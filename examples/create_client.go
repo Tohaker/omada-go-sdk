@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	client "omada-go-sdk/client"
+	client "github.com/Tohaker/omada-go-sdk/client"
 )
 
 // CreateClient demonstrates how to initialize and use the generated clients.

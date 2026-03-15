@@ -1,0 +1,70 @@
+name: pr-checks
+
+on: pull_request
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: root-module
+            working-directory: .
+            command: go test ./...
+          - name: tools-module
+            working-directory: tools
+            command: go test ./...
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - name: Run tests (${{ matrix.name }})
+        working-directory: ${{ matrix.working-directory }}
+        run: ${{ matrix.command }}
+
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
+      - name: Check formatting (root module)
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then
+            echo "Unformatted files found:"
+            echo "$unformatted"
+            exit 1
+          fi
+
+      - name: Check formatting (tools module)
+        working-directory: tools
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then
+            echo "Unformatted files found in tools module:"
+            echo "$unformatted"
+            exit 1
+          fi
+
+      - name: Vet root module
+        run: go vet ./...
+
+      - name: Vet tools module
+        working-directory: tools
+        run: go vet ./...
+
+      - name: Ensure go.mod/go.sum are tidy (root module)
+        run: |
+          go mod tidy
+          git diff --exit-code -- go.mod go.sum
+
+      - name: Ensure go.mod/go.sum are tidy (tools module)
+        working-directory: tools
+        run: |
+          go mod tidy
+          git diff --exit-code -- go.mod go.sum

@@ -1,4 +1,4 @@
-module omada-go-sdk
+module github.com/Tohaker/omada-go-sdk
 
 go 1.25.6
 

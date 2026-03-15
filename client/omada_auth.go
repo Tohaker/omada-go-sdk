@@ -4,7 +4,8 @@ import (
 	"context"
 	"fmt"
 	"net/http"
-	"omada-go-sdk/client/auth"
+
+	"github.com/Tohaker/omada-go-sdk/client/auth"
 )
 
 // OmadaAuthorizeLoginResult contains CSRF/session values from /openapi/authorize/login.
