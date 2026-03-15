@@ -1,0 +1,4 @@
+# Go generated files
+*.exe
+all*.json
+coverage*
