@@ -1,0 +1,28 @@
+name: pr-checks
+
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        directory:
+          - .
+          - tools
+        command:
+          - test: go test ./...
+          - format: gofmt -l .
+          - vet: go vet ./...
+          - tidy: |
+              go mod tidy
+              git diff --exit-code -- go.mod go.sum
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - name: Run ${{ matrix.command }} in ${{ matrix.directory }}
+        working-directory: ${{ matrix.directory }}
+        run: ${{ matrix.command }}
