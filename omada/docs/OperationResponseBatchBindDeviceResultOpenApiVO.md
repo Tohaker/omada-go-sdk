@@ -1,0 +1,108 @@
+# OperationResponseBatchBindDeviceResultOpenApiVO
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**ErrorCode** | Pointer to **int32** |  | [optional] 
+**Msg** | Pointer to **string** |  | [optional] 
+**Result** | Pointer to [**BatchBindDeviceResultOpenApiVO**](BatchBindDeviceResultOpenApiVO.md) |  | [optional] 
+
+## Methods
+
+### NewOperationResponseBatchBindDeviceResultOpenApiVO
+
+`func NewOperationResponseBatchBindDeviceResultOpenApiVO() *OperationResponseBatchBindDeviceResultOpenApiVO`
+
+NewOperationResponseBatchBindDeviceResultOpenApiVO instantiates a new OperationResponseBatchBindDeviceResultOpenApiVO object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewOperationResponseBatchBindDeviceResultOpenApiVOWithDefaults
+
+`func NewOperationResponseBatchBindDeviceResultOpenApiVOWithDefaults() *OperationResponseBatchBindDeviceResultOpenApiVO`
+
+NewOperationResponseBatchBindDeviceResultOpenApiVOWithDefaults instantiates a new OperationResponseBatchBindDeviceResultOpenApiVO object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetErrorCode
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) GetErrorCode() int32`
+
+GetErrorCode returns the ErrorCode field if non-nil, zero value otherwise.
+
+### GetErrorCodeOk
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) GetErrorCodeOk() (*int32, bool)`
+
+GetErrorCodeOk returns a tuple with the ErrorCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrorCode
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) SetErrorCode(v int32)`
+
+SetErrorCode sets ErrorCode field to given value.
+
+### HasErrorCode
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) HasErrorCode() bool`
+
+HasErrorCode returns a boolean if a field has been set.
+
+### GetMsg
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) GetMsg() string`
+
+GetMsg returns the Msg field if non-nil, zero value otherwise.
+
+### GetMsgOk
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) GetMsgOk() (*string, bool)`
+
+GetMsgOk returns a tuple with the Msg field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMsg
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) SetMsg(v string)`
+
+SetMsg sets Msg field to given value.
+
+### HasMsg
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) HasMsg() bool`
+
+HasMsg returns a boolean if a field has been set.
+
+### GetResult
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) GetResult() BatchBindDeviceResultOpenApiVO`
+
+GetResult returns the Result field if non-nil, zero value otherwise.
+
+### GetResultOk
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) GetResultOk() (*BatchBindDeviceResultOpenApiVO, bool)`
+
+GetResultOk returns a tuple with the Result field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResult
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) SetResult(v BatchBindDeviceResultOpenApiVO)`
+
+SetResult sets Result field to given value.
+
+### HasResult
+
+`func (o *OperationResponseBatchBindDeviceResultOpenApiVO) HasResult() bool`
+
+HasResult returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

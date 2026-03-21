@@ -1,0 +1,241 @@
+openapi: "3.0.1"
+info:
+  title: Omada Open API - Authorization
+  description: >
+    Authentication endpoints for the TP-Link Omada Open API.
+    These endpoints are not included in the main OpenAPI spec.
+  version: v0.1
+
+servers:
+  - url: https://use1-omada-northbound.tplinkcloud.com
+    description: US region
+  - url: https://euw1-omada-northbound.tplinkcloud.com
+    description: EU region
+  - url: https://aps1-omada-northbound.tplinkcloud.com
+    description: Singapore region
+
+paths:
+  /openapi/authorize/login:
+    post:
+      tags:
+        - Authorize
+      summary: Login (Authorization Code flow step 1)
+      description: >
+        Authenticate with username and password. Returns a CSRF token and
+        session ID needed to obtain an authorization code.
+      operationId: authorizeLogin
+      parameters:
+        - name: client_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: OAuth client ID
+        - name: omadac_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Omada Controller ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+      responses:
+        "200":
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginResponse"
+
+  /openapi/authorize/code:
+    post:
+      tags:
+        - Authorize
+      summary: Get authorization code (step 2)
+      description: >
+        Exchange CSRF token and session for an authorization code.
+        Requires the Csrf-Token header and TPOMADA_SESSIONID cookie
+        from the login response.
+      operationId: authorizeCode
+      parameters:
+        - name: client_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: OAuth client ID
+        - name: omadac_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Omada Controller ID
+        - name: response_type
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - code
+          description: Must be "code"
+        - name: Csrf-Token
+          in: header
+          required: true
+          schema:
+            type: string
+          description: CSRF token from login response
+        - name: Cookie
+          in: header
+          required: true
+          schema:
+            type: string
+          description: "Session cookie, format: TPOMADA_SESSIONID=<sessionId>"
+      responses:
+        "200":
+          description: Authorization code
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthCodeResponse"
+
+  /openapi/authorize/token:
+    post:
+      tags:
+        - Authorize
+      summary: Get or refresh access token
+      description: >
+        Obtain an access token via authorization code, client credentials,
+        or refresh token grant. The access token is valid for 2 hours.
+        The refresh token is valid for 14 days and is single-use.
+      operationId: authorizeToken
+      parameters:
+        - name: grant_type
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - authorization_code
+              - client_credentials
+              - refresh_token
+          description: OAuth grant type
+        - name: code
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Authorization code (required for authorization_code grant)
+        - name: refresh_token
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Refresh token (required for refresh_token grant)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TokenRequest"
+      responses:
+        "200":
+          description: Token response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TokenResponse"
+
+components:
+  schemas:
+    LoginRequest:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          description: Omada account username
+        password:
+          type: string
+          description: Omada account password
+
+    LoginResult:
+      type: object
+      properties:
+        csrfToken:
+          type: string
+          description: CSRF token for subsequent requests
+        sessionId:
+          type: string
+          description: Session ID to use as TPOMADA_SESSIONID cookie
+
+    LoginResponse:
+      type: object
+      properties:
+        errorCode:
+          type: integer
+          description: "0 indicates success"
+        msg:
+          type: string
+        result:
+          $ref: "#/components/schemas/LoginResult"
+
+    AuthCodeResponse:
+      type: object
+      properties:
+        errorCode:
+          type: integer
+          description: "0 indicates success"
+        msg:
+          type: string
+        result:
+          type: string
+          description: The authorization code
+
+    TokenRequest:
+      type: object
+      required:
+        - client_id
+        - client_secret
+      properties:
+        client_id:
+          type: string
+          description: OAuth client ID
+        client_secret:
+          type: string
+          description: OAuth client secret
+        omadacId:
+          type: string
+          description: Omada Controller ID (required for client_credentials grant)
+
+    TokenResult:
+      type: object
+      properties:
+        accessToken:
+          type: string
+          description: "Access token. Use in Authorization header as: AccessToken=<token>"
+        tokenType:
+          type: string
+          description: Token type (e.g. Bearer)
+        expiresIn:
+          type: integer
+          description: Token validity in seconds (7200 = 2 hours)
+        refreshToken:
+          type: string
+          description: Single-use refresh token valid for 14 days
+
+    TokenResponse:
+      type: object
+      properties:
+        errorCode:
+          type: integer
+          description: "0 indicates success"
+        msg:
+          type: string
+        result:
+          $ref: "#/components/schemas/TokenResult"
