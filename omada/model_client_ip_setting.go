@@ -22,11 +22,11 @@ var _ MappedNullable = &ClientIpSetting{}
 // ClientIpSetting Client IP setting.
 type ClientIpSetting struct {
 	// Client IP.
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// LAN network ID.
 	NetId *string `json:"netId,omitempty"`
 	// DHCP Server Mac.
-	ServerMac *string `json:"serverMac,omitempty" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	ServerMac *string `json:"serverMac,omitempty"`
 	// DHCP Sever Stack ID.
 	ServerStackId *string `json:"serverStackId,omitempty"`
 	// DHCP Sever Type.

@@ -26,7 +26,7 @@ type OuiProfileQueryOpenApiVO struct {
 	// OUI Profile ID
 	Id *string `json:"id,omitempty"`
 	// OUI Profile name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// OUI and description
 	OuiCombine []OUIAndDescription `json:"ouiCombine,omitempty"`
 }

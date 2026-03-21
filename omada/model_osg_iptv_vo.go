@@ -20,7 +20,7 @@ var _ MappedNullable = &OsgIptvVO{}
 // OsgIptvVO struct for OsgIptvVO
 type OsgIptvVO struct {
 	IgmpEnable *bool `json:"igmpEnable,omitempty"`
-	IgmpVersion *string `json:"igmpVersion,omitempty" validate:"regexp=[23]"`
+	IgmpVersion *string `json:"igmpVersion,omitempty"`
 }
 
 // NewOsgIptvVO instantiates a new OsgIptvVO object

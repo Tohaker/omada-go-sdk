@@ -24,7 +24,7 @@ type ServicePortModifyDTO struct {
 	// The enable status of the service flows matched by this Service Port. AdminStatus should be a value as follows: DISABLE,ENABLE. Default value: ENABLE.
 	AdminStatus string `json:"adminStatus"`
 	// Description of service port.Description should contain 1 to 32 characters including numbers, Upper and lower letters, -@_:/. .
-	Description *string `json:"description,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{0,32}$"`
+	Description *string `json:"description,omitempty"`
 	// EtherType should be a value as follows:NONE,IPV4OE,IPV6OE,PPPOE
 	EtherType *string `json:"etherType,omitempty"`
 	// GemPortId should be within the range of 1 to 1023

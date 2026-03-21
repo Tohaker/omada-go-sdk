@@ -24,7 +24,7 @@ type TermsOfServiceUrlVO struct {
 	// Terms of service URL content.
 	Content string `json:"content"`
 	// Terms of service URL title.
-	Text string `json:"text" validate:"regexp=^.{1,100}$"`
+	Text string `json:"text"`
 }
 
 type _TermsOfServiceUrlVO TermsOfServiceUrlVO

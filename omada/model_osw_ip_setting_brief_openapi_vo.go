@@ -22,11 +22,11 @@ var _ MappedNullable = &OswIpSettingBriefOpenapiVO{}
 // OswIpSettingBriefOpenapiVO Network IP setting. Only valid when deviceType is 2.
 type OswIpSettingBriefOpenapiVO struct {
 	// Static IP for mode 0, like 192.168.0.1
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// IP Setting mode. Static:0, DHCP:1
 	Mode int32 `json:"mode"`
 	// IP Mask, like 255.255.255.0
-	Netmask *string `json:"netmask,omitempty" validate:"regexp=(254|252|248|240|224|192|128|0).0.0.0|255.(254|252|248|240|224|192|128|0).0.0|255.255.(254|252|248|240|224|192|128|0).0|255.255.255.(254|252|248|240|224|192|128|0)"`
+	Netmask *string `json:"netmask,omitempty"`
 	// option12
 	Option12 *string `json:"option12,omitempty"`
 }

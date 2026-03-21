@@ -28,9 +28,9 @@ type UpdateEoGreTunnelSettingOpenApiVO struct {
 	// EoGRE Tunnel max keepalive skip count config; It should be within the range of 3–10.
 	MaxCount *int32 `json:"maxCount,omitempty"`
 	// EoGRE Tunnel primary gateway IP address config
-	PrimaryAddress *string `json:"primaryAddress,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	PrimaryAddress *string `json:"primaryAddress,omitempty"`
 	// EoGRE Tunnel secondary gateway IP address config
-	SecondaryAddress *string `json:"secondaryAddress,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SecondaryAddress *string `json:"secondaryAddress,omitempty"`
 	// Maximum Transmission Unit. The value of parameter [tunnelMtu] should be between [850, 1500].
 	TunnelMtu int32 `json:"tunnelMtu"`
 }

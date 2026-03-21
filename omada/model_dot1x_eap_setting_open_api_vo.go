@@ -24,7 +24,7 @@ type Dot1xEapSettingOpenApiVO struct {
 	// EAP 802.1x enabled ports
 	Dot1xPorts []string `json:"dot1xPorts,omitempty"`
 	// MAC address of the EAP
-	Mac string `json:"mac" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	Mac string `json:"mac"`
 }
 
 type _Dot1xEapSettingOpenApiVO Dot1xEapSettingOpenApiVO

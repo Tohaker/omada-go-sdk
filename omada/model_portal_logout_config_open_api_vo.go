@@ -20,7 +20,7 @@ var _ MappedNullable = &PortalLogoutConfigOpenApiVO{}
 // PortalLogoutConfigOpenApiVO struct for PortalLogoutConfigOpenApiVO
 type PortalLogoutConfigOpenApiVO struct {
 	// The domain of the portal logout url
-	Domain *string `json:"domain,omitempty" validate:"regexp=^([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6}$"`
+	Domain *string `json:"domain,omitempty"`
 }
 
 // NewPortalLogoutConfigOpenApiVO instantiates a new PortalLogoutConfigOpenApiVO object

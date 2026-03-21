@@ -39,7 +39,7 @@ type ModifyLocalUserOpenApiVO struct {
 	// The maximum number of users online at the same time when the MAC binding type is No Binding. It cannot be modified after initialization. MaxUsers should be within the range of 1–2048.
 	MaxUsers int32 `json:"maxUsers"`
 	// Name should contain 1 to 128 characters, with no spaces at the beginning and end, and spaces in the middle
-	Name *string `json:"name,omitempty" validate:"regexp=^$|^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// Password should contain 1 to 128 characters.
 	Password string `json:"password"`
 	// Phone number should contain 1 to 20 characters.

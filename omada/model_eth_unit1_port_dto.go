@@ -21,7 +21,7 @@ var _ MappedNullable = &EthUnit1PortDTO{}
 
 // EthUnit1PortDTO Eth unit1 port list
 type EthUnit1PortDTO struct {
-	Description *string `json:"description,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{0,32}$"`
+	Description *string `json:"description,omitempty"`
 	Duplex *string `json:"duplex,omitempty"`
 	DuplexLink *string `json:"duplexLink,omitempty"`
 	FlowControl *string `json:"flowControl,omitempty"`

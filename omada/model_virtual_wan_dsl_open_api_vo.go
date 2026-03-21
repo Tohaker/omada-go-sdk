@@ -30,9 +30,9 @@ type VirtualWanDslOpenApiVO struct {
 	// If your ISP requires MER for network connection(e.g., Sky VDSL).MER switch configuration, only configurable when in VDSL mode and DHCP dial-up mode.
 	MerEnable *bool `json:"merEnable,omitempty"`
 	// MER password configuration, only configurable when in VDSL mode and DHCP dial-up mode.
-	MerPassword *string `json:"merPassword,omitempty" validate:"regexp=^[^\\\\s]{1,63}$"`
+	MerPassword *string `json:"merPassword,omitempty"`
 	// MER username configuration, only configurable when in VDSL mode and DHCP dial-up mode.
-	MerUsername *string `json:"merUsername,omitempty" validate:"regexp=^[^\\\\s]{1,63}$"`
+	MerUsername *string `json:"merUsername,omitempty"`
 	// The modulation type used for your DSL connection. 0: VDSL, 1: ADSL.
 	ModulationType int32 `json:"modulationType"`
 	// The VCI(1~65535) assigned by your ISP to specify the virtual channel endpoints in an ATM network.

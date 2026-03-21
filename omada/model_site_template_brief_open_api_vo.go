@@ -25,7 +25,7 @@ type SiteTemplateBriefOpenApiVO struct {
 	// Site Template ID
 	Id *string `json:"id,omitempty"`
 	// Name of the site template should contain 1 to 64 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// Omada ID
 	OmadacId *string `json:"omadacId,omitempty"`
 	// The settings of the site template.

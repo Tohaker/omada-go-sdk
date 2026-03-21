@@ -42,7 +42,7 @@ type OswStackDetailConfigOpenApiVO struct {
 	// Management VLAN network ID
 	MvlanNetworkId *string `json:"mvlanNetworkId,omitempty"`
 	// Stack Name
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// STP priority should be an integer from 0 to 61440 and divisible by 4096
 	Priority *int32 `json:"priority,omitempty"`
 	QosConfig *OswQosConfigVO `json:"qosConfig,omitempty"`

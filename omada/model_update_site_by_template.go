@@ -22,7 +22,7 @@ var _ MappedNullable = &UpdateSiteByTemplate{}
 // UpdateSiteByTemplate struct for UpdateSiteByTemplate
 type UpdateSiteByTemplate struct {
 	// Name of the site should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	Name string `json:"name"`
 }
 
 type _UpdateSiteByTemplate UpdateSiteByTemplate

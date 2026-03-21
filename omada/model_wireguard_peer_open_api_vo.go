@@ -24,7 +24,7 @@ type WireguardPeerOpenApiVO struct {
 	// IP/MASK address list of WireGuard peer allowed.
 	AllowAddress []string `json:"allowAddress"`
 	// The comment of WireGuard peer should contain 0 to 128 characters.
-	Comment *string `json:"comment,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Comment *string `json:"comment,omitempty"`
 	// The end point IP of WireGuard peer. Get whether supports domain from interface 'Get wireguard peer list'.
 	EndPoint *string `json:"endPoint,omitempty"`
 	// The end point port of WireGuard peer should be within the range of 1-65535.
@@ -34,11 +34,11 @@ type WireguardPeerOpenApiVO struct {
 	// The keepalive second of WireGuard peer should be within the range of 0-65535.
 	KeepAlive int32 `json:"keepAlive"`
 	// The name of WireGuard peer should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// The presharedKey of WireGuard peer must have 44 character of base64 and end with '='.
-	PresharedKey *string `json:"presharedKey,omitempty" validate:"regexp=^[0-9a-zA-Z+\\/]{43}=$"`
+	PresharedKey *string `json:"presharedKey,omitempty"`
 	// The public key of WireGuard peer must have 44 character of base64 and end with '='.
-	PublicKey string `json:"publicKey" validate:"regexp=^[0-9a-zA-Z+\\/]{43}=$"`
+	PublicKey string `json:"publicKey"`
 	// The status of WireGuard peer. Valid value is true or false.
 	Status bool `json:"status"`
 }

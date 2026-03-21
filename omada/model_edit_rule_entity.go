@@ -28,7 +28,7 @@ type EditRuleEntity struct {
 	// The Class value selected in the Qos Class configuration, required when qos is enable. Valid values is 0: Others, 1: Class 1, 2: Class 2, 3: Class 3.
 	QosClass *int32 `json:"qosClass,omitempty"`
 	// Rule name. It should be 1 - 128 characters
-	RuleName string `json:"ruleName" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	RuleName string `json:"ruleName"`
 	// Schedule profile ID, which can be queried by request： Get time range profile list.
 	Schedule string `json:"schedule"`
 }

@@ -22,9 +22,9 @@ var _ MappedNullable = &LdapSetting{}
 // LdapSetting Ldap Portal Setting.
 type LdapSetting struct {
 	// External URL. Required when portalCustom is 2.
-	ExternalUrl *string `json:"externalUrl,omitempty" validate:"regexp=^(([-a-zA-Z0-9@:%._+~#=]{2,256}\\\\.[a-z]{2,63})|((?!255\\\\.255\\\\.255\\\\.255)((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\\\.)){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)))((:([1-9]|[1-9]\\\\d|[1-9]\\\\d{2}|[1-9]\\\\d{3}|[1-5]\\\\d{4}|6[0-4]\\\\d{3}|65[0-4]\\\\d{2}|655[0-2]\\\\d|6553[0-5]))?)(\\/([-a-zA-Z0-9@:%_+.~#?&\\/\\/=]*))?$"`
+	ExternalUrl *string `json:"externalUrl,omitempty"`
 	// External URL scheme, should be a value as follows: http ; https. Required when portalCustom is 2.
-	ExternalUrlScheme *string `json:"externalUrlScheme,omitempty" validate:"regexp=http|https"`
+	ExternalUrlScheme *string `json:"externalUrlScheme,omitempty"`
 	// LDAP profile ID. Ldap profile can be  created using 'Create a new LDAP profile' ('Create a new LDAP profile template') interface, and LDAP profile ID can be obtained from 'Get LDAP profile list' ('Get LDAP profile template list') interface
 	LdapProfileId string `json:"ldapProfileId"`
 	// Portal customization, should be a value as follows: 1: use local; 2: use external

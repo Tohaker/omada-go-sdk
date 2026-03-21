@@ -30,15 +30,15 @@ type SslVpnServerConfigOpenApiVO struct {
 	ExitTime *int32 `json:"exitTime,omitempty"`
 	IpLockSetting *LockSettingOpenApiVO `json:"ipLockSetting,omitempty"`
 	// The end IP of the IP pool. It is required when parameter [status] is true.
-	IpPoolEnd *string `json:"ipPoolEnd,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpPoolEnd *string `json:"ipPoolEnd,omitempty"`
 	// The start IP of the IP pool. It is required when parameter [status] is true.
-	IpPoolStart *string `json:"ipPoolStart,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpPoolStart *string `json:"ipPoolStart,omitempty"`
 	NameLockSetting *LockSettingOpenApiVO `json:"nameLockSetting,omitempty"`
 	// Primary DNS Server of the SSL VPN server. It is required when parameter [status] is true.
-	PrimaryDns *string `json:"primaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	PrimaryDns *string `json:"primaryDns,omitempty"`
 	RadiusSetting *RadiusSettingOpenApiVO `json:"radiusSetting,omitempty"`
 	// Secondary DNS Server of the SSL VPN server.
-	SecondaryDns *string `json:"secondaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SecondaryDns *string `json:"secondaryDns,omitempty"`
 	// Service port of the SSL VPN server. Default value is 1194. It is required when parameter [status] is true, and it should be within the range of 1–65535
 	ServicePort *int32 `json:"servicePort,omitempty"`
 	// Status of the SSL VPN server.

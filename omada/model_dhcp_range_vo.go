@@ -19,8 +19,8 @@ var _ MappedNullable = &DhcpRangeVO{}
 
 // DhcpRangeVO struct for DhcpRangeVO
 type DhcpRangeVO struct {
-	IpaddrEnd *string `json:"ipaddrEnd,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
-	IpaddrStart *string `json:"ipaddrStart,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpaddrEnd *string `json:"ipaddrEnd,omitempty"`
+	IpaddrStart *string `json:"ipaddrStart,omitempty"`
 }
 
 // NewDhcpRangeVO instantiates a new DhcpRangeVO object

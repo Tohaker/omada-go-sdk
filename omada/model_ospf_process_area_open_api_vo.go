@@ -22,7 +22,7 @@ var _ MappedNullable = &OspfProcessAreaOpenApiVO{}
 // OspfProcessAreaOpenApiVO  Up to 16 entries are allowed for the areaList.
 type OspfProcessAreaOpenApiVO struct {
 	// The 32 bit unsigned integer that uniquely identifies the area. It can be in decimal format or dotted decimal format.
-	AreaId string `json:"areaId" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	AreaId string `json:"areaId"`
 	// OSPF area type should be a value as follows: 0: Normal, 1: Stub, or 2: NSSA.
 	AreaType int32 `json:"areaType"`
 	// Up to 16 entries are allowed for the networkList.

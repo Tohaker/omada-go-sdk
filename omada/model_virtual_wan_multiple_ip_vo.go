@@ -19,7 +19,7 @@ var _ MappedNullable = &VirtualWanMultipleIpVO{}
 
 // VirtualWanMultipleIpVO struct for VirtualWanMultipleIpVO
 type VirtualWanMultipleIpVO struct {
-	IP *string `json:"IP,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IP *string `json:"IP,omitempty"`
 	Enable *bool `json:"enable,omitempty"`
 }
 

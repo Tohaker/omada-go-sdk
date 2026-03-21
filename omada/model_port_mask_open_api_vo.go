@@ -22,7 +22,7 @@ var _ MappedNullable = &PortMaskOpenApiVO{}
 // PortMaskOpenApiVO Port mask list. [portType] value of 1 is required
 type PortMaskOpenApiVO struct {
 	// Port mask should be 4 hex number(0-9, A-F), e.g. 0000 or FFFF
-	Mask string `json:"mask" validate:"regexp=^[0-9a-fA-F]{4}$"`
+	Mask string `json:"mask"`
 	// Port should be within the range of 0-65535
 	Port int32 `json:"port"`
 }

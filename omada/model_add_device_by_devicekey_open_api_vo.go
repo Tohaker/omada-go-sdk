@@ -22,7 +22,7 @@ type AddDeviceByDevicekeyOpenApiVO struct {
 	// device key(QR code)
 	DeviceKey *string `json:"deviceKey,omitempty"`
 	// device name(Parameter [name] should be 1 ~ 128 characters)
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// device password
 	Password *string `json:"password,omitempty"`
 	// device username

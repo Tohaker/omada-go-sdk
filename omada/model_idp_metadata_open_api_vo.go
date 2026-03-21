@@ -22,13 +22,13 @@ var _ MappedNullable = &IdpMetadataOpenApiVO{}
 // IdpMetadataOpenApiVO struct for IdpMetadataOpenApiVO
 type IdpMetadataOpenApiVO struct {
 	// IdP description should contain 0 to 128 characters.
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// The IdP entity id which must be unique in same Omadac.
-	EntityId string `json:"entityId" validate:"regexp=^(?=^.{3,255}$)(http(s)?:\\/\\/)(www\\\\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\\\\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+(:\\\\d+)*(\\/[\\\\w-]*(\\\\.[\\\\w-]+)?)*([\\\\?&][\\\\w-]+=[\\\\w-]*)*$"`
+	EntityId string `json:"entityId"`
 	// Login url
-	LoginUrl string `json:"loginUrl" validate:"regexp=^(?=^.{3,255}$)(http(s)?:\\/\\/)(www\\\\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\\\\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+(:\\\\d+)*(\\/[\\\\w-]*(\\\\.[\\\\w-]+)?)*([\\\\?&][\\\\w-]+=[\\\\w-]*)*$"`
+	LoginUrl string `json:"loginUrl"`
 	// IdP name should contain 1 to 32 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,30}[^ ]$"`
+	Name string `json:"name"`
 	// BASE64 encoded string of x509 certificate.
 	X509Certificate string `json:"x509Certificate"`
 }

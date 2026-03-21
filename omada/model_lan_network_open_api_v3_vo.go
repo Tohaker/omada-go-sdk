@@ -35,9 +35,9 @@ type LanNetworkOpenApiV3VO struct {
 	DhcpSettings *DhcpSettingConfig `json:"dhcpSettings,omitempty"`
 	Dhcpv6Guard *Dhcpv6ServersSetting `json:"dhcpv6Guard,omitempty"`
 	// The domain of this network
-	Domain *string `json:"domain,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	Domain *string `json:"domain,omitempty"`
 	// When deviceType is 1, gateway subnet is needed. Format: IP/Mask
-	GatewaySubnet *string `json:"gatewaySubnet,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\/(\\\\d|((1|2)\\\\d)|(30))\\\\b"`
+	GatewaySubnet *string `json:"gatewaySubnet,omitempty"`
 	// Enable IGMP snooping
 	IgmpSnoopEnable bool `json:"igmpSnoopEnable"`
 	Ip *OswIpSettingBriefOpenapiVO `json:"ip,omitempty"`
@@ -49,7 +49,7 @@ type LanNetworkOpenApiV3VO struct {
 	// DHCP mode. 0: None 1: DHCP Server 2: DHCP Relay. Only valid when deviceType is 2.
 	Mode *int32 `json:"mode,omitempty"`
 	// LAN network name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// The switch of QoS queue.
 	QosQueueEnable *bool `json:"qosQueueEnable,omitempty"`
 	// QoS queue Id.
@@ -63,7 +63,7 @@ type LanNetworkOpenApiV3VO struct {
 	// VLANType should be a value as follows: 0: Single; 1: Multiple
 	VlanType *int32 `json:"vlanType,omitempty"`
 	// Only valid when vlanType is 1 and device type is 0 , 1 or 3. When device type is 0 or 3, batch create single vlan, when deviceType is 1 , create bridge vlan. VLAN format: 200, 1-100.
-	Vlans *string `json:"vlans,omitempty" validate:"regexp=^[\\\\d|\\\\d-\\\\d]+(,[\\\\d|\\\\d-\\\\d]+)*$"`
+	Vlans *string `json:"vlans,omitempty"`
 	// VRF ID
 	VrfId *string `json:"vrfId,omitempty"`
 }

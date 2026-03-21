@@ -26,7 +26,7 @@ type RebootScheduleQueryOpenApiVO struct {
 	// Reboot Schedule ID.
 	Id *string `json:"id,omitempty"`
 	// Reboot Schedule name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Reboot Schedule next execution timestamp(ms).
 	NextExecute *int64 `json:"nextExecute,omitempty"`
 	// Reboot Schedule status.

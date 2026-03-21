@@ -24,7 +24,7 @@ type PortScheduleQueryOpenApiVO struct {
 	// Port Schedule individual ID.
 	Id *string `json:"id,omitempty"`
 	// Port Schedule Name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Show Poe Schedule next execution timestamp.
 	NextExecute *int64 `json:"nextExecute,omitempty"`
 	// When notInDst is true, Not displayed in DST.

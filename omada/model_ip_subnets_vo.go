@@ -22,7 +22,7 @@ var _ MappedNullable = &IPSubnetsVO{}
 // IPSubnetsVO User remote subnets of the VPN user.
 type IPSubnetsVO struct {
 	// Description should contain 1 to 512 characters.
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,510}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// IP address, should be a valid IP format
 	Ip string `json:"ip"`
 	// IP mask, mask should be within the range of 1-32

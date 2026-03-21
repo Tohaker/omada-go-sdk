@@ -24,13 +24,13 @@ type HotspotOperator struct {
 	// Last Site ID
 	LastSite *string `json:"lastSite,omitempty"`
 	// Operator name should contain 1 to 128 ASCII characters.
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Operator note should contain 1 to 256 ASCII characters.
-	Note *string `json:"note,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,254}[^ ]$"`
+	Note *string `json:"note,omitempty"`
 	// Operator role type should be a value as follows: 0: Administrator; 1: Viewer.
 	OperatorRoleType *int32 `json:"operatorRoleType,omitempty"`
 	// Operator password should contain 1 to 128 ASCII characters.
-	Password string `json:"password" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Password string `json:"password"`
 	// Selected site ID list should contain at least one site for each operator.
 	SelectedSites []string `json:"selectedSites"`
 }

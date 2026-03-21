@@ -28,7 +28,7 @@ type CertProfileRequestOpenApiVO struct {
 	// Cert profile format, format should be a value as follows: 0: X509; 1: DER.
 	Format int32 `json:"format"`
 	// Cert profile name, name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Client private key file id, it's obtained from the interface 'UploadClientPrivateKeyFile'; When type = 1, Parameter [privateKeyFileId] should not be null.
 	PrivateKeyFileId *string `json:"privateKeyFileId,omitempty"`
 	// Client private key password; When type = 1, Parameter [privateKeyPassword] is an optional input.

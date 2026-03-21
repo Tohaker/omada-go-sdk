@@ -22,7 +22,7 @@ var _ MappedNullable = &EthUnit1PortAppDTO{}
 // EthUnit1PortAppDTO struct for EthUnit1PortAppDTO
 type EthUnit1PortAppDTO struct {
 	// Display the configured port description.Description should contain 1-32 bits numbers, Upper and lower letters, -@_:/. .
-	Description *string `json:"description,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{0,32}$"`
+	Description *string `json:"description,omitempty"`
 	// Port duplex negotiation mode.Duplex should be a value as follows: 2:FULL,0:AUTO
 	Duplex *int32 `json:"duplex,omitempty"`
 	// Actual port duplex mode.DuplexLink should be a value as follows: 0:DISABLE;1:ENABLE

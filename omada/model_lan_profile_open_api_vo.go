@@ -50,7 +50,7 @@ type LanProfileOpenApiVO struct {
 	// Indicates whether mld fast leave is enabled
 	MldFastLeaveEnable *bool `json:"mldFastLeaveEnable,omitempty"`
 	// Name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Native network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks.
 	NativeNetworkId *string `json:"nativeNetworkId,omitempty"`
 	// Indicates whether the VLAN configuration in the Profile is inconsistent with the VLAN configuration that is effective for the bound port.

@@ -34,7 +34,7 @@ type DBAProfileVO struct {
 	// The value for maximum bandwidth is required when the Type is set to MAX, ASSURE_MAX, or FIX_ASSURE_MAX. Max should be within the range of 128 to 1244160, with the unit in kbit/s.
 	Max *int32 `json:"max,omitempty"`
 	// The name of the DBA profile should contain 1 to 32 characters including digits, upper and lower letters, and the following six characters: -@_:/. .
-	Name *string `json:"name,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{1,32}$"`
+	Name *string `json:"name,omitempty"`
 	// The number of T-conts using this DBA template is not configurable and will be returned upon inquiry.
 	TcontNum *int64 `json:"tcontNum,omitempty"`
 	// DBA bandwidth allocation methods.Type should be a value as follows: FIX, ASSURE, MAX, ASSURE_MAX, and FIX_ASSURE_MAX. The default value is FIX.

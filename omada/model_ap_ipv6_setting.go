@@ -25,7 +25,7 @@ type ApIPv6Setting struct {
 	// ipv6 enable
 	Ipv6Enable bool `json:"ipv6Enable"`
 	// Mode should be a value as follows: static; dynamic
-	Mode *string `json:"mode,omitempty" validate:"regexp=dynamic|static"`
+	Mode *string `json:"mode,omitempty"`
 	StaticIpv6Setting *StaticIpv6SettingEntity `json:"staticIpv6Setting,omitempty"`
 }
 

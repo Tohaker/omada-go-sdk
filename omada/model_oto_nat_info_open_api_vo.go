@@ -22,7 +22,7 @@ var _ MappedNullable = &OtoNatInfoOpenApiVO{}
 // OtoNatInfoOpenApiVO struct for OtoNatInfoOpenApiVO
 type OtoNatInfoOpenApiVO struct {
 	// Description should contain 1 to 64 characters.
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// Whether to enable the DMZ
 	Dmz bool `json:"dmz"`
 	// External IP
@@ -34,7 +34,7 @@ type OtoNatInfoOpenApiVO struct {
 	// Internal IP
 	InternalIp string `json:"internalIp"`
 	// Name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Status
 	Status bool `json:"status"`
 }

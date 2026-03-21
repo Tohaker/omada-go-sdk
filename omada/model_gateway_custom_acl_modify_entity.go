@@ -22,7 +22,7 @@ var _ MappedNullable = &GatewayCustomACLModifyEntity{}
 // GatewayCustomACLModifyEntity Modified Custom ACLs.
 type GatewayCustomACLModifyEntity struct {
 	// Custom ACL description should contain 1 to 512 characters.
-	Description string `json:"description" validate:"regexp=^[^ ]$|^[^ ].{0,510}[^ ]$"`
+	Description string `json:"description"`
 	// Custom ACL destination list.
 	DestinationList []string `json:"destinationList"`
 	// Custom ACL destination port. when \"protocol\" is \"TCP\" or \"UDP\", port is valid.

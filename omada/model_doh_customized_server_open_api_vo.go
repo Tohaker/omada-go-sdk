@@ -26,7 +26,7 @@ type DohCustomizedServerOpenApiVO struct {
 	// Custom service name, should contain 1 to 64 characters
 	Name string `json:"name"`
 	// Custom service IP or domain
-	Server string `json:"server" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	Server string `json:"server"`
 }
 
 type _DohCustomizedServerOpenApiVO DohCustomizedServerOpenApiVO

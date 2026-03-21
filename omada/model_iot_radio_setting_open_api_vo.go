@@ -30,7 +30,7 @@ type IotRadioSettingOpenApiVO struct {
 	// The parameter [format] should be a value as follows: [0:second 1:minute; 2:hour]
 	Format *int32 `json:"format,omitempty"`
 	// Bluetooth consle passcode.
-	Passcode *string `json:"passcode,omitempty" validate:"regexp=^[0-9]{6}$"`
+	Passcode *string `json:"passcode,omitempty"`
 	Resource *int32 `json:"resource,omitempty"`
 	// Broadcast transmission power.<br />The parameter [transmitPower] should be a value as follows:[-20, -18, -15, -12, -10, -9, -6, -5, -3, 0, 1, 2, 3, 4, 5, 14, 15, 16, 17, 18, 19, 20].(0 by default)
 	TransmitPower *int32 `json:"transmitPower,omitempty"`

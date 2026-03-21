@@ -34,9 +34,9 @@ type OswVrrpConfigOpenApiVO struct {
 	// Virtual IpV6LinkLocal Address
 	IpV6LinkLocal *string `json:"ipV6LinkLocal,omitempty"`
 	// Key of VRRP
-	Key *string `json:"key,omitempty" validate:"regexp=^(?:[A-Za-z0-9]|[-.\\/:_@]){1,8}$"`
+	Key *string `json:"key,omitempty"`
 	// VRRP name, it should be visible ASCII, and should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Whether the preemption mode is enabled or not, it defaults to enabled.
 	PreemptMode bool `json:"preemptMode"`
 	// Up to 32 entries are allowed for the virtualIpv4s.

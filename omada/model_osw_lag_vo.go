@@ -75,7 +75,7 @@ type OswLagVO struct {
 	// Indicates whether mld fast leave is enabled
 	MldFastLeaveEnable *bool `json:"mldFastLeaveEnable,omitempty"`
 	// Lag Name
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ ?\\"]$|^[^ ?\\"][^?\\"]{0,126}[^ ?\\"]$"`
+	Name *string `json:"name,omitempty"`
 	// Native Network Bridge Vlan.
 	NativeBridgeVlan *int32 `json:"nativeBridgeVlan,omitempty"`
 	// Native Network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks.

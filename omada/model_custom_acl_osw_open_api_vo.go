@@ -26,7 +26,7 @@ type CustomAclOswOpenApiVO struct {
 	// Stack ID
 	StackId *string `json:"stackId,omitempty"`
 	// VRF should be 1 to 15 characters consisting of numbers (0 to 9), uppercase and lowercase letters (A to Z, a to z), and symbols -_@.+ but cannot be . or .. only.
-	Vrf string `json:"vrf" validate:"regexp=^(?!(\\\\.|\\\\.\\\\.)$)[a-zA-Z0-9.\\\\-_@+]{1,15}$"`
+	Vrf string `json:"vrf"`
 	// VRF ID
 	VrfId *string `json:"vrfId,omitempty"`
 }

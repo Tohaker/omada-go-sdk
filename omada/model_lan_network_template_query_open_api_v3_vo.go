@@ -43,7 +43,7 @@ type LanNetworkTemplateQueryOpenApiV3VO struct {
 	DhcpSettings *DhcpSettingsTemplateOpenApiVO `json:"dhcpSettings,omitempty"`
 	Dhcpv6Guard *Dhcpv6ServersSetting `json:"dhcpv6Guard,omitempty"`
 	// The domain of this network
-	Domain *string `json:"domain,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	Domain *string `json:"domain,omitempty"`
 	// Whether Arp Detection is configured.
 	ExistArpDetection *bool `json:"existArpDetection,omitempty"`
 	// Whether custom DHCP Options has been configured.
@@ -59,7 +59,7 @@ type LanNetworkTemplateQueryOpenApiV3VO struct {
 	// IGMP Snooping fast leave enable status
 	FastLeaveEnable *bool `json:"fastLeaveEnable,omitempty"`
 	// When purpose is interface, gateway subnet is needed. Format: IP/Mask
-	GatewaySubnet *string `json:"gatewaySubnet,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\/(\\\\d|((1|2)\\\\d)|(30))\\\\b"`
+	GatewaySubnet *string `json:"gatewaySubnet,omitempty"`
 	// LAN network ID
 	Id *string `json:"id,omitempty"`
 	// Enable IGMP snooping
@@ -75,7 +75,7 @@ type LanNetworkTemplateQueryOpenApiV3VO struct {
 	// DHCP mode. 0: None 1: DHCP Server 2: DHCP Relay. Only valid when deviceType is 2.
 	Mode *int32 `json:"mode,omitempty"`
 	// LAN network name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Original name
 	OrigName *string `json:"origName,omitempty"`
 	// Show portal is enabled or not
@@ -107,7 +107,7 @@ type LanNetworkTemplateQueryOpenApiV3VO struct {
 	// When purpose is interface, VLANType should be a value as follows: 0: Single; 1: Multiple
 	VlanType *int32 `json:"vlanType,omitempty"`
 	// When purpose is interface and VLANType is 1, batch create VLANs. VLAN format: 200, 1-100.
-	Vlans *string `json:"vlans,omitempty" validate:"regexp=^[\\\\d|\\\\d-\\\\d]+(,[\\\\d|\\\\d-\\\\d]+)*$"`
+	Vlans *string `json:"vlans,omitempty"`
 }
 
 type _LanNetworkTemplateQueryOpenApiV3VO LanNetworkTemplateQueryOpenApiV3VO

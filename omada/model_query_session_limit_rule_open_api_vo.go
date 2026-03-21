@@ -28,11 +28,11 @@ type QuerySessionLimitRuleOpenApiVO struct {
 	// Index of the session limit rule. When the [sourceType] is 0 or 1, the index is counted in order, when the sourceType is 2, the index is always -1
 	Index *int32 `json:"index,omitempty"`
 	// IP of the session limit rule.
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// Max sessions should be within the range of 1–999999.
 	MaxSession int32 `json:"maxSession"`
 	// Name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Source IDs of the session limit rule, only for network and IP group type.Network can be created using 'Create LAN network' interface, and network ID can be obtained from 'Get LAN network list' interface. IP group can be created using 'Create a new group profile' interface, and IP group ID can be obtained from 'Get group profile list' interface.
 	SourceIds []string `json:"sourceIds,omitempty"`
 	// Source type should be a value as follows: 0: network; 1: IP group; 2: IP.

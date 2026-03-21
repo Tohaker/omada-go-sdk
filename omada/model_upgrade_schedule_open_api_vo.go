@@ -24,7 +24,7 @@ type UpgradeScheduleOpenApiVO struct {
 	// MAC address of the selected devices. E.g. AA-BB-CC-DD-11-22
 	DeviceMacs []string `json:"deviceMacs"`
 	// Upgrade schedule name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Execution timeStamp(ms). Required when type is 0.
 	NextExecuteTime *int64 `json:"nextExecuteTime,omitempty"`
 	OccurrenceTime *BaseScheduleTimeOpenApiVO `json:"occurrenceTime,omitempty"`

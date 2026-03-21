@@ -26,7 +26,7 @@ type UpgradeScheduleQueryOpenApiVO struct {
 	// Reboot Schedule ID.
 	Id *string `json:"id,omitempty"`
 	// Reboot Schedule name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Execution timeStamp(ms). Required when type is 0.
 	NextExecuteTime *int64 `json:"nextExecuteTime,omitempty"`
 	OccurrenceTime *BaseScheduleTimeOpenApiVO `json:"occurrenceTime,omitempty"`

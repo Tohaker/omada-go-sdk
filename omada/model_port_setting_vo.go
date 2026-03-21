@@ -20,13 +20,13 @@ var _ MappedNullable = &PortSettingVO{}
 // PortSettingVO Parameter [portSettings] should not be null when parameter [provider] is 6.
 type PortSettingVO struct {
 	// When parameter [provider] is 0, parameter [outboundProxy] has a default value of [0.0.0.0]. In other cases, parameter [outboundProxy] is always [0.0.0.0].
-	OutboundProxy *string `json:"outboundProxy,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	OutboundProxy *string `json:"outboundProxy,omitempty"`
 	// When parameter [provider] is 0, parameter [outboundProxyPort] has a default value of [5060]. In other cases, parameter [outboundProxyPort] is always 5060.
 	OutboundProxyPort *int32 `json:"outboundProxyPort,omitempty"`
 	// When parameter [provider] is 0, parameter [registrarPort] has a default value of [5060]. In other cases, parameter [registrarPort] is always 5060.
 	RegistrarPort *int32 `json:"registrarPort,omitempty"`
 	// Parameter [sipProxy] should not be null when parameter [provider] is 6. When parameter [provider] is 0, parameter [sipProxy] has a default value of [0.0.0.0]. In other cases, parameter [sipProxy] is always [0.0.0.0].
-	SipProxy *string `json:"sipProxy,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SipProxy *string `json:"sipProxy,omitempty"`
 	// When parameter [provider] is 0, parameter [sipProxyPort] has a default value of [5060]. In other cases, parameter [sipProxyPort] is always 5060.
 	SipProxyPort *int32 `json:"sipProxyPort,omitempty"`
 	// When parameter [provider] is 0, parameter [viaOutboundProxy] has a default value of [true]. In other cases, parameter [viaOutboundProxy] is always true.

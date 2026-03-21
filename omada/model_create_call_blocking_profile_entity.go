@@ -28,7 +28,7 @@ type CreateCallBlockingProfileEntity struct {
 	// Enable outgoing calls blocking or not. The default value is false.
 	OutgoingCallsBlockingEnable *bool `json:"outgoingCallsBlockingEnable,omitempty"`
 	// Call blocking profile name
-	ProfileName string `json:"profileName" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	ProfileName string `json:"profileName"`
 }
 
 type _CreateCallBlockingProfileEntity CreateCallBlockingProfileEntity

@@ -22,9 +22,9 @@ var _ MappedNullable = &DeviceAccountSettingOpenApiVO{}
 // DeviceAccountSettingOpenApiVO struct for DeviceAccountSettingOpenApiVO
 type DeviceAccountSettingOpenApiVO struct {
 	// Device account parameter [password] should contain 10 to 64 ASCII characters. And passwords must be a combination of uppercase letters, lowercase letters, numbers, and special symbols. Symbols such as ! # $ % & * @ ^ are supported. The password should not contain consecutive identical characters. Username and Password should not be the same.
-	Password string "json:\"password\" validate:\"regexp=^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)(?=.*[\\\\!\\\\#\\\\$\\\\%\\\\&\\\\'\\\\(\\\\)\\\\*\\\\+\\\\,\\\\-\\\\.\\/\\\\:\\\\;\\\\<\\\\=\\\\>\\\\@\\\\[\\\\\\\\\\\\]\\\\^\\\\_\\\\`\\\\{\\\\|\\\\}\\\\~])(?!.*[\\\\00-\\\\040\\\\042\\\\077\\\\0177]).{10,64}$\""
+	Password string `json:"password"`
 	// Device account username should contain 1 to 64 ASCII characters.
-	Username string `json:"username" validate:"regexp=^[\\\\041-\\\\0176]{1,64}$"`
+	Username string `json:"username"`
 }
 
 type _DeviceAccountSettingOpenApiVO DeviceAccountSettingOpenApiVO

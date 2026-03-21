@@ -26,11 +26,11 @@ type ExternalRadiusSetting struct {
 	// Whether to support disconnect messages.
 	DisconnectReq *bool `json:"disconnectReq,omitempty"`
 	// External URL, required when [portalCustom] is 2
-	ExternalUrl *string `json:"externalUrl,omitempty" validate:"regexp=^(([-a-zA-Z0-9@:%._+~#=]{2,256}\\\\.[a-z]{2,63})|((?!255\\\\.255\\\\.255\\\\.255)((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\\\.)){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)))((:([1-9]|[1-9]\\\\d|[1-9]\\\\d{2}|[1-9]\\\\d{3}|[1-5]\\\\d{4}|6[0-4]\\\\d{3}|65[0-4]\\\\d{2}|655[0-2]\\\\d|6553[0-5]))?)(\\/([-a-zA-Z0-9@:%_+.~#?&\\/\\/=]*))?$"`
+	ExternalUrl *string `json:"externalUrl,omitempty"`
 	// External URL scheme, required when [portalCustom] is 2, value could be 'http' or 'https'.
-	ExternalUrlScheme *string `json:"externalUrlScheme,omitempty" validate:"regexp=http|https"`
+	ExternalUrlScheme *string `json:"externalUrlScheme,omitempty"`
 	// RADIUS Attribute: NasID, should contain 1 to 64 characters.
-	NasId string `json:"nasId" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	NasId string `json:"nasId"`
 	// Portal customization, should be a value as follows: 1: Local Web Portal; 2: External Web Portal.
 	PortalCustom int32 `json:"portalCustom"`
 	// RADIUS profile ID.

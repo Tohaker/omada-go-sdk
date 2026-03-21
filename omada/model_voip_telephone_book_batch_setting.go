@@ -26,7 +26,7 @@ type VoipTelephoneBookBatchSetting struct {
 	// Other configurations depending on selected contacts (call forwarding rules for instance) will be deleted together if this field is true. Otherwise, a pre-check will be executed and an error message will be returned when this contact is already used in some other configurations.
 	ForceDelete bool `json:"forceDelete"`
 	// SpeedDialNumberType should be a value as follows: all, include, exclude.
-	SelectType string `json:"selectType" validate:"regexp=all|include|exclude"`
+	SelectType string `json:"selectType"`
 }
 
 type _VoipTelephoneBookBatchSetting VoipTelephoneBookBatchSetting

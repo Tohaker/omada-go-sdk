@@ -22,7 +22,7 @@ var _ MappedNullable = &TagOpenApiVO{}
 // TagOpenApiVO struct for TagOpenApiVO
 type TagOpenApiVO struct {
 	// Tag name should contain 1 to 128 ASCII characters.
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 }
 
 type _TagOpenApiVO TagOpenApiVO

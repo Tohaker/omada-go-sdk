@@ -22,9 +22,9 @@ var _ MappedNullable = &AddFilterEntity{}
 // AddFilterEntity struct for AddFilterEntity
 type AddFilterEntity struct {
 	// Description of filter. It should be 1 - 128 characters
-	Description string `json:"description" validate:"regexp=^.{1,128}$"`
+	Description string `json:"description"`
 	// Filter name. It should be 1 - 128 characters
-	FilterName string `json:"filterName" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	FilterName string `json:"filterName"`
 	// Rule ID list can be obtained from 'Get rule list' interface.
 	Rules []int32 `json:"rules"`
 }

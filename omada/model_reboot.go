@@ -20,7 +20,7 @@ var _ MappedNullable = &Reboot{}
 // Reboot struct for Reboot
 type Reboot struct {
 	// To reboot the router via SMS, send a message starting with \"LTE Router Reboot\", followed by Password/PIN(e.g. LTE Router Reboot 1234). Password is required for the control of device restart via SMS.
-	Command *string `json:"command,omitempty" validate:"regexp=^[\\\\x21\\\\x23-\\\\x26\\\\x28-\\\\x7E]{1,64}$"`
+	Command *string `json:"command,omitempty"`
 }
 
 // NewReboot instantiates a new Reboot object

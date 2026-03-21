@@ -26,7 +26,7 @@ type RadiusSettingOpenApiVO struct {
 	// Default user group ID for the user on the radius server. User group can be created using 'Create SSL VPN user group' interface, and user group ID can be obtained from 'Get user group list for SSL VPN server' interface.
 	DefaultGroup string `json:"defaultGroup"`
 	// NAS IP
-	NasIp *string `json:"nasIp,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	NasIp *string `json:"nasIp,omitempty"`
 	// Request Timeout, 1~60(s).
 	OverTime int32 `json:"overTime"`
 	// Radius profile ID. Radius profile can be created using 'Create a new Radius profile' interface, and Radius profile ID can be obtained from 'Get Radius profile list' interface.

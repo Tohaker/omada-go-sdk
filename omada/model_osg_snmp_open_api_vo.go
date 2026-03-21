@@ -20,9 +20,9 @@ var _ MappedNullable = &OsgSnmpOpenApiVO{}
 // OsgSnmpOpenApiVO Snmp setting
 type OsgSnmpOpenApiVO struct {
 	// Contact, contact should contain 0 to 128 ASCII characters, spaces are not allowed.
-	Contact *string `json:"contact,omitempty" validate:"regexp=^[\\\\041-\\\\0176]{0,128}$"`
+	Contact *string `json:"contact,omitempty"`
 	// Location, location should contain 0 to 128 ASCII characters, spaces are allowed, and leading and trailing spaces are not allowed.
-	Location *string `json:"location,omitempty" validate:"regexp=^[!-~][\\\\040-\\\\0176]{0,126}[!-~]$|^[!-~]$|$"`
+	Location *string `json:"location,omitempty"`
 }
 
 // NewOsgSnmpOpenApiVO instantiates a new OsgSnmpOpenApiVO object

@@ -22,7 +22,7 @@ type SiteInfoOpenApiVO struct {
 	// Site ID
 	Id *string `json:"id,omitempty"`
 	// Site name should contain 0 to 64 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 }
 
 // NewSiteInfoOpenApiVO instantiates a new SiteInfoOpenApiVO object

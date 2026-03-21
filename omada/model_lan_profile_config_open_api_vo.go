@@ -46,7 +46,7 @@ type LanProfileConfigOpenApiVO struct {
 	// Indicates whether mld fast leave is enabled
 	MldFastLeaveEnable *bool `json:"mldFastLeaveEnable,omitempty"`
 	// Name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Native network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks.
 	NativeNetworkId string `json:"nativeNetworkId"`
 	// PoE should be a value as follows: 0: on, 1: off, 2: \"do not modify\"

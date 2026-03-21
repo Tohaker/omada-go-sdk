@@ -112,6 +112,14 @@ func fixSpec(raw []byte) []byte {
 	// Add placeholder schemas for undefined $ref targets.
 	fixUndefinedRefs(parsed)
 
+	// Remove "pattern" fields from schema properties — the Go generator
+	// converts these to validate:"regexp=..." struct tags, but regexes
+	// containing spaces break Go's struct tag parser.
+	removed := stripPatterns(parsed)
+	if removed > 0 {
+		log.Printf("removed %d pattern fields from schemas", removed)
+	}
+
 	// Merge auth spec paths and schemas into the main spec.
 	mergeAuthSpec(parsed)
 
@@ -488,6 +496,28 @@ func fixUndefinedRefs(spec map[string]interface{}) {
 	if added > 0 {
 		log.Printf("added %d placeholder schemas for undefined refs", added)
 	}
+}
+
+// stripPatterns recursively removes "pattern" keys from schema property
+// objects. The Go generator turns these into validate:"regexp=..." struct tags,
+// but regex values containing spaces produce invalid Go struct tags.
+func stripPatterns(v interface{}) int {
+	removed := 0
+	switch val := v.(type) {
+	case map[string]interface{}:
+		if _, has := val["pattern"]; has {
+			delete(val, "pattern")
+			removed++
+		}
+		for _, child := range val {
+			removed += stripPatterns(child)
+		}
+	case []interface{}:
+		for _, item := range val {
+			removed += stripPatterns(item)
+		}
+	}
+	return removed
 }
 
 // mergeAuthSpec reads generator/auth-spec.yaml and merges its paths and

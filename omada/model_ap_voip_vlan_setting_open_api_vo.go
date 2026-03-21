@@ -22,15 +22,15 @@ var _ MappedNullable = &ApVoipVlanSettingOpenApiVO{}
 // ApVoipVlanSettingOpenApiVO VoIP VLAN setting.
 type ApVoipVlanSettingOpenApiVO struct {
 	// VoIP VLAN IP. Parameter [ip] should not be null when [ipType] is 0.
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// IP DNS1.
-	IpDns1 *string `json:"ipDns1,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpDns1 *string `json:"ipDns1,omitempty"`
 	// IP DNS2.
-	IpDns2 *string `json:"ipDns2,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpDns2 *string `json:"ipDns2,omitempty"`
 	// VoIP VLAN IP gateway. Parameter [ipGateway] should not be null when [ipType] is 0.
-	IpGateway *string `json:"ipGateway,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpGateway *string `json:"ipGateway,omitempty"`
 	// VoIP VLAN IP mask. Parameter [ipMask] should not be null when [ipType] is 0.
-	IpMask *string `json:"ipMask,omitempty" validate:"regexp=(254|252|248|240|224|192|128|0).0.0.0|255.(254|252|248|240|224|192|128|0).0.0|255.255.(254|252|248|240|224|192|128|0).0|255.255.255.(254|252|248|240|224|192|128|0)"`
+	IpMask *string `json:"ipMask,omitempty"`
 	// VoIP VLAN IP Type. 0: Static IP. 1: DHCP.
 	IpType *int32 `json:"ipType,omitempty"`
 	// LAN network ID. Parameter [lanNetworkId] should not be null, and should not be the same as the lanNetworkId of management VLAN when parameter [mode] is 1.

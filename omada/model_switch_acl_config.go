@@ -36,7 +36,7 @@ type SwitchACLConfig struct {
 	// Only for bindingType is custom switch vlan, list of selected stack id
 	CustomAclStacks []string `json:"customAclStacks,omitempty"`
 	// ACL rule description, description should contain 1 to 512 characters.
-	Description string `json:"description" validate:"regexp=^[^ ]$|^[^ ].{0,510}[^ ]$"`
+	Description string `json:"description"`
 	// Source IDs, which depends on destinationType, for example: if destinationType is network, destinationIds should be LAN network ID. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface.
 	DestinationIds []string `json:"destinationIds,omitempty"`
 	// DestinationType should be a value as follows: 0: network; 1: IP Group; 2: IP-Port Group; 6: IPv6 Group; 7: IPv6-Port Group

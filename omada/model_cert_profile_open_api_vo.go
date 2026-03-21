@@ -42,7 +42,7 @@ type CertProfileOpenApiVO struct {
 	// Client private key file name.
 	PrivateKeyFileName *string `json:"privateKeyFileName,omitempty"`
 	// Certificate authority profile privateKey Password should contain 1 to 64 characters, spaces, comma, single quotation marks and double quotation marks are not allowed.
-	PrivateKeyPassword *string `json:"privateKeyPassword,omitempty" validate:"regexp=^[\\\\041-\\\\0176]{1,64}$"`
+	PrivateKeyPassword *string `json:"privateKeyPassword,omitempty"`
 	Resource *int32 `json:"resource,omitempty"`
 	// Cert profile status, status should be a value as follows: 0: Normal 1: Expired Soon 2: Expired.
 	Status *int32 `json:"status,omitempty"`

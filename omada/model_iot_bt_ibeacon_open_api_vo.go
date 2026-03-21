@@ -40,7 +40,7 @@ type IotBtIbeaconOpenApiVO struct {
 	// The minor value of adverting ibeacon packet, indicating a smaller group.
 	Minor *string `json:"minor,omitempty"`
 	// The Bluetooth Advertising seting name.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Detailed information about the devices bound to this configuration.
 	SelectMacInfo []ApBtDetailOpenApiVO `json:"selectMacInfo,omitempty"`
 	// Broadcast transmission power.<br />The parameter [transmitPower] should be a value as follows:[-20, -18, -15, -12, -10, -9, -6, -5, -3, 0, 1, 2, 3, 4, 5, 14, 15, 16, 17, 18, 19, 20]

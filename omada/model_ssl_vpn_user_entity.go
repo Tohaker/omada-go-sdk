@@ -32,9 +32,9 @@ type SslVpnUserEntity struct {
 	// ID of the SSL VPN user
 	Id *string `json:"id,omitempty"`
 	// Name of the SSL VPN user
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,18}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Password of the SSL VPN user
-	Password string `json:"password" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,62}[\\\\041-\\\\0176]$"`
+	Password string `json:"password"`
 	// Status of the SSL VPN user
 	Status bool `json:"status"`
 	// Validity of the SSL VPN user

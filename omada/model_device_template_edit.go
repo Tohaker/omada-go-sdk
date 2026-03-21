@@ -24,7 +24,7 @@ type DeviceTemplateEdit struct {
 	// The status of device template. 0:completed ; 1:draft
 	Status *int32 `json:"status,omitempty"`
 	// The name of device template.
-	TemplateName *string `json:"templateName,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	TemplateName *string `json:"templateName,omitempty"`
 }
 
 // NewDeviceTemplateEdit instantiates a new DeviceTemplateEdit object

@@ -22,7 +22,7 @@ var _ MappedNullable = &PortScheduleOpenApiVO{}
 // PortScheduleOpenApiVO struct for PortScheduleOpenApiVO
 type PortScheduleOpenApiVO struct {
 	// Port Schedule Name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Key:MAC(\"String\"), Value:Set of Ports(\"Integer\")
 	PortsMap map[string][]int32 `json:"portsMap"`
 	// Port Schedule Status.

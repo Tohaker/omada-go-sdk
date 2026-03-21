@@ -35,18 +35,18 @@ type Ipv4PppoaOpenApiVO struct {
 	MssClampingValue *int32 `json:"mssClampingValue,omitempty"`
 	// 576-1500, default:1492
 	Mtu int32 `json:"mtu"`
-	Password string "json:\"password\" validate:\"regexp=^[A-Za-z0-9\\\\`\\\\~\\\\!\\\\@\\\\#\\\\$\\\\&\\\\*\\\\(\\\\)\\\\-\\\\=\\\\_\\\\+\\\\[\\\\]\\\\{\\\\}\\\\;\\\\:\\\\'\\\\\\\"\\\\\\\\\\\\|\\/\\\\?\\\\.\\\\,\\\\<\\\\>\\\\%\\\\^\\/]{1,255}$\""
+	Password string `json:"password"`
 	// Primary DNS
-	PrimaryDns *string `json:"primaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	PrimaryDns *string `json:"primaryDns,omitempty"`
 	// It is required when [linkType] is 0. Unit: Second.
 	RedialInterval *int32 `json:"redialInterval,omitempty"`
 	// Secondary DNS
-	SecondaryDns *string `json:"secondaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SecondaryDns *string `json:"secondaryDns,omitempty"`
 	// Service Name. Keep it blank unless your ISP requires you to configure it.
-	ServiceName *string `json:"serviceName,omitempty" validate:"regexp=^[\\\\041-\\\\0176]{1,128}$"`
+	ServiceName *string `json:"serviceName,omitempty"`
 	// It is required when [linkType] is 2. For example, 12:30.
 	StartTime *string `json:"startTime,omitempty"`
-	UserName string "json:\"userName\" validate:\"regexp=^[A-Za-z0-9\\\\`\\\\~\\\\!\\\\@\\\\#\\\\$\\\\&\\\\*\\\\(\\\\)\\\\-\\\\=\\\\_\\\\+\\\\[\\\\]\\\\{\\\\}\\\\;\\\\:\\\\'\\\\\\\"\\\\\\\\\\\\|\\/\\\\?\\\\.\\\\,\\\\<\\\\>\\\\%\\\\^\\/]{1,255}$\""
+	UserName string `json:"userName"`
 }
 
 type _Ipv4PppoaOpenApiVO Ipv4PppoaOpenApiVO

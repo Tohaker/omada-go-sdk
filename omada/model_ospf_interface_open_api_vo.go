@@ -36,7 +36,7 @@ type OspfInterfaceOpenApiVO struct {
 	// Indicates whether the device is a stack member device.
 	IsStack *bool `json:"isStack,omitempty"`
 	// Device Mac
-	Mac string `json:"mac" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	Mac string `json:"mac"`
 	// Displays the key used for md5 authentication, its value should be within the range of 1-16.
 	Md5Key *string `json:"md5Key,omitempty"`
 	// Displays the key ID used for md5 authentication, its value should be within the range of 1-255.

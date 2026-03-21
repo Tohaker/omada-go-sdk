@@ -34,7 +34,7 @@ type SslVpnResourceEntity struct {
 	// ID of the SSL VPN resource.
 	Id *string `json:"id,omitempty"`
 	// IP of the SSL VPN resource, exists when type is 0.
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// Mask of the SSL VPN resource, exists when type is 0.
 	Mask *string `json:"mask,omitempty"`
 	// Name of the SSL VPN resource.

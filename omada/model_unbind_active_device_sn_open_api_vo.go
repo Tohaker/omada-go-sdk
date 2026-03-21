@@ -22,9 +22,9 @@ var _ MappedNullable = &UnbindActiveDeviceSnOpenApiVO{}
 // UnbindActiveDeviceSnOpenApiVO struct for UnbindActiveDeviceSnOpenApiVO
 type UnbindActiveDeviceSnOpenApiVO struct {
 	// New serial number. It should contains 13 characters
-	NewSn string `json:"newSn" validate:"regexp=^[A-Z0-9]{13}$"`
+	NewSn string `json:"newSn"`
 	// Old serial number. It should contains 13 characters
-	OldSn string `json:"oldSn" validate:"regexp=^[A-Z0-9]{13}$"`
+	OldSn string `json:"oldSn"`
 }
 
 type _UnbindActiveDeviceSnOpenApiVO UnbindActiveDeviceSnOpenApiVO

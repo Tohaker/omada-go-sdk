@@ -22,7 +22,7 @@ var _ MappedNullable = &WanMultipleIpOpenApiVO{}
 // WanMultipleIpOpenApiVO struct for WanMultipleIpOpenApiVO
 type WanMultipleIpOpenApiVO struct {
 	Enable bool `json:"enable"`
-	Ip string `json:"ip" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip string `json:"ip"`
 }
 
 type _WanMultipleIpOpenApiVO WanMultipleIpOpenApiVO

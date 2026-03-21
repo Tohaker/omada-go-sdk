@@ -26,7 +26,7 @@ type OswVrfConfigOpenApiVO struct {
 	// Indicates whether ipv6 is enabled
 	Ipv6Enable bool `json:"ipv6Enable"`
 	// VRF Name
-	Vrf string `json:"vrf" validate:"regexp=^(?!(\\\\.|\\\\.\\\\.)$)[a-zA-Z0-9.\\\\-_@+]{1,15}$"`
+	Vrf string `json:"vrf"`
 }
 
 type _OswVrfConfigOpenApiVO OswVrfConfigOpenApiVO

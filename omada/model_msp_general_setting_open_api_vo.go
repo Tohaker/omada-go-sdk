@@ -21,7 +21,7 @@ var _ MappedNullable = &MspGeneralSettingOpenApiVO{}
 type MspGeneralSettingOpenApiVO struct {
 	Dst *DstDTO `json:"dst,omitempty"`
 	// Parameter [name] should be within the range of 1–32 visible ASCII characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,30}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// For the values of timeZone, refer to section 5.1 of the Open API Access Guide.
 	TimeZone *string `json:"timeZone,omitempty"`
 }

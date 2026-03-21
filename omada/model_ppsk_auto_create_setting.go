@@ -26,7 +26,7 @@ type PpskAutoCreateSetting struct {
 	// Generate Number, should be within the range of 1-1024.
 	Number int32 `json:"number"`
 	// PSK Name Prefix, should contain 1 to 60 visible ASCII characters.
-	Prefix string "json:\"prefix\" validate:\"regexp=^[a-zA-z0-9'!\\\"#$%&()*,.\\/:;?^_`\\\\[\\\\]{|}~<>\\\\ ][\\\\041-\\\\0176]{0,59}$\""
+	Prefix string `json:"prefix"`
 	// PSK Bound Vlan, should be within the range of 1-4094.
 	Vlan *int32 `json:"vlan,omitempty"`
 }

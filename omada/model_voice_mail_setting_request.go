@@ -36,7 +36,7 @@ type VoiceMailSettingRequest struct {
 	// Whether voice mail allows remote access.
 	RemoteAccessEnable *bool `json:"remoteAccessEnable,omitempty"`
 	// Remote access pin.
-	RemoteAccessPin *string `json:"remoteAccessPin,omitempty" validate:"regexp=^\\\\d{4,8}$"`
+	RemoteAccessPin *string `json:"remoteAccessPin,omitempty"`
 	// Site ID.
 	SiteId *string `json:"siteId,omitempty"`
 	// USB UUID.

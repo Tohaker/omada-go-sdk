@@ -22,7 +22,7 @@ var _ MappedNullable = &SwitchMultiPortName{}
 // SwitchMultiPortName Port name list
 type SwitchMultiPortName struct {
 	// Port name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ?\\"]$|^[^ ?\\"][^?\\"]{0,126}[^ ?\\"]$"`
+	Name string `json:"name"`
 	// Port ID
 	Port int32 `json:"port"`
 }

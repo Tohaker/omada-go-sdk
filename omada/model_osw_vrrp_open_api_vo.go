@@ -40,9 +40,9 @@ type OswVrrpOpenApiVO struct {
 	// IPV6 Master Device
 	Ipv6MasterDevice *string `json:"ipv6MasterDevice,omitempty"`
 	// Key of VRRP
-	Key *string `json:"key,omitempty" validate:"regexp=^(?:[A-Za-z0-9]|[-.\\/:_@]){1,8}$"`
+	Key *string `json:"key,omitempty"`
 	// VRRP name, it should be visible ASCII, and should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Whether the preemption mode is enabled or not, it defaults to enabled.
 	PreemptMode bool `json:"preemptMode"`
 	// The current status of VRRP, it should be a value as follows: 0: NORMAL, 1: FAILED, 2: ABNORMAL

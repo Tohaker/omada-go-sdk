@@ -32,13 +32,13 @@ type CreateGoogleLdapProfileOpenApiVO struct {
 	// Additional filter, optional when parameter [type] is 1 or 2. For example: ou=xxx. Filter should contain 1 to 512 characters.
 	Filter *string `json:"filter,omitempty"`
 	// Google LDAP profile name. Name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Password, required when parameter [type] is 2. password should contain 6 to 256 characters.
 	Password *string `json:"password,omitempty"`
 	// LDAP server listening port. dstPort should be within the range of 0-65535. It is generally 636.
 	Port int32 `json:"port"`
 	// LDAP server address.
-	Server string `json:"server" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	Server string `json:"server"`
 	// LDAP profile enable status.
 	Status bool `json:"status"`
 }

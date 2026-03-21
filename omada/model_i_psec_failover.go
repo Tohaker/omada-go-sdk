@@ -30,7 +30,7 @@ type IPsecFailover struct {
 	// ID of the IPSec failover.
 	Id *string `json:"id,omitempty"`
 	// Name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,62}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Primary of the IPSec failover. IPsec VPN can be created using 'Create site-to-site VPN' interface, and ID can be obtained from 'Get site-to-site VPN list' interface.
 	Primary string `json:"primary"`
 }

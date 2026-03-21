@@ -48,7 +48,7 @@ type PolicyRoutingInfo struct {
 	// InterfaceType should be a value as follows: 0: WAN; 2: L2TP; 3: PPTP; 4: multi-select WAN or VPN or virtual WAN.
 	InterfaceType *int32 `json:"interfaceType,omitempty"`
 	// Name, name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// For the values of protocols, refer to section 5.5.2 of the Open API Access Guide.
 	Protocols []int32 `json:"protocols"`
 	// Source IDs, which depends on sourceType, for example: if sourceType is network, sourceIds should be LAN network ID. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface.

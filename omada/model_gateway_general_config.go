@@ -25,7 +25,7 @@ type GatewayGeneralConfig struct {
 	LedSetting int32 `json:"ledSetting"`
 	Location *DeviceLocationDetailVO `json:"location,omitempty"`
 	// Device name should contain 1 to 128 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	RememberDevice *int32 `json:"rememberDevice,omitempty"`
 	Snmp *OsgSnmpOpenApiVO `json:"snmp,omitempty"`
 	// Tag IDs

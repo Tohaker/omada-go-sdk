@@ -22,7 +22,7 @@ var _ MappedNullable = &OspfProcessAreaNetworkOpenApiVO{}
 // OspfProcessAreaNetworkOpenApiVO Up to 16 entries are allowed for the networkList.
 type OspfProcessAreaNetworkOpenApiVO struct {
 	// The IP address of the network.
-	Ip string `json:"ip" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip string `json:"ip"`
 	// Mask should be within the range of 0-32.
 	Mask int32 `json:"mask"`
 }

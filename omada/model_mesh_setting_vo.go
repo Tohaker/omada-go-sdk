@@ -28,7 +28,7 @@ type MeshSettingVO struct {
 	// Whether to enable full-sector DFS
 	FullSector *bool `json:"fullSector,omitempty"`
 	// Customer IP
-	Gateway *string `json:"gateway,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Gateway *string `json:"gateway,omitempty"`
 	// Whether to enable mesh
 	MeshEnable bool `json:"meshEnable"`
 }

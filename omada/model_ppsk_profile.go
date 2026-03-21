@@ -25,7 +25,7 @@ type PpskProfile struct {
 	// PPSK List In the PPSK Profile
 	Ppsk []PpskSetting `json:"ppsk"`
 	// PPSK Profile Name, should contain 1 to 64 characters.
-	ProfileName string `json:"profileName" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	ProfileName string `json:"profileName"`
 	RateLimit *PPSKRateLimitSettingVO `json:"rateLimit,omitempty"`
 	// This field has been deprecated since version 6.1. PPSK Profile type: 0：PPSK Without RADIUS;Cloud Based Controller only support PPSK Without RADIUS.
 	Type *int32 `json:"type,omitempty"`

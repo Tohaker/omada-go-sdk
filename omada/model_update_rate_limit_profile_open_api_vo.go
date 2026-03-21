@@ -26,7 +26,7 @@ type UpdateRateLimitProfileOpenApiVO struct {
 	// Whether to enable download limit
 	DownLimitEnable bool `json:"downLimitEnable"`
 	// Rate limit profile name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Upload limit(Unit: Kbps), this field is required when parameter [upLimitEnable] is true.
 	UpLimit *int64 `json:"upLimit,omitempty"`
 	// Whether to enable upload limit

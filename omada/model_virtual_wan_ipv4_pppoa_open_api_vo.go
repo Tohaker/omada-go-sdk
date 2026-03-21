@@ -21,17 +21,17 @@ var _ MappedNullable = &VirtualWanIpv4PppoaOpenApiVO{}
 type VirtualWanIpv4PppoaOpenApiVO struct {
 	Connect *string `json:"connect,omitempty"`
 	// Primary DNS server.
-	Dns1 *string `json:"dns1,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Dns1 *string `json:"dns1,omitempty"`
 	// Secondary DNS server.
-	Dns2 *string `json:"dns2,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Dns2 *string `json:"dns2,omitempty"`
 	// It is required when [linkType] is 2. For example, 12:30.
 	EndTime *string `json:"endTime,omitempty"`
 	// Gateway IP.
-	Gateway *string `json:"gateway,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Gateway *string `json:"gateway,omitempty"`
 	// Get IP address from ISP.
 	IpFromIsp *string `json:"ipFromIsp,omitempty"`
 	// IP address.
-	Ipaddr *string `json:"ipaddr,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ipaddr *string `json:"ipaddr,omitempty"`
 	// Connection Mode. Parameter [linkType] should be as follows: auto: Connect Automatically; demand: Connect Manually; time: Time-based.
 	LinkType *string `json:"linkType,omitempty"`
 	// Parameter [mru] should be a value between 576 and 1492.
@@ -43,17 +43,17 @@ type VirtualWanIpv4PppoaOpenApiVO struct {
 	// Parameter [mtu] should be a value between 576 and 1492.
 	Mtu *int32 `json:"mtu,omitempty"`
 	// Subnet mask.
-	Netmask *string `json:"netmask,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Netmask *string `json:"netmask,omitempty"`
 	// Password. Parameter [password] should contain 1 to 255 ASCII characters.
-	Password *string "json:\"password,omitempty\" validate:\"regexp=^[A-Za-z0-9\\\\`\\\\~\\\\!\\\\@\\\\#\\\\$\\\\&\\\\*\\\\(\\\\)\\\\-\\\\=\\\\_\\\\+\\\\[\\\\]\\\\{\\\\}\\\\;\\\\:\\\\'\\\\\\\"\\\\\\\\\\\\|\\/\\\\?\\\\.\\\\,\\\\<\\\\>\\\\%\\\\^\\/]{1,255}$\""
+	Password *string `json:"password,omitempty"`
 	// It is required when [linkType] is 0. Unit: Second.
 	RedialInterval *int32 `json:"redialInterval,omitempty"`
 	// Parameter [service] should be 1 ~ 128 visible ASCII characters.
-	Service *string `json:"service,omitempty" validate:"regexp=^[\\\\041-\\\\0176]{1,128}$"`
+	Service *string `json:"service,omitempty"`
 	// It is required when [linkType] is 2. For example, 12:30.
 	StartTime *string `json:"startTime,omitempty"`
 	// Username. Parameter [userName] should contain 1 to 255 ASCII characters.
-	UserName *string "json:\"userName,omitempty\" validate:\"regexp=^[A-Za-z0-9\\\\`\\\\~\\\\!\\\\@\\\\#\\\\$\\\\&\\\\*\\\\(\\\\)\\\\-\\\\=\\\\_\\\\+\\\\[\\\\]\\\\{\\\\}\\\\;\\\\:\\\\'\\\\\\\"\\\\\\\\\\\\|\\/\\\\?\\\\.\\\\,\\\\<\\\\>\\\\%\\\\^\\/]{1,255}$\""
+	UserName *string `json:"userName,omitempty"`
 }
 
 // NewVirtualWanIpv4PppoaOpenApiVO instantiates a new VirtualWanIpv4PppoaOpenApiVO object

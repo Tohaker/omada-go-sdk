@@ -28,7 +28,7 @@ type QueryUseNativeNetworkOswV2OpenApiVO struct {
 	// It should be within the range of 1–1000.
 	PageSize int32 `json:"pageSize"`
 	// selectType should be a value as follows: all: select all; include: include ids; exclude: exclude ids.
-	SelectType *string `json:"selectType,omitempty" validate:"regexp=all|include|exclude"`
+	SelectType *string `json:"selectType,omitempty"`
 }
 
 type _QueryUseNativeNetworkOswV2OpenApiVO QueryUseNativeNetworkOswV2OpenApiVO

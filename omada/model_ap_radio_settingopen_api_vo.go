@@ -24,13 +24,13 @@ type ApRadioSettingopenApiVO struct {
 	// The interval of auto switch off wifi
 	AutoSwitchOffWifiInterval *int32 `json:"autoSwitchOffWifiInterval,omitempty"`
 	// Channel Index; The channel index list supported by device can be obtained from interface : Get available channel list of ap; If select auto configuration need to enter 0.
-	Channel *string `json:"channel,omitempty" validate:"regexp=^[0-9]+$"`
+	Channel *string `json:"channel,omitempty"`
 	// Enable channel limit(site level)
 	ChannelLimitEnable *bool `json:"channelLimitEnable,omitempty"`
 	// Custom optional channel freq collection.
 	ChannelRange []int32 `json:"channelRange,omitempty"`
 	// RADIO_20 = 2; RADIO_40 = 3; RADIO_40_20 = 4(corresponding 2G Auto); RADIO_80 = 5; RADIO_80_40_20 = 6(corresponding 5G Auto); RADIO_160= 7; RADIO_160_80_40_20 = 8; RADIO_240 = 9; RADIO_320 = 10
-	ChannelWidth *string `json:"channelWidth,omitempty" validate:"regexp=^([2-9]|10)$"`
+	ChannelWidth *string `json:"channelWidth,omitempty"`
 	// Frequency;The frequency list supported by device can be obtained from interface : Get available channel list of ap.The freq and channel fields should be corresponding, otherwise the channel will be corrected based on the freq field.
 	Freq *int32 `json:"freq,omitempty"`
 	// APP 6G Radio Setting

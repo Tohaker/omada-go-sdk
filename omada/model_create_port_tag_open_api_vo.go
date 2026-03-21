@@ -22,7 +22,7 @@ var _ MappedNullable = &CreatePortTagOpenApiVO{}
 // CreatePortTagOpenApiVO struct for CreatePortTagOpenApiVO
 type CreatePortTagOpenApiVO struct {
 	// Port label name should contain 1 to 128 ASCII characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 }
 
 type _CreatePortTagOpenApiVO CreatePortTagOpenApiVO

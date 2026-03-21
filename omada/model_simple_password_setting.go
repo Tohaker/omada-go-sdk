@@ -22,7 +22,7 @@ var _ MappedNullable = &SimplePasswordSetting{}
 // SimplePasswordSetting Simple Password Portal Setting.
 type SimplePasswordSetting struct {
 	// Auth password, should contain 1 to 128 characters.
-	Password string `json:"password" validate:"regexp=^.{1,128}$"`
+	Password string `json:"password"`
 }
 
 type _SimplePasswordSetting SimplePasswordSetting

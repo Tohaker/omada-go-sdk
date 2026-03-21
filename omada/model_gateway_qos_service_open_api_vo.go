@@ -24,13 +24,13 @@ type GatewayQosServiceOpenApiVO struct {
 	// The code cannot be null and should be within the range of 0-255 when protocol is 3(ICMP).
 	Code *int32 `json:"code,omitempty"`
 	// The description of Gateway QoS Service should contain 0 to 128 characters.
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// The end port of Destination Port Range. It must be more than the start port. It should be within the range of 0-65535 when protocol is 0(TCP), 1(UDP) or 2(TCP/UDP).
 	DestEndPort *int32 `json:"destEndPort,omitempty"`
 	// The start port of Destination Port Range. It must be less than the end port. It should be within the range of 0-65535 when protocol is 0(TCP), 1(UDP) or 2(TCP/UDP).
 	DestStartPort *int32 `json:"destStartPort,omitempty"`
 	// The name of Gateway QoS Service should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// The protoNum cannot be null and should be within the range of 1-255 when protocol is 4(Other).
 	ProtoNum *int32 `json:"protoNum,omitempty"`
 	// The protocol of Gateway QoS Service should be a value as follows: 0: TCP, 1: UDP, 2: TCP/UDP, 3: ICMP, 4: Other.

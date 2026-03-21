@@ -32,7 +32,7 @@ type OswVrfOpenApiVO struct {
 	// Resource
 	Resource *int32 `json:"resource,omitempty"`
 	// VRF Name
-	Vrf string `json:"vrf" validate:"regexp=^(?!(\\\\.|\\\\.\\\\.)$)[a-zA-Z0-9.\\\\-_@+]{1,15}$"`
+	Vrf string `json:"vrf"`
 }
 
 type _OswVrfOpenApiVO OswVrfOpenApiVO

@@ -26,7 +26,7 @@ type MlagConfigOpenApiVO struct {
 	// M-LAG group members configuration
 	MembersConfig []MlagMemberConfigVO `json:"membersConfig,omitempty"`
 	// MLAG group name should be between 1 and 31 characters. Only letters, numbers, and the following symbols are allowed: - . / : @ _ + #
-	Name string `json:"name" validate:"regexp=^[a-zA-z0-9\\\\_\\\\-\\\\@\\\\:\\/\\\\.\\\\+\\\\#]{1,31}$"`
+	Name string `json:"name"`
 }
 
 type _MlagConfigOpenApiVO MlagConfigOpenApiVO

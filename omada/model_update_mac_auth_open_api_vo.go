@@ -30,7 +30,7 @@ type UpdateMacAuthOpenApiVO struct {
 	// Format of the MAC address. MacFormat should be a value as follows: 0: aabbccddeeff, 1: aa-bb-cc-dd-ee-ff, 2: aa:bb:cc:dd:ee:ff, 3: AABBCCDDEEFF, 4: AA-BB-CC-DD-EE-FF, 5: AA:BB:CC:DD:EE:FF
 	MacFormat *int32 `json:"macFormat,omitempty"`
 	// NAS ID issued to AP. NasId should contain 1 to 64 characters
-	NasId *string `json:"nasId,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	NasId *string `json:"nasId,omitempty"`
 	// This field represents radius profile ID. Radius profile can be created using 'Create a new Radius profile' ('Create a new Radius profile template') interface, and radius profile ID can be obtained from 'Get Radius profile list' ('Get Radius profile template list') interface
 	RadiusProfileId *string `json:"radiusProfileId,omitempty"`
 	// SSID ID list with MAC-Based authentication configured. SSID can be created using 'Create new SSID' ('Create new SSID template') interface, and SSID ID can be obtained from 'Get SSID list' ('Get SSID template list') interface

@@ -36,9 +36,9 @@ type ModifyMspUserVO struct {
 	// Force modify
 	ForceModify *bool `json:"forceModify,omitempty"`
 	// User name. When creating cloud user, you should set TP-LINK ID. It should contain 1 to 128 ASCII characters and start with letters, numbers, and underscores.
-	Name string `json:"name" validate:"regexp=^(?![+=@-])[\\\\041-\\\\0176]$|^(?![+=@-])[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Password of local user. User can only modify his child local user's password. It should contain 8 to 128 ASCII characters.And password must be a combination of uppercase letters, lowercase letters, numbers, and special symbols. Symbols such as ! # $ % & * @ ^ are supported.
-	Password *string "json:\"password,omitempty\" validate:\"regexp=^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)(?=.*[\\\\!\\\\#\\\\$\\\\%\\\\&\\\\'\\\\(\\\\)\\\\*\\\\+\\\\,\\\\-\\\\.\\/\\\\:\\\\;\\\\<\\\\=\\\\>\\\\@\\\\[\\\\\\\\\\\\]\\\\^\\\\_\\\\`\\\\{\\\\|\\\\}\\\\~])(?!.*[\\\\00-\\\\040\\\\042\\\\077\\\\0177]).{8,128}$\""
+	Password *string `json:"password,omitempty"`
 	// Role ID of user
 	RoleId string `json:"roleId"`
 	// The start time of the user's validity period. time range: start timestamp (Millisecond).

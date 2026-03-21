@@ -21,8 +21,8 @@ var _ MappedNullable = &DeviceAccountSettingVO{}
 
 // DeviceAccountSettingVO struct for DeviceAccountSettingVO
 type DeviceAccountSettingVO struct {
-	Password string `json:"password" validate:"regexp=^[\\\\041-\\\\0176]{1,64}$"`
-	Username string `json:"username" validate:"regexp=^[\\\\041-\\\\0176]{1,64}$"`
+	Password string `json:"password"`
+	Username string `json:"username"`
 }
 
 type _DeviceAccountSettingVO DeviceAccountSettingVO

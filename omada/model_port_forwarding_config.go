@@ -28,11 +28,11 @@ type PortForwardingConfig struct {
 	// Whether WAN IP has been configured in current Port Forwarding. 
 	ExistWanIp *bool `json:"existWanIp,omitempty"`
 	// External port corresponds with source port in web. External port should be within the range of 1–65535. Must be filled in when DMS is false.
-	ExternalPort *string `json:"externalPort,omitempty" validate:"regexp=^(([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5]))|((([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5]))-(([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5])))$"`
+	ExternalPort *string `json:"externalPort,omitempty"`
 	// Forward IP corresponds with destination IP in web. Forward IP
-	ForwardIp string `json:"forwardIp" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	ForwardIp string `json:"forwardIp"`
 	// Forward port corresponds with destination port in web. Forward port should be 1 or 1-10, within the range of 1–65535. Must be filled in when DMS is false.
-	ForwardPort *string `json:"forwardPort,omitempty" validate:"regexp=^(([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5]))|((([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5]))-(([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5])))$"`
+	ForwardPort *string `json:"forwardPort,omitempty"`
 	// From corresponds with source IP in web. From should be a value as follows: 0: where; 1: limited address
 	From int32 `json:"from"`
 	// This field represents WAN port ID. WAN port ID can be obtained from can be obtained from 'Get internet basic info' interface.
@@ -40,7 +40,7 @@ type PortForwardingConfig struct {
 	// Only for limited address
 	LimitedAddresses []string `json:"limitedAddresses,omitempty"`
 	// Name, name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Protocol should be a value as follows: 0: ALL; 1: TCP; 2: UDP. Must be filled in when DMS is false.
 	Protocol *int32 `json:"protocol,omitempty"`
 	// Port-forwarding enable status.

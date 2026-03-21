@@ -20,7 +20,7 @@ var _ MappedNullable = &NtpServer{}
 // NtpServer NTP server address; Up to 5 entries are allowed for the NTP server address list.
 type NtpServer struct {
 	// NTP server address.
-	Address *string `json:"address,omitempty" validate:"regexp=(?=^.{3,64}$)[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\\\\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+"`
+	Address *string `json:"address,omitempty"`
 }
 
 // NewNtpServer instantiates a new NtpServer object

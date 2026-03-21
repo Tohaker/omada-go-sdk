@@ -23,7 +23,7 @@ var _ MappedNullable = &ApIPSetting{}
 type ApIPSetting struct {
 	DhcpIpSetting *DhcpIpSettingEntity `json:"dhcpIpSetting,omitempty"`
 	// Mode should be a value as follows: Static; DHCP
-	Mode string `json:"mode" validate:"regexp=static|dhcp"`
+	Mode string `json:"mode"`
 	StaticIpSetting *StaticIpSettingEntity `json:"staticIpSetting,omitempty"`
 }
 

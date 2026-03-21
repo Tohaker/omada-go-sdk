@@ -22,7 +22,7 @@ var _ MappedNullable = &SslVpnResourceGroupConfigOpenApiVO{}
 // SslVpnResourceGroupConfigOpenApiVO struct for SslVpnResourceGroupConfigOpenApiVO
 type SslVpnResourceGroupConfigOpenApiVO struct {
 	// Name of the SSL VPN resource group should contain 1 to 20 characters.
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,18}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Resources ID list of the SSL VPN resource group
 	ResourcesList []string `json:"resourcesList,omitempty"`
 }

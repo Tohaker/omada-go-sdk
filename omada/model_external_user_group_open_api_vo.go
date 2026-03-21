@@ -26,7 +26,7 @@ type ExternalUserGroupOpenApiVO struct {
 	// The end time of the user's validity period. time range: end timestamp (Millisecond).
 	EndTime *int64 `json:"endTime,omitempty"`
 	// External user group name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Role ID which can be obtained from 'Get role list' interface.
 	RoleId string `json:"roleId"`
 	// The site IDs that can be accessed. Effective when allSite is false.

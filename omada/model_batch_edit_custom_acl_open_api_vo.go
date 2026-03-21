@@ -28,7 +28,7 @@ type BatchEditCustomAclOpenApiVO struct {
 	// Fuzzy query parameters, support field: voucher code
 	SearchKey *string `json:"searchKey,omitempty"`
 	// SelectType all, include or exclude
-	SelectType *string `json:"selectType,omitempty" validate:"regexp=all|include|exclude"`
+	SelectType *string `json:"selectType,omitempty"`
 	// enable status of acl.
 	Status int32 `json:"status"`
 }

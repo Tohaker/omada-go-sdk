@@ -24,7 +24,7 @@ type OuiBasedVlanApQueryOpenApiVO struct {
 	// Rule ID
 	Id *string `json:"id,omitempty"`
 	// Ap Rule name should contain 1 to 128 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// Basic vlan-oui-priority configuration of oui based rule.
 	RuleCombine []VlanOuiModeQueryOpenApiVO `json:"ruleCombine,omitempty"`
 	// Configured ssid list.

@@ -34,9 +34,9 @@ type ModifyUserVO struct {
 	// Incident notification
 	IncidentNotification *bool `json:"incidentNotification,omitempty"`
 	// User name should contain 1 to 128 characters and start with letters, numbers, and underscores. When creating cloud user, you should set TP-LINK ID.
-	Name string `json:"name" validate:"regexp=^(?![+=@-])[\\\\041-\\\\0176]$|^(?![+=@-])[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Password of local user should contain 8 to 128 characters. And password must be a combination of uppercase letters, lowercase letters, numbers, and special symbols. Symbols such as ! # $ % & * @ ^ are supported.
-	Password *string "json:\"password,omitempty\" validate:\"regexp=^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)(?=.*[\\\\!\\\\#\\\\$\\\\%\\\\&\\\\'\\\\(\\\\)\\\\*\\\\+\\\\,\\\\-\\\\.\\/\\\\:\\\\;\\\\<\\\\=\\\\>\\\\@\\\\[\\\\\\\\\\\\]\\\\^\\\\_\\\\`\\\\{\\\\|\\\\}\\\\~])(?!.*[\\\\00-\\\\040\\\\042\\\\077\\\\0177]).{8,128}$\""
+	Password *string `json:"password,omitempty"`
 	// This field represents Role ID. Role can be created using 'Create new role' interface, and Role ID can be obtained from 'Get role list' interface.
 	RoleId string `json:"roleId"`
 	// User site privilege list

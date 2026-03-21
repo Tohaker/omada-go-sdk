@@ -28,11 +28,11 @@ type MspUserVO struct {
 	EndTime *int64 `json:"endTime,omitempty"`
 	ForceModify *bool `json:"forceModify,omitempty"`
 	Id *string `json:"id,omitempty"`
-	Name string `json:"name" validate:"regexp=^(?![+=@-])[\\\\041-\\\\0176]$|^(?![+=@-])[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	OmadacId *string `json:"omadacId,omitempty"`
 	Owner *bool `json:"owner,omitempty"`
 	ParentUserId *string `json:"parentUserId,omitempty"`
-	Password *string `json:"password,omitempty" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{6,126}[\\\\041-\\\\0176]$"`
+	Password *string `json:"password,omitempty"`
 	Privilege *MspPrivilegeVO `json:"privilege,omitempty"`
 	RoleId *string `json:"roleId,omitempty"`
 	RoleName *string `json:"roleName,omitempty"`

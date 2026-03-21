@@ -52,7 +52,7 @@ type LanProfileInfoOpenApiVO struct {
 	// Indicates whether mld fast leave is enabled
 	MldFastLeaveEnable *bool `json:"mldFastLeaveEnable,omitempty"`
 	// Name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// PoE should be a value as follows: 0: on, 1: off, 2: \"do not modify\"
 	Poe int32 `json:"poe"`
 	// Port-isolation enable status

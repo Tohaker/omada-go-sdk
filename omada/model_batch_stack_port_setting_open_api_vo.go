@@ -50,9 +50,9 @@ type BatchStackPortSettingOpenApiVO struct {
 	// Indicates whether mld fast leave is enabled
 	MldFastLeaveEnable *bool `json:"mldFastLeaveEnable,omitempty"`
 	// Port name
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ ?\\"]$|^[^ ?\\"][^?\\"]{0,126}[^ ?\\"]$"`
+	Name *string `json:"name,omitempty"`
 	// Operation should be a value as follows: SWITCHING; 
-	Operation *string `json:"operation,omitempty" validate:"regexp=switching"`
+	Operation *string `json:"operation,omitempty"`
 	// PoE switch should be a value as follows: 0: Off; 1: 802.3at/af
 	Poe *int32 `json:"poe,omitempty"`
 	// Port-isolation enable status

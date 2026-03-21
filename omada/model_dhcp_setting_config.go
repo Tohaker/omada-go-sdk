@@ -20,13 +20,13 @@ var _ MappedNullable = &DhcpSettingConfig{}
 // DhcpSettingConfig Configure DHCP settings
 type DhcpSettingConfig struct {
 	// The dhcpNextServer should be valid IP address, which is used in optional set next DHCP server.
-	DhcpNextServer *string `json:"dhcpNextServer,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	DhcpNextServer *string `json:"dhcpNextServer,omitempty"`
 	// Setup DHCP server: \"auto\" or \"manual\"
 	Dhcpns *string `json:"dhcpns,omitempty"`
 	// When value is true, DHCP server is enabled
 	Enable *bool `json:"enable,omitempty"`
 	// Manual Setup of DHCP Gateway IP
-	Gateway *string `json:"gateway,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Gateway *string `json:"gateway,omitempty"`
 	// The list of DHCP Range, which size can't be more than \"dhcpRangePoolSize\", \"dhcpRangePoolSize\" can be obtained from 'Get LAN network list' interface.
 	IpRangePool []DhcpRangeOpenApiVO `json:"ipRangePool,omitempty"`
 	// Leasetime should be within the range of 2-10080
@@ -34,9 +34,9 @@ type DhcpSettingConfig struct {
 	// User custom DHCP options
 	Options []CustomDHCPOptions `json:"options,omitempty"`
 	// When DHCPs are \"manual\", primary DNS Server.
-	PriDns *string `json:"priDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	PriDns *string `json:"priDns,omitempty"`
 	// When DHCPs are \"manual\", second DNS Server.
-	SndDns *string `json:"sndDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SndDns *string `json:"sndDns,omitempty"`
 }
 
 // NewDhcpSettingConfig instantiates a new DhcpSettingConfig object

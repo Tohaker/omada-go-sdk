@@ -26,7 +26,7 @@ type RebootScheduleOpenApiVO struct {
 	// Reboot Schedule Id.
 	Id *string `json:"id,omitempty"`
 	// Reboot Schedule name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Reboot Schedule status.
 	Status bool `json:"status"`
 	Time RebootScheduleTimeOpenApiVO `json:"time"`

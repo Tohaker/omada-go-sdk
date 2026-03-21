@@ -28,7 +28,7 @@ type HotspotV2SettingOpenApiVO struct {
 	// Whether to enable DGAF(downstream group-addressed forwarding) disable mode.<br />In DGAF disable mode, the AP will not forward downstream multicast and broadcast packets.
 	DgafDisable *bool `json:"dgafDisable,omitempty"`
 	// Homogenous Extended Service Set Identifier, it is used to identify the same type of ESS network set.<br />Note: HESSID should be consistent with one of the BSSIDs of the APs in the zone.
-	HeSsid *string `json:"heSsid,omitempty" validate:"regexp=^$|^[A-F0-9]{1}[02468ACE]{1}([-][A-F0-9]{2}){5}$"`
+	HeSsid *string `json:"heSsid,omitempty"`
 	// Whether Hotspot2.0 is enabled.<br />If hotspot2.0 is disabled, other parameters in Hotspot2.0 will be invalid.
 	HotspotV2Enable bool `json:"hotspotV2Enable"`
 	// Internet access support status (network reachability), which indicates that the network is allowed to access the Internet.
@@ -36,9 +36,9 @@ type HotspotV2SettingOpenApiVO struct {
 	// Specify the 802.11u network type.<br /> Parameter networkType should be a value as follows: [0: Private network; 1: Private network with guest access; 2: Chargeable public network; 3: Free public network; 4: Personal device network; 5: Emergency services only network; 14: Test or experimental; 15: Wildcard].
 	NetworkType *int32 `json:"networkType,omitempty"`
 	// Enter the domain name of the hotspot operator.<br />For example, www.omadanetworks.com.
-	OperatorDomain *string `json:"operatorDomain,omitempty" validate:"regexp=^$|^([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?$"`
+	OperatorDomain *string `json:"operatorDomain,omitempty"`
 	// Hotspot network operator friendly name.<br />Note:Parameter operatorFriendly should contain between 1 and 64 visible ASCII characters, with no Spaces at the beginning and end, and Spaces in between.
-	OperatorFriendly *string `json:"operatorFriendly,omitempty" validate:"regexp=^$|^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,62}[\\\\041-\\\\0176]$"`
+	OperatorFriendly *string `json:"operatorFriendly,omitempty"`
 	// PLMN ID list, enter PLMN ID of 802.11u 3GPP cellular network.<br />Note: Up to 6 entries are allowed for the PLMN ID list.
 	PlmnId []PlmnIdOpenApiVO `json:"plmnId,omitempty"`
 	// Add a profile to identify and describe a NAI (Network Access Identifier) realm accessible using the AP, and the method that this NAI realm uses for authentication.<br />Note: Up to 10 entries are allowed for the NAI Realm list.

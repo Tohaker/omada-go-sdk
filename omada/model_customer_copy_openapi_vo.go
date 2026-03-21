@@ -22,9 +22,9 @@ var _ MappedNullable = &CustomerCopyOpenapiVO{}
 // CustomerCopyOpenapiVO struct for CustomerCopyOpenapiVO
 type CustomerCopyOpenapiVO struct {
 	// Customer description should contain 1 to 128 characters.
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].*\\\\r?\\\\n?.*{0,126}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// New Customer name should contain 1 to 31 characters.
-	NewCustomerName string `json:"newCustomerName" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,30}[^ ]$"`
+	NewCustomerName string `json:"newCustomerName"`
 	// Source customer ID to be copied.
 	SourceCustomerId string `json:"sourceCustomerId"`
 }

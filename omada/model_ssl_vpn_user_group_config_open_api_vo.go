@@ -24,7 +24,7 @@ type SslVpnUserGroupConfigOpenApiVO struct {
 	// Attribute value used for LDAP authentication. It should contain 1 to 20 characters.
 	LDAPAttribute *string `json:"LDAPAttribute,omitempty"`
 	// Name of the SSL VPN user group should contain 1 to 20 characters.
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,18}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Attribute value used for radius authentication. It should contain 1 to 20 characters.
 	RadiusAttribute *string `json:"radiusAttribute,omitempty"`
 	// Resource group ID list of the SSL VPN user group. Resource group can be created using 'Create SSL VPN resource group' interface, and Resource group ID can be obtained from 'Get resource group list for SSL VPN server' interface.

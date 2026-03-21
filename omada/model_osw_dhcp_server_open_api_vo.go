@@ -22,9 +22,9 @@ var _ MappedNullable = &OswDhcpServerOpenApiVO{}
 // OswDhcpServerOpenApiVO Network DHCP server settings. Only valid when deviceType is 2 and mode is 1.
 type OswDhcpServerOpenApiVO struct {
 	// Gateway IP, like 192.168.0.1
-	Gateway *string `json:"gateway,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Gateway *string `json:"gateway,omitempty"`
 	// DHCP Server IP, like 192.168.0.1.
-	Ip string `json:"ip" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip string `json:"ip"`
 	// The list of DHCP Range
 	IpRangePool []OswDhcpServerRangeOpenApiVO `json:"ipRangePool,omitempty"`
 	// Lease time should be within the range of 2–2880
@@ -32,13 +32,13 @@ type OswDhcpServerOpenApiVO struct {
 	// Parameter [netmask] should not within the range of 1-30
 	Netmask string `json:"netmask"`
 	// option138 ip, like 192.168.0.1
-	Option138 *string `json:"option138,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Option138 *string `json:"option138,omitempty"`
 	// Custom DHCP options.
 	Options []SwitchCustomDHCPOptions `json:"options,omitempty"`
 	// Primary DNS, like 192.0.0.1
-	PriDns *string `json:"priDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	PriDns *string `json:"priDns,omitempty"`
 	// Second DNS, like 8.8.8.8
-	SndDns *string `json:"sndDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SndDns *string `json:"sndDns,omitempty"`
 	// VRF ID
 	VrfId *string `json:"vrfId,omitempty"`
 }

@@ -20,7 +20,7 @@ var _ MappedNullable = &RoamingConsortiumOiOpenApiVO{}
 // RoamingConsortiumOiOpenApiVO Roaming Consortium Oi list, enter the 802.11u roaming organization identifiers.<br />Note: Up to 3 entries are allowed for the Roaming Consortium Oi list.
 type RoamingConsortiumOiOpenApiVO struct {
 	// Roaming Consortium Operator Identifier.<br />Note: Roaming Consortium Oi should conform to XX-XX-XX or XX-XX-XX-XX-XX format(Hexadecimal).
-	Value *string `json:"value,omitempty" validate:"regexp=^([0-9A-Fa-f]{2}[-]){2}[0-9A-Fa-f]{2}$|^([0-9A-Fa-f]{2}[-]){4}[0-9A-Fa-f]{2}$"`
+	Value *string `json:"value,omitempty"`
 }
 
 // NewRoamingConsortiumOiOpenApiVO instantiates a new RoamingConsortiumOiOpenApiVO object

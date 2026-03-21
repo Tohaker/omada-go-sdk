@@ -24,7 +24,7 @@ type DomainOpenApiVO struct {
 	// Domain address, should be a valid domain address
 	Address string `json:"address"`
 	// Domain description, description should contain 1 to 512 characters.
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,510}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// Domain port, port should be within the range of 0-65535 or empty, e.g. 80,80-100
 	Port *string `json:"port,omitempty"`
 }

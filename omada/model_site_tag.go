@@ -20,7 +20,7 @@ var _ MappedNullable = &SiteTag{}
 // SiteTag struct for SiteTag
 type SiteTag struct {
 	// Tag name should contain 1 to 128 ASCII characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name *string `json:"name,omitempty"`
 	// Tag ID
 	TagId *string `json:"tagId,omitempty"`
 }

@@ -24,7 +24,7 @@ type CreateGroupOpenApiVO struct {
 	// Country list. [type] value of 5 is required. For the values of countryList, refer to 'Country Name' section 5.4.1 of the Open API Access Guide
 	CountryList []string `json:"countryList,omitempty"`
 	// Description should contain 1 to 256 characters. [type] value of 5 is required
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,510}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// Domain info. Handle situations where there are ports, [type] value of 7 is required
 	DomainNamePort []DomainOpenApiVO `json:"domainNamePort,omitempty"`
 	// IP subnet info list. [type] value of 0 or 1 is required
@@ -34,7 +34,7 @@ type CreateGroupOpenApiVO struct {
 	// MAC address list. [type] value of 2 is required
 	MacAddressList []CreateMacAddressOpenApiVO `json:"macAddressList,omitempty"`
 	// Group profile name. Name should contain 1 to 64 characters
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Port list. [portType] value of 0 is required. PortList should be within the range of 0-65535, e.g. 80 or 80-100
 	PortList []string `json:"portList,omitempty"`
 	// Port mask list. [portType] value of 1 is required

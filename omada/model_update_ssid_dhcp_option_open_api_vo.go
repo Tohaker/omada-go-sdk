@@ -24,7 +24,7 @@ type UpdateSsidDhcpOptionOpenApiVO struct {
 	// SSID DHCP Option 82 Circuit-ID config. Circuit-ID is an array formed in the selected order, with each array element corresponding to the following enumeration values: 1: VLAN-ID; 2: AP Radio Mac-Address; 3: SSID-Type; 4: SSID-Name; 5: AP Ethernet MAC address; 6: Site-Name. As in the example [3,1,2,4], the following enumeration values are selected sequentially on the page: SSID-Type, VLAN-ID, AP Radio Mac-Address and SSID-Name.
 	CircuitId []int32 `json:"circuitId,omitempty"`
 	// SSID DHCP Option 82 delimiter config (A single arbitrary ASCII character is acceptable).
-	Delimiter *string `json:"delimiter,omitempty" validate:"regexp=^[\\\\040-\\\\0176]$"`
+	Delimiter *string `json:"delimiter,omitempty"`
 	// SSID DHCP Option 82 global config status. True: enable, false: disable.
 	DhcpEnable bool `json:"dhcpEnable"`
 	// SSID DHCP Option 82 format config; It should be a value as follows: 0: ASCII; 1: Binary.

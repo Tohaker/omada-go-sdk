@@ -25,7 +25,7 @@ type EasyManagedSwitchGeneralConfigDetail struct {
 	LedSetting *int32 `json:"ledSetting,omitempty"`
 	Location *DeviceLocationDetailVO `json:"location,omitempty"`
 	// Device name should contain 1 to 32 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,30}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// Power alert status.
 	PowerAlertEnable *bool `json:"powerAlertEnable,omitempty"`
 	// Parameter [remember] should be true or false.

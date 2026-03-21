@@ -20,7 +20,7 @@ var _ MappedNullable = &ModifyProviderProfileEntity{}
 // ModifyProviderProfileEntity struct for ModifyProviderProfileEntity
 type ModifyProviderProfileEntity struct {
 	// Provider profile name
-	ProfileName *string `json:"profileName,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	ProfileName *string `json:"profileName,omitempty"`
 	ProviderSettings *ModifyProviderSettingOpenApiVO `json:"providerSettings,omitempty"`
 }
 

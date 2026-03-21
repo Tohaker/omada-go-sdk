@@ -19,8 +19,8 @@ var _ MappedNullable = &OsgSnmpVO{}
 
 // OsgSnmpVO struct for OsgSnmpVO
 type OsgSnmpVO struct {
-	Contact *string `json:"contact,omitempty" validate:"regexp=^[\\\\041-\\\\0176]{0,128}$"`
-	Location *string `json:"location,omitempty" validate:"regexp=^[!-~][\\\\040-\\\\0176]{0,126}[!-~]$|^[!-~]$|$"`
+	Contact *string `json:"contact,omitempty"`
+	Location *string `json:"location,omitempty"`
 }
 
 // NewOsgSnmpVO instantiates a new OsgSnmpVO object

@@ -24,7 +24,7 @@ type BatchSelectMacsVO struct {
 	// When selectType is set to all, the macs do not need to be passed and all entries are processed, when selectType is set to include, the mac entries contained in the macs are processed, when selectType is set to exclude, the mac entries that are not contained in the macs are processed
 	Macs []string `json:"macs,omitempty"`
 	// SelectType all, include or exclude
-	SelectType string `json:"selectType" validate:"regexp=all|include|exclude"`
+	SelectType string `json:"selectType"`
 }
 
 type _BatchSelectMacsVO BatchSelectMacsVO

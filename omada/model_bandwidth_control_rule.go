@@ -32,7 +32,7 @@ type BandwidthControlRule struct {
 	// Mode should be a value as follows: 0: share; 1: individual.
 	Mode int32 `json:"mode"`
 	// Name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Source IDs of the bandwidth control rule. Network can be created using 'Create LAN network' interface, and network ID can be obtained from 'Get LAN network list' interface. IP group can be created using 'Create a new group profile' interface, and IP group ID can be obtained from 'Get group profile list' interface.
 	SourceIds []string `json:"sourceIds"`
 	// Source type should be a value as follows: 0: network; 1: IP group.

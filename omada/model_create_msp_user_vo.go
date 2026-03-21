@@ -34,9 +34,9 @@ type CreateMspUserVO struct {
 	// The end time of the user's validity period. time range: end timestamp (Millisecond).
 	EndTime *int64 `json:"endTime,omitempty"`
 	// User name. When creating cloud user, you should set TP-LINK ID. It should contain 1 to 128 ASCII visible characters and start with letters, numbers, and underscores.
-	Name string `json:"name" validate:"regexp=^(?![+=@-])[\\\\041-\\\\0176]$|^(?![+=@-])[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Password of local user should contain 8 to 128 ASCII visible characters.And password must be a combination of uppercase letters, lowercase letters, numbers, and special symbols. Symbols such as ! # $ % & * @ ^ are supported.
-	Password *string "json:\"password,omitempty\" validate:\"regexp=^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)(?=.*[\\\\!\\\\#\\\\$\\\\%\\\\&\\\\'\\\\(\\\\)\\\\*\\\\+\\\\,\\\\-\\\\.\\/\\\\:\\\\;\\\\<\\\\=\\\\>\\\\@\\\\[\\\\\\\\\\\\]\\\\^\\\\_\\\\`\\\\{\\\\|\\\\}\\\\~])(?!.*[\\\\00-\\\\040\\\\042\\\\077\\\\0177]).{8,128}$\""
+	Password *string `json:"password,omitempty"`
 	// Msp role ID of user
 	RoleId string `json:"roleId"`
 	// The start time of the user's validity period. time range: start timestamp (Millisecond).

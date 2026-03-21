@@ -24,11 +24,11 @@ type LanDnsOpenApiVO struct {
 	// Name of Lan Dns Item
 	Aliases []string `json:"aliases,omitempty"`
 	// When Type is CNAME, set the domain name to which Domain Name and Alias Domain Name need to be mapped.
-	Cname *string `json:"cname,omitempty" validate:"regexp=(?=^.{1,67}$)[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\\\\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+"`
+	Cname *string `json:"cname,omitempty"`
 	// When the Type is FORWARD, set the Domain Name and Alias Domain Name to be forwarded to a specific DNS Server, up to two DNS Servers can be configured.
 	DnsServers []string `json:"dnsServers,omitempty"`
 	// Enter the domain name.
-	Domain string `json:"domain" validate:"regexp=(?=^.{1,67}$)[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\\\\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+"`
+	Domain string `json:"domain"`
 	// off:false, on: true
 	Enable bool `json:"enable"`
 	Id *string `json:"id,omitempty"`

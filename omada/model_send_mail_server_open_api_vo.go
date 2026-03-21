@@ -24,21 +24,21 @@ type SendMailServerOpenApiVO struct {
 	// Whether the SMTP email server uses basic authentication.
 	AuthEnable bool `json:"authEnable"`
 	// The user's email password used for authentication.
-	Password *string `json:"password,omitempty" validate:"regexp=^[\\\\041-\\\\0176]{1,128}$"`
+	Password *string `json:"password,omitempty"`
 	// The port of the SMTP mailbox server,xxxx  should be within the range of 1-65535
 	Port int32 `json:"port"`
 	// The email address where the message will be received.
-	Receiver *string `json:"receiver,omitempty" validate:"regexp=[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\\\.[a-zA-Z0-9]{2,}"`
+	Receiver *string `json:"receiver,omitempty"`
 	// The email address from which the message was sent.
-	SenderAddress *string `json:"senderAddress,omitempty" validate:"regexp=[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\\\.[a-zA-Z0-9]{2,}"`
+	SenderAddress *string `json:"senderAddress,omitempty"`
 	// Enable SMTP mail server
 	SmtpEnable *bool `json:"smtpEnable,omitempty"`
 	// The domain name of the SMTP mailbox server.
-	SmtpServer string `json:"smtpServer" validate:"regexp=^[\\\\041-\\\\0176]{1,128}$"`
+	SmtpServer string `json:"smtpServer"`
 	// Whether the SMTP mailbox server uses SSL encryption.
 	SslEnable bool `json:"sslEnable"`
 	// The user's email address used for authentication.
-	Username *string `json:"username,omitempty" validate:"regexp=^[\\\\041-\\\\0176]{1,128}$"`
+	Username *string `json:"username,omitempty"`
 }
 
 type _SendMailServerOpenApiVO SendMailServerOpenApiVO

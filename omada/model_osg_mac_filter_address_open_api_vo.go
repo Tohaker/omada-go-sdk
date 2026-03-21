@@ -22,7 +22,7 @@ var _ MappedNullable = &OsgMacFilterAddressOpenApiVO{}
 // OsgMacFilterAddressOpenApiVO MAC addresses of the MAC filtering entity.
 type OsgMacFilterAddressOpenApiVO struct {
 	// MAC address of the MAC filtering address.
-	MacAddress string `json:"macAddress" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	MacAddress string `json:"macAddress"`
 	// Name of the MAC filtering address.
 	Name *string `json:"name,omitempty"`
 }

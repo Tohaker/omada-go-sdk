@@ -27,7 +27,7 @@ type SwitchGeneralConfig struct {
 	LedSetting *int32 `json:"ledSetting,omitempty"`
 	Location *DeviceLocationDetailVO `json:"location,omitempty"`
 	// Device name should contain 1 to 128 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	Sdm *OswSdmTemplateVO `json:"sdm,omitempty"`
 	// Tag IDs
 	TagIds []string `json:"tagIds,omitempty"`

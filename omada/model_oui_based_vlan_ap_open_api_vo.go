@@ -24,7 +24,7 @@ type OuiBasedVlanApOpenApiVO struct {
 	// Ap Rule state.
 	Enable bool `json:"enable"`
 	// Ap Rule name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Basic vlan-oui-priority configuration of oui based vlan rule. Cannot be empty.
 	RuleCombine []VlanOuiModeOpenApiVO `json:"ruleCombine"`
 	// Configured ssid list.

@@ -46,7 +46,7 @@ type OswStackMemberLagOpenApiVO struct {
 	// Indicates whether mld fast leave is enabled
 	MldFastLeaveEnable *bool `json:"mldFastLeaveEnable,omitempty"`
 	// Lag Name
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ ?\\"]$|^[^ ?\\"][^?\\"]{0,126}[^ ?\\"]$"`
+	Name *string `json:"name,omitempty"`
 	// Indicates whether port isolation is enabled
 	PortIsolationEnable *bool `json:"portIsolationEnable,omitempty"`
 	// Profile ID

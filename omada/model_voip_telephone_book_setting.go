@@ -22,9 +22,9 @@ type VoipTelephoneBookSetting struct {
 	// The contact ID of contact person.
 	ContactId *string `json:"contactId,omitempty"`
 	// The firstName of contact person. It should contain 0 to 64 characters.
-	FirstName *string `json:"firstName,omitempty" validate:"regexp=^[A-Za-z0-9]{0,64}$"`
+	FirstName *string `json:"firstName,omitempty"`
 	// The lastName of contact person. It should contain 0 to 64 characters.
-	LastName *string `json:"lastName,omitempty" validate:"regexp=^[A-Za-z0-9]{0,64}$"`
+	LastName *string `json:"lastName,omitempty"`
 	// The mobilePhoneNumber of contact person.
 	MobilePhoneNumber *string `json:"mobilePhoneNumber,omitempty"`
 	// The privatePhoneNumber of contact person.

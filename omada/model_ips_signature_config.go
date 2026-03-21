@@ -24,9 +24,9 @@ type IpsSignatureConfig struct {
 	// Direction should be a value as follow: 0: both direction; 1: source direction; 2: destination direction
 	Direction *int32 `json:"direction,omitempty"`
 	// IPS signature traffic Source. If parameter [trafficType] is 0, parameter [ip] is needed
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// IPS signature traffic Source. If parameter [trafficType] is 1, parameter [subnet] is needed
-	Subnet *string `json:"subnet,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\/([1-9]|((1|2)\\\\d)|(30|31|32))\\\\b"`
+	Subnet *string `json:"subnet,omitempty"`
 	// TrafficType should be a value as follow: 0: ip address; 1: subnet
 	TrafficType *int32 `json:"trafficType,omitempty"`
 	// Type should be a value as follow: 0: all traffic; 1: packet tracking

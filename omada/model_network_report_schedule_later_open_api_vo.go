@@ -34,7 +34,7 @@ type NetworkReportScheduleLaterOpenApiVO struct {
 	// The value ranges from 0 to 59.
 	Minute int32 `json:"minute"`
 	// Report Name.
-	ReportName string `json:"reportName" validate:"regexp=^[a-zA-Z0-9_&\\\\- ]{1,64}$"`
+	ReportName string `json:"reportName"`
 	// Type of the file to be exported [0:PDF,1:CSV].
 	ReportType int32 `json:"reportType"`
 	// The start timestamp of the query for the data needed to generate the report.

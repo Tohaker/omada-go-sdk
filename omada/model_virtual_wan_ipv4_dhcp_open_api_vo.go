@@ -22,11 +22,11 @@ type VirtualWanIpv4DhcpOpenApiVO struct {
 	// Virtual WAN custom DHCP options.
 	DhcpOptions []CustomDHCPOptions `json:"dhcpOptions,omitempty"`
 	// Primary DNS server.
-	Dns1 *string `json:"dns1,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Dns1 *string `json:"dns1,omitempty"`
 	// Secondary DNS server.
-	Dns2 *string `json:"dns2,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Dns2 *string `json:"dns2,omitempty"`
 	// Host name. Parameter [hostname] should be up to 63 characters long and can only use numbers, letters, and underscores.
-	Hostname *string `json:"hostname,omitempty" validate:"regexp=^[a-zA-Z0-9_]{0,63}$"`
+	Hostname *string `json:"hostname,omitempty"`
 	// Parameter [mtu] should be a value between 576 and 1500.
 	Mtu *int32 `json:"mtu,omitempty"`
 	// Subnet mask of virtual WAN.

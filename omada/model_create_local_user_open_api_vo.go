@@ -39,7 +39,7 @@ type CreateLocalUserOpenApiVO struct {
 	// The maximum number of users online at the same time when the MAC binding type is No Binding. It cannot be modified after initialization. MaxUsers should be within the range of 1–2048.
 	MaxUsers int32 `json:"maxUsers"`
 	// Name should contain 1 to 128 characters, with no spaces at the beginning and end, and spaces in the middle
-	Name *string `json:"name,omitempty" validate:"regexp=^$|^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// Password should contain 1 to 128 characters.
 	Password string `json:"password"`
 	// Phone number should contain 1 to 20 characters.
@@ -54,7 +54,7 @@ type CreateLocalUserOpenApiVO struct {
 	// Frequency of traffic limit should be a value as follows: 0: total; 1: daily; 2: weekly; 3: monthly.
 	TrafficLimitFrequency *int32 `json:"trafficLimitFrequency,omitempty"`
 	// User name should contain 1 to 128 ASCII visible characters, with no spaces at the beginning and end, and spaces in the middle, cannot be changed after creation.
-	UserName string `json:"userName" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	UserName string `json:"userName"`
 }
 
 type _CreateLocalUserOpenApiVO CreateLocalUserOpenApiVO

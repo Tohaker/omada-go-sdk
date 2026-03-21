@@ -20,9 +20,9 @@ var _ MappedNullable = &DhcpRangeOpenApiVO{}
 // DhcpRangeOpenApiVO The list of DHCP Range, which size can't be more than \"dhcpRangePoolSize\", \"dhcpRangePoolSize\" can be obtained from 'Get LAN network list' interface.
 type DhcpRangeOpenApiVO struct {
 	// DHCP Range End IP
-	IpaddrEnd *string `json:"ipaddrEnd,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpaddrEnd *string `json:"ipaddrEnd,omitempty"`
 	// DHCP Range Start IP
-	IpaddrStart *string `json:"ipaddrStart,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpaddrStart *string `json:"ipaddrStart,omitempty"`
 }
 
 // NewDhcpRangeOpenApiVO instantiates a new DhcpRangeOpenApiVO object

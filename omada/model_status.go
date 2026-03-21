@@ -20,7 +20,7 @@ var _ MappedNullable = &Status{}
 // Status struct for Status
 type Status struct {
 	// To get status information from the router, send a message starting with \"LTE Router Status\", followed by Password/PIN(e.g. LTE Router Status 1234). The password is required for viewing device-related Information via SMS.
-	Command *string `json:"command,omitempty" validate:"regexp=^[\\\\x21\\\\x23-\\\\x26\\\\x28-\\\\x7E]{1,64}$"`
+	Command *string `json:"command,omitempty"`
 	Content *StatusContent `json:"content,omitempty"`
 }
 

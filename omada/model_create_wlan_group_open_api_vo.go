@@ -26,7 +26,7 @@ type CreateWlanGroupOpenApiVO struct {
 	// WLAN group ID that needs to be cloned. Parameter [clonedWlanId] should not be null when Parameter [clone] is true.
 	ClonedWlanId *string `json:"clonedWlanId,omitempty"`
 	// WLAN group name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 }
 
 type _CreateWlanGroupOpenApiVO CreateWlanGroupOpenApiVO

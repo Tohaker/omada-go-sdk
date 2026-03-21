@@ -22,7 +22,7 @@ var _ MappedNullable = &OswDhcpRelayOpenApiVO{}
 // OswDhcpRelayOpenApiVO Network DHCP relay settings. Only valid when deviceType is 2 and mode is 2
 type OswDhcpRelayOpenApiVO struct {
 	// Address IP, like 192.168.0.1
-	Addr string `json:"addr" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Addr string `json:"addr"`
 	// VRF ID
 	VrfId *string `json:"vrfId,omitempty"`
 }

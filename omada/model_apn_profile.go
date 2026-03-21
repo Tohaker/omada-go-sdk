@@ -22,7 +22,7 @@ var _ MappedNullable = &ApnProfile{}
 // ApnProfile struct for ApnProfile
 type ApnProfile struct {
 	// Access point name, only for apnType static, should contain 1 to 64 characters and should meet the following requirements:     1. Should not start with \"rac\", \"lac\", \"sgsn\" or \"rnc\" and end with \".gprs\", ignoring case.     2. Should not contain \".*.\", \".-\", \"-.\" and spaces.     3. Should not contain any of the characters #!$%^&*(),:;\"'|\\@. 
-	Apn *string `json:"apn,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Apn *string `json:"apn,omitempty"`
 	// ApnType should be a value as follows: 0: static; 1: dynamic.
 	ApnType int32 `json:"apnType"`
 	// 1: apply to SIM1; 2: apply to SIM2; 3: apply to SIM1 and SIM2.
@@ -34,13 +34,13 @@ type ApnProfile struct {
 	// APN profile ID
 	Id *string `json:"id,omitempty"`
 	// APN profile name, name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Password should contain 1 to 64 characters, spaces, comma, single quotation marks and double quotation marks are not allowed.
-	Password *string `json:"password,omitempty" validate:"regexp=^([\\\\041-\\\\053]|[\\\\055-\\\\0176]){1,64}$"`
+	Password *string `json:"password,omitempty"`
 	// PdpType should be a value as follows: 0: IPv4; 1: IPv6; 2: IPv4 & IPv6.
 	PdpType int32 `json:"pdpType"`
 	// Username should contain 1 to 64 characters, spaces, comma, single quotation marks and double quotation marks are not allowed.
-	Username *string `json:"username,omitempty" validate:"regexp=^([\\\\041-\\\\053]|[\\\\055-\\\\0176]){1,64}$"`
+	Username *string `json:"username,omitempty"`
 }
 
 type _ApnProfile ApnProfile

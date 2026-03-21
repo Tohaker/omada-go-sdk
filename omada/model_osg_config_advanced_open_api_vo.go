@@ -20,7 +20,7 @@ var _ MappedNullable = &OsgConfigAdvancedOpenApiVO{}
 // OsgConfigAdvancedOpenApiVO struct for OsgConfigAdvancedOpenApiVO
 type OsgConfigAdvancedOpenApiVO struct {
 	// Echo Server should be a domain name or IP address.
-	EchoServer *string `json:"echoServer,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	EchoServer *string `json:"echoServer,omitempty"`
 	// Hardware Offload enabled or not.
 	HwOffloadEnable *bool `json:"hwOffloadEnable,omitempty"`
 	LbSetting2g *ApLoadBalanceOpenApiVO `json:"lbSetting2g,omitempty"`

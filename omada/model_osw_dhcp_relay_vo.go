@@ -21,7 +21,7 @@ var _ MappedNullable = &OswDhcpRelayVO{}
 
 // OswDhcpRelayVO struct for OswDhcpRelayVO
 type OswDhcpRelayVO struct {
-	Addr string `json:"addr" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Addr string `json:"addr"`
 	VrfId *string `json:"vrfId,omitempty"`
 }
 

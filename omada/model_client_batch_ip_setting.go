@@ -26,7 +26,7 @@ type ClientBatchIPSetting struct {
 	// Network ID.
 	NetId *string `json:"netId,omitempty"`
 	// DHCP Server Mac.
-	ServerMac *string `json:"serverMac,omitempty" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	ServerMac *string `json:"serverMac,omitempty"`
 	// DHCP Server Stack ID.
 	ServerStackId *string `json:"serverStackId,omitempty"`
 	// DHCP Server Type.

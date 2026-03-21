@@ -28,7 +28,7 @@ type SslVpnLockConfigOpenApiVO struct {
 	// Type of the SSL VPN lock should be a value as follows: 0:username; 1:IP
 	Type int32 `json:"type"`
 	// Username of the SSL VPN lock. It is required when parameter [type] is 0.
-	Username *string `json:"username,omitempty" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,18}[\\\\041-\\\\0176]$"`
+	Username *string `json:"username,omitempty"`
 }
 
 type _SslVpnLockConfigOpenApiVO SslVpnLockConfigOpenApiVO

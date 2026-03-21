@@ -24,9 +24,9 @@ type CheckIpMacBindingExportToDhcpReservationOpenApiVO struct {
 	// Interface ID. WAN port ID can be obtained from 'Get internet basic info' interface. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface.
 	InterfaceId string `json:"interfaceId"`
 	// IP of the IP MAC binding entity.
-	Ip string `json:"ip" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip string `json:"ip"`
 	// MAC of the IP MAC binding entity.
-	Mac string `json:"mac" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	Mac string `json:"mac"`
 }
 
 type _CheckIpMacBindingExportToDhcpReservationOpenApiVO CheckIpMacBindingExportToDhcpReservationOpenApiVO

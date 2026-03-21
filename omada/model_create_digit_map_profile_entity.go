@@ -24,7 +24,7 @@ type CreateDigitMapProfileEntity struct {
 	// Digit map
 	DigitMap string `json:"digitMap"`
 	// Digit map profile name
-	ProfileName string `json:"profileName" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	ProfileName string `json:"profileName"`
 }
 
 type _CreateDigitMapProfileEntity CreateDigitMapProfileEntity

@@ -26,7 +26,7 @@ type DeviceTemplateAdd struct {
 	// The model version of device.For example: 1.0
 	ModelVersion *string `json:"modelVersion,omitempty"`
 	// The name of device template.
-	TemplateName *string `json:"templateName,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	TemplateName *string `json:"templateName,omitempty"`
 	// The configurable modules of device. For switch:  1:port; 2:vlanInterface; 3:staticRoute; 4:services; 5:ipSetting. For gateway: 1:port; 2:radios; 3:wlans; 4:services; 5:advanced.
 	TemplateSettings []int32 `json:"templateSettings,omitempty"`
 }

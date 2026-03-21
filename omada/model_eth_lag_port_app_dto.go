@@ -22,7 +22,7 @@ var _ MappedNullable = &EthLagPortAppDTO{}
 // EthLagPortAppDTO struct for EthLagPortAppDTO
 type EthLagPortAppDTO struct {
 	// Description of port
-	Description *string `json:"description,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{0,32}$"`
+	Description *string `json:"description,omitempty"`
 	// Port duplex negotiation mode.Duplex should be a value as follows: 2:FULL,0:AUTO
 	Duplex *int32 `json:"duplex,omitempty"`
 	// Port flow control function switch.FlowControl should be a value as follows: 0:DISABLE;1:ENABLE

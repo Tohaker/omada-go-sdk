@@ -24,11 +24,11 @@ type PortForwardingInfoTemplate struct {
 	// With DMZ enabled, all ports are open and the traffic from external network will be forwarded to the specific destination IP in the LAN.
 	DMZ bool `json:"dMZ"`
 	// External port corresponds with source port in web. ExternalPort should be within the range of 1–65535.
-	ExternalPort *string `json:"externalPort,omitempty" validate:"regexp=^(([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5]))|((([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5]))-(([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5])))$"`
+	ExternalPort *string `json:"externalPort,omitempty"`
 	// Forward IP corresponds with destination IP in web. Forward IP
-	ForwardIp string `json:"forwardIp" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	ForwardIp string `json:"forwardIp"`
 	// Forward port corresponds with destination port in web. ForwardPort should be 1 or 1-10, within the range of 1–65535.
-	ForwardPort *string `json:"forwardPort,omitempty" validate:"regexp=^(([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5]))|((([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5]))-(([1-9]\\\\d{0,3})|([1-5]\\\\d{4})|(6[0-4]\\\\d{3})|(65[0-4]\\\\d{2})|(655[0-2]\\\\d)|(6553[0-5])))$"`
+	ForwardPort *string `json:"forwardPort,omitempty"`
 	// From corresponds with source IP in web. From should be a value as follows: 0: where; 1: limited address
 	From int32 `json:"from"`
 	// Port-forwarding ID
@@ -38,7 +38,7 @@ type PortForwardingInfoTemplate struct {
 	// Only for limited address
 	LimitedAddresses []string `json:"limitedAddresses,omitempty"`
 	// Name, name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Protocol should be a value as follows: 0: ALL; 1: TCP; 2: UDP.
 	Protocol *int32 `json:"protocol,omitempty"`
 	// Site ID

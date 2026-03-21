@@ -22,11 +22,11 @@ var _ MappedNullable = &SendMessage{}
 // SendMessage struct for SendMessage
 type SendMessage struct {
 	// Calling code should contain 2 to 5 characters. Calling code must be entered when entering the country code. For the values of Calling code, refer to section 5.4.1 of the Open API Access Guide.
-	CallingCode *string `json:"callingCode,omitempty" validate:"regexp=\\\\+\\\\d{1,4}"`
+	CallingCode *string `json:"callingCode,omitempty"`
 	// When parameter [type] is 0, parameter [content] should not be null.
 	Content *string `json:"content,omitempty"`
 	// Receiver number.
-	Receiver string `json:"receiver" validate:"regexp=\\\\d{1,20}"`
+	Receiver string `json:"receiver"`
 	// When the device supports Dual-SIM card, parameter [simCard] shoud not be null.1: SIM1; 2: SIM2.
 	SimCard *int32 `json:"simCard,omitempty"`
 	Test *SimQuotaSetting `json:"test,omitempty"`

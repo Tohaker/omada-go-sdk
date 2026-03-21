@@ -25,9 +25,9 @@ type SmsSetting struct {
 	// Twilio auth token
 	AuthToken string `json:"authToken"`
 	// Preset Contry code. String value such as \"+86\".
-	CountryCode *string `json:"countryCode,omitempty" validate:"regexp=^$|^\\\\+(93|374|994|973|880|975|673|855|86|670|995|852|91|62|98|964|972|81|962|850|82|965|996|856|961|853|60|960|976|95|977|968|92|970|63|974|7|966|65|94|963|886|992|66|90|90|993|971|998|84|967|355|376|43|375|32|387|359|3491|385|357|420|45|372|298|358|33|49|350|30|36|354|353|39|371|423|370|352|389|356|373|377|382|31|47|48|351|40|378|381|421|386|34|46|41|380|44|379|213|244|229|267|226|257|237|3491|238|236|235|269|242|243|253|20|240|291|251|241|220|233|224|245|225|254|266|231|218|261|265|223|222|230|212|258|264|227|234|262|250|239|221|248|232|252|27|211|34|249|268|255|228|216|256|260|263|1684|61|682|679|689|1671|692|691|687|64|1670|680|675|685|677|676|688|678|1684|1264|1268|297|247|1|1246|501|1441|1|1345|506|53|1767|1809|1809201|503|299|1473|590|1671|502|509|504|1876|596|52|1664|599|505|1670|507|1787|1869|1758|508|1784|1868|1649|1|1284|1340|54|591|55|56|57|593|500|594|592|595|51|597|598|58|383)$"`
+	CountryCode *string `json:"countryCode,omitempty"`
 	// Twilio phone number. String value, should contain at least 6 digits such as \"+123456\".
-	PhoneNum string `json:"phoneNum" validate:"regexp=\\\\+\\\\d{6,}"`
+	PhoneNum string `json:"phoneNum"`
 	// Twilio SID
 	Sid string `json:"sid"`
 	// User limit with the same phone number, should be within the range of 1–10. Required when parameter [userLimitEnable] is true.

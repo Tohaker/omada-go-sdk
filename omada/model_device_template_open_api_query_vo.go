@@ -30,7 +30,7 @@ type DeviceTemplateOpenApiQueryVO struct {
 	ShowModel *string `json:"showModel,omitempty"`
 	Status *int32 `json:"status,omitempty"`
 	SwitchType *int32 `json:"switchType,omitempty"`
-	TemplateName *string `json:"templateName,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	TemplateName *string `json:"templateName,omitempty"`
 	TemplateSettings []int32 `json:"templateSettings,omitempty"`
 	WirelessRouter *bool `json:"wirelessRouter,omitempty"`
 }

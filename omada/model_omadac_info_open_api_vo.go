@@ -22,7 +22,7 @@ type OmadacInfoOpenApiVO struct {
 	// Customer ID.
 	Id *string `json:"id,omitempty"`
 	// Customer name should contain 1 to 32 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,30}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 }
 
 // NewOmadacInfoOpenApiVO instantiates a new OmadacInfoOpenApiVO object

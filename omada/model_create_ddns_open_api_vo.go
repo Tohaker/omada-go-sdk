@@ -22,12 +22,12 @@ var _ MappedNullable = &CreateDdnsOpenApiVO{}
 // CreateDdnsOpenApiVO struct for CreateDdnsOpenApiVO
 type CreateDdnsOpenApiVO struct {
 	// Dynamic DNS domainName, valid when parameter [service] is 0, 1 or 4
-	DomainName *string `json:"domainName,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	DomainName *string `json:"domainName,omitempty"`
 	// This field represents interface Port ID
 	InterfacePortId string `json:"interfacePortId"`
 	Interval *DdnsIntervalOpenApiVO `json:"interval,omitempty"`
 	// Dynamic DNS password. Password should contain 1 to 128 characters
-	Password string `json:"password" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Password string `json:"password"`
 	// Dynamic DNS service type. Service should be a value as follows: 0: DynDNS, 1: NO-IP, 2: Peanuthull, 3: Comexe, 4: Custom, 5: TP-Link DDNS
 	Service int32 `json:"service"`
 	// Dynamic DNS enable status
@@ -35,7 +35,7 @@ type CreateDdnsOpenApiVO struct {
 	// Dynamic DNS updateUrl, valid when parameter [service] is 4. Update URL must contain [USERNAME], [PASSWORD] and [DOMAIN], and Update-URL will be applied to all custom entries
 	UpdateUrl *string `json:"updateUrl,omitempty"`
 	// Dynamic DNS username. Username should contain 1 to 128 characters
-	Username string `json:"username" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Username string `json:"username"`
 }
 
 type _CreateDdnsOpenApiVO CreateDdnsOpenApiVO

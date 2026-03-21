@@ -20,13 +20,13 @@ var _ MappedNullable = &AddDeviceWithSiteBySnOpenApiVO{}
 // AddDeviceWithSiteBySnOpenApiVO Add devices list
 type AddDeviceWithSiteBySnOpenApiVO struct {
 	// Device name should contain 1 to 128 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// Device password. It should contain 1 to 128 characters.
 	Password *string `json:"password,omitempty"`
 	// Site ID
 	SiteId *string `json:"siteId,omitempty"`
 	// Device serial number. It should contains 13 characters.
-	Sn *string `json:"sn,omitempty" validate:"regexp=^[A-Z0-9]{13}$"`
+	Sn *string `json:"sn,omitempty"`
 	// Device username. It should contain 1 to 128 characters.
 	Username *string `json:"username,omitempty"`
 }

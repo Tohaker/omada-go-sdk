@@ -27,7 +27,7 @@ type ApGeneralConfig struct {
 	LedSetting *int32 `json:"ledSetting,omitempty"`
 	Location *DeviceLocationDetailVO `json:"location,omitempty"`
 	// Device name should contain 1 to 128 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// Parameter [rememberDevice] should be a value as follows: 0:off; 1:on; 2:Use Site Settings.
 	RememberDevice *int32 `json:"rememberDevice,omitempty"`
 	// Whether the remote reset function is enabled.

@@ -24,13 +24,13 @@ type ExternalServerPortalSetting struct {
 	// Host type, should be a value as follows: 1: IP; 2: URL
 	HostType int32 `json:"hostType"`
 	// Server IP, required when [hostType] is 1, pattern as \"xx.xx.xx.xx\".
-	ServerIp *string `json:"serverIp,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	ServerIp *string `json:"serverIp,omitempty"`
 	// Server port, required when [hostType] is 1, from 1 to 65535.
 	ServerPort *int32 `json:"serverPort,omitempty"`
 	// Server url, required when [hostType] is 2.
-	ServerUrl *string `json:"serverUrl,omitempty" validate:"regexp=^(([-a-zA-Z0-9@:%._+~#=]{2,256}\\\\.[a-z]{2,63})|((?!255\\\\.255\\\\.255\\\\.255)((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\\\.)){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)))((:([1-9]|[1-9]\\\\d|[1-9]\\\\d{2}|[1-9]\\\\d{3}|[1-5]\\\\d{4}|6[0-4]\\\\d{3}|65[0-4]\\\\d{2}|655[0-2]\\\\d|6553[0-5]))?)(\\/([-a-zA-Z0-9@:%_+.~#?&\\/\\/=]*))?$"`
+	ServerUrl *string `json:"serverUrl,omitempty"`
 	// Server url scheme, required when [hostType] is 2, value is http or https.
-	ServerUrlScheme *string `json:"serverUrlScheme,omitempty" validate:"regexp=http|https"`
+	ServerUrlScheme *string `json:"serverUrlScheme,omitempty"`
 }
 
 type _ExternalServerPortalSetting ExternalServerPortalSetting

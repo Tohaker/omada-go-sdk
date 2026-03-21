@@ -25,13 +25,13 @@ type PortalCustomizeOpenApiVO struct {
 	// Background picture ID
 	BackgroundPictureId *string `json:"backgroundPictureId,omitempty"`
 	// Button color. Hex color code such as: #ffffff.
-	ButtonColor *string `json:"buttonColor,omitempty" validate:"regexp=^#[0-9A-Fa-f]{6}$"`
+	ButtonColor *string `json:"buttonColor,omitempty"`
 	// Button opacity, should be within the range of 0–100.
 	ButtonOpacity *int32 `json:"buttonOpacity,omitempty"`
 	// Button text, should contain 0 to 32 characters, default value is \"Log In\".
-	ButtonText *string `json:"buttonText,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,30}[^ ]$"`
+	ButtonText *string `json:"buttonText,omitempty"`
 	// Button text color. Hex color code such as: #ffffff.
-	ButtonTextColor *string `json:"buttonTextColor,omitempty" validate:"regexp=^#[0-9A-Fa-f]{6}$"`
+	ButtonTextColor *string `json:"buttonTextColor,omitempty"`
 	// Button text opacity, should be within the range of 0–100.
 	ButtonTextOpacity *int32 `json:"buttonTextOpacity,omitempty"`
 	// Copyright text, should contain 0 to 200 characters.
@@ -39,7 +39,7 @@ type PortalCustomizeOpenApiVO struct {
 	// Whether to dispaly the copyright.
 	CopyrightEnable bool `json:"copyrightEnable"`
 	// Copyright text color. Hex color code such as: #ffffff.
-	CopyrightTextColor *string `json:"copyrightTextColor,omitempty" validate:"regexp=^#[0-9A-Fa-f]{6}$"`
+	CopyrightTextColor *string `json:"copyrightTextColor,omitempty"`
 	// Copyright text font size, should be within the range of 12–18.
 	CopyrightTextFontSize *int32 `json:"copyrightTextFontSize,omitempty"`
 	// Copyright text opacity, should be within the range of 0–100.
@@ -47,13 +47,13 @@ type PortalCustomizeOpenApiVO struct {
 	// The controller automatically adjusts the language displayed on the Portal page according to the system language of the clients.If the language is not supported, the controller will use the default language specified here.<br/>1: en_US (English); 3: cs_CZ (Český); 4: de_DE (Deutsch); 5: da_DK (Dansk); 6: el_GR (ελληνικά);<br/>7: fr_FR (Français); 8: es_ES (Español); 9: nl_NL (Nederlands); 10: it_IT (Italiano); 11: pl_PL (Polski);<br/>12: pt_PT (Português); 13: ru_RU (Русский); 14: sv_SE (Svenska); 15: tr_TR (Türkçe);<br/>16: ar_SA (لغة عربية); <br/>17: ja_JP (日本語); 18: zh_TW (中文(繁體)); 19: th_TH (ไทย); 20: vi_VN (Tiếng Việt); 21: ko_KR (한국어)
 	DefaultLanguage int32 `json:"defaultLanguage"`
 	// Form auth button text, should contain 0 to 32 characters, required when [authType] is 11 and hotspot [enabledTypes] contains 12.Default value is \"Take the Survey\".
-	FormAuthButtonText *string `json:"formAuthButtonText,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,30}[^ ]$"`
+	FormAuthButtonText *string `json:"formAuthButtonText,omitempty"`
 	// Input box color. Hex color code such as: #ffffff.
-	InputBoxColor *string `json:"inputBoxColor,omitempty" validate:"regexp=^#[0-9A-Fa-f]{6}$"`
+	InputBoxColor *string `json:"inputBoxColor,omitempty"`
 	// Input box opacity, should be within the range of 0–100.
 	InputBoxOpacity *int32 `json:"inputBoxOpacity,omitempty"`
 	// Input text color. Hex color code such as: #ffffff.
-	InputTextColor *string `json:"inputTextColor,omitempty" validate:"regexp=^#[0-9A-Fa-f]{6}$"`
+	InputTextColor *string `json:"inputTextColor,omitempty"`
 	// Input text opacity, should be within the range of 0–100.
 	InputTextOpacity *int32 `json:"inputTextOpacity,omitempty"`
 	// Whether to display the default logo.
@@ -73,9 +73,9 @@ type PortalCustomizeOpenApiVO struct {
 	// Whether to display the welcome info
 	WelcomeEnable bool `json:"welcomeEnable"`
 	// Welcome Information, should contain 1 to 31 characters.
-	WelcomeInformation *string `json:"welcomeInformation,omitempty" validate:"regexp=^.{1,31}$"`
+	WelcomeInformation *string `json:"welcomeInformation,omitempty"`
 	// Welcome text color. Hex color code such as: #ffffff.
-	WelcomeTextColor *string `json:"welcomeTextColor,omitempty" validate:"regexp=^#[0-9A-Fa-f]{6}$"`
+	WelcomeTextColor *string `json:"welcomeTextColor,omitempty"`
 	// Welcome text font size, should be within the range of 12–18.
 	WelcomeTextFontSize *int32 `json:"welcomeTextFontSize,omitempty"`
 	// Welcome text opacity, should be within the range of 0–100.

@@ -22,7 +22,7 @@ type ModifyDigitMapProfileEntity struct {
 	// Digit map
 	DigitMap *string `json:"digitMap,omitempty"`
 	// Digit map profile name
-	ProfileName *string `json:"profileName,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	ProfileName *string `json:"profileName,omitempty"`
 }
 
 // NewModifyDigitMapProfileEntity instantiates a new ModifyDigitMapProfileEntity object

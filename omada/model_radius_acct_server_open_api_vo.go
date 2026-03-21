@@ -22,7 +22,7 @@ var _ MappedNullable = &RadiusAcctServerOpenApiVO{}
 // RadiusAcctServerOpenApiVO Radius accounting server list, valid when parameter [radiusAccountingEnable] is true
 type RadiusAcctServerOpenApiVO struct {
 	// Radius Accounting Server IP.In Pro Site of the Omada Pro Controller, [accountingServerIp] should be a valid IP or domain address. In Omada Controller and Basic Site of the Omada Pro Controller, [accountingServerIp] should be a valid IP address.
-	AccountingServerIp string `json:"accountingServerIp" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	AccountingServerIp string `json:"accountingServerIp"`
 	// Radius Accounting port. AccountingServerPort should be within the range of 1-65535
 	AccountingServerPort int32 `json:"accountingServerPort"`
 	// Radius Accounting password,The question mark (?), double quote (\"), percent sign (%), and backslash (\\) may cause the RADIUS function to fail and are not recommended.

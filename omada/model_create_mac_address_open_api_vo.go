@@ -22,7 +22,7 @@ var _ MappedNullable = &CreateMacAddressOpenApiVO{}
 // CreateMacAddressOpenApiVO MAC address list. [type] value of 2 is required
 type CreateMacAddressOpenApiVO struct {
 	// MAC address, should be a valid MAC address format, e.g. AA-BB-CC-DD-11-22
-	MacAddress string `json:"macAddress" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	MacAddress string `json:"macAddress"`
 	// MAC address name, name should contain 1 to 128 characters
 	Name *string `json:"name,omitempty"`
 }

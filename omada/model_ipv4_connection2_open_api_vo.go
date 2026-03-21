@@ -22,19 +22,19 @@ var _ MappedNullable = &Ipv4Connection2OpenApiVO{}
 // Ipv4Connection2OpenApiVO struct for Ipv4Connection2OpenApiVO
 type Ipv4Connection2OpenApiVO struct {
 	// (Optional) It is required when [secondaryProtoType] is 0.
-	DefaultGateway *string `json:"defaultGateway,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	DefaultGateway *string `json:"defaultGateway,omitempty"`
 	// (Optional) It is required when [secondaryProtoType] is 0.
-	IpAddress *string `json:"ipAddress,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpAddress *string `json:"ipAddress,omitempty"`
 	// (Optional) It is required when [secondaryProtoType] is 0.
-	PrimaryDns *string `json:"primaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	PrimaryDns *string `json:"primaryDns,omitempty"`
 	// (Optional) It is required when [secondaryProtoType] is 0.
-	SecondaryDns *string `json:"secondaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SecondaryDns *string `json:"secondaryDns,omitempty"`
 	// It should be a value as follows: 0:Static IP; 1:Dynamic IP; 2: None(Only for PPPoE).
 	SecondaryProtoType int32 `json:"secondaryProtoType"`
 	// (Optional) VPN Server/Domain Name. It is required for L2TP/PPTP.
 	Server *string `json:"server,omitempty"`
 	// (Optional) It is required when [secondaryProtoType] is 0.
-	SubnetMask *string `json:"subnetMask,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SubnetMask *string `json:"subnetMask,omitempty"`
 }
 
 type _Ipv4Connection2OpenApiVO Ipv4Connection2OpenApiVO

@@ -20,9 +20,9 @@ var _ MappedNullable = &CustomerOpenApiVO{}
 // CustomerOpenApiVO struct for CustomerOpenApiVO
 type CustomerOpenApiVO struct {
 	// Customer name should contain 1 to 31 characters.
-	CustomerName *string `json:"customerName,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,30}[^ ]$"`
+	CustomerName *string `json:"customerName,omitempty"`
 	// Customer description should contain 1 to 128 characters.
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].*\\\\r?\\\\n?.*{0,126}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 }
 
 // NewCustomerOpenApiVO instantiates a new CustomerOpenApiVO object

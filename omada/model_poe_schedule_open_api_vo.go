@@ -22,7 +22,7 @@ var _ MappedNullable = &PoeScheduleOpenApiVO{}
 // PoeScheduleOpenApiVO Poe schedule entity
 type PoeScheduleOpenApiVO struct {
 	// PoE Schedule Name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Key:Mac(\"String\"), Value:Set of Ports(\"Integer\")
 	PoePortsMap map[string][]int32 `json:"poePortsMap"`
 	// Site ID

@@ -32,7 +32,7 @@ type RateLimitProfileVO struct {
 	// Whether it is default profile.
 	IsDefault *bool `json:"isDefault,omitempty"`
 	// Rate limit profile name.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	Resource *int32 `json:"resource,omitempty"`
 	// Up limit. Unit is Kbps, integer from 1 to 10485760.
 	UpLimit *int64 `json:"upLimit,omitempty"`

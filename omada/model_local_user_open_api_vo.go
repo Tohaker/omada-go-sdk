@@ -43,7 +43,7 @@ type LocalUserOpenApiVO struct {
 	// The maximum number of users online at the same time when the MAC binding type is No Binding. It cannot be modified after initialization. Value of Maximum Users should be within the range of 1-2048.
 	MaxUsers *int32 `json:"maxUsers,omitempty"`
 	// Name
-	Name *string `json:"name,omitempty" validate:"regexp=^$|^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// Whether the current time has exceeded the expirationTime
 	Overtime *bool `json:"overtime,omitempty"`
 	// Password should contain 1 to 128 characters
@@ -66,7 +66,7 @@ type LocalUserOpenApiVO struct {
 	// Used quantity.
 	Used *int32 `json:"used,omitempty"`
 	// User name should contain 1 to 128 characters
-	UserName *string `json:"userName,omitempty" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	UserName *string `json:"userName,omitempty"`
 }
 
 // NewLocalUserOpenApiVO instantiates a new LocalUserOpenApiVO object

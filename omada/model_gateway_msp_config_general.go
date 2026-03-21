@@ -20,7 +20,7 @@ var _ MappedNullable = &GatewayMspConfigGeneral{}
 // GatewayMspConfigGeneral struct for GatewayMspConfigGeneral
 type GatewayMspConfigGeneral struct {
 	// Device name should contain 1 to 128 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 }
 
 // NewGatewayMspConfigGeneral instantiates a new GatewayMspConfigGeneral object

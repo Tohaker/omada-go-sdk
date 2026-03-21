@@ -22,9 +22,9 @@ var _ MappedNullable = &GoogleOAuthSettingOpenApiVO{}
 // GoogleOAuthSettingOpenApiVO Google OAuth setting, required when [authType] is 16 and social auth [enabledTypes] contains 17.
 type GoogleOAuthSettingOpenApiVO struct {
 	// Google OAuth client ID
-	ClientId string `json:"clientId" validate:"regexp=^\\\\S{0,256}$"`
+	ClientId string `json:"clientId"`
 	// Google OAuth client secret
-	ClientSecret string `json:"clientSecret" validate:"regexp=^\\\\S{0,256}$"`
+	ClientSecret string `json:"clientSecret"`
 }
 
 type _GoogleOAuthSettingOpenApiVO GoogleOAuthSettingOpenApiVO

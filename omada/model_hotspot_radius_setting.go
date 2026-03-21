@@ -27,7 +27,7 @@ type HotspotRadiusSetting struct {
 	// Whether to support disconnect messages.
 	DisconnectReq *bool `json:"disconnectReq,omitempty"`
 	// RADIUS Attribute: NasID, should contain 1 to 64 characters.
-	NasId string `json:"nasId" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	NasId string `json:"nasId"`
 	// RADIUS profile ID.
 	RadiusProfileId string `json:"radiusProfileId"`
 	// Port for listening to disconnect messages, should be within the range of 1–65535.

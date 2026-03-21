@@ -31,9 +31,9 @@ type PpskProfileV2 struct {
 	// This field is required when Parameter [autoCreatePsks] is false; PPSK List In the PPSK Profile
 	Ppsk []PpskSettingV2 `json:"ppsk,omitempty"`
 	// This field is required when Parameter [autoCreatePsks] is true; PSK Name Prefix, should contain 1 to 60 visible ASCII characters.
-	Prefix *string "json:\"prefix,omitempty\" validate:\"regexp=^[a-zA-z0-9'!\\\"#$%&()*,.\\/:;?^_`\\\\[\\\\]{|}~<>\\\\ ][\\\\041-\\\\0176]{0,59}$\""
+	Prefix *string `json:"prefix,omitempty"`
 	// PPSK Profile Name, should contain 1 to 64 characters.
-	ProfileName string `json:"profileName" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	ProfileName string `json:"profileName"`
 	RateLimit *PPSKRateLimitSettingVO `json:"rateLimit,omitempty"`
 	// This field is required when Parameter [autoCreatePsks] is true; PSK Bound Vlan, should be within the range of 1-4094.
 	Vlan *int32 `json:"vlan,omitempty"`

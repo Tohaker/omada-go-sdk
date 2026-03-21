@@ -22,13 +22,13 @@ var _ MappedNullable = &ConfigIotServerOpenApiVO{}
 // ConfigIotServerOpenApiVO struct for ConfigIotServerOpenApiVO
 type ConfigIotServerOpenApiVO struct {
 	// This parameter becomes mandatory when the authentication method is set to \"Use Token\".<br/>Note:The parameter [clientId] should be 1 ~ 128 characters.
-	AccessToken string `json:"accessToken" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	AccessToken string `json:"accessToken"`
 	// The parameter [authentication] should be a value as follows:[0:Use Token].
 	Authentication int32 `json:"authentication"`
 	// Whether to enable the BLE Periodic Telemetry. When disabled no periodic packets will be uploaded.
 	BlePeriodicTelemetry bool `json:"blePeriodicTelemetry"`
 	// This parameter becomes mandatory when the authentication method is set to \"Use Token\".<br />Note:The parameter [clientId] should be 1 ~ 128 characters.
-	ClientId string `json:"clientId" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	ClientId string `json:"clientId"`
 	// A switch that controls whether the AP device exclusively reports the count of IoT devices, and it cannot be null when blePeriodicTelemetry is enabled.
 	CountOnly *bool `json:"countOnly,omitempty"`
 	// Supports protocol-based filtering during IoT data reporting processes.<br />The device class list should contain the value as follows: [0:minew; 1:iBeacon; 2:Eddystone].
@@ -40,7 +40,7 @@ type ConfigIotServerOpenApiVO struct {
 	// User-defined settings to manage AP device filtering rules for IoT devices.<br />The parameter [filtersType] should contain the value as follows:[0:Company Identifier; 1:Vendor; 2:Local Name; 3:Service UUID; 4:Mac Oui; 5:iBeacon UUID; 6:UID; 7:URL].
 	FiltersType []int32 `json:"filtersType,omitempty"`
 	// IoT Transport Stream setting name.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Whether to enable the BLE Data Forwarding. When enabled, the AP directly reports the Bluetooth packet rawData to the server.
 	RawData bool `json:"rawData"`
 	// Data reporting interval configuration for AP devices in IoT systems.The parameter [reportInterval] should be within the range of 1–3600 in seconds, and it cannot be null when blePeriodicTelemetry is enabled.

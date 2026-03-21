@@ -22,13 +22,13 @@ var _ MappedNullable = &SslVpnLockCreateAndModifyOpenApiVO{}
 // SslVpnLockCreateAndModifyOpenApiVO struct for SslVpnLockCreateAndModifyOpenApiVO
 type SslVpnLockCreateAndModifyOpenApiVO struct {
 	// IP of the SSL VPN lock. It is required when parameter [type] is 1.
-	Ip *string `json:"ip,omitempty" validate:"regexp=^((25[0-5]|2[0-4]\\\\d|[01]?\\\\d\\\\d?)\\\\.){3}(25[0-5]|2[0-4]\\\\d|[01]?\\\\d\\\\d?)$"`
+	Ip *string `json:"ip,omitempty"`
 	// Total lock time of the SSL VPN lock should be within the range of 1–1080(min).
 	TotalLockTime int32 `json:"totalLockTime"`
 	// Type of the SSL VPN lock should be a value as follows: 0:username; 1:IP
 	Type int32 `json:"type"`
 	// Username of the SSL VPN lock. It is required when parameter [type] is 0.
-	Username *string `json:"username,omitempty" validate:"regexp=^[a-zA-Z0-9_]{1,20}$"`
+	Username *string `json:"username,omitempty"`
 }
 
 type _SslVpnLockCreateAndModifyOpenApiVO SslVpnLockCreateAndModifyOpenApiVO

@@ -28,7 +28,7 @@ type OuiBasedVlanSwitchOpenApiVO struct {
 	// Switch Rule type. 0:\"All device port\", 1:\"Custom device port\"
 	Mode int32 `json:"mode"`
 	// Switch Rule name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Basic vlan-oui-priority configuration of oui based rule. Cannot be empty.
 	RuleCombine []VlanOuiModeOpenApiVO `json:"ruleCombine"`
 }

@@ -32,9 +32,9 @@ type StaticRoutingInfoTemplate struct {
 	// Metric should be within the range of 0–15.
 	Metric int32 `json:"metric"`
 	// Name, name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Only for routeType:0 or routeType:1 and selected WAN is Static IP/Dynamic IP mode
-	NextHopIp *string `json:"nextHopIp,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	NextHopIp *string `json:"nextHopIp,omitempty"`
 	// RouteType should be a value as follows: 0: NextHop; 1: Interface
 	RouteType int32 `json:"routeType"`
 	// Status

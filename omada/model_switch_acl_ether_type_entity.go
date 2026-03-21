@@ -24,7 +24,7 @@ type SwitchACLEtherTypeEntity struct {
 	// Default:false
 	Enable bool `json:"enable"`
 	// Value, if enable is true, value must not be null
-	Value *string `json:"value,omitempty" validate:"regexp=^[0-9a-fA-F]{4}$"`
+	Value *string `json:"value,omitempty"`
 }
 
 type _SwitchACLEtherTypeEntity SwitchACLEtherTypeEntity

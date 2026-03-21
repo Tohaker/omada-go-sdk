@@ -29,7 +29,7 @@ type UpdateSiteEntity struct {
 	// Longitude of the site should be within the range of -180 - 180.
 	Longitude *float64 `json:"longitude,omitempty"`
 	// Site name should contain 1 to 64 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 	// NTP server status of the site
 	NtpEnable *bool `json:"ntpEnable,omitempty"`
 	// NTP server address; Up to 5 entries are allowed for the NTP server address list.

@@ -22,11 +22,11 @@ var _ MappedNullable = &AccessItem{}
 // AccessItem struct for AccessItem
 type AccessItem struct {
 	// Calling code should contain 2 to 5 characters. Calling code must be entered when entering the country code. For the values of Calling code, refer to section 5.4.1 of the Open API Access Guide.
-	CallingCode *string `json:"callingCode,omitempty" validate:"regexp=\\\\+\\\\d{1,4}"`
+	CallingCode *string `json:"callingCode,omitempty"`
 	// Country code should contain 2 characters. Country code must be entered when entering the calling code. For the values of Country code, refer to section 5.4.1 of the Open API Access Guide.
 	CountryCode *string `json:"countryCode,omitempty"`
 	// Allowed phone numbers.
-	Phone string `json:"phone" validate:"regexp=\\\\d{1,20}"`
+	Phone string `json:"phone"`
 }
 
 type _AccessItem AccessItem

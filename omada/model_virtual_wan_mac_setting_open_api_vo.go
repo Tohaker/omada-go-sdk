@@ -22,7 +22,7 @@ var _ MappedNullable = &VirtualWanMacSettingOpenApiVO{}
 // VirtualWanMacSettingOpenApiVO VirtualWanMacSettingOpenApiVO
 type VirtualWanMacSettingOpenApiVO struct {
 	// Device MAC. When [method] is set, parameter [mac] should not be empty.
-	Mac *string `json:"mac,omitempty" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	Mac *string `json:"mac,omitempty"`
 	// Parameter [method] should be set or recover. Set: Customize MAC address; Recover: Use default MAC address.
 	Method string `json:"method"`
 }

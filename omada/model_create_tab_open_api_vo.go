@@ -20,7 +20,7 @@ var _ MappedNullable = &CreateTabOpenApiVO{}
 // CreateTabOpenApiVO struct for CreateTabOpenApiVO
 type CreateTabOpenApiVO struct {
 	// Names on this Dashboard page must be unique. It should contain 1 to 64 characters.
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,30}[^ ]$"`
+	Name *string `json:"name,omitempty"`
 }
 
 // NewCreateTabOpenApiVO instantiates a new CreateTabOpenApiVO object

@@ -24,7 +24,7 @@ type PortInfo struct {
 	// Whether this port exists in a LAG
 	LagPort bool `json:"lagPort"`
 	// Port name
-	Name string `json:"name" validate:"regexp=^[^ ?\\"]$|^[^ ?\\"][^?\\"]{0,126}[^ ?\\"]$"`
+	Name string `json:"name"`
 	// PoE mode should be a value as follows: 1: on(802.3at/af); 0: off.
 	PoeMode int32 `json:"poeMode"`
 	// Port ID

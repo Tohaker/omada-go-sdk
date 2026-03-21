@@ -24,7 +24,7 @@ type UrlDragSortIndexOpenapiVO struct {
 	// The order in which items take effect, this object is a Map, the key is item ID and the value is the index you want to set.
 	Indexes map[string]int32 `json:"indexes"`
 	// Type must be gateway or ap
-	Type string `json:"type" validate:"regexp=gateway|ap"`
+	Type string `json:"type"`
 }
 
 type _UrlDragSortIndexOpenapiVO UrlDragSortIndexOpenapiVO

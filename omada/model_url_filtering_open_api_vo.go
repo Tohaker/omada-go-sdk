@@ -30,7 +30,7 @@ type UrlFilteringOpenApiVO struct {
 	// Mode should be a value as follows: 0: URL Path; 1: keywords(Only for gateway).
 	Mode int32 `json:"mode"`
 	// Name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Policy should be a value as follows: 0: drop; 1: allow.
 	Policy int32 `json:"policy"`
 	// scenarioMode should be a value as follows:0: Custom  1: Family 2：Work 3：Education 4：Guest.
@@ -44,7 +44,7 @@ type UrlFilteringOpenApiVO struct {
 	// timeRange of the URL filtering, TimeSchedule
 	TimeRange *string `json:"timeRange,omitempty"`
 	// Type should be a value as follows: \"gateway\"; \"ap\".
-	Type string `json:"type" validate:"regexp=gateway|ap"`
+	Type string `json:"type"`
 	// URLs of the URL filtering, eg: www.google.com.
 	Urls []string `json:"urls,omitempty"`
 }

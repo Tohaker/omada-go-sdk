@@ -22,15 +22,15 @@ var _ MappedNullable = &SnmpSettingOpenApiVO{}
 // SnmpSettingOpenApiVO struct for SnmpSettingOpenApiVO
 type SnmpSettingOpenApiVO struct {
 	// Community string, valid when parameter [snmpV1V2CEnable] is true. The communityString should contain at least 10 characters, using a combination of numbers, letters or special characters.  The communityString should not contain consecutive identical characters.
-	CommunityString *string `json:"communityString,omitempty" validate:"regexp=^[\\\\041\\\\043-\\\\076\\\\0100-\\\\0176]{1,64}$"`
+	CommunityString *string `json:"communityString,omitempty"`
 	// The password should contain at least 10 characters, using a combination of numbers, letters or special characters.  The password should not contain consecutive identical characters.  Username and Password should not be the same.
-	Password *string `json:"password,omitempty" validate:"regexp=^[\\\\041\\\\043-\\\\076\\\\0100-\\\\0133\\\\0135-\\\\0176]{8,32}$"`
+	Password *string `json:"password,omitempty"`
 	// SNMPv1 & SNMPv2c enable status
 	SnmpV1V2CEnable bool `json:"snmpV1V2CEnable"`
 	// SNMPv3 enable status
 	SnmpV3Enable bool `json:"snmpV3Enable"`
 	// Username, valid when parameter [snmpV3Enable] is true. Username should contain 1 to 30 characters
-	Username *string `json:"username,omitempty" validate:"regexp=^[0-9a-zA-Z\\\\-\\\\_]{1,30}$"`
+	Username *string `json:"username,omitempty"`
 }
 
 type _SnmpSettingOpenApiVO SnmpSettingOpenApiVO

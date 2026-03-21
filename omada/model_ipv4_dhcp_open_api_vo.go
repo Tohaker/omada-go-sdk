@@ -23,13 +23,13 @@ var _ MappedNullable = &Ipv4DhcpOpenApiVO{}
 type Ipv4DhcpOpenApiVO struct {
 	DhcpOptions []WanDhcpOptionOpenApiVO `json:"dhcpOptions,omitempty"`
 	// Host name
-	Hostname *string `json:"hostname,omitempty" validate:"regexp=^[a-zA-Z0-9_]{0,63}$"`
+	Hostname *string `json:"hostname,omitempty"`
 	// 576-1500, default:1500.
 	Mtu int32 `json:"mtu"`
 	// Primary DNS
-	PrimaryDns *string `json:"primaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	PrimaryDns *string `json:"primaryDns,omitempty"`
 	// Secondary DNS
-	SecondaryDns *string `json:"secondaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SecondaryDns *string `json:"secondaryDns,omitempty"`
 	// Unicast DHCP
 	UnicastDhcp *bool `json:"unicastDhcp,omitempty"`
 	WanMultipleIps []WanMultipleIpOpenApiVO `json:"wanMultipleIps,omitempty"`

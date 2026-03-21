@@ -22,7 +22,7 @@ var _ MappedNullable = &PortTagOpenApiVO{}
 // PortTagOpenApiVO struct for PortTagOpenApiVO
 type PortTagOpenApiVO struct {
 	// Port label name should contain 1 to 128 ASCII characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Data Source. Resource should be a value as follows: 0: new created; 1: from template; 2: override
 	Resource *int32 `json:"resource,omitempty"`
 	// Port label ID

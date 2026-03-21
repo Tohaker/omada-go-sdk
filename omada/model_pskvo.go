@@ -24,9 +24,9 @@ type PSKVO struct {
 	// Mac Bound With PSK
 	Mac *string `json:"mac,omitempty"`
 	// PSK Name
-	Name string "json:\"name\" validate:\"regexp=^[a-zA-z0-9'!\\\"#$%&()*,.\\/:;?^_`\\\\[\\\\]{|}~<>\\\\ ][\\\\041-\\\\0176]{0,63}$\""
+	Name string `json:"name"`
 	// Password
-	Psk string `json:"psk" validate:"regexp=^([A-Za-z0-9\\\\p{Punct} ]{8,63}|[0-9a-fA-F]{8,63})$"`
+	Psk string `json:"psk"`
 	// Vlan Bound With PSK
 	Vlan *int32 `json:"vlan,omitempty"`
 }

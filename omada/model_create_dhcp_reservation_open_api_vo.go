@@ -24,11 +24,11 @@ type CreateDhcpReservationOpenApiVO struct {
 	// True when creating an entry with IP and IP-MAC Binding conflicts confirmed
 	ConfirmConflict *bool `json:"confirmConflict,omitempty"`
 	// Description of DHCP reservation. Description should contain 1 to 128 characters
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// Reserved IP address
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// Device MAC address, format: AA-BB-CC-11-22-33
-	Mac string `json:"mac" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	Mac string `json:"mac"`
 	// This field represents LAN Network ID. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface
 	NetId string `json:"netId"`
 	// Advanced DHCP options

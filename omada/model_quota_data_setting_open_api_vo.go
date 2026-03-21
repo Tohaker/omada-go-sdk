@@ -34,7 +34,7 @@ type QuotaDataSettingOpenApiVO struct {
 	// Quota limit is enabled/disabled.
 	Limit bool `json:"limit"`
 	// The phone number to receive SMS alerts.
-	Phone *string `json:"phone,omitempty" validate:"regexp=\\\\d{1,20}"`
+	Phone *string `json:"phone,omitempty"`
 	// Start date of monthly billing cycle type, valid date should be within the range of 1–31.
 	StartDate *int32 `json:"startDate,omitempty"`
 	// Billing cycle type should be a value as follows: 0:total; 1:monthly.

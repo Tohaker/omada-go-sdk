@@ -24,7 +24,7 @@ type FormAuthResultSelector struct {
 	// IDs of Selected Form Auth Result. Required when type is not all.
 	Ids []string `json:"ids,omitempty"`
 	// Type of Selection, allowed values: all, include, exclude.
-	Type string `json:"type" validate:"regexp=^(all|include|exclude)$"`
+	Type string `json:"type"`
 }
 
 type _FormAuthResultSelector FormAuthResultSelector

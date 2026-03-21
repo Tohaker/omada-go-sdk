@@ -28,7 +28,7 @@ type IgmpConfigVO struct {
 	// Device type:ap, gateway, switch, olt
 	DeviceType *string `json:"deviceType,omitempty"`
 	// The source IP of the general query message sent.
-	GeneralQuerySourceIp *string `json:"generalQuerySourceIp,omitempty" validate:"regexp=^\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b$"`
+	GeneralQuerySourceIp *string `json:"generalQuerySourceIp,omitempty"`
 	// The number of specific group query messages sent by the device.
 	LastMemberQueryCount *int32 `json:"lastMemberQueryCount,omitempty"`
 	// The time interval for the device to send a specific group of query messages (unit: s).

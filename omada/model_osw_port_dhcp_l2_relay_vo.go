@@ -20,13 +20,13 @@ var _ MappedNullable = &OswPortDhcpL2RelayVO{}
 // OswPortDhcpL2RelayVO Dhcp L2 Relay Setting
 type OswPortDhcpL2RelayVO struct {
 	// Circuit ID
-	CircuitId *string `json:"circuitId,omitempty" validate:"regexp=^[a-zA-Z0-9-_@:\\/\\\\.#]{0,64}$"`
+	CircuitId *string `json:"circuitId,omitempty"`
 	// Enable
 	Enable *bool `json:"enable,omitempty"`
 	// Format should be a value as follows: 0: Normal; 1: Private
 	Format *int32 `json:"format,omitempty"`
 	// Remote ID
-	RemoteId *string `json:"remoteId,omitempty" validate:"regexp=^[a-zA-Z0-9-_@:\\/\\\\.#]{0,64}$"`
+	RemoteId *string `json:"remoteId,omitempty"`
 }
 
 // NewOswPortDhcpL2RelayVO instantiates a new OswPortDhcpL2RelayVO object

@@ -22,7 +22,7 @@ var _ MappedNullable = &UpdateWlanGroupOpenApiVO{}
 // UpdateWlanGroupOpenApiVO struct for UpdateWlanGroupOpenApiVO
 type UpdateWlanGroupOpenApiVO struct {
 	// WLAN group name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 }
 
 type _UpdateWlanGroupOpenApiVO UpdateWlanGroupOpenApiVO

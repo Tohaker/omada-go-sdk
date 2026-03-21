@@ -36,15 +36,15 @@ type SslVpnServerSetting struct {
 	Id *string `json:"id,omitempty"`
 	IpLockSetting *LockSettingOpenApiVO `json:"ipLockSetting,omitempty"`
 	// The end IP of the IP pool.
-	IpPoolEnd *string `json:"ipPoolEnd,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpPoolEnd *string `json:"ipPoolEnd,omitempty"`
 	// The start IP of the IP pool.
-	IpPoolStart *string `json:"ipPoolStart,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpPoolStart *string `json:"ipPoolStart,omitempty"`
 	NameLockSetting *LockSettingOpenApiVO `json:"nameLockSetting,omitempty"`
 	// Primary DNS Server of the SSL VPN server.
-	PrimaryDns *string `json:"primaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	PrimaryDns *string `json:"primaryDns,omitempty"`
 	RadiusSetting *RadiusSettingOpenApiVO `json:"radiusSetting,omitempty"`
 	// Secondary DNS Server of the SSL VPN server.
-	SecondaryDns *string `json:"secondaryDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SecondaryDns *string `json:"secondaryDns,omitempty"`
 	// Service port of the SSL VPN server should be within the range of 1–65535
 	ServicePort *int32 `json:"servicePort,omitempty"`
 	// Status of the SSL VPN server.
@@ -56,7 +56,7 @@ type SslVpnServerSetting struct {
 	// Whether to proxy all traffic.
 	TotalTraffic *bool `json:"totalTraffic,omitempty"`
 	// WAP IP of the SSL VPN server.
-	WanIp *string `json:"wanIp,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	WanIp *string `json:"wanIp,omitempty"`
 	// WAN port of the SSL VPN server. WAN port ID can be obtained from 'Get internet basic info' interface
 	WanPort *string `json:"wanPort,omitempty"`
 }

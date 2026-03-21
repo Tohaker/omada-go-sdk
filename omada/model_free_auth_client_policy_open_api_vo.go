@@ -22,9 +22,9 @@ var _ MappedNullable = &FreeAuthClientPolicyOpenApiVO{}
 // FreeAuthClientPolicyOpenApiVO List of Free-Authentication Client Policy
 type FreeAuthClientPolicyOpenApiVO struct {
 	// Free auth client IP Address
-	ClientIp *string `json:"clientIp,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	ClientIp *string `json:"clientIp,omitempty"`
 	// Free auth client MAC Address, for example: AA-AA-AA-AA-AA-AA
-	ClientMac *string `json:"clientMac,omitempty" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	ClientMac *string `json:"clientMac,omitempty"`
 	// Entry ID of the policy. Except for newly added policies, this parameter should be retained
 	IdInt *int32 `json:"idInt,omitempty"`
 	// Type of the policy. It should be a value as follows: 3: Free auth client IP, and parameter [clientIp] is needed. 4: Free auth client MAC, and parameter [clientMac] is needed

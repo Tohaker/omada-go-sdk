@@ -22,7 +22,7 @@ var _ MappedNullable = &BatchCopySiteTemplateOpenApiVO{}
 // BatchCopySiteTemplateOpenApiVO struct for BatchCopySiteTemplateOpenApiVO
 type BatchCopySiteTemplateOpenApiVO struct {
 	// Name of the site should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// The target Customer ID needs to be obtained from the interface \"Obtain the customer ID with permission to modify site templates\".
 	TargetOmadacs []string `json:"targetOmadacs"`
 }

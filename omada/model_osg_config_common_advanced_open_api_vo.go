@@ -19,7 +19,7 @@ var _ MappedNullable = &OsgConfigCommonAdvancedOpenApiVO{}
 
 // OsgConfigCommonAdvancedOpenApiVO struct for OsgConfigCommonAdvancedOpenApiVO
 type OsgConfigCommonAdvancedOpenApiVO struct {
-	EchoServer *string `json:"echoServer,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	EchoServer *string `json:"echoServer,omitempty"`
 	HwOffloadEnable *bool `json:"hwOffloadEnable,omitempty"`
 	// Deprecated, filed lldpSetting is recommended
 	// Deprecated

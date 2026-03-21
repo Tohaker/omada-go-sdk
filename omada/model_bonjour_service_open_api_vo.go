@@ -22,7 +22,7 @@ var _ MappedNullable = &BonjourServiceOpenApiVO{}
 // BonjourServiceOpenApiVO struct for BonjourServiceOpenApiVO
 type BonjourServiceOpenApiVO struct {
 	// The name of Bonjour Service should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// The Service ID list of Bonjour Service. Service ID is a string in \"_A._B.local\" format, where \"A\" can be lowercase letters/numbers/hyphens (-)/underscore (_), and \"B\" should be lowercase letters. For example: _a1._b.local.Up to 3 entries are allowed for the serviceIds list.
 	ServiceIds []string `json:"serviceIds"`
 }

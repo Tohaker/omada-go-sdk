@@ -25,7 +25,7 @@ type CreateTimeRangeProfileOpenApiVO struct {
 	// Time range profile day mode; It should be a value as follows: 0: Every Day, 1: Weekday, 2: Weekend, 3: Customized
 	DayMode int32 `json:"dayMode"`
 	// Time range profile name should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Time range profile schedule time config
 	TimeList []ScheduleTimeOpenApiVO `json:"timeList"`
 }

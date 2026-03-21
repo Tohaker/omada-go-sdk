@@ -24,7 +24,7 @@ type OnuInformationDescriptionEditConfigDTO struct {
 	// Identifier of ONU
 	Key string `json:"key"`
 	// ONU description should contain 1 to 32 characters, including uppercase and lowercase letters, numbers, and the symbols -@_:/. 
-	OnuDescription string `json:"onuDescription" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{1,32}$"`
+	OnuDescription string `json:"onuDescription"`
 }
 
 type _OnuInformationDescriptionEditConfigDTO OnuInformationDescriptionEditConfigDTO

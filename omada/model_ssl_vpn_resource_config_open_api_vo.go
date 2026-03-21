@@ -32,11 +32,11 @@ type SslVpnResourceConfigOpenApiVO struct {
 	// ICMP type of the SSL VPN resource, exists when protocol is ICMP. It should be within the range of 0–255
 	IcmpType *int32 `json:"icmpType,omitempty"`
 	// IP of the SSL VPN resource, exists when type is 0.
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// Mask of the SSL VPN resource, exists when type is 0.
 	Mask *string `json:"mask,omitempty"`
 	// Name of the SSL VPN resource should contain 1 to 20 characters.
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,18}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Other protocol of the SSL VPN resource. It should be within the range of 1–255.
 	OtherProtocol *int32 `json:"otherProtocol,omitempty"`
 	// Protocol of the SSL VPN resource should be a value as follows: 0:All; 1:TCP; 2:UDP; 3:TCP/UDP; 4:ICMP; 5:Other

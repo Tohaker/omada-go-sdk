@@ -30,7 +30,7 @@ type Dot1xSwitchSettingOpenApiVO struct {
 	// Switch MAB enabled ports
 	MabPorts []int32 `json:"mabPorts,omitempty"`
 	// MAC address of the switch
-	Mac string `json:"mac" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	Mac string `json:"mac"`
 }
 
 type _Dot1xSwitchSettingOpenApiVO Dot1xSwitchSettingOpenApiVO

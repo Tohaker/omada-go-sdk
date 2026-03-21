@@ -32,9 +32,9 @@ type CreateVLANs struct {
 	// Enable MLD snooping
 	MldSnoopEnable *bool `json:"mldSnoopEnable,omitempty"`
 	// LAN network name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Support batch VLAN creation. VLAN format: 200, 1-100.
-	Vlans string `json:"vlans" validate:"regexp=^[\\\\d|\\\\d-\\\\d]+(,[\\\\d|\\\\d-\\\\d]+)*$"`
+	Vlans string `json:"vlans"`
 }
 
 type _CreateVLANs CreateVLANs

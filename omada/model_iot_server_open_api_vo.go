@@ -22,13 +22,13 @@ var _ MappedNullable = &IotServerOpenApiVO{}
 // IotServerOpenApiVO struct for IotServerOpenApiVO
 type IotServerOpenApiVO struct {
 	// This parameter becomes mandatory when the authentication method is set to \"Use Token\".<br/>Note:The parameter [clientId] should be 1 ~ 128 characters.
-	AccessToken *string `json:"accessToken,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	AccessToken *string `json:"accessToken,omitempty"`
 	// The parameter [authentication] should be a value as follows:[0:Use Token].
 	Authentication int32 `json:"authentication"`
 	// Whether to enable the BLE Periodic Telemetry. When disabled no periodic packets will be uploaded.
 	BlePeriodicTelemetry bool `json:"blePeriodicTelemetry"`
 	// This parameter becomes mandatory when the authentication method is set to \"Use Token\".<br />Note:The parameter [clientId] should be 1 ~ 128 characters.
-	ClientId *string `json:"clientId,omitempty" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	ClientId *string `json:"clientId,omitempty"`
 	// A switch that controls whether the AP device exclusively reports the count of IoT devices.
 	CountOnly *bool `json:"countOnly,omitempty"`
 	// Supports protocol-based filtering during IoT data reporting processes.<br />The device class list should contain the value as follows: [0:minew; 1:iBeacon; 2:Eddystone].
@@ -42,7 +42,7 @@ type IotServerOpenApiVO struct {
 	// The IoT Transport Stream entry ID.
 	Id *string `json:"id,omitempty"`
 	// IoT Transport Stream setting name.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Whether to enable the BLE Data Forwarding. When enabled, the AP directly reports the Bluetooth packet rawData to the server.
 	RawData bool `json:"rawData"`
 	// Data reporting interval configuration for AP devices in IoT systems.

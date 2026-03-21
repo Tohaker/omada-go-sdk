@@ -22,7 +22,7 @@ var _ MappedNullable = &ModifyControllerRoleVO{}
 // ModifyControllerRoleVO struct for ModifyControllerRoleVO
 type ModifyControllerRoleVO struct {
 	// Role name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	Privilege *ControllerRoleVO `json:"privilege,omitempty"`
 }
 

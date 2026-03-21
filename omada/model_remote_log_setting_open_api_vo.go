@@ -24,7 +24,7 @@ type RemoteLogSettingOpenApiVO struct {
 	// Whether to enable the feature
 	Enable bool `json:"enable"`
 	// The IP address of the remote log server
-	Host *string `json:"host,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	Host *string `json:"host,omitempty"`
 	// Whether it contains client log
 	MoreClientLog *bool `json:"moreClientLog,omitempty"`
 	// Port of the remote log server, port should be within the range of 1-65535

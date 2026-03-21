@@ -22,11 +22,11 @@ type SystemInfoAppDTO struct {
 	// Boot loader version
 	BootLoaderVersion *string `json:"bootLoaderVersion,omitempty"`
 	// Contact information should contain 1-32 bits numbers, Upper and lower letters, -@_:/. .
-	ContactInformation *string `json:"contactInformation,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{1,32}$"`
+	ContactInformation *string `json:"contactInformation,omitempty"`
 	// Device location should contain 1-32 bits numbers, Upper and lower letters, -@_:/. .
-	DeviceLocation *string `json:"deviceLocation,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{1,32}$"`
+	DeviceLocation *string `json:"deviceLocation,omitempty"`
 	// Device name should contain 1-32 bits numbers, Upper and lower letters, -@_:/. .
-	DeviceName *string `json:"deviceName,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{1,32}$"`
+	DeviceName *string `json:"deviceName,omitempty"`
 	// Whether DHCP Relaying is enabled, dhcpRelayStatus should be a value as follows: 1:ENABLE;0:DISABLE.
 	DhcpRelayStatus *int32 `json:"dhcpRelayStatus,omitempty"`
 	// Firmware version

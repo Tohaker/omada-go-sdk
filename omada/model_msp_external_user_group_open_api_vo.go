@@ -30,7 +30,7 @@ type MspExternalUserGroupOpenApiVO struct {
 	// The end time of the user's validity period. time range: end timestamp (Millisecond).
 	EndTime *int64 `json:"endTime,omitempty"`
 	// Msp external user group name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,126}[\\\\041-\\\\0176]$"`
+	Name string `json:"name"`
 	// Msp role ID which can be obtained from 'Get msp role list' interface.
 	RoleId string `json:"roleId"`
 	// The start time of the user's validity period. time range: start timestamp (Millisecond).

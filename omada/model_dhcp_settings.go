@@ -20,37 +20,37 @@ var _ MappedNullable = &DhcpSettings{}
 // DhcpSettings Configure DHCP settings
 type DhcpSettings struct {
 	// The dhcpNextServer should be valid IP address, which is used in optional set next DHCP server.
-	DhcpNextServer *string `json:"dhcpNextServer,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	DhcpNextServer *string `json:"dhcpNextServer,omitempty"`
 	// Setup DHCP server: \"auto\" or \"manual\"
 	Dhcpns *string `json:"dhcpns,omitempty"`
 	// When value is true, DHCP server is enabled
 	Enable *bool `json:"enable,omitempty"`
 	// Manual Setup of DHCP Gateway IP
-	Gateway *string `json:"gateway,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Gateway *string `json:"gateway,omitempty"`
 	// DHCP Omada Controller IP
-	HostIP *string `json:"hostIP,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	HostIP *string `json:"hostIP,omitempty"`
 	// The specific format value of Gateway Subnet End IP
 	IpRangeEnd *int64 `json:"ipRangeEnd,omitempty"`
 	// The specific format value of Gateway Subnet start IP
 	IpRangeStart *int64 `json:"ipRangeStart,omitempty"`
 	// DHCP Range End IP. Must use ipRangePool field If want to configure multiple DHCP Ranges.
-	IpaddrEnd *string `json:"ipaddrEnd,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpaddrEnd *string `json:"ipaddrEnd,omitempty"`
 	// DHCP Range Start IP. Must use ipRangePool field If want to configure multiple DHCP Ranges.
-	IpaddrStart *string `json:"ipaddrStart,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpaddrStart *string `json:"ipaddrStart,omitempty"`
 	// Valid value is from 2 to 2880
 	Leasetime *int32 `json:"leasetime,omitempty"`
 	// The option138 should be valid IP address, which is used in discovering the devices by the Omada controller.
-	Option138 *string `json:"option138,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Option138 *string `json:"option138,omitempty"`
 	// Option60 should be between 0 and 50, which is used to optionally identify the vendor type and configuration of a DHCP client.
-	Option60 *string `json:"option60,omitempty" validate:"regexp=^[\\\\041-\\\\0176]{0,50}$"`
+	Option60 *string `json:"option60,omitempty"`
 	// The Option66 should be between 0 and 128, which specifies the TFTP server information and supports a single TFTP server IP address.
-	Option66 *string `json:"option66,omitempty" validate:"regexp=^[\\\\041-\\\\0176]{0,128}$"`
+	Option66 *string `json:"option66,omitempty"`
 	// User custom DHCP options
 	Options []CustomDHCPOptions `json:"options,omitempty"`
 	// When DHCPs are \"manual\", primary DNS Server.
-	PriDns *string `json:"priDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	PriDns *string `json:"priDns,omitempty"`
 	// When DHCPs are \"manual\", second DNS Server.
-	SndDns *string `json:"sndDns,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	SndDns *string `json:"sndDns,omitempty"`
 }
 
 // NewDhcpSettings instantiates a new DhcpSettings object

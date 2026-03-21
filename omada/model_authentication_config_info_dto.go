@@ -34,13 +34,13 @@ type AuthenticationConfigInfoDTO struct {
 	// Line profile id bound to the ONU
 	LineProfile string `json:"lineProfile"`
 	// Loid set by automatic discovery of the ONT, loid should be 1-32 characters, including letters, numbers, and symbols (-@_:/.).
-	Loid *string `json:"loid,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{1,32}$"`
+	Loid *string `json:"loid,omitempty"`
 	// Loid password set by automatic discovery of the ONT,loidPassword should be ASCII characters from \\x21 to \\x7e
 	LoidPassword *string `json:"loidPassword,omitempty"`
 	// Online status should be a value as follows:DISABLE,ENABLE
 	OnlineStatus *string `json:"onlineStatus,omitempty"`
 	// Automatic discovery ONT Authentication Password.Password should contain 1 to 10 characters in ASCII (from \\x21 to \\x7e) or 1 to 20 characters in hexadecimal.
-	Password *string `json:"password,omitempty" validate:"regexp=^[\\\\x21-\\\\x7e]{1,10}|[0-9a-fA-F ]{1,20}$"`
+	Password *string `json:"password,omitempty"`
 	// Indicates the password type reported by the automatic discovery of the ONT.PasswordType should be a value as follows：ASCII,HEX
 	PasswordType *string `json:"passwordType,omitempty"`
 	// Re-Register-Authentication

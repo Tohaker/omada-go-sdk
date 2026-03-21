@@ -22,7 +22,7 @@ var _ MappedNullable = &CreateProviderProfileEntity{}
 // CreateProviderProfileEntity struct for CreateProviderProfileEntity
 type CreateProviderProfileEntity struct {
 	// Provider profile name
-	ProfileName string `json:"profileName" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	ProfileName string `json:"profileName"`
 	ProviderSettings ProviderSettingVO `json:"providerSettings"`
 }
 

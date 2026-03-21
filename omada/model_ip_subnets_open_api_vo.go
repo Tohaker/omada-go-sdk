@@ -22,9 +22,9 @@ var _ MappedNullable = &IPSubnetsOpenApiVO{}
 // IPSubnetsOpenApiVO IP subnet info list. [type] value of 0 or 1 is required
 type IPSubnetsOpenApiVO struct {
 	// IP description, description should contain 1 to 512 characters.
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,510}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// IP address, should be a valid IP format
-	Ip string `json:"ip" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip string `json:"ip"`
 	// IP mask, mask should be within the range of 1-32
 	Mask int32 `json:"mask"`
 }

@@ -35,7 +35,7 @@ type LanNetworkVO struct {
 	DhcpServerNum *int32 `json:"dhcpServerNum,omitempty"`
 	DhcpSettings *DhcpSettingsVO `json:"dhcpSettings,omitempty"`
 	Dhcpv6Guard *Dhcpv6GuardVO `json:"dhcpv6Guard,omitempty"`
-	Domain *string `json:"domain,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	Domain *string `json:"domain,omitempty"`
 	ExistArpDetection *bool `json:"existArpDetection,omitempty"`
 	ExistCustomDhcpOption *bool `json:"existCustomDhcpOption,omitempty"`
 	ExistDhcpNextServer *bool `json:"existDhcpNextServer,omitempty"`
@@ -43,7 +43,7 @@ type LanNetworkVO struct {
 	ExistNetworkIsolation *bool `json:"existNetworkIsolation,omitempty"`
 	ExistRA *bool `json:"existRA,omitempty"`
 	FastLeaveEnable *bool `json:"fastLeaveEnable,omitempty"`
-	GatewaySubnet *string `json:"gatewaySubnet,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\/(\\\\d|((1|2)\\\\d)|(30))\\\\b"`
+	GatewaySubnet *string `json:"gatewaySubnet,omitempty"`
 	Id *string `json:"id,omitempty"`
 	IgmpSnoopEnable bool `json:"igmpSnoopEnable"`
 	Interface *bool `json:"interface,omitempty"`
@@ -53,7 +53,7 @@ type LanNetworkVO struct {
 	LanNetworkIpv6Config *LanNetworkIpv6ConfigVO `json:"lanNetworkIpv6Config,omitempty"`
 	MldSnoopEnable *bool `json:"mldSnoopEnable,omitempty"`
 	Mode *int32 `json:"mode,omitempty"`
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	OrigName *string `json:"origName,omitempty"`
 	Portal *bool `json:"portal,omitempty"`
 	PortalId *string `json:"portalId,omitempty"`
@@ -71,7 +71,7 @@ type LanNetworkVO struct {
 	TotalIpNum *int64 `json:"totalIpNum,omitempty"`
 	Vlan *int32 `json:"vlan,omitempty"`
 	VlanType *int32 `json:"vlanType,omitempty"`
-	Vlans *string `json:"vlans,omitempty" validate:"regexp=^[\\\\d|\\\\d-\\\\d]+(,[\\\\d|\\\\d-\\\\d]+)*$"`
+	Vlans *string `json:"vlans,omitempty"`
 	VrfId *string `json:"vrfId,omitempty"`
 }
 

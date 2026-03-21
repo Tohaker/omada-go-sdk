@@ -24,13 +24,13 @@ type WireguardOpenApiVO struct {
 	// The listening port for WireGuard VPN should be within the range of 1-65535.
 	ListenPort int32 `json:"listenPort"`
 	// The local IP address of WireGuard VPN.
-	LocalIp string `json:"localIp" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	LocalIp string `json:"localIp"`
 	// The MTU of WireGuard VPN should be within the range of 576-1440.
 	Mtu int32 `json:"mtu"`
 	// The name of WireGuard VPN should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// The private key of WireGuard VPN must have 44 character of base64 and end with '='.
-	PrivateKey string `json:"privateKey" validate:"regexp=^[0-9a-zA-Z+\\/]{43}=$"`
+	PrivateKey string `json:"privateKey"`
 	// The status of WireGuard VPN. Valid value is true or false.
 	Status bool `json:"status"`
 }

@@ -23,7 +23,7 @@ var _ MappedNullable = &GeneralSetting{}
 type GeneralSetting struct {
 	Dst *DstOpenApiVO `json:"dst,omitempty"`
 	// General setting name should be visible ASCII, between 1 and 32 characters.
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,30}[^ ]$"`
+	Name string `json:"name"`
 	// Country/Region of the controller
 	Region string `json:"region"`
 	// For the values of timeZone, refer to section 5.1 of the Open API Access Guide.

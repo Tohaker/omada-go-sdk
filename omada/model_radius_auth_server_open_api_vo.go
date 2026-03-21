@@ -30,9 +30,9 @@ type RadiusAuthServerOpenApiVO struct {
 	// Radius authentication server port, radiusPort should be within the range of 1-65535
 	RadiusPort int32 `json:"radiusPort"`
 	// Radius authentication server password, radiusPwd should contain 1 to 64 characters,The question mark (?), double quote (\"), percent sign (%), and backslash (\\) may cause the RADIUS function to fail and are not recommended.
-	RadiusPwd string `json:"radiusPwd" validate:"regexp=^[\\\\041-\\\\0176]{1,128}$"`
+	RadiusPwd string `json:"radiusPwd"`
 	// Radius authentication server IP. In Pro Site of the Omada Pro Controller, [radiusServerIp] should be a valid IP or domain address. In Omada Controller and Basic Site of the Omada Pro Controller, [radiusServerIp] should be a valid IP address.
-	RadiusServerIp string `json:"radiusServerIp" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	RadiusServerIp string `json:"radiusServerIp"`
 }
 
 type _RadiusAuthServerOpenApiVO RadiusAuthServerOpenApiVO

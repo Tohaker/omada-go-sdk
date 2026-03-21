@@ -67,7 +67,7 @@ type OswPortSettingVO struct {
 	// Indicates whether mld fast leave is enabled
 	MldFastLeaveEnable *bool `json:"mldFastLeaveEnable,omitempty"`
 	// Port or Lag Name
-	Name *string `json:"name,omitempty" validate:"regexp=^[^ ?\\"]$|^[^ ?\\"][^?\\"]{0,126}[^ ?\\"]$"`
+	Name *string `json:"name,omitempty"`
 	// Native Network Bridge Vlan.
 	NativeBridgeVlan *int32 `json:"nativeBridgeVlan,omitempty"`
 	// Native Network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks.
@@ -75,7 +75,7 @@ type OswPortSettingVO struct {
 	// Network Tags Setting should be a value as follows: 0: Allow All; 1: Block All; 2: Custom
 	NetworkTagsSetting *int32 `json:"networkTagsSetting,omitempty"`
 	// Operation should be a value as follows: \"switching\" or \"mirroring\" or \"aggregating\"
-	Operation *string `json:"operation,omitempty" validate:"regexp=switching|mirroring|aggregating"`
+	Operation *string `json:"operation,omitempty"`
 	// Poe should be a value as follows: 0: Off; 1: 802.3at/af
 	Poe *int32 `json:"poe,omitempty"`
 	// Indicates whether port alert is enabled

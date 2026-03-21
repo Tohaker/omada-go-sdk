@@ -22,7 +22,7 @@ var _ MappedNullable = &IPMacBinding{}
 // IPMacBinding struct for IPMacBinding
 type IPMacBinding struct {
 	// Description should contain 1 to 64 characters.
-	Description *string `json:"description,omitempty" validate:"regexp=^$|^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Description *string `json:"description,omitempty"`
 	// Whether to enable export to the DhcpReservation table.
 	EnableExportToDhcpReservation *bool `json:"enableExportToDhcpReservation,omitempty"`
 	// Whether to export to the DhcpReservation table. This subsection is deprecated.
@@ -33,9 +33,9 @@ type IPMacBinding struct {
 	// Interface type should be a value as follows: 0: WAN; 1: LAN interface.
 	InterfaceType int32 `json:"interfaceType"`
 	// IP of the IP MAC binding entity.
-	Ip string `json:"ip" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip string `json:"ip"`
 	// MAC of the IP MAC binding entity.
-	Mac string `json:"mac" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	Mac string `json:"mac"`
 	// Status of the IP MAC binding entity.
 	Status bool `json:"status"`
 	// Whether could export to the DhcpReservation table. This subsection is deprecated.

@@ -34,7 +34,7 @@ type ConfigIotBtIbeaconV2OpenApiVO struct {
 	// The minor value of adverting ibeacon packet, indicating a smaller group.
 	Minor string `json:"minor"`
 	// The Bluetooth Advertising seting name. The name of built-in entry are not allowed to be modified.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// The UUID (Universally Unique Identifier) of the advertising ibeacon packet.
 	Uuid string `json:"uuid"`
 }

@@ -34,7 +34,7 @@ type CreateLdapProfileOpenApiVO struct {
 	// LDAP server group distinguish name, optional when parameter [type] is 1 or 2. For example: ou=xxx,dc=xxx,dc=com. GroupDn should contain 1 to 512 characters
 	GroupDn *string `json:"groupDn,omitempty"`
 	// LDAP profile name. Name should contain 1 to 64 characters
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Regular Dn, required when parameter [type] is 2. RegularDn should contain 1 to 256 characters
 	RegularDn *string `json:"regularDn,omitempty"`
 	// Regular Password, required when parameter [type] is 2. RegularPassword should contain 1 to 256 characters

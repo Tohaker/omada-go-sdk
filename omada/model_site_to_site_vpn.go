@@ -27,7 +27,7 @@ type SiteToSiteVpn struct {
 	// ID of the VPN.
 	Id *string `json:"id,omitempty"`
 	// Name should contain 1 to 63 characters.
-	Name string `json:"name" validate:"regexp=^[a-zA-Z0-9_]{1,63}$"`
+	Name string `json:"name"`
 	// Network list of the VPN, only for Manual IPSec type. Network can be created using 'Create LAN network' interface, and network ID can be obtained from 'Get LAN network list' interface.
 	NetworkList []string `json:"networkList,omitempty"`
 	// Network type should be a value as follows: 0: network list; 1: custom networks.

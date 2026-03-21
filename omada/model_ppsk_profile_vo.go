@@ -27,7 +27,7 @@ type PPSKProfileVO struct {
 	// PSK List In the PPSK Profile
 	Ppsk []PSKVO `json:"ppsk"`
 	// PPSK Profile Name
-	ProfileName string `json:"profileName" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	ProfileName string `json:"profileName"`
 	RateLimit *PPSKRateLimitSettingVO `json:"rateLimit,omitempty"`
 	Resource *int32 `json:"resource,omitempty"`
 	// Ssid List Bound With PPSK Profile

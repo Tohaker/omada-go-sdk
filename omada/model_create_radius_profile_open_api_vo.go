@@ -34,7 +34,7 @@ type CreateRadiusProfileOpenApiVO struct {
 	// When interval update enables, interval update duration, unit: second. InterimUpdateInterval should be within the range of 60-86400
 	InterimUpdateInterval *int32 `json:"interimUpdateInterval,omitempty"`
 	// Radius profile name should contain 1 to 64 characters
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Radius accounting enable status
 	RadiusAccountingEnable bool `json:"radiusAccountingEnable"`
 	// VLAN assignment for wireless network enable status

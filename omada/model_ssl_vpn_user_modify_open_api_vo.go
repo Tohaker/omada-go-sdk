@@ -26,7 +26,7 @@ type SslVpnUserModifyOpenApiVO struct {
 	// Group ID of the SSL VPN user. User group can be created using 'Create SSL VPN user group' interface, and User Group ID can be obtained from 'Get user group list for SSL VPN server' interface.
 	GroupId *string `json:"groupId,omitempty"`
 	// Password of the SSL VPN user should contain 1 to 64 characters.
-	Password string `json:"password" validate:"regexp=^[\\\\041-\\\\0176]$|^[\\\\041-\\\\0176][\\\\040-\\\\0176]{0,62}[\\\\041-\\\\0176]$"`
+	Password string `json:"password"`
 	// Status of the SSL VPN user
 	Status bool `json:"status"`
 	// Validity of the SSL VPN user. The format is Month/Day/Year, for example 08/20/2022

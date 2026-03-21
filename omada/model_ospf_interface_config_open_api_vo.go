@@ -32,7 +32,7 @@ type OspfInterfaceConfigOpenApiVO struct {
 	// The hello interval for the specified interface in seconds. This parameter must be the same for all routers attached to a network. It should be within the range of 1-65535 seconds and the default is 10 seconds.
 	HelloInterval int32 `json:"helloInterval"`
 	// Device Mac
-	Mac string `json:"mac" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	Mac string `json:"mac"`
 	// Displays the key used for md5 authentication, its value should be within the range of 1-16.
 	Md5Key *string `json:"md5Key,omitempty"`
 	// Displays the key ID used for md5 authentication, its value should be within the range of 1-255.

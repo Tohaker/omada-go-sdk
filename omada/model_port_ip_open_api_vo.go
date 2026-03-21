@@ -20,7 +20,7 @@ var _ MappedNullable = &PortIpOpenApiVO{}
 // PortIpOpenApiVO WAN IPs. Wan IPs can be obtained from 'Get internet ports config' interface
 type PortIpOpenApiVO struct {
 	// IP address
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// This field represents WAN port ID. WAN port ID can be obtained from can be obtained from 'Get internet basic info' interface.
 	WanId *string `json:"wanId,omitempty"`
 }

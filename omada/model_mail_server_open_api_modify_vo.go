@@ -26,13 +26,13 @@ type MailServerOpenApiModifyVO struct {
 	// When Authentication is enabled, enter the authorization code that enables a third party to log in to the mailbox. Note that the authorization code is not the mailbox's password.
 	AuthCode *string `json:"authCode,omitempty"`
 	// The email address of the receiver, which can be the same as or different from the sender's email address.
-	Receiver string `json:"receiver" validate:"regexp=[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\\\.[a-zA-Z0-9]{2,}"`
+	Receiver string `json:"receiver"`
 	// The email address of the sender.
-	Sender string `json:"sender" validate:"regexp=[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\\\.[a-zA-Z0-9]{2,}"`
+	Sender string `json:"sender"`
 	// Enter the port used by the SMTP server according to the instructions of your email service provider.
 	SmtpPort *int32 `json:"smtpPort,omitempty"`
 	// Enter the domain name or IP address of the SMTP server.
-	SmtpServer *string `json:"smtpServer,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6})"`
+	SmtpServer *string `json:"smtpServer,omitempty"`
 	// Enable this feature, and the data will be transmitted based on the SSL protocol.
 	Ssl bool `json:"ssl"`
 	// When Authentication is enabled, enter your email address as the username.

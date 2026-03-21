@@ -36,11 +36,11 @@ type OspfProcessOpenApiVO struct {
 	// Indicates whether the device is a stack member device.
 	IsStack *bool `json:"isStack,omitempty"`
 	// Device Mac
-	Mac string `json:"mac" validate:"regexp=[A-Fa-f0-9]{1}[02468aceACE]{1}([-:][A-Fa-f0-9]{2}){5}"`
+	Mac string `json:"mac"`
 	// Process ID should be within the range of 1-65535.
 	ProcessId int32 `json:"processId"`
 	// Router ID
-	RouterId *string `json:"routerId,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	RouterId *string `json:"routerId,omitempty"`
 	// RouterMode, its value should be a value as follows: 0: AUTO, 1: MANUAL.
 	RouterMode int32 `json:"routerMode"`
 	// Used for backend verification, the front-end does not need to pass a value, and there are values when the MAC is master

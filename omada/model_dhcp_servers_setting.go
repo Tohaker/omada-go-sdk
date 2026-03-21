@@ -22,9 +22,9 @@ var _ MappedNullable = &DhcpServersSetting{}
 // DhcpServersSetting Legal DHCP Server
 type DhcpServersSetting struct {
 	// DHCP Server IP1
-	DhcpSvr1 *string `json:"dhcpSvr1,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	DhcpSvr1 *string `json:"dhcpSvr1,omitempty"`
 	// DHCP Server IP2
-	DhcpSvr2 *string `json:"dhcpSvr2,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	DhcpSvr2 *string `json:"dhcpSvr2,omitempty"`
 	// The switch of DHCP Guarding
 	Enable bool `json:"enable"`
 }

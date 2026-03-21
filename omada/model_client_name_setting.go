@@ -22,7 +22,7 @@ var _ MappedNullable = &ClientNameSetting{}
 // ClientNameSetting struct for ClientNameSetting
 type ClientNameSetting struct {
 	// Client Name should contain 1 to 128 characters
-	Name string `json:"name" validate:"regexp=^$|^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name string `json:"name"`
 }
 
 type _ClientNameSetting ClientNameSetting

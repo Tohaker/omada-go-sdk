@@ -24,7 +24,7 @@ type PpskProfileBriefInfo struct {
 	// PPSK Profile ID
 	Id *string `json:"id,omitempty"`
 	// PPSK Profile Name, should contain 1 to 64 characters.
-	ProfileName string `json:"profileName" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	ProfileName string `json:"profileName"`
 	// SSIDs Bound With PPSK Profile
 	Ssid []string `json:"ssid,omitempty"`
 }

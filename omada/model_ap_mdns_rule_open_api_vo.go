@@ -22,7 +22,7 @@ var _ MappedNullable = &ApMdnsRuleOpenApiVO{}
 // ApMdnsRuleOpenApiVO MDNS rule AP config, valid when parameter [type] is 0
 type ApMdnsRuleOpenApiVO struct {
 	// Client Network VLAN. ClientVlan should be within the range of 1 to 4094. Enter one or multiple VLANs. For example: 1,2-100
-	ClientVlan string `json:"clientVlan" validate:"regexp=^[\\\\d|\\\\d-\\\\d]+(,[\\\\d|\\\\d-\\\\d]+)*$"`
+	ClientVlan string `json:"clientVlan"`
 	// Services Network VLAN. ServiceVlan should be within the range of 1 to 4094. Enter only one VLAN
 	ServiceVlan string `json:"serviceVlan"`
 }

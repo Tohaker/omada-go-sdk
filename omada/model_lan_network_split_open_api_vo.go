@@ -24,7 +24,7 @@ type LanNetworkSplitOpenApiVO struct {
 	// LAN network ID
 	Id *string `json:"id,omitempty"`
 	// LAN network name should contain 1 to 128 characters.
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Primary
 	Primary *bool `json:"primary,omitempty"`
 	// Vlan should be within the range of 1-4090.

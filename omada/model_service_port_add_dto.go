@@ -26,7 +26,7 @@ type ServicePortAddDTO struct {
 	// Whether it is batch addition.Default value:false
 	BatchConfig bool `json:"batchConfig"`
 	// Description of service port.Description should be 1-32 characters, including letters, numbers, and symbols (-@_:/.).
-	Description *string `json:"description,omitempty" validate:"regexp=^[a-z0-9A-Z-@_:\\/.]{0,32}$"`
+	Description *string `json:"description,omitempty"`
 	// EtherType should be a value as follows:NONE,IPV4OE,IPV6OE,PPPOE
 	EtherType *string `json:"etherType,omitempty"`
 	// GemPortId should be within the range of 1 to 1023

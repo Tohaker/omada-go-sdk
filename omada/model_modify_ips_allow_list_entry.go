@@ -26,11 +26,11 @@ type ModifyIPSAllowListEntry struct {
 	// Allow list entry ID.
 	Id string `json:"id"`
 	// The value of the trafficType is 0, indicating IP address.
-	IpAddress *string `json:"ipAddress,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	IpAddress *string `json:"ipAddress,omitempty"`
 	// The value of the trafficType is 1, indicating LAN network ID.
 	Network *string `json:"network,omitempty"`
 	// The value of the trafficType is 2, indicating subnet.
-	Subnet *string `json:"subnet,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\/(\\\\d|((1|2)\\\\d)|(30|31|32))\\\\b"`
+	Subnet *string `json:"subnet,omitempty"`
 	// Exempt the category of objects (targets) that can trigger the threat, trafficType should be a value as follows: 0: IP Address, 1: Network, 2: Subnet.
 	TrafficType *int32 `json:"trafficType,omitempty"`
 }

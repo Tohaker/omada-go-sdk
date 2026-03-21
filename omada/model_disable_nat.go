@@ -28,7 +28,7 @@ type DisableNat struct {
 	// A list of Lan of the Disable Nat.
 	LanList []string `json:"lanList"`
 	// Name of the Disable Nat.
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// The Status of the Disable Nat.
 	Status bool `json:"status"`
 }

@@ -37,12 +37,12 @@ type PortalSetting struct {
 	// LandingPage enum: 1: Redirect to the original URL, 2: Redirect to Promotional URL, 3: Redirect to Logout Page. <br/>With The Original URL selected, clients are directed to the URL they request for after they pass Portal authentication. <br/>With The Promotional URL selected, clients are directed to the specified URL here after they pass Portal authentication. <br/>With The Logout Page selected, clients are directed to the Portal Logout Page after they pass Portal authentication. 
 	LandingPage int32 `json:"landingPage"`
 	// If Parameter [landingPage] is 2(Redirect to Promotional URL),this Parameter is requested.
-	LandingUrl *string `json:"landingUrl,omitempty" validate:"regexp=^(([-a-zA-Z0-9@:%._+~#=]{2,256}\\\\.[a-z]{2,63})|((?!255\\\\.255\\\\.255\\\\.255)((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\\\.)){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)))((:([1-9]|[1-9]\\\\d|[1-9]\\\\d{2}|[1-9]\\\\d{3}|[1-5]\\\\d{4}|6[0-4]\\\\d{3}|65[0-4]\\\\d{2}|655[0-2]\\\\d|6553[0-5]))?)(\\/([-a-zA-Z0-9@:%_+.~#?&\\/\\/=]*))?$"`
+	LandingUrl *string `json:"landingUrl,omitempty"`
 	// If Parameter [landingPage] is 2(Redirect to Promotional URL),this Parameter is requested, content is http or https.
-	LandingUrlScheme *string `json:"landingUrlScheme,omitempty" validate:"regexp=http|https"`
+	LandingUrlScheme *string `json:"landingUrlScheme,omitempty"`
 	Ldap *LdapSetting `json:"ldap,omitempty"`
 	// Portal Name, should contain 1 to 128 characters
-	Name string `json:"name" validate:"regexp=^[^ ]$|^[^ ].{0,126}[^ ]$"`
+	Name string `json:"name"`
 	// Lan network ID list bound with this Portal. LAN Network can be created using 'Create LAN network' ('Create LAN network template') interface, and LAN Network ID can be obtained from 'Get LAN network list' ('Get LAN network template list') interface
 	NetworkList []string `json:"networkList,omitempty"`
 	NoAuth *NoAuthSetting `json:"noAuth,omitempty"`

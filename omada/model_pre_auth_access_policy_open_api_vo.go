@@ -24,13 +24,13 @@ type PreAuthAccessPolicyOpenApiVO struct {
 	// Entry ID of the policy. Except for newly added policies, this parameter should be retained
 	IdInt *int32 `json:"idInt,omitempty"`
 	// IP Address of Pre-Authentication Access
-	Ip *string `json:"ip,omitempty" validate:"regexp=\\\\b((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\.((?!\\\\d\\\\d\\\\d)\\\\d+|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])\\\\b"`
+	Ip *string `json:"ip,omitempty"`
 	// Subnet mask of Pre-Authentication Access. It should be within the range of 1-32
 	SubnetMask *int32 `json:"subnetMask,omitempty"`
 	// Type of the policy. It should be a value as follows: 1: Destination IP Range, and parameter [ip] and [subnetMask] is needed. 2: URL, and parameter [url] is needed
 	Type int32 `json:"type"`
 	// URL of Pre-Authentication Access
-	Url *string `json:"url,omitempty" validate:"regexp=((\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])(\\\\.(\\\\d{1,2}|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])){3}(:([0-9]|[1-9]\\\\d{1,3}|[1-5]\\\\d{4}|6[0-4]\\\\d{4}|65[0-4]\\\\d{2}|655[0-2]\\\\d|6553[0-5]))?|([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,18}(:([0-9]|[1-9]\\\\d{1,3}|[1-5]\\\\d{4}|6[0-4]\\\\d{4}|65[0-4]\\\\d{2}|655[0-2]\\\\d|6553[0-5]))?)"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _PreAuthAccessPolicyOpenApiVO PreAuthAccessPolicyOpenApiVO

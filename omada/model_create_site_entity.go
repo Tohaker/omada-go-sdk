@@ -29,7 +29,7 @@ type CreateSiteEntity struct {
 	// Longitude of the site should be within the range of -180 - 180.
 	Longitude *float64 `json:"longitude,omitempty"`
 	// Name of the site should contain 1 to 64 characters.
-	Name string `json:"name" validate:"regexp=^[^ \\\\+\\\\-\\\\@\\\\=]$|^[^ \\\\+\\\\-\\\\@\\\\=].{0,62}[^ ]$"`
+	Name string `json:"name"`
 	// Country/Region of the site; For the values of region, refer to the abbreviation of the ISO country code; For example, you need to input \"United States\" for the United States of America.
 	Region string `json:"region"`
 	// For the values of the scenario of the site, refer to result of the interface for Get scenario list.

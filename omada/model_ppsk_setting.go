@@ -22,11 +22,11 @@ var _ MappedNullable = &PpskSetting{}
 // PpskSetting PPSK Profile's PPSK Setting.
 type PpskSetting struct {
 	// Mac Bound With PSK.The MAC format requires the use of numbers and uppercase letters and connectors, such as AA-BB-CC-00-11-22.
-	Mac *string `json:"mac,omitempty" validate:"regexp=^([0-9A-F][02468ACE](:[0-9A-F]{2}){5})|([0-9a-f][02468ace](:[0-9a-f]{2}){5})|([0-9A-F][02468ACE](-[0-9A-F]{2}){5})|([0-9a-f][02468ace](-[0-9a-f]{2}){5})|([0-9A-F][02468ACE]([0-9A-F]{2}){5})|([0-9a-f][02468ace]([0-9a-f]{2}){5})$"`
+	Mac *string `json:"mac,omitempty"`
 	// PPSK Name, should contain 1 to 64 characters.
-	Name string "json:\"name\" validate:\"regexp=^[a-zA-z0-9'!\\\"#$%&()*,.\\/:;?^_`\\\\[\\\\]{|}~<>\\\\ ][\\\\041-\\\\0176]{0,63}$\""
+	Name string `json:"name"`
 	// Password, should contain 8 to 63 visible ASCII characters.
-	Psk string `json:"psk" validate:"regexp=^([A-Za-z0-9\\\\p{Punct} ]{8,63}|[0-9a-fA-F]{8,63})$"`
+	Psk string `json:"psk"`
 	// Vlan Bound With PSK, should be within the range of 1-4094.
 	Vlan *int32 `json:"vlan,omitempty"`
 }
