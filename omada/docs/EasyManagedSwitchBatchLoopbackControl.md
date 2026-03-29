@@ -1,0 +1,129 @@
+# EasyManagedSwitchBatchLoopbackControl
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**LoopbackDetectEnable** | Pointer to **bool** | LoopbackDetectEnable | [optional] 
+**Priority** | Pointer to **int32** | priority | [optional] 
+**Stp** | Pointer to **int32** | STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP  | [optional] 
+**SwitchMacList** | **[]string** | Parameter [switchMacList] should contain at least one switch MAC | 
+
+## Methods
+
+### NewEasyManagedSwitchBatchLoopbackControl
+
+`func NewEasyManagedSwitchBatchLoopbackControl(switchMacList []string, ) *EasyManagedSwitchBatchLoopbackControl`
+
+NewEasyManagedSwitchBatchLoopbackControl instantiates a new EasyManagedSwitchBatchLoopbackControl object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewEasyManagedSwitchBatchLoopbackControlWithDefaults
+
+`func NewEasyManagedSwitchBatchLoopbackControlWithDefaults() *EasyManagedSwitchBatchLoopbackControl`
+
+NewEasyManagedSwitchBatchLoopbackControlWithDefaults instantiates a new EasyManagedSwitchBatchLoopbackControl object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetLoopbackDetectEnable
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) GetLoopbackDetectEnable() bool`
+
+GetLoopbackDetectEnable returns the LoopbackDetectEnable field if non-nil, zero value otherwise.
+
+### GetLoopbackDetectEnableOk
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) GetLoopbackDetectEnableOk() (*bool, bool)`
+
+GetLoopbackDetectEnableOk returns a tuple with the LoopbackDetectEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoopbackDetectEnable
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) SetLoopbackDetectEnable(v bool)`
+
+SetLoopbackDetectEnable sets LoopbackDetectEnable field to given value.
+
+### HasLoopbackDetectEnable
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) HasLoopbackDetectEnable() bool`
+
+HasLoopbackDetectEnable returns a boolean if a field has been set.
+
+### GetPriority
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) GetPriority() int32`
+
+GetPriority returns the Priority field if non-nil, zero value otherwise.
+
+### GetPriorityOk
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) GetPriorityOk() (*int32, bool)`
+
+GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriority
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) SetPriority(v int32)`
+
+SetPriority sets Priority field to given value.
+
+### HasPriority
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) HasPriority() bool`
+
+HasPriority returns a boolean if a field has been set.
+
+### GetStp
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) GetStp() int32`
+
+GetStp returns the Stp field if non-nil, zero value otherwise.
+
+### GetStpOk
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) GetStpOk() (*int32, bool)`
+
+GetStpOk returns a tuple with the Stp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStp
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) SetStp(v int32)`
+
+SetStp sets Stp field to given value.
+
+### HasStp
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) HasStp() bool`
+
+HasStp returns a boolean if a field has been set.
+
+### GetSwitchMacList
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) GetSwitchMacList() []string`
+
+GetSwitchMacList returns the SwitchMacList field if non-nil, zero value otherwise.
+
+### GetSwitchMacListOk
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) GetSwitchMacListOk() (*[]string, bool)`
+
+GetSwitchMacListOk returns a tuple with the SwitchMacList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwitchMacList
+
+`func (o *EasyManagedSwitchBatchLoopbackControl) SetSwitchMacList(v []string)`
+
+SetSwitchMacList sets SwitchMacList field to given value.
+
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

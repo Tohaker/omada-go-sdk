@@ -1,0 +1,13 @@
+# openapi-generator-ignore
+# Prevent openapi-generator from overwriting specific files in the omada/ output directory.
+
+# Go module files (managed at repo root, not here)
+go.mod
+go.sum
+
+# Git push script (not needed)
+git_push.sh
+
+# Travis CI config (not needed)
+.travis.yml
+
