@@ -1,12 +1,12 @@
-# \AttackDefenseTemplateAPI
+# AttackDefenseTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAttackDefenseSettingTemplate**](AttackDefenseTemplateAPI.md#GetAttackDefenseSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/attack-defense | Get attack and defense template setting
-[**ModifyAttackDefenseSettingTemplate**](AttackDefenseTemplateAPI.md#ModifyAttackDefenseSettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/attack-defense | Modify attack and defense template setting
-[**ResetAttackDefenseSettingTemplate**](AttackDefenseTemplateAPI.md#ResetAttackDefenseSettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/attack-defense/reset | Reset attack and defense template setting
+[**GetAttackDefenseSettingTemplate**](AttackDefenseTemplateAPI.md#getattackdefensesettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/attack-defense | Get attack and defense template setting
+[**ModifyAttackDefenseSettingTemplate**](AttackDefenseTemplateAPI.md#modifyattackdefensesettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/attack-defense | Modify attack and defense template setting
+[**ResetAttackDefenseSettingTemplate**](AttackDefenseTemplateAPI.md#resetattackdefensesettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/attack-defense/reset | Reset attack and defense template setting
 
 
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

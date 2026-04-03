@@ -1,16 +1,16 @@
-# \MspLicenseAPI
+# MspLicenseAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AssignAvailableLicenseForMsp**](MspLicenseAPI.md#AssignAvailableLicenseForMsp) | **Get** /openapi/v1/msp/{mspId}/license/assign | Get available assign license info
-[**AssignmentLicenseForMsp**](MspLicenseAPI.md#AssignmentLicenseForMsp) | **Post** /openapi/v1/msp/{mspId}/license/assign | Assign license to a customer
-[**GetAutoActive1**](MspLicenseAPI.md#GetAutoActive1) | **Get** /openapi/v1/msp/{mspId}/license/recycle | Get available recycle license info
-[**GetAutoActive2**](MspLicenseAPI.md#GetAutoActive2) | **Get** /openapi/v1/msp/{mspId}/license/auto-active | Get license auto active
-[**GetUsedLicenseForMsp**](MspLicenseAPI.md#GetUsedLicenseForMsp) | **Get** /openapi/v1/msp/{mspId}/license/used | Get used license info list for assign or recycle license
-[**ModifyAutoActive1**](MspLicenseAPI.md#ModifyAutoActive1) | **Post** /openapi/v1/msp/{mspId}/license/auto-active | Modify license auto active
-[**RecycleLicenseForMsp**](MspLicenseAPI.md#RecycleLicenseForMsp) | **Post** /openapi/v1/msp/{mspId}/license/recycle | Recycle license from a customer
+[**AssignAvailableLicenseForMsp**](MspLicenseAPI.md#assignavailablelicenseformsp) | **Get** /openapi/v1/msp/{mspId}/license/assign | Get available assign license info
+[**AssignmentLicenseForMsp**](MspLicenseAPI.md#assignmentlicenseformsp) | **Post** /openapi/v1/msp/{mspId}/license/assign | Assign license to a customer
+[**GetAutoActive1**](MspLicenseAPI.md#getautoactive1) | **Get** /openapi/v1/msp/{mspId}/license/recycle | Get available recycle license info
+[**GetAutoActive2**](MspLicenseAPI.md#getautoactive2) | **Get** /openapi/v1/msp/{mspId}/license/auto-active | Get license auto active
+[**GetUsedLicenseForMsp**](MspLicenseAPI.md#getusedlicenseformsp) | **Get** /openapi/v1/msp/{mspId}/license/used | Get used license info list for assign or recycle license
+[**ModifyAutoActive1**](MspLicenseAPI.md#modifyautoactive1) | **Post** /openapi/v1/msp/{mspId}/license/auto-active | Modify license auto active
+[**RecycleLicenseForMsp**](MspLicenseAPI.md#recyclelicenseformsp) | **Post** /openapi/v1/msp/{mspId}/license/recycle | Recycle license from a customer
 
 
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

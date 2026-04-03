@@ -39,7 +39,7 @@ type ClientDetail struct {
 	Capabilities []string `json:"capabilities,omitempty"`
 	// (Wireless)  Actual channel.
 	Channel *int32 `json:"channel,omitempty"`
-	ClientLockToApSetting *ClientLockToApSetting `json:"clientLockToApSetting,omitempty"`
+	ClientLockToApSetting *ClientLockToApDetailSetting `json:"clientLockToApSetting,omitempty"`
 	// connect device type should be a value as follows: ap, switch, gateway.
 	ConnectDevType *string `json:"connectDevType,omitempty"`
 	// Connect type should be a value as follows: 0: wireless guest; 1: wireless user; 2: wired user.
@@ -483,9 +483,9 @@ func (o *ClientDetail) SetChannel(v int32) {
 }
 
 // GetClientLockToApSetting returns the ClientLockToApSetting field value if set, zero value otherwise.
-func (o *ClientDetail) GetClientLockToApSetting() ClientLockToApSetting {
+func (o *ClientDetail) GetClientLockToApSetting() ClientLockToApDetailSetting {
 	if o == nil || IsNil(o.ClientLockToApSetting) {
-		var ret ClientLockToApSetting
+		var ret ClientLockToApDetailSetting
 		return ret
 	}
 	return *o.ClientLockToApSetting
@@ -493,7 +493,7 @@ func (o *ClientDetail) GetClientLockToApSetting() ClientLockToApSetting {
 
 // GetClientLockToApSettingOk returns a tuple with the ClientLockToApSetting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientDetail) GetClientLockToApSettingOk() (*ClientLockToApSetting, bool) {
+func (o *ClientDetail) GetClientLockToApSettingOk() (*ClientLockToApDetailSetting, bool) {
 	if o == nil || IsNil(o.ClientLockToApSetting) {
 		return nil, false
 	}
@@ -509,8 +509,8 @@ func (o *ClientDetail) HasClientLockToApSetting() bool {
 	return false
 }
 
-// SetClientLockToApSetting gets a reference to the given ClientLockToApSetting and assigns it to the ClientLockToApSetting field.
-func (o *ClientDetail) SetClientLockToApSetting(v ClientLockToApSetting) {
+// SetClientLockToApSetting gets a reference to the given ClientLockToApDetailSetting and assigns it to the ClientLockToApSetting field.
+func (o *ClientDetail) SetClientLockToApSetting(v ClientLockToApDetailSetting) {
 	o.ClientLockToApSetting = &v
 }
 

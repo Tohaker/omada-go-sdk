@@ -1,11 +1,11 @@
-# \DeviceManagementSettingAPI
+# DeviceManagementSettingAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDeviceAccessMgmtSetting**](DeviceManagementSettingAPI.md#GetDeviceAccessMgmtSetting) | **Get** /openapi/v1/{omadacId}/device-mgmt | Get device access management setting
-[**ModifyDeviceAccessMgmtSetting**](DeviceManagementSettingAPI.md#ModifyDeviceAccessMgmtSetting) | **Patch** /openapi/v1/{omadacId}/device-mgmt | Modify device access management setting
+[**GetDeviceAccessMgmtSetting**](DeviceManagementSettingAPI.md#getdeviceaccessmgmtsetting) | **Get** /openapi/v1/{omadacId}/device-mgmt | Get device access management setting
+[**ModifyDeviceAccessMgmtSetting**](DeviceManagementSettingAPI.md#modifydeviceaccessmgmtsetting) | **Patch** /openapi/v1/{omadacId}/device-mgmt | Modify device access management setting
 
 
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

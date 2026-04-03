@@ -1,20 +1,20 @@
-# \IDSIPSAPI
+# IDSIPSAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAllowList**](IDSIPSAPI.md#CreateAllowList) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/allow-list | Create new allow list
-[**DeleteAllowList**](IDSIPSAPI.md#DeleteAllowList) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/allow-list/{entryId} | Delete allow list
-[**DeleteBlockList**](IDSIPSAPI.md#DeleteBlockList) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/block-list/{entryId} | Delete block list
-[**DeleteSignature**](IDSIPSAPI.md#DeleteSignature) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/signature/{signId} | Delete signature
-[**EditAllowList**](IDSIPSAPI.md#EditAllowList) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/allow-list | Edit allow list
-[**GetGridAllowList**](IDSIPSAPI.md#GetGridAllowList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/grid/allow-list | Get grid ips allow list
-[**GetGridBlockList**](IDSIPSAPI.md#GetGridBlockList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/grid/block-list | Get grid IPS block list
-[**GetGridSignature**](IDSIPSAPI.md#GetGridSignature) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/signature | Get signature list
-[**GetIpsConfig**](IDSIPSAPI.md#GetIpsConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips | Get site IDS/IPS config
-[**ModifyIpsConfig**](IDSIPSAPI.md#ModifyIpsConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips | Modify site IDS/IPS config
-[**ModifySignature**](IDSIPSAPI.md#ModifySignature) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/signature/{signId} | Modify signature
+[**CreateAllowList**](IDSIPSAPI.md#createallowlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/allow-list | Create new allow list
+[**DeleteAllowList**](IDSIPSAPI.md#deleteallowlist) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/allow-list/{entryId} | Delete allow list
+[**DeleteBlockList**](IDSIPSAPI.md#deleteblocklist) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/block-list/{entryId} | Delete block list
+[**DeleteSignature**](IDSIPSAPI.md#deletesignature) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/signature/{signId} | Delete signature
+[**EditAllowList**](IDSIPSAPI.md#editallowlist) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/allow-list | Edit allow list
+[**GetGridAllowList**](IDSIPSAPI.md#getgridallowlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/grid/allow-list | Get grid ips allow list
+[**GetGridBlockList**](IDSIPSAPI.md#getgridblocklist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/grid/block-list | Get grid IPS block list
+[**GetGridSignature**](IDSIPSAPI.md#getgridsignature) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/signature | Get signature list
+[**GetIpsConfig**](IDSIPSAPI.md#getipsconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips | Get site IDS/IPS config
+[**ModifyIpsConfig**](IDSIPSAPI.md#modifyipsconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips | Modify site IDS/IPS config
+[**ModifySignature**](IDSIPSAPI.md#modifysignature) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/network-security/ips/signature/{signId} | Modify signature
 
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -767,7 +767,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -845,7 +845,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

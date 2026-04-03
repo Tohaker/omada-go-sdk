@@ -1,10 +1,10 @@
-# \BatchOpenAPIAPI
+# BatchOpenAPIAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchController**](BatchOpenAPIAPI.md#BatchController) | **Post** /openapi/v1/{omadacId}/batch | Batch Processing OpenAPIs
+[**BatchController**](BatchOpenAPIAPI.md#batchcontroller) | **Post** /openapi/v1/{omadacId}/batch | Batch Processing OpenAPIs
 
 
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

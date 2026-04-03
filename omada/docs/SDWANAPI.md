@@ -1,22 +1,22 @@
-# \SDWANAPI
+# SDWANAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AutoSelectWanPortRecommendResult**](SDWANAPI.md#AutoSelectWanPortRecommendResult) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/recommend/wans | Auto recommend WAN port.
-[**CheckSdWanGroupIpPool**](SDWANAPI.md#CheckSdWanGroupIpPool) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/ipPool/check | Check SD-WAN IP pool conflict.
-[**CheckSelectedLanNetworkConflict**](SDWANAPI.md#CheckSelectedLanNetworkConflict) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/lan/check | Check whether selected lanNetwork conflict.
-[**CreateSdWanGroup**](SDWANAPI.md#CreateSdWanGroup) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group | Create SD-WAN Group.
-[**DeleteSdWanGroup**](SDWANAPI.md#DeleteSdWanGroup) | **Delete** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId} | Delete SD-WAN Group.
-[**FirstCheckConnection**](SDWANAPI.md#FirstCheckConnection) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId}/firstCheck | First check SD-WAN group connection.
-[**GetCurrentSdWanGroup**](SDWANAPI.md#GetCurrentSdWanGroup) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId} | Get SD-WAN Group.
-[**GetGridSdWanGroup**](SDWANAPI.md#GetGridSdWanGroup) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group | Get SD-WAN Group Grid.
-[**GetGridSdWanGroupBrief**](SDWANAPI.md#GetGridSdWanGroupBrief) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/brief | Get brief SD-WAN Group Grid.
-[**GetGridSdWanGroupDevices**](SDWANAPI.md#GetGridSdWanGroupDevices) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/candidate/devices | Get SD-WAN candidate devices.
-[**GetSdWanGroupDevices**](SDWANAPI.md#GetSdWanGroupDevices) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/saved/devices/{groupId} | Get current SD-WAN devices.
-[**ModifyLanIpRange**](SDWANAPI.md#ModifyLanIpRange) | **Put** /openapi/v1/{omadacId}/sdwan/sdwan-group/lan/modify | Modify selected LanNetwork IP.
-[**ModifySdWanGroup**](SDWANAPI.md#ModifySdWanGroup) | **Put** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId} | Modify SD-WAN Group.
+[**AutoSelectWanPortRecommendResult**](SDWANAPI.md#autoselectwanportrecommendresult) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/recommend/wans | Auto recommend WAN port.
+[**CheckSdWanGroupIpPool**](SDWANAPI.md#checksdwangroupippool) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/ipPool/check | Check SD-WAN IP pool conflict.
+[**CheckSelectedLanNetworkConflict**](SDWANAPI.md#checkselectedlannetworkconflict) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/lan/check | Check whether selected lanNetwork conflict.
+[**CreateSdWanGroup**](SDWANAPI.md#createsdwangroup) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group | Create SD-WAN Group.
+[**DeleteSdWanGroup**](SDWANAPI.md#deletesdwangroup) | **Delete** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId} | Delete SD-WAN Group.
+[**FirstCheckConnection**](SDWANAPI.md#firstcheckconnection) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId}/firstCheck | First check SD-WAN group connection.
+[**GetCurrentSdWanGroup**](SDWANAPI.md#getcurrentsdwangroup) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId} | Get SD-WAN Group.
+[**GetGridSdWanGroup**](SDWANAPI.md#getgridsdwangroup) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group | Get SD-WAN Group Grid.
+[**GetGridSdWanGroupBrief**](SDWANAPI.md#getgridsdwangroupbrief) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/brief | Get brief SD-WAN Group Grid.
+[**GetGridSdWanGroupDevices**](SDWANAPI.md#getgridsdwangroupdevices) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/candidate/devices | Get SD-WAN candidate devices.
+[**GetSdWanGroupDevices**](SDWANAPI.md#getsdwangroupdevices) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/saved/devices/{groupId} | Get current SD-WAN devices.
+[**ModifyLanIpRange**](SDWANAPI.md#modifylaniprange) | **Put** /openapi/v1/{omadacId}/sdwan/sdwan-group/lan/modify | Modify selected LanNetwork IP.
+[**ModifySdWanGroup**](SDWANAPI.md#modifysdwangroup) | **Put** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId} | Modify SD-WAN Group.
 
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -808,7 +808,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -880,7 +880,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -955,7 +955,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

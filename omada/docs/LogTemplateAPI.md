@@ -1,14 +1,14 @@
-# \LogTemplateAPI
+# LogTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAuditLogSettingForMsp**](LogTemplateAPI.md#GetAuditLogSettingForMsp) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/audit-notification | Get site template audit log notification
-[**GetLogSettingForSiteTemplate**](LogTemplateAPI.md#GetLogSettingForSiteTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/log-notification | Get site template log notification
-[**ModifyAuditLogSettingSite**](LogTemplateAPI.md#ModifyAuditLogSettingSite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/audit-notification | Modify site template audit log notification
-[**ModifyLogSettingSiteTemplate**](LogTemplateAPI.md#ModifyLogSettingSiteTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/log-notification | Modify site template log notification
-[**ResetLogSettingSiteTemplate**](LogTemplateAPI.md#ResetLogSettingSiteTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/reset/log-notification | Reset site template log notification
+[**GetAuditLogSettingForMsp**](LogTemplateAPI.md#getauditlogsettingformsp) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/audit-notification | Get site template audit log notification
+[**GetLogSettingForSiteTemplate**](LogTemplateAPI.md#getlogsettingforsitetemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/log-notification | Get site template log notification
+[**ModifyAuditLogSettingSite**](LogTemplateAPI.md#modifyauditlogsettingsite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/audit-notification | Modify site template audit log notification
+[**ModifyLogSettingSiteTemplate**](LogTemplateAPI.md#modifylogsettingsitetemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/log-notification | Modify site template log notification
+[**ResetLogSettingSiteTemplate**](LogTemplateAPI.md#resetlogsettingsitetemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/site/reset/log-notification | Reset site template log notification
 
 
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,11 +1,11 @@
-# \MSPHistoryDataRetentionAPI
+# MSPHistoryDataRetentionAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMspDataRetention**](MSPHistoryDataRetentionAPI.md#GetMspDataRetention) | **Get** /openapi/v1/msp/{mspId}/retention | Get MSP history data retention configuration
-[**ModifyMspRetention**](MSPHistoryDataRetentionAPI.md#ModifyMspRetention) | **Patch** /openapi/v1/msp/{mspId}/retention | Modify MSP history data retention configuration
+[**GetMspDataRetention**](MSPHistoryDataRetentionAPI.md#getmspdataretention) | **Get** /openapi/v1/msp/{mspId}/retention | Get MSP history data retention configuration
+[**ModifyMspRetention**](MSPHistoryDataRetentionAPI.md#modifymspretention) | **Patch** /openapi/v1/msp/{mspId}/retention | Modify MSP history data retention configuration
 
 
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

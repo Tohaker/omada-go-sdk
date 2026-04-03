@@ -1,19 +1,19 @@
-# \OLTServicePortProfileAPI
+# OLTServicePortProfileAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddServicePortProfile**](OLTServicePortProfileAPI.md#AddServicePortProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/add | Create new service port profile
-[**AddServicePortProfileDetail**](OLTServicePortProfileAPI.md#AddServicePortProfileDetail) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/add | Create new service port profile detail
-[**DeleteServicePortProfile**](OLTServicePortProfileAPI.md#DeleteServicePortProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/delete | Delete an existing service port profile
-[**DeleteServicePortProfileDetail**](OLTServicePortProfileAPI.md#DeleteServicePortProfileDetail) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/delete | Delete an existing service port profile detail
-[**EditServicePortProfile**](OLTServicePortProfileAPI.md#EditServicePortProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/edit | Modify an existing service port profile
-[**EditServicePortProfileDetail**](OLTServicePortProfileAPI.md#EditServicePortProfileDetail) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/edit | Modify an existing service port profile detail
-[**GetServicePortProfileList**](OLTServicePortProfileAPI.md#GetServicePortProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/list | Get service port profile list
-[**GetServicePortProfileListDetail**](OLTServicePortProfileAPI.md#GetServicePortProfileListDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/list | Get service port profile list detail
-[**GetServicePortProfilePage**](OLTServicePortProfileAPI.md#GetServicePortProfilePage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/page | Get service port profile page
-[**GetServicePortProfilePageDetail**](OLTServicePortProfileAPI.md#GetServicePortProfilePageDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/page | Get service port profile page detail
+[**AddServicePortProfile**](OLTServicePortProfileAPI.md#addserviceportprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/add | Create new service port profile
+[**AddServicePortProfileDetail**](OLTServicePortProfileAPI.md#addserviceportprofiledetail) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/add | Create new service port profile detail
+[**DeleteServicePortProfile**](OLTServicePortProfileAPI.md#deleteserviceportprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/delete | Delete an existing service port profile
+[**DeleteServicePortProfileDetail**](OLTServicePortProfileAPI.md#deleteserviceportprofiledetail) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/delete | Delete an existing service port profile detail
+[**EditServicePortProfile**](OLTServicePortProfileAPI.md#editserviceportprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/edit | Modify an existing service port profile
+[**EditServicePortProfileDetail**](OLTServicePortProfileAPI.md#editserviceportprofiledetail) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/edit | Modify an existing service port profile detail
+[**GetServicePortProfileList**](OLTServicePortProfileAPI.md#getserviceportprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/list | Get service port profile list
+[**GetServicePortProfileListDetail**](OLTServicePortProfileAPI.md#getserviceportprofilelistdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/list | Get service port profile list detail
+[**GetServicePortProfilePage**](OLTServicePortProfileAPI.md#getserviceportprofilepage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/page | Get service port profile page
+[**GetServicePortProfilePageDetail**](OLTServicePortProfileAPI.md#getserviceportprofilepagedetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service-port/profiles/detail/page | Get service port profile page detail
 
 
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -783,7 +783,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

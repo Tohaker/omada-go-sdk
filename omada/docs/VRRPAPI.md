@@ -1,13 +1,13 @@
-# \VRRPAPI
+# VRRPAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateOswVrrp**](VRRPAPI.md#CreateOswVrrp) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/osw-vrrp | Create Switch Vrrp
-[**DeleteOswVrrp**](VRRPAPI.md#DeleteOswVrrp) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/osw-vrrp/{oswVrrpId} | Delete Switch Vrrp
-[**GetGridOswVrrp**](VRRPAPI.md#GetGridOswVrrp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/osw-vrrp | Get Switch Vrrp list
-[**ModifyOswVrrp**](VRRPAPI.md#ModifyOswVrrp) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/osw-vrrp/{oswVrrpId} | Modify Switch Vrrp
+[**CreateOswVrrp**](VRRPAPI.md#createoswvrrp) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/osw-vrrp | Create Switch Vrrp
+[**DeleteOswVrrp**](VRRPAPI.md#deleteoswvrrp) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/osw-vrrp/{oswVrrpId} | Delete Switch Vrrp
+[**GetGridOswVrrp**](VRRPAPI.md#getgridoswvrrp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/osw-vrrp | Get Switch Vrrp list
+[**ModifyOswVrrp**](VRRPAPI.md#modifyoswvrrp) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/osw-vrrp/{oswVrrpId} | Modify Switch Vrrp
 
 
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

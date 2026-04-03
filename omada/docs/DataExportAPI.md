@@ -1,10 +1,10 @@
-# \DataExportAPI
+# DataExportAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExportSiteRogueApZipFile**](DataExportAPI.md#ExportSiteRogueApZipFile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rogue-ap/export/{format} | Export site Rogue AP scan results
+[**ExportSiteRogueApZipFile**](DataExportAPI.md#exportsiterogueapzipfile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rogue-ap/export/{format} | Export site Rogue AP scan results
 
 
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

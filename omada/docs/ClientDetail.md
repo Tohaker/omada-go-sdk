@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Blocked** | Pointer to **bool** | Whether the client is blocked. | [optional] 
 **Capabilities** | Pointer to **[]string** | One or more of the following values: Station、DOCSIS cable device、Telephone、Router、WLAN access point、Bridge、Repeater、other. | [optional] 
 **Channel** | Pointer to **int32** | (Wireless)  Actual channel. | [optional] 
-**ClientLockToApSetting** | Pointer to [**ClientLockToApSetting**](ClientLockToApSetting.md) |  | [optional] 
+**ClientLockToApSetting** | Pointer to [**ClientLockToApDetailSetting**](ClientLockToApDetailSetting.md) |  | [optional] 
 **ConnectDevType** | Pointer to **string** | connect device type should be a value as follows: ap, switch, gateway. | [optional] 
 **ConnectType** | Pointer to **int32** | Connect type should be a value as follows: 0: wireless guest; 1: wireless user; 2: wired user. | [optional] 
 **ConnectedToWirelessRouter** | Pointer to **bool** | true: Client is connecting to a wireless router. | [optional] 
@@ -340,20 +340,20 @@ HasChannel returns a boolean if a field has been set.
 
 ### GetClientLockToApSetting
 
-`func (o *ClientDetail) GetClientLockToApSetting() ClientLockToApSetting`
+`func (o *ClientDetail) GetClientLockToApSetting() ClientLockToApDetailSetting`
 
 GetClientLockToApSetting returns the ClientLockToApSetting field if non-nil, zero value otherwise.
 
 ### GetClientLockToApSettingOk
 
-`func (o *ClientDetail) GetClientLockToApSettingOk() (*ClientLockToApSetting, bool)`
+`func (o *ClientDetail) GetClientLockToApSettingOk() (*ClientLockToApDetailSetting, bool)`
 
 GetClientLockToApSettingOk returns a tuple with the ClientLockToApSetting field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientLockToApSetting
 
-`func (o *ClientDetail) SetClientLockToApSetting(v ClientLockToApSetting)`
+`func (o *ClientDetail) SetClientLockToApSetting(v ClientLockToApDetailSetting)`
 
 SetClientLockToApSetting sets ClientLockToApSetting field to given value.
 

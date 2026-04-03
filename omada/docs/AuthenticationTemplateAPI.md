@@ -1,20 +1,20 @@
-# \AuthenticationTemplateAPI
+# AuthenticationTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePortalTemplate**](AuthenticationTemplateAPI.md#CreatePortalTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal | Create portal template
-[**DeletePortalTemplate**](AuthenticationTemplateAPI.md#DeletePortalTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/{portalId} | Delete portal template
-[**GetMacAuthSetting**](AuthenticationTemplateAPI.md#GetMacAuthSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-auth | Get site MAC-Based Authentication Template info
-[**GetMacAuthSsids**](AuthenticationTemplateAPI.md#GetMacAuthSsids) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-auth/ssids | Get ssids that support MAC auth Template
-[**GetPortalListTemplate**](AuthenticationTemplateAPI.md#GetPortalListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portals | Get portal list in a site template 
-[**GetPortalTemplateCustomization**](AuthenticationTemplateAPI.md#GetPortalTemplateCustomization) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/{portalId}/customization | Get portal template customization
-[**GetPortalTemplateDetail**](AuthenticationTemplateAPI.md#GetPortalTemplateDetail) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/{portalId} | Get portal template detail
-[**ModifyPortalTemplate**](AuthenticationTemplateAPI.md#ModifyPortalTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/{portalId} | Modify portal template
-[**UpdateMacAuthSetting**](AuthenticationTemplateAPI.md#UpdateMacAuthSetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-auth | Update site MAC-Based Authentication Template info
-[**UploadPortalPageTemplate**](AuthenticationTemplateAPI.md#UploadPortalPageTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/page | Import portal page in a site template
-[**UploadPortalPicTemplate**](AuthenticationTemplateAPI.md#UploadPortalPicTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/pics | Upload portal picture in a site template 
+[**CreatePortalTemplate**](AuthenticationTemplateAPI.md#createportaltemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal | Create portal template
+[**DeletePortalTemplate**](AuthenticationTemplateAPI.md#deleteportaltemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/{portalId} | Delete portal template
+[**GetMacAuthSetting**](AuthenticationTemplateAPI.md#getmacauthsetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-auth | Get site MAC-Based Authentication Template info
+[**GetMacAuthSsids**](AuthenticationTemplateAPI.md#getmacauthssids) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-auth/ssids | Get ssids that support MAC auth Template
+[**GetPortalListTemplate**](AuthenticationTemplateAPI.md#getportallisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portals | Get portal list in a site template 
+[**GetPortalTemplateCustomization**](AuthenticationTemplateAPI.md#getportaltemplatecustomization) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/{portalId}/customization | Get portal template customization
+[**GetPortalTemplateDetail**](AuthenticationTemplateAPI.md#getportaltemplatedetail) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/{portalId} | Get portal template detail
+[**ModifyPortalTemplate**](AuthenticationTemplateAPI.md#modifyportaltemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/{portalId} | Modify portal template
+[**UpdateMacAuthSetting**](AuthenticationTemplateAPI.md#updatemacauthsetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-auth | Update site MAC-Based Authentication Template info
+[**UploadPortalPageTemplate**](AuthenticationTemplateAPI.md#uploadportalpagetemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/page | Import portal page in a site template
+[**UploadPortalPicTemplate**](AuthenticationTemplateAPI.md#uploadportalpictemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/portal/pics | Upload portal picture in a site template 
 
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -681,7 +681,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -833,7 +833,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

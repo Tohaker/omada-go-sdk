@@ -1,15 +1,15 @@
-# \OLTPonPortAPI
+# OLTPonPortAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EditPonPort**](OLTPonPortAPI.md#EditPonPort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/edit | Batch modify pon port
-[**GetPonPortInformationList**](OLTPonPortAPI.md#GetPonPortInformationList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/informations/list | Get pon port information list
-[**GetPonPortInformationPage**](OLTPonPortAPI.md#GetPonPortInformationPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/informations/page | Get pon port information page
-[**GetPonPortList**](OLTPonPortAPI.md#GetPonPortList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/configs/list | Get pon port list
-[**GetPonPortListMsp**](OLTPonPortAPI.md#GetPonPortListMsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/configs/list | Get pon port list(msp mode)
-[**GetPonPortPage**](OLTPonPortAPI.md#GetPonPortPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/configs/page | Get pon port page
+[**EditPonPort**](OLTPonPortAPI.md#editponport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/edit | Batch modify pon port
+[**GetPonPortInformationList**](OLTPonPortAPI.md#getponportinformationlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/informations/list | Get pon port information list
+[**GetPonPortInformationPage**](OLTPonPortAPI.md#getponportinformationpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/informations/page | Get pon port information page
+[**GetPonPortList**](OLTPonPortAPI.md#getponportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/configs/list | Get pon port list
+[**GetPonPortListMsp**](OLTPonPortAPI.md#getponportlistmsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/configs/list | Get pon port list(msp mode)
+[**GetPonPortPage**](OLTPonPortAPI.md#getponportpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/pon-port/configs/page | Get pon port page
 
 
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

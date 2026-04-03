@@ -1,34 +1,34 @@
-# \SiteTemplateConfigurationAPI
+# SiteTemplateConfigurationAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetBandSteeringTemplateSetting**](SiteTemplateConfigurationAPI.md#GetBandSteeringTemplateSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/band-steering | Get site template band steering setting
-[**GetBeaconControlTemplateSetting**](SiteTemplateConfigurationAPI.md#GetBeaconControlTemplateSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/beacon-control | Get site template beacon control setting
-[**GetChannelLimitTemplateSetting**](SiteTemplateConfigurationAPI.md#GetChannelLimitTemplateSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/channel-limit | Get site template channel limit setting
-[**GetExistSiteTemplateSettingByOpenApi**](SiteTemplateConfigurationAPI.md#GetExistSiteTemplateSettingByOpenApi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/exist | Query site template setting exist or not
-[**GetLldpTemplateSetting**](SiteTemplateConfigurationAPI.md#GetLldpTemplateSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lldp | Get site template lldp setting
-[**GetMeshTemplateSetting**](SiteTemplateConfigurationAPI.md#GetMeshTemplateSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Get site template mesh setting
-[**GetMulticastRateLimitTemplateByOpenApi**](SiteTemplateConfigurationAPI.md#GetMulticastRateLimitTemplateByOpenApi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multicast-rate-limit | Get site template multicast rate limit setting
-[**GetRemoteLoggingTemplateSetting**](SiteTemplateConfigurationAPI.md#GetRemoteLoggingTemplateSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remote-logging | Get site template remote logging setting
-[**GetRoamingTemplateSetting**](SiteTemplateConfigurationAPI.md#GetRoamingTemplateSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/roaming | Get site template roaming setting
-[**GetSiteTemplateLedSetting**](SiteTemplateConfigurationAPI.md#GetSiteTemplateLedSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/led | Get site template led setting
-[**GetSiteTemplateSettingCap**](SiteTemplateConfigurationAPI.md#GetSiteTemplateSettingCap) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/capacity | Get siteTemplate capabilities.
-[**GetSiteTemplateSpecification**](SiteTemplateConfigurationAPI.md#GetSiteTemplateSpecification) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/specification | Get siteTemplate functional specifications
-[**ModifySiteConfigurationTemplate**](SiteTemplateConfigurationAPI.md#ModifySiteConfigurationTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/configuration | Modify Site template configuration settings
-[**ModifySiteServiceTemplate**](SiteTemplateConfigurationAPI.md#ModifySiteServiceTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/service | Modify Site template service settings
-[**ModifySiteTemplateGeneralConfig**](SiteTemplateConfigurationAPI.md#ModifySiteTemplateGeneralConfig) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/general/config | Modify the general configuration settings of the Site template
-[**ModifySiteTemplateSetting**](SiteTemplateConfigurationAPI.md#ModifySiteTemplateSetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting | Modify Site template settings
-[**UpdateBandSteeringTemplateSetting**](SiteTemplateConfigurationAPI.md#UpdateBandSteeringTemplateSetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/band-steering | Modify site template band steering setting
-[**UpdateBeaconControlTemplateSetting**](SiteTemplateConfigurationAPI.md#UpdateBeaconControlTemplateSetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/beacon-control | Modify site template beacon control setting
-[**UpdateChannelLimitTemplateSetting**](SiteTemplateConfigurationAPI.md#UpdateChannelLimitTemplateSetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/channel-limit | Modify site template channel limit setting
-[**UpdateLldpTemplateSetting**](SiteTemplateConfigurationAPI.md#UpdateLldpTemplateSetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lldp | Modify site template lldp setting
-[**UpdateMcastRateLimitSettingTemplateByOpenApi**](SiteTemplateConfigurationAPI.md#UpdateMcastRateLimitSettingTemplateByOpenApi) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multicast-rate-limit | Modify site template multicast rate limit setting
-[**UpdateMeshTemplateSetting**](SiteTemplateConfigurationAPI.md#UpdateMeshTemplateSetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Modify site template mesh setting
-[**UpdateRemoteLoggingTemplateSetting**](SiteTemplateConfigurationAPI.md#UpdateRemoteLoggingTemplateSetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remote-logging | Modify site template remote logging setting
-[**UpdateRoamingTemplateSetting**](SiteTemplateConfigurationAPI.md#UpdateRoamingTemplateSetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/roaming | Modify site template roaming setting
-[**UpdateSiteTemplateLedSetting**](SiteTemplateConfigurationAPI.md#UpdateSiteTemplateLedSetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/led | Modify site template led setting
+[**GetBandSteeringTemplateSetting**](SiteTemplateConfigurationAPI.md#getbandsteeringtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/band-steering | Get site template band steering setting
+[**GetBeaconControlTemplateSetting**](SiteTemplateConfigurationAPI.md#getbeaconcontroltemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/beacon-control | Get site template beacon control setting
+[**GetChannelLimitTemplateSetting**](SiteTemplateConfigurationAPI.md#getchannellimittemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/channel-limit | Get site template channel limit setting
+[**GetExistSiteTemplateSettingByOpenApi**](SiteTemplateConfigurationAPI.md#getexistsitetemplatesettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/exist | Query site template setting exist or not
+[**GetLldpTemplateSetting**](SiteTemplateConfigurationAPI.md#getlldptemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lldp | Get site template lldp setting
+[**GetMeshTemplateSetting**](SiteTemplateConfigurationAPI.md#getmeshtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Get site template mesh setting
+[**GetMulticastRateLimitTemplateByOpenApi**](SiteTemplateConfigurationAPI.md#getmulticastratelimittemplatebyopenapi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multicast-rate-limit | Get site template multicast rate limit setting
+[**GetRemoteLoggingTemplateSetting**](SiteTemplateConfigurationAPI.md#getremoteloggingtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remote-logging | Get site template remote logging setting
+[**GetRoamingTemplateSetting**](SiteTemplateConfigurationAPI.md#getroamingtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/roaming | Get site template roaming setting
+[**GetSiteTemplateLedSetting**](SiteTemplateConfigurationAPI.md#getsitetemplateledsetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/led | Get site template led setting
+[**GetSiteTemplateSettingCap**](SiteTemplateConfigurationAPI.md#getsitetemplatesettingcap) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/capacity | Get siteTemplate capabilities.
+[**GetSiteTemplateSpecification**](SiteTemplateConfigurationAPI.md#getsitetemplatespecification) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/specification | Get siteTemplate functional specifications
+[**ModifySiteConfigurationTemplate**](SiteTemplateConfigurationAPI.md#modifysiteconfigurationtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/configuration | Modify Site template configuration settings
+[**ModifySiteServiceTemplate**](SiteTemplateConfigurationAPI.md#modifysiteservicetemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/service | Modify Site template service settings
+[**ModifySiteTemplateGeneralConfig**](SiteTemplateConfigurationAPI.md#modifysitetemplategeneralconfig) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/general/config | Modify the general configuration settings of the Site template
+[**ModifySiteTemplateSetting**](SiteTemplateConfigurationAPI.md#modifysitetemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting | Modify Site template settings
+[**UpdateBandSteeringTemplateSetting**](SiteTemplateConfigurationAPI.md#updatebandsteeringtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/band-steering | Modify site template band steering setting
+[**UpdateBeaconControlTemplateSetting**](SiteTemplateConfigurationAPI.md#updatebeaconcontroltemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/beacon-control | Modify site template beacon control setting
+[**UpdateChannelLimitTemplateSetting**](SiteTemplateConfigurationAPI.md#updatechannellimittemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/channel-limit | Modify site template channel limit setting
+[**UpdateLldpTemplateSetting**](SiteTemplateConfigurationAPI.md#updatelldptemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lldp | Modify site template lldp setting
+[**UpdateMcastRateLimitSettingTemplateByOpenApi**](SiteTemplateConfigurationAPI.md#updatemcastratelimitsettingtemplatebyopenapi) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multicast-rate-limit | Modify site template multicast rate limit setting
+[**UpdateMeshTemplateSetting**](SiteTemplateConfigurationAPI.md#updatemeshtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Modify site template mesh setting
+[**UpdateRemoteLoggingTemplateSetting**](SiteTemplateConfigurationAPI.md#updateremoteloggingtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remote-logging | Modify site template remote logging setting
+[**UpdateRoamingTemplateSetting**](SiteTemplateConfigurationAPI.md#updateroamingtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/roaming | Modify site template roaming setting
+[**UpdateSiteTemplateLedSetting**](SiteTemplateConfigurationAPI.md#updatesitetemplateledsetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/led | Modify site template led setting
 
 
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -677,7 +677,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -896,7 +896,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -971,7 +971,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1046,7 +1046,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1121,7 +1121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1196,7 +1196,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1271,7 +1271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1346,7 +1346,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1421,7 +1421,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1496,7 +1496,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1571,7 +1571,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1646,7 +1646,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1721,7 +1721,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1796,7 +1796,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1871,7 +1871,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

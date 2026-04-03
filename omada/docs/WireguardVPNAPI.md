@@ -1,19 +1,19 @@
-# \WireguardVPNAPI
+# WireguardVPNAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePeer**](WireguardVPNAPI.md#CreatePeer) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-peers | Create new wireguard peer
-[**CreateWireguard**](WireguardVPNAPI.md#CreateWireguard) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguards | Create new wireguard
-[**DeletePeer**](WireguardVPNAPI.md#DeletePeer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-peers/{id} | Delete an existing wireguard peer
-[**DeleteWireguard**](WireguardVPNAPI.md#DeleteWireguard) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguards/{id} | Delete an existing wireguard
-[**GetWireguardKey**](WireguardVPNAPI.md#GetWireguardKey) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-key | Get new private key and public key
-[**GetWireguardSummary**](WireguardVPNAPI.md#GetWireguardSummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-summarys | Get all wireguard&#39;s id and name info
-[**ListPeer**](WireguardVPNAPI.md#ListPeer) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-peers | Get wireguard peer list
-[**ListWireguard**](WireguardVPNAPI.md#ListWireguard) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguards | Get wireguard list
-[**ModifyPeer**](WireguardVPNAPI.md#ModifyPeer) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-peers/{id} | Modify an existing wireguard peer
-[**ModifyWireguard**](WireguardVPNAPI.md#ModifyWireguard) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguards/{id} | Modify an existing wireguard
+[**CreatePeer**](WireguardVPNAPI.md#createpeer) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-peers | Create new wireguard peer
+[**CreateWireguard**](WireguardVPNAPI.md#createwireguard) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguards | Create new wireguard
+[**DeletePeer**](WireguardVPNAPI.md#deletepeer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-peers/{id} | Delete an existing wireguard peer
+[**DeleteWireguard**](WireguardVPNAPI.md#deletewireguard) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguards/{id} | Delete an existing wireguard
+[**GetWireguardKey**](WireguardVPNAPI.md#getwireguardkey) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-key | Get new private key and public key
+[**GetWireguardSummary**](WireguardVPNAPI.md#getwireguardsummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-summarys | Get all wireguard&#39;s id and name info
+[**ListPeer**](WireguardVPNAPI.md#listpeer) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-peers | Get wireguard peer list
+[**ListWireguard**](WireguardVPNAPI.md#listwireguard) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguards | Get wireguard list
+[**ModifyPeer**](WireguardVPNAPI.md#modifypeer) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguard-peers/{id} | Modify an existing wireguard peer
+[**ModifyWireguard**](WireguardVPNAPI.md#modifywireguard) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/wireguards/{id} | Modify an existing wireguard
 
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -611,7 +611,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -689,7 +689,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -767,7 +767,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

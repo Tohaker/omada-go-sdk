@@ -1,33 +1,33 @@
-# \VoucherAPI
+# VoucherAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ClearInvalidVouchersInSelectedGroups**](VoucherAPI.md#ClearInvalidVouchersInSelectedGroups) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/batch/clear-invalid | Delete expired vouchers in voucher groups
-[**ClearInvalidVouchersInaGroup**](VoucherAPI.md#ClearInvalidVouchersInaGroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId}/clear-invalid | Delete expired vouchers in a voucher group
-[**CreateVoucherGroup**](VoucherAPI.md#CreateVoucherGroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups | Create a new Voucher Group
-[**DeleteSelectedVoucherGroups**](VoucherAPI.md#DeleteSelectedVoucherGroups) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/batch/delete | Delete selected Voucher Groups
-[**DeleteVoucher**](VoucherAPI.md#DeleteVoucher) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/{id} | Delete an existing voucher
-[**DeleteVoucherGroup**](VoucherAPI.md#DeleteVoucherGroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId} | Delete an existing Voucher Group
-[**DeleteVouchers**](VoucherAPI.md#DeleteVouchers) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/batch/delete | Delete selected vouchers
-[**EditVoucherGroupPattern**](VoucherAPI.md#EditVoucherGroupPattern) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId}/pattern | Edit voucher group pattern
-[**ExportVouchersWithSiteByCloudAccess**](VoucherAPI.md#ExportVouchersWithSiteByCloudAccess) | **Post** /openapi/v1/{omadacId}/files/hotspot/sites/{siteId}/vouchers/export | Export voucher list to file
-[**GetAllTimeVoucherSummary**](VoucherAPI.md#GetAllTimeVoucherSummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/summary | Get voucher summary
-[**GetGridVoucherGroups**](VoucherAPI.md#GetGridVoucherGroups) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups | Get Voucher Group List
-[**GetGroupConfigLimit**](VoucherAPI.md#GetGroupConfigLimit) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/config-limit | Get voucher group config limit
-[**GetVoucher**](VoucherAPI.md#GetVoucher) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/{id} | Get a voucher
-[**GetVoucherCurrencyCandidates**](VoucherAPI.md#GetVoucherCurrencyCandidates) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/currency-list | Get voucher currency candidates
-[**GetVoucherDistributionByDuration**](VoucherAPI.md#GetVoucherDistributionByDuration) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/duration | Get voucher distribution by duration
-[**GetVoucherDistributionByPrice**](VoucherAPI.md#GetVoucherDistributionByPrice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/unit-price | Get voucher distribution by price
-[**GetVoucherGroupDetail**](VoucherAPI.md#GetVoucherGroupDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId} | Get Voucher Group Detail
-[**GetVoucherHistoryStatistics**](VoucherAPI.md#GetVoucherHistoryStatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history | Get voucher history statistics
-[**GetVoucherLogo**](VoucherAPI.md#GetVoucherLogo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/files/voucher/logos/{picId} | Get voucher logo
-[**ModifyHotspotSetting**](VoucherAPI.md#ModifyHotspotSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/setting | Modify voucher currency
-[**PrintSelectedVoucherGroups**](VoucherAPI.md#PrintSelectedVoucherGroups) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/batch/print-unused | Get unused vouchers in selected voucher groups
-[**PrintVoucherGroup**](VoucherAPI.md#PrintVoucherGroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId}/print-unused | Get unused vouchers in voucher group
-[**PrintVouchers**](VoucherAPI.md#PrintVouchers) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/batch/print | Get selected vouchers in a voucher group
-[**UploadVoucherLogo**](VoucherAPI.md#UploadVoucherLogo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/files/voucher/logos | Upload voucher logo
+[**ClearInvalidVouchersInSelectedGroups**](VoucherAPI.md#clearinvalidvouchersinselectedgroups) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/batch/clear-invalid | Delete expired vouchers in voucher groups
+[**ClearInvalidVouchersInaGroup**](VoucherAPI.md#clearinvalidvouchersinagroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId}/clear-invalid | Delete expired vouchers in a voucher group
+[**CreateVoucherGroup**](VoucherAPI.md#createvouchergroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups | Create a new Voucher Group
+[**DeleteSelectedVoucherGroups**](VoucherAPI.md#deleteselectedvouchergroups) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/batch/delete | Delete selected Voucher Groups
+[**DeleteVoucher**](VoucherAPI.md#deletevoucher) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/{id} | Delete an existing voucher
+[**DeleteVoucherGroup**](VoucherAPI.md#deletevouchergroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId} | Delete an existing Voucher Group
+[**DeleteVouchers**](VoucherAPI.md#deletevouchers) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/batch/delete | Delete selected vouchers
+[**EditVoucherGroupPattern**](VoucherAPI.md#editvouchergrouppattern) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId}/pattern | Edit voucher group pattern
+[**ExportVouchersWithSiteByCloudAccess**](VoucherAPI.md#exportvoucherswithsitebycloudaccess) | **Post** /openapi/v1/{omadacId}/files/hotspot/sites/{siteId}/vouchers/export | Export voucher list to file
+[**GetAllTimeVoucherSummary**](VoucherAPI.md#getalltimevouchersummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/summary | Get voucher summary
+[**GetGridVoucherGroups**](VoucherAPI.md#getgridvouchergroups) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups | Get Voucher Group List
+[**GetGroupConfigLimit**](VoucherAPI.md#getgroupconfiglimit) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/config-limit | Get voucher group config limit
+[**GetVoucher**](VoucherAPI.md#getvoucher) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/{id} | Get a voucher
+[**GetVoucherCurrencyCandidates**](VoucherAPI.md#getvouchercurrencycandidates) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/currency-list | Get voucher currency candidates
+[**GetVoucherDistributionByDuration**](VoucherAPI.md#getvoucherdistributionbyduration) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/duration | Get voucher distribution by duration
+[**GetVoucherDistributionByPrice**](VoucherAPI.md#getvoucherdistributionbyprice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/unit-price | Get voucher distribution by price
+[**GetVoucherGroupDetail**](VoucherAPI.md#getvouchergroupdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId} | Get Voucher Group Detail
+[**GetVoucherHistoryStatistics**](VoucherAPI.md#getvoucherhistorystatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history | Get voucher history statistics
+[**GetVoucherLogo**](VoucherAPI.md#getvoucherlogo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/files/voucher/logos/{picId} | Get voucher logo
+[**ModifyHotspotSetting**](VoucherAPI.md#modifyhotspotsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/setting | Modify voucher currency
+[**PrintSelectedVoucherGroups**](VoucherAPI.md#printselectedvouchergroups) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/batch/print-unused | Get unused vouchers in selected voucher groups
+[**PrintVoucherGroup**](VoucherAPI.md#printvouchergroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId}/print-unused | Get unused vouchers in voucher group
+[**PrintVouchers**](VoucherAPI.md#printvouchers) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/batch/print | Get selected vouchers in a voucher group
+[**UploadVoucherLogo**](VoucherAPI.md#uploadvoucherlogo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/files/voucher/logos | Upload voucher logo
 
 
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -625,7 +625,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -700,7 +700,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -860,7 +860,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -933,7 +933,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1009,7 +1009,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1082,7 +1082,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1159,7 +1159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1236,7 +1236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1322,7 +1322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1399,7 +1399,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1475,7 +1475,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1550,7 +1550,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1625,7 +1625,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1701,7 +1701,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1776,7 +1776,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1853,7 +1853,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

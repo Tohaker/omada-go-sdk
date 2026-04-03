@@ -1,12 +1,12 @@
-# \AuthorizeAPI
+# AuthorizeAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AuthorizeCode**](AuthorizeAPI.md#AuthorizeCode) | **Post** /openapi/authorize/code | Get authorization code (step 2)
-[**AuthorizeLogin**](AuthorizeAPI.md#AuthorizeLogin) | **Post** /openapi/authorize/login | Login (Authorization Code flow step 1)
-[**AuthorizeToken**](AuthorizeAPI.md#AuthorizeToken) | **Post** /openapi/authorize/token | Get or refresh access token
+[**AuthorizeCode**](AuthorizeAPI.md#authorizecode) | **Post** /openapi/authorize/code | Get authorization code (step 2)
+[**AuthorizeLogin**](AuthorizeAPI.md#authorizelogin) | **Post** /openapi/authorize/login | Login (Authorization Code flow step 1)
+[**AuthorizeToken**](AuthorizeAPI.md#authorizetoken) | **Post** /openapi/authorize/token | Get or refresh access token
 
 
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

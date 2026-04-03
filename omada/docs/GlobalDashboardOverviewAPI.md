@@ -1,10 +1,10 @@
-# \GlobalDashboardOverviewAPI
+# GlobalDashboardOverviewAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGernalSettings1**](GlobalDashboardOverviewAPI.md#GetGernalSettings1) | **Get** /openapi/v1/{omadacId}/dashboard/overview-without-client | Get global dashboard overview
+[**GetGernalSettings1**](GlobalDashboardOverviewAPI.md#getgernalsettings1) | **Get** /openapi/v1/{omadacId}/dashboard/overview-without-client | Get global dashboard overview
 
 
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

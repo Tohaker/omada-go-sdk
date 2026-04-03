@@ -1,41 +1,41 @@
-# \InsightAPI
+# InsightAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteALLBatchFullChannelDetectHistory**](InsightAPI.md#DeleteALLBatchFullChannelDetectHistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect | Delete all interference detection history
-[**DeleteBatchFullChannelDetectHistory**](InsightAPI.md#DeleteBatchFullChannelDetectHistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId} | Delete the interference detection history
-[**ExportBatchFullChannelDetectResultData**](InsightAPI.md#ExportBatchFullChannelDetectResultData) | **Get** /openapi/v1/{omadacId}/files/sites/{siteId}/full-channel-detect/{historyId} | Export batch interference detection results
-[**ExportRogueApsGlobal**](InsightAPI.md#ExportRogueApsGlobal) | **Post** /openapi/v1/{omadacId}/files/neighbors | Export global Rogue AP scan results
-[**GetBatchChannelLoadsResult**](InsightAPI.md#GetBatchChannelLoadsResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/channel-load | Get channel utilization results of batch interference detection
-[**GetBatchFullChannelDetectApList**](InsightAPI.md#GetBatchFullChannelDetectApList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/ap-list | Get the AP list of batch interference detection
-[**GetBatchFullChannelDetectStatus**](InsightAPI.md#GetBatchFullChannelDetectStatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/status | Get the interference detection status
-[**GetBatchWifiInterferencesResult**](InsightAPI.md#GetBatchWifiInterferencesResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/grid/wifi-interference | Get WiFi interference results of batch interference detection
-[**GetChannelLoadResult**](InsightAPI.md#GetChannelLoadResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/channel-load | Get channel utilization results of interference detection
-[**GetDisableFullChannelDetectApMacList**](InsightAPI.md#GetDisableFullChannelDetectApMacList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/batch/info | Get the MAC list of APs that cannot perform interference detection
-[**GetFullChannelDetectStatus**](InsightAPI.md#GetFullChannelDetectStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/status | Get the interference detection status of APs
-[**GetGridEnableFullChannelDetectApList**](InsightAPI.md#GetGridEnableFullChannelDetectApList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/full-channel-detect/ap-list | Get the list of devices that can perform interference detection by page
-[**GetGridFullChannelDetectHistory**](InsightAPI.md#GetGridFullChannelDetectHistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/grid/scan-history | Get the interference detection history by page
-[**GetGridOswRoutingTable**](InsightAPI.md#GetGridOswRoutingTable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/routingTable | Get switch routing table
-[**GetGridRogueAps**](InsightAPI.md#GetGridRogueAps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/rogueaps | Query the Rogue AP scan results
-[**GetGridRouting**](InsightAPI.md#GetGridRouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/routing/{type} | Get the routing table data interface
-[**GetGridStackRoutingTable**](InsightAPI.md#GetGridStackRoutingTable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/routingTable | Get stack routing table
-[**GetGridVpnIpSec**](InsightAPI.md#GetGridVpnIpSec) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/ipsec | Query the vpnStats ipsec list
-[**GetGridVpnTunnel**](InsightAPI.md#GetGridVpnTunnel) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/tunnel | Query the vpnStats tunnel list
-[**GetGridWidsData**](InsightAPI.md#GetGridWidsData) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids | Query the Wireless IDS entry list
-[**GetGridWifiInterfResult**](InsightAPI.md#GetGridWifiInterfResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/wlan-interference |  Get WiFi interference results of interference detection
-[**GetGridWipsBlackList**](InsightAPI.md#GetGridWipsBlackList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids/blacklist | Get the dynamic blacklist entry data of Wireless IDS
-[**GetPortForwardStatus**](InsightAPI.md#GetPortForwardStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/port-forwarding/{type} | Get Port Forwarding Status
-[**GetSpectralScanHistoryResult**](InsightAPI.md#GetSpectralScanHistoryResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/spectral-scan/aps/{apMac}/spectral-scan-result/history | Get history results of environment scanning
-[**GetSpectralScanResult**](InsightAPI.md#GetSpectralScanResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/spectral-scan/aps/{apMac}/spectral-scan-result | Get current results of environment scanning
-[**RemoveWipsBlackList**](InsightAPI.md#RemoveWipsBlackList) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids/blacklist/{mac} | Remove the specified Device MAC from the blacklist of the reported device
-[**ScanRogueAps**](InsightAPI.md#ScanRogueAps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/rogueaps/scan | Scan Rogue APs
-[**StartBatchFullChannelDetect**](InsightAPI.md#StartBatchFullChannelDetect) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect-start | Enable batch interference detection
-[**StopSpectralScan**](InsightAPI.md#StopSpectralScan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/spectral-scan-stop | Stop environment scanning
-[**TerminateVpnTunnel**](InsightAPI.md#TerminateVpnTunnel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/vpn/stats/tunnel/terminate | Terminating vpn tunnel
-[**TriggerFullChannelDetect**](InsightAPI.md#TriggerFullChannelDetect) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect-start | Enable interference detection
-[**TriggerSpectralScan**](InsightAPI.md#TriggerSpectralScan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/spectral-scan-start | Enable environment scanning
+[**DeleteALLBatchFullChannelDetectHistory**](InsightAPI.md#deleteallbatchfullchanneldetecthistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect | Delete all interference detection history
+[**DeleteBatchFullChannelDetectHistory**](InsightAPI.md#deletebatchfullchanneldetecthistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId} | Delete the interference detection history
+[**ExportBatchFullChannelDetectResultData**](InsightAPI.md#exportbatchfullchanneldetectresultdata) | **Get** /openapi/v1/{omadacId}/files/sites/{siteId}/full-channel-detect/{historyId} | Export batch interference detection results
+[**ExportRogueApsGlobal**](InsightAPI.md#exportrogueapsglobal) | **Post** /openapi/v1/{omadacId}/files/neighbors | Export global Rogue AP scan results
+[**GetBatchChannelLoadsResult**](InsightAPI.md#getbatchchannelloadsresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/channel-load | Get channel utilization results of batch interference detection
+[**GetBatchFullChannelDetectApList**](InsightAPI.md#getbatchfullchanneldetectaplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/ap-list | Get the AP list of batch interference detection
+[**GetBatchFullChannelDetectStatus**](InsightAPI.md#getbatchfullchanneldetectstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/status | Get the interference detection status
+[**GetBatchWifiInterferencesResult**](InsightAPI.md#getbatchwifiinterferencesresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/grid/wifi-interference | Get WiFi interference results of batch interference detection
+[**GetChannelLoadResult**](InsightAPI.md#getchannelloadresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/channel-load | Get channel utilization results of interference detection
+[**GetDisableFullChannelDetectApMacList**](InsightAPI.md#getdisablefullchanneldetectapmaclist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/batch/info | Get the MAC list of APs that cannot perform interference detection
+[**GetFullChannelDetectStatus**](InsightAPI.md#getfullchanneldetectstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/status | Get the interference detection status of APs
+[**GetGridEnableFullChannelDetectApList**](InsightAPI.md#getgridenablefullchanneldetectaplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/full-channel-detect/ap-list | Get the list of devices that can perform interference detection by page
+[**GetGridFullChannelDetectHistory**](InsightAPI.md#getgridfullchanneldetecthistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/grid/scan-history | Get the interference detection history by page
+[**GetGridOswRoutingTable**](InsightAPI.md#getgridoswroutingtable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/routingTable | Get switch routing table
+[**GetGridRogueAps**](InsightAPI.md#getgridrogueaps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/rogueaps | Query the Rogue AP scan results
+[**GetGridRouting**](InsightAPI.md#getgridrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/routing/{type} | Get the routing table data interface
+[**GetGridStackRoutingTable**](InsightAPI.md#getgridstackroutingtable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/routingTable | Get stack routing table
+[**GetGridVpnIpSec**](InsightAPI.md#getgridvpnipsec) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/ipsec | Query the vpnStats ipsec list
+[**GetGridVpnTunnel**](InsightAPI.md#getgridvpntunnel) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/tunnel | Query the vpnStats tunnel list
+[**GetGridWidsData**](InsightAPI.md#getgridwidsdata) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids | Query the Wireless IDS entry list
+[**GetGridWifiInterfResult**](InsightAPI.md#getgridwifiinterfresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/wlan-interference |  Get WiFi interference results of interference detection
+[**GetGridWipsBlackList**](InsightAPI.md#getgridwipsblacklist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids/blacklist | Get the dynamic blacklist entry data of Wireless IDS
+[**GetPortForwardStatus**](InsightAPI.md#getportforwardstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/port-forwarding/{type} | Get Port Forwarding Status
+[**GetSpectralScanHistoryResult**](InsightAPI.md#getspectralscanhistoryresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/spectral-scan/aps/{apMac}/spectral-scan-result/history | Get history results of environment scanning
+[**GetSpectralScanResult**](InsightAPI.md#getspectralscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/spectral-scan/aps/{apMac}/spectral-scan-result | Get current results of environment scanning
+[**RemoveWipsBlackList**](InsightAPI.md#removewipsblacklist) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids/blacklist/{mac} | Remove the specified Device MAC from the blacklist of the reported device
+[**ScanRogueAps**](InsightAPI.md#scanrogueaps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/rogueaps/scan | Scan Rogue APs
+[**StartBatchFullChannelDetect**](InsightAPI.md#startbatchfullchanneldetect) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect-start | Enable batch interference detection
+[**StopSpectralScan**](InsightAPI.md#stopspectralscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/spectral-scan-stop | Stop environment scanning
+[**TerminateVpnTunnel**](InsightAPI.md#terminatevpntunnel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/vpn/stats/tunnel/terminate | Terminating vpn tunnel
+[**TriggerFullChannelDetect**](InsightAPI.md#triggerfullchanneldetect) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect-start | Enable interference detection
+[**TriggerSpectralScan**](InsightAPI.md#triggerspectralscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/spectral-scan-start | Enable environment scanning
 
 
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -555,7 +555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -641,7 +641,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -717,7 +717,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -790,7 +790,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -866,7 +866,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -943,7 +943,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1020,7 +1020,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1106,7 +1106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1183,7 +1183,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1263,7 +1263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1349,7 +1349,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1426,7 +1426,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1503,7 +1503,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1580,7 +1580,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1660,7 +1660,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1737,7 +1737,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1817,7 +1817,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1893,7 +1893,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1971,7 +1971,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2049,7 +2049,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2122,7 +2122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2197,7 +2197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2273,7 +2273,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2348,7 +2348,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2426,7 +2426,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2502,7 +2502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

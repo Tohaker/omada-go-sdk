@@ -1,17 +1,17 @@
-# \LocalUserAPI
+# LocalUserAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ClearLocalUserDynamicMac**](LocalUserAPI.md#ClearLocalUserDynamicMac) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id}/clear-dynamic-mac | Clear dynamic mac
-[**CreateLocalUser**](LocalUserAPI.md#CreateLocalUser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers | Create a new local user
-[**DeleteLocalUser**](LocalUserAPI.md#DeleteLocalUser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Delete an existing localuser
-[**DownloadLocalUsers**](LocalUserAPI.md#DownloadLocalUsers) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/files/hotspot/local-users | Download local user file (excel or csv) by localhost
-[**GetLocalUser**](LocalUserAPI.md#GetLocalUser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Get a local user for given localuserId
-[**GetLocalUsers**](LocalUserAPI.md#GetLocalUsers) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers | Get local user list
-[**ModifyLocalUser**](LocalUserAPI.md#ModifyLocalUser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Modify an existing localuser
-[**UploadLocalUsers**](LocalUserAPI.md#UploadLocalUsers) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/files/hotspot/local-users | Upload local user file (excel or csv) by localhost
+[**ClearLocalUserDynamicMac**](LocalUserAPI.md#clearlocaluserdynamicmac) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id}/clear-dynamic-mac | Clear dynamic mac
+[**CreateLocalUser**](LocalUserAPI.md#createlocaluser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers | Create a new local user
+[**DeleteLocalUser**](LocalUserAPI.md#deletelocaluser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Delete an existing localuser
+[**DownloadLocalUsers**](LocalUserAPI.md#downloadlocalusers) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/files/hotspot/local-users | Download local user file (excel or csv) by localhost
+[**GetLocalUser**](LocalUserAPI.md#getlocaluser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Get a local user for given localuserId
+[**GetLocalUsers**](LocalUserAPI.md#getlocalusers) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers | Get local user list
+[**ModifyLocalUser**](LocalUserAPI.md#modifylocaluser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Modify an existing localuser
+[**UploadLocalUsers**](LocalUserAPI.md#uploadlocalusers) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/files/hotspot/local-users | Upload local user file (excel or csv) by localhost
 
 
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

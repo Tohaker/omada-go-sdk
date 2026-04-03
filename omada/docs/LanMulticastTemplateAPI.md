@@ -1,13 +1,13 @@
-# \LanMulticastTemplateAPI
+# LanMulticastTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateLanMulticastTemplate**](LanMulticastTemplateAPI.md#CreateLanMulticastTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-multicasts | Create new lan multicast template
-[**DeleteLanMulticastTemplate**](LanMulticastTemplateAPI.md#DeleteLanMulticastTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-multicasts/{multicastId} | Delete an existing lan multicast template
-[**GetGridLanMulticastTemplates**](LanMulticastTemplateAPI.md#GetGridLanMulticastTemplates) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-multicasts | Get lan multicast template list
-[**ModifyLanMulticastTemplate**](LanMulticastTemplateAPI.md#ModifyLanMulticastTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-multicasts/{multicastId} | Modify a lan multicast template
+[**CreateLanMulticastTemplate**](LanMulticastTemplateAPI.md#createlanmulticasttemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-multicasts | Create new lan multicast template
+[**DeleteLanMulticastTemplate**](LanMulticastTemplateAPI.md#deletelanmulticasttemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-multicasts/{multicastId} | Delete an existing lan multicast template
+[**GetGridLanMulticastTemplates**](LanMulticastTemplateAPI.md#getgridlanmulticasttemplates) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-multicasts | Get lan multicast template list
+[**ModifyLanMulticastTemplate**](LanMulticastTemplateAPI.md#modifylanmulticasttemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-multicasts/{multicastId} | Modify a lan multicast template
 
 
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

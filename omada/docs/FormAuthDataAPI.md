@@ -1,20 +1,20 @@
-# \FormAuthDataAPI
+# FormAuthDataAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAuthForm**](FormAuthDataAPI.md#CreateAuthForm) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys | Create a new authentication survey
-[**DeleteAuthForm**](FormAuthDataAPI.md#DeleteAuthForm) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId} | Delete an existing authentication survey
-[**DeleteFormAuthResult**](FormAuthDataAPI.md#DeleteFormAuthResult) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/auth-results/{surveyResultId} | Delete an authentication survey result for given surveyResultId
-[**DeleteSelectedFormAuthResult**](FormAuthDataAPI.md#DeleteSelectedFormAuthResult) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId}/auth-results | Delete selected authentication survey results for given surveyId
-[**ExportAuthForms**](FormAuthDataAPI.md#ExportAuthForms) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/files/hotspot/form-auths/{formId}/export | Export the Form Authentication Result List
-[**GetAuthForm**](FormAuthDataAPI.md#GetAuthForm) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId} | Get an authentication survey for given surveyId
-[**GetAuthForms**](FormAuthDataAPI.md#GetAuthForms) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys | Get authentication survey list
-[**GetFormAuthResult**](FormAuthDataAPI.md#GetFormAuthResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/auth-results/{surveyResultId} | Get an authentication survey result for given surveyResultId
-[**GetFormAuthResults**](FormAuthDataAPI.md#GetFormAuthResults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId}/auth-results | Get authentication result lists for given survey
-[**GetGridFormAuthResults**](FormAuthDataAPI.md#GetGridFormAuthResults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/form-auths/{formId}/auth-results | Get Form Authentication Result
-[**ModifyAuthForm**](FormAuthDataAPI.md#ModifyAuthForm) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId} | Modify an authentication survey for given surveyId
+[**CreateAuthForm**](FormAuthDataAPI.md#createauthform) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys | Create a new authentication survey
+[**DeleteAuthForm**](FormAuthDataAPI.md#deleteauthform) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId} | Delete an existing authentication survey
+[**DeleteFormAuthResult**](FormAuthDataAPI.md#deleteformauthresult) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/auth-results/{surveyResultId} | Delete an authentication survey result for given surveyResultId
+[**DeleteSelectedFormAuthResult**](FormAuthDataAPI.md#deleteselectedformauthresult) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId}/auth-results | Delete selected authentication survey results for given surveyId
+[**ExportAuthForms**](FormAuthDataAPI.md#exportauthforms) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/files/hotspot/form-auths/{formId}/export | Export the Form Authentication Result List
+[**GetAuthForm**](FormAuthDataAPI.md#getauthform) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId} | Get an authentication survey for given surveyId
+[**GetAuthForms**](FormAuthDataAPI.md#getauthforms) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys | Get authentication survey list
+[**GetFormAuthResult**](FormAuthDataAPI.md#getformauthresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/auth-results/{surveyResultId} | Get an authentication survey result for given surveyResultId
+[**GetFormAuthResults**](FormAuthDataAPI.md#getformauthresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId}/auth-results | Get authentication result lists for given survey
+[**GetGridFormAuthResults**](FormAuthDataAPI.md#getgridformauthresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/form-auths/{formId}/auth-results | Get Form Authentication Result
+[**ModifyAuthForm**](FormAuthDataAPI.md#modifyauthform) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/surveys/{surveyId} | Modify an authentication survey for given surveyId
 
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -858,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

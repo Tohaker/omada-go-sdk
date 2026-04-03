@@ -1,13 +1,13 @@
-# \AttackDefenseAPI
+# AttackDefenseAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAttackDefenseSetting**](AttackDefenseAPI.md#GetAttackDefenseSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/attack-defense | Get attack and defense setting
-[**GetDefaultAttackDefense**](AttackDefenseAPI.md#GetDefaultAttackDefense) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/attack-defense/default | Get attack and defense default setting
-[**ModifyAttackDefenseSetting**](AttackDefenseAPI.md#ModifyAttackDefenseSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/attack-defense | Modify attack and defense setting
-[**ResetAttackDefenseSetting**](AttackDefenseAPI.md#ResetAttackDefenseSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/attack-defense/reset | Reset attack and defense setting
+[**GetAttackDefenseSetting**](AttackDefenseAPI.md#getattackdefensesetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/attack-defense | Get attack and defense setting
+[**GetDefaultAttackDefense**](AttackDefenseAPI.md#getdefaultattackdefense) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/attack-defense/default | Get attack and defense default setting
+[**ModifyAttackDefenseSetting**](AttackDefenseAPI.md#modifyattackdefensesetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/attack-defense | Modify attack and defense setting
+[**ResetAttackDefenseSetting**](AttackDefenseAPI.md#resetattackdefensesetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/attack-defense/reset | Reset attack and defense setting
 
 
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

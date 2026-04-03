@@ -1,18 +1,18 @@
-# \StatisticAPI
+# StatisticAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDevice5MinStatistic**](StatisticAPI.md#GetDevice5MinStatistic) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/stat/{deviceMac}/5min | Get device statistic data 5 min
-[**GetDeviceDailyStatistic**](StatisticAPI.md#GetDeviceDailyStatistic) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/stat/{deviceMac}/daily | Get device statistic data daily
-[**GetDeviceHourlyStatistic**](StatisticAPI.md#GetDeviceHourlyStatistic) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/stat/{deviceMac}/hourly | Get device statistic data hourly
-[**GetOltStatChart**](StatisticAPI.md#GetOltStatChart) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/olts/{deviceMac}/chart | Get olt statistics chart
-[**GetOswRankingCards**](StatisticAPI.md#GetOswRankingCards) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/health/switches/rankingCards | Get switch ranking cards
-[**GetOswStackDetailStat**](StatisticAPI.md#GetOswStackDetailStat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/stack/{stackId} | Get switch stack statistics
-[**GetStackStatChart**](StatisticAPI.md#GetStackStatChart) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/stack/{stackId}/chart | Get stack statistics chart
-[**GetSwitchStat**](StatisticAPI.md#GetSwitchStat) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stat/switches/{deviceMac} | Get switch statistics
-[**GetSwitchStatChart**](StatisticAPI.md#GetSwitchStatChart) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/switches/{deviceMac}/chart | Get switch statistics chart
+[**GetDevice5MinStatistic**](StatisticAPI.md#getdevice5minstatistic) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/stat/{deviceMac}/5min | Get device statistic data 5 min
+[**GetDeviceDailyStatistic**](StatisticAPI.md#getdevicedailystatistic) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/stat/{deviceMac}/daily | Get device statistic data daily
+[**GetDeviceHourlyStatistic**](StatisticAPI.md#getdevicehourlystatistic) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/stat/{deviceMac}/hourly | Get device statistic data hourly
+[**GetOltStatChart**](StatisticAPI.md#getoltstatchart) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/olts/{deviceMac}/chart | Get olt statistics chart
+[**GetOswRankingCards**](StatisticAPI.md#getoswrankingcards) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/health/switches/rankingCards | Get switch ranking cards
+[**GetOswStackDetailStat**](StatisticAPI.md#getoswstackdetailstat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/stack/{stackId} | Get switch stack statistics
+[**GetStackStatChart**](StatisticAPI.md#getstackstatchart) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/stack/{stackId}/chart | Get stack statistics chart
+[**GetSwitchStat**](StatisticAPI.md#getswitchstat) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stat/switches/{deviceMac} | Get switch statistics
+[**GetSwitchStatChart**](StatisticAPI.md#getswitchstatchart) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/switches/{deviceMac}/chart | Get switch statistics chart
 
 
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -707,7 +707,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

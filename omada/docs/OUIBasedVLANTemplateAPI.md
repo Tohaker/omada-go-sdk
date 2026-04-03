@@ -1,17 +1,17 @@
-# \OUIBasedVLANTemplateAPI
+# OUIBasedVLANTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#CreateApOuiBasedVlanTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules | Create Ap oui based vlan template
-[**CreateSwitchOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#CreateSwitchOuiBasedVlanTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules | Create Switch oui based vlan template
-[**DeleteApOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#DeleteApOuiBasedVlanTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules/{ouiBasedVlanId} | Delete Ap oui based vlan template
-[**DeleteSwitchOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#DeleteSwitchOuiBasedVlanTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/{ouiBasedVlanId} | Delete Switch oui based vlan template
-[**GetGridApOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#GetGridApOuiBasedVlanTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules | Get Ap oui based vlan template list
-[**GetGridSwitchOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#GetGridSwitchOuiBasedVlanTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules | Get Switch oui based vlan template list
-[**ModifyApOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#ModifyApOuiBasedVlanTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules/{ouiBasedVlanId} | Modify Ap oui based vlan template
-[**ModifySwitchOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#ModifySwitchOuiBasedVlanTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/{ouiBasedVlanId} | Modify Switch oui based vlan template
+[**CreateApOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#createapouibasedvlantemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules | Create Ap oui based vlan template
+[**CreateSwitchOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#createswitchouibasedvlantemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules | Create Switch oui based vlan template
+[**DeleteApOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#deleteapouibasedvlantemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules/{ouiBasedVlanId} | Delete Ap oui based vlan template
+[**DeleteSwitchOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#deleteswitchouibasedvlantemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/{ouiBasedVlanId} | Delete Switch oui based vlan template
+[**GetGridApOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#getgridapouibasedvlantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules | Get Ap oui based vlan template list
+[**GetGridSwitchOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#getgridswitchouibasedvlantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules | Get Switch oui based vlan template list
+[**ModifyApOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#modifyapouibasedvlantemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules/{ouiBasedVlanId} | Modify Ap oui based vlan template
+[**ModifySwitchOuiBasedVlanTemplate**](OUIBasedVLANTemplateAPI.md#modifyswitchouibasedvlantemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/{ouiBasedVlanId} | Modify Switch oui based vlan template
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

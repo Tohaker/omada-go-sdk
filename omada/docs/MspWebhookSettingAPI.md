@@ -1,15 +1,15 @@
-# \MspWebhookSettingAPI
+# MspWebhookSettingAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateWebhookForMsp**](MspWebhookSettingAPI.md#CreateWebhookForMsp) | **Post** /openapi/v1/msp/{mspId}/webhook/settings | Create MSP webhook setting
-[**DeleteWebhookForMsp**](MspWebhookSettingAPI.md#DeleteWebhookForMsp) | **Delete** /openapi/v1/msp/{mspId}/webhook/settings/{webhookId} | Delete MSP webhook setting
-[**GetWebhookForMsp**](MspWebhookSettingAPI.md#GetWebhookForMsp) | **Get** /openapi/v1/msp/{mspId}/webhook/settings | Get MSP webhook setting list
-[**GetWebhookLogsForMsp**](MspWebhookSettingAPI.md#GetWebhookLogsForMsp) | **Get** /openapi/v1/msp/{mspId}/webhook/settings/dispatch-logs | Get MSP webhook dispatch log list
-[**ModifyWebhookForMsp**](MspWebhookSettingAPI.md#ModifyWebhookForMsp) | **Patch** /openapi/v1/msp/{mspId}/webhook/settings/{webhookId} | Modify MSP webhook setting
-[**TestWebhookFormsp**](MspWebhookSettingAPI.md#TestWebhookFormsp) | **Post** /openapi/v1/msp/{mspId}/webhook/settings/{webhookId} | Test MSP webhook setting
+[**CreateWebhookForMsp**](MspWebhookSettingAPI.md#createwebhookformsp) | **Post** /openapi/v1/msp/{mspId}/webhook/settings | Create MSP webhook setting
+[**DeleteWebhookForMsp**](MspWebhookSettingAPI.md#deletewebhookformsp) | **Delete** /openapi/v1/msp/{mspId}/webhook/settings/{webhookId} | Delete MSP webhook setting
+[**GetWebhookForMsp**](MspWebhookSettingAPI.md#getwebhookformsp) | **Get** /openapi/v1/msp/{mspId}/webhook/settings | Get MSP webhook setting list
+[**GetWebhookLogsForMsp**](MspWebhookSettingAPI.md#getwebhooklogsformsp) | **Get** /openapi/v1/msp/{mspId}/webhook/settings/dispatch-logs | Get MSP webhook dispatch log list
+[**ModifyWebhookForMsp**](MspWebhookSettingAPI.md#modifywebhookformsp) | **Patch** /openapi/v1/msp/{mspId}/webhook/settings/{webhookId} | Modify MSP webhook setting
+[**TestWebhookFormsp**](MspWebhookSettingAPI.md#testwebhookformsp) | **Post** /openapi/v1/msp/{mspId}/webhook/settings/{webhookId} | Test MSP webhook setting
 
 
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

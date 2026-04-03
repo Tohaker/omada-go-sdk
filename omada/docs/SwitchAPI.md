@@ -1,73 +1,73 @@
-# \SwitchAPI
+# SwitchAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPortTag**](SwitchAPI.md#AddPortTag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Create new switch port label
-[**BatchApplySwitchNetwork**](SwitchAPI.md#BatchApplySwitchNetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks | Batch modify switch vlan interfaces.
-[**BatchModifyESLoopbackControl**](SwitchAPI.md#BatchModifyESLoopbackControl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/switches/es/config/loopback | Batch modify switch loopback control (Agile Series)
-[**BatchModifyLoopbackControl**](SwitchAPI.md#BatchModifyLoopbackControl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/switches/config/loopback | Batch modify switch loopback control
-[**BatchModifySwitchPort**](SwitchAPI.md#BatchModifySwitchPort) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/config | Batch modify switch port
-[**BatchModifySwitchesPortLag**](SwitchAPI.md#BatchModifySwitchesPortLag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/multi-ports/config | Batch modify switches ports and lags
-[**BatchPortPoERecovery**](SwitchAPI.md#BatchPortPoERecovery) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/poe-recovery | Switch port poe recovery.
-[**BatchSetNameForGivenPorts1**](SwitchAPI.md#BatchSetNameForGivenPorts1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/name | Batch set name for given ports
-[**BatchSetPoeModeForGivenPorts1**](SwitchAPI.md#BatchSetPoeModeForGivenPorts1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/poe-mode | Batch set poe mode for given ports
-[**BatchSetPortStatusForGivenPorts1**](SwitchAPI.md#BatchSetPortStatusForGivenPorts1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/status | Batch set status for given ports
-[**BatchSetProfileOverrideForGivenPorts1**](SwitchAPI.md#BatchSetProfileOverrideForGivenPorts1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/profile-override | Batch set profile-override for given ports
-[**CancelCableTest**](SwitchAPI.md#CancelCableTest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/cancel | Cancel cable test
-[**ClearOswPortCounters**](SwitchAPI.md#ClearOswPortCounters) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/multi-ports/clear-counters | Clear the switches ports counters
-[**CreateOswVrf**](SwitchAPI.md#CreateOswVrf) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs | Create new vrf
-[**DeleteOswVrf**](SwitchAPI.md#DeleteOswVrf) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs/{vrfId} | Delete vrf
-[**DeletePortTag**](SwitchAPI.md#DeletePortTag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Delete an existing switch port label
-[**DeleteSwitchLag**](SwitchAPI.md#DeleteSwitchLag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lags/{lagId} | Delete switch lag
-[**GetBatchSelectOswDetailsView**](SwitchAPI.md#GetBatchSelectOswDetailsView) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/select | Get the switches and ports detail in batches
-[**GetBatchSwitchExistNetworks**](SwitchAPI.md#GetBatchSwitchExistNetworks) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/exist-network | Get the networks intersections existing on multiple switches
-[**GetCableTestFullResults**](SwitchAPI.md#GetCableTestFullResults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/full-results | Get the cable test full results
-[**GetCableTestIncrementResults**](SwitchAPI.md#GetCableTestIncrementResults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/increment-results | Get the cable test increment results
-[**GetCableTestLogs**](SwitchAPI.md#GetCableTestLogs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/logs | Get the cable test logs
-[**GetCableTestOswPorts**](SwitchAPI.md#GetCableTestOswPorts) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/ports | Get the port list used for cable test
-[**GetESGeneralConfig**](SwitchAPI.md#GetESGeneralConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/general-config | Get switch general config (Agile Series )
-[**GetESInfo**](SwitchAPI.md#GetESInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac} | Get switch info (Agile Series)
-[**GetESNetworkOverview**](SwitchAPI.md#GetESNetworkOverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/network-overview | Query Agile Series switch valid network
-[**GetGeneralConfig**](SwitchAPI.md#GetGeneralConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/general-config | Get switch general config
-[**GetGridDhcpUserList**](SwitchAPI.md#GetGridDhcpUserList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/dhcp/user-list | Get switch dhcp user list
-[**GetGridLldpNeighborTable**](SwitchAPI.md#GetGridLldpNeighborTable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lldp-neighbors | Get switch lldp neighbor table
-[**GetGridOspfNeighborTable**](SwitchAPI.md#GetGridOspfNeighborTable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ospf-neighbors | Get switch ospf neighbor table
-[**GetGridPortAndLagNetworks1**](SwitchAPI.md#GetGridPortAndLagNetworks1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/port-lag-networks | Get the networks used on switch&#39;s ports and LAGs
-[**GetGridPortAndLagNetworksDetail**](SwitchAPI.md#GetGridPortAndLagNetworksDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks-detail | Get the networks detail (including the vlan related ports and lags info) used on switch&#39;s ports and LAGs
-[**GetGridSwitchesPortsCounters**](SwitchAPI.md#GetGridSwitchesPortsCounters) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/counters | Get the switches ports counters information
-[**GetGridSwitchesPortsOverview**](SwitchAPI.md#GetGridSwitchesPortsOverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/overview | Get the switches ports overview
-[**GetGridSwitchesPortsPoe**](SwitchAPI.md#GetGridSwitchesPortsPoe) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/poe-info | Get the switches ports poe information
-[**GetGridVrf**](SwitchAPI.md#GetGridVrf) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs | Get the vrfs on the switch
-[**GetOswDDMInfo**](SwitchAPI.md#GetOswDDMInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ddm/info | Get osw ddm info.
-[**GetOswDetailInfoListForPortsView**](SwitchAPI.md#GetOswDetailInfoListForPortsView) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/switch-detail | Get the switches detail for ports view
-[**GetOswForGivenLanNetworkIdAndVlan**](SwitchAPI.md#GetOswForGivenLanNetworkIdAndVlan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlans/{vlan}/switches | Get the paging query for the osws with given network id and vlan
-[**GetOswsDetails**](SwitchAPI.md#GetOswsDetails) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/details | Get the details of osws with given omadacid, siteid and macs and stackIds.
-[**GetOswsSupportArpDetect**](SwitchAPI.md#GetOswsSupportArpDetect) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/supportArpDetect | Get the paging query for the osws that support arp detect.
-[**GetOswsSupportDhcpSnoop**](SwitchAPI.md#GetOswsSupportDhcpSnoop) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/supportDhcpSnoop | Get the paging query for the osws that support dhcp snoop.
-[**GetPortAndLagNetwork1**](SwitchAPI.md#GetPortAndLagNetwork1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/port-lag-networks/{networkId}/vlan/{vlan} | Get the switch&#39;s ports and LAGs that the network affects
-[**GetPortTags**](SwitchAPI.md#GetPortTags) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Get switch port label list
-[**GetSwitchExistNetworks**](SwitchAPI.md#GetSwitchExistNetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/exist-network | Get the networks existing on the switch
-[**GetSwitchInfo**](SwitchAPI.md#GetSwitchInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac} | Get switch info
-[**GetSwitchUsedSdmNum**](SwitchAPI.md#GetSwitchUsedSdmNum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/sdm-used | Get the used sdm template num on the switch
-[**ListSwitchNetworks**](SwitchAPI.md#ListSwitchNetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks | Query switch vlan interface infos.
-[**ModifyESGeneralConfig**](SwitchAPI.md#ModifyESGeneralConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/general-config | Modify switch general config (Agile Series)
-[**ModifyESLoopbackControl**](SwitchAPI.md#ModifyESLoopbackControl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/config/loopback | Modify switch loopback control (Agile Series)
-[**ModifyGeneralConfig**](SwitchAPI.md#ModifyGeneralConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/general-config | Modify switch general config
-[**ModifyLoopbackControl**](SwitchAPI.md#ModifyLoopbackControl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/config/loopback | Modify switch loopback control
-[**ModifyOswVrf**](SwitchAPI.md#ModifyOswVrf) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs/{vrfId} | Modify vrf
-[**ModifyPortTag**](SwitchAPI.md#ModifyPortTag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Modify an existing switch port label
-[**ModifySwitchLag**](SwitchAPI.md#ModifySwitchLag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lags/{lagId} | Modify switch lag
-[**ModifySwitchNetwork**](SwitchAPI.md#ModifySwitchNetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks/{networkId} | Modify switch network config.
-[**ModifySwitchPort**](SwitchAPI.md#ModifySwitchPort) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port} | Modify switch port
-[**MspMoveToCustomer**](SwitchAPI.md#MspMoveToCustomer) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/switches/move | Move site to target customer
-[**SetNameForGivenPort1**](SwitchAPI.md#SetNameForGivenPort1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/name | Set name for given port
-[**SetPoeModeForGivenPort1**](SwitchAPI.md#SetPoeModeForGivenPort1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/poe-mode | Set poe mode for given port
-[**SetPortModeForGivenPort1**](SwitchAPI.md#SetPortModeForGivenPort1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/status | Set port status for given port
-[**SetProfileForGivenPort1**](SwitchAPI.md#SetProfileForGivenPort1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/profile | Set profile for given port
-[**SetProfileOverrideForGivenPort1**](SwitchAPI.md#SetProfileOverrideForGivenPort1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/profile-override | Set profile-override for given port
-[**StartCableTest**](SwitchAPI.md#StartCableTest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/start | Start cable test
+[**AddPortTag**](SwitchAPI.md#addporttag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Create new switch port label
+[**BatchApplySwitchNetwork**](SwitchAPI.md#batchapplyswitchnetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks | Batch modify switch vlan interfaces.
+[**BatchModifyESLoopbackControl**](SwitchAPI.md#batchmodifyesloopbackcontrol) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/switches/es/config/loopback | Batch modify switch loopback control (Agile Series)
+[**BatchModifyLoopbackControl**](SwitchAPI.md#batchmodifyloopbackcontrol) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/switches/config/loopback | Batch modify switch loopback control
+[**BatchModifySwitchPort**](SwitchAPI.md#batchmodifyswitchport) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/config | Batch modify switch port
+[**BatchModifySwitchesPortLag**](SwitchAPI.md#batchmodifyswitchesportlag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/multi-ports/config | Batch modify switches ports and lags
+[**BatchPortPoERecovery**](SwitchAPI.md#batchportpoerecovery) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/poe-recovery | Switch port poe recovery.
+[**BatchSetNameForGivenPorts1**](SwitchAPI.md#batchsetnameforgivenports1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/name | Batch set name for given ports
+[**BatchSetPoeModeForGivenPorts1**](SwitchAPI.md#batchsetpoemodeforgivenports1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/poe-mode | Batch set poe mode for given ports
+[**BatchSetPortStatusForGivenPorts1**](SwitchAPI.md#batchsetportstatusforgivenports1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/status | Batch set status for given ports
+[**BatchSetProfileOverrideForGivenPorts1**](SwitchAPI.md#batchsetprofileoverrideforgivenports1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/profile-override | Batch set profile-override for given ports
+[**CancelCableTest**](SwitchAPI.md#cancelcabletest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/cancel | Cancel cable test
+[**ClearOswPortCounters**](SwitchAPI.md#clearoswportcounters) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/multi-ports/clear-counters | Clear the switches ports counters
+[**CreateOswVrf**](SwitchAPI.md#createoswvrf) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs | Create new vrf
+[**DeleteOswVrf**](SwitchAPI.md#deleteoswvrf) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs/{vrfId} | Delete vrf
+[**DeletePortTag**](SwitchAPI.md#deleteporttag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Delete an existing switch port label
+[**DeleteSwitchLag**](SwitchAPI.md#deleteswitchlag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lags/{lagId} | Delete switch lag
+[**GetBatchSelectOswDetailsView**](SwitchAPI.md#getbatchselectoswdetailsview) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/select | Get the switches and ports detail in batches
+[**GetBatchSwitchExistNetworks**](SwitchAPI.md#getbatchswitchexistnetworks) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/exist-network | Get the networks intersections existing on multiple switches
+[**GetCableTestFullResults**](SwitchAPI.md#getcabletestfullresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/full-results | Get the cable test full results
+[**GetCableTestIncrementResults**](SwitchAPI.md#getcabletestincrementresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/increment-results | Get the cable test increment results
+[**GetCableTestLogs**](SwitchAPI.md#getcabletestlogs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/logs | Get the cable test logs
+[**GetCableTestOswPorts**](SwitchAPI.md#getcabletestoswports) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/ports | Get the port list used for cable test
+[**GetESGeneralConfig**](SwitchAPI.md#getesgeneralconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/general-config | Get switch general config (Agile Series )
+[**GetESInfo**](SwitchAPI.md#getesinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac} | Get switch info (Agile Series)
+[**GetESNetworkOverview**](SwitchAPI.md#getesnetworkoverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/network-overview | Query Agile Series switch valid network
+[**GetGeneralConfig**](SwitchAPI.md#getgeneralconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/general-config | Get switch general config
+[**GetGridDhcpUserList**](SwitchAPI.md#getgriddhcpuserlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/dhcp/user-list | Get switch dhcp user list
+[**GetGridLldpNeighborTable**](SwitchAPI.md#getgridlldpneighbortable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lldp-neighbors | Get switch lldp neighbor table
+[**GetGridOspfNeighborTable**](SwitchAPI.md#getgridospfneighbortable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ospf-neighbors | Get switch ospf neighbor table
+[**GetGridPortAndLagNetworks1**](SwitchAPI.md#getgridportandlagnetworks1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/port-lag-networks | Get the networks used on switch&#39;s ports and LAGs
+[**GetGridPortAndLagNetworksDetail**](SwitchAPI.md#getgridportandlagnetworksdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks-detail | Get the networks detail (including the vlan related ports and lags info) used on switch&#39;s ports and LAGs
+[**GetGridSwitchesPortsCounters**](SwitchAPI.md#getgridswitchesportscounters) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/counters | Get the switches ports counters information
+[**GetGridSwitchesPortsOverview**](SwitchAPI.md#getgridswitchesportsoverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/overview | Get the switches ports overview
+[**GetGridSwitchesPortsPoe**](SwitchAPI.md#getgridswitchesportspoe) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/poe-info | Get the switches ports poe information
+[**GetGridVrf**](SwitchAPI.md#getgridvrf) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs | Get the vrfs on the switch
+[**GetOswDDMInfo**](SwitchAPI.md#getoswddminfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ddm/info | Get osw ddm info.
+[**GetOswDetailInfoListForPortsView**](SwitchAPI.md#getoswdetailinfolistforportsview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/switch-detail | Get the switches detail for ports view
+[**GetOswForGivenLanNetworkIdAndVlan**](SwitchAPI.md#getoswforgivenlannetworkidandvlan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlans/{vlan}/switches | Get the paging query for the osws with given network id and vlan
+[**GetOswsDetails**](SwitchAPI.md#getoswsdetails) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/details | Get the details of osws with given omadacid, siteid and macs and stackIds.
+[**GetOswsSupportArpDetect**](SwitchAPI.md#getoswssupportarpdetect) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/supportArpDetect | Get the paging query for the osws that support arp detect.
+[**GetOswsSupportDhcpSnoop**](SwitchAPI.md#getoswssupportdhcpsnoop) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/supportDhcpSnoop | Get the paging query for the osws that support dhcp snoop.
+[**GetPortAndLagNetwork1**](SwitchAPI.md#getportandlagnetwork1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/port-lag-networks/{networkId}/vlan/{vlan} | Get the switch&#39;s ports and LAGs that the network affects
+[**GetPortTags**](SwitchAPI.md#getporttags) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Get switch port label list
+[**GetSwitchExistNetworks**](SwitchAPI.md#getswitchexistnetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/exist-network | Get the networks existing on the switch
+[**GetSwitchInfo**](SwitchAPI.md#getswitchinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac} | Get switch info
+[**GetSwitchUsedSdmNum**](SwitchAPI.md#getswitchusedsdmnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/sdm-used | Get the used sdm template num on the switch
+[**ListSwitchNetworks**](SwitchAPI.md#listswitchnetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks | Query switch vlan interface infos.
+[**ModifyESGeneralConfig**](SwitchAPI.md#modifyesgeneralconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/general-config | Modify switch general config (Agile Series)
+[**ModifyESLoopbackControl**](SwitchAPI.md#modifyesloopbackcontrol) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/config/loopback | Modify switch loopback control (Agile Series)
+[**ModifyGeneralConfig**](SwitchAPI.md#modifygeneralconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/general-config | Modify switch general config
+[**ModifyLoopbackControl**](SwitchAPI.md#modifyloopbackcontrol) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/config/loopback | Modify switch loopback control
+[**ModifyOswVrf**](SwitchAPI.md#modifyoswvrf) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs/{vrfId} | Modify vrf
+[**ModifyPortTag**](SwitchAPI.md#modifyporttag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Modify an existing switch port label
+[**ModifySwitchLag**](SwitchAPI.md#modifyswitchlag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lags/{lagId} | Modify switch lag
+[**ModifySwitchNetwork**](SwitchAPI.md#modifyswitchnetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks/{networkId} | Modify switch network config.
+[**ModifySwitchPort**](SwitchAPI.md#modifyswitchport) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port} | Modify switch port
+[**MspMoveToCustomer**](SwitchAPI.md#mspmovetocustomer) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/switches/move | Move site to target customer
+[**SetNameForGivenPort1**](SwitchAPI.md#setnameforgivenport1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/name | Set name for given port
+[**SetPoeModeForGivenPort1**](SwitchAPI.md#setpoemodeforgivenport1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/poe-mode | Set poe mode for given port
+[**SetPortModeForGivenPort1**](SwitchAPI.md#setportmodeforgivenport1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/status | Set port status for given port
+[**SetProfileForGivenPort1**](SwitchAPI.md#setprofileforgivenport1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/profile | Set profile for given port
+[**SetProfileOverrideForGivenPort1**](SwitchAPI.md#setprofileoverrideforgivenport1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port}/profile-override | Set profile-override for given port
+[**StartCableTest**](SwitchAPI.md#startcabletest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/start | Start cable test
 
 
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -827,7 +827,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -905,7 +905,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -981,7 +981,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1056,7 +1056,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1134,7 +1134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1213,7 +1213,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1288,7 +1288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1367,7 +1367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1442,7 +1442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1517,7 +1517,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1593,7 +1593,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1669,7 +1669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1745,7 +1745,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1821,7 +1821,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1897,7 +1897,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1973,7 +1973,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2049,7 +2049,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2125,7 +2125,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2205,7 +2205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2289,7 +2289,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2377,7 +2377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2457,7 +2457,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2537,7 +2537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2614,7 +2614,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2691,7 +2691,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2768,7 +2768,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2844,7 +2844,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2920,7 +2920,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2993,7 +2993,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3076,7 +3076,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3151,7 +3151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3228,7 +3228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3305,7 +3305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3387,7 +3387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3460,7 +3460,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3536,7 +3536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3612,7 +3612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3688,7 +3688,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3768,7 +3768,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3846,7 +3846,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3924,7 +3924,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4002,7 +4002,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4080,7 +4080,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4161,7 +4161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4236,7 +4236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4317,7 +4317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4398,7 +4398,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4479,7 +4479,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4557,7 +4557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4638,7 +4638,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4719,7 +4719,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4800,7 +4800,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4881,7 +4881,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4962,7 +4962,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5040,7 +5040,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

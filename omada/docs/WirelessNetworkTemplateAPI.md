@@ -1,27 +1,27 @@
-# \WirelessNetworkTemplateAPI
+# WirelessNetworkTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CountWlansTemplate**](WirelessNetworkTemplateAPI.md#CountWlansTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/cmd/countWlans | Check if the number of WLAN groups is out of limit
-[**CreateSsidTemplate**](WirelessNetworkTemplateAPI.md#CreateSsidTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids | Create new SSID template
-[**CreateWlanGroupTemplate**](WirelessNetworkTemplateAPI.md#CreateWlanGroupTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Create new WLAN group template
-[**DeleteSsidTemplate**](WirelessNetworkTemplateAPI.md#DeleteSsidTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Delete an existing SSID template
-[**DeleteWlanGroupTemplate**](WirelessNetworkTemplateAPI.md#DeleteWlanGroupTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId} | Delete an existing WLAN group template
-[**GetGridWlanGroupTemplate**](WirelessNetworkTemplateAPI.md#GetGridWlanGroupTemplate) | **Get** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Get WLAN group template list paging query
-[**GetSsidDetailTemplate**](WirelessNetworkTemplateAPI.md#GetSsidDetailTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Get SSID template detail info
-[**GetSsidListTemplate**](WirelessNetworkTemplateAPI.md#GetSsidListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids | Get SSID template list
-[**GetWlanGroupListTemplate**](WirelessNetworkTemplateAPI.md#GetWlanGroupListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Get WLAN group template list
-[**UpdateSsidBasicConfigTemplate**](WirelessNetworkTemplateAPI.md#UpdateSsidBasicConfigTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-basic-config | Update SSID template basic config
-[**UpdateSsidDhcpOptionConfigTemplate**](WirelessNetworkTemplateAPI.md#UpdateSsidDhcpOptionConfigTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-dhcp-option | Update SSID template DHCP option 82 config
-[**UpdateSsidHotspotV2SettingTemplate**](WirelessNetworkTemplateAPI.md#UpdateSsidHotspotV2SettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-hotspotv2 | Update SSID template Hotspot2.0 config
-[**UpdateSsidMacFilterConfigTemplate**](WirelessNetworkTemplateAPI.md#UpdateSsidMacFilterConfigTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-mac-filter | Update SSID template mac filter config
-[**UpdateSsidMultiCastConfigTemplate**](WirelessNetworkTemplateAPI.md#UpdateSsidMultiCastConfigTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-multicast-config | Update SSID template Multicast/Broadcast management config
-[**UpdateSsidRateControlConfigTemplate**](WirelessNetworkTemplateAPI.md#UpdateSsidRateControlConfigTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-control | Update SSID template 802.11 rate control config
-[**UpdateSsidRateLimitConfigTemplate**](WirelessNetworkTemplateAPI.md#UpdateSsidRateLimitConfigTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-limit | Update SSID template rate limit config
-[**UpdateSsidWlanScheduleTemplate**](WirelessNetworkTemplateAPI.md#UpdateSsidWlanScheduleTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wlan-schedule | Update SSID template WLAN schedule config
-[**UpdateWlanGroupTemplate**](WirelessNetworkTemplateAPI.md#UpdateWlanGroupTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN group template
+[**CountWlansTemplate**](WirelessNetworkTemplateAPI.md#countwlanstemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/cmd/countWlans | Check if the number of WLAN groups is out of limit
+[**CreateSsidTemplate**](WirelessNetworkTemplateAPI.md#createssidtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids | Create new SSID template
+[**CreateWlanGroupTemplate**](WirelessNetworkTemplateAPI.md#createwlangrouptemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Create new WLAN group template
+[**DeleteSsidTemplate**](WirelessNetworkTemplateAPI.md#deletessidtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Delete an existing SSID template
+[**DeleteWlanGroupTemplate**](WirelessNetworkTemplateAPI.md#deletewlangrouptemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId} | Delete an existing WLAN group template
+[**GetGridWlanGroupTemplate**](WirelessNetworkTemplateAPI.md#getgridwlangrouptemplate) | **Get** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Get WLAN group template list paging query
+[**GetSsidDetailTemplate**](WirelessNetworkTemplateAPI.md#getssiddetailtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Get SSID template detail info
+[**GetSsidListTemplate**](WirelessNetworkTemplateAPI.md#getssidlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids | Get SSID template list
+[**GetWlanGroupListTemplate**](WirelessNetworkTemplateAPI.md#getwlangrouplisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Get WLAN group template list
+[**UpdateSsidBasicConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidbasicconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-basic-config | Update SSID template basic config
+[**UpdateSsidDhcpOptionConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessiddhcpoptionconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-dhcp-option | Update SSID template DHCP option 82 config
+[**UpdateSsidHotspotV2SettingTemplate**](WirelessNetworkTemplateAPI.md#updatessidhotspotv2settingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-hotspotv2 | Update SSID template Hotspot2.0 config
+[**UpdateSsidMacFilterConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidmacfilterconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-mac-filter | Update SSID template mac filter config
+[**UpdateSsidMultiCastConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidmulticastconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-multicast-config | Update SSID template Multicast/Broadcast management config
+[**UpdateSsidRateControlConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidratecontrolconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-control | Update SSID template 802.11 rate control config
+[**UpdateSsidRateLimitConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidratelimitconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-limit | Update SSID template rate limit config
+[**UpdateSsidWlanScheduleTemplate**](WirelessNetworkTemplateAPI.md#updatessidwlanscheduletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wlan-schedule | Update SSID template WLAN schedule config
+[**UpdateWlanGroupTemplate**](WirelessNetworkTemplateAPI.md#updatewlangrouptemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN group template
 
 
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -786,7 +786,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -867,7 +867,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -948,7 +948,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1029,7 +1029,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1110,7 +1110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1191,7 +1191,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1272,7 +1272,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1353,7 +1353,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1431,7 +1431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,4 +1,4 @@
-# Go API client for omada
+# Go API client for TP-Link Omada
 
 Omada Open API
 
@@ -2617,8 +2617,8 @@ Class | Method | HTTP request | Description
  - [ClientHistoryVO](docs/ClientHistoryVO.md)
  - [ClientInfo](docs/ClientInfo.md)
  - [ClientIpSetting](docs/ClientIpSetting.md)
- - [ClientLockToAPSetting](docs/ClientLockToAPSetting.md)
- - [ClientLockToApSetting](docs/ClientLockToApSetting.md)
+ - [ClientLockToApDetailSetting](docs/ClientLockToApDetailSetting.md)
+ - [ClientLockToApMacListSetting](docs/ClientLockToApMacListSetting.md)
  - [ClientMACIPSetting](docs/ClientMACIPSetting.md)
  - [ClientMultifrequencyInfo](docs/ClientMultifrequencyInfo.md)
  - [ClientNameSetting](docs/ClientNameSetting.md)

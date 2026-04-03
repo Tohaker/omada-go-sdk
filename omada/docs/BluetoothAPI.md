@@ -1,33 +1,33 @@
-# \BluetoothAPI
+# BluetoothAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchDeleteBtIbeaconConfig**](BluetoothAPI.md#BatchDeleteBtIbeaconConfig) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config/batch | Batch delete Bluetooth Advertising
-[**BatchDeleteBtIbeaconConfigV2**](BluetoothAPI.md#BatchDeleteBtIbeaconConfigV2) | **Delete** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config/batch | Batch delete Bluetooth Advertising v2
-[**BatchDeleteIotServer**](BluetoothAPI.md#BatchDeleteIotServer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers/batch-delete | Batch Delete IoT Transport Stream
-[**BatchModifyBtIbeaconConfig**](BluetoothAPI.md#BatchModifyBtIbeaconConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config/batch-config | Batch modify Bluetooth Advertising
-[**BatchModifyBtIbeaconConfigV2**](BluetoothAPI.md#BatchModifyBtIbeaconConfigV2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config/batch-config | Batch modify Bluetooth Advertising
-[**BatchModifyIotDeviceTransmitPower**](BluetoothAPI.md#BatchModifyIotDeviceTransmitPower) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/radio/transmit-power | Batch Modify transmit power of IoT devices.
-[**CreateBtIbeaconConfig**](BluetoothAPI.md#CreateBtIbeaconConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config | Create Bluetooth Advertising
-[**CreateBtIbeaconConfigV2**](BluetoothAPI.md#CreateBtIbeaconConfigV2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config | Create Bluetooth Advertising v2
-[**CreateIotServer**](BluetoothAPI.md#CreateIotServer) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers | Create IoT Transport Stream
-[**DeleteBtIbeaconConfig**](BluetoothAPI.md#DeleteBtIbeaconConfig) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config/{id} | Delete Bluetooth Advertising
-[**DeleteBtIbeaconConfigV2**](BluetoothAPI.md#DeleteBtIbeaconConfigV2) | **Delete** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config/{id} | Delete Bluetooth Advertising v2
-[**DeleteIotServer**](BluetoothAPI.md#DeleteIotServer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers/{id} | Delete IoT Transport Stream
-[**GetGridBtIbeaconDevices**](BluetoothAPI.md#GetGridBtIbeaconDevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices | Get Bluetooth Advertising Devices
-[**GetGridBtIbeaconList**](BluetoothAPI.md#GetGridBtIbeaconList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config | Get Bluetooth Advertising
-[**GetGridBtIbeaconListV2**](BluetoothAPI.md#GetGridBtIbeaconListV2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config | Get Bluetooth Advertising v2
-[**GetGridIotServer**](BluetoothAPI.md#GetGridIotServer) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers | Get IoT Transport Steam
-[**GetIotBlueToothAgingTime**](BluetoothAPI.md#GetIotBlueToothAgingTime) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/aging-time | Get Aging Time
-[**GetIotDeviceTransmitPowerInfoList**](BluetoothAPI.md#GetIotDeviceTransmitPowerInfoList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/radio/transmit-power | Get IoT devices with transmit power
-[**GetIotRadioSetting**](BluetoothAPI.md#GetIotRadioSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/radio | Get Iot Radio Setting
-[**ModifyBtIbeaconConfig**](BluetoothAPI.md#ModifyBtIbeaconConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config/{id} | Modify Bluetooth Advertising
-[**ModifyBtIbeaconConfigV2**](BluetoothAPI.md#ModifyBtIbeaconConfigV2) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config/{id} | Modify Bluetooth Advertising v2
-[**ModifyIotBlueToothAgingTime**](BluetoothAPI.md#ModifyIotBlueToothAgingTime) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/aging-time | Modify Aging Time
-[**ModifyIotRadioSetting**](BluetoothAPI.md#ModifyIotRadioSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/radio | Modify Iot Radio Setting
-[**ModifyIotServer**](BluetoothAPI.md#ModifyIotServer) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers/{id} | Modify IoT Transport Steam
+[**BatchDeleteBtIbeaconConfig**](BluetoothAPI.md#batchdeletebtibeaconconfig) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config/batch | Batch delete Bluetooth Advertising
+[**BatchDeleteBtIbeaconConfigV2**](BluetoothAPI.md#batchdeletebtibeaconconfigv2) | **Delete** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config/batch | Batch delete Bluetooth Advertising v2
+[**BatchDeleteIotServer**](BluetoothAPI.md#batchdeleteiotserver) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers/batch-delete | Batch Delete IoT Transport Stream
+[**BatchModifyBtIbeaconConfig**](BluetoothAPI.md#batchmodifybtibeaconconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config/batch-config | Batch modify Bluetooth Advertising
+[**BatchModifyBtIbeaconConfigV2**](BluetoothAPI.md#batchmodifybtibeaconconfigv2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config/batch-config | Batch modify Bluetooth Advertising
+[**BatchModifyIotDeviceTransmitPower**](BluetoothAPI.md#batchmodifyiotdevicetransmitpower) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/radio/transmit-power | Batch Modify transmit power of IoT devices.
+[**CreateBtIbeaconConfig**](BluetoothAPI.md#createbtibeaconconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config | Create Bluetooth Advertising
+[**CreateBtIbeaconConfigV2**](BluetoothAPI.md#createbtibeaconconfigv2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config | Create Bluetooth Advertising v2
+[**CreateIotServer**](BluetoothAPI.md#createiotserver) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers | Create IoT Transport Stream
+[**DeleteBtIbeaconConfig**](BluetoothAPI.md#deletebtibeaconconfig) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config/{id} | Delete Bluetooth Advertising
+[**DeleteBtIbeaconConfigV2**](BluetoothAPI.md#deletebtibeaconconfigv2) | **Delete** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config/{id} | Delete Bluetooth Advertising v2
+[**DeleteIotServer**](BluetoothAPI.md#deleteiotserver) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers/{id} | Delete IoT Transport Stream
+[**GetGridBtIbeaconDevices**](BluetoothAPI.md#getgridbtibeacondevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices | Get Bluetooth Advertising Devices
+[**GetGridBtIbeaconList**](BluetoothAPI.md#getgridbtibeaconlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config | Get Bluetooth Advertising
+[**GetGridBtIbeaconListV2**](BluetoothAPI.md#getgridbtibeaconlistv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config | Get Bluetooth Advertising v2
+[**GetGridIotServer**](BluetoothAPI.md#getgridiotserver) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers | Get IoT Transport Steam
+[**GetIotBlueToothAgingTime**](BluetoothAPI.md#getiotbluetoothagingtime) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/aging-time | Get Aging Time
+[**GetIotDeviceTransmitPowerInfoList**](BluetoothAPI.md#getiotdevicetransmitpowerinfolist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/radio/transmit-power | Get IoT devices with transmit power
+[**GetIotRadioSetting**](BluetoothAPI.md#getiotradiosetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/radio | Get Iot Radio Setting
+[**ModifyBtIbeaconConfig**](BluetoothAPI.md#modifybtibeaconconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/devices/config/{id} | Modify Bluetooth Advertising
+[**ModifyBtIbeaconConfigV2**](BluetoothAPI.md#modifybtibeaconconfigv2) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/setting/iot/devices/config/{id} | Modify Bluetooth Advertising v2
+[**ModifyIotBlueToothAgingTime**](BluetoothAPI.md#modifyiotbluetoothagingtime) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/aging-time | Modify Aging Time
+[**ModifyIotRadioSetting**](BluetoothAPI.md#modifyiotradiosetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/radio | Modify Iot Radio Setting
+[**ModifyIotServer**](BluetoothAPI.md#modifyiotserver) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/iot/servers/{id} | Modify IoT Transport Steam
 
 
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -770,7 +770,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -922,7 +922,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -999,7 +999,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1076,7 +1076,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1153,7 +1153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1230,7 +1230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1303,7 +1303,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1382,7 +1382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1455,7 +1455,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1533,7 +1533,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1611,7 +1611,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1686,7 +1686,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1761,7 +1761,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1839,7 +1839,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

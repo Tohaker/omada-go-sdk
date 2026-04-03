@@ -1,29 +1,29 @@
-# \HealthAPI
+# HealthAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApHealthDetail**](HealthAPI.md#GetApHealthDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/eaps/{apMac}/health/detail | Get ap health detail
-[**GetApHealthTimeList**](HealthAPI.md#GetApHealthTimeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/eaps/{apMac}/health/timeline | Get ap health time line
-[**GetClientHealthDetail**](HealthAPI.md#GetClientHealthDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/health/detail | Get client health detail
-[**GetClientHealthTimeList**](HealthAPI.md#GetClientHealthTimeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/health/timeline | Get client health time line
-[**GetMspApHealthDetail**](HealthAPI.md#GetMspApHealthDetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eaps/{apMac}/health/detail | Get msp ap health detail
-[**GetMspApHealthTimeList**](HealthAPI.md#GetMspApHealthTimeList) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eaps/{apMac}/health/timeline | Get msp ap health time line
-[**GetMspOsgHealthDetail**](HealthAPI.md#GetMspOsgHealthDetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac}/health/detail | Get msp gateway health detail
-[**GetMspOsgHealthTimeList**](HealthAPI.md#GetMspOsgHealthTimeList) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac}/health/timeline | Get msp gateway health time line
-[**GetMspOswHealthDetail**](HealthAPI.md#GetMspOswHealthDetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/switches/{switchMac}/health/detail | Get msp switch health detail
-[**GetMspOswHealthTimeList**](HealthAPI.md#GetMspOswHealthTimeList) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/switches/{switchMac}/health/timeline | Get msp switch health time line
-[**GetMultiOswHealthTimeList**](HealthAPI.md#GetMultiOswHealthTimeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/health/timeline | Batch get switch health time line
-[**GetOsgHealthDetail**](HealthAPI.md#GetOsgHealthDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/health/detail | Get gateway health detail
-[**GetOsgHealthTimeList**](HealthAPI.md#GetOsgHealthTimeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/health/timeline | Get gateway health time line
-[**GetOswHealthDetail**](HealthAPI.md#GetOswHealthDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/health/detail | Get switch health detail
-[**GetOswHealthTimeList**](HealthAPI.md#GetOswHealthTimeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/health/timeline | Get switch health time line
-[**GetSiteClientHealthTimeList**](HealthAPI.md#GetSiteClientHealthTimeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/health/client/timeline | Get site client health time line
-[**GetSiteHealthTimeList**](HealthAPI.md#GetSiteHealthTimeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/health/timeline | Get site health time line
-[**GetWifiClientInfoList**](HealthAPI.md#GetWifiClientInfoList) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wifi/health/client/list | Get site wifi top k device/client 
-[**GetWifiHealthTimeList**](HealthAPI.md#GetWifiHealthTimeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wifi/health/timeline | Get site wifi health time line
-[**GetWifiSubHealthTimeList**](HealthAPI.md#GetWifiSubHealthTimeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wifi/sub/health/timeline | Get site wifi sub health detail 
+[**GetApHealthDetail**](HealthAPI.md#getaphealthdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/eaps/{apMac}/health/detail | Get ap health detail
+[**GetApHealthTimeList**](HealthAPI.md#getaphealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/eaps/{apMac}/health/timeline | Get ap health time line
+[**GetClientHealthDetail**](HealthAPI.md#getclienthealthdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/health/detail | Get client health detail
+[**GetClientHealthTimeList**](HealthAPI.md#getclienthealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/health/timeline | Get client health time line
+[**GetMspApHealthDetail**](HealthAPI.md#getmspaphealthdetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eaps/{apMac}/health/detail | Get msp ap health detail
+[**GetMspApHealthTimeList**](HealthAPI.md#getmspaphealthtimelist) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eaps/{apMac}/health/timeline | Get msp ap health time line
+[**GetMspOsgHealthDetail**](HealthAPI.md#getmsposghealthdetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac}/health/detail | Get msp gateway health detail
+[**GetMspOsgHealthTimeList**](HealthAPI.md#getmsposghealthtimelist) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac}/health/timeline | Get msp gateway health time line
+[**GetMspOswHealthDetail**](HealthAPI.md#getmsposwhealthdetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/switches/{switchMac}/health/detail | Get msp switch health detail
+[**GetMspOswHealthTimeList**](HealthAPI.md#getmsposwhealthtimelist) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/switches/{switchMac}/health/timeline | Get msp switch health time line
+[**GetMultiOswHealthTimeList**](HealthAPI.md#getmultioswhealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/health/timeline | Batch get switch health time line
+[**GetOsgHealthDetail**](HealthAPI.md#getosghealthdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/health/detail | Get gateway health detail
+[**GetOsgHealthTimeList**](HealthAPI.md#getosghealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/health/timeline | Get gateway health time line
+[**GetOswHealthDetail**](HealthAPI.md#getoswhealthdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/health/detail | Get switch health detail
+[**GetOswHealthTimeList**](HealthAPI.md#getoswhealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/health/timeline | Get switch health time line
+[**GetSiteClientHealthTimeList**](HealthAPI.md#getsiteclienthealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/health/client/timeline | Get site client health time line
+[**GetSiteHealthTimeList**](HealthAPI.md#getsitehealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/health/timeline | Get site health time line
+[**GetWifiClientInfoList**](HealthAPI.md#getwificlientinfolist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wifi/health/client/list | Get site wifi top k device/client 
+[**GetWifiHealthTimeList**](HealthAPI.md#getwifihealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wifi/health/timeline | Get site wifi health time line
+[**GetWifiSubHealthTimeList**](HealthAPI.md#getwifisubhealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wifi/sub/health/timeline | Get site wifi sub health detail 
 
 
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -752,7 +752,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -835,7 +835,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -996,7 +996,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1076,7 +1076,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1156,7 +1156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1236,7 +1236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1313,7 +1313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1390,7 +1390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1465,7 +1465,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1542,7 +1542,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1619,7 +1619,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

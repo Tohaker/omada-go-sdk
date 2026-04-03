@@ -1,58 +1,58 @@
-# \GatewayAPI
+# GatewayAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchModifyPortConfig**](GatewayAPI.md#BatchModifyPortConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/multi-ports/config | Batch modify gateway port config
-[**ChangeInternetState**](GatewayAPI.md#ChangeInternetState) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/internet-state | Change Internet State
-[**ChangeIpv6State**](GatewayAPI.md#ChangeIpv6State) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/{gatewayMac}/ipv6State | Modify IPv6 state
-[**ChangePinSetting**](GatewayAPI.md#ChangePinSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/pin | Modify PIN management information of an LTE model
-[**DeleteIspFile**](GatewayAPI.md#DeleteIspFile) | **Delete** /openapi/v1/{omadacId}/files/sites/{siteId}/gateways/{gatewayMac}/isp-upgrade/{fileId} | Delete isp file
-[**GetEnableWanDetail**](GatewayAPI.md#GetEnableWanDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/health/gateways/{gatewayMac}/wans/details | Get enable wan port detail
-[**GetGatewayInfo**](GatewayAPI.md#GetGatewayInfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId} | Get gateway template info
-[**GetGatewayInfo1**](GatewayAPI.md#GetGatewayInfo1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac} | Get gateway info
-[**GetGeneralConfig1**](GatewayAPI.md#GetGeneralConfig1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/general-config | Get gateway general config
-[**GetIpptLanIpv6**](GatewayAPI.md#GetIpptLanIpv6) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/network/ipv6 | Get lan ipv6 config for ippt
-[**GetLanStatus**](GatewayAPI.md#GetLanStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/lan-status | Get gateway lan status
-[**GetPinSetting**](GatewayAPI.md#GetPinSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/pin | Get PIN setting
-[**GetPorts**](GatewayAPI.md#GetPorts) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports | Get gateway ports
-[**GetPortsTemplate**](GatewayAPI.md#GetPortsTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/config | Get gateway template port info
-[**GetSimCardUsed**](GatewayAPI.md#GetSimCardUsed) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/simCardUsed | Get SIM card used
-[**GetSpecifiedGatewayInfos**](GatewayAPI.md#GetSpecifiedGatewayInfos) | **Get** /openapi/v1/{omadacId}/global/gateways/wan-status | Get global gateways wan status
-[**GetSsidDetail1**](GatewayAPI.md#GetSsidDetail1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans/ssid | Get SSID detail info
-[**GetSsidDetailTemplate1**](GatewayAPI.md#GetSsidDetailTemplate1) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid | Get SSID detail info
-[**GetWanStatus**](GatewayAPI.md#GetWanStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/wan-status | Get gateway wan status
-[**IspUpgrade**](GatewayAPI.md#IspUpgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/{gatewayMac}/isp-upgrade | Upgrade isp
-[**ModifyConfigAdvanced**](GatewayAPI.md#ModifyConfigAdvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced | Modify gateway advanced config
-[**ModifyConfigAdvancedTemplate**](GatewayAPI.md#ModifyConfigAdvancedTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced | Modify gateway template advanced config
-[**ModifyConfigCommonAdvanced**](GatewayAPI.md#ModifyConfigCommonAdvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/common | Modify gateway advanced common config
-[**ModifyConfigCommonAdvancedTemplate**](GatewayAPI.md#ModifyConfigCommonAdvancedTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/common | Modify gateway template common advanced config
-[**ModifyConfigGeneral**](GatewayAPI.md#ModifyConfigGeneral) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify gateway general config
-[**ModifyConfigGeneralTemplate**](GatewayAPI.md#ModifyConfigGeneralTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/general | Modify gateway template general config
-[**ModifyConfigRadios**](GatewayAPI.md#ModifyConfigRadios) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/radios | Modify gateway radios config
-[**ModifyConfigRadiosTemplate**](GatewayAPI.md#ModifyConfigRadiosTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/radios | Modify gateway template radios config
-[**ModifyConfigServices**](GatewayAPI.md#ModifyConfigServices) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/services | Modify gateway config service
-[**ModifyConfigServicesTemplate**](GatewayAPI.md#ModifyConfigServicesTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/services | Modify gateway template services config
-[**ModifyConfigWirelessAdvanced**](GatewayAPI.md#ModifyConfigWirelessAdvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/wireless | Modify gateway advanced wireless config
-[**ModifyConfigWirelessAdvancedTemplate**](GatewayAPI.md#ModifyConfigWirelessAdvancedTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/wireless | Modify gateway template wireless advanced config
-[**ModifyConfigWlans**](GatewayAPI.md#ModifyConfigWlans) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans | Modify gateway wlans config
-[**ModifyConfigWlansTemplate**](GatewayAPI.md#ModifyConfigWlansTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans | Modify gateway template wlans config
-[**ModifyGeneralConfig1**](GatewayAPI.md#ModifyGeneralConfig1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/general-config | Modify gateway general config
-[**ModifyIpptLanIpv6**](GatewayAPI.md#ModifyIpptLanIpv6) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/network/ipv6 | Modify lan ipv6 config for ippt
-[**ModifyOsgConfigForMsp**](GatewayAPI.md#ModifyOsgConfigForMsp) | **Patch** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac} | Modify gateway config for msp
-[**ModifyOsgConfigGeneralForMsp**](GatewayAPI.md#ModifyOsgConfigGeneralForMsp) | **Put** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify general gateway config for msp
-[**ModifyPortConfig**](GatewayAPI.md#ModifyPortConfig) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/{port}/config | Modify gateway template port config
-[**ModifyPortConfig1**](GatewayAPI.md#ModifyPortConfig1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports/{port}/config | Modify gateway port config
-[**ModifySshSettingByMac**](GatewayAPI.md#ModifySshSettingByMac) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/services/ssh | Modify SSH setting by mac
-[**ModifySsidBasicConfig**](GatewayAPI.md#ModifySsidBasicConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans/ssid/{ssidId}/basic-config | modify SSID basic config
-[**ModifySsidBasicConfigTemplate**](GatewayAPI.md#ModifySsidBasicConfigTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid/{ssidId}/basic-config | modify SSID basic config
-[**ModifySsidMacFilterConfig**](GatewayAPI.md#ModifySsidMacFilterConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans/ssid/{ssidId}/mac-filter | Update SSID mac filter config
-[**ModifySsidMacFilterConfigTemplate**](GatewayAPI.md#ModifySsidMacFilterConfigTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid/{ssidId}/mac-filter | Update SSID mac filter config
-[**MoveToSite1**](GatewayAPI.md#MoveToSite1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/move | Move devices to another site
-[**MspMoveToCustomer2**](GatewayAPI.md#MspMoveToCustomer2) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/gateways/move | Move site to target customer
-[**RecoveryPoePort**](GatewayAPI.md#RecoveryPoePort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports/{port}/restart | Recovery gateway poe port
-[**UploadIspFile**](GatewayAPI.md#UploadIspFile) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/gateways/{gatewayMac}/isp-upgrade | Upload isp upgrade file
+[**BatchModifyPortConfig**](GatewayAPI.md#batchmodifyportconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/multi-ports/config | Batch modify gateway port config
+[**ChangeInternetState**](GatewayAPI.md#changeinternetstate) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/internet-state | Change Internet State
+[**ChangeIpv6State**](GatewayAPI.md#changeipv6state) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/{gatewayMac}/ipv6State | Modify IPv6 state
+[**ChangePinSetting**](GatewayAPI.md#changepinsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/pin | Modify PIN management information of an LTE model
+[**DeleteIspFile**](GatewayAPI.md#deleteispfile) | **Delete** /openapi/v1/{omadacId}/files/sites/{siteId}/gateways/{gatewayMac}/isp-upgrade/{fileId} | Delete isp file
+[**GetEnableWanDetail**](GatewayAPI.md#getenablewandetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/health/gateways/{gatewayMac}/wans/details | Get enable wan port detail
+[**GetGatewayInfo**](GatewayAPI.md#getgatewayinfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId} | Get gateway template info
+[**GetGatewayInfo1**](GatewayAPI.md#getgatewayinfo1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac} | Get gateway info
+[**GetGeneralConfig1**](GatewayAPI.md#getgeneralconfig1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/general-config | Get gateway general config
+[**GetIpptLanIpv6**](GatewayAPI.md#getipptlanipv6) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/network/ipv6 | Get lan ipv6 config for ippt
+[**GetLanStatus**](GatewayAPI.md#getlanstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/lan-status | Get gateway lan status
+[**GetPinSetting**](GatewayAPI.md#getpinsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/pin | Get PIN setting
+[**GetPorts**](GatewayAPI.md#getports) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports | Get gateway ports
+[**GetPortsTemplate**](GatewayAPI.md#getportstemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/config | Get gateway template port info
+[**GetSimCardUsed**](GatewayAPI.md#getsimcardused) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/simCardUsed | Get SIM card used
+[**GetSpecifiedGatewayInfos**](GatewayAPI.md#getspecifiedgatewayinfos) | **Get** /openapi/v1/{omadacId}/global/gateways/wan-status | Get global gateways wan status
+[**GetSsidDetail1**](GatewayAPI.md#getssiddetail1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans/ssid | Get SSID detail info
+[**GetSsidDetailTemplate1**](GatewayAPI.md#getssiddetailtemplate1) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid | Get SSID detail info
+[**GetWanStatus**](GatewayAPI.md#getwanstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/wan-status | Get gateway wan status
+[**IspUpgrade**](GatewayAPI.md#ispupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/{gatewayMac}/isp-upgrade | Upgrade isp
+[**ModifyConfigAdvanced**](GatewayAPI.md#modifyconfigadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced | Modify gateway advanced config
+[**ModifyConfigAdvancedTemplate**](GatewayAPI.md#modifyconfigadvancedtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced | Modify gateway template advanced config
+[**ModifyConfigCommonAdvanced**](GatewayAPI.md#modifyconfigcommonadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/common | Modify gateway advanced common config
+[**ModifyConfigCommonAdvancedTemplate**](GatewayAPI.md#modifyconfigcommonadvancedtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/common | Modify gateway template common advanced config
+[**ModifyConfigGeneral**](GatewayAPI.md#modifyconfiggeneral) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify gateway general config
+[**ModifyConfigGeneralTemplate**](GatewayAPI.md#modifyconfiggeneraltemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/general | Modify gateway template general config
+[**ModifyConfigRadios**](GatewayAPI.md#modifyconfigradios) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/radios | Modify gateway radios config
+[**ModifyConfigRadiosTemplate**](GatewayAPI.md#modifyconfigradiostemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/radios | Modify gateway template radios config
+[**ModifyConfigServices**](GatewayAPI.md#modifyconfigservices) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/services | Modify gateway config service
+[**ModifyConfigServicesTemplate**](GatewayAPI.md#modifyconfigservicestemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/services | Modify gateway template services config
+[**ModifyConfigWirelessAdvanced**](GatewayAPI.md#modifyconfigwirelessadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/wireless | Modify gateway advanced wireless config
+[**ModifyConfigWirelessAdvancedTemplate**](GatewayAPI.md#modifyconfigwirelessadvancedtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/wireless | Modify gateway template wireless advanced config
+[**ModifyConfigWlans**](GatewayAPI.md#modifyconfigwlans) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans | Modify gateway wlans config
+[**ModifyConfigWlansTemplate**](GatewayAPI.md#modifyconfigwlanstemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans | Modify gateway template wlans config
+[**ModifyGeneralConfig1**](GatewayAPI.md#modifygeneralconfig1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/general-config | Modify gateway general config
+[**ModifyIpptLanIpv6**](GatewayAPI.md#modifyipptlanipv6) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/network/ipv6 | Modify lan ipv6 config for ippt
+[**ModifyOsgConfigForMsp**](GatewayAPI.md#modifyosgconfigformsp) | **Patch** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac} | Modify gateway config for msp
+[**ModifyOsgConfigGeneralForMsp**](GatewayAPI.md#modifyosgconfiggeneralformsp) | **Put** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify general gateway config for msp
+[**ModifyPortConfig**](GatewayAPI.md#modifyportconfig) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/{port}/config | Modify gateway template port config
+[**ModifyPortConfig1**](GatewayAPI.md#modifyportconfig1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports/{port}/config | Modify gateway port config
+[**ModifySshSettingByMac**](GatewayAPI.md#modifysshsettingbymac) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/services/ssh | Modify SSH setting by mac
+[**ModifySsidBasicConfig**](GatewayAPI.md#modifyssidbasicconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans/ssid/{ssidId}/basic-config | modify SSID basic config
+[**ModifySsidBasicConfigTemplate**](GatewayAPI.md#modifyssidbasicconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid/{ssidId}/basic-config | modify SSID basic config
+[**ModifySsidMacFilterConfig**](GatewayAPI.md#modifyssidmacfilterconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans/ssid/{ssidId}/mac-filter | Update SSID mac filter config
+[**ModifySsidMacFilterConfigTemplate**](GatewayAPI.md#modifyssidmacfilterconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid/{ssidId}/mac-filter | Update SSID mac filter config
+[**MoveToSite1**](GatewayAPI.md#movetosite1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/move | Move devices to another site
+[**MspMoveToCustomer2**](GatewayAPI.md#mspmovetocustomer2) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/gateways/move | Move site to target customer
+[**RecoveryPoePort**](GatewayAPI.md#recoverypoeport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports/{port}/restart | Recovery gateway poe port
+[**UploadIspFile**](GatewayAPI.md#uploadispfile) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/gateways/{gatewayMac}/isp-upgrade | Upload isp upgrade file
 
 
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -891,7 +891,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -967,7 +967,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1043,7 +1043,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1119,7 +1119,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1195,7 +1195,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1269,7 +1269,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1345,7 +1345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1421,7 +1421,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1497,7 +1497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1575,7 +1575,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1653,7 +1653,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1731,7 +1731,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1809,7 +1809,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1887,7 +1887,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1965,7 +1965,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2043,7 +2043,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2121,7 +2121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2199,7 +2199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2277,7 +2277,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2355,7 +2355,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2433,7 +2433,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2511,7 +2511,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2589,7 +2589,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2667,7 +2667,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2745,7 +2745,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2823,7 +2823,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2904,7 +2904,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2985,7 +2985,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3066,7 +3066,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3147,7 +3147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3225,7 +3225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3306,7 +3306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3387,7 +3387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3468,7 +3468,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3549,7 +3549,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3624,7 +3624,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3702,7 +3702,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3781,7 +3781,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3859,7 +3859,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,16 +1,16 @@
-# \IPMACBindingTemplateAPI
+# IPMACBindingTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchDeleteIpMacBindingsTemplate**](IPMACBindingTemplateAPI.md#BatchDeleteIpMacBindingsTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds/batch-delete | Batch delete IP-MAC bindings template
-[**CreateIpMacBindingTemplate**](IPMACBindingTemplateAPI.md#CreateIpMacBindingTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds | Create IP-MAC binding template
-[**DeleteIpMacBindingTemplate**](IPMACBindingTemplateAPI.md#DeleteIpMacBindingTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds/{bindId} | Delete IP-MAC binding template
-[**GetGridIpMacBindingTemplate**](IPMACBindingTemplateAPI.md#GetGridIpMacBindingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds | Get IP-MAC binding template list
-[**GetIpMacBindingGeneralSettingTemplate**](IPMACBindingTemplateAPI.md#GetIpMacBindingGeneralSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-bind | Get IP-MAC binding template general setting
-[**ModifyIpMacBindingGeneralSettingTemplate**](IPMACBindingTemplateAPI.md#ModifyIpMacBindingGeneralSettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-bind | Modify IP-MAC binding template general setting
-[**ModifyIpMacBindingTemplate**](IPMACBindingTemplateAPI.md#ModifyIpMacBindingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds/{bindId} | Modify IP-MAC binding template
+[**BatchDeleteIpMacBindingsTemplate**](IPMACBindingTemplateAPI.md#batchdeleteipmacbindingstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds/batch-delete | Batch delete IP-MAC bindings template
+[**CreateIpMacBindingTemplate**](IPMACBindingTemplateAPI.md#createipmacbindingtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds | Create IP-MAC binding template
+[**DeleteIpMacBindingTemplate**](IPMACBindingTemplateAPI.md#deleteipmacbindingtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds/{bindId} | Delete IP-MAC binding template
+[**GetGridIpMacBindingTemplate**](IPMACBindingTemplateAPI.md#getgridipmacbindingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds | Get IP-MAC binding template list
+[**GetIpMacBindingGeneralSettingTemplate**](IPMACBindingTemplateAPI.md#getipmacbindinggeneralsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-bind | Get IP-MAC binding template general setting
+[**ModifyIpMacBindingGeneralSettingTemplate**](IPMACBindingTemplateAPI.md#modifyipmacbindinggeneralsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-bind | Modify IP-MAC binding template general setting
+[**ModifyIpMacBindingTemplate**](IPMACBindingTemplateAPI.md#modifyipmacbindingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds/{bindId} | Modify IP-MAC binding template
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

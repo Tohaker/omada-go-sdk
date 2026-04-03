@@ -1,38 +1,38 @@
-# \DashboardAPI
+# DashboardAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchConfigTab**](DashboardAPI.md#BatchConfigTab) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/multi-tabs/config | Batch set tab config
-[**ConfigBandwidthForWanPorts**](DashboardAPI.md#ConfigBandwidthForWanPorts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/bandwidth | Set site dashboard wan bandwidth
-[**CreateTab**](DashboardAPI.md#CreateTab) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs | Create new tab
-[**GetActiveAps**](DashboardAPI.md#GetActiveAps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/most-active-eaps | Get the most active eap list
-[**GetActiveApsV2**](DashboardAPI.md#GetActiveApsV2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/dashboard/most-active-eaps | Get the most active eap list
-[**GetActiveSwitches**](DashboardAPI.md#GetActiveSwitches) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/most-active-switches | Get most active switch list
-[**GetAllNetworkActivity**](DashboardAPI.md#GetAllNetworkActivity) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/allNetworkActivity | Get grid dashboard open network activity statistic list
-[**GetCardTopology**](DashboardAPI.md#GetCardTopology) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/card/overview | Get network overview
-[**GetChannels**](DashboardAPI.md#GetChannels) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/channels | Get channel distribution and usage
-[**GetGatewayIspLoad**](DashboardAPI.md#GetGatewayIspLoad) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/gateway/isp/load | Get site dashboard isp load inform
-[**GetGridDashboardIpsecTunnelStats**](DashboardAPI.md#GetGridDashboardIpsecTunnelStats) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/lpset-tunnel-stats | Get grid dashboard lpsec tunnel statistic list
-[**GetGridDashboardOpenVpnTunnelStats**](DashboardAPI.md#GetGridDashboardOpenVpnTunnelStats) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/open-vpn-tunnel-stats | Get grid dashboard open vpn tunnel statistic list
-[**GetGridDashboardTunnelStats**](DashboardAPI.md#GetGridDashboardTunnelStats) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/vpn-tunnel-stats | Get grid dashboard tunnel statistic list
-[**GetInterference**](DashboardAPI.md#GetInterference) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-interference | Get top interference
-[**GetIspLoad**](DashboardAPI.md#GetIspLoad) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/isp-load | Get isp load info
-[**GetOverview**](DashboardAPI.md#GetOverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/overview-diagram | Get site overview diagram info
-[**GetPoeUsage**](DashboardAPI.md#GetPoeUsage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/poe-usage | Get poe usage
-[**GetRetryAndDroppedRate**](DashboardAPI.md#GetRetryAndDroppedRate) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/retry-dropped-rate | Get retried rate and dropped rate
-[**GetSwitchSummary**](DashboardAPI.md#GetSwitchSummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/switch-summary | Get switch summary
-[**GetTop5Aps**](DashboardAPI.md#GetTop5Aps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-aps | Get Top 5 Aps
-[**GetTopCpuUsageWithTimeRange**](DashboardAPI.md#GetTopCpuUsageWithTimeRange) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-device-cpu-usage | Get top device cpu usage
-[**GetTopMemoryUsageWithTimeRange**](DashboardAPI.md#GetTopMemoryUsageWithTimeRange) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-device-memory-usage | Get top device memory usage
-[**GetTrafficActivities**](DashboardAPI.md#GetTrafficActivities) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/traffic-activities | Get traffic activity
-[**GetTrafficDistribution**](DashboardAPI.md#GetTrafficDistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/traffic-distribution | Get traffic distribution
-[**GetWifiSummary**](DashboardAPI.md#GetWifiSummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/wifi-summary | Get wifi summary
-[**ListAllTabs**](DashboardAPI.md#ListAllTabs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs | Get tab list
-[**ListTabs**](DashboardAPI.md#ListTabs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/without-overall-tabs | Get tab without overall tab list
-[**RemoveTab**](DashboardAPI.md#RemoveTab) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs/{tabId} | Delete an existing tab
-[**UpdateTab**](DashboardAPI.md#UpdateTab) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs/{tabId} | Modify an existing tab
+[**BatchConfigTab**](DashboardAPI.md#batchconfigtab) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/multi-tabs/config | Batch set tab config
+[**ConfigBandwidthForWanPorts**](DashboardAPI.md#configbandwidthforwanports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/bandwidth | Set site dashboard wan bandwidth
+[**CreateTab**](DashboardAPI.md#createtab) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs | Create new tab
+[**GetActiveAps**](DashboardAPI.md#getactiveaps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/most-active-eaps | Get the most active eap list
+[**GetActiveApsV2**](DashboardAPI.md#getactiveapsv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/dashboard/most-active-eaps | Get the most active eap list
+[**GetActiveSwitches**](DashboardAPI.md#getactiveswitches) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/most-active-switches | Get most active switch list
+[**GetAllNetworkActivity**](DashboardAPI.md#getallnetworkactivity) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/allNetworkActivity | Get grid dashboard open network activity statistic list
+[**GetCardTopology**](DashboardAPI.md#getcardtopology) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/card/overview | Get network overview
+[**GetChannels**](DashboardAPI.md#getchannels) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/channels | Get channel distribution and usage
+[**GetGatewayIspLoad**](DashboardAPI.md#getgatewayispload) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/gateway/isp/load | Get site dashboard isp load inform
+[**GetGridDashboardIpsecTunnelStats**](DashboardAPI.md#getgriddashboardipsectunnelstats) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/lpset-tunnel-stats | Get grid dashboard lpsec tunnel statistic list
+[**GetGridDashboardOpenVpnTunnelStats**](DashboardAPI.md#getgriddashboardopenvpntunnelstats) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/open-vpn-tunnel-stats | Get grid dashboard open vpn tunnel statistic list
+[**GetGridDashboardTunnelStats**](DashboardAPI.md#getgriddashboardtunnelstats) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/vpn-tunnel-stats | Get grid dashboard tunnel statistic list
+[**GetInterference**](DashboardAPI.md#getinterference) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-interference | Get top interference
+[**GetIspLoad**](DashboardAPI.md#getispload) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/isp-load | Get isp load info
+[**GetOverview**](DashboardAPI.md#getoverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/overview-diagram | Get site overview diagram info
+[**GetPoeUsage**](DashboardAPI.md#getpoeusage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/poe-usage | Get poe usage
+[**GetRetryAndDroppedRate**](DashboardAPI.md#getretryanddroppedrate) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/retry-dropped-rate | Get retried rate and dropped rate
+[**GetSwitchSummary**](DashboardAPI.md#getswitchsummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/switch-summary | Get switch summary
+[**GetTop5Aps**](DashboardAPI.md#gettop5aps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-aps | Get Top 5 Aps
+[**GetTopCpuUsageWithTimeRange**](DashboardAPI.md#gettopcpuusagewithtimerange) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-device-cpu-usage | Get top device cpu usage
+[**GetTopMemoryUsageWithTimeRange**](DashboardAPI.md#gettopmemoryusagewithtimerange) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-device-memory-usage | Get top device memory usage
+[**GetTrafficActivities**](DashboardAPI.md#gettrafficactivities) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/traffic-activities | Get traffic activity
+[**GetTrafficDistribution**](DashboardAPI.md#gettrafficdistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/traffic-distribution | Get traffic distribution
+[**GetWifiSummary**](DashboardAPI.md#getwifisummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/wifi-summary | Get wifi summary
+[**ListAllTabs**](DashboardAPI.md#listalltabs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs | Get tab list
+[**ListTabs**](DashboardAPI.md#listtabs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/without-overall-tabs | Get tab without overall tab list
+[**RemoveTab**](DashboardAPI.md#removetab) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs/{tabId} | Delete an existing tab
+[**UpdateTab**](DashboardAPI.md#updatetab) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs/{tabId} | Modify an existing tab
 
 
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -778,7 +778,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -851,7 +851,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -926,7 +926,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1001,7 +1001,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1074,7 +1074,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1151,7 +1151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1224,7 +1224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1297,7 +1297,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1374,7 +1374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1451,7 +1451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1528,7 +1528,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1605,7 +1605,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1682,7 +1682,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1759,7 +1759,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1836,7 +1836,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1913,7 +1913,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1986,7 +1986,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2059,7 +2059,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2135,7 +2135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2213,7 +2213,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,38 +1,38 @@
-# \LogAPI
+# LogAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteAlertLogsForGlobal**](LogAPI.md#DeleteAlertLogsForGlobal) | **Delete** /openapi/v1/{omadacId}/logs/alerts/delete | Delete global alert log
-[**DeleteAlertLogsForSite**](LogAPI.md#DeleteAlertLogsForSite) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/logs/alerts/delete | Delete site alert log
-[**DeleteEventLogsForGlobal**](LogAPI.md#DeleteEventLogsForGlobal) | **Delete** /openapi/v1/{omadacId}/logs/events/delete | Delete global event log
-[**DeleteEventLogsForSite**](LogAPI.md#DeleteEventLogsForSite) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/logs/events/delete | Delete site event log
-[**ExportAuditLogListForGlobal**](LogAPI.md#ExportAuditLogListForGlobal) | **Post** /openapi/v1/{omadacId}/logs/audit/export | Export audit log list in global view
-[**ExportLogListForGlobal**](LogAPI.md#ExportLogListForGlobal) | **Post** /openapi/v1/{omadacId}/logs/export | Export log list in global view
-[**GetAlertLogsForGlobal**](LogAPI.md#GetAlertLogsForGlobal) | **Get** /openapi/v1/{omadacId}/logs/alerts | Get global alert log list
-[**GetAlertLogsForSite**](LogAPI.md#GetAlertLogsForSite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/logs/alerts | Get site alert log list
-[**GetAuditLogSettingForGlobal**](LogAPI.md#GetAuditLogSettingForGlobal) | **Get** /openapi/v1/{omadacId}/audit-notification | Get global audit log notification
-[**GetAuditLogSettingForMsp1**](LogAPI.md#GetAuditLogSettingForMsp1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/site/audit-notification | Get site audit log notification
-[**GetAuditLogsForGlobal**](LogAPI.md#GetAuditLogsForGlobal) | **Get** /openapi/v1/{omadacId}/audit-logs | Get global audit log list
-[**GetAuditLogsForSite**](LogAPI.md#GetAuditLogsForSite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/audit-logs | Get site audit log list
-[**GetEventLogsForGlobal**](LogAPI.md#GetEventLogsForGlobal) | **Get** /openapi/v1/{omadacId}/logs/events | Get global event log list
-[**GetEventLogsForSite**](LogAPI.md#GetEventLogsForSite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/logs/events | Get site event log list
-[**GetLogSettingForGlobal**](LogAPI.md#GetLogSettingForGlobal) | **Get** /openapi/v1/{omadacId}/log-notification | Get global log notification
-[**GetLogSettingForGlobalV2**](LogAPI.md#GetLogSettingForGlobalV2) | **Get** /openapi/v2/{omadacId}/log-notification | Get global log notification v2
-[**GetLogSettingForSite**](LogAPI.md#GetLogSettingForSite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/site/log-notification | Get site log notification
-[**GetLogSettingForSiteV2**](LogAPI.md#GetLogSettingForSiteV2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/site/log-notification | Get site log notification v2
-[**GetRemoteLoggingSettingTip**](LogAPI.md#GetRemoteLoggingSettingTip) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remote-logging/tip | Get site remote logging setting tip
-[**GetRemoteLoggingTip**](LogAPI.md#GetRemoteLoggingTip) | **Get** /openapi/v1/{omadacId}/global/controller/setting/syslog/tip | Get customer remote logging tip
-[**ModifyAuditLogSettingGlobal**](LogAPI.md#ModifyAuditLogSettingGlobal) | **Patch** /openapi/v1/{omadacId}/audit-notification | Modify global audit log notification
-[**ModifyAuditLogSettingSite1**](LogAPI.md#ModifyAuditLogSettingSite1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/site/audit-notification | Modify site audit log notification
-[**ModifyLogSettingGlobal**](LogAPI.md#ModifyLogSettingGlobal) | **Patch** /openapi/v1/{omadacId}/log-notification | Modify global log notification
-[**ModifyLogSettingGlobalV2**](LogAPI.md#ModifyLogSettingGlobalV2) | **Patch** /openapi/v2/{omadacId}/log-notification | Modify global log notification v2
-[**ModifyLogSettingSite**](LogAPI.md#ModifyLogSettingSite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/site/log-notification | Modify site log notification
-[**ModifyLogSettingSiteV2**](LogAPI.md#ModifyLogSettingSiteV2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/site/log-notification | Modify site log notification v2
-[**ResetLogSettingGlobal**](LogAPI.md#ResetLogSettingGlobal) | **Post** /openapi/v1/{omadacId}/reset/log-notification | Reset global log notification
-[**ResetLogSettingSite**](LogAPI.md#ResetLogSettingSite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/site/reset/log-notification | Reset site log notification
-[**ResolveAlertForSite**](LogAPI.md#ResolveAlertForSite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/logs/alerts/resolve | Resolve site alert log
+[**DeleteAlertLogsForGlobal**](LogAPI.md#deletealertlogsforglobal) | **Delete** /openapi/v1/{omadacId}/logs/alerts/delete | Delete global alert log
+[**DeleteAlertLogsForSite**](LogAPI.md#deletealertlogsforsite) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/logs/alerts/delete | Delete site alert log
+[**DeleteEventLogsForGlobal**](LogAPI.md#deleteeventlogsforglobal) | **Delete** /openapi/v1/{omadacId}/logs/events/delete | Delete global event log
+[**DeleteEventLogsForSite**](LogAPI.md#deleteeventlogsforsite) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/logs/events/delete | Delete site event log
+[**ExportAuditLogListForGlobal**](LogAPI.md#exportauditloglistforglobal) | **Post** /openapi/v1/{omadacId}/logs/audit/export | Export audit log list in global view
+[**ExportLogListForGlobal**](LogAPI.md#exportloglistforglobal) | **Post** /openapi/v1/{omadacId}/logs/export | Export log list in global view
+[**GetAlertLogsForGlobal**](LogAPI.md#getalertlogsforglobal) | **Get** /openapi/v1/{omadacId}/logs/alerts | Get global alert log list
+[**GetAlertLogsForSite**](LogAPI.md#getalertlogsforsite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/logs/alerts | Get site alert log list
+[**GetAuditLogSettingForGlobal**](LogAPI.md#getauditlogsettingforglobal) | **Get** /openapi/v1/{omadacId}/audit-notification | Get global audit log notification
+[**GetAuditLogSettingForMsp1**](LogAPI.md#getauditlogsettingformsp1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/site/audit-notification | Get site audit log notification
+[**GetAuditLogsForGlobal**](LogAPI.md#getauditlogsforglobal) | **Get** /openapi/v1/{omadacId}/audit-logs | Get global audit log list
+[**GetAuditLogsForSite**](LogAPI.md#getauditlogsforsite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/audit-logs | Get site audit log list
+[**GetEventLogsForGlobal**](LogAPI.md#geteventlogsforglobal) | **Get** /openapi/v1/{omadacId}/logs/events | Get global event log list
+[**GetEventLogsForSite**](LogAPI.md#geteventlogsforsite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/logs/events | Get site event log list
+[**GetLogSettingForGlobal**](LogAPI.md#getlogsettingforglobal) | **Get** /openapi/v1/{omadacId}/log-notification | Get global log notification
+[**GetLogSettingForGlobalV2**](LogAPI.md#getlogsettingforglobalv2) | **Get** /openapi/v2/{omadacId}/log-notification | Get global log notification v2
+[**GetLogSettingForSite**](LogAPI.md#getlogsettingforsite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/site/log-notification | Get site log notification
+[**GetLogSettingForSiteV2**](LogAPI.md#getlogsettingforsitev2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/site/log-notification | Get site log notification v2
+[**GetRemoteLoggingSettingTip**](LogAPI.md#getremoteloggingsettingtip) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remote-logging/tip | Get site remote logging setting tip
+[**GetRemoteLoggingTip**](LogAPI.md#getremoteloggingtip) | **Get** /openapi/v1/{omadacId}/global/controller/setting/syslog/tip | Get customer remote logging tip
+[**ModifyAuditLogSettingGlobal**](LogAPI.md#modifyauditlogsettingglobal) | **Patch** /openapi/v1/{omadacId}/audit-notification | Modify global audit log notification
+[**ModifyAuditLogSettingSite1**](LogAPI.md#modifyauditlogsettingsite1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/site/audit-notification | Modify site audit log notification
+[**ModifyLogSettingGlobal**](LogAPI.md#modifylogsettingglobal) | **Patch** /openapi/v1/{omadacId}/log-notification | Modify global log notification
+[**ModifyLogSettingGlobalV2**](LogAPI.md#modifylogsettingglobalv2) | **Patch** /openapi/v2/{omadacId}/log-notification | Modify global log notification v2
+[**ModifyLogSettingSite**](LogAPI.md#modifylogsettingsite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/site/log-notification | Modify site log notification
+[**ModifyLogSettingSiteV2**](LogAPI.md#modifylogsettingsitev2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/site/log-notification | Modify site log notification v2
+[**ResetLogSettingGlobal**](LogAPI.md#resetlogsettingglobal) | **Post** /openapi/v1/{omadacId}/reset/log-notification | Reset global log notification
+[**ResetLogSettingSite**](LogAPI.md#resetlogsettingsite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/site/reset/log-notification | Reset site log notification
+[**ResolveAlertForSite**](LogAPI.md#resolvealertforsite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/logs/alerts/resolve | Resolve site alert log
 
 
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -699,7 +699,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -772,7 +772,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -858,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -947,7 +947,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1027,7 +1027,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1110,7 +1110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1180,7 +1180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1250,7 +1250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1323,7 +1323,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1396,7 +1396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1469,7 +1469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1539,7 +1539,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1611,7 +1611,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1686,7 +1686,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1758,7 +1758,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1830,7 +1830,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1905,7 +1905,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1980,7 +1980,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2050,7 +2050,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2123,7 +2123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2198,7 +2198,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

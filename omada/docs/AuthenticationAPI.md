@@ -1,29 +1,29 @@
-# \AuthenticationAPI
+# AuthenticationAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPortal**](AuthenticationAPI.md#AddPortal) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/portal | Add portal
-[**DeletePortal**](AuthenticationAPI.md#DeletePortal) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/portal/{portalId} | Delete portal
-[**GetEapDot1xCandidates**](AuthenticationAPI.md#GetEapDot1xCandidates) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dot1x/eap/candidates | Get site EAP 802.1x setting candidates
-[**GetEapDot1xSetting**](AuthenticationAPI.md#GetEapDot1xSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dot1x/eap | Get site eap 802.1x setting
-[**GetGlobalPortalDomainSetting**](AuthenticationAPI.md#GetGlobalPortalDomainSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portal/setting/domain | Get Portal Domain
-[**GetMacAuthSetting1**](AuthenticationAPI.md#GetMacAuthSetting1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-auth | Get site MAC-Based Authentication info
-[**GetMacAuthSsids1**](AuthenticationAPI.md#GetMacAuthSsids1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-auth/ssids | Get ssids that support MAC auth
-[**GetPortalCandidates**](AuthenticationAPI.md#GetPortalCandidates) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/portal/candidates | Get portal SSIDs and networks
-[**GetPortalCustomization**](AuthenticationAPI.md#GetPortalCustomization) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portal/{portalId}/customization | Get portal customization
-[**GetPortalDetail**](AuthenticationAPI.md#GetPortalDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portal/{portalId} | Get portal detail
-[**GetPortalList**](AuthenticationAPI.md#GetPortalList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portals | Get portal list in a site
-[**GetPortalListWithLogoutEnabled**](AuthenticationAPI.md#GetPortalListWithLogoutEnabled) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portals/logout-enabled | Gets a list of logout enabled portals on the site
-[**GetSwitchDot1xCandidates**](AuthenticationAPI.md#GetSwitchDot1xCandidates) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dot1x/candidates | Get site switch 802.1x setting candidates
-[**GetSwitchDot1xSetting**](AuthenticationAPI.md#GetSwitchDot1xSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dot1x | Get site switch 802.1x setting
-[**ModifyPortal**](AuthenticationAPI.md#ModifyPortal) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/portal/{portalId} | Modify portal
-[**UpdateEapDot1xSetting**](AuthenticationAPI.md#UpdateEapDot1xSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dot1x/eap | Modify site EAP 802.1x setting
-[**UpdateMacAuthSetting1**](AuthenticationAPI.md#UpdateMacAuthSetting1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/mac-auth | Update site MAC-Based Authentication info
-[**UpdateSwitchDot1xSetting**](AuthenticationAPI.md#UpdateSwitchDot1xSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dot1x | Modify site switch 802.1x setting
-[**UploadPortalPage**](AuthenticationAPI.md#UploadPortalPage) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/portal/page | Import portal page
-[**UploadPortalPic**](AuthenticationAPI.md#UploadPortalPic) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/portal/pics | Upload portal picture
+[**AddPortal**](AuthenticationAPI.md#addportal) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/portal | Add portal
+[**DeletePortal**](AuthenticationAPI.md#deleteportal) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/portal/{portalId} | Delete portal
+[**GetEapDot1xCandidates**](AuthenticationAPI.md#geteapdot1xcandidates) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dot1x/eap/candidates | Get site EAP 802.1x setting candidates
+[**GetEapDot1xSetting**](AuthenticationAPI.md#geteapdot1xsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dot1x/eap | Get site eap 802.1x setting
+[**GetGlobalPortalDomainSetting**](AuthenticationAPI.md#getglobalportaldomainsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portal/setting/domain | Get Portal Domain
+[**GetMacAuthSetting1**](AuthenticationAPI.md#getmacauthsetting1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-auth | Get site MAC-Based Authentication info
+[**GetMacAuthSsids1**](AuthenticationAPI.md#getmacauthssids1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-auth/ssids | Get ssids that support MAC auth
+[**GetPortalCandidates**](AuthenticationAPI.md#getportalcandidates) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/portal/candidates | Get portal SSIDs and networks
+[**GetPortalCustomization**](AuthenticationAPI.md#getportalcustomization) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portal/{portalId}/customization | Get portal customization
+[**GetPortalDetail**](AuthenticationAPI.md#getportaldetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portal/{portalId} | Get portal detail
+[**GetPortalList**](AuthenticationAPI.md#getportallist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portals | Get portal list in a site
+[**GetPortalListWithLogoutEnabled**](AuthenticationAPI.md#getportallistwithlogoutenabled) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portals/logout-enabled | Gets a list of logout enabled portals on the site
+[**GetSwitchDot1xCandidates**](AuthenticationAPI.md#getswitchdot1xcandidates) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dot1x/candidates | Get site switch 802.1x setting candidates
+[**GetSwitchDot1xSetting**](AuthenticationAPI.md#getswitchdot1xsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dot1x | Get site switch 802.1x setting
+[**ModifyPortal**](AuthenticationAPI.md#modifyportal) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/portal/{portalId} | Modify portal
+[**UpdateEapDot1xSetting**](AuthenticationAPI.md#updateeapdot1xsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dot1x/eap | Modify site EAP 802.1x setting
+[**UpdateMacAuthSetting1**](AuthenticationAPI.md#updatemacauthsetting1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/mac-auth | Update site MAC-Based Authentication info
+[**UpdateSwitchDot1xSetting**](AuthenticationAPI.md#updateswitchdot1xsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dot1x | Modify site switch 802.1x setting
+[**UploadPortalPage**](AuthenticationAPI.md#uploadportalpage) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/portal/page | Import portal page
+[**UploadPortalPic**](AuthenticationAPI.md#uploadportalpic) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/portal/pics | Upload portal picture
 
 
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -682,7 +682,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -758,7 +758,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -831,7 +831,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -904,7 +904,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -977,7 +977,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1050,7 +1050,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1128,7 +1128,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1203,7 +1203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1278,7 +1278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1353,7 +1353,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1428,7 +1428,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1505,7 +1505,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

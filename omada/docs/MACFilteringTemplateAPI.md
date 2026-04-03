@@ -1,16 +1,16 @@
-# \MACFilteringTemplateAPI
+# MACFilteringTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateMacFilteringTemplate**](MACFilteringTemplateAPI.md#CreateMacFilteringTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters | Create MAC filtering template
-[**DeleteMacFilteringTemplate**](MACFilteringTemplateAPI.md#DeleteMacFilteringTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters/{filterId} | Delete MAC filtering template
-[**GetGridAllowMacFilteringTemplate**](MACFilteringTemplateAPI.md#GetGridAllowMacFilteringTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters/allow | Get allow MAC filtering template list
-[**GetGridDenyMacFilteringTemplate**](MACFilteringTemplateAPI.md#GetGridDenyMacFilteringTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters/deny | Get deny MAC filtering template list
-[**GetMacFilteringGeneralSettingTemplate**](MACFilteringTemplateAPI.md#GetMacFilteringGeneralSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filter | Get MAC filtering template general setting
-[**ModifyMacFilteringGeneralSettingTemplate**](MACFilteringTemplateAPI.md#ModifyMacFilteringGeneralSettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filter | Modify MAC filtering template general setting
-[**ModifyMacFilteringTemplate**](MACFilteringTemplateAPI.md#ModifyMacFilteringTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters/{filterId} | Modify MAC filtering template
+[**CreateMacFilteringTemplate**](MACFilteringTemplateAPI.md#createmacfilteringtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters | Create MAC filtering template
+[**DeleteMacFilteringTemplate**](MACFilteringTemplateAPI.md#deletemacfilteringtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters/{filterId} | Delete MAC filtering template
+[**GetGridAllowMacFilteringTemplate**](MACFilteringTemplateAPI.md#getgridallowmacfilteringtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters/allow | Get allow MAC filtering template list
+[**GetGridDenyMacFilteringTemplate**](MACFilteringTemplateAPI.md#getgriddenymacfilteringtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters/deny | Get deny MAC filtering template list
+[**GetMacFilteringGeneralSettingTemplate**](MACFilteringTemplateAPI.md#getmacfilteringgeneralsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filter | Get MAC filtering template general setting
+[**ModifyMacFilteringGeneralSettingTemplate**](MACFilteringTemplateAPI.md#modifymacfilteringgeneralsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filter | Modify MAC filtering template general setting
+[**ModifyMacFilteringTemplate**](MACFilteringTemplateAPI.md#modifymacfilteringtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters/{filterId} | Modify MAC filtering template
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

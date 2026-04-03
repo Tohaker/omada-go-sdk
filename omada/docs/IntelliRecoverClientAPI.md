@@ -1,15 +1,15 @@
-# \IntelliRecoverClientAPI
+# IntelliRecoverClientAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddMonitorClients**](IntelliRecoverClientAPI.md#AddMonitorClients) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/add | Add client into intelli recover client list
-[**DeleteMonitorClients**](IntelliRecoverClientAPI.md#DeleteMonitorClients) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/delete | Delete the intelli recover client
-[**GetEligibleClientList**](IntelliRecoverClientAPI.md#GetEligibleClientList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/eligible-client-grids | Obtain the list of clients that can be monitored
-[**GetGridMonitorClient**](IntelliRecoverClientAPI.md#GetGridMonitorClient) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/grids | Get the intelli recover client list
-[**RebootClientUplinkPoe**](IntelliRecoverClientAPI.md#RebootClientUplinkPoe) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/reboot-uplink-poe | Reboot the client uplinkDevice poe
-[**VerifyMonitorClient**](IntelliRecoverClientAPI.md#VerifyMonitorClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/verify | Verify if the client is allowed to be monitored
+[**AddMonitorClients**](IntelliRecoverClientAPI.md#addmonitorclients) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/add | Add client into intelli recover client list
+[**DeleteMonitorClients**](IntelliRecoverClientAPI.md#deletemonitorclients) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/delete | Delete the intelli recover client
+[**GetEligibleClientList**](IntelliRecoverClientAPI.md#geteligibleclientlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/eligible-client-grids | Obtain the list of clients that can be monitored
+[**GetGridMonitorClient**](IntelliRecoverClientAPI.md#getgridmonitorclient) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/grids | Get the intelli recover client list
+[**RebootClientUplinkPoe**](IntelliRecoverClientAPI.md#rebootclientuplinkpoe) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/reboot-uplink-poe | Reboot the client uplinkDevice poe
+[**VerifyMonitorClient**](IntelliRecoverClientAPI.md#verifymonitorclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-client/verify | Verify if the client is allowed to be monitored
 
 
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

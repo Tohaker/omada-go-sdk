@@ -1,14 +1,14 @@
-# \HotspotOperatorsAPI
+# HotspotOperatorsAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateHotspotOperator**](HotspotOperatorsAPI.md#CreateHotspotOperator) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators | Create a new hotspot operator
-[**DeleteHotspotOperator**](HotspotOperatorsAPI.md#DeleteHotspotOperator) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators/{id} | Delete an existing hotspot operator
-[**GetHotspotOperatorDetail**](HotspotOperatorsAPI.md#GetHotspotOperatorDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators/{id} | Get hotspot operator detail
-[**GetHotspotOperatorList**](HotspotOperatorsAPI.md#GetHotspotOperatorList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators | Get hotspot operators list
-[**ModifyHotspotOperator**](HotspotOperatorsAPI.md#ModifyHotspotOperator) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators/{id} | Modify an existing hotspot operator
+[**CreateHotspotOperator**](HotspotOperatorsAPI.md#createhotspotoperator) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators | Create a new hotspot operator
+[**DeleteHotspotOperator**](HotspotOperatorsAPI.md#deletehotspotoperator) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators/{id} | Delete an existing hotspot operator
+[**GetHotspotOperatorDetail**](HotspotOperatorsAPI.md#gethotspotoperatordetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators/{id} | Get hotspot operator detail
+[**GetHotspotOperatorList**](HotspotOperatorsAPI.md#gethotspotoperatorlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators | Get hotspot operators list
+[**ModifyHotspotOperator**](HotspotOperatorsAPI.md#modifyhotspotoperator) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/operators/{id} | Modify an existing hotspot operator
 
 
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

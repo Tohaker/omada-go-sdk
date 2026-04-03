@@ -1,14 +1,14 @@
-# \OLTGemPortAPI
+# OLTGemPortAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddGemPort**](OLTGemPortAPI.md#AddGemPort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/add | Create new gem port
-[**DeleteGemPort**](OLTGemPortAPI.md#DeleteGemPort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/delete | Delete an existing gem port
-[**EditGemPort**](OLTGemPortAPI.md#EditGemPort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/edit | Modify an existing gem port
-[**GetGemPortList**](OLTGemPortAPI.md#GetGemPortList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/list | Get gem port list
-[**GetGemPortPage**](OLTGemPortAPI.md#GetGemPortPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/page | Get gem port page
+[**AddGemPort**](OLTGemPortAPI.md#addgemport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/add | Create new gem port
+[**DeleteGemPort**](OLTGemPortAPI.md#deletegemport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/delete | Delete an existing gem port
+[**EditGemPort**](OLTGemPortAPI.md#editgemport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/edit | Modify an existing gem port
+[**GetGemPortList**](OLTGemPortAPI.md#getgemportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/list | Get gem port list
+[**GetGemPortPage**](OLTGemPortAPI.md#getgemportpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-ports/page | Get gem port page
 
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

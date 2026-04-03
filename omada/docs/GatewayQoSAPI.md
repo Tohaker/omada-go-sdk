@@ -1,22 +1,22 @@
-# \GatewayQoSAPI
+# GatewayQoSAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateBwCtrl**](GatewayQoSAPI.md#CreateBwCtrl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/bwcs | Create new bandwidth control rule
-[**CreateClassRule**](GatewayQoSAPI.md#CreateClassRule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/class-rules | Create new class rule
-[**DeleteBwCtrl**](GatewayQoSAPI.md#DeleteBwCtrl) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/bwcs/{id} | Delete an existing bandwidth control rule
-[**DeleteClassRule**](GatewayQoSAPI.md#DeleteClassRule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/class-rules/{id} | Delete an existing class rule
-[**GetBandwidthCtrlGrid**](GatewayQoSAPI.md#GetBandwidthCtrlGrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/bwcs | Get bandwidth control rule list
-[**GetClassRuleGrid**](GatewayQoSAPI.md#GetClassRuleGrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/class-rules | Get class rule list
-[**GetQosWans**](GatewayQoSAPI.md#GetQosWans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/wans | Get WAN ports info for Gateway QoS
-[**GetTagOut**](GatewayQoSAPI.md#GetTagOut) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/tag-outbound-traffic | Get Tag Outbound Traffic info
-[**GetVoip**](GatewayQoSAPI.md#GetVoip) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/voip-prioritization | Get VoIP Prioritization info
-[**ModifyBwCtrl**](GatewayQoSAPI.md#ModifyBwCtrl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/bwcs/{id} | Modify an existing bandwidth control rule
-[**ModifyClassRule**](GatewayQoSAPI.md#ModifyClassRule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/class-rules/{id} | Modify an existing class rule
-[**ModifyTagOut**](GatewayQoSAPI.md#ModifyTagOut) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/tag-outbound-traffic | Modify Tag Outbound Traffic info
-[**ModifyVoip**](GatewayQoSAPI.md#ModifyVoip) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/voip-prioritization | Modify VoIP Prioritization info
+[**CreateBwCtrl**](GatewayQoSAPI.md#createbwctrl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/bwcs | Create new bandwidth control rule
+[**CreateClassRule**](GatewayQoSAPI.md#createclassrule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/class-rules | Create new class rule
+[**DeleteBwCtrl**](GatewayQoSAPI.md#deletebwctrl) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/bwcs/{id} | Delete an existing bandwidth control rule
+[**DeleteClassRule**](GatewayQoSAPI.md#deleteclassrule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/class-rules/{id} | Delete an existing class rule
+[**GetBandwidthCtrlGrid**](GatewayQoSAPI.md#getbandwidthctrlgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/bwcs | Get bandwidth control rule list
+[**GetClassRuleGrid**](GatewayQoSAPI.md#getclassrulegrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/class-rules | Get class rule list
+[**GetQosWans**](GatewayQoSAPI.md#getqoswans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/wans | Get WAN ports info for Gateway QoS
+[**GetTagOut**](GatewayQoSAPI.md#gettagout) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/tag-outbound-traffic | Get Tag Outbound Traffic info
+[**GetVoip**](GatewayQoSAPI.md#getvoip) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/voip-prioritization | Get VoIP Prioritization info
+[**ModifyBwCtrl**](GatewayQoSAPI.md#modifybwctrl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/bwcs/{id} | Modify an existing bandwidth control rule
+[**ModifyClassRule**](GatewayQoSAPI.md#modifyclassrule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/class-rules/{id} | Modify an existing class rule
+[**ModifyTagOut**](GatewayQoSAPI.md#modifytagout) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/tag-outbound-traffic | Modify Tag Outbound Traffic info
+[**ModifyVoip**](GatewayQoSAPI.md#modifyvoip) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/qos/gateway/voip-prioritization | Modify VoIP Prioritization info
 
 
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -839,7 +839,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -989,7 +989,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

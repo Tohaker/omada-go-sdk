@@ -20,7 +20,7 @@ var _ MappedNullable = &ClientBatchSetting{}
 // ClientBatchSetting struct for ClientBatchSetting
 type ClientBatchSetting struct {
 	IpSetting *ClientBatchIPSetting `json:"ipSetting,omitempty"`
-	LockToAp *ClientLockToAPSetting `json:"lockToAp,omitempty"`
+	LockToAp *ClientLockToApMacListSetting `json:"lockToAp,omitempty"`
 	// List of clients' mac.
 	MacList []string `json:"macList,omitempty"`
 	RateLimit *ClientRateLimitSetting `json:"rateLimit,omitempty"`
@@ -76,9 +76,9 @@ func (o *ClientBatchSetting) SetIpSetting(v ClientBatchIPSetting) {
 }
 
 // GetLockToAp returns the LockToAp field value if set, zero value otherwise.
-func (o *ClientBatchSetting) GetLockToAp() ClientLockToAPSetting {
+func (o *ClientBatchSetting) GetLockToAp() ClientLockToApMacListSetting {
 	if o == nil || IsNil(o.LockToAp) {
-		var ret ClientLockToAPSetting
+		var ret ClientLockToApMacListSetting
 		return ret
 	}
 	return *o.LockToAp
@@ -86,7 +86,7 @@ func (o *ClientBatchSetting) GetLockToAp() ClientLockToAPSetting {
 
 // GetLockToApOk returns a tuple with the LockToAp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientBatchSetting) GetLockToApOk() (*ClientLockToAPSetting, bool) {
+func (o *ClientBatchSetting) GetLockToApOk() (*ClientLockToApMacListSetting, bool) {
 	if o == nil || IsNil(o.LockToAp) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *ClientBatchSetting) HasLockToAp() bool {
 	return false
 }
 
-// SetLockToAp gets a reference to the given ClientLockToAPSetting and assigns it to the LockToAp field.
-func (o *ClientBatchSetting) SetLockToAp(v ClientLockToAPSetting) {
+// SetLockToAp gets a reference to the given ClientLockToApMacListSetting and assigns it to the LockToAp field.
+func (o *ClientBatchSetting) SetLockToAp(v ClientLockToApMacListSetting) {
 	o.LockToAp = &v
 }
 

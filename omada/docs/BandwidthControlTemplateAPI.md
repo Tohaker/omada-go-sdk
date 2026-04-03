@@ -1,16 +1,16 @@
-# \BandwidthControlTemplateAPI
+# BandwidthControlTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateBandwidthCtrlRuleTemplate**](BandwidthControlTemplateAPI.md#CreateBandwidthCtrlRuleTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules | Create bandwidth control template rule
-[**DeleteBandwidthCtrlRuleTemplate**](BandwidthControlTemplateAPI.md#DeleteBandwidthCtrlRuleTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules/{ruleId} | Delete bandwidth control template rule
-[**GetBandwidthCtrlTemplate**](BandwidthControlTemplateAPI.md#GetBandwidthCtrlTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control | Get bandwidth control template
-[**GetGridBandwidthCtrlRuleTemplate**](BandwidthControlTemplateAPI.md#GetGridBandwidthCtrlRuleTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules | Get bandwidth control template rule list
-[**ModifyBandwidthCtrlRuleIndexTemplate**](BandwidthControlTemplateAPI.md#ModifyBandwidthCtrlRuleIndexTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules | Modify bandwidth control template rule index
-[**ModifyBandwidthCtrlRuleTemplate**](BandwidthControlTemplateAPI.md#ModifyBandwidthCtrlRuleTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules/{ruleId} | Modify bandwidth control template rule
-[**ModifyBandwidthCtrlTemplate**](BandwidthControlTemplateAPI.md#ModifyBandwidthCtrlTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control | Modify bandwidth control template
+[**CreateBandwidthCtrlRuleTemplate**](BandwidthControlTemplateAPI.md#createbandwidthctrlruletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules | Create bandwidth control template rule
+[**DeleteBandwidthCtrlRuleTemplate**](BandwidthControlTemplateAPI.md#deletebandwidthctrlruletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules/{ruleId} | Delete bandwidth control template rule
+[**GetBandwidthCtrlTemplate**](BandwidthControlTemplateAPI.md#getbandwidthctrltemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control | Get bandwidth control template
+[**GetGridBandwidthCtrlRuleTemplate**](BandwidthControlTemplateAPI.md#getgridbandwidthctrlruletemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules | Get bandwidth control template rule list
+[**ModifyBandwidthCtrlRuleIndexTemplate**](BandwidthControlTemplateAPI.md#modifybandwidthctrlruleindextemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules | Modify bandwidth control template rule index
+[**ModifyBandwidthCtrlRuleTemplate**](BandwidthControlTemplateAPI.md#modifybandwidthctrlruletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control/rules/{ruleId} | Modify bandwidth control template rule
+[**ModifyBandwidthCtrlTemplate**](BandwidthControlTemplateAPI.md#modifybandwidthctrltemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bandwidth-control | Modify bandwidth control template
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,11 +1,11 @@
-# \SystemSettingsAPI
+# SystemSettingsAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DisableControllerUpgradeNotification**](SystemSettingsAPI.md#DisableControllerUpgradeNotification) | **Post** /openapi/v1/{omadacId}/notification/disable | Turn off the software update push switch
-[**GetControllerStatus**](SystemSettingsAPI.md#GetControllerStatus) | **Get** /openapi/v1/{omadacId}/system/setting/controller-status | Get controller status
+[**DisableControllerUpgradeNotification**](SystemSettingsAPI.md#disablecontrollerupgradenotification) | **Post** /openapi/v1/{omadacId}/notification/disable | Turn off the software update push switch
+[**GetControllerStatus**](SystemSettingsAPI.md#getcontrollerstatus) | **Get** /openapi/v1/{omadacId}/system/setting/controller-status | Get controller status
 
 
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

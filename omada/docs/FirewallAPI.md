@@ -1,13 +1,13 @@
-# \FirewallAPI
+# FirewallAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDefaultFirewallConfig**](FirewallAPI.md#GetDefaultFirewallConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/firewall/timeout/default | Get firewall default setting
-[**GetFirewallSetting**](FirewallAPI.md#GetFirewallSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/firewall | Get firewall setting
-[**ModifyFirewallSetting**](FirewallAPI.md#ModifyFirewallSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/firewall | Modify firewall setting
-[**ResetFirewallSetting**](FirewallAPI.md#ResetFirewallSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/firewall/reset | Reset firewall setting
+[**GetDefaultFirewallConfig**](FirewallAPI.md#getdefaultfirewallconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/firewall/timeout/default | Get firewall default setting
+[**GetFirewallSetting**](FirewallAPI.md#getfirewallsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/firewall | Get firewall setting
+[**ModifyFirewallSetting**](FirewallAPI.md#modifyfirewallsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/firewall | Modify firewall setting
+[**ResetFirewallSetting**](FirewallAPI.md#resetfirewallsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/firewall/reset | Reset firewall setting
 
 
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

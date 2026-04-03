@@ -1,33 +1,33 @@
-# \MspSettingAPI
+# MspSettingAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteCertificate**](MspSettingAPI.md#DeleteCertificate) | **Delete** /openapi/v1/msp/{mspId}/system/setting/certificate/{cerId} | Delete an existing msp certificate
-[**DeleteSSLKey**](MspSettingAPI.md#DeleteSSLKey) | **Delete** /openapi/v1/msp/{mspId}/system/setting/ssl-key/{keyId} | Delete an existing msp SSL key
-[**DisableMspControllerUpgradeNotification**](MspSettingAPI.md#DisableMspControllerUpgradeNotification) | **Post** /openapi/v1/msp/{mspId}/notification/disable | Turn off the software update push switch in MSP mode
-[**EvaluateMspFeedback**](MspSettingAPI.md#EvaluateMspFeedback) | **Post** /openapi/v1/msp/{mspId}/users/feedback/evaluates | Evaluate MSP feedback
-[**GetGeneralSetting**](MspSettingAPI.md#GetGeneralSetting) | **Get** /openapi/v1/msp/{mspId}/general-setting | Get msp general setting
-[**GetMspDstInfo**](MspSettingAPI.md#GetMspDstInfo) | **Get** /openapi/v1/msp/{mspId}/dst-info | Get msp DST
-[**GetMspMailServer**](MspSettingAPI.md#GetMspMailServer) | **Get** /openapi/v1/msp/{mspId}/settings/mail-server | Get MSP mail server
-[**GetMspMailServerStatusGlobal**](MspSettingAPI.md#GetMspMailServerStatusGlobal) | **Get** /openapi/v1/msp/{mspId}/account/mail-status | Get MSP mailServer status
-[**GetMspRadiusProxy**](MspSettingAPI.md#GetMspRadiusProxy) | **Get** /openapi/v1/msp/{mspId}/settings/network/radius-proxy | Get Msp RADIUS proxy server setting
-[**GetMspRadiusServer**](MspSettingAPI.md#GetMspRadiusServer) | **Get** /openapi/v1/msp/{mspId}/settings/network/radius-server | Get Msp Built-In RADIUS server setting
-[**GetMspUserInterface**](MspSettingAPI.md#GetMspUserInterface) | **Get** /openapi/v1/msp/{mspId}/settings/user-interface | Get msp user interface
-[**GetPrivacyPolicyMsp**](MspSettingAPI.md#GetPrivacyPolicyMsp) | **Get** /openapi/v1/msp/{mspId}/privacy-policy | Get msp privacy policy
-[**GetRemoteLoggingSetting1**](MspSettingAPI.md#GetRemoteLoggingSetting1) | **Get** /openapi/v1/msp/{mspId}/remote-logging | Get msp remote logging setting
-[**GetUiInterface1**](MspSettingAPI.md#GetUiInterface1) | **Get** /openapi/v1/msp/{mspId}/ui-interface | Get msp ui interface
-[**ModifyGeneralSetting**](MspSettingAPI.md#ModifyGeneralSetting) | **Patch** /openapi/v1/msp/{mspId}/general-setting | Modify msp general setting
-[**ModifyMspMailServer**](MspSettingAPI.md#ModifyMspMailServer) | **Patch** /openapi/v1/msp/{mspId}/settings/mail-server | Modify MSP mail server
-[**ModifyMspRadiusServer**](MspSettingAPI.md#ModifyMspRadiusServer) | **Patch** /openapi/v1/msp/{mspId}/settings/network/radius-server | Modify Msp Built-In RADIUS server setting
-[**ModifyMspUserInterface**](MspSettingAPI.md#ModifyMspUserInterface) | **Patch** /openapi/v1/msp/{mspId}/settings/user-interface | Modify msp user interface
-[**ModifyRadiusProxy1**](MspSettingAPI.md#ModifyRadiusProxy1) | **Patch** /openapi/v1/msp/{mspId}/settings/network/radius-proxy | Modify Msp RADIUS proxy server setting
-[**ModifyRemoteLoggingSetting**](MspSettingAPI.md#ModifyRemoteLoggingSetting) | **Patch** /openapi/v1/msp/{mspId}/remote-logging | Modify msp remote logging setting
-[**ModifyUiInterface1**](MspSettingAPI.md#ModifyUiInterface1) | **Patch** /openapi/v1/msp/{mspId}/ui-interface | Modify msp ui interface
-[**SendTestMailForMspV2**](MspSettingAPI.md#SendTestMailForMspV2) | **Post** /openapi/v1/msp/{mspId}/settings/test-mail | Send test mail for MSP
-[**UploadCertificate**](MspSettingAPI.md#UploadCertificate) | **Post** /openapi/v1/msp/{mspId}/system/setting/certificate | Upload msp certificate
-[**UploadSSLKey**](MspSettingAPI.md#UploadSSLKey) | **Post** /openapi/v1/msp/{mspId}/system/setting/ssl-key | Upload msp SSL key
+[**DeleteCertificate**](MspSettingAPI.md#deletecertificate) | **Delete** /openapi/v1/msp/{mspId}/system/setting/certificate/{cerId} | Delete an existing msp certificate
+[**DeleteSSLKey**](MspSettingAPI.md#deletesslkey) | **Delete** /openapi/v1/msp/{mspId}/system/setting/ssl-key/{keyId} | Delete an existing msp SSL key
+[**DisableMspControllerUpgradeNotification**](MspSettingAPI.md#disablemspcontrollerupgradenotification) | **Post** /openapi/v1/msp/{mspId}/notification/disable | Turn off the software update push switch in MSP mode
+[**EvaluateMspFeedback**](MspSettingAPI.md#evaluatemspfeedback) | **Post** /openapi/v1/msp/{mspId}/users/feedback/evaluates | Evaluate MSP feedback
+[**GetGeneralSetting**](MspSettingAPI.md#getgeneralsetting) | **Get** /openapi/v1/msp/{mspId}/general-setting | Get msp general setting
+[**GetMspDstInfo**](MspSettingAPI.md#getmspdstinfo) | **Get** /openapi/v1/msp/{mspId}/dst-info | Get msp DST
+[**GetMspMailServer**](MspSettingAPI.md#getmspmailserver) | **Get** /openapi/v1/msp/{mspId}/settings/mail-server | Get MSP mail server
+[**GetMspMailServerStatusGlobal**](MspSettingAPI.md#getmspmailserverstatusglobal) | **Get** /openapi/v1/msp/{mspId}/account/mail-status | Get MSP mailServer status
+[**GetMspRadiusProxy**](MspSettingAPI.md#getmspradiusproxy) | **Get** /openapi/v1/msp/{mspId}/settings/network/radius-proxy | Get Msp RADIUS proxy server setting
+[**GetMspRadiusServer**](MspSettingAPI.md#getmspradiusserver) | **Get** /openapi/v1/msp/{mspId}/settings/network/radius-server | Get Msp Built-In RADIUS server setting
+[**GetMspUserInterface**](MspSettingAPI.md#getmspuserinterface) | **Get** /openapi/v1/msp/{mspId}/settings/user-interface | Get msp user interface
+[**GetPrivacyPolicyMsp**](MspSettingAPI.md#getprivacypolicymsp) | **Get** /openapi/v1/msp/{mspId}/privacy-policy | Get msp privacy policy
+[**GetRemoteLoggingSetting1**](MspSettingAPI.md#getremoteloggingsetting1) | **Get** /openapi/v1/msp/{mspId}/remote-logging | Get msp remote logging setting
+[**GetUiInterface1**](MspSettingAPI.md#getuiinterface1) | **Get** /openapi/v1/msp/{mspId}/ui-interface | Get msp ui interface
+[**ModifyGeneralSetting**](MspSettingAPI.md#modifygeneralsetting) | **Patch** /openapi/v1/msp/{mspId}/general-setting | Modify msp general setting
+[**ModifyMspMailServer**](MspSettingAPI.md#modifymspmailserver) | **Patch** /openapi/v1/msp/{mspId}/settings/mail-server | Modify MSP mail server
+[**ModifyMspRadiusServer**](MspSettingAPI.md#modifymspradiusserver) | **Patch** /openapi/v1/msp/{mspId}/settings/network/radius-server | Modify Msp Built-In RADIUS server setting
+[**ModifyMspUserInterface**](MspSettingAPI.md#modifymspuserinterface) | **Patch** /openapi/v1/msp/{mspId}/settings/user-interface | Modify msp user interface
+[**ModifyRadiusProxy1**](MspSettingAPI.md#modifyradiusproxy1) | **Patch** /openapi/v1/msp/{mspId}/settings/network/radius-proxy | Modify Msp RADIUS proxy server setting
+[**ModifyRemoteLoggingSetting**](MspSettingAPI.md#modifyremoteloggingsetting) | **Patch** /openapi/v1/msp/{mspId}/remote-logging | Modify msp remote logging setting
+[**ModifyUiInterface1**](MspSettingAPI.md#modifyuiinterface1) | **Patch** /openapi/v1/msp/{mspId}/ui-interface | Modify msp ui interface
+[**SendTestMailForMspV2**](MspSettingAPI.md#sendtestmailformspv2) | **Post** /openapi/v1/msp/{mspId}/settings/test-mail | Send test mail for MSP
+[**UploadCertificate**](MspSettingAPI.md#uploadcertificate) | **Post** /openapi/v1/msp/{mspId}/system/setting/certificate | Upload msp certificate
+[**UploadSSLKey**](MspSettingAPI.md#uploadsslkey) | **Post** /openapi/v1/msp/{mspId}/system/setting/ssl-key | Upload msp SSL key
 
 
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -727,7 +727,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -797,7 +797,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -867,7 +867,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -937,7 +937,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1007,7 +1007,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1079,7 +1079,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1151,7 +1151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1223,7 +1223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1295,7 +1295,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1367,7 +1367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1439,7 +1439,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1511,7 +1511,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1583,7 +1583,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1657,7 +1657,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1731,7 +1731,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

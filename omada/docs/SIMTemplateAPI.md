@@ -1,16 +1,16 @@
-# \SIMTemplateAPI
+# SIMTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMailServerTemplate**](SIMTemplateAPI.md#GetMailServerTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/mails | get mail server
-[**ModifyMailServerTemplate**](SIMTemplateAPI.md#ModifyMailServerTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/mails/{mailId} | modify mail server
-[**ModifySmsPolicySettingTemplate**](SIMTemplateAPI.md#ModifySmsPolicySettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/policy | Modify SMS policy setting template
-[**ModifySmsRouterCommandTemplate**](SIMTemplateAPI.md#ModifySmsRouterCommandTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/router-command | Modify SMS router command template
-[**QuerySimCardQuotaSettingTemplate**](SIMTemplateAPI.md#QuerySimCardQuotaSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/quota/{simCard} | Get one of Dual-SIM card&#39;s SIM data setting template
-[**QuerySmsPolicySettingTemplate**](SIMTemplateAPI.md#QuerySmsPolicySettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/policy | Query SMS policy setting template
-[**QuerySmsRouterCommandTemplate**](SIMTemplateAPI.md#QuerySmsRouterCommandTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/router-command | Query SMS router command template
+[**GetMailServerTemplate**](SIMTemplateAPI.md#getmailservertemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/mails | get mail server
+[**ModifyMailServerTemplate**](SIMTemplateAPI.md#modifymailservertemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/mails/{mailId} | modify mail server
+[**ModifySmsPolicySettingTemplate**](SIMTemplateAPI.md#modifysmspolicysettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/policy | Modify SMS policy setting template
+[**ModifySmsRouterCommandTemplate**](SIMTemplateAPI.md#modifysmsroutercommandtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/router-command | Modify SMS router command template
+[**QuerySimCardQuotaSettingTemplate**](SIMTemplateAPI.md#querysimcardquotasettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/quota/{simCard} | Get one of Dual-SIM card&#39;s SIM data setting template
+[**QuerySmsPolicySettingTemplate**](SIMTemplateAPI.md#querysmspolicysettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/policy | Query SMS policy setting template
+[**QuerySmsRouterCommandTemplate**](SIMTemplateAPI.md#querysmsroutercommandtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/router-command | Query SMS router command template
 
 
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

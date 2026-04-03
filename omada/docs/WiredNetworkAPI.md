@@ -1,103 +1,103 @@
-# \WiredNetworkAPI
+# WiredNetworkAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchIsolateLanNetwork1**](WiredNetworkAPI.md#BatchIsolateLanNetwork1) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks/batch-isolate | Batch isolate network
-[**CheckNetworkParamWhenCreate**](WiredNetworkAPI.md#CheckNetworkParamWhenCreate) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/param-check | Check basic parameters when creating network
-[**CheckNetworkParamWhenModify**](WiredNetworkAPI.md#CheckNetworkParamWhenModify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/param-check | Check basic parameters when modifying the network
-[**CheckParamAndGetPreConfig**](WiredNetworkAPI.md#CheckParamAndGetPreConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/check | Check all parameters and generate configuration when creating network
-[**CheckParamAndGetPreConfigWhenModify**](WiredNetworkAPI.md#CheckParamAndGetPreConfigWhenModify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/check | Check all parameters and generate configuration when modifying the network
-[**CheckPortBindingParamWhenCreate**](WiredNetworkAPI.md#CheckPortBindingParamWhenCreate) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/ports-check | Check selected ports when creating network
-[**CheckPortBindingParamWhenModify**](WiredNetworkAPI.md#CheckPortBindingParamWhenModify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/ports-check | Check port binding when modifying network
-[**CheckVirtualWanUsed1**](WiredNetworkAPI.md#CheckVirtualWanUsed1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/delete-check | Check Virtual Wan Used
-[**CheckWanLanStatus1**](WiredNetworkAPI.md#CheckWanLanStatus1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan-lan-status | Check WAN-LAN status
-[**ConfirmCreateVlanNetwork**](WiredNetworkAPI.md#ConfirmCreateVlanNetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/confirm | Confirm create lan network
-[**ConfirmModifyVlanNetwork**](WiredNetworkAPI.md#ConfirmModifyVlanNetwork) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/confirm | Confirm modify lan network
-[**CreateLanDns**](WiredNetworkAPI.md#CreateLanDns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/lan/dns | Create a LAN DNS rule
-[**CreateLanNetwork**](WiredNetworkAPI.md#CreateLanNetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks | Create LAN network
-[**CreateLanNetworkV2**](WiredNetworkAPI.md#CreateLanNetworkV2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks | Create LAN network
-[**CreateLanProfile**](WiredNetworkAPI.md#CreateLanProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles | Create new LAN profile
-[**CreateOswLanProfile**](WiredNetworkAPI.md#CreateOswLanProfile) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/lan-profiles | Create new switch profile
-[**CreateVirtualWan**](WiredNetworkAPI.md#CreateVirtualWan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans | Create virtual WAN
-[**CreateVlans1**](WiredNetworkAPI.md#CreateVlans1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-vlans | Batch create vlans
-[**DeleteLanDns**](WiredNetworkAPI.md#DeleteLanDns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/lan/dns/{dnsId} | Delete an existing LAN DNS rule
-[**DeleteLanNetwork**](WiredNetworkAPI.md#DeleteLanNetwork) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/{networkId} | Delete LAN network
-[**DeleteLanProfile**](WiredNetworkAPI.md#DeleteLanProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Delete an existing LAN profile
-[**DeleteOswLanProfile**](WiredNetworkAPI.md#DeleteOswLanProfile) | **Delete** /openapi/v2/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Delete an existing switch profile
-[**DeleteVirtualWan1**](WiredNetworkAPI.md#DeleteVirtualWan1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/{virtualWanId} | Delete virtual WAN
-[**GetAllInterfacesForBatchIsolate1**](WiredNetworkAPI.md#GetAllInterfacesForBatchIsolate1) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks/isolate/interfaces | Get interface List
-[**GetAllLanNetworks**](WiredNetworkAPI.md#GetAllLanNetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/all | Get all networks for the omada id and site id
-[**GetAllValidVlansInSiteForSwitchOuiBasedVlan1**](WiredNetworkAPI.md#GetAllValidVlansInSiteForSwitchOuiBasedVlan1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/valid-vlans | Get valid vlanList for switch oui based vlan
-[**GetAutoEffectDevicesWhenCreate**](WiredNetworkAPI.md#GetAutoEffectDevicesWhenCreate) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/auto-effect-devices | Get auto effect devices when creating network
-[**GetAutoEffectDevicesWhenModify**](WiredNetworkAPI.md#GetAutoEffectDevicesWhenModify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/auto-effect-devices | Get auto effect devices when modifying network
-[**GetAutoSelectDevicesWhenModify**](WiredNetworkAPI.md#GetAutoSelectDevicesWhenModify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/auto-select-devices | Get auto select devices when modifying network
-[**GetAvailableVirtualWan**](WiredNetworkAPI.md#GetAvailableVirtualWan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/available-virtual-wans | Query available virtual WAN list
-[**GetAvailableWanPorts1**](WiredNetworkAPI.md#GetAvailableWanPorts1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/wan-ports | Get available wan ports
-[**GetBandScanResult**](WiredNetworkAPI.md#GetBandScanResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/band-scan/{portUuid} | Get band scan result.
-[**GetDeliveringProcess**](WiredNetworkAPI.md#GetDeliveringProcess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/process | Get network delivering process and config
-[**GetDeliveringProcessWithoutConfig**](WiredNetworkAPI.md#GetDeliveringProcessWithoutConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/brief-process | Get network delivering process
-[**GetDhcpServerDevCapForNetwork**](WiredNetworkAPI.md#GetDhcpServerDevCapForNetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/dhcp-server/capabilities | Get the capabilities of the DHCP server under the network
-[**GetDhcpServerInfoForNetwork**](WiredNetworkAPI.md#GetDhcpServerInfoForNetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/dhcp-server-info | Get the address pool of the DHCP server under the network and the number of available IPs
-[**GetGridLanDns**](WiredNetworkAPI.md#GetGridLanDns) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/lan/dns | Get LAN DNS list
-[**GetGridSupportVlanNetworkDevicesBySite**](WiredNetworkAPI.md#GetGridSupportVlanNetworkDevicesBySite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/devices | Get devices list that can be dhcp server
-[**GetGridVirtualWan**](WiredNetworkAPI.md#GetGridVirtualWan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans | Query virtual WAN list
-[**GetGridVlanNetworkAffectedDevicePorts**](WiredNetworkAPI.md#GetGridVlanNetworkAffectedDevicePorts) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/ports | Get the ports of devices that use the network
-[**GetGridVlans**](WiredNetworkAPI.md#GetGridVlans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/vlans | Get the networks whose purpose is vlan
-[**GetInterfaceLanNetwork**](WiredNetworkAPI.md#GetInterfaceLanNetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/interface | Get all \&quot;single\&quot;/\&quot;multi\&quot; interface lan network
-[**GetInterfaceLanNetworkV2**](WiredNetworkAPI.md#GetInterfaceLanNetworkV2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks/interface | Get all \&quot;single\&quot;/\&quot;multi\&quot; interface lan network V2
-[**GetInternet**](WiredNetworkAPI.md#GetInternet) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet | Get internet info
-[**GetInternetBasicPortInfo1**](WiredNetworkAPI.md#GetInternetBasicPortInfo1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/basic-info | Get internet basic info
-[**GetInternetLoadBalance1**](WiredNetworkAPI.md#GetInternetLoadBalance1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/load-balance | Get internet load balance config
-[**GetIpptInternet**](WiredNetworkAPI.md#GetIpptInternet) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/internet | Get internet info by mac
-[**GetIspScanResult**](WiredNetworkAPI.md#GetIspScanResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/isp-scan/{portUuid} | Get Isp scan result
-[**GetLanNetwork**](WiredNetworkAPI.md#GetLanNetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/{networkId} | Get LAN network
-[**GetLanNetworkList**](WiredNetworkAPI.md#GetLanNetworkList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks | Get LAN network list
-[**GetLanNetworkListV2**](WiredNetworkAPI.md#GetLanNetworkListV2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks | Get LAN network list
-[**GetLanNetworkListV3**](WiredNetworkAPI.md#GetLanNetworkListV3) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/lan-networks | Get LAN network list V3
-[**GetLanProfileList**](WiredNetworkAPI.md#GetLanProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles | Get LAN profile list
-[**GetLoadBalanceWeightStatus**](WiredNetworkAPI.md#GetLoadBalanceWeightStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/load-balance/status | Check Wan Loadbalance status
-[**GetLocationAndIspInfo**](WiredNetworkAPI.md#GetLocationAndIspInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/location-isp | Get location and ISP info
-[**GetLteWanPortsConfig**](WiredNetworkAPI.md#GetLteWanPortsConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/lte/ports-config | Get internet lte wan ports config
-[**GetNetworksWithServersForReservation**](WiredNetworkAPI.md#GetNetworksWithServersForReservation) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/server-for-reservation | Get all networks that can reserve IP addresses and their corresponding servers
-[**GetOswForGivenLanNetworkIds**](WiredNetworkAPI.md#GetOswForGivenLanNetworkIds) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/switches | Get LAN network list
-[**GetOswLanProfileList**](WiredNetworkAPI.md#GetOswLanProfileList) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lan-profiles | Get switch profile list
-[**GetOswPortLanNetInfo**](WiredNetworkAPI.md#GetOswPortLanNetInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-switch-setting | Get switch port profile info
-[**GetSelectDevicePortsInfo**](WiredNetworkAPI.md#GetSelectDevicePortsInfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/devices/ports | Get the port information of the selected devices when creating network
-[**GetSelectDevicePortsInfoWhenModify**](WiredNetworkAPI.md#GetSelectDevicePortsInfoWhenModify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/devices/ports | Get the port information of the selected devices when modifying the network
-[**GetSelectStackPortsInfo**](WiredNetworkAPI.md#GetSelectStackPortsInfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/stack/ports | Get the port information of the selected stacks when creating network
-[**GetSelectStackPortsInfoWhenModify**](WiredNetworkAPI.md#GetSelectStackPortsInfoWhenModify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/stack/ports | Get the port information of the selected stacks when modifying the network
-[**GetSimCardBandScanResult**](WiredNetworkAPI.md#GetSimCardBandScanResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/band-scan/{portUuid}/{simCard} | Obtain the bandScan result of the corresponding SIM card
-[**GetSimCardIspScanResult**](WiredNetworkAPI.md#GetSimCardIspScanResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/isp-scan/{portUuid}/{simCard} | Obtain the ispScan result of the corresponding SIM card
-[**GetSupportInfo**](WiredNetworkAPI.md#GetSupportInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/models | Get supported gateway model list for pre-configuration
-[**GetUseLanProfileES**](WiredNetworkAPI.md#GetUseLanProfileES) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles/{profileId}/es | Query Agile Series switches that used the profile
-[**GetUseNativeNetworkOsw**](WiredNetworkAPI.md#GetUseNativeNetworkOsw) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/es | Query switches that used the Native Network&#39;s profile
-[**GetUseNativeNetworkOswV2**](WiredNetworkAPI.md#GetUseNativeNetworkOswV2) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/es-native | Query switches that used the Native Network&#39;s profile V2
-[**GetVlanNetworkAffectedDevice1**](WiredNetworkAPI.md#GetVlanNetworkAffectedDevice1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/devices | Get devices list that use the network
-[**GetVlanNetworkAffectedSsid1**](WiredNetworkAPI.md#GetVlanNetworkAffectedSsid1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/ssids | Get grid ssid list that use the vlan
-[**GetWanPortsConfig**](WiredNetworkAPI.md#GetWanPortsConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/ports-config | Get internet ports config
-[**GetWanPortsMaxSpeed1**](WiredNetworkAPI.md#GetWanPortsMaxSpeed1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan-max-speed | Get wan ports max speed
-[**ModifyGatewayModel**](WiredNetworkAPI.md#ModifyGatewayModel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/internet/change-model | Modify gateway mode for pre-configuration
-[**ModifyInternetBasicPortInfo1**](WiredNetworkAPI.md#ModifyInternetBasicPortInfo1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/basic-info | Modify the internet basic configuration
-[**ModifyInternetLoadBalance1**](WiredNetworkAPI.md#ModifyInternetLoadBalance1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/load-balance | Modify internet load balance config
-[**ModifyIpptLteWanPortConfig**](WiredNetworkAPI.md#ModifyIpptLteWanPortConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/internet/lte/ports-config | Modify internet lte port config for ippt
-[**ModifyIpptWanMode**](WiredNetworkAPI.md#ModifyIpptWanMode) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/internet/wan-mode | Modify internet wan mode
-[**ModifyLanDns**](WiredNetworkAPI.md#ModifyLanDns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/lan/dns/{dnsId} | Modify an existing LAN DNS rule
-[**ModifyLanNetwork**](WiredNetworkAPI.md#ModifyLanNetwork) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/{networkId} | Modify LAN network
-[**ModifyLanNetworkV2**](WiredNetworkAPI.md#ModifyLanNetworkV2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks/{networkId} | Modify LAN network
-[**ModifyLanProfile**](WiredNetworkAPI.md#ModifyLanProfile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Modify a LAN profile
-[**ModifyLteWanPortConfig**](WiredNetworkAPI.md#ModifyLteWanPortConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/lte/ports-config | Modify internet lte port config
-[**ModifyOswLanProfile**](WiredNetworkAPI.md#ModifyOswLanProfile) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Modify a switch profile
-[**ModifyVirtualWan**](WiredNetworkAPI.md#ModifyVirtualWan) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/{virtualWanId} | Modify virtual WAN
-[**ModifyVirtualWanStatus**](WiredNetworkAPI.md#ModifyVirtualWanStatus) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/{virtualWanId}/status | Modify virtual WAN status
-[**ModifyWanPortSettings**](WiredNetworkAPI.md#ModifyWanPortSettings) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/port-setting | Modify Wan Port Settings
-[**ModifyWanPorts**](WiredNetworkAPI.md#ModifyWanPorts) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/wan-ports | Modify Wan Ports
-[**ModifyWanPortsConfig**](WiredNetworkAPI.md#ModifyWanPortsConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/ports-config | Modify internet ports config
-[**NetworkMapping**](WiredNetworkAPI.md#NetworkMapping) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/network-mapping | Network mapping
-[**SpeedTest**](WiredNetworkAPI.md#SpeedTest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/speedTest | SpeedTest
-[**StartBandScan**](WiredNetworkAPI.md#StartBandScan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/band-scan | BandScan
-[**StartIspScan**](WiredNetworkAPI.md#StartIspScan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/isp-scan | IspScan
+[**BatchIsolateLanNetwork1**](WiredNetworkAPI.md#batchisolatelannetwork1) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks/batch-isolate | Batch isolate network
+[**CheckNetworkParamWhenCreate**](WiredNetworkAPI.md#checknetworkparamwhencreate) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/param-check | Check basic parameters when creating network
+[**CheckNetworkParamWhenModify**](WiredNetworkAPI.md#checknetworkparamwhenmodify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/param-check | Check basic parameters when modifying the network
+[**CheckParamAndGetPreConfig**](WiredNetworkAPI.md#checkparamandgetpreconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/check | Check all parameters and generate configuration when creating network
+[**CheckParamAndGetPreConfigWhenModify**](WiredNetworkAPI.md#checkparamandgetpreconfigwhenmodify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/check | Check all parameters and generate configuration when modifying the network
+[**CheckPortBindingParamWhenCreate**](WiredNetworkAPI.md#checkportbindingparamwhencreate) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/ports-check | Check selected ports when creating network
+[**CheckPortBindingParamWhenModify**](WiredNetworkAPI.md#checkportbindingparamwhenmodify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/ports-check | Check port binding when modifying network
+[**CheckVirtualWanUsed1**](WiredNetworkAPI.md#checkvirtualwanused1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/delete-check | Check Virtual Wan Used
+[**CheckWanLanStatus1**](WiredNetworkAPI.md#checkwanlanstatus1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan-lan-status | Check WAN-LAN status
+[**ConfirmCreateVlanNetwork**](WiredNetworkAPI.md#confirmcreatevlannetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/confirm | Confirm create lan network
+[**ConfirmModifyVlanNetwork**](WiredNetworkAPI.md#confirmmodifyvlannetwork) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/confirm | Confirm modify lan network
+[**CreateLanDns**](WiredNetworkAPI.md#createlandns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/lan/dns | Create a LAN DNS rule
+[**CreateLanNetwork**](WiredNetworkAPI.md#createlannetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks | Create LAN network
+[**CreateLanNetworkV2**](WiredNetworkAPI.md#createlannetworkv2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks | Create LAN network
+[**CreateLanProfile**](WiredNetworkAPI.md#createlanprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles | Create new LAN profile
+[**CreateOswLanProfile**](WiredNetworkAPI.md#createoswlanprofile) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/lan-profiles | Create new switch profile
+[**CreateVirtualWan**](WiredNetworkAPI.md#createvirtualwan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans | Create virtual WAN
+[**CreateVlans1**](WiredNetworkAPI.md#createvlans1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-vlans | Batch create vlans
+[**DeleteLanDns**](WiredNetworkAPI.md#deletelandns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/lan/dns/{dnsId} | Delete an existing LAN DNS rule
+[**DeleteLanNetwork**](WiredNetworkAPI.md#deletelannetwork) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/{networkId} | Delete LAN network
+[**DeleteLanProfile**](WiredNetworkAPI.md#deletelanprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Delete an existing LAN profile
+[**DeleteOswLanProfile**](WiredNetworkAPI.md#deleteoswlanprofile) | **Delete** /openapi/v2/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Delete an existing switch profile
+[**DeleteVirtualWan1**](WiredNetworkAPI.md#deletevirtualwan1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/{virtualWanId} | Delete virtual WAN
+[**GetAllInterfacesForBatchIsolate1**](WiredNetworkAPI.md#getallinterfacesforbatchisolate1) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks/isolate/interfaces | Get interface List
+[**GetAllLanNetworks**](WiredNetworkAPI.md#getalllannetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/all | Get all networks for the omada id and site id
+[**GetAllValidVlansInSiteForSwitchOuiBasedVlan1**](WiredNetworkAPI.md#getallvalidvlansinsiteforswitchouibasedvlan1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/valid-vlans | Get valid vlanList for switch oui based vlan
+[**GetAutoEffectDevicesWhenCreate**](WiredNetworkAPI.md#getautoeffectdeviceswhencreate) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/auto-effect-devices | Get auto effect devices when creating network
+[**GetAutoEffectDevicesWhenModify**](WiredNetworkAPI.md#getautoeffectdeviceswhenmodify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/auto-effect-devices | Get auto effect devices when modifying network
+[**GetAutoSelectDevicesWhenModify**](WiredNetworkAPI.md#getautoselectdeviceswhenmodify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/auto-select-devices | Get auto select devices when modifying network
+[**GetAvailableVirtualWan**](WiredNetworkAPI.md#getavailablevirtualwan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/available-virtual-wans | Query available virtual WAN list
+[**GetAvailableWanPorts1**](WiredNetworkAPI.md#getavailablewanports1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/wan-ports | Get available wan ports
+[**GetBandScanResult**](WiredNetworkAPI.md#getbandscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/band-scan/{portUuid} | Get band scan result.
+[**GetDeliveringProcess**](WiredNetworkAPI.md#getdeliveringprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/process | Get network delivering process and config
+[**GetDeliveringProcessWithoutConfig**](WiredNetworkAPI.md#getdeliveringprocesswithoutconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/brief-process | Get network delivering process
+[**GetDhcpServerDevCapForNetwork**](WiredNetworkAPI.md#getdhcpserverdevcapfornetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/dhcp-server/capabilities | Get the capabilities of the DHCP server under the network
+[**GetDhcpServerInfoForNetwork**](WiredNetworkAPI.md#getdhcpserverinfofornetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/dhcp-server-info | Get the address pool of the DHCP server under the network and the number of available IPs
+[**GetGridLanDns**](WiredNetworkAPI.md#getgridlandns) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/lan/dns | Get LAN DNS list
+[**GetGridSupportVlanNetworkDevicesBySite**](WiredNetworkAPI.md#getgridsupportvlannetworkdevicesbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/devices | Get devices list that can be dhcp server
+[**GetGridVirtualWan**](WiredNetworkAPI.md#getgridvirtualwan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans | Query virtual WAN list
+[**GetGridVlanNetworkAffectedDevicePorts**](WiredNetworkAPI.md#getgridvlannetworkaffecteddeviceports) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/ports | Get the ports of devices that use the network
+[**GetGridVlans**](WiredNetworkAPI.md#getgridvlans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/vlans | Get the networks whose purpose is vlan
+[**GetInterfaceLanNetwork**](WiredNetworkAPI.md#getinterfacelannetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/interface | Get all \&quot;single\&quot;/\&quot;multi\&quot; interface lan network
+[**GetInterfaceLanNetworkV2**](WiredNetworkAPI.md#getinterfacelannetworkv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks/interface | Get all \&quot;single\&quot;/\&quot;multi\&quot; interface lan network V2
+[**GetInternet**](WiredNetworkAPI.md#getinternet) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet | Get internet info
+[**GetInternetBasicPortInfo1**](WiredNetworkAPI.md#getinternetbasicportinfo1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/basic-info | Get internet basic info
+[**GetInternetLoadBalance1**](WiredNetworkAPI.md#getinternetloadbalance1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/load-balance | Get internet load balance config
+[**GetIpptInternet**](WiredNetworkAPI.md#getipptinternet) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/internet | Get internet info by mac
+[**GetIspScanResult**](WiredNetworkAPI.md#getispscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/isp-scan/{portUuid} | Get Isp scan result
+[**GetLanNetwork**](WiredNetworkAPI.md#getlannetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/{networkId} | Get LAN network
+[**GetLanNetworkList**](WiredNetworkAPI.md#getlannetworklist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks | Get LAN network list
+[**GetLanNetworkListV2**](WiredNetworkAPI.md#getlannetworklistv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks | Get LAN network list
+[**GetLanNetworkListV3**](WiredNetworkAPI.md#getlannetworklistv3) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/lan-networks | Get LAN network list V3
+[**GetLanProfileList**](WiredNetworkAPI.md#getlanprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles | Get LAN profile list
+[**GetLoadBalanceWeightStatus**](WiredNetworkAPI.md#getloadbalanceweightstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/load-balance/status | Check Wan Loadbalance status
+[**GetLocationAndIspInfo**](WiredNetworkAPI.md#getlocationandispinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/location-isp | Get location and ISP info
+[**GetLteWanPortsConfig**](WiredNetworkAPI.md#getltewanportsconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/lte/ports-config | Get internet lte wan ports config
+[**GetNetworksWithServersForReservation**](WiredNetworkAPI.md#getnetworkswithserversforreservation) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/server-for-reservation | Get all networks that can reserve IP addresses and their corresponding servers
+[**GetOswForGivenLanNetworkIds**](WiredNetworkAPI.md#getoswforgivenlannetworkids) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/switches | Get LAN network list
+[**GetOswLanProfileList**](WiredNetworkAPI.md#getoswlanprofilelist) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lan-profiles | Get switch profile list
+[**GetOswPortLanNetInfo**](WiredNetworkAPI.md#getoswportlannetinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-switch-setting | Get switch port profile info
+[**GetSelectDevicePortsInfo**](WiredNetworkAPI.md#getselectdeviceportsinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/devices/ports | Get the port information of the selected devices when creating network
+[**GetSelectDevicePortsInfoWhenModify**](WiredNetworkAPI.md#getselectdeviceportsinfowhenmodify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/devices/ports | Get the port information of the selected devices when modifying the network
+[**GetSelectStackPortsInfo**](WiredNetworkAPI.md#getselectstackportsinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/stack/ports | Get the port information of the selected stacks when creating network
+[**GetSelectStackPortsInfoWhenModify**](WiredNetworkAPI.md#getselectstackportsinfowhenmodify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/stack/ports | Get the port information of the selected stacks when modifying the network
+[**GetSimCardBandScanResult**](WiredNetworkAPI.md#getsimcardbandscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/band-scan/{portUuid}/{simCard} | Obtain the bandScan result of the corresponding SIM card
+[**GetSimCardIspScanResult**](WiredNetworkAPI.md#getsimcardispscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/isp-scan/{portUuid}/{simCard} | Obtain the ispScan result of the corresponding SIM card
+[**GetSupportInfo**](WiredNetworkAPI.md#getsupportinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/models | Get supported gateway model list for pre-configuration
+[**GetUseLanProfileES**](WiredNetworkAPI.md#getuselanprofilees) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles/{profileId}/es | Query Agile Series switches that used the profile
+[**GetUseNativeNetworkOsw**](WiredNetworkAPI.md#getusenativenetworkosw) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/es | Query switches that used the Native Network&#39;s profile
+[**GetUseNativeNetworkOswV2**](WiredNetworkAPI.md#getusenativenetworkoswv2) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/es-native | Query switches that used the Native Network&#39;s profile V2
+[**GetVlanNetworkAffectedDevice1**](WiredNetworkAPI.md#getvlannetworkaffecteddevice1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/devices | Get devices list that use the network
+[**GetVlanNetworkAffectedSsid1**](WiredNetworkAPI.md#getvlannetworkaffectedssid1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/ssids | Get grid ssid list that use the vlan
+[**GetWanPortsConfig**](WiredNetworkAPI.md#getwanportsconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/ports-config | Get internet ports config
+[**GetWanPortsMaxSpeed1**](WiredNetworkAPI.md#getwanportsmaxspeed1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan-max-speed | Get wan ports max speed
+[**ModifyGatewayModel**](WiredNetworkAPI.md#modifygatewaymodel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/internet/change-model | Modify gateway mode for pre-configuration
+[**ModifyInternetBasicPortInfo1**](WiredNetworkAPI.md#modifyinternetbasicportinfo1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/basic-info | Modify the internet basic configuration
+[**ModifyInternetLoadBalance1**](WiredNetworkAPI.md#modifyinternetloadbalance1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/load-balance | Modify internet load balance config
+[**ModifyIpptLteWanPortConfig**](WiredNetworkAPI.md#modifyipptltewanportconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/internet/lte/ports-config | Modify internet lte port config for ippt
+[**ModifyIpptWanMode**](WiredNetworkAPI.md#modifyipptwanmode) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/internet/wan-mode | Modify internet wan mode
+[**ModifyLanDns**](WiredNetworkAPI.md#modifylandns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/lan/dns/{dnsId} | Modify an existing LAN DNS rule
+[**ModifyLanNetwork**](WiredNetworkAPI.md#modifylannetwork) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/{networkId} | Modify LAN network
+[**ModifyLanNetworkV2**](WiredNetworkAPI.md#modifylannetworkv2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/lan-networks/{networkId} | Modify LAN network
+[**ModifyLanProfile**](WiredNetworkAPI.md#modifylanprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Modify a LAN profile
+[**ModifyLteWanPortConfig**](WiredNetworkAPI.md#modifyltewanportconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/lte/ports-config | Modify internet lte port config
+[**ModifyOswLanProfile**](WiredNetworkAPI.md#modifyoswlanprofile) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Modify a switch profile
+[**ModifyVirtualWan**](WiredNetworkAPI.md#modifyvirtualwan) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/{virtualWanId} | Modify virtual WAN
+[**ModifyVirtualWanStatus**](WiredNetworkAPI.md#modifyvirtualwanstatus) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/{virtualWanId}/status | Modify virtual WAN status
+[**ModifyWanPortSettings**](WiredNetworkAPI.md#modifywanportsettings) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/port-setting | Modify Wan Port Settings
+[**ModifyWanPorts**](WiredNetworkAPI.md#modifywanports) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/wan-ports | Modify Wan Ports
+[**ModifyWanPortsConfig**](WiredNetworkAPI.md#modifywanportsconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/ports-config | Modify internet ports config
+[**NetworkMapping**](WiredNetworkAPI.md#networkmapping) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/network-mapping | Network mapping
+[**SpeedTest**](WiredNetworkAPI.md#speedtest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/speedTest | SpeedTest
+[**StartBandScan**](WiredNetworkAPI.md#startbandscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/band-scan | BandScan
+[**StartIspScan**](WiredNetworkAPI.md#startispscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/isp-scan | IspScan
 
 
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -698,7 +698,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -771,7 +771,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -924,7 +924,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -999,7 +999,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1074,7 +1074,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1149,7 +1149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1224,7 +1224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1299,7 +1299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1374,7 +1374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1449,7 +1449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1525,7 +1525,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1601,7 +1601,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1677,7 +1677,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1753,7 +1753,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1829,7 +1829,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1906,7 +1906,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1979,7 +1979,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2056,7 +2056,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2131,7 +2131,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2209,7 +2209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2287,7 +2287,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2360,7 +2360,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2435,7 +2435,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2511,7 +2511,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2587,7 +2587,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2663,7 +2663,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2739,7 +2739,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2815,7 +2815,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2892,7 +2892,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2969,7 +2969,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3046,7 +3046,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3129,7 +3129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3208,7 +3208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3283,7 +3283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3358,7 +3358,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3431,7 +3431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3504,7 +3504,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3577,7 +3577,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3653,7 +3653,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3729,7 +3729,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3805,7 +3805,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3882,7 +3882,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3959,7 +3959,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4036,7 +4036,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4113,7 +4113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4186,7 +4186,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4259,7 +4259,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4332,7 +4332,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4405,7 +4405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4480,7 +4480,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4557,7 +4557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4634,7 +4634,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4709,7 +4709,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4787,7 +4787,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4862,7 +4862,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4940,7 +4940,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5019,7 +5019,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5098,7 +5098,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5171,7 +5171,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5251,7 +5251,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5326,7 +5326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5401,7 +5401,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5480,7 +5480,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5563,7 +5563,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5636,7 +5636,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5711,7 +5711,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5786,7 +5786,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5861,7 +5861,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5936,7 +5936,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6014,7 +6014,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6092,7 +6092,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6170,7 +6170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6248,7 +6248,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6326,7 +6326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6404,7 +6404,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6479,7 +6479,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6557,7 +6557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6635,7 +6635,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6713,7 +6713,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6788,7 +6788,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6863,7 +6863,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -6938,7 +6938,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -7013,7 +7013,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -7088,7 +7088,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -7163,7 +7163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -7238,7 +7238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,59 +1,59 @@
-# \ProfilesTemplateAPI
+# ProfilesTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AutoCreatePPSKTemplate**](ProfilesTemplateAPI.md#AutoCreatePPSKTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/generate-psk | Auto Create PSK templates
-[**CreateApnProfileTemplate**](ProfilesTemplateAPI.md#CreateApnProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/apn | Create a new APN profile template
-[**CreateGroupProfileTemplate**](ProfilesTemplateAPI.md#CreateGroupProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups | Create a new group profile template
-[**CreateLdapProfileTemplate**](ProfilesTemplateAPI.md#CreateLdapProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/ldap | Create a new LDAP profile template
-[**CreateMdnsProfileTemplate**](ProfilesTemplateAPI.md#CreateMdnsProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service | Create new Bonjour Service Template
-[**CreateOuiProfileTemplate**](ProfilesTemplateAPI.md#CreateOuiProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles | Create OUI profile template
-[**CreatePPSKProfileTemplate**](ProfilesTemplateAPI.md#CreatePPSKProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile | Create PPSK profile template
-[**CreateRadiusProfileTemplate**](ProfilesTemplateAPI.md#CreateRadiusProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Create a new Radius profile template
-[**CreateRadiusUserTemplate**](ProfilesTemplateAPI.md#CreateRadiusUserTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Create a new Build-in Radius profile user template
-[**CreateRateLimitProfileTemplate**](ProfilesTemplateAPI.md#CreateRateLimitProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profiles | Create rate limit profile template
-[**CreateTemplateServiceType**](ProfilesTemplateAPI.md#CreateTemplateServiceType) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type | Create siteTemplate&#39;s new Gateway QoS Service
-[**CreateTimeRangeProfileTemplate**](ProfilesTemplateAPI.md#CreateTimeRangeProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profiles | Create time range profile template
-[**DeleteAllPPSKProfilesTemplate**](ProfilesTemplateAPI.md#DeleteAllPPSKProfilesTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profiles | Delete All PPSK profile templates
-[**DeleteApnProfileTemplate**](ProfilesTemplateAPI.md#DeleteApnProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/apn/{profileId} | Delete an exist APN profile template
-[**DeleteGroupProfileTemplate**](ProfilesTemplateAPI.md#DeleteGroupProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups/{groupType}/{groupId} | Delete an exist group profile template
-[**DeleteLdapProfileTemplate**](ProfilesTemplateAPI.md#DeleteLdapProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/ldap/{ldapProfileId} | Delete an exist LDAP profile template
-[**DeleteMdnsProfileTemplate**](ProfilesTemplateAPI.md#DeleteMdnsProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service/{id} | Delete an existing Bonjour Service Template
-[**DeleteOuiProfileTemplate**](ProfilesTemplateAPI.md#DeleteOuiProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/{ouiId} | Delete OUI Profile template
-[**DeletePPSKProfileTemplate**](ProfilesTemplateAPI.md#DeletePPSKProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Delete PPSK profile template
-[**DeleteRadiusProfileTemplate**](ProfilesTemplateAPI.md#DeleteRadiusProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Delete an exist Radius profile template
-[**DeleteRadiusUserTemplate**](ProfilesTemplateAPI.md#DeleteRadiusUserTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Delete an exist Build-in Radius profile user template
-[**DeleteRateLimitProfileTemplate**](ProfilesTemplateAPI.md#DeleteRateLimitProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profile/{profileId} | Delete rate limit profile template
-[**DeleteTemplateServiceType**](ProfilesTemplateAPI.md#DeleteTemplateServiceType) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type/{id} | Delete an existing Gateway QoS Service in siteTemplate
-[**DeleteTimeRangeProfileTemplate**](ProfilesTemplateAPI.md#DeleteTimeRangeProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profile/{profileId} | Delete time range profile template
-[**GetApnProfileListTemplate**](ProfilesTemplateAPI.md#GetApnProfileListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/apn | Get APN profile template list
-[**GetGroupProfilesByTypeTemplate**](ProfilesTemplateAPI.md#GetGroupProfilesByTypeTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups/{groupType} | Get group profile template list by type
-[**GetGroupProfilesTemplate**](ProfilesTemplateAPI.md#GetGroupProfilesTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups | Get group profile template list
-[**GetLdapProfileListTemplate**](ProfilesTemplateAPI.md#GetLdapProfileListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/ldap | Get LDAP profile template list
-[**GetOuiProfileFullListTemplate**](ProfilesTemplateAPI.md#GetOuiProfileFullListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/all | Get OUI profile template summary list
-[**GetOuiProfileListTemplate**](ProfilesTemplateAPI.md#GetOuiProfileListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles | Get OUI profile template list
-[**GetPPSKProfileDetailTemplate**](ProfilesTemplateAPI.md#GetPPSKProfileDetailTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Get PPSK profile template detail
-[**GetPPSKProfilesTemplate**](ProfilesTemplateAPI.md#GetPPSKProfilesTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profiles | Get PPSK profile templates list
-[**GetRadiusProfileListTemplate**](ProfilesTemplateAPI.md#GetRadiusProfileListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Get Radius profile template list
-[**GetRadiusUserListTemplate**](ProfilesTemplateAPI.md#GetRadiusUserListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Get Build-in Radius profile user template list
-[**GetRateLimitProfileListTemplate**](ProfilesTemplateAPI.md#GetRateLimitProfileListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profiles | Get rate limit profile template list
-[**GetTemplateServiceTypeSummary**](ProfilesTemplateAPI.md#GetTemplateServiceTypeSummary) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type-summary | Get all Gateway QoS Service&#39;s ID and name info in siteTemplate
-[**GetTimeRangeListTemplate**](ProfilesTemplateAPI.md#GetTimeRangeListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profiles | Get time range profile template list
-[**ListMdnsProfileTemplate**](ProfilesTemplateAPI.md#ListMdnsProfileTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service | Get Bonjour Service Template list
-[**ListTemplateServiceType**](ProfilesTemplateAPI.md#ListTemplateServiceType) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type | Get siteTemplate&#39;s Gateway QoS Service list
-[**ModifyApnProfileTemplate**](ProfilesTemplateAPI.md#ModifyApnProfileTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/apn/{profileId} | Modify an exist APN profile template
-[**ModifyGroupProfileTemplate**](ProfilesTemplateAPI.md#ModifyGroupProfileTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups/{groupType}/{groupId} | Modify an exist group profile template
-[**ModifyLdapProfileTemplate**](ProfilesTemplateAPI.md#ModifyLdapProfileTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/ldap/{ldapProfileId} | Modify an exist LDAP profile template
-[**ModifyMdnsProfileTemplate**](ProfilesTemplateAPI.md#ModifyMdnsProfileTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service/{id} | Modify an existing Bonjour Service Template
-[**ModifyOuiProfileTemplate**](ProfilesTemplateAPI.md#ModifyOuiProfileTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/{ouiId} | Modify OUI Profile template
-[**ModifyPPSKProfileTemplate**](ProfilesTemplateAPI.md#ModifyPPSKProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Modify PPSK profile template
-[**ModifyRadiusProfileTemplate**](ProfilesTemplateAPI.md#ModifyRadiusProfileTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Modify an exist Radius profile template
-[**ModifyRadiusUserTemplate**](ProfilesTemplateAPI.md#ModifyRadiusUserTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Modify an exist Build-in Radius profile user template
-[**ModifyRateLimitProfileTemplate**](ProfilesTemplateAPI.md#ModifyRateLimitProfileTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profile/{profileId} | Modify rate limit profile template
-[**ModifyTemplateServiceType**](ProfilesTemplateAPI.md#ModifyTemplateServiceType) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type/{id} | Modify an existing Gateway QoS Service in siteTemplate
-[**ModifyTimeRangeProfileTemplate**](ProfilesTemplateAPI.md#ModifyTimeRangeProfileTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profile/{profileId} | Modify time range profile template
+[**AutoCreatePPSKTemplate**](ProfilesTemplateAPI.md#autocreateppsktemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/generate-psk | Auto Create PSK templates
+[**CreateApnProfileTemplate**](ProfilesTemplateAPI.md#createapnprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/apn | Create a new APN profile template
+[**CreateGroupProfileTemplate**](ProfilesTemplateAPI.md#creategroupprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups | Create a new group profile template
+[**CreateLdapProfileTemplate**](ProfilesTemplateAPI.md#createldapprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/ldap | Create a new LDAP profile template
+[**CreateMdnsProfileTemplate**](ProfilesTemplateAPI.md#createmdnsprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service | Create new Bonjour Service Template
+[**CreateOuiProfileTemplate**](ProfilesTemplateAPI.md#createouiprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles | Create OUI profile template
+[**CreatePPSKProfileTemplate**](ProfilesTemplateAPI.md#createppskprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile | Create PPSK profile template
+[**CreateRadiusProfileTemplate**](ProfilesTemplateAPI.md#createradiusprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Create a new Radius profile template
+[**CreateRadiusUserTemplate**](ProfilesTemplateAPI.md#createradiususertemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Create a new Build-in Radius profile user template
+[**CreateRateLimitProfileTemplate**](ProfilesTemplateAPI.md#createratelimitprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profiles | Create rate limit profile template
+[**CreateTemplateServiceType**](ProfilesTemplateAPI.md#createtemplateservicetype) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type | Create siteTemplate&#39;s new Gateway QoS Service
+[**CreateTimeRangeProfileTemplate**](ProfilesTemplateAPI.md#createtimerangeprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profiles | Create time range profile template
+[**DeleteAllPPSKProfilesTemplate**](ProfilesTemplateAPI.md#deleteallppskprofilestemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profiles | Delete All PPSK profile templates
+[**DeleteApnProfileTemplate**](ProfilesTemplateAPI.md#deleteapnprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/apn/{profileId} | Delete an exist APN profile template
+[**DeleteGroupProfileTemplate**](ProfilesTemplateAPI.md#deletegroupprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups/{groupType}/{groupId} | Delete an exist group profile template
+[**DeleteLdapProfileTemplate**](ProfilesTemplateAPI.md#deleteldapprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/ldap/{ldapProfileId} | Delete an exist LDAP profile template
+[**DeleteMdnsProfileTemplate**](ProfilesTemplateAPI.md#deletemdnsprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service/{id} | Delete an existing Bonjour Service Template
+[**DeleteOuiProfileTemplate**](ProfilesTemplateAPI.md#deleteouiprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/{ouiId} | Delete OUI Profile template
+[**DeletePPSKProfileTemplate**](ProfilesTemplateAPI.md#deleteppskprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Delete PPSK profile template
+[**DeleteRadiusProfileTemplate**](ProfilesTemplateAPI.md#deleteradiusprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Delete an exist Radius profile template
+[**DeleteRadiusUserTemplate**](ProfilesTemplateAPI.md#deleteradiususertemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Delete an exist Build-in Radius profile user template
+[**DeleteRateLimitProfileTemplate**](ProfilesTemplateAPI.md#deleteratelimitprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profile/{profileId} | Delete rate limit profile template
+[**DeleteTemplateServiceType**](ProfilesTemplateAPI.md#deletetemplateservicetype) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type/{id} | Delete an existing Gateway QoS Service in siteTemplate
+[**DeleteTimeRangeProfileTemplate**](ProfilesTemplateAPI.md#deletetimerangeprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profile/{profileId} | Delete time range profile template
+[**GetApnProfileListTemplate**](ProfilesTemplateAPI.md#getapnprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/apn | Get APN profile template list
+[**GetGroupProfilesByTypeTemplate**](ProfilesTemplateAPI.md#getgroupprofilesbytypetemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups/{groupType} | Get group profile template list by type
+[**GetGroupProfilesTemplate**](ProfilesTemplateAPI.md#getgroupprofilestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups | Get group profile template list
+[**GetLdapProfileListTemplate**](ProfilesTemplateAPI.md#getldapprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/ldap | Get LDAP profile template list
+[**GetOuiProfileFullListTemplate**](ProfilesTemplateAPI.md#getouiprofilefulllisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/all | Get OUI profile template summary list
+[**GetOuiProfileListTemplate**](ProfilesTemplateAPI.md#getouiprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles | Get OUI profile template list
+[**GetPPSKProfileDetailTemplate**](ProfilesTemplateAPI.md#getppskprofiledetailtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Get PPSK profile template detail
+[**GetPPSKProfilesTemplate**](ProfilesTemplateAPI.md#getppskprofilestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profiles | Get PPSK profile templates list
+[**GetRadiusProfileListTemplate**](ProfilesTemplateAPI.md#getradiusprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Get Radius profile template list
+[**GetRadiusUserListTemplate**](ProfilesTemplateAPI.md#getradiususerlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Get Build-in Radius profile user template list
+[**GetRateLimitProfileListTemplate**](ProfilesTemplateAPI.md#getratelimitprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profiles | Get rate limit profile template list
+[**GetTemplateServiceTypeSummary**](ProfilesTemplateAPI.md#gettemplateservicetypesummary) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type-summary | Get all Gateway QoS Service&#39;s ID and name info in siteTemplate
+[**GetTimeRangeListTemplate**](ProfilesTemplateAPI.md#gettimerangelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profiles | Get time range profile template list
+[**ListMdnsProfileTemplate**](ProfilesTemplateAPI.md#listmdnsprofiletemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service | Get Bonjour Service Template list
+[**ListTemplateServiceType**](ProfilesTemplateAPI.md#listtemplateservicetype) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type | Get siteTemplate&#39;s Gateway QoS Service list
+[**ModifyApnProfileTemplate**](ProfilesTemplateAPI.md#modifyapnprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/apn/{profileId} | Modify an exist APN profile template
+[**ModifyGroupProfileTemplate**](ProfilesTemplateAPI.md#modifygroupprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups/{groupType}/{groupId} | Modify an exist group profile template
+[**ModifyLdapProfileTemplate**](ProfilesTemplateAPI.md#modifyldapprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/ldap/{ldapProfileId} | Modify an exist LDAP profile template
+[**ModifyMdnsProfileTemplate**](ProfilesTemplateAPI.md#modifymdnsprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service/{id} | Modify an existing Bonjour Service Template
+[**ModifyOuiProfileTemplate**](ProfilesTemplateAPI.md#modifyouiprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/{ouiId} | Modify OUI Profile template
+[**ModifyPPSKProfileTemplate**](ProfilesTemplateAPI.md#modifyppskprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Modify PPSK profile template
+[**ModifyRadiusProfileTemplate**](ProfilesTemplateAPI.md#modifyradiusprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Modify an exist Radius profile template
+[**ModifyRadiusUserTemplate**](ProfilesTemplateAPI.md#modifyradiususertemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Modify an exist Build-in Radius profile user template
+[**ModifyRateLimitProfileTemplate**](ProfilesTemplateAPI.md#modifyratelimitprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profile/{profileId} | Modify rate limit profile template
+[**ModifyTemplateServiceType**](ProfilesTemplateAPI.md#modifytemplateservicetype) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type/{id} | Modify an existing Gateway QoS Service in siteTemplate
+[**ModifyTimeRangeProfileTemplate**](ProfilesTemplateAPI.md#modifytimerangeprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profile/{profileId} | Modify time range profile template
 
 
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -570,7 +570,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -645,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -720,7 +720,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -795,7 +795,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -945,7 +945,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1018,7 +1018,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1094,7 +1094,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1173,7 +1173,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1249,7 +1249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1325,7 +1325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1401,7 +1401,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1477,7 +1477,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1553,7 +1553,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1629,7 +1629,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1705,7 +1705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1781,7 +1781,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1857,7 +1857,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1930,7 +1930,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2006,7 +2006,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2079,7 +2079,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2152,7 +2152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2225,7 +2225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2302,7 +2302,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2378,7 +2378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2453,7 +2453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2526,7 +2526,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2605,7 +2605,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2678,7 +2678,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2751,7 +2751,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2824,7 +2824,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2897,7 +2897,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2974,7 +2974,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3052,7 +3052,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3133,7 +3133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3211,7 +3211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3289,7 +3289,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3367,7 +3367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3445,7 +3445,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3523,7 +3523,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3601,7 +3601,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3679,7 +3679,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3757,7 +3757,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3835,7 +3835,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

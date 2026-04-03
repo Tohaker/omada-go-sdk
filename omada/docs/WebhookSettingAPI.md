@@ -1,15 +1,15 @@
-# \WebhookSettingAPI
+# WebhookSettingAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateWebhookForGlobal**](WebhookSettingAPI.md#CreateWebhookForGlobal) | **Post** /openapi/v1/{omadacId}/webhook/settings | Create global webhook setting
-[**DeleteWebhookForGlobal**](WebhookSettingAPI.md#DeleteWebhookForGlobal) | **Delete** /openapi/v1/{omadacId}/webhook/settings/{webhookId} | Delete global webhook setting
-[**GetWebhookForGlobal**](WebhookSettingAPI.md#GetWebhookForGlobal) | **Get** /openapi/v1/{omadacId}/webhook/settings | Get global webhook setting list.
-[**GetWebhookLogsForGlobal**](WebhookSettingAPI.md#GetWebhookLogsForGlobal) | **Get** /openapi/v1/{omadacId}/webhook/settings/dispatch-logs | Get global webhook dispatch log list
-[**ModifyWebhookForGlobal**](WebhookSettingAPI.md#ModifyWebhookForGlobal) | **Patch** /openapi/v1/{omadacId}/webhook/settings/{webhookId} | Modify global webhook setting
-[**TestWebhookForGlobal**](WebhookSettingAPI.md#TestWebhookForGlobal) | **Post** /openapi/v1/{omadacId}/webhook/settings/{webhookId} | Test global webhook setting
+[**CreateWebhookForGlobal**](WebhookSettingAPI.md#createwebhookforglobal) | **Post** /openapi/v1/{omadacId}/webhook/settings | Create global webhook setting
+[**DeleteWebhookForGlobal**](WebhookSettingAPI.md#deletewebhookforglobal) | **Delete** /openapi/v1/{omadacId}/webhook/settings/{webhookId} | Delete global webhook setting
+[**GetWebhookForGlobal**](WebhookSettingAPI.md#getwebhookforglobal) | **Get** /openapi/v1/{omadacId}/webhook/settings | Get global webhook setting list.
+[**GetWebhookLogsForGlobal**](WebhookSettingAPI.md#getwebhooklogsforglobal) | **Get** /openapi/v1/{omadacId}/webhook/settings/dispatch-logs | Get global webhook dispatch log list
+[**ModifyWebhookForGlobal**](WebhookSettingAPI.md#modifywebhookforglobal) | **Patch** /openapi/v1/{omadacId}/webhook/settings/{webhookId} | Modify global webhook setting
+[**TestWebhookForGlobal**](WebhookSettingAPI.md#testwebhookforglobal) | **Post** /openapi/v1/{omadacId}/webhook/settings/{webhookId} | Test global webhook setting
 
 
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

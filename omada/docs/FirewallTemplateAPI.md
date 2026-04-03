@@ -1,12 +1,12 @@
-# \FirewallTemplateAPI
+# FirewallTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetFirewallSettingTemplate**](FirewallTemplateAPI.md#GetFirewallSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/firewall | Get firewall template setting
-[**ModifyFirewallSettingTemplate**](FirewallTemplateAPI.md#ModifyFirewallSettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/firewall | Modify firewall template setting
-[**ResetFirewallSettingTemplate**](FirewallTemplateAPI.md#ResetFirewallSettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/firewall/reset | Reset firewall template setting
+[**GetFirewallSettingTemplate**](FirewallTemplateAPI.md#getfirewallsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/firewall | Get firewall template setting
+[**ModifyFirewallSettingTemplate**](FirewallTemplateAPI.md#modifyfirewallsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/firewall | Modify firewall template setting
+[**ResetFirewallSettingTemplate**](FirewallTemplateAPI.md#resetfirewallsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/firewall/reset | Reset firewall template setting
 
 
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

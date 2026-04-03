@@ -1,30 +1,30 @@
-# \OLTONURegisterAPI
+# OLTONURegisterAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddAuthenticationConfig**](OLTONURegisterAPI.md#AddAuthenticationConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/add | Create authentication config
-[**AddOnuAutoAuthenticationRuleConfig**](OLTONURegisterAPI.md#AddOnuAutoAuthenticationRuleConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/add | Create ONU auto authentication rule
-[**AuthOnu**](OLTONURegisterAPI.md#AuthOnu) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofind/onus/auth | Authenticate ONU
-[**ClearOnuAutofindConfig**](OLTONURegisterAPI.md#ClearOnuAutofindConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofind/onus/clear | Batch delete existing ONU auto find config
-[**DeleteAuthenticationConfig**](OLTONURegisterAPI.md#DeleteAuthenticationConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/delete | Batch delete existing authentication config
-[**DeleteOnuAutoAuthenticationRuleConfig**](OLTONURegisterAPI.md#DeleteOnuAutoAuthenticationRuleConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/delete | Delete an existing ONU auto authentication rule
-[**EditAuthenticationConfig**](OLTONURegisterAPI.md#EditAuthenticationConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/edit | Modify an existing authentication config
-[**EditOnuAdminStatus**](OLTONURegisterAPI.md#EditOnuAdminStatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/admin-status/edit | Modify an existing ONU admin status
-[**EditOnuAutoAuthenticationConfig**](OLTONURegisterAPI.md#EditOnuAutoAuthenticationConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/global/configs/edit | Modify an existing ONU auto authentication config
-[**EditOnuAutoAuthenticationRuleConfig**](OLTONURegisterAPI.md#EditOnuAutoAuthenticationRuleConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/edit | Modify an existing ONU auto authentication rule
-[**EditOnuPonAutoAuthenticationConfig**](OLTONURegisterAPI.md#EditOnuPonAutoAuthenticationConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/port-configs/edit | Modify an existing ONU pon auto authentication config
-[**EditOnuRegisterAutofindConfig**](OLTONURegisterAPI.md#EditOnuRegisterAutofindConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofind/configs/edit | Modify an existing ONU register auto find config
-[**GetAuthenticationConfigList**](OLTONURegisterAPI.md#GetAuthenticationConfigList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/list | Get authentication config list
-[**GetAuthenticationConfigPage**](OLTONURegisterAPI.md#GetAuthenticationConfigPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/page | Get authentication config page
-[**GetOnuAutoAuthenticationConfig**](OLTONURegisterAPI.md#GetOnuAutoAuthenticationConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/global/configs/get | Get ONU auto authentication config
-[**GetOnuAutoAuthenticationRuleConfigList**](OLTONURegisterAPI.md#GetOnuAutoAuthenticationRuleConfigList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/list | Get ONU auto authentication rule list
-[**GetOnuAutoAuthenticationRuleConfigPage**](OLTONURegisterAPI.md#GetOnuAutoAuthenticationRuleConfigPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/page | Get ONU auto authentication rule page
-[**GetOnuAutofindConfigList**](OLTONURegisterAPI.md#GetOnuAutofindConfigList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofinds/list | Get ONU auto find config list
-[**GetOnuAutofindConfigPage**](OLTONURegisterAPI.md#GetOnuAutofindConfigPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofinds/page | get ONU auto find config page
-[**GetOnuPonAutoAuthenticationConfig**](OLTONURegisterAPI.md#GetOnuPonAutoAuthenticationConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/port-configs/get | Get ONU pon auto authentication config
-[**GetOnuRegisterAutofindConfig**](OLTONURegisterAPI.md#GetOnuRegisterAutofindConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofind/configs/get | Get ONU register auto find config
+[**AddAuthenticationConfig**](OLTONURegisterAPI.md#addauthenticationconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/add | Create authentication config
+[**AddOnuAutoAuthenticationRuleConfig**](OLTONURegisterAPI.md#addonuautoauthenticationruleconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/add | Create ONU auto authentication rule
+[**AuthOnu**](OLTONURegisterAPI.md#authonu) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofind/onus/auth | Authenticate ONU
+[**ClearOnuAutofindConfig**](OLTONURegisterAPI.md#clearonuautofindconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofind/onus/clear | Batch delete existing ONU auto find config
+[**DeleteAuthenticationConfig**](OLTONURegisterAPI.md#deleteauthenticationconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/delete | Batch delete existing authentication config
+[**DeleteOnuAutoAuthenticationRuleConfig**](OLTONURegisterAPI.md#deleteonuautoauthenticationruleconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/delete | Delete an existing ONU auto authentication rule
+[**EditAuthenticationConfig**](OLTONURegisterAPI.md#editauthenticationconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/edit | Modify an existing authentication config
+[**EditOnuAdminStatus**](OLTONURegisterAPI.md#editonuadminstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/admin-status/edit | Modify an existing ONU admin status
+[**EditOnuAutoAuthenticationConfig**](OLTONURegisterAPI.md#editonuautoauthenticationconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/global/configs/edit | Modify an existing ONU auto authentication config
+[**EditOnuAutoAuthenticationRuleConfig**](OLTONURegisterAPI.md#editonuautoauthenticationruleconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/edit | Modify an existing ONU auto authentication rule
+[**EditOnuPonAutoAuthenticationConfig**](OLTONURegisterAPI.md#editonuponautoauthenticationconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/port-configs/edit | Modify an existing ONU pon auto authentication config
+[**EditOnuRegisterAutofindConfig**](OLTONURegisterAPI.md#editonuregisterautofindconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofind/configs/edit | Modify an existing ONU register auto find config
+[**GetAuthenticationConfigList**](OLTONURegisterAPI.md#getauthenticationconfiglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/list | Get authentication config list
+[**GetAuthenticationConfigPage**](OLTONURegisterAPI.md#getauthenticationconfigpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/authentications/page | Get authentication config page
+[**GetOnuAutoAuthenticationConfig**](OLTONURegisterAPI.md#getonuautoauthenticationconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/global/configs/get | Get ONU auto authentication config
+[**GetOnuAutoAuthenticationRuleConfigList**](OLTONURegisterAPI.md#getonuautoauthenticationruleconfiglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/list | Get ONU auto authentication rule list
+[**GetOnuAutoAuthenticationRuleConfigPage**](OLTONURegisterAPI.md#getonuautoauthenticationruleconfigpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/rules/page | Get ONU auto authentication rule page
+[**GetOnuAutofindConfigList**](OLTONURegisterAPI.md#getonuautofindconfiglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofinds/list | Get ONU auto find config list
+[**GetOnuAutofindConfigPage**](OLTONURegisterAPI.md#getonuautofindconfigpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofinds/page | get ONU auto find config page
+[**GetOnuPonAutoAuthenticationConfig**](OLTONURegisterAPI.md#getonuponautoauthenticationconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/auto-authentication/port-configs/get | Get ONU pon auto authentication config
+[**GetOnuRegisterAutofindConfig**](OLTONURegisterAPI.md#getonuregisterautofindconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-register/autofind/configs/get | Get ONU register auto find config
 
 
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -952,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1030,7 +1030,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1108,7 +1108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1184,7 +1184,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1262,7 +1262,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1340,7 +1340,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1418,7 +1418,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1496,7 +1496,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1574,7 +1574,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1650,7 +1650,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

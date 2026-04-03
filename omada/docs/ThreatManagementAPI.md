@@ -1,13 +1,13 @@
-# \ThreatManagementAPI
+# ThreatManagementAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteThreatList**](ThreatManagementAPI.md#DeleteThreatList) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ips/threat | Delete archived ips threat
-[**GetThreatDetail**](ThreatManagementAPI.md#GetThreatDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ips/threat/{threatId} | Get threat entry detail
-[**GetThreatList**](ThreatManagementAPI.md#GetThreatList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ips/grid/threat-management | Get grid threat list
-[**OperateThreats**](ThreatManagementAPI.md#OperateThreats) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ips/threat/multi-ops | Block/Isolate Device/Signature Suppression/Allow ips threat
+[**DeleteThreatList**](ThreatManagementAPI.md#deletethreatlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ips/threat | Delete archived ips threat
+[**GetThreatDetail**](ThreatManagementAPI.md#getthreatdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ips/threat/{threatId} | Get threat entry detail
+[**GetThreatList**](ThreatManagementAPI.md#getthreatlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ips/grid/threat-management | Get grid threat list
+[**OperateThreats**](ThreatManagementAPI.md#operatethreats) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ips/threat/multi-ops | Block/Isolate Device/Signature Suppression/Allow ips threat
 
 
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

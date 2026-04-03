@@ -1,18 +1,18 @@
-# \SSOAPI
+# SSOAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateExternalUserGroup**](SSOAPI.md#CreateExternalUserGroup) | **Post** /openapi/v1/{omadacId}/sso/external-user-groups | Create new external user group
-[**CreateIdpMetadata**](SSOAPI.md#CreateIdpMetadata) | **Post** /openapi/v1/{omadacId}/sso/saml-idps | Create new idp
-[**DeleteExternalUserGroup**](SSOAPI.md#DeleteExternalUserGroup) | **Delete** /openapi/v1/{omadacId}/sso/external-user-groups/{externalUserGroupId} | Delete an existing external user group
-[**DeleteIdpMetadata**](SSOAPI.md#DeleteIdpMetadata) | **Delete** /openapi/v1/{omadacId}/sso/saml-idps/{idpId} | Delete an existing idp
-[**GetExternalUserGroupList**](SSOAPI.md#GetExternalUserGroupList) | **Get** /openapi/v1/{omadacId}/sso/external-user-groups | Get external user group list
-[**GetExternalUserList**](SSOAPI.md#GetExternalUserList) | **Get** /openapi/v1/{omadacId}/sso/external-users | Get external user list
-[**GetIdpMetadataList**](SSOAPI.md#GetIdpMetadataList) | **Get** /openapi/v1/{omadacId}/sso/saml-idps | Get idp list
-[**ModifyExternalUserGroup**](SSOAPI.md#ModifyExternalUserGroup) | **Put** /openapi/v1/{omadacId}/sso/external-user-groups/{externalUserGroupId} | Modify an existing external user group
-[**ModifyIdpMetadata**](SSOAPI.md#ModifyIdpMetadata) | **Put** /openapi/v1/{omadacId}/sso/saml-idps/{idpId} | Modify an existing idp
+[**CreateExternalUserGroup**](SSOAPI.md#createexternalusergroup) | **Post** /openapi/v1/{omadacId}/sso/external-user-groups | Create new external user group
+[**CreateIdpMetadata**](SSOAPI.md#createidpmetadata) | **Post** /openapi/v1/{omadacId}/sso/saml-idps | Create new idp
+[**DeleteExternalUserGroup**](SSOAPI.md#deleteexternalusergroup) | **Delete** /openapi/v1/{omadacId}/sso/external-user-groups/{externalUserGroupId} | Delete an existing external user group
+[**DeleteIdpMetadata**](SSOAPI.md#deleteidpmetadata) | **Delete** /openapi/v1/{omadacId}/sso/saml-idps/{idpId} | Delete an existing idp
+[**GetExternalUserGroupList**](SSOAPI.md#getexternalusergrouplist) | **Get** /openapi/v1/{omadacId}/sso/external-user-groups | Get external user group list
+[**GetExternalUserList**](SSOAPI.md#getexternaluserlist) | **Get** /openapi/v1/{omadacId}/sso/external-users | Get external user list
+[**GetIdpMetadataList**](SSOAPI.md#getidpmetadatalist) | **Get** /openapi/v1/{omadacId}/sso/saml-idps | Get idp list
+[**ModifyExternalUserGroup**](SSOAPI.md#modifyexternalusergroup) | **Put** /openapi/v1/{omadacId}/sso/external-user-groups/{externalUserGroupId} | Modify an existing external user group
+[**ModifyIdpMetadata**](SSOAPI.md#modifyidpmetadata) | **Put** /openapi/v1/{omadacId}/sso/saml-idps/{idpId} | Modify an existing idp
 
 
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

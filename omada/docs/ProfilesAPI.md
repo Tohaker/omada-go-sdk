@@ -1,69 +1,69 @@
-# \ProfilesAPI
+# ProfilesAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPSKsToPPSKProfile**](ProfilesAPI.md#AddPSKsToPPSKProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId}/add-psk | Add PSKs to PPSK profile
-[**AutoCreatePPSK**](ProfilesAPI.md#AutoCreatePPSK) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/generate-psk | Auto Create PSKs
-[**CreateApnProfile**](ProfilesAPI.md#CreateApnProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn | Create a new APN profile
-[**CreateApnProfileByMac**](ProfilesAPI.md#CreateApnProfileByMac) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/profiles/apns | Create a new APN profile by mac
-[**CreateGoogleLdapProfile**](ProfilesAPI.md#CreateGoogleLdapProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google | Create a new google LDAP profile
-[**CreateGroupProfile**](ProfilesAPI.md#CreateGroupProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups | Create a new group profile
-[**CreateLdapProfile**](ProfilesAPI.md#CreateLdapProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap | Create a new LDAP profile
-[**CreateMdnsProfile**](ProfilesAPI.md#CreateMdnsProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service | Create new Bonjour Service
-[**CreateOuiProfile**](ProfilesAPI.md#CreateOuiProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles | Create OUI profile
-[**CreatePPSKProfile**](ProfilesAPI.md#CreatePPSKProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile | Create PPSK profile
-[**CreatePPSKProfileV2**](ProfilesAPI.md#CreatePPSKProfileV2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/ppsk-profile | Create PPSK profile V2
-[**CreateRadiusProfile**](ProfilesAPI.md#CreateRadiusProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Create a new Radius profile
-[**CreateRadiusUser**](ProfilesAPI.md#CreateRadiusUser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Create a new Build-in Radius profile user
-[**CreateRateLimitProfile**](ProfilesAPI.md#CreateRateLimitProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Create rate limit profile
-[**CreateServiceType**](ProfilesAPI.md#CreateServiceType) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type | Create new Gateway QoS Service
-[**CreateTimeRangeProfile**](ProfilesAPI.md#CreateTimeRangeProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Create time range profile
-[**DeleteAllPPSKProfiles**](ProfilesAPI.md#DeleteAllPPSKProfiles) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profiles | Delete All PPSK profiles
-[**DeleteApnProfile**](ProfilesAPI.md#DeleteApnProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn/{profileId} | Delete an exist APN profile
-[**DeleteGoogleLdapProfile**](ProfilesAPI.md#DeleteGoogleLdapProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google/{profileId} | Delete an exist google LDAP profile
-[**DeleteGroupProfile**](ProfilesAPI.md#DeleteGroupProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups/{groupType}/{groupId} | Delete an exist group profile
-[**DeleteLdapProfile**](ProfilesAPI.md#DeleteLdapProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/{ldapProfileId} | Delete an exist LDAP profile
-[**DeleteMdnsProfile**](ProfilesAPI.md#DeleteMdnsProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service/{id} | Delete an existing Bonjour Service
-[**DeleteOuiProfile**](ProfilesAPI.md#DeleteOuiProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/{ouiId} | Delete OUI Profile
-[**DeletePPSKProfile**](ProfilesAPI.md#DeletePPSKProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Delete PPSK profile
-[**DeletePSKsToPPSKProfile**](ProfilesAPI.md#DeletePSKsToPPSKProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId}/delete-psk | Delete PSKs to PPSK profile
-[**DeleteRadiusProfile**](ProfilesAPI.md#DeleteRadiusProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Delete an exist Radius profile
-[**DeleteRadiusUser**](ProfilesAPI.md#DeleteRadiusUser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Delete an exist Build-in Radius profile user
-[**DeleteRateLimitProfile**](ProfilesAPI.md#DeleteRateLimitProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Delete rate limit profile
-[**DeleteServiceType**](ProfilesAPI.md#DeleteServiceType) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Delete an existing Gateway QoS Service
-[**DeleteTimeRangeProfile**](ProfilesAPI.md#DeleteTimeRangeProfile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Delete time range profile
-[**GetApnProfileList**](ProfilesAPI.md#GetApnProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn | Get APN profile list
-[**GetApnProfilesForIppt**](ProfilesAPI.md#GetApnProfilesForIppt) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/profiles/apns | Get APN profile list by mac for ippt
-[**GetGoogleLdapProfileList**](ProfilesAPI.md#GetGoogleLdapProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google | Get google LDAP profile list
-[**GetGroupProfiles**](ProfilesAPI.md#GetGroupProfiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups | Get group profile list
-[**GetGroupProfilesByType**](ProfilesAPI.md#GetGroupProfilesByType) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups/{groupType} | Get group profile list by type
-[**GetLdapProfileList**](ProfilesAPI.md#GetLdapProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap | Get LDAP profile list
-[**GetOuiProfileFullList**](ProfilesAPI.md#GetOuiProfileFullList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/all | Get OUI profile summary list
-[**GetOuiProfileList**](ProfilesAPI.md#GetOuiProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles | Get OUI profile list
-[**GetPPSKProfileDetail**](ProfilesAPI.md#GetPPSKProfileDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Get PPSK profile detail
-[**GetPPSKProfiles**](ProfilesAPI.md#GetPPSKProfiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profiles | Get PPSK profiles list
-[**GetRadiusProfileList**](ProfilesAPI.md#GetRadiusProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Get Radius profile list
-[**GetRadiusUserList**](ProfilesAPI.md#GetRadiusUserList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Get Build-in Radius profile user list
-[**GetRateLimitProfileList**](ProfilesAPI.md#GetRateLimitProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Get rate limit profile list
-[**GetServiceTypeSummary**](ProfilesAPI.md#GetServiceTypeSummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type-summary | Get all Gateway QoS Service&#39;s ID and name info
-[**GetTimeRangeList**](ProfilesAPI.md#GetTimeRangeList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Get time range profile list
-[**ListMdnsProfile**](ProfilesAPI.md#ListMdnsProfile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service | Get Bonjour Service list
-[**ListRateLimitForHotspot**](ProfilesAPI.md#ListRateLimitForHotspot) | **Get** /openapi/v1/{omadacId}/hotspot/sites/{siteId}/setting/profiles/rateLimits | get the rate limit list
-[**ListServiceType**](ProfilesAPI.md#ListServiceType) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type | Get Gateway QoS Service list
-[**ModifyApnProfile**](ProfilesAPI.md#ModifyApnProfile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn/{profileId} | Modify an exist APN profile
-[**ModifyGoogleLdapProfile**](ProfilesAPI.md#ModifyGoogleLdapProfile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google/{profileId} | Modify an exist google LDAP profile
-[**ModifyGroupProfile**](ProfilesAPI.md#ModifyGroupProfile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups/{groupType}/{groupId} | Modify an exist group profile
-[**ModifyLdapProfile**](ProfilesAPI.md#ModifyLdapProfile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/{ldapProfileId} | Modify an exist LDAP profile
-[**ModifyMdnsProfile**](ProfilesAPI.md#ModifyMdnsProfile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service/{id} | Modify an existing Bonjour Service
-[**ModifyOuiProfile**](ProfilesAPI.md#ModifyOuiProfile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/{ouiId} | Modify OUI Profile
-[**ModifyPPSKProfile**](ProfilesAPI.md#ModifyPPSKProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Modify PPSK profile
-[**ModifyRadiusProfile**](ProfilesAPI.md#ModifyRadiusProfile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Modify an exist Radius profile
-[**ModifyRadiusUser**](ProfilesAPI.md#ModifyRadiusUser) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Modify an exist Build-in Radius profile user
-[**ModifyRateLimitProfile**](ProfilesAPI.md#ModifyRateLimitProfile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Modify rate limit profile
-[**ModifyServiceType**](ProfilesAPI.md#ModifyServiceType) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Modify an existing Gateway QoS Service
-[**ModifyTimeRangeProfile**](ProfilesAPI.md#ModifyTimeRangeProfile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Modify time range profile
+[**AddPSKsToPPSKProfile**](ProfilesAPI.md#addpskstoppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId}/add-psk | Add PSKs to PPSK profile
+[**AutoCreatePPSK**](ProfilesAPI.md#autocreateppsk) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/generate-psk | Auto Create PSKs
+[**CreateApnProfile**](ProfilesAPI.md#createapnprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn | Create a new APN profile
+[**CreateApnProfileByMac**](ProfilesAPI.md#createapnprofilebymac) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/profiles/apns | Create a new APN profile by mac
+[**CreateGoogleLdapProfile**](ProfilesAPI.md#creategoogleldapprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google | Create a new google LDAP profile
+[**CreateGroupProfile**](ProfilesAPI.md#creategroupprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups | Create a new group profile
+[**CreateLdapProfile**](ProfilesAPI.md#createldapprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap | Create a new LDAP profile
+[**CreateMdnsProfile**](ProfilesAPI.md#createmdnsprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service | Create new Bonjour Service
+[**CreateOuiProfile**](ProfilesAPI.md#createouiprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles | Create OUI profile
+[**CreatePPSKProfile**](ProfilesAPI.md#createppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile | Create PPSK profile
+[**CreatePPSKProfileV2**](ProfilesAPI.md#createppskprofilev2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/ppsk-profile | Create PPSK profile V2
+[**CreateRadiusProfile**](ProfilesAPI.md#createradiusprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Create a new Radius profile
+[**CreateRadiusUser**](ProfilesAPI.md#createradiususer) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Create a new Build-in Radius profile user
+[**CreateRateLimitProfile**](ProfilesAPI.md#createratelimitprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Create rate limit profile
+[**CreateServiceType**](ProfilesAPI.md#createservicetype) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type | Create new Gateway QoS Service
+[**CreateTimeRangeProfile**](ProfilesAPI.md#createtimerangeprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Create time range profile
+[**DeleteAllPPSKProfiles**](ProfilesAPI.md#deleteallppskprofiles) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profiles | Delete All PPSK profiles
+[**DeleteApnProfile**](ProfilesAPI.md#deleteapnprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn/{profileId} | Delete an exist APN profile
+[**DeleteGoogleLdapProfile**](ProfilesAPI.md#deletegoogleldapprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google/{profileId} | Delete an exist google LDAP profile
+[**DeleteGroupProfile**](ProfilesAPI.md#deletegroupprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups/{groupType}/{groupId} | Delete an exist group profile
+[**DeleteLdapProfile**](ProfilesAPI.md#deleteldapprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/{ldapProfileId} | Delete an exist LDAP profile
+[**DeleteMdnsProfile**](ProfilesAPI.md#deletemdnsprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service/{id} | Delete an existing Bonjour Service
+[**DeleteOuiProfile**](ProfilesAPI.md#deleteouiprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/{ouiId} | Delete OUI Profile
+[**DeletePPSKProfile**](ProfilesAPI.md#deleteppskprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Delete PPSK profile
+[**DeletePSKsToPPSKProfile**](ProfilesAPI.md#deletepskstoppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId}/delete-psk | Delete PSKs to PPSK profile
+[**DeleteRadiusProfile**](ProfilesAPI.md#deleteradiusprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Delete an exist Radius profile
+[**DeleteRadiusUser**](ProfilesAPI.md#deleteradiususer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Delete an exist Build-in Radius profile user
+[**DeleteRateLimitProfile**](ProfilesAPI.md#deleteratelimitprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Delete rate limit profile
+[**DeleteServiceType**](ProfilesAPI.md#deleteservicetype) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Delete an existing Gateway QoS Service
+[**DeleteTimeRangeProfile**](ProfilesAPI.md#deletetimerangeprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Delete time range profile
+[**GetApnProfileList**](ProfilesAPI.md#getapnprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn | Get APN profile list
+[**GetApnProfilesForIppt**](ProfilesAPI.md#getapnprofilesforippt) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/profiles/apns | Get APN profile list by mac for ippt
+[**GetGoogleLdapProfileList**](ProfilesAPI.md#getgoogleldapprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google | Get google LDAP profile list
+[**GetGroupProfiles**](ProfilesAPI.md#getgroupprofiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups | Get group profile list
+[**GetGroupProfilesByType**](ProfilesAPI.md#getgroupprofilesbytype) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups/{groupType} | Get group profile list by type
+[**GetLdapProfileList**](ProfilesAPI.md#getldapprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap | Get LDAP profile list
+[**GetOuiProfileFullList**](ProfilesAPI.md#getouiprofilefulllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/all | Get OUI profile summary list
+[**GetOuiProfileList**](ProfilesAPI.md#getouiprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles | Get OUI profile list
+[**GetPPSKProfileDetail**](ProfilesAPI.md#getppskprofiledetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Get PPSK profile detail
+[**GetPPSKProfiles**](ProfilesAPI.md#getppskprofiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profiles | Get PPSK profiles list
+[**GetRadiusProfileList**](ProfilesAPI.md#getradiusprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Get Radius profile list
+[**GetRadiusUserList**](ProfilesAPI.md#getradiususerlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Get Build-in Radius profile user list
+[**GetRateLimitProfileList**](ProfilesAPI.md#getratelimitprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Get rate limit profile list
+[**GetServiceTypeSummary**](ProfilesAPI.md#getservicetypesummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type-summary | Get all Gateway QoS Service&#39;s ID and name info
+[**GetTimeRangeList**](ProfilesAPI.md#gettimerangelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Get time range profile list
+[**ListMdnsProfile**](ProfilesAPI.md#listmdnsprofile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service | Get Bonjour Service list
+[**ListRateLimitForHotspot**](ProfilesAPI.md#listratelimitforhotspot) | **Get** /openapi/v1/{omadacId}/hotspot/sites/{siteId}/setting/profiles/rateLimits | get the rate limit list
+[**ListServiceType**](ProfilesAPI.md#listservicetype) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type | Get Gateway QoS Service list
+[**ModifyApnProfile**](ProfilesAPI.md#modifyapnprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn/{profileId} | Modify an exist APN profile
+[**ModifyGoogleLdapProfile**](ProfilesAPI.md#modifygoogleldapprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google/{profileId} | Modify an exist google LDAP profile
+[**ModifyGroupProfile**](ProfilesAPI.md#modifygroupprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/groups/{groupType}/{groupId} | Modify an exist group profile
+[**ModifyLdapProfile**](ProfilesAPI.md#modifyldapprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/{ldapProfileId} | Modify an exist LDAP profile
+[**ModifyMdnsProfile**](ProfilesAPI.md#modifymdnsprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service/{id} | Modify an existing Bonjour Service
+[**ModifyOuiProfile**](ProfilesAPI.md#modifyouiprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/{ouiId} | Modify OUI Profile
+[**ModifyPPSKProfile**](ProfilesAPI.md#modifyppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Modify PPSK profile
+[**ModifyRadiusProfile**](ProfilesAPI.md#modifyradiusprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Modify an exist Radius profile
+[**ModifyRadiusUser**](ProfilesAPI.md#modifyradiususer) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Modify an exist Build-in Radius profile user
+[**ModifyRateLimitProfile**](ProfilesAPI.md#modifyratelimitprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Modify rate limit profile
+[**ModifyServiceType**](ProfilesAPI.md#modifyservicetype) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Modify an existing Gateway QoS Service
+[**ModifyTimeRangeProfile**](ProfilesAPI.md#modifytimerangeprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Modify time range profile
 
 
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -738,7 +738,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -813,7 +813,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -888,7 +888,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -963,7 +963,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1038,7 +1038,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1113,7 +1113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1188,7 +1188,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1263,7 +1263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1336,7 +1336,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1412,7 +1412,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1488,7 +1488,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1567,7 +1567,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1643,7 +1643,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1719,7 +1719,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1795,7 +1795,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1871,7 +1871,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1949,7 +1949,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2025,7 +2025,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2101,7 +2101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2177,7 +2177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2253,7 +2253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2329,7 +2329,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2402,7 +2402,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2478,7 +2478,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2551,7 +2551,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2624,7 +2624,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2700,7 +2700,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2773,7 +2773,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2846,7 +2846,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2923,7 +2923,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2999,7 +2999,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3072,7 +3072,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3145,7 +3145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3224,7 +3224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3297,7 +3297,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3370,7 +3370,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3443,7 +3443,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3516,7 +3516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3589,7 +3589,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3666,7 +3666,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3744,7 +3744,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3824,7 +3824,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3905,7 +3905,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3983,7 +3983,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4061,7 +4061,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4139,7 +4139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4217,7 +4217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4295,7 +4295,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4373,7 +4373,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4451,7 +4451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4529,7 +4529,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4607,7 +4607,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

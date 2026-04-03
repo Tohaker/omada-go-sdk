@@ -1,39 +1,39 @@
-# \VPNAPI
+# VPNAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateClientToSiteVpnClient**](VPNAPI.md#CreateClientToSiteVpnClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients | Create client-to-site VPN client
-[**CreateClientToSiteVpnServer**](VPNAPI.md#CreateClientToSiteVpnServer) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers | Create client-to-site VPN server
-[**CreateIpsecFailover**](VPNAPI.md#CreateIpsecFailover) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ipsec_failovers | Create IPsec failover
-[**CreateSiteToSiteVpn**](VPNAPI.md#CreateSiteToSiteVpn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns | Create site-to-site VPN
-[**CreateVpnUser**](VPNAPI.md#CreateVpnUser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/users | Create VPN user
-[**CreateVpnUserV2**](VPNAPI.md#CreateVpnUserV2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/vpn/users | Create VPN user V2
-[**DeleteClientToSiteVpnClient**](VPNAPI.md#DeleteClientToSiteVpnClient) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients/{vpnId} | Delete client-to-site VPN client
-[**DeleteClientToSiteVpnServer**](VPNAPI.md#DeleteClientToSiteVpnServer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId} | Delete client-to-site VPN server
-[**DeleteIpsecFailover**](VPNAPI.md#DeleteIpsecFailover) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ipsec_failovers/{failoverId} | Delete IPsec failover
-[**DeleteSiteToSiteVpn**](VPNAPI.md#DeleteSiteToSiteVpn) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/{vpnId} | Delete site-to-site VPN
-[**DeleteVpn**](VPNAPI.md#DeleteVpn) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/{vpnId} | Delete VPN
-[**DeleteVpnUser**](VPNAPI.md#DeleteVpnUser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/users/{userId} | Delete VPN user
-[**GetAllVpnList**](VPNAPI.md#GetAllVpnList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn | Get All VPN list
-[**GetClientToSiteVpnClientList**](VPNAPI.md#GetClientToSiteVpnClientList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients | Get client-to-site VPN client list
-[**GetClientToSiteVpnServerInfo**](VPNAPI.md#GetClientToSiteVpnServerInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId} | Get client-to-site VPN server info
-[**GetClientToSiteVpnServerList**](VPNAPI.md#GetClientToSiteVpnServerList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers | Get client-to-site VPN server list
-[**GetClientToSiteVpnServerUserList**](VPNAPI.md#GetClientToSiteVpnServerUserList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId}/users | Get user list for client-to-site VPN server
-[**GetGridIpsecFailover**](VPNAPI.md#GetGridIpsecFailover) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ipsec_failovers | Get IPsec failover list
-[**GetGridVpnUser**](VPNAPI.md#GetGridVpnUser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/users | Get VPN user list
-[**GetSiteToSiteVpnInfo**](VPNAPI.md#GetSiteToSiteVpnInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/{vpnId} | Get site-to-site VPN info
-[**GetSiteToSiteVpnList**](VPNAPI.md#GetSiteToSiteVpnList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns | Get site-to-site VPN list
-[**GetVpnClientToSiteClientInfo**](VPNAPI.md#GetVpnClientToSiteClientInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients/{vpnId} | Get client-to-site VPN client info
-[**ListRemoteSite**](VPNAPI.md#ListRemoteSite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remoteSites | List Remote Site
-[**ModifyClientToSiteVpnClient**](VPNAPI.md#ModifyClientToSiteVpnClient) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients/{vpnId} | Modify client-to-site VPN client
-[**ModifyClientToSiteVpnServer**](VPNAPI.md#ModifyClientToSiteVpnServer) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId} | Modify client-to-site VPN server
-[**ModifyIpsecFailover**](VPNAPI.md#ModifyIpsecFailover) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ipsec_failovers/{failoverId} | Modify IPsec failover
-[**ModifySiteToSiteVpn**](VPNAPI.md#ModifySiteToSiteVpn) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/{vpnId} | Modify site-to-site VPN
-[**ModifyVpnUser**](VPNAPI.md#ModifyVpnUser) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/users/{userId} | Modify VPN user
-[**ModifyVpnUserV2**](VPNAPI.md#ModifyVpnUserV2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/vpn/users/{userId} | Modify VPN user V2
-[**UploadVpnCertificateFile**](VPNAPI.md#UploadVpnCertificateFile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/certificate | Upload VPN certificate file
+[**CreateClientToSiteVpnClient**](VPNAPI.md#createclienttositevpnclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients | Create client-to-site VPN client
+[**CreateClientToSiteVpnServer**](VPNAPI.md#createclienttositevpnserver) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers | Create client-to-site VPN server
+[**CreateIpsecFailover**](VPNAPI.md#createipsecfailover) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ipsec_failovers | Create IPsec failover
+[**CreateSiteToSiteVpn**](VPNAPI.md#createsitetositevpn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns | Create site-to-site VPN
+[**CreateVpnUser**](VPNAPI.md#createvpnuser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/users | Create VPN user
+[**CreateVpnUserV2**](VPNAPI.md#createvpnuserv2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/vpn/users | Create VPN user V2
+[**DeleteClientToSiteVpnClient**](VPNAPI.md#deleteclienttositevpnclient) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients/{vpnId} | Delete client-to-site VPN client
+[**DeleteClientToSiteVpnServer**](VPNAPI.md#deleteclienttositevpnserver) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId} | Delete client-to-site VPN server
+[**DeleteIpsecFailover**](VPNAPI.md#deleteipsecfailover) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ipsec_failovers/{failoverId} | Delete IPsec failover
+[**DeleteSiteToSiteVpn**](VPNAPI.md#deletesitetositevpn) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/{vpnId} | Delete site-to-site VPN
+[**DeleteVpn**](VPNAPI.md#deletevpn) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/{vpnId} | Delete VPN
+[**DeleteVpnUser**](VPNAPI.md#deletevpnuser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/users/{userId} | Delete VPN user
+[**GetAllVpnList**](VPNAPI.md#getallvpnlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn | Get All VPN list
+[**GetClientToSiteVpnClientList**](VPNAPI.md#getclienttositevpnclientlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients | Get client-to-site VPN client list
+[**GetClientToSiteVpnServerInfo**](VPNAPI.md#getclienttositevpnserverinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId} | Get client-to-site VPN server info
+[**GetClientToSiteVpnServerList**](VPNAPI.md#getclienttositevpnserverlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers | Get client-to-site VPN server list
+[**GetClientToSiteVpnServerUserList**](VPNAPI.md#getclienttositevpnserveruserlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId}/users | Get user list for client-to-site VPN server
+[**GetGridIpsecFailover**](VPNAPI.md#getgridipsecfailover) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ipsec_failovers | Get IPsec failover list
+[**GetGridVpnUser**](VPNAPI.md#getgridvpnuser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/users | Get VPN user list
+[**GetSiteToSiteVpnInfo**](VPNAPI.md#getsitetositevpninfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/{vpnId} | Get site-to-site VPN info
+[**GetSiteToSiteVpnList**](VPNAPI.md#getsitetositevpnlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns | Get site-to-site VPN list
+[**GetVpnClientToSiteClientInfo**](VPNAPI.md#getvpnclienttositeclientinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients/{vpnId} | Get client-to-site VPN client info
+[**ListRemoteSite**](VPNAPI.md#listremotesite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remoteSites | List Remote Site
+[**ModifyClientToSiteVpnClient**](VPNAPI.md#modifyclienttositevpnclient) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients/{vpnId} | Modify client-to-site VPN client
+[**ModifyClientToSiteVpnServer**](VPNAPI.md#modifyclienttositevpnserver) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId} | Modify client-to-site VPN server
+[**ModifyIpsecFailover**](VPNAPI.md#modifyipsecfailover) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ipsec_failovers/{failoverId} | Modify IPsec failover
+[**ModifySiteToSiteVpn**](VPNAPI.md#modifysitetositevpn) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/{vpnId} | Modify site-to-site VPN
+[**ModifyVpnUser**](VPNAPI.md#modifyvpnuser) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/vpn/users/{userId} | Modify VPN user
+[**ModifyVpnUserV2**](VPNAPI.md#modifyvpnuserv2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/vpn/users/{userId} | Modify VPN user V2
+[**UploadVpnCertificateFile**](VPNAPI.md#uploadvpncertificatefile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/certificate | Upload VPN certificate file
 
 
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -703,7 +703,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -931,7 +931,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1004,7 +1004,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1153,7 +1153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1226,7 +1226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1302,7 +1302,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1379,7 +1379,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1458,7 +1458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1534,7 +1534,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1607,7 +1607,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1683,7 +1683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1756,7 +1756,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1834,7 +1834,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1912,7 +1912,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1990,7 +1990,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2068,7 +2068,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2146,7 +2146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2224,7 +2224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2299,7 +2299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

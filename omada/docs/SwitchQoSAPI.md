@@ -1,25 +1,25 @@
-# \SwitchQoSAPI
+# SwitchQoSAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateQosRule**](SwitchQoSAPI.md#CreateQosRule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule | Create switch QoS rule.
-[**DeleteQosRule**](SwitchQoSAPI.md#DeleteQosRule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/{qosRuleId} | Delete switch QoS rule.
-[**GetAllSelectableDevices**](SwitchQoSAPI.md#GetAllSelectableDevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/selectable-devices/all | Get switch QoS all selectable device&#39;s mac.
-[**GetDscpMapping**](SwitchQoSAPI.md#GetDscpMapping) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/dscp-mapping | Get switch QoS dscp mapping.
-[**GetDscpMappingTemplate**](SwitchQoSAPI.md#GetDscpMappingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-qos/qos-rule/dscp-mapping | Get switch QoS dscp mapping in site template.
-[**GetOswQosMode**](SwitchQoSAPI.md#GetOswQosMode) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-mode | Get switch QoS mode.
-[**GetQosRules**](SwitchQoSAPI.md#GetQosRules) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule | Get switch QoS rules.
-[**GetSchedulerMapping**](SwitchQoSAPI.md#GetSchedulerMapping) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/scheduler-mapping | Get switch QoS queue scheduling.
-[**GetSelectableDevices**](SwitchQoSAPI.md#GetSelectableDevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/selectable-devices | Get switch QoS selectable devices.
-[**GetSelectedDeviceBriefInfo**](SwitchQoSAPI.md#GetSelectedDeviceBriefInfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/device-info | Get switch QoS selected device brief info.
-[**GetUpgradableDevices**](SwitchQoSAPI.md#GetUpgradableDevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/upgradable-devices | Get switch QoS upgradable devices.
-[**ModifyDscpMapping**](SwitchQoSAPI.md#ModifyDscpMapping) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/dscp-mapping | Modify switch QoS dscp mapping.
-[**ModifyOswQosMode**](SwitchQoSAPI.md#ModifyOswQosMode) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-mode | Modify switch QoS mode.
-[**ModifyQosRule**](SwitchQoSAPI.md#ModifyQosRule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/{qosRuleId} | Modify switch QoS rule.
-[**ModifyQosRuleStatus**](SwitchQoSAPI.md#ModifyQosRuleStatus) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/status/{qosRuleId} | Modify switch QoS rule&#39;s status.
-[**ModifySchedulerMapping**](SwitchQoSAPI.md#ModifySchedulerMapping) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/scheduler-mapping | Modify switch QoS queue scheduling.
+[**CreateQosRule**](SwitchQoSAPI.md#createqosrule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule | Create switch QoS rule.
+[**DeleteQosRule**](SwitchQoSAPI.md#deleteqosrule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/{qosRuleId} | Delete switch QoS rule.
+[**GetAllSelectableDevices**](SwitchQoSAPI.md#getallselectabledevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/selectable-devices/all | Get switch QoS all selectable device&#39;s mac.
+[**GetDscpMapping**](SwitchQoSAPI.md#getdscpmapping) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/dscp-mapping | Get switch QoS dscp mapping.
+[**GetDscpMappingTemplate**](SwitchQoSAPI.md#getdscpmappingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-qos/qos-rule/dscp-mapping | Get switch QoS dscp mapping in site template.
+[**GetOswQosMode**](SwitchQoSAPI.md#getoswqosmode) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-mode | Get switch QoS mode.
+[**GetQosRules**](SwitchQoSAPI.md#getqosrules) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule | Get switch QoS rules.
+[**GetSchedulerMapping**](SwitchQoSAPI.md#getschedulermapping) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/scheduler-mapping | Get switch QoS queue scheduling.
+[**GetSelectableDevices**](SwitchQoSAPI.md#getselectabledevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/selectable-devices | Get switch QoS selectable devices.
+[**GetSelectedDeviceBriefInfo**](SwitchQoSAPI.md#getselecteddevicebriefinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/device-info | Get switch QoS selected device brief info.
+[**GetUpgradableDevices**](SwitchQoSAPI.md#getupgradabledevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/upgradable-devices | Get switch QoS upgradable devices.
+[**ModifyDscpMapping**](SwitchQoSAPI.md#modifydscpmapping) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/dscp-mapping | Modify switch QoS dscp mapping.
+[**ModifyOswQosMode**](SwitchQoSAPI.md#modifyoswqosmode) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-mode | Modify switch QoS mode.
+[**ModifyQosRule**](SwitchQoSAPI.md#modifyqosrule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/{qosRuleId} | Modify switch QoS rule.
+[**ModifyQosRuleStatus**](SwitchQoSAPI.md#modifyqosrulestatus) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/status/{qosRuleId} | Modify switch QoS rule&#39;s status.
+[**ModifySchedulerMapping**](SwitchQoSAPI.md#modifyschedulermapping) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/scheduler-mapping | Modify switch QoS queue scheduling.
 
 
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -762,7 +762,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -835,7 +835,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -910,7 +910,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -985,7 +985,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1063,7 +1063,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1141,7 +1141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1216,7 +1216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

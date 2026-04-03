@@ -1,14 +1,14 @@
-# \OLTServiceProfileAPI
+# OLTServiceProfileAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddServiceProfile**](OLTServiceProfileAPI.md#AddServiceProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/add | Create new service profile
-[**DeleteServiceProfile**](OLTServiceProfileAPI.md#DeleteServiceProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/delete | Delete an existing service profile
-[**EditServiceProfile**](OLTServiceProfileAPI.md#EditServiceProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/edit | Modify an existing service profile
-[**GetServiceProfileList**](OLTServiceProfileAPI.md#GetServiceProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/list | Get service profile list
-[**GetServiceProfilePage**](OLTServiceProfileAPI.md#GetServiceProfilePage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/page | Get service profile page
+[**AddServiceProfile**](OLTServiceProfileAPI.md#addserviceprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/add | Create new service profile
+[**DeleteServiceProfile**](OLTServiceProfileAPI.md#deleteserviceprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/delete | Delete an existing service profile
+[**EditServiceProfile**](OLTServiceProfileAPI.md#editserviceprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/edit | Modify an existing service profile
+[**GetServiceProfileList**](OLTServiceProfileAPI.md#getserviceprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/list | Get service profile list
+[**GetServiceProfilePage**](OLTServiceProfileAPI.md#getserviceprofilepage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/profiles/page | Get service profile page
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

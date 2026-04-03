@@ -1,13 +1,13 @@
-# \DisableNatAPI
+# DisableNatAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddDisableNat1**](DisableNatAPI.md#AddDisableNat1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wired-networks/disable-nat | Create Disable Nat
-[**DeleteDisableNat1**](DisableNatAPI.md#DeleteDisableNat1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wired-networks/disable-nat/{disableNatId} | Delete Disable Nat
-[**GetDisableNatGrid1**](DisableNatAPI.md#GetDisableNatGrid1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wired-networks/disable-nats | Get Disable Nat Grid
-[**ModifyDisableNat**](DisableNatAPI.md#ModifyDisableNat) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/wired-networks/disable-nat/{disableNatId} | Modify Disable Nat
+[**AddDisableNat1**](DisableNatAPI.md#adddisablenat1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wired-networks/disable-nat | Create Disable Nat
+[**DeleteDisableNat1**](DisableNatAPI.md#deletedisablenat1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wired-networks/disable-nat/{disableNatId} | Delete Disable Nat
+[**GetDisableNatGrid1**](DisableNatAPI.md#getdisablenatgrid1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wired-networks/disable-nats | Get Disable Nat Grid
+[**ModifyDisableNat**](DisableNatAPI.md#modifydisablenat) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/wired-networks/disable-nat/{disableNatId} | Modify Disable Nat
 
 
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

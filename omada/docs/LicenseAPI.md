@@ -1,16 +1,16 @@
-# \LicenseAPI
+# LicenseAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAutoActive**](LicenseAPI.md#GetAutoActive) | **Get** /openapi/v1/{omadacId}/license/auto-active | Get license auto active
-[**GetAutoRenew**](LicenseAPI.md#GetAutoRenew) | **Get** /openapi/v1/{omadacId}/license/auto-renew | Get license auto renew
-[**GetLicenseNumByCategory**](LicenseAPI.md#GetLicenseNumByCategory) | **Get** /openapi/v1/{omadacId}/licenses/available-license | Get available license num
-[**GetSiteAutoRenew**](LicenseAPI.md#GetSiteAutoRenew) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/license/auto-renew | Get site license auto renew
-[**ModifyAutoActive**](LicenseAPI.md#ModifyAutoActive) | **Post** /openapi/v1/{omadacId}/license/auto-active | Modify license auto active
-[**ModifyAutoRenew**](LicenseAPI.md#ModifyAutoRenew) | **Post** /openapi/v1/{omadacId}/license/auto-renew | Modify license auto renew
-[**ModifySiteAutoRenew**](LicenseAPI.md#ModifySiteAutoRenew) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/license/auto-renew | Modify site license auto renew
+[**GetAutoActive**](LicenseAPI.md#getautoactive) | **Get** /openapi/v1/{omadacId}/license/auto-active | Get license auto active
+[**GetAutoRenew**](LicenseAPI.md#getautorenew) | **Get** /openapi/v1/{omadacId}/license/auto-renew | Get license auto renew
+[**GetLicenseNumByCategory**](LicenseAPI.md#getlicensenumbycategory) | **Get** /openapi/v1/{omadacId}/licenses/available-license | Get available license num
+[**GetSiteAutoRenew**](LicenseAPI.md#getsiteautorenew) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/license/auto-renew | Get site license auto renew
+[**ModifyAutoActive**](LicenseAPI.md#modifyautoactive) | **Post** /openapi/v1/{omadacId}/license/auto-active | Modify license auto active
+[**ModifyAutoRenew**](LicenseAPI.md#modifyautorenew) | **Post** /openapi/v1/{omadacId}/license/auto-renew | Modify license auto renew
+[**ModifySiteAutoRenew**](LicenseAPI.md#modifysiteautorenew) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/license/auto-renew | Modify site license auto renew
 
 
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,21 +1,21 @@
-# \OSPFAPI
+# OSPFAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchDeleteOspfInterface**](OSPFAPI.md#BatchDeleteOspfInterface) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface/batch-delete | Batch Delete Ospf Interface
-[**BatchDeleteOspfProcess**](OSPFAPI.md#BatchDeleteOspfProcess) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process/batch-delete | Batch Delete Ospf Process
-[**CreateOspfInterface**](OSPFAPI.md#CreateOspfInterface) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface | Create Ospf Interface
-[**CreateOspfProcess**](OSPFAPI.md#CreateOspfProcess) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process | Create Ospf Process
-[**DeleteOspfInterface**](OSPFAPI.md#DeleteOspfInterface) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/interface/{ospfInterfaceId} | Delete Ospf Interface
-[**DeleteOspfProcess**](OSPFAPI.md#DeleteOspfProcess) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/process/{ospfProcessId} | Delete Ospf Process
-[**GetGridOspfInterface**](OSPFAPI.md#GetGridOspfInterface) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface | Get Ospf Interface list
-[**GetGridOspfProcess**](OSPFAPI.md#GetGridOspfProcess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process | Get Ospf Process list
-[**GetOspfDevice**](OSPFAPI.md#GetOspfDevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/device | Get Ospf Device list
-[**GetOswVlanIf**](OSPFAPI.md#GetOswVlanIf) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vlan-interface/switches/{switchMac} | Get Switch Vlan Interface list
-[**ModifyOspfInterface**](OSPFAPI.md#ModifyOspfInterface) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface/{ospfInterfaceId} | Modify Ospf Interface
-[**ModifyOspfProcess**](OSPFAPI.md#ModifyOspfProcess) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process/{ospfProcessId} | Modify Ospf Process
+[**BatchDeleteOspfInterface**](OSPFAPI.md#batchdeleteospfinterface) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface/batch-delete | Batch Delete Ospf Interface
+[**BatchDeleteOspfProcess**](OSPFAPI.md#batchdeleteospfprocess) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process/batch-delete | Batch Delete Ospf Process
+[**CreateOspfInterface**](OSPFAPI.md#createospfinterface) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface | Create Ospf Interface
+[**CreateOspfProcess**](OSPFAPI.md#createospfprocess) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process | Create Ospf Process
+[**DeleteOspfInterface**](OSPFAPI.md#deleteospfinterface) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/interface/{ospfInterfaceId} | Delete Ospf Interface
+[**DeleteOspfProcess**](OSPFAPI.md#deleteospfprocess) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/process/{ospfProcessId} | Delete Ospf Process
+[**GetGridOspfInterface**](OSPFAPI.md#getgridospfinterface) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface | Get Ospf Interface list
+[**GetGridOspfProcess**](OSPFAPI.md#getgridospfprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process | Get Ospf Process list
+[**GetOspfDevice**](OSPFAPI.md#getospfdevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/device | Get Ospf Device list
+[**GetOswVlanIf**](OSPFAPI.md#getoswvlanif) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vlan-interface/switches/{switchMac} | Get Switch Vlan Interface list
+[**ModifyOspfInterface**](OSPFAPI.md#modifyospfinterface) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface/{ospfInterfaceId} | Modify Ospf Interface
+[**ModifyOspfProcess**](OSPFAPI.md#modifyospfprocess) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process/{ospfProcessId} | Modify Ospf Process
 
 
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -772,7 +772,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -850,7 +850,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -928,7 +928,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

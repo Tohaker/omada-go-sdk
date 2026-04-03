@@ -12,40 +12,45 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
-// checks if the ClientLockToApSetting type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ClientLockToApSetting{}
+// checks if the ClientLockToApMacListSetting type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ClientLockToApMacListSetting{}
 
-// ClientLockToApSetting Client lock to ap setting.
-type ClientLockToApSetting struct {
-	// AP name and MAC info list.
-	Aps []ApBriefInfoVO `json:"aps,omitempty"`
-	// Lock to AP enable.
-	Enable *bool `json:"enable,omitempty"`
+// ClientLockToApMacListSetting struct for ClientLockToApMacListSetting
+type ClientLockToApMacListSetting struct {
+	// AP MAC list. Use capital letters and separator, for example: AA-AA-AA-AA-AA-AA.
+	Aps []string `json:"aps,omitempty"`
+	// Lock to AP enable
+	Enable bool `json:"enable"`
 }
 
-// NewClientLockToApSetting instantiates a new ClientLockToApSetting object
+type _ClientLockToApMacListSetting ClientLockToApMacListSetting
+
+// NewClientLockToApMacListSetting instantiates a new ClientLockToApMacListSetting object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClientLockToApSetting() *ClientLockToApSetting {
-	this := ClientLockToApSetting{}
+func NewClientLockToApMacListSetting(enable bool) *ClientLockToApMacListSetting {
+	this := ClientLockToApMacListSetting{}
+	this.Enable = enable
 	return &this
 }
 
-// NewClientLockToApSettingWithDefaults instantiates a new ClientLockToApSetting object
+// NewClientLockToApMacListSettingWithDefaults instantiates a new ClientLockToApMacListSetting object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewClientLockToApSettingWithDefaults() *ClientLockToApSetting {
-	this := ClientLockToApSetting{}
+func NewClientLockToApMacListSettingWithDefaults() *ClientLockToApMacListSetting {
+	this := ClientLockToApMacListSetting{}
 	return &this
 }
 
 // GetAps returns the Aps field value if set, zero value otherwise.
-func (o *ClientLockToApSetting) GetAps() []ApBriefInfoVO {
+func (o *ClientLockToApMacListSetting) GetAps() []string {
 	if o == nil || IsNil(o.Aps) {
-		var ret []ApBriefInfoVO
+		var ret []string
 		return ret
 	}
 	return o.Aps
@@ -53,7 +58,7 @@ func (o *ClientLockToApSetting) GetAps() []ApBriefInfoVO {
 
 // GetApsOk returns a tuple with the Aps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientLockToApSetting) GetApsOk() ([]ApBriefInfoVO, bool) {
+func (o *ClientLockToApMacListSetting) GetApsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Aps) {
 		return nil, false
 	}
@@ -61,7 +66,7 @@ func (o *ClientLockToApSetting) GetApsOk() ([]ApBriefInfoVO, bool) {
 }
 
 // HasAps returns a boolean if a field has been set.
-func (o *ClientLockToApSetting) HasAps() bool {
+func (o *ClientLockToApMacListSetting) HasAps() bool {
 	if o != nil && !IsNil(o.Aps) {
 		return true
 	}
@@ -69,44 +74,36 @@ func (o *ClientLockToApSetting) HasAps() bool {
 	return false
 }
 
-// SetAps gets a reference to the given []ApBriefInfoVO and assigns it to the Aps field.
-func (o *ClientLockToApSetting) SetAps(v []ApBriefInfoVO) {
+// SetAps gets a reference to the given []string and assigns it to the Aps field.
+func (o *ClientLockToApMacListSetting) SetAps(v []string) {
 	o.Aps = v
 }
 
-// GetEnable returns the Enable field value if set, zero value otherwise.
-func (o *ClientLockToApSetting) GetEnable() bool {
-	if o == nil || IsNil(o.Enable) {
+// GetEnable returns the Enable field value
+func (o *ClientLockToApMacListSetting) GetEnable() bool {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.Enable
+
+	return o.Enable
 }
 
-// GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
+// GetEnableOk returns a tuple with the Enable field value
 // and a boolean to check if the value has been set.
-func (o *ClientLockToApSetting) GetEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.Enable) {
+func (o *ClientLockToApMacListSetting) GetEnableOk() (*bool, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Enable, true
+	return &o.Enable, true
 }
 
-// HasEnable returns a boolean if a field has been set.
-func (o *ClientLockToApSetting) HasEnable() bool {
-	if o != nil && !IsNil(o.Enable) {
-		return true
-	}
-
-	return false
+// SetEnable sets field value
+func (o *ClientLockToApMacListSetting) SetEnable(v bool) {
+	o.Enable = v
 }
 
-// SetEnable gets a reference to the given bool and assigns it to the Enable field.
-func (o *ClientLockToApSetting) SetEnable(v bool) {
-	o.Enable = &v
-}
-
-func (o ClientLockToApSetting) MarshalJSON() ([]byte, error) {
+func (o ClientLockToApMacListSetting) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -114,49 +111,84 @@ func (o ClientLockToApSetting) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ClientLockToApSetting) ToMap() (map[string]interface{}, error) {
+func (o ClientLockToApMacListSetting) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Aps) {
 		toSerialize["aps"] = o.Aps
 	}
-	if !IsNil(o.Enable) {
-		toSerialize["enable"] = o.Enable
-	}
+	toSerialize["enable"] = o.Enable
 	return toSerialize, nil
 }
 
-type NullableClientLockToApSetting struct {
-	value *ClientLockToApSetting
+func (o *ClientLockToApMacListSetting) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"enable",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varClientLockToApMacListSetting := _ClientLockToApMacListSetting{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varClientLockToApMacListSetting)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClientLockToApMacListSetting(varClientLockToApMacListSetting)
+
+	return err
+}
+
+type NullableClientLockToApMacListSetting struct {
+	value *ClientLockToApMacListSetting
 	isSet bool
 }
 
-func (v NullableClientLockToApSetting) Get() *ClientLockToApSetting {
+func (v NullableClientLockToApMacListSetting) Get() *ClientLockToApMacListSetting {
 	return v.value
 }
 
-func (v *NullableClientLockToApSetting) Set(val *ClientLockToApSetting) {
+func (v *NullableClientLockToApMacListSetting) Set(val *ClientLockToApMacListSetting) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableClientLockToApSetting) IsSet() bool {
+func (v NullableClientLockToApMacListSetting) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableClientLockToApSetting) Unset() {
+func (v *NullableClientLockToApMacListSetting) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableClientLockToApSetting(val *ClientLockToApSetting) *NullableClientLockToApSetting {
-	return &NullableClientLockToApSetting{value: val, isSet: true}
+func NewNullableClientLockToApMacListSetting(val *ClientLockToApMacListSetting) *NullableClientLockToApMacListSetting {
+	return &NullableClientLockToApMacListSetting{value: val, isSet: true}
 }
 
-func (v NullableClientLockToApSetting) MarshalJSON() ([]byte, error) {
+func (v NullableClientLockToApMacListSetting) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableClientLockToApSetting) UnmarshalJSON(src []byte) error {
+func (v *NullableClientLockToApMacListSetting) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

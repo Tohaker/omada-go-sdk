@@ -1,24 +1,24 @@
-# \MspLogAPI
+# MspLogAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteAlertLogsForMsp**](MspLogAPI.md#DeleteAlertLogsForMsp) | **Delete** /openapi/v1/msp/{mspId}/logs/alerts/delete | Delete MSP alert log
-[**DeleteEventLogsForMsp**](MspLogAPI.md#DeleteEventLogsForMsp) | **Delete** /openapi/v1/msp/{mspId}/logs/events/delete | Delete MSP event log
-[**ExportAuditLogListForGlobal1**](MspLogAPI.md#ExportAuditLogListForGlobal1) | **Post** /openapi/v1/msp/{mspId}/logs/audit/export | Export audit log list in MSP view
-[**ExportLogListForMsp**](MspLogAPI.md#ExportLogListForMsp) | **Post** /openapi/v1/msp/{mspId}/logs/export | Export log list in MSP view
-[**GetAlertLogsForMsp**](MspLogAPI.md#GetAlertLogsForMsp) | **Get** /openapi/v1/msp/{mspId}/logs/alerts | Get MSP alert log list
-[**GetAuditLogSettingForMsp2**](MspLogAPI.md#GetAuditLogSettingForMsp2) | **Get** /openapi/v1/msp/{mspId}/audit-notification | Get MSP audit log notification
-[**GetAuditLogsForMsp**](MspLogAPI.md#GetAuditLogsForMsp) | **Get** /openapi/v1/msp/{mspId}/audit-logs | Get MSP audit log list
-[**GetEventLogsForMsp**](MspLogAPI.md#GetEventLogsForMsp) | **Get** /openapi/v1/msp/{mspId}/logs/events | Get MSP event log list
-[**GetLogSettingForMsp**](MspLogAPI.md#GetLogSettingForMsp) | **Get** /openapi/v1/msp/{mspId}/log-notification | Get MSP log notification
-[**GetLogSettingForMspV2**](MspLogAPI.md#GetLogSettingForMspV2) | **Get** /openapi/v1/msp/{mspId}/log-notification-setting | Get MSP log notification
-[**ModifyAuditLogSettingMsp**](MspLogAPI.md#ModifyAuditLogSettingMsp) | **Patch** /openapi/v1/msp/{mspId}/audit-notification | Modify MSP audit log notification
-[**ModifyLogSettingMsp**](MspLogAPI.md#ModifyLogSettingMsp) | **Patch** /openapi/v1/msp/{mspId}/log-notification | Modify MSP log notification
-[**ModifyLogSettingMspV2**](MspLogAPI.md#ModifyLogSettingMspV2) | **Patch** /openapi/v1/msp/{mspId}/log-notification-setting | Modify MSP log notification
-[**ResetLogSettingMsp**](MspLogAPI.md#ResetLogSettingMsp) | **Post** /openapi/v1/msp/{mspId}/reset/log-notification | Reset MSP log notification
-[**ResolveAlertForMsp**](MspLogAPI.md#ResolveAlertForMsp) | **Post** /openapi/v1/msp/{mspId}/logs/alerts/resolve | Resolve MSP alert log
+[**DeleteAlertLogsForMsp**](MspLogAPI.md#deletealertlogsformsp) | **Delete** /openapi/v1/msp/{mspId}/logs/alerts/delete | Delete MSP alert log
+[**DeleteEventLogsForMsp**](MspLogAPI.md#deleteeventlogsformsp) | **Delete** /openapi/v1/msp/{mspId}/logs/events/delete | Delete MSP event log
+[**ExportAuditLogListForGlobal1**](MspLogAPI.md#exportauditloglistforglobal1) | **Post** /openapi/v1/msp/{mspId}/logs/audit/export | Export audit log list in MSP view
+[**ExportLogListForMsp**](MspLogAPI.md#exportloglistformsp) | **Post** /openapi/v1/msp/{mspId}/logs/export | Export log list in MSP view
+[**GetAlertLogsForMsp**](MspLogAPI.md#getalertlogsformsp) | **Get** /openapi/v1/msp/{mspId}/logs/alerts | Get MSP alert log list
+[**GetAuditLogSettingForMsp2**](MspLogAPI.md#getauditlogsettingformsp2) | **Get** /openapi/v1/msp/{mspId}/audit-notification | Get MSP audit log notification
+[**GetAuditLogsForMsp**](MspLogAPI.md#getauditlogsformsp) | **Get** /openapi/v1/msp/{mspId}/audit-logs | Get MSP audit log list
+[**GetEventLogsForMsp**](MspLogAPI.md#geteventlogsformsp) | **Get** /openapi/v1/msp/{mspId}/logs/events | Get MSP event log list
+[**GetLogSettingForMsp**](MspLogAPI.md#getlogsettingformsp) | **Get** /openapi/v1/msp/{mspId}/log-notification | Get MSP log notification
+[**GetLogSettingForMspV2**](MspLogAPI.md#getlogsettingformspv2) | **Get** /openapi/v1/msp/{mspId}/log-notification-setting | Get MSP log notification
+[**ModifyAuditLogSettingMsp**](MspLogAPI.md#modifyauditlogsettingmsp) | **Patch** /openapi/v1/msp/{mspId}/audit-notification | Modify MSP audit log notification
+[**ModifyLogSettingMsp**](MspLogAPI.md#modifylogsettingmsp) | **Patch** /openapi/v1/msp/{mspId}/log-notification | Modify MSP log notification
+[**ModifyLogSettingMspV2**](MspLogAPI.md#modifylogsettingmspv2) | **Patch** /openapi/v1/msp/{mspId}/log-notification-setting | Modify MSP log notification
+[**ResetLogSettingMsp**](MspLogAPI.md#resetlogsettingmsp) | **Post** /openapi/v1/msp/{mspId}/reset/log-notification | Reset MSP log notification
+[**ResolveAlertForMsp**](MspLogAPI.md#resolvealertformsp) | **Post** /openapi/v1/msp/{mspId}/logs/alerts/resolve | Resolve MSP alert log
 
 
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -686,7 +686,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -828,7 +828,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -900,7 +900,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -972,7 +972,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1042,7 +1042,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1114,7 +1114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,80 +1,75 @@
-# ClientLockToApSetting
+# ClientLockToApMacListSetting
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Aps** | Pointer to [**[]ApBriefInfoVO**](ApBriefInfoVO.md) | AP name and MAC info list. | [optional] 
-**Enable** | Pointer to **bool** | Lock to AP enable. | [optional] 
+**Aps** | Pointer to **[]string** | AP MAC list. Use capital letters and separator, for example: AA-AA-AA-AA-AA-AA. | [optional] 
+**Enable** | **bool** | Lock to AP enable | 
 
 ## Methods
 
-### NewClientLockToApSetting
+### NewClientLockToApMacListSetting
 
-`func NewClientLockToApSetting() *ClientLockToApSetting`
+`func NewClientLockToApMacListSetting(enable bool, ) *ClientLockToApMacListSetting`
 
-NewClientLockToApSetting instantiates a new ClientLockToApSetting object
+NewClientLockToApMacListSetting instantiates a new ClientLockToApMacListSetting object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewClientLockToApSettingWithDefaults
+### NewClientLockToApMacListSettingWithDefaults
 
-`func NewClientLockToApSettingWithDefaults() *ClientLockToApSetting`
+`func NewClientLockToApMacListSettingWithDefaults() *ClientLockToApMacListSetting`
 
-NewClientLockToApSettingWithDefaults instantiates a new ClientLockToApSetting object
+NewClientLockToApMacListSettingWithDefaults instantiates a new ClientLockToApMacListSetting object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAps
 
-`func (o *ClientLockToApSetting) GetAps() []ApBriefInfoVO`
+`func (o *ClientLockToApMacListSetting) GetAps() []string`
 
 GetAps returns the Aps field if non-nil, zero value otherwise.
 
 ### GetApsOk
 
-`func (o *ClientLockToApSetting) GetApsOk() (*[]ApBriefInfoVO, bool)`
+`func (o *ClientLockToApMacListSetting) GetApsOk() (*[]string, bool)`
 
 GetApsOk returns a tuple with the Aps field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAps
 
-`func (o *ClientLockToApSetting) SetAps(v []ApBriefInfoVO)`
+`func (o *ClientLockToApMacListSetting) SetAps(v []string)`
 
 SetAps sets Aps field to given value.
 
 ### HasAps
 
-`func (o *ClientLockToApSetting) HasAps() bool`
+`func (o *ClientLockToApMacListSetting) HasAps() bool`
 
 HasAps returns a boolean if a field has been set.
 
 ### GetEnable
 
-`func (o *ClientLockToApSetting) GetEnable() bool`
+`func (o *ClientLockToApMacListSetting) GetEnable() bool`
 
 GetEnable returns the Enable field if non-nil, zero value otherwise.
 
 ### GetEnableOk
 
-`func (o *ClientLockToApSetting) GetEnableOk() (*bool, bool)`
+`func (o *ClientLockToApMacListSetting) GetEnableOk() (*bool, bool)`
 
 GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnable
 
-`func (o *ClientLockToApSetting) SetEnable(v bool)`
+`func (o *ClientLockToApMacListSetting) SetEnable(v bool)`
 
 SetEnable sets Enable field to given value.
 
-### HasEnable
-
-`func (o *ClientLockToApSetting) HasEnable() bool`
-
-HasEnable returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,13 +1,13 @@
-# \OLTONTPortAPI
+# OLTONTPortAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EditOntEthPort**](OLTONTPortAPI.md#EditOntEthPort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/{serviceId}/eth-ports/edit | Modify an existing ont eth port
-[**EditOntPotsPort**](OLTONTPortAPI.md#EditOntPotsPort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/{serviceId}/pots-ports/edit | Modify an existing ont pots port
-[**GetOntEthPortList**](OLTONTPortAPI.md#GetOntEthPortList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/{serviceId}/eth-ports/list | Get ont eth port list
-[**GetOntPotsPortList**](OLTONTPortAPI.md#GetOntPotsPortList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/{serviceId}/pots-ports/list | Get ont pots port list
+[**EditOntEthPort**](OLTONTPortAPI.md#editontethport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/{serviceId}/eth-ports/edit | Modify an existing ont eth port
+[**EditOntPotsPort**](OLTONTPortAPI.md#editontpotsport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/{serviceId}/pots-ports/edit | Modify an existing ont pots port
+[**GetOntEthPortList**](OLTONTPortAPI.md#getontethportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/{serviceId}/eth-ports/list | Get ont eth port list
+[**GetOntPotsPortList**](OLTONTPortAPI.md#getontpotsportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/service/{serviceId}/pots-ports/list | Get ont pots port list
 
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
