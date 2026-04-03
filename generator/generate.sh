@@ -15,7 +15,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 cd "${ROOT_DIR}"
 
-GENERATOR_IMAGE="openapitools/openapi-generator-cli:v7.12.0"
+GENERATOR_IMAGE="openapitools/openapi-generator-cli:v7.21.0"
 
 echo "=== Step 1: Fetch and fix upstream spec ==="
 go run tools/fix_spec.go
