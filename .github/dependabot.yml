@@ -6,15 +6,15 @@
 
 version: 2
 updates:
-  - package-ecosystem: "devcontainers"
-    directory: "/"
+  - package-ecosystem: devcontainers
+    directory: /
     schedule:
         interval: weekly
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
         interval: weekly
-  - package-ecosystem: "go-mod"
-    directory: "/"
+  - package-ecosystem: gomod
+    directory: /
     schedule: 
         interval: weekly
