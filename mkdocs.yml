@@ -1,0 +1,14 @@
+site_name: Omada Go SDK
+site_url: https://tohaker.github.io/omada-go-sdk
+repo_url: https://github.com/Tohaker/omada-go-sdk
+theme:
+  name: material
+docs_dir: omada
+plugins:
+  - search
+  - exclude:
+      glob:
+        - /.openapi-generator
+        - /test
+        - "*.go"
+        - .openapi-generator-ignore

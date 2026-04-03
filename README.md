@@ -111,6 +111,32 @@ Or use the GitHub Actions workflow: **Actions → Generate SDK → Run workflow*
 3. A separate generation pass adds auth endpoints from `generator/auth-spec.yaml`
 4. The result is a single `omada` Go package in the `omada/` subdirectory
 
+## Publishing docs
+
+Docs are published using [`mkdocs-material`](https://squidfunk.github.io/mkdocs-material/).
+
+If you've opened this repository in the `devcontainer`, `mkdocs` and all required plugins will already be installed and configured for you.
+
+Otherwise, if you haven't done so already, follow their [getting started](https://squidfunk.github.io/mkdocs-material/getting-started) guide to set up your local environment.
+
+You must also install the following extra plugins;
+- `mkdocs-exclude`
+
+To preview the docs locally, just run
+
+```sh
+mkdocs serve
+```
+
+Or build to the `/site` directory with 
+
+```sh
+mkdocs build
+```
+
+Whenever docs are generated with `go generate` and commited to the main branch, the docs will deploy and be available to view at `tohaker.github.io/omada-go-sdk`.
+
+
 ## License
 
 See [LICENSE](LICENSE).
