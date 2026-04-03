@@ -1,14 +1,14 @@
-# \OLTTrafficProfileAPI
+# OLTTrafficProfileAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddTrafficProfile**](OLTTrafficProfileAPI.md#AddTrafficProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/add | Create new traffic profile
-[**DeleteTrafficProfile**](OLTTrafficProfileAPI.md#DeleteTrafficProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/delete | Delete an existing traffic profile
-[**EditTrafficProfile**](OLTTrafficProfileAPI.md#EditTrafficProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/edit | Modify an existing traffic profile
-[**GetTrafficProfileList**](OLTTrafficProfileAPI.md#GetTrafficProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/list | Get traffic profile list
-[**GetTrafficProfilePage**](OLTTrafficProfileAPI.md#GetTrafficProfilePage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/page | Get traffic profile page
+[**AddTrafficProfile**](OLTTrafficProfileAPI.md#addtrafficprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/add | Create new traffic profile
+[**DeleteTrafficProfile**](OLTTrafficProfileAPI.md#deletetrafficprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/delete | Delete an existing traffic profile
+[**EditTrafficProfile**](OLTTrafficProfileAPI.md#edittrafficprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/edit | Modify an existing traffic profile
+[**GetTrafficProfileList**](OLTTrafficProfileAPI.md#gettrafficprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/list | Get traffic profile list
+[**GetTrafficProfilePage**](OLTTrafficProfileAPI.md#gettrafficprofilepage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/traffic/profiles/page | Get traffic profile page
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,13 +1,13 @@
-# \ScheduleTemplateAPI
+# ScheduleTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateRebootSchedule**](ScheduleTemplateAPI.md#CreateRebootSchedule) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules | Create new reboot schedule template
-[**DeleteRebootSchedule**](ScheduleTemplateAPI.md#DeleteRebootSchedule) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules/{id} | Delete reboot schedule template
-[**GetRebootScheduleList1**](ScheduleTemplateAPI.md#GetRebootScheduleList1) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules | Get reboot schedule template list
-[**ModifyRebootSchedule**](ScheduleTemplateAPI.md#ModifyRebootSchedule) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules/{id} | Modify reboot schedule template
+[**CreateRebootSchedule**](ScheduleTemplateAPI.md#createrebootschedule) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules | Create new reboot schedule template
+[**DeleteRebootSchedule**](ScheduleTemplateAPI.md#deleterebootschedule) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules/{id} | Delete reboot schedule template
+[**GetRebootScheduleList1**](ScheduleTemplateAPI.md#getrebootschedulelist1) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules | Get reboot schedule template list
+[**ModifyRebootSchedule**](ScheduleTemplateAPI.md#modifyrebootschedule) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules/{id} | Modify reboot schedule template
 
 
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

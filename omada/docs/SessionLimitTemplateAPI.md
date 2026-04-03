@@ -1,16 +1,16 @@
-# \SessionLimitTemplateAPI
+# SessionLimitTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTemplateSessionLimitRule**](SessionLimitTemplateAPI.md#CreateTemplateSessionLimitRule) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules | Create site template&#39;s session limit rule
-[**DeleteTemplateSessionLimitRule**](SessionLimitTemplateAPI.md#DeleteTemplateSessionLimitRule) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules/{ruleId} | Delete site template&#39;s session limit rule
-[**GetTemplateGridSessionLimitRule**](SessionLimitTemplateAPI.md#GetTemplateGridSessionLimitRule) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules | Get site template&#39;s session limit rule list
-[**GetTemplateSessionLimit**](SessionLimitTemplateAPI.md#GetTemplateSessionLimit) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit | Get site template&#39;s session limit
-[**ModifyTemplateSessionLimit**](SessionLimitTemplateAPI.md#ModifyTemplateSessionLimit) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit | Modify site template&#39;s session limit
-[**ModifyTemplateSessionLimitRule**](SessionLimitTemplateAPI.md#ModifyTemplateSessionLimitRule) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules/{ruleId} | Modify site template&#39;s session limit rule
-[**ModifyTemplateSessionLimitRuleIndex**](SessionLimitTemplateAPI.md#ModifyTemplateSessionLimitRuleIndex) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules | Modify site template&#39;s session limit rule index
+[**CreateTemplateSessionLimitRule**](SessionLimitTemplateAPI.md#createtemplatesessionlimitrule) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules | Create site template&#39;s session limit rule
+[**DeleteTemplateSessionLimitRule**](SessionLimitTemplateAPI.md#deletetemplatesessionlimitrule) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules/{ruleId} | Delete site template&#39;s session limit rule
+[**GetTemplateGridSessionLimitRule**](SessionLimitTemplateAPI.md#gettemplategridsessionlimitrule) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules | Get site template&#39;s session limit rule list
+[**GetTemplateSessionLimit**](SessionLimitTemplateAPI.md#gettemplatesessionlimit) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit | Get site template&#39;s session limit
+[**ModifyTemplateSessionLimit**](SessionLimitTemplateAPI.md#modifytemplatesessionlimit) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit | Modify site template&#39;s session limit
+[**ModifyTemplateSessionLimitRule**](SessionLimitTemplateAPI.md#modifytemplatesessionlimitrule) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules/{ruleId} | Modify site template&#39;s session limit rule
+[**ModifyTemplateSessionLimitRuleIndex**](SessionLimitTemplateAPI.md#modifytemplatesessionlimitruleindex) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/session-limit/rules | Modify site template&#39;s session limit rule index
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

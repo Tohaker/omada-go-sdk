@@ -1,29 +1,29 @@
-# \UserAndRoleAPI
+# UserAndRoleAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateNewRole**](UserAndRoleAPI.md#CreateNewRole) | **Post** /openapi/v1/{omadacId}/roles | Create new role
-[**CreateNewUser**](UserAndRoleAPI.md#CreateNewUser) | **Post** /openapi/v1/{omadacId}/users | Create new user
-[**DeleteRole**](UserAndRoleAPI.md#DeleteRole) | **Delete** /openapi/v1/{omadacId}/roles/{roleId} | Delete an existing role
-[**DeleteUser**](UserAndRoleAPI.md#DeleteUser) | **Delete** /openapi/v1/{omadacId}/users/{userID} | Delete an existing user
-[**GetAllCloudUsersExcludeRoot**](UserAndRoleAPI.md#GetAllCloudUsersExcludeRoot) | **Get** /openapi/v1/{omadacId}/users/cloud | Get all cloud users exclude owner
-[**GetAllLocalUsersExcludeRoot**](UserAndRoleAPI.md#GetAllLocalUsersExcludeRoot) | **Get** /openapi/v1/{omadacId}/users/local | Get all local users exclude owner
-[**GetAllRoles**](UserAndRoleAPI.md#GetAllRoles) | **Get** /openapi/v1/{omadacId}/roles | Get role list
-[**GetAppGridUsers**](UserAndRoleAPI.md#GetAppGridUsers) | **Get** /openapi/v1/{omadacId}/all-users | Get user list for app
-[**GetAvailableRole**](UserAndRoleAPI.md#GetAvailableRole) | **Get** /openapi/v1/{omadacId}/roles/available | Get available roles for creating new user
-[**GetGlobalMFAStatus**](UserAndRoleAPI.md#GetGlobalMFAStatus) | **Get** /openapi/v1/{omadacId}/mfa/status | Get the status of the system&#39;s Two-Factor Authentication.
-[**GetGridUsers**](UserAndRoleAPI.md#GetGridUsers) | **Get** /openapi/v1/{omadacId}/users | Get user list
-[**GetRole**](UserAndRoleAPI.md#GetRole) | **Get** /openapi/v1/{omadacId}/roles/{roleId} | Get role info
-[**GetUser**](UserAndRoleAPI.md#GetUser) | **Get** /openapi/v1/{omadacId}/users/{userID} | Get user info
-[**ModifyGlobalMFAStatus**](UserAndRoleAPI.md#ModifyGlobalMFAStatus) | **Post** /openapi/v1/{omadacId}/mfa/status | Modify the status of the system&#39;s Two-Factor Authentication.
-[**ModifyRole**](UserAndRoleAPI.md#ModifyRole) | **Put** /openapi/v1/{omadacId}/roles/{roleId} | Modify an existing role
-[**ModifyUser**](UserAndRoleAPI.md#ModifyUser) | **Put** /openapi/v1/{omadacId}/users/{userID} | Modify an existing user
-[**ModifyUserBatch**](UserAndRoleAPI.md#ModifyUserBatch) | **Patch** /openapi/v1/{omadacId}/users/batch-temporary-users | Batch modify users.
-[**Reinvite**](UserAndRoleAPI.md#Reinvite) | **Post** /openapi/v1/{omadacId}/account/users/{userID}/re-invite | Re-Invite an existing user
-[**TransferMspRoot**](UserAndRoleAPI.md#TransferMspRoot) | **Post** /openapi/v1/msp/{mspId}/owner/transfer | Transfer MSP owner permission to an existing user
-[**TransferRoot**](UserAndRoleAPI.md#TransferRoot) | **Post** /openapi/v1/{omadacId}/owner/transfer | Transfer owner permission to an existing user
+[**CreateNewRole**](UserAndRoleAPI.md#createnewrole) | **Post** /openapi/v1/{omadacId}/roles | Create new role
+[**CreateNewUser**](UserAndRoleAPI.md#createnewuser) | **Post** /openapi/v1/{omadacId}/users | Create new user
+[**DeleteRole**](UserAndRoleAPI.md#deleterole) | **Delete** /openapi/v1/{omadacId}/roles/{roleId} | Delete an existing role
+[**DeleteUser**](UserAndRoleAPI.md#deleteuser) | **Delete** /openapi/v1/{omadacId}/users/{userID} | Delete an existing user
+[**GetAllCloudUsersExcludeRoot**](UserAndRoleAPI.md#getallcloudusersexcluderoot) | **Get** /openapi/v1/{omadacId}/users/cloud | Get all cloud users exclude owner
+[**GetAllLocalUsersExcludeRoot**](UserAndRoleAPI.md#getalllocalusersexcluderoot) | **Get** /openapi/v1/{omadacId}/users/local | Get all local users exclude owner
+[**GetAllRoles**](UserAndRoleAPI.md#getallroles) | **Get** /openapi/v1/{omadacId}/roles | Get role list
+[**GetAppGridUsers**](UserAndRoleAPI.md#getappgridusers) | **Get** /openapi/v1/{omadacId}/all-users | Get user list for app
+[**GetAvailableRole**](UserAndRoleAPI.md#getavailablerole) | **Get** /openapi/v1/{omadacId}/roles/available | Get available roles for creating new user
+[**GetGlobalMFAStatus**](UserAndRoleAPI.md#getglobalmfastatus) | **Get** /openapi/v1/{omadacId}/mfa/status | Get the status of the system&#39;s Two-Factor Authentication.
+[**GetGridUsers**](UserAndRoleAPI.md#getgridusers) | **Get** /openapi/v1/{omadacId}/users | Get user list
+[**GetRole**](UserAndRoleAPI.md#getrole) | **Get** /openapi/v1/{omadacId}/roles/{roleId} | Get role info
+[**GetUser**](UserAndRoleAPI.md#getuser) | **Get** /openapi/v1/{omadacId}/users/{userID} | Get user info
+[**ModifyGlobalMFAStatus**](UserAndRoleAPI.md#modifyglobalmfastatus) | **Post** /openapi/v1/{omadacId}/mfa/status | Modify the status of the system&#39;s Two-Factor Authentication.
+[**ModifyRole**](UserAndRoleAPI.md#modifyrole) | **Put** /openapi/v1/{omadacId}/roles/{roleId} | Modify an existing role
+[**ModifyUser**](UserAndRoleAPI.md#modifyuser) | **Put** /openapi/v1/{omadacId}/users/{userID} | Modify an existing user
+[**ModifyUserBatch**](UserAndRoleAPI.md#modifyuserbatch) | **Patch** /openapi/v1/{omadacId}/users/batch-temporary-users | Batch modify users.
+[**Reinvite**](UserAndRoleAPI.md#reinvite) | **Post** /openapi/v1/{omadacId}/account/users/{userID}/re-invite | Re-Invite an existing user
+[**TransferMspRoot**](UserAndRoleAPI.md#transfermsproot) | **Post** /openapi/v1/msp/{mspId}/owner/transfer | Transfer MSP owner permission to an existing user
+[**TransferRoot**](UserAndRoleAPI.md#transferroot) | **Post** /openapi/v1/{omadacId}/owner/transfer | Transfer owner permission to an existing user
 
 
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -821,7 +821,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -894,7 +894,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -967,7 +967,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1039,7 +1039,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1114,7 +1114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1189,7 +1189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1261,7 +1261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1334,7 +1334,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1406,7 +1406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1478,7 +1478,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

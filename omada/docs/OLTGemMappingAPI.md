@@ -1,14 +1,14 @@
-# \OLTGemMappingAPI
+# OLTGemMappingAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddGemMapping**](OLTGemMappingAPI.md#AddGemMapping) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/add | Create new gem mapping
-[**DeleteGemMapping**](OLTGemMappingAPI.md#DeleteGemMapping) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/delete | Delete an existing gem mapping
-[**EditGemMapping**](OLTGemMappingAPI.md#EditGemMapping) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/edit | Modify an existing gem mapping
-[**GetGemMappingList**](OLTGemMappingAPI.md#GetGemMappingList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/list | Get gem mapping list
-[**GetGemMappingPage**](OLTGemMappingAPI.md#GetGemMappingPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/page | Get gem mapping page
+[**AddGemMapping**](OLTGemMappingAPI.md#addgemmapping) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/add | Create new gem mapping
+[**DeleteGemMapping**](OLTGemMappingAPI.md#deletegemmapping) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/delete | Delete an existing gem mapping
+[**EditGemMapping**](OLTGemMappingAPI.md#editgemmapping) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/edit | Modify an existing gem mapping
+[**GetGemMappingList**](OLTGemMappingAPI.md#getgemmappinglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/list | Get gem mapping list
+[**GetGemMappingPage**](OLTGemMappingAPI.md#getgemmappingpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/gem-mappings/page | Get gem mapping page
 
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

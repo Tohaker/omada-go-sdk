@@ -1,0 +1,16 @@
+generatorName: go
+inputSpec: tools/all-fixed.json
+outputDir: omada
+templateDir: generator/templates
+gitUserId: Tohaker
+gitRepoId: omada-go-sdk
+additionalProperties:
+  packageName: omada
+  packageVersion: 0.2.0
+  isGoSubmodule: true
+  generateInterfaces: true
+  structPrefix: true
+  enumClassPrefix: true
+modelNameMappings:
+  ClientLockToAPSetting: ClientLockToApMacListSetting
+  ClientLockToApSetting: ClientLockToApDetailSetting

@@ -1,14 +1,14 @@
-# \OLTLineProfileAPI
+# OLTLineProfileAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLineProfile**](OLTLineProfileAPI.md#AddLineProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/add | Create new line profile
-[**DeleteLineProfile**](OLTLineProfileAPI.md#DeleteLineProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/delete | Delete an existing line profile
-[**EditLineProfile**](OLTLineProfileAPI.md#EditLineProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/edit | Modify an existing line profile
-[**GetLineProfileList**](OLTLineProfileAPI.md#GetLineProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/list | Get line profile list
-[**GetLineProfilePage**](OLTLineProfileAPI.md#GetLineProfilePage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/page | Get line profile page
+[**AddLineProfile**](OLTLineProfileAPI.md#addlineprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/add | Create new line profile
+[**DeleteLineProfile**](OLTLineProfileAPI.md#deletelineprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/delete | Delete an existing line profile
+[**EditLineProfile**](OLTLineProfileAPI.md#editlineprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/edit | Modify an existing line profile
+[**GetLineProfileList**](OLTLineProfileAPI.md#getlineprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/list | Get line profile list
+[**GetLineProfilePage**](OLTLineProfileAPI.md#getlineprofilepage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/profiles/page | Get line profile page
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

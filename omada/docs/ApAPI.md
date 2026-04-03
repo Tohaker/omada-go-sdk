@@ -1,82 +1,82 @@
-# \ApAPI
+# ApAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchModifyAntSwitchConfig**](ApAPI.md#BatchModifyAntSwitchConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/ant-switch | Batch Modify AP antSwitch Setting
-[**BatchModifyApVlanConfig**](ApAPI.md#BatchModifyApVlanConfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/vlan | Batch Modify Ap Vlan Config
-[**BatchModifyMultiApPorts**](ApAPI.md#BatchModifyMultiApPorts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/config | Batch modify multiple aps port config
-[**BatchModifyPowerSavingConfig**](ApAPI.md#BatchModifyPowerSavingConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/power-saving | Batch Modify ap power saving config
-[**ChangeP2pRole**](ApAPI.md#ChangeP2pRole) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/change-role | Change p2p ap role
-[**GetAfcConfig**](ApAPI.md#GetAfcConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc-config | Get ap AFC config
-[**GetAfcInfo**](ApAPI.md#GetAfcInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc | Get ap AFC Status Info
-[**GetAllApBriefInfosBySite**](ApAPI.md#GetAllApBriefInfosBySite) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lockToAp/aps | Get Lock to Ap brief APs
-[**GetAntSwitchConfig**](ApAPI.md#GetAntSwitchConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ant-switch | Get AP antSwitch Setting
-[**GetAntennaGainConfig**](ApAPI.md#GetAntennaGainConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Get AP antenna gain config
-[**GetApBridgeInfo**](ApAPI.md#GetApBridgeInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Get P2P bridge config
-[**GetApL3AccessConfig**](ApAPI.md#GetApL3AccessConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/l3access | Get Ap L3Access Config
-[**GetApListChannelInfo**](ApAPI.md#GetApListChannelInfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/channel-info | Get ap list channel info.
-[**GetApLldpConfig**](ApAPI.md#GetApLldpConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lldp | Get Ap LLDP Config
-[**GetApLoadBalanceConfig**](ApAPI.md#GetApLoadBalanceConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Get Ap Load Balance Config
-[**GetApOfdmaConfig**](ApAPI.md#GetApOfdmaConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Get ap OFDMA config
-[**GetApP2pInfo**](ApAPI.md#GetApP2pInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/p2pInfo | Get P2P bridge group info
-[**GetApPortList**](ApAPI.md#GetApPortList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ports | Get Ap port list
-[**GetApPortVlans**](ApAPI.md#GetApPortVlans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/port-vlans | Get ap current vlans config
-[**GetApQoSConfig**](ApAPI.md#GetApQoSConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/qos | Get Ap QoS Config
-[**GetApSnmpConfig**](ApAPI.md#GetApSnmpConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/snmp | Get Ap Snmp Config
-[**GetApTrunkSettingConfig**](ApAPI.md#GetApTrunkSettingConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/trunk-setting | Get Ap Trunk Setting Config
-[**GetApUplinkConfig**](ApAPI.md#GetApUplinkConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/uplink-config | Get Ap Uplink Config
-[**GetApVlanConfig**](ApAPI.md#GetApVlanConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Get Ap Vlan Config
-[**GetApVlanConfigV2**](ApAPI.md#GetApVlanConfigV2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Get Ap Vlan Config v2
-[**GetAvailableChannelOfAp**](ApAPI.md#GetAvailableChannelOfAp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/available-channel | Get available channel list of ap
-[**GetChannelLimitConfig**](ApAPI.md#GetChannelLimitConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-limit | Get ap channel limit config
-[**GetDownlinkWiredDevices**](ApAPI.md#GetDownlinkWiredDevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wired-downlink | Get ap downlink(wired) device list
-[**GetGeneralConfig2**](ApAPI.md#GetGeneralConfig2) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/general-config | Get ap general config
-[**GetGridMeshCandiParentsForAdopt**](ApAPI.md#GetGridMeshCandiParentsForAdopt) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/grid/mesh/candiParents | Get the candidate parent AP of the mesh AP
-[**GetIpSettingConfig**](ApAPI.md#GetIpSettingConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ip-setting | Get ap ip setting
-[**GetIpv6SettingConfig**](ApAPI.md#GetIpv6SettingConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ipv6-setting | Get ap ipv6 setting
-[**GetLanDetail**](ApAPI.md#GetLanDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lan-traffic-info | Get ap lan traffic info
-[**GetMeshStatistics**](ApAPI.md#GetMeshStatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get ap mesh statistics
-[**GetMeshStatisticsForMsp**](ApAPI.md#GetMeshStatisticsForMsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get ap mesh statistics for MSP view
-[**GetMultiApPortList**](ApAPI.md#GetMultiApPortList) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/capability | Get multiple aps port list
-[**GetOverviewDetail**](ApAPI.md#GetOverviewDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac} | Get ap info
-[**GetPowerSavingConfig**](ApAPI.md#GetPowerSavingConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Get ap power saving config
-[**GetRFScanResult**](ApAPI.md#GetRFScanResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/rf-scan-result | Get rf scan result
-[**GetRFScanResultV2**](ApAPI.md#GetRFScanResultV2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/rf-scan-result | Get rf scan result v2
-[**GetRadiosConfig**](ApAPI.md#GetRadiosConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radio-config | Get ap radio config
-[**GetRadiosDetail**](ApAPI.md#GetRadiosDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radios | Get ap radio detail
-[**GetSpeedTestResults**](ApAPI.md#GetSpeedTestResults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/speed-test-result | Get speed test result
-[**GetUplinkWiredDetail**](ApAPI.md#GetUplinkWiredDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wired-uplink | Get ap uplink(wired) detail
-[**GetWlansConfig**](ApAPI.md#GetWlansConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/override | Get ap WLANs override config
-[**GetWlansConfigV2**](ApAPI.md#GetWlansConfigV2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/override | Get ap WLANs override config V2
-[**ModifyAfcConfig**](ApAPI.md#ModifyAfcConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc-config | Modify ap AFC config
-[**ModifyAntSwitchConfig**](ApAPI.md#ModifyAntSwitchConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ant-switch | Modify AP antSwitch Setting
-[**ModifyAntennaGainConfig**](ApAPI.md#ModifyAntennaGainConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Modify AP antenna gain config
-[**ModifyApBridgeInfo**](ApAPI.md#ModifyApBridgeInfo) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Modify P2P bridge config
-[**ModifyApChannelConfig**](ApAPI.md#ModifyApChannelConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-config | Modify ap channel config
-[**ModifyApLoadBalanceConfig**](ApAPI.md#ModifyApLoadBalanceConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Modify Ap Load Balance Config
-[**ModifyApOfdmaConfig**](ApAPI.md#ModifyApOfdmaConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Modify ap OFDMA config
-[**ModifyApPort**](ApAPI.md#ModifyApPort) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ports/{port} | Modify Ap Port Config
-[**ModifyApQosConfig**](ApAPI.md#ModifyApQosConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/qos | Modify Ap QoS Config
-[**ModifyApServicesConfig**](ApAPI.md#ModifyApServicesConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/service-config | Modify AP Service Config
-[**ModifyApTrunkSettingConfig**](ApAPI.md#ModifyApTrunkSettingConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/trunk-setting | Modify Ap Trunk Setting Config
-[**ModifyApUpLinkConfig**](ApAPI.md#ModifyApUpLinkConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/uplink-config | Modify Ap Uplink Config
-[**ModifyApVlanConfig**](ApAPI.md#ModifyApVlanConfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Modify Ap Vlan Config
-[**ModifyApWlanGroup**](ApAPI.md#ModifyApWlanGroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wlan-group | Switch ap&#39;s wlan group
-[**ModifyChannelLimitConfig**](ApAPI.md#ModifyChannelLimitConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-limit | Modify ap channel limit config
-[**ModifyGeneralConfig2**](ApAPI.md#ModifyGeneralConfig2) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/general-config | Modify ap general config
-[**ModifyIpSettingConfig**](ApAPI.md#ModifyIpSettingConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ip-setting | Modify ap ip setting
-[**ModifyIpv6SettingConfig**](ApAPI.md#ModifyIpv6SettingConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ipv6-setting | Modify ap ipv6 setting
-[**ModifyPowerSavingConfig**](ApAPI.md#ModifyPowerSavingConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Modify ap power saving config
-[**ModifyRadiosConfig**](ApAPI.md#ModifyRadiosConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radio-config | Modify ap radio config
-[**ModifyWlansConfig**](ApAPI.md#ModifyWlansConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/override | Modify ap WLANs override config
-[**ModifyWlansConfigV2**](ApAPI.md#ModifyWlansConfigV2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/override | Modify ap WLANs override config V2
-[**MspMoveToCustomer3**](ApAPI.md#MspMoveToCustomer3) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/aps/move | Move site to target customer
-[**TriggerRadioFrequencyScan**](ApAPI.md#TriggerRadioFrequencyScan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/start-rf-scan | Start rf scan
-[**TriggerRadioFrequencyScanV2**](ApAPI.md#TriggerRadioFrequencyScanV2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/start-rf-scan | Start rf scan v2
-[**TriggerSpeedTest**](ApAPI.md#TriggerSpeedTest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/start-speed-test | Start speed test
-[**UpdateApLocationUseGps**](ApAPI.md#UpdateApLocationUseGps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/location-gps | Update ap location info use GPS
+[**BatchModifyAntSwitchConfig**](ApAPI.md#batchmodifyantswitchconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/ant-switch | Batch Modify AP antSwitch Setting
+[**BatchModifyApVlanConfig**](ApAPI.md#batchmodifyapvlanconfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/vlan | Batch Modify Ap Vlan Config
+[**BatchModifyMultiApPorts**](ApAPI.md#batchmodifymultiapports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/config | Batch modify multiple aps port config
+[**BatchModifyPowerSavingConfig**](ApAPI.md#batchmodifypowersavingconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/power-saving | Batch Modify ap power saving config
+[**ChangeP2pRole**](ApAPI.md#changep2prole) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/change-role | Change p2p ap role
+[**GetAfcConfig**](ApAPI.md#getafcconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc-config | Get ap AFC config
+[**GetAfcInfo**](ApAPI.md#getafcinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc | Get ap AFC Status Info
+[**GetAllApBriefInfosBySite**](ApAPI.md#getallapbriefinfosbysite) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lockToAp/aps | Get Lock to Ap brief APs
+[**GetAntSwitchConfig**](ApAPI.md#getantswitchconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ant-switch | Get AP antSwitch Setting
+[**GetAntennaGainConfig**](ApAPI.md#getantennagainconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Get AP antenna gain config
+[**GetApBridgeInfo**](ApAPI.md#getapbridgeinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Get P2P bridge config
+[**GetApL3AccessConfig**](ApAPI.md#getapl3accessconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/l3access | Get Ap L3Access Config
+[**GetApListChannelInfo**](ApAPI.md#getaplistchannelinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/channel-info | Get ap list channel info.
+[**GetApLldpConfig**](ApAPI.md#getaplldpconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lldp | Get Ap LLDP Config
+[**GetApLoadBalanceConfig**](ApAPI.md#getaploadbalanceconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Get Ap Load Balance Config
+[**GetApOfdmaConfig**](ApAPI.md#getapofdmaconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Get ap OFDMA config
+[**GetApP2pInfo**](ApAPI.md#getapp2pinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/p2pInfo | Get P2P bridge group info
+[**GetApPortList**](ApAPI.md#getapportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ports | Get Ap port list
+[**GetApPortVlans**](ApAPI.md#getapportvlans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/port-vlans | Get ap current vlans config
+[**GetApQoSConfig**](ApAPI.md#getapqosconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/qos | Get Ap QoS Config
+[**GetApSnmpConfig**](ApAPI.md#getapsnmpconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/snmp | Get Ap Snmp Config
+[**GetApTrunkSettingConfig**](ApAPI.md#getaptrunksettingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/trunk-setting | Get Ap Trunk Setting Config
+[**GetApUplinkConfig**](ApAPI.md#getapuplinkconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/uplink-config | Get Ap Uplink Config
+[**GetApVlanConfig**](ApAPI.md#getapvlanconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Get Ap Vlan Config
+[**GetApVlanConfigV2**](ApAPI.md#getapvlanconfigv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Get Ap Vlan Config v2
+[**GetAvailableChannelOfAp**](ApAPI.md#getavailablechannelofap) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/available-channel | Get available channel list of ap
+[**GetChannelLimitConfig**](ApAPI.md#getchannellimitconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-limit | Get ap channel limit config
+[**GetDownlinkWiredDevices**](ApAPI.md#getdownlinkwireddevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wired-downlink | Get ap downlink(wired) device list
+[**GetGeneralConfig2**](ApAPI.md#getgeneralconfig2) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/general-config | Get ap general config
+[**GetGridMeshCandiParentsForAdopt**](ApAPI.md#getgridmeshcandiparentsforadopt) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/grid/mesh/candiParents | Get the candidate parent AP of the mesh AP
+[**GetIpSettingConfig**](ApAPI.md#getipsettingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ip-setting | Get ap ip setting
+[**GetIpv6SettingConfig**](ApAPI.md#getipv6settingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ipv6-setting | Get ap ipv6 setting
+[**GetLanDetail**](ApAPI.md#getlandetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lan-traffic-info | Get ap lan traffic info
+[**GetMeshStatistics**](ApAPI.md#getmeshstatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get ap mesh statistics
+[**GetMeshStatisticsForMsp**](ApAPI.md#getmeshstatisticsformsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get ap mesh statistics for MSP view
+[**GetMultiApPortList**](ApAPI.md#getmultiapportlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/capability | Get multiple aps port list
+[**GetOverviewDetail**](ApAPI.md#getoverviewdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac} | Get ap info
+[**GetPowerSavingConfig**](ApAPI.md#getpowersavingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Get ap power saving config
+[**GetRFScanResult**](ApAPI.md#getrfscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/rf-scan-result | Get rf scan result
+[**GetRFScanResultV2**](ApAPI.md#getrfscanresultv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/rf-scan-result | Get rf scan result v2
+[**GetRadiosConfig**](ApAPI.md#getradiosconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radio-config | Get ap radio config
+[**GetRadiosDetail**](ApAPI.md#getradiosdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radios | Get ap radio detail
+[**GetSpeedTestResults**](ApAPI.md#getspeedtestresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/speed-test-result | Get speed test result
+[**GetUplinkWiredDetail**](ApAPI.md#getuplinkwireddetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wired-uplink | Get ap uplink(wired) detail
+[**GetWlansConfig**](ApAPI.md#getwlansconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/override | Get ap WLANs override config
+[**GetWlansConfigV2**](ApAPI.md#getwlansconfigv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/override | Get ap WLANs override config V2
+[**ModifyAfcConfig**](ApAPI.md#modifyafcconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc-config | Modify ap AFC config
+[**ModifyAntSwitchConfig**](ApAPI.md#modifyantswitchconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ant-switch | Modify AP antSwitch Setting
+[**ModifyAntennaGainConfig**](ApAPI.md#modifyantennagainconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Modify AP antenna gain config
+[**ModifyApBridgeInfo**](ApAPI.md#modifyapbridgeinfo) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Modify P2P bridge config
+[**ModifyApChannelConfig**](ApAPI.md#modifyapchannelconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-config | Modify ap channel config
+[**ModifyApLoadBalanceConfig**](ApAPI.md#modifyaploadbalanceconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Modify Ap Load Balance Config
+[**ModifyApOfdmaConfig**](ApAPI.md#modifyapofdmaconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Modify ap OFDMA config
+[**ModifyApPort**](ApAPI.md#modifyapport) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ports/{port} | Modify Ap Port Config
+[**ModifyApQosConfig**](ApAPI.md#modifyapqosconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/qos | Modify Ap QoS Config
+[**ModifyApServicesConfig**](ApAPI.md#modifyapservicesconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/service-config | Modify AP Service Config
+[**ModifyApTrunkSettingConfig**](ApAPI.md#modifyaptrunksettingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/trunk-setting | Modify Ap Trunk Setting Config
+[**ModifyApUpLinkConfig**](ApAPI.md#modifyapuplinkconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/uplink-config | Modify Ap Uplink Config
+[**ModifyApVlanConfig**](ApAPI.md#modifyapvlanconfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Modify Ap Vlan Config
+[**ModifyApWlanGroup**](ApAPI.md#modifyapwlangroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wlan-group | Switch ap&#39;s wlan group
+[**ModifyChannelLimitConfig**](ApAPI.md#modifychannellimitconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-limit | Modify ap channel limit config
+[**ModifyGeneralConfig2**](ApAPI.md#modifygeneralconfig2) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/general-config | Modify ap general config
+[**ModifyIpSettingConfig**](ApAPI.md#modifyipsettingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ip-setting | Modify ap ip setting
+[**ModifyIpv6SettingConfig**](ApAPI.md#modifyipv6settingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ipv6-setting | Modify ap ipv6 setting
+[**ModifyPowerSavingConfig**](ApAPI.md#modifypowersavingconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Modify ap power saving config
+[**ModifyRadiosConfig**](ApAPI.md#modifyradiosconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radio-config | Modify ap radio config
+[**ModifyWlansConfig**](ApAPI.md#modifywlansconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/override | Modify ap WLANs override config
+[**ModifyWlansConfigV2**](ApAPI.md#modifywlansconfigv2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/override | Modify ap WLANs override config V2
+[**MspMoveToCustomer3**](ApAPI.md#mspmovetocustomer3) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/aps/move | Move site to target customer
+[**TriggerRadioFrequencyScan**](ApAPI.md#triggerradiofrequencyscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/start-rf-scan | Start rf scan
+[**TriggerRadioFrequencyScanV2**](ApAPI.md#triggerradiofrequencyscanv2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/start-rf-scan | Start rf scan v2
+[**TriggerSpeedTest**](ApAPI.md#triggerspeedtest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/start-speed-test | Start speed test
+[**UpdateApLocationUseGps**](ApAPI.md#updateaplocationusegps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/location-gps | Update ap location info use GPS
 
 
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -668,7 +668,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -896,7 +896,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -972,7 +972,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1047,7 +1047,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1123,7 +1123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1199,7 +1199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1275,7 +1275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1351,7 +1351,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1427,7 +1427,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1507,7 +1507,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1583,7 +1583,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1659,7 +1659,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1735,7 +1735,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1811,7 +1811,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1887,7 +1887,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1963,7 +1963,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2039,7 +2039,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2115,7 +2115,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2191,7 +2191,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2267,7 +2267,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2347,7 +2347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2423,7 +2423,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2499,7 +2499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2575,7 +2575,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2651,7 +2651,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2730,7 +2730,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2805,7 +2805,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2881,7 +2881,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2957,7 +2957,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3033,7 +3033,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3109,7 +3109,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3185,7 +3185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3261,7 +3261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3337,7 +3337,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3413,7 +3413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3489,7 +3489,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3565,7 +3565,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3643,7 +3643,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3721,7 +3721,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3799,7 +3799,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3877,7 +3877,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3955,7 +3955,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4033,7 +4033,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4111,7 +4111,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4192,7 +4192,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4270,7 +4270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4348,7 +4348,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4426,7 +4426,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4504,7 +4504,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4582,7 +4582,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4660,7 +4660,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4738,7 +4738,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4816,7 +4816,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4894,7 +4894,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4972,7 +4972,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5050,7 +5050,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5128,7 +5128,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5206,7 +5206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5284,7 +5284,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5362,7 +5362,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5438,7 +5438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5516,7 +5516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5594,7 +5594,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5670,7 +5670,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

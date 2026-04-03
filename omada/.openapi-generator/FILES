@@ -518,8 +518,8 @@ docs/ClientHistoryVO.md
 docs/ClientInfo.md
 docs/ClientInsightAPI.md
 docs/ClientIpSetting.md
-docs/ClientLockToAPSetting.md
-docs/ClientLockToApSetting.md
+docs/ClientLockToApDetailSetting.md
+docs/ClientLockToApMacListSetting.md
 docs/ClientMACIPSetting.md
 docs/ClientMultifrequencyInfo.md
 docs/ClientNameSetting.md
@@ -3608,7 +3608,7 @@ model_client_history_info.go
 model_client_history_vo.go
 model_client_info.go
 model_client_ip_setting.go
-model_client_lock_to_ap_setting.go
+model_client_lock_to_ap_detail_setting.go
 model_client_lock_to_ap_setting_0.go
 model_client_macip_setting.go
 model_client_multifrequency_info.go

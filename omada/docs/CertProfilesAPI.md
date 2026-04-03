@@ -1,19 +1,19 @@
-# \CertProfilesAPI
+# CertProfilesAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCertProfile1**](CertProfilesAPI.md#CreateCertProfile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles | Create a new certificate profile
-[**DeleteCertProfile1**](CertProfilesAPI.md#DeleteCertProfile1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Delete an exist certificate profile
-[**DeleteCertProfileFile1**](CertProfilesAPI.md#DeleteCertProfileFile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/delete-file/{fileId} | Delete an exist certificate profile file
-[**GetAllCertProfile**](CertProfilesAPI.md#GetAllCertProfile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/all-cert-profiles | Get certificate profile list
-[**GetCertProfileDetail1**](CertProfilesAPI.md#GetCertProfileDetail1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Get a certificate profile detail
-[**GetGridCertProfile1**](CertProfilesAPI.md#GetGridCertProfile1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles | Get grid certificate profile list
-[**ModifyCertProfile1**](CertProfilesAPI.md#ModifyCertProfile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Modify an exist certificate profile
-[**UploadCaCertFile1**](CertProfilesAPI.md#UploadCaCertFile1) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/setting/profiles/cert-profiles/ca-cert | Upload CA profile file
-[**UploadClientCertFile1**](CertProfilesAPI.md#UploadClientCertFile1) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/setting/profiles/cert-profiles/client-cert | Upload client certificate profile file
-[**UploadClientPrivateKeyFile1**](CertProfilesAPI.md#UploadClientPrivateKeyFile1) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/setting/profiles/cert-profiles/client-private-key | Upload client private key file
+[**CreateCertProfile1**](CertProfilesAPI.md#createcertprofile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles | Create a new certificate profile
+[**DeleteCertProfile1**](CertProfilesAPI.md#deletecertprofile1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Delete an exist certificate profile
+[**DeleteCertProfileFile1**](CertProfilesAPI.md#deletecertprofilefile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/delete-file/{fileId} | Delete an exist certificate profile file
+[**GetAllCertProfile**](CertProfilesAPI.md#getallcertprofile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/all-cert-profiles | Get certificate profile list
+[**GetCertProfileDetail1**](CertProfilesAPI.md#getcertprofiledetail1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Get a certificate profile detail
+[**GetGridCertProfile1**](CertProfilesAPI.md#getgridcertprofile1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles | Get grid certificate profile list
+[**ModifyCertProfile1**](CertProfilesAPI.md#modifycertprofile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Modify an exist certificate profile
+[**UploadCaCertFile1**](CertProfilesAPI.md#uploadcacertfile1) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/setting/profiles/cert-profiles/ca-cert | Upload CA profile file
+[**UploadClientCertFile1**](CertProfilesAPI.md#uploadclientcertfile1) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/setting/profiles/cert-profiles/client-cert | Upload client certificate profile file
+[**UploadClientPrivateKeyFile1**](CertProfilesAPI.md#uploadclientprivatekeyfile1) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/setting/profiles/cert-profiles/client-private-key | Upload client private key file
 
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

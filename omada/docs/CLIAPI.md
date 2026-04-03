@@ -1,20 +1,20 @@
-# \CLIAPI
+# CLIAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApplyCliConfig**](CLIAPI.md#ApplyCliConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cli/configs/config-id/{configId}/apply | Apply the CLI configuration
-[**CreateCliConfig**](CLIAPI.md#CreateCliConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/cli-type/{cliType}/save | Create a new CLI configuration
-[**DeleteCliConfig**](CLIAPI.md#DeleteCliConfig) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/cli/configs/cli-type/{cliType} | Delete the CLI configuration
-[**ExportCliVariableToFile**](CLIAPI.md#ExportCliVariableToFile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cli/export/variable | Export CLI variable
-[**GetCliConfig**](CLIAPI.md#GetCliConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/cli-type/{cliType}/config-id/{configId} | Get the CLI configuration content
-[**GetCliDevice**](CLIAPI.md#GetCliDevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/devices | Get device list when importing device configuration
-[**GetCliDeviceByType**](CLIAPI.md#GetCliDeviceByType) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/devices/device-type/{deviceType} | Get device list when creating CLI
-[**GetCliList**](CLIAPI.md#GetCliList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/configs/cli-type/{cliType}/device-type/{deviceType} | Get the CLI configuration list
-[**GetModelAndVersionListByType**](CLIAPI.md#GetModelAndVersionListByType) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/models/device-type/{deviceType} | Get model and version for model CLI.
-[**ImportCliVariableToFile**](CLIAPI.md#ImportCliVariableToFile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cli/import/variable | Import CLI variable
-[**ModifyCliConfig**](CLIAPI.md#ModifyCliConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/cli-type/{cliType}/config-id/{configId} | Modify the CLI configuration content
+[**ApplyCliConfig**](CLIAPI.md#applycliconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cli/configs/config-id/{configId}/apply | Apply the CLI configuration
+[**CreateCliConfig**](CLIAPI.md#createcliconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/cli-type/{cliType}/save | Create a new CLI configuration
+[**DeleteCliConfig**](CLIAPI.md#deletecliconfig) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/cli/configs/cli-type/{cliType} | Delete the CLI configuration
+[**ExportCliVariableToFile**](CLIAPI.md#exportclivariabletofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cli/export/variable | Export CLI variable
+[**GetCliConfig**](CLIAPI.md#getcliconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/cli-type/{cliType}/config-id/{configId} | Get the CLI configuration content
+[**GetCliDevice**](CLIAPI.md#getclidevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/devices | Get device list when importing device configuration
+[**GetCliDeviceByType**](CLIAPI.md#getclidevicebytype) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/devices/device-type/{deviceType} | Get device list when creating CLI
+[**GetCliList**](CLIAPI.md#getclilist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/configs/cli-type/{cliType}/device-type/{deviceType} | Get the CLI configuration list
+[**GetModelAndVersionListByType**](CLIAPI.md#getmodelandversionlistbytype) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cli/models/device-type/{deviceType} | Get model and version for model CLI.
+[**ImportCliVariableToFile**](CLIAPI.md#importclivariabletofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cli/import/variable | Import CLI variable
+[**ModifyCliConfig**](CLIAPI.md#modifycliconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/cli/config/cli-type/{cliType}/config-id/{configId} | Modify the CLI configuration content
 
 
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -700,7 +700,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -775,7 +775,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -856,7 +856,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

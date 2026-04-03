@@ -1,14 +1,14 @@
-# \OLTDBAAPI
+# OLTDBAAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddDBAProfile**](OLTDBAAPI.md#AddDBAProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/add | Create new DBA profile
-[**DeleteDBAProfile**](OLTDBAAPI.md#DeleteDBAProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/delete | Delete an existing DBA profile
-[**EditDBAProfile**](OLTDBAAPI.md#EditDBAProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/edit | Modify an existing DBA profile
-[**GetDBAProfileList**](OLTDBAAPI.md#GetDBAProfileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/list | Get DBA profile list
-[**GetDBAProfilePage**](OLTDBAAPI.md#GetDBAProfilePage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/page | Get DBA profile page
+[**AddDBAProfile**](OLTDBAAPI.md#adddbaprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/add | Create new DBA profile
+[**DeleteDBAProfile**](OLTDBAAPI.md#deletedbaprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/delete | Delete an existing DBA profile
+[**EditDBAProfile**](OLTDBAAPI.md#editdbaprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/edit | Modify an existing DBA profile
+[**GetDBAProfileList**](OLTDBAAPI.md#getdbaprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/list | Get DBA profile list
+[**GetDBAProfilePage**](OLTDBAAPI.md#getdbaprofilepage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/dba/profiles/page | Get DBA profile page
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

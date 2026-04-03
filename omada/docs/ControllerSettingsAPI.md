@@ -1,36 +1,36 @@
-# \ControllerSettingsAPI
+# ControllerSettingsAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelFavoriteSite**](ControllerSettingsAPI.md#CancelFavoriteSite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/favorites/cancels | Cancel favorite site
-[**EvaluateFeedback**](ControllerSettingsAPI.md#EvaluateFeedback) | **Post** /openapi/v1/{omadacId}/users/feedback/evaluates | Evaluate a customer feedback
-[**FavoriteSite**](ControllerSettingsAPI.md#FavoriteSite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/favorites | Favorite site
-[**GetClientActiveTimeout**](ControllerSettingsAPI.md#GetClientActiveTimeout) | **Get** /openapi/v1/{omadacId}/controller/setting/active-timeout | Get client active timeout
-[**GetClientDetailInformationSetting**](ControllerSettingsAPI.md#GetClientDetailInformationSetting) | **Get** /openapi/v1/{omadacId}/client-detail-information | Get client detail information settings
-[**GetClientRecognitionEnable**](ControllerSettingsAPI.md#GetClientRecognitionEnable) | **Get** /openapi/v1/{omadacId}/controller/setting/client-recognition | Get whether client recognition is enabled
-[**GetExpImprove**](ControllerSettingsAPI.md#GetExpImprove) | **Get** /openapi/v1/{omadacId}/global/controller/setting/exp-improve | Get experience improvement
-[**GetGernalSettings**](ControllerSettingsAPI.md#GetGernalSettings) | **Get** /openapi/v1/{omadacId}/global/controller/setting/general | Get general settings
-[**GetMailServerStatus**](ControllerSettingsAPI.md#GetMailServerStatus) | **Get** /openapi/v1/{omadacId}/mail/status | Get mailServer status
-[**GetOmadacDstInfo1**](ControllerSettingsAPI.md#GetOmadacDstInfo1) | **Get** /openapi/v1/{omadacId}/dst-info | Get controller DST
-[**GetPrivacyPolicy**](ControllerSettingsAPI.md#GetPrivacyPolicy) | **Get** /openapi/v1/{omadacId}/privacy-policy | Get privacy policy
-[**GetRadiusProxy**](ControllerSettingsAPI.md#GetRadiusProxy) | **Get** /openapi/v1/{omadacId}/global/controller/setting/network/radius-proxy | Get RADIUS proxy server setting
-[**GetRadiusServer**](ControllerSettingsAPI.md#GetRadiusServer) | **Get** /openapi/v1/{omadacId}/global/controller/setting/network/radius-server | Get Built-In RADIUS server setting
-[**GetRemoteLogging**](ControllerSettingsAPI.md#GetRemoteLogging) | **Get** /openapi/v1/{omadacId}/global/controller/setting/syslog | Get remote logging
-[**GetRetention**](ControllerSettingsAPI.md#GetRetention) | **Get** /openapi/v1/{omadacId}/controller/setting/retention | Get retention
-[**GetUiInterface**](ControllerSettingsAPI.md#GetUiInterface) | **Get** /openapi/v1/{omadacId}/controller/setting/ui-interface | Get UI interface
-[**ModfiyClientRecognitionEnable**](ControllerSettingsAPI.md#ModfiyClientRecognitionEnable) | **Patch** /openapi/v1/{omadacId}/controller/setting/client-recognition | Modify client recognition enable
-[**ModifyClientActiveTimeout**](ControllerSettingsAPI.md#ModifyClientActiveTimeout) | **Patch** /openapi/v1/{omadacId}/controller/setting/active-timeout | Modify an existing client active timeout
-[**ModifyClientDetailInformationSetting**](ControllerSettingsAPI.md#ModifyClientDetailInformationSetting) | **Patch** /openapi/v1/{omadacId}/client-detail-information | Modify client detail information settings
-[**ModifyExpImprove**](ControllerSettingsAPI.md#ModifyExpImprove) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/exp-improve | Modify an existing experience improvement
-[**ModifyGeneralSettings**](ControllerSettingsAPI.md#ModifyGeneralSettings) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/general | Modify an existing general settings
-[**ModifyRadiusProxy**](ControllerSettingsAPI.md#ModifyRadiusProxy) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/network/radius-proxy | Modify RADIUS proxy server setting
-[**ModifyRadiusServer**](ControllerSettingsAPI.md#ModifyRadiusServer) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/network/radius-server | Modify Built-In RADIUS server setting
-[**ModifyRemoteLogging**](ControllerSettingsAPI.md#ModifyRemoteLogging) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/syslog | Modify an existing remote logging
-[**ModifyRetention1**](ControllerSettingsAPI.md#ModifyRetention1) | **Patch** /openapi/v1/{omadacId}/controller/setting/retention | Modify an existing retention
-[**ModifyUiInterface**](ControllerSettingsAPI.md#ModifyUiInterface) | **Patch** /openapi/v1/{omadacId}/controller/setting/ui-interface | Modify an existing UI interface
-[**SendTestEmail**](ControllerSettingsAPI.md#SendTestEmail) | **Post** /openapi/v1/{omadacId}/settings/test-mail | Send test mail for controller
+[**CancelFavoriteSite**](ControllerSettingsAPI.md#cancelfavoritesite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/favorites/cancels | Cancel favorite site
+[**EvaluateFeedback**](ControllerSettingsAPI.md#evaluatefeedback) | **Post** /openapi/v1/{omadacId}/users/feedback/evaluates | Evaluate a customer feedback
+[**FavoriteSite**](ControllerSettingsAPI.md#favoritesite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/favorites | Favorite site
+[**GetClientActiveTimeout**](ControllerSettingsAPI.md#getclientactivetimeout) | **Get** /openapi/v1/{omadacId}/controller/setting/active-timeout | Get client active timeout
+[**GetClientDetailInformationSetting**](ControllerSettingsAPI.md#getclientdetailinformationsetting) | **Get** /openapi/v1/{omadacId}/client-detail-information | Get client detail information settings
+[**GetClientRecognitionEnable**](ControllerSettingsAPI.md#getclientrecognitionenable) | **Get** /openapi/v1/{omadacId}/controller/setting/client-recognition | Get whether client recognition is enabled
+[**GetExpImprove**](ControllerSettingsAPI.md#getexpimprove) | **Get** /openapi/v1/{omadacId}/global/controller/setting/exp-improve | Get experience improvement
+[**GetGernalSettings**](ControllerSettingsAPI.md#getgernalsettings) | **Get** /openapi/v1/{omadacId}/global/controller/setting/general | Get general settings
+[**GetMailServerStatus**](ControllerSettingsAPI.md#getmailserverstatus) | **Get** /openapi/v1/{omadacId}/mail/status | Get mailServer status
+[**GetOmadacDstInfo1**](ControllerSettingsAPI.md#getomadacdstinfo1) | **Get** /openapi/v1/{omadacId}/dst-info | Get controller DST
+[**GetPrivacyPolicy**](ControllerSettingsAPI.md#getprivacypolicy) | **Get** /openapi/v1/{omadacId}/privacy-policy | Get privacy policy
+[**GetRadiusProxy**](ControllerSettingsAPI.md#getradiusproxy) | **Get** /openapi/v1/{omadacId}/global/controller/setting/network/radius-proxy | Get RADIUS proxy server setting
+[**GetRadiusServer**](ControllerSettingsAPI.md#getradiusserver) | **Get** /openapi/v1/{omadacId}/global/controller/setting/network/radius-server | Get Built-In RADIUS server setting
+[**GetRemoteLogging**](ControllerSettingsAPI.md#getremotelogging) | **Get** /openapi/v1/{omadacId}/global/controller/setting/syslog | Get remote logging
+[**GetRetention**](ControllerSettingsAPI.md#getretention) | **Get** /openapi/v1/{omadacId}/controller/setting/retention | Get retention
+[**GetUiInterface**](ControllerSettingsAPI.md#getuiinterface) | **Get** /openapi/v1/{omadacId}/controller/setting/ui-interface | Get UI interface
+[**ModfiyClientRecognitionEnable**](ControllerSettingsAPI.md#modfiyclientrecognitionenable) | **Patch** /openapi/v1/{omadacId}/controller/setting/client-recognition | Modify client recognition enable
+[**ModifyClientActiveTimeout**](ControllerSettingsAPI.md#modifyclientactivetimeout) | **Patch** /openapi/v1/{omadacId}/controller/setting/active-timeout | Modify an existing client active timeout
+[**ModifyClientDetailInformationSetting**](ControllerSettingsAPI.md#modifyclientdetailinformationsetting) | **Patch** /openapi/v1/{omadacId}/client-detail-information | Modify client detail information settings
+[**ModifyExpImprove**](ControllerSettingsAPI.md#modifyexpimprove) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/exp-improve | Modify an existing experience improvement
+[**ModifyGeneralSettings**](ControllerSettingsAPI.md#modifygeneralsettings) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/general | Modify an existing general settings
+[**ModifyRadiusProxy**](ControllerSettingsAPI.md#modifyradiusproxy) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/network/radius-proxy | Modify RADIUS proxy server setting
+[**ModifyRadiusServer**](ControllerSettingsAPI.md#modifyradiusserver) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/network/radius-server | Modify Built-In RADIUS server setting
+[**ModifyRemoteLogging**](ControllerSettingsAPI.md#modifyremotelogging) | **Patch** /openapi/v1/{omadacId}/global/controller/setting/syslog | Modify an existing remote logging
+[**ModifyRetention1**](ControllerSettingsAPI.md#modifyretention1) | **Patch** /openapi/v1/{omadacId}/controller/setting/retention | Modify an existing retention
+[**ModifyUiInterface**](ControllerSettingsAPI.md#modifyuiinterface) | **Patch** /openapi/v1/{omadacId}/controller/setting/ui-interface | Modify an existing UI interface
+[**SendTestEmail**](ControllerSettingsAPI.md#sendtestemail) | **Post** /openapi/v1/{omadacId}/settings/test-mail | Send test mail for controller
 
 
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -730,7 +730,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -800,7 +800,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1010,7 +1010,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1080,7 +1080,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1150,7 +1150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1222,7 +1222,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1294,7 +1294,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1366,7 +1366,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1438,7 +1438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1510,7 +1510,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1582,7 +1582,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1654,7 +1654,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1726,7 +1726,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1798,7 +1798,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1870,7 +1870,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1942,7 +1942,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

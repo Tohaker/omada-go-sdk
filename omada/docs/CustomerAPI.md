@@ -1,18 +1,18 @@
-# \CustomerAPI
+# CustomerAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelFavoriteCustomer**](CustomerAPI.md#CancelFavoriteCustomer) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/favorites/cancels | Cancel a favorite customer
-[**CopyCustomer**](CustomerAPI.md#CopyCustomer) | **Post** /openapi/v1/msp/{mspId}/customers/copy | Create a customer by copying from existing customer
-[**CreateCustomer**](CustomerAPI.md#CreateCustomer) | **Post** /openapi/v1/msp/{mspId}/customers | Create new customer
-[**DeleteCustomer**](CustomerAPI.md#DeleteCustomer) | **Delete** /openapi/v1/msp/{mspId}/customers/{customerId} | Delete an existing customer
-[**FavoriteCustomer**](CustomerAPI.md#FavoriteCustomer) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/favorites | Favorite a customer
-[**GetCustomerDetail**](CustomerAPI.md#GetCustomerDetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId} | Get customer info
-[**GetCustomerList**](CustomerAPI.md#GetCustomerList) | **Get** /openapi/v1/msp/{mspId}/customers | Get customer list
-[**GetCustomersInGlobalHaveSiteTemplateModify**](CustomerAPI.md#GetCustomersInGlobalHaveSiteTemplateModify) | **Get** /openapi/v1/{omadacId}/copy/site/template/batch/customers | Obtain the customer ID with permission to modify site templates
-[**ModifyCustomer**](CustomerAPI.md#ModifyCustomer) | **Patch** /openapi/v1/msp/{mspId}/customers/{customerId} | Modify an existing customer
+[**CancelFavoriteCustomer**](CustomerAPI.md#cancelfavoritecustomer) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/favorites/cancels | Cancel a favorite customer
+[**CopyCustomer**](CustomerAPI.md#copycustomer) | **Post** /openapi/v1/msp/{mspId}/customers/copy | Create a customer by copying from existing customer
+[**CreateCustomer**](CustomerAPI.md#createcustomer) | **Post** /openapi/v1/msp/{mspId}/customers | Create new customer
+[**DeleteCustomer**](CustomerAPI.md#deletecustomer) | **Delete** /openapi/v1/msp/{mspId}/customers/{customerId} | Delete an existing customer
+[**FavoriteCustomer**](CustomerAPI.md#favoritecustomer) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/favorites | Favorite a customer
+[**GetCustomerDetail**](CustomerAPI.md#getcustomerdetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId} | Get customer info
+[**GetCustomerList**](CustomerAPI.md#getcustomerlist) | **Get** /openapi/v1/msp/{mspId}/customers | Get customer list
+[**GetCustomersInGlobalHaveSiteTemplateModify**](CustomerAPI.md#getcustomersinglobalhavesitetemplatemodify) | **Get** /openapi/v1/{omadacId}/copy/site/template/batch/customers | Obtain the customer ID with permission to modify site templates
+[**ModifyCustomer**](CustomerAPI.md#modifycustomer) | **Patch** /openapi/v1/msp/{mspId}/customers/{customerId} | Modify an existing customer
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

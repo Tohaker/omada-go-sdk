@@ -1,41 +1,41 @@
-# \SSLVPNAPI
+# SSLVPNAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateLockedSslVpnTunnuel**](SSLVPNAPI.md#CreateLockedSslVpnTunnuel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels | Create locked SSL VPN tunnel
-[**CreateLockedSslVpnUser**](SSLVPNAPI.md#CreateLockedSslVpnUser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-users | Create SSL VPN locked user
-[**CreateSslVpnResource**](SSLVPNAPI.md#CreateSslVpnResource) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resources | Create SSL VPN resource
-[**CreateSslVpnResourceGroup**](SSLVPNAPI.md#CreateSslVpnResourceGroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resource-groups | Create SSL VPN resource group
-[**CreateSslVpnUser**](SSLVPNAPI.md#CreateSslVpnUser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users | Create SSL VPN user
-[**CreateSslVpnUserGroup**](SSLVPNAPI.md#CreateSslVpnUserGroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups | Create SSL VPN user group
-[**DeleteLockedSslVpnTunnel**](SSLVPNAPI.md#DeleteLockedSslVpnTunnel) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels/{lockTunnelId} | Delete SSL VPN locked tunnel
-[**DeleteLockedSslVpnUser**](SSLVPNAPI.md#DeleteLockedSslVpnUser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-users/{id} | Delete SSL VPN locked user
-[**DeleteSslVpnResource**](SSLVPNAPI.md#DeleteSslVpnResource) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resources/{id} | Delete SSL VPN resource
-[**DeleteSslVpnResourceGroup**](SSLVPNAPI.md#DeleteSslVpnResourceGroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resource-groups/{id} | Delete SSL VPN resource group
-[**DeleteSslVpnUser**](SSLVPNAPI.md#DeleteSslVpnUser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users/{id} | Delete SSL VPN user
-[**DeleteSslVpnUserGroup**](SSLVPNAPI.md#DeleteSslVpnUserGroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups/{id} | Delete SSL VPN user group
-[**DownloadSslVpnCertificate**](SSLVPNAPI.md#DownloadSslVpnCertificate) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/certificate | Download SSL VPN certificate.
-[**GetGridLockedSslVpnServerUser**](SSLVPNAPI.md#GetGridLockedSslVpnServerUser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-users | Get locked user list for SSL VPN server
-[**GetGridSslVpnServerResource**](SSLVPNAPI.md#GetGridSslVpnServerResource) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resources | Get resource list for SSL VPN server
-[**GetGridSslVpnServerResourceGroup**](SSLVPNAPI.md#GetGridSslVpnServerResourceGroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resource-groups | Get resource group list for SSL VPN server
-[**GetGridSslVpnServerUser**](SSLVPNAPI.md#GetGridSslVpnServerUser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users | Get user list for SSL VPN server
-[**GetGridSslVpnServerUserGroup**](SSLVPNAPI.md#GetGridSslVpnServerUserGroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups | Get user group list for SSL VPN server
-[**GetGridSslVpnUserInGroup**](SSLVPNAPI.md#GetGridSslVpnUserInGroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/usergroups/{userGroupId}/users | Get SSL VPN user list in group.
-[**GetLockedSslVpnTunnuels**](SSLVPNAPI.md#GetLockedSslVpnTunnuels) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels | Get locked SSL VPN tunnel.
-[**GetRadiusServerInfo**](SSLVPNAPI.md#GetRadiusServerInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/radius | Get radius server for SSL VPN server
-[**GetSslVpnResourceGroupList**](SSLVPNAPI.md#GetSslVpnResourceGroupList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/briefresourcegroups | Get SSL VPN resource group list.
-[**GetSslVpnResourceList**](SSLVPNAPI.md#GetSslVpnResourceList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/briefresources | Get SSL VPN resource list
-[**GetSslVpnServerSetting**](SSLVPNAPI.md#GetSslVpnServerSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/setting | Get SSL VPN server setting
-[**GetSslVpnUserGroupList**](SSLVPNAPI.md#GetSslVpnUserGroupList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/briefusergroups | Get SSL VPN user Group list.
-[**ModifyLockedSslVpnTunnuel**](SSLVPNAPI.md#ModifyLockedSslVpnTunnuel) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels/{lockTunnelId} | Modify locked SSL VPN tunnel
-[**ModifyLockedSslVpnUser**](SSLVPNAPI.md#ModifyLockedSslVpnUser) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-users/{id} | Modify SSL VPN locked user
-[**ModifySslVpnResource**](SSLVPNAPI.md#ModifySslVpnResource) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resources/{id} | Modify SSL VPN resource
-[**ModifySslVpnResourceGroup**](SSLVPNAPI.md#ModifySslVpnResourceGroup) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resource-groups/{id} | Modify SSL VPN resource group
-[**ModifySslVpnServerSetting**](SSLVPNAPI.md#ModifySslVpnServerSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/setting | Modify SSL VPN server setting
-[**ModifySslVpnUser**](SSLVPNAPI.md#ModifySslVpnUser) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users/{id} | Modify SSL VPN user
-[**ModifySslVpnUserGroup**](SSLVPNAPI.md#ModifySslVpnUserGroup) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups/{id} | Modify SSL VPN user group
+[**CreateLockedSslVpnTunnuel**](SSLVPNAPI.md#createlockedsslvpntunnuel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels | Create locked SSL VPN tunnel
+[**CreateLockedSslVpnUser**](SSLVPNAPI.md#createlockedsslvpnuser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-users | Create SSL VPN locked user
+[**CreateSslVpnResource**](SSLVPNAPI.md#createsslvpnresource) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resources | Create SSL VPN resource
+[**CreateSslVpnResourceGroup**](SSLVPNAPI.md#createsslvpnresourcegroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resource-groups | Create SSL VPN resource group
+[**CreateSslVpnUser**](SSLVPNAPI.md#createsslvpnuser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users | Create SSL VPN user
+[**CreateSslVpnUserGroup**](SSLVPNAPI.md#createsslvpnusergroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups | Create SSL VPN user group
+[**DeleteLockedSslVpnTunnel**](SSLVPNAPI.md#deletelockedsslvpntunnel) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels/{lockTunnelId} | Delete SSL VPN locked tunnel
+[**DeleteLockedSslVpnUser**](SSLVPNAPI.md#deletelockedsslvpnuser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-users/{id} | Delete SSL VPN locked user
+[**DeleteSslVpnResource**](SSLVPNAPI.md#deletesslvpnresource) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resources/{id} | Delete SSL VPN resource
+[**DeleteSslVpnResourceGroup**](SSLVPNAPI.md#deletesslvpnresourcegroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resource-groups/{id} | Delete SSL VPN resource group
+[**DeleteSslVpnUser**](SSLVPNAPI.md#deletesslvpnuser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users/{id} | Delete SSL VPN user
+[**DeleteSslVpnUserGroup**](SSLVPNAPI.md#deletesslvpnusergroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups/{id} | Delete SSL VPN user group
+[**DownloadSslVpnCertificate**](SSLVPNAPI.md#downloadsslvpncertificate) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/certificate | Download SSL VPN certificate.
+[**GetGridLockedSslVpnServerUser**](SSLVPNAPI.md#getgridlockedsslvpnserveruser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-users | Get locked user list for SSL VPN server
+[**GetGridSslVpnServerResource**](SSLVPNAPI.md#getgridsslvpnserverresource) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resources | Get resource list for SSL VPN server
+[**GetGridSslVpnServerResourceGroup**](SSLVPNAPI.md#getgridsslvpnserverresourcegroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resource-groups | Get resource group list for SSL VPN server
+[**GetGridSslVpnServerUser**](SSLVPNAPI.md#getgridsslvpnserveruser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users | Get user list for SSL VPN server
+[**GetGridSslVpnServerUserGroup**](SSLVPNAPI.md#getgridsslvpnserverusergroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups | Get user group list for SSL VPN server
+[**GetGridSslVpnUserInGroup**](SSLVPNAPI.md#getgridsslvpnuseringroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/usergroups/{userGroupId}/users | Get SSL VPN user list in group.
+[**GetLockedSslVpnTunnuels**](SSLVPNAPI.md#getlockedsslvpntunnuels) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels | Get locked SSL VPN tunnel.
+[**GetRadiusServerInfo**](SSLVPNAPI.md#getradiusserverinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/radius | Get radius server for SSL VPN server
+[**GetSslVpnResourceGroupList**](SSLVPNAPI.md#getsslvpnresourcegrouplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/briefresourcegroups | Get SSL VPN resource group list.
+[**GetSslVpnResourceList**](SSLVPNAPI.md#getsslvpnresourcelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/briefresources | Get SSL VPN resource list
+[**GetSslVpnServerSetting**](SSLVPNAPI.md#getsslvpnserversetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/setting | Get SSL VPN server setting
+[**GetSslVpnUserGroupList**](SSLVPNAPI.md#getsslvpnusergrouplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/briefusergroups | Get SSL VPN user Group list.
+[**ModifyLockedSslVpnTunnuel**](SSLVPNAPI.md#modifylockedsslvpntunnuel) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels/{lockTunnelId} | Modify locked SSL VPN tunnel
+[**ModifyLockedSslVpnUser**](SSLVPNAPI.md#modifylockedsslvpnuser) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-users/{id} | Modify SSL VPN locked user
+[**ModifySslVpnResource**](SSLVPNAPI.md#modifysslvpnresource) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resources/{id} | Modify SSL VPN resource
+[**ModifySslVpnResourceGroup**](SSLVPNAPI.md#modifysslvpnresourcegroup) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resource-groups/{id} | Modify SSL VPN resource group
+[**ModifySslVpnServerSetting**](SSLVPNAPI.md#modifysslvpnserversetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/setting | Modify SSL VPN server setting
+[**ModifySslVpnUser**](SSLVPNAPI.md#modifysslvpnuser) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users/{id} | Modify SSL VPN user
+[**ModifySslVpnUserGroup**](SSLVPNAPI.md#modifysslvpnusergroup) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups/{id} | Modify SSL VPN user group
 
 
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -781,7 +781,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -857,7 +857,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -933,7 +933,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1008,7 +1008,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1085,7 +1085,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1162,7 +1162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1239,7 +1239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1316,7 +1316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1393,7 +1393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1473,7 +1473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1550,7 +1550,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1623,7 +1623,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1696,7 +1696,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1769,7 +1769,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1842,7 +1842,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1915,7 +1915,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1993,7 +1993,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2071,7 +2071,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2149,7 +2149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2227,7 +2227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2302,7 +2302,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2380,7 +2380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2458,7 +2458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

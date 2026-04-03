@@ -1,21 +1,21 @@
-# \ReportV2API
+# ReportV2API
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddTabNetworkReport**](ReportV2API.md#AddTabNetworkReport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/report/tab | add new tab 
-[**DeleteTabNetworkReport**](ReportV2API.md#DeleteTabNetworkReport) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/report/tab/{tabIds} | batch delete tabs
-[**EmailReportScheduleV2**](ReportV2API.md#EmailReportScheduleV2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/report/export-schedule-email | Export report for scheduler
-[**ExportLaterEmailV2**](ReportV2API.md#ExportLaterEmailV2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/report/export-later-email | Export report once later
-[**ExportNowEmailV2**](ReportV2API.md#ExportNowEmailV2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/report/export-now-email | Export report now for email
-[**ExportNowLocal**](ReportV2API.md#ExportNowLocal) | **Post** /openapi/v2/{omadacId}/files/sites/{siteId}/report/export-now-local | Export report now
-[**GetAllTabs**](ReportV2API.md#GetAllTabs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/report/allTabs | Get report all tabs
-[**GetCardsInfo**](ReportV2API.md#GetCardsInfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/report/cards | Get cards info 
-[**GetScheduleTimeInfoV2**](ReportV2API.md#GetScheduleTimeInfoV2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/report/export-schedule-email | Get schedule time info
-[**GetTabById**](ReportV2API.md#GetTabById) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/report/{tabId} | get all cards in a tab
-[**RecordTabNetworkReport**](ReportV2API.md#RecordTabNetworkReport) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/report/reorder | reorder the tab 
-[**UpdateTabNetworkReport**](ReportV2API.md#UpdateTabNetworkReport) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/report/tab | update  tab 
+[**AddTabNetworkReport**](ReportV2API.md#addtabnetworkreport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/report/tab | add new tab 
+[**DeleteTabNetworkReport**](ReportV2API.md#deletetabnetworkreport) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/report/tab/{tabIds} | batch delete tabs
+[**EmailReportScheduleV2**](ReportV2API.md#emailreportschedulev2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/report/export-schedule-email | Export report for scheduler
+[**ExportLaterEmailV2**](ReportV2API.md#exportlateremailv2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/report/export-later-email | Export report once later
+[**ExportNowEmailV2**](ReportV2API.md#exportnowemailv2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/report/export-now-email | Export report now for email
+[**ExportNowLocal**](ReportV2API.md#exportnowlocal) | **Post** /openapi/v2/{omadacId}/files/sites/{siteId}/report/export-now-local | Export report now
+[**GetAllTabs**](ReportV2API.md#getalltabs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/report/allTabs | Get report all tabs
+[**GetCardsInfo**](ReportV2API.md#getcardsinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/report/cards | Get cards info 
+[**GetScheduleTimeInfoV2**](ReportV2API.md#getscheduletimeinfov2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/report/export-schedule-email | Get schedule time info
+[**GetTabById**](ReportV2API.md#gettabbyid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/report/{tabId} | get all cards in a tab
+[**RecordTabNetworkReport**](ReportV2API.md#recordtabnetworkreport) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/report/reorder | reorder the tab 
+[**UpdateTabNetworkReport**](ReportV2API.md#updatetabnetworkreport) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/report/tab | update  tab 
 
 
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -679,7 +679,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -755,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -905,7 +905,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

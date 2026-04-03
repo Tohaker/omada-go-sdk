@@ -1,28 +1,28 @@
-# \ACLAPI
+# ACLAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchDeleteOsgCustomAcls**](ACLAPI.md#BatchDeleteOsgCustomAcls) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/gateway-acls/batch-delete | batch Delete Osg Custom Acls
-[**BatchEditOsgCustomAclStatus**](ACLAPI.md#BatchEditOsgCustomAclStatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/gateway-acls/batch-edit | batch Edit Osg Custom Acls
-[**ClearOsgHitCounts**](ACLAPI.md#ClearOsgHitCounts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls/hit-counts | Clear gateway custom ACL hit counts
-[**CreateEapAcl**](ACLAPI.md#CreateEapAcl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls | Create new eap ACL
-[**CreateOsgAcl**](ACLAPI.md#CreateOsgAcl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls | Create new gateway ACL
-[**CreateOswAcl**](ACLAPI.md#CreateOswAcl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osw-acls | Create new switch ACL
-[**DeleteAcl**](ACLAPI.md#DeleteAcl) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/acls/{aclId} | Delete ACL
-[**GetAclConfigTypeSetting**](ACLAPI.md#GetAclConfigTypeSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-config-mode | Get gateway ACL config mode
-[**GetEapAclList**](ACLAPI.md#GetEapAclList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls | Get eap ACL list
-[**GetOsgAclList**](ACLAPI.md#GetOsgAclList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls | Get gateway ACL list
-[**GetOsgCustomAclList**](ACLAPI.md#GetOsgCustomAclList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls | Get osg custom ACL
-[**GetOswAclList**](ACLAPI.md#GetOswAclList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osw-acls | Get switch ACL list
-[**ModifyAclConfigTypeSetting**](ACLAPI.md#ModifyAclConfigTypeSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-config-mode | Modify gateway ACL config mode
-[**ModifyAclIndex**](ACLAPI.md#ModifyAclIndex) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/modifyIndex | Modify ACL Index
-[**ModifyEapAcl**](ACLAPI.md#ModifyEapAcl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls/{aclId} | Modify an  EAP ACL
-[**ModifyOsgAcl**](ACLAPI.md#ModifyOsgAcl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls/{aclId} | Modify a gateway ACL
-[**ModifyOsgCustomAclIndex**](ACLAPI.md#ModifyOsgCustomAclIndex) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls/modifyIndex | Modify gateway custom ACL index
-[**ModifyOswAcl**](ACLAPI.md#ModifyOswAcl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/acls/osw-acls/{aclId} | Modify a switch ACL
-[**UpdateOsgCustomAcls**](ACLAPI.md#UpdateOsgCustomAcls) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls | Update osg custom ACLs
+[**BatchDeleteOsgCustomAcls**](ACLAPI.md#batchdeleteosgcustomacls) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/gateway-acls/batch-delete | batch Delete Osg Custom Acls
+[**BatchEditOsgCustomAclStatus**](ACLAPI.md#batcheditosgcustomaclstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/gateway-acls/batch-edit | batch Edit Osg Custom Acls
+[**ClearOsgHitCounts**](ACLAPI.md#clearosghitcounts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls/hit-counts | Clear gateway custom ACL hit counts
+[**CreateEapAcl**](ACLAPI.md#createeapacl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls | Create new eap ACL
+[**CreateOsgAcl**](ACLAPI.md#createosgacl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls | Create new gateway ACL
+[**CreateOswAcl**](ACLAPI.md#createoswacl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osw-acls | Create new switch ACL
+[**DeleteAcl**](ACLAPI.md#deleteacl) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/acls/{aclId} | Delete ACL
+[**GetAclConfigTypeSetting**](ACLAPI.md#getaclconfigtypesetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-config-mode | Get gateway ACL config mode
+[**GetEapAclList**](ACLAPI.md#geteapacllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls | Get eap ACL list
+[**GetOsgAclList**](ACLAPI.md#getosgacllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls | Get gateway ACL list
+[**GetOsgCustomAclList**](ACLAPI.md#getosgcustomacllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls | Get osg custom ACL
+[**GetOswAclList**](ACLAPI.md#getoswacllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osw-acls | Get switch ACL list
+[**ModifyAclConfigTypeSetting**](ACLAPI.md#modifyaclconfigtypesetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-config-mode | Modify gateway ACL config mode
+[**ModifyAclIndex**](ACLAPI.md#modifyaclindex) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/modifyIndex | Modify ACL Index
+[**ModifyEapAcl**](ACLAPI.md#modifyeapacl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls/{aclId} | Modify an  EAP ACL
+[**ModifyOsgAcl**](ACLAPI.md#modifyosgacl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls/{aclId} | Modify a gateway ACL
+[**ModifyOsgCustomAclIndex**](ACLAPI.md#modifyosgcustomaclindex) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls/modifyIndex | Modify gateway custom ACL index
+[**ModifyOswAcl**](ACLAPI.md#modifyoswacl) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/acls/osw-acls/{aclId} | Modify a switch ACL
+[**UpdateOsgCustomAcls**](ACLAPI.md#updateosgcustomacls) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls | Update osg custom ACLs
 
 
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -611,7 +611,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -688,7 +688,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -765,7 +765,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -842,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -919,7 +919,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -994,7 +994,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1069,7 +1069,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1147,7 +1147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1225,7 +1225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1300,7 +1300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1378,7 +1378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1453,7 +1453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

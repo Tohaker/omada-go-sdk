@@ -1,15 +1,15 @@
-# \IDSIPSTemplateAPI
+# IDSIPSTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTemplateAllowList**](IDSIPSTemplateAPI.md#CreateTemplateAllowList) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips/allow-list | Create site template&#39;s allow list
-[**DeleteTemplateAllowList**](IDSIPSTemplateAPI.md#DeleteTemplateAllowList) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips/allow-list/{entryId} | Delete template allow list
-[**EditTemplateAllowList**](IDSIPSTemplateAPI.md#EditTemplateAllowList) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips/allow-list | Edit site template&#39;s allow list
-[**GetIpsTemplateConfig**](IDSIPSTemplateAPI.md#GetIpsTemplateConfig) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips | Get site template IDS/IPS config
-[**GetTemplateGridAllowList**](IDSIPSTemplateAPI.md#GetTemplateGridAllowList) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/grid/allow-list | Get site template grid ips allow list
-[**ModifyIpsTemplateConfig**](IDSIPSTemplateAPI.md#ModifyIpsTemplateConfig) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips | Modify site template IDS/IPS config
+[**CreateTemplateAllowList**](IDSIPSTemplateAPI.md#createtemplateallowlist) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips/allow-list | Create site template&#39;s allow list
+[**DeleteTemplateAllowList**](IDSIPSTemplateAPI.md#deletetemplateallowlist) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips/allow-list/{entryId} | Delete template allow list
+[**EditTemplateAllowList**](IDSIPSTemplateAPI.md#edittemplateallowlist) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips/allow-list | Edit site template&#39;s allow list
+[**GetIpsTemplateConfig**](IDSIPSTemplateAPI.md#getipstemplateconfig) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips | Get site template IDS/IPS config
+[**GetTemplateGridAllowList**](IDSIPSTemplateAPI.md#gettemplategridallowlist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/grid/allow-list | Get site template grid ips allow list
+[**ModifyIpsTemplateConfig**](IDSIPSTemplateAPI.md#modifyipstemplateconfig) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/ips | Modify site template IDS/IPS config
 
 
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

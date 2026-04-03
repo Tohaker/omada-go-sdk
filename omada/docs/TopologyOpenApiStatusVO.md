@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **DirectlyShowClientsDeviceMacs** | Pointer to [**[]ClientsQueryMacAndFilterType**](ClientsQueryMacAndFilterType.md) | Devices Macs That Show Clients Directly | [optional] 
 **Disconnected** | Pointer to **int32** | Disconnected Devices Count | [optional] 
 **ExistUMVmsDev** | Pointer to **bool** | Whether Unmanaged Vms Devices Exist | [optional] 
-**StpLoops** | Pointer to [**map[string][]TopologyOpenApiEdgeVO**](set.md) | Stp Loops | [optional] 
+**StpLoops** | Pointer to [**map[string][]TopologyOpenApiEdgeVO**](TopologyOpenApiEdgeVO.md) | Stp Loops | [optional] 
 **WiredClient** | Pointer to **int32** | Wired Client Count | [optional] 
 
 ## Methods

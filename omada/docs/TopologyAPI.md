@@ -1,27 +1,27 @@
-# \TopologyAPI
+# TopologyAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAvailableNetworks**](TopologyAPI.md#GetAvailableNetworks) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/available-network | Get available network
-[**GetDeviceLinkTopology**](TopologyAPI.md#GetDeviceLinkTopology) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/devices/{deviceMac}/device-link-topology | Get Device Link Topology
-[**GetDevicesOfSsid**](TopologyAPI.md#GetDevicesOfSsid) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/ssids/{ssidId}/devices | Search Devices of Ssid in Topology
-[**GetDevicesOfVlan**](TopologyAPI.md#GetDevicesOfVlan) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/{networkId}/vlan/{vlan}/devices | Search Devices of Vlan in Topology
-[**GetFilterDevicesOfSsid**](TopologyAPI.md#GetFilterDevicesOfSsid) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology/ssids/{ssidId}/devices | Filter Devices of Ssid in Topology
-[**GetFilterDevicesOfVlan**](TopologyAPI.md#GetFilterDevicesOfVlan) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology/{networkId}/vlan/{vlan}/devices | Filter Devices of Vlan in Topology
-[**GetGridDeviceClient**](TopologyAPI.md#GetGridDeviceClient) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/search-device-client | Search Device or Client in Topology
-[**GetIsolatedAndPreConfigDevices**](TopologyAPI.md#GetIsolatedAndPreConfigDevices) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/isolated-and-pre-config | Get isolated and preconfigured devices
-[**GetMspDeviceLinkTopology**](TopologyAPI.md#GetMspDeviceLinkTopology) | **Get** /openapi/v2/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/device-link-topology | Get Msp Device Link Topology
-[**GetTopology**](TopologyAPI.md#GetTopology) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology | Get site topology
-[**GetTopologyClients**](TopologyAPI.md#GetTopologyClients) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/devices/{mac}/clients | Get the clients
-[**GetTopologyClientsByDevice**](TopologyAPI.md#GetTopologyClientsByDevice) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/devices/{mac}/all-clients | Get the clients by device
-[**GetTopologyClientsByDevices**](TopologyAPI.md#GetTopologyClientsByDevices) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/topology/devices/all-clients | Get the clients by devices.
-[**GetTopologyDiscoveryStatus**](TopologyAPI.md#GetTopologyDiscoveryStatus) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/discovery/status | Get topology discovery status
-[**GetTopologyNodes**](TopologyAPI.md#GetTopologyNodes) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/nodes | Get topology nodes
-[**GetV3Topology**](TopologyAPI.md#GetV3Topology) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology | Get site topology, version 3
-[**RefreshTopology**](TopologyAPI.md#RefreshTopology) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/topology | Refresh site topology
-[**SetTopologyNode**](TopologyAPI.md#SetTopologyNode) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/topology/nodes | Set site topology top node
+[**GetAvailableNetworks**](TopologyAPI.md#getavailablenetworks) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/available-network | Get available network
+[**GetDeviceLinkTopology**](TopologyAPI.md#getdevicelinktopology) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/devices/{deviceMac}/device-link-topology | Get Device Link Topology
+[**GetDevicesOfSsid**](TopologyAPI.md#getdevicesofssid) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/ssids/{ssidId}/devices | Search Devices of Ssid in Topology
+[**GetDevicesOfVlan**](TopologyAPI.md#getdevicesofvlan) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/{networkId}/vlan/{vlan}/devices | Search Devices of Vlan in Topology
+[**GetFilterDevicesOfSsid**](TopologyAPI.md#getfilterdevicesofssid) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology/ssids/{ssidId}/devices | Filter Devices of Ssid in Topology
+[**GetFilterDevicesOfVlan**](TopologyAPI.md#getfilterdevicesofvlan) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology/{networkId}/vlan/{vlan}/devices | Filter Devices of Vlan in Topology
+[**GetGridDeviceClient**](TopologyAPI.md#getgriddeviceclient) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/search-device-client | Search Device or Client in Topology
+[**GetIsolatedAndPreConfigDevices**](TopologyAPI.md#getisolatedandpreconfigdevices) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/isolated-and-pre-config | Get isolated and preconfigured devices
+[**GetMspDeviceLinkTopology**](TopologyAPI.md#getmspdevicelinktopology) | **Get** /openapi/v2/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/device-link-topology | Get Msp Device Link Topology
+[**GetTopology**](TopologyAPI.md#gettopology) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology | Get site topology
+[**GetTopologyClients**](TopologyAPI.md#gettopologyclients) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/devices/{mac}/clients | Get the clients
+[**GetTopologyClientsByDevice**](TopologyAPI.md#gettopologyclientsbydevice) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/devices/{mac}/all-clients | Get the clients by device
+[**GetTopologyClientsByDevices**](TopologyAPI.md#gettopologyclientsbydevices) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/topology/devices/all-clients | Get the clients by devices.
+[**GetTopologyDiscoveryStatus**](TopologyAPI.md#gettopologydiscoverystatus) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/discovery/status | Get topology discovery status
+[**GetTopologyNodes**](TopologyAPI.md#gettopologynodes) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/nodes | Get topology nodes
+[**GetV3Topology**](TopologyAPI.md#getv3topology) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology | Get site topology, version 3
+[**RefreshTopology**](TopologyAPI.md#refreshtopology) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/topology | Refresh site topology
+[**SetTopologyNode**](TopologyAPI.md#settopologynode) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/topology/nodes | Set site topology top node
 
 
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -703,7 +703,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -776,7 +776,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -852,7 +852,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -930,7 +930,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1005,7 +1005,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1078,7 +1078,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1151,7 +1151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1226,7 +1226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1299,7 +1299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1374,7 +1374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

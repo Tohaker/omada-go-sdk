@@ -1,22 +1,22 @@
-# \ACLTemplateAPI
+# ACLTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateEapAclTemplate**](ACLTemplateAPI.md#CreateEapAclTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/eap-acls | Create new eap template ACL
-[**CreateOsgAclTemplate**](ACLTemplateAPI.md#CreateOsgAclTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-acls | Create new gateway template ACL
-[**DeleteAclTemplate**](ACLTemplateAPI.md#DeleteAclTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/{aclId} | Delete Gateway/AP ACL template
-[**GetAclConfigTypeSettingTemplate**](ACLTemplateAPI.md#GetAclConfigTypeSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-config-mode | Get gateway ACL config mode template
-[**GetEapAclListTemplate**](ACLTemplateAPI.md#GetEapAclListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/eap-acls | Get eap ACL template list
-[**GetOsgAclListTemplate**](ACLTemplateAPI.md#GetOsgAclListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-acls | Get gateway ACL template list
-[**GetOsgCustomAclListTemplate**](ACLTemplateAPI.md#GetOsgCustomAclListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls | Get osg custom ACL template
-[**ModifyAclConfigTypeSettingTemplate**](ACLTemplateAPI.md#ModifyAclConfigTypeSettingTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-config-mode | Modify gateway ACL config template mode
-[**ModifyAclIndexTemplate**](ACLTemplateAPI.md#ModifyAclIndexTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/modifyIndex | Modify ACL template Index
-[**ModifyEapAclTemplate**](ACLTemplateAPI.md#ModifyEapAclTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/eap-acls/{aclId} | Modify an EAP template ACL
-[**ModifyOsgAclTemplate**](ACLTemplateAPI.md#ModifyOsgAclTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-acls/{aclId} | Modify a gateway template ACL
-[**ModifyOsgCustomAclIndexTemplate**](ACLTemplateAPI.md#ModifyOsgCustomAclIndexTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls/modifyIndex | Modify gateway custom ACL template index
-[**UpdateOsgCustomAclsTemplate**](ACLTemplateAPI.md#UpdateOsgCustomAclsTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls | Update osg custom ACL templates
+[**CreateEapAclTemplate**](ACLTemplateAPI.md#createeapacltemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/eap-acls | Create new eap template ACL
+[**CreateOsgAclTemplate**](ACLTemplateAPI.md#createosgacltemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-acls | Create new gateway template ACL
+[**DeleteAclTemplate**](ACLTemplateAPI.md#deleteacltemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/{aclId} | Delete Gateway/AP ACL template
+[**GetAclConfigTypeSettingTemplate**](ACLTemplateAPI.md#getaclconfigtypesettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-config-mode | Get gateway ACL config mode template
+[**GetEapAclListTemplate**](ACLTemplateAPI.md#geteapacllisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/eap-acls | Get eap ACL template list
+[**GetOsgAclListTemplate**](ACLTemplateAPI.md#getosgacllisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-acls | Get gateway ACL template list
+[**GetOsgCustomAclListTemplate**](ACLTemplateAPI.md#getosgcustomacllisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls | Get osg custom ACL template
+[**ModifyAclConfigTypeSettingTemplate**](ACLTemplateAPI.md#modifyaclconfigtypesettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-config-mode | Modify gateway ACL config template mode
+[**ModifyAclIndexTemplate**](ACLTemplateAPI.md#modifyaclindextemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/modifyIndex | Modify ACL template Index
+[**ModifyEapAclTemplate**](ACLTemplateAPI.md#modifyeapacltemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/eap-acls/{aclId} | Modify an EAP template ACL
+[**ModifyOsgAclTemplate**](ACLTemplateAPI.md#modifyosgacltemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-acls/{aclId} | Modify a gateway template ACL
+[**ModifyOsgCustomAclIndexTemplate**](ACLTemplateAPI.md#modifyosgcustomaclindextemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls/modifyIndex | Modify gateway custom ACL template index
+[**UpdateOsgCustomAclsTemplate**](ACLTemplateAPI.md#updateosgcustomaclstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls | Update osg custom ACL templates
 
 
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -613,7 +613,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -688,7 +688,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -919,7 +919,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -994,7 +994,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

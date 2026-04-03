@@ -1,38 +1,38 @@
-# \FirmwareAPI
+# FirmwareAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CheckUploadUpgradeFirmwareLimit**](FirmwareAPI.md#CheckUploadUpgradeFirmwareLimit) | **Post** /openapi/v1/{omadacId}/upgrade/firmware-size/{firmwareSize} | Check the limit of the firmware pool
-[**CreateAutoCheckUpgrade**](FirmwareAPI.md#CreateAutoCheckUpgrade) | **Post** /openapi/v1/{omadacId}/upgrade/autoCheck | Create autocheck upgrade plan
-[**CreateFailedDeviceModelPlan**](FirmwareAPI.md#CreateFailedDeviceModelPlan) | **Post** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/failed-model-plan | Create Upgrade Plan for Failed Device
-[**CreateFirmwareUpgradePlan**](FirmwareAPI.md#CreateFirmwareUpgradePlan) | **Post** /openapi/v1/{omadacId}/firmwares/{firmwareId}/upgrade/plan | Create firmware upgrade plan based on manually uploaded firmware
-[**CreateRollback**](FirmwareAPI.md#CreateRollback) | **Post** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/rollback | Create rollback plan
-[**CreateUpgradePlan**](FirmwareAPI.md#CreateUpgradePlan) | **Post** /openapi/v1/{omadacId}/upgrade/overview/plans | Create firmware upgrade plan
-[**DeleteAutoCheckUpgrade**](FirmwareAPI.md#DeleteAutoCheckUpgrade) | **Delete** /openapi/v1/{omadacId}/autoCheck/{autoCheckId}/upgrade | Delete autoCheck upgrade plan
-[**DeleteUpgradeFirmware**](FirmwareAPI.md#DeleteUpgradeFirmware) | **Delete** /openapi/v1/{omadacId}/firmwares/{firmwareId}/upgrade | Delete upgrade firmware
-[**DeleteUpgradePlan**](FirmwareAPI.md#DeleteUpgradePlan) | **Delete** /openapi/v1/{omadacId}/plans/{planId}/upgrade/overview | Delete firmware upgrade plan
-[**EditAutoCheckUpgrade**](FirmwareAPI.md#EditAutoCheckUpgrade) | **Patch** /openapi/v1/{omadacId}/autoCheck/{autoCheckId}/upgrade | Edit autoCheck upgrade plan
-[**EditFirmwareUpgrade**](FirmwareAPI.md#EditFirmwareUpgrade) | **Post** /openapi/v1/{omadacId}/upgrade/firmwares/{firmwareId} | Edit the uploaded firmware
-[**EditUpgradePlan**](FirmwareAPI.md#EditUpgradePlan) | **Patch** /openapi/v1/{omadacId}/plans/{planId}/upgrade/overview | Edit firmware upgrade plan
-[**GetGridAutoCheckUpgrade**](FirmwareAPI.md#GetGridAutoCheckUpgrade) | **Get** /openapi/v1/{omadacId}/upgrade/autoCheck | Get autocheck upgrade plan
-[**GetGridFirmwareList**](FirmwareAPI.md#GetGridFirmwareList) | **Get** /openapi/v1/{omadacId}/upgrade/firmwares | Get the uploaded firmware list
-[**GetGridFirmwarePoolList**](FirmwareAPI.md#GetGridFirmwarePoolList) | **Get** /openapi/v1/{omadacId}/upgrade/overview/firmwares | Get firmware pool list
-[**GetGridPlanUpgradeModelList**](FirmwareAPI.md#GetGridPlanUpgradeModelList) | **Get** /openapi/v1/{omadacId}/upgrade/plan/models | Get the list of models
-[**GetGridPlanUpgradeSiteList**](FirmwareAPI.md#GetGridPlanUpgradeSiteList) | **Post** /openapi/v1/{omadacId}/upgrade/plan/sites | Get the sites of the selected model
-[**GetGridUpgradeLogs**](FirmwareAPI.md#GetGridUpgradeLogs) | **Get** /openapi/v1/{omadacId}/upgrade/overview/logs | Get firmware upgrade logs
-[**GetGridUpgradePlans**](FirmwareAPI.md#GetGridUpgradePlans) | **Get** /openapi/v1/{omadacId}/upgrade/overview/plans | Get firmware upgrade plans
-[**GetModelBySites**](FirmwareAPI.md#GetModelBySites) | **Post** /openapi/v1/{omadacId}/upgrade/models | Get the model of the specified site
-[**GetModelFirmwareReleaseNotes**](FirmwareAPI.md#GetModelFirmwareReleaseNotes) | **Post** /openapi/v1/{omadacId}/upgrade/overview/firmwares/release-note | Get release notes information
-[**GetPlanUpgradeModelInfo**](FirmwareAPI.md#GetPlanUpgradeModelInfo) | **Post** /openapi/v1/{omadacId}/upgrade/plan/firmware | Get the upgradeable information of the selected model
-[**GetTargetFirmwareAllSites**](FirmwareAPI.md#GetTargetFirmwareAllSites) | **Get** /openapi/v1/{omadacId}/upgrade/firmwares/{firmwareId}/target-sites | Get all sites of target firmware
-[**GetTryBetaStatus**](FirmwareAPI.md#GetTryBetaStatus) | **Get** /openapi/v1/{omadacId}/upgrade/overview/try-beta | Get try-beta switch status
-[**GetUpgradeFailedDeviceFirmwareInfo**](FirmwareAPI.md#GetUpgradeFailedDeviceFirmwareInfo) | **Get** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/failed-model-firmware | Get firmware information about the failed device to be upgraded
-[**GetUpgradeFailedDeviceInfos**](FirmwareAPI.md#GetUpgradeFailedDeviceInfos) | **Get** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/failed-devices | Get the list of devices which upgrade failed
-[**GetcriticalModelNum**](FirmwareAPI.md#GetcriticalModelNum) | **Get** /openapi/v1/{omadacId}/upgrade/overview/critical | Get the number of critical models
-[**ModifyTryBetaStatus**](FirmwareAPI.md#ModifyTryBetaStatus) | **Patch** /openapi/v1/{omadacId}/upgrade/overview/try-beta | Modify try-beta switch status
-[**UploadUpgradeFirmware**](FirmwareAPI.md#UploadUpgradeFirmware) | **Post** /openapi/v1/{omadacId}/files/upgrade/firmware | Upload upgrade firmware
+[**CheckUploadUpgradeFirmwareLimit**](FirmwareAPI.md#checkuploadupgradefirmwarelimit) | **Post** /openapi/v1/{omadacId}/upgrade/firmware-size/{firmwareSize} | Check the limit of the firmware pool
+[**CreateAutoCheckUpgrade**](FirmwareAPI.md#createautocheckupgrade) | **Post** /openapi/v1/{omadacId}/upgrade/autoCheck | Create autocheck upgrade plan
+[**CreateFailedDeviceModelPlan**](FirmwareAPI.md#createfaileddevicemodelplan) | **Post** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/failed-model-plan | Create Upgrade Plan for Failed Device
+[**CreateFirmwareUpgradePlan**](FirmwareAPI.md#createfirmwareupgradeplan) | **Post** /openapi/v1/{omadacId}/firmwares/{firmwareId}/upgrade/plan | Create firmware upgrade plan based on manually uploaded firmware
+[**CreateRollback**](FirmwareAPI.md#createrollback) | **Post** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/rollback | Create rollback plan
+[**CreateUpgradePlan**](FirmwareAPI.md#createupgradeplan) | **Post** /openapi/v1/{omadacId}/upgrade/overview/plans | Create firmware upgrade plan
+[**DeleteAutoCheckUpgrade**](FirmwareAPI.md#deleteautocheckupgrade) | **Delete** /openapi/v1/{omadacId}/autoCheck/{autoCheckId}/upgrade | Delete autoCheck upgrade plan
+[**DeleteUpgradeFirmware**](FirmwareAPI.md#deleteupgradefirmware) | **Delete** /openapi/v1/{omadacId}/firmwares/{firmwareId}/upgrade | Delete upgrade firmware
+[**DeleteUpgradePlan**](FirmwareAPI.md#deleteupgradeplan) | **Delete** /openapi/v1/{omadacId}/plans/{planId}/upgrade/overview | Delete firmware upgrade plan
+[**EditAutoCheckUpgrade**](FirmwareAPI.md#editautocheckupgrade) | **Patch** /openapi/v1/{omadacId}/autoCheck/{autoCheckId}/upgrade | Edit autoCheck upgrade plan
+[**EditFirmwareUpgrade**](FirmwareAPI.md#editfirmwareupgrade) | **Post** /openapi/v1/{omadacId}/upgrade/firmwares/{firmwareId} | Edit the uploaded firmware
+[**EditUpgradePlan**](FirmwareAPI.md#editupgradeplan) | **Patch** /openapi/v1/{omadacId}/plans/{planId}/upgrade/overview | Edit firmware upgrade plan
+[**GetGridAutoCheckUpgrade**](FirmwareAPI.md#getgridautocheckupgrade) | **Get** /openapi/v1/{omadacId}/upgrade/autoCheck | Get autocheck upgrade plan
+[**GetGridFirmwareList**](FirmwareAPI.md#getgridfirmwarelist) | **Get** /openapi/v1/{omadacId}/upgrade/firmwares | Get the uploaded firmware list
+[**GetGridFirmwarePoolList**](FirmwareAPI.md#getgridfirmwarepoollist) | **Get** /openapi/v1/{omadacId}/upgrade/overview/firmwares | Get firmware pool list
+[**GetGridPlanUpgradeModelList**](FirmwareAPI.md#getgridplanupgrademodellist) | **Get** /openapi/v1/{omadacId}/upgrade/plan/models | Get the list of models
+[**GetGridPlanUpgradeSiteList**](FirmwareAPI.md#getgridplanupgradesitelist) | **Post** /openapi/v1/{omadacId}/upgrade/plan/sites | Get the sites of the selected model
+[**GetGridUpgradeLogs**](FirmwareAPI.md#getgridupgradelogs) | **Get** /openapi/v1/{omadacId}/upgrade/overview/logs | Get firmware upgrade logs
+[**GetGridUpgradePlans**](FirmwareAPI.md#getgridupgradeplans) | **Get** /openapi/v1/{omadacId}/upgrade/overview/plans | Get firmware upgrade plans
+[**GetModelBySites**](FirmwareAPI.md#getmodelbysites) | **Post** /openapi/v1/{omadacId}/upgrade/models | Get the model of the specified site
+[**GetModelFirmwareReleaseNotes**](FirmwareAPI.md#getmodelfirmwarereleasenotes) | **Post** /openapi/v1/{omadacId}/upgrade/overview/firmwares/release-note | Get release notes information
+[**GetPlanUpgradeModelInfo**](FirmwareAPI.md#getplanupgrademodelinfo) | **Post** /openapi/v1/{omadacId}/upgrade/plan/firmware | Get the upgradeable information of the selected model
+[**GetTargetFirmwareAllSites**](FirmwareAPI.md#gettargetfirmwareallsites) | **Get** /openapi/v1/{omadacId}/upgrade/firmwares/{firmwareId}/target-sites | Get all sites of target firmware
+[**GetTryBetaStatus**](FirmwareAPI.md#gettrybetastatus) | **Get** /openapi/v1/{omadacId}/upgrade/overview/try-beta | Get try-beta switch status
+[**GetUpgradeFailedDeviceFirmwareInfo**](FirmwareAPI.md#getupgradefaileddevicefirmwareinfo) | **Get** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/failed-model-firmware | Get firmware information about the failed device to be upgraded
+[**GetUpgradeFailedDeviceInfos**](FirmwareAPI.md#getupgradefaileddeviceinfos) | **Get** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/failed-devices | Get the list of devices which upgrade failed
+[**GetcriticalModelNum**](FirmwareAPI.md#getcriticalmodelnum) | **Get** /openapi/v1/{omadacId}/upgrade/overview/critical | Get the number of critical models
+[**ModifyTryBetaStatus**](FirmwareAPI.md#modifytrybetastatus) | **Patch** /openapi/v1/{omadacId}/upgrade/overview/try-beta | Modify try-beta switch status
+[**UploadUpgradeFirmware**](FirmwareAPI.md#uploadupgradefirmware) | **Post** /openapi/v1/{omadacId}/files/upgrade/firmware | Upload upgrade firmware
 
 
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -835,7 +835,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -910,7 +910,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -988,7 +988,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1068,7 +1068,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1148,7 +1148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1226,7 +1226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1298,7 +1298,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1376,7 +1376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1454,7 +1454,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1526,7 +1526,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1598,7 +1598,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1670,7 +1670,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1743,7 +1743,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1813,7 +1813,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1886,7 +1886,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1963,7 +1963,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2033,7 +2033,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2105,7 +2105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2187,7 +2187,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

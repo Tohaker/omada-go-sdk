@@ -1,37 +1,37 @@
-# \SwitchTemplateAPI
+# SwitchTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPortTagTemplate**](SwitchTemplateAPI.md#AddPortTagTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Create new template port label
-[**BatchModifySwitchPortTemplate**](SwitchTemplateAPI.md#BatchModifySwitchPortTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/config | Batch modify switch template port
-[**BatchSetNameForGivenPorts**](SwitchTemplateAPI.md#BatchSetNameForGivenPorts) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/name | Batch set name for given switch template ports
-[**BatchSetPoeModeForGivenPorts**](SwitchTemplateAPI.md#BatchSetPoeModeForGivenPorts) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/poe-mode | Batch set poe mode for given switch template ports
-[**BatchSetPortStatusForGivenPorts**](SwitchTemplateAPI.md#BatchSetPortStatusForGivenPorts) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/status | Batch set status for given switch template ports
-[**BatchSetProfileOverrideForGivenPorts**](SwitchTemplateAPI.md#BatchSetProfileOverrideForGivenPorts) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/profile-override | Batch set profile-override for given switch template ports
-[**CreateOswVrfTemplate**](SwitchTemplateAPI.md#CreateOswVrfTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs | Create new vrf template
-[**DeleteOswVrfTemplate**](SwitchTemplateAPI.md#DeleteOswVrfTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs/{vrfId} | Delete vrf template
-[**DeletePortTagTemplate**](SwitchTemplateAPI.md#DeletePortTagTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Delete an existing template port label
-[**DeleteSwitchLagTemplate**](SwitchTemplateAPI.md#DeleteSwitchLagTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/lags/{lagId} | Delete switch template lag
-[**GetBatchSwitchTemplateExistNetworks**](SwitchTemplateAPI.md#GetBatchSwitchTemplateExistNetworks) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/exist-network | Get the networks intersections existing on multiple switch templates
-[**GetGridPortAndLagNetworks**](SwitchTemplateAPI.md#GetGridPortAndLagNetworks) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/port-lag-networks | Get the networks used on switch template&#39;s ports and LAGs
-[**GetGridVrfTemplate**](SwitchTemplateAPI.md#GetGridVrfTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs | Get the vrfs on the switch template
-[**GetOswForGivenLanNetworkIdAndVlanTemplate**](SwitchTemplateAPI.md#GetOswForGivenLanNetworkIdAndVlanTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlans/{vlan}/switches | Get the paging query for the osw templates with given network id and vlan
-[**GetOswsDetailsTemplate**](SwitchTemplateAPI.md#GetOswsDetailsTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switches/details | Get the details of osw templates with given omadacid, siteid and macs and stackIds.
-[**GetPortAndLagNetwork**](SwitchTemplateAPI.md#GetPortAndLagNetwork) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/port-lag-networks/{networkId}/vlan/{vlan} | Get the switch template&#39;s ports and LAGs that the network affects
-[**GetPortTagTemplates**](SwitchTemplateAPI.md#GetPortTagTemplates) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Get template port label list
-[**GetSwitchTemplateExistNetworks**](SwitchTemplateAPI.md#GetSwitchTemplateExistNetworks) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/exist-network | Get the networks existing on the switch template
-[**GetSwitchTemplateInfo**](SwitchTemplateAPI.md#GetSwitchTemplateInfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId} | Get switch template info
-[**ModifyOswVrfTemplate**](SwitchTemplateAPI.md#ModifyOswVrfTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs/{vrfId} | Modify vrf template
-[**ModifyPortTagTemplate**](SwitchTemplateAPI.md#ModifyPortTagTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Modify an existing template port label
-[**ModifySwitchLagTemplate**](SwitchTemplateAPI.md#ModifySwitchLagTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/lags/{lagId} | Modify switch template lag
-[**ModifySwitchPortTemplate**](SwitchTemplateAPI.md#ModifySwitchPortTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port} | Modify switch template port
-[**SetNameForGivenPort**](SwitchTemplateAPI.md#SetNameForGivenPort) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/name | Set name for given switch template port
-[**SetPoeModeForGivenPort**](SwitchTemplateAPI.md#SetPoeModeForGivenPort) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/poe-mode | Set poe mode for given switch template port
-[**SetPortModeForGivenPort**](SwitchTemplateAPI.md#SetPortModeForGivenPort) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/status | Set port status for given switch template port
-[**SetProfileForGivenPort**](SwitchTemplateAPI.md#SetProfileForGivenPort) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/profile | Set profile for given switch template port
-[**SetProfileOverrideForGivenPort**](SwitchTemplateAPI.md#SetProfileOverrideForGivenPort) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/profile-override | Set profile-override for given switch template port
+[**AddPortTagTemplate**](SwitchTemplateAPI.md#addporttagtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Create new template port label
+[**BatchModifySwitchPortTemplate**](SwitchTemplateAPI.md#batchmodifyswitchporttemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/config | Batch modify switch template port
+[**BatchSetNameForGivenPorts**](SwitchTemplateAPI.md#batchsetnameforgivenports) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/name | Batch set name for given switch template ports
+[**BatchSetPoeModeForGivenPorts**](SwitchTemplateAPI.md#batchsetpoemodeforgivenports) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/poe-mode | Batch set poe mode for given switch template ports
+[**BatchSetPortStatusForGivenPorts**](SwitchTemplateAPI.md#batchsetportstatusforgivenports) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/status | Batch set status for given switch template ports
+[**BatchSetProfileOverrideForGivenPorts**](SwitchTemplateAPI.md#batchsetprofileoverrideforgivenports) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/profile-override | Batch set profile-override for given switch template ports
+[**CreateOswVrfTemplate**](SwitchTemplateAPI.md#createoswvrftemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs | Create new vrf template
+[**DeleteOswVrfTemplate**](SwitchTemplateAPI.md#deleteoswvrftemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs/{vrfId} | Delete vrf template
+[**DeletePortTagTemplate**](SwitchTemplateAPI.md#deleteporttagtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Delete an existing template port label
+[**DeleteSwitchLagTemplate**](SwitchTemplateAPI.md#deleteswitchlagtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/lags/{lagId} | Delete switch template lag
+[**GetBatchSwitchTemplateExistNetworks**](SwitchTemplateAPI.md#getbatchswitchtemplateexistnetworks) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/exist-network | Get the networks intersections existing on multiple switch templates
+[**GetGridPortAndLagNetworks**](SwitchTemplateAPI.md#getgridportandlagnetworks) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/port-lag-networks | Get the networks used on switch template&#39;s ports and LAGs
+[**GetGridVrfTemplate**](SwitchTemplateAPI.md#getgridvrftemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs | Get the vrfs on the switch template
+[**GetOswForGivenLanNetworkIdAndVlanTemplate**](SwitchTemplateAPI.md#getoswforgivenlannetworkidandvlantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlans/{vlan}/switches | Get the paging query for the osw templates with given network id and vlan
+[**GetOswsDetailsTemplate**](SwitchTemplateAPI.md#getoswsdetailstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switches/details | Get the details of osw templates with given omadacid, siteid and macs and stackIds.
+[**GetPortAndLagNetwork**](SwitchTemplateAPI.md#getportandlagnetwork) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/port-lag-networks/{networkId}/vlan/{vlan} | Get the switch template&#39;s ports and LAGs that the network affects
+[**GetPortTagTemplates**](SwitchTemplateAPI.md#getporttagtemplates) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Get template port label list
+[**GetSwitchTemplateExistNetworks**](SwitchTemplateAPI.md#getswitchtemplateexistnetworks) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/exist-network | Get the networks existing on the switch template
+[**GetSwitchTemplateInfo**](SwitchTemplateAPI.md#getswitchtemplateinfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId} | Get switch template info
+[**ModifyOswVrfTemplate**](SwitchTemplateAPI.md#modifyoswvrftemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs/{vrfId} | Modify vrf template
+[**ModifyPortTagTemplate**](SwitchTemplateAPI.md#modifyporttagtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Modify an existing template port label
+[**ModifySwitchLagTemplate**](SwitchTemplateAPI.md#modifyswitchlagtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/lags/{lagId} | Modify switch template lag
+[**ModifySwitchPortTemplate**](SwitchTemplateAPI.md#modifyswitchporttemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port} | Modify switch template port
+[**SetNameForGivenPort**](SwitchTemplateAPI.md#setnameforgivenport) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/name | Set name for given switch template port
+[**SetPoeModeForGivenPort**](SwitchTemplateAPI.md#setpoemodeforgivenport) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/poe-mode | Set poe mode for given switch template port
+[**SetPortModeForGivenPort**](SwitchTemplateAPI.md#setportmodeforgivenport) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/status | Set port status for given switch template port
+[**SetProfileForGivenPort**](SwitchTemplateAPI.md#setprofileforgivenport) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/profile | Set profile for given switch template port
+[**SetProfileOverrideForGivenPort**](SwitchTemplateAPI.md#setprofileoverrideforgivenport) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port}/profile-override | Set profile-override for given switch template port
 
 
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -645,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -720,7 +720,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -799,7 +799,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -954,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1030,7 +1030,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1113,7 +1113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1188,7 +1188,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1270,7 +1270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1343,7 +1343,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1419,7 +1419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1495,7 +1495,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1576,7 +1576,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1651,7 +1651,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1732,7 +1732,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1813,7 +1813,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1894,7 +1894,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1975,7 +1975,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2056,7 +2056,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2137,7 +2137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2218,7 +2218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

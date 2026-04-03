@@ -1,14 +1,14 @@
-# \OLTTContAPI
+# OLTTContAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddTcont**](OLTTContAPI.md#AddTcont) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/add | Create new t-cont
-[**DeleteTcont**](OLTTContAPI.md#DeleteTcont) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/delete | Delete an existing t-cont
-[**EditTcont**](OLTTContAPI.md#EditTcont) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/edit | Modify an existing t-cont
-[**GetTcontList**](OLTTContAPI.md#GetTcontList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/list | Get t-cont list
-[**GetTcontPage**](OLTTContAPI.md#GetTcontPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/page | Get t-cont page
+[**AddTcont**](OLTTContAPI.md#addtcont) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/add | Create new t-cont
+[**DeleteTcont**](OLTTContAPI.md#deletetcont) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/delete | Delete an existing t-cont
+[**EditTcont**](OLTTContAPI.md#edittcont) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/edit | Modify an existing t-cont
+[**GetTcontList**](OLTTContAPI.md#gettcontlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/list | Get t-cont list
+[**GetTcontPage**](OLTTContAPI.md#gettcontpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/profile/line/{lineProfileId}/t-conts/page | Get t-cont page
 
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

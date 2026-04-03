@@ -1,11 +1,11 @@
-# \MSPSiteAPI
+# MSPSiteAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetSiteList1**](MSPSiteAPI.md#GetSiteList1) | **Get** /openapi/v1/msp/{mspId}/sites | Get msp site list
-[**GetTags2**](MSPSiteAPI.md#GetTags2) | **Get** /openapi/v1/msp/{mspId}/sites/tags | Get msp site tag list
+[**GetSiteList1**](MSPSiteAPI.md#getsitelist1) | **Get** /openapi/v1/msp/{mspId}/sites | Get msp site list
+[**GetTags2**](MSPSiteAPI.md#gettags2) | **Get** /openapi/v1/msp/{mspId}/sites/tags | Get msp site tag list
 
 
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,10 +1,10 @@
-# \QuickActionAPI
+# QuickActionAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetNetworkWizardDefaultNetwork**](QuickActionAPI.md#GetNetworkWizardDefaultNetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/quick-action/network-wizard/default-network | Get default network of the network wizard
+[**GetNetworkWizardDefaultNetwork**](QuickActionAPI.md#getnetworkwizarddefaultnetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/quick-action/network-wizard/default-network | Get default network of the network wizard
 
 
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

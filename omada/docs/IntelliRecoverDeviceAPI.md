@@ -1,17 +1,17 @@
-# \IntelliRecoverDeviceAPI
+# IntelliRecoverDeviceAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddMonitorDevices**](IntelliRecoverDeviceAPI.md#AddMonitorDevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/add | Add device into intelli recover device list
-[**DeleteMonitorDevices**](IntelliRecoverDeviceAPI.md#DeleteMonitorDevices) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/delete | Delete the intelli recover device
-[**GetEligibleDeviceList**](IntelliRecoverDeviceAPI.md#GetEligibleDeviceList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/eligible-device-grids | Obtain the list of devices that can be monitored
-[**GetGridMonitorDevice**](IntelliRecoverDeviceAPI.md#GetGridMonitorDevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/grids | Get the intelli recover device list
-[**GetIntelliRecoverSetting**](IntelliRecoverDeviceAPI.md#GetIntelliRecoverSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/intelli-recover/auto-setting/config | Get intelli recover setting
-[**ModifyIntelliRecoverSetting**](IntelliRecoverDeviceAPI.md#ModifyIntelliRecoverSetting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/intelli-recover/auto-setting/modify | Modify intelli recover setting
-[**RebootDeviceUplinkPoe**](IntelliRecoverDeviceAPI.md#RebootDeviceUplinkPoe) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/reboot-uplink-poe | Reboot the device uplinkDevice poe
-[**VerifyMonitorDevice**](IntelliRecoverDeviceAPI.md#VerifyMonitorDevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/verify | Verify if the device is allowed to be monitored
+[**AddMonitorDevices**](IntelliRecoverDeviceAPI.md#addmonitordevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/add | Add device into intelli recover device list
+[**DeleteMonitorDevices**](IntelliRecoverDeviceAPI.md#deletemonitordevices) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/delete | Delete the intelli recover device
+[**GetEligibleDeviceList**](IntelliRecoverDeviceAPI.md#geteligibledevicelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/eligible-device-grids | Obtain the list of devices that can be monitored
+[**GetGridMonitorDevice**](IntelliRecoverDeviceAPI.md#getgridmonitordevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/grids | Get the intelli recover device list
+[**GetIntelliRecoverSetting**](IntelliRecoverDeviceAPI.md#getintellirecoversetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/intelli-recover/auto-setting/config | Get intelli recover setting
+[**ModifyIntelliRecoverSetting**](IntelliRecoverDeviceAPI.md#modifyintellirecoversetting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/intelli-recover/auto-setting/modify | Modify intelli recover setting
+[**RebootDeviceUplinkPoe**](IntelliRecoverDeviceAPI.md#rebootdeviceuplinkpoe) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/reboot-uplink-poe | Reboot the device uplinkDevice poe
+[**VerifyMonitorDevice**](IntelliRecoverDeviceAPI.md#verifymonitordevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/monitor-device/verify | Verify if the device is allowed to be monitored
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -605,7 +605,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

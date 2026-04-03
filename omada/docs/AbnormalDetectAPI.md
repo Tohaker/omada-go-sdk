@@ -1,17 +1,17 @@
-# \AbnormalDetectAPI
+# AbnormalDetectAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAnomalyEventSettingForSite**](AbnormalDetectAPI.md#GetAnomalyEventSettingForSite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/setting | Get site anomaly event setting
-[**GetAnomalyEventSettingForSiteTemlate**](AbnormalDetectAPI.md#GetAnomalyEventSettingForSiteTemlate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/setting | Get site template anomaly event setting
-[**GetNotificationTemplate**](AbnormalDetectAPI.md#GetNotificationTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/notification | Get abnormal notification template info
-[**GetNotificationTemplate1**](AbnormalDetectAPI.md#GetNotificationTemplate1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/notification | Get abnormal notification info
-[**ModifyAnomalyEventSettingForSite**](AbnormalDetectAPI.md#ModifyAnomalyEventSettingForSite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/setting/modify | Modify site anomaly event setting
-[**ModifyAnomalyEventSettingForSiteTemplate**](AbnormalDetectAPI.md#ModifyAnomalyEventSettingForSiteTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/setting/modify | Modify site template anomaly event setting
-[**ModifyNotification**](AbnormalDetectAPI.md#ModifyNotification) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/notification | Set abnormal notification info
-[**ModifyNotificationTemplate**](AbnormalDetectAPI.md#ModifyNotificationTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/notification | Set abnormal notification template info
+[**GetAnomalyEventSettingForSite**](AbnormalDetectAPI.md#getanomalyeventsettingforsite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/setting | Get site anomaly event setting
+[**GetAnomalyEventSettingForSiteTemlate**](AbnormalDetectAPI.md#getanomalyeventsettingforsitetemlate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/setting | Get site template anomaly event setting
+[**GetNotificationTemplate**](AbnormalDetectAPI.md#getnotificationtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/notification | Get abnormal notification template info
+[**GetNotificationTemplate1**](AbnormalDetectAPI.md#getnotificationtemplate1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/notification | Get abnormal notification info
+[**ModifyAnomalyEventSettingForSite**](AbnormalDetectAPI.md#modifyanomalyeventsettingforsite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/setting/modify | Modify site anomaly event setting
+[**ModifyAnomalyEventSettingForSiteTemplate**](AbnormalDetectAPI.md#modifyanomalyeventsettingforsitetemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/setting/modify | Modify site template anomaly event setting
+[**ModifyNotification**](AbnormalDetectAPI.md#modifynotification) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/notification | Set abnormal notification info
+[**ModifyNotificationTemplate**](AbnormalDetectAPI.md#modifynotificationtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/notification | Set abnormal notification template info
 
 
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,13 +1,13 @@
-# \LanMulticastAPI
+# LanMulticastAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateLanMulticast**](LanMulticastAPI.md#CreateLanMulticast) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-multicasts | Create new lan multicast
-[**DeleteLanMulticast**](LanMulticastAPI.md#DeleteLanMulticast) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/lan-multicasts/{multicastId} | Delete an existing lan multicast
-[**GetGridLanMulticasts**](LanMulticastAPI.md#GetGridLanMulticasts) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-multicasts | Get lan multicast list
-[**ModifyLanMulticast**](LanMulticastAPI.md#ModifyLanMulticast) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/lan-multicasts/{multicastId} | Modify a lan multicast
+[**CreateLanMulticast**](LanMulticastAPI.md#createlanmulticast) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-multicasts | Create new lan multicast
+[**DeleteLanMulticast**](LanMulticastAPI.md#deletelanmulticast) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/lan-multicasts/{multicastId} | Delete an existing lan multicast
+[**GetGridLanMulticasts**](LanMulticastAPI.md#getgridlanmulticasts) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-multicasts | Get lan multicast list
+[**ModifyLanMulticast**](LanMulticastAPI.md#modifylanmulticast) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/lan-multicasts/{multicastId} | Modify a lan multicast
 
 
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

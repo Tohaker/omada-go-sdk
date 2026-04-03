@@ -1,16 +1,16 @@
-# \MACFilteringAPI
+# MACFilteringAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateMacFiltering**](MACFilteringAPI.md#CreateMacFiltering) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters | Create MAC filtering
-[**DeleteMacFiltering**](MACFilteringAPI.md#DeleteMacFiltering) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters/{filterId} | Delete MAC filtering
-[**GetGridAllowMacFiltering**](MACFilteringAPI.md#GetGridAllowMacFiltering) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters/allow | Get allow MAC filtering list
-[**GetGridDenyMacFiltering**](MACFilteringAPI.md#GetGridDenyMacFiltering) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters/deny | Get deny MAC filtering list
-[**GetMacFilteringGeneralSetting**](MACFilteringAPI.md#GetMacFilteringGeneralSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-filter | Get MAC filtering general setting
-[**ModifyMacFiltering**](MACFilteringAPI.md#ModifyMacFiltering) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters/{filterId} | Modify MAC filtering
-[**ModifyMacFilteringGeneralSetting**](MACFilteringAPI.md#ModifyMacFilteringGeneralSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/mac-filter | Modify MAC filtering general setting
+[**CreateMacFiltering**](MACFilteringAPI.md#createmacfiltering) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters | Create MAC filtering
+[**DeleteMacFiltering**](MACFilteringAPI.md#deletemacfiltering) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters/{filterId} | Delete MAC filtering
+[**GetGridAllowMacFiltering**](MACFilteringAPI.md#getgridallowmacfiltering) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters/allow | Get allow MAC filtering list
+[**GetGridDenyMacFiltering**](MACFilteringAPI.md#getgriddenymacfiltering) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters/deny | Get deny MAC filtering list
+[**GetMacFilteringGeneralSetting**](MACFilteringAPI.md#getmacfilteringgeneralsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mac-filter | Get MAC filtering general setting
+[**ModifyMacFiltering**](MACFilteringAPI.md#modifymacfiltering) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/mac-filters/{filterId} | Modify MAC filtering
+[**ModifyMacFilteringGeneralSetting**](MACFilteringAPI.md#modifymacfilteringgeneralsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/mac-filter | Modify MAC filtering general setting
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

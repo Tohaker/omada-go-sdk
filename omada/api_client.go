@@ -5219,11 +5219,11 @@ type ClientAPIUpdateClientLockToApSettingRequest struct {
 	omadacId string
 	siteId string
 	clientMac string
-	clientLockToAPSetting *ClientLockToAPSetting
+	clientLockToApMacListSetting *ClientLockToApMacListSetting
 }
 
-func (r ClientAPIUpdateClientLockToApSettingRequest) ClientLockToAPSetting(clientLockToAPSetting ClientLockToAPSetting) ClientAPIUpdateClientLockToApSettingRequest {
-	r.clientLockToAPSetting = &clientLockToAPSetting
+func (r ClientAPIUpdateClientLockToApSettingRequest) ClientLockToApMacListSetting(clientLockToApMacListSetting ClientLockToApMacListSetting) ClientAPIUpdateClientLockToApSettingRequest {
+	r.clientLockToApMacListSetting = &clientLockToApMacListSetting
 	return r
 }
 
@@ -5275,8 +5275,8 @@ func (a *ClientAPIService) UpdateClientLockToApSettingExecute(r ClientAPIUpdateC
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.clientLockToAPSetting == nil {
-		return localVarReturnValue, nil, reportError("clientLockToAPSetting is required and must be specified")
+	if r.clientLockToApMacListSetting == nil {
+		return localVarReturnValue, nil, reportError("clientLockToApMacListSetting is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -5297,7 +5297,7 @@ func (a *ClientAPIService) UpdateClientLockToApSettingExecute(r ClientAPIUpdateC
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.clientLockToAPSetting
+	localVarPostBody = r.clientLockToApMacListSetting
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

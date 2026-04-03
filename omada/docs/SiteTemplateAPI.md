@@ -1,41 +1,41 @@
-# \SiteTemplateAPI
+# SiteTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchSyncSiteWithTemplate**](SiteTemplateAPI.md#BatchSyncSiteWithTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multi-sites/sync | Batch sync site settings with the site template
-[**BindSiteTemplate**](SiteTemplateAPI.md#BindSiteTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bind-site | Bind site with a site template
-[**BoundSiteExistUnSupportRadSecDevice**](SiteTemplateAPI.md#BoundSiteExistUnSupportRadSecDevice) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devices/un-support-radsec | Check for unsupported RadSec devices in the bound sites.
-[**CopySiteTemplate**](SiteTemplateAPI.md#CopySiteTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/copy | Create Site Template by copying exist site template
-[**CopySiteTemplateToCustomers**](SiteTemplateAPI.md#CopySiteTemplateToCustomers) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/copy/batch | Copy site template to customers
-[**CreateDeviceTemplate**](SiteTemplateAPI.md#CreateDeviceTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates | create device template
-[**CreateNewSiteTemplate**](SiteTemplateAPI.md#CreateNewSiteTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates | Create new site template
-[**DeleteDeviceTemplate**](SiteTemplateAPI.md#DeleteDeviceTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId} | delete device template
-[**DeleteSiteTemplate**](SiteTemplateAPI.md#DeleteSiteTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId} | Delete an existing site template
-[**DeviceTemplateBindDeviceBatch**](SiteTemplateAPI.md#DeviceTemplateBindDeviceBatch) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/batch-binddevice | Device template batch bind devices
-[**DeviceTemplateSyncConfigBatch**](SiteTemplateAPI.md#DeviceTemplateSyncConfigBatch) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/batch-sync-config | Device template batch sync config to devices
-[**DeviceTemplateUnbindDeviceBatch**](SiteTemplateAPI.md#DeviceTemplateUnbindDeviceBatch) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/batch-unbinddevice | Device template batch unbind devices
-[**GetBoundSites**](SiteTemplateAPI.md#GetBoundSites) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/binding-sites | Get sites info which bound to the site template
-[**GetGridDeviceTemplate**](SiteTemplateAPI.md#GetGridDeviceTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates | Get deviceTemplate info list
-[**GetGridDeviceTemplateAvailableDevices**](SiteTemplateAPI.md#GetGridDeviceTemplateAvailableDevices) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/available-bind-devices | Get deviceTemplate&#39;s available devices
-[**GetGridDeviceTemplateBoundDevices**](SiteTemplateAPI.md#GetGridDeviceTemplateBoundDevices) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/bound-devices | Get deviceTemplate&#39;s bound devices
-[**GetGridDeviceTemplateDetail**](SiteTemplateAPI.md#GetGridDeviceTemplateDetail) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/detail | get device template
-[**GetGridDevicesAvailableTemplate**](SiteTemplateAPI.md#GetGridDevicesAvailableTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/available-devices/{siteId} | get the devices on the site and the templates that can be bound
-[**GetSiteTemplateAllModules**](SiteTemplateAPI.md#GetSiteTemplateAllModules) | **Get** /openapi/v1/{omadacId}/sitetemplates/all-modules | Get all function modules which can be selected when creating site template
-[**GetSiteTemplateConfiguration**](SiteTemplateAPI.md#GetSiteTemplateConfiguration) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/configuration | get site template settings
-[**GetSiteTemplateDstInfo**](SiteTemplateAPI.md#GetSiteTemplateDstInfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/dst-info | Get daylight saving time information for the Site template configuration
-[**GetSiteTemplateEntity**](SiteTemplateAPI.md#GetSiteTemplateEntity) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId} | Get site template info
-[**GetSiteTemplateGeneralConfig**](SiteTemplateAPI.md#GetSiteTemplateGeneralConfig) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/general/config | get site template general config
-[**GetSiteTemplateList**](SiteTemplateAPI.md#GetSiteTemplateList) | **Get** /openapi/v1/{omadacId}/sitetemplates | Get site template list
-[**GetSiteTemplateModules**](SiteTemplateAPI.md#GetSiteTemplateModules) | **Get** /openapi/v1/{omadacId}/sitetemplates/modules | Get function modules which can be selected when creating site template
-[**GetSiteTemplateService**](SiteTemplateAPI.md#GetSiteTemplateService) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service | get site template service
-[**GetSiteTemplateWirelessFeature**](SiteTemplateAPI.md#GetSiteTemplateWirelessFeature) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/wireless/feature | get site template WirelessFeature
-[**GetSitesOverrides**](SiteTemplateAPI.md#GetSitesOverrides) | **Get** /openapi/v1/{omadacId}/site-overrides | get site overrides
-[**GetValidDeviceModel**](SiteTemplateAPI.md#GetValidDeviceModel) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/available-devicemodels | get valid device template
-[**ModifyDeviceTemplate**](SiteTemplateAPI.md#ModifyDeviceTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId} | modify device template
-[**UnbindSite**](SiteTemplateAPI.md#UnbindSite) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/batch-unbind | Batch unbind sites from a site template
-[**UpdateSiteTemplateEntity**](SiteTemplateAPI.md#UpdateSiteTemplateEntity) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId} | Modify an existing site template
+[**BatchSyncSiteWithTemplate**](SiteTemplateAPI.md#batchsyncsitewithtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multi-sites/sync | Batch sync site settings with the site template
+[**BindSiteTemplate**](SiteTemplateAPI.md#bindsitetemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bind-site | Bind site with a site template
+[**BoundSiteExistUnSupportRadSecDevice**](SiteTemplateAPI.md#boundsiteexistunsupportradsecdevice) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devices/un-support-radsec | Check for unsupported RadSec devices in the bound sites.
+[**CopySiteTemplate**](SiteTemplateAPI.md#copysitetemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/copy | Create Site Template by copying exist site template
+[**CopySiteTemplateToCustomers**](SiteTemplateAPI.md#copysitetemplatetocustomers) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/copy/batch | Copy site template to customers
+[**CreateDeviceTemplate**](SiteTemplateAPI.md#createdevicetemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates | create device template
+[**CreateNewSiteTemplate**](SiteTemplateAPI.md#createnewsitetemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates | Create new site template
+[**DeleteDeviceTemplate**](SiteTemplateAPI.md#deletedevicetemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId} | delete device template
+[**DeleteSiteTemplate**](SiteTemplateAPI.md#deletesitetemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId} | Delete an existing site template
+[**DeviceTemplateBindDeviceBatch**](SiteTemplateAPI.md#devicetemplatebinddevicebatch) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/batch-binddevice | Device template batch bind devices
+[**DeviceTemplateSyncConfigBatch**](SiteTemplateAPI.md#devicetemplatesyncconfigbatch) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/batch-sync-config | Device template batch sync config to devices
+[**DeviceTemplateUnbindDeviceBatch**](SiteTemplateAPI.md#devicetemplateunbinddevicebatch) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/batch-unbinddevice | Device template batch unbind devices
+[**GetBoundSites**](SiteTemplateAPI.md#getboundsites) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/binding-sites | Get sites info which bound to the site template
+[**GetGridDeviceTemplate**](SiteTemplateAPI.md#getgriddevicetemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates | Get deviceTemplate info list
+[**GetGridDeviceTemplateAvailableDevices**](SiteTemplateAPI.md#getgriddevicetemplateavailabledevices) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/available-bind-devices | Get deviceTemplate&#39;s available devices
+[**GetGridDeviceTemplateBoundDevices**](SiteTemplateAPI.md#getgriddevicetemplatebounddevices) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/bound-devices | Get deviceTemplate&#39;s bound devices
+[**GetGridDeviceTemplateDetail**](SiteTemplateAPI.md#getgriddevicetemplatedetail) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/detail | get device template
+[**GetGridDevicesAvailableTemplate**](SiteTemplateAPI.md#getgriddevicesavailabletemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/available-devices/{siteId} | get the devices on the site and the templates that can be bound
+[**GetSiteTemplateAllModules**](SiteTemplateAPI.md#getsitetemplateallmodules) | **Get** /openapi/v1/{omadacId}/sitetemplates/all-modules | Get all function modules which can be selected when creating site template
+[**GetSiteTemplateConfiguration**](SiteTemplateAPI.md#getsitetemplateconfiguration) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/configuration | get site template settings
+[**GetSiteTemplateDstInfo**](SiteTemplateAPI.md#getsitetemplatedstinfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/dst-info | Get daylight saving time information for the Site template configuration
+[**GetSiteTemplateEntity**](SiteTemplateAPI.md#getsitetemplateentity) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId} | Get site template info
+[**GetSiteTemplateGeneralConfig**](SiteTemplateAPI.md#getsitetemplategeneralconfig) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/general/config | get site template general config
+[**GetSiteTemplateList**](SiteTemplateAPI.md#getsitetemplatelist) | **Get** /openapi/v1/{omadacId}/sitetemplates | Get site template list
+[**GetSiteTemplateModules**](SiteTemplateAPI.md#getsitetemplatemodules) | **Get** /openapi/v1/{omadacId}/sitetemplates/modules | Get function modules which can be selected when creating site template
+[**GetSiteTemplateService**](SiteTemplateAPI.md#getsitetemplateservice) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service | get site template service
+[**GetSiteTemplateWirelessFeature**](SiteTemplateAPI.md#getsitetemplatewirelessfeature) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/wireless/feature | get site template WirelessFeature
+[**GetSitesOverrides**](SiteTemplateAPI.md#getsitesoverrides) | **Get** /openapi/v1/{omadacId}/site-overrides | get site overrides
+[**GetValidDeviceModel**](SiteTemplateAPI.md#getvaliddevicemodel) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/available-devicemodels | get valid device template
+[**ModifyDeviceTemplate**](SiteTemplateAPI.md#modifydevicetemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId} | modify device template
+[**UnbindSite**](SiteTemplateAPI.md#unbindsite) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/batch-unbind | Batch unbind sites from a site template
+[**UpdateSiteTemplateEntity**](SiteTemplateAPI.md#updatesitetemplateentity) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId} | Modify an existing site template
 
 
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -547,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -852,7 +852,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -930,7 +930,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1007,7 +1007,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1084,7 +1084,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1164,7 +1164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1244,7 +1244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1321,7 +1321,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1401,7 +1401,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1471,7 +1471,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1544,7 +1544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1617,7 +1617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1690,7 +1690,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1763,7 +1763,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1841,7 +1841,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1911,7 +1911,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1984,7 +1984,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2057,7 +2057,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2129,7 +2129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2202,7 +2202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2280,7 +2280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2355,7 +2355,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2430,7 +2430,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

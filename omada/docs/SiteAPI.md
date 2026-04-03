@@ -1,35 +1,35 @@
-# \SiteAPI
+# SiteAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddScenario**](SiteAPI.md#AddScenario) | **Post** /openapi/v1/{omadacId}/scenarios | Create new scenario
-[**AddTag1**](SiteAPI.md#AddTag1) | **Post** /openapi/v1/{omadacId}/sites/tags | Create new site tag
-[**BatchSiteCopy**](SiteAPI.md#BatchSiteCopy) | **Post** /openapi/v1/{omadacId}/sites/copy | Batch create sites by copying from existing site
-[**BatchSiteImport**](SiteAPI.md#BatchSiteImport) | **Post** /openapi/v1/{omadacId}/sites/multi-import | Batch create sites by importing site backup files from file server
-[**CreateNewSite**](SiteAPI.md#CreateNewSite) | **Post** /openapi/v1/{omadacId}/sites | Create new site
-[**CreateNewSiteByTemplate**](SiteAPI.md#CreateNewSiteByTemplate) | **Post** /openapi/v1/{omadacId}/sites/template | Create new site from site template
-[**DeleteScenario**](SiteAPI.md#DeleteScenario) | **Delete** /openapi/v1/{omadacId}/scenarios | Delete site scenario
-[**DeleteSite**](SiteAPI.md#DeleteSite) | **Delete** /openapi/v1/{omadacId}/sites/{siteId} | Delete an existing site
-[**DeleteTag1**](SiteAPI.md#DeleteTag1) | **Delete** /openapi/v1/{omadacId}/sites/tags | Delete an existing site tag
-[**GetAvailableSiteToBind**](SiteAPI.md#GetAvailableSiteToBind) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/available-bind | Get available site to bind template
-[**GetNtpServerStatus**](SiteAPI.md#GetNtpServerStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/ntp | Get ntp server status
-[**GetNtpServerStatusTemplate**](SiteAPI.md#GetNtpServerStatusTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/ntp | Get template ntp server status
-[**GetPlacedSitePositions**](SiteAPI.md#GetPlacedSitePositions) | **Get** /openapi/v1/{omadacId}/placed-site-position | Obtain the geographic location information of Placed Sites
-[**GetScenarioList**](SiteAPI.md#GetScenarioList) | **Get** /openapi/v1/{omadacId}/scenarios | Get scenario list
-[**GetScenarioListDifference**](SiteAPI.md#GetScenarioListDifference) | **Get** /openapi/v1/{omadacId}/scenarios/difference | Get scenario list difference
-[**GetSiteDeviceAccountSetting**](SiteAPI.md#GetSiteDeviceAccountSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/device-account | Get site device account setting
-[**GetSiteEntity**](SiteAPI.md#GetSiteEntity) | **Get** /openapi/v1/{omadacId}/sites/{siteId} | Get site info
-[**GetSiteInfoForAbnormal**](SiteAPI.md#GetSiteInfoForAbnormal) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/global-dashboard/site-map/abnormal | Get the details of a site
-[**GetSiteList**](SiteAPI.md#GetSiteList) | **Get** /openapi/v1/{omadacId}/sites | Get site list
-[**GetSiteSummaryStatisticByOpenApi**](SiteAPI.md#GetSiteSummaryStatisticByOpenApi) | **Post** /openapi/v1/{omadacId}/sites/statistic | Get sites statistic
-[**GetSiteUrlByOpenApi**](SiteAPI.md#GetSiteUrlByOpenApi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url | Get site url
-[**GetTags1**](SiteAPI.md#GetTags1) | **Get** /openapi/v1/{omadacId}/sites/tags | Get site tag list
-[**GetUnplacedSitePositions**](SiteAPI.md#GetUnplacedSitePositions) | **Get** /openapi/v1/{omadacId}/unplaced-site-position | Obtain the geographic location information of unplaced Sites
-[**ModifyTag1**](SiteAPI.md#ModifyTag1) | **Patch** /openapi/v1/{omadacId}/sites/tags | Modify an existing site tag
-[**UpdateSiteDeviceAccountSetting**](SiteAPI.md#UpdateSiteDeviceAccountSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/device-account | Update site device account setting
-[**UpdateSiteEntity**](SiteAPI.md#UpdateSiteEntity) | **Put** /openapi/v1/{omadacId}/sites/{siteId} | Modify an existing site
+[**AddScenario**](SiteAPI.md#addscenario) | **Post** /openapi/v1/{omadacId}/scenarios | Create new scenario
+[**AddTag1**](SiteAPI.md#addtag1) | **Post** /openapi/v1/{omadacId}/sites/tags | Create new site tag
+[**BatchSiteCopy**](SiteAPI.md#batchsitecopy) | **Post** /openapi/v1/{omadacId}/sites/copy | Batch create sites by copying from existing site
+[**BatchSiteImport**](SiteAPI.md#batchsiteimport) | **Post** /openapi/v1/{omadacId}/sites/multi-import | Batch create sites by importing site backup files from file server
+[**CreateNewSite**](SiteAPI.md#createnewsite) | **Post** /openapi/v1/{omadacId}/sites | Create new site
+[**CreateNewSiteByTemplate**](SiteAPI.md#createnewsitebytemplate) | **Post** /openapi/v1/{omadacId}/sites/template | Create new site from site template
+[**DeleteScenario**](SiteAPI.md#deletescenario) | **Delete** /openapi/v1/{omadacId}/scenarios | Delete site scenario
+[**DeleteSite**](SiteAPI.md#deletesite) | **Delete** /openapi/v1/{omadacId}/sites/{siteId} | Delete an existing site
+[**DeleteTag1**](SiteAPI.md#deletetag1) | **Delete** /openapi/v1/{omadacId}/sites/tags | Delete an existing site tag
+[**GetAvailableSiteToBind**](SiteAPI.md#getavailablesitetobind) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/available-bind | Get available site to bind template
+[**GetNtpServerStatus**](SiteAPI.md#getntpserverstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/ntp | Get ntp server status
+[**GetNtpServerStatusTemplate**](SiteAPI.md#getntpserverstatustemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/ntp | Get template ntp server status
+[**GetPlacedSitePositions**](SiteAPI.md#getplacedsitepositions) | **Get** /openapi/v1/{omadacId}/placed-site-position | Obtain the geographic location information of Placed Sites
+[**GetScenarioList**](SiteAPI.md#getscenariolist) | **Get** /openapi/v1/{omadacId}/scenarios | Get scenario list
+[**GetScenarioListDifference**](SiteAPI.md#getscenariolistdifference) | **Get** /openapi/v1/{omadacId}/scenarios/difference | Get scenario list difference
+[**GetSiteDeviceAccountSetting**](SiteAPI.md#getsitedeviceaccountsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/device-account | Get site device account setting
+[**GetSiteEntity**](SiteAPI.md#getsiteentity) | **Get** /openapi/v1/{omadacId}/sites/{siteId} | Get site info
+[**GetSiteInfoForAbnormal**](SiteAPI.md#getsiteinfoforabnormal) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/global-dashboard/site-map/abnormal | Get the details of a site
+[**GetSiteList**](SiteAPI.md#getsitelist) | **Get** /openapi/v1/{omadacId}/sites | Get site list
+[**GetSiteSummaryStatisticByOpenApi**](SiteAPI.md#getsitesummarystatisticbyopenapi) | **Post** /openapi/v1/{omadacId}/sites/statistic | Get sites statistic
+[**GetSiteUrlByOpenApi**](SiteAPI.md#getsiteurlbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url | Get site url
+[**GetTags1**](SiteAPI.md#gettags1) | **Get** /openapi/v1/{omadacId}/sites/tags | Get site tag list
+[**GetUnplacedSitePositions**](SiteAPI.md#getunplacedsitepositions) | **Get** /openapi/v1/{omadacId}/unplaced-site-position | Obtain the geographic location information of unplaced Sites
+[**ModifyTag1**](SiteAPI.md#modifytag1) | **Patch** /openapi/v1/{omadacId}/sites/tags | Modify an existing site tag
+[**UpdateSiteDeviceAccountSetting**](SiteAPI.md#updatesitedeviceaccountsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/device-account | Update site device account setting
+[**UpdateSiteEntity**](SiteAPI.md#updatesiteentity) | **Put** /openapi/v1/{omadacId}/sites/{siteId} | Modify an existing site
 
 
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -670,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -822,7 +822,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -895,7 +895,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -965,7 +965,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1035,7 +1035,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1105,7 +1105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1178,7 +1178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1251,7 +1251,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1324,7 +1324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1406,7 +1406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1478,7 +1478,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1551,7 +1551,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1621,7 +1621,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1697,7 +1697,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1769,7 +1769,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1844,7 +1844,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1919,7 +1919,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

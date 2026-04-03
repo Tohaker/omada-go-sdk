@@ -1,19 +1,19 @@
-# \RoutingAPI
+# RoutingAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePolicyRouting**](RoutingAPI.md#CreatePolicyRouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings | Create new policy routing
-[**CreateStaticRouting**](RoutingAPI.md#CreateStaticRouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Create new static routing
-[**DeletePolicyRouting**](RoutingAPI.md#DeletePolicyRouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/{policyRoutingId} | Delete policy routing
-[**DeleteStaticRouting**](RoutingAPI.md#DeleteStaticRouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Delete static routing
-[**GetGridPolicyRouting**](RoutingAPI.md#GetGridPolicyRouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings | Get policy routing list
-[**GetGridStaticRouting**](RoutingAPI.md#GetGridStaticRouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Get static routing list
-[**GetStaticRoutingInterfaceList**](RoutingAPI.md#GetStaticRoutingInterfaceList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/interfaces | Get static routing interface list
-[**ModifyPolicyRouting**](RoutingAPI.md#ModifyPolicyRouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/{policyRoutingId} | Modify policy routing
-[**ModifyPolicyRoutingIndex**](RoutingAPI.md#ModifyPolicyRoutingIndex) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/modifyIndex | Modify policy routing Index
-[**ModifyStaticRouting**](RoutingAPI.md#ModifyStaticRouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Modify static routing
+[**CreatePolicyRouting**](RoutingAPI.md#createpolicyrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings | Create new policy routing
+[**CreateStaticRouting**](RoutingAPI.md#createstaticrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Create new static routing
+[**DeletePolicyRouting**](RoutingAPI.md#deletepolicyrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/{policyRoutingId} | Delete policy routing
+[**DeleteStaticRouting**](RoutingAPI.md#deletestaticrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Delete static routing
+[**GetGridPolicyRouting**](RoutingAPI.md#getgridpolicyrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings | Get policy routing list
+[**GetGridStaticRouting**](RoutingAPI.md#getgridstaticrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Get static routing list
+[**GetStaticRoutingInterfaceList**](RoutingAPI.md#getstaticroutinginterfacelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/interfaces | Get static routing interface list
+[**ModifyPolicyRouting**](RoutingAPI.md#modifypolicyrouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/{policyRoutingId} | Modify policy routing
+[**ModifyPolicyRoutingIndex**](RoutingAPI.md#modifypolicyroutingindex) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/modifyIndex | Modify policy routing Index
+[**ModifyStaticRouting**](RoutingAPI.md#modifystaticrouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Modify static routing
 
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -765,7 +765,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

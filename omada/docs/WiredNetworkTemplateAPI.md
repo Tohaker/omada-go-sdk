@@ -1,69 +1,69 @@
-# \WiredNetworkTemplateAPI
+# WiredNetworkTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchIsolateLanNetwork**](WiredNetworkTemplateAPI.md#BatchIsolateLanNetwork) | **Post** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/batch-isolate | Batch isolate network
-[**CheckNetworkTemplateParamWhenCreate**](WiredNetworkTemplateAPI.md#CheckNetworkTemplateParamWhenCreate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/param-check | Check basic parameters when creating network template
-[**CheckNetworkTemplateParamWhenModify**](WiredNetworkTemplateAPI.md#CheckNetworkTemplateParamWhenModify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/param-check | Check basic parameters when modifying the network
-[**CheckTemplateParamAndGetPreConfig**](WiredNetworkTemplateAPI.md#CheckTemplateParamAndGetPreConfig) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/check | Check all parameters and generate configuration when creating network template
-[**CheckTemplateParamAndGetPreConfigWhenModify**](WiredNetworkTemplateAPI.md#CheckTemplateParamAndGetPreConfigWhenModify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/check | Check all parameters and generate configuration when modifying the network template
-[**CheckTemplatePortBindingParamWhenCreate**](WiredNetworkTemplateAPI.md#CheckTemplatePortBindingParamWhenCreate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/ports-check | Check selected ports when creating network for site template
-[**CheckTemplatePortBindingParamWhenModify**](WiredNetworkTemplateAPI.md#CheckTemplatePortBindingParamWhenModify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/ports-check | Check port binding when modifying network for site template
-[**CheckVirtualWanUsed**](WiredNetworkTemplateAPI.md#CheckVirtualWanUsed) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/delete-check | Check Virtual Wan Used
-[**CheckWanLanStatus**](WiredNetworkTemplateAPI.md#CheckWanLanStatus) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wan-lan-status | Check template WAN-LAN status
-[**ConfirmCreateVlanNetworkTemplate**](WiredNetworkTemplateAPI.md#ConfirmCreateVlanNetworkTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/confirm | Confirm create lan network template
-[**ConfirmModifyVlanNetworkTemplate**](WiredNetworkTemplateAPI.md#ConfirmModifyVlanNetworkTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/confirm | Confirm modify lan network template
-[**CreateLanDnsTemplate**](WiredNetworkTemplateAPI.md#CreateLanDnsTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan/dns | Create LAN Dns template
-[**CreateLanNetworkTemplate**](WiredNetworkTemplateAPI.md#CreateLanNetworkTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks | Create LAN network template
-[**CreateLanProfileTemplate**](WiredNetworkTemplateAPI.md#CreateLanProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles | Create new LAN profile template
-[**CreateOswLanProfileTemplate**](WiredNetworkTemplateAPI.md#CreateOswLanProfileTemplate) | **Post** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles | Create new switch profile template
-[**CreateVirtualWanTemplate**](WiredNetworkTemplateAPI.md#CreateVirtualWanTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans | Create virtual WAN template
-[**CreateVlans**](WiredNetworkTemplateAPI.md#CreateVlans) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-vlans | Batch create vlans template
-[**DeleteLanDnsTemplate**](WiredNetworkTemplateAPI.md#DeleteLanDnsTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan/dns/{dnsId} | Delete LAN Dns template
-[**DeleteLanNetworkTemplate**](WiredNetworkTemplateAPI.md#DeleteLanNetworkTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/{networkId} | Delete LAN network template
-[**DeleteLanProfileTemplate**](WiredNetworkTemplateAPI.md#DeleteLanProfileTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Delete an existing LAN profile template
-[**DeleteOswLanProfileTemplate**](WiredNetworkTemplateAPI.md#DeleteOswLanProfileTemplate) | **Delete** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Delete an existing switch profile template
-[**DeleteVirtualWan**](WiredNetworkTemplateAPI.md#DeleteVirtualWan) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId} | Delete virtual WAN template
-[**GetAllInterfacesForBatchIsolate**](WiredNetworkTemplateAPI.md#GetAllInterfacesForBatchIsolate) | **Get** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/isolate/interfaces | Get interface Grid
-[**GetAllLanNetworksTemplate**](WiredNetworkTemplateAPI.md#GetAllLanNetworksTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/all | Get all network templates for the omada id and site template id
-[**GetAllValidVlansInSiteForSwitchOuiBasedVlan**](WiredNetworkTemplateAPI.md#GetAllValidVlansInSiteForSwitchOuiBasedVlan) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/valid-vlans | Get valid site template vlanList for switch oui based vlan
-[**GetAutoEffectDevicesTemplateWhenCreate**](WiredNetworkTemplateAPI.md#GetAutoEffectDevicesTemplateWhenCreate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/auto-effect-devices | Get auto effect devices when creating network
-[**GetAutoEffectDevicesTemplateWhenModify**](WiredNetworkTemplateAPI.md#GetAutoEffectDevicesTemplateWhenModify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/auto-effect-devices | Get auto effect devices when modifying network
-[**GetAutoSelectDevicesTemplateWhenModify**](WiredNetworkTemplateAPI.md#GetAutoSelectDevicesTemplateWhenModify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/auto-select-devices | Get auto select devices when modifying network
-[**GetAvailableVirtualWanTemplate**](WiredNetworkTemplateAPI.md#GetAvailableVirtualWanTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/available-virtual-wans | Query available virtual WAN list for template
-[**GetAvailableWanPorts**](WiredNetworkTemplateAPI.md#GetAvailableWanPorts) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/wan-ports | Get available wan ports
-[**GetGridSupportVlanNetworkDevicesBySiteTemplate**](WiredNetworkTemplateAPI.md#GetGridSupportVlanNetworkDevicesBySiteTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/devices | Get device template list that can be dhcp server
-[**GetGridVirtualWanTemplate**](WiredNetworkTemplateAPI.md#GetGridVirtualWanTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans | Query virtual WAN list template
-[**GetInterfaceLanNetworkV21**](WiredNetworkTemplateAPI.md#GetInterfaceLanNetworkV21) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/interface | Get all \&quot;single\&quot;/\&quot;multi\&quot; interface lan network template
-[**GetInternetBasicPortInfo**](WiredNetworkTemplateAPI.md#GetInternetBasicPortInfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/basic-info | Get site template internet basic info
-[**GetInternetLoadBalance**](WiredNetworkTemplateAPI.md#GetInternetLoadBalance) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/load-balance | Get site template internet load balance config
-[**GetInternetTemplate**](WiredNetworkTemplateAPI.md#GetInternetTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet | Get internet info
-[**GetLanDnsTemplateList**](WiredNetworkTemplateAPI.md#GetLanDnsTemplateList) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan/dns | Get LAN Dns template list
-[**GetLanNetworkTemplate**](WiredNetworkTemplateAPI.md#GetLanNetworkTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/{networkId} | Get LAN network template
-[**GetLanNetworkTemplateList**](WiredNetworkTemplateAPI.md#GetLanNetworkTemplateList) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks | Get LAN network template list
-[**GetLanNetworkTemplateListV3**](WiredNetworkTemplateAPI.md#GetLanNetworkTemplateListV3) | **Get** /openapi/v3/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks | Get LAN network template list
-[**GetLanProfileTemplateList**](WiredNetworkTemplateAPI.md#GetLanProfileTemplateList) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles | Get LAN profile template list
-[**GetLoadBalanceWeightStatusTemplate**](WiredNetworkTemplateAPI.md#GetLoadBalanceWeightStatusTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/load-balance/status | Check Wan Loadbalance status
-[**GetOswLanProfileTemplateList**](WiredNetworkTemplateAPI.md#GetOswLanProfileTemplateList) | **Get** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles | Get switch profile template list
-[**GetSelectDeviceTemplatePortsInfo**](WiredNetworkTemplateAPI.md#GetSelectDeviceTemplatePortsInfo) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/devices/ports | Get the port information of the selected device templates when creating network for site template
-[**GetSelectDeviceTemplatePortsInfoWhenModify**](WiredNetworkTemplateAPI.md#GetSelectDeviceTemplatePortsInfoWhenModify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/devices/ports | Get the port information of the selected device templates when modifying the network for site template
-[**GetSupportPortsDeviceTemplates**](WiredNetworkTemplateAPI.md#GetSupportPortsDeviceTemplates) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/support-ports | Get grid devices templates that support ports config.
-[**GetTemplateGridVlanNetworkAffectedDevicePorts**](WiredNetworkTemplateAPI.md#GetTemplateGridVlanNetworkAffectedDevicePorts) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlan/{vlan}/ports | Get the ports of devices template that use the network
-[**GetUseLanProfileESTemplateList**](WiredNetworkTemplateAPI.md#GetUseLanProfileESTemplateList) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId}/es | Get Use LAN profile ES template list
-[**GetVlanNetworkAffectedDevice**](WiredNetworkTemplateAPI.md#GetVlanNetworkAffectedDevice) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlan/{vlan}/devices | Get device template list that use the network
-[**GetVlanNetworkAffectedSsid**](WiredNetworkTemplateAPI.md#GetVlanNetworkAffectedSsid) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlan/{vlan}/ssids | Get grid ssid template list that use the vlan
-[**GetWanPortsMaxSpeed**](WiredNetworkTemplateAPI.md#GetWanPortsMaxSpeed) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wan-max-speed | Get wan ports max speed
-[**ModifyInternetBasicPortInfo**](WiredNetworkTemplateAPI.md#ModifyInternetBasicPortInfo) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/basic-info | Modify site template internet basic configuration
-[**ModifyInternetLoadBalance**](WiredNetworkTemplateAPI.md#ModifyInternetLoadBalance) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/load-balance | Modify site template internet load balance config
-[**ModifyLanDnsTemplate**](WiredNetworkTemplateAPI.md#ModifyLanDnsTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan/dns/{dnsId} | Modify LAN Dns template
-[**ModifyLanNetworkTemplate**](WiredNetworkTemplateAPI.md#ModifyLanNetworkTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/{networkId} | Modify LAN network template
-[**ModifyLanProfileTemplate**](WiredNetworkTemplateAPI.md#ModifyLanProfileTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Modify a LAN profile template
-[**ModifyOswLanProfileTemplate**](WiredNetworkTemplateAPI.md#ModifyOswLanProfileTemplate) | **Patch** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Modify a switch profile template
-[**ModifyVirtualWanStatusTemplate**](WiredNetworkTemplateAPI.md#ModifyVirtualWanStatusTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId}/status | Modify virtual WAN status template
-[**ModifyVirtualWanTemplate**](WiredNetworkTemplateAPI.md#ModifyVirtualWanTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId} | Modify virtual WAN template
-[**ModifyWanPortsTemplate**](WiredNetworkTemplateAPI.md#ModifyWanPortsTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/wan-ports | Modify Wan Ports
+[**BatchIsolateLanNetwork**](WiredNetworkTemplateAPI.md#batchisolatelannetwork) | **Post** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/batch-isolate | Batch isolate network
+[**CheckNetworkTemplateParamWhenCreate**](WiredNetworkTemplateAPI.md#checknetworktemplateparamwhencreate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/param-check | Check basic parameters when creating network template
+[**CheckNetworkTemplateParamWhenModify**](WiredNetworkTemplateAPI.md#checknetworktemplateparamwhenmodify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/param-check | Check basic parameters when modifying the network
+[**CheckTemplateParamAndGetPreConfig**](WiredNetworkTemplateAPI.md#checktemplateparamandgetpreconfig) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/check | Check all parameters and generate configuration when creating network template
+[**CheckTemplateParamAndGetPreConfigWhenModify**](WiredNetworkTemplateAPI.md#checktemplateparamandgetpreconfigwhenmodify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/check | Check all parameters and generate configuration when modifying the network template
+[**CheckTemplatePortBindingParamWhenCreate**](WiredNetworkTemplateAPI.md#checktemplateportbindingparamwhencreate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/ports-check | Check selected ports when creating network for site template
+[**CheckTemplatePortBindingParamWhenModify**](WiredNetworkTemplateAPI.md#checktemplateportbindingparamwhenmodify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/ports-check | Check port binding when modifying network for site template
+[**CheckVirtualWanUsed**](WiredNetworkTemplateAPI.md#checkvirtualwanused) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/delete-check | Check Virtual Wan Used
+[**CheckWanLanStatus**](WiredNetworkTemplateAPI.md#checkwanlanstatus) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wan-lan-status | Check template WAN-LAN status
+[**ConfirmCreateVlanNetworkTemplate**](WiredNetworkTemplateAPI.md#confirmcreatevlannetworktemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/confirm | Confirm create lan network template
+[**ConfirmModifyVlanNetworkTemplate**](WiredNetworkTemplateAPI.md#confirmmodifyvlannetworktemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/confirm | Confirm modify lan network template
+[**CreateLanDnsTemplate**](WiredNetworkTemplateAPI.md#createlandnstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan/dns | Create LAN Dns template
+[**CreateLanNetworkTemplate**](WiredNetworkTemplateAPI.md#createlannetworktemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks | Create LAN network template
+[**CreateLanProfileTemplate**](WiredNetworkTemplateAPI.md#createlanprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles | Create new LAN profile template
+[**CreateOswLanProfileTemplate**](WiredNetworkTemplateAPI.md#createoswlanprofiletemplate) | **Post** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles | Create new switch profile template
+[**CreateVirtualWanTemplate**](WiredNetworkTemplateAPI.md#createvirtualwantemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans | Create virtual WAN template
+[**CreateVlans**](WiredNetworkTemplateAPI.md#createvlans) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-vlans | Batch create vlans template
+[**DeleteLanDnsTemplate**](WiredNetworkTemplateAPI.md#deletelandnstemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan/dns/{dnsId} | Delete LAN Dns template
+[**DeleteLanNetworkTemplate**](WiredNetworkTemplateAPI.md#deletelannetworktemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/{networkId} | Delete LAN network template
+[**DeleteLanProfileTemplate**](WiredNetworkTemplateAPI.md#deletelanprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Delete an existing LAN profile template
+[**DeleteOswLanProfileTemplate**](WiredNetworkTemplateAPI.md#deleteoswlanprofiletemplate) | **Delete** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Delete an existing switch profile template
+[**DeleteVirtualWan**](WiredNetworkTemplateAPI.md#deletevirtualwan) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId} | Delete virtual WAN template
+[**GetAllInterfacesForBatchIsolate**](WiredNetworkTemplateAPI.md#getallinterfacesforbatchisolate) | **Get** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/isolate/interfaces | Get interface Grid
+[**GetAllLanNetworksTemplate**](WiredNetworkTemplateAPI.md#getalllannetworkstemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/all | Get all network templates for the omada id and site template id
+[**GetAllValidVlansInSiteForSwitchOuiBasedVlan**](WiredNetworkTemplateAPI.md#getallvalidvlansinsiteforswitchouibasedvlan) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/valid-vlans | Get valid site template vlanList for switch oui based vlan
+[**GetAutoEffectDevicesTemplateWhenCreate**](WiredNetworkTemplateAPI.md#getautoeffectdevicestemplatewhencreate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/auto-effect-devices | Get auto effect devices when creating network
+[**GetAutoEffectDevicesTemplateWhenModify**](WiredNetworkTemplateAPI.md#getautoeffectdevicestemplatewhenmodify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/auto-effect-devices | Get auto effect devices when modifying network
+[**GetAutoSelectDevicesTemplateWhenModify**](WiredNetworkTemplateAPI.md#getautoselectdevicestemplatewhenmodify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/auto-select-devices | Get auto select devices when modifying network
+[**GetAvailableVirtualWanTemplate**](WiredNetworkTemplateAPI.md#getavailablevirtualwantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/available-virtual-wans | Query available virtual WAN list for template
+[**GetAvailableWanPorts**](WiredNetworkTemplateAPI.md#getavailablewanports) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/wan-ports | Get available wan ports
+[**GetGridSupportVlanNetworkDevicesBySiteTemplate**](WiredNetworkTemplateAPI.md#getgridsupportvlannetworkdevicesbysitetemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/devices | Get device template list that can be dhcp server
+[**GetGridVirtualWanTemplate**](WiredNetworkTemplateAPI.md#getgridvirtualwantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans | Query virtual WAN list template
+[**GetInterfaceLanNetworkV21**](WiredNetworkTemplateAPI.md#getinterfacelannetworkv21) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/interface | Get all \&quot;single\&quot;/\&quot;multi\&quot; interface lan network template
+[**GetInternetBasicPortInfo**](WiredNetworkTemplateAPI.md#getinternetbasicportinfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/basic-info | Get site template internet basic info
+[**GetInternetLoadBalance**](WiredNetworkTemplateAPI.md#getinternetloadbalance) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/load-balance | Get site template internet load balance config
+[**GetInternetTemplate**](WiredNetworkTemplateAPI.md#getinternettemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet | Get internet info
+[**GetLanDnsTemplateList**](WiredNetworkTemplateAPI.md#getlandnstemplatelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan/dns | Get LAN Dns template list
+[**GetLanNetworkTemplate**](WiredNetworkTemplateAPI.md#getlannetworktemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/{networkId} | Get LAN network template
+[**GetLanNetworkTemplateList**](WiredNetworkTemplateAPI.md#getlannetworktemplatelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks | Get LAN network template list
+[**GetLanNetworkTemplateListV3**](WiredNetworkTemplateAPI.md#getlannetworktemplatelistv3) | **Get** /openapi/v3/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks | Get LAN network template list
+[**GetLanProfileTemplateList**](WiredNetworkTemplateAPI.md#getlanprofiletemplatelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles | Get LAN profile template list
+[**GetLoadBalanceWeightStatusTemplate**](WiredNetworkTemplateAPI.md#getloadbalanceweightstatustemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/load-balance/status | Check Wan Loadbalance status
+[**GetOswLanProfileTemplateList**](WiredNetworkTemplateAPI.md#getoswlanprofiletemplatelist) | **Get** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles | Get switch profile template list
+[**GetSelectDeviceTemplatePortsInfo**](WiredNetworkTemplateAPI.md#getselectdevicetemplateportsinfo) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/devices/ports | Get the port information of the selected device templates when creating network for site template
+[**GetSelectDeviceTemplatePortsInfoWhenModify**](WiredNetworkTemplateAPI.md#getselectdevicetemplateportsinfowhenmodify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/devices/ports | Get the port information of the selected device templates when modifying the network for site template
+[**GetSupportPortsDeviceTemplates**](WiredNetworkTemplateAPI.md#getsupportportsdevicetemplates) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/support-ports | Get grid devices templates that support ports config.
+[**GetTemplateGridVlanNetworkAffectedDevicePorts**](WiredNetworkTemplateAPI.md#gettemplategridvlannetworkaffecteddeviceports) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlan/{vlan}/ports | Get the ports of devices template that use the network
+[**GetUseLanProfileESTemplateList**](WiredNetworkTemplateAPI.md#getuselanprofileestemplatelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId}/es | Get Use LAN profile ES template list
+[**GetVlanNetworkAffectedDevice**](WiredNetworkTemplateAPI.md#getvlannetworkaffecteddevice) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlan/{vlan}/devices | Get device template list that use the network
+[**GetVlanNetworkAffectedSsid**](WiredNetworkTemplateAPI.md#getvlannetworkaffectedssid) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlan/{vlan}/ssids | Get grid ssid template list that use the vlan
+[**GetWanPortsMaxSpeed**](WiredNetworkTemplateAPI.md#getwanportsmaxspeed) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wan-max-speed | Get wan ports max speed
+[**ModifyInternetBasicPortInfo**](WiredNetworkTemplateAPI.md#modifyinternetbasicportinfo) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/basic-info | Modify site template internet basic configuration
+[**ModifyInternetLoadBalance**](WiredNetworkTemplateAPI.md#modifyinternetloadbalance) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/internet/load-balance | Modify site template internet load balance config
+[**ModifyLanDnsTemplate**](WiredNetworkTemplateAPI.md#modifylandnstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan/dns/{dnsId} | Modify LAN Dns template
+[**ModifyLanNetworkTemplate**](WiredNetworkTemplateAPI.md#modifylannetworktemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/{networkId} | Modify LAN network template
+[**ModifyLanProfileTemplate**](WiredNetworkTemplateAPI.md#modifylanprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Modify a LAN profile template
+[**ModifyOswLanProfileTemplate**](WiredNetworkTemplateAPI.md#modifyoswlanprofiletemplate) | **Patch** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Modify a switch profile template
+[**ModifyVirtualWanStatusTemplate**](WiredNetworkTemplateAPI.md#modifyvirtualwanstatustemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId}/status | Modify virtual WAN status template
+[**ModifyVirtualWanTemplate**](WiredNetworkTemplateAPI.md#modifyvirtualwantemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId} | Modify virtual WAN template
+[**ModifyWanPortsTemplate**](WiredNetworkTemplateAPI.md#modifywanportstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/wan-ports | Modify Wan Ports
 
 
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -737,7 +737,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -812,7 +812,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -890,7 +890,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -965,7 +965,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1040,7 +1040,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1115,7 +1115,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1190,7 +1190,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1265,7 +1265,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1340,7 +1340,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1416,7 +1416,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1492,7 +1492,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1568,7 +1568,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1644,7 +1644,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1720,7 +1720,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1797,7 +1797,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1870,7 +1870,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1947,7 +1947,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2022,7 +2022,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2100,7 +2100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2178,7 +2178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2251,7 +2251,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2326,7 +2326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2403,7 +2403,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2480,7 +2480,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2555,7 +2555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2628,7 +2628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2701,7 +2701,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2774,7 +2774,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2851,7 +2851,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2927,7 +2927,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3004,7 +3004,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3081,7 +3081,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3158,7 +3158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3231,7 +3231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3308,7 +3308,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3383,7 +3383,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3461,7 +3461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3534,7 +3534,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3617,7 +3617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3697,7 +3697,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3776,7 +3776,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3859,7 +3859,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3934,7 +3934,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4009,7 +4009,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4084,7 +4084,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4162,7 +4162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4240,7 +4240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4318,7 +4318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4396,7 +4396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4474,7 +4474,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4552,7 +4552,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4627,7 +4627,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,38 +1,38 @@
-# \SiteConfigurationAPI
+# SiteConfigurationAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetBandSteeringSetting**](SiteConfigurationAPI.md#GetBandSteeringSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/band-steering | Get site band steering setting
-[**GetBeaconControlSetting**](SiteConfigurationAPI.md#GetBeaconControlSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/beacon-control | Get site beacon control setting
-[**GetChannelLimitSetting**](SiteConfigurationAPI.md#GetChannelLimitSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/channel-limit | Get site channel limit setting
-[**GetDisasterModeStatus**](SiteConfigurationAPI.md#GetDisasterModeStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/disaster | Get the status of disaster modes in Japan
-[**GetExistSiteSettingByOpenApi**](SiteConfigurationAPI.md#GetExistSiteSettingByOpenApi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/exist | Query site setting exist or not
-[**GetLldpSetting**](SiteConfigurationAPI.md#GetLldpSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lldp | Get site lldp setting
-[**GetMeshSetting**](SiteConfigurationAPI.md#GetMeshSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mesh | Get site mesh setting
-[**GetMulticastRateLimitByOpenApi**](SiteConfigurationAPI.md#GetMulticastRateLimitByOpenApi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multicast-rate-limit | Get site multicast rate limit setting
-[**GetOmadacDstInfo**](SiteConfigurationAPI.md#GetOmadacDstInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dst-info | Get site DST
-[**GetPortalLogoutDomainSetting**](SiteConfigurationAPI.md#GetPortalLogoutDomainSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portal-logout | Get portal logout domain setting
-[**GetRemoteLoggingSetting**](SiteConfigurationAPI.md#GetRemoteLoggingSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remote-logging | Get site remote logging setting
-[**GetRoamingSetting**](SiteConfigurationAPI.md#GetRoamingSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/roaming | Get site roaming setting
-[**GetSiteLedSetting**](SiteConfigurationAPI.md#GetSiteLedSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/led | Get site led setting
-[**GetSiteRememberSettingByOpenApi**](SiteConfigurationAPI.md#GetSiteRememberSettingByOpenApi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remember-device | Get site remember device setting
-[**GetSiteSettingCap**](SiteConfigurationAPI.md#GetSiteSettingCap) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capacity | Get site capabilities.
-[**GetSiteSpecification**](SiteConfigurationAPI.md#GetSiteSpecification) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/specification | Get site functional specifications
-[**GetSiteSupportSwitchInfo**](SiteConfigurationAPI.md#GetSiteSupportSwitchInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-support | Get supported switch types information for the site
-[**ModifyDisasterModeStatus**](SiteConfigurationAPI.md#ModifyDisasterModeStatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/disaster | Modify the status of disaster modes in Japan
-[**ModifySiteRememberSettingByOpenApi**](SiteConfigurationAPI.md#ModifySiteRememberSettingByOpenApi) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/remember-device | Modify site remember device setting
-[**UpdateBandSteeringSetting**](SiteConfigurationAPI.md#UpdateBandSteeringSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/band-steering | Modify site band steering setting
-[**UpdateBeaconControlSetting**](SiteConfigurationAPI.md#UpdateBeaconControlSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/beacon-control | Modify site beacon control setting
-[**UpdateChannelLimitSetting**](SiteConfigurationAPI.md#UpdateChannelLimitSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/channel-limit | Modify site channel limit setting
-[**UpdateLldpSetting**](SiteConfigurationAPI.md#UpdateLldpSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/lldp | Modify site lldp setting
-[**UpdateMcastRateLimitSettingByOpenApi**](SiteConfigurationAPI.md#UpdateMcastRateLimitSettingByOpenApi) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/multicast-rate-limit | Modify site multicast rate limit setting
-[**UpdateMeshSetting**](SiteConfigurationAPI.md#UpdateMeshSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/mesh | Modify site mesh setting
-[**UpdatePortalLogoutDomainSetting**](SiteConfigurationAPI.md#UpdatePortalLogoutDomainSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/portal-logout | Modify portal logout domain setting
-[**UpdateRemoteLoggingSetting**](SiteConfigurationAPI.md#UpdateRemoteLoggingSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/remote-logging | Modify site remote logging setting
-[**UpdateRoamingSetting**](SiteConfigurationAPI.md#UpdateRoamingSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/roaming | Modify site roaming setting
-[**UpdateSiteLedSetting**](SiteConfigurationAPI.md#UpdateSiteLedSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/led | Modify site led setting
+[**GetBandSteeringSetting**](SiteConfigurationAPI.md#getbandsteeringsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/band-steering | Get site band steering setting
+[**GetBeaconControlSetting**](SiteConfigurationAPI.md#getbeaconcontrolsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/beacon-control | Get site beacon control setting
+[**GetChannelLimitSetting**](SiteConfigurationAPI.md#getchannellimitsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/channel-limit | Get site channel limit setting
+[**GetDisasterModeStatus**](SiteConfigurationAPI.md#getdisastermodestatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/disaster | Get the status of disaster modes in Japan
+[**GetExistSiteSettingByOpenApi**](SiteConfigurationAPI.md#getexistsitesettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/exist | Query site setting exist or not
+[**GetLldpSetting**](SiteConfigurationAPI.md#getlldpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lldp | Get site lldp setting
+[**GetMeshSetting**](SiteConfigurationAPI.md#getmeshsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mesh | Get site mesh setting
+[**GetMulticastRateLimitByOpenApi**](SiteConfigurationAPI.md#getmulticastratelimitbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multicast-rate-limit | Get site multicast rate limit setting
+[**GetOmadacDstInfo**](SiteConfigurationAPI.md#getomadacdstinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dst-info | Get site DST
+[**GetPortalLogoutDomainSetting**](SiteConfigurationAPI.md#getportallogoutdomainsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/portal-logout | Get portal logout domain setting
+[**GetRemoteLoggingSetting**](SiteConfigurationAPI.md#getremoteloggingsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remote-logging | Get site remote logging setting
+[**GetRoamingSetting**](SiteConfigurationAPI.md#getroamingsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/roaming | Get site roaming setting
+[**GetSiteLedSetting**](SiteConfigurationAPI.md#getsiteledsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/led | Get site led setting
+[**GetSiteRememberSettingByOpenApi**](SiteConfigurationAPI.md#getsiteremembersettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remember-device | Get site remember device setting
+[**GetSiteSettingCap**](SiteConfigurationAPI.md#getsitesettingcap) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capacity | Get site capabilities.
+[**GetSiteSpecification**](SiteConfigurationAPI.md#getsitespecification) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/specification | Get site functional specifications
+[**GetSiteSupportSwitchInfo**](SiteConfigurationAPI.md#getsitesupportswitchinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-support | Get supported switch types information for the site
+[**ModifyDisasterModeStatus**](SiteConfigurationAPI.md#modifydisastermodestatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/disaster | Modify the status of disaster modes in Japan
+[**ModifySiteRememberSettingByOpenApi**](SiteConfigurationAPI.md#modifysiteremembersettingbyopenapi) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/remember-device | Modify site remember device setting
+[**UpdateBandSteeringSetting**](SiteConfigurationAPI.md#updatebandsteeringsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/band-steering | Modify site band steering setting
+[**UpdateBeaconControlSetting**](SiteConfigurationAPI.md#updatebeaconcontrolsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/beacon-control | Modify site beacon control setting
+[**UpdateChannelLimitSetting**](SiteConfigurationAPI.md#updatechannellimitsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/channel-limit | Modify site channel limit setting
+[**UpdateLldpSetting**](SiteConfigurationAPI.md#updatelldpsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/lldp | Modify site lldp setting
+[**UpdateMcastRateLimitSettingByOpenApi**](SiteConfigurationAPI.md#updatemcastratelimitsettingbyopenapi) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/multicast-rate-limit | Modify site multicast rate limit setting
+[**UpdateMeshSetting**](SiteConfigurationAPI.md#updatemeshsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/mesh | Modify site mesh setting
+[**UpdatePortalLogoutDomainSetting**](SiteConfigurationAPI.md#updateportallogoutdomainsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/portal-logout | Modify portal logout domain setting
+[**UpdateRemoteLoggingSetting**](SiteConfigurationAPI.md#updateremoteloggingsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/remote-logging | Modify site remote logging setting
+[**UpdateRoamingSetting**](SiteConfigurationAPI.md#updateroamingsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/roaming | Modify site roaming setting
+[**UpdateSiteLedSetting**](SiteConfigurationAPI.md#updatesiteledsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/led | Modify site led setting
 
 
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -681,7 +681,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -754,7 +754,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -827,7 +827,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -900,7 +900,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -973,7 +973,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1046,7 +1046,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1119,7 +1119,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1192,7 +1192,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1265,7 +1265,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1340,7 +1340,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1415,7 +1415,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1490,7 +1490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1565,7 +1565,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1640,7 +1640,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1715,7 +1715,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1790,7 +1790,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1865,7 +1865,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1940,7 +1940,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2015,7 +2015,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2090,7 +2090,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2165,7 +2165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

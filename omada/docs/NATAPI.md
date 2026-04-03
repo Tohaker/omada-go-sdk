@@ -1,19 +1,19 @@
-# \NATAPI
+# NATAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateOtoNat**](NATAPI.md#CreateOtoNat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/nat/one-to-one-nat | Create new One-to-One NAT
-[**CreatePortForwarding**](NATAPI.md#CreatePortForwarding) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/nat/port-forwardings | Create new port forwarding
-[**DeleteOtoNat**](NATAPI.md#DeleteOtoNat) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/nat/one-to-one-nat/{otonatId} | Delete One-to-One NAT
-[**DeletePortForwarding**](NATAPI.md#DeletePortForwarding) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/nat/port-forwardings/{portForwardingId} | Delete port forwarding
-[**GetAlg**](NATAPI.md#GetAlg) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/nat/alg | Get ALG Info
-[**GetGridOtoNats**](NATAPI.md#GetGridOtoNats) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/nat/one-to-one-nat | Get One-to-One NAT list
-[**GetPortForwardingList**](NATAPI.md#GetPortForwardingList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/nat/port-forwardings | Get port forwarding list
-[**ModifyAlg**](NATAPI.md#ModifyAlg) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/nat/alg | Modify ALG setting
-[**ModifyOtoNat**](NATAPI.md#ModifyOtoNat) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/nat/one-to-one-nat/{otonatId} | Modify One-to-One NAT
-[**ModifyPortForwarding**](NATAPI.md#ModifyPortForwarding) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/nat/port-forwardings/{portForwardingId} | Modify port forwarding
+[**CreateOtoNat**](NATAPI.md#createotonat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/nat/one-to-one-nat | Create new One-to-One NAT
+[**CreatePortForwarding**](NATAPI.md#createportforwarding) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/nat/port-forwardings | Create new port forwarding
+[**DeleteOtoNat**](NATAPI.md#deleteotonat) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/nat/one-to-one-nat/{otonatId} | Delete One-to-One NAT
+[**DeletePortForwarding**](NATAPI.md#deleteportforwarding) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/nat/port-forwardings/{portForwardingId} | Delete port forwarding
+[**GetAlg**](NATAPI.md#getalg) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/nat/alg | Get ALG Info
+[**GetGridOtoNats**](NATAPI.md#getgridotonats) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/nat/one-to-one-nat | Get One-to-One NAT list
+[**GetPortForwardingList**](NATAPI.md#getportforwardinglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/nat/port-forwardings | Get port forwarding list
+[**ModifyAlg**](NATAPI.md#modifyalg) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/nat/alg | Modify ALG setting
+[**ModifyOtoNat**](NATAPI.md#modifyotonat) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/nat/one-to-one-nat/{otonatId} | Modify One-to-One NAT
+[**ModifyPortForwarding**](NATAPI.md#modifyportforwarding) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/nat/port-forwardings/{portForwardingId} | Modify port forwarding
 
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -765,7 +765,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

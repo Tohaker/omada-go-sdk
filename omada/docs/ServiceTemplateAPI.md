@@ -1,42 +1,42 @@
-# \ServiceTemplateAPI
+# ServiceTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPortScheduleTemplate**](ServiceTemplateAPI.md#AddPortScheduleTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules | Create a new Port Schedule Template
-[**CreateDdnsTemplate**](ServiceTemplateAPI.md#CreateDdnsTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns | Create a new Dynamic DNS template entry
-[**CreateMdnsTemplate**](ServiceTemplateAPI.md#CreateMdnsTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns | Create a new mDNS template rule
-[**DeleteDdnsTemplate**](ServiceTemplateAPI.md#DeleteDdnsTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/{ddnsId} | Delete an exist Dynamic DNS template entry
-[**DeleteMdnsTemplate**](ServiceTemplateAPI.md#DeleteMdnsTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns/{mdnsId} | Delete an exist mDNS template rule
-[**GetDdnsGridTemplate**](ServiceTemplateAPI.md#GetDdnsGridTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns | Get Dynamic DNS template list
-[**GetDnsCacheSettingTemplate**](ServiceTemplateAPI.md#GetDnsCacheSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/dns-cache | Get DNS cache setting template
-[**GetDnsProxyTemplate**](ServiceTemplateAPI.md#GetDnsProxyTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-proxy | Get DNS proxy template setting
-[**GetGlobalDdnsUpdateUrlTemplate**](ServiceTemplateAPI.md#GetGlobalDdnsUpdateUrlTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/update-url | Get DDNS update url
-[**GetIgmpTemplate**](ServiceTemplateAPI.md#GetIgmpTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/igmp | Get IGMP template setting
-[**GetIptvTemplate**](ServiceTemplateAPI.md#GetIptvTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/iptv | Get IPTV template setting
-[**GetIptvTemplateServerSetting**](ServiceTemplateAPI.md#GetIptvTemplateServerSetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv | Get IPTV setting template
-[**GetMdnsGridTemplate**](ServiceTemplateAPI.md#GetMdnsGridTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns | Get mDNS template rule list
-[**GetPortScheduleListTemplate**](ServiceTemplateAPI.md#GetPortScheduleListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules | Get port Schedule list
-[**GetRebootScheduleList**](ServiceTemplateAPI.md#GetRebootScheduleList) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/rebootSchedules | Get reboot schedule templates
-[**GetSnmpSettingTemplate**](ServiceTemplateAPI.md#GetSnmpSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/snmp | Get SNMP template setting
-[**GetSshSettingTemplate**](ServiceTemplateAPI.md#GetSshSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ssh | Get SSH template setting
-[**GetUpnpSettingTemplate**](ServiceTemplateAPI.md#GetUpnpSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/upnp | Get UPnP template setting
-[**ModifyDdnsTemplate**](ServiceTemplateAPI.md#ModifyDdnsTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/{ddnsId} | Modify an exist Dynamic DNS template entry
-[**ModifyDnsCacheSettingTemplate**](ServiceTemplateAPI.md#ModifyDnsCacheSettingTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-cache | Modify DNS cache setting
-[**ModifyDnsProxyTemplate**](ServiceTemplateAPI.md#ModifyDnsProxyTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-proxy | Modify DNS proxy template setting
-[**ModifyIgmpTemplate**](ServiceTemplateAPI.md#ModifyIgmpTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/igmp | Modify IGMP template setting
-[**ModifyIptvTemplate**](ServiceTemplateAPI.md#ModifyIptvTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/iptv | Modify IPTV template setting
-[**ModifyIptvTemplateServerSetting**](ServiceTemplateAPI.md#ModifyIptvTemplateServerSetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv | Modify IPTV setting template
-[**ModifyMdnsTemplate**](ServiceTemplateAPI.md#ModifyMdnsTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns/{mdnsId} | Modify an exist mDNS template rule
-[**ModifyPortScheduleTemplate**](ServiceTemplateAPI.md#ModifyPortScheduleTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId} | Modify a Port Schedule Template
-[**ModifyRebootScheduleTemplate**](ServiceTemplateAPI.md#ModifyRebootScheduleTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/rebootSchedules/{rebootScheduleId} | Modify reboot schedule template
-[**ModifySnmpSettingTemplate**](ServiceTemplateAPI.md#ModifySnmpSettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/snmp | Modify SNMP template setting
-[**RefreshDnsCacheListTemplate**](ServiceTemplateAPI.md#RefreshDnsCacheListTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-cache-data/refresh | Refresh dns cache list
-[**RemovePortScheduleTemplate**](ServiceTemplateAPI.md#RemovePortScheduleTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId} | Delete Port Schedule Template
-[**RemoveRebootScheduleTemplate**](ServiceTemplateAPI.md#RemoveRebootScheduleTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/rebootSchedules/{rebootScheduleId} | Remove reboot schedule template
-[**UpdateSshSettingTemplate**](ServiceTemplateAPI.md#UpdateSshSettingTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ssh | Modify SSH template setting
-[**UpdateUpnpSettingTemplate**](ServiceTemplateAPI.md#UpdateUpnpSettingTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/upnp | Modify UPnP template setting
+[**AddPortScheduleTemplate**](ServiceTemplateAPI.md#addportscheduletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules | Create a new Port Schedule Template
+[**CreateDdnsTemplate**](ServiceTemplateAPI.md#createddnstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns | Create a new Dynamic DNS template entry
+[**CreateMdnsTemplate**](ServiceTemplateAPI.md#createmdnstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns | Create a new mDNS template rule
+[**DeleteDdnsTemplate**](ServiceTemplateAPI.md#deleteddnstemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/{ddnsId} | Delete an exist Dynamic DNS template entry
+[**DeleteMdnsTemplate**](ServiceTemplateAPI.md#deletemdnstemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns/{mdnsId} | Delete an exist mDNS template rule
+[**GetDdnsGridTemplate**](ServiceTemplateAPI.md#getddnsgridtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns | Get Dynamic DNS template list
+[**GetDnsCacheSettingTemplate**](ServiceTemplateAPI.md#getdnscachesettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/dns-cache | Get DNS cache setting template
+[**GetDnsProxyTemplate**](ServiceTemplateAPI.md#getdnsproxytemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-proxy | Get DNS proxy template setting
+[**GetGlobalDdnsUpdateUrlTemplate**](ServiceTemplateAPI.md#getglobalddnsupdateurltemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/update-url | Get DDNS update url
+[**GetIgmpTemplate**](ServiceTemplateAPI.md#getigmptemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/igmp | Get IGMP template setting
+[**GetIptvTemplate**](ServiceTemplateAPI.md#getiptvtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/iptv | Get IPTV template setting
+[**GetIptvTemplateServerSetting**](ServiceTemplateAPI.md#getiptvtemplateserversetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv | Get IPTV setting template
+[**GetMdnsGridTemplate**](ServiceTemplateAPI.md#getmdnsgridtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns | Get mDNS template rule list
+[**GetPortScheduleListTemplate**](ServiceTemplateAPI.md#getportschedulelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules | Get port Schedule list
+[**GetRebootScheduleList**](ServiceTemplateAPI.md#getrebootschedulelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/rebootSchedules | Get reboot schedule templates
+[**GetSnmpSettingTemplate**](ServiceTemplateAPI.md#getsnmpsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/snmp | Get SNMP template setting
+[**GetSshSettingTemplate**](ServiceTemplateAPI.md#getsshsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ssh | Get SSH template setting
+[**GetUpnpSettingTemplate**](ServiceTemplateAPI.md#getupnpsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/upnp | Get UPnP template setting
+[**ModifyDdnsTemplate**](ServiceTemplateAPI.md#modifyddnstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/{ddnsId} | Modify an exist Dynamic DNS template entry
+[**ModifyDnsCacheSettingTemplate**](ServiceTemplateAPI.md#modifydnscachesettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-cache | Modify DNS cache setting
+[**ModifyDnsProxyTemplate**](ServiceTemplateAPI.md#modifydnsproxytemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-proxy | Modify DNS proxy template setting
+[**ModifyIgmpTemplate**](ServiceTemplateAPI.md#modifyigmptemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/igmp | Modify IGMP template setting
+[**ModifyIptvTemplate**](ServiceTemplateAPI.md#modifyiptvtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/iptv | Modify IPTV template setting
+[**ModifyIptvTemplateServerSetting**](ServiceTemplateAPI.md#modifyiptvtemplateserversetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv | Modify IPTV setting template
+[**ModifyMdnsTemplate**](ServiceTemplateAPI.md#modifymdnstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns/{mdnsId} | Modify an exist mDNS template rule
+[**ModifyPortScheduleTemplate**](ServiceTemplateAPI.md#modifyportscheduletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId} | Modify a Port Schedule Template
+[**ModifyRebootScheduleTemplate**](ServiceTemplateAPI.md#modifyrebootscheduletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/rebootSchedules/{rebootScheduleId} | Modify reboot schedule template
+[**ModifySnmpSettingTemplate**](ServiceTemplateAPI.md#modifysnmpsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/snmp | Modify SNMP template setting
+[**RefreshDnsCacheListTemplate**](ServiceTemplateAPI.md#refreshdnscachelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-cache-data/refresh | Refresh dns cache list
+[**RemovePortScheduleTemplate**](ServiceTemplateAPI.md#removeportscheduletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId} | Delete Port Schedule Template
+[**RemoveRebootScheduleTemplate**](ServiceTemplateAPI.md#removerebootscheduletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/rebootSchedules/{rebootScheduleId} | Remove reboot schedule template
+[**UpdateSshSettingTemplate**](ServiceTemplateAPI.md#updatesshsettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ssh | Modify SSH template setting
+[**UpdateUpnpSettingTemplate**](ServiceTemplateAPI.md#updateupnpsettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/upnp | Modify UPnP template setting
 
 
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -707,7 +707,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -853,7 +853,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -926,7 +926,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1003,7 +1003,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1076,7 +1076,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1149,7 +1149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1222,7 +1222,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1295,7 +1295,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1368,7 +1368,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1446,7 +1446,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1521,7 +1521,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1596,7 +1596,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1671,7 +1671,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1746,7 +1746,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1821,7 +1821,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1899,7 +1899,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1980,7 +1980,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2062,7 +2062,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2137,7 +2137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2212,7 +2212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2291,7 +2291,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2367,7 +2367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2442,7 +2442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2517,7 +2517,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

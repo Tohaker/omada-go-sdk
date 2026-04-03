@@ -1,18 +1,18 @@
-# \BluetoothTemplateAPI
+# BluetoothTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchDeleteIotServerTemplate**](BluetoothTemplateAPI.md#BatchDeleteIotServerTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers/batch-delete | Batch delete IoT Transport Stream(Template)
-[**CreateIotServerTemplate**](BluetoothTemplateAPI.md#CreateIotServerTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers | Create IoT Transport Stream(Template)
-[**DeleteIotServerTemplate**](BluetoothTemplateAPI.md#DeleteIotServerTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers/{id} | Delete IoT Transport Stream(Template)
-[**GetGridIotServerTemplate**](BluetoothTemplateAPI.md#GetGridIotServerTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers | Get IoT Transport Stream(Template)
-[**GetIotBlueToothAgingTimeTemplate**](BluetoothTemplateAPI.md#GetIotBlueToothAgingTimeTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/aging-time | Get Aging Time(Template)
-[**GetIotRadioSettingTemplate**](BluetoothTemplateAPI.md#GetIotRadioSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/radio | Get Iot Radio Setting(Template)
-[**ModifyIotBlueToothAgingTimeTemplate**](BluetoothTemplateAPI.md#ModifyIotBlueToothAgingTimeTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/aging-time | Modify Aging Time(Template)
-[**ModifyIotRadioSettingTemplate**](BluetoothTemplateAPI.md#ModifyIotRadioSettingTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/radio | Modify Iot Radio Setting(Template)
-[**ModifyIotServerTemplate**](BluetoothTemplateAPI.md#ModifyIotServerTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers/{id} | Modify IoT Transport Stream(Template)
+[**BatchDeleteIotServerTemplate**](BluetoothTemplateAPI.md#batchdeleteiotservertemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers/batch-delete | Batch delete IoT Transport Stream(Template)
+[**CreateIotServerTemplate**](BluetoothTemplateAPI.md#createiotservertemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers | Create IoT Transport Stream(Template)
+[**DeleteIotServerTemplate**](BluetoothTemplateAPI.md#deleteiotservertemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers/{id} | Delete IoT Transport Stream(Template)
+[**GetGridIotServerTemplate**](BluetoothTemplateAPI.md#getgridiotservertemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers | Get IoT Transport Stream(Template)
+[**GetIotBlueToothAgingTimeTemplate**](BluetoothTemplateAPI.md#getiotbluetoothagingtimetemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/aging-time | Get Aging Time(Template)
+[**GetIotRadioSettingTemplate**](BluetoothTemplateAPI.md#getiotradiosettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/radio | Get Iot Radio Setting(Template)
+[**ModifyIotBlueToothAgingTimeTemplate**](BluetoothTemplateAPI.md#modifyiotbluetoothagingtimetemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/aging-time | Modify Aging Time(Template)
+[**ModifyIotRadioSettingTemplate**](BluetoothTemplateAPI.md#modifyiotradiosettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/radio | Modify Iot Radio Setting(Template)
+[**ModifyIotServerTemplate**](BluetoothTemplateAPI.md#modifyiotservertemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/iot/servers/{id} | Modify IoT Transport Stream(Template)
 
 
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -681,7 +681,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

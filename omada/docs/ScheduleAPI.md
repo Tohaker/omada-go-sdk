@@ -1,27 +1,27 @@
-# \ScheduleAPI
+# ScheduleAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePoeSchedule**](ScheduleAPI.md#CreatePoeSchedule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules | Create new PoE Schedule
-[**CreatePortSchedule**](ScheduleAPI.md#CreatePortSchedule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules | Create new Port Schedule
-[**CreateRebootSchedule1**](ScheduleAPI.md#CreateRebootSchedule1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules | Create new reboot schedule
-[**CreateUpgradeSchedule**](ScheduleAPI.md#CreateUpgradeSchedule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules | Create new upgrade schedule
-[**DeletePoeSchedule**](ScheduleAPI.md#DeletePoeSchedule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules/{poeScheduleId} | Delete PoE Schedule
-[**DeletePortSchedule**](ScheduleAPI.md#DeletePortSchedule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules/{portScheduleId} | Delete Port Schedule
-[**DeleteRebootSchedule1**](ScheduleAPI.md#DeleteRebootSchedule1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules/{id} | Delete reboot schedule
-[**DeleteUpgradeSchedule**](ScheduleAPI.md#DeleteUpgradeSchedule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules/{id} | Delete upgrade schedule
-[**GetPoePortsList**](ScheduleAPI.md#GetPoePortsList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/poe-ports | Get PoE ports list
-[**GetPoeScheduleList**](ScheduleAPI.md#GetPoeScheduleList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules | Get PoE schedule list
-[**GetPortScheduleList**](ScheduleAPI.md#GetPortScheduleList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules | Get port schedule list
-[**GetPortSchedulePorts**](ScheduleAPI.md#GetPortSchedulePorts) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/port-status-ports | Get device ports list supporting port schedule
-[**GetRebootScheduleList2**](ScheduleAPI.md#GetRebootScheduleList2) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules | Get reboot schedule list
-[**GetUpgradeScheduleList**](ScheduleAPI.md#GetUpgradeScheduleList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules | Get upgrade schedule list
-[**ModifyPoeSchedule**](ScheduleAPI.md#ModifyPoeSchedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules/{poeScheduleId} | Modify PoE Schedule
-[**ModifyPortSchedule**](ScheduleAPI.md#ModifyPortSchedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules/{portScheduleId} | Modify Port Schedule
-[**ModifyRebootSchedule1**](ScheduleAPI.md#ModifyRebootSchedule1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules/{id} | Modify reboot schedule
-[**ModifyUpgradeSchedule**](ScheduleAPI.md#ModifyUpgradeSchedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules/{id} | Modify upgrade schedule
+[**CreatePoeSchedule**](ScheduleAPI.md#createpoeschedule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules | Create new PoE Schedule
+[**CreatePortSchedule**](ScheduleAPI.md#createportschedule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules | Create new Port Schedule
+[**CreateRebootSchedule1**](ScheduleAPI.md#createrebootschedule1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules | Create new reboot schedule
+[**CreateUpgradeSchedule**](ScheduleAPI.md#createupgradeschedule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules | Create new upgrade schedule
+[**DeletePoeSchedule**](ScheduleAPI.md#deletepoeschedule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules/{poeScheduleId} | Delete PoE Schedule
+[**DeletePortSchedule**](ScheduleAPI.md#deleteportschedule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules/{portScheduleId} | Delete Port Schedule
+[**DeleteRebootSchedule1**](ScheduleAPI.md#deleterebootschedule1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules/{id} | Delete reboot schedule
+[**DeleteUpgradeSchedule**](ScheduleAPI.md#deleteupgradeschedule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules/{id} | Delete upgrade schedule
+[**GetPoePortsList**](ScheduleAPI.md#getpoeportslist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/poe-ports | Get PoE ports list
+[**GetPoeScheduleList**](ScheduleAPI.md#getpoeschedulelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules | Get PoE schedule list
+[**GetPortScheduleList**](ScheduleAPI.md#getportschedulelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules | Get port schedule list
+[**GetPortSchedulePorts**](ScheduleAPI.md#getportscheduleports) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/port-status-ports | Get device ports list supporting port schedule
+[**GetRebootScheduleList2**](ScheduleAPI.md#getrebootschedulelist2) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules | Get reboot schedule list
+[**GetUpgradeScheduleList**](ScheduleAPI.md#getupgradeschedulelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules | Get upgrade schedule list
+[**ModifyPoeSchedule**](ScheduleAPI.md#modifypoeschedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules/{poeScheduleId} | Modify PoE Schedule
+[**ModifyPortSchedule**](ScheduleAPI.md#modifyportschedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules/{portScheduleId} | Modify Port Schedule
+[**ModifyRebootSchedule1**](ScheduleAPI.md#modifyrebootschedule1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules/{id} | Modify reboot schedule
+[**ModifyUpgradeSchedule**](ScheduleAPI.md#modifyupgradeschedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules/{id} | Modify upgrade schedule
 
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -617,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -767,7 +767,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -917,7 +917,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -990,7 +990,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1063,7 +1063,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1141,7 +1141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1219,7 +1219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1297,7 +1297,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1375,7 +1375,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

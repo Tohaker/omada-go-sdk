@@ -1,14 +1,14 @@
-# \MSPDeviceAPI
+# MSPDeviceAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AdoptOneForMsp**](MSPDeviceAPI.md#AdoptOneForMsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/start-adopt | Start adopt device For Msp
-[**BatchAdoptForMsp**](MSPDeviceAPI.md#BatchAdoptForMsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/devices/batch-adopt | batch adopt device in msp view
-[**GetMspKnownDeviceList**](MSPDeviceAPI.md#GetMspKnownDeviceList) | **Get** /openapi/v1/msp/{mspId}/devices/known-devices | Get MSP known device list
-[**GetMspUnknownDeviceList**](MSPDeviceAPI.md#GetMspUnknownDeviceList) | **Get** /openapi/v1/msp/{mspId}/devices/unknown-devices | Get MSP unknown device list
-[**GetTags3**](MSPDeviceAPI.md#GetTags3) | **Get** /openapi/v1/msp/{mspId}/devices/tag | Get tag list
+[**AdoptOneForMsp**](MSPDeviceAPI.md#adoptoneformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/start-adopt | Start adopt device For Msp
+[**BatchAdoptForMsp**](MSPDeviceAPI.md#batchadoptformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/devices/batch-adopt | batch adopt device in msp view
+[**GetMspKnownDeviceList**](MSPDeviceAPI.md#getmspknowndevicelist) | **Get** /openapi/v1/msp/{mspId}/devices/known-devices | Get MSP known device list
+[**GetMspUnknownDeviceList**](MSPDeviceAPI.md#getmspunknowndevicelist) | **Get** /openapi/v1/msp/{mspId}/devices/unknown-devices | Get MSP unknown device list
+[**GetTags3**](MSPDeviceAPI.md#gettags3) | **Get** /openapi/v1/msp/{mspId}/devices/tag | Get tag list
 
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IpSetting** | Pointer to [**ClientBatchIPSetting**](ClientBatchIPSetting.md) |  | [optional] 
-**LockToAp** | Pointer to [**ClientLockToAPSetting**](ClientLockToAPSetting.md) |  | [optional] 
+**LockToAp** | Pointer to [**ClientLockToApMacListSetting**](ClientLockToApMacListSetting.md) |  | [optional] 
 **MacList** | Pointer to **[]string** | List of clients&#39; mac. | [optional] 
 **RateLimit** | Pointer to [**ClientRateLimitSetting**](ClientRateLimitSetting.md) |  | [optional] 
 
@@ -55,20 +55,20 @@ HasIpSetting returns a boolean if a field has been set.
 
 ### GetLockToAp
 
-`func (o *ClientBatchSetting) GetLockToAp() ClientLockToAPSetting`
+`func (o *ClientBatchSetting) GetLockToAp() ClientLockToApMacListSetting`
 
 GetLockToAp returns the LockToAp field if non-nil, zero value otherwise.
 
 ### GetLockToApOk
 
-`func (o *ClientBatchSetting) GetLockToApOk() (*ClientLockToAPSetting, bool)`
+`func (o *ClientBatchSetting) GetLockToApOk() (*ClientLockToApMacListSetting, bool)`
 
 GetLockToApOk returns a tuple with the LockToAp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLockToAp
 
-`func (o *ClientBatchSetting) SetLockToAp(v ClientLockToAPSetting)`
+`func (o *ClientBatchSetting) SetLockToAp(v ClientLockToApMacListSetting)`
 
 SetLockToAp sets LockToAp field to given value.
 

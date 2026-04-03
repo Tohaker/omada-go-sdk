@@ -1,18 +1,18 @@
-# \IPMACBindingAPI
+# IPMACBindingAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchDeleteIpMacBindings**](IPMACBindingAPI.md#BatchDeleteIpMacBindings) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/batch-delete | Batch delete IP-MAC bindings
-[**CheckIpMacBindingExportToDhcpReservation**](IPMACBindingAPI.md#CheckIpMacBindingExportToDhcpReservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/check/dhcp-res | Check IP-MAC binding export to DHCP reservation
-[**CreateIpMacBinding**](IPMACBindingAPI.md#CreateIpMacBinding) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds | Create IP-MAC binding
-[**DeleteIpMacBinding**](IPMACBindingAPI.md#DeleteIpMacBinding) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/{bindId} | Delete IP-MAC binding
-[**GetGridIpMacBinding**](IPMACBindingAPI.md#GetGridIpMacBinding) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds | Get IP-MAC binding list
-[**GetIpMacBindingGeneralSetting**](IPMACBindingAPI.md#GetIpMacBindingGeneralSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-bind | Get IP-MAC binding general setting
-[**ImportIpMacBindingListFromFile**](IPMACBindingAPI.md#ImportIpMacBindingListFromFile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/import | Import IP-MAC bindings from file
-[**ModifyIpMacBinding**](IPMACBindingAPI.md#ModifyIpMacBinding) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/{bindId} | Modify IP-MAC binding
-[**ModifyIpMacBindingGeneralSetting**](IPMACBindingAPI.md#ModifyIpMacBindingGeneralSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-bind | Modify IP-MAC binding general setting
+[**BatchDeleteIpMacBindings**](IPMACBindingAPI.md#batchdeleteipmacbindings) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/batch-delete | Batch delete IP-MAC bindings
+[**CheckIpMacBindingExportToDhcpReservation**](IPMACBindingAPI.md#checkipmacbindingexporttodhcpreservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/check/dhcp-res | Check IP-MAC binding export to DHCP reservation
+[**CreateIpMacBinding**](IPMACBindingAPI.md#createipmacbinding) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds | Create IP-MAC binding
+[**DeleteIpMacBinding**](IPMACBindingAPI.md#deleteipmacbinding) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/{bindId} | Delete IP-MAC binding
+[**GetGridIpMacBinding**](IPMACBindingAPI.md#getgridipmacbinding) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds | Get IP-MAC binding list
+[**GetIpMacBindingGeneralSetting**](IPMACBindingAPI.md#getipmacbindinggeneralsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-bind | Get IP-MAC binding general setting
+[**ImportIpMacBindingListFromFile**](IPMACBindingAPI.md#importipmacbindinglistfromfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/import | Import IP-MAC bindings from file
+[**ModifyIpMacBinding**](IPMACBindingAPI.md#modifyipmacbinding) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-binds/{bindId} | Modify IP-MAC binding
+[**ModifyIpMacBindingGeneralSetting**](IPMACBindingAPI.md#modifyipmacbindinggeneralsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/ip-mac-bind | Modify IP-MAC binding general setting
 
 
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

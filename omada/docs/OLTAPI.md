@@ -1,30 +1,30 @@
-# \OLTAPI
+# OLTAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EditConfig**](OLTAPI.md#EditConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/system-info/configs/edit | Modify OLT description info
-[**EditConfigForMsp**](OLTAPI.md#EditConfigForMsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac}/system/system-info/configs/edit | Modify OLT description info(MSP mode)
-[**EditLagsConfigList**](OLTAPI.md#EditLagsConfigList) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/lags/edit | Batch modify ETH LAG(Link Aggregation Group) config
-[**EditManagementSystemInterfaces**](OLTAPI.md#EditManagementSystemInterfaces) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/management-system-interface/edit | Modify OLT Management System Interface
-[**EditPortsConfigList**](OLTAPI.md#EditPortsConfigList) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/unit1/edit | Batch Modify ETH Unit1 port of olt
-[**GetConfig**](OLTAPI.md#GetConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/system-info/configs | Get OLT description info
-[**GetConfigForMsp**](OLTAPI.md#GetConfigForMsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac}/system/system-info/configs | Get OLT description info(MSP mode)
-[**GetDetail**](OLTAPI.md#GetDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac} | Get OLT info
-[**GetEthAndPonList**](OLTAPI.md#GetEthAndPonList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/eth-port/and/pon-port/list | Get pon port and eth port of OLT
-[**GetEthAndPonListForMsp**](OLTAPI.md#GetEthAndPonListForMsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eth-port/and/pon-port/list | Get pon port and eth port of OLT(MSP mode)
-[**GetLagsConfigList**](OLTAPI.md#GetLagsConfigList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/lags/list | Get ETH LAG(Link Aggregation Group) config list
-[**GetManagementSystemInterfaces**](OLTAPI.md#GetManagementSystemInterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/management-system-interface/get | Get OLT Management System Interface list
-[**GetOltDetailForMsp**](OLTAPI.md#GetOltDetailForMsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac} | Get OLT info(MSP mode)
-[**GetOltPortsDDMStatus**](OLTAPI.md#GetOltPortsDDMStatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/olt/{deviceMac}/ddm/info | Get DDM(Digital Diagnostic Monitoring) status list of OLT port list
-[**GetPortsConfigList**](OLTAPI.md#GetPortsConfigList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/unit1/list | Get ETH Unit1 port list of olt
-[**GetPortsConfigListForMsp**](OLTAPI.md#GetPortsConfigListForMsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/unit1/list | Get ETH Unit1 port list of olt(MSP mode)
-[**ModifyOltConfig**](OLTAPI.md#ModifyOltConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac} | Modify olt config
-[**ModifyOltConfigForMsp**](OLTAPI.md#ModifyOltConfigForMsp) | **Patch** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac} | Modify olt config(MSP mode)
-[**MoveToSite**](OLTAPI.md#MoveToSite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/olts/move | Move OLT to another site
-[**MspMoveToCustomer1**](OLTAPI.md#MspMoveToCustomer1) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/olts/move | Move OLT to another customer(MSP mode)
-[**RebootNow**](OLTAPI.md#RebootNow) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/system-tools/reboot/now | Reboot OLT
+[**EditConfig**](OLTAPI.md#editconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/system-info/configs/edit | Modify OLT description info
+[**EditConfigForMsp**](OLTAPI.md#editconfigformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac}/system/system-info/configs/edit | Modify OLT description info(MSP mode)
+[**EditLagsConfigList**](OLTAPI.md#editlagsconfiglist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/lags/edit | Batch modify ETH LAG(Link Aggregation Group) config
+[**EditManagementSystemInterfaces**](OLTAPI.md#editmanagementsysteminterfaces) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/management-system-interface/edit | Modify OLT Management System Interface
+[**EditPortsConfigList**](OLTAPI.md#editportsconfiglist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/unit1/edit | Batch Modify ETH Unit1 port of olt
+[**GetConfig**](OLTAPI.md#getconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/system-info/configs | Get OLT description info
+[**GetConfigForMsp**](OLTAPI.md#getconfigformsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac}/system/system-info/configs | Get OLT description info(MSP mode)
+[**GetDetail**](OLTAPI.md#getdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac} | Get OLT info
+[**GetEthAndPonList**](OLTAPI.md#getethandponlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/eth-port/and/pon-port/list | Get pon port and eth port of OLT
+[**GetEthAndPonListForMsp**](OLTAPI.md#getethandponlistformsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eth-port/and/pon-port/list | Get pon port and eth port of OLT(MSP mode)
+[**GetLagsConfigList**](OLTAPI.md#getlagsconfiglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/lags/list | Get ETH LAG(Link Aggregation Group) config list
+[**GetManagementSystemInterfaces**](OLTAPI.md#getmanagementsysteminterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/management-system-interface/get | Get OLT Management System Interface list
+[**GetOltDetailForMsp**](OLTAPI.md#getoltdetailformsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac} | Get OLT info(MSP mode)
+[**GetOltPortsDDMStatus**](OLTAPI.md#getoltportsddmstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/olt/{deviceMac}/ddm/info | Get DDM(Digital Diagnostic Monitoring) status list of OLT port list
+[**GetPortsConfigList**](OLTAPI.md#getportsconfiglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/unit1/list | Get ETH Unit1 port list of olt
+[**GetPortsConfigListForMsp**](OLTAPI.md#getportsconfiglistformsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac}/l2-feature/eth-port/port/unit1/list | Get ETH Unit1 port list of olt(MSP mode)
+[**ModifyOltConfig**](OLTAPI.md#modifyoltconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac} | Modify olt config
+[**ModifyOltConfigForMsp**](OLTAPI.md#modifyoltconfigformsp) | **Patch** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac} | Modify olt config(MSP mode)
+[**MoveToSite**](OLTAPI.md#movetosite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/olts/move | Move OLT to another site
+[**MspMoveToCustomer1**](OLTAPI.md#mspmovetocustomer1) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/olts/move | Move OLT to another customer(MSP mode)
+[**RebootNow**](OLTAPI.md#rebootnow) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/system/system-tools/reboot/now | Reboot OLT
 
 
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -792,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -868,7 +868,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -944,7 +944,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1023,7 +1023,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1101,7 +1101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1177,7 +1177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1256,7 +1256,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1334,7 +1334,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1415,7 +1415,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1490,7 +1490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1568,7 +1568,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1644,7 +1644,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

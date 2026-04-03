@@ -1,11 +1,11 @@
-# \EoGRETunnelAPI
+# EoGRETunnelAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGreTunnelConfig**](EoGRETunnelAPI.md#GetGreTunnelConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/gre-tunnel | Get EoGRE tunnel config
-[**ModifyGreTunnelConfig**](EoGRETunnelAPI.md#ModifyGreTunnelConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/gre-tunnel | Modify EoGRE tunnel config
+[**GetGreTunnelConfig**](EoGRETunnelAPI.md#getgretunnelconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/gre-tunnel | Get EoGRE tunnel config
+[**ModifyGreTunnelConfig**](EoGRETunnelAPI.md#modifygretunnelconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/gre-tunnel | Modify EoGRE tunnel config
 
 
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,20 +1,20 @@
-# \GlobalSecurityAPI
+# GlobalSecurityAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddBlockedCountry**](GlobalSecurityAPI.md#AddBlockedCountry) | **Post** /openapi/v1/{omadacId}/security/blocked-country/add | Add Blocked Country
-[**DelBlockedCountry**](GlobalSecurityAPI.md#DelBlockedCountry) | **Delete** /openapi/v1/{omadacId}/security/blocked-country | Delete blocked countries.
-[**DeleteGlobalThreatList**](GlobalSecurityAPI.md#DeleteGlobalThreatList) | **Post** /openapi/v1/{omadacId}/ips/threat | Delete Global Threat List
-[**GetBlockedCountries**](GlobalSecurityAPI.md#GetBlockedCountries) | **Post** /openapi/v1/{omadacId}/security/blocked-country | Get Blocked Countries
-[**GetCountryThreats**](GlobalSecurityAPI.md#GetCountryThreats) | **Post** /openapi/v1/{omadacId}/security/threat-map/threats | Get Country Threats
-[**GetGlobalCategory**](GlobalSecurityAPI.md#GetGlobalCategory) | **Post** /openapi/v1/{omadacId}/security/threat-map/threat-count | Get Global Category
-[**GetGlobalThreatList**](GlobalSecurityAPI.md#GetGlobalThreatList) | **Get** /openapi/v1/{omadacId}/security/threat-management | Get Global Threat List
-[**GetGlobalThreatMap**](GlobalSecurityAPI.md#GetGlobalThreatMap) | **Post** /openapi/v1/{omadacId}/security/threat-map | Get Global Threat Map
-[**GetGlobalTopThreatList**](GlobalSecurityAPI.md#GetGlobalTopThreatList) | **Get** /openapi/v1/{omadacId}/security/threat-management/top | Get Global Top Threat List
-[**GetThreatCount**](GlobalSecurityAPI.md#GetThreatCount) | **Get** /openapi/v1/{omadacId}/security/threat-management/severity | Get Threat Count
-[**OperateGlobalThreats**](GlobalSecurityAPI.md#OperateGlobalThreats) | **Post** /openapi/v1/{omadacId}/ips/threat/ops | Operate Global Threats
+[**AddBlockedCountry**](GlobalSecurityAPI.md#addblockedcountry) | **Post** /openapi/v1/{omadacId}/security/blocked-country/add | Add Blocked Country
+[**DelBlockedCountry**](GlobalSecurityAPI.md#delblockedcountry) | **Delete** /openapi/v1/{omadacId}/security/blocked-country | Delete blocked countries.
+[**DeleteGlobalThreatList**](GlobalSecurityAPI.md#deleteglobalthreatlist) | **Post** /openapi/v1/{omadacId}/ips/threat | Delete Global Threat List
+[**GetBlockedCountries**](GlobalSecurityAPI.md#getblockedcountries) | **Post** /openapi/v1/{omadacId}/security/blocked-country | Get Blocked Countries
+[**GetCountryThreats**](GlobalSecurityAPI.md#getcountrythreats) | **Post** /openapi/v1/{omadacId}/security/threat-map/threats | Get Country Threats
+[**GetGlobalCategory**](GlobalSecurityAPI.md#getglobalcategory) | **Post** /openapi/v1/{omadacId}/security/threat-map/threat-count | Get Global Category
+[**GetGlobalThreatList**](GlobalSecurityAPI.md#getglobalthreatlist) | **Get** /openapi/v1/{omadacId}/security/threat-management | Get Global Threat List
+[**GetGlobalThreatMap**](GlobalSecurityAPI.md#getglobalthreatmap) | **Post** /openapi/v1/{omadacId}/security/threat-map | Get Global Threat Map
+[**GetGlobalTopThreatList**](GlobalSecurityAPI.md#getglobaltopthreatlist) | **Get** /openapi/v1/{omadacId}/security/threat-management/top | Get Global Top Threat List
+[**GetThreatCount**](GlobalSecurityAPI.md#getthreatcount) | **Get** /openapi/v1/{omadacId}/security/threat-management/severity | Get Threat Count
+[**OperateGlobalThreats**](GlobalSecurityAPI.md#operateglobalthreats) | **Post** /openapi/v1/{omadacId}/ips/threat/ops | Operate Global Threats
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -746,7 +746,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,31 +1,31 @@
-# \MSPUserAndRoleAPI
+# MSPUserAndRoleAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCustomerRole**](MSPUserAndRoleAPI.md#CreateCustomerRole) | **Post** /openapi/v1/msp/{mspId}/account/customer-roles | Create new customer role
-[**CreateNewMspRole**](MSPUserAndRoleAPI.md#CreateNewMspRole) | **Post** /openapi/v1/msp/{mspId}/roles | Create new msp role
-[**CreateNewMspUser**](MSPUserAndRoleAPI.md#CreateNewMspUser) | **Post** /openapi/v1/msp/{mspId}/users | Create new msp user
-[**DeleteCustomerRole**](MSPUserAndRoleAPI.md#DeleteCustomerRole) | **Delete** /openapi/v1/msp/{mspId}/account/customer-roles/{roleId} | Delete an existing customer role
-[**DeleteMspRole**](MSPUserAndRoleAPI.md#DeleteMspRole) | **Delete** /openapi/v1/msp/{mspId}/roles/{roleId} | Delete an existing msp role
-[**DeleteMspUser**](MSPUserAndRoleAPI.md#DeleteMspUser) | **Delete** /openapi/v1/msp/{mspId}/users/{userID} | Delete an existing msp user
-[**GetAllCustomerRoles**](MSPUserAndRoleAPI.md#GetAllCustomerRoles) | **Get** /openapi/v1/msp/{mspId}/customer-roles | Get customer role list in msp
-[**GetAllMspCloudUsersExcludeRoot**](MSPUserAndRoleAPI.md#GetAllMspCloudUsersExcludeRoot) | **Get** /openapi/v1/msp/{mspId}/users/cloud | Get all MSP cloud users exclude owner
-[**GetAllMspLocalUsersExcludeRoot**](MSPUserAndRoleAPI.md#GetAllMspLocalUsersExcludeRoot) | **Get** /openapi/v1/msp/{mspId}/users/local | Get all MSP local users exclude owner
-[**GetAllMspRoles**](MSPUserAndRoleAPI.md#GetAllMspRoles) | **Get** /openapi/v1/msp/{mspId}/roles | Get msp role list
-[**GetAvailableCustomerRoles**](MSPUserAndRoleAPI.md#GetAvailableCustomerRoles) | **Get** /openapi/v1/msp/{mspId}/roles/customer/roles/available | Get available customer roles for creating new user
-[**GetAvailableMspRoles**](MSPUserAndRoleAPI.md#GetAvailableMspRoles) | **Get** /openapi/v1/msp/{mspId}/roles/available | Get available MSP roles for creating new user
-[**GetGridUsers1**](MSPUserAndRoleAPI.md#GetGridUsers1) | **Get** /openapi/v1/msp/{mspId}/users | Get msp user list
-[**GetMFAStatus**](MSPUserAndRoleAPI.md#GetMFAStatus) | **Get** /openapi/v1/msp/{mspId}/mfa/status | Get the status of the MSP system&#39;s Two-Factor Authentication.
-[**GetMspAppGridUsers**](MSPUserAndRoleAPI.md#GetMspAppGridUsers) | **Get** /openapi/v1/msp/{mspId}/all-users | Get msp user list for app
-[**GetMspRole**](MSPUserAndRoleAPI.md#GetMspRole) | **Get** /openapi/v1/msp/{mspId}/roles/{roleId} | Get msp role info
-[**GetUser1**](MSPUserAndRoleAPI.md#GetUser1) | **Get** /openapi/v1/msp/{mspId}/users/{userID} | Get msp user info
-[**ModifyCustomerRole**](MSPUserAndRoleAPI.md#ModifyCustomerRole) | **Put** /openapi/v1/msp/{mspId}/account/customer-roles/{roleId} | Modify an existing customer role
-[**ModifyMspMFAStatus**](MSPUserAndRoleAPI.md#ModifyMspMFAStatus) | **Post** /openapi/v1/msp/{mspId}/mfa/status | Modify the status of the MSP system&#39;s Two-Factor Authentication.
-[**ModifyMspRole**](MSPUserAndRoleAPI.md#ModifyMspRole) | **Put** /openapi/v1/msp/{mspId}/roles/{roleId} | Modify an existing msp role
-[**ModifyMspUser**](MSPUserAndRoleAPI.md#ModifyMspUser) | **Put** /openapi/v1/msp/{mspId}/users/{userID} | Modify an existing msp user
-[**ModifyMspUserBatch**](MSPUserAndRoleAPI.md#ModifyMspUserBatch) | **Patch** /openapi/v1/msp/{mspId}/users/batch-temporary-users | Batch modify MSP users.
+[**CreateCustomerRole**](MSPUserAndRoleAPI.md#createcustomerrole) | **Post** /openapi/v1/msp/{mspId}/account/customer-roles | Create new customer role
+[**CreateNewMspRole**](MSPUserAndRoleAPI.md#createnewmsprole) | **Post** /openapi/v1/msp/{mspId}/roles | Create new msp role
+[**CreateNewMspUser**](MSPUserAndRoleAPI.md#createnewmspuser) | **Post** /openapi/v1/msp/{mspId}/users | Create new msp user
+[**DeleteCustomerRole**](MSPUserAndRoleAPI.md#deletecustomerrole) | **Delete** /openapi/v1/msp/{mspId}/account/customer-roles/{roleId} | Delete an existing customer role
+[**DeleteMspRole**](MSPUserAndRoleAPI.md#deletemsprole) | **Delete** /openapi/v1/msp/{mspId}/roles/{roleId} | Delete an existing msp role
+[**DeleteMspUser**](MSPUserAndRoleAPI.md#deletemspuser) | **Delete** /openapi/v1/msp/{mspId}/users/{userID} | Delete an existing msp user
+[**GetAllCustomerRoles**](MSPUserAndRoleAPI.md#getallcustomerroles) | **Get** /openapi/v1/msp/{mspId}/customer-roles | Get customer role list in msp
+[**GetAllMspCloudUsersExcludeRoot**](MSPUserAndRoleAPI.md#getallmspcloudusersexcluderoot) | **Get** /openapi/v1/msp/{mspId}/users/cloud | Get all MSP cloud users exclude owner
+[**GetAllMspLocalUsersExcludeRoot**](MSPUserAndRoleAPI.md#getallmsplocalusersexcluderoot) | **Get** /openapi/v1/msp/{mspId}/users/local | Get all MSP local users exclude owner
+[**GetAllMspRoles**](MSPUserAndRoleAPI.md#getallmsproles) | **Get** /openapi/v1/msp/{mspId}/roles | Get msp role list
+[**GetAvailableCustomerRoles**](MSPUserAndRoleAPI.md#getavailablecustomerroles) | **Get** /openapi/v1/msp/{mspId}/roles/customer/roles/available | Get available customer roles for creating new user
+[**GetAvailableMspRoles**](MSPUserAndRoleAPI.md#getavailablemsproles) | **Get** /openapi/v1/msp/{mspId}/roles/available | Get available MSP roles for creating new user
+[**GetGridUsers1**](MSPUserAndRoleAPI.md#getgridusers1) | **Get** /openapi/v1/msp/{mspId}/users | Get msp user list
+[**GetMFAStatus**](MSPUserAndRoleAPI.md#getmfastatus) | **Get** /openapi/v1/msp/{mspId}/mfa/status | Get the status of the MSP system&#39;s Two-Factor Authentication.
+[**GetMspAppGridUsers**](MSPUserAndRoleAPI.md#getmspappgridusers) | **Get** /openapi/v1/msp/{mspId}/all-users | Get msp user list for app
+[**GetMspRole**](MSPUserAndRoleAPI.md#getmsprole) | **Get** /openapi/v1/msp/{mspId}/roles/{roleId} | Get msp role info
+[**GetUser1**](MSPUserAndRoleAPI.md#getuser1) | **Get** /openapi/v1/msp/{mspId}/users/{userID} | Get msp user info
+[**ModifyCustomerRole**](MSPUserAndRoleAPI.md#modifycustomerrole) | **Put** /openapi/v1/msp/{mspId}/account/customer-roles/{roleId} | Modify an existing customer role
+[**ModifyMspMFAStatus**](MSPUserAndRoleAPI.md#modifymspmfastatus) | **Post** /openapi/v1/msp/{mspId}/mfa/status | Modify the status of the MSP system&#39;s Two-Factor Authentication.
+[**ModifyMspRole**](MSPUserAndRoleAPI.md#modifymsprole) | **Put** /openapi/v1/msp/{mspId}/roles/{roleId} | Modify an existing msp role
+[**ModifyMspUser**](MSPUserAndRoleAPI.md#modifymspuser) | **Put** /openapi/v1/msp/{mspId}/users/{userID} | Modify an existing msp user
+[**ModifyMspUserBatch**](MSPUserAndRoleAPI.md#modifymspuserbatch) | **Patch** /openapi/v1/msp/{mspId}/users/batch-temporary-users | Batch modify MSP users.
 
 
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -734,7 +734,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -804,7 +804,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -958,7 +958,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1028,7 +1028,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1185,7 +1185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1258,7 +1258,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1333,7 +1333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1405,7 +1405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1480,7 +1480,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1555,7 +1555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1627,7 +1627,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

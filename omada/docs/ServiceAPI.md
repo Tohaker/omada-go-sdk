@@ -1,44 +1,44 @@
-# \ServiceAPI
+# ServiceAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchExportDhcpReservationListToFile**](ServiceAPI.md#BatchExportDhcpReservationListToFile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/batch-export | Batch Export DHCP reservation list to file
-[**ClearDnsCacheList**](ServiceAPI.md#ClearDnsCacheList) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/dns-cache-data/clear | Clear DNS cache list
-[**CreateDdns**](ServiceAPI.md#CreateDdns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns | Create a new Dynamic DNS entry
-[**CreateDhcpReservation**](ServiceAPI.md#CreateDhcpReservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp | Create a new DHCP reservation
-[**CreateMdns**](ServiceAPI.md#CreateMdns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Create a new mDNS rule
-[**DeleteDdns**](ServiceAPI.md#DeleteDdns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns/{ddnsId} | Delete an exist Dynamic DNS entry
-[**DeleteDhcpReservation**](ServiceAPI.md#DeleteDhcpReservation) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac} | Delete an exist DHCP reservation
-[**DeleteMdns**](ServiceAPI.md#DeleteMdns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns/{mdnsId} | Delete an exist mDNS rule
-[**DownloadDhcpImportResult**](ServiceAPI.md#DownloadDhcpImportResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/import-result | Download DHCP import result
-[**ExportDhcpReservation**](ServiceAPI.md#ExportDhcpReservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac}/export | Export DHCP reservation to IP_MAC Binding
-[**ExportDhcpReservationListToFile**](ServiceAPI.md#ExportDhcpReservationListToFile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/export | Export DHCP reservation list to file
-[**GetDdnsGrid**](ServiceAPI.md#GetDdnsGrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns | Get Dynamic DNS list
-[**GetDhcpReservationGrid**](ServiceAPI.md#GetDhcpReservationGrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp | Get DHCP reservation list
-[**GetDnsCacheList**](ServiceAPI.md#GetDnsCacheList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/dns-cache-data | Get DNS cache list
-[**GetDnsCacheSetting**](ServiceAPI.md#GetDnsCacheSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Get DNS cache
-[**GetDnsProxy**](ServiceAPI.md#GetDnsProxy) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Get DNS proxy setting
-[**GetGridAllDhcpUserList**](ServiceAPI.md#GetGridAllDhcpUserList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list | Get the dhcp user list of all servers
-[**GetIgmp**](ServiceAPI.md#GetIgmp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Get IGMP setting
-[**GetIptv**](ServiceAPI.md#GetIptv) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Get IPTV setting
-[**GetMdnsGrid**](ServiceAPI.md#GetMdnsGrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Get mDNS rule list
-[**GetSnmpSetting**](ServiceAPI.md#GetSnmpSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Get SNMP setting
-[**GetSshSetting**](ServiceAPI.md#GetSshSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Get SSH setting
-[**GetUpnpSetting**](ServiceAPI.md#GetUpnpSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Get UPnP setting
-[**ImportDhcpReservationListFromFile**](ServiceAPI.md#ImportDhcpReservationListFromFile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/import | Import DHCP reservation list from file
-[**ModifyDdns**](ServiceAPI.md#ModifyDdns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns/{ddnsId} | Modify an exist Dynamic DNS entry
-[**ModifyDhcpReservation**](ServiceAPI.md#ModifyDhcpReservation) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac} | Modify an exist DHCP reservation
-[**ModifyDnsCacheSetting**](ServiceAPI.md#ModifyDnsCacheSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Modify DNS cache setting
-[**ModifyDnsProxy**](ServiceAPI.md#ModifyDnsProxy) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Modify DNS proxy setting
-[**ModifyIgmp**](ServiceAPI.md#ModifyIgmp) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Modify IGMP setting
-[**ModifyIptv**](ServiceAPI.md#ModifyIptv) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Modify IPTV setting
-[**ModifyMdns**](ServiceAPI.md#ModifyMdns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns/{mdnsId} | Modify an exist mDNS rule
-[**ModifySnmpSetting**](ServiceAPI.md#ModifySnmpSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Modify SNMP setting
-[**ReservationFromDhcpUserList**](ServiceAPI.md#ReservationFromDhcpUserList) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list/reservation | Reservation From Dhcp User List
-[**UpdateSshSetting**](ServiceAPI.md#UpdateSshSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Modify SSH setting
-[**UpdateUpnpSetting**](ServiceAPI.md#UpdateUpnpSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Modify UPnP setting
+[**BatchExportDhcpReservationListToFile**](ServiceAPI.md#batchexportdhcpreservationlisttofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/batch-export | Batch Export DHCP reservation list to file
+[**ClearDnsCacheList**](ServiceAPI.md#cleardnscachelist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/dns-cache-data/clear | Clear DNS cache list
+[**CreateDdns**](ServiceAPI.md#createddns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns | Create a new Dynamic DNS entry
+[**CreateDhcpReservation**](ServiceAPI.md#createdhcpreservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp | Create a new DHCP reservation
+[**CreateMdns**](ServiceAPI.md#createmdns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Create a new mDNS rule
+[**DeleteDdns**](ServiceAPI.md#deleteddns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns/{ddnsId} | Delete an exist Dynamic DNS entry
+[**DeleteDhcpReservation**](ServiceAPI.md#deletedhcpreservation) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac} | Delete an exist DHCP reservation
+[**DeleteMdns**](ServiceAPI.md#deletemdns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns/{mdnsId} | Delete an exist mDNS rule
+[**DownloadDhcpImportResult**](ServiceAPI.md#downloaddhcpimportresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/import-result | Download DHCP import result
+[**ExportDhcpReservation**](ServiceAPI.md#exportdhcpreservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac}/export | Export DHCP reservation to IP_MAC Binding
+[**ExportDhcpReservationListToFile**](ServiceAPI.md#exportdhcpreservationlisttofile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/export | Export DHCP reservation list to file
+[**GetDdnsGrid**](ServiceAPI.md#getddnsgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns | Get Dynamic DNS list
+[**GetDhcpReservationGrid**](ServiceAPI.md#getdhcpreservationgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp | Get DHCP reservation list
+[**GetDnsCacheList**](ServiceAPI.md#getdnscachelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/dns-cache-data | Get DNS cache list
+[**GetDnsCacheSetting**](ServiceAPI.md#getdnscachesetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Get DNS cache
+[**GetDnsProxy**](ServiceAPI.md#getdnsproxy) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Get DNS proxy setting
+[**GetGridAllDhcpUserList**](ServiceAPI.md#getgridalldhcpuserlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list | Get the dhcp user list of all servers
+[**GetIgmp**](ServiceAPI.md#getigmp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Get IGMP setting
+[**GetIptv**](ServiceAPI.md#getiptv) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Get IPTV setting
+[**GetMdnsGrid**](ServiceAPI.md#getmdnsgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Get mDNS rule list
+[**GetSnmpSetting**](ServiceAPI.md#getsnmpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Get SNMP setting
+[**GetSshSetting**](ServiceAPI.md#getsshsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Get SSH setting
+[**GetUpnpSetting**](ServiceAPI.md#getupnpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Get UPnP setting
+[**ImportDhcpReservationListFromFile**](ServiceAPI.md#importdhcpreservationlistfromfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/import | Import DHCP reservation list from file
+[**ModifyDdns**](ServiceAPI.md#modifyddns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns/{ddnsId} | Modify an exist Dynamic DNS entry
+[**ModifyDhcpReservation**](ServiceAPI.md#modifydhcpreservation) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac} | Modify an exist DHCP reservation
+[**ModifyDnsCacheSetting**](ServiceAPI.md#modifydnscachesetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Modify DNS cache setting
+[**ModifyDnsProxy**](ServiceAPI.md#modifydnsproxy) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Modify DNS proxy setting
+[**ModifyIgmp**](ServiceAPI.md#modifyigmp) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Modify IGMP setting
+[**ModifyIptv**](ServiceAPI.md#modifyiptv) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Modify IPTV setting
+[**ModifyMdns**](ServiceAPI.md#modifymdns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns/{mdnsId} | Modify an exist mDNS rule
+[**ModifySnmpSetting**](ServiceAPI.md#modifysnmpsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Modify SNMP setting
+[**ReservationFromDhcpUserList**](ServiceAPI.md#reservationfromdhcpuserlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list/reservation | Reservation From Dhcp User List
+[**UpdateSshSetting**](ServiceAPI.md#updatesshsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Modify SSH setting
+[**UpdateUpnpSetting**](ServiceAPI.md#updateupnpsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Modify UPnP setting
 
 
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -555,7 +555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -782,7 +782,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -938,7 +938,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1027,7 +1027,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1102,7 +1102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1175,7 +1175,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1248,7 +1248,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1325,7 +1325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1398,7 +1398,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1471,7 +1471,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1548,7 +1548,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1621,7 +1621,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1694,7 +1694,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1767,7 +1767,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1842,7 +1842,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1920,7 +1920,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1998,7 +1998,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2073,7 +2073,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2148,7 +2148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2223,7 +2223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2298,7 +2298,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2376,7 +2376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2451,7 +2451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2526,7 +2526,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2601,7 +2601,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2676,7 +2676,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

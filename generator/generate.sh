@@ -15,7 +15,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 cd "${ROOT_DIR}"
 
-GENERATOR_IMAGE="openapitools/openapi-generator-cli:v7.12.0"
+GENERATOR_IMAGE="openapitools/openapi-generator-cli:v7.21.0"
 
 echo "=== Step 1: Fetch and fix upstream spec ==="
 go run tools/fix_spec.go
@@ -23,14 +23,9 @@ go run tools/fix_spec.go
 echo ""
 echo "=== Step 2: Generate SDK from fixed spec ==="
 docker run --rm \
+  -w /local \
   -v "${ROOT_DIR}:/local" \
-  "${GENERATOR_IMAGE}" generate \
-  -i /local/tools/all-fixed.json \
-  -g go \
-  -o /local/omada \
-  -c /local/generator/config.json \
-  --git-user-id Tohaker \
-  --git-repo-id omada-go-sdk
+  "${GENERATOR_IMAGE}" batch generator/batch.yaml
 
 echo ""
 echo "=== Step 3: Tidy Go modules ==="

@@ -1,18 +1,18 @@
-# \AuthorizedClientAPI
+# AuthorizedClientAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AuthClient**](AuthorizedClientAPI.md#AuthClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/clients/{clientMac}/auth | Authentication the given client
-[**CancelAuthClient**](AuthorizedClientAPI.md#CancelAuthClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/clients/{clientMac}/unauth | Cancel authentication the given client
-[**DeleteAllInvalidAuthedClients**](AuthorizedClientAPI.md#DeleteAllInvalidAuthedClients) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records/delete | Delete all invalid authed record
-[**DeleteHotspotAuthedClient**](AuthorizedClientAPI.md#DeleteHotspotAuthedClient) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records/{id} | Delete given authed record
-[**DisconnectHotspotAuthedClient**](AuthorizedClientAPI.md#DisconnectHotspotAuthedClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records/{id}/disconnect | Disconnect authed client 
-[**ExportAuthedClientListGlobalByCloudAccess**](AuthorizedClientAPI.md#ExportAuthedClientListGlobalByCloudAccess) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-client-list | Export global authed client list
-[**ExtendHotspotAuthedClient**](AuthorizedClientAPI.md#ExtendHotspotAuthedClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records/{id}/period | Modify period for given authed record
-[**GetHotspotAuthedClients**](AuthorizedClientAPI.md#GetHotspotAuthedClients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records | Get authentication record list
-[**GetHotspotStatistic**](AuthorizedClientAPI.md#GetHotspotStatistic) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/dashboard/statistics | Get hotspot statistic
+[**AuthClient**](AuthorizedClientAPI.md#authclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/clients/{clientMac}/auth | Authentication the given client
+[**CancelAuthClient**](AuthorizedClientAPI.md#cancelauthclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/clients/{clientMac}/unauth | Cancel authentication the given client
+[**DeleteAllInvalidAuthedClients**](AuthorizedClientAPI.md#deleteallinvalidauthedclients) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records/delete | Delete all invalid authed record
+[**DeleteHotspotAuthedClient**](AuthorizedClientAPI.md#deletehotspotauthedclient) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records/{id} | Delete given authed record
+[**DisconnectHotspotAuthedClient**](AuthorizedClientAPI.md#disconnecthotspotauthedclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records/{id}/disconnect | Disconnect authed client 
+[**ExportAuthedClientListGlobalByCloudAccess**](AuthorizedClientAPI.md#exportauthedclientlistglobalbycloudaccess) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-client-list | Export global authed client list
+[**ExtendHotspotAuthedClient**](AuthorizedClientAPI.md#extendhotspotauthedclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records/{id}/period | Modify period for given authed record
+[**GetHotspotAuthedClients**](AuthorizedClientAPI.md#gethotspotauthedclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/authed-records | Get authentication record list
+[**GetHotspotStatistic**](AuthorizedClientAPI.md#gethotspotstatistic) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/dashboard/statistics | Get hotspot statistic
 
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -714,7 +714,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

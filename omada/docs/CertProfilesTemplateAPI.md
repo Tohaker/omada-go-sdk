@@ -1,18 +1,18 @@
-# \CertProfilesTemplateAPI
+# CertProfilesTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCertProfile**](CertProfilesTemplateAPI.md#CreateCertProfile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles | Create a new certificate profile Template
-[**DeleteCertProfile**](CertProfilesTemplateAPI.md#DeleteCertProfile) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/{certId} | Delete an exist certificate profile Template
-[**DeleteCertProfileFile**](CertProfilesTemplateAPI.md#DeleteCertProfileFile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/delete-file/{fileId} | Delete an exist certificate profile Template file
-[**GetCertProfileDetail**](CertProfilesTemplateAPI.md#GetCertProfileDetail) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/{certId} | Get a certificate profile Template detail
-[**GetGridCertProfile**](CertProfilesTemplateAPI.md#GetGridCertProfile) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles | Get certificate profile Template list
-[**ModifyCertProfile**](CertProfilesTemplateAPI.md#ModifyCertProfile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/{certId} | Modify an exist certificate profile Template
-[**UploadCaCertFile**](CertProfilesTemplateAPI.md#UploadCaCertFile) | **Post** /openapi/v1/{omadacId}/files/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/ca-cert | Upload CA profile Template file
-[**UploadClientCertFile**](CertProfilesTemplateAPI.md#UploadClientCertFile) | **Post** /openapi/v1/{omadacId}/files/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/client-cert | Upload client certificate profile Template file
-[**UploadClientPrivateKeyFile**](CertProfilesTemplateAPI.md#UploadClientPrivateKeyFile) | **Post** /openapi/v1/{omadacId}/files/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/client-private-key | Upload client private key Template file
+[**CreateCertProfile**](CertProfilesTemplateAPI.md#createcertprofile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles | Create a new certificate profile Template
+[**DeleteCertProfile**](CertProfilesTemplateAPI.md#deletecertprofile) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/{certId} | Delete an exist certificate profile Template
+[**DeleteCertProfileFile**](CertProfilesTemplateAPI.md#deletecertprofilefile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/delete-file/{fileId} | Delete an exist certificate profile Template file
+[**GetCertProfileDetail**](CertProfilesTemplateAPI.md#getcertprofiledetail) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/{certId} | Get a certificate profile Template detail
+[**GetGridCertProfile**](CertProfilesTemplateAPI.md#getgridcertprofile) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles | Get certificate profile Template list
+[**ModifyCertProfile**](CertProfilesTemplateAPI.md#modifycertprofile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/{certId} | Modify an exist certificate profile Template
+[**UploadCaCertFile**](CertProfilesTemplateAPI.md#uploadcacertfile) | **Post** /openapi/v1/{omadacId}/files/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/ca-cert | Upload CA profile Template file
+[**UploadClientCertFile**](CertProfilesTemplateAPI.md#uploadclientcertfile) | **Post** /openapi/v1/{omadacId}/files/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/client-cert | Upload client certificate profile Template file
+[**UploadClientPrivateKeyFile**](CertProfilesTemplateAPI.md#uploadclientprivatekeyfile) | **Post** /openapi/v1/{omadacId}/files/sitetemplates/{siteTemplateId}/setting/profiles/cert-profiles/client-private-key | Upload client private key Template file
 
 
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -622,7 +622,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -699,7 +699,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

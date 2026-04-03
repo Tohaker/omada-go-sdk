@@ -1,17 +1,17 @@
-# \CloudUserAPI
+# CloudUserAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BindMspOwner**](CloudUserAPI.md#BindMspOwner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/bind | bind the MSP owner account
-[**BindOwner**](CloudUserAPI.md#BindOwner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/bind | bind the owner account
-[**GetCloudAccessStatus**](CloudUserAPI.md#GetCloudAccessStatus) | **Get** /openapi/v1/{omadacId}/cloud/status | Get cloud access status
-[**GetCloudUserInfo**](CloudUserAPI.md#GetCloudUserInfo) | **Get** /openapi/v1/{omadacId}/cloud/user | get cloud user information
-[**GetMspCloudAccessStatus**](CloudUserAPI.md#GetMspCloudAccessStatus) | **Get** /openapi/v1/msp/{mspId}/cloud/status | Get MSP cloud access status
-[**GetRemoteBindingStatus**](CloudUserAPI.md#GetRemoteBindingStatus) | **Get** /openapi/v1/{omadacId}/cloud/remote/bind/status | Get remote bind status
-[**UnbindMspOwner**](CloudUserAPI.md#UnbindMspOwner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/unbind | unbind the MSP owner account
-[**UnbindOwner**](CloudUserAPI.md#UnbindOwner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/unbind | unbind the owner account
+[**BindMspOwner**](CloudUserAPI.md#bindmspowner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/bind | bind the MSP owner account
+[**BindOwner**](CloudUserAPI.md#bindowner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/bind | bind the owner account
+[**GetCloudAccessStatus**](CloudUserAPI.md#getcloudaccessstatus) | **Get** /openapi/v1/{omadacId}/cloud/status | Get cloud access status
+[**GetCloudUserInfo**](CloudUserAPI.md#getclouduserinfo) | **Get** /openapi/v1/{omadacId}/cloud/user | get cloud user information
+[**GetMspCloudAccessStatus**](CloudUserAPI.md#getmspcloudaccessstatus) | **Get** /openapi/v1/msp/{mspId}/cloud/status | Get MSP cloud access status
+[**GetRemoteBindingStatus**](CloudUserAPI.md#getremotebindingstatus) | **Get** /openapi/v1/{omadacId}/cloud/remote/bind/status | Get remote bind status
+[**UnbindMspOwner**](CloudUserAPI.md#unbindmspowner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/unbind | unbind the MSP owner account
+[**UnbindOwner**](CloudUserAPI.md#unbindowner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/unbind | unbind the owner account
 
 
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

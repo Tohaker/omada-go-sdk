@@ -1,22 +1,22 @@
-# \BackupAndRestoreAPI
+# BackupAndRestoreAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BackupFileServer**](BackupAndRestoreAPI.md#BackupFileServer) | **Post** /openapi/v1/{omadacId}/maintenance/backup/file-server | Backup controller config to file server
-[**BackupSelfServer**](BackupAndRestoreAPI.md#BackupSelfServer) | **Post** /openapi/v1/{omadacId}/maintenance/backup/self-server | Backup controller config to cloud server
-[**BackupSitesFileServer**](BackupAndRestoreAPI.md#BackupSitesFileServer) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-backup/file-server | Backup multi sites config to file server
-[**BackupSitesSelfServer**](BackupAndRestoreAPI.md#BackupSitesSelfServer) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-backup/self-server | Backup multi sites config to self server
-[**GetBackupResult**](BackupAndRestoreAPI.md#GetBackupResult) | **Get** /openapi/v1/{omadacId}/maintenance/backup/result | Get controller backup result
-[**GetRestoreResult**](BackupAndRestoreAPI.md#GetRestoreResult) | **Get** /openapi/v1/{omadacId}/maintenance/restore/result | Get controller restore result
-[**GetSelfServerFileList**](BackupAndRestoreAPI.md#GetSelfServerFileList) | **Get** /openapi/v1/{omadacId}/maintenance/backup/files | Get controller backup file list in self server
-[**GetSelfServerSiteFileList**](BackupAndRestoreAPI.md#GetSelfServerSiteFileList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/maintenance/backup/files | Get site backup file list in self server
-[**GetSiteBackupResult**](BackupAndRestoreAPI.md#GetSiteBackupResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/backup/result | Get site backup result
-[**RestoreFileServer**](BackupAndRestoreAPI.md#RestoreFileServer) | **Post** /openapi/v1/{omadacId}/maintenance/restore/file-server | Restore controller config from file server
-[**RestoreSelfServer**](BackupAndRestoreAPI.md#RestoreSelfServer) | **Post** /openapi/v1/{omadacId}/maintenance/restore/self-server | Restore controller config from cloud server
-[**RestoreSitesFileServer**](BackupAndRestoreAPI.md#RestoreSitesFileServer) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-restore/file-server | Restore multi sites config from file server
-[**RestoreSitesSelfServer**](BackupAndRestoreAPI.md#RestoreSitesSelfServer) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-restore/self-server | Restore multi sites config from self server
+[**BackupFileServer**](BackupAndRestoreAPI.md#backupfileserver) | **Post** /openapi/v1/{omadacId}/maintenance/backup/file-server | Backup controller config to file server
+[**BackupSelfServer**](BackupAndRestoreAPI.md#backupselfserver) | **Post** /openapi/v1/{omadacId}/maintenance/backup/self-server | Backup controller config to cloud server
+[**BackupSitesFileServer**](BackupAndRestoreAPI.md#backupsitesfileserver) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-backup/file-server | Backup multi sites config to file server
+[**BackupSitesSelfServer**](BackupAndRestoreAPI.md#backupsitesselfserver) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-backup/self-server | Backup multi sites config to self server
+[**GetBackupResult**](BackupAndRestoreAPI.md#getbackupresult) | **Get** /openapi/v1/{omadacId}/maintenance/backup/result | Get controller backup result
+[**GetRestoreResult**](BackupAndRestoreAPI.md#getrestoreresult) | **Get** /openapi/v1/{omadacId}/maintenance/restore/result | Get controller restore result
+[**GetSelfServerFileList**](BackupAndRestoreAPI.md#getselfserverfilelist) | **Get** /openapi/v1/{omadacId}/maintenance/backup/files | Get controller backup file list in self server
+[**GetSelfServerSiteFileList**](BackupAndRestoreAPI.md#getselfserversitefilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/maintenance/backup/files | Get site backup file list in self server
+[**GetSiteBackupResult**](BackupAndRestoreAPI.md#getsitebackupresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/backup/result | Get site backup result
+[**RestoreFileServer**](BackupAndRestoreAPI.md#restorefileserver) | **Post** /openapi/v1/{omadacId}/maintenance/restore/file-server | Restore controller config from file server
+[**RestoreSelfServer**](BackupAndRestoreAPI.md#restoreselfserver) | **Post** /openapi/v1/{omadacId}/maintenance/restore/self-server | Restore controller config from cloud server
+[**RestoreSitesFileServer**](BackupAndRestoreAPI.md#restoresitesfileserver) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-restore/file-server | Restore multi sites config from file server
+[**RestoreSitesSelfServer**](BackupAndRestoreAPI.md#restoresitesselfserver) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-restore/self-server | Restore multi sites config from self server
 
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -868,7 +868,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

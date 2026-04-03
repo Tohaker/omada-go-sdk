@@ -1,11 +1,11 @@
-# \NetworkReportAPI
+# NetworkReportAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EmailNetworkReportLater**](NetworkReportAPI.md#EmailNetworkReportLater) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networkReport/oneTime | Email Network Report Later
-[**EmailNetworkReportSchedule**](NetworkReportAPI.md#EmailNetworkReportSchedule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networkReport/schedule | Email Network Report Schedule
+[**EmailNetworkReportLater**](NetworkReportAPI.md#emailnetworkreportlater) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networkReport/oneTime | Email Network Report Later
+[**EmailNetworkReportSchedule**](NetworkReportAPI.md#emailnetworkreportschedule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networkReport/schedule | Email Network Report Schedule
 
 
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

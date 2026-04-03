@@ -1,11 +1,11 @@
-# \AccessControlAPI
+# AccessControlAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAccessControl**](AccessControlAPI.md#GetAccessControl) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Get access control setting
-[**ModifyAccessControl**](AccessControlAPI.md#ModifyAccessControl) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Modify access control setting
+[**GetAccessControl**](AccessControlAPI.md#getaccesscontrol) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Get access control setting
+[**ModifyAccessControl**](AccessControlAPI.md#modifyaccesscontrol) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Modify access control setting
 
 
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

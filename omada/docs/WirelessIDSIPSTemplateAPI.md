@@ -1,13 +1,13 @@
-# \WirelessIDSIPSTemplateAPI
+# WirelessIDSIPSTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetWidsConfigTemplate**](WirelessIDSIPSTemplateAPI.md#GetWidsConfigTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ids | Get wireless IDS config template
-[**GetWipsConfigTemplate**](WirelessIDSIPSTemplateAPI.md#GetWipsConfigTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ips | Get wireless IPS config template
-[**ModifyWidsConfigTemplate**](WirelessIDSIPSTemplateAPI.md#ModifyWidsConfigTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ids | Modify wireless IDS config template
-[**ModifyWipsConfigTemplate**](WirelessIDSIPSTemplateAPI.md#ModifyWipsConfigTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ips | Modify wireless IPS config template
+[**GetWidsConfigTemplate**](WirelessIDSIPSTemplateAPI.md#getwidsconfigtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ids | Get wireless IDS config template
+[**GetWipsConfigTemplate**](WirelessIDSIPSTemplateAPI.md#getwipsconfigtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ips | Get wireless IPS config template
+[**ModifyWidsConfigTemplate**](WirelessIDSIPSTemplateAPI.md#modifywidsconfigtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ids | Modify wireless IDS config template
+[**ModifyWipsConfigTemplate**](WirelessIDSIPSTemplateAPI.md#modifywipsconfigtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ips | Modify wireless IPS config template
 
 
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

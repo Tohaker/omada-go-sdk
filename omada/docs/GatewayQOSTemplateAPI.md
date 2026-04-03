@@ -1,22 +1,22 @@
-# \GatewayQOSTemplateAPI
+# GatewayQOSTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTemplateBwCtrl**](GatewayQOSTemplateAPI.md#CreateTemplateBwCtrl) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/bwcs | Create siteTemplate&#39;s new bandwidth control rule
-[**CreateTemplateClassRule**](GatewayQOSTemplateAPI.md#CreateTemplateClassRule) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/class-rules | Create siteTemplate&#39;s new class rule
-[**DeleteTemplateBwCtrl**](GatewayQOSTemplateAPI.md#DeleteTemplateBwCtrl) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/bwcs/{id} | Delete an existing bandwidth control rule in siteTemplate
-[**DeleteTemplateClassRule**](GatewayQOSTemplateAPI.md#DeleteTemplateClassRule) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/class-rules/{id} | Delete an existing class rule in siteTemplate
-[**GetTemplateBandwidthCtrlGrid**](GatewayQOSTemplateAPI.md#GetTemplateBandwidthCtrlGrid) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/bwcs | Get siteTemplate&#39;s bandwidth control rule list
-[**GetTemplateClassRuleGrid**](GatewayQOSTemplateAPI.md#GetTemplateClassRuleGrid) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/class-rules | Get siteTemplate&#39;s class rule list
-[**GetTemplateQosWans**](GatewayQOSTemplateAPI.md#GetTemplateQosWans) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/wans | Get siteTemplate&#39;s WAN ports info for Gateway QoS
-[**GetTemplateTagOut**](GatewayQOSTemplateAPI.md#GetTemplateTagOut) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/tag-outbound-traffic | Get siteTemplate&#39;s Tag Outbound Traffic info
-[**GetTemplateVoip**](GatewayQOSTemplateAPI.md#GetTemplateVoip) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/voip-prioritization | Get siteTemplate&#39;s VoIP Prioritization info
-[**ModifyTemplateBwCtrl**](GatewayQOSTemplateAPI.md#ModifyTemplateBwCtrl) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/bwcs/{id} | Modify an existing bandwidth control rule in siteTemplate
-[**ModifyTemplateClassRule**](GatewayQOSTemplateAPI.md#ModifyTemplateClassRule) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/class-rules/{id} | Modify an existing class rule in siteTemplate
-[**ModifyTemplateTagOut**](GatewayQOSTemplateAPI.md#ModifyTemplateTagOut) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/tag-outbound-traffic | Modify siteTemplate&#39;s Tag Outbound Traffic info
-[**ModifyTemplateVoip**](GatewayQOSTemplateAPI.md#ModifyTemplateVoip) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/voip-prioritization | Modify siteTemplate&#39;s VoIP Prioritization info
+[**CreateTemplateBwCtrl**](GatewayQOSTemplateAPI.md#createtemplatebwctrl) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/bwcs | Create siteTemplate&#39;s new bandwidth control rule
+[**CreateTemplateClassRule**](GatewayQOSTemplateAPI.md#createtemplateclassrule) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/class-rules | Create siteTemplate&#39;s new class rule
+[**DeleteTemplateBwCtrl**](GatewayQOSTemplateAPI.md#deletetemplatebwctrl) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/bwcs/{id} | Delete an existing bandwidth control rule in siteTemplate
+[**DeleteTemplateClassRule**](GatewayQOSTemplateAPI.md#deletetemplateclassrule) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/class-rules/{id} | Delete an existing class rule in siteTemplate
+[**GetTemplateBandwidthCtrlGrid**](GatewayQOSTemplateAPI.md#gettemplatebandwidthctrlgrid) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/bwcs | Get siteTemplate&#39;s bandwidth control rule list
+[**GetTemplateClassRuleGrid**](GatewayQOSTemplateAPI.md#gettemplateclassrulegrid) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/class-rules | Get siteTemplate&#39;s class rule list
+[**GetTemplateQosWans**](GatewayQOSTemplateAPI.md#gettemplateqoswans) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/wans | Get siteTemplate&#39;s WAN ports info for Gateway QoS
+[**GetTemplateTagOut**](GatewayQOSTemplateAPI.md#gettemplatetagout) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/tag-outbound-traffic | Get siteTemplate&#39;s Tag Outbound Traffic info
+[**GetTemplateVoip**](GatewayQOSTemplateAPI.md#gettemplatevoip) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/voip-prioritization | Get siteTemplate&#39;s VoIP Prioritization info
+[**ModifyTemplateBwCtrl**](GatewayQOSTemplateAPI.md#modifytemplatebwctrl) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/bwcs/{id} | Modify an existing bandwidth control rule in siteTemplate
+[**ModifyTemplateClassRule**](GatewayQOSTemplateAPI.md#modifytemplateclassrule) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/class-rules/{id} | Modify an existing class rule in siteTemplate
+[**ModifyTemplateTagOut**](GatewayQOSTemplateAPI.md#modifytemplatetagout) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/tag-outbound-traffic | Modify siteTemplate&#39;s Tag Outbound Traffic info
+[**ModifyTemplateVoip**](GatewayQOSTemplateAPI.md#modifytemplatevoip) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/qos/gateway/voip-prioritization | Modify siteTemplate&#39;s VoIP Prioritization info
 
 
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -839,7 +839,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -989,7 +989,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

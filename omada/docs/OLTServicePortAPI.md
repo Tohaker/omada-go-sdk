@@ -1,23 +1,23 @@
-# \OLTServicePortAPI
+# OLTServicePortAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddServicePort**](OLTServicePortAPI.md#AddServicePort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/add | Create new service port
-[**ClearStatisticInfo**](OLTServicePortAPI.md#ClearStatisticInfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistics/clear | Batch delete existing statistic info
-[**DeleteServicePort**](OLTServicePortAPI.md#DeleteServicePort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/delete | Batch delete existing service port
-[**EditAutoRefreshConfig**](OLTServicePortAPI.md#EditAutoRefreshConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistic/configs/edit | Modify an existing auto refresh config
-[**EditAutoServicePort**](OLTServicePortAPI.md#EditAutoServicePort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/auto-service-ports/edit | Batch modify auto service port
-[**EditServicePort**](OLTServicePortAPI.md#EditServicePort) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/edit | Modify an existing service port
-[**GetAutoRefreshConfig**](OLTServicePortAPI.md#GetAutoRefreshConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistic/configs | Get auto refresh config
-[**GetAutoServicePortConfigPage**](OLTServicePortAPI.md#GetAutoServicePortConfigPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/auto-service-ports/page | Get auto service port config page
-[**GetAutoServicePortList**](OLTServicePortAPI.md#GetAutoServicePortList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/auto-service-ports/list | Get auto service port list
-[**GetServicePortList**](OLTServicePortAPI.md#GetServicePortList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/list | Get service port list
-[**GetServicePortPage**](OLTServicePortAPI.md#GetServicePortPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/page | Get service port page
-[**GetStatisticInfoDetail**](OLTServicePortAPI.md#GetStatisticInfoDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistics/detail | Get statistic info detail
-[**GetStatisticInfoList**](OLTServicePortAPI.md#GetStatisticInfoList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistics/list | Get statistic info list
-[**GetStatisticInfoPage**](OLTServicePortAPI.md#GetStatisticInfoPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistics/page | Get statistic info page
+[**AddServicePort**](OLTServicePortAPI.md#addserviceport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/add | Create new service port
+[**ClearStatisticInfo**](OLTServicePortAPI.md#clearstatisticinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistics/clear | Batch delete existing statistic info
+[**DeleteServicePort**](OLTServicePortAPI.md#deleteserviceport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/delete | Batch delete existing service port
+[**EditAutoRefreshConfig**](OLTServicePortAPI.md#editautorefreshconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistic/configs/edit | Modify an existing auto refresh config
+[**EditAutoServicePort**](OLTServicePortAPI.md#editautoserviceport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/auto-service-ports/edit | Batch modify auto service port
+[**EditServicePort**](OLTServicePortAPI.md#editserviceport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/edit | Modify an existing service port
+[**GetAutoRefreshConfig**](OLTServicePortAPI.md#getautorefreshconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistic/configs | Get auto refresh config
+[**GetAutoServicePortConfigPage**](OLTServicePortAPI.md#getautoserviceportconfigpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/auto-service-ports/page | Get auto service port config page
+[**GetAutoServicePortList**](OLTServicePortAPI.md#getautoserviceportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/auto-service-ports/list | Get auto service port list
+[**GetServicePortList**](OLTServicePortAPI.md#getserviceportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/list | Get service port list
+[**GetServicePortPage**](OLTServicePortAPI.md#getserviceportpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-ports/page | Get service port page
+[**GetStatisticInfoDetail**](OLTServicePortAPI.md#getstatisticinfodetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistics/detail | Get statistic info detail
+[**GetStatisticInfoList**](OLTServicePortAPI.md#getstatisticinfolist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistics/list | Get statistic info list
+[**GetStatisticInfoPage**](OLTServicePortAPI.md#getstatisticinfopage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/service-port/statistics/page | Get statistic info page
 
 
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -631,7 +631,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -709,7 +709,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -787,7 +787,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -865,7 +865,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -943,7 +943,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1021,7 +1021,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1099,7 +1099,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

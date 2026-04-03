@@ -1,24 +1,24 @@
-# \WLANOptimizationAPI
+# WLANOptimizationAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApplyPlanningHistory**](WLANOptimizationAPI.md#ApplyPlanningHistory) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/planningHistory/{id} | apply Planning History
-[**CancelRadioFrequencyPlanning**](WLANOptimizationAPI.md#CancelRadioFrequencyPlanning) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/rfPlanning/cancel | cancel Radio Frequency Planning
-[**DeletePlanningHistory**](WLANOptimizationAPI.md#DeletePlanningHistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/planningHistory/{id} | delete Planning History
-[**GetExperienceIndex**](WLANOptimizationAPI.md#GetExperienceIndex) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/experienceIndex | get Experience Index
-[**GetGirdPlanningHistorys**](WLANOptimizationAPI.md#GetGirdPlanningHistorys) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/planningHistory | get Gird Planning Historys
-[**GetPlanningHistory**](WLANOptimizationAPI.md#GetPlanningHistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/planningHistory/{id} | Get Planning History
-[**GetRFPlanningDeployHistory**](WLANOptimizationAPI.md#GetRFPlanningDeployHistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfplanning/history | get RF Planning Deploy History
-[**GetRadioFrequencyPlanningConfig**](WLANOptimizationAPI.md#GetRadioFrequencyPlanningConfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning | get Radio Frequency Planning Config
-[**GetRadioFrequencyPlanningConfigTemplate**](WLANOptimizationAPI.md#GetRadioFrequencyPlanningConfigTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rfPlanning/config | get Radio Frequency Planning Config Template
-[**GetRadioFrequencyPlanningResult**](WLANOptimizationAPI.md#GetRadioFrequencyPlanningResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/result | get Radio Frequency Planning Result
-[**ModifyExcludeAps**](WLANOptimizationAPI.md#ModifyExcludeAps) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/excludeAps | modify Exclude Aps
-[**ModifyRFPlanningDeployConfig**](WLANOptimizationAPI.md#ModifyRFPlanningDeployConfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/config | modify RF Planning Deploy Config
-[**ModifyRFPlanningDeployConfigTemplate**](WLANOptimizationAPI.md#ModifyRFPlanningDeployConfigTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rfPlanning/config | modify RF Planning Deploy Config Template
-[**StartOptimization**](WLANOptimizationAPI.md#StartOptimization) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/rfPlanning/optimization | start Optimization
-[**StartRrmOptimization**](WLANOptimizationAPI.md#StartRrmOptimization) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/rfPlanning/rrmOptimization | start Rrm Optimization
+[**ApplyPlanningHistory**](WLANOptimizationAPI.md#applyplanninghistory) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/planningHistory/{id} | apply Planning History
+[**CancelRadioFrequencyPlanning**](WLANOptimizationAPI.md#cancelradiofrequencyplanning) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/rfPlanning/cancel | cancel Radio Frequency Planning
+[**DeletePlanningHistory**](WLANOptimizationAPI.md#deleteplanninghistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/planningHistory/{id} | delete Planning History
+[**GetExperienceIndex**](WLANOptimizationAPI.md#getexperienceindex) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/experienceIndex | get Experience Index
+[**GetGirdPlanningHistorys**](WLANOptimizationAPI.md#getgirdplanninghistorys) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/planningHistory | get Gird Planning Historys
+[**GetPlanningHistory**](WLANOptimizationAPI.md#getplanninghistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/planningHistory/{id} | Get Planning History
+[**GetRFPlanningDeployHistory**](WLANOptimizationAPI.md#getrfplanningdeployhistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfplanning/history | get RF Planning Deploy History
+[**GetRadioFrequencyPlanningConfig**](WLANOptimizationAPI.md#getradiofrequencyplanningconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning | get Radio Frequency Planning Config
+[**GetRadioFrequencyPlanningConfigTemplate**](WLANOptimizationAPI.md#getradiofrequencyplanningconfigtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rfPlanning/config | get Radio Frequency Planning Config Template
+[**GetRadioFrequencyPlanningResult**](WLANOptimizationAPI.md#getradiofrequencyplanningresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/result | get Radio Frequency Planning Result
+[**ModifyExcludeAps**](WLANOptimizationAPI.md#modifyexcludeaps) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/excludeAps | modify Exclude Aps
+[**ModifyRFPlanningDeployConfig**](WLANOptimizationAPI.md#modifyrfplanningdeployconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/config | modify RF Planning Deploy Config
+[**ModifyRFPlanningDeployConfigTemplate**](WLANOptimizationAPI.md#modifyrfplanningdeployconfigtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rfPlanning/config | modify RF Planning Deploy Config Template
+[**StartOptimization**](WLANOptimizationAPI.md#startoptimization) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/rfPlanning/optimization | start Optimization
+[**StartRrmOptimization**](WLANOptimizationAPI.md#startrrmoptimization) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/rfPlanning/rrmOptimization | start Rrm Optimization
 
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -682,7 +682,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -755,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -905,7 +905,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -980,7 +980,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1055,7 +1055,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1130,7 +1130,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

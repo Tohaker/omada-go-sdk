@@ -1,32 +1,32 @@
-# \VoIPTemplateAPI
+# VoIPTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddCallForwardingRule**](VoIPTemplateAPI.md#AddCallForwardingRule) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-forwarding | Create new siteTemplate&#39;s Call Forwarding
-[**BatchDeleteVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#BatchDeleteVoipTelephoneBookTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book/batch-delete | Batch delete existing Contact Person in siteTemplate
-[**CreateCallBlockingProfile**](VoIPTemplateAPI.md#CreateCallBlockingProfile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/call-blocking | Create new call blocking profile template
-[**CreateProviderProfile**](VoIPTemplateAPI.md#CreateProviderProfile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/provider-profiles | Create new provider profile template
-[**CreateVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#CreateVoipTelephoneBookTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book | Create new siteTemplate&#39;s Contact Person
-[**DeleteCallBlockingProfile1**](VoIPTemplateAPI.md#DeleteCallBlockingProfile1) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/call-blocking/delete | Delete call blocking profile template
-[**DeleteCallForwardingRule**](VoIPTemplateAPI.md#DeleteCallForwardingRule) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-forwarding | Batch delete existing Call Forwarding in siteTemplate
-[**DeleteProviderProfiles1**](VoIPTemplateAPI.md#DeleteProviderProfiles1) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/provider-profiles/delete | Delete provider profile(s) template
-[**DeleteVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#DeleteVoipTelephoneBookTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book/{contactId} | Delete an existing Contact Person in siteTemplate
-[**GetCallBlockingProfiles**](VoIPTemplateAPI.md#GetCallBlockingProfiles) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/call-blocking | Get call blocking profile list template
-[**GetCallForwardingRulesGridTemplate**](VoIPTemplateAPI.md#GetCallForwardingRulesGridTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-forwarding/grid | Get siteTemplate&#39;s Call Forwarding list
-[**GetDndSettings**](VoIPTemplateAPI.md#GetDndSettings) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/dnd/settings | Get DND settings template
-[**GetGridProviderProfileList**](VoIPTemplateAPI.md#GetGridProviderProfileList) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/grid/provider-profiles | Get the grid of provider profile list template
-[**GetVoipCallLogEnable**](VoIPTemplateAPI.md#GetVoipCallLogEnable) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-log-enable | Get siteTemplate&#39;s Voip CallLog Setting
-[**GetVoipEmergency**](VoIPTemplateAPI.md#GetVoipEmergency) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/emergency-number-settings | Get Voip Emergency Number Info Template
-[**GetVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#GetVoipTelephoneBookTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book | Get siteTemplate&#39;s Voip Contact Person list
-[**ModifyCallBlockingProfile**](VoIPTemplateAPI.md#ModifyCallBlockingProfile) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/call-blocking/{profileId} | Modify a call blocking profile template
-[**ModifyCallForwardingRule**](VoIPTemplateAPI.md#ModifyCallForwardingRule) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-forwarding/{forwardingRuleId} | Modify an existing Call Forwarding in siteTemplate
-[**ModifyDndSettings**](VoIPTemplateAPI.md#ModifyDndSettings) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/dnd/settings | Modify DND settings template
-[**ModifyProviderProfile**](VoIPTemplateAPI.md#ModifyProviderProfile) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/provider-profiles/{profileId} | Modify a provider profile template
-[**ModifyVoipCallLogEnable**](VoIPTemplateAPI.md#ModifyVoipCallLogEnable) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-log-enable | Modify siteTemplate&#39;s Voip CallLog Setting
-[**ModifyVoipEmergency**](VoIPTemplateAPI.md#ModifyVoipEmergency) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/emergency-number-settings | Modify Voip Emergency Number Setting Template
-[**ModifyVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#ModifyVoipTelephoneBookTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book/{contactId} | Modify an existing Contact Person in siteTemplate
+[**AddCallForwardingRule**](VoIPTemplateAPI.md#addcallforwardingrule) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-forwarding | Create new siteTemplate&#39;s Call Forwarding
+[**BatchDeleteVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#batchdeletevoiptelephonebooktemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book/batch-delete | Batch delete existing Contact Person in siteTemplate
+[**CreateCallBlockingProfile**](VoIPTemplateAPI.md#createcallblockingprofile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/call-blocking | Create new call blocking profile template
+[**CreateProviderProfile**](VoIPTemplateAPI.md#createproviderprofile) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/provider-profiles | Create new provider profile template
+[**CreateVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#createvoiptelephonebooktemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book | Create new siteTemplate&#39;s Contact Person
+[**DeleteCallBlockingProfile1**](VoIPTemplateAPI.md#deletecallblockingprofile1) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/call-blocking/delete | Delete call blocking profile template
+[**DeleteCallForwardingRule**](VoIPTemplateAPI.md#deletecallforwardingrule) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-forwarding | Batch delete existing Call Forwarding in siteTemplate
+[**DeleteProviderProfiles1**](VoIPTemplateAPI.md#deleteproviderprofiles1) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/provider-profiles/delete | Delete provider profile(s) template
+[**DeleteVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#deletevoiptelephonebooktemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book/{contactId} | Delete an existing Contact Person in siteTemplate
+[**GetCallBlockingProfiles**](VoIPTemplateAPI.md#getcallblockingprofiles) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/call-blocking | Get call blocking profile list template
+[**GetCallForwardingRulesGridTemplate**](VoIPTemplateAPI.md#getcallforwardingrulesgridtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-forwarding/grid | Get siteTemplate&#39;s Call Forwarding list
+[**GetDndSettings**](VoIPTemplateAPI.md#getdndsettings) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/dnd/settings | Get DND settings template
+[**GetGridProviderProfileList**](VoIPTemplateAPI.md#getgridproviderprofilelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/grid/provider-profiles | Get the grid of provider profile list template
+[**GetVoipCallLogEnable**](VoIPTemplateAPI.md#getvoipcalllogenable) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-log-enable | Get siteTemplate&#39;s Voip CallLog Setting
+[**GetVoipEmergency**](VoIPTemplateAPI.md#getvoipemergency) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/emergency-number-settings | Get Voip Emergency Number Info Template
+[**GetVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#getvoiptelephonebooktemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book | Get siteTemplate&#39;s Voip Contact Person list
+[**ModifyCallBlockingProfile**](VoIPTemplateAPI.md#modifycallblockingprofile) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/call-blocking/{profileId} | Modify a call blocking profile template
+[**ModifyCallForwardingRule**](VoIPTemplateAPI.md#modifycallforwardingrule) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-forwarding/{forwardingRuleId} | Modify an existing Call Forwarding in siteTemplate
+[**ModifyDndSettings**](VoIPTemplateAPI.md#modifydndsettings) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/dnd/settings | Modify DND settings template
+[**ModifyProviderProfile**](VoIPTemplateAPI.md#modifyproviderprofile) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/provider-profiles/{profileId} | Modify a provider profile template
+[**ModifyVoipCallLogEnable**](VoIPTemplateAPI.md#modifyvoipcalllogenable) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/call-log-enable | Modify siteTemplate&#39;s Voip CallLog Setting
+[**ModifyVoipEmergency**](VoIPTemplateAPI.md#modifyvoipemergency) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/emergency-number-settings | Modify Voip Emergency Number Setting Template
+[**ModifyVoipTelephoneBookTemplate**](VoIPTemplateAPI.md#modifyvoiptelephonebooktemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/voip/telephone-book/{contactId} | Modify an existing Contact Person in siteTemplate
 
 
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -618,7 +618,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -769,7 +769,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -919,7 +919,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -996,7 +996,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1069,7 +1069,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1142,7 +1142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1219,7 +1219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1297,7 +1297,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1375,7 +1375,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1450,7 +1450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1528,7 +1528,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1603,7 +1603,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1678,7 +1678,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1756,7 +1756,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

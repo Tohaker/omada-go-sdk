@@ -1,20 +1,20 @@
-# \NATTemplateAPI
+# NATTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddDisableNat**](NATTemplateAPI.md#AddDisableNat) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wired-networks/disable-nat | Create new siteTemplate&#39;s Disable Nat
-[**AddOtoNatTemplates**](NATTemplateAPI.md#AddOtoNatTemplates) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/transmission/otonats | Create site template&#39;s otonat
-[**CreateTemplatePortForwarding**](NATTemplateAPI.md#CreateTemplatePortForwarding) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/port-forwardings | Create site template&#39;s new port forwarding
-[**DeleteDisableNat**](NATTemplateAPI.md#DeleteDisableNat) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wired-networks/disable-nat/{disableNatId} | Delete an existing Disable Nat in siteTemplate
-[**DeleteTemplatePortForwarding**](NATTemplateAPI.md#DeleteTemplatePortForwarding) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/port-forwardings/{portForwardingId} | Delete site template&#39;s port forwarding
-[**GetDisableNatGrid**](NATTemplateAPI.md#GetDisableNatGrid) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wired-networks/disable-nat | Get siteTemplate&#39;s Disable Nat list
-[**GetTemplateAlg**](NATTemplateAPI.md#GetTemplateAlg) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/alg | Get site template&#39;s ALG Info
-[**GetTemplatePortForwardingList**](NATTemplateAPI.md#GetTemplatePortForwardingList) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/port-forwardings | Get site template&#39;s port forwarding list
-[**ModifyDisableNatTemplate**](NATTemplateAPI.md#ModifyDisableNatTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wired-networks/disable-nat/{disableNatId} | Modify an existing Disable Nat in siteTemplate
-[**ModifyTemplateAlg**](NATTemplateAPI.md#ModifyTemplateAlg) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/alg | Modify site template&#39;s ALG setting
-[**ModifyTemplatePortForwarding**](NATTemplateAPI.md#ModifyTemplatePortForwarding) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/port-forwardings/{portForwardingId} | Modify site template&#39;s port forwarding
+[**AddDisableNat**](NATTemplateAPI.md#adddisablenat) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wired-networks/disable-nat | Create new siteTemplate&#39;s Disable Nat
+[**AddOtoNatTemplates**](NATTemplateAPI.md#addotonattemplates) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/transmission/otonats | Create site template&#39;s otonat
+[**CreateTemplatePortForwarding**](NATTemplateAPI.md#createtemplateportforwarding) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/port-forwardings | Create site template&#39;s new port forwarding
+[**DeleteDisableNat**](NATTemplateAPI.md#deletedisablenat) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wired-networks/disable-nat/{disableNatId} | Delete an existing Disable Nat in siteTemplate
+[**DeleteTemplatePortForwarding**](NATTemplateAPI.md#deletetemplateportforwarding) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/port-forwardings/{portForwardingId} | Delete site template&#39;s port forwarding
+[**GetDisableNatGrid**](NATTemplateAPI.md#getdisablenatgrid) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wired-networks/disable-nat | Get siteTemplate&#39;s Disable Nat list
+[**GetTemplateAlg**](NATTemplateAPI.md#gettemplatealg) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/alg | Get site template&#39;s ALG Info
+[**GetTemplatePortForwardingList**](NATTemplateAPI.md#gettemplateportforwardinglist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/port-forwardings | Get site template&#39;s port forwarding list
+[**ModifyDisableNatTemplate**](NATTemplateAPI.md#modifydisablenattemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wired-networks/disable-nat/{disableNatId} | Modify an existing Disable Nat in siteTemplate
+[**ModifyTemplateAlg**](NATTemplateAPI.md#modifytemplatealg) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/alg | Modify site template&#39;s ALG setting
+[**ModifyTemplatePortForwarding**](NATTemplateAPI.md#modifytemplateportforwarding) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/nat/port-forwardings/{portForwardingId} | Modify site template&#39;s port forwarding
 
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -688,7 +688,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -763,7 +763,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -841,7 +841,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

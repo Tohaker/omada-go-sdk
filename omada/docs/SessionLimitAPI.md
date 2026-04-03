@@ -1,16 +1,16 @@
-# \SessionLimitAPI
+# SessionLimitAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSessionLimitRule**](SessionLimitAPI.md#CreateSessionLimitRule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules | Create session limit rule
-[**DeleteSessionLimitRule**](SessionLimitAPI.md#DeleteSessionLimitRule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules/{ruleId} | Delete session limit rule
-[**GetGridSessionLimitRule**](SessionLimitAPI.md#GetGridSessionLimitRule) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules | Get session limit rule list
-[**GetSessionLimit**](SessionLimitAPI.md#GetSessionLimit) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/session-limit | Get session limit
-[**ModifySessionLimit**](SessionLimitAPI.md#ModifySessionLimit) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/session-limit | Modify session limit
-[**ModifySessionLimitRule**](SessionLimitAPI.md#ModifySessionLimitRule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules/{ruleId} | Modify session limit rule
-[**ModifySessionLimitRuleIndex**](SessionLimitAPI.md#ModifySessionLimitRuleIndex) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules | Modify session limit rule index
+[**CreateSessionLimitRule**](SessionLimitAPI.md#createsessionlimitrule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules | Create session limit rule
+[**DeleteSessionLimitRule**](SessionLimitAPI.md#deletesessionlimitrule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules/{ruleId} | Delete session limit rule
+[**GetGridSessionLimitRule**](SessionLimitAPI.md#getgridsessionlimitrule) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules | Get session limit rule list
+[**GetSessionLimit**](SessionLimitAPI.md#getsessionlimit) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/session-limit | Get session limit
+[**ModifySessionLimit**](SessionLimitAPI.md#modifysessionlimit) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/session-limit | Modify session limit
+[**ModifySessionLimitRule**](SessionLimitAPI.md#modifysessionlimitrule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules/{ruleId} | Modify session limit rule
+[**ModifySessionLimitRuleIndex**](SessionLimitAPI.md#modifysessionlimitruleindex) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules | Modify session limit rule index
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

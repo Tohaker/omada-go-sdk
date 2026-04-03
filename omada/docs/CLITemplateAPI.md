@@ -1,15 +1,15 @@
-# \CLITemplateAPI
+# CLITemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApplyCliConfigTemplate**](CLITemplateAPI.md#ApplyCliConfigTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/configs/config-id/{configId}/apply | Apply the CLI template configuration
-[**CreateCliConfigTemplate**](CLITemplateAPI.md#CreateCliConfigTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/config/cli-type/{cliType}/save | Create a new CLI template configuration
-[**DeleteCliConfigTemplate**](CLITemplateAPI.md#DeleteCliConfigTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/configs/cli-type/{cliType} | Delete the CLI template configuration
-[**GetCliConfigTemplate**](CLITemplateAPI.md#GetCliConfigTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/config/cli-type/{cliType}/config-id/{configId} | Get the CLI template configuration content
-[**GetGridCliTemplate**](CLITemplateAPI.md#GetGridCliTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/configs/cli-type/{cliType}/device-type/{deviceType} | Get the CLI template configuration list
-[**ModifyCliConfigTemplate**](CLITemplateAPI.md#ModifyCliConfigTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/config/cli-type/{cliType}/config-id/{configId} | Modify the CLI template configuration content
+[**ApplyCliConfigTemplate**](CLITemplateAPI.md#applycliconfigtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/configs/config-id/{configId}/apply | Apply the CLI template configuration
+[**CreateCliConfigTemplate**](CLITemplateAPI.md#createcliconfigtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/config/cli-type/{cliType}/save | Create a new CLI template configuration
+[**DeleteCliConfigTemplate**](CLITemplateAPI.md#deletecliconfigtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/configs/cli-type/{cliType} | Delete the CLI template configuration
+[**GetCliConfigTemplate**](CLITemplateAPI.md#getcliconfigtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/config/cli-type/{cliType}/config-id/{configId} | Get the CLI template configuration content
+[**GetGridCliTemplate**](CLITemplateAPI.md#getgridclitemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/configs/cli-type/{cliType}/device-type/{deviceType} | Get the CLI template configuration list
+[**ModifyCliConfigTemplate**](CLITemplateAPI.md#modifycliconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/config/cli-type/{cliType}/config-id/{configId} | Modify the CLI template configuration content
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

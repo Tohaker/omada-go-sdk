@@ -1,17 +1,17 @@
-# \ArpDetectionAPI
+# ArpDetectionAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateArpDetects**](ArpDetectionAPI.md#CreateArpDetects) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects | Create new arp detects
-[**DeleteArpDetect**](ArpDetectionAPI.md#DeleteArpDetect) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/{arpDetectId} | Delete an existing arp detect
-[**GetArpDetectStatus**](ArpDetectionAPI.md#GetArpDetectStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/status | Get arp detect status
-[**GetGridArpDetects**](ArpDetectionAPI.md#GetGridArpDetects) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects | Get arp detect list
-[**GetOswPortLagIdVlans**](ArpDetectionAPI.md#GetOswPortLagIdVlans) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/portLagVlans | Get the port or standard port or lag to vlans map of one osw.
-[**ImportArpDetectImpbsFromFile**](ArpDetectionAPI.md#ImportArpDetectImpbsFromFile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/impbs/import | Import the static impbs from file.
-[**ModifyArpDetect**](ArpDetectionAPI.md#ModifyArpDetect) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/{arpDetectId} | Modify a arp detect
-[**ModifyArpDetectStatus**](ArpDetectionAPI.md#ModifyArpDetectStatus) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/status | Modify arp detect status
+[**CreateArpDetects**](ArpDetectionAPI.md#createarpdetects) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects | Create new arp detects
+[**DeleteArpDetect**](ArpDetectionAPI.md#deletearpdetect) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/{arpDetectId} | Delete an existing arp detect
+[**GetArpDetectStatus**](ArpDetectionAPI.md#getarpdetectstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/status | Get arp detect status
+[**GetGridArpDetects**](ArpDetectionAPI.md#getgridarpdetects) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects | Get arp detect list
+[**GetOswPortLagIdVlans**](ArpDetectionAPI.md#getoswportlagidvlans) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/portLagVlans | Get the port or standard port or lag to vlans map of one osw.
+[**ImportArpDetectImpbsFromFile**](ArpDetectionAPI.md#importarpdetectimpbsfromfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/impbs/import | Import the static impbs from file.
+[**ModifyArpDetect**](ArpDetectionAPI.md#modifyarpdetect) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/{arpDetectId} | Modify a arp detect
+[**ModifyArpDetectStatus**](ArpDetectionAPI.md#modifyarpdetectstatus) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/arpDetects/status | Modify arp detect status
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

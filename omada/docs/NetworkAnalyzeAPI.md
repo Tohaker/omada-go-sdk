@@ -1,16 +1,16 @@
-# \NetworkAnalyzeAPI
+# NetworkAnalyzeAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DownloadCaptureFile**](NetworkAnalyzeAPI.md#DownloadCaptureFile) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/download | Download package capture file
-[**GetAllCaptureDevices**](NetworkAnalyzeAPI.md#GetAllCaptureDevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/all-devices/device-type/{deviceType} | Get devices that can capture packages
-[**GetDeviceInterfaces**](NetworkAnalyzeAPI.md#GetDeviceInterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/interfaces | Get device interfaces
-[**GetLastCaptureDevice**](NetworkAnalyzeAPI.md#GetLastCaptureDevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/lastDevice | Get last capture device
-[**QueryPackageCaptureStatus**](NetworkAnalyzeAPI.md#QueryPackageCaptureStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/{requestId}/status | Query package capture status
-[**StartPackageCapture**](NetworkAnalyzeAPI.md#StartPackageCapture) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/start | Start package capturing
-[**StopPackageCapture**](NetworkAnalyzeAPI.md#StopPackageCapture) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/stop | Stop package capturing
+[**DownloadCaptureFile**](NetworkAnalyzeAPI.md#downloadcapturefile) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/download | Download package capture file
+[**GetAllCaptureDevices**](NetworkAnalyzeAPI.md#getallcapturedevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/all-devices/device-type/{deviceType} | Get devices that can capture packages
+[**GetDeviceInterfaces**](NetworkAnalyzeAPI.md#getdeviceinterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/interfaces | Get device interfaces
+[**GetLastCaptureDevice**](NetworkAnalyzeAPI.md#getlastcapturedevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/lastDevice | Get last capture device
+[**QueryPackageCaptureStatus**](NetworkAnalyzeAPI.md#querypackagecapturestatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/{requestId}/status | Query package capture status
+[**StartPackageCapture**](NetworkAnalyzeAPI.md#startpackagecapture) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/start | Start package capturing
+[**StopPackageCapture**](NetworkAnalyzeAPI.md#stoppackagecapture) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/capture/device-type/{deviceType}/{deviceMac}/stop | Stop package capturing
 
 
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -557,7 +557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

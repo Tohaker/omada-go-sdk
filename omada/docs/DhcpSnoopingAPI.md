@@ -1,16 +1,16 @@
-# \DhcpSnoopingAPI
+# DhcpSnoopingAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDhcpSnoops**](DhcpSnoopingAPI.md#CreateDhcpSnoops) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops | Create new dhcp snoops
-[**DeleteDhcpSnoop**](DhcpSnoopingAPI.md#DeleteDhcpSnoop) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/{dhcpSnoopId} | Delete an existing dhcp snoop
-[**GetDhcpSnoopImpbs**](DhcpSnoopingAPI.md#GetDhcpSnoopImpbs) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/impbs | Get the impbs with given omadacid, siteid and mac and stackId.
-[**GetDhcpSnoopStatus**](DhcpSnoopingAPI.md#GetDhcpSnoopStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/status | Get dhcp snoop status
-[**GetGridDhcpSnoops**](DhcpSnoopingAPI.md#GetGridDhcpSnoops) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops | Get dhcp snoop list
-[**ModifyDhcpSnoop**](DhcpSnoopingAPI.md#ModifyDhcpSnoop) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/{dhcpSnoopId} | Modify a dhcp snoop
-[**ModifyDhcpSnoopStatus**](DhcpSnoopingAPI.md#ModifyDhcpSnoopStatus) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/status | Modify dhcp snoop status
+[**CreateDhcpSnoops**](DhcpSnoopingAPI.md#createdhcpsnoops) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops | Create new dhcp snoops
+[**DeleteDhcpSnoop**](DhcpSnoopingAPI.md#deletedhcpsnoop) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/{dhcpSnoopId} | Delete an existing dhcp snoop
+[**GetDhcpSnoopImpbs**](DhcpSnoopingAPI.md#getdhcpsnoopimpbs) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/impbs | Get the impbs with given omadacid, siteid and mac and stackId.
+[**GetDhcpSnoopStatus**](DhcpSnoopingAPI.md#getdhcpsnoopstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/status | Get dhcp snoop status
+[**GetGridDhcpSnoops**](DhcpSnoopingAPI.md#getgriddhcpsnoops) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops | Get dhcp snoop list
+[**ModifyDhcpSnoop**](DhcpSnoopingAPI.md#modifydhcpsnoop) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/{dhcpSnoopId} | Modify a dhcp snoop
+[**ModifyDhcpSnoopStatus**](DhcpSnoopingAPI.md#modifydhcpsnoopstatus) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dhcpSnoops/status | Modify dhcp snoop status
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

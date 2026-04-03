@@ -1,16 +1,16 @@
-# \BandwidthControlAPI
+# BandwidthControlAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateBandwidthCtrlRule**](BandwidthControlAPI.md#CreateBandwidthCtrlRule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules | Create bandwidth control rule
-[**DeleteBandwidthCtrlRule**](BandwidthControlAPI.md#DeleteBandwidthCtrlRule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules/{ruleId} | Delete bandwidth control rule
-[**GetBandwidthCtrl**](BandwidthControlAPI.md#GetBandwidthCtrl) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control | Get bandwidth control
-[**GetGridBandwidthCtrlRule**](BandwidthControlAPI.md#GetGridBandwidthCtrlRule) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules | Get bandwidth control rule list
-[**ModifyBandwidthCtrl**](BandwidthControlAPI.md#ModifyBandwidthCtrl) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control | Modify bandwidth control
-[**ModifyBandwidthCtrlRule**](BandwidthControlAPI.md#ModifyBandwidthCtrlRule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules/{ruleId} | Modify bandwidth control rule
-[**ModifyBandwidthCtrlRuleIndex**](BandwidthControlAPI.md#ModifyBandwidthCtrlRuleIndex) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules | Modify bandwidth control rule index
+[**CreateBandwidthCtrlRule**](BandwidthControlAPI.md#createbandwidthctrlrule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules | Create bandwidth control rule
+[**DeleteBandwidthCtrlRule**](BandwidthControlAPI.md#deletebandwidthctrlrule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules/{ruleId} | Delete bandwidth control rule
+[**GetBandwidthCtrl**](BandwidthControlAPI.md#getbandwidthctrl) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control | Get bandwidth control
+[**GetGridBandwidthCtrlRule**](BandwidthControlAPI.md#getgridbandwidthctrlrule) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules | Get bandwidth control rule list
+[**ModifyBandwidthCtrl**](BandwidthControlAPI.md#modifybandwidthctrl) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control | Modify bandwidth control
+[**ModifyBandwidthCtrlRule**](BandwidthControlAPI.md#modifybandwidthctrlrule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules/{ruleId} | Modify bandwidth control rule
+[**ModifyBandwidthCtrlRuleIndex**](BandwidthControlAPI.md#modifybandwidthctrlruleindex) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules | Modify bandwidth control rule index
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

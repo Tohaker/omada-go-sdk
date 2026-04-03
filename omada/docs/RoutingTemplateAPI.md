@@ -1,18 +1,18 @@
-# \RoutingTemplateAPI
+# RoutingTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTemplatePolicyRouting**](RoutingTemplateAPI.md#CreateTemplatePolicyRouting) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings | Create site template&#39;s policy routing
-[**CreateTemplateStaticRouting**](RoutingTemplateAPI.md#CreateTemplateStaticRouting) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/static-routings | Create site template&#39;s static routing
-[**DeleteTemplatePolicyRouting**](RoutingTemplateAPI.md#DeleteTemplatePolicyRouting) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings/{policyRoutingId} | Delete site template&#39;s policy routing
-[**DeleteTemplateStaticRouting**](RoutingTemplateAPI.md#DeleteTemplateStaticRouting) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/static-routings/{staticRoutingId} | Delete site template&#39;s static routing
-[**GetTemplateGridPolicyRouting**](RoutingTemplateAPI.md#GetTemplateGridPolicyRouting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings | Get site template&#39;s policy routing list
-[**GetTemplateGridStaticRouting**](RoutingTemplateAPI.md#GetTemplateGridStaticRouting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/static-routings | Get site template&#39;s static routing list
-[**ModifyTemplatePolicyRouting**](RoutingTemplateAPI.md#ModifyTemplatePolicyRouting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings/{policyRoutingId} | Modify site template&#39;s policy routing
-[**ModifyTemplatePolicyRoutingIndex**](RoutingTemplateAPI.md#ModifyTemplatePolicyRoutingIndex) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings/modifyIndex | Modify site template&#39;s policy routing Index
-[**ModifyTemplateStaticRouting**](RoutingTemplateAPI.md#ModifyTemplateStaticRouting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/static-routings/{staticRoutingId} | Modify site template&#39;s static routing
+[**CreateTemplatePolicyRouting**](RoutingTemplateAPI.md#createtemplatepolicyrouting) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings | Create site template&#39;s policy routing
+[**CreateTemplateStaticRouting**](RoutingTemplateAPI.md#createtemplatestaticrouting) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/static-routings | Create site template&#39;s static routing
+[**DeleteTemplatePolicyRouting**](RoutingTemplateAPI.md#deletetemplatepolicyrouting) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings/{policyRoutingId} | Delete site template&#39;s policy routing
+[**DeleteTemplateStaticRouting**](RoutingTemplateAPI.md#deletetemplatestaticrouting) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/static-routings/{staticRoutingId} | Delete site template&#39;s static routing
+[**GetTemplateGridPolicyRouting**](RoutingTemplateAPI.md#gettemplategridpolicyrouting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings | Get site template&#39;s policy routing list
+[**GetTemplateGridStaticRouting**](RoutingTemplateAPI.md#gettemplategridstaticrouting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/static-routings | Get site template&#39;s static routing list
+[**ModifyTemplatePolicyRouting**](RoutingTemplateAPI.md#modifytemplatepolicyrouting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings/{policyRoutingId} | Modify site template&#39;s policy routing
+[**ModifyTemplatePolicyRoutingIndex**](RoutingTemplateAPI.md#modifytemplatepolicyroutingindex) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings/modifyIndex | Modify site template&#39;s policy routing Index
+[**ModifyTemplateStaticRouting**](RoutingTemplateAPI.md#modifytemplatestaticrouting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/static-routings/{staticRoutingId} | Modify site template&#39;s static routing
 
 
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

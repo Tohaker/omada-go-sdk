@@ -1,83 +1,83 @@
-# \DeviceAPI
+# DeviceAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActiveDevice**](DeviceAPI.md#ActiveDevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/active | Batch active devices
-[**ActiveDeviceBySn**](DeviceAPI.md#ActiveDeviceBySn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/sn-active | Batch active devices by SN
-[**ActiveDeviceWithMultiSite**](DeviceAPI.md#ActiveDeviceWithMultiSite) | **Post** /openapi/v1/{omadacId}/multi-devices/active | Batch active devices with multi site
-[**AddDevices**](DeviceAPI.md#AddDevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/multi-add | Batch add devices
-[**AddDevicesByDeviceKey**](DeviceAPI.md#AddDevicesByDeviceKey) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/devicekey-add | Batch add devices by DEVICE KEY.
-[**AddDevicesBySn**](DeviceAPI.md#AddDevicesBySn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/sn-add | Batch add devices by SN
-[**AddDevicesBySnWithMultiSite**](DeviceAPI.md#AddDevicesBySnWithMultiSite) | **Post** /openapi/v1/{omadacId}/multi-devices/sn-add | Batch add devices by SN with multi site
-[**AddDevicesForMsp**](DeviceAPI.md#AddDevicesForMsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/multi-add | Batch add devices in MSP view
-[**AddTag**](DeviceAPI.md#AddTag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Create new tag
-[**AdoptDevice**](DeviceAPI.md#AdoptDevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/start-adopt | Start adopt device
-[**BatchAdopt**](DeviceAPI.md#BatchAdopt) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/batch-adopt | batch adopt device
-[**CancelRollingUpgrade**](DeviceAPI.md#CancelRollingUpgrade) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/rolling-upgrade-tasks/{taskId} | End the rolling upgrade task
-[**CopyDeviceConfiguration**](DeviceAPI.md#CopyDeviceConfiguration) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/copy | Copy configuration
-[**DeleteTag**](DeviceAPI.md#DeleteTag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Delete an existing tag
-[**DownloadDeviceInfo**](DeviceAPI.md#DownloadDeviceInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/{deviceMac}/downloadDeviceInfo/{type} | Download device information.
-[**ExistUnSupportRadSecDevice**](DeviceAPI.md#ExistUnSupportRadSecDevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/un-support-radsec | Check for unsupported RadSec devices.
-[**ExportAddFailDevices**](DeviceAPI.md#ExportAddFailDevices) | **Get** /openapi/v1/{omadacId}/devices/add/{operateId}/export | Export the device file that failed to add in GLOBAL view.
-[**ExportGlobalDeviceList**](DeviceAPI.md#ExportGlobalDeviceList) | **Post** /openapi/v1/{omadacId}/devices/export | Export device list in GLOBAL view
-[**ExportMspAddFailDevices**](DeviceAPI.md#ExportMspAddFailDevices) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/devices/add/{operateId}/export | Export the device file that failed to add in MSP view.
-[**ExportPreConfigDevices**](DeviceAPI.md#ExportPreConfigDevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/migrate/exportPreDevice | Export preconfigured devices of site.
-[**ExportPreConfigDevicesGlobal**](DeviceAPI.md#ExportPreConfigDevicesGlobal) | **Post** /openapi/v1/{omadacId}/migrate/exportPreDevice | Export preconfigured devices in GLOBAL view.
-[**ExportSiteDeviceList**](DeviceAPI.md#ExportSiteDeviceList) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/export | Export device list of site
-[**ForceProvisionDevice**](DeviceAPI.md#ForceProvisionDevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/force-provision | Force provision device
-[**ForgetDevice**](DeviceAPI.md#ForgetDevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/forget | Forget device
-[**ForgetDeviceForMsp**](DeviceAPI.md#ForgetDeviceForMsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/forget | Forget one device in MSP view.
-[**GetAddDevicesStatus**](DeviceAPI.md#GetAddDevicesStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/add/{operateId}/status | Batch get added device status
-[**GetAddDevicesStatusMultiSite**](DeviceAPI.md#GetAddDevicesStatusMultiSite) | **Get** /openapi/v1/{omadacId}/multi-devices/add/{operateId}/status | Batch get added device status with multi site
-[**GetAdoptAbleDevicesForGlobalBatchAdopt**](DeviceAPI.md#GetAdoptAbleDevicesForGlobalBatchAdopt) | **Get** /openapi/v1/{omadacId}/devices/batch/info | Batch get info of adopted device in global view.
-[**GetAdoptAbleDevicesForMspBatchAdopt**](DeviceAPI.md#GetAdoptAbleDevicesForMspBatchAdopt) | **Get** /openapi/v1/msp/{mspId}/devices/batch/info | Batch get info of adopted device in MSP view.
-[**GetAdoptTip**](DeviceAPI.md#GetAdoptTip) | **Get** /openapi/v1/{omadacId}/adopt-tip | Get adopt tip
-[**GetAllDeviceBySite**](DeviceAPI.md#GetAllDeviceBySite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/all | Get device list info.
-[**GetAutoSelectDevices**](DeviceAPI.md#GetAutoSelectDevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/quick-action/network-wizard/auto-select-devices | Get auto select devices in quick-config page.
-[**GetCheckFirmwareTaskResult**](DeviceAPI.md#GetCheckFirmwareTaskResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/all-devices/check-latest-firmware-tasks/{taskId} | Get the result of the given check latest firmware task
-[**GetDeviceAdoptResult**](DeviceAPI.md#GetDeviceAdoptResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/adopt-result | Get device adopt result
-[**GetDeviceList**](DeviceAPI.md#GetDeviceList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices | Get site device list
-[**GetDeviceRememberMe**](DeviceAPI.md#GetDeviceRememberMe) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/remember | Get device remember Config
-[**GetDeviceWhiteList**](DeviceAPI.md#GetDeviceWhiteList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/device-white-list | Get the whitelist list of devices.
-[**GetFirmwareInfo**](DeviceAPI.md#GetFirmwareInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/latest-firmware-info | Get the latest firmware info of the device
-[**GetForgetProcess**](DeviceAPI.md#GetForgetProcess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/forget/{forgetId}/status | Get batch forget process
-[**GetGlobalKnownDeviceList**](DeviceAPI.md#GetGlobalKnownDeviceList) | **Get** /openapi/v1/{omadacId}/devices/known-devices | Get global known device list
-[**GetGlobalUnknownDeviceList**](DeviceAPI.md#GetGlobalUnknownDeviceList) | **Get** /openapi/v1/{omadacId}/devices/unknown-devices | Get global unknown device list
-[**GetGridAdoptedBridgeDevicesBySite**](DeviceAPI.md#GetGridAdoptedBridgeDevicesBySite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/bridge-devices/adopted | Get Bridge group grouped devices
-[**GetGridAdoptedDevicesStatByGlobal**](DeviceAPI.md#GetGridAdoptedDevicesStatByGlobal) | **Get** /openapi/v1/{omadacId}/devices/stat | Query the statistics for the list of global adopted devices.
-[**GetGridPendingBridgeDevicesBySite**](DeviceAPI.md#GetGridPendingBridgeDevicesBySite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/bridge-devices/pending | Get Bridge group ungrouped devices
-[**GetGridPendingDevicesBySite**](DeviceAPI.md#GetGridPendingDevicesBySite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/devices/pending | Get adoptable device list of target site
-[**GetManuallyUpgradeRes**](DeviceAPI.md#GetManuallyUpgradeRes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/manually-upgrade-tasks/{taskId} | Get the result of the given manually upgrade task
-[**GetMoveSiteProcess**](DeviceAPI.md#GetMoveSiteProcess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/move/{moveSiteId}/status | Get batch move site process
-[**GetOnlineTimeline**](DeviceAPI.md#GetOnlineTimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/timeline | Get device online timeline
-[**GetOnlineUpgradeRes**](DeviceAPI.md#GetOnlineUpgradeRes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/online-upgrade-result | Get online upgrade result
-[**GetRollingUpgradeRes**](DeviceAPI.md#GetRollingUpgradeRes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/rolling-upgrade-tasks/{taskId} | Get the result of the given rolling upgrade task
-[**GetSingleForgetProcess**](DeviceAPI.md#GetSingleForgetProcess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/forget/{forgetId}/status | Get forget process of device
-[**GetSingleMoveSiteProcess**](DeviceAPI.md#GetSingleMoveSiteProcess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/move/{moveSiteId}/status | Get move site process of device
-[**GetTags**](DeviceAPI.md#GetTags) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Get tag list
-[**GetUplinkDeviceInfo**](DeviceAPI.md#GetUplinkDeviceInfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/uplink-info | Query uplink information for specified device MAC addresses under the site.
-[**LocateDevice**](DeviceAPI.md#LocateDevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/locate | Locate device
-[**LocatePorts**](DeviceAPI.md#LocatePorts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/locate/switch-ports | Locate multiple ports of multiple switches
-[**ManuallyUpgrade**](DeviceAPI.md#ManuallyUpgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/start-manually-upgrade | Start manually upgrade
-[**ModifyDeviceRememberMe**](DeviceAPI.md#ModifyDeviceRememberMe) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/remember | Modify device remember Config
-[**ModifyTag**](DeviceAPI.md#ModifyTag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Modify an existing tag
-[**MoveSite**](DeviceAPI.md#MoveSite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/site-move | Move site
-[**MoveSiteForAps**](DeviceAPI.md#MoveSiteForAps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/site-move | Move aps to another site
-[**OnlineCheckUpgrade**](DeviceAPI.md#OnlineCheckUpgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/all-devices/start-check-latest-firmware | Start check latest firmware for all devices
-[**OnlineRollingUpgrade**](DeviceAPI.md#OnlineRollingUpgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/start-rolling-upgrade | Start batch rolling upgrade
-[**OnlineRollingUpgradeByQuery**](DeviceAPI.md#OnlineRollingUpgradeByQuery) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/onlineRollingUpgrade | Start batch rolling upgrade By Query
-[**OnlineUpgrade**](DeviceAPI.md#OnlineUpgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/start-online-upgrade | Start online upgrade
-[**RebootDevice**](DeviceAPI.md#RebootDevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/reboot | Reboot device
-[**RetryAddDevice**](DeviceAPI.md#RetryAddDevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/add/retry | Retry add device
-[**RetryAddDeviceByMsp**](DeviceAPI.md#RetryAddDeviceByMsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/add/retry | retry add device in msp view
-[**SearchGlobalDevice**](DeviceAPI.md#SearchGlobalDevice) | **Get** /openapi/v1/{omadacId}/devices | Global search for devices returns the devices under the sites that have permissions.
-[**UnbindActiveDeviceBySn**](DeviceAPI.md#UnbindActiveDeviceBySn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/sn-unbind-active | Change the license from the old device to the new device
-[**UnbindDevice**](DeviceAPI.md#UnbindDevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/unbind | Batch unbind devices
-[**UnbindDeviceBySn**](DeviceAPI.md#UnbindDeviceBySn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/sn-unbind | Batch unbind devices by SN
-[**UpdateDeviceTag**](DeviceAPI.md#UpdateDeviceTag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/tag | Set device tag for given devices
-[**UploadUpgradeFile**](DeviceAPI.md#UploadUpgradeFile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/upgrade-file | Upload device firmware
+[**ActiveDevice**](DeviceAPI.md#activedevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/active | Batch active devices
+[**ActiveDeviceBySn**](DeviceAPI.md#activedevicebysn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/sn-active | Batch active devices by SN
+[**ActiveDeviceWithMultiSite**](DeviceAPI.md#activedevicewithmultisite) | **Post** /openapi/v1/{omadacId}/multi-devices/active | Batch active devices with multi site
+[**AddDevices**](DeviceAPI.md#adddevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/multi-add | Batch add devices
+[**AddDevicesByDeviceKey**](DeviceAPI.md#adddevicesbydevicekey) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/devicekey-add | Batch add devices by DEVICE KEY.
+[**AddDevicesBySn**](DeviceAPI.md#adddevicesbysn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/sn-add | Batch add devices by SN
+[**AddDevicesBySnWithMultiSite**](DeviceAPI.md#adddevicesbysnwithmultisite) | **Post** /openapi/v1/{omadacId}/multi-devices/sn-add | Batch add devices by SN with multi site
+[**AddDevicesForMsp**](DeviceAPI.md#adddevicesformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/multi-add | Batch add devices in MSP view
+[**AddTag**](DeviceAPI.md#addtag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Create new tag
+[**AdoptDevice**](DeviceAPI.md#adoptdevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/start-adopt | Start adopt device
+[**BatchAdopt**](DeviceAPI.md#batchadopt) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/batch-adopt | batch adopt device
+[**CancelRollingUpgrade**](DeviceAPI.md#cancelrollingupgrade) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/rolling-upgrade-tasks/{taskId} | End the rolling upgrade task
+[**CopyDeviceConfiguration**](DeviceAPI.md#copydeviceconfiguration) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/copy | Copy configuration
+[**DeleteTag**](DeviceAPI.md#deletetag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Delete an existing tag
+[**DownloadDeviceInfo**](DeviceAPI.md#downloaddeviceinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/{deviceMac}/downloadDeviceInfo/{type} | Download device information.
+[**ExistUnSupportRadSecDevice**](DeviceAPI.md#existunsupportradsecdevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/un-support-radsec | Check for unsupported RadSec devices.
+[**ExportAddFailDevices**](DeviceAPI.md#exportaddfaildevices) | **Get** /openapi/v1/{omadacId}/devices/add/{operateId}/export | Export the device file that failed to add in GLOBAL view.
+[**ExportGlobalDeviceList**](DeviceAPI.md#exportglobaldevicelist) | **Post** /openapi/v1/{omadacId}/devices/export | Export device list in GLOBAL view
+[**ExportMspAddFailDevices**](DeviceAPI.md#exportmspaddfaildevices) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/devices/add/{operateId}/export | Export the device file that failed to add in MSP view.
+[**ExportPreConfigDevices**](DeviceAPI.md#exportpreconfigdevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/migrate/exportPreDevice | Export preconfigured devices of site.
+[**ExportPreConfigDevicesGlobal**](DeviceAPI.md#exportpreconfigdevicesglobal) | **Post** /openapi/v1/{omadacId}/migrate/exportPreDevice | Export preconfigured devices in GLOBAL view.
+[**ExportSiteDeviceList**](DeviceAPI.md#exportsitedevicelist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/export | Export device list of site
+[**ForceProvisionDevice**](DeviceAPI.md#forceprovisiondevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/force-provision | Force provision device
+[**ForgetDevice**](DeviceAPI.md#forgetdevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/forget | Forget device
+[**ForgetDeviceForMsp**](DeviceAPI.md#forgetdeviceformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/forget | Forget one device in MSP view.
+[**GetAddDevicesStatus**](DeviceAPI.md#getadddevicesstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/add/{operateId}/status | Batch get added device status
+[**GetAddDevicesStatusMultiSite**](DeviceAPI.md#getadddevicesstatusmultisite) | **Get** /openapi/v1/{omadacId}/multi-devices/add/{operateId}/status | Batch get added device status with multi site
+[**GetAdoptAbleDevicesForGlobalBatchAdopt**](DeviceAPI.md#getadoptabledevicesforglobalbatchadopt) | **Get** /openapi/v1/{omadacId}/devices/batch/info | Batch get info of adopted device in global view.
+[**GetAdoptAbleDevicesForMspBatchAdopt**](DeviceAPI.md#getadoptabledevicesformspbatchadopt) | **Get** /openapi/v1/msp/{mspId}/devices/batch/info | Batch get info of adopted device in MSP view.
+[**GetAdoptTip**](DeviceAPI.md#getadopttip) | **Get** /openapi/v1/{omadacId}/adopt-tip | Get adopt tip
+[**GetAllDeviceBySite**](DeviceAPI.md#getalldevicebysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/all | Get device list info.
+[**GetAutoSelectDevices**](DeviceAPI.md#getautoselectdevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/quick-action/network-wizard/auto-select-devices | Get auto select devices in quick-config page.
+[**GetCheckFirmwareTaskResult**](DeviceAPI.md#getcheckfirmwaretaskresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/all-devices/check-latest-firmware-tasks/{taskId} | Get the result of the given check latest firmware task
+[**GetDeviceAdoptResult**](DeviceAPI.md#getdeviceadoptresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/adopt-result | Get device adopt result
+[**GetDeviceList**](DeviceAPI.md#getdevicelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices | Get site device list
+[**GetDeviceRememberMe**](DeviceAPI.md#getdevicerememberme) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/remember | Get device remember Config
+[**GetDeviceWhiteList**](DeviceAPI.md#getdevicewhitelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/device-white-list | Get the whitelist list of devices.
+[**GetFirmwareInfo**](DeviceAPI.md#getfirmwareinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/latest-firmware-info | Get the latest firmware info of the device
+[**GetForgetProcess**](DeviceAPI.md#getforgetprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/forget/{forgetId}/status | Get batch forget process
+[**GetGlobalKnownDeviceList**](DeviceAPI.md#getglobalknowndevicelist) | **Get** /openapi/v1/{omadacId}/devices/known-devices | Get global known device list
+[**GetGlobalUnknownDeviceList**](DeviceAPI.md#getglobalunknowndevicelist) | **Get** /openapi/v1/{omadacId}/devices/unknown-devices | Get global unknown device list
+[**GetGridAdoptedBridgeDevicesBySite**](DeviceAPI.md#getgridadoptedbridgedevicesbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/bridge-devices/adopted | Get Bridge group grouped devices
+[**GetGridAdoptedDevicesStatByGlobal**](DeviceAPI.md#getgridadopteddevicesstatbyglobal) | **Get** /openapi/v1/{omadacId}/devices/stat | Query the statistics for the list of global adopted devices.
+[**GetGridPendingBridgeDevicesBySite**](DeviceAPI.md#getgridpendingbridgedevicesbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/bridge-devices/pending | Get Bridge group ungrouped devices
+[**GetGridPendingDevicesBySite**](DeviceAPI.md#getgridpendingdevicesbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/devices/pending | Get adoptable device list of target site
+[**GetManuallyUpgradeRes**](DeviceAPI.md#getmanuallyupgraderes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/manually-upgrade-tasks/{taskId} | Get the result of the given manually upgrade task
+[**GetMoveSiteProcess**](DeviceAPI.md#getmovesiteprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/move/{moveSiteId}/status | Get batch move site process
+[**GetOnlineTimeline**](DeviceAPI.md#getonlinetimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/timeline | Get device online timeline
+[**GetOnlineUpgradeRes**](DeviceAPI.md#getonlineupgraderes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/online-upgrade-result | Get online upgrade result
+[**GetRollingUpgradeRes**](DeviceAPI.md#getrollingupgraderes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/rolling-upgrade-tasks/{taskId} | Get the result of the given rolling upgrade task
+[**GetSingleForgetProcess**](DeviceAPI.md#getsingleforgetprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/forget/{forgetId}/status | Get forget process of device
+[**GetSingleMoveSiteProcess**](DeviceAPI.md#getsinglemovesiteprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/move/{moveSiteId}/status | Get move site process of device
+[**GetTags**](DeviceAPI.md#gettags) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Get tag list
+[**GetUplinkDeviceInfo**](DeviceAPI.md#getuplinkdeviceinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/uplink-info | Query uplink information for specified device MAC addresses under the site.
+[**LocateDevice**](DeviceAPI.md#locatedevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/locate | Locate device
+[**LocatePorts**](DeviceAPI.md#locateports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/locate/switch-ports | Locate multiple ports of multiple switches
+[**ManuallyUpgrade**](DeviceAPI.md#manuallyupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/start-manually-upgrade | Start manually upgrade
+[**ModifyDeviceRememberMe**](DeviceAPI.md#modifydevicerememberme) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/remember | Modify device remember Config
+[**ModifyTag**](DeviceAPI.md#modifytag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Modify an existing tag
+[**MoveSite**](DeviceAPI.md#movesite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/site-move | Move site
+[**MoveSiteForAps**](DeviceAPI.md#movesiteforaps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/site-move | Move aps to another site
+[**OnlineCheckUpgrade**](DeviceAPI.md#onlinecheckupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/all-devices/start-check-latest-firmware | Start check latest firmware for all devices
+[**OnlineRollingUpgrade**](DeviceAPI.md#onlinerollingupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/start-rolling-upgrade | Start batch rolling upgrade
+[**OnlineRollingUpgradeByQuery**](DeviceAPI.md#onlinerollingupgradebyquery) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/onlineRollingUpgrade | Start batch rolling upgrade By Query
+[**OnlineUpgrade**](DeviceAPI.md#onlineupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/start-online-upgrade | Start online upgrade
+[**RebootDevice**](DeviceAPI.md#rebootdevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/reboot | Reboot device
+[**RetryAddDevice**](DeviceAPI.md#retryadddevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/add/retry | Retry add device
+[**RetryAddDeviceByMsp**](DeviceAPI.md#retryadddevicebymsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/add/retry | retry add device in msp view
+[**SearchGlobalDevice**](DeviceAPI.md#searchglobaldevice) | **Get** /openapi/v1/{omadacId}/devices | Global search for devices returns the devices under the sites that have permissions.
+[**UnbindActiveDeviceBySn**](DeviceAPI.md#unbindactivedevicebysn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/sn-unbind-active | Change the license from the old device to the new device
+[**UnbindDevice**](DeviceAPI.md#unbinddevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/unbind | Batch unbind devices
+[**UnbindDeviceBySn**](DeviceAPI.md#unbinddevicebysn) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/sn-unbind | Batch unbind devices by SN
+[**UpdateDeviceTag**](DeviceAPI.md#updatedevicetag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/tag | Set device tag for given devices
+[**UploadUpgradeFile**](DeviceAPI.md#uploadupgradefile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/upgrade-file | Upload device firmware
 
 
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -741,7 +741,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -819,7 +819,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -894,7 +894,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -970,7 +970,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1045,7 +1045,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1120,7 +1120,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1199,7 +1199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1272,7 +1272,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1347,7 +1347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1419,7 +1419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1497,7 +1497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1570,7 +1570,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1640,7 +1640,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1715,7 +1715,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1791,7 +1791,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1867,7 +1867,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1946,7 +1946,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2022,7 +2022,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2095,7 +2095,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2179,7 +2179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2263,7 +2263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2333,7 +2333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2406,7 +2406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2481,7 +2481,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2557,7 +2557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2633,7 +2633,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2720,7 +2720,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2796,7 +2796,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2869,7 +2869,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2945,7 +2945,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3021,7 +3021,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3109,7 +3109,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3191,7 +3191,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3282,7 +3282,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3352,7 +3352,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3443,7 +3443,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3522,7 +3522,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3598,7 +3598,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3674,7 +3674,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3752,7 +3752,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3828,7 +3828,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3904,7 +3904,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3983,7 +3983,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4062,7 +4062,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4135,7 +4135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4210,7 +4210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4288,7 +4288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4363,7 +4363,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4438,7 +4438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4516,7 +4516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4591,7 +4591,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4669,7 +4669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4744,7 +4744,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4817,7 +4817,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4892,7 +4892,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4969,7 +4969,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5045,7 +5045,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5121,7 +5121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5199,7 +5199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5280,7 +5280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5352,7 +5352,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5427,7 +5427,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5502,7 +5502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5577,7 +5577,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5652,7 +5652,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -5727,7 +5727,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

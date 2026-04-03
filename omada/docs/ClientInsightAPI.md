@@ -1,29 +1,29 @@
-# \ClientInsightAPI
+# ClientInsightAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApDensity**](ClientInsightAPI.md#GetApDensity) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/ap-density | Get ap density.
-[**GetClientActivity**](ClientInsightAPI.md#GetClientActivity) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-activity | Get client activity
-[**GetClientNumberForCustomerList**](ClientInsightAPI.md#GetClientNumberForCustomerList) | **Post** /openapi/v1/msp/{mspId}/customers/client-count | Get the Msp customers&#39; client count.
-[**GetClientsAssociationActivities**](ClientInsightAPI.md#GetClientsAssociationActivities) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-association-activities | Get clients association activities.
-[**GetClientsAssociationTimeDistribution**](ClientInsightAPI.md#GetClientsAssociationTimeDistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-association-time-distribution | Get clients association time distribution.
-[**GetClientsBandDistribution**](ClientInsightAPI.md#GetClientsBandDistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-signal-distribution | Get clients signal distribution.
-[**GetClientsBubble**](ClientInsightAPI.md#GetClientsBubble) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/clients-bubble | Get clients bubble.
-[**GetClientsDistribution**](ClientInsightAPI.md#GetClientsDistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-distribution | Get client distribution.
-[**GetClientsFreqDistribution**](ClientInsightAPI.md#GetClientsFreqDistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-freq-distribution | Get clients freq distribution.
-[**GetClientsRssiDistribution**](ClientInsightAPI.md#GetClientsRssiDistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-rssi-distribution | Get clients rssi distribution.
-[**GetClientsSsidDistribution**](ClientInsightAPI.md#GetClientsSsidDistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-ssid-distribution | Get clients ssid distribution.
-[**GetCurrentClientNum**](ClientInsightAPI.md#GetCurrentClientNum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/current-client-num | Get current client number.
-[**GetDeviceClient5MinStat**](ClientInsightAPI.md#GetDeviceClient5MinStat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/{deviceMac}/client-stat-5min | Get device client 5 min stat.
-[**GetGridKnownClients**](ClientInsightAPI.md#GetGridKnownClients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/clients | Get known clients list
-[**GetGridPastConnections**](ClientInsightAPI.md#GetGridPastConnections) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/past-connection | Get client past connection list
-[**GetLongestClientUptime**](ClientInsightAPI.md#GetLongestClientUptime) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/longest-uptime | Get longest client uptime.
-[**GetMostActiveClients**](ClientInsightAPI.md#GetMostActiveClients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/active-clients | Get most active client.
-[**GetMspDashboardOverall**](ClientInsightAPI.md#GetMspDashboardOverall) | **Get** /openapi/v1/msp/{mspId}/dashboard/client/overview-diagram | Get the msp overview diagram of client.
-[**GetPastClientNum**](ClientInsightAPI.md#GetPastClientNum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/past-client-num | Get past client number.
-[**GetStackClientStat**](ClientInsightAPI.md#GetStackClientStat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/stacks/{stackId}/client-stat | Get stack client stat.
+[**GetApDensity**](ClientInsightAPI.md#getapdensity) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/ap-density | Get ap density.
+[**GetClientActivity**](ClientInsightAPI.md#getclientactivity) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-activity | Get client activity
+[**GetClientNumberForCustomerList**](ClientInsightAPI.md#getclientnumberforcustomerlist) | **Post** /openapi/v1/msp/{mspId}/customers/client-count | Get the Msp customers&#39; client count.
+[**GetClientsAssociationActivities**](ClientInsightAPI.md#getclientsassociationactivities) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-association-activities | Get clients association activities.
+[**GetClientsAssociationTimeDistribution**](ClientInsightAPI.md#getclientsassociationtimedistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-association-time-distribution | Get clients association time distribution.
+[**GetClientsBandDistribution**](ClientInsightAPI.md#getclientsbanddistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-signal-distribution | Get clients signal distribution.
+[**GetClientsBubble**](ClientInsightAPI.md#getclientsbubble) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/clients-bubble | Get clients bubble.
+[**GetClientsDistribution**](ClientInsightAPI.md#getclientsdistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-distribution | Get client distribution.
+[**GetClientsFreqDistribution**](ClientInsightAPI.md#getclientsfreqdistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-freq-distribution | Get clients freq distribution.
+[**GetClientsRssiDistribution**](ClientInsightAPI.md#getclientsrssidistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-rssi-distribution | Get clients rssi distribution.
+[**GetClientsSsidDistribution**](ClientInsightAPI.md#getclientsssiddistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/client-ssid-distribution | Get clients ssid distribution.
+[**GetCurrentClientNum**](ClientInsightAPI.md#getcurrentclientnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/current-client-num | Get current client number.
+[**GetDeviceClient5MinStat**](ClientInsightAPI.md#getdeviceclient5minstat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/{deviceMac}/client-stat-5min | Get device client 5 min stat.
+[**GetGridKnownClients**](ClientInsightAPI.md#getgridknownclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/clients | Get known clients list
+[**GetGridPastConnections**](ClientInsightAPI.md#getgridpastconnections) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/past-connection | Get client past connection list
+[**GetLongestClientUptime**](ClientInsightAPI.md#getlongestclientuptime) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/longest-uptime | Get longest client uptime.
+[**GetMostActiveClients**](ClientInsightAPI.md#getmostactiveclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/active-clients | Get most active client.
+[**GetMspDashboardOverall**](ClientInsightAPI.md#getmspdashboardoverall) | **Get** /openapi/v1/msp/{mspId}/dashboard/client/overview-diagram | Get the msp overview diagram of client.
+[**GetPastClientNum**](ClientInsightAPI.md#getpastclientnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/past-client-num | Get past client number.
+[**GetStackClientStat**](ClientInsightAPI.md#getstackclientstat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/stacks/{stackId}/client-stat | Get stack client stat.
 
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -829,7 +829,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -902,7 +902,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -982,7 +982,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1069,7 +1069,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1156,7 +1156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1229,7 +1229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1302,7 +1302,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1372,7 +1372,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1449,7 +1449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1527,7 +1527,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,14 +1,14 @@
-# \RrmAPI
+# RrmAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetRrmIncompatibleAps**](RrmAPI.md#GetRrmIncompatibleAps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rrm/incompatible | Get incompatible rrm ap list
-[**GetRrmSetting**](RrmAPI.md#GetRrmSetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rrm/config | Get Rrm setting
-[**GetRrmSettingTemplate**](RrmAPI.md#GetRrmSettingTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rrm/config | Get Rrm template setting
-[**ModifyRrmSetting**](RrmAPI.md#ModifyRrmSetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rrm/config | Modify Rrm setting
-[**ModifyRrmSettingTemplate**](RrmAPI.md#ModifyRrmSettingTemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rrm/config | Modify Rrm template setting
+[**GetRrmIncompatibleAps**](RrmAPI.md#getrrmincompatibleaps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rrm/incompatible | Get incompatible rrm ap list
+[**GetRrmSetting**](RrmAPI.md#getrrmsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rrm/config | Get Rrm setting
+[**GetRrmSettingTemplate**](RrmAPI.md#getrrmsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rrm/config | Get Rrm template setting
+[**ModifyRrmSetting**](RrmAPI.md#modifyrrmsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rrm/config | Modify Rrm setting
+[**ModifyRrmSettingTemplate**](RrmAPI.md#modifyrrmsettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rrm/config | Modify Rrm template setting
 
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,17 +1,17 @@
-# \MlagAPI
+# MlagAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateMlagGroup**](MlagAPI.md#CreateMlagGroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/mlag | Create M-LAG group
-[**DeleteMlagGroup**](MlagAPI.md#DeleteMlagGroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/mlag/{mlagId} | Delete M-LAG group
-[**GetGridMlagGroup**](MlagAPI.md#GetGridMlagGroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mlag | Get M-LAG group list
-[**GetMlagCccResult**](MlagAPI.md#GetMlagCccResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mlag/{mlagId}/mlag-ccc/{type} | Get the configuration consistency check result of the M-LAG Group
-[**ListSupportMlagGroupOsws**](MlagAPI.md#ListSupportMlagGroupOsws) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mlag/switches | Get support M-LAG group switch list
-[**LocateMlag**](MlagAPI.md#LocateMlag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/mlag/{mlagId}/locate | Locate M-LAG group
-[**ModifyMlagGroup**](MlagAPI.md#ModifyMlagGroup) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/mlag/{mlagId} | Modify M-LAG group
-[**RebootMlag**](MlagAPI.md#RebootMlag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/mlag/{mlagId}/reboot | Reboot M-LAG group
+[**CreateMlagGroup**](MlagAPI.md#createmlaggroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/mlag | Create M-LAG group
+[**DeleteMlagGroup**](MlagAPI.md#deletemlaggroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/mlag/{mlagId} | Delete M-LAG group
+[**GetGridMlagGroup**](MlagAPI.md#getgridmlaggroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mlag | Get M-LAG group list
+[**GetMlagCccResult**](MlagAPI.md#getmlagcccresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mlag/{mlagId}/mlag-ccc/{type} | Get the configuration consistency check result of the M-LAG Group
+[**ListSupportMlagGroupOsws**](MlagAPI.md#listsupportmlaggrouposws) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mlag/switches | Get support M-LAG group switch list
+[**LocateMlag**](MlagAPI.md#locatemlag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/mlag/{mlagId}/locate | Locate M-LAG group
+[**ModifyMlagGroup**](MlagAPI.md#modifymlaggroup) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/mlag/{mlagId} | Modify M-LAG group
+[**RebootMlag**](MlagAPI.md#rebootmlag) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/mlag/{mlagId}/reboot | Reboot M-LAG group
 
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -617,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

@@ -1,18 +1,18 @@
-# \URLFilteringAPI
+# URLFilteringAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateUrlFilteringRule**](URLFilteringAPI.md#CreateUrlFilteringRule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/url-filters | Create URL filtering rule
-[**DeleteUrlFilteringRule**](URLFilteringAPI.md#DeleteUrlFilteringRule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/{ruleId} | Delete URL filtering rule
-[**GetCategory**](URLFilteringAPI.md#GetCategory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/category | Get Category
-[**GetGridEapRule**](URLFilteringAPI.md#GetGridEapRule) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/eap | Get URL filtering rule list for eap
-[**GetGridGatewayRule**](URLFilteringAPI.md#GetGridGatewayRule) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/gateway | Get URL filtering rule list for gateway
-[**GetUrlFilterGeneral**](URLFilteringAPI.md#GetUrlFilterGeneral) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/globalUrlFilter | Get Content Filter Global
-[**ModifyUrlFilterGeneral**](URLFilteringAPI.md#ModifyUrlFilterGeneral) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/globalUrlFilter | Edit Content Filter Global
-[**ModifyUrlFilteringRule**](URLFilteringAPI.md#ModifyUrlFilteringRule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/{ruleId} | Modify URL filtering rule
-[**ModifyUrlFilteringRuleIndex**](URLFilteringAPI.md#ModifyUrlFilteringRuleIndex) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/url-filters | Modify URL filtering rule index
+[**CreateUrlFilteringRule**](URLFilteringAPI.md#createurlfilteringrule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/url-filters | Create URL filtering rule
+[**DeleteUrlFilteringRule**](URLFilteringAPI.md#deleteurlfilteringrule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/{ruleId} | Delete URL filtering rule
+[**GetCategory**](URLFilteringAPI.md#getcategory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/category | Get Category
+[**GetGridEapRule**](URLFilteringAPI.md#getgrideaprule) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/eap | Get URL filtering rule list for eap
+[**GetGridGatewayRule**](URLFilteringAPI.md#getgridgatewayrule) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/gateway | Get URL filtering rule list for gateway
+[**GetUrlFilterGeneral**](URLFilteringAPI.md#geturlfiltergeneral) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/globalUrlFilter | Get Content Filter Global
+[**ModifyUrlFilterGeneral**](URLFilteringAPI.md#modifyurlfiltergeneral) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/globalUrlFilter | Edit Content Filter Global
+[**ModifyUrlFilteringRule**](URLFilteringAPI.md#modifyurlfilteringrule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/{ruleId} | Modify URL filtering rule
+[**ModifyUrlFilteringRuleIndex**](URLFilteringAPI.md#modifyurlfilteringruleindex) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/url-filters | Modify URL filtering rule index
 
 
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

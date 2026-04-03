@@ -1,15 +1,15 @@
-# \URLFilteringTemplateAPI
+# URLFilteringTemplateAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateUrlFilteringRuleTemplate**](URLFilteringTemplateAPI.md#CreateUrlFilteringRuleTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters | Create URL filtering template rule
-[**DeleteUrlFilteringRuleTemplate**](URLFilteringTemplateAPI.md#DeleteUrlFilteringRuleTemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters/{ruleId} | Delete URL filtering template rule
-[**GetGridEapRuleTemplate**](URLFilteringTemplateAPI.md#GetGridEapRuleTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters/eap | Get URL filtering template rule list for eap
-[**GetGridGatewayRuleTemplate**](URLFilteringTemplateAPI.md#GetGridGatewayRuleTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters/gateway | Get URL filtering template rule list for gateway
-[**ModifyUrlFilteringRuleIndexTemplate**](URLFilteringTemplateAPI.md#ModifyUrlFilteringRuleIndexTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters | Modify URL filtering template rule index
-[**ModifyUrlFilteringRuleTemplate**](URLFilteringTemplateAPI.md#ModifyUrlFilteringRuleTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters/{ruleId} | Modify URL filtering template rule
+[**CreateUrlFilteringRuleTemplate**](URLFilteringTemplateAPI.md#createurlfilteringruletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters | Create URL filtering template rule
+[**DeleteUrlFilteringRuleTemplate**](URLFilteringTemplateAPI.md#deleteurlfilteringruletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters/{ruleId} | Delete URL filtering template rule
+[**GetGridEapRuleTemplate**](URLFilteringTemplateAPI.md#getgrideapruletemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters/eap | Get URL filtering template rule list for eap
+[**GetGridGatewayRuleTemplate**](URLFilteringTemplateAPI.md#getgridgatewayruletemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters/gateway | Get URL filtering template rule list for gateway
+[**ModifyUrlFilteringRuleIndexTemplate**](URLFilteringTemplateAPI.md#modifyurlfilteringruleindextemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters | Modify URL filtering template rule index
+[**ModifyUrlFilteringRuleTemplate**](URLFilteringTemplateAPI.md#modifyurlfilteringruletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/url-filters/{ruleId} | Modify URL filtering template rule
 
 
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

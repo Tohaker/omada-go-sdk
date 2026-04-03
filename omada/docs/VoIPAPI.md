@@ -1,65 +1,65 @@
-# \VoIPAPI
+# VoIPAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddCallForwardingRule1**](VoIPAPI.md#AddCallForwardingRule1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-forwarding | Add call forwarding rules
-[**BatchDeleteVoipTelephoneBook**](VoIPAPI.md#BatchDeleteVoipTelephoneBook) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book/batch-delete | Batch Delete Contact Person
-[**BatchModifyVoipDeviceSetting**](VoIPAPI.md#BatchModifyVoipDeviceSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/batch-modify | Batch Modify Voip Device Setting
-[**BindTelephoneNumber**](VoIPAPI.md#BindTelephoneNumber) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/{deviceMac}/bind-telephone-number | Bind Telephone Number
-[**ClearVoipCallLog**](VoIPAPI.md#ClearVoipCallLog) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/voip/call-log/delete-all | Delete Voip CallLog Data List
-[**CreateCallBlockingProfile1**](VoIPAPI.md#CreateCallBlockingProfile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-blocking | Create new call blocking profile
-[**CreateDigitMapProfile**](VoIPAPI.md#CreateDigitMapProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/digit-map | Create new digit map profile
-[**CreateDigitMapProfileTemplate**](VoIPAPI.md#CreateDigitMapProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/digit-map | Create new digit map profile template
-[**CreateProviderProfile1**](VoIPAPI.md#CreateProviderProfile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/provider-profiles | Create new provider profile
-[**CreateVoipTelephoneBook**](VoIPAPI.md#CreateVoipTelephoneBook) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book | Create New Contact Person
-[**DeleteCallBlockingProfile**](VoIPAPI.md#DeleteCallBlockingProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-blocking/delete | Delete call blocking profile
-[**DeleteCallForwardingRule1**](VoIPAPI.md#DeleteCallForwardingRule1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-forwarding | Delete call forwarding rules
-[**DeleteDigitMapProfile**](VoIPAPI.md#DeleteDigitMapProfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/digit-map/delete | Delete digit map profile
-[**DeleteDigitMapProfileTemplate**](VoIPAPI.md#DeleteDigitMapProfileTemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/digit-map/delete | Delete digit map profile template
-[**DeleteProviderProfiles**](VoIPAPI.md#DeleteProviderProfiles) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/provider-profiles/delete | Delete provider profile(s)
-[**DeleteTelephoneNumber**](VoIPAPI.md#DeleteTelephoneNumber) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/{deviceMac}/telephone-number/{phoneNumberId} | Delete Telephone Number
-[**DeleteTelephoneNumber1**](VoIPAPI.md#DeleteTelephoneNumber1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/all | Delete all voice mail
-[**DeleteVoipMail**](VoIPAPI.md#DeleteVoipMail) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/batch-delete | Batch delete voice mail
-[**DeleteVoipTelephoneBook**](VoIPAPI.md#DeleteVoipTelephoneBook) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book/{contactId} | Delete Contact Person
-[**DownloadTelephoneNumberImportResult**](VoIPAPI.md#DownloadTelephoneNumberImportResult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/import-result | Download telephone number list import result
-[**DownloadVoiceMail**](VoIPAPI.md#DownloadVoiceMail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/{voiceId}/download | Get voice mail
-[**ExportTelephoneNumberListToFile**](VoIPAPI.md#ExportTelephoneNumberListToFile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/export | Export telephone number list to file
-[**GetAllCallBlockingProfiles**](VoIPAPI.md#GetAllCallBlockingProfiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/call-blocking | Get All Call Blocking Profiles
-[**GetAllDigitMapProfiles**](VoIPAPI.md#GetAllDigitMapProfiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/digit-map | Get All Digit Map Profiles
-[**GetCallBlockingProfiles1**](VoIPAPI.md#GetCallBlockingProfiles1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-blocking | Get call blocking profile list
-[**GetCallForwardingRulesGrid**](VoIPAPI.md#GetCallForwardingRulesGrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-forwarding/grid | Get call forwarding rules
-[**GetDigitMapProfiles**](VoIPAPI.md#GetDigitMapProfiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/digit-map | Get digit map profile list
-[**GetDigitMapProfilesTemplate**](VoIPAPI.md#GetDigitMapProfilesTemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/digit-map | Get digit map profile list template
-[**GetDndSettings1**](VoIPAPI.md#GetDndSettings1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/dnd/settings | Get DND settings
-[**GetGridProviderProfileList1**](VoIPAPI.md#GetGridProviderProfileList1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/grid/provider-profiles | Get the grid of provider profile list
-[**GetGridSimplifiedVoipDevices**](VoIPAPI.md#GetGridSimplifiedVoipDevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/simplied-list | Get Grid of Simplified VoIP Devices
-[**GetGridTelephoneNumberRegistrationResults**](VoIPAPI.md#GetGridTelephoneNumberRegistrationResults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/grid/telephone-number | Get Grid of Telephone Number Registration Results
-[**GetTelephoneNumberBatchConfigList**](VoIPAPI.md#GetTelephoneNumberBatchConfigList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/batch-config-list | Get Telephone Number Config List
-[**GetTelephoneNumberRegistrationResults**](VoIPAPI.md#GetTelephoneNumberRegistrationResults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/{deviceMac}/registration-result | Get Telephone Number Registration Results
-[**GetUsbInfo**](VoIPAPI.md#GetUsbInfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/settings/usbInfo | Get USB info
-[**GetVoipCallLog**](VoIPAPI.md#GetVoipCallLog) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/voip/call-log | Get Voip CallLog Data List
-[**GetVoipCallLogEnable1**](VoIPAPI.md#GetVoipCallLogEnable1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/voip/call-log-enable | Get Voip CallLog Setting
-[**GetVoipDeviceList**](VoIPAPI.md#GetVoipDeviceList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices | Get Voip Device List
-[**GetVoipEmergency1**](VoIPAPI.md#GetVoipEmergency1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/voip/emergency-number-settings | Get Voip Emergency Number Info
-[**GetVoipMailGrid**](VoIPAPI.md#GetVoipMailGrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/grid | Get voice mail list
-[**GetVoipMailSettings**](VoIPAPI.md#GetVoipMailSettings) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/settings | Get voice mail settings
-[**GetVoipTelephoneBook**](VoIPAPI.md#GetVoipTelephoneBook) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book | Get Voip TelephoneBook List
-[**ImportTelephoneNumberListFromFile**](VoIPAPI.md#ImportTelephoneNumberListFromFile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/import | Import telephone number list from file
-[**ModifyCallBlockingProfile1**](VoIPAPI.md#ModifyCallBlockingProfile1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-blocking/{profileId} | Modify a call blocking profile
-[**ModifyCallForwardingRule1**](VoIPAPI.md#ModifyCallForwardingRule1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-forwarding | Modify call forwarding rules
-[**ModifyDigitMapProfile**](VoIPAPI.md#ModifyDigitMapProfile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/digit-map/{profileId} | Modify a digit map profile
-[**ModifyDigitMapProfileTemplate**](VoIPAPI.md#ModifyDigitMapProfileTemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/digit-map/{profileId} | Modify a digit map profile template
-[**ModifyDndSettings1**](VoIPAPI.md#ModifyDndSettings1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/dnd/settings | Modify DND settings
-[**ModifyProviderProfile1**](VoIPAPI.md#ModifyProviderProfile1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/provider-profiles/{profileId} | Modify a provider profile
-[**ModifyVoipCallLogEnable1**](VoIPAPI.md#ModifyVoipCallLogEnable1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/voip/call-log-enable | Modify Voip CallLog Setting
-[**ModifyVoipDeviceOsgSetting**](VoIPAPI.md#ModifyVoipDeviceOsgSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/osg/{deviceMac} | Modify Voip Device OSG Setting
-[**ModifyVoipDeviceSetting**](VoIPAPI.md#ModifyVoipDeviceSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/{deviceMac} | Modify Voip Device AP Setting
-[**ModifyVoipEmergency1**](VoIPAPI.md#ModifyVoipEmergency1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/voip/emergency-number-settings | Modify Voip Emergency Number Setting
-[**ModifyVoipTelephoneBook**](VoIPAPI.md#ModifyVoipTelephoneBook) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book/{contactId} | Modify Contact Person
-[**SetVoipMailSettings**](VoIPAPI.md#SetVoipMailSettings) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/settings | Edit voice mail settings
-[**UpdateTelephoneNumberList**](VoIPAPI.md#UpdateTelephoneNumberList) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/batch-config-list | Update Telephone Number List
+[**AddCallForwardingRule1**](VoIPAPI.md#addcallforwardingrule1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-forwarding | Add call forwarding rules
+[**BatchDeleteVoipTelephoneBook**](VoIPAPI.md#batchdeletevoiptelephonebook) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book/batch-delete | Batch Delete Contact Person
+[**BatchModifyVoipDeviceSetting**](VoIPAPI.md#batchmodifyvoipdevicesetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/batch-modify | Batch Modify Voip Device Setting
+[**BindTelephoneNumber**](VoIPAPI.md#bindtelephonenumber) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/{deviceMac}/bind-telephone-number | Bind Telephone Number
+[**ClearVoipCallLog**](VoIPAPI.md#clearvoipcalllog) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/voip/call-log/delete-all | Delete Voip CallLog Data List
+[**CreateCallBlockingProfile1**](VoIPAPI.md#createcallblockingprofile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-blocking | Create new call blocking profile
+[**CreateDigitMapProfile**](VoIPAPI.md#createdigitmapprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/digit-map | Create new digit map profile
+[**CreateDigitMapProfileTemplate**](VoIPAPI.md#createdigitmapprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/digit-map | Create new digit map profile template
+[**CreateProviderProfile1**](VoIPAPI.md#createproviderprofile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/provider-profiles | Create new provider profile
+[**CreateVoipTelephoneBook**](VoIPAPI.md#createvoiptelephonebook) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book | Create New Contact Person
+[**DeleteCallBlockingProfile**](VoIPAPI.md#deletecallblockingprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-blocking/delete | Delete call blocking profile
+[**DeleteCallForwardingRule1**](VoIPAPI.md#deletecallforwardingrule1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-forwarding | Delete call forwarding rules
+[**DeleteDigitMapProfile**](VoIPAPI.md#deletedigitmapprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/digit-map/delete | Delete digit map profile
+[**DeleteDigitMapProfileTemplate**](VoIPAPI.md#deletedigitmapprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/digit-map/delete | Delete digit map profile template
+[**DeleteProviderProfiles**](VoIPAPI.md#deleteproviderprofiles) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/provider-profiles/delete | Delete provider profile(s)
+[**DeleteTelephoneNumber**](VoIPAPI.md#deletetelephonenumber) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/{deviceMac}/telephone-number/{phoneNumberId} | Delete Telephone Number
+[**DeleteTelephoneNumber1**](VoIPAPI.md#deletetelephonenumber1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/all | Delete all voice mail
+[**DeleteVoipMail**](VoIPAPI.md#deletevoipmail) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/batch-delete | Batch delete voice mail
+[**DeleteVoipTelephoneBook**](VoIPAPI.md#deletevoiptelephonebook) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book/{contactId} | Delete Contact Person
+[**DownloadTelephoneNumberImportResult**](VoIPAPI.md#downloadtelephonenumberimportresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/import-result | Download telephone number list import result
+[**DownloadVoiceMail**](VoIPAPI.md#downloadvoicemail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/{voiceId}/download | Get voice mail
+[**ExportTelephoneNumberListToFile**](VoIPAPI.md#exporttelephonenumberlisttofile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/export | Export telephone number list to file
+[**GetAllCallBlockingProfiles**](VoIPAPI.md#getallcallblockingprofiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/call-blocking | Get All Call Blocking Profiles
+[**GetAllDigitMapProfiles**](VoIPAPI.md#getalldigitmapprofiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/digit-map | Get All Digit Map Profiles
+[**GetCallBlockingProfiles1**](VoIPAPI.md#getcallblockingprofiles1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-blocking | Get call blocking profile list
+[**GetCallForwardingRulesGrid**](VoIPAPI.md#getcallforwardingrulesgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-forwarding/grid | Get call forwarding rules
+[**GetDigitMapProfiles**](VoIPAPI.md#getdigitmapprofiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/digit-map | Get digit map profile list
+[**GetDigitMapProfilesTemplate**](VoIPAPI.md#getdigitmapprofilestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/digit-map | Get digit map profile list template
+[**GetDndSettings1**](VoIPAPI.md#getdndsettings1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/dnd/settings | Get DND settings
+[**GetGridProviderProfileList1**](VoIPAPI.md#getgridproviderprofilelist1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/grid/provider-profiles | Get the grid of provider profile list
+[**GetGridSimplifiedVoipDevices**](VoIPAPI.md#getgridsimplifiedvoipdevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/simplied-list | Get Grid of Simplified VoIP Devices
+[**GetGridTelephoneNumberRegistrationResults**](VoIPAPI.md#getgridtelephonenumberregistrationresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/grid/telephone-number | Get Grid of Telephone Number Registration Results
+[**GetTelephoneNumberBatchConfigList**](VoIPAPI.md#gettelephonenumberbatchconfiglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/batch-config-list | Get Telephone Number Config List
+[**GetTelephoneNumberRegistrationResults**](VoIPAPI.md#gettelephonenumberregistrationresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/{deviceMac}/registration-result | Get Telephone Number Registration Results
+[**GetUsbInfo**](VoIPAPI.md#getusbinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/settings/usbInfo | Get USB info
+[**GetVoipCallLog**](VoIPAPI.md#getvoipcalllog) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/voip/call-log | Get Voip CallLog Data List
+[**GetVoipCallLogEnable1**](VoIPAPI.md#getvoipcalllogenable1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/voip/call-log-enable | Get Voip CallLog Setting
+[**GetVoipDeviceList**](VoIPAPI.md#getvoipdevicelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices | Get Voip Device List
+[**GetVoipEmergency1**](VoIPAPI.md#getvoipemergency1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/voip/emergency-number-settings | Get Voip Emergency Number Info
+[**GetVoipMailGrid**](VoIPAPI.md#getvoipmailgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/grid | Get voice mail list
+[**GetVoipMailSettings**](VoIPAPI.md#getvoipmailsettings) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/settings | Get voice mail settings
+[**GetVoipTelephoneBook**](VoIPAPI.md#getvoiptelephonebook) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book | Get Voip TelephoneBook List
+[**ImportTelephoneNumberListFromFile**](VoIPAPI.md#importtelephonenumberlistfromfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/import | Import telephone number list from file
+[**ModifyCallBlockingProfile1**](VoIPAPI.md#modifycallblockingprofile1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-blocking/{profileId} | Modify a call blocking profile
+[**ModifyCallForwardingRule1**](VoIPAPI.md#modifycallforwardingrule1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/call-forwarding | Modify call forwarding rules
+[**ModifyDigitMapProfile**](VoIPAPI.md#modifydigitmapprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/digit-map/{profileId} | Modify a digit map profile
+[**ModifyDigitMapProfileTemplate**](VoIPAPI.md#modifydigitmapprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/voip/digit-map/{profileId} | Modify a digit map profile template
+[**ModifyDndSettings1**](VoIPAPI.md#modifydndsettings1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/dnd/settings | Modify DND settings
+[**ModifyProviderProfile1**](VoIPAPI.md#modifyproviderprofile1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/provider-profiles/{profileId} | Modify a provider profile
+[**ModifyVoipCallLogEnable1**](VoIPAPI.md#modifyvoipcalllogenable1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/voip/call-log-enable | Modify Voip CallLog Setting
+[**ModifyVoipDeviceOsgSetting**](VoIPAPI.md#modifyvoipdeviceosgsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/osg/{deviceMac} | Modify Voip Device OSG Setting
+[**ModifyVoipDeviceSetting**](VoIPAPI.md#modifyvoipdevicesetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/{deviceMac} | Modify Voip Device AP Setting
+[**ModifyVoipEmergency1**](VoIPAPI.md#modifyvoipemergency1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/voip/emergency-number-settings | Modify Voip Emergency Number Setting
+[**ModifyVoipTelephoneBook**](VoIPAPI.md#modifyvoiptelephonebook) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/voip/telephone-book/{contactId} | Modify Contact Person
+[**SetVoipMailSettings**](VoIPAPI.md#setvoipmailsettings) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voice-mail/settings | Edit voice mail settings
+[**UpdateTelephoneNumberList**](VoIPAPI.md#updatetelephonenumberlist) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/voip/voip-devices/telephone-number/batch-config-list | Update Telephone Number List
 
 
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -727,7 +727,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -877,7 +877,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -952,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1027,7 +1027,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1102,7 +1102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1177,7 +1177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1258,7 +1258,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1331,7 +1331,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1406,7 +1406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1482,7 +1482,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1555,7 +1555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1631,7 +1631,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1704,7 +1704,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1777,7 +1777,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1850,7 +1850,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1923,7 +1923,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2000,7 +2000,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2073,7 +2073,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2146,7 +2146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2219,7 +2219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2296,7 +2296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2373,7 +2373,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2450,7 +2450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2527,7 +2527,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2603,7 +2603,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2676,7 +2676,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2759,7 +2759,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2832,7 +2832,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2909,7 +2909,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2982,7 +2982,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3059,7 +3059,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3132,7 +3132,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3209,7 +3209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3284,7 +3284,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3362,7 +3362,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3437,7 +3437,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3515,7 +3515,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3593,7 +3593,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3668,7 +3668,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3746,7 +3746,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3821,7 +3821,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3899,7 +3899,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -3977,7 +3977,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4052,7 +4052,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4130,7 +4130,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4205,7 +4205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -4280,7 +4280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

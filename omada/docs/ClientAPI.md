@@ -1,45 +1,45 @@
-# \ClientAPI
+# ClientAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchModifyClientSetting**](ClientAPI.md#BatchModifyClientSetting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/config | Batch config clients
-[**BlockClient**](ClientAPI.md#BlockClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/block | Block the client
-[**DeleteClient**](ClientAPI.md#DeleteClient) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac} | Delete client
-[**DeleteClients**](ClientAPI.md#DeleteClients) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/delete | Batch delete clients
-[**DisconnectClient**](ClientAPI.md#DisconnectClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/disconnect | Disconnect the client
-[**ExportClient**](ClientAPI.md#ExportClient) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/clients/export | Export client list
-[**ExportClientListGlobalByCloudAccess**](ClientAPI.md#ExportClientListGlobalByCloudAccess) | **Post** /openapi/v1/{omadacId}/files/client-list | Export global client list.
-[**GetClientCorrectionList**](ClientAPI.md#GetClientCorrectionList) | **Get** /openapi/v1/{omadacId}/correction-list | Get client correction options list
-[**GetClientDetail**](ClientAPI.md#GetClientDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac} | Get client info
-[**GetClientDetailStat5Min**](ClientAPI.md#GetClientDetailStat5Min) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client-stat-detail/{clientMac}/5Min | Get client statistical data details at a 5-minute interval.
-[**GetClientDetailStatDaily**](ClientAPI.md#GetClientDetailStatDaily) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client-stat-detail/{clientMac}/daily | Get client statistical data details at a daily interval.
-[**GetClientDetailStatHourly**](ClientAPI.md#GetClientDetailStatHourly) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client-stat-detail/{clientMac}/hourly | Get client statistical data details at a hourly interval.
-[**GetClientFilteringOptions**](ClientAPI.md#GetClientFilteringOptions) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/search-fields-options | Get client list filtering options
-[**GetClientHistoryDataEnable**](ClientAPI.md#GetClientHistoryDataEnable) | **Get** /openapi/v1/{omadacId}/controller/client/history-enable | Get History data retention config.
-[**GetClientJourney**](ClientAPI.md#GetClientJourney) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-connection | Get client connection histories
-[**GetClientTimeline**](ClientAPI.md#GetClientTimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-timeline | Get client timeline events
-[**GetClientTopology**](ClientAPI.md#GetClientTopology) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-link-topology | Get client link topology
-[**GetGridActiveClients**](ClientAPI.md#GetGridActiveClients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients | Get client list
-[**GetGridAllClients**](ClientAPI.md#GetGridAllClients) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/clients | Get all client list
-[**GetGridClientHistory**](ClientAPI.md#GetGridClientHistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-history |  Get Client history.
-[**GetVigiDetailStat5Min**](ClientAPI.md#GetVigiDetailStat5Min) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/5Min | Get VIGI device statistical data details at a 5-minute interval.
-[**GetVigiDetailStatDaily**](ClientAPI.md#GetVigiDetailStatDaily) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/daily | Get VIGI device statistical data details at a daily interval.
-[**GetVigiDetailStatHourly**](ClientAPI.md#GetVigiDetailStatHourly) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/hourly | Get VIGI device statistical data details at a hourly interval.
-[**GetVigiJourney**](ClientAPI.md#GetVigiJourney) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vigis/{vigiMac}/vigi-connection | Get VIGI device connection histories
-[**GetVigiTimeline**](ClientAPI.md#GetVigiTimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vigis/{vigiMac}/vigi-timeline | Get VIGI device timeline events
-[**GetVigiTopology**](ClientAPI.md#GetVigiTopology) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigis/{vigiMac}/vigi-link-topology | Get VIGI device link topology
-[**GlobalClientStatByDevice**](ClientAPI.md#GlobalClientStatByDevice) | **Post** /openapi/v1/{omadacId}/clients/stat/devices | Get global client statistics by device.
-[**GlobalExportAllClientList**](ClientAPI.md#GlobalExportAllClientList) | **Post** /openapi/v1/{omadacId}/files/all-client-list | Export all client list in GLOBAL view
-[**ModifyClientIpSetting**](ClientAPI.md#ModifyClientIpSetting) | **Patch** /openapi/v1/{omadacId}/network/sites/{siteId}/cmd/clients/{clientMac}/update-ipSetting | Set ip setting for given client
-[**MspClientStatByDevice**](ClientAPI.md#MspClientStatByDevice) | **Post** /openapi/v1/msp/{mspId}/clients/stat/devices | Get msp client statistics by device.
-[**RebootClient**](ClientAPI.md#RebootClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/reboot | Reboot the client
-[**ReconnectClient**](ClientAPI.md#ReconnectClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/reconnect | Reconnect the client
-[**UnblockClient**](ClientAPI.md#UnblockClient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/unblock | Unblock the client
-[**UpdateClientLockToApSetting**](ClientAPI.md#UpdateClientLockToApSetting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/lock-to-ap | Lock the given client to aps
-[**UpdateClientName**](ClientAPI.md#UpdateClientName) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/name | Set name for given client
-[**UpdateClientRateLimitSetting**](ClientAPI.md#UpdateClientRateLimitSetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/ratelimit | Set ratelimit setting for given client
+[**BatchModifyClientSetting**](ClientAPI.md#batchmodifyclientsetting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/config | Batch config clients
+[**BlockClient**](ClientAPI.md#blockclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/block | Block the client
+[**DeleteClient**](ClientAPI.md#deleteclient) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac} | Delete client
+[**DeleteClients**](ClientAPI.md#deleteclients) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/delete | Batch delete clients
+[**DisconnectClient**](ClientAPI.md#disconnectclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/disconnect | Disconnect the client
+[**ExportClient**](ClientAPI.md#exportclient) | **Post** /openapi/v1/{omadacId}/files/sites/{siteId}/clients/export | Export client list
+[**ExportClientListGlobalByCloudAccess**](ClientAPI.md#exportclientlistglobalbycloudaccess) | **Post** /openapi/v1/{omadacId}/files/client-list | Export global client list.
+[**GetClientCorrectionList**](ClientAPI.md#getclientcorrectionlist) | **Get** /openapi/v1/{omadacId}/correction-list | Get client correction options list
+[**GetClientDetail**](ClientAPI.md#getclientdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac} | Get client info
+[**GetClientDetailStat5Min**](ClientAPI.md#getclientdetailstat5min) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client-stat-detail/{clientMac}/5Min | Get client statistical data details at a 5-minute interval.
+[**GetClientDetailStatDaily**](ClientAPI.md#getclientdetailstatdaily) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client-stat-detail/{clientMac}/daily | Get client statistical data details at a daily interval.
+[**GetClientDetailStatHourly**](ClientAPI.md#getclientdetailstathourly) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client-stat-detail/{clientMac}/hourly | Get client statistical data details at a hourly interval.
+[**GetClientFilteringOptions**](ClientAPI.md#getclientfilteringoptions) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/search-fields-options | Get client list filtering options
+[**GetClientHistoryDataEnable**](ClientAPI.md#getclienthistorydataenable) | **Get** /openapi/v1/{omadacId}/controller/client/history-enable | Get History data retention config.
+[**GetClientJourney**](ClientAPI.md#getclientjourney) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-connection | Get client connection histories
+[**GetClientTimeline**](ClientAPI.md#getclienttimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-timeline | Get client timeline events
+[**GetClientTopology**](ClientAPI.md#getclienttopology) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-link-topology | Get client link topology
+[**GetGridActiveClients**](ClientAPI.md#getgridactiveclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients | Get client list
+[**GetGridAllClients**](ClientAPI.md#getgridallclients) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/clients | Get all client list
+[**GetGridClientHistory**](ClientAPI.md#getgridclienthistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-history |  Get Client history.
+[**GetVigiDetailStat5Min**](ClientAPI.md#getvigidetailstat5min) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/5Min | Get VIGI device statistical data details at a 5-minute interval.
+[**GetVigiDetailStatDaily**](ClientAPI.md#getvigidetailstatdaily) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/daily | Get VIGI device statistical data details at a daily interval.
+[**GetVigiDetailStatHourly**](ClientAPI.md#getvigidetailstathourly) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/hourly | Get VIGI device statistical data details at a hourly interval.
+[**GetVigiJourney**](ClientAPI.md#getvigijourney) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vigis/{vigiMac}/vigi-connection | Get VIGI device connection histories
+[**GetVigiTimeline**](ClientAPI.md#getvigitimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vigis/{vigiMac}/vigi-timeline | Get VIGI device timeline events
+[**GetVigiTopology**](ClientAPI.md#getvigitopology) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigis/{vigiMac}/vigi-link-topology | Get VIGI device link topology
+[**GlobalClientStatByDevice**](ClientAPI.md#globalclientstatbydevice) | **Post** /openapi/v1/{omadacId}/clients/stat/devices | Get global client statistics by device.
+[**GlobalExportAllClientList**](ClientAPI.md#globalexportallclientlist) | **Post** /openapi/v1/{omadacId}/files/all-client-list | Export all client list in GLOBAL view
+[**ModifyClientIpSetting**](ClientAPI.md#modifyclientipsetting) | **Patch** /openapi/v1/{omadacId}/network/sites/{siteId}/cmd/clients/{clientMac}/update-ipSetting | Set ip setting for given client
+[**MspClientStatByDevice**](ClientAPI.md#mspclientstatbydevice) | **Post** /openapi/v1/msp/{mspId}/clients/stat/devices | Get msp client statistics by device.
+[**RebootClient**](ClientAPI.md#rebootclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/reboot | Reboot the client
+[**ReconnectClient**](ClientAPI.md#reconnectclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/reconnect | Reconnect the client
+[**UnblockClient**](ClientAPI.md#unblockclient) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/unblock | Unblock the client
+[**UpdateClientLockToApSetting**](ClientAPI.md#updateclientlocktoapsetting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/lock-to-ap | Lock the given client to aps
+[**UpdateClientName**](ClientAPI.md#updateclientname) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/name | Set name for given client
+[**UpdateClientRateLimitSetting**](ClientAPI.md#updateclientratelimitsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/ratelimit | Set ratelimit setting for given client
 
 
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -556,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -858,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -936,7 +936,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1009,7 +1009,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1079,7 +1079,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1159,7 +1159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1241,7 +1241,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1317,7 +1317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1412,7 +1412,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1487,7 +1487,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1591,7 +1591,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1669,7 +1669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1747,7 +1747,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1825,7 +1825,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1905,7 +1905,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1987,7 +1987,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2063,7 +2063,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2135,7 +2135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2207,7 +2207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2285,7 +2285,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2357,7 +2357,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2435,7 +2435,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2511,7 +2511,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2587,7 +2587,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2601,7 +2601,7 @@ Name | Type | Description  | Notes
 
 ## UpdateClientLockToApSetting
 
-> OperationResponseWithoutResult UpdateClientLockToApSetting(ctx, omadacId, siteId, clientMac).ClientLockToAPSetting(clientLockToAPSetting).Execute()
+> OperationResponseWithoutResult UpdateClientLockToApSetting(ctx, omadacId, siteId, clientMac).ClientLockToApMacListSetting(clientLockToApMacListSetting).Execute()
 
 Lock the given client to aps
 
@@ -2623,11 +2623,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	clientMac := "clientMac_example" // string | Client MAC
-	clientLockToAPSetting := *openapiclient.NewClientLockToAPSetting(false) // ClientLockToAPSetting | 
+	clientLockToApMacListSetting := *openapiclient.NewClientLockToApMacListSetting(false) // ClientLockToApMacListSetting | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ClientAPI.UpdateClientLockToApSetting(context.Background(), omadacId, siteId, clientMac).ClientLockToAPSetting(clientLockToAPSetting).Execute()
+	resp, r, err := apiClient.ClientAPI.UpdateClientLockToApSetting(context.Background(), omadacId, siteId, clientMac).ClientLockToApMacListSetting(clientLockToApMacListSetting).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.UpdateClientLockToApSetting``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2657,7 +2657,7 @@ Name | Type | Description  | Notes
 
 
 
- **clientLockToAPSetting** | [**ClientLockToAPSetting**](ClientLockToAPSetting.md) |  | 
+ **clientLockToApMacListSetting** | [**ClientLockToApMacListSetting**](ClientLockToApMacListSetting.md) |  | 
 
 ### Return type
 
@@ -2665,7 +2665,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2743,7 +2743,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -2821,7 +2821,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

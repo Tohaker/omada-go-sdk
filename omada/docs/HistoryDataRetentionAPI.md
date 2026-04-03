@@ -1,13 +1,13 @@
-# \HistoryDataRetentionAPI
+# HistoryDataRetentionAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDataRetention**](HistoryDataRetentionAPI.md#GetDataRetention) | **Get** /openapi/v1/{omadacId}/retention | Get history data retention configuration
-[**GetMspClientDetailInfoSetting**](HistoryDataRetentionAPI.md#GetMspClientDetailInfoSetting) | **Get** /openapi/v1/msp/{mspId}/client-detail-information | Get MSP client detail information setting.
-[**ModifyMspClientDetailInfoSetting**](HistoryDataRetentionAPI.md#ModifyMspClientDetailInfoSetting) | **Patch** /openapi/v1/msp/{mspId}/client-detail-information | Modify MSP client detail information setting.
-[**ModifyRetention**](HistoryDataRetentionAPI.md#ModifyRetention) | **Patch** /openapi/v1/{omadacId}/retention | Modify history data retention configuration
+[**GetDataRetention**](HistoryDataRetentionAPI.md#getdataretention) | **Get** /openapi/v1/{omadacId}/retention | Get history data retention configuration
+[**GetMspClientDetailInfoSetting**](HistoryDataRetentionAPI.md#getmspclientdetailinfosetting) | **Get** /openapi/v1/msp/{mspId}/client-detail-information | Get MSP client detail information setting.
+[**ModifyMspClientDetailInfoSetting**](HistoryDataRetentionAPI.md#modifymspclientdetailinfosetting) | **Patch** /openapi/v1/msp/{mspId}/client-detail-information | Modify MSP client detail information setting.
+[**ModifyRetention**](HistoryDataRetentionAPI.md#modifyretention) | **Patch** /openapi/v1/{omadacId}/retention | Modify history data retention configuration
 
 
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

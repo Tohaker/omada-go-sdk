@@ -1,29 +1,29 @@
-# \WirelessNetworkAPI
+# WirelessNetworkAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CountWlans**](WirelessNetworkAPI.md#CountWlans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/cmd/countWlans | Check if the number of WLAN groups is out of limit
-[**CreateSsid**](WirelessNetworkAPI.md#CreateSsid) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids | Create new SSID
-[**CreateWlanGroup**](WirelessNetworkAPI.md#CreateWlanGroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans | Create new WLAN group
-[**DeleteSsid**](WirelessNetworkAPI.md#DeleteSsid) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Delete an existing SSID
-[**DeleteWlanGroup**](WirelessNetworkAPI.md#DeleteWlanGroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Delete an existing WLAN group
-[**GetGridWlanGroup**](WirelessNetworkAPI.md#GetGridWlanGroup) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/wireless-network/wlans | Get WLAN group list paging query
-[**GetSiteApExist6G**](WirelessNetworkAPI.md#GetSiteApExist6G) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/multi-band-6g/exist | Get the site exists 6G ap
-[**GetSsidDetail**](WirelessNetworkAPI.md#GetSsidDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Get SSID detail info
-[**GetSsidList**](WirelessNetworkAPI.md#GetSsidList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids | Get SSID list
-[**GetSsidsBySite**](WirelessNetworkAPI.md#GetSsidsBySite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids | Get all ssids of the site
-[**GetWlanGroupList**](WirelessNetworkAPI.md#GetWlanGroupList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans | Get WLAN group list
-[**UpdateSsidBasicConfig**](WirelessNetworkAPI.md#UpdateSsidBasicConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-basic-config | Update SSID basic config
-[**UpdateSsidDhcpOptionConfig**](WirelessNetworkAPI.md#UpdateSsidDhcpOptionConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-dhcp-option | Update SSID DHCP option 82 config
-[**UpdateSsidHotspotV2Setting**](WirelessNetworkAPI.md#UpdateSsidHotspotV2Setting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-hotspotv2 | Update SSID Hotspot2.0 config
-[**UpdateSsidMacFilterConfig**](WirelessNetworkAPI.md#UpdateSsidMacFilterConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-mac-filter | Update SSID mac filter config
-[**UpdateSsidMultiCastConfig**](WirelessNetworkAPI.md#UpdateSsidMultiCastConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-multicast-config | Update SSID Multicast/Broadcast management config
-[**UpdateSsidRateControlConfig**](WirelessNetworkAPI.md#UpdateSsidRateControlConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-control | Update SSID 802.11 rate control config
-[**UpdateSsidRateLimitConfig**](WirelessNetworkAPI.md#UpdateSsidRateLimitConfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-limit | Update SSID rate limit config
-[**UpdateSsidWlanSchedule**](WirelessNetworkAPI.md#UpdateSsidWlanSchedule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wlan-schedule | Update SSID WLAN schedule config
-[**UpdateWlanGroup**](WirelessNetworkAPI.md#UpdateWlanGroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN group
+[**CountWlans**](WirelessNetworkAPI.md#countwlans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/cmd/countWlans | Check if the number of WLAN groups is out of limit
+[**CreateSsid**](WirelessNetworkAPI.md#createssid) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids | Create new SSID
+[**CreateWlanGroup**](WirelessNetworkAPI.md#createwlangroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans | Create new WLAN group
+[**DeleteSsid**](WirelessNetworkAPI.md#deletessid) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Delete an existing SSID
+[**DeleteWlanGroup**](WirelessNetworkAPI.md#deletewlangroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Delete an existing WLAN group
+[**GetGridWlanGroup**](WirelessNetworkAPI.md#getgridwlangroup) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/wireless-network/wlans | Get WLAN group list paging query
+[**GetSiteApExist6G**](WirelessNetworkAPI.md#getsiteapexist6g) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/multi-band-6g/exist | Get the site exists 6G ap
+[**GetSsidDetail**](WirelessNetworkAPI.md#getssiddetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Get SSID detail info
+[**GetSsidList**](WirelessNetworkAPI.md#getssidlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids | Get SSID list
+[**GetSsidsBySite**](WirelessNetworkAPI.md#getssidsbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids | Get all ssids of the site
+[**GetWlanGroupList**](WirelessNetworkAPI.md#getwlangrouplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans | Get WLAN group list
+[**UpdateSsidBasicConfig**](WirelessNetworkAPI.md#updatessidbasicconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-basic-config | Update SSID basic config
+[**UpdateSsidDhcpOptionConfig**](WirelessNetworkAPI.md#updatessiddhcpoptionconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-dhcp-option | Update SSID DHCP option 82 config
+[**UpdateSsidHotspotV2Setting**](WirelessNetworkAPI.md#updatessidhotspotv2setting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-hotspotv2 | Update SSID Hotspot2.0 config
+[**UpdateSsidMacFilterConfig**](WirelessNetworkAPI.md#updatessidmacfilterconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-mac-filter | Update SSID mac filter config
+[**UpdateSsidMultiCastConfig**](WirelessNetworkAPI.md#updatessidmulticastconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-multicast-config | Update SSID Multicast/Broadcast management config
+[**UpdateSsidRateControlConfig**](WirelessNetworkAPI.md#updatessidratecontrolconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-control | Update SSID 802.11 rate control config
+[**UpdateSsidRateLimitConfig**](WirelessNetworkAPI.md#updatessidratelimitconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-limit | Update SSID rate limit config
+[**UpdateSsidWlanSchedule**](WirelessNetworkAPI.md#updatessidwlanschedule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wlan-schedule | Update SSID WLAN schedule config
+[**UpdateWlanGroup**](WirelessNetworkAPI.md#updatewlangroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN group
 
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -707,7 +707,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -782,7 +782,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -855,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -936,7 +936,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1017,7 +1017,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1098,7 +1098,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1179,7 +1179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1260,7 +1260,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1341,7 +1341,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1422,7 +1422,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1503,7 +1503,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -1581,7 +1581,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 

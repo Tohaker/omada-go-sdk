@@ -1,20 +1,20 @@
-# \OLTONUManagementAPI
+# OLTONUManagementAPI
 
 All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EditOnuGlobalConfigStatus**](OLTONUManagementAPI.md#EditOnuGlobalConfigStatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/global-config/edit | Modify an existing ONU global config status
-[**EditOnuInformationAdminStatusConfig**](OLTONUManagementAPI.md#EditOnuInformationAdminStatusConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/admin/edit | Modify an existing ONU admin status config
-[**EditOnuInformationDescriptionConfig**](OLTONUManagementAPI.md#EditOnuInformationDescriptionConfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/description/edit | Modify an existing ONU description
-[**EditOnuIsolationStatus**](OLTONUManagementAPI.md#EditOnuIsolationStatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/global-config/isolation/edit | Modify an existing ONU  isolation status
-[**GetOnuGlobalConfigStatus**](OLTONUManagementAPI.md#GetOnuGlobalConfigStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/global-config/get | Get ONU global config status
-[**GetOnuInformationConfigList**](OLTONUManagementAPI.md#GetOnuInformationConfigList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/list | Get ONU information config list
-[**GetOnuInformationConfigPage**](OLTONUManagementAPI.md#GetOnuInformationConfigPage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/page | Get ONU information config page
-[**GetOnuInformationDetail**](OLTONUManagementAPI.md#GetOnuInformationDetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/detail/get | Get ONU information detail
-[**GetOnuIsolationStatus**](OLTONUManagementAPI.md#GetOnuIsolationStatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/global-config/isolation/get | Get ONU isolation status
-[**GetOnuRebootStatusConfigList**](OLTONUManagementAPI.md#GetOnuRebootStatusConfigList) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/reboot-status/list | Get ONU reboot status
-[**RebootOnu**](OLTONUManagementAPI.md#RebootOnu) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/onu/reboot | Reboot ONU
+[**EditOnuGlobalConfigStatus**](OLTONUManagementAPI.md#editonuglobalconfigstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/global-config/edit | Modify an existing ONU global config status
+[**EditOnuInformationAdminStatusConfig**](OLTONUManagementAPI.md#editonuinformationadminstatusconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/admin/edit | Modify an existing ONU admin status config
+[**EditOnuInformationDescriptionConfig**](OLTONUManagementAPI.md#editonuinformationdescriptionconfig) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/description/edit | Modify an existing ONU description
+[**EditOnuIsolationStatus**](OLTONUManagementAPI.md#editonuisolationstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/global-config/isolation/edit | Modify an existing ONU  isolation status
+[**GetOnuGlobalConfigStatus**](OLTONUManagementAPI.md#getonuglobalconfigstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/global-config/get | Get ONU global config status
+[**GetOnuInformationConfigList**](OLTONUManagementAPI.md#getonuinformationconfiglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/list | Get ONU information config list
+[**GetOnuInformationConfigPage**](OLTONUManagementAPI.md#getonuinformationconfigpage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/page | Get ONU information config page
+[**GetOnuInformationDetail**](OLTONUManagementAPI.md#getonuinformationdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/detail/get | Get ONU information detail
+[**GetOnuIsolationStatus**](OLTONUManagementAPI.md#getonuisolationstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/global-config/isolation/get | Get ONU isolation status
+[**GetOnuRebootStatusConfigList**](OLTONUManagementAPI.md#getonurebootstatusconfiglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/reboot-status/list | Get ONU reboot status
+[**RebootOnu**](OLTONUManagementAPI.md#rebootonu) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/olts/{deviceMac}/pon/onu-management/informations/onu/reboot | Reboot ONU
 
 
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -550,7 +550,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -628,7 +628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
@@ -858,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AccessToken](../README.md#AccessToken)
+[AccessToken](../README.md#accesstoken)
 
 ### HTTP request headers
 
