@@ -27,6 +27,8 @@ jobs:
         run: go install tool
 
       - name: Create or update release PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           changeset each --filter open-changesets -- sh -c '
             set -e
