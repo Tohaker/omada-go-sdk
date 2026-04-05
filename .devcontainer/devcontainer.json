@@ -18,7 +18,8 @@
 		"vscode": {
 			"extensions": [
 				"github.vscode-github-actions",
-				"redhat.vscode-yaml"
+				"redhat.vscode-yaml",
+				"ms-vscode.makefile-tools"
 			]
 		}
 	}

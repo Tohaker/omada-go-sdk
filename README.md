@@ -99,15 +99,37 @@ Prerequisites: Go 1.21+, Docker.
 
 ```bash
 # Run the full generation pipeline
-./generator/generate.sh
+make all
 ```
 
-Or use the GitHub Actions workflow: **Actions → Generate SDK → Run workflow** with a version tag (e.g. `v0.1.1`).
+## Releasing a new version
+
+This repository uses a two-phase release flow with
+[`go-changesets`](https://github.com/jakoblorz/go-changesets):
+
+1. [`changesets-version-pr`](./.github/workflows/changesets-version-pr.yml) reads pending `.changeset/*.md` files and opens/updates a release PR.
+2. [`changesets-publish`](./.github/workflows/changesets-publish.yml) runs after merge to `main`, regenerates/verifies the SDK, and publishes tags/releases when `version.txt` is newer than the latest tag.
+
+### Add a changeset
+
+Install tools:
+
+```bash
+go install tool
+```
+
+Create a changeset file interactively:
+
+```bash
+changeset add
+```
+
+Changeset files are committed under `.changeset/` and consumed automatically by the version PR workflow.
 
 ## How It Works
 
 1. **`tools/fix_spec.go`** fetches the upstream OpenAPI spec and fixes known issues (schema names with spaces/special chars, missing security definitions, HTTP→HTTPS)
-2. **`openapi-generator-cli`** (pinned to v7.12.0 via Docker) generates the Go client SDK from the fixed spec
+2. **`openapi-generator-cli`** generates the Go client SDK from the fixed spec
 3. A separate generation pass adds auth endpoints from `generator/auth-spec.yaml`
 4. The result is a single `omada` Go package in the `omada/` subdirectory
 

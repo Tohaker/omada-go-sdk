@@ -1,0 +1,43 @@
+name: Publish Changesets
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
+      - name: Install tools
+        run: go install tool
+
+      - name: Validate release prerequisites
+        run: |
+          test -f go.work || (echo "go.work missing" && exit 1)
+          test -f version.txt || (echo "version.txt missing" && exit 1)
+
+      - name: Regenerate SDK
+        run: make all
+
+      - name: Publish tags and GitHub release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
+        run: |
+          changeset each --filter outdated-versions -- \
+            changeset publish --owner "$REPO_OWNER" --repo "$REPO_NAME"
