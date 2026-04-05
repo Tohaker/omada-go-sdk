@@ -28,6 +28,7 @@ jobs:
 
       - name: Create or update release PR
         run: | 
-          changeset gh pr open \
-            --owner ${{ github.event.repository.owner }} \
-            --repo ${{ github.event.repository.name }}
+          changeset each --filter open-changesets -- \
+            changeset gh pr open \
+              --owner ${{ github.event.repository.owner }} \
+              --repo ${{ github.event.repository.name }}
