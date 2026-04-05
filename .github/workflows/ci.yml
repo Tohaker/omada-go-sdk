@@ -17,5 +17,11 @@ jobs:
         with:
           go-version-file: go.mod
 
-      - name: Verify
-        run: make verify
+      - name: Generate SDK
+        run: make all
+
+      - name: Check for uncommitted changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+              echo "::error::SDK changes detected. Make sure you have pushed all generated changes" && exit 1
+          fi
