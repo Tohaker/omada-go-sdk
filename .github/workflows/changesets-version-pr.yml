@@ -1,0 +1,51 @@
+name: Create version PR
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  version-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
+      - name: Install go-changesets
+        run: go install github.com/jakoblorz/go-changesets/cmd/changeset@v0.0.9
+
+      - name: Validate release prerequisites
+        run: |
+          test -f go.work || (echo "go.work missing" && exit 1)
+          test -f version.txt || (echo "version.txt missing" && exit 1)
+
+      - name: Apply pending changesets
+        run: changeset each --filter open-changesets -- changeset version
+
+      - name: Create or update release PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore(release): apply changesets"
+          title: "chore(release): apply changesets"
+          body: |
+            Automated release update generated from pending changesets.
+
+            This PR updates:
+            - version.txt
+            - CHANGELOG.md
+            - consumed .changeset files
+          branch: chore/release-changesets
+          delete-branch: true
+          labels: release

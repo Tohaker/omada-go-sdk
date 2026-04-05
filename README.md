@@ -104,6 +104,30 @@ Prerequisites: Go 1.21+, Docker.
 
 Or use the GitHub Actions workflow: **Actions → Generate SDK → Run workflow** with a version tag (e.g. `v0.1.1`).
 
+## Releasing a new version
+
+This repository uses a two-phase release flow with
+[`go-changesets`](https://github.com/jakoblorz/go-changesets):
+
+1. [`changesets-version-pr`](./.github/workflows/changesets-version-pr.yml) reads pending `.changeset/*.md` files and opens/updates a release PR.
+2. [`changesets-publish`](./.github/workflows/changesets-publish.yml) runs after merge to `main`, regenerates/verifies the SDK, and publishes tags/releases when `version.txt` is newer than the latest tag.
+
+### Add a changeset
+
+Install locally (optional):
+
+```bash
+go install github.com/jakoblorz/go-changesets/cmd/changeset@v0.0.9
+```
+
+Create a changeset file interactively:
+
+```bash
+changeset add
+```
+
+Changeset files are committed under `.changeset/` and consumed automatically by the version PR workflow.
+
 ## How It Works
 
 1. **`tools/fix_spec.go`** fetches the upstream OpenAPI spec and fixes known issues (schema names with spaces/special chars, missing security definitions, HTTP→HTTPS)
