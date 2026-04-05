@@ -22,8 +22,8 @@ jobs:
         with:
           go-version-file: go.mod
 
-      - name: Install go-changesets
-        run: go install github.com/jakoblorz/go-changesets/cmd/changeset@v0.0.9
+      - name: Install tools
+        run: go install tool
 
       - name: Validate release prerequisites
         run: |

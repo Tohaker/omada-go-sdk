@@ -114,10 +114,10 @@ This repository uses a two-phase release flow with
 
 ### Add a changeset
 
-Install locally (optional):
+Install tools:
 
 ```bash
-go install github.com/jakoblorz/go-changesets/cmd/changeset@v0.0.9
+go install tool
 ```
 
 Create a changeset file interactively:
