@@ -31,10 +31,7 @@ jobs:
           test -f version.txt || (echo "version.txt missing" && exit 1)
 
       - name: Regenerate SDK
-        run: ./generator/generate.sh
-
-      - name: Verify vet
-        run: go vet ./...
+        run: make all
 
       - name: Publish tags and GitHub release
         env:
