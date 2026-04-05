@@ -27,8 +27,40 @@ jobs:
         run: go install tool
 
       - name: Create or update release PR
-        run: | 
-          changeset each --filter open-changesets -- \
-            changeset gh pr open \
-              --owner ${{ github.event.repository.owner }} \
+        run: |
+          changeset each --filter open-changesets -- sh -c '
+            set -e
+
+            BRANCH="changeset-release/$PROJECT"
+
+            echo "📦 Creating PR for $PROJECT..."
+
+            git checkout -b "$BRANCH" 2>/dev/null || git checkout "$BRANCH"
+
+            # Run version - this deletes changesets
+            changeset version \
+              --owner ${{ github.repository_owner }} \
               --repo ${{ github.event.repository.name }}
+
+            if git diff --quiet && git diff --cached --quiet; then
+              echo "⚠️  No changes to commit for $PROJECT"
+              git checkout main
+              exit 0
+            fi
+
+            VERSION=$(cat "$PROJECT_PATH/version.txt" 2>/dev/null || echo "unknown")
+
+            git add .
+            git commit -m "chore: version $PROJECT to $VERSION"
+            git push -u origin "$BRANCH" --force
+
+            changeset gh pr open \
+              --owner ${{ github.repository_owner }} \
+              --repo ${{ github.event.repository.name }}
+
+            git checkout main
+            git reset --hard origin/main
+            git clean -fd
+
+            echo "✅ PR created/updated for $PROJECT"
+          '
