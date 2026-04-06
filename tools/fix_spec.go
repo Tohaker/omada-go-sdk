@@ -16,7 +16,9 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"path/filepath"
 	"regexp"
+	"sort"
 	"strings"
 	"unicode"
 
@@ -120,8 +122,8 @@ func fixSpec(raw []byte) []byte {
 		log.Printf("removed %d pattern fields from schemas", removed)
 	}
 
-	// Merge auth spec paths and schemas into the main spec.
-	mergeAuthSpec(parsed)
+	// Merge all patch specs into the main spec.
+	mergePatchSpecs(parsed)
 
 	out, err := json.MarshalIndent(parsed, "", "  ")
 	if err != nil {
@@ -520,51 +522,161 @@ func stripPatterns(v interface{}) int {
 	return removed
 }
 
-// mergeAuthSpec reads generator/auth-spec.yaml and merges its paths and
-// schemas into the main spec so that a single generation pass produces the
-// complete SDK including the Authorize API.
-func mergeAuthSpec(spec map[string]interface{}) {
-	raw, err := os.ReadFile("generator/auth-spec.yaml")
+// mergePatchSpecs reads all specs in generator/patches and merges them into the
+// main spec so a single generation pass produces the complete SDK.
+//
+// Behavior:
+// - patch specs deep-merge path operations and overwrite schemas by name.
+func mergePatchSpecs(spec map[string]interface{}) {
+	patchFiles, err := listPatchSpecFiles("generator/patches")
 	if err != nil {
-		log.Fatalf("read auth-spec.yaml: %v", err)
+		log.Fatalf("list patch specs: %v", err)
 	}
 
-	var auth map[string]interface{}
-	if err := yaml.Unmarshal(raw, &auth); err != nil {
-		log.Fatalf("parse auth-spec.yaml: %v", err)
+	for _, patchFile := range patchFiles {
+		patchSpec, err := readSpecFile(patchFile)
+		if err != nil {
+			log.Fatalf("read patch spec %s: %v", patchFile, err)
+		}
+		mergeOneSpec(spec, patchSpec, patchFile, true, true)
+	}
+}
+
+func listPatchSpecFiles(dir string) ([]string, error) {
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return nil, nil
+		}
+		return nil, err
 	}
 
-	// Merge paths.
-	authPaths, _ := auth["paths"].(map[string]interface{})
-	mainPaths, _ := spec["paths"].(map[string]interface{})
-	if mainPaths == nil {
-		mainPaths = make(map[string]interface{})
-		spec["paths"] = mainPaths
-	}
-	for path, ops := range authPaths {
-		if _, exists := mainPaths[path]; exists {
-			log.Printf("warning: auth path %s already exists in main spec, skipping", path)
+	var files []string
+	for _, entry := range entries {
+		if entry.IsDir() {
 			continue
 		}
-		mainPaths[path] = ops
+		ext := strings.ToLower(filepath.Ext(entry.Name()))
+		if ext != ".json" && ext != ".yaml" && ext != ".yml" {
+			continue
+		}
+		files = append(files, filepath.Join(dir, entry.Name()))
 	}
-	log.Printf("merged %d auth paths into main spec", len(authPaths))
+	sort.Strings(files)
+	return files, nil
+}
 
-	// Merge schemas.
-	authComponents, _ := auth["components"].(map[string]interface{})
-	authSchemas, _ := authComponents["schemas"].(map[string]interface{})
-	mainComponents, _ := spec["components"].(map[string]interface{})
+func readSpecFile(path string) (map[string]interface{}, error) {
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	var spec map[string]interface{}
+	switch strings.ToLower(filepath.Ext(path)) {
+	case ".json":
+		if err := json.Unmarshal(raw, &spec); err != nil {
+			return nil, err
+		}
+	case ".yaml", ".yml":
+		if err := yaml.Unmarshal(raw, &spec); err != nil {
+			return nil, err
+		}
+	default:
+		return nil, fmt.Errorf("unsupported spec extension: %s", filepath.Ext(path))
+	}
+
+	return spec, nil
+}
+
+func mergeOneSpec(mainSpec, overlay map[string]interface{}, source string, overwriteSchemas bool, overwritePaths bool) {
+	mainPaths, _ := mainSpec["paths"].(map[string]interface{})
+	if mainPaths == nil {
+		mainPaths = make(map[string]interface{})
+		mainSpec["paths"] = mainPaths
+	}
+
+	overlayPaths, _ := overlay["paths"].(map[string]interface{})
+	pathsAdded := 0
+	pathsUpdated := 0
+	pathsSkipped := 0
+	for path, overlayPathItem := range overlayPaths {
+		existingPathItem, exists := mainPaths[path]
+		if !exists {
+			mainPaths[path] = overlayPathItem
+			pathsAdded++
+			continue
+		}
+
+		if !overwritePaths {
+			pathsSkipped++
+			continue
+		}
+
+		existingMap, okExisting := existingPathItem.(map[string]interface{})
+		overlayMap, okOverlay := overlayPathItem.(map[string]interface{})
+		if okExisting && okOverlay {
+			deepMergeMaps(existingMap, overlayMap)
+			pathsUpdated++
+			continue
+		}
+
+		mainPaths[path] = overlayPathItem
+		pathsUpdated++
+	}
+
+	mainComponents, _ := mainSpec["components"].(map[string]interface{})
+	if mainComponents == nil {
+		mainComponents = make(map[string]interface{})
+		mainSpec["components"] = mainComponents
+	}
 	mainSchemas, _ := mainComponents["schemas"].(map[string]interface{})
-	added := 0
-	for name, schema := range authSchemas {
-		if _, exists := mainSchemas[name]; exists {
-			log.Printf("warning: auth schema %s already exists in main spec, skipping", name)
+	if mainSchemas == nil {
+		mainSchemas = make(map[string]interface{})
+		mainComponents["schemas"] = mainSchemas
+	}
+
+	overlayComponents, _ := overlay["components"].(map[string]interface{})
+	overlaySchemas, _ := overlayComponents["schemas"].(map[string]interface{})
+	schemasAdded := 0
+	schemasUpdated := 0
+	schemasSkipped := 0
+	for name, schema := range overlaySchemas {
+		_, exists := mainSchemas[name]
+		if exists && !overwriteSchemas {
+			schemasSkipped++
 			continue
 		}
 		mainSchemas[name] = schema
-		added++
+		if exists {
+			schemasUpdated++
+		} else {
+			schemasAdded++
+		}
 	}
-	log.Printf("merged %d auth schemas into main spec", added)
+
+	log.Printf("merged spec %s: paths +%d updated %d skipped %d; schemas +%d updated %d skipped %d",
+		source, pathsAdded, pathsUpdated, pathsSkipped, schemasAdded, schemasUpdated, schemasSkipped)
+}
+
+func deepMergeMaps(dst, src map[string]interface{}) {
+	for key, srcVal := range src {
+		dstVal, exists := dst[key]
+		if !exists {
+			dst[key] = srcVal
+			continue
+		}
+
+		dstMap, okDst := dstVal.(map[string]interface{})
+		srcMap, okSrc := srcVal.(map[string]interface{})
+		if okDst && okSrc {
+			deepMergeMaps(dstMap, srcMap)
+			continue
+		}
+
+		// Non-map values are overwritten by the overlay value.
+		dst[key] = srcVal
+	}
 }
 
 // collectRefs recursively walks the spec and collects all $ref values.

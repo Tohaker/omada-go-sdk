@@ -6,11 +6,32 @@ on:
       - main
 
 jobs:
+  validate:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Install openapi-spec-validator
+        run: pip install openapi-spec-validator
+
+      - name: Fix spec
+        run: make fix
+
+      - name: Validate OpenAPI patch files
+        run: openapi-spec-validator tools/all-fixed.json
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
 
       - name: Setup Go
         uses: actions/setup-go@v6

@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ## CreateNewSite
 
-> OperationResponse CreateNewSite(ctx, omadacId).CreateSiteEntity(createSiteEntity).Execute()
+> CreateNewSiteResponse CreateNewSite(ctx, omadacId).CreateSiteEntity(createSiteEntity).Execute()
 
 Create new site
 
@@ -352,7 +352,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SiteAPI.CreateNewSite``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateNewSite`: OperationResponse
+	// response from `CreateNewSite`: CreateNewSiteResponse
 	fmt.Fprintf(os.Stdout, "Response from `SiteAPI.CreateNewSite`: %v\n", resp)
 }
 ```
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**CreateNewSiteResponse**](CreateNewSiteResponse.md)
 
 ### Authorization
 

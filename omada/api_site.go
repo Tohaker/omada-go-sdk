@@ -94,8 +94,8 @@ type SiteAPI interface {
 	CreateNewSite(ctx context.Context, omadacId string) SiteAPICreateNewSiteRequest
 
 	// CreateNewSiteExecute executes the request
-	//  @return OperationResponse
-	CreateNewSiteExecute(r SiteAPICreateNewSiteRequest) (*OperationResponse, *http.Response, error)
+	//  @return CreateNewSiteResponse
+	CreateNewSiteExecute(r SiteAPICreateNewSiteRequest) (*CreateNewSiteResponse, *http.Response, error)
 
 	/*
 	CreateNewSiteByTemplate Create new site from site template
@@ -950,7 +950,7 @@ func (r SiteAPICreateNewSiteRequest) CreateSiteEntity(createSiteEntity CreateSit
 	return r
 }
 
-func (r SiteAPICreateNewSiteRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SiteAPICreateNewSiteRequest) Execute() (*CreateNewSiteResponse, *http.Response, error) {
 	return r.ApiService.CreateNewSiteExecute(r)
 }
 
@@ -972,13 +972,13 @@ func (a *SiteAPIService) CreateNewSite(ctx context.Context, omadacId string) Sit
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SiteAPIService) CreateNewSiteExecute(r SiteAPICreateNewSiteRequest) (*OperationResponse, *http.Response, error) {
+//  @return CreateNewSiteResponse
+func (a *SiteAPIService) CreateNewSiteExecute(r SiteAPICreateNewSiteRequest) (*CreateNewSiteResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *CreateNewSiteResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteAPIService.CreateNewSite")
