@@ -1,0 +1,44 @@
+{
+    "openapi": "3.0.1",
+    "paths": {
+        "/openapi/v1/{omadacId}/sites": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateNewSiteResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components":{
+        "schemas": {
+            "CreateNewSiteResponse": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/OperationResponse"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "result": {
+                                "type": "object",
+                                "properties": {
+                                    "siteId": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

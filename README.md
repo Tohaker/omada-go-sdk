@@ -130,7 +130,7 @@ Changeset files are committed under `.changeset/` and consumed automatically by 
 
 1. **`tools/fix_spec.go`** fetches the upstream OpenAPI spec and fixes known issues (schema names with spaces/special chars, missing security definitions, HTTP→HTTPS)
 2. **`openapi-generator-cli`** generates the Go client SDK from the fixed spec
-3. A separate generation pass adds auth endpoints from `generator/auth-spec.yaml`
+3. Patch specs from `generator/patches/` are merged into the fixed upstream spec (including auth endpoints)
 4. The result is a single `omada` Go package in the `omada/` subdirectory
 
 ## Publishing docs
