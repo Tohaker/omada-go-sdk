@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SiteId** | Pointer to **string** |  | [optional] 
+**SiteId** | Pointer to **string** | Id of the created site | [optional] 
 
 ## Methods
 

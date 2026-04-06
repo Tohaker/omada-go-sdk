@@ -17,8 +17,9 @@ import (
 // checks if the CreateNewSiteResponseAllOfResult type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CreateNewSiteResponseAllOfResult{}
 
-// CreateNewSiteResponseAllOfResult struct for CreateNewSiteResponseAllOfResult
+// CreateNewSiteResponseAllOfResult The created site
 type CreateNewSiteResponseAllOfResult struct {
+	// Id of the created site
 	SiteId *string `json:"siteId,omitempty"`
 }
 
