@@ -2682,6 +2682,8 @@ Class | Method | HTTP request | Description
  - [CreateMdnsRuleOpenApiVO](docs/CreateMdnsRuleOpenApiVO.md)
  - [CreateMdnsRuleTemplateOpenApiVO](docs/CreateMdnsRuleTemplateOpenApiVO.md)
  - [CreateMspUserVO](docs/CreateMspUserVO.md)
+ - [CreateNewSiteResponse](docs/CreateNewSiteResponse.md)
+ - [CreateNewSiteResponseAllOfResult](docs/CreateNewSiteResponseAllOfResult.md)
  - [CreateOspfInterfaceRequest](docs/CreateOspfInterfaceRequest.md)
  - [CreateOspfProcessRequest](docs/CreateOspfProcessRequest.md)
  - [CreateOswVrrpRequest](docs/CreateOswVrrpRequest.md)

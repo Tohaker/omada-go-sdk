@@ -585,6 +585,8 @@ docs/CreateMacAddressOpenApiVO.md
 docs/CreateMdnsRuleOpenApiVO.md
 docs/CreateMdnsRuleTemplateOpenApiVO.md
 docs/CreateMspUserVO.md
+docs/CreateNewSiteResponse.md
+docs/CreateNewSiteResponseAllOfResult.md
 docs/CreateOspfInterfaceRequest.md
 docs/CreateOspfProcessRequest.md
 docs/CreateOswVrrpRequest.md
@@ -3673,6 +3675,8 @@ model_create_mac_address_open_api_vo.go
 model_create_mdns_rule_open_api_vo.go
 model_create_mdns_rule_template_open_api_vo.go
 model_create_msp_user_vo.go
+model_create_new_site_response.go
+model_create_new_site_response_all_of_result.go
 model_create_ospf_interface_request.go
 model_create_ospf_process_request.go
 model_create_osw_vrrp_request.go
