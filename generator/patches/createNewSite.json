@@ -26,12 +26,15 @@
                     },
                     {
                         "type": "object",
+                        "description": "Response from creating a new site",
                         "properties": {
                             "result": {
                                 "type": "object",
+                                "description": "The created site",
                                 "properties": {
                                     "siteId": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "Id of the created site"
                                     }
                                 }
                             }
