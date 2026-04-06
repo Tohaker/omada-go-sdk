@@ -15,16 +15,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.2.0 (2026-04-03)
 ### Added
-
 - Documentation is now available at https://tohaker.github.io/omada-go-sdk
 
 ### Changed
-
 - SDK is now generated with `openapi-generator-cli` v7.21.0
 - Multipart requests now defer the closing of files when calling the `addFile` method.
 
 ## 0.1.0 (2026-03-29)
 ### Added
-
 - Initial generation of Omada SDK from source
 - Created Auth spec to fill the gaps in the original source spec

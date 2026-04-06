@@ -108,7 +108,7 @@ This repository uses a two-phase release flow with
 [`go-changesets`](https://github.com/jakoblorz/go-changesets):
 
 1. [`changesets-version-pr`](./.github/workflows/changesets-version-pr.yml) reads pending `.changeset/*.md` files and opens/updates a release PR.
-2. [`changesets-publish`](./.github/workflows/changesets-publish.yml) runs after merge to `main`, regenerates/verifies the SDK, and publishes tags/releases when `version.txt` is newer than the latest tag.
+2. [`changesets-publish`](./.github/workflows/changesets-publish.yml) runs after merge to `main` and publishes tags/releases when `version.txt` is newer than the latest tag.
 
 ### Add a changeset
 
