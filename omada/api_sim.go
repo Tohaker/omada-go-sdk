@@ -107,19 +107,39 @@ type SIMAPI interface {
 	/*
 	ExportSmsMessageBymac Export SMS message by mac
 
-	Export SMS message by mac.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-35400  -  The adopted gateway does not support SIM configurations.<br/>-35404  -  Device does not exist, cannot export message.<br/>-35406  -  No SMS, cannot export.<br/>-35411  -  The gateway does not support Dual-SIM standby.
+	Export SMS message by mac.This interface has been deprecated. Please use the following interfaces instead: Export SMS message by mac V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-35400  -  The adopted gateway does not support SIM configurations.<br/>-35404  -  Device does not exist, cannot export message.<br/>-35406  -  No SMS, cannot export.<br/>-35411  -  The gateway does not support Dual-SIM standby.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param gatewayMac Device MAC address, like AA-BB-CC-DD-EE-FF
 	@return SIMAPIExportSmsMessageBymacRequest
+
+	Deprecated
 	*/
 	ExportSmsMessageBymac(ctx context.Context, omadacId string, siteId string, gatewayMac string) SIMAPIExportSmsMessageBymacRequest
 
 	// ExportSmsMessageBymacExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ExportSmsMessageBymacExecute(r SIMAPIExportSmsMessageBymacRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ExportSmsMessageBymacV2 Export SMS message by mac V2
+
+	Export SMS message by mac.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-35400  -  The adopted gateway does not support SIM configurations.<br/>-35404  -  Device does not exist, cannot export message.<br/>-35406  -  No SMS, cannot export.<br/>-35411  -  The gateway does not support Dual-SIM standby.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param gatewayMac Device MAC address, like AA-BB-CC-DD-EE-FF
+	@return SIMAPIExportSmsMessageBymacV2Request
+	*/
+	ExportSmsMessageBymacV2(ctx context.Context, omadacId string, siteId string, gatewayMac string) SIMAPIExportSmsMessageBymacV2Request
+
+	// ExportSmsMessageBymacV2Execute executes the request
+	//  @return OperationResponseWithoutResult
+	ExportSmsMessageBymacV2Execute(r SIMAPIExportSmsMessageBymacV2Request) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	GetGridSimCardSmsInboxMessage Get one of Dual-SIM card's SMS inbox message
@@ -1332,13 +1352,15 @@ func (r SIMAPIExportSmsMessageBymacRequest) Execute() (*OperationResponseWithout
 /*
 ExportSmsMessageBymac Export SMS message by mac
 
-Export SMS message by mac.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-35400  -  The adopted gateway does not support SIM configurations.<br/>-35404  -  Device does not exist, cannot export message.<br/>-35406  -  No SMS, cannot export.<br/>-35411  -  The gateway does not support Dual-SIM standby.
+Export SMS message by mac.This interface has been deprecated. Please use the following interfaces instead: Export SMS message by mac V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-35400  -  The adopted gateway does not support SIM configurations.<br/>-35404  -  Device does not exist, cannot export message.<br/>-35406  -  No SMS, cannot export.<br/>-35411  -  The gateway does not support Dual-SIM standby.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param gatewayMac Device MAC address, like AA-BB-CC-DD-EE-FF
  @return SIMAPIExportSmsMessageBymacRequest
+
+Deprecated
 */
 func (a *SIMAPIService) ExportSmsMessageBymac(ctx context.Context, omadacId string, siteId string, gatewayMac string) SIMAPIExportSmsMessageBymacRequest {
 	return SIMAPIExportSmsMessageBymacRequest{
@@ -1352,6 +1374,7 @@ func (a *SIMAPIService) ExportSmsMessageBymac(ctx context.Context, omadacId stri
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *SIMAPIService) ExportSmsMessageBymacExecute(r SIMAPIExportSmsMessageBymacRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -1366,6 +1389,142 @@ func (a *SIMAPIService) ExportSmsMessageBymacExecute(r SIMAPIExportSmsMessageBym
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/sim/sms/export"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.exportMessage == nil {
+		return localVarReturnValue, nil, reportError("exportMessage is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.exportMessage
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SIMAPIExportSmsMessageBymacV2Request struct {
+	ctx context.Context
+	ApiService SIMAPI
+	omadacId string
+	siteId string
+	gatewayMac string
+	exportMessage *ExportMessage
+}
+
+func (r SIMAPIExportSmsMessageBymacV2Request) ExportMessage(exportMessage ExportMessage) SIMAPIExportSmsMessageBymacV2Request {
+	r.exportMessage = &exportMessage
+	return r
+}
+
+func (r SIMAPIExportSmsMessageBymacV2Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ExportSmsMessageBymacV2Execute(r)
+}
+
+/*
+ExportSmsMessageBymacV2 Export SMS message by mac V2
+
+Export SMS message by mac.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-35400  -  The adopted gateway does not support SIM configurations.<br/>-35404  -  Device does not exist, cannot export message.<br/>-35406  -  No SMS, cannot export.<br/>-35411  -  The gateway does not support Dual-SIM standby.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param gatewayMac Device MAC address, like AA-BB-CC-DD-EE-FF
+ @return SIMAPIExportSmsMessageBymacV2Request
+*/
+func (a *SIMAPIService) ExportSmsMessageBymacV2(ctx context.Context, omadacId string, siteId string, gatewayMac string) SIMAPIExportSmsMessageBymacV2Request {
+	return SIMAPIExportSmsMessageBymacV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		gatewayMac: gatewayMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *SIMAPIService) ExportSmsMessageBymacV2Execute(r SIMAPIExportSmsMessageBymacV2Request) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SIMAPIService.ExportSmsMessageBymacV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/files/sites/{siteId}/gateways/{gatewayMac}/sim/sms/export"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)

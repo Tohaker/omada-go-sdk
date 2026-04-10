@@ -23,9 +23,9 @@ import (
 type CloudUserAPI interface {
 
 	/*
-	BindMspOwner bind the MSP owner account
+	BindMspOwner Bind the MSP owner account
 
-	bind the MSP owner account.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-20003  -  The controller does not exist.<br/>-30103  -  Invalid email address.
+	Bind the MSP owner account.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-20003  -  The controller does not exist.<br/>-30103  -  Invalid email address.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -38,9 +38,9 @@ type CloudUserAPI interface {
 	BindMspOwnerExecute(r CloudUserAPIBindMspOwnerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	BindOwner bind the owner account
+	BindOwner Bind the owner account
 
-	bind the owner account.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1005  -  Operation forbidden.<br/>-30103  -  Invalid email address.
+	Bind the owner account.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1005  -  Operation forbidden.<br/>-30103  -  Invalid email address.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -68,9 +68,9 @@ type CloudUserAPI interface {
 	GetCloudAccessStatusExecute(r CloudUserAPIGetCloudAccessStatusRequest) (*OperationResponseCloudAccessOpenApiVO, *http.Response, error)
 
 	/*
-	GetCloudUserInfo get cloud user information
+	GetCloudUserInfo Get cloud user information
 
-	get cloud user information, only for remote access.<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-20010  -  This account does not exist.
+	Get cloud user information, only for remote access.<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-20010  -  This account does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -113,9 +113,9 @@ type CloudUserAPI interface {
 	GetRemoteBindingStatusExecute(r CloudUserAPIGetRemoteBindingStatusRequest) (*OperationResponseRemoteBindingOpenApiVO, *http.Response, error)
 
 	/*
-	UnbindMspOwner unbind the MSP owner account
+	UnbindMspOwner Unbind the MSP owner account
 
-	unbind the MSP owner account.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7101  -  Cloud access is not enabled.
+	Unbind the MSP owner account.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7101  -  Cloud access is not enabled.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -128,9 +128,9 @@ type CloudUserAPI interface {
 	UnbindMspOwnerExecute(r CloudUserAPIUnbindMspOwnerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	UnbindOwner unbind the owner account
+	UnbindOwner Unbind the owner account
 
-	unbind the owner account.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-7101  -  Cloud access is not enabled.
+	Unbind the owner account.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-7101  -  Cloud access is not enabled.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -163,9 +163,9 @@ func (r CloudUserAPIBindMspOwnerRequest) Execute() (*OperationResponseWithoutRes
 }
 
 /*
-BindMspOwner bind the MSP owner account
+BindMspOwner Bind the MSP owner account
 
-bind the MSP owner account.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-20003  -  The controller does not exist.<br/>-30103  -  Invalid email address.
+Bind the MSP owner account.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-20003  -  The controller does not exist.<br/>-30103  -  Invalid email address.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -291,9 +291,9 @@ func (r CloudUserAPIBindOwnerRequest) Execute() (*OperationResponseWithoutResult
 }
 
 /*
-BindOwner bind the owner account
+BindOwner Bind the owner account
 
-bind the owner account.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1005  -  Operation forbidden.<br/>-30103  -  Invalid email address.
+Bind the owner account.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1005  -  Operation forbidden.<br/>-30103  -  Invalid email address.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -530,9 +530,9 @@ func (r CloudUserAPIGetCloudUserInfoRequest) Execute() (*OperationResponse, *htt
 }
 
 /*
-GetCloudUserInfo get cloud user information
+GetCloudUserInfo Get cloud user information
 
-get cloud user information, only for remote access.<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-20010  -  This account does not exist.
+Get cloud user information, only for remote access.<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-20010  -  This account does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -881,9 +881,9 @@ func (r CloudUserAPIUnbindMspOwnerRequest) Execute() (*OperationResponseWithoutR
 }
 
 /*
-UnbindMspOwner unbind the MSP owner account
+UnbindMspOwner Unbind the MSP owner account
 
-unbind the MSP owner account.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7101  -  Cloud access is not enabled.
+Unbind the MSP owner account.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7101  -  Cloud access is not enabled.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -998,9 +998,9 @@ func (r CloudUserAPIUnbindOwnerRequest) Execute() (*OperationResponseWithoutResu
 }
 
 /*
-UnbindOwner unbind the owner account
+UnbindOwner Unbind the owner account
 
-unbind the owner account.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-7101  -  Cloud access is not enabled.
+Unbind the owner account.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-7101  -  Cloud access is not enabled.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

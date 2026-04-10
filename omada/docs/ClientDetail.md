@@ -35,9 +35,9 @@ Name | Type | Description | Notes
 **Ipv6List** | Pointer to **[]string** | IPv6 Address. | [optional] 
 **LagId** | Pointer to **int32** | (Wired) LAG ID. Exists only when the client is connected to the LAG. | [optional] 
 **LastSeen** | Pointer to **int64** | Last found time, timestamp (ms). | [optional] 
+**LocateEnable** | Pointer to **bool** | Whether locate function is enabled | [optional] 
 **Mac** | Pointer to **string** | Client MAC Address. | [optional] 
 **Manager** | Pointer to **bool** | Whether it is the client currently being managed. | [optional] 
-**ManagerAndHandleAuthstatus** | Pointer to [**ClientDetail**](ClientDetail.md) |  | [optional] 
 **Model** | Pointer to **string** | Model of client device. | [optional] 
 **MultiLink** | Pointer to [**[]ClientMultifrequencyInfo**](ClientMultifrequencyInfo.md) | (Wireless) Client multifrequency info list. | [optional] 
 **Name** | Pointer to **string** | Client Name, alias. | [optional] 
@@ -53,9 +53,13 @@ Name | Type | Description | Notes
 **SignalRank** | Pointer to **int32** | (Wireless) Signal strength level should be within the range of 0-5. | [optional] 
 **Snr** | Pointer to **int32** | (Wireless) Signal Noise Ratio. | [optional] 
 **Ssid** | Pointer to **string** | (Wireless)  SSID name. | [optional] 
+**StPortsInLag** | Pointer to **[]string** | Standard switch ports in Lag. Exists only when lagId exists and stackId exists | [optional] 
+**StackId** | Pointer to **string** | Stack Id | [optional] 
 **StandardPort** | Pointer to **string** | Standard port. | [optional] 
+**SupportLocate** | Pointer to **bool** | Whether the client supports locate.True when the client is wired connected to a switch or stack that supports locate port. | [optional] 
 **SwitchMac** | Pointer to **string** | (Wired, connectDevType&#x3D;switch)  Switch MAC address. | [optional] 
 **SwitchName** | Pointer to **string** | (Wired, connectDevType&#x3D;switch)  Switch name. | [optional] 
+**SwitchPortsInLag** | Pointer to **[]int32** | Switch ports in Lag. Exists only when lagId exists and stackId is null | [optional] 
 **SystemName** | Pointer to **string** | Device system name. | [optional] 
 **TrafficDown** | Pointer to **int64** | Downstream traffic (Byte). | [optional] 
 **TrafficUp** | Pointer to **int64** | Upstream traffic (Byte). | [optional] 
@@ -863,6 +867,31 @@ SetLastSeen sets LastSeen field to given value.
 
 HasLastSeen returns a boolean if a field has been set.
 
+### GetLocateEnable
+
+`func (o *ClientDetail) GetLocateEnable() bool`
+
+GetLocateEnable returns the LocateEnable field if non-nil, zero value otherwise.
+
+### GetLocateEnableOk
+
+`func (o *ClientDetail) GetLocateEnableOk() (*bool, bool)`
+
+GetLocateEnableOk returns a tuple with the LocateEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocateEnable
+
+`func (o *ClientDetail) SetLocateEnable(v bool)`
+
+SetLocateEnable sets LocateEnable field to given value.
+
+### HasLocateEnable
+
+`func (o *ClientDetail) HasLocateEnable() bool`
+
+HasLocateEnable returns a boolean if a field has been set.
+
 ### GetMac
 
 `func (o *ClientDetail) GetMac() string`
@@ -912,31 +941,6 @@ SetManager sets Manager field to given value.
 `func (o *ClientDetail) HasManager() bool`
 
 HasManager returns a boolean if a field has been set.
-
-### GetManagerAndHandleAuthstatus
-
-`func (o *ClientDetail) GetManagerAndHandleAuthstatus() ClientDetail`
-
-GetManagerAndHandleAuthstatus returns the ManagerAndHandleAuthstatus field if non-nil, zero value otherwise.
-
-### GetManagerAndHandleAuthstatusOk
-
-`func (o *ClientDetail) GetManagerAndHandleAuthstatusOk() (*ClientDetail, bool)`
-
-GetManagerAndHandleAuthstatusOk returns a tuple with the ManagerAndHandleAuthstatus field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetManagerAndHandleAuthstatus
-
-`func (o *ClientDetail) SetManagerAndHandleAuthstatus(v ClientDetail)`
-
-SetManagerAndHandleAuthstatus sets ManagerAndHandleAuthstatus field to given value.
-
-### HasManagerAndHandleAuthstatus
-
-`func (o *ClientDetail) HasManagerAndHandleAuthstatus() bool`
-
-HasManagerAndHandleAuthstatus returns a boolean if a field has been set.
 
 ### GetModel
 
@@ -1313,6 +1317,56 @@ SetSsid sets Ssid field to given value.
 
 HasSsid returns a boolean if a field has been set.
 
+### GetStPortsInLag
+
+`func (o *ClientDetail) GetStPortsInLag() []string`
+
+GetStPortsInLag returns the StPortsInLag field if non-nil, zero value otherwise.
+
+### GetStPortsInLagOk
+
+`func (o *ClientDetail) GetStPortsInLagOk() (*[]string, bool)`
+
+GetStPortsInLagOk returns a tuple with the StPortsInLag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStPortsInLag
+
+`func (o *ClientDetail) SetStPortsInLag(v []string)`
+
+SetStPortsInLag sets StPortsInLag field to given value.
+
+### HasStPortsInLag
+
+`func (o *ClientDetail) HasStPortsInLag() bool`
+
+HasStPortsInLag returns a boolean if a field has been set.
+
+### GetStackId
+
+`func (o *ClientDetail) GetStackId() string`
+
+GetStackId returns the StackId field if non-nil, zero value otherwise.
+
+### GetStackIdOk
+
+`func (o *ClientDetail) GetStackIdOk() (*string, bool)`
+
+GetStackIdOk returns a tuple with the StackId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackId
+
+`func (o *ClientDetail) SetStackId(v string)`
+
+SetStackId sets StackId field to given value.
+
+### HasStackId
+
+`func (o *ClientDetail) HasStackId() bool`
+
+HasStackId returns a boolean if a field has been set.
+
 ### GetStandardPort
 
 `func (o *ClientDetail) GetStandardPort() string`
@@ -1337,6 +1391,31 @@ SetStandardPort sets StandardPort field to given value.
 `func (o *ClientDetail) HasStandardPort() bool`
 
 HasStandardPort returns a boolean if a field has been set.
+
+### GetSupportLocate
+
+`func (o *ClientDetail) GetSupportLocate() bool`
+
+GetSupportLocate returns the SupportLocate field if non-nil, zero value otherwise.
+
+### GetSupportLocateOk
+
+`func (o *ClientDetail) GetSupportLocateOk() (*bool, bool)`
+
+GetSupportLocateOk returns a tuple with the SupportLocate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportLocate
+
+`func (o *ClientDetail) SetSupportLocate(v bool)`
+
+SetSupportLocate sets SupportLocate field to given value.
+
+### HasSupportLocate
+
+`func (o *ClientDetail) HasSupportLocate() bool`
+
+HasSupportLocate returns a boolean if a field has been set.
 
 ### GetSwitchMac
 
@@ -1387,6 +1466,31 @@ SetSwitchName sets SwitchName field to given value.
 `func (o *ClientDetail) HasSwitchName() bool`
 
 HasSwitchName returns a boolean if a field has been set.
+
+### GetSwitchPortsInLag
+
+`func (o *ClientDetail) GetSwitchPortsInLag() []int32`
+
+GetSwitchPortsInLag returns the SwitchPortsInLag field if non-nil, zero value otherwise.
+
+### GetSwitchPortsInLagOk
+
+`func (o *ClientDetail) GetSwitchPortsInLagOk() (*[]int32, bool)`
+
+GetSwitchPortsInLagOk returns a tuple with the SwitchPortsInLag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwitchPortsInLag
+
+`func (o *ClientDetail) SetSwitchPortsInLag(v []int32)`
+
+SetSwitchPortsInLag sets SwitchPortsInLag field to given value.
+
+### HasSwitchPortsInLag
+
+`func (o *ClientDetail) HasSwitchPortsInLag() bool`
+
+HasSwitchPortsInLag returns a boolean if a field has been set.
 
 ### GetSystemName
 

@@ -25,7 +25,7 @@ type GatewayQoSAPI interface {
 	/*
 	CreateBwCtrl Create new bandwidth control rule
 
-	Create new bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-34265  -  The adopted or preconfigured gateway does not support QoS.<br/>-43310  -  The WAN Port is being used by other bandwidths.
+	Create new bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34265  -  The adopted or preconfigured gateway does not support QoS.<br/>-43310  -  The WAN Port is being used by other bandwidths.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -171,7 +171,7 @@ type GatewayQoSAPI interface {
 	/*
 	ModifyBwCtrl Modify an existing bandwidth control rule
 
-	Modify an existing bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-34265  -  The adopted or preconfigured gateway does not support QoS.<br/>-43304  -  The bandwidth control entry does not exist.
+	Modify an existing bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34265  -  The adopted or preconfigured gateway does not support QoS.<br/>-43304  -  The bandwidth control entry does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -258,7 +258,7 @@ func (r GatewayQoSAPICreateBwCtrlRequest) Execute() (*OperationResponseResponseI
 /*
 CreateBwCtrl Create new bandwidth control rule
 
-Create new bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-34265  -  The adopted or preconfigured gateway does not support QoS.<br/>-43310  -  The WAN Port is being used by other bandwidths.
+Create new bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34265  -  The adopted or preconfigured gateway does not support QoS.<br/>-43310  -  The WAN Port is being used by other bandwidths.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1422,7 +1422,7 @@ func (r GatewayQoSAPIModifyBwCtrlRequest) Execute() (*OperationResponseWithoutRe
 /*
 ModifyBwCtrl Modify an existing bandwidth control rule
 
-Modify an existing bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-34265  -  The adopted or preconfigured gateway does not support QoS.<br/>-43304  -  The bandwidth control entry does not exist.
+Modify an existing bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34265  -  The adopted or preconfigured gateway does not support QoS.<br/>-43304  -  The bandwidth control entry does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

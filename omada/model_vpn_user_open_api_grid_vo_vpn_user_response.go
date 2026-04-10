@@ -24,10 +24,24 @@ type VpnUserOpenApiGridVOVpnUserResponse struct {
 	// Number of entries per page.
 	CurrentSize *int32 `json:"currentSize,omitempty"`
 	Data []VpnUserResponse `json:"data,omitempty"`
-	// Whether local ip configuration is supported of the VPN user
+	// The maximum number of concurrent users supported by VPN.
+	MaxConcurrentUser *int32 `json:"maxConcurrentUser,omitempty"`
+	// The maximum number of concurrent users supported by SSL VPN.
+	SslVpnMaxConUserNum *int32 `json:"sslVpnMaxConUserNum,omitempty"`
+	// The maximum number of subnets allowed for a VPN user.
+	SubnetsLimitSize *int32 `json:"subnetsLimitSize,omitempty"`
+	// Whether the L2TP configuration is supported by the VPN user.
+	SupportL2TP *bool `json:"supportL2TP,omitempty"`
+	// Whether the local IP address configuration is supported by the VPN user.
 	SupportLocalIp *bool `json:"supportLocalIp,omitempty"`
+	// Whether the OpenVPN configuration is supported by the VPN user.
+	SupportOpenVpn *bool `json:"supportOpenVpn,omitempty"`
 	// Whether protocol configuration is supported of the VPN user
 	SupportProtocol *bool `json:"supportProtocol,omitempty"`
+	// Whether VPN server is optional.
+	SupportServerOptional *bool `json:"supportServerOptional,omitempty"`
+	// Whether the SSLVPN configuration is supported by the VPN user.
+	SupportSslVpn *bool `json:"supportSslVpn,omitempty"`
 	// Total rows of all items.
 	TotalRows *int64 `json:"totalRows,omitempty"`
 }
@@ -145,6 +159,134 @@ func (o *VpnUserOpenApiGridVOVpnUserResponse) SetData(v []VpnUserResponse) {
 	o.Data = v
 }
 
+// GetMaxConcurrentUser returns the MaxConcurrentUser field value if set, zero value otherwise.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetMaxConcurrentUser() int32 {
+	if o == nil || IsNil(o.MaxConcurrentUser) {
+		var ret int32
+		return ret
+	}
+	return *o.MaxConcurrentUser
+}
+
+// GetMaxConcurrentUserOk returns a tuple with the MaxConcurrentUser field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetMaxConcurrentUserOk() (*int32, bool) {
+	if o == nil || IsNil(o.MaxConcurrentUser) {
+		return nil, false
+	}
+	return o.MaxConcurrentUser, true
+}
+
+// HasMaxConcurrentUser returns a boolean if a field has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) HasMaxConcurrentUser() bool {
+	if o != nil && !IsNil(o.MaxConcurrentUser) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxConcurrentUser gets a reference to the given int32 and assigns it to the MaxConcurrentUser field.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) SetMaxConcurrentUser(v int32) {
+	o.MaxConcurrentUser = &v
+}
+
+// GetSslVpnMaxConUserNum returns the SslVpnMaxConUserNum field value if set, zero value otherwise.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSslVpnMaxConUserNum() int32 {
+	if o == nil || IsNil(o.SslVpnMaxConUserNum) {
+		var ret int32
+		return ret
+	}
+	return *o.SslVpnMaxConUserNum
+}
+
+// GetSslVpnMaxConUserNumOk returns a tuple with the SslVpnMaxConUserNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSslVpnMaxConUserNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.SslVpnMaxConUserNum) {
+		return nil, false
+	}
+	return o.SslVpnMaxConUserNum, true
+}
+
+// HasSslVpnMaxConUserNum returns a boolean if a field has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSslVpnMaxConUserNum() bool {
+	if o != nil && !IsNil(o.SslVpnMaxConUserNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetSslVpnMaxConUserNum gets a reference to the given int32 and assigns it to the SslVpnMaxConUserNum field.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSslVpnMaxConUserNum(v int32) {
+	o.SslVpnMaxConUserNum = &v
+}
+
+// GetSubnetsLimitSize returns the SubnetsLimitSize field value if set, zero value otherwise.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSubnetsLimitSize() int32 {
+	if o == nil || IsNil(o.SubnetsLimitSize) {
+		var ret int32
+		return ret
+	}
+	return *o.SubnetsLimitSize
+}
+
+// GetSubnetsLimitSizeOk returns a tuple with the SubnetsLimitSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSubnetsLimitSizeOk() (*int32, bool) {
+	if o == nil || IsNil(o.SubnetsLimitSize) {
+		return nil, false
+	}
+	return o.SubnetsLimitSize, true
+}
+
+// HasSubnetsLimitSize returns a boolean if a field has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSubnetsLimitSize() bool {
+	if o != nil && !IsNil(o.SubnetsLimitSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubnetsLimitSize gets a reference to the given int32 and assigns it to the SubnetsLimitSize field.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSubnetsLimitSize(v int32) {
+	o.SubnetsLimitSize = &v
+}
+
+// GetSupportL2TP returns the SupportL2TP field value if set, zero value otherwise.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportL2TP() bool {
+	if o == nil || IsNil(o.SupportL2TP) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportL2TP
+}
+
+// GetSupportL2TPOk returns a tuple with the SupportL2TP field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportL2TPOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportL2TP) {
+		return nil, false
+	}
+	return o.SupportL2TP, true
+}
+
+// HasSupportL2TP returns a boolean if a field has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSupportL2TP() bool {
+	if o != nil && !IsNil(o.SupportL2TP) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportL2TP gets a reference to the given bool and assigns it to the SupportL2TP field.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSupportL2TP(v bool) {
+	o.SupportL2TP = &v
+}
+
 // GetSupportLocalIp returns the SupportLocalIp field value if set, zero value otherwise.
 func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportLocalIp() bool {
 	if o == nil || IsNil(o.SupportLocalIp) {
@@ -177,6 +319,38 @@ func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSupportLocalIp(v bool) {
 	o.SupportLocalIp = &v
 }
 
+// GetSupportOpenVpn returns the SupportOpenVpn field value if set, zero value otherwise.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportOpenVpn() bool {
+	if o == nil || IsNil(o.SupportOpenVpn) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportOpenVpn
+}
+
+// GetSupportOpenVpnOk returns a tuple with the SupportOpenVpn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportOpenVpnOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportOpenVpn) {
+		return nil, false
+	}
+	return o.SupportOpenVpn, true
+}
+
+// HasSupportOpenVpn returns a boolean if a field has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSupportOpenVpn() bool {
+	if o != nil && !IsNil(o.SupportOpenVpn) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportOpenVpn gets a reference to the given bool and assigns it to the SupportOpenVpn field.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSupportOpenVpn(v bool) {
+	o.SupportOpenVpn = &v
+}
+
 // GetSupportProtocol returns the SupportProtocol field value if set, zero value otherwise.
 func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportProtocol() bool {
 	if o == nil || IsNil(o.SupportProtocol) {
@@ -207,6 +381,70 @@ func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSupportProtocol() bool {
 // SetSupportProtocol gets a reference to the given bool and assigns it to the SupportProtocol field.
 func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSupportProtocol(v bool) {
 	o.SupportProtocol = &v
+}
+
+// GetSupportServerOptional returns the SupportServerOptional field value if set, zero value otherwise.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportServerOptional() bool {
+	if o == nil || IsNil(o.SupportServerOptional) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportServerOptional
+}
+
+// GetSupportServerOptionalOk returns a tuple with the SupportServerOptional field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportServerOptionalOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportServerOptional) {
+		return nil, false
+	}
+	return o.SupportServerOptional, true
+}
+
+// HasSupportServerOptional returns a boolean if a field has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSupportServerOptional() bool {
+	if o != nil && !IsNil(o.SupportServerOptional) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportServerOptional gets a reference to the given bool and assigns it to the SupportServerOptional field.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSupportServerOptional(v bool) {
+	o.SupportServerOptional = &v
+}
+
+// GetSupportSslVpn returns the SupportSslVpn field value if set, zero value otherwise.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportSslVpn() bool {
+	if o == nil || IsNil(o.SupportSslVpn) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportSslVpn
+}
+
+// GetSupportSslVpnOk returns a tuple with the SupportSslVpn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportSslVpnOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportSslVpn) {
+		return nil, false
+	}
+	return o.SupportSslVpn, true
+}
+
+// HasSupportSslVpn returns a boolean if a field has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSupportSslVpn() bool {
+	if o != nil && !IsNil(o.SupportSslVpn) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportSslVpn gets a reference to the given bool and assigns it to the SupportSslVpn field.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSupportSslVpn(v bool) {
+	o.SupportSslVpn = &v
 }
 
 // GetTotalRows returns the TotalRows field value if set, zero value otherwise.
@@ -260,11 +498,32 @@ func (o VpnUserOpenApiGridVOVpnUserResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
+	if !IsNil(o.MaxConcurrentUser) {
+		toSerialize["maxConcurrentUser"] = o.MaxConcurrentUser
+	}
+	if !IsNil(o.SslVpnMaxConUserNum) {
+		toSerialize["sslVpnMaxConUserNum"] = o.SslVpnMaxConUserNum
+	}
+	if !IsNil(o.SubnetsLimitSize) {
+		toSerialize["subnetsLimitSize"] = o.SubnetsLimitSize
+	}
+	if !IsNil(o.SupportL2TP) {
+		toSerialize["supportL2TP"] = o.SupportL2TP
+	}
 	if !IsNil(o.SupportLocalIp) {
 		toSerialize["supportLocalIp"] = o.SupportLocalIp
 	}
+	if !IsNil(o.SupportOpenVpn) {
+		toSerialize["supportOpenVpn"] = o.SupportOpenVpn
+	}
 	if !IsNil(o.SupportProtocol) {
 		toSerialize["supportProtocol"] = o.SupportProtocol
+	}
+	if !IsNil(o.SupportServerOptional) {
+		toSerialize["supportServerOptional"] = o.SupportServerOptional
+	}
+	if !IsNil(o.SupportSslVpn) {
+		toSerialize["supportSslVpn"] = o.SupportSslVpn
 	}
 	if !IsNil(o.TotalRows) {
 		toSerialize["totalRows"] = o.TotalRows

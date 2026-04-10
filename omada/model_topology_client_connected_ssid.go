@@ -19,6 +19,8 @@ var _ MappedNullable = &TopologyClientConnectedSsid{}
 
 // TopologyClientConnectedSsid SSID that client connected.
 type TopologyClientConnectedSsid struct {
+	// Client Report Vlan Id.
+	ClientVlanId *int32 `json:"clientVlanId,omitempty"`
 	// SSID ID.
 	Id *string `json:"id,omitempty"`
 	// SSID Name.
@@ -44,6 +46,38 @@ func NewTopologyClientConnectedSsid() *TopologyClientConnectedSsid {
 func NewTopologyClientConnectedSsidWithDefaults() *TopologyClientConnectedSsid {
 	this := TopologyClientConnectedSsid{}
 	return &this
+}
+
+// GetClientVlanId returns the ClientVlanId field value if set, zero value otherwise.
+func (o *TopologyClientConnectedSsid) GetClientVlanId() int32 {
+	if o == nil || IsNil(o.ClientVlanId) {
+		var ret int32
+		return ret
+	}
+	return *o.ClientVlanId
+}
+
+// GetClientVlanIdOk returns a tuple with the ClientVlanId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyClientConnectedSsid) GetClientVlanIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.ClientVlanId) {
+		return nil, false
+	}
+	return o.ClientVlanId, true
+}
+
+// HasClientVlanId returns a boolean if a field has been set.
+func (o *TopologyClientConnectedSsid) HasClientVlanId() bool {
+	if o != nil && !IsNil(o.ClientVlanId) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientVlanId gets a reference to the given int32 and assigns it to the ClientVlanId field.
+func (o *TopologyClientConnectedSsid) SetClientVlanId(v int32) {
+	o.ClientVlanId = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -184,6 +218,9 @@ func (o TopologyClientConnectedSsid) MarshalJSON() ([]byte, error) {
 
 func (o TopologyClientConnectedSsid) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ClientVlanId) {
+		toSerialize["clientVlanId"] = o.ClientVlanId
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}

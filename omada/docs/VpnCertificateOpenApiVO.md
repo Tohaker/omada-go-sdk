@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FileName** | Pointer to **string** | File name of the VPN certificate | [optional] 
-**Id** | Pointer to **string** | ID of the VPN certificate | [optional] 
+**FileName** | Pointer to **string** | File name of the VPN certificate. | [optional] 
+**Id** | Pointer to **string** | ID of the VPN certificate. | [optional] 
 
 ## Methods
 

@@ -23,6 +23,38 @@ import (
 type SSLVPNAPI interface {
 
 	/*
+	BatchDeleteLockedSslVpnTunnel Batch delete SSL VPN locked tunnel
+
+	Batch delete SSL VPN locked tunnel.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest
+	*/
+	BatchDeleteLockedSslVpnTunnel(ctx context.Context, omadacId string, siteId string) SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest
+
+	// BatchDeleteLockedSslVpnTunnelExecute executes the request
+	//  @return OperationResponseWithoutResult
+	BatchDeleteLockedSslVpnTunnelExecute(r SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	BatchDeleteSslVpnUserGroup Batch delete SSL VPN user group
+
+	Batch delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for radius authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return SSLVPNAPIBatchDeleteSslVpnUserGroupRequest
+	*/
+	BatchDeleteSslVpnUserGroup(ctx context.Context, omadacId string, siteId string) SSLVPNAPIBatchDeleteSslVpnUserGroupRequest
+
+	// BatchDeleteSslVpnUserGroupExecute executes the request
+	//  @return OperationResponseWithoutResult
+	BatchDeleteSslVpnUserGroupExecute(r SSLVPNAPIBatchDeleteSslVpnUserGroupRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	CreateLockedSslVpnTunnuel Create locked SSL VPN tunnel
 
 	Create locked SSL VPN tunnel.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43007  -  IP already exists.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43009  -  Username already exists.<br/>-43013  -  The number of locks has reached the limit.
@@ -89,7 +121,7 @@ type SSLVPNAPI interface {
 	/*
 	CreateSslVpnUser Create SSL VPN user
 
-	Create SSL VPN user .<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43002  -  The number of users has reached the limit.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
+	Create SSL VPN user. This interface has been deprecated. Please use the following interfaces instead: Create VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43002  -  The number of users has reached the limit.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -189,7 +221,7 @@ type SSLVPNAPI interface {
 	/*
 	DeleteSslVpnUser Delete SSL VPN user
 
-	Delete SSL VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete SSL VPN user. This interface has been deprecated. Please use the following interfaces instead: Delete VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -223,17 +255,20 @@ type SSLVPNAPI interface {
 	/*
 	DownloadSslVpnCertificate Download SSL VPN certificate.
 
-	Download SSL VPN certificate. Filename is a UTF-8 string encoded by URL Encoder.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34606  -  No gateway in this site.<br/>-34607  -  Failed to get the VPN certificate.<br/>-34624  -  Failed to get any response from the gateway.<br/>-34685  -  It takes about 5 minutes to generate the file, please export it later.
+	Download SSL VPN certificate. Filename is a UTF-8 string encoded by URL Encoder. This interface has been deprecated. Please use the following interfaces instead: Download Open VPN or SSL VPN certificate.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34606  -  No gateway in this site.<br/>-34607  -  Failed to get the VPN certificate.<br/>-34624  -  Failed to get any response from the gateway.<br/>-34685  -  It takes about 5 minutes to generate the file, please export it later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return SSLVPNAPIDownloadSslVpnCertificateRequest
+
+	Deprecated
 	*/
 	DownloadSslVpnCertificate(ctx context.Context, omadacId string, siteId string) SSLVPNAPIDownloadSslVpnCertificateRequest
 
 	// DownloadSslVpnCertificateExecute executes the request
 	//  @return OperationResponse
+	// Deprecated
 	DownloadSslVpnCertificateExecute(r SSLVPNAPIDownloadSslVpnCertificateRequest) (*OperationResponse, *http.Response, error)
 
 	/*
@@ -287,17 +322,20 @@ type SSLVPNAPI interface {
 	/*
 	GetGridSslVpnServerUser Get user list for SSL VPN server
 
-	Get user list for SSL VPN server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get user list for SSL VPN server. This interface has been deprecated. Please use the following interfaces instead: Get VPN user list V2 or Get user list by VPN server ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return SSLVPNAPIGetGridSslVpnServerUserRequest
+
+	Deprecated
 	*/
 	GetGridSslVpnServerUser(ctx context.Context, omadacId string, siteId string) SSLVPNAPIGetGridSslVpnServerUserRequest
 
 	// GetGridSslVpnServerUserExecute executes the request
 	//  @return OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity
+	// Deprecated
 	GetGridSslVpnServerUserExecute(r SSLVPNAPIGetGridSslVpnServerUserRequest) (*OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity, *http.Response, error)
 
 	/*
@@ -313,25 +351,45 @@ type SSLVPNAPI interface {
 	GetGridSslVpnServerUserGroup(ctx context.Context, omadacId string, siteId string) SSLVPNAPIGetGridSslVpnServerUserGroupRequest
 
 	// GetGridSslVpnServerUserGroupExecute executes the request
-	//  @return OperationResponseGridVOSslVpnUserGroupEntity
-	GetGridSslVpnServerUserGroupExecute(r SSLVPNAPIGetGridSslVpnServerUserGroupRequest) (*OperationResponseGridVOSslVpnUserGroupEntity, *http.Response, error)
+	//  @return OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity
+	GetGridSslVpnServerUserGroupExecute(r SSLVPNAPIGetGridSslVpnServerUserGroupRequest) (*OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity, *http.Response, error)
 
 	/*
 	GetGridSslVpnUserInGroup Get SSL VPN user list in group.
 
-	Get SSL VPN user list in group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get SSL VPN user list in group. This interface has been deprecated. Please use the following interfaces instead: Get SSL VPN user list in group V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param userGroupId User Group Id
 	@return SSLVPNAPIGetGridSslVpnUserInGroupRequest
+
+	Deprecated
 	*/
 	GetGridSslVpnUserInGroup(ctx context.Context, omadacId string, siteId string, userGroupId string) SSLVPNAPIGetGridSslVpnUserInGroupRequest
 
 	// GetGridSslVpnUserInGroupExecute executes the request
 	//  @return OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity
+	// Deprecated
 	GetGridSslVpnUserInGroupExecute(r SSLVPNAPIGetGridSslVpnUserInGroupRequest) (*OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity, *http.Response, error)
+
+	/*
+	GetGridSslVpnUserInGroupV2 Get SSL VPN user list in group V2.
+
+	Get SSL VPN user list in group V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param userGroupId User Group Id
+	@return SSLVPNAPIGetGridSslVpnUserInGroupV2Request
+	*/
+	GetGridSslVpnUserInGroupV2(ctx context.Context, omadacId string, siteId string, userGroupId string) SSLVPNAPIGetGridSslVpnUserInGroupV2Request
+
+	// GetGridSslVpnUserInGroupV2Execute executes the request
+	//  @return OperationResponseSslVpnUserGridVOVpnUserInfoVO
+	GetGridSslVpnUserInGroupV2Execute(r SSLVPNAPIGetGridSslVpnUserInGroupV2Request) (*OperationResponseSslVpnUserGridVOVpnUserInfoVO, *http.Response, error)
 
 	/*
 	GetLockedSslVpnTunnuels Get locked SSL VPN tunnel.
@@ -400,23 +458,26 @@ type SSLVPNAPI interface {
 	/*
 	GetSslVpnServerSetting Get SSL VPN server setting
 
-	Get SSL VPN server setting.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
+	Get SSL VPN server setting.This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return SSLVPNAPIGetSslVpnServerSettingRequest
+
+	Deprecated
 	*/
 	GetSslVpnServerSetting(ctx context.Context, omadacId string, siteId string) SSLVPNAPIGetSslVpnServerSettingRequest
 
 	// GetSslVpnServerSettingExecute executes the request
 	//  @return OperationResponseSslVpnServerSetting
+	// Deprecated
 	GetSslVpnServerSettingExecute(r SSLVPNAPIGetSslVpnServerSettingRequest) (*OperationResponseSslVpnServerSetting, *http.Response, error)
 
 	/*
 	GetSslVpnUserGroupList Get SSL VPN user Group list.
 
-	Get SSL VPN user Group list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get SSL VPN user Group list. This interface has been deprecated. Please use the following interfaces instead: Get SSL VPN user Group list V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -500,23 +561,26 @@ type SSLVPNAPI interface {
 	/*
 	ModifySslVpnServerSetting Modify SSL VPN server setting
 
-	Get SSL VPN server setting.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34032  -  Built-in radius server not started.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43010  -  The IP addresses in SSL VPN IP pool cannot overlap with other VPN IP pools on the same site.<br/>-43011  -  The service port cannot be the same as that of the OpenVPN server.<br/>-43017  -  The device does not support configuring radius type.<br/>-43018  -  The device does not support configuring LDAP type.
+	Get SSL VPN server setting. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2 or Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34032  -  Built-in radius server not started.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43010  -  The IP addresses in SSL VPN IP pool cannot overlap with other VPN IP pools on the same site.<br/>-43011  -  The service port cannot be the same as that of the OpenVPN server.<br/>-43017  -  The device does not support configuring radius type.<br/>-43018  -  The device does not support configuring LDAP type.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return SSLVPNAPIModifySslVpnServerSettingRequest
+
+	Deprecated
 	*/
 	ModifySslVpnServerSetting(ctx context.Context, omadacId string, siteId string) SSLVPNAPIModifySslVpnServerSettingRequest
 
 	// ModifySslVpnServerSettingExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifySslVpnServerSettingExecute(r SSLVPNAPIModifySslVpnServerSettingRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifySslVpnUser Modify SSL VPN user
 
-	Modify SSL VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
+	Modify SSL VPN user. This interface has been deprecated. Please use the following interfaces instead: Modify VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -550,6 +614,270 @@ type SSLVPNAPI interface {
 
 // SSLVPNAPIService SSLVPNAPI service
 type SSLVPNAPIService service
+
+type SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest struct {
+	ctx context.Context
+	ApiService SSLVPNAPI
+	omadacId string
+	siteId string
+	batchSelectSslUserVO *BatchSelectSslUserVO
+}
+
+func (r SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest) BatchSelectSslUserVO(batchSelectSslUserVO BatchSelectSslUserVO) SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest {
+	r.batchSelectSslUserVO = &batchSelectSslUserVO
+	return r
+}
+
+func (r SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.BatchDeleteLockedSslVpnTunnelExecute(r)
+}
+
+/*
+BatchDeleteLockedSslVpnTunnel Batch delete SSL VPN locked tunnel
+
+Batch delete SSL VPN locked tunnel.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest
+*/
+func (a *SSLVPNAPIService) BatchDeleteLockedSslVpnTunnel(ctx context.Context, omadacId string, siteId string) SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest {
+	return SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *SSLVPNAPIService) BatchDeleteLockedSslVpnTunnelExecute(r SSLVPNAPIBatchDeleteLockedSslVpnTunnelRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SSLVPNAPIService.BatchDeleteLockedSslVpnTunnel")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.batchSelectSslUserVO == nil {
+		return localVarReturnValue, nil, reportError("batchSelectSslUserVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.batchSelectSslUserVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SSLVPNAPIBatchDeleteSslVpnUserGroupRequest struct {
+	ctx context.Context
+	ApiService SSLVPNAPI
+	omadacId string
+	siteId string
+	batchSelectSslUserVO *BatchSelectSslUserVO
+}
+
+func (r SSLVPNAPIBatchDeleteSslVpnUserGroupRequest) BatchSelectSslUserVO(batchSelectSslUserVO BatchSelectSslUserVO) SSLVPNAPIBatchDeleteSslVpnUserGroupRequest {
+	r.batchSelectSslUserVO = &batchSelectSslUserVO
+	return r
+}
+
+func (r SSLVPNAPIBatchDeleteSslVpnUserGroupRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.BatchDeleteSslVpnUserGroupExecute(r)
+}
+
+/*
+BatchDeleteSslVpnUserGroup Batch delete SSL VPN user group
+
+Batch delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for radius authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return SSLVPNAPIBatchDeleteSslVpnUserGroupRequest
+*/
+func (a *SSLVPNAPIService) BatchDeleteSslVpnUserGroup(ctx context.Context, omadacId string, siteId string) SSLVPNAPIBatchDeleteSslVpnUserGroupRequest {
+	return SSLVPNAPIBatchDeleteSslVpnUserGroupRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *SSLVPNAPIService) BatchDeleteSslVpnUserGroupExecute(r SSLVPNAPIBatchDeleteSslVpnUserGroupRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SSLVPNAPIService.BatchDeleteSslVpnUserGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.batchSelectSslUserVO == nil {
+		return localVarReturnValue, nil, reportError("batchSelectSslUserVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.batchSelectSslUserVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type SSLVPNAPICreateLockedSslVpnTunnuelRequest struct {
 	ctx context.Context
@@ -1099,7 +1427,7 @@ func (r SSLVPNAPICreateSslVpnUserRequest) Execute() (*OperationResponseWithoutRe
 /*
 CreateSslVpnUser Create SSL VPN user
 
-Create SSL VPN user .<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43002  -  The number of users has reached the limit.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
+Create SSL VPN user. This interface has been deprecated. Please use the following interfaces instead: Create VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43002  -  The number of users has reached the limit.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1858,7 +2186,7 @@ func (r SSLVPNAPIDeleteSslVpnUserRequest) Execute() (*OperationResponseWithoutRe
 /*
 DeleteSslVpnUser Delete SSL VPN user
 
-Delete SSL VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete SSL VPN user. This interface has been deprecated. Please use the following interfaces instead: Delete VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2114,12 +2442,14 @@ func (r SSLVPNAPIDownloadSslVpnCertificateRequest) Execute() (*OperationResponse
 /*
 DownloadSslVpnCertificate Download SSL VPN certificate.
 
-Download SSL VPN certificate. Filename is a UTF-8 string encoded by URL Encoder.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34606  -  No gateway in this site.<br/>-34607  -  Failed to get the VPN certificate.<br/>-34624  -  Failed to get any response from the gateway.<br/>-34685  -  It takes about 5 minutes to generate the file, please export it later.
+Download SSL VPN certificate. Filename is a UTF-8 string encoded by URL Encoder. This interface has been deprecated. Please use the following interfaces instead: Download Open VPN or SSL VPN certificate.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34606  -  No gateway in this site.<br/>-34607  -  Failed to get the VPN certificate.<br/>-34624  -  Failed to get any response from the gateway.<br/>-34685  -  It takes about 5 minutes to generate the file, please export it later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return SSLVPNAPIDownloadSslVpnCertificateRequest
+
+Deprecated
 */
 func (a *SSLVPNAPIService) DownloadSslVpnCertificate(ctx context.Context, omadacId string, siteId string) SSLVPNAPIDownloadSslVpnCertificateRequest {
 	return SSLVPNAPIDownloadSslVpnCertificateRequest{
@@ -2132,6 +2462,7 @@ func (a *SSLVPNAPIService) DownloadSslVpnCertificate(ctx context.Context, omadac
 
 // Execute executes the request
 //  @return OperationResponse
+// Deprecated
 func (a *SSLVPNAPIService) DownloadSslVpnCertificateExecute(r SSLVPNAPIDownloadSslVpnCertificateRequest) (*OperationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -2232,6 +2563,10 @@ type SSLVPNAPIGetGridLockedSslVpnServerUserRequest struct {
 	siteId string
 	page *int32
 	pageSize *int32
+	searchKey *string
+	sortsUserName *string
+	sortsIp *string
+	sortsLeftLockTime *string
 }
 
 // Start page number. Start from 1.
@@ -2243,6 +2578,30 @@ func (r SSLVPNAPIGetGridLockedSslVpnServerUserRequest) Page(page int32) SSLVPNAP
 // Number of entries per page. It should be within the range of 1–1000.
 func (r SSLVPNAPIGetGridLockedSslVpnServerUserRequest) PageSize(pageSize int32) SSLVPNAPIGetGridLockedSslVpnServerUserRequest {
 	r.pageSize = &pageSize
+	return r
+}
+
+// Fuzzy query parameters, support field name.
+func (r SSLVPNAPIGetGridLockedSslVpnServerUserRequest) SearchKey(searchKey string) SSLVPNAPIGetGridLockedSslVpnServerUserRequest {
+	r.searchKey = &searchKey
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r SSLVPNAPIGetGridLockedSslVpnServerUserRequest) SortsUserName(sortsUserName string) SSLVPNAPIGetGridLockedSslVpnServerUserRequest {
+	r.sortsUserName = &sortsUserName
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r SSLVPNAPIGetGridLockedSslVpnServerUserRequest) SortsIp(sortsIp string) SSLVPNAPIGetGridLockedSslVpnServerUserRequest {
+	r.sortsIp = &sortsIp
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r SSLVPNAPIGetGridLockedSslVpnServerUserRequest) SortsLeftLockTime(sortsLeftLockTime string) SSLVPNAPIGetGridLockedSslVpnServerUserRequest {
+	r.sortsLeftLockTime = &sortsLeftLockTime
 	return r
 }
 
@@ -2300,6 +2659,18 @@ func (a *SSLVPNAPIService) GetGridLockedSslVpnServerUserExecute(r SSLVPNAPIGetGr
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	if r.sortsUserName != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.userName", r.sortsUserName, "form", "")
+	}
+	if r.sortsIp != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.ip", r.sortsIp, "form", "")
+	}
+	if r.sortsLeftLockTime != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.leftLockTime", r.sortsLeftLockTime, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2375,6 +2746,7 @@ type SSLVPNAPIGetGridSslVpnServerResourceRequest struct {
 	siteId string
 	page *int32
 	pageSize *int32
+	searchKey *string
 }
 
 // Start page number. Start from 1.
@@ -2386,6 +2758,12 @@ func (r SSLVPNAPIGetGridSslVpnServerResourceRequest) Page(page int32) SSLVPNAPIG
 // Number of entries per page. It should be within the range of 1–1000.
 func (r SSLVPNAPIGetGridSslVpnServerResourceRequest) PageSize(pageSize int32) SSLVPNAPIGetGridSslVpnServerResourceRequest {
 	r.pageSize = &pageSize
+	return r
+}
+
+// Fuzzy query parameters, support field name.
+func (r SSLVPNAPIGetGridSslVpnServerResourceRequest) SearchKey(searchKey string) SSLVPNAPIGetGridSslVpnServerResourceRequest {
+	r.searchKey = &searchKey
 	return r
 }
 
@@ -2443,6 +2821,9 @@ func (a *SSLVPNAPIService) GetGridSslVpnServerResourceExecute(r SSLVPNAPIGetGrid
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2682,12 +3063,14 @@ func (r SSLVPNAPIGetGridSslVpnServerUserRequest) Execute() (*OperationResponseSs
 /*
 GetGridSslVpnServerUser Get user list for SSL VPN server
 
-Get user list for SSL VPN server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get user list for SSL VPN server. This interface has been deprecated. Please use the following interfaces instead: Get VPN user list V2 or Get user list by VPN server ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return SSLVPNAPIGetGridSslVpnServerUserRequest
+
+Deprecated
 */
 func (a *SSLVPNAPIService) GetGridSslVpnServerUser(ctx context.Context, omadacId string, siteId string) SSLVPNAPIGetGridSslVpnServerUserRequest {
 	return SSLVPNAPIGetGridSslVpnServerUserRequest{
@@ -2700,6 +3083,7 @@ func (a *SSLVPNAPIService) GetGridSslVpnServerUser(ctx context.Context, omadacId
 
 // Execute executes the request
 //  @return OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity
+// Deprecated
 func (a *SSLVPNAPIService) GetGridSslVpnServerUserExecute(r SSLVPNAPIGetGridSslVpnServerUserRequest) (*OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -2804,6 +3188,7 @@ type SSLVPNAPIGetGridSslVpnServerUserGroupRequest struct {
 	siteId string
 	page *int32
 	pageSize *int32
+	searchKey *string
 }
 
 // Start page number. Start from 1.
@@ -2818,7 +3203,13 @@ func (r SSLVPNAPIGetGridSslVpnServerUserGroupRequest) PageSize(pageSize int32) S
 	return r
 }
 
-func (r SSLVPNAPIGetGridSslVpnServerUserGroupRequest) Execute() (*OperationResponseGridVOSslVpnUserGroupEntity, *http.Response, error) {
+// Fuzzy query parameters, support field name.
+func (r SSLVPNAPIGetGridSslVpnServerUserGroupRequest) SearchKey(searchKey string) SSLVPNAPIGetGridSslVpnServerUserGroupRequest {
+	r.searchKey = &searchKey
+	return r
+}
+
+func (r SSLVPNAPIGetGridSslVpnServerUserGroupRequest) Execute() (*OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity, *http.Response, error) {
 	return r.ApiService.GetGridSslVpnServerUserGroupExecute(r)
 }
 
@@ -2842,13 +3233,13 @@ func (a *SSLVPNAPIService) GetGridSslVpnServerUserGroup(ctx context.Context, oma
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVOSslVpnUserGroupEntity
-func (a *SSLVPNAPIService) GetGridSslVpnServerUserGroupExecute(r SSLVPNAPIGetGridSslVpnServerUserGroupRequest) (*OperationResponseGridVOSslVpnUserGroupEntity, *http.Response, error) {
+//  @return OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity
+func (a *SSLVPNAPIService) GetGridSslVpnServerUserGroupExecute(r SSLVPNAPIGetGridSslVpnServerUserGroupRequest) (*OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVOSslVpnUserGroupEntity
+		localVarReturnValue  *OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SSLVPNAPIService.GetGridSslVpnServerUserGroup")
@@ -2872,6 +3263,9 @@ func (a *SSLVPNAPIService) GetGridSslVpnServerUserGroupExecute(r SSLVPNAPIGetGri
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2969,13 +3363,15 @@ func (r SSLVPNAPIGetGridSslVpnUserInGroupRequest) Execute() (*OperationResponseS
 /*
 GetGridSslVpnUserInGroup Get SSL VPN user list in group.
 
-Get SSL VPN user list in group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get SSL VPN user list in group. This interface has been deprecated. Please use the following interfaces instead: Get SSL VPN user list in group V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param userGroupId User Group Id
  @return SSLVPNAPIGetGridSslVpnUserInGroupRequest
+
+Deprecated
 */
 func (a *SSLVPNAPIService) GetGridSslVpnUserInGroup(ctx context.Context, omadacId string, siteId string, userGroupId string) SSLVPNAPIGetGridSslVpnUserInGroupRequest {
 	return SSLVPNAPIGetGridSslVpnUserInGroupRequest{
@@ -2989,6 +3385,7 @@ func (a *SSLVPNAPIService) GetGridSslVpnUserInGroup(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity
+// Deprecated
 func (a *SSLVPNAPIService) GetGridSslVpnUserInGroupExecute(r SSLVPNAPIGetGridSslVpnUserInGroupRequest) (*OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -3017,6 +3414,173 @@ func (a *SSLVPNAPIService) GetGridSslVpnUserInGroupExecute(r SSLVPNAPIGetGridSsl
 		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
 	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SSLVPNAPIGetGridSslVpnUserInGroupV2Request struct {
+	ctx context.Context
+	ApiService SSLVPNAPI
+	omadacId string
+	siteId string
+	userGroupId string
+	page *int32
+	pageSize *int32
+	searchKey *string
+	sortsUsername *string
+}
+
+// Start page number. Start from 1.
+func (r SSLVPNAPIGetGridSslVpnUserInGroupV2Request) Page(page int32) SSLVPNAPIGetGridSslVpnUserInGroupV2Request {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r SSLVPNAPIGetGridSslVpnUserInGroupV2Request) PageSize(pageSize int32) SSLVPNAPIGetGridSslVpnUserInGroupV2Request {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Fuzzy query parameters, support field user name.
+func (r SSLVPNAPIGetGridSslVpnUserInGroupV2Request) SearchKey(searchKey string) SSLVPNAPIGetGridSslVpnUserInGroupV2Request {
+	r.searchKey = &searchKey
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effectuser name.
+func (r SSLVPNAPIGetGridSslVpnUserInGroupV2Request) SortsUsername(sortsUsername string) SSLVPNAPIGetGridSslVpnUserInGroupV2Request {
+	r.sortsUsername = &sortsUsername
+	return r
+}
+
+func (r SSLVPNAPIGetGridSslVpnUserInGroupV2Request) Execute() (*OperationResponseSslVpnUserGridVOVpnUserInfoVO, *http.Response, error) {
+	return r.ApiService.GetGridSslVpnUserInGroupV2Execute(r)
+}
+
+/*
+GetGridSslVpnUserInGroupV2 Get SSL VPN user list in group V2.
+
+Get SSL VPN user list in group V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param userGroupId User Group Id
+ @return SSLVPNAPIGetGridSslVpnUserInGroupV2Request
+*/
+func (a *SSLVPNAPIService) GetGridSslVpnUserInGroupV2(ctx context.Context, omadacId string, siteId string, userGroupId string) SSLVPNAPIGetGridSslVpnUserInGroupV2Request {
+	return SSLVPNAPIGetGridSslVpnUserInGroupV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		userGroupId: userGroupId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSslVpnUserGridVOVpnUserInfoVO
+func (a *SSLVPNAPIService) GetGridSslVpnUserInGroupV2Execute(r SSLVPNAPIGetGridSslVpnUserInGroupV2Request) (*OperationResponseSslVpnUserGridVOVpnUserInfoVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSslVpnUserGridVOVpnUserInfoVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SSLVPNAPIService.GetGridSslVpnUserInGroupV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/usergroups/{userGroupId}/users"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"userGroupId"+"}", url.PathEscape(parameterValueToString(r.userGroupId, "userGroupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	if r.sortsUsername != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.username", r.sortsUsername, "form", "")
+	}
 	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	// to determine the Content-Type header
@@ -3607,12 +4171,14 @@ func (r SSLVPNAPIGetSslVpnServerSettingRequest) Execute() (*OperationResponseSsl
 /*
 GetSslVpnServerSetting Get SSL VPN server setting
 
-Get SSL VPN server setting.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
+Get SSL VPN server setting.This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return SSLVPNAPIGetSslVpnServerSettingRequest
+
+Deprecated
 */
 func (a *SSLVPNAPIService) GetSslVpnServerSetting(ctx context.Context, omadacId string, siteId string) SSLVPNAPIGetSslVpnServerSettingRequest {
 	return SSLVPNAPIGetSslVpnServerSettingRequest{
@@ -3625,6 +4191,7 @@ func (a *SSLVPNAPIService) GetSslVpnServerSetting(ctx context.Context, omadacId 
 
 // Execute executes the request
 //  @return OperationResponseSslVpnServerSetting
+// Deprecated
 func (a *SSLVPNAPIService) GetSslVpnServerSettingExecute(r SSLVPNAPIGetSslVpnServerSettingRequest) (*OperationResponseSslVpnServerSetting, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -3728,7 +4295,7 @@ func (r SSLVPNAPIGetSslVpnUserGroupListRequest) Execute() (*OperationResponseLis
 /*
 GetSslVpnUserGroupList Get SSL VPN user Group list.
 
-Get SSL VPN user Group list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get SSL VPN user Group list. This interface has been deprecated. Please use the following interfaces instead: Get SSL VPN user Group list V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4399,12 +4966,14 @@ func (r SSLVPNAPIModifySslVpnServerSettingRequest) Execute() (*OperationResponse
 /*
 ModifySslVpnServerSetting Modify SSL VPN server setting
 
-Get SSL VPN server setting.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34032  -  Built-in radius server not started.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43010  -  The IP addresses in SSL VPN IP pool cannot overlap with other VPN IP pools on the same site.<br/>-43011  -  The service port cannot be the same as that of the OpenVPN server.<br/>-43017  -  The device does not support configuring radius type.<br/>-43018  -  The device does not support configuring LDAP type.
+Get SSL VPN server setting. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2 or Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34032  -  Built-in radius server not started.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43010  -  The IP addresses in SSL VPN IP pool cannot overlap with other VPN IP pools on the same site.<br/>-43011  -  The service port cannot be the same as that of the OpenVPN server.<br/>-43017  -  The device does not support configuring radius type.<br/>-43018  -  The device does not support configuring LDAP type.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return SSLVPNAPIModifySslVpnServerSettingRequest
+
+Deprecated
 */
 func (a *SSLVPNAPIService) ModifySslVpnServerSetting(ctx context.Context, omadacId string, siteId string) SSLVPNAPIModifySslVpnServerSettingRequest {
 	return SSLVPNAPIModifySslVpnServerSettingRequest{
@@ -4417,6 +4986,7 @@ func (a *SSLVPNAPIService) ModifySslVpnServerSetting(ctx context.Context, omadac
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *SSLVPNAPIService) ModifySslVpnServerSettingExecute(r SSLVPNAPIModifySslVpnServerSettingRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
@@ -4532,7 +5102,7 @@ func (r SSLVPNAPIModifySslVpnUserRequest) Execute() (*OperationResponseWithoutRe
 /*
 ModifySslVpnUser Modify SSL VPN user
 
-Modify SSL VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
+Modify SSL VPN user. This interface has been deprecated. Please use the following interfaces instead: Modify VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

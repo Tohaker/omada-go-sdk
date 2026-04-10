@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the InternetPortOpenApiVO type satisfies the MappedNullable interface at compile time
@@ -21,17 +23,20 @@ var _ MappedNullable = &InternetPortOpenApiVO{}
 type InternetPortOpenApiVO struct {
 	LteWanSetting *LteWanSettingOpenApiVO `json:"lteWanSetting,omitempty"`
 	// The Type of the Internet port as follows: 0: WAN; 1: USB; 2: LTE; 3: DSL.
-	Type *int32 `json:"type,omitempty"`
+	Type int32 `json:"type"`
 	UsbLteSetting *UsbLteSettingOpenApiVO `json:"usbLteSetting,omitempty"`
 	WanPortSetting *WanPortSettingOpenApiVO `json:"wanPortSetting,omitempty"`
 }
+
+type _InternetPortOpenApiVO InternetPortOpenApiVO
 
 // NewInternetPortOpenApiVO instantiates a new InternetPortOpenApiVO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInternetPortOpenApiVO() *InternetPortOpenApiVO {
+func NewInternetPortOpenApiVO(type_ int32) *InternetPortOpenApiVO {
 	this := InternetPortOpenApiVO{}
+	this.Type = type_
 	return &this
 }
 
@@ -75,36 +80,28 @@ func (o *InternetPortOpenApiVO) SetLteWanSetting(v LteWanSettingOpenApiVO) {
 	o.LteWanSetting = &v
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
+// GetType returns the Type field value
 func (o *InternetPortOpenApiVO) GetType() int32 {
-	if o == nil || IsNil(o.Type) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Type
+
+	return o.Type
 }
 
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *InternetPortOpenApiVO) GetTypeOk() (*int32, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Type, true
+	return &o.Type, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *InternetPortOpenApiVO) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given int32 and assigns it to the Type field.
+// SetType sets field value
 func (o *InternetPortOpenApiVO) SetType(v int32) {
-	o.Type = &v
+	o.Type = v
 }
 
 // GetUsbLteSetting returns the UsbLteSetting field value if set, zero value otherwise.
@@ -184,9 +181,7 @@ func (o InternetPortOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LteWanSetting) {
 		toSerialize["lteWanSetting"] = o.LteWanSetting
 	}
-	if !IsNil(o.Type) {
-		toSerialize["type"] = o.Type
-	}
+	toSerialize["type"] = o.Type
 	if !IsNil(o.UsbLteSetting) {
 		toSerialize["usbLteSetting"] = o.UsbLteSetting
 	}
@@ -194,6 +189,43 @@ func (o InternetPortOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["wanPortSetting"] = o.WanPortSetting
 	}
 	return toSerialize, nil
+}
+
+func (o *InternetPortOpenApiVO) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varInternetPortOpenApiVO := _InternetPortOpenApiVO{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varInternetPortOpenApiVO)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InternetPortOpenApiVO(varInternetPortOpenApiVO)
+
+	return err
 }
 
 type NullableInternetPortOpenApiVO struct {

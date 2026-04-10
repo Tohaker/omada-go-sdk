@@ -43,24 +43,27 @@ type StackAPI interface {
 	/*
 	BatchModifyOswStackPorts Batch modify stack port
 
-	Batch modify stack port.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+	Batch modify stack port. This interface has been deprecated. Please use the following interface instead: Batch modify stack port V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param stackId Stack ID
 	@return StackAPIBatchModifyOswStackPortsRequest
+
+	Deprecated
 	*/
 	BatchModifyOswStackPorts(ctx context.Context, omadacId string, siteId string, stackId string) StackAPIBatchModifyOswStackPortsRequest
 
 	// BatchModifyOswStackPortsExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	BatchModifyOswStackPortsExecute(r StackAPIBatchModifyOswStackPortsRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	BatchModifySwitchStackPortSetting Batch modify stack port
+	BatchModifySwitchStackPortSetting Batch modify stack port V2
 
-	Batch modify stack port.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+	Batch modify stack port V2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -161,7 +164,7 @@ type StackAPI interface {
 	/*
 	DeleteOswStackLag Delete stack lag
 
-	Delete stack lag.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+	Delete stack lag. This interface has been deprecated. Please use the following interface instead: Delete stack lag V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -169,11 +172,14 @@ type StackAPI interface {
 	@param stackId Stack ID
 	@param lagId LAG ID
 	@return StackAPIDeleteOswStackLagRequest
+
+	Deprecated
 	*/
 	DeleteOswStackLag(ctx context.Context, omadacId string, siteId string, stackId string, lagId string) StackAPIDeleteOswStackLagRequest
 
 	// DeleteOswStackLagExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteOswStackLagExecute(r StackAPIDeleteOswStackLagRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
@@ -213,9 +219,9 @@ type StackAPI interface {
 	DeleteStackVrfExecute(r StackAPIDeleteStackVrfRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	DeleteSwitchStackLagSetting Delete stack lag
+	DeleteSwitchStackLagSetting Delete stack lag V2
 
-	Delete stack lag.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+	Delete stack lag V2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -775,7 +781,7 @@ type StackAPI interface {
 	/*
 	ModifyOswStackLag Modify stack lag
 
-	Modify stack lag.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+	Modify stack lag. This interface has been deprecated. Please use the following interface instead: Modify stack lag V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -783,17 +789,20 @@ type StackAPI interface {
 	@param stackId Stack ID
 	@param lagId LAG ID
 	@return StackAPIModifyOswStackLagRequest
+
+	Deprecated
 	*/
 	ModifyOswStackLag(ctx context.Context, omadacId string, siteId string, stackId string, lagId string) StackAPIModifyOswStackLagRequest
 
 	// ModifyOswStackLagExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyOswStackLagExecute(r StackAPIModifyOswStackLagRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyOswStackPort Modify stack port
 
-	Modify stack port.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+	Modify stack port. This interface has been deprecated. Please use the following interface instead: Modify stack port V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -801,11 +810,14 @@ type StackAPI interface {
 	@param stackId Stack ID
 	@param port Port
 	@return StackAPIModifyOswStackPortRequest
+
+	Deprecated
 	*/
 	ModifyOswStackPort(ctx context.Context, omadacId string, siteId string, stackId string, port string) StackAPIModifyOswStackPortRequest
 
 	// ModifyOswStackPortExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyOswStackPortExecute(r StackAPIModifyOswStackPortRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
@@ -897,9 +909,9 @@ type StackAPI interface {
 	ModifyStackVrfExecute(r StackAPIModifyStackVrfRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifySwitchStackLagSetting Modify stack lag
+	ModifySwitchStackLagSetting Modify stack lag V2
 
-	Modify stack lag.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+	Modify stack lag V2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -915,9 +927,9 @@ type StackAPI interface {
 	ModifySwitchStackLagSettingExecute(r StackAPIModifySwitchStackLagSettingRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifySwitchStackPortSetting Modify stack port
+	ModifySwitchStackPortSetting Modify stack port V2
 
-	Modify stack port.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+	Modify stack port V2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1127,13 +1139,15 @@ func (r StackAPIBatchModifyOswStackPortsRequest) Execute() (*OperationResponseWi
 /*
 BatchModifyOswStackPorts Batch modify stack port
 
-Batch modify stack port.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+Batch modify stack port. This interface has been deprecated. Please use the following interface instead: Batch modify stack port V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param stackId Stack ID
  @return StackAPIBatchModifyOswStackPortsRequest
+
+Deprecated
 */
 func (a *StackAPIService) BatchModifyOswStackPorts(ctx context.Context, omadacId string, siteId string, stackId string) StackAPIBatchModifyOswStackPortsRequest {
 	return StackAPIBatchModifyOswStackPortsRequest{
@@ -1147,6 +1161,7 @@ func (a *StackAPIService) BatchModifyOswStackPorts(ctx context.Context, omadacId
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *StackAPIService) BatchModifyOswStackPortsExecute(r StackAPIBatchModifyOswStackPortsRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -1261,9 +1276,9 @@ func (r StackAPIBatchModifySwitchStackPortSettingRequest) Execute() (*OperationR
 }
 
 /*
-BatchModifySwitchStackPortSetting Batch modify stack port
+BatchModifySwitchStackPortSetting Batch modify stack port V2
 
-Batch modify stack port.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+Batch modify stack port V2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2048,7 +2063,7 @@ func (r StackAPIDeleteOswStackLagRequest) Execute() (*OperationResponseWithoutRe
 /*
 DeleteOswStackLag Delete stack lag
 
-Delete stack lag.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+Delete stack lag. This interface has been deprecated. Please use the following interface instead: Delete stack lag V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2056,6 +2071,8 @@ Delete stack lag.<br/><br/>The interface requires one of the permissions: <br/>S
  @param stackId Stack ID
  @param lagId LAG ID
  @return StackAPIDeleteOswStackLagRequest
+
+Deprecated
 */
 func (a *StackAPIService) DeleteOswStackLag(ctx context.Context, omadacId string, siteId string, stackId string, lagId string) StackAPIDeleteOswStackLagRequest {
 	return StackAPIDeleteOswStackLagRequest{
@@ -2070,6 +2087,7 @@ func (a *StackAPIService) DeleteOswStackLag(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *StackAPIService) DeleteOswStackLagExecute(r StackAPIDeleteOswStackLagRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -2433,9 +2451,9 @@ func (r StackAPIDeleteSwitchStackLagSettingRequest) Execute() (*OperationRespons
 }
 
 /*
-DeleteSwitchStackLagSetting Delete stack lag
+DeleteSwitchStackLagSetting Delete stack lag V2
 
-Delete stack lag.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+Delete stack lag V2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6916,7 +6934,7 @@ func (r StackAPIModifyOswStackLagRequest) Execute() (*OperationResponseWithoutRe
 /*
 ModifyOswStackLag Modify stack lag
 
-Modify stack lag.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+Modify stack lag. This interface has been deprecated. Please use the following interface instead: Modify stack lag V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6924,6 +6942,8 @@ Modify stack lag.<br/><br/>The interface requires one of the permissions: <br/>S
  @param stackId Stack ID
  @param lagId LAG ID
  @return StackAPIModifyOswStackLagRequest
+
+Deprecated
 */
 func (a *StackAPIService) ModifyOswStackLag(ctx context.Context, omadacId string, siteId string, stackId string, lagId string) StackAPIModifyOswStackLagRequest {
 	return StackAPIModifyOswStackLagRequest{
@@ -6938,6 +6958,7 @@ func (a *StackAPIService) ModifyOswStackLag(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *StackAPIService) ModifyOswStackLagExecute(r StackAPIModifyOswStackLagRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -7056,7 +7077,7 @@ func (r StackAPIModifyOswStackPortRequest) Execute() (*OperationResponseWithoutR
 /*
 ModifyOswStackPort Modify stack port
 
-Modify stack port.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+Modify stack port. This interface has been deprecated. Please use the following interface instead: Modify stack port V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -7064,6 +7085,8 @@ Modify stack port.<br/><br/>The interface requires one of the permissions: <br/>
  @param stackId Stack ID
  @param port Port
  @return StackAPIModifyOswStackPortRequest
+
+Deprecated
 */
 func (a *StackAPIService) ModifyOswStackPort(ctx context.Context, omadacId string, siteId string, stackId string, port string) StackAPIModifyOswStackPortRequest {
 	return StackAPIModifyOswStackPortRequest{
@@ -7078,6 +7101,7 @@ func (a *StackAPIService) ModifyOswStackPort(ctx context.Context, omadacId strin
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *StackAPIService) ModifyOswStackPortExecute(r StackAPIModifyOswStackPortRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -7886,9 +7910,9 @@ func (r StackAPIModifySwitchStackLagSettingRequest) Execute() (*OperationRespons
 }
 
 /*
-ModifySwitchStackLagSetting Modify stack lag
+ModifySwitchStackLagSetting Modify stack lag V2
 
-Modify stack lag.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+Modify stack lag V2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8026,9 +8050,9 @@ func (r StackAPIModifySwitchStackPortSettingRequest) Execute() (*OperationRespon
 }
 
 /*
-ModifySwitchStackPortSetting Modify stack port
+ModifySwitchStackPortSetting Modify stack port V2
 
-Modify stack port.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+Modify stack port V2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

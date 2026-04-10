@@ -4,14 +4,14 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BindMspOwner**](CloudUserAPI.md#bindmspowner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/bind | bind the MSP owner account
-[**BindOwner**](CloudUserAPI.md#bindowner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/bind | bind the owner account
+[**BindMspOwner**](CloudUserAPI.md#bindmspowner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/bind | Bind the MSP owner account
+[**BindOwner**](CloudUserAPI.md#bindowner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/bind | Bind the owner account
 [**GetCloudAccessStatus**](CloudUserAPI.md#getcloudaccessstatus) | **Get** /openapi/v1/{omadacId}/cloud/status | Get cloud access status
-[**GetCloudUserInfo**](CloudUserAPI.md#getclouduserinfo) | **Get** /openapi/v1/{omadacId}/cloud/user | get cloud user information
+[**GetCloudUserInfo**](CloudUserAPI.md#getclouduserinfo) | **Get** /openapi/v1/{omadacId}/cloud/user | Get cloud user information
 [**GetMspCloudAccessStatus**](CloudUserAPI.md#getmspcloudaccessstatus) | **Get** /openapi/v1/msp/{mspId}/cloud/status | Get MSP cloud access status
 [**GetRemoteBindingStatus**](CloudUserAPI.md#getremotebindingstatus) | **Get** /openapi/v1/{omadacId}/cloud/remote/bind/status | Get remote bind status
-[**UnbindMspOwner**](CloudUserAPI.md#unbindmspowner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/unbind | unbind the MSP owner account
-[**UnbindOwner**](CloudUserAPI.md#unbindowner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/unbind | unbind the owner account
+[**UnbindMspOwner**](CloudUserAPI.md#unbindmspowner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/unbind | Unbind the MSP owner account
+[**UnbindOwner**](CloudUserAPI.md#unbindowner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/unbind | Unbind the owner account
 
 
 
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 > OperationResponseWithoutResult BindMspOwner(ctx, mspId).BindOwnerOpenApiVO(bindOwnerOpenApiVO).Execute()
 
-bind the MSP owner account
+Bind the MSP owner account
 
 
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult BindOwner(ctx, omadacId).BindOwnerOpenApiVO(bindOwnerOpenApiVO).Execute()
 
-bind the owner account
+Bind the owner account
 
 
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 > OperationResponse GetCloudUserInfo(ctx, omadacId).Execute()
 
-get cloud user information
+Get cloud user information
 
 
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult UnbindMspOwner(ctx, mspId).Execute()
 
-unbind the MSP owner account
+Unbind the MSP owner account
 
 
 
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult UnbindOwner(ctx, omadacId).Execute()
 
-unbind the owner account
+Unbind the owner account
 
 
 

@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**DeletePortTagTemplate**](SwitchTemplateAPI.md#deleteporttagtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Delete an existing template port label
 [**DeleteSwitchLagTemplate**](SwitchTemplateAPI.md#deleteswitchlagtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/lags/{lagId} | Delete switch template lag
 [**GetBatchSwitchTemplateExistNetworks**](SwitchTemplateAPI.md#getbatchswitchtemplateexistnetworks) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/exist-network | Get the networks intersections existing on multiple switch templates
+[**GetBatchSwitchTemplateExistNetworksV2**](SwitchTemplateAPI.md#getbatchswitchtemplateexistnetworksv2) | **Post** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/exist-network | Get the networks intersections existing on multiple switch templates V2
 [**GetGridPortAndLagNetworks**](SwitchTemplateAPI.md#getgridportandlagnetworks) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/port-lag-networks | Get the networks used on switch template&#39;s ports and LAGs
 [**GetGridVrfTemplate**](SwitchTemplateAPI.md#getgridvrftemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs | Get the vrfs on the switch template
 [**GetOswForGivenLanNetworkIdAndVlanTemplate**](SwitchTemplateAPI.md#getoswforgivenlannetworkidandvlantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlans/{vlan}/switches | Get the paging query for the osw templates with given network id and vlan
@@ -867,6 +868,81 @@ Name | Type | Description  | Notes
 
 
  **oswMacListVO** | [**OswMacListVO**](OswMacListVO.md) |  | 
+
+### Return type
+
+[**OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO**](OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBatchSwitchTemplateExistNetworksV2
+
+> OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO GetBatchSwitchTemplateExistNetworksV2(ctx, omadacId, siteTemplateId).OswDeviceTemplateIdListVO(oswDeviceTemplateIdListVO).Execute()
+
+Get the networks intersections existing on multiple switch templates V2
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	oswDeviceTemplateIdListVO := *openapiclient.NewOswDeviceTemplateIdListVO() // OswDeviceTemplateIdListVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchTemplateAPI.GetBatchSwitchTemplateExistNetworksV2(context.Background(), omadacId, siteTemplateId).OswDeviceTemplateIdListVO(oswDeviceTemplateIdListVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchTemplateAPI.GetBatchSwitchTemplateExistNetworksV2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBatchSwitchTemplateExistNetworksV2`: OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `SwitchTemplateAPI.GetBatchSwitchTemplateExistNetworksV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBatchSwitchTemplateExistNetworksV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **oswDeviceTemplateIdListVO** | [**OswDeviceTemplateIdListVO**](OswDeviceTemplateIdListVO.md) |  | 
 
 ### Return type
 

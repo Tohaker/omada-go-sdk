@@ -49,6 +49,7 @@ Method | HTTP request | Description
 [**GetOswLanProfileTemplateList**](WiredNetworkTemplateAPI.md#getoswlanprofiletemplatelist) | **Get** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles | Get switch profile template list
 [**GetSelectDeviceTemplatePortsInfo**](WiredNetworkTemplateAPI.md#getselectdevicetemplateportsinfo) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/devices/ports | Get the port information of the selected device templates when creating network for site template
 [**GetSelectDeviceTemplatePortsInfoWhenModify**](WiredNetworkTemplateAPI.md#getselectdevicetemplateportsinfowhenmodify) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/devices/ports | Get the port information of the selected device templates when modifying the network for site template
+[**GetSpeedTestV2SettingTemplate**](WiredNetworkTemplateAPI.md#getspeedtestv2settingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/speedTest | Get SpeedTest Setting Template
 [**GetSupportPortsDeviceTemplates**](WiredNetworkTemplateAPI.md#getsupportportsdevicetemplates) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/support-ports | Get grid devices templates that support ports config.
 [**GetTemplateGridVlanNetworkAffectedDevicePorts**](WiredNetworkTemplateAPI.md#gettemplategridvlannetworkaffecteddeviceports) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/networks/{networkId}/vlan/{vlan}/ports | Get the ports of devices template that use the network
 [**GetUseLanProfileESTemplateList**](WiredNetworkTemplateAPI.md#getuselanprofileestemplatelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId}/es | Get Use LAN profile ES template list
@@ -61,6 +62,7 @@ Method | HTTP request | Description
 [**ModifyLanNetworkTemplate**](WiredNetworkTemplateAPI.md#modifylannetworktemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/{networkId} | Modify LAN network template
 [**ModifyLanProfileTemplate**](WiredNetworkTemplateAPI.md#modifylanprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Modify a LAN profile template
 [**ModifyOswLanProfileTemplate**](WiredNetworkTemplateAPI.md#modifyoswlanprofiletemplate) | **Patch** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Modify a switch profile template
+[**ModifySpeedTestV2SettingTemplate**](WiredNetworkTemplateAPI.md#modifyspeedtestv2settingtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/speedTest | Modify SpeedTest Setting Template
 [**ModifyVirtualWanStatusTemplate**](WiredNetworkTemplateAPI.md#modifyvirtualwanstatustemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId}/status | Modify virtual WAN status template
 [**ModifyVirtualWanTemplate**](WiredNetworkTemplateAPI.md#modifyvirtualwantemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId} | Modify virtual WAN template
 [**ModifyWanPortsTemplate**](WiredNetworkTemplateAPI.md#modifywanportstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/wan-ports | Modify Wan Ports
@@ -678,7 +680,7 @@ Name | Type | Description  | Notes
 
 ## CheckWanLanStatus
 
-> CheckWanLanStatusOpenApiVO CheckWanLanStatus(ctx, omadacId, siteTemplateId).Execute()
+> OperationResponseCheckWanLanStatusOpenApiVO CheckWanLanStatus(ctx, omadacId, siteTemplateId).Execute()
 
 Check template WAN-LAN status
 
@@ -707,7 +709,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkTemplateAPI.CheckWanLanStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CheckWanLanStatus`: CheckWanLanStatusOpenApiVO
+	// response from `CheckWanLanStatus`: OperationResponseCheckWanLanStatusOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkTemplateAPI.CheckWanLanStatus`: %v\n", resp)
 }
 ```
@@ -733,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CheckWanLanStatusOpenApiVO**](CheckWanLanStatusOpenApiVO.md)
+[**OperationResponseCheckWanLanStatusOpenApiVO**](OperationResponseCheckWanLanStatusOpenApiVO.md)
 
 ### Authorization
 
@@ -979,7 +981,7 @@ Name | Type | Description  | Notes
 
 ## CreateLanNetworkTemplate
 
-> ResponseIdVO CreateLanNetworkTemplate(ctx, omadacId, siteTemplateId).LanNetworkTemplateOpenApiVO(lanNetworkTemplateOpenApiVO).Execute()
+> OperationResponseResponseIdVO CreateLanNetworkTemplate(ctx, omadacId, siteTemplateId).LanNetworkTemplateOpenApiVO(lanNetworkTemplateOpenApiVO).Execute()
 
 Create LAN network template
 
@@ -1009,7 +1011,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkTemplateAPI.CreateLanNetworkTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateLanNetworkTemplate`: ResponseIdVO
+	// response from `CreateLanNetworkTemplate`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkTemplateAPI.CreateLanNetworkTemplate`: %v\n", resp)
 }
 ```
@@ -1036,7 +1038,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseIdVO**](ResponseIdVO.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -2286,7 +2288,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	function := int32(56) // int32 | function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3:IGMP_PROXY, 4: VIRTUAL_WAN
+	function := int32(56) // int32 | function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3: IGMP_PROXY, 4: VIRTUAL_WAN, 5: PORT_FROWARDING, 6: OTONAT, 7: BANDWIDTH_CONTROL, 8: STATIC_ROUTING, 9: POLICY_ROUTING, 10: VPN, 11: SSL_VPN, 12: DDNS, 13: UPNP, 14: MLD, 15: LAN
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2318,7 +2320,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **function** | **int32** | function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3:IGMP_PROXY, 4: VIRTUAL_WAN | 
+ **function** | **int32** | function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3: IGMP_PROXY, 4: VIRTUAL_WAN, 5: PORT_FROWARDING, 6: OTONAT, 7: BANDWIDTH_CONTROL, 8: STATIC_ROUTING, 9: POLICY_ROUTING, 10: VPN, 11: SSL_VPN, 12: DDNS, 13: UPNP, 14: MLD, 15: LAN | 
 
 ### Return type
 
@@ -2788,7 +2790,7 @@ Name | Type | Description  | Notes
 
 ## GetLanDnsTemplateList
 
-> OperationResponseGridVOLanDnsOpenApiVO GetLanDnsTemplateList(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseLanDnsGridVOLanDnsOpenApiVO GetLanDnsTemplateList(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).Execute()
 
 Get LAN Dns template list
 
@@ -2819,7 +2821,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkTemplateAPI.GetLanDnsTemplateList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLanDnsTemplateList`: OperationResponseGridVOLanDnsOpenApiVO
+	// response from `GetLanDnsTemplateList`: OperationResponseLanDnsGridVOLanDnsOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkTemplateAPI.GetLanDnsTemplateList`: %v\n", resp)
 }
 ```
@@ -2847,7 +2849,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVOLanDnsOpenApiVO**](OperationResponseGridVOLanDnsOpenApiVO.md)
+[**OperationResponseLanDnsGridVOLanDnsOpenApiVO**](OperationResponseLanDnsGridVOLanDnsOpenApiVO.md)
 
 ### Authorization
 
@@ -3466,6 +3468,79 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSpeedTestV2SettingTemplate
+
+> OperationResponseSpeedTestV2SettingVO GetSpeedTestV2SettingTemplate(ctx, omadacId, siteTemplateId).Execute()
+
+Get SpeedTest Setting Template
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WiredNetworkTemplateAPI.GetSpeedTestV2SettingTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkTemplateAPI.GetSpeedTestV2SettingTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpeedTestV2SettingTemplate`: OperationResponseSpeedTestV2SettingVO
+	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkTemplateAPI.GetSpeedTestV2SettingTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSpeedTestV2SettingTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseSpeedTestV2SettingVO**](OperationResponseSpeedTestV2SettingVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -4393,6 +4468,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifySpeedTestV2SettingTemplate
+
+> OperationResponse ModifySpeedTestV2SettingTemplate(ctx, omadacId, siteTemplateId).ModifySpeedTestV2SettingOpenApiVO(modifySpeedTestV2SettingOpenApiVO).Execute()
+
+Modify SpeedTest Setting Template
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	modifySpeedTestV2SettingOpenApiVO := *openapiclient.NewModifySpeedTestV2SettingOpenApiVO(false) // ModifySpeedTestV2SettingOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WiredNetworkTemplateAPI.ModifySpeedTestV2SettingTemplate(context.Background(), omadacId, siteTemplateId).ModifySpeedTestV2SettingOpenApiVO(modifySpeedTestV2SettingOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkTemplateAPI.ModifySpeedTestV2SettingTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifySpeedTestV2SettingTemplate`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkTemplateAPI.ModifySpeedTestV2SettingTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifySpeedTestV2SettingTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **modifySpeedTestV2SettingOpenApiVO** | [**ModifySpeedTestV2SettingOpenApiVO**](ModifySpeedTestV2SettingOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
 
 ### Authorization
 

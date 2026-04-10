@@ -53,7 +53,7 @@ type VPN struct {
 	ExistLdap *bool `json:"existLdap,omitempty"`
 	// Whether Open VPN Client Remote Server is Domain Name.
 	ExistOpenVpnDomain *bool `json:"existOpenVpnDomain,omitempty"`
-	// Whether current VPN has configured none-default option: dh14 or dh15
+	// Whether current VPN has configured none-default option: dh14 or dh15.
 	ExistPfs *bool `json:"existPfs,omitempty"`
 	// Whether current VPN has configured none-default Proposal option for IKE negotiation phase-1: SHA384 or SHA512.
 	ExistPhase1Proposal1 *bool `json:"existPhase1Proposal1,omitempty"`
@@ -107,7 +107,7 @@ type VPN struct {
 	// Status of the VPN.
 	Status *bool `json:"status,omitempty"`
 	VpnConfiguration *VpnCertificateOpenApiVO `json:"vpnConfiguration,omitempty"`
-	// WAN list of the VPN, only for Manual IPSec type. WAN port ID can be obtained from 'Get internet basic info' interface.
+	// WAN list of the VPN. WAN port ID can be obtained from 'Get internet basic info' interface.
 	Wans []string `json:"wans,omitempty"`
 	// Working Mode should be a value as follow: 0:NAT 1:Routing.
 	WorkingMode *int32 `json:"workingMode,omitempty"`

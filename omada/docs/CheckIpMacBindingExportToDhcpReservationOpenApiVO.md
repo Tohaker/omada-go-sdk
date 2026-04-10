@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ImbId** | Pointer to **string** | IP-MAC binding entry ID. | [optional] 
 **InterfaceId** | **string** | Interface ID. WAN port ID can be obtained from &#39;Get internet basic info&#39; interface. LAN Network can be created using &#39;Create LAN network&#39; interface, and LAN Network ID can be obtained from &#39;Get LAN network list&#39; interface. | 
 **Ip** | **string** | IP of the IP MAC binding entity. | 
 **Mac** | **string** | MAC of the IP MAC binding entity. | 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewCheckIpMacBindingExportToDhcpReservationOpenApiVOWithDefaults instantiates a new CheckIpMacBindingExportToDhcpReservationOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetImbId
+
+`func (o *CheckIpMacBindingExportToDhcpReservationOpenApiVO) GetImbId() string`
+
+GetImbId returns the ImbId field if non-nil, zero value otherwise.
+
+### GetImbIdOk
+
+`func (o *CheckIpMacBindingExportToDhcpReservationOpenApiVO) GetImbIdOk() (*string, bool)`
+
+GetImbIdOk returns a tuple with the ImbId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImbId
+
+`func (o *CheckIpMacBindingExportToDhcpReservationOpenApiVO) SetImbId(v string)`
+
+SetImbId sets ImbId field to given value.
+
+### HasImbId
+
+`func (o *CheckIpMacBindingExportToDhcpReservationOpenApiVO) HasImbId() bool`
+
+HasImbId returns a boolean if a field has been set.
 
 ### GetInterfaceId
 

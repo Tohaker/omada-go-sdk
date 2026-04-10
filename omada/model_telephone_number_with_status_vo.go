@@ -20,6 +20,7 @@ var _ MappedNullable = &TelephoneNumberWithStatusVO{}
 // TelephoneNumberWithStatusVO The list of registration result.
 type TelephoneNumberWithStatusVO struct {
 	DeviceMac *string `json:"deviceMac,omitempty"`
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	Number *string `json:"number,omitempty"`
 	Password *string `json:"password,omitempty"`
 	PhoneNumberId *string `json:"phoneNumberId,omitempty"`
@@ -78,6 +79,38 @@ func (o *TelephoneNumberWithStatusVO) HasDeviceMac() bool {
 // SetDeviceMac gets a reference to the given string and assigns it to the DeviceMac field.
 func (o *TelephoneNumberWithStatusVO) SetDeviceMac(v string) {
 	o.DeviceMac = &v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *TelephoneNumberWithStatusVO) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TelephoneNumberWithStatusVO) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *TelephoneNumberWithStatusVO) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *TelephoneNumberWithStatusVO) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetNumber returns the Number field value if set, zero value otherwise.
@@ -380,6 +413,9 @@ func (o TelephoneNumberWithStatusVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.DeviceMac) {
 		toSerialize["deviceMac"] = o.DeviceMac
+	}
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
 	}
 	if !IsNil(o.Number) {
 		toSerialize["number"] = o.Number

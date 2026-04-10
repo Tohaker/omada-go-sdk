@@ -6,7 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientDataTrendDaily** | Pointer to **int32** | Retention Configuration of client data trend records(only effective in local controller), clientDataTrendDaily should be a value as follows: 1: 1day; 7: 7days; 31: 31days; 60: 60days, 90: 90days. | [optional] 
 **ClientDataTrendEnable** | Pointer to **bool** | Whether the client data trend records is recorded. | [optional] 
+**ClientHealthEnable** | Pointer to **bool** | Whether client health is enabled. When enabled, client health data will be recorded, which may consume a significant amount of storage space. | [optional] 
 **ClientHistory** | Pointer to **int32** | Retention configuration of client History(only effective in local controller), clientHistory should be a value as follows: -1: Disabled; 0: All Time(Windows, Linux Only); 7: 7days; 31: 31days; 90: 90days; 180: 180days; 365: 365days. | [optional] 
+**ClientRecognitionEnable** | Pointer to **bool** | Whether client recognition is enabled. With the feature enabled, network devices will report client information in real time to ensure the accuracy of client recognition. Cloud Access is required for client recognition. | [optional] 
 **ClientsDataEnable** | **bool** | Whether the clients&#39; history data is recorded. | 
 **Daily** | Pointer to **int32** | Retention configuration of time series with daily granularity, daily should be a value as follows: 90: 90days; 180: 180days; 365: 365days(Fixed value in Cloud Based Controller as 365 days). | [optional] 
 **KnownClient** | Pointer to **int32** | Retention configuration of known client Data, knownClient should be a value as follows: -1: Disabled; 0: All Time(Windows, Linux Only); 1: 1day; 7: 7days; 31: 31days; 90: 90days; 180: 180days; 365: 365days. | [optional] 
@@ -86,6 +88,31 @@ SetClientDataTrendEnable sets ClientDataTrendEnable field to given value.
 
 HasClientDataTrendEnable returns a boolean if a field has been set.
 
+### GetClientHealthEnable
+
+`func (o *ModifyHistoryRetentionOpenApiVO) GetClientHealthEnable() bool`
+
+GetClientHealthEnable returns the ClientHealthEnable field if non-nil, zero value otherwise.
+
+### GetClientHealthEnableOk
+
+`func (o *ModifyHistoryRetentionOpenApiVO) GetClientHealthEnableOk() (*bool, bool)`
+
+GetClientHealthEnableOk returns a tuple with the ClientHealthEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientHealthEnable
+
+`func (o *ModifyHistoryRetentionOpenApiVO) SetClientHealthEnable(v bool)`
+
+SetClientHealthEnable sets ClientHealthEnable field to given value.
+
+### HasClientHealthEnable
+
+`func (o *ModifyHistoryRetentionOpenApiVO) HasClientHealthEnable() bool`
+
+HasClientHealthEnable returns a boolean if a field has been set.
+
 ### GetClientHistory
 
 `func (o *ModifyHistoryRetentionOpenApiVO) GetClientHistory() int32`
@@ -110,6 +137,31 @@ SetClientHistory sets ClientHistory field to given value.
 `func (o *ModifyHistoryRetentionOpenApiVO) HasClientHistory() bool`
 
 HasClientHistory returns a boolean if a field has been set.
+
+### GetClientRecognitionEnable
+
+`func (o *ModifyHistoryRetentionOpenApiVO) GetClientRecognitionEnable() bool`
+
+GetClientRecognitionEnable returns the ClientRecognitionEnable field if non-nil, zero value otherwise.
+
+### GetClientRecognitionEnableOk
+
+`func (o *ModifyHistoryRetentionOpenApiVO) GetClientRecognitionEnableOk() (*bool, bool)`
+
+GetClientRecognitionEnableOk returns a tuple with the ClientRecognitionEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientRecognitionEnable
+
+`func (o *ModifyHistoryRetentionOpenApiVO) SetClientRecognitionEnable(v bool)`
+
+SetClientRecognitionEnable sets ClientRecognitionEnable field to given value.
+
+### HasClientRecognitionEnable
+
+`func (o *ModifyHistoryRetentionOpenApiVO) HasClientRecognitionEnable() bool`
+
+HasClientRecognitionEnable returns a boolean if a field has been set.
 
 ### GetClientsDataEnable
 

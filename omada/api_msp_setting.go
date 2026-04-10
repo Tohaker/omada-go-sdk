@@ -145,36 +145,6 @@ type MspSettingAPI interface {
 	GetMspMailServerStatusGlobalExecute(r MspSettingAPIGetMspMailServerStatusGlobalRequest) (*OperationResponse, *http.Response, error)
 
 	/*
-	GetMspRadiusProxy Get Msp RADIUS proxy server setting
-
-	Get Msp RADIUS proxy server setting<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings View Only
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param mspId MSP ID
-	@return MspSettingAPIGetMspRadiusProxyRequest
-	*/
-	GetMspRadiusProxy(ctx context.Context, mspId string) MspSettingAPIGetMspRadiusProxyRequest
-
-	// GetMspRadiusProxyExecute executes the request
-	//  @return OperationResponseRadiusProxyServerSetting
-	GetMspRadiusProxyExecute(r MspSettingAPIGetMspRadiusProxyRequest) (*OperationResponseRadiusProxyServerSetting, *http.Response, error)
-
-	/*
-	GetMspRadiusServer Get Msp Built-In RADIUS server setting
-
-	Get Msp Built-In RADIUS server setting<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings View Only
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param mspId MSP ID
-	@return MspSettingAPIGetMspRadiusServerRequest
-	*/
-	GetMspRadiusServer(ctx context.Context, mspId string) MspSettingAPIGetMspRadiusServerRequest
-
-	// GetMspRadiusServerExecute executes the request
-	//  @return OperationResponseBuiltInRadiusServerSetting
-	GetMspRadiusServerExecute(r MspSettingAPIGetMspRadiusServerRequest) (*OperationResponseBuiltInRadiusServerSetting, *http.Response, error)
-
-	/*
 	GetMspUserInterface Get msp user interface
 
 	Get msp user interface<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
@@ -222,7 +192,7 @@ type MspSettingAPI interface {
 	/*
 	GetUiInterface1 Get msp ui interface
 
-	Get msp ui interface<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
+	Get msp ui interface. This interface has been deprecated. Please use the following interface instead: Get msp user interface.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -268,21 +238,6 @@ type MspSettingAPI interface {
 	ModifyMspMailServerExecute(r MspSettingAPIModifyMspMailServerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyMspRadiusServer Modify Msp Built-In RADIUS server setting
-
-	Modify Msp Built-In RADIUS server setting<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param mspId MSP ID
-	@return MspSettingAPIModifyMspRadiusServerRequest
-	*/
-	ModifyMspRadiusServer(ctx context.Context, mspId string) MspSettingAPIModifyMspRadiusServerRequest
-
-	// ModifyMspRadiusServerExecute executes the request
-	//  @return OperationResponse
-	ModifyMspRadiusServerExecute(r MspSettingAPIModifyMspRadiusServerRequest) (*OperationResponse, *http.Response, error)
-
-	/*
 	ModifyMspUserInterface Modify msp user interface
 
 	Modify msp user interface<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
@@ -296,21 +251,6 @@ type MspSettingAPI interface {
 	// ModifyMspUserInterfaceExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifyMspUserInterfaceExecute(r MspSettingAPIModifyMspUserInterfaceRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
-	ModifyRadiusProxy1 Modify Msp RADIUS proxy server setting
-
-	Modify Msp RADIUS proxy server setting<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param mspId MSP ID
-	@return MspSettingAPIModifyRadiusProxy1Request
-	*/
-	ModifyRadiusProxy1(ctx context.Context, mspId string) MspSettingAPIModifyRadiusProxy1Request
-
-	// ModifyRadiusProxy1Execute executes the request
-	//  @return OperationResponseRadiusProxyServerSetting
-	ModifyRadiusProxy1Execute(r MspSettingAPIModifyRadiusProxy1Request) (*OperationResponseRadiusProxyServerSetting, *http.Response, error)
 
 	/*
 	ModifyRemoteLoggingSetting Modify msp remote logging setting
@@ -330,7 +270,7 @@ type MspSettingAPI interface {
 	/*
 	ModifyUiInterface1 Modify msp ui interface
 
-	Modify msp ui interface<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
+	Modify msp ui interface. This interface has been deprecated. Please use the following interface instead: Modify msp user interface.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -363,7 +303,7 @@ type MspSettingAPI interface {
 	/*
 	UploadCertificate Upload msp certificate
 
-	Upload msp certificate. Only support .pem, .pfx, .pem files. Certificate name should be the same as the file name.
+	Upload msp certificate. Only support .pem, .pfx, .jks files. Certificate name should be the same as the file name.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -1349,240 +1289,6 @@ func (a *MspSettingAPIService) GetMspMailServerStatusGlobalExecute(r MspSettingA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MspSettingAPIGetMspRadiusProxyRequest struct {
-	ctx context.Context
-	ApiService MspSettingAPI
-	mspId string
-}
-
-func (r MspSettingAPIGetMspRadiusProxyRequest) Execute() (*OperationResponseRadiusProxyServerSetting, *http.Response, error) {
-	return r.ApiService.GetMspRadiusProxyExecute(r)
-}
-
-/*
-GetMspRadiusProxy Get Msp RADIUS proxy server setting
-
-Get Msp RADIUS proxy server setting<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings View Only
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mspId MSP ID
- @return MspSettingAPIGetMspRadiusProxyRequest
-*/
-func (a *MspSettingAPIService) GetMspRadiusProxy(ctx context.Context, mspId string) MspSettingAPIGetMspRadiusProxyRequest {
-	return MspSettingAPIGetMspRadiusProxyRequest{
-		ApiService: a,
-		ctx: ctx,
-		mspId: mspId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseRadiusProxyServerSetting
-func (a *MspSettingAPIService) GetMspRadiusProxyExecute(r MspSettingAPIGetMspRadiusProxyRequest) (*OperationResponseRadiusProxyServerSetting, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseRadiusProxyServerSetting
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MspSettingAPIService.GetMspRadiusProxy")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/settings/network/radius-proxy"
-	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type MspSettingAPIGetMspRadiusServerRequest struct {
-	ctx context.Context
-	ApiService MspSettingAPI
-	mspId string
-}
-
-func (r MspSettingAPIGetMspRadiusServerRequest) Execute() (*OperationResponseBuiltInRadiusServerSetting, *http.Response, error) {
-	return r.ApiService.GetMspRadiusServerExecute(r)
-}
-
-/*
-GetMspRadiusServer Get Msp Built-In RADIUS server setting
-
-Get Msp Built-In RADIUS server setting<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings View Only
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mspId MSP ID
- @return MspSettingAPIGetMspRadiusServerRequest
-*/
-func (a *MspSettingAPIService) GetMspRadiusServer(ctx context.Context, mspId string) MspSettingAPIGetMspRadiusServerRequest {
-	return MspSettingAPIGetMspRadiusServerRequest{
-		ApiService: a,
-		ctx: ctx,
-		mspId: mspId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseBuiltInRadiusServerSetting
-func (a *MspSettingAPIService) GetMspRadiusServerExecute(r MspSettingAPIGetMspRadiusServerRequest) (*OperationResponseBuiltInRadiusServerSetting, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseBuiltInRadiusServerSetting
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MspSettingAPIService.GetMspRadiusServer")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/settings/network/radius-server"
-	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type MspSettingAPIGetMspUserInterfaceRequest struct {
 	ctx context.Context
 	ApiService MspSettingAPI
@@ -1947,7 +1653,7 @@ func (r MspSettingAPIGetUiInterface1Request) Execute() (*OperationResponseMspUiI
 /*
 GetUiInterface1 Get msp ui interface
 
-Get msp ui interface<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
+Get msp ui interface. This interface has been deprecated. Please use the following interface instead: Get msp user interface.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -2310,134 +2016,6 @@ func (a *MspSettingAPIService) ModifyMspMailServerExecute(r MspSettingAPIModifyM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MspSettingAPIModifyMspRadiusServerRequest struct {
-	ctx context.Context
-	ApiService MspSettingAPI
-	mspId string
-	builtInRadiusServerSetting *BuiltInRadiusServerSetting
-}
-
-func (r MspSettingAPIModifyMspRadiusServerRequest) BuiltInRadiusServerSetting(builtInRadiusServerSetting BuiltInRadiusServerSetting) MspSettingAPIModifyMspRadiusServerRequest {
-	r.builtInRadiusServerSetting = &builtInRadiusServerSetting
-	return r
-}
-
-func (r MspSettingAPIModifyMspRadiusServerRequest) Execute() (*OperationResponse, *http.Response, error) {
-	return r.ApiService.ModifyMspRadiusServerExecute(r)
-}
-
-/*
-ModifyMspRadiusServer Modify Msp Built-In RADIUS server setting
-
-Modify Msp Built-In RADIUS server setting<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mspId MSP ID
- @return MspSettingAPIModifyMspRadiusServerRequest
-*/
-func (a *MspSettingAPIService) ModifyMspRadiusServer(ctx context.Context, mspId string) MspSettingAPIModifyMspRadiusServerRequest {
-	return MspSettingAPIModifyMspRadiusServerRequest{
-		ApiService: a,
-		ctx: ctx,
-		mspId: mspId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponse
-func (a *MspSettingAPIService) ModifyMspRadiusServerExecute(r MspSettingAPIModifyMspRadiusServerRequest) (*OperationResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MspSettingAPIService.ModifyMspRadiusServer")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/settings/network/radius-server"
-	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.builtInRadiusServerSetting == nil {
-		return localVarReturnValue, nil, reportError("builtInRadiusServerSetting is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.builtInRadiusServerSetting
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type MspSettingAPIModifyMspUserInterfaceRequest struct {
 	ctx context.Context
 	ApiService MspSettingAPI
@@ -2515,134 +2093,6 @@ func (a *MspSettingAPIService) ModifyMspUserInterfaceExecute(r MspSettingAPIModi
 	}
 	// body params
 	localVarPostBody = r.mspUserInterfaceOpenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type MspSettingAPIModifyRadiusProxy1Request struct {
-	ctx context.Context
-	ApiService MspSettingAPI
-	mspId string
-	radiusProxyServerSetting *RadiusProxyServerSetting
-}
-
-func (r MspSettingAPIModifyRadiusProxy1Request) RadiusProxyServerSetting(radiusProxyServerSetting RadiusProxyServerSetting) MspSettingAPIModifyRadiusProxy1Request {
-	r.radiusProxyServerSetting = &radiusProxyServerSetting
-	return r
-}
-
-func (r MspSettingAPIModifyRadiusProxy1Request) Execute() (*OperationResponseRadiusProxyServerSetting, *http.Response, error) {
-	return r.ApiService.ModifyRadiusProxy1Execute(r)
-}
-
-/*
-ModifyRadiusProxy1 Modify Msp RADIUS proxy server setting
-
-Modify Msp RADIUS proxy server setting<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mspId MSP ID
- @return MspSettingAPIModifyRadiusProxy1Request
-*/
-func (a *MspSettingAPIService) ModifyRadiusProxy1(ctx context.Context, mspId string) MspSettingAPIModifyRadiusProxy1Request {
-	return MspSettingAPIModifyRadiusProxy1Request{
-		ApiService: a,
-		ctx: ctx,
-		mspId: mspId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseRadiusProxyServerSetting
-func (a *MspSettingAPIService) ModifyRadiusProxy1Execute(r MspSettingAPIModifyRadiusProxy1Request) (*OperationResponseRadiusProxyServerSetting, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseRadiusProxyServerSetting
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MspSettingAPIService.ModifyRadiusProxy1")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/settings/network/radius-proxy"
-	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.radiusProxyServerSetting == nil {
-		return localVarReturnValue, nil, reportError("radiusProxyServerSetting is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.radiusProxyServerSetting
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2841,7 +2291,7 @@ func (r MspSettingAPIModifyUiInterface1Request) Execute() (*OperationResponseWit
 /*
 ModifyUiInterface1 Modify msp ui interface
 
-Modify msp ui interface<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
+Modify msp ui interface. This interface has been deprecated. Please use the following interface instead: Modify msp user interface.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -3089,6 +2539,7 @@ type MspSettingAPIUploadCertificateRequest struct {
 	uploadCertificateRequest *UploadCertificateRequest
 }
 
+// Upload certificate file name
 func (r MspSettingAPIUploadCertificateRequest) CerName(cerName string) MspSettingAPIUploadCertificateRequest {
 	r.cerName = &cerName
 	return r
@@ -3106,7 +2557,7 @@ func (r MspSettingAPIUploadCertificateRequest) Execute() (*OperationResponse, *h
 /*
 UploadCertificate Upload msp certificate
 
-Upload msp certificate. Only support .pem, .pfx, .pem files. Certificate name should be the same as the file name.
+Upload msp certificate. Only support .pem, .pfx, .jks files. Certificate name should be the same as the file name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -3221,7 +2672,7 @@ type MspSettingAPIUploadSSLKeyRequest struct {
 	ApiService MspSettingAPI
 	mspId string
 	keyName *string
-	uploadCertificateRequest *UploadCertificateRequest
+	uploadSSLKeyRequest *UploadSSLKeyRequest
 }
 
 func (r MspSettingAPIUploadSSLKeyRequest) KeyName(keyName string) MspSettingAPIUploadSSLKeyRequest {
@@ -3229,8 +2680,8 @@ func (r MspSettingAPIUploadSSLKeyRequest) KeyName(keyName string) MspSettingAPIU
 	return r
 }
 
-func (r MspSettingAPIUploadSSLKeyRequest) UploadCertificateRequest(uploadCertificateRequest UploadCertificateRequest) MspSettingAPIUploadSSLKeyRequest {
-	r.uploadCertificateRequest = &uploadCertificateRequest
+func (r MspSettingAPIUploadSSLKeyRequest) UploadSSLKeyRequest(uploadSSLKeyRequest UploadSSLKeyRequest) MspSettingAPIUploadSSLKeyRequest {
+	r.uploadSSLKeyRequest = &uploadSSLKeyRequest
 	return r
 }
 
@@ -3299,7 +2750,7 @@ func (a *MspSettingAPIService) UploadSSLKeyExecute(r MspSettingAPIUploadSSLKeyRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.uploadCertificateRequest
+	localVarPostBody = r.uploadSSLKeyRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

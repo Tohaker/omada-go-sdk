@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enable** | **bool** | Whether to enable UPnP | 
 **NetworkIds** | Pointer to **[]string** | This field represents LAN Network ID. LAN Network ID can be obtained from \&quot;Get all \&quot;single\&quot;/\&quot;multi\&quot; interface lan network\&quot; interface. | [optional] 
+**SupportByDsLiteAndMapE** | Pointer to **bool** | Whether this feature is supported for the DS-Lite or Map-E WAN connection types. | [optional] 
 **WanPortIds** | Pointer to **[]string** | This field represents WAN Port ID, WAN Port ID can be obtained from \&quot;Get internet basic info\&quot; interface. | [optional] 
 
 ## Methods
@@ -71,6 +72,31 @@ SetNetworkIds sets NetworkIds field to given value.
 `func (o *UpnpSettingOpenApiVO) HasNetworkIds() bool`
 
 HasNetworkIds returns a boolean if a field has been set.
+
+### GetSupportByDsLiteAndMapE
+
+`func (o *UpnpSettingOpenApiVO) GetSupportByDsLiteAndMapE() bool`
+
+GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field if non-nil, zero value otherwise.
+
+### GetSupportByDsLiteAndMapEOk
+
+`func (o *UpnpSettingOpenApiVO) GetSupportByDsLiteAndMapEOk() (*bool, bool)`
+
+GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportByDsLiteAndMapE
+
+`func (o *UpnpSettingOpenApiVO) SetSupportByDsLiteAndMapE(v bool)`
+
+SetSupportByDsLiteAndMapE sets SupportByDsLiteAndMapE field to given value.
+
+### HasSupportByDsLiteAndMapE
+
+`func (o *UpnpSettingOpenApiVO) HasSupportByDsLiteAndMapE() bool`
+
+HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
 
 ### GetWanPortIds
 

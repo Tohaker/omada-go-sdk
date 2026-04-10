@@ -23,6 +23,36 @@ import (
 type SDWANAPI interface {
 
 	/*
+	AutoCreateMappingNetwork Auto create mapped network.
+
+	Auto create mapped network.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@return SDWANAPIAutoCreateMappingNetworkRequest
+	*/
+	AutoCreateMappingNetwork(ctx context.Context, omadacId string) SDWANAPIAutoCreateMappingNetworkRequest
+
+	// AutoCreateMappingNetworkExecute executes the request
+	//  @return OperationResponseSdWanMappedNetworkResult
+	AutoCreateMappingNetworkExecute(r SDWANAPIAutoCreateMappingNetworkRequest) (*OperationResponseSdWanMappedNetworkResult, *http.Response, error)
+
+	/*
+	AutoCreateSdWanGroupName Auto create group name.
+
+	Auto create group name.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@return SDWANAPIAutoCreateSdWanGroupNameRequest
+	*/
+	AutoCreateSdWanGroupName(ctx context.Context, omadacId string) SDWANAPIAutoCreateSdWanGroupNameRequest
+
+	// AutoCreateSdWanGroupNameExecute executes the request
+	//  @return OperationResponseString
+	AutoCreateSdWanGroupNameExecute(r SDWANAPIAutoCreateSdWanGroupNameRequest) (*OperationResponseString, *http.Response, error)
+
+	/*
 	AutoSelectWanPortRecommendResult Auto recommend WAN port.
 
 	Get the result of recommended WAN port with Auto Select.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
@@ -38,6 +68,21 @@ type SDWANAPI interface {
 	AutoSelectWanPortRecommendResultExecute(r SDWANAPIAutoSelectWanPortRecommendResultRequest) (*OperationResponseBatchAutoSelectWanPortResult, *http.Response, error)
 
 	/*
+	CheckModifiedMappedNetwork Check modified mapped network.
+
+	Check modified mapped network.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@return SDWANAPICheckModifiedMappedNetworkRequest
+	*/
+	CheckModifiedMappedNetwork(ctx context.Context, omadacId string) SDWANAPICheckModifiedMappedNetworkRequest
+
+	// CheckModifiedMappedNetworkExecute executes the request
+	//  @return OperationResponseWithoutResult
+	CheckModifiedMappedNetworkExecute(r SDWANAPICheckModifiedMappedNetworkRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	CheckSdWanGroupIpPool Check SD-WAN IP pool conflict.
 
 	Check whether the IP pool conflicts with the IP pool of other SD-WAN groups.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
@@ -51,21 +96,6 @@ type SDWANAPI interface {
 	// CheckSdWanGroupIpPoolExecute executes the request
 	//  @return OperationResponseWithoutResult
 	CheckSdWanGroupIpPoolExecute(r SDWANAPICheckSdWanGroupIpPoolRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
-	CheckSelectedLanNetworkConflict Check whether selected lanNetwork conflict.
-
-	Check whether selected lanNetwork conflict.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param omadacId Omada ID
-	@return SDWANAPICheckSelectedLanNetworkConflictRequest
-	*/
-	CheckSelectedLanNetworkConflict(ctx context.Context, omadacId string) SDWANAPICheckSelectedLanNetworkConflictRequest
-
-	// CheckSelectedLanNetworkConflictExecute executes the request
-	//  @return OperationResponseSdWanSelectedLanNetwork
-	CheckSelectedLanNetworkConflictExecute(r SDWANAPICheckSelectedLanNetworkConflictRequest) (*OperationResponseSdWanSelectedLanNetwork, *http.Response, error)
 
 	/*
 	CreateSdWanGroup Create SD-WAN Group.
@@ -133,22 +163,25 @@ type SDWANAPI interface {
 	/*
 	GetGridSdWanGroup Get SD-WAN Group Grid.
 
-	Get all SD-WAN Group.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+	Get all SD-WAN Group. This interface has been deprecated. Please use the following interfaces instead: getGridSdWanGroupBrief<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@return SDWANAPIGetGridSdWanGroupRequest
+
+	Deprecated
 	*/
 	GetGridSdWanGroup(ctx context.Context, omadacId string) SDWANAPIGetGridSdWanGroupRequest
 
 	// GetGridSdWanGroupExecute executes the request
 	//  @return OperationResponseGridVOSdWanGroupDetail
+	// Deprecated
 	GetGridSdWanGroupExecute(r SDWANAPIGetGridSdWanGroupRequest) (*OperationResponseGridVOSdWanGroupDetail, *http.Response, error)
 
 	/*
-	GetGridSdWanGroupBrief Get brief SD-WAN Group Grid.
+	GetGridSdWanGroupBrief Get SD-WAN Group Grid brief info.
 
-	Get all brief SD-WAN Group.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+	Get all SD-WAN Group brief info.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -221,10 +254,271 @@ type SDWANAPI interface {
 	// ModifySdWanGroupExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifySdWanGroupExecute(r SDWANAPIModifySdWanGroupRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifySdWanGroupNetWorkMap Modify SD-WAN Group NAT info.
+
+	Modify SD-WAN Group NAT info.<br/><br/>The interface requires one of the permissions: <br/>SD WAN Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param groupId The ID of a SD-WAN Group
+	@return SDWANAPIModifySdWanGroupNetWorkMapRequest
+	*/
+	ModifySdWanGroupNetWorkMap(ctx context.Context, omadacId string, groupId string) SDWANAPIModifySdWanGroupNetWorkMapRequest
+
+	// ModifySdWanGroupNetWorkMapExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifySdWanGroupNetWorkMapExecute(r SDWANAPIModifySdWanGroupNetWorkMapRequest) (*OperationResponseWithoutResult, *http.Response, error)
 }
 
 // SDWANAPIService SDWANAPI service
 type SDWANAPIService service
+
+type SDWANAPIAutoCreateMappingNetworkRequest struct {
+	ctx context.Context
+	ApiService SDWANAPI
+	omadacId string
+	sdWanSelectedMapNetwork *SdWanSelectedMapNetwork
+}
+
+func (r SDWANAPIAutoCreateMappingNetworkRequest) SdWanSelectedMapNetwork(sdWanSelectedMapNetwork SdWanSelectedMapNetwork) SDWANAPIAutoCreateMappingNetworkRequest {
+	r.sdWanSelectedMapNetwork = &sdWanSelectedMapNetwork
+	return r
+}
+
+func (r SDWANAPIAutoCreateMappingNetworkRequest) Execute() (*OperationResponseSdWanMappedNetworkResult, *http.Response, error) {
+	return r.ApiService.AutoCreateMappingNetworkExecute(r)
+}
+
+/*
+AutoCreateMappingNetwork Auto create mapped network.
+
+Auto create mapped network.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @return SDWANAPIAutoCreateMappingNetworkRequest
+*/
+func (a *SDWANAPIService) AutoCreateMappingNetwork(ctx context.Context, omadacId string) SDWANAPIAutoCreateMappingNetworkRequest {
+	return SDWANAPIAutoCreateMappingNetworkRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSdWanMappedNetworkResult
+func (a *SDWANAPIService) AutoCreateMappingNetworkExecute(r SDWANAPIAutoCreateMappingNetworkRequest) (*OperationResponseSdWanMappedNetworkResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSdWanMappedNetworkResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDWANAPIService.AutoCreateMappingNetwork")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sdwan/sdwan-group/map/network"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.sdWanSelectedMapNetwork == nil {
+		return localVarReturnValue, nil, reportError("sdWanSelectedMapNetwork is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.sdWanSelectedMapNetwork
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SDWANAPIAutoCreateSdWanGroupNameRequest struct {
+	ctx context.Context
+	ApiService SDWANAPI
+	omadacId string
+}
+
+func (r SDWANAPIAutoCreateSdWanGroupNameRequest) Execute() (*OperationResponseString, *http.Response, error) {
+	return r.ApiService.AutoCreateSdWanGroupNameExecute(r)
+}
+
+/*
+AutoCreateSdWanGroupName Auto create group name.
+
+Auto create group name.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @return SDWANAPIAutoCreateSdWanGroupNameRequest
+*/
+func (a *SDWANAPIService) AutoCreateSdWanGroupName(ctx context.Context, omadacId string) SDWANAPIAutoCreateSdWanGroupNameRequest {
+	return SDWANAPIAutoCreateSdWanGroupNameRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseString
+func (a *SDWANAPIService) AutoCreateSdWanGroupNameExecute(r SDWANAPIAutoCreateSdWanGroupNameRequest) (*OperationResponseString, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseString
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDWANAPIService.AutoCreateSdWanGroupName")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sdwan/sdwan-group/auto/groupName"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type SDWANAPIAutoSelectWanPortRecommendResultRequest struct {
 	ctx context.Context
@@ -354,6 +648,134 @@ func (a *SDWANAPIService) AutoSelectWanPortRecommendResultExecute(r SDWANAPIAuto
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type SDWANAPICheckModifiedMappedNetworkRequest struct {
+	ctx context.Context
+	ApiService SDWANAPI
+	omadacId string
+	checkMappedNetwork *CheckMappedNetwork
+}
+
+func (r SDWANAPICheckModifiedMappedNetworkRequest) CheckMappedNetwork(checkMappedNetwork CheckMappedNetwork) SDWANAPICheckModifiedMappedNetworkRequest {
+	r.checkMappedNetwork = &checkMappedNetwork
+	return r
+}
+
+func (r SDWANAPICheckModifiedMappedNetworkRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CheckModifiedMappedNetworkExecute(r)
+}
+
+/*
+CheckModifiedMappedNetwork Check modified mapped network.
+
+Check modified mapped network.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @return SDWANAPICheckModifiedMappedNetworkRequest
+*/
+func (a *SDWANAPIService) CheckModifiedMappedNetwork(ctx context.Context, omadacId string) SDWANAPICheckModifiedMappedNetworkRequest {
+	return SDWANAPICheckModifiedMappedNetworkRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *SDWANAPIService) CheckModifiedMappedNetworkExecute(r SDWANAPICheckModifiedMappedNetworkRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDWANAPIService.CheckModifiedMappedNetwork")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sdwan/sdwan-group/map/check"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.checkMappedNetwork == nil {
+		return localVarReturnValue, nil, reportError("checkMappedNetwork is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.checkMappedNetwork
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type SDWANAPICheckSdWanGroupIpPoolRequest struct {
 	ctx context.Context
 	ApiService SDWANAPI
@@ -431,134 +853,6 @@ func (a *SDWANAPIService) CheckSdWanGroupIpPoolExecute(r SDWANAPICheckSdWanGroup
 	}
 	// body params
 	localVarPostBody = r.sdWanIpPoolRange
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type SDWANAPICheckSelectedLanNetworkConflictRequest struct {
-	ctx context.Context
-	ApiService SDWANAPI
-	omadacId string
-	sdWanSelectedLanNetwork *SdWanSelectedLanNetwork
-}
-
-func (r SDWANAPICheckSelectedLanNetworkConflictRequest) SdWanSelectedLanNetwork(sdWanSelectedLanNetwork SdWanSelectedLanNetwork) SDWANAPICheckSelectedLanNetworkConflictRequest {
-	r.sdWanSelectedLanNetwork = &sdWanSelectedLanNetwork
-	return r
-}
-
-func (r SDWANAPICheckSelectedLanNetworkConflictRequest) Execute() (*OperationResponseSdWanSelectedLanNetwork, *http.Response, error) {
-	return r.ApiService.CheckSelectedLanNetworkConflictExecute(r)
-}
-
-/*
-CheckSelectedLanNetworkConflict Check whether selected lanNetwork conflict.
-
-Check whether selected lanNetwork conflict.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param omadacId Omada ID
- @return SDWANAPICheckSelectedLanNetworkConflictRequest
-*/
-func (a *SDWANAPIService) CheckSelectedLanNetworkConflict(ctx context.Context, omadacId string) SDWANAPICheckSelectedLanNetworkConflictRequest {
-	return SDWANAPICheckSelectedLanNetworkConflictRequest{
-		ApiService: a,
-		ctx: ctx,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseSdWanSelectedLanNetwork
-func (a *SDWANAPIService) CheckSelectedLanNetworkConflictExecute(r SDWANAPICheckSelectedLanNetworkConflictRequest) (*OperationResponseSdWanSelectedLanNetwork, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseSdWanSelectedLanNetwork
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDWANAPIService.CheckSelectedLanNetworkConflict")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sdwan/sdwan-group/lan/check"
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.sdWanSelectedLanNetwork == nil {
-		return localVarReturnValue, nil, reportError("sdWanSelectedLanNetwork is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.sdWanSelectedLanNetwork
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1128,11 +1422,13 @@ func (r SDWANAPIGetGridSdWanGroupRequest) Execute() (*OperationResponseGridVOSdW
 /*
 GetGridSdWanGroup Get SD-WAN Group Grid.
 
-Get all SD-WAN Group.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+Get all SD-WAN Group. This interface has been deprecated. Please use the following interfaces instead: getGridSdWanGroupBrief<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @return SDWANAPIGetGridSdWanGroupRequest
+
+Deprecated
 */
 func (a *SDWANAPIService) GetGridSdWanGroup(ctx context.Context, omadacId string) SDWANAPIGetGridSdWanGroupRequest {
 	return SDWANAPIGetGridSdWanGroupRequest{
@@ -1144,6 +1440,7 @@ func (a *SDWANAPIService) GetGridSdWanGroup(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseGridVOSdWanGroupDetail
+// Deprecated
 func (a *SDWANAPIService) GetGridSdWanGroupExecute(r SDWANAPIGetGridSdWanGroupRequest) (*OperationResponseGridVOSdWanGroupDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -1265,9 +1562,9 @@ func (r SDWANAPIGetGridSdWanGroupBriefRequest) Execute() (*OperationResponseGrid
 }
 
 /*
-GetGridSdWanGroupBrief Get brief SD-WAN Group Grid.
+GetGridSdWanGroupBrief Get SD-WAN Group Grid brief info.
 
-Get all brief SD-WAN Group.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
+Get all SD-WAN Group brief info.<br/><br/>The interface requires one of the permissions: <br/>SD WAN View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1837,6 +2134,138 @@ func (a *SDWANAPIService) ModifySdWanGroupExecute(r SDWANAPIModifySdWanGroupRequ
 	}
 	// body params
 	localVarPostBody = r.sdWanGroup
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SDWANAPIModifySdWanGroupNetWorkMapRequest struct {
+	ctx context.Context
+	ApiService SDWANAPI
+	omadacId string
+	groupId string
+	sdWanNatInfo *SdWanNatInfo
+}
+
+func (r SDWANAPIModifySdWanGroupNetWorkMapRequest) SdWanNatInfo(sdWanNatInfo SdWanNatInfo) SDWANAPIModifySdWanGroupNetWorkMapRequest {
+	r.sdWanNatInfo = &sdWanNatInfo
+	return r
+}
+
+func (r SDWANAPIModifySdWanGroupNetWorkMapRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifySdWanGroupNetWorkMapExecute(r)
+}
+
+/*
+ModifySdWanGroupNetWorkMap Modify SD-WAN Group NAT info.
+
+Modify SD-WAN Group NAT info.<br/><br/>The interface requires one of the permissions: <br/>SD WAN Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param groupId The ID of a SD-WAN Group
+ @return SDWANAPIModifySdWanGroupNetWorkMapRequest
+*/
+func (a *SDWANAPIService) ModifySdWanGroupNetWorkMap(ctx context.Context, omadacId string, groupId string) SDWANAPIModifySdWanGroupNetWorkMapRequest {
+	return SDWANAPIModifySdWanGroupNetWorkMapRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		groupId: groupId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *SDWANAPIService) ModifySdWanGroupNetWorkMapExecute(r SDWANAPIModifySdWanGroupNetWorkMapRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SDWANAPIService.ModifySdWanGroupNetWorkMap")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sdwan/sdwan-group/map/{groupId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"groupId"+"}", url.PathEscape(parameterValueToString(r.groupId, "groupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.sdWanNatInfo == nil {
+		return localVarReturnValue, nil, reportError("sdWanNatInfo is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.sdWanNatInfo
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

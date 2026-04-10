@@ -966,7 +966,7 @@ Name | Type | Description  | Notes
 
 ## GetAuthenticationConfigList
 
-> OperationResponseListAuthenticationConfigDTO GetAuthenticationConfigList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListAuthenticationConfigDTO GetAuthenticationConfigList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get authentication config list
 
@@ -988,11 +988,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewOnuRegisterAuthenPageQueryRequestDTO("PonPort_example") // OnuRegisterAuthenPageQueryRequestDTO | 
+	queryParam := *openapiclient.NewOnuRegisterAuthenPageQueryRequestDTO("PonPort_example") // OnuRegisterAuthenPageQueryRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONURegisterAPI.GetAuthenticationConfigList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONURegisterAPI.GetAuthenticationConfigList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONURegisterAPI.GetAuthenticationConfigList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1022,7 +1022,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OnuRegisterAuthenPageQueryRequestDTO**](OnuRegisterAuthenPageQueryRequestDTO.md) |  | 
+ **queryParam** | [**OnuRegisterAuthenPageQueryRequestDTO**](OnuRegisterAuthenPageQueryRequestDTO.md) |  | 
 
 ### Return type
 
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 
 ## GetAuthenticationConfigPage
 
-> OperationResponsePageResponseAuthenticationConfigDTO GetAuthenticationConfigPage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseAuthenticationConfigDTO GetAuthenticationConfigPage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get authentication config page
 
@@ -1066,11 +1066,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewOnuRegisterAuthenPageQueryRequestDTO("PonPort_example") // OnuRegisterAuthenPageQueryRequestDTO | 
+	queryParam := *openapiclient.NewOnuRegisterAuthenPageQueryRequestDTO("PonPort_example") // OnuRegisterAuthenPageQueryRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONURegisterAPI.GetAuthenticationConfigPage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONURegisterAPI.GetAuthenticationConfigPage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONURegisterAPI.GetAuthenticationConfigPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1100,7 +1100,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OnuRegisterAuthenPageQueryRequestDTO**](OnuRegisterAuthenPageQueryRequestDTO.md) |  | 
+ **queryParam** | [**OnuRegisterAuthenPageQueryRequestDTO**](OnuRegisterAuthenPageQueryRequestDTO.md) |  | 
 
 ### Return type
 
@@ -1198,7 +1198,7 @@ Name | Type | Description  | Notes
 
 ## GetOnuAutoAuthenticationRuleConfigList
 
-> OperationResponseListPonAutoAuthenticationRuleConfigDTO GetOnuAutoAuthenticationRuleConfigList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListPonAutoAuthenticationRuleConfigDTO GetOnuAutoAuthenticationRuleConfigList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get ONU auto authentication rule list
 
@@ -1220,11 +1220,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewOnuRegisterAuthenticationPageQueryRequestDTO("PonPort_example") // OnuRegisterAuthenticationPageQueryRequestDTO | 
+	queryParam := *openapiclient.NewOnuRegisterAuthenticationPageQueryRequestDTO("PonPort_example") // OnuRegisterAuthenticationPageQueryRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuAutoAuthenticationRuleConfigList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuAutoAuthenticationRuleConfigList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONURegisterAPI.GetOnuAutoAuthenticationRuleConfigList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1254,7 +1254,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OnuRegisterAuthenticationPageQueryRequestDTO**](OnuRegisterAuthenticationPageQueryRequestDTO.md) |  | 
+ **queryParam** | [**OnuRegisterAuthenticationPageQueryRequestDTO**](OnuRegisterAuthenticationPageQueryRequestDTO.md) |  | 
 
 ### Return type
 
@@ -1276,7 +1276,7 @@ Name | Type | Description  | Notes
 
 ## GetOnuAutoAuthenticationRuleConfigPage
 
-> OperationResponsePageResponsePonAutoAuthenticationRuleConfigDTO GetOnuAutoAuthenticationRuleConfigPage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponsePonAutoAuthenticationRuleConfigDTO GetOnuAutoAuthenticationRuleConfigPage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get ONU auto authentication rule page
 
@@ -1298,11 +1298,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewOnuRegisterAuthenticationPageQueryRequestDTO("PonPort_example") // OnuRegisterAuthenticationPageQueryRequestDTO | 
+	queryParam := *openapiclient.NewOnuRegisterAuthenticationPageQueryRequestDTO("PonPort_example") // OnuRegisterAuthenticationPageQueryRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuAutoAuthenticationRuleConfigPage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuAutoAuthenticationRuleConfigPage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONURegisterAPI.GetOnuAutoAuthenticationRuleConfigPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1332,7 +1332,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OnuRegisterAuthenticationPageQueryRequestDTO**](OnuRegisterAuthenticationPageQueryRequestDTO.md) |  | 
+ **queryParam** | [**OnuRegisterAuthenticationPageQueryRequestDTO**](OnuRegisterAuthenticationPageQueryRequestDTO.md) |  | 
 
 ### Return type
 
@@ -1354,7 +1354,7 @@ Name | Type | Description  | Notes
 
 ## GetOnuAutofindConfigList
 
-> OperationResponseListOnuAutofindConfigDTO GetOnuAutofindConfigList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListOnuAutofindConfigDTO GetOnuAutofindConfigList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get ONU auto find config list
 
@@ -1376,11 +1376,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewOnuRegisterAutoFindPageQueryRequestDTO("PonPort_example") // OnuRegisterAutoFindPageQueryRequestDTO | 
+	queryParam := *openapiclient.NewOnuRegisterAutoFindPageQueryRequestDTO("PonPort_example") // OnuRegisterAutoFindPageQueryRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuAutofindConfigList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuAutofindConfigList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONURegisterAPI.GetOnuAutofindConfigList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1410,7 +1410,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OnuRegisterAutoFindPageQueryRequestDTO**](OnuRegisterAutoFindPageQueryRequestDTO.md) |  | 
+ **queryParam** | [**OnuRegisterAutoFindPageQueryRequestDTO**](OnuRegisterAutoFindPageQueryRequestDTO.md) |  | 
 
 ### Return type
 
@@ -1432,7 +1432,7 @@ Name | Type | Description  | Notes
 
 ## GetOnuAutofindConfigPage
 
-> OperationResponsePageResponseOnuAutofindConfigDTO GetOnuAutofindConfigPage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseOnuAutofindConfigDTO GetOnuAutofindConfigPage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 get ONU auto find config page
 
@@ -1454,11 +1454,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewOnuRegisterAutoFindPageQueryRequestDTO("PonPort_example") // OnuRegisterAutoFindPageQueryRequestDTO | 
+	queryParam := *openapiclient.NewOnuRegisterAutoFindPageQueryRequestDTO("PonPort_example") // OnuRegisterAutoFindPageQueryRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuAutofindConfigPage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuAutofindConfigPage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONURegisterAPI.GetOnuAutofindConfigPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1488,7 +1488,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OnuRegisterAutoFindPageQueryRequestDTO**](OnuRegisterAutoFindPageQueryRequestDTO.md) |  | 
+ **queryParam** | [**OnuRegisterAutoFindPageQueryRequestDTO**](OnuRegisterAutoFindPageQueryRequestDTO.md) |  | 
 
 ### Return type
 
@@ -1510,7 +1510,7 @@ Name | Type | Description  | Notes
 
 ## GetOnuPonAutoAuthenticationConfig
 
-> OperationResponsePonAutoAuthenticationConfigDTO GetOnuPonAutoAuthenticationConfig(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePonAutoAuthenticationConfigDTO GetOnuPonAutoAuthenticationConfig(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get ONU pon auto authentication config
 
@@ -1532,11 +1532,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewPonPortRequestDTO("PonPort_example") // PonPortRequestDTO | 
+	queryParam := *openapiclient.NewPonPortRequestDTO("PonPort_example") // PonPortRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuPonAutoAuthenticationConfig(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONURegisterAPI.GetOnuPonAutoAuthenticationConfig(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONURegisterAPI.GetOnuPonAutoAuthenticationConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1566,7 +1566,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**PonPortRequestDTO**](PonPortRequestDTO.md) |  | 
+ **queryParam** | [**PonPortRequestDTO**](PonPortRequestDTO.md) |  | 
 
 ### Return type
 

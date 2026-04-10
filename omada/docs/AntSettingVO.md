@@ -6,7 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AntGain** | Pointer to **int32** | antenna gain | [optional] 
 **AntMode** | Pointer to **int32** | antenna mode | [optional] 
-**AntPattern** | Pointer to **int32** | antenna pattern,0 is directional and 1 is omnidirectional. | [optional] 
+**AntPattern** | Pointer to **int32** | antenna pattern,0 is built-In and 1 is External. | [optional] 
+**CustomGainLimit** | Pointer to **int32** | custom antMode max antenna gain. | [optional] 
+**DefaultOmniGain** | Pointer to **int32** | default Omni Antenna Mode gain. | [optional] 
 
 ## Methods
 
@@ -101,6 +103,56 @@ SetAntPattern sets AntPattern field to given value.
 `func (o *AntSettingVO) HasAntPattern() bool`
 
 HasAntPattern returns a boolean if a field has been set.
+
+### GetCustomGainLimit
+
+`func (o *AntSettingVO) GetCustomGainLimit() int32`
+
+GetCustomGainLimit returns the CustomGainLimit field if non-nil, zero value otherwise.
+
+### GetCustomGainLimitOk
+
+`func (o *AntSettingVO) GetCustomGainLimitOk() (*int32, bool)`
+
+GetCustomGainLimitOk returns a tuple with the CustomGainLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomGainLimit
+
+`func (o *AntSettingVO) SetCustomGainLimit(v int32)`
+
+SetCustomGainLimit sets CustomGainLimit field to given value.
+
+### HasCustomGainLimit
+
+`func (o *AntSettingVO) HasCustomGainLimit() bool`
+
+HasCustomGainLimit returns a boolean if a field has been set.
+
+### GetDefaultOmniGain
+
+`func (o *AntSettingVO) GetDefaultOmniGain() int32`
+
+GetDefaultOmniGain returns the DefaultOmniGain field if non-nil, zero value otherwise.
+
+### GetDefaultOmniGainOk
+
+`func (o *AntSettingVO) GetDefaultOmniGainOk() (*int32, bool)`
+
+GetDefaultOmniGainOk returns a tuple with the DefaultOmniGain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultOmniGain
+
+`func (o *AntSettingVO) SetDefaultOmniGain(v int32)`
+
+SetDefaultOmniGain sets DefaultOmniGain field to given value.
+
+### HasDefaultOmniGain
+
+`func (o *AntSettingVO) HasDefaultOmniGain() bool`
+
+HasDefaultOmniGain returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

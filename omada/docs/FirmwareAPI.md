@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**EditAutoCheckUpgrade**](FirmwareAPI.md#editautocheckupgrade) | **Patch** /openapi/v1/{omadacId}/autoCheck/{autoCheckId}/upgrade | Edit autoCheck upgrade plan
 [**EditFirmwareUpgrade**](FirmwareAPI.md#editfirmwareupgrade) | **Post** /openapi/v1/{omadacId}/upgrade/firmwares/{firmwareId} | Edit the uploaded firmware
 [**EditUpgradePlan**](FirmwareAPI.md#editupgradeplan) | **Patch** /openapi/v1/{omadacId}/plans/{planId}/upgrade/overview | Edit firmware upgrade plan
+[**GetEmailReminderSwitchStatus**](FirmwareAPI.md#getemailreminderswitchstatus) | **Get** /openapi/v1/{omadacId}/upgrade/overview/mail/reminder | Get Email Reminder Switch Status
 [**GetGridAutoCheckUpgrade**](FirmwareAPI.md#getgridautocheckupgrade) | **Get** /openapi/v1/{omadacId}/upgrade/autoCheck | Get autocheck upgrade plan
 [**GetGridFirmwareList**](FirmwareAPI.md#getgridfirmwarelist) | **Get** /openapi/v1/{omadacId}/upgrade/firmwares | Get the uploaded firmware list
 [**GetGridFirmwarePoolList**](FirmwareAPI.md#getgridfirmwarepoollist) | **Get** /openapi/v1/{omadacId}/upgrade/overview/firmwares | Get firmware pool list
@@ -27,10 +28,13 @@ Method | HTTP request | Description
 [**GetModelFirmwareReleaseNotes**](FirmwareAPI.md#getmodelfirmwarereleasenotes) | **Post** /openapi/v1/{omadacId}/upgrade/overview/firmwares/release-note | Get release notes information
 [**GetPlanUpgradeModelInfo**](FirmwareAPI.md#getplanupgrademodelinfo) | **Post** /openapi/v1/{omadacId}/upgrade/plan/firmware | Get the upgradeable information of the selected model
 [**GetTargetFirmwareAllSites**](FirmwareAPI.md#gettargetfirmwareallsites) | **Get** /openapi/v1/{omadacId}/upgrade/firmwares/{firmwareId}/target-sites | Get all sites of target firmware
+[**GetTryBetaChannel**](FirmwareAPI.md#gettrybetachannel) | **Get** /openapi/v1/{omadacId}/upgrade/overview/try-beta/channel | Get try-beta Channel Info
 [**GetTryBetaStatus**](FirmwareAPI.md#gettrybetastatus) | **Get** /openapi/v1/{omadacId}/upgrade/overview/try-beta | Get try-beta switch status
 [**GetUpgradeFailedDeviceFirmwareInfo**](FirmwareAPI.md#getupgradefaileddevicefirmwareinfo) | **Get** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/failed-model-firmware | Get firmware information about the failed device to be upgraded
 [**GetUpgradeFailedDeviceInfos**](FirmwareAPI.md#getupgradefaileddeviceinfos) | **Get** /openapi/v1/{omadacId}/logs/{upgradeLogId}/upgrade/overview/failed-devices | Get the list of devices which upgrade failed
 [**GetcriticalModelNum**](FirmwareAPI.md#getcriticalmodelnum) | **Get** /openapi/v1/{omadacId}/upgrade/overview/critical | Get the number of critical models
+[**ModifyEmailReminderSwitchStatus**](FirmwareAPI.md#modifyemailreminderswitchstatus) | **Patch** /openapi/v1/{omadacId}/upgrade/overview/mail/reminder | Modify Email Reminder Switch Status
+[**ModifyTryBetaChannel**](FirmwareAPI.md#modifytrybetachannel) | **Patch** /openapi/v1/{omadacId}/upgrade/overview/try-beta/channel | Modify try-beta Channel Info
 [**ModifyTryBetaStatus**](FirmwareAPI.md#modifytrybetastatus) | **Patch** /openapi/v1/{omadacId}/upgrade/overview/try-beta | Modify try-beta switch status
 [**UploadUpgradeFirmware**](FirmwareAPI.md#uploadupgradefirmware) | **Post** /openapi/v1/{omadacId}/files/upgrade/firmware | Upload upgrade firmware
 
@@ -922,6 +926,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetEmailReminderSwitchStatus
+
+> OperationResponseUpgradeSettingEmailReminder GetEmailReminderSwitchStatus(ctx, omadacId).Execute()
+
+Get Email Reminder Switch Status
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.FirmwareAPI.GetEmailReminderSwitchStatus(context.Background(), omadacId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `FirmwareAPI.GetEmailReminderSwitchStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetEmailReminderSwitchStatus`: OperationResponseUpgradeSettingEmailReminder
+	fmt.Fprintf(os.Stdout, "Response from `FirmwareAPI.GetEmailReminderSwitchStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetEmailReminderSwitchStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**OperationResponseUpgradeSettingEmailReminder**](OperationResponseUpgradeSettingEmailReminder.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetGridAutoCheckUpgrade
 
 > OperationResponseGridVOAutoCheckUpgradeInfo GetGridAutoCheckUpgrade(ctx, omadacId).Page(page).PageSize(pageSize).SortsAutoCheckTime(sortsAutoCheckTime).SearchKey(searchKey).Execute()
@@ -1755,6 +1829,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetTryBetaChannel
+
+> OperationResponseUpgradeSettingTryBetaChannel GetTryBetaChannel(ctx, omadacId).Execute()
+
+Get try-beta Channel Info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.FirmwareAPI.GetTryBetaChannel(context.Background(), omadacId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `FirmwareAPI.GetTryBetaChannel``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTryBetaChannel`: OperationResponseUpgradeSettingTryBetaChannel
+	fmt.Fprintf(os.Stdout, "Response from `FirmwareAPI.GetTryBetaChannel`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTryBetaChannelRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**OperationResponseUpgradeSettingTryBetaChannel**](OperationResponseUpgradeSettingTryBetaChannel.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetTryBetaStatus
 
 > OperationResponseUpgradeSettingTryBeta GetTryBetaStatus(ctx, omadacId).Execute()
@@ -2038,6 +2182,150 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifyEmailReminderSwitchStatus
+
+> OperationResponseWithoutResult ModifyEmailReminderSwitchStatus(ctx, omadacId).UpgradeSettingEmailReminder(upgradeSettingEmailReminder).Execute()
+
+Modify Email Reminder Switch Status
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	upgradeSettingEmailReminder := *openapiclient.NewUpgradeSettingEmailReminder(false) // UpgradeSettingEmailReminder | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.FirmwareAPI.ModifyEmailReminderSwitchStatus(context.Background(), omadacId).UpgradeSettingEmailReminder(upgradeSettingEmailReminder).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `FirmwareAPI.ModifyEmailReminderSwitchStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyEmailReminderSwitchStatus`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `FirmwareAPI.ModifyEmailReminderSwitchStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyEmailReminderSwitchStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **upgradeSettingEmailReminder** | [**UpgradeSettingEmailReminder**](UpgradeSettingEmailReminder.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifyTryBetaChannel
+
+> OperationResponseWithoutResult ModifyTryBetaChannel(ctx, omadacId).UpgradeSettingTryBetaChannel(upgradeSettingTryBetaChannel).Execute()
+
+Modify try-beta Channel Info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	upgradeSettingTryBetaChannel := *openapiclient.NewUpgradeSettingTryBetaChannel(int32(123)) // UpgradeSettingTryBetaChannel | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.FirmwareAPI.ModifyTryBetaChannel(context.Background(), omadacId).UpgradeSettingTryBetaChannel(upgradeSettingTryBetaChannel).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `FirmwareAPI.ModifyTryBetaChannel``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyTryBetaChannel`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `FirmwareAPI.ModifyTryBetaChannel`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyTryBetaChannelRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **upgradeSettingTryBetaChannel** | [**UpgradeSettingTryBetaChannel**](UpgradeSettingTryBetaChannel.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

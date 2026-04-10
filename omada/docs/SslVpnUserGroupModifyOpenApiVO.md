@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LDAPAttribute** | Pointer to **string** | Attribute value used for LDAP authentication. It should contain 1 to 20 characters. | [optional] 
+**LdapAttribute** | Pointer to **string** | Attribute value used for LDAP authentication. It should contain 1 to 20 characters. | [optional] 
 **RadiusAttribute** | Pointer to **string** | Attribute value used for radius authentication. It should contain 1 to 20 characters. | [optional] 
 **ResourceGroupList** | Pointer to **[]string** | Resource group ID list of the SSL VPN user group. Resource group can be created using &#39;Create SSL VPN resource group&#39; interface, and Resource group ID can be obtained from &#39;Get resource group list for SSL VPN server&#39; interface. | [optional] 
 
@@ -27,30 +27,30 @@ NewSslVpnUserGroupModifyOpenApiVOWithDefaults instantiates a new SslVpnUserGroup
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetLDAPAttribute
+### GetLdapAttribute
 
-`func (o *SslVpnUserGroupModifyOpenApiVO) GetLDAPAttribute() string`
+`func (o *SslVpnUserGroupModifyOpenApiVO) GetLdapAttribute() string`
 
-GetLDAPAttribute returns the LDAPAttribute field if non-nil, zero value otherwise.
+GetLdapAttribute returns the LdapAttribute field if non-nil, zero value otherwise.
 
-### GetLDAPAttributeOk
+### GetLdapAttributeOk
 
-`func (o *SslVpnUserGroupModifyOpenApiVO) GetLDAPAttributeOk() (*string, bool)`
+`func (o *SslVpnUserGroupModifyOpenApiVO) GetLdapAttributeOk() (*string, bool)`
 
-GetLDAPAttributeOk returns a tuple with the LDAPAttribute field if it's non-nil, zero value otherwise
+GetLdapAttributeOk returns a tuple with the LdapAttribute field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLDAPAttribute
+### SetLdapAttribute
 
-`func (o *SslVpnUserGroupModifyOpenApiVO) SetLDAPAttribute(v string)`
+`func (o *SslVpnUserGroupModifyOpenApiVO) SetLdapAttribute(v string)`
 
-SetLDAPAttribute sets LDAPAttribute field to given value.
+SetLdapAttribute sets LdapAttribute field to given value.
 
-### HasLDAPAttribute
+### HasLdapAttribute
 
-`func (o *SslVpnUserGroupModifyOpenApiVO) HasLDAPAttribute() bool`
+`func (o *SslVpnUserGroupModifyOpenApiVO) HasLdapAttribute() bool`
 
-HasLDAPAttribute returns a boolean if a field has been set.
+HasLdapAttribute returns a boolean if a field has been set.
 
 ### GetRadiusAttribute
 

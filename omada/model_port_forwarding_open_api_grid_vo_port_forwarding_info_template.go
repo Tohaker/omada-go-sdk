@@ -24,6 +24,8 @@ type PortForwardingOpenApiGridVOPortForwardingInfoTemplate struct {
 	// Number of entries per page.
 	CurrentSize *int32 `json:"currentSize,omitempty"`
 	Data []PortForwardingInfoTemplate `json:"data,omitempty"`
+	// Whether this feature is supported for the DS-Lite or Map-E WAN connection types.
+	SupportByDsLiteAndMapE *bool `json:"supportByDsLiteAndMapE,omitempty"`
 	// Whether Virtual Wan configuration is supported of port forwarding.
 	SupportVirtualWan *bool `json:"supportVirtualWan,omitempty"`
 	// Whether Wan Alias Ip configuration is supported of port forwarding.
@@ -145,6 +147,38 @@ func (o *PortForwardingOpenApiGridVOPortForwardingInfoTemplate) SetData(v []Port
 	o.Data = v
 }
 
+// GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field value if set, zero value otherwise.
+func (o *PortForwardingOpenApiGridVOPortForwardingInfoTemplate) GetSupportByDsLiteAndMapE() bool {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportByDsLiteAndMapE
+}
+
+// GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortForwardingOpenApiGridVOPortForwardingInfoTemplate) GetSupportByDsLiteAndMapEOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		return nil, false
+	}
+	return o.SupportByDsLiteAndMapE, true
+}
+
+// HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
+func (o *PortForwardingOpenApiGridVOPortForwardingInfoTemplate) HasSupportByDsLiteAndMapE() bool {
+	if o != nil && !IsNil(o.SupportByDsLiteAndMapE) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportByDsLiteAndMapE gets a reference to the given bool and assigns it to the SupportByDsLiteAndMapE field.
+func (o *PortForwardingOpenApiGridVOPortForwardingInfoTemplate) SetSupportByDsLiteAndMapE(v bool) {
+	o.SupportByDsLiteAndMapE = &v
+}
+
 // GetSupportVirtualWan returns the SupportVirtualWan field value if set, zero value otherwise.
 func (o *PortForwardingOpenApiGridVOPortForwardingInfoTemplate) GetSupportVirtualWan() bool {
 	if o == nil || IsNil(o.SupportVirtualWan) {
@@ -259,6 +293,9 @@ func (o PortForwardingOpenApiGridVOPortForwardingInfoTemplate) ToMap() (map[stri
 	}
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
+	}
+	if !IsNil(o.SupportByDsLiteAndMapE) {
+		toSerialize["supportByDsLiteAndMapE"] = o.SupportByDsLiteAndMapE
 	}
 	if !IsNil(o.SupportVirtualWan) {
 		toSerialize["supportVirtualWan"] = o.SupportVirtualWan

@@ -17,7 +17,7 @@ import (
 // checks if the WiredPortV3DTO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &WiredPortV3DTO{}
 
-// WiredPortV3DTO The port of this gateway's upstream device
+// WiredPortV3DTO Uplink port.
 type WiredPortV3DTO struct {
 	// Lag Id
 	LagId *string `json:"lagId,omitempty"`

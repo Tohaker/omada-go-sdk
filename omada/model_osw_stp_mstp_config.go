@@ -19,7 +19,7 @@ import (
 // checks if the OswStpMstpConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswStpMstpConfig{}
 
-// OswStpMstpConfig STP MSTP Config
+// OswStpMstpConfig STP MSTP mode settging
 type OswStpMstpConfig struct {
 	// Instances
 	Instances []OswStpInstanceConfig `json:"instances"`

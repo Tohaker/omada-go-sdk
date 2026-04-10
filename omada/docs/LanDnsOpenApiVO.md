@@ -4,16 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Aliases** | Pointer to **[]string** | Name of Lan Dns Item | [optional] 
+**Aliases** | Pointer to **[]string** | If a server provides different services and has multiple domain names, you can configure them in the Alias Domain Name. | [optional] 
 **Cname** | Pointer to **string** | When Type is CNAME, set the domain name to which Domain Name and Alias Domain Name need to be mapped. | [optional] 
+**CustomTtl** | Pointer to **bool** | When custom TTL is activated, TTL will take effect as custom value. Otherwise, TTL will take effect as default(3600). | [optional] 
 **DnsServers** | Pointer to **[]string** | When the Type is FORWARD, set the Domain Name and Alias Domain Name to be forwarded to a specific DNS Server, up to two DNS Servers can be configured. | [optional] 
 **Domain** | **string** | Enter the domain name. | 
 **Enable** | **bool** | off:false, on: true | 
-**Id** | Pointer to **string** |  | [optional] 
 **IpAddresses** | Pointer to **[]string** | When the Type is IP, it is the IPv4 address of the returned DNS response. | [optional] 
 **Ipv6Addresses** | Pointer to **[]string** | When the Type is IP, it is the IPv6 address of the returned DNS response. | [optional] 
-**LanNetworkIds** | Pointer to **[]string** | The ids of Lan Network. | [optional] 
+**LanNetworkIds** | Pointer to **[]string** | The ids of Lan Network. When the Type is IP or CNAME, it is the LAN network to which the rule applies. | [optional] 
 **Name** | **string** | Name of Lan Dns Item | 
+**Ttl** | Pointer to **int32** | The amount of time DNS information is allowed to be cached. The range of TTL should be 1-86400. It is recommended to use the default TTL for each record. | [optional] 
 **Type** | **int32** | There are three options, IP:0, CNAME:1, and FORWARD:2. | 
 
 ## Methods
@@ -85,6 +86,31 @@ SetCname sets Cname field to given value.
 
 HasCname returns a boolean if a field has been set.
 
+### GetCustomTtl
+
+`func (o *LanDnsOpenApiVO) GetCustomTtl() bool`
+
+GetCustomTtl returns the CustomTtl field if non-nil, zero value otherwise.
+
+### GetCustomTtlOk
+
+`func (o *LanDnsOpenApiVO) GetCustomTtlOk() (*bool, bool)`
+
+GetCustomTtlOk returns a tuple with the CustomTtl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomTtl
+
+`func (o *LanDnsOpenApiVO) SetCustomTtl(v bool)`
+
+SetCustomTtl sets CustomTtl field to given value.
+
+### HasCustomTtl
+
+`func (o *LanDnsOpenApiVO) HasCustomTtl() bool`
+
+HasCustomTtl returns a boolean if a field has been set.
+
 ### GetDnsServers
 
 `func (o *LanDnsOpenApiVO) GetDnsServers() []string`
@@ -149,31 +175,6 @@ and a boolean to check if the value has been set.
 
 SetEnable sets Enable field to given value.
 
-
-### GetId
-
-`func (o *LanDnsOpenApiVO) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *LanDnsOpenApiVO) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *LanDnsOpenApiVO) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *LanDnsOpenApiVO) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetIpAddresses
 
@@ -269,6 +270,31 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
+### GetTtl
+
+`func (o *LanDnsOpenApiVO) GetTtl() int32`
+
+GetTtl returns the Ttl field if non-nil, zero value otherwise.
+
+### GetTtlOk
+
+`func (o *LanDnsOpenApiVO) GetTtlOk() (*int32, bool)`
+
+GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTtl
+
+`func (o *LanDnsOpenApiVO) SetTtl(v int32)`
+
+SetTtl sets Ttl field to given value.
+
+### HasTtl
+
+`func (o *LanDnsOpenApiVO) HasTtl() bool`
+
+HasTtl returns a boolean if a field has been set.
 
 ### GetType
 

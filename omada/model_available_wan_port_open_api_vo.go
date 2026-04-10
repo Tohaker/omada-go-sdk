@@ -21,10 +21,20 @@ var _ MappedNullable = &AvailableWanPortOpenApiVO{}
 type AvailableWanPortOpenApiVO struct {
 	// qos configured
 	Configured *bool `json:"configured,omitempty"`
+	// IPv4 address.
+	Ip *string `json:"ip,omitempty"`
+	// IPv6 enable.
+	Ipv6 *bool `json:"ipv6,omitempty"`
+	// IPv6 connection type: 0: static; 1: dynamic; 2: PPPoE; 3: 6to4Tunnel; 4: bridge.
+	Ipv6Proto *string `json:"ipv6Proto,omitempty"`
 	// port name
 	PortName *string `json:"portName,omitempty"`
 	// port id
 	PortUuid *string `json:"portUuid,omitempty"`
+	// WAN IPv4 connection type, it supports Static IP, DHCP, PPPoE, L2TP, PPTP, DS-Lite, and MAP-E.
+	Proto *string `json:"proto,omitempty"`
+	// Recommended WAN port.
+	RecommendedWan *bool `json:"recommendedWan,omitempty"`
 	// support iptv?
 	SupportIptv *bool `json:"supportIptv,omitempty"`
 	// wan type
@@ -80,6 +90,102 @@ func (o *AvailableWanPortOpenApiVO) HasConfigured() bool {
 // SetConfigured gets a reference to the given bool and assigns it to the Configured field.
 func (o *AvailableWanPortOpenApiVO) SetConfigured(v bool) {
 	o.Configured = &v
+}
+
+// GetIp returns the Ip field value if set, zero value otherwise.
+func (o *AvailableWanPortOpenApiVO) GetIp() string {
+	if o == nil || IsNil(o.Ip) {
+		var ret string
+		return ret
+	}
+	return *o.Ip
+}
+
+// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AvailableWanPortOpenApiVO) GetIpOk() (*string, bool) {
+	if o == nil || IsNil(o.Ip) {
+		return nil, false
+	}
+	return o.Ip, true
+}
+
+// HasIp returns a boolean if a field has been set.
+func (o *AvailableWanPortOpenApiVO) HasIp() bool {
+	if o != nil && !IsNil(o.Ip) {
+		return true
+	}
+
+	return false
+}
+
+// SetIp gets a reference to the given string and assigns it to the Ip field.
+func (o *AvailableWanPortOpenApiVO) SetIp(v string) {
+	o.Ip = &v
+}
+
+// GetIpv6 returns the Ipv6 field value if set, zero value otherwise.
+func (o *AvailableWanPortOpenApiVO) GetIpv6() bool {
+	if o == nil || IsNil(o.Ipv6) {
+		var ret bool
+		return ret
+	}
+	return *o.Ipv6
+}
+
+// GetIpv6Ok returns a tuple with the Ipv6 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AvailableWanPortOpenApiVO) GetIpv6Ok() (*bool, bool) {
+	if o == nil || IsNil(o.Ipv6) {
+		return nil, false
+	}
+	return o.Ipv6, true
+}
+
+// HasIpv6 returns a boolean if a field has been set.
+func (o *AvailableWanPortOpenApiVO) HasIpv6() bool {
+	if o != nil && !IsNil(o.Ipv6) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpv6 gets a reference to the given bool and assigns it to the Ipv6 field.
+func (o *AvailableWanPortOpenApiVO) SetIpv6(v bool) {
+	o.Ipv6 = &v
+}
+
+// GetIpv6Proto returns the Ipv6Proto field value if set, zero value otherwise.
+func (o *AvailableWanPortOpenApiVO) GetIpv6Proto() string {
+	if o == nil || IsNil(o.Ipv6Proto) {
+		var ret string
+		return ret
+	}
+	return *o.Ipv6Proto
+}
+
+// GetIpv6ProtoOk returns a tuple with the Ipv6Proto field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AvailableWanPortOpenApiVO) GetIpv6ProtoOk() (*string, bool) {
+	if o == nil || IsNil(o.Ipv6Proto) {
+		return nil, false
+	}
+	return o.Ipv6Proto, true
+}
+
+// HasIpv6Proto returns a boolean if a field has been set.
+func (o *AvailableWanPortOpenApiVO) HasIpv6Proto() bool {
+	if o != nil && !IsNil(o.Ipv6Proto) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpv6Proto gets a reference to the given string and assigns it to the Ipv6Proto field.
+func (o *AvailableWanPortOpenApiVO) SetIpv6Proto(v string) {
+	o.Ipv6Proto = &v
 }
 
 // GetPortName returns the PortName field value if set, zero value otherwise.
@@ -144,6 +250,70 @@ func (o *AvailableWanPortOpenApiVO) HasPortUuid() bool {
 // SetPortUuid gets a reference to the given string and assigns it to the PortUuid field.
 func (o *AvailableWanPortOpenApiVO) SetPortUuid(v string) {
 	o.PortUuid = &v
+}
+
+// GetProto returns the Proto field value if set, zero value otherwise.
+func (o *AvailableWanPortOpenApiVO) GetProto() string {
+	if o == nil || IsNil(o.Proto) {
+		var ret string
+		return ret
+	}
+	return *o.Proto
+}
+
+// GetProtoOk returns a tuple with the Proto field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AvailableWanPortOpenApiVO) GetProtoOk() (*string, bool) {
+	if o == nil || IsNil(o.Proto) {
+		return nil, false
+	}
+	return o.Proto, true
+}
+
+// HasProto returns a boolean if a field has been set.
+func (o *AvailableWanPortOpenApiVO) HasProto() bool {
+	if o != nil && !IsNil(o.Proto) {
+		return true
+	}
+
+	return false
+}
+
+// SetProto gets a reference to the given string and assigns it to the Proto field.
+func (o *AvailableWanPortOpenApiVO) SetProto(v string) {
+	o.Proto = &v
+}
+
+// GetRecommendedWan returns the RecommendedWan field value if set, zero value otherwise.
+func (o *AvailableWanPortOpenApiVO) GetRecommendedWan() bool {
+	if o == nil || IsNil(o.RecommendedWan) {
+		var ret bool
+		return ret
+	}
+	return *o.RecommendedWan
+}
+
+// GetRecommendedWanOk returns a tuple with the RecommendedWan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AvailableWanPortOpenApiVO) GetRecommendedWanOk() (*bool, bool) {
+	if o == nil || IsNil(o.RecommendedWan) {
+		return nil, false
+	}
+	return o.RecommendedWan, true
+}
+
+// HasRecommendedWan returns a boolean if a field has been set.
+func (o *AvailableWanPortOpenApiVO) HasRecommendedWan() bool {
+	if o != nil && !IsNil(o.RecommendedWan) {
+		return true
+	}
+
+	return false
+}
+
+// SetRecommendedWan gets a reference to the given bool and assigns it to the RecommendedWan field.
+func (o *AvailableWanPortOpenApiVO) SetRecommendedWan(v bool) {
+	o.RecommendedWan = &v
 }
 
 // GetSupportIptv returns the SupportIptv field value if set, zero value otherwise.
@@ -255,11 +425,26 @@ func (o AvailableWanPortOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Configured) {
 		toSerialize["configured"] = o.Configured
 	}
+	if !IsNil(o.Ip) {
+		toSerialize["ip"] = o.Ip
+	}
+	if !IsNil(o.Ipv6) {
+		toSerialize["ipv6"] = o.Ipv6
+	}
+	if !IsNil(o.Ipv6Proto) {
+		toSerialize["ipv6Proto"] = o.Ipv6Proto
+	}
 	if !IsNil(o.PortName) {
 		toSerialize["portName"] = o.PortName
 	}
 	if !IsNil(o.PortUuid) {
 		toSerialize["portUuid"] = o.PortUuid
+	}
+	if !IsNil(o.Proto) {
+		toSerialize["proto"] = o.Proto
+	}
+	if !IsNil(o.RecommendedWan) {
+		toSerialize["recommendedWan"] = o.RecommendedWan
 	}
 	if !IsNil(o.SupportIptv) {
 		toSerialize["supportIptv"] = o.SupportIptv

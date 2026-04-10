@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **DeviceType** | Pointer to **[]string** | Filter by the type of client. | [optional] 
 **Guest** | Pointer to **[]bool** | Filter by guest, effective only when wireless is true. | [optional] 
 **Health** | Pointer to **int32** | Filter by health score, 0:No Data, 1 : poor 2 : fair 3 : good | [optional] 
+**IpExist** | Pointer to **bool** | Filter by ipExist. true : Filter clients with existing IP addresses, false or null: unfiltered client. | [optional] 
 **IpcNvr** | Pointer to **bool** | Filter by ipcNvr, This filter will not affect clientStat result. true : filter by client type IPC or NVR, false or null: NOT filter by client type. | [optional] 
 **Model** | Pointer to **string** | Filter by the model. | [optional] 
 **Network** | Pointer to **[]string** | Filter by lan network name. | [optional] 
@@ -216,6 +217,31 @@ SetHealth sets Health field to given value.
 `func (o *ClientQueryFiltersOpenApiVO) HasHealth() bool`
 
 HasHealth returns a boolean if a field has been set.
+
+### GetIpExist
+
+`func (o *ClientQueryFiltersOpenApiVO) GetIpExist() bool`
+
+GetIpExist returns the IpExist field if non-nil, zero value otherwise.
+
+### GetIpExistOk
+
+`func (o *ClientQueryFiltersOpenApiVO) GetIpExistOk() (*bool, bool)`
+
+GetIpExistOk returns a tuple with the IpExist field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpExist
+
+`func (o *ClientQueryFiltersOpenApiVO) SetIpExist(v bool)`
+
+SetIpExist sets IpExist field to given value.
+
+### HasIpExist
+
+`func (o *ClientQueryFiltersOpenApiVO) HasIpExist() bool`
+
+HasIpExist returns a boolean if a field has been set.
 
 ### GetIpcNvr
 

@@ -888,11 +888,11 @@ type OLTONUManagementAPIGetOnuInformationConfigListRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *OnuManagementListQueryRequestDTO
+	queryParam *OnuManagementListQueryRequestDTO
 }
 
-func (r OLTONUManagementAPIGetOnuInformationConfigListRequest) Dto(dto OnuManagementListQueryRequestDTO) OLTONUManagementAPIGetOnuInformationConfigListRequest {
-	r.dto = &dto
+func (r OLTONUManagementAPIGetOnuInformationConfigListRequest) QueryParam(queryParam OnuManagementListQueryRequestDTO) OLTONUManagementAPIGetOnuInformationConfigListRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -944,11 +944,11 @@ func (a *OLTONUManagementAPIService) GetOnuInformationConfigListExecute(r OLTONU
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1023,11 +1023,11 @@ type OLTONUManagementAPIGetOnuInformationConfigPageRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *OnuManagementPageQueryRequestDTO
+	queryParam *OnuManagementPageQueryRequestDTO
 }
 
-func (r OLTONUManagementAPIGetOnuInformationConfigPageRequest) Dto(dto OnuManagementPageQueryRequestDTO) OLTONUManagementAPIGetOnuInformationConfigPageRequest {
-	r.dto = &dto
+func (r OLTONUManagementAPIGetOnuInformationConfigPageRequest) QueryParam(queryParam OnuManagementPageQueryRequestDTO) OLTONUManagementAPIGetOnuInformationConfigPageRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1079,11 +1079,11 @@ func (a *OLTONUManagementAPIService) GetOnuInformationConfigPageExecute(r OLTONU
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1158,11 +1158,11 @@ type OLTONUManagementAPIGetOnuInformationDetailRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *OnuInfoDetailRequestDTO
+	queryParam *OnuInfoDetailRequestDTO
 }
 
-func (r OLTONUManagementAPIGetOnuInformationDetailRequest) Dto(dto OnuInfoDetailRequestDTO) OLTONUManagementAPIGetOnuInformationDetailRequest {
-	r.dto = &dto
+func (r OLTONUManagementAPIGetOnuInformationDetailRequest) QueryParam(queryParam OnuInfoDetailRequestDTO) OLTONUManagementAPIGetOnuInformationDetailRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1214,11 +1214,11 @@ func (a *OLTONUManagementAPIService) GetOnuInformationDetailExecute(r OLTONUMana
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

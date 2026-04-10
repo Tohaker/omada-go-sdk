@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Radius profile name | [optional] 
 **RadiusAccountingEnable** | Pointer to **bool** | Radius accounting enable status | [optional] 
 **RadiusProfileId** | Pointer to **string** | Radius profile ID | [optional] 
+**RequireMessageAuthenticator** | Pointer to **bool** | Message-Authenticator enable status | [optional] 
 **ServerEnable** | Pointer to **bool** | Built-in Radius server enable status, valid when parameter [builtInServer] is true | [optional] 
 **TunnelReplyEnable** | Pointer to **bool** | Built-in Radius server tunneled reply enable status, valid when parameter [builtInServer] is true | [optional] 
 **WirelessVlanAssignment** | Pointer to **bool** | VLAN assignment for wireless network enable status | [optional] 
@@ -390,6 +391,31 @@ SetRadiusProfileId sets RadiusProfileId field to given value.
 `func (o *RadiusProfileOpenApiVO) HasRadiusProfileId() bool`
 
 HasRadiusProfileId returns a boolean if a field has been set.
+
+### GetRequireMessageAuthenticator
+
+`func (o *RadiusProfileOpenApiVO) GetRequireMessageAuthenticator() bool`
+
+GetRequireMessageAuthenticator returns the RequireMessageAuthenticator field if non-nil, zero value otherwise.
+
+### GetRequireMessageAuthenticatorOk
+
+`func (o *RadiusProfileOpenApiVO) GetRequireMessageAuthenticatorOk() (*bool, bool)`
+
+GetRequireMessageAuthenticatorOk returns a tuple with the RequireMessageAuthenticator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireMessageAuthenticator
+
+`func (o *RadiusProfileOpenApiVO) SetRequireMessageAuthenticator(v bool)`
+
+SetRequireMessageAuthenticator sets RequireMessageAuthenticator field to given value.
+
+### HasRequireMessageAuthenticator
+
+`func (o *RadiusProfileOpenApiVO) HasRequireMessageAuthenticator() bool`
+
+HasRequireMessageAuthenticator returns a boolean if a field has been set.
 
 ### GetServerEnable
 

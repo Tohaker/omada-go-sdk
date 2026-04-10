@@ -38,6 +38,7 @@ type InternetOpenApiVO struct {
 	// Omadac ID.
 	OmadacId *string `json:"omadacId,omitempty"`
 	OsgPortInfo *OsgPortInfoOpenApiVO `json:"osgPortInfo,omitempty"`
+	PortOnlineStatus *PortOnlineStatusOpenApiVO `json:"portOnlineStatus,omitempty"`
 	// The list of wan port UUID.
 	PortUuids []string `json:"portUuids,omitempty"`
 	// Resource of data.
@@ -52,6 +53,8 @@ type InternetOpenApiVO struct {
 	SupportDhcpOptions *bool `json:"supportDhcpOptions,omitempty"`
 	// Whether the device supports Discrete Wan.
 	SupportDiscreteWan *bool `json:"supportDiscreteWan,omitempty"`
+	// Whether the WAN port supports configuring DS-Lite.
+	SupportDsLite *bool `json:"supportDsLite,omitempty"`
 	// Whether it supports DSL.
 	SupportDsl *bool `json:"supportDsl,omitempty"`
 	// Whether it supports dual SIM single standby: 0: not support, 1: support.
@@ -60,6 +63,8 @@ type InternetOpenApiVO struct {
 	SupportIpv6NonAddress *bool `json:"supportIpv6NonAddress,omitempty"`
 	// Whether to configure LTE Wan.
 	SupportLte *bool `json:"supportLte,omitempty"`
+	// Whether the WAN port supports configuring MAP-E.
+	SupportMapE *bool `json:"supportMapE,omitempty"`
 	// The maximum number of wans supported.
 	SupportMaxWanNum *int32 `json:"supportMaxWanNum,omitempty"`
 	// Whether MSS clamping is supported for PPPoE, L2TP, and PPTP.
@@ -70,6 +75,8 @@ type InternetOpenApiVO struct {
 	SupportPppoeMru *bool `json:"supportPppoeMru,omitempty"`
 	// Whether the device supports Reduce USB 3.0 Interference Reduction.
 	SupportReduceUsbRfi *bool `json:"supportReduceUsbRfi,omitempty"`
+	// Whether the Load Balance Failover supports Timing mode.
+	SupportTimingMode *bool `json:"supportTimingMode,omitempty"`
 	// Whether USB port dhcpOptions can be customized.
 	SupportUsbDhcpOptions *bool `json:"supportUsbDhcpOptions,omitempty"`
 	// Whether it supports virtual wan.
@@ -395,6 +402,38 @@ func (o *InternetOpenApiVO) SetOsgPortInfo(v OsgPortInfoOpenApiVO) {
 	o.OsgPortInfo = &v
 }
 
+// GetPortOnlineStatus returns the PortOnlineStatus field value if set, zero value otherwise.
+func (o *InternetOpenApiVO) GetPortOnlineStatus() PortOnlineStatusOpenApiVO {
+	if o == nil || IsNil(o.PortOnlineStatus) {
+		var ret PortOnlineStatusOpenApiVO
+		return ret
+	}
+	return *o.PortOnlineStatus
+}
+
+// GetPortOnlineStatusOk returns a tuple with the PortOnlineStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InternetOpenApiVO) GetPortOnlineStatusOk() (*PortOnlineStatusOpenApiVO, bool) {
+	if o == nil || IsNil(o.PortOnlineStatus) {
+		return nil, false
+	}
+	return o.PortOnlineStatus, true
+}
+
+// HasPortOnlineStatus returns a boolean if a field has been set.
+func (o *InternetOpenApiVO) HasPortOnlineStatus() bool {
+	if o != nil && !IsNil(o.PortOnlineStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortOnlineStatus gets a reference to the given PortOnlineStatusOpenApiVO and assigns it to the PortOnlineStatus field.
+func (o *InternetOpenApiVO) SetPortOnlineStatus(v PortOnlineStatusOpenApiVO) {
+	o.PortOnlineStatus = &v
+}
+
 // GetPortUuids returns the PortUuids field value if set, zero value otherwise.
 func (o *InternetOpenApiVO) GetPortUuids() []string {
 	if o == nil || IsNil(o.PortUuids) {
@@ -611,6 +650,38 @@ func (o *InternetOpenApiVO) SetSupportDiscreteWan(v bool) {
 	o.SupportDiscreteWan = &v
 }
 
+// GetSupportDsLite returns the SupportDsLite field value if set, zero value otherwise.
+func (o *InternetOpenApiVO) GetSupportDsLite() bool {
+	if o == nil || IsNil(o.SupportDsLite) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportDsLite
+}
+
+// GetSupportDsLiteOk returns a tuple with the SupportDsLite field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InternetOpenApiVO) GetSupportDsLiteOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportDsLite) {
+		return nil, false
+	}
+	return o.SupportDsLite, true
+}
+
+// HasSupportDsLite returns a boolean if a field has been set.
+func (o *InternetOpenApiVO) HasSupportDsLite() bool {
+	if o != nil && !IsNil(o.SupportDsLite) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportDsLite gets a reference to the given bool and assigns it to the SupportDsLite field.
+func (o *InternetOpenApiVO) SetSupportDsLite(v bool) {
+	o.SupportDsLite = &v
+}
+
 // GetSupportDsl returns the SupportDsl field value if set, zero value otherwise.
 func (o *InternetOpenApiVO) GetSupportDsl() bool {
 	if o == nil || IsNil(o.SupportDsl) {
@@ -737,6 +808,38 @@ func (o *InternetOpenApiVO) HasSupportLte() bool {
 // SetSupportLte gets a reference to the given bool and assigns it to the SupportLte field.
 func (o *InternetOpenApiVO) SetSupportLte(v bool) {
 	o.SupportLte = &v
+}
+
+// GetSupportMapE returns the SupportMapE field value if set, zero value otherwise.
+func (o *InternetOpenApiVO) GetSupportMapE() bool {
+	if o == nil || IsNil(o.SupportMapE) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportMapE
+}
+
+// GetSupportMapEOk returns a tuple with the SupportMapE field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InternetOpenApiVO) GetSupportMapEOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportMapE) {
+		return nil, false
+	}
+	return o.SupportMapE, true
+}
+
+// HasSupportMapE returns a boolean if a field has been set.
+func (o *InternetOpenApiVO) HasSupportMapE() bool {
+	if o != nil && !IsNil(o.SupportMapE) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportMapE gets a reference to the given bool and assigns it to the SupportMapE field.
+func (o *InternetOpenApiVO) SetSupportMapE(v bool) {
+	o.SupportMapE = &v
 }
 
 // GetSupportMaxWanNum returns the SupportMaxWanNum field value if set, zero value otherwise.
@@ -897,6 +1000,38 @@ func (o *InternetOpenApiVO) HasSupportReduceUsbRfi() bool {
 // SetSupportReduceUsbRfi gets a reference to the given bool and assigns it to the SupportReduceUsbRfi field.
 func (o *InternetOpenApiVO) SetSupportReduceUsbRfi(v bool) {
 	o.SupportReduceUsbRfi = &v
+}
+
+// GetSupportTimingMode returns the SupportTimingMode field value if set, zero value otherwise.
+func (o *InternetOpenApiVO) GetSupportTimingMode() bool {
+	if o == nil || IsNil(o.SupportTimingMode) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportTimingMode
+}
+
+// GetSupportTimingModeOk returns a tuple with the SupportTimingMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InternetOpenApiVO) GetSupportTimingModeOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportTimingMode) {
+		return nil, false
+	}
+	return o.SupportTimingMode, true
+}
+
+// HasSupportTimingMode returns a boolean if a field has been set.
+func (o *InternetOpenApiVO) HasSupportTimingMode() bool {
+	if o != nil && !IsNil(o.SupportTimingMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportTimingMode gets a reference to the given bool and assigns it to the SupportTimingMode field.
+func (o *InternetOpenApiVO) SetSupportTimingMode(v bool) {
+	o.SupportTimingMode = &v
 }
 
 // GetSupportUsbDhcpOptions returns the SupportUsbDhcpOptions field value if set, zero value otherwise.
@@ -1192,6 +1327,9 @@ func (o InternetOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OsgPortInfo) {
 		toSerialize["osgPortInfo"] = o.OsgPortInfo
 	}
+	if !IsNil(o.PortOnlineStatus) {
+		toSerialize["portOnlineStatus"] = o.PortOnlineStatus
+	}
 	if !IsNil(o.PortUuids) {
 		toSerialize["portUuids"] = o.PortUuids
 	}
@@ -1211,6 +1349,9 @@ func (o InternetOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SupportDiscreteWan) {
 		toSerialize["supportDiscreteWan"] = o.SupportDiscreteWan
 	}
+	if !IsNil(o.SupportDsLite) {
+		toSerialize["supportDsLite"] = o.SupportDsLite
+	}
 	if !IsNil(o.SupportDsl) {
 		toSerialize["supportDsl"] = o.SupportDsl
 	}
@@ -1222,6 +1363,9 @@ func (o InternetOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportLte) {
 		toSerialize["supportLte"] = o.SupportLte
+	}
+	if !IsNil(o.SupportMapE) {
+		toSerialize["supportMapE"] = o.SupportMapE
 	}
 	if !IsNil(o.SupportMaxWanNum) {
 		toSerialize["supportMaxWanNum"] = o.SupportMaxWanNum
@@ -1237,6 +1381,9 @@ func (o InternetOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportReduceUsbRfi) {
 		toSerialize["supportReduceUsbRfi"] = o.SupportReduceUsbRfi
+	}
+	if !IsNil(o.SupportTimingMode) {
+		toSerialize["supportTimingMode"] = o.SupportTimingMode
 	}
 	if !IsNil(o.SupportUsbDhcpOptions) {
 		toSerialize["supportUsbDhcpOptions"] = o.SupportUsbDhcpOptions

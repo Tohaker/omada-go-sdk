@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enable** | **bool** |  | 
-**Version** | **int32** | Version should be a value as follows: 2:v2; 3:v3. | 
-**VirtualWanId** | Pointer to **string** | Virtual WAN ID, can be obtained from &#39;Query virtual WAN list&#39; interface. At least one of the wanPortId or virtualWanId should not be null. | [optional] 
-**WanPortId** | Pointer to **string** | WAN port ID, can be obtained from &#39;Get internet basic info&#39; interface. At least one of the wanPortId or virtualWanId should not be null. | [optional] 
+**Version** | **int32** | Version should be one of the following values: 2:v2; 3:v3. | 
+**VirtualWanId** | Pointer to **string** | Virtual WAN ID, can be obtained from &#39;Query virtual WAN list&#39; interface. At least one of the WAN Port IDs or Virtual WAN Port IDs should not be null. | [optional] 
+**WanPortId** | Pointer to **string** | WAN port ID, can be obtained from &#39;Get internet basic info&#39; interface. At least one of the WAN Port IDs or Virtual WAN Port IDs should not be null. | [optional] 
 
 ## Methods
 

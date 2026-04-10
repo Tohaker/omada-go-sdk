@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ## GetOnuInformationConfigList
 
-> OperationResponseListOnuInformationConfigDTO GetOnuInformationConfigList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListOnuInformationConfigDTO GetOnuInformationConfigList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get ONU information config list
 
@@ -430,11 +430,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewOnuManagementListQueryRequestDTO("PonPort_example") // OnuManagementListQueryRequestDTO | 
+	queryParam := *openapiclient.NewOnuManagementListQueryRequestDTO("PonPort_example") // OnuManagementListQueryRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONUManagementAPI.GetOnuInformationConfigList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONUManagementAPI.GetOnuInformationConfigList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONUManagementAPI.GetOnuInformationConfigList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OnuManagementListQueryRequestDTO**](OnuManagementListQueryRequestDTO.md) |  | 
+ **queryParam** | [**OnuManagementListQueryRequestDTO**](OnuManagementListQueryRequestDTO.md) |  | 
 
 ### Return type
 
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 
 ## GetOnuInformationConfigPage
 
-> OperationResponsePageResponseOnuInformationConfigDTO GetOnuInformationConfigPage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseOnuInformationConfigDTO GetOnuInformationConfigPage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get ONU information config page
 
@@ -508,11 +508,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewOnuManagementPageQueryRequestDTO("PonPort_example") // OnuManagementPageQueryRequestDTO | 
+	queryParam := *openapiclient.NewOnuManagementPageQueryRequestDTO("PonPort_example") // OnuManagementPageQueryRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONUManagementAPI.GetOnuInformationConfigPage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONUManagementAPI.GetOnuInformationConfigPage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONUManagementAPI.GetOnuInformationConfigPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OnuManagementPageQueryRequestDTO**](OnuManagementPageQueryRequestDTO.md) |  | 
+ **queryParam** | [**OnuManagementPageQueryRequestDTO**](OnuManagementPageQueryRequestDTO.md) |  | 
 
 ### Return type
 
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 
 ## GetOnuInformationDetail
 
-> OperationResponseOnuDetailConfigDTO GetOnuInformationDetail(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseOnuDetailConfigDTO GetOnuInformationDetail(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get ONU information detail
 
@@ -586,11 +586,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewOnuInfoDetailRequestDTO("Key_example") // OnuInfoDetailRequestDTO | 
+	queryParam := *openapiclient.NewOnuInfoDetailRequestDTO("Key_example") // OnuInfoDetailRequestDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONUManagementAPI.GetOnuInformationDetail(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONUManagementAPI.GetOnuInformationDetail(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONUManagementAPI.GetOnuInformationDetail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OnuInfoDetailRequestDTO**](OnuInfoDetailRequestDTO.md) |  | 
+ **queryParam** | [**OnuInfoDetailRequestDTO**](OnuInfoDetailRequestDTO.md) |  | 
 
 ### Return type
 

@@ -182,8 +182,8 @@ type ClientAPI interface {
 	GetClientDetailStat5Min(ctx context.Context, omadacId string, siteId string, clientMac string) ClientAPIGetClientDetailStat5MinRequest
 
 	// GetClientDetailStat5MinExecute executes the request
-	//  @return OperationResponseClientStatisticalDataDetail
-	GetClientDetailStat5MinExecute(r ClientAPIGetClientDetailStat5MinRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error)
+	//  @return OperationResponseClientStatisticalDataDetailResult
+	GetClientDetailStat5MinExecute(r ClientAPIGetClientDetailStat5MinRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error)
 
 	/*
 	GetClientDetailStatDaily Get client statistical data details at a daily interval.
@@ -199,8 +199,8 @@ type ClientAPI interface {
 	GetClientDetailStatDaily(ctx context.Context, omadacId string, siteId string, clientMac string) ClientAPIGetClientDetailStatDailyRequest
 
 	// GetClientDetailStatDailyExecute executes the request
-	//  @return OperationResponseClientStatisticalDataDetail
-	GetClientDetailStatDailyExecute(r ClientAPIGetClientDetailStatDailyRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error)
+	//  @return OperationResponseClientStatisticalDataDetailResult
+	GetClientDetailStatDailyExecute(r ClientAPIGetClientDetailStatDailyRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error)
 
 	/*
 	GetClientDetailStatHourly Get client statistical data details at a hourly interval.
@@ -216,8 +216,8 @@ type ClientAPI interface {
 	GetClientDetailStatHourly(ctx context.Context, omadacId string, siteId string, clientMac string) ClientAPIGetClientDetailStatHourlyRequest
 
 	// GetClientDetailStatHourlyExecute executes the request
-	//  @return OperationResponseClientStatisticalDataDetail
-	GetClientDetailStatHourlyExecute(r ClientAPIGetClientDetailStatHourlyRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error)
+	//  @return OperationResponseClientStatisticalDataDetailResult
+	GetClientDetailStatHourlyExecute(r ClientAPIGetClientDetailStatHourlyRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error)
 
 	/*
 	GetClientFilteringOptions Get client list filtering options
@@ -314,8 +314,8 @@ type ClientAPI interface {
 	GetGridActiveClients(ctx context.Context, omadacId string, siteId string) ClientAPIGetGridActiveClientsRequest
 
 	// GetGridActiveClientsExecute executes the request
-	//  @return OperationResponseClientGridVOClientInfo
-	GetGridActiveClientsExecute(r ClientAPIGetGridActiveClientsRequest) (*OperationResponseClientGridVOClientInfo, *http.Response, error)
+	//  @return OperationResponseClientGridVOOpenApiClientInfo
+	GetGridActiveClientsExecute(r ClientAPIGetGridActiveClientsRequest) (*OperationResponseClientGridVOOpenApiClientInfo, *http.Response, error)
 
 	/*
 	GetGridAllClients Get all client list
@@ -330,8 +330,8 @@ type ClientAPI interface {
 	GetGridAllClients(ctx context.Context, omadacId string, siteId string) ClientAPIGetGridAllClientsRequest
 
 	// GetGridAllClientsExecute executes the request
-	//  @return OperationResponseClientGridVOClientInfo
-	GetGridAllClientsExecute(r ClientAPIGetGridAllClientsRequest) (*OperationResponseClientGridVOClientInfo, *http.Response, error)
+	//  @return OperationResponseClientGridVOOpenApiClientInfo
+	GetGridAllClientsExecute(r ClientAPIGetGridAllClientsRequest) (*OperationResponseClientGridVOOpenApiClientInfo, *http.Response, error)
 
 	/*
 	GetGridClientHistory  Get Client history.
@@ -364,8 +364,8 @@ type ClientAPI interface {
 	GetVigiDetailStat5Min(ctx context.Context, omadacId string, siteId string, vigiMac string) ClientAPIGetVigiDetailStat5MinRequest
 
 	// GetVigiDetailStat5MinExecute executes the request
-	//  @return OperationResponseClientStatisticalDataDetail
-	GetVigiDetailStat5MinExecute(r ClientAPIGetVigiDetailStat5MinRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error)
+	//  @return OperationResponseClientStatisticalDataDetailResult
+	GetVigiDetailStat5MinExecute(r ClientAPIGetVigiDetailStat5MinRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error)
 
 	/*
 	GetVigiDetailStatDaily Get VIGI device statistical data details at a daily interval.
@@ -381,8 +381,8 @@ type ClientAPI interface {
 	GetVigiDetailStatDaily(ctx context.Context, omadacId string, siteId string, vigiMac string) ClientAPIGetVigiDetailStatDailyRequest
 
 	// GetVigiDetailStatDailyExecute executes the request
-	//  @return OperationResponseClientStatisticalDataDetail
-	GetVigiDetailStatDailyExecute(r ClientAPIGetVigiDetailStatDailyRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error)
+	//  @return OperationResponseClientStatisticalDataDetailResult
+	GetVigiDetailStatDailyExecute(r ClientAPIGetVigiDetailStatDailyRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error)
 
 	/*
 	GetVigiDetailStatHourly Get VIGI device statistical data details at a hourly interval.
@@ -398,8 +398,8 @@ type ClientAPI interface {
 	GetVigiDetailStatHourly(ctx context.Context, omadacId string, siteId string, vigiMac string) ClientAPIGetVigiDetailStatHourlyRequest
 
 	// GetVigiDetailStatHourlyExecute executes the request
-	//  @return OperationResponseClientStatisticalDataDetail
-	GetVigiDetailStatHourlyExecute(r ClientAPIGetVigiDetailStatHourlyRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error)
+	//  @return OperationResponseClientStatisticalDataDetailResult
+	GetVigiDetailStatHourlyExecute(r ClientAPIGetVigiDetailStatHourlyRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error)
 
 	/*
 	GetVigiJourney Get VIGI device connection histories
@@ -1775,7 +1775,7 @@ func (r ClientAPIGetClientDetailStat5MinRequest) ClientStatQuery(clientStatQuery
 	return r
 }
 
-func (r ClientAPIGetClientDetailStat5MinRequest) Execute() (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+func (r ClientAPIGetClientDetailStat5MinRequest) Execute() (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	return r.ApiService.GetClientDetailStat5MinExecute(r)
 }
 
@@ -1801,13 +1801,13 @@ func (a *ClientAPIService) GetClientDetailStat5Min(ctx context.Context, omadacId
 }
 
 // Execute executes the request
-//  @return OperationResponseClientStatisticalDataDetail
-func (a *ClientAPIService) GetClientDetailStat5MinExecute(r ClientAPIGetClientDetailStat5MinRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+//  @return OperationResponseClientStatisticalDataDetailResult
+func (a *ClientAPIService) GetClientDetailStat5MinExecute(r ClientAPIGetClientDetailStat5MinRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseClientStatisticalDataDetail
+		localVarReturnValue  *OperationResponseClientStatisticalDataDetailResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetClientDetailStat5Min")
@@ -1911,7 +1911,7 @@ func (r ClientAPIGetClientDetailStatDailyRequest) ClientStatQuery(clientStatQuer
 	return r
 }
 
-func (r ClientAPIGetClientDetailStatDailyRequest) Execute() (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+func (r ClientAPIGetClientDetailStatDailyRequest) Execute() (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	return r.ApiService.GetClientDetailStatDailyExecute(r)
 }
 
@@ -1937,13 +1937,13 @@ func (a *ClientAPIService) GetClientDetailStatDaily(ctx context.Context, omadacI
 }
 
 // Execute executes the request
-//  @return OperationResponseClientStatisticalDataDetail
-func (a *ClientAPIService) GetClientDetailStatDailyExecute(r ClientAPIGetClientDetailStatDailyRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+//  @return OperationResponseClientStatisticalDataDetailResult
+func (a *ClientAPIService) GetClientDetailStatDailyExecute(r ClientAPIGetClientDetailStatDailyRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseClientStatisticalDataDetail
+		localVarReturnValue  *OperationResponseClientStatisticalDataDetailResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetClientDetailStatDaily")
@@ -2047,7 +2047,7 @@ func (r ClientAPIGetClientDetailStatHourlyRequest) ClientStatQuery(clientStatQue
 	return r
 }
 
-func (r ClientAPIGetClientDetailStatHourlyRequest) Execute() (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+func (r ClientAPIGetClientDetailStatHourlyRequest) Execute() (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	return r.ApiService.GetClientDetailStatHourlyExecute(r)
 }
 
@@ -2073,13 +2073,13 @@ func (a *ClientAPIService) GetClientDetailStatHourly(ctx context.Context, omadac
 }
 
 // Execute executes the request
-//  @return OperationResponseClientStatisticalDataDetail
-func (a *ClientAPIService) GetClientDetailStatHourlyExecute(r ClientAPIGetClientDetailStatHourlyRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+//  @return OperationResponseClientStatisticalDataDetailResult
+func (a *ClientAPIService) GetClientDetailStatHourlyExecute(r ClientAPIGetClientDetailStatHourlyRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseClientStatisticalDataDetail
+		localVarReturnValue  *OperationResponseClientStatisticalDataDetailResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetClientDetailStatHourly")
@@ -2921,7 +2921,7 @@ func (r ClientAPIGetGridActiveClientsRequest) SearchKey(searchKey string) Client
 	return r
 }
 
-func (r ClientAPIGetGridActiveClientsRequest) Execute() (*OperationResponseClientGridVOClientInfo, *http.Response, error) {
+func (r ClientAPIGetGridActiveClientsRequest) Execute() (*OperationResponseClientGridVOOpenApiClientInfo, *http.Response, error) {
 	return r.ApiService.GetGridActiveClientsExecute(r)
 }
 
@@ -2945,13 +2945,13 @@ func (a *ClientAPIService) GetGridActiveClients(ctx context.Context, omadacId st
 }
 
 // Execute executes the request
-//  @return OperationResponseClientGridVOClientInfo
-func (a *ClientAPIService) GetGridActiveClientsExecute(r ClientAPIGetGridActiveClientsRequest) (*OperationResponseClientGridVOClientInfo, *http.Response, error) {
+//  @return OperationResponseClientGridVOOpenApiClientInfo
+func (a *ClientAPIService) GetGridActiveClientsExecute(r ClientAPIGetGridActiveClientsRequest) (*OperationResponseClientGridVOOpenApiClientInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseClientGridVOClientInfo
+		localVarReturnValue  *OperationResponseClientGridVOOpenApiClientInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetGridActiveClients")
@@ -3083,7 +3083,7 @@ func (r ClientAPIGetGridAllClientsRequest) ClientQueryDataOpenApiVO(clientQueryD
 	return r
 }
 
-func (r ClientAPIGetGridAllClientsRequest) Execute() (*OperationResponseClientGridVOClientInfo, *http.Response, error) {
+func (r ClientAPIGetGridAllClientsRequest) Execute() (*OperationResponseClientGridVOOpenApiClientInfo, *http.Response, error) {
 	return r.ApiService.GetGridAllClientsExecute(r)
 }
 
@@ -3107,13 +3107,13 @@ func (a *ClientAPIService) GetGridAllClients(ctx context.Context, omadacId strin
 }
 
 // Execute executes the request
-//  @return OperationResponseClientGridVOClientInfo
-func (a *ClientAPIService) GetGridAllClientsExecute(r ClientAPIGetGridAllClientsRequest) (*OperationResponseClientGridVOClientInfo, *http.Response, error) {
+//  @return OperationResponseClientGridVOOpenApiClientInfo
+func (a *ClientAPIService) GetGridAllClientsExecute(r ClientAPIGetGridAllClientsRequest) (*OperationResponseClientGridVOOpenApiClientInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseClientGridVOClientInfo
+		localVarReturnValue  *OperationResponseClientGridVOOpenApiClientInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetGridAllClients")
@@ -3483,7 +3483,7 @@ func (r ClientAPIGetVigiDetailStat5MinRequest) ClientStatQuery(clientStatQuery C
 	return r
 }
 
-func (r ClientAPIGetVigiDetailStat5MinRequest) Execute() (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+func (r ClientAPIGetVigiDetailStat5MinRequest) Execute() (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	return r.ApiService.GetVigiDetailStat5MinExecute(r)
 }
 
@@ -3509,13 +3509,13 @@ func (a *ClientAPIService) GetVigiDetailStat5Min(ctx context.Context, omadacId s
 }
 
 // Execute executes the request
-//  @return OperationResponseClientStatisticalDataDetail
-func (a *ClientAPIService) GetVigiDetailStat5MinExecute(r ClientAPIGetVigiDetailStat5MinRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+//  @return OperationResponseClientStatisticalDataDetailResult
+func (a *ClientAPIService) GetVigiDetailStat5MinExecute(r ClientAPIGetVigiDetailStat5MinRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseClientStatisticalDataDetail
+		localVarReturnValue  *OperationResponseClientStatisticalDataDetailResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetVigiDetailStat5Min")
@@ -3619,7 +3619,7 @@ func (r ClientAPIGetVigiDetailStatDailyRequest) ClientStatQuery(clientStatQuery 
 	return r
 }
 
-func (r ClientAPIGetVigiDetailStatDailyRequest) Execute() (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+func (r ClientAPIGetVigiDetailStatDailyRequest) Execute() (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	return r.ApiService.GetVigiDetailStatDailyExecute(r)
 }
 
@@ -3645,13 +3645,13 @@ func (a *ClientAPIService) GetVigiDetailStatDaily(ctx context.Context, omadacId 
 }
 
 // Execute executes the request
-//  @return OperationResponseClientStatisticalDataDetail
-func (a *ClientAPIService) GetVigiDetailStatDailyExecute(r ClientAPIGetVigiDetailStatDailyRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+//  @return OperationResponseClientStatisticalDataDetailResult
+func (a *ClientAPIService) GetVigiDetailStatDailyExecute(r ClientAPIGetVigiDetailStatDailyRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseClientStatisticalDataDetail
+		localVarReturnValue  *OperationResponseClientStatisticalDataDetailResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetVigiDetailStatDaily")
@@ -3755,7 +3755,7 @@ func (r ClientAPIGetVigiDetailStatHourlyRequest) ClientStatQuery(clientStatQuery
 	return r
 }
 
-func (r ClientAPIGetVigiDetailStatHourlyRequest) Execute() (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+func (r ClientAPIGetVigiDetailStatHourlyRequest) Execute() (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	return r.ApiService.GetVigiDetailStatHourlyExecute(r)
 }
 
@@ -3781,13 +3781,13 @@ func (a *ClientAPIService) GetVigiDetailStatHourly(ctx context.Context, omadacId
 }
 
 // Execute executes the request
-//  @return OperationResponseClientStatisticalDataDetail
-func (a *ClientAPIService) GetVigiDetailStatHourlyExecute(r ClientAPIGetVigiDetailStatHourlyRequest) (*OperationResponseClientStatisticalDataDetail, *http.Response, error) {
+//  @return OperationResponseClientStatisticalDataDetailResult
+func (a *ClientAPIService) GetVigiDetailStatHourlyExecute(r ClientAPIGetVigiDetailStatHourlyRequest) (*OperationResponseClientStatisticalDataDetailResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseClientStatisticalDataDetail
+		localVarReturnValue  *OperationResponseClientStatisticalDataDetailResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetVigiDetailStatHourly")
@@ -4569,11 +4569,11 @@ type ClientAPIModifyClientIpSettingRequest struct {
 	omadacId string
 	siteId string
 	clientMac string
-	clientIpSetting *ClientIpSetting
+	openApiClientIpSetting *OpenApiClientIpSetting
 }
 
-func (r ClientAPIModifyClientIpSettingRequest) ClientIpSetting(clientIpSetting ClientIpSetting) ClientAPIModifyClientIpSettingRequest {
-	r.clientIpSetting = &clientIpSetting
+func (r ClientAPIModifyClientIpSettingRequest) OpenApiClientIpSetting(openApiClientIpSetting OpenApiClientIpSetting) ClientAPIModifyClientIpSettingRequest {
+	r.openApiClientIpSetting = &openApiClientIpSetting
 	return r
 }
 
@@ -4625,8 +4625,8 @@ func (a *ClientAPIService) ModifyClientIpSettingExecute(r ClientAPIModifyClientI
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.clientIpSetting == nil {
-		return localVarReturnValue, nil, reportError("clientIpSetting is required and must be specified")
+	if r.openApiClientIpSetting == nil {
+		return localVarReturnValue, nil, reportError("openApiClientIpSetting is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -4647,7 +4647,7 @@ func (a *ClientAPIService) ModifyClientIpSettingExecute(r ClientAPIModifyClientI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.clientIpSetting
+	localVarPostBody = r.openApiClientIpSetting
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

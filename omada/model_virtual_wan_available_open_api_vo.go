@@ -21,12 +21,16 @@ var _ MappedNullable = &VirtualWanAvailableOpenApiVO{}
 type VirtualWanAvailableOpenApiVO struct {
 	// Virtual WAN IPv4 proto.
 	Ipv4Proto *string `json:"ipv4Proto,omitempty"`
+	// Port max bandwidth.
+	MaxBandwidth *int64 `json:"maxBandwidth,omitempty"`
 	// Virtual WAN name.
 	Name *string `json:"name,omitempty"`
 	// Physical WAN ID.
 	PhysicalWanId *string `json:"physicalWanId,omitempty"`
 	// Physical WAN port type, 0: WAN; 1:WAN/LAN; 2:LAN; 3:SFP WAN; 4:USB LTE WAN; 5: LTE WAN; 6:DSL WAN;
 	Type *int32 `json:"type,omitempty"`
+	// Virtual WAN Entry ID.
+	VirtualEntryId *int32 `json:"virtualEntryId,omitempty"`
 	// Virtual WAN ID.
 	VirtualWanId *string `json:"virtualWanId,omitempty"`
 }
@@ -78,6 +82,38 @@ func (o *VirtualWanAvailableOpenApiVO) HasIpv4Proto() bool {
 // SetIpv4Proto gets a reference to the given string and assigns it to the Ipv4Proto field.
 func (o *VirtualWanAvailableOpenApiVO) SetIpv4Proto(v string) {
 	o.Ipv4Proto = &v
+}
+
+// GetMaxBandwidth returns the MaxBandwidth field value if set, zero value otherwise.
+func (o *VirtualWanAvailableOpenApiVO) GetMaxBandwidth() int64 {
+	if o == nil || IsNil(o.MaxBandwidth) {
+		var ret int64
+		return ret
+	}
+	return *o.MaxBandwidth
+}
+
+// GetMaxBandwidthOk returns a tuple with the MaxBandwidth field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VirtualWanAvailableOpenApiVO) GetMaxBandwidthOk() (*int64, bool) {
+	if o == nil || IsNil(o.MaxBandwidth) {
+		return nil, false
+	}
+	return o.MaxBandwidth, true
+}
+
+// HasMaxBandwidth returns a boolean if a field has been set.
+func (o *VirtualWanAvailableOpenApiVO) HasMaxBandwidth() bool {
+	if o != nil && !IsNil(o.MaxBandwidth) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxBandwidth gets a reference to the given int64 and assigns it to the MaxBandwidth field.
+func (o *VirtualWanAvailableOpenApiVO) SetMaxBandwidth(v int64) {
+	o.MaxBandwidth = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -176,6 +212,38 @@ func (o *VirtualWanAvailableOpenApiVO) SetType(v int32) {
 	o.Type = &v
 }
 
+// GetVirtualEntryId returns the VirtualEntryId field value if set, zero value otherwise.
+func (o *VirtualWanAvailableOpenApiVO) GetVirtualEntryId() int32 {
+	if o == nil || IsNil(o.VirtualEntryId) {
+		var ret int32
+		return ret
+	}
+	return *o.VirtualEntryId
+}
+
+// GetVirtualEntryIdOk returns a tuple with the VirtualEntryId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VirtualWanAvailableOpenApiVO) GetVirtualEntryIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.VirtualEntryId) {
+		return nil, false
+	}
+	return o.VirtualEntryId, true
+}
+
+// HasVirtualEntryId returns a boolean if a field has been set.
+func (o *VirtualWanAvailableOpenApiVO) HasVirtualEntryId() bool {
+	if o != nil && !IsNil(o.VirtualEntryId) {
+		return true
+	}
+
+	return false
+}
+
+// SetVirtualEntryId gets a reference to the given int32 and assigns it to the VirtualEntryId field.
+func (o *VirtualWanAvailableOpenApiVO) SetVirtualEntryId(v int32) {
+	o.VirtualEntryId = &v
+}
+
 // GetVirtualWanId returns the VirtualWanId field value if set, zero value otherwise.
 func (o *VirtualWanAvailableOpenApiVO) GetVirtualWanId() string {
 	if o == nil || IsNil(o.VirtualWanId) {
@@ -221,6 +289,9 @@ func (o VirtualWanAvailableOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Ipv4Proto) {
 		toSerialize["ipv4Proto"] = o.Ipv4Proto
 	}
+	if !IsNil(o.MaxBandwidth) {
+		toSerialize["maxBandwidth"] = o.MaxBandwidth
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
@@ -229,6 +300,9 @@ func (o VirtualWanAvailableOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.VirtualEntryId) {
+		toSerialize["virtualEntryId"] = o.VirtualEntryId
 	}
 	if !IsNil(o.VirtualWanId) {
 		toSerialize["virtualWanId"] = o.VirtualWanId

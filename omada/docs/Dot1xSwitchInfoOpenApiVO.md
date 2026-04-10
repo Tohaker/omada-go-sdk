@@ -10,9 +10,11 @@ Name | Type | Description | Notes
 **Mac** | Pointer to **string** | Switch MAC address | [optional] 
 **Model** | Pointer to **string** | Switch model | [optional] 
 **Name** | Pointer to **string** | Switch name | [optional] 
+**PortConfigured** | Pointer to **bool** | Is there any port configured with 802.1x or MAB authentication. | [optional] 
 **Ports** | Pointer to [**[]Dot1xPortInfoOpenApiVO**](Dot1xPortInfoOpenApiVO.md) | Switch port information | [optional] 
 **Status** | Pointer to **string** | Device status | [optional] 
 **StatusCategory** | Pointer to **int32** | Device status category, 0: Disconnected, 1: Connected, 2: Pending,3: Heartbeat Missed, 4: Isolated | [optional] 
+**SupportSingleMabAuth** | Pointer to **bool** | Whether the switch supports single MAB Authentication.If not supported, it will not take effect when configuring single MAB authentication for the port of the switch. | [optional] 
 **SupportVrf** | Pointer to **bool** | Whether the switch supports VRF | [optional] 
 **Version** | Pointer to **string** | Switch firmwareVersion | [optional] 
 
@@ -185,6 +187,31 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetPortConfigured
+
+`func (o *Dot1xSwitchInfoOpenApiVO) GetPortConfigured() bool`
+
+GetPortConfigured returns the PortConfigured field if non-nil, zero value otherwise.
+
+### GetPortConfiguredOk
+
+`func (o *Dot1xSwitchInfoOpenApiVO) GetPortConfiguredOk() (*bool, bool)`
+
+GetPortConfiguredOk returns a tuple with the PortConfigured field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPortConfigured
+
+`func (o *Dot1xSwitchInfoOpenApiVO) SetPortConfigured(v bool)`
+
+SetPortConfigured sets PortConfigured field to given value.
+
+### HasPortConfigured
+
+`func (o *Dot1xSwitchInfoOpenApiVO) HasPortConfigured() bool`
+
+HasPortConfigured returns a boolean if a field has been set.
+
 ### GetPorts
 
 `func (o *Dot1xSwitchInfoOpenApiVO) GetPorts() []Dot1xPortInfoOpenApiVO`
@@ -259,6 +286,31 @@ SetStatusCategory sets StatusCategory field to given value.
 `func (o *Dot1xSwitchInfoOpenApiVO) HasStatusCategory() bool`
 
 HasStatusCategory returns a boolean if a field has been set.
+
+### GetSupportSingleMabAuth
+
+`func (o *Dot1xSwitchInfoOpenApiVO) GetSupportSingleMabAuth() bool`
+
+GetSupportSingleMabAuth returns the SupportSingleMabAuth field if non-nil, zero value otherwise.
+
+### GetSupportSingleMabAuthOk
+
+`func (o *Dot1xSwitchInfoOpenApiVO) GetSupportSingleMabAuthOk() (*bool, bool)`
+
+GetSupportSingleMabAuthOk returns a tuple with the SupportSingleMabAuth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportSingleMabAuth
+
+`func (o *Dot1xSwitchInfoOpenApiVO) SetSupportSingleMabAuth(v bool)`
+
+SetSupportSingleMabAuth sets SupportSingleMabAuth field to given value.
+
+### HasSupportSingleMabAuth
+
+`func (o *Dot1xSwitchInfoOpenApiVO) HasSupportSingleMabAuth() bool`
+
+HasSupportSingleMabAuth returns a boolean if a field has been set.
 
 ### GetSupportVrf
 

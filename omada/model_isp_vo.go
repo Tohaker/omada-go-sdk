@@ -27,12 +27,16 @@ type IspVO struct {
 	DownloadSpeedSet *int64 `json:"downloadSpeedSet,omitempty"`
 	// Port ip.
 	Ip *string `json:"ip,omitempty"`
+	// WAN IPv4 proto.
+	Ipv4Proto *string `json:"ipv4Proto,omitempty"`
 	// Port load balance.
 	LoadBalance *string `json:"loadBalance,omitempty"`
 	// Port max bandwidth.
 	MaxBandwidth *int64 `json:"maxBandwidth,omitempty"`
 	// Port name.
 	Name *string `json:"name,omitempty"`
+	// onLine status, should be a value as follows:1 : online0 : offline
+	OnLineStatus *int32 `json:"onLineStatus,omitempty"`
 	// Port id.
 	Port *int32 `json:"port,omitempty"`
 	// Port uuid.
@@ -192,6 +196,38 @@ func (o *IspVO) SetIp(v string) {
 	o.Ip = &v
 }
 
+// GetIpv4Proto returns the Ipv4Proto field value if set, zero value otherwise.
+func (o *IspVO) GetIpv4Proto() string {
+	if o == nil || IsNil(o.Ipv4Proto) {
+		var ret string
+		return ret
+	}
+	return *o.Ipv4Proto
+}
+
+// GetIpv4ProtoOk returns a tuple with the Ipv4Proto field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IspVO) GetIpv4ProtoOk() (*string, bool) {
+	if o == nil || IsNil(o.Ipv4Proto) {
+		return nil, false
+	}
+	return o.Ipv4Proto, true
+}
+
+// HasIpv4Proto returns a boolean if a field has been set.
+func (o *IspVO) HasIpv4Proto() bool {
+	if o != nil && !IsNil(o.Ipv4Proto) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpv4Proto gets a reference to the given string and assigns it to the Ipv4Proto field.
+func (o *IspVO) SetIpv4Proto(v string) {
+	o.Ipv4Proto = &v
+}
+
 // GetLoadBalance returns the LoadBalance field value if set, zero value otherwise.
 func (o *IspVO) GetLoadBalance() string {
 	if o == nil || IsNil(o.LoadBalance) {
@@ -286,6 +322,38 @@ func (o *IspVO) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *IspVO) SetName(v string) {
 	o.Name = &v
+}
+
+// GetOnLineStatus returns the OnLineStatus field value if set, zero value otherwise.
+func (o *IspVO) GetOnLineStatus() int32 {
+	if o == nil || IsNil(o.OnLineStatus) {
+		var ret int32
+		return ret
+	}
+	return *o.OnLineStatus
+}
+
+// GetOnLineStatusOk returns a tuple with the OnLineStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IspVO) GetOnLineStatusOk() (*int32, bool) {
+	if o == nil || IsNil(o.OnLineStatus) {
+		return nil, false
+	}
+	return o.OnLineStatus, true
+}
+
+// HasOnLineStatus returns a boolean if a field has been set.
+func (o *IspVO) HasOnLineStatus() bool {
+	if o != nil && !IsNil(o.OnLineStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnLineStatus gets a reference to the given int32 and assigns it to the OnLineStatus field.
+func (o *IspVO) SetOnLineStatus(v int32) {
+	o.OnLineStatus = &v
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
@@ -502,6 +570,9 @@ func (o IspVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Ip) {
 		toSerialize["ip"] = o.Ip
 	}
+	if !IsNil(o.Ipv4Proto) {
+		toSerialize["ipv4Proto"] = o.Ipv4Proto
+	}
 	if !IsNil(o.LoadBalance) {
 		toSerialize["loadBalance"] = o.LoadBalance
 	}
@@ -510,6 +581,9 @@ func (o IspVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.OnLineStatus) {
+		toSerialize["onLineStatus"] = o.OnLineStatus
 	}
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port

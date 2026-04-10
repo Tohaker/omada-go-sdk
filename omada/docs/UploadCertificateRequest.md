@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**File** | ***os.File** |  | 
+**File** | ***os.File** | Upload certificate file | 
 
 ## Methods
 

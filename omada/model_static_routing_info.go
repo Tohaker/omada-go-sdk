@@ -37,7 +37,7 @@ type StaticRoutingInfo struct {
 	Metric int32 `json:"metric"`
 	// Name, name should contain 1 to 64 characters.
 	Name string `json:"name"`
-	// Only for routeType:0 or routeType:1 and selected WAN is Static IP/Dynamic IP mode
+	// Only for routeType:0 or routeType:1 and selected WAN is Static IP/Dynamic IP/MAP-E mode
 	NextHopIp *string `json:"nextHopIp,omitempty"`
 	// RouteType should be a value as follows: 0: NextHop; 1: Interface
 	RouteType int32 `json:"routeType"`

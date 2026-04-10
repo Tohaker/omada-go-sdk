@@ -220,6 +220,23 @@ type DeviceAPI interface {
 	CancelRollingUpgradeExecute(r DeviceAPICancelRollingUpgradeRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	CheckMacType Check the device type by mac.
+
+	Check the device type by mac.<br/><br/>The interface requires one of the permissions: <br/>Site Log & Audit Log Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+	@return DeviceAPICheckMacTypeRequest
+	*/
+	CheckMacType(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPICheckMacTypeRequest
+
+	// CheckMacTypeExecute executes the request
+	//  @return OperationResponseCheckMacTypeOpenApiVO
+	CheckMacTypeExecute(r DeviceAPICheckMacTypeRequest) (*OperationResponseCheckMacTypeOpenApiVO, *http.Response, error)
+
+	/*
 	CopyDeviceConfiguration Copy configuration
 
 	Copy the configuration of one device to another device of the same model. Only for switch and access point.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39056  -  Failed to copy config because of source device not exist.<br/>-39057  -  Failed to copy config because of the copied device is different from the model of the source device.
@@ -2743,6 +2760,131 @@ func (a *DeviceAPIService) CancelRollingUpgradeExecute(r DeviceAPICancelRollingU
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"taskId"+"}", url.PathEscape(parameterValueToString(r.taskId, "taskId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type DeviceAPICheckMacTypeRequest struct {
+	ctx context.Context
+	ApiService DeviceAPI
+	omadacId string
+	siteId string
+	deviceMac string
+}
+
+func (r DeviceAPICheckMacTypeRequest) Execute() (*OperationResponseCheckMacTypeOpenApiVO, *http.Response, error) {
+	return r.ApiService.CheckMacTypeExecute(r)
+}
+
+/*
+CheckMacType Check the device type by mac.
+
+Check the device type by mac.<br/><br/>The interface requires one of the permissions: <br/>Site Log & Audit Log Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+ @return DeviceAPICheckMacTypeRequest
+*/
+func (a *DeviceAPIService) CheckMacType(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPICheckMacTypeRequest {
+	return DeviceAPICheckMacTypeRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		deviceMac: deviceMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseCheckMacTypeOpenApiVO
+func (a *DeviceAPIService) CheckMacTypeExecute(r DeviceAPICheckMacTypeRequest) (*OperationResponseCheckMacTypeOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseCheckMacTypeOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceAPIService.CheckMacType")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/check-mac-type"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceMac"+"}", url.PathEscape(parameterValueToString(r.deviceMac, "deviceMac")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -63,7 +63,7 @@ type GatewayWanStatusEntity struct {
 	Port *int32 `json:"port,omitempty"`
 	// Port description
 	PortDesc *string `json:"portDesc,omitempty"`
-	// Wan ipv4 proto type, use static，dhcp，pppoe，l2tp，pptp.
+	// WAN IPv4 connection type, it supports Static IP, DHCP, PPPoE, L2TP, PPTP, DS-Lite, and MAP-E.
 	Proto *string `json:"proto,omitempty"`
 	RoamingStatus *int32 `json:"roamingStatus,omitempty"`
 	Rsrp *int32 `json:"rsrp,omitempty"`

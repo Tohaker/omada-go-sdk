@@ -21,6 +21,7 @@ var _ MappedNullable = &OsgPvIdNameVO{}
 type OsgPvIdNameVO struct {
 	PvId *int32 `json:"pvId,omitempty"`
 	PvName *string `json:"pvName,omitempty"`
+	QosTagEnable *bool `json:"qosTagEnable,omitempty"`
 }
 
 // NewOsgPvIdNameVO instantiates a new OsgPvIdNameVO object
@@ -104,6 +105,38 @@ func (o *OsgPvIdNameVO) SetPvName(v string) {
 	o.PvName = &v
 }
 
+// GetQosTagEnable returns the QosTagEnable field value if set, zero value otherwise.
+func (o *OsgPvIdNameVO) GetQosTagEnable() bool {
+	if o == nil || IsNil(o.QosTagEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.QosTagEnable
+}
+
+// GetQosTagEnableOk returns a tuple with the QosTagEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgPvIdNameVO) GetQosTagEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.QosTagEnable) {
+		return nil, false
+	}
+	return o.QosTagEnable, true
+}
+
+// HasQosTagEnable returns a boolean if a field has been set.
+func (o *OsgPvIdNameVO) HasQosTagEnable() bool {
+	if o != nil && !IsNil(o.QosTagEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetQosTagEnable gets a reference to the given bool and assigns it to the QosTagEnable field.
+func (o *OsgPvIdNameVO) SetQosTagEnable(v bool) {
+	o.QosTagEnable = &v
+}
+
 func (o OsgPvIdNameVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -119,6 +152,9 @@ func (o OsgPvIdNameVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PvName) {
 		toSerialize["pvName"] = o.PvName
+	}
+	if !IsNil(o.QosTagEnable) {
+		toSerialize["qosTagEnable"] = o.QosTagEnable
 	}
 	return toSerialize, nil
 }

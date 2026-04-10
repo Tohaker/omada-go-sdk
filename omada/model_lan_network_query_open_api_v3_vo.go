@@ -108,7 +108,7 @@ type LanNetworkQueryOpenApiV3VO struct {
 	SubnetOverrideEnable *bool `json:"subnetOverrideEnable,omitempty"`
 	// Total ip num
 	TotalIpNum *int64 `json:"totalIpNum,omitempty"`
-	// When purpose is \"VLAN\" or purpose is \"interface\" and VLANType is 0, vlan should be within the range of 1-4090.When purpose is \"VLAN\" and VLANType is 0 and \"application\" is 1, vlan could be within the range of 1-4094.
+	// Only Valid when vlanType is 0. Vlan should be within the range of 1-4094.
 	Vlan *int32 `json:"vlan,omitempty"`
 	// When purpose is interface, VLANType should be a value as follows: 0: Single; 1: Multiple
 	VlanType *int32 `json:"vlanType,omitempty"`

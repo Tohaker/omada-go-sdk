@@ -49,6 +49,8 @@ type LanNetworkBrief struct {
 	Vlan *int32 `json:"vlan,omitempty"`
 	// The type of vlan of the lan network
 	VlanType *int32 `json:"vlanType,omitempty"`
+	// Batch Vlan IDS.
+	Vlans *string `json:"vlans,omitempty"`
 }
 
 // NewLanNetworkBrief instantiates a new LanNetworkBrief object
@@ -548,6 +550,38 @@ func (o *LanNetworkBrief) SetVlanType(v int32) {
 	o.VlanType = &v
 }
 
+// GetVlans returns the Vlans field value if set, zero value otherwise.
+func (o *LanNetworkBrief) GetVlans() string {
+	if o == nil || IsNil(o.Vlans) {
+		var ret string
+		return ret
+	}
+	return *o.Vlans
+}
+
+// GetVlansOk returns a tuple with the Vlans field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanNetworkBrief) GetVlansOk() (*string, bool) {
+	if o == nil || IsNil(o.Vlans) {
+		return nil, false
+	}
+	return o.Vlans, true
+}
+
+// HasVlans returns a boolean if a field has been set.
+func (o *LanNetworkBrief) HasVlans() bool {
+	if o != nil && !IsNil(o.Vlans) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlans gets a reference to the given string and assigns it to the Vlans field.
+func (o *LanNetworkBrief) SetVlans(v string) {
+	o.Vlans = &v
+}
+
 func (o LanNetworkBrief) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -602,6 +636,9 @@ func (o LanNetworkBrief) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VlanType) {
 		toSerialize["vlanType"] = o.VlanType
+	}
+	if !IsNil(o.Vlans) {
+		toSerialize["vlans"] = o.Vlans
 	}
 	return toSerialize, nil
 }

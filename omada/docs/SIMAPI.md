@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**CreateMailServerByMac**](SIMAPI.md#createmailserverbymac) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/mails | Create mail server by mac
 [**ExportSmsMessage**](SIMAPI.md#exportsmsmessage) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/sim/sms/export | Export SMS message
 [**ExportSmsMessageBymac**](SIMAPI.md#exportsmsmessagebymac) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/sim/sms/export | Export SMS message by mac
+[**ExportSmsMessageBymacV2**](SIMAPI.md#exportsmsmessagebymacv2) | **Post** /openapi/v2/{omadacId}/files/sites/{siteId}/gateways/{gatewayMac}/sim/sms/export | Export SMS message by mac V2
 [**GetGridSimCardSmsInboxMessage**](SIMAPI.md#getgridsimcardsmsinboxmessage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/sim/sms/inbox/{simCard} | Get one of Dual-SIM card&#39;s SMS inbox message
 [**GetGridSimCardSmsInboxMessageByMac**](SIMAPI.md#getgridsimcardsmsinboxmessagebymac) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/sim/sms/inbox/{simCard} | Get one of Dual-SIM card&#39;s SMS inbox message by mac
 [**GetGridSimCardSmsOutboxMessage**](SIMAPI.md#getgridsimcardsmsoutboxmessage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/sim/sms/outbox/{simCard} | Get one of Dual-SIM card&#39;s SMS outbox message
@@ -476,6 +477,84 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiExportSmsMessageBymacRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **exportMessage** | [**ExportMessage**](ExportMessage.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ExportSmsMessageBymacV2
+
+> OperationResponseWithoutResult ExportSmsMessageBymacV2(ctx, omadacId, siteId, gatewayMac).ExportMessage(exportMessage).Execute()
+
+Export SMS message by mac V2
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	gatewayMac := "gatewayMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
+	exportMessage := *openapiclient.NewExportMessage(int64(123), int32(123), int64(123), int32(123)) // ExportMessage | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SIMAPI.ExportSmsMessageBymacV2(context.Background(), omadacId, siteId, gatewayMac).ExportMessage(exportMessage).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SIMAPI.ExportSmsMessageBymacV2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportSmsMessageBymacV2`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SIMAPI.ExportSmsMessageBymacV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**gatewayMac** | **string** | Device MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiExportSmsMessageBymacV2Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

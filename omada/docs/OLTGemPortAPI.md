@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ## GetGemPortList
 
-> OperationResponseListGemPortDTO GetGemPortList(ctx, omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+> OperationResponseListGemPortDTO GetGemPortList(ctx, omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 
 Get gem port list
 
@@ -280,11 +280,11 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
 	lineProfileId := "lineProfileId_example" // string | Line Profile ID should be a number between 0-512
-	dto := *openapiclient.NewGemPortListQueryDTO() // GemPortListQueryDTO | 
+	queryParam := *openapiclient.NewGemPortListQueryDTO() // GemPortListQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTGemPortAPI.GetGemPortList(context.Background(), omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTGemPortAPI.GetGemPortList(context.Background(), omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTGemPortAPI.GetGemPortList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**GemPortListQueryDTO**](GemPortListQueryDTO.md) |  | 
+ **queryParam** | [**GemPortListQueryDTO**](GemPortListQueryDTO.md) |  | 
 
 ### Return type
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ## GetGemPortPage
 
-> OperationResponsePageResponseGemPortDTO GetGemPortPage(ctx, omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+> OperationResponsePageResponseGemPortDTO GetGemPortPage(ctx, omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 
 Get gem port page
 
@@ -361,11 +361,11 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
 	lineProfileId := "lineProfileId_example" // string | Line Profile ID should be a number between 0-512
-	dto := *openapiclient.NewGemPortPageQueryDTO() // GemPortPageQueryDTO | 
+	queryParam := *openapiclient.NewGemPortPageQueryDTO() // GemPortPageQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTGemPortAPI.GetGemPortPage(context.Background(), omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTGemPortAPI.GetGemPortPage(context.Background(), omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTGemPortAPI.GetGemPortPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**GemPortPageQueryDTO**](GemPortPageQueryDTO.md) |  | 
+ **queryParam** | [**GemPortPageQueryDTO**](GemPortPageQueryDTO.md) |  | 
 
 ### Return type
 

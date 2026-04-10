@@ -1211,11 +1211,11 @@ type OLTServicePortAPIGetAutoServicePortConfigPageRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *AutoServicePortQueryDTO
+	queryParam *AutoServicePortQueryDTO
 }
 
-func (r OLTServicePortAPIGetAutoServicePortConfigPageRequest) Dto(dto AutoServicePortQueryDTO) OLTServicePortAPIGetAutoServicePortConfigPageRequest {
-	r.dto = &dto
+func (r OLTServicePortAPIGetAutoServicePortConfigPageRequest) QueryParam(queryParam AutoServicePortQueryDTO) OLTServicePortAPIGetAutoServicePortConfigPageRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1267,11 +1267,11 @@ func (a *OLTServicePortAPIService) GetAutoServicePortConfigPageExecute(r OLTServ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1346,11 +1346,11 @@ type OLTServicePortAPIGetAutoServicePortListRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *AutoServicePortQueryDTO
+	queryParam *AutoServicePortQueryDTO
 }
 
-func (r OLTServicePortAPIGetAutoServicePortListRequest) Dto(dto AutoServicePortQueryDTO) OLTServicePortAPIGetAutoServicePortListRequest {
-	r.dto = &dto
+func (r OLTServicePortAPIGetAutoServicePortListRequest) QueryParam(queryParam AutoServicePortQueryDTO) OLTServicePortAPIGetAutoServicePortListRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1402,11 +1402,11 @@ func (a *OLTServicePortAPIService) GetAutoServicePortListExecute(r OLTServicePor
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1481,11 +1481,11 @@ type OLTServicePortAPIGetServicePortListRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *ServicePortQueryDTO
+	queryParam *ServicePortQueryDTO
 }
 
-func (r OLTServicePortAPIGetServicePortListRequest) Dto(dto ServicePortQueryDTO) OLTServicePortAPIGetServicePortListRequest {
-	r.dto = &dto
+func (r OLTServicePortAPIGetServicePortListRequest) QueryParam(queryParam ServicePortQueryDTO) OLTServicePortAPIGetServicePortListRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1537,11 +1537,11 @@ func (a *OLTServicePortAPIService) GetServicePortListExecute(r OLTServicePortAPI
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1616,11 +1616,11 @@ type OLTServicePortAPIGetServicePortPageRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *ServicePortQueryDTO
+	queryParam *ServicePortQueryDTO
 }
 
-func (r OLTServicePortAPIGetServicePortPageRequest) Dto(dto ServicePortQueryDTO) OLTServicePortAPIGetServicePortPageRequest {
-	r.dto = &dto
+func (r OLTServicePortAPIGetServicePortPageRequest) QueryParam(queryParam ServicePortQueryDTO) OLTServicePortAPIGetServicePortPageRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1672,11 +1672,11 @@ func (a *OLTServicePortAPIService) GetServicePortPageExecute(r OLTServicePortAPI
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1751,11 +1751,11 @@ type OLTServicePortAPIGetStatisticInfoDetailRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *StatisticInfoDetailQueryDTO
+	queryParam *StatisticInfoDetailQueryDTO
 }
 
-func (r OLTServicePortAPIGetStatisticInfoDetailRequest) Dto(dto StatisticInfoDetailQueryDTO) OLTServicePortAPIGetStatisticInfoDetailRequest {
-	r.dto = &dto
+func (r OLTServicePortAPIGetStatisticInfoDetailRequest) QueryParam(queryParam StatisticInfoDetailQueryDTO) OLTServicePortAPIGetStatisticInfoDetailRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1807,11 +1807,11 @@ func (a *OLTServicePortAPIService) GetStatisticInfoDetailExecute(r OLTServicePor
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1886,11 +1886,11 @@ type OLTServicePortAPIGetStatisticInfoListRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *StatisticInfoQueryDTO
+	queryParam *StatisticInfoQueryDTO
 }
 
-func (r OLTServicePortAPIGetStatisticInfoListRequest) Dto(dto StatisticInfoQueryDTO) OLTServicePortAPIGetStatisticInfoListRequest {
-	r.dto = &dto
+func (r OLTServicePortAPIGetStatisticInfoListRequest) QueryParam(queryParam StatisticInfoQueryDTO) OLTServicePortAPIGetStatisticInfoListRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1942,11 +1942,11 @@ func (a *OLTServicePortAPIService) GetStatisticInfoListExecute(r OLTServicePortA
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2021,11 +2021,11 @@ type OLTServicePortAPIGetStatisticInfoPageRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *StatisticInfoQueryDTO
+	queryParam *StatisticInfoQueryDTO
 }
 
-func (r OLTServicePortAPIGetStatisticInfoPageRequest) Dto(dto StatisticInfoQueryDTO) OLTServicePortAPIGetStatisticInfoPageRequest {
-	r.dto = &dto
+func (r OLTServicePortAPIGetStatisticInfoPageRequest) QueryParam(queryParam StatisticInfoQueryDTO) OLTServicePortAPIGetStatisticInfoPageRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -2077,11 +2077,11 @@ func (a *OLTServicePortAPIService) GetStatisticInfoPageExecute(r OLTServicePortA
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

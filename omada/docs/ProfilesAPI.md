@@ -902,7 +902,7 @@ Name | Type | Description  | Notes
 
 ## CreateRadiusProfile
 
-> OperationResponseResIdOpenApiVO CreateRadiusProfile(ctx, omadacId, siteId).CreateRadiusProfileOpenApiVO(createRadiusProfileOpenApiVO).Execute()
+> OperationResponseString CreateRadiusProfile(ctx, omadacId, siteId).CreateRadiusProfileOpenApiVO(createRadiusProfileOpenApiVO).Execute()
 
 Create a new Radius profile
 
@@ -932,7 +932,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.CreateRadiusProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateRadiusProfile`: OperationResponseResIdOpenApiVO
+	// response from `CreateRadiusProfile`: OperationResponseString
 	fmt.Fprintf(os.Stdout, "Response from `ProfilesAPI.CreateRadiusProfile`: %v\n", resp)
 }
 ```
@@ -959,7 +959,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseResIdOpenApiVO**](OperationResponseResIdOpenApiVO.md)
+[**OperationResponseString**](OperationResponseString.md)
 
 ### Authorization
 

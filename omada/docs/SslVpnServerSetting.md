@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **SecondaryDns** | Pointer to **string** | Secondary DNS Server of the SSL VPN server. | [optional] 
 **ServicePort** | Pointer to **int32** | Service port of the SSL VPN server should be within the range of 1–65535 | [optional] 
 **Status** | **bool** | Status of the SSL VPN server. | 
+**SupportByDsLiteAndMapE** | Pointer to **bool** | Whether this feature is supported for the DS-Lite or Map-E WAN connection types. | [optional] 
 **SupportLDAP** | Pointer to **bool** | Whether the adopted gateway supports LDAP. | [optional] 
 **SupportRadius** | Pointer to **bool** | Whether the adopted gateway supports Radius. | [optional] 
 **TotalTraffic** | Pointer to **bool** | Whether to proxy all traffic. | [optional] 
@@ -439,6 +440,31 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+
+### GetSupportByDsLiteAndMapE
+
+`func (o *SslVpnServerSetting) GetSupportByDsLiteAndMapE() bool`
+
+GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field if non-nil, zero value otherwise.
+
+### GetSupportByDsLiteAndMapEOk
+
+`func (o *SslVpnServerSetting) GetSupportByDsLiteAndMapEOk() (*bool, bool)`
+
+GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportByDsLiteAndMapE
+
+`func (o *SslVpnServerSetting) SetSupportByDsLiteAndMapE(v bool)`
+
+SetSupportByDsLiteAndMapE sets SupportByDsLiteAndMapE field to given value.
+
+### HasSupportByDsLiteAndMapE
+
+`func (o *SslVpnServerSetting) HasSupportByDsLiteAndMapE() bool`
+
+HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
 
 ### GetSupportLDAP
 

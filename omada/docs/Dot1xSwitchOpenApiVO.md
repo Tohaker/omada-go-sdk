@@ -4,20 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthMode** | Pointer to **int32** | Mode of authentication protocol. AuthMode should be a value as follows: 0: PAP, 1: EAP | [optional] 
-**AuthType** | Pointer to **int32** | Type of the authentication. AuthType should be a value as follows: 0: MAC based, 1: Port based | [optional] 
+**AuthMode** | **int32** | Mode of authentication protocol. AuthMode should be a value as follows: 0: PAP, 1: EAP | 
+**AuthType** | **int32** | Type of the authentication. AuthType should be a value as follows: 0: Port based, 1: Mac based | 
 **Enable** | **bool** | Switch 802.1x function enable status | 
-**Mab** | Pointer to **bool** | MAB enable status | [optional] 
-**MacFormat** | Pointer to **int32** | Format of the MAC address. MacFormat should be a value as follows: 0: aabbccddeeff, 1: aa-bb-cc-dd-ee-ff, 2: aa:bb:cc:dd:ee:ff, 3: AABBCCDDEEFF, 4: AA-BB-CC-DD-EE-FF, 5: AA:BB:CC:DD:EE:FF | [optional] 
-**RadiusProfileId** | Pointer to **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new Radius profile&#39; (&#39;Create a new Radius profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get Radius profile list&#39; (&#39;Get Radius profile template list&#39;) interface | [optional] 
+**GuestVlan** | Pointer to **int32** | Guest VLAN, clients that have not been authorized will be added to the guest VLAN.The value of guest VLAN should be selected from the created LAN Network. | [optional] 
+**Mab** | **bool** | MAB enable status | 
+**MacFormat** | **int32** | Format of the MAC address. MacFormat should be a value as follows: 0: aabbccddeeff, 1: aa-bb-cc-dd-ee-ff, 2: aa:bb:cc:dd:ee:ff, 3: AABBCCDDEEFF, 4: AA-BB-CC-DD-EE-FF, 5: AA:BB:CC:DD:EE:FF | 
+**NasId** | Pointer to **string** | Nas ID,NasId should contain 1~31 characters, except the question mark (?) and double quote (\&quot;). | [optional] 
+**RadiusProfileId** | **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new Radius profile&#39; (&#39;Create a new Radius profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get Radius profile list&#39; (&#39;Get Radius profile template list&#39;) interface | 
 **Switches** | Pointer to [**[]Dot1xSwitchSettingOpenApiVO**](Dot1xSwitchSettingOpenApiVO.md) | Enabled switch ports, optional when update switch 802.1x setting | [optional] 
-**VlanAssign** | Pointer to **bool** | VLAN Assignment enable status | [optional] 
+**VlanAssign** | **bool** | VLAN Assignment enable status | 
 
 ## Methods
 
 ### NewDot1xSwitchOpenApiVO
 
-`func NewDot1xSwitchOpenApiVO(enable bool, ) *Dot1xSwitchOpenApiVO`
+`func NewDot1xSwitchOpenApiVO(authMode int32, authType int32, enable bool, mab bool, macFormat int32, radiusProfileId string, vlanAssign bool, ) *Dot1xSwitchOpenApiVO`
 
 NewDot1xSwitchOpenApiVO instantiates a new Dot1xSwitchOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -51,11 +53,6 @@ and a boolean to check if the value has been set.
 
 SetAuthMode sets AuthMode field to given value.
 
-### HasAuthMode
-
-`func (o *Dot1xSwitchOpenApiVO) HasAuthMode() bool`
-
-HasAuthMode returns a boolean if a field has been set.
 
 ### GetAuthType
 
@@ -76,11 +73,6 @@ and a boolean to check if the value has been set.
 
 SetAuthType sets AuthType field to given value.
 
-### HasAuthType
-
-`func (o *Dot1xSwitchOpenApiVO) HasAuthType() bool`
-
-HasAuthType returns a boolean if a field has been set.
 
 ### GetEnable
 
@@ -102,6 +94,31 @@ and a boolean to check if the value has been set.
 SetEnable sets Enable field to given value.
 
 
+### GetGuestVlan
+
+`func (o *Dot1xSwitchOpenApiVO) GetGuestVlan() int32`
+
+GetGuestVlan returns the GuestVlan field if non-nil, zero value otherwise.
+
+### GetGuestVlanOk
+
+`func (o *Dot1xSwitchOpenApiVO) GetGuestVlanOk() (*int32, bool)`
+
+GetGuestVlanOk returns a tuple with the GuestVlan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGuestVlan
+
+`func (o *Dot1xSwitchOpenApiVO) SetGuestVlan(v int32)`
+
+SetGuestVlan sets GuestVlan field to given value.
+
+### HasGuestVlan
+
+`func (o *Dot1xSwitchOpenApiVO) HasGuestVlan() bool`
+
+HasGuestVlan returns a boolean if a field has been set.
+
 ### GetMab
 
 `func (o *Dot1xSwitchOpenApiVO) GetMab() bool`
@@ -121,11 +138,6 @@ and a boolean to check if the value has been set.
 
 SetMab sets Mab field to given value.
 
-### HasMab
-
-`func (o *Dot1xSwitchOpenApiVO) HasMab() bool`
-
-HasMab returns a boolean if a field has been set.
 
 ### GetMacFormat
 
@@ -146,11 +158,31 @@ and a boolean to check if the value has been set.
 
 SetMacFormat sets MacFormat field to given value.
 
-### HasMacFormat
 
-`func (o *Dot1xSwitchOpenApiVO) HasMacFormat() bool`
+### GetNasId
 
-HasMacFormat returns a boolean if a field has been set.
+`func (o *Dot1xSwitchOpenApiVO) GetNasId() string`
+
+GetNasId returns the NasId field if non-nil, zero value otherwise.
+
+### GetNasIdOk
+
+`func (o *Dot1xSwitchOpenApiVO) GetNasIdOk() (*string, bool)`
+
+GetNasIdOk returns a tuple with the NasId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNasId
+
+`func (o *Dot1xSwitchOpenApiVO) SetNasId(v string)`
+
+SetNasId sets NasId field to given value.
+
+### HasNasId
+
+`func (o *Dot1xSwitchOpenApiVO) HasNasId() bool`
+
+HasNasId returns a boolean if a field has been set.
 
 ### GetRadiusProfileId
 
@@ -171,11 +203,6 @@ and a boolean to check if the value has been set.
 
 SetRadiusProfileId sets RadiusProfileId field to given value.
 
-### HasRadiusProfileId
-
-`func (o *Dot1xSwitchOpenApiVO) HasRadiusProfileId() bool`
-
-HasRadiusProfileId returns a boolean if a field has been set.
 
 ### GetSwitches
 
@@ -221,11 +248,6 @@ and a boolean to check if the value has been set.
 
 SetVlanAssign sets VlanAssign field to given value.
 
-### HasVlanAssign
-
-`func (o *Dot1xSwitchOpenApiVO) HasVlanAssign() bool`
-
-HasVlanAssign returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

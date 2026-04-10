@@ -41,7 +41,7 @@ type NATAPI interface {
 	/*
 	CreatePortForwarding Create new port forwarding
 
-	Create new port forwarding.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34201  -  Only one DMZ rule is allowed for one WAN port.<br/>-34209  -  Cannot create a port forwarding rule with the same Interface, Source Port, and WAN IP as an existing one. Please modify.<br/>-34245  -  The limited IP address range conflict.<br/>-34259  -  The Gateway does not support WAN IP in Portforwarding<br/>-34260  -  The Gateway does not support select Virtual WAN in Portforwarding<br/>-34261  -  The source port already exists for the chosen interface(s). Please change the source port.
+	Create new port forwarding.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34201  -  Only one DMZ rule is allowed for one WAN port.<br/>-34209  -  Cannot create a port forwarding rule with the same Interface, Source Port, and WAN IP as an existing one. Please modify.<br/>-34245  -  The limited IP address range conflict.<br/>-34259  -  The Gateway does not support WAN IP in Portforwarding<br/>-34260  -  The Gateway does not support select Virtual WAN in Portforwarding<br/>-34261  -  The source port already exists for the chosen interface(s). Please change the source port.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -101,8 +101,8 @@ type NATAPI interface {
 	GetAlg(ctx context.Context, omadacId string, siteId string) NATAPIGetAlgRequest
 
 	// GetAlgExecute executes the request
-	//  @return OperationResponseALGSetting
-	GetAlgExecute(r NATAPIGetAlgRequest) (*OperationResponseALGSetting, *http.Response, error)
+	//  @return OperationResponseGetAlgOpenApiVO
+	GetAlgExecute(r NATAPIGetAlgRequest) (*OperationResponseGetAlgOpenApiVO, *http.Response, error)
 
 	/*
 	GetGridOtoNats Get One-to-One NAT list
@@ -172,7 +172,7 @@ type NATAPI interface {
 	/*
 	ModifyPortForwarding Modify port forwarding
 
-	Modify port forwarding.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34201  -  Only one DMZ rule is allowed for one WAN port.<br/>-34209  -  Cannot create a port forwarding rule with the same Interface, Source Port, and WAN IP as an existing one. Please modify.<br/>-34245  -  The limited IP address range conflict.<br/>-34259  -  The Gateway does not support WAN IP in Portforwarding<br/>-34260  -  The Gateway does not support select Virtual WAN in Portforwarding<br/>-34261  -  The source port already exists for the chosen interface(s). Please change the source port.
+	Modify port forwarding.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34201  -  Only one DMZ rule is allowed for one WAN port.<br/>-34209  -  Cannot create a port forwarding rule with the same Interface, Source Port, and WAN IP as an existing one. Please modify.<br/>-34245  -  The limited IP address range conflict.<br/>-34259  -  The Gateway does not support WAN IP in Portforwarding<br/>-34260  -  The Gateway does not support select Virtual WAN in Portforwarding<br/>-34261  -  The source port already exists for the chosen interface(s). Please change the source port.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -342,7 +342,7 @@ func (r NATAPICreatePortForwardingRequest) Execute() (*OperationResponseWithoutR
 /*
 CreatePortForwarding Create new port forwarding
 
-Create new port forwarding.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34201  -  Only one DMZ rule is allowed for one WAN port.<br/>-34209  -  Cannot create a port forwarding rule with the same Interface, Source Port, and WAN IP as an existing one. Please modify.<br/>-34245  -  The limited IP address range conflict.<br/>-34259  -  The Gateway does not support WAN IP in Portforwarding<br/>-34260  -  The Gateway does not support select Virtual WAN in Portforwarding<br/>-34261  -  The source port already exists for the chosen interface(s). Please change the source port.
+Create new port forwarding.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34201  -  Only one DMZ rule is allowed for one WAN port.<br/>-34209  -  Cannot create a port forwarding rule with the same Interface, Source Port, and WAN IP as an existing one. Please modify.<br/>-34245  -  The limited IP address range conflict.<br/>-34259  -  The Gateway does not support WAN IP in Portforwarding<br/>-34260  -  The Gateway does not support select Virtual WAN in Portforwarding<br/>-34261  -  The source port already exists for the chosen interface(s). Please change the source port.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -711,7 +711,7 @@ type NATAPIGetAlgRequest struct {
 	siteId string
 }
 
-func (r NATAPIGetAlgRequest) Execute() (*OperationResponseALGSetting, *http.Response, error) {
+func (r NATAPIGetAlgRequest) Execute() (*OperationResponseGetAlgOpenApiVO, *http.Response, error) {
 	return r.ApiService.GetAlgExecute(r)
 }
 
@@ -735,13 +735,13 @@ func (a *NATAPIService) GetAlg(ctx context.Context, omadacId string, siteId stri
 }
 
 // Execute executes the request
-//  @return OperationResponseALGSetting
-func (a *NATAPIService) GetAlgExecute(r NATAPIGetAlgRequest) (*OperationResponseALGSetting, *http.Response, error) {
+//  @return OperationResponseGetAlgOpenApiVO
+func (a *NATAPIService) GetAlgExecute(r NATAPIGetAlgRequest) (*OperationResponseGetAlgOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseALGSetting
+		localVarReturnValue  *OperationResponseGetAlgOpenApiVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NATAPIService.GetAlg")
@@ -1400,7 +1400,7 @@ func (r NATAPIModifyPortForwardingRequest) Execute() (*OperationResponseWithoutR
 /*
 ModifyPortForwarding Modify port forwarding
 
-Modify port forwarding.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34201  -  Only one DMZ rule is allowed for one WAN port.<br/>-34209  -  Cannot create a port forwarding rule with the same Interface, Source Port, and WAN IP as an existing one. Please modify.<br/>-34245  -  The limited IP address range conflict.<br/>-34259  -  The Gateway does not support WAN IP in Portforwarding<br/>-34260  -  The Gateway does not support select Virtual WAN in Portforwarding<br/>-34261  -  The source port already exists for the chosen interface(s). Please change the source port.
+Modify port forwarding.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34201  -  Only one DMZ rule is allowed for one WAN port.<br/>-34209  -  Cannot create a port forwarding rule with the same Interface, Source Port, and WAN IP as an existing one. Please modify.<br/>-34245  -  The limited IP address range conflict.<br/>-34259  -  The Gateway does not support WAN IP in Portforwarding<br/>-34260  -  The Gateway does not support select Virtual WAN in Portforwarding<br/>-34261  -  The source port already exists for the chosen interface(s). Please change the source port.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

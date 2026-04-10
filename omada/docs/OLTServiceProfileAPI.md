@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ## GetServiceProfileList
 
-> OperationResponseListServiceProfileVO GetServiceProfileList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListServiceProfileVO GetServiceProfileList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get service profile list
 
@@ -270,11 +270,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewServiceProfileListQueryDTO() // ServiceProfileListQueryDTO | 
+	queryParam := *openapiclient.NewServiceProfileListQueryDTO() // ServiceProfileListQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTServiceProfileAPI.GetServiceProfileList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTServiceProfileAPI.GetServiceProfileList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTServiceProfileAPI.GetServiceProfileList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**ServiceProfileListQueryDTO**](ServiceProfileListQueryDTO.md) |  | 
+ **queryParam** | [**ServiceProfileListQueryDTO**](ServiceProfileListQueryDTO.md) |  | 
 
 ### Return type
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ## GetServiceProfilePage
 
-> OperationResponsePageResponseServiceProfileVO GetServiceProfilePage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseServiceProfileVO GetServiceProfilePage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get service profile page
 
@@ -348,11 +348,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewServiceProfilePageQueryDTO() // ServiceProfilePageQueryDTO | 
+	queryParam := *openapiclient.NewServiceProfilePageQueryDTO() // ServiceProfilePageQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTServiceProfileAPI.GetServiceProfilePage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTServiceProfileAPI.GetServiceProfilePage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTServiceProfileAPI.GetServiceProfilePage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**ServiceProfilePageQueryDTO**](ServiceProfilePageQueryDTO.md) |  | 
+ **queryParam** | [**ServiceProfilePageQueryDTO**](ServiceProfilePageQueryDTO.md) |  | 
 
 ### Return type
 

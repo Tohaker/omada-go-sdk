@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **IpLong** | Pointer to **int64** |  | [optional] 
 **LeftLeaseTime** | Pointer to **string** | Left Lease Time | [optional] 
 **MacAddress** | Pointer to **string** | Mac Address | [optional] 
+**Model** | Pointer to **string** | device Model | [optional] 
+**ModelVersion** | Pointer to **string** | device ModelVersion | [optional] 
 **Name** | Pointer to **string** | Dhcp User Name | [optional] 
 **NetId** | Pointer to **string** | Network ID | [optional] 
 **NetName** | Pointer to **string** | Network Name | [optional] 
@@ -136,6 +138,56 @@ SetMacAddress sets MacAddress field to given value.
 `func (o *DhcpUserVO) HasMacAddress() bool`
 
 HasMacAddress returns a boolean if a field has been set.
+
+### GetModel
+
+`func (o *DhcpUserVO) GetModel() string`
+
+GetModel returns the Model field if non-nil, zero value otherwise.
+
+### GetModelOk
+
+`func (o *DhcpUserVO) GetModelOk() (*string, bool)`
+
+GetModelOk returns a tuple with the Model field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModel
+
+`func (o *DhcpUserVO) SetModel(v string)`
+
+SetModel sets Model field to given value.
+
+### HasModel
+
+`func (o *DhcpUserVO) HasModel() bool`
+
+HasModel returns a boolean if a field has been set.
+
+### GetModelVersion
+
+`func (o *DhcpUserVO) GetModelVersion() string`
+
+GetModelVersion returns the ModelVersion field if non-nil, zero value otherwise.
+
+### GetModelVersionOk
+
+`func (o *DhcpUserVO) GetModelVersionOk() (*string, bool)`
+
+GetModelVersionOk returns a tuple with the ModelVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModelVersion
+
+`func (o *DhcpUserVO) SetModelVersion(v string)`
+
+SetModelVersion sets ModelVersion field to given value.
+
+### HasModelVersion
+
+`func (o *DhcpUserVO) HasModelVersion() bool`
+
+HasModelVersion returns a boolean if a field has been set.
 
 ### GetName
 

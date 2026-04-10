@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ## GetOntEthPortList
 
-> OperationResponseListOntEthPortDTO GetOntEthPortList(ctx, omadacId, siteId, deviceMac, serviceId).Dto(dto).Execute()
+> OperationResponseListOntEthPortDTO GetOntEthPortList(ctx, omadacId, siteId, deviceMac, serviceId).QueryParam(queryParam).Execute()
 
 Get ont eth port list
 
@@ -198,11 +198,11 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
 	serviceId := "serviceId_example" // string | Service Profile ID should be a number between 0-512
-	dto := *openapiclient.NewOntEthPortListQueryDTO() // OntEthPortListQueryDTO | 
+	queryParam := *openapiclient.NewOntEthPortListQueryDTO() // OntEthPortListQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONTPortAPI.GetOntEthPortList(context.Background(), omadacId, siteId, deviceMac, serviceId).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONTPortAPI.GetOntEthPortList(context.Background(), omadacId, siteId, deviceMac, serviceId).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONTPortAPI.GetOntEthPortList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OntEthPortListQueryDTO**](OntEthPortListQueryDTO.md) |  | 
+ **queryParam** | [**OntEthPortListQueryDTO**](OntEthPortListQueryDTO.md) |  | 
 
 ### Return type
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ## GetOntPotsPortList
 
-> OperationResponseListOntPotsPortDTO GetOntPotsPortList(ctx, omadacId, siteId, deviceMac, serviceId).Dto(dto).Execute()
+> OperationResponseListOntPotsPortDTO GetOntPotsPortList(ctx, omadacId, siteId, deviceMac, serviceId).QueryParam(queryParam).Execute()
 
 Get ont pots port list
 
@@ -279,11 +279,11 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
 	serviceId := "serviceId_example" // string | Service Profile ID should be a number between 0-512
-	dto := *openapiclient.NewOntPotsPortListQueryDTO() // OntPotsPortListQueryDTO | 
+	queryParam := *openapiclient.NewOntPotsPortListQueryDTO() // OntPotsPortListQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTONTPortAPI.GetOntPotsPortList(context.Background(), omadacId, siteId, deviceMac, serviceId).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTONTPortAPI.GetOntPotsPortList(context.Background(), omadacId, siteId, deviceMac, serviceId).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTONTPortAPI.GetOntPotsPortList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**OntPotsPortListQueryDTO**](OntPotsPortListQueryDTO.md) |  | 
+ **queryParam** | [**OntPotsPortListQueryDTO**](OntPotsPortListQueryDTO.md) |  | 
 
 ### Return type
 

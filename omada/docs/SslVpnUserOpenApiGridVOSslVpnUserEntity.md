@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **CurrentSize** | Pointer to **int32** | Number of entries per page. | [optional] 
 **Data** | Pointer to [**[]SslVpnUserEntity**](SslVpnUserEntity.md) |  | [optional] 
 **Expired** | Pointer to **int32** | Expired number of the SSL VPN user | [optional] 
+**SslVpnMaxConUserNum** | Pointer to **int32** |  | [optional] 
 **Total** | Pointer to **int32** | Total number of the SSL VPN user | [optional] 
 **TotalRows** | Pointer to **int64** | Total rows of all items. | [optional] 
 
@@ -155,6 +156,31 @@ SetExpired sets Expired field to given value.
 `func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) HasExpired() bool`
 
 HasExpired returns a boolean if a field has been set.
+
+### GetSslVpnMaxConUserNum
+
+`func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) GetSslVpnMaxConUserNum() int32`
+
+GetSslVpnMaxConUserNum returns the SslVpnMaxConUserNum field if non-nil, zero value otherwise.
+
+### GetSslVpnMaxConUserNumOk
+
+`func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) GetSslVpnMaxConUserNumOk() (*int32, bool)`
+
+GetSslVpnMaxConUserNumOk returns a tuple with the SslVpnMaxConUserNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSslVpnMaxConUserNum
+
+`func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) SetSslVpnMaxConUserNum(v int32)`
+
+SetSslVpnMaxConUserNum sets SslVpnMaxConUserNum field to given value.
+
+### HasSslVpnMaxConUserNum
+
+`func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) HasSslVpnMaxConUserNum() bool`
+
+HasSslVpnMaxConUserNum returns a boolean if a field has been set.
 
 ### GetTotal
 

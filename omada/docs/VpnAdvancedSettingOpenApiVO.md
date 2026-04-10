@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Dpd** | Pointer to **bool** | DPD of the VPN advanced setting. | [optional] 
-**DpdInterval** | Pointer to **int32** | DPD interval of the VPN advanced setting. | [optional] 
+**DpdInterval** | Pointer to **int32** | DPD interval of the VPN advanced setting should be within the range of 1-300 seconds. | [optional] 
 **EncapsulationMode** | Pointer to **int32** | Encapsulation mode should be a value as follows: 0: Tunnel Mode; 1: Transport Mode. | [optional] 
 **ExchangeMode** | Pointer to **int32** | Exchange mode should be a value as follows: 0: Main Mode; 1: Aggressive Mode. | [optional] 
 **KeyExchangeVersion** | Pointer to **int32** | Key exchange version should be a value as follows: 0: IKEv1; 1: IKEv2. | [optional] 
@@ -13,16 +13,16 @@ Name | Type | Description | Notes
 **LocalName** | Pointer to **string** | Local name of the VPN advanced setting. | [optional] 
 **NegotiationMode** | Pointer to **int32** | Negotiation mode should be a value as follows: 0: Initiator; 1: Aggressive Mode. | [optional] 
 **Pfs** | Pointer to **int32** | PFS should be a value as follows: 0: None; 1: dh1; 2: dh2; 3: dh5; 14: dh14; 15: dh15. | [optional] 
-**Phase1Proposal1** | Pointer to **int32** | Phase1 proposal1 should be a value as follows: 0: MD5; 1: SHA1. | [optional] 
+**Phase1Proposal1** | Pointer to **int32** | Phase1 proposal1 should be a value as follows: 0: MD5; 1: SHA1; 2: SHA256; 3: SHA384; 4: SHA512. | [optional] 
 **Phase1Proposal2** | Pointer to **int32** | Phase1 proposal2 should be a value as follows: 0: DES; 1: 3DES; 2: AES128; 3: AES192; 4: AES256. | [optional] 
 **Phase1Proposal3** | Pointer to **int32** | Phase1 proposal3 should be a value as follows: 0: DH1; 1: DH2; 2: DH5; 3: DH14; 4: DH15; 5: DH16; 6: DH19; 7: DH20; 8: DH21; 9: DH25; 10: DH26. | [optional] 
 **Phase2Proposal1** | Pointer to **int32** | Phase2 proposal1 should be a value as follows: 0: AH; 1: ESP. | [optional] 
-**Phase2Proposal2** | Pointer to **int32** | Phase2 proposal2 should be a value as follows: 0: MD; 1: SHA1. | [optional] 
+**Phase2Proposal2** | Pointer to **int32** | Phase2 proposal2 should be a value as follows: 0: MD5; 1: SHA1; 2: SHA256; 3: SHA384; 4:SHA512. | [optional] 
 **Phase2Proposal3** | Pointer to **int32** | Phase2 proposal3 should be a value as follows: 0: DES; 1: 3DES; 2: AES128; 3: AES192; 4: AES256. | [optional] 
 **RemoteIdType** | Pointer to **int32** | Remote ID type should be a value as follows: 0: IP Address; 1: Name. | [optional] 
 **RemoteName** | Pointer to **string** | Remote name of the VPN advanced setting. | [optional] 
-**SaLifetime** | Pointer to **int32** | SA lifetime of the VPN advanced setting. | [optional] 
-**SaLifetime2** | Pointer to **int32** | SA lifetime2 of the VPN advanced setting. | [optional] 
+**SaLifetime** | Pointer to **int32** | SA lifetime of the VPN advanced setting should be within the range of 60-604800 seconds. | [optional] 
+**SaLifetime2** | Pointer to **int32** | SA lifetime2 of the VPN advanced setting should be within the range of 120-604800 seconds. | [optional] 
 
 ## Methods
 

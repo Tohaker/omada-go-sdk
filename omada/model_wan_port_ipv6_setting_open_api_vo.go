@@ -21,12 +21,13 @@ var _ MappedNullable = &WanPortIpv6SettingOpenApiVO{}
 
 // WanPortIpv6SettingOpenApiVO Port IPv6 setting
 type WanPortIpv6SettingOpenApiVO struct {
+	// IPv6 enable.
 	Enable bool `json:"enable"`
 	Ipv6Dynamic *Ipv6DynamicOpenApiVO `json:"ipv6Dynamic,omitempty"`
 	Ipv6Pppoe *Ipv6PppoeOpenApiVO `json:"ipv6Pppoe,omitempty"`
 	Ipv6Static *Ipv6StaticOpenApiVO `json:"ipv6Static,omitempty"`
 	Ipv6Tunnel *Ipv6TunnelOpenApiVO `json:"ipv6Tunnel,omitempty"`
-	// IPv4 connection type should be a value as follows: 0: static; 1: dynamic; 2: PPPoE; 3: 6to4Tunnel; 4: bridge.
+	// IPv6 connection type should be a value as follows: 0: static; 1: dynamic; 2: PPPoE; 3: 6to4Tunnel; 4: bridge.
 	ProtoType *int32 `json:"protoType,omitempty"`
 }
 

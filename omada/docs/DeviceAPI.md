@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**AdoptDevice**](DeviceAPI.md#adoptdevice) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/start-adopt | Start adopt device
 [**BatchAdopt**](DeviceAPI.md#batchadopt) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/batch-adopt | batch adopt device
 [**CancelRollingUpgrade**](DeviceAPI.md#cancelrollingupgrade) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/rolling-upgrade-tasks/{taskId} | End the rolling upgrade task
+[**CheckMacType**](DeviceAPI.md#checkmactype) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/check-mac-type | Check the device type by mac.
 [**CopyDeviceConfiguration**](DeviceAPI.md#copydeviceconfiguration) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/copy | Copy configuration
 [**DeleteTag**](DeviceAPI.md#deletetag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Delete an existing tag
 [**DownloadDeviceInfo**](DeviceAPI.md#downloaddeviceinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/{deviceMac}/downloadDeviceInfo/{type} | Download device information.
@@ -967,6 +968,82 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CheckMacType
+
+> OperationResponseCheckMacTypeOpenApiVO CheckMacType(ctx, omadacId, siteId, deviceMac).Execute()
+
+Check the device type by mac.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceAPI.CheckMacType(context.Background(), omadacId, siteId, deviceMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.CheckMacType``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CheckMacType`: OperationResponseCheckMacTypeOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.CheckMacType`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**deviceMac** | **string** | Device MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCheckMacTypeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseCheckMacTypeOpenApiVO**](OperationResponseCheckMacTypeOpenApiVO.md)
 
 ### Authorization
 

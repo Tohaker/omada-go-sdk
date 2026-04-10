@@ -25,7 +25,7 @@ type GatewayACLInfo struct {
 	Description string `json:"description"`
 	// Destination IDs, which depends on destinationType, for example: if destinationType is network, destinationIds should be LAN network ID. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface.
 	DestinationIds []string `json:"destinationIds"`
-	// DestinationType should be a value as follows: 0: network; 1: IP Group; 2: IP-Port Group; 6: IPv6 Group; 7: IPv6-Port Group;10: Domain Group.
+	// DestinationType should be a value as follows: 0: network; 1: IP Group; 2: IP-Port Group; 6: IPv6 Group; 7: IPv6-Port Group;10: Domain Group; 11: !Network; 12: !IP Group；13: !IP-Port Group；14: !IPv6 Group；15: !IPv6-port Group
 	DestinationType int32 `json:"destinationType"`
 	Direction *GatewayDirectionEntity `json:"direction,omitempty"`
 	// ACL ID
@@ -38,7 +38,7 @@ type GatewayACLInfo struct {
 	Protocols []int32 `json:"protocols"`
 	// Source IDs, which depends on sourceType, for example: if sourceType is network, sourceIds should be LAN network ID. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface.
 	SourceIds []string `json:"sourceIds"`
-	// SourceType should be a value as follows: 0: network; 1: IP Group; 2: IP-Port Group; 4: SSID; 6: IPv6 Group; 7: IPv6-Port Group; 8: Country; 9: Country Group
+	// SourceType should be a value as follows: 0: network; 1: IP Group; 2: IP-Port Group; 4: SSID; 6: IPv6 Group; 7: IPv6-Port Group; 8: Country; 9: Country Group; 11: !Network; 12: !IP Group; 13: !IP-Port Group; 14: !IPv6 Group; 15: !IPv6-port Group
 	SourceType int32 `json:"sourceType"`
 	// StateMode should be a value as follows: 0: auto; 1: manual
 	StateMode int32 `json:"stateMode"`

@@ -552,8 +552,8 @@ type VoIPAPI interface {
 	GetTelephoneNumberBatchConfigList(ctx context.Context, omadacId string, siteId string) VoIPAPIGetTelephoneNumberBatchConfigListRequest
 
 	// GetTelephoneNumberBatchConfigListExecute executes the request
-	//  @return OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO
-	GetTelephoneNumberBatchConfigListExecute(r VoIPAPIGetTelephoneNumberBatchConfigListRequest) (*OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO, *http.Response, error)
+	//  @return OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO
+	GetTelephoneNumberBatchConfigListExecute(r VoIPAPIGetTelephoneNumberBatchConfigListRequest) (*OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO, *http.Response, error)
 
 	/*
 	GetTelephoneNumberRegistrationResults Get Telephone Number Registration Results
@@ -3307,6 +3307,12 @@ type VoIPAPIDeleteVoipTelephoneBookRequest struct {
 	omadacId string
 	siteId string
 	contactId string
+	voipDeleteTelephoneBook *VoipDeleteTelephoneBook
+}
+
+func (r VoIPAPIDeleteVoipTelephoneBookRequest) VoipDeleteTelephoneBook(voipDeleteTelephoneBook VoipDeleteTelephoneBook) VoIPAPIDeleteVoipTelephoneBookRequest {
+	r.voipDeleteTelephoneBook = &voipDeleteTelephoneBook
+	return r
 }
 
 func (r VoIPAPIDeleteVoipTelephoneBookRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
@@ -3357,9 +3363,12 @@ func (a *VoIPAPIService) DeleteVoipTelephoneBookExecute(r VoIPAPIDeleteVoipTelep
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.voipDeleteTelephoneBook == nil {
+		return localVarReturnValue, nil, reportError("voipDeleteTelephoneBook is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -3375,6 +3384,8 @@ func (a *VoIPAPIService) DeleteVoipTelephoneBookExecute(r VoIPAPIDeleteVoipTelep
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.voipDeleteTelephoneBook
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -5112,7 +5123,7 @@ func (r VoIPAPIGetTelephoneNumberBatchConfigListRequest) PageSize(pageSize int32
 	return r
 }
 
-func (r VoIPAPIGetTelephoneNumberBatchConfigListRequest) Execute() (*OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO, *http.Response, error) {
+func (r VoIPAPIGetTelephoneNumberBatchConfigListRequest) Execute() (*OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO, *http.Response, error) {
 	return r.ApiService.GetTelephoneNumberBatchConfigListExecute(r)
 }
 
@@ -5136,13 +5147,13 @@ func (a *VoIPAPIService) GetTelephoneNumberBatchConfigList(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO
-func (a *VoIPAPIService) GetTelephoneNumberBatchConfigListExecute(r VoIPAPIGetTelephoneNumberBatchConfigListRequest) (*OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO, *http.Response, error) {
+//  @return OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO
+func (a *VoIPAPIService) GetTelephoneNumberBatchConfigListExecute(r VoIPAPIGetTelephoneNumberBatchConfigListRequest) (*OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO
+		localVarReturnValue  *OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoIPAPIService.GetTelephoneNumberBatchConfigList")
@@ -6450,11 +6461,11 @@ type VoIPAPIImportTelephoneNumberListFromFileRequest struct {
 	ApiService VoIPAPI
 	omadacId string
 	siteId string
-	uploadCertificateRequest *UploadCertificateRequest
+	uploadSSLKeyRequest *UploadSSLKeyRequest
 }
 
-func (r VoIPAPIImportTelephoneNumberListFromFileRequest) UploadCertificateRequest(uploadCertificateRequest UploadCertificateRequest) VoIPAPIImportTelephoneNumberListFromFileRequest {
-	r.uploadCertificateRequest = &uploadCertificateRequest
+func (r VoIPAPIImportTelephoneNumberListFromFileRequest) UploadSSLKeyRequest(uploadSSLKeyRequest UploadSSLKeyRequest) VoIPAPIImportTelephoneNumberListFromFileRequest {
+	r.uploadSSLKeyRequest = &uploadSSLKeyRequest
 	return r
 }
 
@@ -6522,7 +6533,7 @@ func (a *VoIPAPIService) ImportTelephoneNumberListFromFileExecute(r VoIPAPIImpor
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.uploadCertificateRequest
+	localVarPostBody = r.uploadSSLKeyRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

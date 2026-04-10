@@ -25,6 +25,8 @@ type UpnpSettingOpenApiVO struct {
 	Enable bool `json:"enable"`
 	// This field represents LAN Network ID. LAN Network ID can be obtained from \"Get all \"single\"/\"multi\" interface lan network\" interface.
 	NetworkIds []string `json:"networkIds,omitempty"`
+	// Whether this feature is supported for the DS-Lite or Map-E WAN connection types.
+	SupportByDsLiteAndMapE *bool `json:"supportByDsLiteAndMapE,omitempty"`
 	// This field represents WAN Port ID, WAN Port ID can be obtained from \"Get internet basic info\" interface.
 	WanPortIds []string `json:"wanPortIds,omitempty"`
 }
@@ -105,6 +107,38 @@ func (o *UpnpSettingOpenApiVO) SetNetworkIds(v []string) {
 	o.NetworkIds = v
 }
 
+// GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field value if set, zero value otherwise.
+func (o *UpnpSettingOpenApiVO) GetSupportByDsLiteAndMapE() bool {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportByDsLiteAndMapE
+}
+
+// GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpnpSettingOpenApiVO) GetSupportByDsLiteAndMapEOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		return nil, false
+	}
+	return o.SupportByDsLiteAndMapE, true
+}
+
+// HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
+func (o *UpnpSettingOpenApiVO) HasSupportByDsLiteAndMapE() bool {
+	if o != nil && !IsNil(o.SupportByDsLiteAndMapE) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportByDsLiteAndMapE gets a reference to the given bool and assigns it to the SupportByDsLiteAndMapE field.
+func (o *UpnpSettingOpenApiVO) SetSupportByDsLiteAndMapE(v bool) {
+	o.SupportByDsLiteAndMapE = &v
+}
+
 // GetWanPortIds returns the WanPortIds field value if set, zero value otherwise.
 func (o *UpnpSettingOpenApiVO) GetWanPortIds() []string {
 	if o == nil || IsNil(o.WanPortIds) {
@@ -150,6 +184,9 @@ func (o UpnpSettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize["enable"] = o.Enable
 	if !IsNil(o.NetworkIds) {
 		toSerialize["networkIds"] = o.NetworkIds
+	}
+	if !IsNil(o.SupportByDsLiteAndMapE) {
+		toSerialize["supportByDsLiteAndMapE"] = o.SupportByDsLiteAndMapE
 	}
 	if !IsNil(o.WanPortIds) {
 		toSerialize["wanPortIds"] = o.WanPortIds

@@ -21,6 +21,8 @@ var _ MappedNullable = &CheckIpMacBindingExportToDhcpReservationOpenApiVO{}
 
 // CheckIpMacBindingExportToDhcpReservationOpenApiVO struct for CheckIpMacBindingExportToDhcpReservationOpenApiVO
 type CheckIpMacBindingExportToDhcpReservationOpenApiVO struct {
+	// IP-MAC binding entry ID.
+	ImbId *string `json:"imbId,omitempty"`
 	// Interface ID. WAN port ID can be obtained from 'Get internet basic info' interface. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface.
 	InterfaceId string `json:"interfaceId"`
 	// IP of the IP MAC binding entity.
@@ -49,6 +51,38 @@ func NewCheckIpMacBindingExportToDhcpReservationOpenApiVO(interfaceId string, ip
 func NewCheckIpMacBindingExportToDhcpReservationOpenApiVOWithDefaults() *CheckIpMacBindingExportToDhcpReservationOpenApiVO {
 	this := CheckIpMacBindingExportToDhcpReservationOpenApiVO{}
 	return &this
+}
+
+// GetImbId returns the ImbId field value if set, zero value otherwise.
+func (o *CheckIpMacBindingExportToDhcpReservationOpenApiVO) GetImbId() string {
+	if o == nil || IsNil(o.ImbId) {
+		var ret string
+		return ret
+	}
+	return *o.ImbId
+}
+
+// GetImbIdOk returns a tuple with the ImbId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CheckIpMacBindingExportToDhcpReservationOpenApiVO) GetImbIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ImbId) {
+		return nil, false
+	}
+	return o.ImbId, true
+}
+
+// HasImbId returns a boolean if a field has been set.
+func (o *CheckIpMacBindingExportToDhcpReservationOpenApiVO) HasImbId() bool {
+	if o != nil && !IsNil(o.ImbId) {
+		return true
+	}
+
+	return false
+}
+
+// SetImbId gets a reference to the given string and assigns it to the ImbId field.
+func (o *CheckIpMacBindingExportToDhcpReservationOpenApiVO) SetImbId(v string) {
+	o.ImbId = &v
 }
 
 // GetInterfaceId returns the InterfaceId field value
@@ -133,6 +167,9 @@ func (o CheckIpMacBindingExportToDhcpReservationOpenApiVO) MarshalJSON() ([]byte
 
 func (o CheckIpMacBindingExportToDhcpReservationOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ImbId) {
+		toSerialize["imbId"] = o.ImbId
+	}
 	toSerialize["interfaceId"] = o.InterfaceId
 	toSerialize["ip"] = o.Ip
 	toSerialize["mac"] = o.Mac

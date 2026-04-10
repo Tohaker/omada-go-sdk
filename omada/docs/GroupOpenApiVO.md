@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **PortList** | Pointer to **[]string** | Port list. Valid when [portType] is 0 | [optional] 
 **PortMaskList** | Pointer to [**[]PortMaskOpenApiVO**](PortMaskOpenApiVO.md) | Port mask list. [portType] value of 1 are is required | [optional] 
 **PortType** | Pointer to **int32** | Port type. 0: port range 1: port mask. Valid when [type] is 1 or 4 | [optional] 
-**Type** | Pointer to **int32** | Type of group profile. 0: IP Group; 1: IP Port Group; 2: MAC Group; 3: IPv6 Group; 4: IPv6 Port Group; 5: Country Group; 7: Domain Group | [optional] 
+**Type** | Pointer to **int32** | Type of group profile. 0: IP Group; 1: IP Port Group; 2: MAC Group; 3: IPv6 Group; 4: IPv6 Port Group; 5: Country Group; 7: Domain Group; | [optional] 
 
 ## Methods
 

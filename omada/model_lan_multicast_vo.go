@@ -19,6 +19,8 @@ var _ MappedNullable = &LanMulticastVO{}
 
 // LanMulticastVO struct for LanMulticastVO
 type LanMulticastVO struct {
+	// Whether open flood known protocols.
+	FloodKnownEnable *bool `json:"floodKnownEnable,omitempty"`
 	// The primary id of the multicast snooping.
 	Id *string `json:"id,omitempty"`
 	// The querier configs for IGMP snooping(ipv4).
@@ -29,8 +31,6 @@ type LanMulticastVO struct {
 	Name *string `json:"name,omitempty"`
 	// The collection of snooping network ids related to this multicast snooping config.
 	Networks []NetworkVO `json:"networks,omitempty"`
-	// The id of the omada the multicast snooping belongs to.
-	OmadacId *string `json:"omadacId,omitempty"`
 	// When multicast snooping value 0,then represents the IGMP snooping type,else if value 1,then represents MLD snooping type.
 	Protocol *int32 `json:"protocol,omitempty"`
 	// Whether open querier.
@@ -41,8 +41,6 @@ type LanMulticastVO struct {
 	RouterPortEnable *bool `json:"routerPortEnable,omitempty"`
 	// The specific list of router ports info,including network, devices and the ports on them.
 	RouterPorts []RouterPortVO `json:"routerPorts,omitempty"`
-	// The id of the site the multicast snooping belongs to.
-	SiteId *string `json:"siteId,omitempty"`
 	SnoopConfig *SnoopConfigVO `json:"snoopConfig,omitempty"`
 	UnknownMulticastExceptDevice *UnknownMulticastConfigVO `json:"unknownMulticastExceptDevice,omitempty"`
 	// When it selects 0,then send forward, it selects 1,then discard info, it selects 2,then route port first.
@@ -64,6 +62,38 @@ func NewLanMulticastVO() *LanMulticastVO {
 func NewLanMulticastVOWithDefaults() *LanMulticastVO {
 	this := LanMulticastVO{}
 	return &this
+}
+
+// GetFloodKnownEnable returns the FloodKnownEnable field value if set, zero value otherwise.
+func (o *LanMulticastVO) GetFloodKnownEnable() bool {
+	if o == nil || IsNil(o.FloodKnownEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.FloodKnownEnable
+}
+
+// GetFloodKnownEnableOk returns a tuple with the FloodKnownEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanMulticastVO) GetFloodKnownEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.FloodKnownEnable) {
+		return nil, false
+	}
+	return o.FloodKnownEnable, true
+}
+
+// HasFloodKnownEnable returns a boolean if a field has been set.
+func (o *LanMulticastVO) HasFloodKnownEnable() bool {
+	if o != nil && !IsNil(o.FloodKnownEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetFloodKnownEnable gets a reference to the given bool and assigns it to the FloodKnownEnable field.
+func (o *LanMulticastVO) SetFloodKnownEnable(v bool) {
+	o.FloodKnownEnable = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -226,38 +256,6 @@ func (o *LanMulticastVO) SetNetworks(v []NetworkVO) {
 	o.Networks = v
 }
 
-// GetOmadacId returns the OmadacId field value if set, zero value otherwise.
-func (o *LanMulticastVO) GetOmadacId() string {
-	if o == nil || IsNil(o.OmadacId) {
-		var ret string
-		return ret
-	}
-	return *o.OmadacId
-}
-
-// GetOmadacIdOk returns a tuple with the OmadacId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LanMulticastVO) GetOmadacIdOk() (*string, bool) {
-	if o == nil || IsNil(o.OmadacId) {
-		return nil, false
-	}
-	return o.OmadacId, true
-}
-
-// HasOmadacId returns a boolean if a field has been set.
-func (o *LanMulticastVO) HasOmadacId() bool {
-	if o != nil && !IsNil(o.OmadacId) {
-		return true
-	}
-
-	return false
-}
-
-// SetOmadacId gets a reference to the given string and assigns it to the OmadacId field.
-func (o *LanMulticastVO) SetOmadacId(v string) {
-	o.OmadacId = &v
-}
-
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *LanMulticastVO) GetProtocol() int32 {
 	if o == nil || IsNil(o.Protocol) {
@@ -418,38 +416,6 @@ func (o *LanMulticastVO) SetRouterPorts(v []RouterPortVO) {
 	o.RouterPorts = v
 }
 
-// GetSiteId returns the SiteId field value if set, zero value otherwise.
-func (o *LanMulticastVO) GetSiteId() string {
-	if o == nil || IsNil(o.SiteId) {
-		var ret string
-		return ret
-	}
-	return *o.SiteId
-}
-
-// GetSiteIdOk returns a tuple with the SiteId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LanMulticastVO) GetSiteIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteId) {
-		return nil, false
-	}
-	return o.SiteId, true
-}
-
-// HasSiteId returns a boolean if a field has been set.
-func (o *LanMulticastVO) HasSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
-}
-
-// SetSiteId gets a reference to the given string and assigns it to the SiteId field.
-func (o *LanMulticastVO) SetSiteId(v string) {
-	o.SiteId = &v
-}
-
 // GetSnoopConfig returns the SnoopConfig field value if set, zero value otherwise.
 func (o *LanMulticastVO) GetSnoopConfig() SnoopConfigVO {
 	if o == nil || IsNil(o.SnoopConfig) {
@@ -556,6 +522,9 @@ func (o LanMulticastVO) MarshalJSON() ([]byte, error) {
 
 func (o LanMulticastVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.FloodKnownEnable) {
+		toSerialize["floodKnownEnable"] = o.FloodKnownEnable
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -571,9 +540,6 @@ func (o LanMulticastVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Networks) {
 		toSerialize["networks"] = o.Networks
 	}
-	if !IsNil(o.OmadacId) {
-		toSerialize["omadacId"] = o.OmadacId
-	}
 	if !IsNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
@@ -588,9 +554,6 @@ func (o LanMulticastVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RouterPorts) {
 		toSerialize["routerPorts"] = o.RouterPorts
-	}
-	if !IsNil(o.SiteId) {
-		toSerialize["siteId"] = o.SiteId
 	}
 	if !IsNil(o.SnoopConfig) {
 		toSerialize["snoopConfig"] = o.SnoopConfig

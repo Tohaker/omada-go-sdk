@@ -22,6 +22,8 @@ Method | HTTP request | Description
 [**GetOverview**](DashboardAPI.md#getoverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/overview-diagram | Get site overview diagram info
 [**GetPoeUsage**](DashboardAPI.md#getpoeusage) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/poe-usage | Get poe usage
 [**GetRetryAndDroppedRate**](DashboardAPI.md#getretryanddroppedrate) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/retry-dropped-rate | Get retried rate and dropped rate
+[**GetSpeedTestV2Result**](DashboardAPI.md#getspeedtestv2result) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/speedTestResult | Get Speed Test Result
+[**GetSpeedTestV2ResultDateList**](DashboardAPI.md#getspeedtestv2resultdatelist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/speedTestResult/dateList | Get date list of speed test results
 [**GetSwitchSummary**](DashboardAPI.md#getswitchsummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/switch-summary | Get switch summary
 [**GetTop5Aps**](DashboardAPI.md#gettop5aps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-aps | Get Top 5 Aps
 [**GetTopCpuUsageWithTimeRange**](DashboardAPI.md#gettopcpuusagewithtimerange) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/top-device-cpu-usage | Get top device cpu usage
@@ -32,6 +34,7 @@ Method | HTTP request | Description
 [**ListAllTabs**](DashboardAPI.md#listalltabs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs | Get tab list
 [**ListTabs**](DashboardAPI.md#listtabs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/without-overall-tabs | Get tab without overall tab list
 [**RemoveTab**](DashboardAPI.md#removetab) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs/{tabId} | Delete an existing tab
+[**StartSpeedTestV2**](DashboardAPI.md#startspeedtestv2) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/speedTest | Start Speed Test
 [**UpdateTab**](DashboardAPI.md#updatetab) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs/{tabId} | Modify an existing tab
 
 
@@ -1386,6 +1389,160 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetSpeedTestV2Result
+
+> OperationResponseSpeedTestV2ResultVO GetSpeedTestV2Result(ctx, omadacId, siteId, gatewayMac).Execute()
+
+Get Speed Test Result
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DashboardAPI.GetSpeedTestV2Result(context.Background(), omadacId, siteId, gatewayMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DashboardAPI.GetSpeedTestV2Result``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpeedTestV2Result`: OperationResponseSpeedTestV2ResultVO
+	fmt.Fprintf(os.Stdout, "Response from `DashboardAPI.GetSpeedTestV2Result`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**gatewayMac** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSpeedTestV2ResultRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseSpeedTestV2ResultVO**](OperationResponseSpeedTestV2ResultVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSpeedTestV2ResultDateList
+
+> OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO GetSpeedTestV2ResultDateList(ctx, omadacId, siteId, gatewayMac).OpenApiQuerySpeedTestDateListVO(openApiQuerySpeedTestDateListVO).Execute()
+
+Get date list of speed test results
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	openApiQuerySpeedTestDateListVO := *openapiclient.NewOpenApiQuerySpeedTestDateListVO(int32(123), int32(123)) // OpenApiQuerySpeedTestDateListVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DashboardAPI.GetSpeedTestV2ResultDateList(context.Background(), omadacId, siteId, gatewayMac).OpenApiQuerySpeedTestDateListVO(openApiQuerySpeedTestDateListVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DashboardAPI.GetSpeedTestV2ResultDateList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpeedTestV2ResultDateList`: OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `DashboardAPI.GetSpeedTestV2ResultDateList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**gatewayMac** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSpeedTestV2ResultDateListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **openApiQuerySpeedTestDateListVO** | [**OpenApiQuerySpeedTestDateListVO**](OpenApiQuerySpeedTestDateListVO.md) |  | 
+
+### Return type
+
+[**OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO**](OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetSwitchSummary
 
 > OperationResponseSwitchSummary GetSwitchSummary(ctx, omadacId, siteId).Start(start).End(end).Execute()
@@ -2140,6 +2297,84 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StartSpeedTestV2
+
+> OperationResponseStartSpeedTestV2ResultVO StartSpeedTestV2(ctx, omadacId, siteId, gatewayMac).OpenApiSpeedTestSelectPortsVO(openApiSpeedTestSelectPortsVO).Execute()
+
+Start Speed Test
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	openApiSpeedTestSelectPortsVO := *openapiclient.NewOpenApiSpeedTestSelectPortsVO() // OpenApiSpeedTestSelectPortsVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DashboardAPI.StartSpeedTestV2(context.Background(), omadacId, siteId, gatewayMac).OpenApiSpeedTestSelectPortsVO(openApiSpeedTestSelectPortsVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DashboardAPI.StartSpeedTestV2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `StartSpeedTestV2`: OperationResponseStartSpeedTestV2ResultVO
+	fmt.Fprintf(os.Stdout, "Response from `DashboardAPI.StartSpeedTestV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**gatewayMac** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStartSpeedTestV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **openApiSpeedTestSelectPortsVO** | [**OpenApiSpeedTestSelectPortsVO**](OpenApiSpeedTestSelectPortsVO.md) |  | 
+
+### Return type
+
+[**OperationResponseStartSpeedTestV2ResultVO**](OperationResponseStartSpeedTestV2ResultVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

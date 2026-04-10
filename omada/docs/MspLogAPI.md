@@ -13,10 +13,10 @@ Method | HTTP request | Description
 [**GetAuditLogsForMsp**](MspLogAPI.md#getauditlogsformsp) | **Get** /openapi/v1/msp/{mspId}/audit-logs | Get MSP audit log list
 [**GetEventLogsForMsp**](MspLogAPI.md#geteventlogsformsp) | **Get** /openapi/v1/msp/{mspId}/logs/events | Get MSP event log list
 [**GetLogSettingForMsp**](MspLogAPI.md#getlogsettingformsp) | **Get** /openapi/v1/msp/{mspId}/log-notification | Get MSP log notification
-[**GetLogSettingForMspV2**](MspLogAPI.md#getlogsettingformspv2) | **Get** /openapi/v1/msp/{mspId}/log-notification-setting | Get MSP log notification
+[**GetLogSettingForMspV2**](MspLogAPI.md#getlogsettingformspv2) | **Get** /openapi/v1/msp/{mspId}/log-notification-setting | Get MSP log notification v2
 [**ModifyAuditLogSettingMsp**](MspLogAPI.md#modifyauditlogsettingmsp) | **Patch** /openapi/v1/msp/{mspId}/audit-notification | Modify MSP audit log notification
 [**ModifyLogSettingMsp**](MspLogAPI.md#modifylogsettingmsp) | **Patch** /openapi/v1/msp/{mspId}/log-notification | Modify MSP log notification
-[**ModifyLogSettingMspV2**](MspLogAPI.md#modifylogsettingmspv2) | **Patch** /openapi/v1/msp/{mspId}/log-notification-setting | Modify MSP log notification
+[**ModifyLogSettingMspV2**](MspLogAPI.md#modifylogsettingmspv2) | **Patch** /openapi/v1/msp/{mspId}/log-notification-setting | Modify MSP log notification v2
 [**ResetLogSettingMsp**](MspLogAPI.md#resetlogsettingmsp) | **Post** /openapi/v1/msp/{mspId}/reset/log-notification | Reset MSP log notification
 [**ResolveAlertForMsp**](MspLogAPI.md#resolvealertformsp) | **Post** /openapi/v1/msp/{mspId}/logs/alerts/resolve | Resolve MSP alert log
 
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseLogNotificationSettingOpenApiVO GetLogSettingForMspV2(ctx, mspId).Execute()
 
-Get MSP log notification
+Get MSP log notification v2
 
 
 
@@ -916,7 +916,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyLogSettingMspV2(ctx, mspId).LogNotificationSettingEditOpenApiV2VO(logNotificationSettingEditOpenApiV2VO).Execute()
 
-Modify MSP log notification
+Modify MSP log notification v2
 
 
 

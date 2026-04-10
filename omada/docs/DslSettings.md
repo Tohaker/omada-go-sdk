@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnnexType** | Pointer to **int32** | Enter a value as follows: 0-Annex Auto, 1-Annex A, 2-Annex B, 3-Annex I, 4-Annex J, 5-Annex M, 6-Annex A/L, 7-Annex B/J, 8-Annex A/I/J/L/M | [optional] 
 **BitSwap** | Pointer to **int32** | Enter a value as follows: 0-off, 1-on. | [optional] 
-**ModulationType** | Pointer to **int32** | Enter a value as follows: 0-Auto Sync-up, 2-ADSL2, 3-ADSL2+, 4-G.dmt, 5-T1.423, 6-VDSL2. | [optional] 
+**ModulationType** | Pointer to **int32** | Enter a value as follows: 0-Auto Sync-up, 2-ADSL2, 3-ADSL2+, 4-G.dmt, 5-T1.423, 6-VDSL2, 7-G.Lte. | [optional] 
 **Sra** | Pointer to **int32** | Enter a value as follows: 0-off, 1-on. | [optional] 
 
 ## Methods

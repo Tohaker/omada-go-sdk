@@ -5,14 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ipv4Dhcp** | Pointer to [**Ipv4DhcpOpenApiVO**](Ipv4DhcpOpenApiVO.md) |  | [optional] 
+**Ipv4Dslite** | Pointer to [**Ipv4DsLiteOpenApiVO**](Ipv4DsLiteOpenApiVO.md) |  | [optional] 
 **Ipv4Ipoa** | Pointer to [**Ipv4IpoaOpenApiVO**](Ipv4IpoaOpenApiVO.md) |  | [optional] 
 **Ipv4L2tp** | Pointer to [**Ipv4L2tpOpenApiVO**](Ipv4L2tpOpenApiVO.md) |  | [optional] 
+**Ipv4Mape** | Pointer to [**Ipv4MapEOpenApiVO**](Ipv4MapEOpenApiVO.md) |  | [optional] 
 **Ipv4Pppoa** | Pointer to [**Ipv4PppoaOpenApiVO**](Ipv4PppoaOpenApiVO.md) |  | [optional] 
 **Ipv4Pppoe** | Pointer to [**Ipv4PppoeOpenApiVO**](Ipv4PppoeOpenApiVO.md) |  | [optional] 
 **Ipv4Pptp** | Pointer to [**Ipv4PptpOpenApiVO**](Ipv4PptpOpenApiVO.md) |  | [optional] 
 **Ipv4Static** | Pointer to [**Ipv4StaticOpenApiVO**](Ipv4StaticOpenApiVO.md) |  | [optional] 
-**ProtoType** | **int32** | IPv4 connection type should be a value as follows: 0:static; 1:DHCP; 2:PPPoE; 3:L2TP; 4:PPTP. | 
-**QosTag** | Pointer to **bool** | 802.1Q Tag. It takes effect when [vlanId] is not 0. | [optional] 
+**ProtoType** | **int32** | IPv4 connection type should be one of the following values: 0:static; 1:DHCP; 2:PPPoE; 3:L2TP; 4:PPTP; 5:DS-Lite; 6:MAP-E. | 
+**QosTagEnable** | Pointer to **bool** | 802.1Q Tag. It takes effect when [vlanId] is not 0. | [optional] 
 **VlanId** | **int32** | VLAN ID should be within the range of 0–4094, 0 means disable. | 
 **VlanPriority** | Pointer to **int32** | Vlan Priority. It takes effect when [vlanId] is not 0, and it should be within the range of 0–7. | [optional] 
 
@@ -59,6 +61,31 @@ SetIpv4Dhcp sets Ipv4Dhcp field to given value.
 `func (o *WanPortIpv4SettingOpenApiVO) HasIpv4Dhcp() bool`
 
 HasIpv4Dhcp returns a boolean if a field has been set.
+
+### GetIpv4Dslite
+
+`func (o *WanPortIpv4SettingOpenApiVO) GetIpv4Dslite() Ipv4DsLiteOpenApiVO`
+
+GetIpv4Dslite returns the Ipv4Dslite field if non-nil, zero value otherwise.
+
+### GetIpv4DsliteOk
+
+`func (o *WanPortIpv4SettingOpenApiVO) GetIpv4DsliteOk() (*Ipv4DsLiteOpenApiVO, bool)`
+
+GetIpv4DsliteOk returns a tuple with the Ipv4Dslite field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpv4Dslite
+
+`func (o *WanPortIpv4SettingOpenApiVO) SetIpv4Dslite(v Ipv4DsLiteOpenApiVO)`
+
+SetIpv4Dslite sets Ipv4Dslite field to given value.
+
+### HasIpv4Dslite
+
+`func (o *WanPortIpv4SettingOpenApiVO) HasIpv4Dslite() bool`
+
+HasIpv4Dslite returns a boolean if a field has been set.
 
 ### GetIpv4Ipoa
 
@@ -109,6 +136,31 @@ SetIpv4L2tp sets Ipv4L2tp field to given value.
 `func (o *WanPortIpv4SettingOpenApiVO) HasIpv4L2tp() bool`
 
 HasIpv4L2tp returns a boolean if a field has been set.
+
+### GetIpv4Mape
+
+`func (o *WanPortIpv4SettingOpenApiVO) GetIpv4Mape() Ipv4MapEOpenApiVO`
+
+GetIpv4Mape returns the Ipv4Mape field if non-nil, zero value otherwise.
+
+### GetIpv4MapeOk
+
+`func (o *WanPortIpv4SettingOpenApiVO) GetIpv4MapeOk() (*Ipv4MapEOpenApiVO, bool)`
+
+GetIpv4MapeOk returns a tuple with the Ipv4Mape field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpv4Mape
+
+`func (o *WanPortIpv4SettingOpenApiVO) SetIpv4Mape(v Ipv4MapEOpenApiVO)`
+
+SetIpv4Mape sets Ipv4Mape field to given value.
+
+### HasIpv4Mape
+
+`func (o *WanPortIpv4SettingOpenApiVO) HasIpv4Mape() bool`
+
+HasIpv4Mape returns a boolean if a field has been set.
 
 ### GetIpv4Pppoa
 
@@ -230,30 +282,30 @@ and a boolean to check if the value has been set.
 SetProtoType sets ProtoType field to given value.
 
 
-### GetQosTag
+### GetQosTagEnable
 
-`func (o *WanPortIpv4SettingOpenApiVO) GetQosTag() bool`
+`func (o *WanPortIpv4SettingOpenApiVO) GetQosTagEnable() bool`
 
-GetQosTag returns the QosTag field if non-nil, zero value otherwise.
+GetQosTagEnable returns the QosTagEnable field if non-nil, zero value otherwise.
 
-### GetQosTagOk
+### GetQosTagEnableOk
 
-`func (o *WanPortIpv4SettingOpenApiVO) GetQosTagOk() (*bool, bool)`
+`func (o *WanPortIpv4SettingOpenApiVO) GetQosTagEnableOk() (*bool, bool)`
 
-GetQosTagOk returns a tuple with the QosTag field if it's non-nil, zero value otherwise
+GetQosTagEnableOk returns a tuple with the QosTagEnable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetQosTag
+### SetQosTagEnable
 
-`func (o *WanPortIpv4SettingOpenApiVO) SetQosTag(v bool)`
+`func (o *WanPortIpv4SettingOpenApiVO) SetQosTagEnable(v bool)`
 
-SetQosTag sets QosTag field to given value.
+SetQosTagEnable sets QosTagEnable field to given value.
 
-### HasQosTag
+### HasQosTagEnable
 
-`func (o *WanPortIpv4SettingOpenApiVO) HasQosTag() bool`
+`func (o *WanPortIpv4SettingOpenApiVO) HasQosTagEnable() bool`
 
-HasQosTag returns a boolean if a field has been set.
+HasQosTagEnable returns a boolean if a field has been set.
 
 ### GetVlanId
 

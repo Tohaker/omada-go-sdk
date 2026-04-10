@@ -6,18 +6,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Site** | Pointer to **string** | ID of current Site. | [optional] 
 **ClientMode** | Pointer to **int32** | Client mode should be a value as follows: 0: Client-To-Site, 1: Site-To-Site. | [optional] 
-**ExistLocalIp** | Pointer to **bool** | Whether Local IP has been configured. | [optional] 
-**ExistProtocol** | Pointer to **bool** | Whether OpenVPN has configured as VPN Type. | [optional] 
+**ExistLocalIp** | Pointer to **bool** | Whether the Local IP is configured. | [optional] 
+**ExistProtocol** | Pointer to **bool** | Whether an OpenVPN user exists. | [optional] 
+**GroupId** | Pointer to **string** | Group ID of the SSL VPN user. User group can be created using &#39;Create SSL VPN user group&#39; interface, and User Group ID can be obtained from &#39;Get user group list for SSL VPN server&#39; interface. | [optional] 
 **Id** | Pointer to **string** | ID of the VPN user. | [optional] 
-**LocalIp** | Pointer to **string** | Local IP of the VPN user | [optional] 
+**LocalIp** | Pointer to **string** | Local IP of the VPN user. | [optional] 
 **MaxConnections** | Pointer to **int32** | Max connections should be within the range of 1–100. | [optional] 
 **OmadacId** | Pointer to **string** | ID of current Controller. | [optional] 
 **Password** | Pointer to **string** | Password of the VPN user. | [optional] 
 **Protocol** | Pointer to **int32** | Protocol should be a value as follows: 0: L2TP or PPTP; 1: openVPN. | [optional] 
 **ServerNames** | Pointer to **string** | Server names of the VPN user. | [optional] 
 **Servers** | Pointer to **[]string** | Servers of the VPN user. Server can be created using &#39;Create client-to-site VPN server&#39; interface, and server ID can be obtained from &#39;Get client-to-site VPN server list&#39; interface. | [optional] 
+**Status** | Pointer to **bool** | Status of the SSL VPN user. | [optional] 
 **UserRemoteSubnets** | Pointer to [**[]IPSubnetsVO**](IPSubnetsVO.md) | User remote subnets of the VPN user. | [optional] 
 **Username** | Pointer to **string** | Username of the VPN user. | [optional] 
+**Validity** | Pointer to **string** | Validity of the SSL VPN user. The format is Month/Day/Year, for example 08/20/2022. | [optional] 
 
 ## Methods
 
@@ -137,6 +140,31 @@ SetExistProtocol sets ExistProtocol field to given value.
 `func (o *VpnUserResponse) HasExistProtocol() bool`
 
 HasExistProtocol returns a boolean if a field has been set.
+
+### GetGroupId
+
+`func (o *VpnUserResponse) GetGroupId() string`
+
+GetGroupId returns the GroupId field if non-nil, zero value otherwise.
+
+### GetGroupIdOk
+
+`func (o *VpnUserResponse) GetGroupIdOk() (*string, bool)`
+
+GetGroupIdOk returns a tuple with the GroupId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroupId
+
+`func (o *VpnUserResponse) SetGroupId(v string)`
+
+SetGroupId sets GroupId field to given value.
+
+### HasGroupId
+
+`func (o *VpnUserResponse) HasGroupId() bool`
+
+HasGroupId returns a boolean if a field has been set.
 
 ### GetId
 
@@ -338,6 +366,31 @@ SetServers sets Servers field to given value.
 
 HasServers returns a boolean if a field has been set.
 
+### GetStatus
+
+`func (o *VpnUserResponse) GetStatus() bool`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *VpnUserResponse) GetStatusOk() (*bool, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *VpnUserResponse) SetStatus(v bool)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *VpnUserResponse) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
 ### GetUserRemoteSubnets
 
 `func (o *VpnUserResponse) GetUserRemoteSubnets() []IPSubnetsVO`
@@ -387,6 +440,31 @@ SetUsername sets Username field to given value.
 `func (o *VpnUserResponse) HasUsername() bool`
 
 HasUsername returns a boolean if a field has been set.
+
+### GetValidity
+
+`func (o *VpnUserResponse) GetValidity() string`
+
+GetValidity returns the Validity field if non-nil, zero value otherwise.
+
+### GetValidityOk
+
+`func (o *VpnUserResponse) GetValidityOk() (*string, bool)`
+
+GetValidityOk returns a tuple with the Validity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidity
+
+`func (o *VpnUserResponse) SetValidity(v string)`
+
+SetValidity sets Validity field to given value.
+
+### HasValidity
+
+`func (o *VpnUserResponse) HasValidity() bool`
+
+HasValidity returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

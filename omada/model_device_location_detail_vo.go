@@ -25,6 +25,8 @@ type DeviceLocationDetailVO struct {
 	Latitude *float64 `json:"latitude,omitempty"`
 	// Longitude of the device.
 	Longitude *float64 `json:"longitude,omitempty"`
+	// Last GPS fix timestamp
+	Timestamp *int64 `json:"timestamp,omitempty"`
 }
 
 // NewDeviceLocationDetailVO instantiates a new DeviceLocationDetailVO object
@@ -140,6 +142,38 @@ func (o *DeviceLocationDetailVO) SetLongitude(v float64) {
 	o.Longitude = &v
 }
 
+// GetTimestamp returns the Timestamp field value if set, zero value otherwise.
+func (o *DeviceLocationDetailVO) GetTimestamp() int64 {
+	if o == nil || IsNil(o.Timestamp) {
+		var ret int64
+		return ret
+	}
+	return *o.Timestamp
+}
+
+// GetTimestampOk returns a tuple with the Timestamp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceLocationDetailVO) GetTimestampOk() (*int64, bool) {
+	if o == nil || IsNil(o.Timestamp) {
+		return nil, false
+	}
+	return o.Timestamp, true
+}
+
+// HasTimestamp returns a boolean if a field has been set.
+func (o *DeviceLocationDetailVO) HasTimestamp() bool {
+	if o != nil && !IsNil(o.Timestamp) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimestamp gets a reference to the given int64 and assigns it to the Timestamp field.
+func (o *DeviceLocationDetailVO) SetTimestamp(v int64) {
+	o.Timestamp = &v
+}
+
 func (o DeviceLocationDetailVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -158,6 +192,9 @@ func (o DeviceLocationDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Longitude) {
 		toSerialize["longitude"] = o.Longitude
+	}
+	if !IsNil(o.Timestamp) {
+		toSerialize["timestamp"] = o.Timestamp
 	}
 	return toSerialize, nil
 }

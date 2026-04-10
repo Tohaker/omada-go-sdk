@@ -4,20 +4,165 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AutoCreateMappingNetwork**](SDWANAPI.md#autocreatemappingnetwork) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/map/network | Auto create mapped network.
+[**AutoCreateSdWanGroupName**](SDWANAPI.md#autocreatesdwangroupname) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/auto/groupName | Auto create group name.
 [**AutoSelectWanPortRecommendResult**](SDWANAPI.md#autoselectwanportrecommendresult) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/recommend/wans | Auto recommend WAN port.
+[**CheckModifiedMappedNetwork**](SDWANAPI.md#checkmodifiedmappednetwork) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/map/check | Check modified mapped network.
 [**CheckSdWanGroupIpPool**](SDWANAPI.md#checksdwangroupippool) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/ipPool/check | Check SD-WAN IP pool conflict.
-[**CheckSelectedLanNetworkConflict**](SDWANAPI.md#checkselectedlannetworkconflict) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/lan/check | Check whether selected lanNetwork conflict.
 [**CreateSdWanGroup**](SDWANAPI.md#createsdwangroup) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group | Create SD-WAN Group.
 [**DeleteSdWanGroup**](SDWANAPI.md#deletesdwangroup) | **Delete** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId} | Delete SD-WAN Group.
 [**FirstCheckConnection**](SDWANAPI.md#firstcheckconnection) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId}/firstCheck | First check SD-WAN group connection.
 [**GetCurrentSdWanGroup**](SDWANAPI.md#getcurrentsdwangroup) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId} | Get SD-WAN Group.
 [**GetGridSdWanGroup**](SDWANAPI.md#getgridsdwangroup) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group | Get SD-WAN Group Grid.
-[**GetGridSdWanGroupBrief**](SDWANAPI.md#getgridsdwangroupbrief) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/brief | Get brief SD-WAN Group Grid.
+[**GetGridSdWanGroupBrief**](SDWANAPI.md#getgridsdwangroupbrief) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/brief | Get SD-WAN Group Grid brief info.
 [**GetGridSdWanGroupDevices**](SDWANAPI.md#getgridsdwangroupdevices) | **Post** /openapi/v1/{omadacId}/sdwan/sdwan-group/candidate/devices | Get SD-WAN candidate devices.
 [**GetSdWanGroupDevices**](SDWANAPI.md#getsdwangroupdevices) | **Get** /openapi/v1/{omadacId}/sdwan/sdwan-group/saved/devices/{groupId} | Get current SD-WAN devices.
 [**ModifyLanIpRange**](SDWANAPI.md#modifylaniprange) | **Put** /openapi/v1/{omadacId}/sdwan/sdwan-group/lan/modify | Modify selected LanNetwork IP.
 [**ModifySdWanGroup**](SDWANAPI.md#modifysdwangroup) | **Put** /openapi/v1/{omadacId}/sdwan/sdwan-group/{groupId} | Modify SD-WAN Group.
+[**ModifySdWanGroupNetWorkMap**](SDWANAPI.md#modifysdwangroupnetworkmap) | **Put** /openapi/v1/{omadacId}/sdwan/sdwan-group/map/{groupId} | Modify SD-WAN Group NAT info.
 
+
+
+## AutoCreateMappingNetwork
+
+> OperationResponseSdWanMappedNetworkResult AutoCreateMappingNetwork(ctx, omadacId).SdWanSelectedMapNetwork(sdWanSelectedMapNetwork).Execute()
+
+Auto create mapped network.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	sdWanSelectedMapNetwork := *openapiclient.NewSdWanSelectedMapNetwork() // SdWanSelectedMapNetwork | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SDWANAPI.AutoCreateMappingNetwork(context.Background(), omadacId).SdWanSelectedMapNetwork(sdWanSelectedMapNetwork).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SDWANAPI.AutoCreateMappingNetwork``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AutoCreateMappingNetwork`: OperationResponseSdWanMappedNetworkResult
+	fmt.Fprintf(os.Stdout, "Response from `SDWANAPI.AutoCreateMappingNetwork`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAutoCreateMappingNetworkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **sdWanSelectedMapNetwork** | [**SdWanSelectedMapNetwork**](SdWanSelectedMapNetwork.md) |  | 
+
+### Return type
+
+[**OperationResponseSdWanMappedNetworkResult**](OperationResponseSdWanMappedNetworkResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AutoCreateSdWanGroupName
+
+> OperationResponseString AutoCreateSdWanGroupName(ctx, omadacId).Execute()
+
+Auto create group name.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SDWANAPI.AutoCreateSdWanGroupName(context.Background(), omadacId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SDWANAPI.AutoCreateSdWanGroupName``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AutoCreateSdWanGroupName`: OperationResponseString
+	fmt.Fprintf(os.Stdout, "Response from `SDWANAPI.AutoCreateSdWanGroupName`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAutoCreateSdWanGroupNameRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**OperationResponseString**](OperationResponseString.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## AutoSelectWanPortRecommendResult
@@ -92,6 +237,78 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CheckModifiedMappedNetwork
+
+> OperationResponseWithoutResult CheckModifiedMappedNetwork(ctx, omadacId).CheckMappedNetwork(checkMappedNetwork).Execute()
+
+Check modified mapped network.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	checkMappedNetwork := *openapiclient.NewCheckMappedNetwork() // CheckMappedNetwork | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SDWANAPI.CheckModifiedMappedNetwork(context.Background(), omadacId).CheckMappedNetwork(checkMappedNetwork).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SDWANAPI.CheckModifiedMappedNetwork``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CheckModifiedMappedNetwork`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SDWANAPI.CheckModifiedMappedNetwork`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCheckModifiedMappedNetworkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **checkMappedNetwork** | [**CheckMappedNetwork**](CheckMappedNetwork.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CheckSdWanGroupIpPool
 
 > OperationResponseWithoutResult CheckSdWanGroupIpPool(ctx, omadacId).SdWanIpPoolRange(sdWanIpPoolRange).Execute()
@@ -149,78 +366,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CheckSelectedLanNetworkConflict
-
-> OperationResponseSdWanSelectedLanNetwork CheckSelectedLanNetworkConflict(ctx, omadacId).SdWanSelectedLanNetwork(sdWanSelectedLanNetwork).Execute()
-
-Check whether selected lanNetwork conflict.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	sdWanSelectedLanNetwork := *openapiclient.NewSdWanSelectedLanNetwork() // SdWanSelectedLanNetwork | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SDWANAPI.CheckSelectedLanNetworkConflict(context.Background(), omadacId).SdWanSelectedLanNetwork(sdWanSelectedLanNetwork).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SDWANAPI.CheckSelectedLanNetworkConflict``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `CheckSelectedLanNetworkConflict`: OperationResponseSdWanSelectedLanNetwork
-	fmt.Fprintf(os.Stdout, "Response from `SDWANAPI.CheckSelectedLanNetworkConflict`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCheckSelectedLanNetworkConflictRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **sdWanSelectedLanNetwork** | [**SdWanSelectedLanNetwork**](SdWanSelectedLanNetwork.md) |  | 
-
-### Return type
-
-[**OperationResponseSdWanSelectedLanNetwork**](OperationResponseSdWanSelectedLanNetwork.md)
 
 ### Authorization
 
@@ -605,7 +750,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseGridVOSdWanGroupBrief GetGridSdWanGroupBrief(ctx, omadacId).Page(page).PageSize(pageSize).Execute()
 
-Get brief SD-WAN Group Grid.
+Get SD-WAN Group Grid brief info.
 
 
 
@@ -948,6 +1093,81 @@ Name | Type | Description  | Notes
 
 
  **sdWanGroup** | [**SdWanGroup**](SdWanGroup.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifySdWanGroupNetWorkMap
+
+> OperationResponseWithoutResult ModifySdWanGroupNetWorkMap(ctx, omadacId, groupId).SdWanNatInfo(sdWanNatInfo).Execute()
+
+Modify SD-WAN Group NAT info.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	groupId := "groupId_example" // string | The ID of a SD-WAN Group
+	sdWanNatInfo := *openapiclient.NewSdWanNatInfo() // SdWanNatInfo | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SDWANAPI.ModifySdWanGroupNetWorkMap(context.Background(), omadacId, groupId).SdWanNatInfo(sdWanNatInfo).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SDWANAPI.ModifySdWanGroupNetWorkMap``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifySdWanGroupNetWorkMap`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SDWANAPI.ModifySdWanGroupNetWorkMap`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**groupId** | **string** | The ID of a SD-WAN Group | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifySdWanGroupNetWorkMapRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **sdWanNatInfo** | [**SdWanNatInfo**](SdWanNatInfo.md) |  | 
 
 ### Return type
 

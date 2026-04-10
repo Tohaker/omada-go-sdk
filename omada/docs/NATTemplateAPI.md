@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ## GetTemplateAlg
 
-> OperationResponseALGSetting GetTemplateAlg(ctx, omadacId, siteTemplateId).Execute()
+> OperationResponseGetAlgOpenApiVO GetTemplateAlg(ctx, omadacId, siteTemplateId).Execute()
 
 Get site template's ALG Info
 
@@ -503,7 +503,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NATTemplateAPI.GetTemplateAlg``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTemplateAlg`: OperationResponseALGSetting
+	// response from `GetTemplateAlg`: OperationResponseGetAlgOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `NATTemplateAPI.GetTemplateAlg`: %v\n", resp)
 }
 ```
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseALGSetting**](OperationResponseALGSetting.md)
+[**OperationResponseGetAlgOpenApiVO**](OperationResponseGetAlgOpenApiVO.md)
 
 ### Authorization
 

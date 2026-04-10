@@ -31,6 +31,8 @@ type ClientNodeInfo struct {
 	Guest *bool `json:"guest,omitempty"`
 	// Health Score, 1~3: poor; 4~7: fair; 0: no data; 8~10 good.
 	HealthScore *int32 `json:"healthScore,omitempty"`
+	// Client IP.
+	Ip *string `json:"ip,omitempty"`
 	// Client MAC Address.
 	Mac *string `json:"mac,omitempty"`
 	// Whether it is the device currently accessing the Controller itself.
@@ -254,6 +256,38 @@ func (o *ClientNodeInfo) HasHealthScore() bool {
 // SetHealthScore gets a reference to the given int32 and assigns it to the HealthScore field.
 func (o *ClientNodeInfo) SetHealthScore(v int32) {
 	o.HealthScore = &v
+}
+
+// GetIp returns the Ip field value if set, zero value otherwise.
+func (o *ClientNodeInfo) GetIp() string {
+	if o == nil || IsNil(o.Ip) {
+		var ret string
+		return ret
+	}
+	return *o.Ip
+}
+
+// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientNodeInfo) GetIpOk() (*string, bool) {
+	if o == nil || IsNil(o.Ip) {
+		return nil, false
+	}
+	return o.Ip, true
+}
+
+// HasIp returns a boolean if a field has been set.
+func (o *ClientNodeInfo) HasIp() bool {
+	if o != nil && !IsNil(o.Ip) {
+		return true
+	}
+
+	return false
+}
+
+// SetIp gets a reference to the given string and assigns it to the Ip field.
+func (o *ClientNodeInfo) SetIp(v string) {
+	o.Ip = &v
 }
 
 // GetMac returns the Mac field value if set, zero value otherwise.
@@ -539,6 +573,9 @@ func (o ClientNodeInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HealthScore) {
 		toSerialize["healthScore"] = o.HealthScore
+	}
+	if !IsNil(o.Ip) {
+		toSerialize["ip"] = o.Ip
 	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac

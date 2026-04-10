@@ -525,11 +525,11 @@ type OLTTrafficProfileAPIGetTrafficProfileListRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *TrafficProfileListQueryDTO
+	queryParam *TrafficProfileListQueryDTO
 }
 
-func (r OLTTrafficProfileAPIGetTrafficProfileListRequest) Dto(dto TrafficProfileListQueryDTO) OLTTrafficProfileAPIGetTrafficProfileListRequest {
-	r.dto = &dto
+func (r OLTTrafficProfileAPIGetTrafficProfileListRequest) QueryParam(queryParam TrafficProfileListQueryDTO) OLTTrafficProfileAPIGetTrafficProfileListRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -581,11 +581,11 @@ func (a *OLTTrafficProfileAPIService) GetTrafficProfileListExecute(r OLTTrafficP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -660,11 +660,11 @@ type OLTTrafficProfileAPIGetTrafficProfilePageRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *TrafficProfilePageQueryDTO
+	queryParam *TrafficProfilePageQueryDTO
 }
 
-func (r OLTTrafficProfileAPIGetTrafficProfilePageRequest) Dto(dto TrafficProfilePageQueryDTO) OLTTrafficProfileAPIGetTrafficProfilePageRequest {
-	r.dto = &dto
+func (r OLTTrafficProfileAPIGetTrafficProfilePageRequest) QueryParam(queryParam TrafficProfilePageQueryDTO) OLTTrafficProfileAPIGetTrafficProfilePageRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -716,11 +716,11 @@ func (a *OLTTrafficProfileAPIService) GetTrafficProfilePageExecute(r OLTTrafficP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

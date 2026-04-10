@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Content** | **string** | Terms of service URL content. | 
+**Index** | Pointer to **int32** | Index of hyperlink position. | [optional] 
 **Text** | **string** | Terms of service URL title. | 
 
 ## Methods
@@ -45,6 +46,31 @@ and a boolean to check if the value has been set.
 
 SetContent sets Content field to given value.
 
+
+### GetIndex
+
+`func (o *TermsOfServiceUrlVO) GetIndex() int32`
+
+GetIndex returns the Index field if non-nil, zero value otherwise.
+
+### GetIndexOk
+
+`func (o *TermsOfServiceUrlVO) GetIndexOk() (*int32, bool)`
+
+GetIndexOk returns a tuple with the Index field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndex
+
+`func (o *TermsOfServiceUrlVO) SetIndex(v int32)`
+
+SetIndex sets Index field to given value.
+
+### HasIndex
+
+`func (o *TermsOfServiceUrlVO) HasIndex() bool`
+
+HasIndex returns a boolean if a field has been set.
 
 ### GetText
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DeviceMac** | Pointer to **string** |  | [optional] 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) |  | [optional] 
 **Number** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **PhoneNumberId** | Pointer to **string** |  | [optional] 
@@ -58,6 +59,31 @@ SetDeviceMac sets DeviceMac field to given value.
 `func (o *TelephoneNumberWithStatusVO) HasDeviceMac() bool`
 
 HasDeviceMac returns a boolean if a field has been set.
+
+### GetFeatureDescription
+
+`func (o *TelephoneNumberWithStatusVO) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *TelephoneNumberWithStatusVO) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *TelephoneNumberWithStatusVO) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *TelephoneNumberWithStatusVO) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetNumber
 

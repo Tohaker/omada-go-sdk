@@ -23,8 +23,12 @@ type AntSettingVO struct {
 	AntGain *int32 `json:"antGain,omitempty"`
 	// antenna mode
 	AntMode *int32 `json:"antMode,omitempty"`
-	// antenna pattern,0 is directional and 1 is omnidirectional.
+	// antenna pattern,0 is built-In and 1 is External.
 	AntPattern *int32 `json:"antPattern,omitempty"`
+	// custom antMode max antenna gain.
+	CustomGainLimit *int32 `json:"customGainLimit,omitempty"`
+	// default Omni Antenna Mode gain.
+	DefaultOmniGain *int32 `json:"defaultOmniGain,omitempty"`
 }
 
 // NewAntSettingVO instantiates a new AntSettingVO object
@@ -140,6 +144,70 @@ func (o *AntSettingVO) SetAntPattern(v int32) {
 	o.AntPattern = &v
 }
 
+// GetCustomGainLimit returns the CustomGainLimit field value if set, zero value otherwise.
+func (o *AntSettingVO) GetCustomGainLimit() int32 {
+	if o == nil || IsNil(o.CustomGainLimit) {
+		var ret int32
+		return ret
+	}
+	return *o.CustomGainLimit
+}
+
+// GetCustomGainLimitOk returns a tuple with the CustomGainLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AntSettingVO) GetCustomGainLimitOk() (*int32, bool) {
+	if o == nil || IsNil(o.CustomGainLimit) {
+		return nil, false
+	}
+	return o.CustomGainLimit, true
+}
+
+// HasCustomGainLimit returns a boolean if a field has been set.
+func (o *AntSettingVO) HasCustomGainLimit() bool {
+	if o != nil && !IsNil(o.CustomGainLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomGainLimit gets a reference to the given int32 and assigns it to the CustomGainLimit field.
+func (o *AntSettingVO) SetCustomGainLimit(v int32) {
+	o.CustomGainLimit = &v
+}
+
+// GetDefaultOmniGain returns the DefaultOmniGain field value if set, zero value otherwise.
+func (o *AntSettingVO) GetDefaultOmniGain() int32 {
+	if o == nil || IsNil(o.DefaultOmniGain) {
+		var ret int32
+		return ret
+	}
+	return *o.DefaultOmniGain
+}
+
+// GetDefaultOmniGainOk returns a tuple with the DefaultOmniGain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AntSettingVO) GetDefaultOmniGainOk() (*int32, bool) {
+	if o == nil || IsNil(o.DefaultOmniGain) {
+		return nil, false
+	}
+	return o.DefaultOmniGain, true
+}
+
+// HasDefaultOmniGain returns a boolean if a field has been set.
+func (o *AntSettingVO) HasDefaultOmniGain() bool {
+	if o != nil && !IsNil(o.DefaultOmniGain) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultOmniGain gets a reference to the given int32 and assigns it to the DefaultOmniGain field.
+func (o *AntSettingVO) SetDefaultOmniGain(v int32) {
+	o.DefaultOmniGain = &v
+}
+
 func (o AntSettingVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -158,6 +226,12 @@ func (o AntSettingVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AntPattern) {
 		toSerialize["antPattern"] = o.AntPattern
+	}
+	if !IsNil(o.CustomGainLimit) {
+		toSerialize["customGainLimit"] = o.CustomGainLimit
+	}
+	if !IsNil(o.DefaultOmniGain) {
+		toSerialize["defaultOmniGain"] = o.DefaultOmniGain
 	}
 	return toSerialize, nil
 }

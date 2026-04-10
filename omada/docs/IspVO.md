@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 **DownloadSpeed** | Pointer to **string** | The current download speed. | [optional] 
 **DownloadSpeedSet** | Pointer to **int64** | The set download speed. | [optional] 
 **Ip** | Pointer to **string** | Port ip. | [optional] 
+**Ipv4Proto** | Pointer to **string** | WAN IPv4 proto. | [optional] 
 **LoadBalance** | Pointer to **string** | Port load balance. | [optional] 
 **MaxBandwidth** | Pointer to **int64** | Port max bandwidth. | [optional] 
 **Name** | Pointer to **string** | Port name. | [optional] 
+**OnLineStatus** | Pointer to **int32** | onLine status, should be a value as follows:1 : online0 : offline | [optional] 
 **Port** | Pointer to **int32** | Port id. | [optional] 
 **PortUuid** | Pointer to **string** | Port uuid. | [optional] 
 **Status** | Pointer to **int32** | Isp status, should be a value as follows:2 : normal ISP1 : primary ISP0 : backup ISP | [optional] 
@@ -137,6 +139,31 @@ SetIp sets Ip field to given value.
 
 HasIp returns a boolean if a field has been set.
 
+### GetIpv4Proto
+
+`func (o *IspVO) GetIpv4Proto() string`
+
+GetIpv4Proto returns the Ipv4Proto field if non-nil, zero value otherwise.
+
+### GetIpv4ProtoOk
+
+`func (o *IspVO) GetIpv4ProtoOk() (*string, bool)`
+
+GetIpv4ProtoOk returns a tuple with the Ipv4Proto field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpv4Proto
+
+`func (o *IspVO) SetIpv4Proto(v string)`
+
+SetIpv4Proto sets Ipv4Proto field to given value.
+
+### HasIpv4Proto
+
+`func (o *IspVO) HasIpv4Proto() bool`
+
+HasIpv4Proto returns a boolean if a field has been set.
+
 ### GetLoadBalance
 
 `func (o *IspVO) GetLoadBalance() string`
@@ -211,6 +238,31 @@ SetName sets Name field to given value.
 `func (o *IspVO) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetOnLineStatus
+
+`func (o *IspVO) GetOnLineStatus() int32`
+
+GetOnLineStatus returns the OnLineStatus field if non-nil, zero value otherwise.
+
+### GetOnLineStatusOk
+
+`func (o *IspVO) GetOnLineStatusOk() (*int32, bool)`
+
+GetOnLineStatusOk returns a tuple with the OnLineStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnLineStatus
+
+`func (o *IspVO) SetOnLineStatus(v int32)`
+
+SetOnLineStatus sets OnLineStatus field to given value.
+
+### HasOnLineStatus
+
+`func (o *IspVO) HasOnLineStatus() bool`
+
+HasOnLineStatus returns a boolean if a field has been set.
 
 ### GetPort
 

@@ -6,16 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NetId** | Pointer to **string** | Lan Network IDs | [optional] 
 **SearchKey** | Pointer to **string** | Search Key | [optional] 
+**SelectIps** | **[]string** | Selected Ips | 
 **SelectMacs** | [**BatchSelectMacsVO**](BatchSelectMacsVO.md) |  | 
 **ServerMac** | Pointer to **string** | Dhcp Server Macs | [optional] 
 **ServerStackId** | Pointer to **string** | Dhcp Server StackIds | [optional] 
-**Type** | Pointer to **string** | Type of Dhcp User | [optional] 
+**Type** | Pointer to **string** | Filter Type of Dhcp User: \&quot;device\&quot;, \&quot;client\&quot; or \&quot;device, client\&quot; | [optional] 
 
 ## Methods
 
 ### NewDhcpUserFilterVO
 
-`func NewDhcpUserFilterVO(selectMacs BatchSelectMacsVO, ) *DhcpUserFilterVO`
+`func NewDhcpUserFilterVO(selectIps []string, selectMacs BatchSelectMacsVO, ) *DhcpUserFilterVO`
 
 NewDhcpUserFilterVO instantiates a new DhcpUserFilterVO object
 This constructor will assign default values to properties that have it defined,
@@ -79,6 +80,26 @@ SetSearchKey sets SearchKey field to given value.
 `func (o *DhcpUserFilterVO) HasSearchKey() bool`
 
 HasSearchKey returns a boolean if a field has been set.
+
+### GetSelectIps
+
+`func (o *DhcpUserFilterVO) GetSelectIps() []string`
+
+GetSelectIps returns the SelectIps field if non-nil, zero value otherwise.
+
+### GetSelectIpsOk
+
+`func (o *DhcpUserFilterVO) GetSelectIpsOk() (*[]string, bool)`
+
+GetSelectIpsOk returns a tuple with the SelectIps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelectIps
+
+`func (o *DhcpUserFilterVO) SetSelectIps(v []string)`
+
+SetSelectIps sets SelectIps field to given value.
+
 
 ### GetSelectMacs
 

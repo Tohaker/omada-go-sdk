@@ -21,6 +21,8 @@ var _ MappedNullable = &UpgradeLogOpenApiInfo{}
 type UpgradeLogOpenApiInfo struct {
 	// Model firmware version list before upgrade ,such as \"[2.5.0 Build 20190118 Rel. 64821, 2.4.8 Build 20190118 Rel. 64821]\". This field is the same as \"PREVIOUS VERSION\" in Controller Upgrade Logs
 	CurrentVersion []string `json:"currentVersion,omitempty"`
+	// The number of devices that failed to upgrade in this upgrade plan.
+	FailedDeviceNum *int32 `json:"failedDeviceNum,omitempty"`
 	// Upgrade log ID.
 	Id *string `json:"id,omitempty"`
 	ModelTypeInfo *ModelTypeInfoOpenApiVO `json:"modelTypeInfo,omitempty"`
@@ -85,6 +87,38 @@ func (o *UpgradeLogOpenApiInfo) HasCurrentVersion() bool {
 // SetCurrentVersion gets a reference to the given []string and assigns it to the CurrentVersion field.
 func (o *UpgradeLogOpenApiInfo) SetCurrentVersion(v []string) {
 	o.CurrentVersion = v
+}
+
+// GetFailedDeviceNum returns the FailedDeviceNum field value if set, zero value otherwise.
+func (o *UpgradeLogOpenApiInfo) GetFailedDeviceNum() int32 {
+	if o == nil || IsNil(o.FailedDeviceNum) {
+		var ret int32
+		return ret
+	}
+	return *o.FailedDeviceNum
+}
+
+// GetFailedDeviceNumOk returns a tuple with the FailedDeviceNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpgradeLogOpenApiInfo) GetFailedDeviceNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.FailedDeviceNum) {
+		return nil, false
+	}
+	return o.FailedDeviceNum, true
+}
+
+// HasFailedDeviceNum returns a boolean if a field has been set.
+func (o *UpgradeLogOpenApiInfo) HasFailedDeviceNum() bool {
+	if o != nil && !IsNil(o.FailedDeviceNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetFailedDeviceNum gets a reference to the given int32 and assigns it to the FailedDeviceNum field.
+func (o *UpgradeLogOpenApiInfo) SetFailedDeviceNum(v int32) {
+	o.FailedDeviceNum = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -355,6 +389,9 @@ func (o UpgradeLogOpenApiInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CurrentVersion) {
 		toSerialize["currentVersion"] = o.CurrentVersion
+	}
+	if !IsNil(o.FailedDeviceNum) {
+		toSerialize["failedDeviceNum"] = o.FailedDeviceNum
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

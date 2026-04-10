@@ -217,8 +217,8 @@ type ProfilesAPI interface {
 	CreateRadiusProfile(ctx context.Context, omadacId string, siteId string) ProfilesAPICreateRadiusProfileRequest
 
 	// CreateRadiusProfileExecute executes the request
-	//  @return OperationResponseResIdOpenApiVO
-	CreateRadiusProfileExecute(r ProfilesAPICreateRadiusProfileRequest) (*OperationResponseResIdOpenApiVO, *http.Response, error)
+	//  @return OperationResponseString
+	CreateRadiusProfileExecute(r ProfilesAPICreateRadiusProfileRequest) (*OperationResponseString, *http.Response, error)
 
 	/*
 	CreateRadiusUser Create a new Build-in Radius profile user
@@ -2522,7 +2522,7 @@ func (r ProfilesAPICreateRadiusProfileRequest) CreateRadiusProfileOpenApiVO(crea
 	return r
 }
 
-func (r ProfilesAPICreateRadiusProfileRequest) Execute() (*OperationResponseResIdOpenApiVO, *http.Response, error) {
+func (r ProfilesAPICreateRadiusProfileRequest) Execute() (*OperationResponseString, *http.Response, error) {
 	return r.ApiService.CreateRadiusProfileExecute(r)
 }
 
@@ -2546,13 +2546,13 @@ func (a *ProfilesAPIService) CreateRadiusProfile(ctx context.Context, omadacId s
 }
 
 // Execute executes the request
-//  @return OperationResponseResIdOpenApiVO
-func (a *ProfilesAPIService) CreateRadiusProfileExecute(r ProfilesAPICreateRadiusProfileRequest) (*OperationResponseResIdOpenApiVO, *http.Response, error) {
+//  @return OperationResponseString
+func (a *ProfilesAPIService) CreateRadiusProfileExecute(r ProfilesAPICreateRadiusProfileRequest) (*OperationResponseString, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseResIdOpenApiVO
+		localVarReturnValue  *OperationResponseString
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.CreateRadiusProfile")

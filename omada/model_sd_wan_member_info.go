@@ -21,14 +21,20 @@ var _ MappedNullable = &SdWanMemberInfo{}
 
 // SdWanMemberInfo A list of members of the SD-WAN group
 type SdWanMemberInfo struct {
+	// The address where the site is located.
+	Address *string `json:"address,omitempty"`
 	// The device MAC of the sdWan member.
 	DeviceMac *string `json:"deviceMac,omitempty"`
 	// The device name of the sdWan member.
 	DeviceName *string `json:"deviceName,omitempty"`
 	// A list of lan network info for SdWan Member.
 	LanNetworkInfo []LanNetworkBrief `json:"lanNetworkInfo,omitempty"`
+	// The map latitude of the site.
+	Latitude *float64 `json:"latitude,omitempty"`
 	// If a member is a spoke, the link connection to the hub is identified.
 	LinkedToHub *int32 `json:"linkedToHub,omitempty"`
+	// The map longitude of the site.
+	Longitude *float64 `json:"longitude,omitempty"`
 	// The device model of the sdWan member.
 	Model *string `json:"model,omitempty"`
 	// The device model version of the sdWan member.
@@ -37,6 +43,12 @@ type SdWanMemberInfo struct {
 	OnlineStatus *int32 `json:"onlineStatus,omitempty"`
 	// Whether the sdWan member has a public IP.
 	PublicIp *bool `json:"publicIp,omitempty"`
+	// The region where the site is located.
+	Region *string `json:"region,omitempty"`
+	// The region latitude of the site.
+	RegionLatitude *float64 `json:"regionLatitude,omitempty"`
+	// The region longitude of the site.
+	RegionLongitude *float64 `json:"regionLongitude,omitempty"`
 	// The role of sdWan member, hub or spoke.
 	Role int32 `json:"role"`
 	// The sdWan IP of the sdWan member.
@@ -47,8 +59,12 @@ type SdWanMemberInfo struct {
 	SiteId *string `json:"siteId,omitempty"`
 	// The name of the site where the sdWan member is located.
 	SiteName *string `json:"siteName,omitempty"`
+	// Whether the device support SD-WAN NAT.
+	SupportSdWanNat *bool `json:"supportSdWanNat,omitempty"`
 	// The device type of the sdWan member.
 	Type *string `json:"type,omitempty"`
+	// Whether the site is placed on the map.
+	Unplaced *bool `json:"unplaced,omitempty"`
 	// A list of device port status info for SdWan Member.
 	WanPortsInfo []OsgPortStatBrief `json:"wanPortsInfo,omitempty"`
 }
@@ -71,6 +87,38 @@ func NewSdWanMemberInfo(role int32) *SdWanMemberInfo {
 func NewSdWanMemberInfoWithDefaults() *SdWanMemberInfo {
 	this := SdWanMemberInfo{}
 	return &this
+}
+
+// GetAddress returns the Address field value if set, zero value otherwise.
+func (o *SdWanMemberInfo) GetAddress() string {
+	if o == nil || IsNil(o.Address) {
+		var ret string
+		return ret
+	}
+	return *o.Address
+}
+
+// GetAddressOk returns a tuple with the Address field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanMemberInfo) GetAddressOk() (*string, bool) {
+	if o == nil || IsNil(o.Address) {
+		return nil, false
+	}
+	return o.Address, true
+}
+
+// HasAddress returns a boolean if a field has been set.
+func (o *SdWanMemberInfo) HasAddress() bool {
+	if o != nil && !IsNil(o.Address) {
+		return true
+	}
+
+	return false
+}
+
+// SetAddress gets a reference to the given string and assigns it to the Address field.
+func (o *SdWanMemberInfo) SetAddress(v string) {
+	o.Address = &v
 }
 
 // GetDeviceMac returns the DeviceMac field value if set, zero value otherwise.
@@ -169,6 +217,38 @@ func (o *SdWanMemberInfo) SetLanNetworkInfo(v []LanNetworkBrief) {
 	o.LanNetworkInfo = v
 }
 
+// GetLatitude returns the Latitude field value if set, zero value otherwise.
+func (o *SdWanMemberInfo) GetLatitude() float64 {
+	if o == nil || IsNil(o.Latitude) {
+		var ret float64
+		return ret
+	}
+	return *o.Latitude
+}
+
+// GetLatitudeOk returns a tuple with the Latitude field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanMemberInfo) GetLatitudeOk() (*float64, bool) {
+	if o == nil || IsNil(o.Latitude) {
+		return nil, false
+	}
+	return o.Latitude, true
+}
+
+// HasLatitude returns a boolean if a field has been set.
+func (o *SdWanMemberInfo) HasLatitude() bool {
+	if o != nil && !IsNil(o.Latitude) {
+		return true
+	}
+
+	return false
+}
+
+// SetLatitude gets a reference to the given float64 and assigns it to the Latitude field.
+func (o *SdWanMemberInfo) SetLatitude(v float64) {
+	o.Latitude = &v
+}
+
 // GetLinkedToHub returns the LinkedToHub field value if set, zero value otherwise.
 func (o *SdWanMemberInfo) GetLinkedToHub() int32 {
 	if o == nil || IsNil(o.LinkedToHub) {
@@ -199,6 +279,38 @@ func (o *SdWanMemberInfo) HasLinkedToHub() bool {
 // SetLinkedToHub gets a reference to the given int32 and assigns it to the LinkedToHub field.
 func (o *SdWanMemberInfo) SetLinkedToHub(v int32) {
 	o.LinkedToHub = &v
+}
+
+// GetLongitude returns the Longitude field value if set, zero value otherwise.
+func (o *SdWanMemberInfo) GetLongitude() float64 {
+	if o == nil || IsNil(o.Longitude) {
+		var ret float64
+		return ret
+	}
+	return *o.Longitude
+}
+
+// GetLongitudeOk returns a tuple with the Longitude field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanMemberInfo) GetLongitudeOk() (*float64, bool) {
+	if o == nil || IsNil(o.Longitude) {
+		return nil, false
+	}
+	return o.Longitude, true
+}
+
+// HasLongitude returns a boolean if a field has been set.
+func (o *SdWanMemberInfo) HasLongitude() bool {
+	if o != nil && !IsNil(o.Longitude) {
+		return true
+	}
+
+	return false
+}
+
+// SetLongitude gets a reference to the given float64 and assigns it to the Longitude field.
+func (o *SdWanMemberInfo) SetLongitude(v float64) {
+	o.Longitude = &v
 }
 
 // GetModel returns the Model field value if set, zero value otherwise.
@@ -327,6 +439,102 @@ func (o *SdWanMemberInfo) HasPublicIp() bool {
 // SetPublicIp gets a reference to the given bool and assigns it to the PublicIp field.
 func (o *SdWanMemberInfo) SetPublicIp(v bool) {
 	o.PublicIp = &v
+}
+
+// GetRegion returns the Region field value if set, zero value otherwise.
+func (o *SdWanMemberInfo) GetRegion() string {
+	if o == nil || IsNil(o.Region) {
+		var ret string
+		return ret
+	}
+	return *o.Region
+}
+
+// GetRegionOk returns a tuple with the Region field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanMemberInfo) GetRegionOk() (*string, bool) {
+	if o == nil || IsNil(o.Region) {
+		return nil, false
+	}
+	return o.Region, true
+}
+
+// HasRegion returns a boolean if a field has been set.
+func (o *SdWanMemberInfo) HasRegion() bool {
+	if o != nil && !IsNil(o.Region) {
+		return true
+	}
+
+	return false
+}
+
+// SetRegion gets a reference to the given string and assigns it to the Region field.
+func (o *SdWanMemberInfo) SetRegion(v string) {
+	o.Region = &v
+}
+
+// GetRegionLatitude returns the RegionLatitude field value if set, zero value otherwise.
+func (o *SdWanMemberInfo) GetRegionLatitude() float64 {
+	if o == nil || IsNil(o.RegionLatitude) {
+		var ret float64
+		return ret
+	}
+	return *o.RegionLatitude
+}
+
+// GetRegionLatitudeOk returns a tuple with the RegionLatitude field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanMemberInfo) GetRegionLatitudeOk() (*float64, bool) {
+	if o == nil || IsNil(o.RegionLatitude) {
+		return nil, false
+	}
+	return o.RegionLatitude, true
+}
+
+// HasRegionLatitude returns a boolean if a field has been set.
+func (o *SdWanMemberInfo) HasRegionLatitude() bool {
+	if o != nil && !IsNil(o.RegionLatitude) {
+		return true
+	}
+
+	return false
+}
+
+// SetRegionLatitude gets a reference to the given float64 and assigns it to the RegionLatitude field.
+func (o *SdWanMemberInfo) SetRegionLatitude(v float64) {
+	o.RegionLatitude = &v
+}
+
+// GetRegionLongitude returns the RegionLongitude field value if set, zero value otherwise.
+func (o *SdWanMemberInfo) GetRegionLongitude() float64 {
+	if o == nil || IsNil(o.RegionLongitude) {
+		var ret float64
+		return ret
+	}
+	return *o.RegionLongitude
+}
+
+// GetRegionLongitudeOk returns a tuple with the RegionLongitude field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanMemberInfo) GetRegionLongitudeOk() (*float64, bool) {
+	if o == nil || IsNil(o.RegionLongitude) {
+		return nil, false
+	}
+	return o.RegionLongitude, true
+}
+
+// HasRegionLongitude returns a boolean if a field has been set.
+func (o *SdWanMemberInfo) HasRegionLongitude() bool {
+	if o != nil && !IsNil(o.RegionLongitude) {
+		return true
+	}
+
+	return false
+}
+
+// SetRegionLongitude gets a reference to the given float64 and assigns it to the RegionLongitude field.
+func (o *SdWanMemberInfo) SetRegionLongitude(v float64) {
+	o.RegionLongitude = &v
 }
 
 // GetRole returns the Role field value
@@ -481,6 +689,38 @@ func (o *SdWanMemberInfo) SetSiteName(v string) {
 	o.SiteName = &v
 }
 
+// GetSupportSdWanNat returns the SupportSdWanNat field value if set, zero value otherwise.
+func (o *SdWanMemberInfo) GetSupportSdWanNat() bool {
+	if o == nil || IsNil(o.SupportSdWanNat) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportSdWanNat
+}
+
+// GetSupportSdWanNatOk returns a tuple with the SupportSdWanNat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanMemberInfo) GetSupportSdWanNatOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportSdWanNat) {
+		return nil, false
+	}
+	return o.SupportSdWanNat, true
+}
+
+// HasSupportSdWanNat returns a boolean if a field has been set.
+func (o *SdWanMemberInfo) HasSupportSdWanNat() bool {
+	if o != nil && !IsNil(o.SupportSdWanNat) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportSdWanNat gets a reference to the given bool and assigns it to the SupportSdWanNat field.
+func (o *SdWanMemberInfo) SetSupportSdWanNat(v bool) {
+	o.SupportSdWanNat = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *SdWanMemberInfo) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -511,6 +751,38 @@ func (o *SdWanMemberInfo) HasType() bool {
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *SdWanMemberInfo) SetType(v string) {
 	o.Type = &v
+}
+
+// GetUnplaced returns the Unplaced field value if set, zero value otherwise.
+func (o *SdWanMemberInfo) GetUnplaced() bool {
+	if o == nil || IsNil(o.Unplaced) {
+		var ret bool
+		return ret
+	}
+	return *o.Unplaced
+}
+
+// GetUnplacedOk returns a tuple with the Unplaced field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanMemberInfo) GetUnplacedOk() (*bool, bool) {
+	if o == nil || IsNil(o.Unplaced) {
+		return nil, false
+	}
+	return o.Unplaced, true
+}
+
+// HasUnplaced returns a boolean if a field has been set.
+func (o *SdWanMemberInfo) HasUnplaced() bool {
+	if o != nil && !IsNil(o.Unplaced) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnplaced gets a reference to the given bool and assigns it to the Unplaced field.
+func (o *SdWanMemberInfo) SetUnplaced(v bool) {
+	o.Unplaced = &v
 }
 
 // GetWanPortsInfo returns the WanPortsInfo field value if set, zero value otherwise.
@@ -555,6 +827,9 @@ func (o SdWanMemberInfo) MarshalJSON() ([]byte, error) {
 
 func (o SdWanMemberInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Address) {
+		toSerialize["address"] = o.Address
+	}
 	if !IsNil(o.DeviceMac) {
 		toSerialize["deviceMac"] = o.DeviceMac
 	}
@@ -564,8 +839,14 @@ func (o SdWanMemberInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LanNetworkInfo) {
 		toSerialize["lanNetworkInfo"] = o.LanNetworkInfo
 	}
+	if !IsNil(o.Latitude) {
+		toSerialize["latitude"] = o.Latitude
+	}
 	if !IsNil(o.LinkedToHub) {
 		toSerialize["linkedToHub"] = o.LinkedToHub
+	}
+	if !IsNil(o.Longitude) {
+		toSerialize["longitude"] = o.Longitude
 	}
 	if !IsNil(o.Model) {
 		toSerialize["model"] = o.Model
@@ -578,6 +859,15 @@ func (o SdWanMemberInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PublicIp) {
 		toSerialize["publicIp"] = o.PublicIp
+	}
+	if !IsNil(o.Region) {
+		toSerialize["region"] = o.Region
+	}
+	if !IsNil(o.RegionLatitude) {
+		toSerialize["regionLatitude"] = o.RegionLatitude
+	}
+	if !IsNil(o.RegionLongitude) {
+		toSerialize["regionLongitude"] = o.RegionLongitude
 	}
 	toSerialize["role"] = o.Role
 	if !IsNil(o.SdWanIp) {
@@ -592,8 +882,14 @@ func (o SdWanMemberInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SiteName) {
 		toSerialize["siteName"] = o.SiteName
 	}
+	if !IsNil(o.SupportSdWanNat) {
+		toSerialize["supportSdWanNat"] = o.SupportSdWanNat
+	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Unplaced) {
+		toSerialize["unplaced"] = o.Unplaced
 	}
 	if !IsNil(o.WanPortsInfo) {
 		toSerialize["wanPortsInfo"] = o.WanPortsInfo

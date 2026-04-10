@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **CertProfile** | Pointer to **bool** |  | [optional] 
 **ClientRateLimit** | Pointer to **bool** |  | [optional] 
 **Cluster** | Pointer to **bool** |  | [optional] 
+**ClusterHsMode** | Pointer to **bool** |  | [optional] 
 **ClusterModeOn** | Pointer to **bool** |  | [optional] 
 **CustomAcl** | Pointer to **bool** |  | [optional] 
 **Ddns** | Pointer to **bool** |  | [optional] 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **DnsCache** | Pointer to **bool** |  | [optional] 
 **DnsLoopUpSupport** | Pointer to **bool** |  | [optional] 
 **DnsProxy** | Pointer to **bool** |  | [optional] 
+**DomainNoPortGroup** | Pointer to **bool** |  | [optional] 
 **Dpi** | Pointer to **bool** |  | [optional] 
 **DpiStat** | Pointer to **bool** |  | [optional] 
 **Dsl** | Pointer to **bool** |  | [optional] 
@@ -40,6 +42,7 @@ Name | Type | Description | Notes
 **LdapVpn** | Pointer to **bool** |  | [optional] 
 **LockToAp** | Pointer to **bool** |  | [optional] 
 **MacFilter** | Pointer to **bool** |  | [optional] 
+**NatTraversal** | Pointer to **bool** |  | [optional] 
 **NetworkCheckSupport** | Pointer to **bool** |  | [optional] 
 **NetworkSecurity** | Pointer to **bool** |  | [optional] 
 **OltVlan** | Pointer to **bool** |  | [optional] 
@@ -52,17 +55,22 @@ Name | Type | Description | Notes
 **PolicyRouting** | Pointer to **bool** |  | [optional] 
 **Qos** | Pointer to **bool** |  | [optional] 
 **Radios** | Pointer to **bool** |  | [optional] 
+**ServerClientWireguard** | Pointer to **bool** |  | [optional] 
 **ServerOpenVpnGoogleLdap** | Pointer to **bool** |  | [optional] 
 **ServiceIptv** | Pointer to **bool** |  | [optional] 
 **ServiceType** | Pointer to **bool** |  | [optional] 
 **Sim** | Pointer to **bool** |  | [optional] 
+**SiteToSiteVpn** | Pointer to **bool** |  | [optional] 
 **SnmpServiceSetting** | Pointer to **bool** |  | [optional] 
+**SpeedTest** | Pointer to **bool** |  | [optional] 
+**SpeedTestSchedule** | Pointer to **bool** |  | [optional] 
 **Ssh** | Pointer to **bool** |  | [optional] 
 **SslVpn** | Pointer to **bool** |  | [optional] 
 **Statistics** | Pointer to **bool** |  | [optional] 
 **SubVpn** | Pointer to **bool** |  | [optional] 
 **SupportDpi** | Pointer to **bool** |  | [optional] 
 **SupportES** | Pointer to **bool** |  | [optional] 
+**SupportGetDhcpLeaseTime** | Pointer to **bool** |  | [optional] 
 **SupportL2** | Pointer to **bool** |  | [optional] 
 **SupportL3** | Pointer to **bool** |  | [optional] 
 **SupportShowServerInReservation** | Pointer to **bool** |  | [optional] 
@@ -73,6 +81,8 @@ Name | Type | Description | Notes
 **UrlCategory** | Pointer to **bool** |  | [optional] 
 **VirtualWan** | Pointer to **bool** |  | [optional] 
 **Voip** | Pointer to **bool** |  | [optional] 
+**VpnClient** | Pointer to **bool** |  | [optional] 
+**VpnServer** | Pointer to **bool** |  | [optional] 
 **VpnStatus** | Pointer to **bool** |  | [optional] 
 **VpnUser** | Pointer to **bool** |  | [optional] 
 **Wireguard** | Pointer to **bool** |  | [optional] 
@@ -298,6 +308,31 @@ SetCluster sets Cluster field to given value.
 
 HasCluster returns a boolean if a field has been set.
 
+### GetClusterHsMode
+
+`func (o *SiteSettingCapVO) GetClusterHsMode() bool`
+
+GetClusterHsMode returns the ClusterHsMode field if non-nil, zero value otherwise.
+
+### GetClusterHsModeOk
+
+`func (o *SiteSettingCapVO) GetClusterHsModeOk() (*bool, bool)`
+
+GetClusterHsModeOk returns a tuple with the ClusterHsMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClusterHsMode
+
+`func (o *SiteSettingCapVO) SetClusterHsMode(v bool)`
+
+SetClusterHsMode sets ClusterHsMode field to given value.
+
+### HasClusterHsMode
+
+`func (o *SiteSettingCapVO) HasClusterHsMode() bool`
+
+HasClusterHsMode returns a boolean if a field has been set.
+
 ### GetClusterModeOn
 
 `func (o *SiteSettingCapVO) GetClusterModeOn() bool`
@@ -497,6 +532,31 @@ SetDnsProxy sets DnsProxy field to given value.
 `func (o *SiteSettingCapVO) HasDnsProxy() bool`
 
 HasDnsProxy returns a boolean if a field has been set.
+
+### GetDomainNoPortGroup
+
+`func (o *SiteSettingCapVO) GetDomainNoPortGroup() bool`
+
+GetDomainNoPortGroup returns the DomainNoPortGroup field if non-nil, zero value otherwise.
+
+### GetDomainNoPortGroupOk
+
+`func (o *SiteSettingCapVO) GetDomainNoPortGroupOk() (*bool, bool)`
+
+GetDomainNoPortGroupOk returns a tuple with the DomainNoPortGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDomainNoPortGroup
+
+`func (o *SiteSettingCapVO) SetDomainNoPortGroup(v bool)`
+
+SetDomainNoPortGroup sets DomainNoPortGroup field to given value.
+
+### HasDomainNoPortGroup
+
+`func (o *SiteSettingCapVO) HasDomainNoPortGroup() bool`
+
+HasDomainNoPortGroup returns a boolean if a field has been set.
 
 ### GetDpi
 
@@ -998,6 +1058,31 @@ SetMacFilter sets MacFilter field to given value.
 
 HasMacFilter returns a boolean if a field has been set.
 
+### GetNatTraversal
+
+`func (o *SiteSettingCapVO) GetNatTraversal() bool`
+
+GetNatTraversal returns the NatTraversal field if non-nil, zero value otherwise.
+
+### GetNatTraversalOk
+
+`func (o *SiteSettingCapVO) GetNatTraversalOk() (*bool, bool)`
+
+GetNatTraversalOk returns a tuple with the NatTraversal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNatTraversal
+
+`func (o *SiteSettingCapVO) SetNatTraversal(v bool)`
+
+SetNatTraversal sets NatTraversal field to given value.
+
+### HasNatTraversal
+
+`func (o *SiteSettingCapVO) HasNatTraversal() bool`
+
+HasNatTraversal returns a boolean if a field has been set.
+
 ### GetNetworkCheckSupport
 
 `func (o *SiteSettingCapVO) GetNetworkCheckSupport() bool`
@@ -1298,6 +1383,31 @@ SetRadios sets Radios field to given value.
 
 HasRadios returns a boolean if a field has been set.
 
+### GetServerClientWireguard
+
+`func (o *SiteSettingCapVO) GetServerClientWireguard() bool`
+
+GetServerClientWireguard returns the ServerClientWireguard field if non-nil, zero value otherwise.
+
+### GetServerClientWireguardOk
+
+`func (o *SiteSettingCapVO) GetServerClientWireguardOk() (*bool, bool)`
+
+GetServerClientWireguardOk returns a tuple with the ServerClientWireguard field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerClientWireguard
+
+`func (o *SiteSettingCapVO) SetServerClientWireguard(v bool)`
+
+SetServerClientWireguard sets ServerClientWireguard field to given value.
+
+### HasServerClientWireguard
+
+`func (o *SiteSettingCapVO) HasServerClientWireguard() bool`
+
+HasServerClientWireguard returns a boolean if a field has been set.
+
 ### GetServerOpenVpnGoogleLdap
 
 `func (o *SiteSettingCapVO) GetServerOpenVpnGoogleLdap() bool`
@@ -1398,6 +1508,31 @@ SetSim sets Sim field to given value.
 
 HasSim returns a boolean if a field has been set.
 
+### GetSiteToSiteVpn
+
+`func (o *SiteSettingCapVO) GetSiteToSiteVpn() bool`
+
+GetSiteToSiteVpn returns the SiteToSiteVpn field if non-nil, zero value otherwise.
+
+### GetSiteToSiteVpnOk
+
+`func (o *SiteSettingCapVO) GetSiteToSiteVpnOk() (*bool, bool)`
+
+GetSiteToSiteVpnOk returns a tuple with the SiteToSiteVpn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSiteToSiteVpn
+
+`func (o *SiteSettingCapVO) SetSiteToSiteVpn(v bool)`
+
+SetSiteToSiteVpn sets SiteToSiteVpn field to given value.
+
+### HasSiteToSiteVpn
+
+`func (o *SiteSettingCapVO) HasSiteToSiteVpn() bool`
+
+HasSiteToSiteVpn returns a boolean if a field has been set.
+
 ### GetSnmpServiceSetting
 
 `func (o *SiteSettingCapVO) GetSnmpServiceSetting() bool`
@@ -1422,6 +1557,56 @@ SetSnmpServiceSetting sets SnmpServiceSetting field to given value.
 `func (o *SiteSettingCapVO) HasSnmpServiceSetting() bool`
 
 HasSnmpServiceSetting returns a boolean if a field has been set.
+
+### GetSpeedTest
+
+`func (o *SiteSettingCapVO) GetSpeedTest() bool`
+
+GetSpeedTest returns the SpeedTest field if non-nil, zero value otherwise.
+
+### GetSpeedTestOk
+
+`func (o *SiteSettingCapVO) GetSpeedTestOk() (*bool, bool)`
+
+GetSpeedTestOk returns a tuple with the SpeedTest field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpeedTest
+
+`func (o *SiteSettingCapVO) SetSpeedTest(v bool)`
+
+SetSpeedTest sets SpeedTest field to given value.
+
+### HasSpeedTest
+
+`func (o *SiteSettingCapVO) HasSpeedTest() bool`
+
+HasSpeedTest returns a boolean if a field has been set.
+
+### GetSpeedTestSchedule
+
+`func (o *SiteSettingCapVO) GetSpeedTestSchedule() bool`
+
+GetSpeedTestSchedule returns the SpeedTestSchedule field if non-nil, zero value otherwise.
+
+### GetSpeedTestScheduleOk
+
+`func (o *SiteSettingCapVO) GetSpeedTestScheduleOk() (*bool, bool)`
+
+GetSpeedTestScheduleOk returns a tuple with the SpeedTestSchedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpeedTestSchedule
+
+`func (o *SiteSettingCapVO) SetSpeedTestSchedule(v bool)`
+
+SetSpeedTestSchedule sets SpeedTestSchedule field to given value.
+
+### HasSpeedTestSchedule
+
+`func (o *SiteSettingCapVO) HasSpeedTestSchedule() bool`
+
+HasSpeedTestSchedule returns a boolean if a field has been set.
 
 ### GetSsh
 
@@ -1572,6 +1757,31 @@ SetSupportES sets SupportES field to given value.
 `func (o *SiteSettingCapVO) HasSupportES() bool`
 
 HasSupportES returns a boolean if a field has been set.
+
+### GetSupportGetDhcpLeaseTime
+
+`func (o *SiteSettingCapVO) GetSupportGetDhcpLeaseTime() bool`
+
+GetSupportGetDhcpLeaseTime returns the SupportGetDhcpLeaseTime field if non-nil, zero value otherwise.
+
+### GetSupportGetDhcpLeaseTimeOk
+
+`func (o *SiteSettingCapVO) GetSupportGetDhcpLeaseTimeOk() (*bool, bool)`
+
+GetSupportGetDhcpLeaseTimeOk returns a tuple with the SupportGetDhcpLeaseTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportGetDhcpLeaseTime
+
+`func (o *SiteSettingCapVO) SetSupportGetDhcpLeaseTime(v bool)`
+
+SetSupportGetDhcpLeaseTime sets SupportGetDhcpLeaseTime field to given value.
+
+### HasSupportGetDhcpLeaseTime
+
+`func (o *SiteSettingCapVO) HasSupportGetDhcpLeaseTime() bool`
+
+HasSupportGetDhcpLeaseTime returns a boolean if a field has been set.
 
 ### GetSupportL2
 
@@ -1822,6 +2032,56 @@ SetVoip sets Voip field to given value.
 `func (o *SiteSettingCapVO) HasVoip() bool`
 
 HasVoip returns a boolean if a field has been set.
+
+### GetVpnClient
+
+`func (o *SiteSettingCapVO) GetVpnClient() bool`
+
+GetVpnClient returns the VpnClient field if non-nil, zero value otherwise.
+
+### GetVpnClientOk
+
+`func (o *SiteSettingCapVO) GetVpnClientOk() (*bool, bool)`
+
+GetVpnClientOk returns a tuple with the VpnClient field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVpnClient
+
+`func (o *SiteSettingCapVO) SetVpnClient(v bool)`
+
+SetVpnClient sets VpnClient field to given value.
+
+### HasVpnClient
+
+`func (o *SiteSettingCapVO) HasVpnClient() bool`
+
+HasVpnClient returns a boolean if a field has been set.
+
+### GetVpnServer
+
+`func (o *SiteSettingCapVO) GetVpnServer() bool`
+
+GetVpnServer returns the VpnServer field if non-nil, zero value otherwise.
+
+### GetVpnServerOk
+
+`func (o *SiteSettingCapVO) GetVpnServerOk() (*bool, bool)`
+
+GetVpnServerOk returns a tuple with the VpnServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVpnServer
+
+`func (o *SiteSettingCapVO) SetVpnServer(v bool)`
+
+SetVpnServer sets VpnServer field to given value.
+
+### HasVpnServer
+
+`func (o *SiteSettingCapVO) HasVpnServer() bool`
+
+HasVpnServer returns a boolean if a field has been set.
 
 ### GetVpnStatus
 

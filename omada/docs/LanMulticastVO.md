@@ -4,18 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**FloodKnownEnable** | Pointer to **bool** | Whether open flood known protocols. | [optional] 
 **Id** | Pointer to **string** | The primary id of the multicast snooping. | [optional] 
 **IgmpQueriers** | Pointer to [**[]IgmpConfigVO**](IgmpConfigVO.md) | The querier configs for IGMP snooping(ipv4). | [optional] 
 **MldQueriers** | Pointer to [**[]MldConfigVO**](MldConfigVO.md) | The querier configs for MLD snooping(ipv6). | [optional] 
 **Name** | Pointer to **string** | The name of the multicast snooping. | [optional] 
 **Networks** | Pointer to [**[]NetworkVO**](NetworkVO.md) | The collection of snooping network ids related to this multicast snooping config. | [optional] 
-**OmadacId** | Pointer to **string** | The id of the omada the multicast snooping belongs to. | [optional] 
 **Protocol** | Pointer to **int32** | When multicast snooping value 0,then represents the IGMP snooping type,else if value 1,then represents MLD snooping type. | [optional] 
 **QuerierEnable** | Pointer to **bool** | Whether open querier. | [optional] 
 **Resource** | Pointer to **int32** | resource | [optional] 
 **RouterPortEnable** | Pointer to **bool** | Whether open manual router port config. | [optional] 
 **RouterPorts** | Pointer to [**[]RouterPortVO**](RouterPortVO.md) | The specific list of router ports info,including network, devices and the ports on them. | [optional] 
-**SiteId** | Pointer to **string** | The id of the site the multicast snooping belongs to. | [optional] 
 **SnoopConfig** | Pointer to [**SnoopConfigVO**](SnoopConfigVO.md) |  | [optional] 
 **UnknownMulticastExceptDevice** | Pointer to [**UnknownMulticastConfigVO**](UnknownMulticastConfigVO.md) |  | [optional] 
 **UnknownMulticastRule** | Pointer to **int32** | When it selects 0,then send forward, it selects 1,then discard info, it selects 2,then route port first. | [optional] 
@@ -38,6 +37,31 @@ will change when the set of required properties is changed
 NewLanMulticastVOWithDefaults instantiates a new LanMulticastVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetFloodKnownEnable
+
+`func (o *LanMulticastVO) GetFloodKnownEnable() bool`
+
+GetFloodKnownEnable returns the FloodKnownEnable field if non-nil, zero value otherwise.
+
+### GetFloodKnownEnableOk
+
+`func (o *LanMulticastVO) GetFloodKnownEnableOk() (*bool, bool)`
+
+GetFloodKnownEnableOk returns a tuple with the FloodKnownEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFloodKnownEnable
+
+`func (o *LanMulticastVO) SetFloodKnownEnable(v bool)`
+
+SetFloodKnownEnable sets FloodKnownEnable field to given value.
+
+### HasFloodKnownEnable
+
+`func (o *LanMulticastVO) HasFloodKnownEnable() bool`
+
+HasFloodKnownEnable returns a boolean if a field has been set.
 
 ### GetId
 
@@ -164,31 +188,6 @@ SetNetworks sets Networks field to given value.
 
 HasNetworks returns a boolean if a field has been set.
 
-### GetOmadacId
-
-`func (o *LanMulticastVO) GetOmadacId() string`
-
-GetOmadacId returns the OmadacId field if non-nil, zero value otherwise.
-
-### GetOmadacIdOk
-
-`func (o *LanMulticastVO) GetOmadacIdOk() (*string, bool)`
-
-GetOmadacIdOk returns a tuple with the OmadacId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOmadacId
-
-`func (o *LanMulticastVO) SetOmadacId(v string)`
-
-SetOmadacId sets OmadacId field to given value.
-
-### HasOmadacId
-
-`func (o *LanMulticastVO) HasOmadacId() bool`
-
-HasOmadacId returns a boolean if a field has been set.
-
 ### GetProtocol
 
 `func (o *LanMulticastVO) GetProtocol() int32`
@@ -313,31 +312,6 @@ SetRouterPorts sets RouterPorts field to given value.
 `func (o *LanMulticastVO) HasRouterPorts() bool`
 
 HasRouterPorts returns a boolean if a field has been set.
-
-### GetSiteId
-
-`func (o *LanMulticastVO) GetSiteId() string`
-
-GetSiteId returns the SiteId field if non-nil, zero value otherwise.
-
-### GetSiteIdOk
-
-`func (o *LanMulticastVO) GetSiteIdOk() (*string, bool)`
-
-GetSiteIdOk returns a tuple with the SiteId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSiteId
-
-`func (o *LanMulticastVO) SetSiteId(v string)`
-
-SetSiteId sets SiteId field to given value.
-
-### HasSiteId
-
-`func (o *LanMulticastVO) HasSiteId() bool`
-
-HasSiteId returns a boolean if a field has been set.
 
 ### GetSnoopConfig
 

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **SiteId** | Pointer to **string** | The site ID of the lan network | [optional] 
 **Vlan** | Pointer to **int32** | The vlan number of the lan network | [optional] 
 **VlanType** | Pointer to **int32** | The type of vlan of the lan network | [optional] 
+**Vlans** | Pointer to **string** | Batch Vlan IDS. | [optional] 
 
 ## Methods
 
@@ -413,6 +414,31 @@ SetVlanType sets VlanType field to given value.
 `func (o *LanNetworkBrief) HasVlanType() bool`
 
 HasVlanType returns a boolean if a field has been set.
+
+### GetVlans
+
+`func (o *LanNetworkBrief) GetVlans() string`
+
+GetVlans returns the Vlans field if non-nil, zero value otherwise.
+
+### GetVlansOk
+
+`func (o *LanNetworkBrief) GetVlansOk() (*string, bool)`
+
+GetVlansOk returns a tuple with the Vlans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVlans
+
+`func (o *LanNetworkBrief) SetVlans(v string)`
+
+SetVlans sets Vlans field to given value.
+
+### HasVlans
+
+`func (o *LanNetworkBrief) HasVlans() bool`
+
+HasVlans returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

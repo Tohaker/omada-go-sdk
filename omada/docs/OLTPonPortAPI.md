@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ## GetPonPortInformationPage
 
-> OperationResponsePageResponsePonPortInformationDTO GetPonPortInformationPage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponsePonPortInformationDTO GetPonPortInformationPage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get pon port information page
 
@@ -191,11 +191,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewBaseDevicePageQueryRequest() // BaseDevicePageQueryRequest | 
+	queryParam := *openapiclient.NewBaseDevicePageQueryRequest() // BaseDevicePageQueryRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTPonPortAPI.GetPonPortInformationPage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTPonPortAPI.GetPonPortInformationPage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTPonPortAPI.GetPonPortInformationPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**BaseDevicePageQueryRequest**](BaseDevicePageQueryRequest.md) |  | 
+ **queryParam** | [**BaseDevicePageQueryRequest**](BaseDevicePageQueryRequest.md) |  | 
 
 ### Return type
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ## GetPonPortPage
 
-> OperationResponsePageResponsePonPortDTO GetPonPortPage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponsePonPortDTO GetPonPortPage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get pon port page
 
@@ -424,11 +424,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewBaseDevicePageQueryRequest() // BaseDevicePageQueryRequest | 
+	queryParam := *openapiclient.NewBaseDevicePageQueryRequest() // BaseDevicePageQueryRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTPonPortAPI.GetPonPortPage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTPonPortAPI.GetPonPortPage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTPonPortAPI.GetPonPortPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**BaseDevicePageQueryRequest**](BaseDevicePageQueryRequest.md) |  | 
+ **queryParam** | [**BaseDevicePageQueryRequest**](BaseDevicePageQueryRequest.md) |  | 
 
 ### Return type
 

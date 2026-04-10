@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CurrentPage** | Pointer to **int32** | Current page number. | [optional] 
 **CurrentSize** | Pointer to **int32** | Number of entries per page. | [optional] 
 **Data** | Pointer to [**[]DdnsOpenApiVO**](DdnsOpenApiVO.md) |  | [optional] 
+**SupportByDsLiteAndMapE** | Pointer to **bool** | Whether this feature is supported for the DS-Lite or Map-E WAN connection types. | [optional] 
 **SupportCustomDdns** | Pointer to **bool** | Whether Custom Service Provider is supported in Dynamic DNS. | [optional] 
 **SupportCustomInterval** | Pointer to **bool** | Whether Custom Update Interval is supported in Dynamic DNS. | [optional] 
 **SupportTpLinkddns** | Pointer to **int32** | Whether Dynamic DNS supports TP-Link as a service provider. 0: Not supported, 1: Supported and not configured, 2: Supported and configured. | [optional] 
@@ -105,6 +106,31 @@ SetData sets Data field to given value.
 `func (o *DdnsOpenApiGridVODdnsOpenApiVO) HasData() bool`
 
 HasData returns a boolean if a field has been set.
+
+### GetSupportByDsLiteAndMapE
+
+`func (o *DdnsOpenApiGridVODdnsOpenApiVO) GetSupportByDsLiteAndMapE() bool`
+
+GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field if non-nil, zero value otherwise.
+
+### GetSupportByDsLiteAndMapEOk
+
+`func (o *DdnsOpenApiGridVODdnsOpenApiVO) GetSupportByDsLiteAndMapEOk() (*bool, bool)`
+
+GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportByDsLiteAndMapE
+
+`func (o *DdnsOpenApiGridVODdnsOpenApiVO) SetSupportByDsLiteAndMapE(v bool)`
+
+SetSupportByDsLiteAndMapE sets SupportByDsLiteAndMapE field to given value.
+
+### HasSupportByDsLiteAndMapE
+
+`func (o *DdnsOpenApiGridVODdnsOpenApiVO) HasSupportByDsLiteAndMapE() bool`
+
+HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
 
 ### GetSupportCustomDdns
 

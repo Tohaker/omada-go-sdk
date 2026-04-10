@@ -69,6 +69,10 @@ type APIClient struct {
 
 	AttackDefenseTemplateAPI AttackDefenseTemplateAPI
 
+	AuditLogAPI AuditLogAPI
+
+	AuditLogTemplateAPI AuditLogTemplateAPI
+
 	AuthenticationAPI AuthenticationAPI
 
 	AuthenticationTemplateAPI AuthenticationTemplateAPI
@@ -103,6 +107,8 @@ type APIClient struct {
 
 	CloudUserAPI CloudUserAPI
 
+	ClusterAPI ClusterAPI
+
 	ControllerSettingsAPI ControllerSettingsAPI
 
 	CustomerAPI CustomerAPI
@@ -134,6 +140,8 @@ type APIClient struct {
 	GatewayQOSTemplateAPI GatewayQOSTemplateAPI
 
 	GatewayQoSAPI GatewayQoSAPI
+
+	GatewayTemplateAPI GatewayTemplateAPI
 
 	GlobalDashboardOverviewAPI GlobalDashboardOverviewAPI
 
@@ -244,6 +252,8 @@ type APIClient struct {
 	ProfilesTemplateAPI ProfilesTemplateAPI
 
 	QuickActionAPI QuickActionAPI
+
+	RemoteAccessAPI RemoteAccessAPI
 
 	ReportV2API ReportV2API
 
@@ -360,6 +370,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ArpDetectionAPI = (*ArpDetectionAPIService)(&c.common)
 	c.AttackDefenseAPI = (*AttackDefenseAPIService)(&c.common)
 	c.AttackDefenseTemplateAPI = (*AttackDefenseTemplateAPIService)(&c.common)
+	c.AuditLogAPI = (*AuditLogAPIService)(&c.common)
+	c.AuditLogTemplateAPI = (*AuditLogTemplateAPIService)(&c.common)
 	c.AuthenticationAPI = (*AuthenticationAPIService)(&c.common)
 	c.AuthenticationTemplateAPI = (*AuthenticationTemplateAPIService)(&c.common)
 	c.AuthorizeAPI = (*AuthorizeAPIService)(&c.common)
@@ -377,6 +389,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ClientAPI = (*ClientAPIService)(&c.common)
 	c.ClientInsightAPI = (*ClientInsightAPIService)(&c.common)
 	c.CloudUserAPI = (*CloudUserAPIService)(&c.common)
+	c.ClusterAPI = (*ClusterAPIService)(&c.common)
 	c.ControllerSettingsAPI = (*ControllerSettingsAPIService)(&c.common)
 	c.CustomerAPI = (*CustomerAPIService)(&c.common)
 	c.DashboardAPI = (*DashboardAPIService)(&c.common)
@@ -393,6 +406,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.GatewayAPI = (*GatewayAPIService)(&c.common)
 	c.GatewayQOSTemplateAPI = (*GatewayQOSTemplateAPIService)(&c.common)
 	c.GatewayQoSAPI = (*GatewayQoSAPIService)(&c.common)
+	c.GatewayTemplateAPI = (*GatewayTemplateAPIService)(&c.common)
 	c.GlobalDashboardOverviewAPI = (*GlobalDashboardOverviewAPIService)(&c.common)
 	c.GlobalSecurityAPI = (*GlobalSecurityAPIService)(&c.common)
 	c.HealthAPI = (*HealthAPIService)(&c.common)
@@ -448,6 +462,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ProfilesAPI = (*ProfilesAPIService)(&c.common)
 	c.ProfilesTemplateAPI = (*ProfilesTemplateAPIService)(&c.common)
 	c.QuickActionAPI = (*QuickActionAPIService)(&c.common)
+	c.RemoteAccessAPI = (*RemoteAccessAPIService)(&c.common)
 	c.ReportV2API = (*ReportV2APIService)(&c.common)
 	c.RoutingAPI = (*RoutingAPIService)(&c.common)
 	c.RoutingTemplateAPI = (*RoutingTemplateAPIService)(&c.common)

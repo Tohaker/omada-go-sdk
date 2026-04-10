@@ -22,6 +22,7 @@ var _ MappedNullable = &UploadCertificateRequest{}
 
 // UploadCertificateRequest struct for UploadCertificateRequest
 type UploadCertificateRequest struct {
+	// Upload certificate file
 	File *os.File `json:"file"`
 }
 

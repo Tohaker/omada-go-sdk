@@ -27,6 +27,8 @@ type SiteSummaryInfo struct {
 	Longitude *float64 `json:"longitude,omitempty"`
 	// Name of the site should contain 1 to 64 characters.
 	Name *string `json:"name,omitempty"`
+	// Default Site mark
+	Primary *bool `json:"primary,omitempty"`
 	// Country/Region of the site; For the values of region, refer to the abbreviation of the ISO country code; For example, you need to input \"United States\" for the United States of America.
 	Region *string `json:"region,omitempty"`
 	// For the values of the scenario of the site, refer to result of the interface for Get scenario list.
@@ -190,6 +192,38 @@ func (o *SiteSummaryInfo) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *SiteSummaryInfo) SetName(v string) {
 	o.Name = &v
+}
+
+// GetPrimary returns the Primary field value if set, zero value otherwise.
+func (o *SiteSummaryInfo) GetPrimary() bool {
+	if o == nil || IsNil(o.Primary) {
+		var ret bool
+		return ret
+	}
+	return *o.Primary
+}
+
+// GetPrimaryOk returns a tuple with the Primary field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSummaryInfo) GetPrimaryOk() (*bool, bool) {
+	if o == nil || IsNil(o.Primary) {
+		return nil, false
+	}
+	return o.Primary, true
+}
+
+// HasPrimary returns a boolean if a field has been set.
+func (o *SiteSummaryInfo) HasPrimary() bool {
+	if o != nil && !IsNil(o.Primary) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrimary gets a reference to the given bool and assigns it to the Primary field.
+func (o *SiteSummaryInfo) SetPrimary(v bool) {
+	o.Primary = &v
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
@@ -501,6 +535,9 @@ func (o SiteSummaryInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Primary) {
+		toSerialize["primary"] = o.Primary
 	}
 	if !IsNil(o.Region) {
 		toSerialize["region"] = o.Region

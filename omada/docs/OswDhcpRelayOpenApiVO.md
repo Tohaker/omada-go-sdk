@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Addr** | **string** | Address IP, like 192.168.0.1 | 
+**Addr** | Pointer to **string** | Address IP, like 192.168.0.1 | [optional] 
+**ServerAddrs** | Pointer to **[]string** | Server Address IP List, like 192.168.0.1 | [optional] 
 **VrfId** | Pointer to **string** | VRF ID | [optional] 
 
 ## Methods
 
 ### NewOswDhcpRelayOpenApiVO
 
-`func NewOswDhcpRelayOpenApiVO(addr string, ) *OswDhcpRelayOpenApiVO`
+`func NewOswDhcpRelayOpenApiVO() *OswDhcpRelayOpenApiVO`
 
 NewOswDhcpRelayOpenApiVO instantiates a new OswDhcpRelayOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +46,36 @@ and a boolean to check if the value has been set.
 
 SetAddr sets Addr field to given value.
 
+### HasAddr
+
+`func (o *OswDhcpRelayOpenApiVO) HasAddr() bool`
+
+HasAddr returns a boolean if a field has been set.
+
+### GetServerAddrs
+
+`func (o *OswDhcpRelayOpenApiVO) GetServerAddrs() []string`
+
+GetServerAddrs returns the ServerAddrs field if non-nil, zero value otherwise.
+
+### GetServerAddrsOk
+
+`func (o *OswDhcpRelayOpenApiVO) GetServerAddrsOk() (*[]string, bool)`
+
+GetServerAddrsOk returns a tuple with the ServerAddrs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerAddrs
+
+`func (o *OswDhcpRelayOpenApiVO) SetServerAddrs(v []string)`
+
+SetServerAddrs sets ServerAddrs field to given value.
+
+### HasServerAddrs
+
+`func (o *OswDhcpRelayOpenApiVO) HasServerAddrs() bool`
+
+HasServerAddrs returns a boolean if a field has been set.
 
 ### GetVrfId
 

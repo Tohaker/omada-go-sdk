@@ -31,10 +31,12 @@ type WanLoadBalanceOpenApiVO struct {
 	LinkBackup bool `json:"linkBackup"`
 	// effective only for 'linkBackup: true'
 	Method *string `json:"method,omitempty"`
-	// It is required when [linkBackup] is true. 0: Enable backup link when any primary WAN fails. 1: Enable backup link when all primary WANs fail.
+	// It is required when [linkBackup] is true. 0: Enable backup link when any primary WAN fails. 1: Enable backup link when all primary WANs fail. 2: Timing
 	Mode *int32 `json:"mode,omitempty"`
 	// Primary WAN port IDs. It is required when [linkBackup] is true.
 	PrimaryWans []string `json:"primaryWans,omitempty"`
+	// Time Range ID. It is required when [mode] is timing.
+	TimeRangeId *string `json:"timeRangeId,omitempty"`
 	// virtual wan load balance
 	VirtualWanWeights []VirtualWanWeightOpenApiVO `json:"virtualWanWeights,omitempty"`
 	// Load Balancing Weights,item of weights should be within the range of 1 to the max int value(2147483647). It is sorted by port ID.
@@ -271,6 +273,38 @@ func (o *WanLoadBalanceOpenApiVO) SetPrimaryWans(v []string) {
 	o.PrimaryWans = v
 }
 
+// GetTimeRangeId returns the TimeRangeId field value if set, zero value otherwise.
+func (o *WanLoadBalanceOpenApiVO) GetTimeRangeId() string {
+	if o == nil || IsNil(o.TimeRangeId) {
+		var ret string
+		return ret
+	}
+	return *o.TimeRangeId
+}
+
+// GetTimeRangeIdOk returns a tuple with the TimeRangeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WanLoadBalanceOpenApiVO) GetTimeRangeIdOk() (*string, bool) {
+	if o == nil || IsNil(o.TimeRangeId) {
+		return nil, false
+	}
+	return o.TimeRangeId, true
+}
+
+// HasTimeRangeId returns a boolean if a field has been set.
+func (o *WanLoadBalanceOpenApiVO) HasTimeRangeId() bool {
+	if o != nil && !IsNil(o.TimeRangeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimeRangeId gets a reference to the given string and assigns it to the TimeRangeId field.
+func (o *WanLoadBalanceOpenApiVO) SetTimeRangeId(v string) {
+	o.TimeRangeId = &v
+}
+
 // GetVirtualWanWeights returns the VirtualWanWeights field value if set, zero value otherwise.
 func (o *WanLoadBalanceOpenApiVO) GetVirtualWanWeights() []VirtualWanWeightOpenApiVO {
 	if o == nil || IsNil(o.VirtualWanWeights) {
@@ -353,6 +387,9 @@ func (o WanLoadBalanceOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PrimaryWans) {
 		toSerialize["primaryWans"] = o.PrimaryWans
+	}
+	if !IsNil(o.TimeRangeId) {
+		toSerialize["timeRangeId"] = o.TimeRangeId
 	}
 	if !IsNil(o.VirtualWanWeights) {
 		toSerialize["virtualWanWeights"] = o.VirtualWanWeights

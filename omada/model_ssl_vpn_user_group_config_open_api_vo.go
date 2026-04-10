@@ -22,7 +22,7 @@ var _ MappedNullable = &SslVpnUserGroupConfigOpenApiVO{}
 // SslVpnUserGroupConfigOpenApiVO struct for SslVpnUserGroupConfigOpenApiVO
 type SslVpnUserGroupConfigOpenApiVO struct {
 	// Attribute value used for LDAP authentication. It should contain 1 to 20 characters.
-	LDAPAttribute *string `json:"LDAPAttribute,omitempty"`
+	LdapAttribute *string `json:"ldapAttribute,omitempty"`
 	// Name of the SSL VPN user group should contain 1 to 20 characters.
 	Name string `json:"name"`
 	// Attribute value used for radius authentication. It should contain 1 to 20 characters.
@@ -51,36 +51,36 @@ func NewSslVpnUserGroupConfigOpenApiVOWithDefaults() *SslVpnUserGroupConfigOpenA
 	return &this
 }
 
-// GetLDAPAttribute returns the LDAPAttribute field value if set, zero value otherwise.
-func (o *SslVpnUserGroupConfigOpenApiVO) GetLDAPAttribute() string {
-	if o == nil || IsNil(o.LDAPAttribute) {
+// GetLdapAttribute returns the LdapAttribute field value if set, zero value otherwise.
+func (o *SslVpnUserGroupConfigOpenApiVO) GetLdapAttribute() string {
+	if o == nil || IsNil(o.LdapAttribute) {
 		var ret string
 		return ret
 	}
-	return *o.LDAPAttribute
+	return *o.LdapAttribute
 }
 
-// GetLDAPAttributeOk returns a tuple with the LDAPAttribute field value if set, nil otherwise
+// GetLdapAttributeOk returns a tuple with the LdapAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SslVpnUserGroupConfigOpenApiVO) GetLDAPAttributeOk() (*string, bool) {
-	if o == nil || IsNil(o.LDAPAttribute) {
+func (o *SslVpnUserGroupConfigOpenApiVO) GetLdapAttributeOk() (*string, bool) {
+	if o == nil || IsNil(o.LdapAttribute) {
 		return nil, false
 	}
-	return o.LDAPAttribute, true
+	return o.LdapAttribute, true
 }
 
-// HasLDAPAttribute returns a boolean if a field has been set.
-func (o *SslVpnUserGroupConfigOpenApiVO) HasLDAPAttribute() bool {
-	if o != nil && !IsNil(o.LDAPAttribute) {
+// HasLdapAttribute returns a boolean if a field has been set.
+func (o *SslVpnUserGroupConfigOpenApiVO) HasLdapAttribute() bool {
+	if o != nil && !IsNil(o.LdapAttribute) {
 		return true
 	}
 
 	return false
 }
 
-// SetLDAPAttribute gets a reference to the given string and assigns it to the LDAPAttribute field.
-func (o *SslVpnUserGroupConfigOpenApiVO) SetLDAPAttribute(v string) {
-	o.LDAPAttribute = &v
+// SetLdapAttribute gets a reference to the given string and assigns it to the LdapAttribute field.
+func (o *SslVpnUserGroupConfigOpenApiVO) SetLdapAttribute(v string) {
+	o.LdapAttribute = &v
 }
 
 // GetName returns the Name field value
@@ -181,8 +181,8 @@ func (o SslVpnUserGroupConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o SslVpnUserGroupConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LDAPAttribute) {
-		toSerialize["LDAPAttribute"] = o.LDAPAttribute
+	if !IsNil(o.LdapAttribute) {
+		toSerialize["ldapAttribute"] = o.LdapAttribute
 	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.RadiusAttribute) {

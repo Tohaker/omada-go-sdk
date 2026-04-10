@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientMode** | Pointer to **int32** | Client mode should be a value as follows: 0: Client-To-Site, 1: Site-To-Site. | [optional] 
-**LocalIp** | Pointer to **string** | Local IP of the VPN user | [optional] 
+**LocalIp** | Pointer to **string** | Local IP of the VPN user. | [optional] 
 **MaxConnections** | Pointer to **int32** | Max connections should be within the range of 1–100. | [optional] 
 **Password** | **string** | Password of the VPN user. | 
 **Protocol** | Pointer to **int32** | Protocol should be a value as follows: 0: L2TP or PPTP; 1: openVPN. | [optional] 

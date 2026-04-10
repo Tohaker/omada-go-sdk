@@ -4,58 +4,58 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Site** | Pointer to **string** |  | [optional] 
-**AccessControlRule** | Pointer to **bool** |  | [optional] 
-**AllLan** | Pointer to **bool** |  | [optional] 
-**Application** | Pointer to **int32** |  | [optional] 
-**ArpDetectionEnable** | Pointer to **bool** |  | [optional] 
-**DeviceMac** | Pointer to **string** |  | [optional] 
-**DeviceType** | Pointer to **int32** |  | [optional] 
-**DhcpGuard** | Pointer to [**DhcpGuardVO**](DhcpGuardVO.md) |  | [optional] 
-**DhcpL2RelayEnable** | Pointer to **bool** |  | [optional] 
+**Site** | Pointer to **string** | Site ID | [optional] 
+**AccessControlRule** | Pointer to **bool** | Show AccessControlRule is enabled or not | [optional] 
+**AllLan** | Pointer to **bool** | When Internet pre-config is closed or Internet pre-config is Universal, allLAN is \&quot;true\&quot;; after adopting gateway, allLAN is \&quot;false\&quot;. | [optional] 
+**Application** | Pointer to **int32** | Effective device type should be a value as follows: 0: Gateway and Switch; 1: Switch | [optional] 
+**ArpDetectionEnable** | Pointer to **bool** | Enable arp detection. Only valid when deviceType is 1 and gateway supports this feature. | [optional] 
+**DeviceMac** | Pointer to **string** | DHCP Server Device mac. Only valid when deviceType is 1 or 2. When deviceType is 1, deviceMac can be empty when there is no gateway in the site. | [optional] 
+**DeviceType** | Pointer to **int32** | DHCP Server Device type. It should be a value as follows: 0:External Device 1:gateway 2:switch 3:none | [optional] 
+**DhcpGuard** | Pointer to [**DhcpServersSetting**](DhcpServersSetting.md) |  | [optional] 
+**DhcpL2RelayEnable** | Pointer to **bool** | The switch of DHCP L2 relay | [optional] 
 **DhcpRelay** | Pointer to [**OswDhcpRelayVO**](OswDhcpRelayVO.md) |  | [optional] 
 **DhcpServer** | Pointer to [**OswDhcpServerVO**](OswDhcpServerVO.md) |  | [optional] 
-**DhcpServerNum** | Pointer to **int32** |  | [optional] 
-**DhcpSettings** | Pointer to [**DhcpSettingsVO**](DhcpSettingsVO.md) |  | [optional] 
-**Dhcpv6Guard** | Pointer to [**Dhcpv6GuardVO**](Dhcpv6GuardVO.md) |  | [optional] 
-**Domain** | Pointer to **string** |  | [optional] 
-**ExistArpDetection** | Pointer to **bool** |  | [optional] 
-**ExistCustomDhcpOption** | Pointer to **bool** |  | [optional] 
-**ExistDhcpNextServer** | Pointer to **bool** |  | [optional] 
-**ExistMultiVlan** | Pointer to **bool** |  | [optional] 
-**ExistNetworkIsolation** | Pointer to **bool** |  | [optional] 
-**ExistRA** | Pointer to **bool** |  | [optional] 
-**FastLeaveEnable** | Pointer to **bool** |  | [optional] 
-**GatewaySubnet** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**IgmpSnoopEnable** | **bool** |  | 
+**DhcpServerNum** | Pointer to **int32** | The number of dhcp server devices in effect, Only valid when vlanType is 0. | [optional] 
+**DhcpSettings** | Pointer to [**DhcpSettingInfo**](DhcpSettingInfo.md) |  | [optional] 
+**Dhcpv6Guard** | Pointer to [**Dhcpv6ServersSetting**](Dhcpv6ServersSetting.md) |  | [optional] 
+**Domain** | Pointer to **string** | The domain of this network | [optional] 
+**ExistArpDetection** | Pointer to **bool** | Whether Arp Detection is configured. | [optional] 
+**ExistCustomDhcpOption** | Pointer to **bool** | Whether custom DHCP Options has been configured. | [optional] 
+**ExistDhcpNextServer** | Pointer to **bool** | Whether DHCP Next Server has been configured. | [optional] 
+**ExistMultiVlan** | Pointer to **bool** | Whether VLAN Type is Multiple. | [optional] 
+**ExistNetworkIsolation** | Pointer to **bool** | Whether Network Isolation is configured. | [optional] 
+**ExistRA** | Pointer to **bool** | Whether RA has been configured. | [optional] 
+**FastLeaveEnable** | Pointer to **bool** | IGMP Snooping fast leave enable status | [optional] 
+**GatewaySubnet** | Pointer to **string** | When purpose is interface, gateway subnet is needed. Format: IP/Mask | [optional] 
+**Id** | Pointer to **string** | LAN network ID | [optional] 
+**IgmpSnoopEnable** | **bool** | Enable IGMP snooping | 
 **Interface** | Pointer to **bool** |  | [optional] 
-**InterfaceIds** | Pointer to **[]string** |  | [optional] 
+**InterfaceIds** | Pointer to **[]string** | Gateway LAN port IDs (acquired from \&quot;Check WAN/LAN status\&quot;) | [optional] 
 **Ip** | Pointer to [**OswIpSettingVO**](OswIpSettingVO.md) |  | [optional] 
-**Isolation** | Pointer to **bool** |  | [optional] 
-**LanNetworkIpv6Config** | Pointer to [**LanNetworkIpv6ConfigVO**](LanNetworkIpv6ConfigVO.md) |  | [optional] 
-**MldSnoopEnable** | Pointer to **bool** |  | [optional] 
-**Mode** | Pointer to **int32** |  | [optional] 
-**Name** | **string** |  | 
-**OrigName** | Pointer to **string** |  | [optional] 
-**Portal** | Pointer to **bool** |  | [optional] 
-**PortalId** | Pointer to **string** |  | [optional] 
-**PortalName** | Pointer to **string** |  | [optional] 
-**Primary** | Pointer to **bool** |  | [optional] 
-**Purpose** | **string** |  | 
-**QosQueueEnable** | Pointer to **bool** |  | [optional] 
-**QueueId** | Pointer to **int32** |  | [optional] 
-**RateLimit** | Pointer to **bool** |  | [optional] 
-**Resource** | Pointer to **int32** |  | [optional] 
-**StackId** | Pointer to **string** |  | [optional] 
-**State** | Pointer to **int32** |  | [optional] 
-**SubnetOverride** | Pointer to **bool** |  | [optional] 
-**SubnetOverrideEnable** | Pointer to **bool** |  | [optional] 
-**TotalIpNum** | Pointer to **int64** |  | [optional] 
-**Vlan** | Pointer to **int32** |  | [optional] 
-**VlanType** | Pointer to **int32** |  | [optional] 
-**Vlans** | Pointer to **string** |  | [optional] 
-**VrfId** | Pointer to **string** |  | [optional] 
+**Isolation** | Pointer to **bool** | Whether network isolated. | [optional] 
+**LanNeworkIpv6Config** | Pointer to [**LanNetworkIPV6Config**](LanNetworkIPV6Config.md) |  | [optional] 
+**MldSnoopEnable** | Pointer to **bool** | Enable MLD snooping | [optional] 
+**Mode** | Pointer to **int32** | DHCP mode. 0: None 1: DHCP Server 2: DHCP Relay. Only valid when deviceType is 2. | [optional] 
+**Name** | **string** | LAN network name should contain 1 to 128 characters. | 
+**OrigName** | Pointer to **string** | Original name | [optional] 
+**Portal** | Pointer to **bool** | Show portal is enabled or not | [optional] 
+**PortalId** | Pointer to **string** | Show portal ID | [optional] 
+**PortalName** | Pointer to **string** | Show related portal name | [optional] 
+**Primary** | Pointer to **bool** | Primary | [optional] 
+**Purpose** | **string** | LAN network purpose should be as follows: vlan or interface | 
+**QosQueueEnable** | Pointer to **bool** | The switch of QoS queue. | [optional] 
+**QueueId** | Pointer to **int32** | QoS queue Id. | [optional] 
+**RateLimit** | Pointer to **bool** | Show RateLimit is enabled or not | [optional] 
+**Resource** | Pointer to **int32** | Resource is a value as follows: 0: new created; 1: from template; 2: override | [optional] 
+**StackId** | Pointer to **string** | DHCP Server Device stackId. Only valid when deviceType is 2 and the selected device is stack | [optional] 
+**State** | Pointer to **int32** | Network delivering state. It should be a value as follows: 0: not in delivering 1:delivering 2. deliver done | [optional] 
+**SubnetOverride** | Pointer to **bool** | Subnet override | [optional] 
+**SubnetOverrideEnable** | Pointer to **bool** | Subnet override enable status | [optional] 
+**TotalIpNum** | Pointer to **int64** | Total ip num | [optional] 
+**Vlan** | Pointer to **int32** | Only Valid when vlanType is 0. Vlan should be within the range of 1-4094. | [optional] 
+**VlanType** | Pointer to **int32** | When purpose is interface, VLANType should be a value as follows: 0: Single; 1: Multiple | [optional] 
+**Vlans** | Pointer to **string** | When purpose is interface and VLANType is 1, batch create VLANs. VLAN format: 200, 1-100. | [optional] 
+**VrfId** | Pointer to **string** | VRF ID | [optional] 
 
 ## Methods
 
@@ -253,20 +253,20 @@ HasDeviceType returns a boolean if a field has been set.
 
 ### GetDhcpGuard
 
-`func (o *LanNetworkVO) GetDhcpGuard() DhcpGuardVO`
+`func (o *LanNetworkVO) GetDhcpGuard() DhcpServersSetting`
 
 GetDhcpGuard returns the DhcpGuard field if non-nil, zero value otherwise.
 
 ### GetDhcpGuardOk
 
-`func (o *LanNetworkVO) GetDhcpGuardOk() (*DhcpGuardVO, bool)`
+`func (o *LanNetworkVO) GetDhcpGuardOk() (*DhcpServersSetting, bool)`
 
 GetDhcpGuardOk returns a tuple with the DhcpGuard field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDhcpGuard
 
-`func (o *LanNetworkVO) SetDhcpGuard(v DhcpGuardVO)`
+`func (o *LanNetworkVO) SetDhcpGuard(v DhcpServersSetting)`
 
 SetDhcpGuard sets DhcpGuard field to given value.
 
@@ -378,20 +378,20 @@ HasDhcpServerNum returns a boolean if a field has been set.
 
 ### GetDhcpSettings
 
-`func (o *LanNetworkVO) GetDhcpSettings() DhcpSettingsVO`
+`func (o *LanNetworkVO) GetDhcpSettings() DhcpSettingInfo`
 
 GetDhcpSettings returns the DhcpSettings field if non-nil, zero value otherwise.
 
 ### GetDhcpSettingsOk
 
-`func (o *LanNetworkVO) GetDhcpSettingsOk() (*DhcpSettingsVO, bool)`
+`func (o *LanNetworkVO) GetDhcpSettingsOk() (*DhcpSettingInfo, bool)`
 
 GetDhcpSettingsOk returns a tuple with the DhcpSettings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDhcpSettings
 
-`func (o *LanNetworkVO) SetDhcpSettings(v DhcpSettingsVO)`
+`func (o *LanNetworkVO) SetDhcpSettings(v DhcpSettingInfo)`
 
 SetDhcpSettings sets DhcpSettings field to given value.
 
@@ -403,20 +403,20 @@ HasDhcpSettings returns a boolean if a field has been set.
 
 ### GetDhcpv6Guard
 
-`func (o *LanNetworkVO) GetDhcpv6Guard() Dhcpv6GuardVO`
+`func (o *LanNetworkVO) GetDhcpv6Guard() Dhcpv6ServersSetting`
 
 GetDhcpv6Guard returns the Dhcpv6Guard field if non-nil, zero value otherwise.
 
 ### GetDhcpv6GuardOk
 
-`func (o *LanNetworkVO) GetDhcpv6GuardOk() (*Dhcpv6GuardVO, bool)`
+`func (o *LanNetworkVO) GetDhcpv6GuardOk() (*Dhcpv6ServersSetting, bool)`
 
 GetDhcpv6GuardOk returns a tuple with the Dhcpv6Guard field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDhcpv6Guard
 
-`func (o *LanNetworkVO) SetDhcpv6Guard(v Dhcpv6GuardVO)`
+`func (o *LanNetworkVO) SetDhcpv6Guard(v Dhcpv6ServersSetting)`
 
 SetDhcpv6Guard sets Dhcpv6Guard field to given value.
 
@@ -796,30 +796,30 @@ SetIsolation sets Isolation field to given value.
 
 HasIsolation returns a boolean if a field has been set.
 
-### GetLanNetworkIpv6Config
+### GetLanNeworkIpv6Config
 
-`func (o *LanNetworkVO) GetLanNetworkIpv6Config() LanNetworkIpv6ConfigVO`
+`func (o *LanNetworkVO) GetLanNeworkIpv6Config() LanNetworkIPV6Config`
 
-GetLanNetworkIpv6Config returns the LanNetworkIpv6Config field if non-nil, zero value otherwise.
+GetLanNeworkIpv6Config returns the LanNeworkIpv6Config field if non-nil, zero value otherwise.
 
-### GetLanNetworkIpv6ConfigOk
+### GetLanNeworkIpv6ConfigOk
 
-`func (o *LanNetworkVO) GetLanNetworkIpv6ConfigOk() (*LanNetworkIpv6ConfigVO, bool)`
+`func (o *LanNetworkVO) GetLanNeworkIpv6ConfigOk() (*LanNetworkIPV6Config, bool)`
 
-GetLanNetworkIpv6ConfigOk returns a tuple with the LanNetworkIpv6Config field if it's non-nil, zero value otherwise
+GetLanNeworkIpv6ConfigOk returns a tuple with the LanNeworkIpv6Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLanNetworkIpv6Config
+### SetLanNeworkIpv6Config
 
-`func (o *LanNetworkVO) SetLanNetworkIpv6Config(v LanNetworkIpv6ConfigVO)`
+`func (o *LanNetworkVO) SetLanNeworkIpv6Config(v LanNetworkIPV6Config)`
 
-SetLanNetworkIpv6Config sets LanNetworkIpv6Config field to given value.
+SetLanNeworkIpv6Config sets LanNeworkIpv6Config field to given value.
 
-### HasLanNetworkIpv6Config
+### HasLanNeworkIpv6Config
 
-`func (o *LanNetworkVO) HasLanNetworkIpv6Config() bool`
+`func (o *LanNetworkVO) HasLanNeworkIpv6Config() bool`
 
-HasLanNetworkIpv6Config returns a boolean if a field has been set.
+HasLanNeworkIpv6Config returns a boolean if a field has been set.
 
 ### GetMldSnoopEnable
 

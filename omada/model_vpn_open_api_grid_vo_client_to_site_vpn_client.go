@@ -30,8 +30,12 @@ type VpnOpenApiGridVOClientToSiteVpnClient struct {
 	Phase1Proposal1Cap []int32 `json:"phase1Proposal1Cap,omitempty"`
 	// Proposal options for IKE negotiation phase-2. 0: MD5, 1: SHA1, 2:SHA256, 3:SHA384, 4:SHA512.+ Default: MD5, SHA1 and SHA256
 	Phase2Proposal2Cap []int32 `json:"phase2Proposal2Cap,omitempty"`
+	// The limit on the number of entries for remote subnets and local network.
+	SubnetsLimitSize *int32 `json:"subnetsLimitSize,omitempty"`
 	// Whether account auth configuration is supported of the VPN
 	SupportAccountAuth *bool `json:"supportAccountAuth,omitempty"`
+	// Whether this feature is supported for the DS-Lite or Map-E WAN connection types.
+	SupportByDsLiteAndMapE *bool `json:"supportByDsLiteAndMapE,omitempty"`
 	// Whether custom dns configuration is supported of the VPN
 	SupportCustomDns *bool `json:"supportCustomDns,omitempty"`
 	// Whether custom network configuration is supported of the VPN
@@ -40,11 +44,9 @@ type VpnOpenApiGridVOClientToSiteVpnClient struct {
 	SupportIPsec *bool `json:"supportIPsec,omitempty"`
 	// Whether ip range configuration is supported of the VPN
 	SupportIpRange *bool `json:"supportIpRange,omitempty"`
-	// Whether IPSec Source NAT is supported of the VPN
-	SupportIpSNat *bool `json:"supportIpSNat,omitempty"`
 	// Whether L2TP VPN is supported.
 	SupportL2TP *bool `json:"supportL2TP,omitempty"`
-	// Whether LDAP authentication mode is supported of the VPN client
+	// Whether LDAP authentication mode is supported of the VPN server
 	SupportLdap *bool `json:"supportLdap,omitempty"`
 	// Whether OpenVPN supports inputting domain
 	SupportOpenVpnDomain *bool `json:"supportOpenVpnDomain,omitempty"`
@@ -265,6 +267,38 @@ func (o *VpnOpenApiGridVOClientToSiteVpnClient) SetPhase2Proposal2Cap(v []int32)
 	o.Phase2Proposal2Cap = v
 }
 
+// GetSubnetsLimitSize returns the SubnetsLimitSize field value if set, zero value otherwise.
+func (o *VpnOpenApiGridVOClientToSiteVpnClient) GetSubnetsLimitSize() int32 {
+	if o == nil || IsNil(o.SubnetsLimitSize) {
+		var ret int32
+		return ret
+	}
+	return *o.SubnetsLimitSize
+}
+
+// GetSubnetsLimitSizeOk returns a tuple with the SubnetsLimitSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnOpenApiGridVOClientToSiteVpnClient) GetSubnetsLimitSizeOk() (*int32, bool) {
+	if o == nil || IsNil(o.SubnetsLimitSize) {
+		return nil, false
+	}
+	return o.SubnetsLimitSize, true
+}
+
+// HasSubnetsLimitSize returns a boolean if a field has been set.
+func (o *VpnOpenApiGridVOClientToSiteVpnClient) HasSubnetsLimitSize() bool {
+	if o != nil && !IsNil(o.SubnetsLimitSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubnetsLimitSize gets a reference to the given int32 and assigns it to the SubnetsLimitSize field.
+func (o *VpnOpenApiGridVOClientToSiteVpnClient) SetSubnetsLimitSize(v int32) {
+	o.SubnetsLimitSize = &v
+}
+
 // GetSupportAccountAuth returns the SupportAccountAuth field value if set, zero value otherwise.
 func (o *VpnOpenApiGridVOClientToSiteVpnClient) GetSupportAccountAuth() bool {
 	if o == nil || IsNil(o.SupportAccountAuth) {
@@ -295,6 +329,38 @@ func (o *VpnOpenApiGridVOClientToSiteVpnClient) HasSupportAccountAuth() bool {
 // SetSupportAccountAuth gets a reference to the given bool and assigns it to the SupportAccountAuth field.
 func (o *VpnOpenApiGridVOClientToSiteVpnClient) SetSupportAccountAuth(v bool) {
 	o.SupportAccountAuth = &v
+}
+
+// GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field value if set, zero value otherwise.
+func (o *VpnOpenApiGridVOClientToSiteVpnClient) GetSupportByDsLiteAndMapE() bool {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportByDsLiteAndMapE
+}
+
+// GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnOpenApiGridVOClientToSiteVpnClient) GetSupportByDsLiteAndMapEOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		return nil, false
+	}
+	return o.SupportByDsLiteAndMapE, true
+}
+
+// HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
+func (o *VpnOpenApiGridVOClientToSiteVpnClient) HasSupportByDsLiteAndMapE() bool {
+	if o != nil && !IsNil(o.SupportByDsLiteAndMapE) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportByDsLiteAndMapE gets a reference to the given bool and assigns it to the SupportByDsLiteAndMapE field.
+func (o *VpnOpenApiGridVOClientToSiteVpnClient) SetSupportByDsLiteAndMapE(v bool) {
+	o.SupportByDsLiteAndMapE = &v
 }
 
 // GetSupportCustomDns returns the SupportCustomDns field value if set, zero value otherwise.
@@ -423,38 +489,6 @@ func (o *VpnOpenApiGridVOClientToSiteVpnClient) HasSupportIpRange() bool {
 // SetSupportIpRange gets a reference to the given bool and assigns it to the SupportIpRange field.
 func (o *VpnOpenApiGridVOClientToSiteVpnClient) SetSupportIpRange(v bool) {
 	o.SupportIpRange = &v
-}
-
-// GetSupportIpSNat returns the SupportIpSNat field value if set, zero value otherwise.
-func (o *VpnOpenApiGridVOClientToSiteVpnClient) GetSupportIpSNat() bool {
-	if o == nil || IsNil(o.SupportIpSNat) {
-		var ret bool
-		return ret
-	}
-	return *o.SupportIpSNat
-}
-
-// GetSupportIpSNatOk returns a tuple with the SupportIpSNat field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VpnOpenApiGridVOClientToSiteVpnClient) GetSupportIpSNatOk() (*bool, bool) {
-	if o == nil || IsNil(o.SupportIpSNat) {
-		return nil, false
-	}
-	return o.SupportIpSNat, true
-}
-
-// HasSupportIpSNat returns a boolean if a field has been set.
-func (o *VpnOpenApiGridVOClientToSiteVpnClient) HasSupportIpSNat() bool {
-	if o != nil && !IsNil(o.SupportIpSNat) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportIpSNat gets a reference to the given bool and assigns it to the SupportIpSNat field.
-func (o *VpnOpenApiGridVOClientToSiteVpnClient) SetSupportIpSNat(v bool) {
-	o.SupportIpSNat = &v
 }
 
 // GetSupportL2TP returns the SupportL2TP field value if set, zero value otherwise.
@@ -677,8 +711,14 @@ func (o VpnOpenApiGridVOClientToSiteVpnClient) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Phase2Proposal2Cap) {
 		toSerialize["phase2Proposal2Cap"] = o.Phase2Proposal2Cap
 	}
+	if !IsNil(o.SubnetsLimitSize) {
+		toSerialize["subnetsLimitSize"] = o.SubnetsLimitSize
+	}
 	if !IsNil(o.SupportAccountAuth) {
 		toSerialize["supportAccountAuth"] = o.SupportAccountAuth
+	}
+	if !IsNil(o.SupportByDsLiteAndMapE) {
+		toSerialize["supportByDsLiteAndMapE"] = o.SupportByDsLiteAndMapE
 	}
 	if !IsNil(o.SupportCustomDns) {
 		toSerialize["supportCustomDns"] = o.SupportCustomDns
@@ -691,9 +731,6 @@ func (o VpnOpenApiGridVOClientToSiteVpnClient) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.SupportIpRange) {
 		toSerialize["supportIpRange"] = o.SupportIpRange
-	}
-	if !IsNil(o.SupportIpSNat) {
-		toSerialize["supportIpSNat"] = o.SupportIpSNat
 	}
 	if !IsNil(o.SupportL2TP) {
 		toSerialize["supportL2TP"] = o.SupportL2TP

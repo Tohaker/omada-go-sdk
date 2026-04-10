@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ClientCount** | Pointer to **int32** | Directly Connected Client Count | [optional] 
 **ClientHealth** | Pointer to [**ClientAggHealthDTO**](ClientAggHealthDTO.md) |  | [optional] 
 **ClientType** | Pointer to **string** | Type of Third Party Device, if type is other | [optional] 
+**ClientVlanId** | Pointer to **int32** | Vlan Id Of Client That Exists In Topology As Other Device | [optional] 
 **Compatible** | Pointer to **int32** | The Compatibility Type Of Device Firmware And Controller | [optional] 
 **ConnectedChannel** | Pointer to **int32** | Connected Channel Of IPC/NVR | [optional] 
 **DadLink** | Pointer to [**[]WiredPortV3DTO**](WiredPortV3DTO.md) | DadLink for mlag node | [optional] 
@@ -367,6 +368,31 @@ SetClientType sets ClientType field to given value.
 `func (o *TopologyV3OpenApiNodeVO) HasClientType() bool`
 
 HasClientType returns a boolean if a field has been set.
+
+### GetClientVlanId
+
+`func (o *TopologyV3OpenApiNodeVO) GetClientVlanId() int32`
+
+GetClientVlanId returns the ClientVlanId field if non-nil, zero value otherwise.
+
+### GetClientVlanIdOk
+
+`func (o *TopologyV3OpenApiNodeVO) GetClientVlanIdOk() (*int32, bool)`
+
+GetClientVlanIdOk returns a tuple with the ClientVlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientVlanId
+
+`func (o *TopologyV3OpenApiNodeVO) SetClientVlanId(v int32)`
+
+SetClientVlanId sets ClientVlanId field to given value.
+
+### HasClientVlanId
+
+`func (o *TopologyV3OpenApiNodeVO) HasClientVlanId() bool`
+
+HasClientVlanId returns a boolean if a field has been set.
 
 ### GetCompatible
 

@@ -25,67 +25,79 @@ type WireguardVPNAPI interface {
 	/*
 	CreatePeer Create new wireguard peer
 
-	Create new wireguard peer.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43202  -  The number of WireGuard peers has reached the limit.<br/>-43205  -  The public key of the WireGuard peer for the same interface already exists.<br/>-43206  -  The device does not support configuring domain for WireGuard peer.<br/>-43207  -  Endpoint and Endpoint Port need to be filled in at the same time or both left blank.<br/>-43208  -  The device does not support WireGuard VPN.
+	Create new wireguard peer. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual or Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43202  -  The number of WireGuard peers has reached the limit.<br/>-43205  -  The public key of the WireGuard peer for the same interface already exists.<br/>-43206  -  The device does not support configuring domain for WireGuard peer.<br/>-43207  -  Endpoint and Endpoint Port need to be filled in at the same time or both left blank.<br/>-43208  -  The device does not support WireGuard VPN.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WireguardVPNAPICreatePeerRequest
+
+	Deprecated
 	*/
 	CreatePeer(ctx context.Context, omadacId string, siteId string) WireguardVPNAPICreatePeerRequest
 
 	// CreatePeerExecute executes the request
 	//  @return OperationResponseResponseIdVO
+	// Deprecated
 	CreatePeerExecute(r WireguardVPNAPICreatePeerRequest) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
 	CreateWireguard Create new wireguard
 
-	Create new wireguard.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43200  -  The number of WireGuard entries has reached the limit.<br/>-43204  -  The port has been used.<br/>-43208  -  The device does not support WireGuard VPN.
+	Create new wireguard. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43200  -  The number of WireGuard entries has reached the limit.<br/>-43204  -  The port has been used.<br/>-43208  -  The device does not support WireGuard VPN.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WireguardVPNAPICreateWireguardRequest
+
+	Deprecated
 	*/
 	CreateWireguard(ctx context.Context, omadacId string, siteId string) WireguardVPNAPICreateWireguardRequest
 
 	// CreateWireguardExecute executes the request
 	//  @return OperationResponseResponseIdVO
+	// Deprecated
 	CreateWireguardExecute(r WireguardVPNAPICreateWireguardRequest) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
 	DeletePeer Delete an existing wireguard peer
 
-	Delete an existing wireguard peer.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete an existing wireguard peer. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param id Peer ID
 	@return WireguardVPNAPIDeletePeerRequest
+
+	Deprecated
 	*/
 	DeletePeer(ctx context.Context, omadacId string, siteId string, id string) WireguardVPNAPIDeletePeerRequest
 
 	// DeletePeerExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeletePeerExecute(r WireguardVPNAPIDeletePeerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	DeleteWireguard Delete an existing wireguard
 
-	Delete an existing wireguard.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete an existing wireguard. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param id WireGuard VPN ID
 	@return WireguardVPNAPIDeleteWireguardRequest
+
+	Deprecated
 	*/
 	DeleteWireguard(ctx context.Context, omadacId string, siteId string, id string) WireguardVPNAPIDeleteWireguardRequest
 
 	// DeleteWireguardExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteWireguardExecute(r WireguardVPNAPIDeleteWireguardRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
@@ -113,77 +125,92 @@ type WireguardVPNAPI interface {
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WireguardVPNAPIGetWireguardSummaryRequest
+
+	Deprecated
 	*/
 	GetWireguardSummary(ctx context.Context, omadacId string, siteId string) WireguardVPNAPIGetWireguardSummaryRequest
 
 	// GetWireguardSummaryExecute executes the request
 	//  @return OperationResponseResponseDataVOWireguardSummaryOpenApiVO
+	// Deprecated
 	GetWireguardSummaryExecute(r WireguardVPNAPIGetWireguardSummaryRequest) (*OperationResponseResponseDataVOWireguardSummaryOpenApiVO, *http.Response, error)
 
 	/*
 	ListPeer Get wireguard peer list
 
-	Get wireguard peer list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get wireguard peer list. This interface has been deprecated. Please use the following interfaces instead: Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WireguardVPNAPIListPeerRequest
+
+	Deprecated
 	*/
 	ListPeer(ctx context.Context, omadacId string, siteId string) WireguardVPNAPIListPeerRequest
 
 	// ListPeerExecute executes the request
 	//  @return OperationResponseWireguardPeerOpenApiGridVOWireguardPeerDetailOpenApiVO
+	// Deprecated
 	ListPeerExecute(r WireguardVPNAPIListPeerRequest) (*OperationResponseWireguardPeerOpenApiGridVOWireguardPeerDetailOpenApiVO, *http.Response, error)
 
 	/*
 	ListWireguard Get wireguard list
 
-	Get wireguard list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get wireguard list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WireguardVPNAPIListWireguardRequest
+
+	Deprecated
 	*/
 	ListWireguard(ctx context.Context, omadacId string, siteId string) WireguardVPNAPIListWireguardRequest
 
 	// ListWireguardExecute executes the request
 	//  @return OperationResponseGridVOWireguardDetailOpenApiVO
+	// Deprecated
 	ListWireguardExecute(r WireguardVPNAPIListWireguardRequest) (*OperationResponseGridVOWireguardDetailOpenApiVO, *http.Response, error)
 
 	/*
 	ModifyPeer Modify an existing wireguard peer
 
-	Modify an existing wireguard peer.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43202  -  The number of WireGuard peers has reached the limit.<br/>-43203  -  The WireGuard peer does not exist.<br/>-43205  -  The public key of the WireGuard peer for the same interface already exists.<br/>-43206  -  The device does not support configuring domain for WireGuard peer.<br/>-43207  -  Endpoint and Endpoint Port need to be filled in at the same time or both left blank.<br/>-43208  -  The device does not support WireGuard VPN.
+	Modify an existing wireguard peer. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43202  -  The number of WireGuard peers has reached the limit.<br/>-43203  -  The WireGuard peer does not exist.<br/>-43205  -  The public key of the WireGuard peer for the same interface already exists.<br/>-43206  -  The device does not support configuring domain for WireGuard peer.<br/>-43207  -  Endpoint and Endpoint Port need to be filled in at the same time or both left blank.<br/>-43208  -  The device does not support WireGuard VPN.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param id Peer ID
 	@return WireguardVPNAPIModifyPeerRequest
+
+	Deprecated
 	*/
 	ModifyPeer(ctx context.Context, omadacId string, siteId string, id string) WireguardVPNAPIModifyPeerRequest
 
 	// ModifyPeerExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyPeerExecute(r WireguardVPNAPIModifyPeerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyWireguard Modify an existing wireguard
 
-	Modify an existing wireguard.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43201  -  The WireGuard entry does not exist.<br/>-43204  -  The port has been used.<br/>-43208  -  The device does not support WireGuard VPN.
+	Modify an existing wireguard. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43201  -  The WireGuard entry does not exist.<br/>-43204  -  The port has been used.<br/>-43208  -  The device does not support WireGuard VPN.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param id Wireguard ID
 	@return WireguardVPNAPIModifyWireguardRequest
+
+	Deprecated
 	*/
 	ModifyWireguard(ctx context.Context, omadacId string, siteId string, id string) WireguardVPNAPIModifyWireguardRequest
 
 	// ModifyWireguardExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyWireguardExecute(r WireguardVPNAPIModifyWireguardRequest) (*OperationResponseWithoutResult, *http.Response, error)
 }
 
@@ -210,12 +237,14 @@ func (r WireguardVPNAPICreatePeerRequest) Execute() (*OperationResponseResponseI
 /*
 CreatePeer Create new wireguard peer
 
-Create new wireguard peer.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43202  -  The number of WireGuard peers has reached the limit.<br/>-43205  -  The public key of the WireGuard peer for the same interface already exists.<br/>-43206  -  The device does not support configuring domain for WireGuard peer.<br/>-43207  -  Endpoint and Endpoint Port need to be filled in at the same time or both left blank.<br/>-43208  -  The device does not support WireGuard VPN.
+Create new wireguard peer. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual or Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43202  -  The number of WireGuard peers has reached the limit.<br/>-43205  -  The public key of the WireGuard peer for the same interface already exists.<br/>-43206  -  The device does not support configuring domain for WireGuard peer.<br/>-43207  -  Endpoint and Endpoint Port need to be filled in at the same time or both left blank.<br/>-43208  -  The device does not support WireGuard VPN.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return WireguardVPNAPICreatePeerRequest
+
+Deprecated
 */
 func (a *WireguardVPNAPIService) CreatePeer(ctx context.Context, omadacId string, siteId string) WireguardVPNAPICreatePeerRequest {
 	return WireguardVPNAPICreatePeerRequest{
@@ -228,6 +257,7 @@ func (a *WireguardVPNAPIService) CreatePeer(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseResponseIdVO
+// Deprecated
 func (a *WireguardVPNAPIService) CreatePeerExecute(r WireguardVPNAPICreatePeerRequest) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -342,12 +372,14 @@ func (r WireguardVPNAPICreateWireguardRequest) Execute() (*OperationResponseResp
 /*
 CreateWireguard Create new wireguard
 
-Create new wireguard.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43200  -  The number of WireGuard entries has reached the limit.<br/>-43204  -  The port has been used.<br/>-43208  -  The device does not support WireGuard VPN.
+Create new wireguard. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43200  -  The number of WireGuard entries has reached the limit.<br/>-43204  -  The port has been used.<br/>-43208  -  The device does not support WireGuard VPN.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return WireguardVPNAPICreateWireguardRequest
+
+Deprecated
 */
 func (a *WireguardVPNAPIService) CreateWireguard(ctx context.Context, omadacId string, siteId string) WireguardVPNAPICreateWireguardRequest {
 	return WireguardVPNAPICreateWireguardRequest{
@@ -360,6 +392,7 @@ func (a *WireguardVPNAPIService) CreateWireguard(ctx context.Context, omadacId s
 
 // Execute executes the request
 //  @return OperationResponseResponseIdVO
+// Deprecated
 func (a *WireguardVPNAPIService) CreateWireguardExecute(r WireguardVPNAPICreateWireguardRequest) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -469,13 +502,15 @@ func (r WireguardVPNAPIDeletePeerRequest) Execute() (*OperationResponseWithoutRe
 /*
 DeletePeer Delete an existing wireguard peer
 
-Delete an existing wireguard peer.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete an existing wireguard peer. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param id Peer ID
  @return WireguardVPNAPIDeletePeerRequest
+
+Deprecated
 */
 func (a *WireguardVPNAPIService) DeletePeer(ctx context.Context, omadacId string, siteId string, id string) WireguardVPNAPIDeletePeerRequest {
 	return WireguardVPNAPIDeletePeerRequest{
@@ -489,6 +524,7 @@ func (a *WireguardVPNAPIService) DeletePeer(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WireguardVPNAPIService) DeletePeerExecute(r WireguardVPNAPIDeletePeerRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -594,13 +630,15 @@ func (r WireguardVPNAPIDeleteWireguardRequest) Execute() (*OperationResponseWith
 /*
 DeleteWireguard Delete an existing wireguard
 
-Delete an existing wireguard.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete an existing wireguard. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param id WireGuard VPN ID
  @return WireguardVPNAPIDeleteWireguardRequest
+
+Deprecated
 */
 func (a *WireguardVPNAPIService) DeleteWireguard(ctx context.Context, omadacId string, siteId string, id string) WireguardVPNAPIDeleteWireguardRequest {
 	return WireguardVPNAPIDeleteWireguardRequest{
@@ -614,6 +652,7 @@ func (a *WireguardVPNAPIService) DeleteWireguard(ctx context.Context, omadacId s
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WireguardVPNAPIService) DeleteWireguardExecute(r WireguardVPNAPIDeleteWireguardRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -845,6 +884,8 @@ Get all wireguard's id and name info.<br/><br/>The interface requires one of the
  @param omadacId Omada ID
  @param siteId Site ID
  @return WireguardVPNAPIGetWireguardSummaryRequest
+
+Deprecated
 */
 func (a *WireguardVPNAPIService) GetWireguardSummary(ctx context.Context, omadacId string, siteId string) WireguardVPNAPIGetWireguardSummaryRequest {
 	return WireguardVPNAPIGetWireguardSummaryRequest{
@@ -857,6 +898,7 @@ func (a *WireguardVPNAPIService) GetWireguardSummary(ctx context.Context, omadac
 
 // Execute executes the request
 //  @return OperationResponseResponseDataVOWireguardSummaryOpenApiVO
+// Deprecated
 func (a *WireguardVPNAPIService) GetWireguardSummaryExecute(r WireguardVPNAPIGetWireguardSummaryRequest) (*OperationResponseResponseDataVOWireguardSummaryOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -981,12 +1023,14 @@ func (r WireguardVPNAPIListPeerRequest) Execute() (*OperationResponseWireguardPe
 /*
 ListPeer Get wireguard peer list
 
-Get wireguard peer list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get wireguard peer list. This interface has been deprecated. Please use the following interfaces instead: Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return WireguardVPNAPIListPeerRequest
+
+Deprecated
 */
 func (a *WireguardVPNAPIService) ListPeer(ctx context.Context, omadacId string, siteId string) WireguardVPNAPIListPeerRequest {
 	return WireguardVPNAPIListPeerRequest{
@@ -999,6 +1043,7 @@ func (a *WireguardVPNAPIService) ListPeer(ctx context.Context, omadacId string, 
 
 // Execute executes the request
 //  @return OperationResponseWireguardPeerOpenApiGridVOWireguardPeerDetailOpenApiVO
+// Deprecated
 func (a *WireguardVPNAPIService) ListPeerExecute(r WireguardVPNAPIListPeerRequest) (*OperationResponseWireguardPeerOpenApiGridVOWireguardPeerDetailOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -1134,12 +1179,14 @@ func (r WireguardVPNAPIListWireguardRequest) Execute() (*OperationResponseGridVO
 /*
 ListWireguard Get wireguard list
 
-Get wireguard list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get wireguard list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return WireguardVPNAPIListWireguardRequest
+
+Deprecated
 */
 func (a *WireguardVPNAPIService) ListWireguard(ctx context.Context, omadacId string, siteId string) WireguardVPNAPIListWireguardRequest {
 	return WireguardVPNAPIListWireguardRequest{
@@ -1152,6 +1199,7 @@ func (a *WireguardVPNAPIService) ListWireguard(ctx context.Context, omadacId str
 
 // Execute executes the request
 //  @return OperationResponseGridVOWireguardDetailOpenApiVO
+// Deprecated
 func (a *WireguardVPNAPIService) ListWireguardExecute(r WireguardVPNAPIListWireguardRequest) (*OperationResponseGridVOWireguardDetailOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -1273,13 +1321,15 @@ func (r WireguardVPNAPIModifyPeerRequest) Execute() (*OperationResponseWithoutRe
 /*
 ModifyPeer Modify an existing wireguard peer
 
-Modify an existing wireguard peer.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43202  -  The number of WireGuard peers has reached the limit.<br/>-43203  -  The WireGuard peer does not exist.<br/>-43205  -  The public key of the WireGuard peer for the same interface already exists.<br/>-43206  -  The device does not support configuring domain for WireGuard peer.<br/>-43207  -  Endpoint and Endpoint Port need to be filled in at the same time or both left blank.<br/>-43208  -  The device does not support WireGuard VPN.
+Modify an existing wireguard peer. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43202  -  The number of WireGuard peers has reached the limit.<br/>-43203  -  The WireGuard peer does not exist.<br/>-43205  -  The public key of the WireGuard peer for the same interface already exists.<br/>-43206  -  The device does not support configuring domain for WireGuard peer.<br/>-43207  -  Endpoint and Endpoint Port need to be filled in at the same time or both left blank.<br/>-43208  -  The device does not support WireGuard VPN.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param id Peer ID
  @return WireguardVPNAPIModifyPeerRequest
+
+Deprecated
 */
 func (a *WireguardVPNAPIService) ModifyPeer(ctx context.Context, omadacId string, siteId string, id string) WireguardVPNAPIModifyPeerRequest {
 	return WireguardVPNAPIModifyPeerRequest{
@@ -1293,6 +1343,7 @@ func (a *WireguardVPNAPIService) ModifyPeer(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WireguardVPNAPIService) ModifyPeerExecute(r WireguardVPNAPIModifyPeerRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
@@ -1409,13 +1460,15 @@ func (r WireguardVPNAPIModifyWireguardRequest) Execute() (*OperationResponseWith
 /*
 ModifyWireguard Modify an existing wireguard
 
-Modify an existing wireguard.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43201  -  The WireGuard entry does not exist.<br/>-43204  -  The port has been used.<br/>-43208  -  The device does not support WireGuard VPN.
+Modify an existing wireguard. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-43201  -  The WireGuard entry does not exist.<br/>-43204  -  The port has been used.<br/>-43208  -  The device does not support WireGuard VPN.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param id Wireguard ID
  @return WireguardVPNAPIModifyWireguardRequest
+
+Deprecated
 */
 func (a *WireguardVPNAPIService) ModifyWireguard(ctx context.Context, omadacId string, siteId string, id string) WireguardVPNAPIModifyWireguardRequest {
 	return WireguardVPNAPIModifyWireguardRequest{
@@ -1429,6 +1482,7 @@ func (a *WireguardVPNAPIService) ModifyWireguard(ctx context.Context, omadacId s
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WireguardVPNAPIService) ModifyWireguardExecute(r WireguardVPNAPIModifyWireguardRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut

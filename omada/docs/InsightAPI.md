@@ -21,7 +21,12 @@ Method | HTTP request | Description
 [**GetGridRogueAps**](InsightAPI.md#getgridrogueaps) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/rogueaps | Query the Rogue AP scan results
 [**GetGridRouting**](InsightAPI.md#getgridrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/routing/{type} | Get the routing table data interface
 [**GetGridStackRoutingTable**](InsightAPI.md#getgridstackroutingtable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/routingTable | Get stack routing table
+[**GetGridVpnClientStatus**](InsightAPI.md#getgridvpnclientstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/client | Get VPN Client status list
 [**GetGridVpnIpSec**](InsightAPI.md#getgridvpnipsec) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/ipsec | Query the vpnStats ipsec list
+[**GetGridVpnS2SPeersStatus**](InsightAPI.md#getgridvpns2speersstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/s2s/{vpnId}/peer | Get VPN Site-to-Site&#39;s peers status list
+[**GetGridVpnS2SStatus**](InsightAPI.md#getgridvpns2sstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/s2s | Get VPN Site-to-Site status list
+[**GetGridVpnServerClientsStatus**](InsightAPI.md#getgridvpnserverclientsstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/server/{vpnId}/client | Get VPN Server&#39;s clients status list
+[**GetGridVpnServerStatus**](InsightAPI.md#getgridvpnserverstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/server | Get VPN Server status list
 [**GetGridVpnTunnel**](InsightAPI.md#getgridvpntunnel) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/tunnel | Query the vpnStats tunnel list
 [**GetGridWidsData**](InsightAPI.md#getgridwidsdata) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids | Query the Wireless IDS entry list
 [**GetGridWifiInterfResult**](InsightAPI.md#getgridwifiinterfresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/wlan-interference |  Get WiFi interference results of interference detection
@@ -494,7 +499,7 @@ Name | Type | Description  | Notes
 
 ## GetBatchFullChannelDetectStatus
 
-> OperationResponseListBatchFullChannelDetectHistoryOpenApiVO GetBatchFullChannelDetectStatus(ctx, omadacId, siteId).QueryBatchFullChannelDetectStatusVO(queryBatchFullChannelDetectStatusVO).Execute()
+> OperationResponseListBatchFullChannelDetectStatusOpenApiVO GetBatchFullChannelDetectStatus(ctx, omadacId, siteId).QueryBatchFullChannelDetectStatusVO(queryBatchFullChannelDetectStatusVO).Execute()
 
 Get the interference detection status
 
@@ -524,7 +529,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.GetBatchFullChannelDetectStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetBatchFullChannelDetectStatus`: OperationResponseListBatchFullChannelDetectHistoryOpenApiVO
+	// response from `GetBatchFullChannelDetectStatus`: OperationResponseListBatchFullChannelDetectStatusOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.GetBatchFullChannelDetectStatus`: %v\n", resp)
 }
 ```
@@ -551,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseListBatchFullChannelDetectHistoryOpenApiVO**](OperationResponseListBatchFullChannelDetectHistoryOpenApiVO.md)
+[**OperationResponseListBatchFullChannelDetectStatusOpenApiVO**](OperationResponseListBatchFullChannelDetectStatusOpenApiVO.md)
 
 ### Authorization
 
@@ -1361,6 +1366,85 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetGridVpnClientStatus
+
+> OperationResponseGridVOVpnTunnelStatusVO GetGridVpnClientStatus(ctx, omadacId, siteId).FiltersVpnType(filtersVpnType).Page(page).PageSize(pageSize).Execute()
+
+Get VPN Client status list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	filtersVpnType := "filtersVpnType_example" // string | Filter query parameters, support field vpnType. 0: L2TP; 1: PPTP; 3: OpenVPN; 4: WireGuard.
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InsightAPI.GetGridVpnClientStatus(context.Background(), omadacId, siteId).FiltersVpnType(filtersVpnType).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.GetGridVpnClientStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridVpnClientStatus`: OperationResponseGridVOVpnTunnelStatusVO
+	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.GetGridVpnClientStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridVpnClientStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **filtersVpnType** | **string** | Filter query parameters, support field vpnType. 0: L2TP; 1: PPTP; 3: OpenVPN; 4: WireGuard. | 
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseGridVOVpnTunnelStatusVO**](OperationResponseGridVOVpnTunnelStatusVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetGridVpnIpSec
 
 > OperationResponseGridVOOsgVpnIpSecOpenApiVO GetGridVpnIpSec(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
@@ -1423,6 +1507,338 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseGridVOOsgVpnIpSecOpenApiVO**](OperationResponseGridVOOsgVpnIpSecOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridVpnS2SPeersStatus
+
+> OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO GetGridVpnS2SPeersStatus(ctx, omadacId, siteId, vpnId).Page(page).PageSize(pageSize).FiltersStatus(filtersStatus).SearchKey(searchKey).Execute()
+
+Get VPN Site-to-Site's peers status list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	vpnId := "vpnId_example" // string | VPN ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	filtersStatus := "filtersStatus_example" // string | Filter query parameters, support field status. 0: disconnected; 1: connected. (optional)
+	searchKey := "searchKey_example" // string | searchKey (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InsightAPI.GetGridVpnS2SPeersStatus(context.Background(), omadacId, siteId, vpnId).Page(page).PageSize(pageSize).FiltersStatus(filtersStatus).SearchKey(searchKey).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.GetGridVpnS2SPeersStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridVpnS2SPeersStatus`: OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO
+	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.GetGridVpnS2SPeersStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**vpnId** | **string** | VPN ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridVpnS2SPeersStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **filtersStatus** | **string** | Filter query parameters, support field status. 0: disconnected; 1: connected. | 
+ **searchKey** | **string** | searchKey | 
+
+### Return type
+
+[**OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO**](OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridVpnS2SStatus
+
+> OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO GetGridVpnS2SStatus(ctx, omadacId, siteId).FiltersVpnType(filtersVpnType).Page(page).PageSize(pageSize).Execute()
+
+Get VPN Site-to-Site status list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	filtersVpnType := "filtersVpnType_example" // string | Filter query parameters, support field vpnType. 2: IPSec; 4: WireGuard.
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InsightAPI.GetGridVpnS2SStatus(context.Background(), omadacId, siteId).FiltersVpnType(filtersVpnType).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.GetGridVpnS2SStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridVpnS2SStatus`: OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO
+	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.GetGridVpnS2SStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridVpnS2SStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **filtersVpnType** | **string** | Filter query parameters, support field vpnType. 2: IPSec; 4: WireGuard. | 
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO**](OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridVpnServerClientsStatus
+
+> OperationResponseGridVOVpnTunnelRemoteStatusVO GetGridVpnServerClientsStatus(ctx, omadacId, siteId, vpnId).Page(page).PageSize(pageSize).FiltersStatus(filtersStatus).SearchKey(searchKey).Execute()
+
+Get VPN Server's clients status list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	vpnId := "vpnId_example" // string | VPN ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	filtersStatus := "filtersStatus_example" // string | Filter query parameters, support field status. 0: disconnected; 1: connected. (optional)
+	searchKey := "searchKey_example" // string | searchKey (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InsightAPI.GetGridVpnServerClientsStatus(context.Background(), omadacId, siteId, vpnId).Page(page).PageSize(pageSize).FiltersStatus(filtersStatus).SearchKey(searchKey).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.GetGridVpnServerClientsStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridVpnServerClientsStatus`: OperationResponseGridVOVpnTunnelRemoteStatusVO
+	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.GetGridVpnServerClientsStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**vpnId** | **string** | VPN ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridVpnServerClientsStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **filtersStatus** | **string** | Filter query parameters, support field status. 0: disconnected; 1: connected. | 
+ **searchKey** | **string** | searchKey | 
+
+### Return type
+
+[**OperationResponseGridVOVpnTunnelRemoteStatusVO**](OperationResponseGridVOVpnTunnelRemoteStatusVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridVpnServerStatus
+
+> OperationResponseVpnTunnelGridVOVpnTunnelStatusVO GetGridVpnServerStatus(ctx, omadacId, siteId).FiltersVpnType(filtersVpnType).Page(page).PageSize(pageSize).FiltersClientMode(filtersClientMode).SortsActiveClients(sortsActiveClients).SortsClients(sortsClients).Execute()
+
+Get VPN Server status list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	filtersVpnType := "filtersVpnType_example" // string | Filter query parameters, support field vpnType. 0: L2TP; 1: PPTP; 2: IPSec; 3: OpenVPN; 4: WireGuard; 5: SSL VPN.
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	filtersClientMode := "filtersClientMode_example" // string | Filter query parameters, support field Client mode for VPN user. 0: NEM(Network Extension Mode) ; 1: Client. (optional)
+	sortsActiveClients := "sortsActiveClients_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
+	sortsClients := "sortsClients_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InsightAPI.GetGridVpnServerStatus(context.Background(), omadacId, siteId).FiltersVpnType(filtersVpnType).Page(page).PageSize(pageSize).FiltersClientMode(filtersClientMode).SortsActiveClients(sortsActiveClients).SortsClients(sortsClients).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.GetGridVpnServerStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridVpnServerStatus`: OperationResponseVpnTunnelGridVOVpnTunnelStatusVO
+	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.GetGridVpnServerStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridVpnServerStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **filtersVpnType** | **string** | Filter query parameters, support field vpnType. 0: L2TP; 1: PPTP; 2: IPSec; 3: OpenVPN; 4: WireGuard; 5: SSL VPN. | 
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **filtersClientMode** | **string** | Filter query parameters, support field Client mode for VPN user. 0: NEM(Network Extension Mode) ; 1: Client. | 
+ **sortsActiveClients** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect | 
+ **sortsClients** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect | 
+
+### Return type
+
+[**OperationResponseVpnTunnelGridVOVpnTunnelStatusVO**](OperationResponseVpnTunnelGridVOVpnTunnelStatusVO.md)
 
 ### Authorization
 

@@ -47,6 +47,8 @@ type RadiusProfileOpenApiVO struct {
 	RadiusAccountingEnable *bool `json:"radiusAccountingEnable,omitempty"`
 	// Radius profile ID
 	RadiusProfileId *string `json:"radiusProfileId,omitempty"`
+	// Message-Authenticator enable status
+	RequireMessageAuthenticator *bool `json:"requireMessageAuthenticator,omitempty"`
 	// Built-in Radius server enable status, valid when parameter [builtInServer] is true
 	ServerEnable *bool `json:"serverEnable,omitempty"`
 	// Built-in Radius server tunneled reply enable status, valid when parameter [builtInServer] is true
@@ -520,6 +522,38 @@ func (o *RadiusProfileOpenApiVO) SetRadiusProfileId(v string) {
 	o.RadiusProfileId = &v
 }
 
+// GetRequireMessageAuthenticator returns the RequireMessageAuthenticator field value if set, zero value otherwise.
+func (o *RadiusProfileOpenApiVO) GetRequireMessageAuthenticator() bool {
+	if o == nil || IsNil(o.RequireMessageAuthenticator) {
+		var ret bool
+		return ret
+	}
+	return *o.RequireMessageAuthenticator
+}
+
+// GetRequireMessageAuthenticatorOk returns a tuple with the RequireMessageAuthenticator field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RadiusProfileOpenApiVO) GetRequireMessageAuthenticatorOk() (*bool, bool) {
+	if o == nil || IsNil(o.RequireMessageAuthenticator) {
+		return nil, false
+	}
+	return o.RequireMessageAuthenticator, true
+}
+
+// HasRequireMessageAuthenticator returns a boolean if a field has been set.
+func (o *RadiusProfileOpenApiVO) HasRequireMessageAuthenticator() bool {
+	if o != nil && !IsNil(o.RequireMessageAuthenticator) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequireMessageAuthenticator gets a reference to the given bool and assigns it to the RequireMessageAuthenticator field.
+func (o *RadiusProfileOpenApiVO) SetRequireMessageAuthenticator(v bool) {
+	o.RequireMessageAuthenticator = &v
+}
+
 // GetServerEnable returns the ServerEnable field value if set, zero value otherwise.
 func (o *RadiusProfileOpenApiVO) GetServerEnable() bool {
 	if o == nil || IsNil(o.ServerEnable) {
@@ -667,6 +701,9 @@ func (o RadiusProfileOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RadiusProfileId) {
 		toSerialize["radiusProfileId"] = o.RadiusProfileId
+	}
+	if !IsNil(o.RequireMessageAuthenticator) {
+		toSerialize["requireMessageAuthenticator"] = o.RequireMessageAuthenticator
 	}
 	if !IsNil(o.ServerEnable) {
 		toSerialize["serverEnable"] = o.ServerEnable

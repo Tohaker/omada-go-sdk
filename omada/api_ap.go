@@ -23,9 +23,9 @@ import (
 type ApAPI interface {
 
 	/*
-	BatchModifyAntSwitchConfig Batch Modify AP antSwitch Setting
+	BatchModifyAntSwitchConfig Batch modify AP antSwitch setting
 
-	Batch Modify AP antSwitch Setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-60004  -  The device is not activated.
+	Batch modify AP antSwitch setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-60004  -  The device is not activated.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -39,9 +39,9 @@ type ApAPI interface {
 	BatchModifyAntSwitchConfigExecute(r ApAPIBatchModifyAntSwitchConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	BatchModifyApVlanConfig Batch Modify Ap Vlan Config
+	BatchModifyApVlanConfig Batch modify AP vlan config
 
-	Batch Modify Ap Vlan Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39346  -  The default LanNetwork cannot be selected for AP management vlan configuration.
+	Batch modify AP vlan config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39346  -  The default LanNetwork cannot be selected for AP management vlan configuration.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -55,9 +55,9 @@ type ApAPI interface {
 	BatchModifyApVlanConfigExecute(r ApAPIBatchModifyApVlanConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	BatchModifyMultiApPorts Batch modify multiple aps port config
+	BatchModifyMultiApPorts Batch modify multiple APs port config
 
-	Batch modify multiple aps port config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1  -  Something went wrong. Please try again later or contact our technical support.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39348  -  This AP port vlanId can not be same as the exist default LanNetwork profile.<br/>-39759  -  Cannot batch configure AP ports since one or several selected APs do not have a downlink port.
+	Batch modify multiple APs port config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1  -  Something went wrong. Please try again later or contact our technical support.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39348  -  This AP port vlanId can not be same as the exist default LanNetwork profile.<br/>-39759  -  Cannot batch configure AP ports since one or several selected APs do not have a downlink port.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -87,9 +87,9 @@ type ApAPI interface {
 	BatchModifyPowerSavingConfigExecute(r ApAPIBatchModifyPowerSavingConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ChangeP2pRole Change p2p ap role
+	ChangeP2pRole Change p2p AP role
 
-	Switch p2p ap role from main to client or client to main.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-39050  -  This device does not exist.<br/>-39352  -  The current firmware of the Main AP does not support role changing.<br/>-39354  -  Cannot change roles when multiple Client APs are connected to the Main AP.
+	Switch p2p AP role from main to client or client to main.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-39050  -  This device does not exist.<br/>-39352  -  The current firmware of the Main AP does not support role changing.<br/>-39354  -  Cannot change roles when multiple Client APs are connected to the Main AP.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -103,9 +103,9 @@ type ApAPI interface {
 	ChangeP2pRoleExecute(r ApAPIChangeP2pRoleRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	GetAfcConfig Get ap AFC config
+	GetAfcConfig Get AP AFC config
 
-	Get ap AFC config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP AFC config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -120,9 +120,9 @@ type ApAPI interface {
 	GetAfcConfigExecute(r ApAPIGetAfcConfigRequest) (*OperationResponseAfcConfigOpenApiVO, *http.Response, error)
 
 	/*
-	GetAfcInfo Get ap AFC Status Info
+	GetAfcInfo Get AP AFC Status Info
 
-	Get ap AFC Status Info.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP AFC Status Info.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -137,9 +137,9 @@ type ApAPI interface {
 	GetAfcInfoExecute(r ApAPIGetAfcInfoRequest) (*OperationResponseApAfcInfoOpenApiVO, *http.Response, error)
 
 	/*
-	GetAllApBriefInfosBySite Get Lock to Ap brief APs
+	GetAllApBriefInfosBySite Get lock to AP brief APs
 
-	Get Lock to Ap brief APs<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only
+	Get lock to AP brief APs<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -153,9 +153,9 @@ type ApAPI interface {
 	GetAllApBriefInfosBySiteExecute(r ApAPIGetAllApBriefInfosBySiteRequest) (*OperationResponseListApBriefInfo, *http.Response, error)
 
 	/*
-	GetAntSwitchConfig Get AP antSwitch Setting
+	GetAntSwitchConfig Get AP antSwitch setting
 
-	Get AP antSwitch Setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP antSwitch setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -204,9 +204,9 @@ type ApAPI interface {
 	GetApBridgeInfoExecute(r ApAPIGetApBridgeInfoRequest) (*OperationResponseApBridgeConfig, *http.Response, error)
 
 	/*
-	GetApL3AccessConfig Get Ap L3Access Config
+	GetApL3AccessConfig Get AP l3Access config
 
-	Get Ap L3Access Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP l3Access config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -237,9 +237,9 @@ type ApAPI interface {
 	GetApListChannelInfoExecute(r ApAPIGetApListChannelInfoRequest) (*ApChannelInfoOpenApiVO, *http.Response, error)
 
 	/*
-	GetApLldpConfig Get Ap LLDP Config
+	GetApLldpConfig Get AP lldp config
 
-	Get Ap LLDP Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP lldp config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -254,9 +254,9 @@ type ApAPI interface {
 	GetApLldpConfigExecute(r ApAPIGetApLldpConfigRequest) (*OperationResponseApLldpConfigOpenApiVO, *http.Response, error)
 
 	/*
-	GetApLoadBalanceConfig Get Ap Load Balance Config
+	GetApLoadBalanceConfig Get AP load balance config
 
-	Get Ap Load Balance Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP load balance config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -271,9 +271,9 @@ type ApAPI interface {
 	GetApLoadBalanceConfigExecute(r ApAPIGetApLoadBalanceConfigRequest) (*OperationResponseApAdvancedLoadBalanceOpenApiVO, *http.Response, error)
 
 	/*
-	GetApOfdmaConfig Get ap OFDMA config
+	GetApOfdmaConfig Get AP OFDMA config
 
-	Get ap OFDMA config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP OFDMA config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -305,9 +305,9 @@ type ApAPI interface {
 	GetApP2pInfoExecute(r ApAPIGetApP2pInfoRequest) (*OperationResponseApP2pInfo, *http.Response, error)
 
 	/*
-	GetApPortList Get Ap port list
+	GetApPortList Get AP port list
 
-	Get Ap port list<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP port list<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -322,9 +322,9 @@ type ApAPI interface {
 	GetApPortListExecute(r ApAPIGetApPortListRequest) (*OperationResponseListAPLANPortList, *http.Response, error)
 
 	/*
-	GetApPortVlans Get ap current vlans config
+	GetApPortVlans Get AP current vlans config
 
-	get ap current vlans config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	get AP current vlans config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -339,9 +339,9 @@ type ApAPI interface {
 	GetApPortVlansExecute(r ApAPIGetApPortVlansRequest) (*OperationResponseGridVOApVlansVO, *http.Response, error)
 
 	/*
-	GetApQoSConfig Get Ap QoS Config
+	GetApQoSConfig Get AP qos config
 
-	Get Ap QoS Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP qos config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -356,9 +356,9 @@ type ApAPI interface {
 	GetApQoSConfigExecute(r ApAPIGetApQoSConfigRequest) (*OperationResponseApAdvancedQosOpenApiVO, *http.Response, error)
 
 	/*
-	GetApSnmpConfig Get Ap Snmp Config
+	GetApSnmpConfig Get AP snmp config
 
-	Get Ap Snmp Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP snmp config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -373,9 +373,9 @@ type ApAPI interface {
 	GetApSnmpConfigExecute(r ApAPIGetApSnmpConfigRequest) (*OperationResponseApSnmpConfigOpenApiVO, *http.Response, error)
 
 	/*
-	GetApTrunkSettingConfig Get Ap Trunk Setting Config
+	GetApTrunkSettingConfig Get AP trunk setting config
 
-	Get Ap Trunk Setting Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP trunk setting config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -390,9 +390,9 @@ type ApAPI interface {
 	GetApTrunkSettingConfigExecute(r ApAPIGetApTrunkSettingConfigRequest) (*OperationResponseApTrunkSettingOpenApiVO, *http.Response, error)
 
 	/*
-	GetApUplinkConfig Get Ap Uplink Config
+	GetApUplinkConfig Get AP uplink config
 
-	Get Ap Uplink Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP uplink config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -407,9 +407,9 @@ type ApAPI interface {
 	GetApUplinkConfigExecute(r ApAPIGetApUplinkConfigRequest) (*OperationResponseListApUplinkConfigOpenApiVO, *http.Response, error)
 
 	/*
-	GetApVlanConfig Get Ap Vlan Config
+	GetApVlanConfig Get AP vlan config
 
-	Get Ap Vlan Config. This interface has been deprecated. Please use the following interface instead: Get Ap Vlan Config v2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP vlan config. This interface has been deprecated. Please use the following interface instead: Get AP vlan config v2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -427,9 +427,9 @@ type ApAPI interface {
 	GetApVlanConfigExecute(r ApAPIGetApVlanConfigRequest) (*OperationResponseApVlanConfigOpenApiVO, *http.Response, error)
 
 	/*
-	GetApVlanConfigV2 Get Ap Vlan Config v2
+	GetApVlanConfigV2 Get AP vlan config v2
 
-	Get Ap Vlan Config v2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP vlan config v2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -444,9 +444,9 @@ type ApAPI interface {
 	GetApVlanConfigV2Execute(r ApAPIGetApVlanConfigV2Request) (*OperationResponseApVlanConfigV2OpenApiVO, *http.Response, error)
 
 	/*
-	GetAvailableChannelOfAp Get available channel list of ap
+	GetAvailableChannelOfAp Get available channel list of AP
 
-	Get available channel list of ap<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-60004  -  The device is not activated.
+	Get available channel list of AP<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-60004  -  The device is not activated.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -461,9 +461,9 @@ type ApAPI interface {
 	GetAvailableChannelOfApExecute(r ApAPIGetAvailableChannelOfApRequest) (*OperationResponseApAvailableChannelOpenApiVO, *http.Response, error)
 
 	/*
-	GetChannelLimitConfig Get ap channel limit config
+	GetChannelLimitConfig Get AP channel limit config
 
-	Get ap channel limit config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP channel limit config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -478,9 +478,9 @@ type ApAPI interface {
 	GetChannelLimitConfigExecute(r ApAPIGetChannelLimitConfigRequest) (*OperationResponseChannelLimitConfigOpenApiVO, *http.Response, error)
 
 	/*
-	GetDownlinkWiredDevices Get ap downlink(wired) device list
+	GetDownlinkWiredDevices Get AP downlink(wired) device list
 
-	Get ap downlink(wired) device list<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-1005  -  Operation forbidden.<br/>-39303  -  AP does not exist.
+	Get AP downlink(wired) device list<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-1005  -  Operation forbidden.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -495,9 +495,9 @@ type ApAPI interface {
 	GetDownlinkWiredDevicesExecute(r ApAPIGetDownlinkWiredDevicesRequest) (*OperationResponseApWiredDownlink, *http.Response, error)
 
 	/*
-	GetGeneralConfig2 Get ap general config
+	GetGeneralConfig2 Get AP general config
 
-	Get ap general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -529,9 +529,9 @@ type ApAPI interface {
 	GetGridMeshCandiParentsForAdoptExecute(r ApAPIGetGridMeshCandiParentsForAdoptRequest) (*OperationResponseGridVOCandidateParentForAdoptOpenApiVO, *http.Response, error)
 
 	/*
-	GetIpSettingConfig Get ap ip setting
+	GetIpSettingConfig Get AP ip setting
 
-	Get ap IP setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP IP setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -546,9 +546,9 @@ type ApAPI interface {
 	GetIpSettingConfigExecute(r ApAPIGetIpSettingConfigRequest) (*OperationResponseApIPSetting, *http.Response, error)
 
 	/*
-	GetIpv6SettingConfig Get ap ipv6 setting
+	GetIpv6SettingConfig Get AP ipv6 setting
 
-	Get ap IPV6 setting, the ap should support IPv6<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP ipv6 setting, the AP should support ipv6<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -563,9 +563,9 @@ type ApAPI interface {
 	GetIpv6SettingConfigExecute(r ApAPIGetIpv6SettingConfigRequest) (*OperationResponseApIPv6Setting, *http.Response, error)
 
 	/*
-	GetLanDetail Get ap lan traffic info
+	GetLanDetail Get AP lan traffic info
 
-	Get ap lan traffic info<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP lan traffic info<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -580,9 +580,9 @@ type ApAPI interface {
 	GetLanDetailExecute(r ApAPIGetLanDetailRequest) (*OperationResponseApLanTraffic, *http.Response, error)
 
 	/*
-	GetMeshStatistics Get ap mesh statistics
+	GetMeshStatistics Get AP mesh statistics
 
-	Get ap mesh statistics<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP mesh statistics<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -597,9 +597,9 @@ type ApAPI interface {
 	GetMeshStatisticsExecute(r ApAPIGetMeshStatisticsRequest) (*OperationResponseApMeshStatisticsOpenApiVO, *http.Response, error)
 
 	/*
-	GetMeshStatisticsForMsp Get ap mesh statistics for MSP view
+	GetMeshStatisticsForMsp Get AP mesh statistics for MSP view
 
-	Get ap mesh statistics for MSP view<br/><br/>The interface requires one of the permissions: <br/>MSP Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Get AP mesh statistics for MSP view<br/><br/>The interface requires one of the permissions: <br/>MSP Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -615,9 +615,9 @@ type ApAPI interface {
 	GetMeshStatisticsForMspExecute(r ApAPIGetMeshStatisticsForMspRequest) (*OperationResponseApMeshStatisticsOpenApiVO, *http.Response, error)
 
 	/*
-	GetMultiApPortList Get multiple aps port list
+	GetMultiApPortList Get multiple APs port list
 
-	Get multiple Aps Port List.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39050  -  This device does not exist.<br/>-39749  -  To modify AP port configurations in batches, select APs of the same model.
+	Get multiple APs Port List.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39050  -  This device does not exist.<br/>-39749  -  To modify AP port configurations in batches, select APs of the same model.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -631,9 +631,9 @@ type ApAPI interface {
 	GetMultiApPortListExecute(r ApAPIGetMultiApPortListRequest) (*OperationResponseListAPLANPortList, *http.Response, error)
 
 	/*
-	GetOverviewDetail Get ap info
+	GetOverviewDetail Get AP info
 
-	Get ap info<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP info<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -648,9 +648,26 @@ type ApAPI interface {
 	GetOverviewDetailExecute(r ApAPIGetOverviewDetailRequest) (*OperationResponseApOverviewInfo, *http.Response, error)
 
 	/*
-	GetPowerSavingConfig Get ap power saving config
+	GetParingWindowResult Get Paring Window Result
 
-	Get ap power saving config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get Paring Window Result<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+	@return ApAPIGetParingWindowResultRequest
+	*/
+	GetParingWindowResult(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIGetParingWindowResultRequest
+
+	// GetParingWindowResultExecute executes the request
+	//  @return OperationResponseAPBridgeParingWindowResult
+	GetParingWindowResultExecute(r ApAPIGetParingWindowResultRequest) (*OperationResponseAPBridgeParingWindowResult, *http.Response, error)
+
+	/*
+	GetPowerSavingConfig Get AP power saving config
+
+	Get AP power saving config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -702,9 +719,9 @@ type ApAPI interface {
 	GetRFScanResultV2Execute(r ApAPIGetRFScanResultV2Request) (*OperationResponseApRFScanResult, *http.Response, error)
 
 	/*
-	GetRadiosConfig Get ap radio config
+	GetRadiosConfig Get AP radio config
 
-	Get ap radio config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP radio config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -719,9 +736,9 @@ type ApAPI interface {
 	GetRadiosConfigExecute(r ApAPIGetRadiosConfigRequest) (*OperationResponseApRadiosConfig, *http.Response, error)
 
 	/*
-	GetRadiosDetail Get ap radio detail
+	GetRadiosDetail Get AP radio detail
 
-	Get ap radio detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP radio detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -753,9 +770,9 @@ type ApAPI interface {
 	GetSpeedTestResultsExecute(r ApAPIGetSpeedTestResultsRequest) (*OperationResponseApSpeedTestResultsOpenApiVO, *http.Response, error)
 
 	/*
-	GetUplinkWiredDetail Get ap uplink(wired) detail
+	GetUplinkWiredDetail Get AP uplink(wired) detail
 
-	Get ap uplink(wired) detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP uplink(wired) detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -770,29 +787,9 @@ type ApAPI interface {
 	GetUplinkWiredDetailExecute(r ApAPIGetUplinkWiredDetailRequest) (*OperationResponseApWiredUplink, *http.Response, error)
 
 	/*
-	GetWlansConfig Get ap WLANs override config
+	GetWlansConfigV2 Get AP WLANs override config V2
 
-	Get ap WLANs override config. This interface has been deprecated. Please Use the following interface instead: Get ap WLANs override config V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param omadacId Omada ID
-	@param siteId Site ID
-	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
-	@return ApAPIGetWlansConfigRequest
-
-	Deprecated
-	*/
-	GetWlansConfig(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIGetWlansConfigRequest
-
-	// GetWlansConfigExecute executes the request
-	//  @return OperationResponseApSsidWlansOpenApiVO
-	// Deprecated
-	GetWlansConfigExecute(r ApAPIGetWlansConfigRequest) (*OperationResponseApSsidWlansOpenApiVO, *http.Response, error)
-
-	/*
-	GetWlansConfigV2 Get ap WLANs override config V2
-
-	Get ap WLANs override config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Get AP WLANs override config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -807,9 +804,9 @@ type ApAPI interface {
 	GetWlansConfigV2Execute(r ApAPIGetWlansConfigV2Request) (*OperationResponseApSsidWlansOpenApiV2VO, *http.Response, error)
 
 	/*
-	ModifyAfcConfig Modify ap AFC config
+	ModifyAfcConfig Modify AP AFC config
 
-	Modify ap AFC config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Modify AP AFC config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -824,9 +821,9 @@ type ApAPI interface {
 	ModifyAfcConfigExecute(r ApAPIModifyAfcConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyAntSwitchConfig Modify AP antSwitch Setting
+	ModifyAntSwitchConfig Modify AP antSwitch setting
 
-	Modify AP antSwitch Setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+	Modify AP antSwitch setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -875,9 +872,9 @@ type ApAPI interface {
 	ModifyApBridgeInfoExecute(r ApAPIModifyApBridgeInfoRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyApChannelConfig Modify ap channel config
+	ModifyApChannelConfig Modify AP channel config
 
-	Modify ap channel config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Modify AP channel config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -892,9 +889,9 @@ type ApAPI interface {
 	ModifyApChannelConfigExecute(r ApAPIModifyApChannelConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyApLoadBalanceConfig Modify Ap Load Balance Config
+	ModifyApLoadBalanceConfig Modify AP load balance config
 
-	Modify Ap Load Balance Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
+	Modify AP load balance config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -909,9 +906,26 @@ type ApAPI interface {
 	ModifyApLoadBalanceConfigExecute(r ApAPIModifyApLoadBalanceConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyApOfdmaConfig Modify ap OFDMA config
+	ModifyApManagementSsidConfig Modify AP management ssid config
 
-	Modify ap OFDMA config; If the device does not support this feature, it cannot be modified successfully.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Modify AP management ssid config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+	@return ApAPIModifyApManagementSsidConfigRequest
+	*/
+	ModifyApManagementSsidConfig(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIModifyApManagementSsidConfigRequest
+
+	// ModifyApManagementSsidConfigExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyApManagementSsidConfigExecute(r ApAPIModifyApManagementSsidConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyApOfdmaConfig Modify AP OFDMA config
+
+	Modify AP OFDMA config; If the device does not support this feature, it cannot be modified successfully.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -926,9 +940,9 @@ type ApAPI interface {
 	ModifyApOfdmaConfigExecute(r ApAPIModifyApOfdmaConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyApPort Modify Ap Port Config
+	ModifyApPort Modify AP port config
 
-	Modify Ap Port Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39348  -  This AP port vlanId can not be same as the exist default LanNetwork profile.
+	Modify AP port config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39348  -  This AP port vlanId can not be same as the exist default LanNetwork profile.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -944,9 +958,9 @@ type ApAPI interface {
 	ModifyApPortExecute(r ApAPIModifyApPortRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyApQosConfig Modify Ap QoS Config
+	ModifyApQosConfig Modify AP qos config
 
-	Modify Ap QoS Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
+	Modify AP qos config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -961,9 +975,9 @@ type ApAPI interface {
 	ModifyApQosConfigExecute(r ApAPIModifyApQosConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyApServicesConfig Modify AP Service Config
+	ModifyApServicesConfig Modify AP service config
 
-	Modify AP Service Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-44205  -  The device does not support this feature.<br/>-60004  -  The device is not activated.
+	Modify AP service config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-44205  -  The device does not support this feature.<br/>-60004  -  The device is not activated.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -978,9 +992,9 @@ type ApAPI interface {
 	ModifyApServicesConfigExecute(r ApAPIModifyApServicesConfigRequest) (*OperationResponseApServicesConfigOpenApiVO, *http.Response, error)
 
 	/*
-	ModifyApTrunkSettingConfig Modify Ap Trunk Setting Config
+	ModifyApTrunkSettingConfig Modify AP trunk setting config
 
-	Modify Ap Trunk Setting Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
+	Modify AP trunk setting config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -995,9 +1009,9 @@ type ApAPI interface {
 	ModifyApTrunkSettingConfigExecute(r ApAPIModifyApTrunkSettingConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyApUpLinkConfig Modify Ap Uplink Config
+	ModifyApUpLinkConfig Modify AP uplink config
 
-	Modify Ap Uplink Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.
+	Modify AP uplink config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1012,9 +1026,9 @@ type ApAPI interface {
 	ModifyApUpLinkConfigExecute(r ApAPIModifyApUpLinkConfigRequest) (*ApUplinkConfigOpenApiVO, *http.Response, error)
 
 	/*
-	ModifyApVlanConfig Modify Ap Vlan Config
+	ModifyApVlanConfig Modify AP vlan config
 
-	Modify Ap Vlan Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39346  -  The default LanNetwork cannot be selected for AP management vlan configuration.
+	Modify AP vlan config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39346  -  The default LanNetwork cannot be selected for AP management vlan configuration.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1029,9 +1043,9 @@ type ApAPI interface {
 	ModifyApVlanConfigExecute(r ApAPIModifyApVlanConfigRequest) (*OperationResponseApVlanConfigV2OpenApiVO, *http.Response, error)
 
 	/*
-	ModifyApWlanGroup Switch ap's wlan group
+	ModifyApWlanGroup Switch AP's wlan group
 
-	Switch ap's wlan group<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Switch AP's wlan group<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1046,9 +1060,9 @@ type ApAPI interface {
 	ModifyApWlanGroupExecute(r ApAPIModifyApWlanGroupRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyChannelLimitConfig Modify ap channel limit config
+	ModifyChannelLimitConfig Modify AP channel limit config
 
-	Modify ap channel limit config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Modify AP channel limit config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1063,9 +1077,9 @@ type ApAPI interface {
 	ModifyChannelLimitConfigExecute(r ApAPIModifyChannelLimitConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyGeneralConfig2 Modify ap general config
+	ModifyGeneralConfig2 Modify AP general config
 
-	Modify ap general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Modify AP general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1080,9 +1094,9 @@ type ApAPI interface {
 	ModifyGeneralConfig2Execute(r ApAPIModifyGeneralConfig2Request) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyIpSettingConfig Modify ap ip setting
+	ModifyIpSettingConfig Modify AP ip setting
 
-	Modify ap IP setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Modify AP IP setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1097,9 +1111,9 @@ type ApAPI interface {
 	ModifyIpSettingConfigExecute(r ApAPIModifyIpSettingConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyIpv6SettingConfig Modify ap ipv6 setting
+	ModifyIpv6SettingConfig Modify AP ipv6 setting
 
-	Modify ap IPv6 setting, the ap should support IPv6. Ensure the configuration is correct. Otherwise the device may be unable to connect to the Controller and require a factory reset.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Modify AP ipv6 setting, the AP should support ipv6. Ensure the configuration is correct. Otherwise the device may be unable to connect to the Controller and require a factory reset.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1114,9 +1128,9 @@ type ApAPI interface {
 	ModifyIpv6SettingConfigExecute(r ApAPIModifyIpv6SettingConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyPowerSavingConfig Modify ap power saving config
+	ModifyPowerSavingConfig Modify AP power saving config
 
-	Modify ap power saving config; If the device does not support this feature, it cannot be modified successfully.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-44205  -  The device does not support this feature.
+	Modify AP power saving config; If the device does not support this feature, it cannot be modified successfully.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-44205  -  The device does not support this feature.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1131,9 +1145,9 @@ type ApAPI interface {
 	ModifyPowerSavingConfigExecute(r ApAPIModifyPowerSavingConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyRadiosConfig Modify ap radio config
+	ModifyRadiosConfig Modify AP radio config
 
-	Modify ap radio config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Modify AP radio config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1148,29 +1162,9 @@ type ApAPI interface {
 	ModifyRadiosConfigExecute(r ApAPIModifyRadiosConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyWlansConfig Modify ap WLANs override config
+	ModifyWlansConfigV2 Modify AP WLANs override config V2
 
-	Modify ap WLANs override config. This interface has been deprecated. Please Use the following interface instead: Modify ap WLANs override config V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param omadacId Omada ID
-	@param siteId Site ID
-	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
-	@return ApAPIModifyWlansConfigRequest
-
-	Deprecated
-	*/
-	ModifyWlansConfig(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIModifyWlansConfigRequest
-
-	// ModifyWlansConfigExecute executes the request
-	//  @return OperationResponseWithoutResult
-	// Deprecated
-	ModifyWlansConfigExecute(r ApAPIModifyWlansConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
-	ModifyWlansConfigV2 Modify ap WLANs override config V2
-
-	Modify ap WLANs override config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+	Modify AP WLANs override config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1200,6 +1194,40 @@ type ApAPI interface {
 	// MspMoveToCustomer3Execute executes the request
 	//  @return OperationResponseWithoutResult
 	MspMoveToCustomer3Execute(r ApAPIMspMoveToCustomer3Request) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	StartParingWindow Bridge AP Start Paring Window
+
+	Bridge AP Start Paring Window<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+	@return ApAPIStartParingWindowRequest
+	*/
+	StartParingWindow(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIStartParingWindowRequest
+
+	// StartParingWindowExecute executes the request
+	//  @return OperationResponseWithoutResult
+	StartParingWindowExecute(r ApAPIStartParingWindowRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	StopParingWindow Bridge AP Stop Paring Window
+
+	Bridge AP Stop Paring Window<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+	@return ApAPIStopParingWindowRequest
+	*/
+	StopParingWindow(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIStopParingWindowRequest
+
+	// StopParingWindowExecute executes the request
+	//  @return OperationResponseWithoutResult
+	StopParingWindowExecute(r ApAPIStopParingWindowRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	TriggerRadioFrequencyScan Start rf scan
@@ -1256,9 +1284,9 @@ type ApAPI interface {
 	TriggerSpeedTestExecute(r ApAPITriggerSpeedTestRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	UpdateApLocationUseGps Update ap location info use GPS
+	UpdateApLocationUseGps Update AP location info use GPS
 
-	Update ap location info use GPS, only support gps function aps can get valid data.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-39358  -  The AP failed to get valid location information from the GPS module.
+	Update AP location info use GPS, only support gps function aps can get valid data.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-39358  -  The AP failed to get valid location information from the GPS module.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1294,9 +1322,9 @@ func (r ApAPIBatchModifyAntSwitchConfigRequest) Execute() (*OperationResponseWit
 }
 
 /*
-BatchModifyAntSwitchConfig Batch Modify AP antSwitch Setting
+BatchModifyAntSwitchConfig Batch modify AP antSwitch setting
 
-Batch Modify AP antSwitch Setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-60004  -  The device is not activated.
+Batch modify AP antSwitch setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-60004  -  The device is not activated.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1426,9 +1454,9 @@ func (r ApAPIBatchModifyApVlanConfigRequest) Execute() (*OperationResponseWithou
 }
 
 /*
-BatchModifyApVlanConfig Batch Modify Ap Vlan Config
+BatchModifyApVlanConfig Batch modify AP vlan config
 
-Batch Modify Ap Vlan Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39346  -  The default LanNetwork cannot be selected for AP management vlan configuration.
+Batch modify AP vlan config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39346  -  The default LanNetwork cannot be selected for AP management vlan configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1558,9 +1586,9 @@ func (r ApAPIBatchModifyMultiApPortsRequest) Execute() (*OperationResponseWithou
 }
 
 /*
-BatchModifyMultiApPorts Batch modify multiple aps port config
+BatchModifyMultiApPorts Batch modify multiple APs port config
 
-Batch modify multiple aps port config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1  -  Something went wrong. Please try again later or contact our technical support.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39348  -  This AP port vlanId can not be same as the exist default LanNetwork profile.<br/>-39759  -  Cannot batch configure AP ports since one or several selected APs do not have a downlink port.
+Batch modify multiple APs port config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1  -  Something went wrong. Please try again later or contact our technical support.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39348  -  This AP port vlanId can not be same as the exist default LanNetwork profile.<br/>-39759  -  Cannot batch configure AP ports since one or several selected APs do not have a downlink port.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1822,9 +1850,9 @@ func (r ApAPIChangeP2pRoleRequest) Execute() (*OperationResponseWithoutResult, *
 }
 
 /*
-ChangeP2pRole Change p2p ap role
+ChangeP2pRole Change p2p AP role
 
-Switch p2p ap role from main to client or client to main.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-39050  -  This device does not exist.<br/>-39352  -  The current firmware of the Main AP does not support role changing.<br/>-39354  -  Cannot change roles when multiple Client APs are connected to the Main AP.
+Switch p2p AP role from main to client or client to main.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-39050  -  This device does not exist.<br/>-39352  -  The current firmware of the Main AP does not support role changing.<br/>-39354  -  Cannot change roles when multiple Client APs are connected to the Main AP.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1949,9 +1977,9 @@ func (r ApAPIGetAfcConfigRequest) Execute() (*OperationResponseAfcConfigOpenApiV
 }
 
 /*
-GetAfcConfig Get ap AFC config
+GetAfcConfig Get AP AFC config
 
-Get ap AFC config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP AFC config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2074,9 +2102,9 @@ func (r ApAPIGetAfcInfoRequest) Execute() (*OperationResponseApAfcInfoOpenApiVO,
 }
 
 /*
-GetAfcInfo Get ap AFC Status Info
+GetAfcInfo Get AP AFC Status Info
 
-Get ap AFC Status Info.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP AFC Status Info.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2198,9 +2226,9 @@ func (r ApAPIGetAllApBriefInfosBySiteRequest) Execute() (*OperationResponseListA
 }
 
 /*
-GetAllApBriefInfosBySite Get Lock to Ap brief APs
+GetAllApBriefInfosBySite Get lock to AP brief APs
 
-Get Lock to Ap brief APs<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only
+Get lock to AP brief APs<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2320,9 +2348,9 @@ func (r ApAPIGetAntSwitchConfigRequest) Execute() (*OperationResponseApAntSwitch
 }
 
 /*
-GetAntSwitchConfig Get AP antSwitch Setting
+GetAntSwitchConfig Get AP antSwitch setting
 
-Get AP antSwitch Setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP antSwitch setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2695,9 +2723,9 @@ func (r ApAPIGetApL3AccessConfigRequest) Execute() (*OperationResponseApL3Access
 }
 
 /*
-GetApL3AccessConfig Get Ap L3Access Config
+GetApL3AccessConfig Get AP l3Access config
 
-Get Ap L3Access Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP l3Access config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2952,9 +2980,9 @@ func (r ApAPIGetApLldpConfigRequest) Execute() (*OperationResponseApLldpConfigOp
 }
 
 /*
-GetApLldpConfig Get Ap LLDP Config
+GetApLldpConfig Get AP lldp config
 
-Get Ap LLDP Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP lldp config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3077,9 +3105,9 @@ func (r ApAPIGetApLoadBalanceConfigRequest) Execute() (*OperationResponseApAdvan
 }
 
 /*
-GetApLoadBalanceConfig Get Ap Load Balance Config
+GetApLoadBalanceConfig Get AP load balance config
 
-Get Ap Load Balance Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP load balance config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3202,9 +3230,9 @@ func (r ApAPIGetApOfdmaConfigRequest) Execute() (*OperationResponseApOfdmaConfig
 }
 
 /*
-GetApOfdmaConfig Get ap OFDMA config
+GetApOfdmaConfig Get AP OFDMA config
 
-Get ap OFDMA config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP OFDMA config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3452,9 +3480,9 @@ func (r ApAPIGetApPortListRequest) Execute() (*OperationResponseListAPLANPortLis
 }
 
 /*
-GetApPortList Get Ap port list
+GetApPortList Get AP port list
 
-Get Ap port list<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP port list<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3591,9 +3619,9 @@ func (r ApAPIGetApPortVlansRequest) Execute() (*OperationResponseGridVOApVlansVO
 }
 
 /*
-GetApPortVlans Get ap current vlans config
+GetApPortVlans Get AP current vlans config
 
-get ap current vlans config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+get AP current vlans config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3724,9 +3752,9 @@ func (r ApAPIGetApQoSConfigRequest) Execute() (*OperationResponseApAdvancedQosOp
 }
 
 /*
-GetApQoSConfig Get Ap QoS Config
+GetApQoSConfig Get AP qos config
 
-Get Ap QoS Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP qos config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3849,9 +3877,9 @@ func (r ApAPIGetApSnmpConfigRequest) Execute() (*OperationResponseApSnmpConfigOp
 }
 
 /*
-GetApSnmpConfig Get Ap Snmp Config
+GetApSnmpConfig Get AP snmp config
 
-Get Ap Snmp Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP snmp config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3974,9 +4002,9 @@ func (r ApAPIGetApTrunkSettingConfigRequest) Execute() (*OperationResponseApTrun
 }
 
 /*
-GetApTrunkSettingConfig Get Ap Trunk Setting Config
+GetApTrunkSettingConfig Get AP trunk setting config
 
-Get Ap Trunk Setting Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP trunk setting config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4099,9 +4127,9 @@ func (r ApAPIGetApUplinkConfigRequest) Execute() (*OperationResponseListApUplink
 }
 
 /*
-GetApUplinkConfig Get Ap Uplink Config
+GetApUplinkConfig Get AP uplink config
 
-Get Ap Uplink Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP uplink config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4224,9 +4252,9 @@ func (r ApAPIGetApVlanConfigRequest) Execute() (*OperationResponseApVlanConfigOp
 }
 
 /*
-GetApVlanConfig Get Ap Vlan Config
+GetApVlanConfig Get AP vlan config
 
-Get Ap Vlan Config. This interface has been deprecated. Please use the following interface instead: Get Ap Vlan Config v2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP vlan config. This interface has been deprecated. Please use the following interface instead: Get AP vlan config v2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4352,9 +4380,9 @@ func (r ApAPIGetApVlanConfigV2Request) Execute() (*OperationResponseApVlanConfig
 }
 
 /*
-GetApVlanConfigV2 Get Ap Vlan Config v2
+GetApVlanConfigV2 Get AP vlan config v2
 
-Get Ap Vlan Config v2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP vlan config v2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4477,9 +4505,9 @@ func (r ApAPIGetAvailableChannelOfApRequest) Execute() (*OperationResponseApAvai
 }
 
 /*
-GetAvailableChannelOfAp Get available channel list of ap
+GetAvailableChannelOfAp Get available channel list of AP
 
-Get available channel list of ap<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-60004  -  The device is not activated.
+Get available channel list of AP<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-60004  -  The device is not activated.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4602,9 +4630,9 @@ func (r ApAPIGetChannelLimitConfigRequest) Execute() (*OperationResponseChannelL
 }
 
 /*
-GetChannelLimitConfig Get ap channel limit config
+GetChannelLimitConfig Get AP channel limit config
 
-Get ap channel limit config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP channel limit config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4727,9 +4755,9 @@ func (r ApAPIGetDownlinkWiredDevicesRequest) Execute() (*OperationResponseApWire
 }
 
 /*
-GetDownlinkWiredDevices Get ap downlink(wired) device list
+GetDownlinkWiredDevices Get AP downlink(wired) device list
 
-Get ap downlink(wired) device list<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-1005  -  Operation forbidden.<br/>-39303  -  AP does not exist.
+Get AP downlink(wired) device list<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-1005  -  Operation forbidden.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4852,9 +4880,9 @@ func (r ApAPIGetGeneralConfig2Request) Execute() (*OperationResponseApGeneralCon
 }
 
 /*
-GetGeneralConfig2 Get ap general config
+GetGeneralConfig2 Get AP general config
 
-Get ap general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5124,9 +5152,9 @@ func (r ApAPIGetIpSettingConfigRequest) Execute() (*OperationResponseApIPSetting
 }
 
 /*
-GetIpSettingConfig Get ap ip setting
+GetIpSettingConfig Get AP ip setting
 
-Get ap IP setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP IP setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5249,9 +5277,9 @@ func (r ApAPIGetIpv6SettingConfigRequest) Execute() (*OperationResponseApIPv6Set
 }
 
 /*
-GetIpv6SettingConfig Get ap ipv6 setting
+GetIpv6SettingConfig Get AP ipv6 setting
 
-Get ap IPV6 setting, the ap should support IPv6<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP ipv6 setting, the AP should support ipv6<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5374,9 +5402,9 @@ func (r ApAPIGetLanDetailRequest) Execute() (*OperationResponseApLanTraffic, *ht
 }
 
 /*
-GetLanDetail Get ap lan traffic info
+GetLanDetail Get AP lan traffic info
 
-Get ap lan traffic info<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP lan traffic info<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5499,9 +5527,9 @@ func (r ApAPIGetMeshStatisticsRequest) Execute() (*OperationResponseApMeshStatis
 }
 
 /*
-GetMeshStatistics Get ap mesh statistics
+GetMeshStatistics Get AP mesh statistics
 
-Get ap mesh statistics<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP mesh statistics<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5625,9 +5653,9 @@ func (r ApAPIGetMeshStatisticsForMspRequest) Execute() (*OperationResponseApMesh
 }
 
 /*
-GetMeshStatisticsForMsp Get ap mesh statistics for MSP view
+GetMeshStatisticsForMsp Get AP mesh statistics for MSP view
 
-Get ap mesh statistics for MSP view<br/><br/>The interface requires one of the permissions: <br/>MSP Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Get AP mesh statistics for MSP view<br/><br/>The interface requires one of the permissions: <br/>MSP Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -5758,9 +5786,9 @@ func (r ApAPIGetMultiApPortListRequest) Execute() (*OperationResponseListAPLANPo
 }
 
 /*
-GetMultiApPortList Get multiple aps port list
+GetMultiApPortList Get multiple APs port list
 
-Get multiple Aps Port List.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39050  -  This device does not exist.<br/>-39749  -  To modify AP port configurations in batches, select APs of the same model.
+Get multiple APs Port List.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39050  -  This device does not exist.<br/>-39749  -  To modify AP port configurations in batches, select APs of the same model.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5885,9 +5913,9 @@ func (r ApAPIGetOverviewDetailRequest) Execute() (*OperationResponseApOverviewIn
 }
 
 /*
-GetOverviewDetail Get ap info
+GetOverviewDetail Get AP info
 
-Get ap info<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP info<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5997,6 +6025,131 @@ func (a *ApAPIService) GetOverviewDetailExecute(r ApAPIGetOverviewDetailRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApAPIGetParingWindowResultRequest struct {
+	ctx context.Context
+	ApiService ApAPI
+	omadacId string
+	siteId string
+	apMac string
+}
+
+func (r ApAPIGetParingWindowResultRequest) Execute() (*OperationResponseAPBridgeParingWindowResult, *http.Response, error) {
+	return r.ApiService.GetParingWindowResultExecute(r)
+}
+
+/*
+GetParingWindowResult Get Paring Window Result
+
+Get Paring Window Result<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+ @return ApAPIGetParingWindowResultRequest
+*/
+func (a *ApAPIService) GetParingWindowResult(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIGetParingWindowResultRequest {
+	return ApAPIGetParingWindowResultRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apMac: apMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseAPBridgeParingWindowResult
+func (a *ApAPIService) GetParingWindowResultExecute(r ApAPIGetParingWindowResultRequest) (*OperationResponseAPBridgeParingWindowResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseAPBridgeParingWindowResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.GetParingWindowResult")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/paring-window-result"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApAPIGetPowerSavingConfigRequest struct {
 	ctx context.Context
 	ApiService ApAPI
@@ -6010,9 +6163,9 @@ func (r ApAPIGetPowerSavingConfigRequest) Execute() (*OperationResponseApPowerSa
 }
 
 /*
-GetPowerSavingConfig Get ap power saving config
+GetPowerSavingConfig Get AP power saving config
 
-Get ap power saving config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP power saving config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6388,9 +6541,9 @@ func (r ApAPIGetRadiosConfigRequest) Execute() (*OperationResponseApRadiosConfig
 }
 
 /*
-GetRadiosConfig Get ap radio config
+GetRadiosConfig Get AP radio config
 
-Get ap radio config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP radio config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6513,9 +6666,9 @@ func (r ApAPIGetRadiosDetailRequest) Execute() (*OperationResponseApRadiosDetail
 }
 
 /*
-GetRadiosDetail Get ap radio detail
+GetRadiosDetail Get AP radio detail
 
-Get ap radio detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP radio detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6763,9 +6916,9 @@ func (r ApAPIGetUplinkWiredDetailRequest) Execute() (*OperationResponseApWiredUp
 }
 
 /*
-GetUplinkWiredDetail Get ap uplink(wired) detail
+GetUplinkWiredDetail Get AP uplink(wired) detail
 
-Get ap uplink(wired) detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP uplink(wired) detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6875,134 +7028,6 @@ func (a *ApAPIService) GetUplinkWiredDetailExecute(r ApAPIGetUplinkWiredDetailRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApAPIGetWlansConfigRequest struct {
-	ctx context.Context
-	ApiService ApAPI
-	omadacId string
-	siteId string
-	apMac string
-}
-
-func (r ApAPIGetWlansConfigRequest) Execute() (*OperationResponseApSsidWlansOpenApiVO, *http.Response, error) {
-	return r.ApiService.GetWlansConfigExecute(r)
-}
-
-/*
-GetWlansConfig Get ap WLANs override config
-
-Get ap WLANs override config. This interface has been deprecated. Please Use the following interface instead: Get ap WLANs override config V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param omadacId Omada ID
- @param siteId Site ID
- @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
- @return ApAPIGetWlansConfigRequest
-
-Deprecated
-*/
-func (a *ApAPIService) GetWlansConfig(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIGetWlansConfigRequest {
-	return ApAPIGetWlansConfigRequest{
-		ApiService: a,
-		ctx: ctx,
-		omadacId: omadacId,
-		siteId: siteId,
-		apMac: apMac,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseApSsidWlansOpenApiVO
-// Deprecated
-func (a *ApAPIService) GetWlansConfigExecute(r ApAPIGetWlansConfigRequest) (*OperationResponseApSsidWlansOpenApiVO, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseApSsidWlansOpenApiVO
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.GetWlansConfig")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/override"
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ApAPIGetWlansConfigV2Request struct {
 	ctx context.Context
 	ApiService ApAPI
@@ -7016,9 +7041,9 @@ func (r ApAPIGetWlansConfigV2Request) Execute() (*OperationResponseApSsidWlansOp
 }
 
 /*
-GetWlansConfigV2 Get ap WLANs override config V2
+GetWlansConfigV2 Get AP WLANs override config V2
 
-Get ap WLANs override config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Get AP WLANs override config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -7147,9 +7172,9 @@ func (r ApAPIModifyAfcConfigRequest) Execute() (*OperationResponseWithoutResult,
 }
 
 /*
-ModifyAfcConfig Modify ap AFC config
+ModifyAfcConfig Modify AP AFC config
 
-Modify ap AFC config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Modify AP AFC config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -7283,9 +7308,9 @@ func (r ApAPIModifyAntSwitchConfigRequest) Execute() (*OperationResponseWithoutR
 }
 
 /*
-ModifyAntSwitchConfig Modify AP antSwitch Setting
+ModifyAntSwitchConfig Modify AP antSwitch setting
 
-Modify AP antSwitch Setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+Modify AP antSwitch setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -7691,9 +7716,9 @@ func (r ApAPIModifyApChannelConfigRequest) Execute() (*OperationResponseWithoutR
 }
 
 /*
-ModifyApChannelConfig Modify ap channel config
+ModifyApChannelConfig Modify AP channel config
 
-Modify ap channel config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Modify AP channel config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -7827,9 +7852,9 @@ func (r ApAPIModifyApLoadBalanceConfigRequest) Execute() (*OperationResponseWith
 }
 
 /*
-ModifyApLoadBalanceConfig Modify Ap Load Balance Config
+ModifyApLoadBalanceConfig Modify AP load balance config
 
-Modify Ap Load Balance Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
+Modify AP load balance config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -7944,6 +7969,142 @@ func (a *ApAPIService) ModifyApLoadBalanceConfigExecute(r ApAPIModifyApLoadBalan
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApAPIModifyApManagementSsidConfigRequest struct {
+	ctx context.Context
+	ApiService ApAPI
+	omadacId string
+	siteId string
+	apMac string
+	apManagementSsidConfig *ApManagementSsidConfig
+}
+
+func (r ApAPIModifyApManagementSsidConfigRequest) ApManagementSsidConfig(apManagementSsidConfig ApManagementSsidConfig) ApAPIModifyApManagementSsidConfigRequest {
+	r.apManagementSsidConfig = &apManagementSsidConfig
+	return r
+}
+
+func (r ApAPIModifyApManagementSsidConfigRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyApManagementSsidConfigExecute(r)
+}
+
+/*
+ModifyApManagementSsidConfig Modify AP management ssid config
+
+Modify AP management ssid config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+ @return ApAPIModifyApManagementSsidConfigRequest
+*/
+func (a *ApAPIService) ModifyApManagementSsidConfig(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIModifyApManagementSsidConfigRequest {
+	return ApAPIModifyApManagementSsidConfigRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apMac: apMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *ApAPIService) ModifyApManagementSsidConfigExecute(r ApAPIModifyApManagementSsidConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.ModifyApManagementSsidConfig")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/management-wlan"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.apManagementSsidConfig == nil {
+		return localVarReturnValue, nil, reportError("apManagementSsidConfig is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.apManagementSsidConfig
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApAPIModifyApOfdmaConfigRequest struct {
 	ctx context.Context
 	ApiService ApAPI
@@ -7963,9 +8124,9 @@ func (r ApAPIModifyApOfdmaConfigRequest) Execute() (*OperationResponseWithoutRes
 }
 
 /*
-ModifyApOfdmaConfig Modify ap OFDMA config
+ModifyApOfdmaConfig Modify AP OFDMA config
 
-Modify ap OFDMA config; If the device does not support this feature, it cannot be modified successfully.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Modify AP OFDMA config; If the device does not support this feature, it cannot be modified successfully.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8100,9 +8261,9 @@ func (r ApAPIModifyApPortRequest) Execute() (*OperationResponseWithoutResult, *h
 }
 
 /*
-ModifyApPort Modify Ap Port Config
+ModifyApPort Modify AP port config
 
-Modify Ap Port Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39348  -  This AP port vlanId can not be same as the exist default LanNetwork profile.
+Modify AP port config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39348  -  This AP port vlanId can not be same as the exist default LanNetwork profile.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8239,9 +8400,9 @@ func (r ApAPIModifyApQosConfigRequest) Execute() (*OperationResponseWithoutResul
 }
 
 /*
-ModifyApQosConfig Modify Ap QoS Config
+ModifyApQosConfig Modify AP qos config
 
-Modify Ap QoS Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
+Modify AP qos config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8375,9 +8536,9 @@ func (r ApAPIModifyApServicesConfigRequest) Execute() (*OperationResponseApServi
 }
 
 /*
-ModifyApServicesConfig Modify AP Service Config
+ModifyApServicesConfig Modify AP service config
 
-Modify AP Service Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-44205  -  The device does not support this feature.<br/>-60004  -  The device is not activated.
+Modify AP service config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-44205  -  The device does not support this feature.<br/>-60004  -  The device is not activated.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8511,9 +8672,9 @@ func (r ApAPIModifyApTrunkSettingConfigRequest) Execute() (*OperationResponseWit
 }
 
 /*
-ModifyApTrunkSettingConfig Modify Ap Trunk Setting Config
+ModifyApTrunkSettingConfig Modify AP trunk setting config
 
-Modify Ap Trunk Setting Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
+Modify AP trunk setting config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-44405  -  The configuration has been overridden.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8647,9 +8808,9 @@ func (r ApAPIModifyApUpLinkConfigRequest) Execute() (*ApUplinkConfigOpenApiVO, *
 }
 
 /*
-ModifyApUpLinkConfig Modify Ap Uplink Config
+ModifyApUpLinkConfig Modify AP uplink config
 
-Modify Ap Uplink Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.
+Modify AP uplink config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8783,9 +8944,9 @@ func (r ApAPIModifyApVlanConfigRequest) Execute() (*OperationResponseApVlanConfi
 }
 
 /*
-ModifyApVlanConfig Modify Ap Vlan Config
+ModifyApVlanConfig Modify AP vlan config
 
-Modify Ap Vlan Config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39346  -  The default LanNetwork cannot be selected for AP management vlan configuration.
+Modify AP vlan config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39051  -  Operation failed. Please try again later.<br/>-39303  -  AP does not exist.<br/>-39346  -  The default LanNetwork cannot be selected for AP management vlan configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8919,9 +9080,9 @@ func (r ApAPIModifyApWlanGroupRequest) Execute() (*OperationResponseWithoutResul
 }
 
 /*
-ModifyApWlanGroup Switch ap's wlan group
+ModifyApWlanGroup Switch AP's wlan group
 
-Switch ap's wlan group<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Switch AP's wlan group<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9055,9 +9216,9 @@ func (r ApAPIModifyChannelLimitConfigRequest) Execute() (*OperationResponseWitho
 }
 
 /*
-ModifyChannelLimitConfig Modify ap channel limit config
+ModifyChannelLimitConfig Modify AP channel limit config
 
-Modify ap channel limit config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Modify AP channel limit config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9191,9 +9352,9 @@ func (r ApAPIModifyGeneralConfig2Request) Execute() (*OperationResponseWithoutRe
 }
 
 /*
-ModifyGeneralConfig2 Modify ap general config
+ModifyGeneralConfig2 Modify AP general config
 
-Modify ap general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Modify AP general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9327,9 +9488,9 @@ func (r ApAPIModifyIpSettingConfigRequest) Execute() (*OperationResponseWithoutR
 }
 
 /*
-ModifyIpSettingConfig Modify ap ip setting
+ModifyIpSettingConfig Modify AP ip setting
 
-Modify ap IP setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Modify AP IP setting<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9463,9 +9624,9 @@ func (r ApAPIModifyIpv6SettingConfigRequest) Execute() (*OperationResponseWithou
 }
 
 /*
-ModifyIpv6SettingConfig Modify ap ipv6 setting
+ModifyIpv6SettingConfig Modify AP ipv6 setting
 
-Modify ap IPv6 setting, the ap should support IPv6. Ensure the configuration is correct. Otherwise the device may be unable to connect to the Controller and require a factory reset.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Modify AP ipv6 setting, the AP should support ipv6. Ensure the configuration is correct. Otherwise the device may be unable to connect to the Controller and require a factory reset.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9599,9 +9760,9 @@ func (r ApAPIModifyPowerSavingConfigRequest) Execute() (*OperationResponseWithou
 }
 
 /*
-ModifyPowerSavingConfig Modify ap power saving config
+ModifyPowerSavingConfig Modify AP power saving config
 
-Modify ap power saving config; If the device does not support this feature, it cannot be modified successfully.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-44205  -  The device does not support this feature.
+Modify AP power saving config; If the device does not support this feature, it cannot be modified successfully.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.<br/>-44205  -  The device does not support this feature.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9735,9 +9896,9 @@ func (r ApAPIModifyRadiosConfigRequest) Execute() (*OperationResponseWithoutResu
 }
 
 /*
-ModifyRadiosConfig Modify ap radio config
+ModifyRadiosConfig Modify AP radio config
 
-Modify ap radio config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Modify AP radio config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9852,145 +10013,6 @@ func (a *ApAPIService) ModifyRadiosConfigExecute(r ApAPIModifyRadiosConfigReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApAPIModifyWlansConfigRequest struct {
-	ctx context.Context
-	ApiService ApAPI
-	omadacId string
-	siteId string
-	apMac string
-	apSsidOverrideOpenApiVO *ApSsidOverrideOpenApiVO
-}
-
-func (r ApAPIModifyWlansConfigRequest) ApSsidOverrideOpenApiVO(apSsidOverrideOpenApiVO ApSsidOverrideOpenApiVO) ApAPIModifyWlansConfigRequest {
-	r.apSsidOverrideOpenApiVO = &apSsidOverrideOpenApiVO
-	return r
-}
-
-func (r ApAPIModifyWlansConfigRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifyWlansConfigExecute(r)
-}
-
-/*
-ModifyWlansConfig Modify ap WLANs override config
-
-Modify ap WLANs override config. This interface has been deprecated. Please Use the following interface instead: Modify ap WLANs override config V2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param omadacId Omada ID
- @param siteId Site ID
- @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
- @return ApAPIModifyWlansConfigRequest
-
-Deprecated
-*/
-func (a *ApAPIService) ModifyWlansConfig(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIModifyWlansConfigRequest {
-	return ApAPIModifyWlansConfigRequest{
-		ApiService: a,
-		ctx: ctx,
-		omadacId: omadacId,
-		siteId: siteId,
-		apMac: apMac,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-// Deprecated
-func (a *ApAPIService) ModifyWlansConfigExecute(r ApAPIModifyWlansConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.ModifyWlansConfig")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/override"
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.apSsidOverrideOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("apSsidOverrideOpenApiVO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.apSsidOverrideOpenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ApAPIModifyWlansConfigV2Request struct {
 	ctx context.Context
 	ApiService ApAPI
@@ -10010,9 +10032,9 @@ func (r ApAPIModifyWlansConfigV2Request) Execute() (*OperationResponseWithoutRes
 }
 
 /*
-ModifyWlansConfigV2 Modify ap WLANs override config V2
+ModifyWlansConfigV2 Modify AP WLANs override config V2
 
-Modify ap WLANs override config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
+Modify AP WLANs override config.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39303  -  AP does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -10212,6 +10234,256 @@ func (a *ApAPIService) MspMoveToCustomer3Execute(r ApAPIMspMoveToCustomer3Reques
 	}
 	// body params
 	localVarPostBody = r.moveToCustomerOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApAPIStartParingWindowRequest struct {
+	ctx context.Context
+	ApiService ApAPI
+	omadacId string
+	siteId string
+	apMac string
+}
+
+func (r ApAPIStartParingWindowRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.StartParingWindowExecute(r)
+}
+
+/*
+StartParingWindow Bridge AP Start Paring Window
+
+Bridge AP Start Paring Window<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+ @return ApAPIStartParingWindowRequest
+*/
+func (a *ApAPIService) StartParingWindow(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIStartParingWindowRequest {
+	return ApAPIStartParingWindowRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apMac: apMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *ApAPIService) StartParingWindowExecute(r ApAPIStartParingWindowRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.StartParingWindow")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/start-paring-window"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApAPIStopParingWindowRequest struct {
+	ctx context.Context
+	ApiService ApAPI
+	omadacId string
+	siteId string
+	apMac string
+}
+
+func (r ApAPIStopParingWindowRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.StopParingWindowExecute(r)
+}
+
+/*
+StopParingWindow Bridge AP Stop Paring Window
+
+Bridge AP Stop Paring Window<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+ @return ApAPIStopParingWindowRequest
+*/
+func (a *ApAPIService) StopParingWindow(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIStopParingWindowRequest {
+	return ApAPIStopParingWindowRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apMac: apMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *ApAPIService) StopParingWindowExecute(r ApAPIStopParingWindowRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.StopParingWindow")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/stop-paring-window"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -10676,9 +10948,9 @@ func (r ApAPIUpdateApLocationUseGpsRequest) Execute() (*OperationResponseApLocat
 }
 
 /*
-UpdateApLocationUseGps Update ap location info use GPS
+UpdateApLocationUseGps Update AP location info use GPS
 
-Update ap location info use GPS, only support gps function aps can get valid data.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-39358  -  The AP failed to get valid location information from the GPS module.
+Update AP location info use GPS, only support gps function aps can get valid data.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.<br/>-39358  -  The AP failed to get valid location information from the GPS module.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

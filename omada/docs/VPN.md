@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **ExistL2TP** | Pointer to **bool** | Whether current VPN is L2TP type. | [optional] 
 **ExistLdap** | Pointer to **bool** | Whether Auth Mode is LDAP. | [optional] 
 **ExistOpenVpnDomain** | Pointer to **bool** | Whether Open VPN Client Remote Server is Domain Name. | [optional] 
-**ExistPfs** | Pointer to **bool** | Whether current VPN has configured none-default option: dh14 or dh15 | [optional] 
+**ExistPfs** | Pointer to **bool** | Whether current VPN has configured none-default option: dh14 or dh15. | [optional] 
 **ExistPhase1Proposal1** | Pointer to **bool** | Whether current VPN has configured none-default Proposal option for IKE negotiation phase-1: SHA384 or SHA512. | [optional] 
 **ExistPhase2Proposal2** | Pointer to **bool** | Whether current VPN has configured none-default Proposal option for IKE negotiation phase-2: SHA384 or SHA512. | [optional] 
 **ExistServerOpenVpnGoogleLdap** | Pointer to **bool** | Whether Auth Mode is Google LDAP. | [optional] 
@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **SiteVpnType** | Pointer to **int32** | Site VPN type of the VPN. | [optional] 
 **Status** | Pointer to **bool** | Status of the VPN. | [optional] 
 **VpnConfiguration** | Pointer to [**VpnCertificateOpenApiVO**](VpnCertificateOpenApiVO.md) |  | [optional] 
-**Wans** | Pointer to **[]string** | WAN list of the VPN, only for Manual IPSec type. WAN port ID can be obtained from &#39;Get internet basic info&#39; interface. | [optional] 
+**Wans** | Pointer to **[]string** | WAN list of the VPN. WAN port ID can be obtained from &#39;Get internet basic info&#39; interface. | [optional] 
 **WorkingMode** | Pointer to **int32** | Working Mode should be a value as follow: 0:NAT 1:Routing. | [optional] 
 
 ## Methods

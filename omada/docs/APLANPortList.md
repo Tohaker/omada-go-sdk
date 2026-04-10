@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **PoeOutEnable** | Pointer to **bool** | Whether to enable poe out. | [optional] 
 **PoeState** | Pointer to **int32** | This value is only available when supportPoe is true.It should be a value as follows: 0：In the power supply; 1：Not in the power supply. | [optional] 
 **Port** | Pointer to **int32** | Port Number | [optional] 
+**PortStatus** | Pointer to [**ApPortStatusVO**](ApPortStatusVO.md) |  | [optional] 
 **PortType** | Pointer to **int32** | Port Type | [optional] 
 **Status** | Pointer to **bool** | Whether to disable the port, defaults to true. | [optional] 
 **SupportBandwidthControl** | Pointer to **bool** | Whether band width control is supported | [optional] 
@@ -480,6 +481,31 @@ SetPort sets Port field to given value.
 `func (o *APLANPortList) HasPort() bool`
 
 HasPort returns a boolean if a field has been set.
+
+### GetPortStatus
+
+`func (o *APLANPortList) GetPortStatus() ApPortStatusVO`
+
+GetPortStatus returns the PortStatus field if non-nil, zero value otherwise.
+
+### GetPortStatusOk
+
+`func (o *APLANPortList) GetPortStatusOk() (*ApPortStatusVO, bool)`
+
+GetPortStatusOk returns a tuple with the PortStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPortStatus
+
+`func (o *APLANPortList) SetPortStatus(v ApPortStatusVO)`
+
+SetPortStatus sets PortStatus field to given value.
+
+### HasPortStatus
+
+`func (o *APLANPortList) HasPortStatus() bool`
+
+HasPortStatus returns a boolean if a field has been set.
 
 ### GetPortType
 

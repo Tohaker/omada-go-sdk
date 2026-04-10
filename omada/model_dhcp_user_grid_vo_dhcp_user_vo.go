@@ -26,6 +26,8 @@ type DhcpUserGridVODhcpUserVO struct {
 	Data []DhcpUserVO `json:"data,omitempty"`
 	// Mapping between lan network name and lan network ID
 	NetNameToIdMap *map[string]string `json:"netNameToIdMap,omitempty"`
+	// The number of DHCP users that cannot be selected when adding from the user list in DHCP reservation.
+	SelectedNum *int64 `json:"selectedNum,omitempty"`
 	// Mapping between server name and macs
 	ServerNameToMacMap *map[string][]string `json:"serverNameToMacMap,omitempty"`
 	// Mapping between server name and stack IDs
@@ -179,6 +181,38 @@ func (o *DhcpUserGridVODhcpUserVO) SetNetNameToIdMap(v map[string]string) {
 	o.NetNameToIdMap = &v
 }
 
+// GetSelectedNum returns the SelectedNum field value if set, zero value otherwise.
+func (o *DhcpUserGridVODhcpUserVO) GetSelectedNum() int64 {
+	if o == nil || IsNil(o.SelectedNum) {
+		var ret int64
+		return ret
+	}
+	return *o.SelectedNum
+}
+
+// GetSelectedNumOk returns a tuple with the SelectedNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DhcpUserGridVODhcpUserVO) GetSelectedNumOk() (*int64, bool) {
+	if o == nil || IsNil(o.SelectedNum) {
+		return nil, false
+	}
+	return o.SelectedNum, true
+}
+
+// HasSelectedNum returns a boolean if a field has been set.
+func (o *DhcpUserGridVODhcpUserVO) HasSelectedNum() bool {
+	if o != nil && !IsNil(o.SelectedNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetSelectedNum gets a reference to the given int64 and assigns it to the SelectedNum field.
+func (o *DhcpUserGridVODhcpUserVO) SetSelectedNum(v int64) {
+	o.SelectedNum = &v
+}
+
 // GetServerNameToMacMap returns the ServerNameToMacMap field value if set, zero value otherwise.
 func (o *DhcpUserGridVODhcpUserVO) GetServerNameToMacMap() map[string][]string {
 	if o == nil || IsNil(o.ServerNameToMacMap) {
@@ -296,6 +330,9 @@ func (o DhcpUserGridVODhcpUserVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.NetNameToIdMap) {
 		toSerialize["netNameToIdMap"] = o.NetNameToIdMap
+	}
+	if !IsNil(o.SelectedNum) {
+		toSerialize["selectedNum"] = o.SelectedNum
 	}
 	if !IsNil(o.ServerNameToMacMap) {
 		toSerialize["serverNameToMacMap"] = o.ServerNameToMacMap

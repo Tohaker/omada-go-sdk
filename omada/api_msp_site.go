@@ -34,8 +34,8 @@ type MSPSiteAPI interface {
 	GetSiteList1(ctx context.Context, mspId string) MSPSiteAPIGetSiteList1Request
 
 	// GetSiteList1Execute executes the request
-	//  @return OperationResponseGridVOSiteSummaryInfo
-	GetSiteList1Execute(r MSPSiteAPIGetSiteList1Request) (*OperationResponseGridVOSiteSummaryInfo, *http.Response, error)
+	//  @return OperationResponseGridVOMspSiteSummaryInfo
+	GetSiteList1Execute(r MSPSiteAPIGetSiteList1Request) (*OperationResponseGridVOMspSiteSummaryInfo, *http.Response, error)
 
 	/*
 	GetTags2 Get msp site tag list
@@ -104,7 +104,7 @@ func (r MSPSiteAPIGetSiteList1Request) FiltersType(filtersType string) MSPSiteAP
 	return r
 }
 
-func (r MSPSiteAPIGetSiteList1Request) Execute() (*OperationResponseGridVOSiteSummaryInfo, *http.Response, error) {
+func (r MSPSiteAPIGetSiteList1Request) Execute() (*OperationResponseGridVOMspSiteSummaryInfo, *http.Response, error) {
 	return r.ApiService.GetSiteList1Execute(r)
 }
 
@@ -126,13 +126,13 @@ func (a *MSPSiteAPIService) GetSiteList1(ctx context.Context, mspId string) MSPS
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVOSiteSummaryInfo
-func (a *MSPSiteAPIService) GetSiteList1Execute(r MSPSiteAPIGetSiteList1Request) (*OperationResponseGridVOSiteSummaryInfo, *http.Response, error) {
+//  @return OperationResponseGridVOMspSiteSummaryInfo
+func (a *MSPSiteAPIService) GetSiteList1Execute(r MSPSiteAPIGetSiteList1Request) (*OperationResponseGridVOMspSiteSummaryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVOSiteSummaryInfo
+		localVarReturnValue  *OperationResponseGridVOMspSiteSummaryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MSPSiteAPIService.GetSiteList1")

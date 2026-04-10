@@ -26,6 +26,10 @@ type DhcpUserVO struct {
 	LeftLeaseTime *string `json:"leftLeaseTime,omitempty"`
 	// Mac Address
 	MacAddress *string `json:"macAddress,omitempty"`
+	// device Model
+	Model *string `json:"model,omitempty"`
+	// device ModelVersion
+	ModelVersion *string `json:"modelVersion,omitempty"`
 	// Dhcp User Name
 	Name *string `json:"name,omitempty"`
 	// Network ID
@@ -189,6 +193,70 @@ func (o *DhcpUserVO) HasMacAddress() bool {
 // SetMacAddress gets a reference to the given string and assigns it to the MacAddress field.
 func (o *DhcpUserVO) SetMacAddress(v string) {
 	o.MacAddress = &v
+}
+
+// GetModel returns the Model field value if set, zero value otherwise.
+func (o *DhcpUserVO) GetModel() string {
+	if o == nil || IsNil(o.Model) {
+		var ret string
+		return ret
+	}
+	return *o.Model
+}
+
+// GetModelOk returns a tuple with the Model field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DhcpUserVO) GetModelOk() (*string, bool) {
+	if o == nil || IsNil(o.Model) {
+		return nil, false
+	}
+	return o.Model, true
+}
+
+// HasModel returns a boolean if a field has been set.
+func (o *DhcpUserVO) HasModel() bool {
+	if o != nil && !IsNil(o.Model) {
+		return true
+	}
+
+	return false
+}
+
+// SetModel gets a reference to the given string and assigns it to the Model field.
+func (o *DhcpUserVO) SetModel(v string) {
+	o.Model = &v
+}
+
+// GetModelVersion returns the ModelVersion field value if set, zero value otherwise.
+func (o *DhcpUserVO) GetModelVersion() string {
+	if o == nil || IsNil(o.ModelVersion) {
+		var ret string
+		return ret
+	}
+	return *o.ModelVersion
+}
+
+// GetModelVersionOk returns a tuple with the ModelVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DhcpUserVO) GetModelVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.ModelVersion) {
+		return nil, false
+	}
+	return o.ModelVersion, true
+}
+
+// HasModelVersion returns a boolean if a field has been set.
+func (o *DhcpUserVO) HasModelVersion() bool {
+	if o != nil && !IsNil(o.ModelVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetModelVersion gets a reference to the given string and assigns it to the ModelVersion field.
+func (o *DhcpUserVO) SetModelVersion(v string) {
+	o.ModelVersion = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -500,6 +568,12 @@ func (o DhcpUserVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MacAddress) {
 		toSerialize["macAddress"] = o.MacAddress
+	}
+	if !IsNil(o.Model) {
+		toSerialize["model"] = o.Model
+	}
+	if !IsNil(o.ModelVersion) {
+		toSerialize["modelVersion"] = o.ModelVersion
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

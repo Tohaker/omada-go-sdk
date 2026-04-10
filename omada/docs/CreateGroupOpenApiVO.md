@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **PortList** | Pointer to **[]string** | Port list. [portType] value of 0 is required. PortList should be within the range of 0-65535, e.g. 80 or 80-100 | [optional] 
 **PortMaskList** | Pointer to [**[]PortMaskOpenApiVO**](PortMaskOpenApiVO.md) | Port mask list. [portType] value of 1 is required | [optional] 
 **PortType** | Pointer to **int32** | Port type, portType should be a value as follows: 0: port range 1: port mask. [type] value of 1 or 4 is required | [optional] 
-**Type** | **int32** | Type of group profile, type should be a value as follows: 0: IP Group; 1: IP Port Group; 2: MAC Group; 3: IPv6 Group; 4: IPv6 Port Group; 5: Country Group; 7: Domain Group | 
+**Type** | **int32** | Type of group profile, type should be a value as follows: 0: IP Group; 1: IP Port Group; 2: MAC Group; 3: IPv6 Group; 4: IPv6 Port Group; 5: Country Group; 7: Domain Group; | 
 
 ## Methods
 

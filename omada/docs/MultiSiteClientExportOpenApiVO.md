@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientsDisplay** | Pointer to **[]string** | The information of client list for export. | [optional] 
+**ClientsDisplayOverride** | Pointer to **map[string][]string** | Override the export columns for given siteIds. | [optional] 
 **Format** | **int32** | Format should be a value as follows: 0: csv; 1: xlsx. | 
 **Mode** | **int32** | Export columns mode. 0：All Columns  1: CurrentDisplayColumns. | 
 **SelectType** | **string** | Select type of the sites of clients to export. include: include selected sites, exclude: all but exclude selected sites, all: include all sites. | 
@@ -53,6 +54,31 @@ SetClientsDisplay sets ClientsDisplay field to given value.
 `func (o *MultiSiteClientExportOpenApiVO) HasClientsDisplay() bool`
 
 HasClientsDisplay returns a boolean if a field has been set.
+
+### GetClientsDisplayOverride
+
+`func (o *MultiSiteClientExportOpenApiVO) GetClientsDisplayOverride() map[string][]string`
+
+GetClientsDisplayOverride returns the ClientsDisplayOverride field if non-nil, zero value otherwise.
+
+### GetClientsDisplayOverrideOk
+
+`func (o *MultiSiteClientExportOpenApiVO) GetClientsDisplayOverrideOk() (*map[string][]string, bool)`
+
+GetClientsDisplayOverrideOk returns a tuple with the ClientsDisplayOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientsDisplayOverride
+
+`func (o *MultiSiteClientExportOpenApiVO) SetClientsDisplayOverride(v map[string][]string)`
+
+SetClientsDisplayOverride sets ClientsDisplayOverride field to given value.
+
+### HasClientsDisplayOverride
+
+`func (o *MultiSiteClientExportOpenApiVO) HasClientsDisplayOverride() bool`
+
+HasClientsDisplayOverride returns a boolean if a field has been set.
 
 ### GetFormat
 

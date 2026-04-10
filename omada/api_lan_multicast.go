@@ -35,8 +35,8 @@ type LanMulticastAPI interface {
 	CreateLanMulticast(ctx context.Context, omadacId string, siteId string) LanMulticastAPICreateLanMulticastRequest
 
 	// CreateLanMulticastExecute executes the request
-	//  @return ResponseIdVO
-	CreateLanMulticastExecute(r LanMulticastAPICreateLanMulticastRequest) (*ResponseIdVO, *http.Response, error)
+	//  @return OperationResponseResponseIdVO
+	CreateLanMulticastExecute(r LanMulticastAPICreateLanMulticastRequest) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
 	DeleteLanMulticast Delete an existing lan multicast
@@ -68,8 +68,8 @@ type LanMulticastAPI interface {
 	GetGridLanMulticasts(ctx context.Context, omadacId string, siteId string) LanMulticastAPIGetGridLanMulticastsRequest
 
 	// GetGridLanMulticastsExecute executes the request
-	//  @return OperationResponse
-	GetGridLanMulticastsExecute(r LanMulticastAPIGetGridLanMulticastsRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseGridVOLanMulticastVO
+	GetGridLanMulticastsExecute(r LanMulticastAPIGetGridLanMulticastsRequest) (*OperationResponseGridVOLanMulticastVO, *http.Response, error)
 
 	/*
 	ModifyLanMulticast Modify a lan multicast
@@ -105,7 +105,7 @@ func (r LanMulticastAPICreateLanMulticastRequest) LanMulticastVO(lanMulticastVO 
 	return r
 }
 
-func (r LanMulticastAPICreateLanMulticastRequest) Execute() (*ResponseIdVO, *http.Response, error) {
+func (r LanMulticastAPICreateLanMulticastRequest) Execute() (*OperationResponseResponseIdVO, *http.Response, error) {
 	return r.ApiService.CreateLanMulticastExecute(r)
 }
 
@@ -129,13 +129,13 @@ func (a *LanMulticastAPIService) CreateLanMulticast(ctx context.Context, omadacI
 }
 
 // Execute executes the request
-//  @return ResponseIdVO
-func (a *LanMulticastAPIService) CreateLanMulticastExecute(r LanMulticastAPICreateLanMulticastRequest) (*ResponseIdVO, *http.Response, error) {
+//  @return OperationResponseResponseIdVO
+func (a *LanMulticastAPIService) CreateLanMulticastExecute(r LanMulticastAPICreateLanMulticastRequest) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ResponseIdVO
+		localVarReturnValue  *OperationResponseResponseIdVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanMulticastAPIService.CreateLanMulticast")
@@ -370,7 +370,7 @@ func (r LanMulticastAPIGetGridLanMulticastsRequest) PageSize(pageSize int32) Lan
 	return r
 }
 
-func (r LanMulticastAPIGetGridLanMulticastsRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r LanMulticastAPIGetGridLanMulticastsRequest) Execute() (*OperationResponseGridVOLanMulticastVO, *http.Response, error) {
 	return r.ApiService.GetGridLanMulticastsExecute(r)
 }
 
@@ -394,13 +394,13 @@ func (a *LanMulticastAPIService) GetGridLanMulticasts(ctx context.Context, omada
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *LanMulticastAPIService) GetGridLanMulticastsExecute(r LanMulticastAPIGetGridLanMulticastsRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseGridVOLanMulticastVO
+func (a *LanMulticastAPIService) GetGridLanMulticastsExecute(r LanMulticastAPIGetGridLanMulticastsRequest) (*OperationResponseGridVOLanMulticastVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseGridVOLanMulticastVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanMulticastAPIService.GetGridLanMulticasts")

@@ -19,9 +19,17 @@ var _ MappedNullable = &BatchFullChannelDetectHistoryOpenApiVO{}
 
 // BatchFullChannelDetectHistoryOpenApiVO struct for BatchFullChannelDetectHistoryOpenApiVO
 type BatchFullChannelDetectHistoryOpenApiVO struct {
+	// Device information list
+	DeviceInfoList []ApInfoOpenApiVO `json:"deviceInfoList,omitempty"`
+	// Whether to enable interference detect
+	EnableInterference *bool `json:"enableInterference,omitempty"`
 	// Id of batch full channel detect history.
 	HistoryId *string `json:"historyId,omitempty"`
-	// Status of full channel detect, status should be a value as follows: 0: finish; 1: scanning.
+	// Last full channel detect time.
+	LastSeen *int64 `json:"lastSeen,omitempty"`
+	// The total number of APs participating in the full channel detect.
+	ScanApNum *int32 `json:"scanApNum,omitempty"`
+	// full channel detect status. 0: finish, 1: scanning.
 	Status *int32 `json:"status,omitempty"`
 }
 
@@ -40,6 +48,70 @@ func NewBatchFullChannelDetectHistoryOpenApiVO() *BatchFullChannelDetectHistoryO
 func NewBatchFullChannelDetectHistoryOpenApiVOWithDefaults() *BatchFullChannelDetectHistoryOpenApiVO {
 	this := BatchFullChannelDetectHistoryOpenApiVO{}
 	return &this
+}
+
+// GetDeviceInfoList returns the DeviceInfoList field value if set, zero value otherwise.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) GetDeviceInfoList() []ApInfoOpenApiVO {
+	if o == nil || IsNil(o.DeviceInfoList) {
+		var ret []ApInfoOpenApiVO
+		return ret
+	}
+	return o.DeviceInfoList
+}
+
+// GetDeviceInfoListOk returns a tuple with the DeviceInfoList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) GetDeviceInfoListOk() ([]ApInfoOpenApiVO, bool) {
+	if o == nil || IsNil(o.DeviceInfoList) {
+		return nil, false
+	}
+	return o.DeviceInfoList, true
+}
+
+// HasDeviceInfoList returns a boolean if a field has been set.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) HasDeviceInfoList() bool {
+	if o != nil && !IsNil(o.DeviceInfoList) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceInfoList gets a reference to the given []ApInfoOpenApiVO and assigns it to the DeviceInfoList field.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) SetDeviceInfoList(v []ApInfoOpenApiVO) {
+	o.DeviceInfoList = v
+}
+
+// GetEnableInterference returns the EnableInterference field value if set, zero value otherwise.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) GetEnableInterference() bool {
+	if o == nil || IsNil(o.EnableInterference) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableInterference
+}
+
+// GetEnableInterferenceOk returns a tuple with the EnableInterference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) GetEnableInterferenceOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableInterference) {
+		return nil, false
+	}
+	return o.EnableInterference, true
+}
+
+// HasEnableInterference returns a boolean if a field has been set.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) HasEnableInterference() bool {
+	if o != nil && !IsNil(o.EnableInterference) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableInterference gets a reference to the given bool and assigns it to the EnableInterference field.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) SetEnableInterference(v bool) {
+	o.EnableInterference = &v
 }
 
 // GetHistoryId returns the HistoryId field value if set, zero value otherwise.
@@ -72,6 +144,70 @@ func (o *BatchFullChannelDetectHistoryOpenApiVO) HasHistoryId() bool {
 // SetHistoryId gets a reference to the given string and assigns it to the HistoryId field.
 func (o *BatchFullChannelDetectHistoryOpenApiVO) SetHistoryId(v string) {
 	o.HistoryId = &v
+}
+
+// GetLastSeen returns the LastSeen field value if set, zero value otherwise.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) GetLastSeen() int64 {
+	if o == nil || IsNil(o.LastSeen) {
+		var ret int64
+		return ret
+	}
+	return *o.LastSeen
+}
+
+// GetLastSeenOk returns a tuple with the LastSeen field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) GetLastSeenOk() (*int64, bool) {
+	if o == nil || IsNil(o.LastSeen) {
+		return nil, false
+	}
+	return o.LastSeen, true
+}
+
+// HasLastSeen returns a boolean if a field has been set.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) HasLastSeen() bool {
+	if o != nil && !IsNil(o.LastSeen) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastSeen gets a reference to the given int64 and assigns it to the LastSeen field.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) SetLastSeen(v int64) {
+	o.LastSeen = &v
+}
+
+// GetScanApNum returns the ScanApNum field value if set, zero value otherwise.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) GetScanApNum() int32 {
+	if o == nil || IsNil(o.ScanApNum) {
+		var ret int32
+		return ret
+	}
+	return *o.ScanApNum
+}
+
+// GetScanApNumOk returns a tuple with the ScanApNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) GetScanApNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.ScanApNum) {
+		return nil, false
+	}
+	return o.ScanApNum, true
+}
+
+// HasScanApNum returns a boolean if a field has been set.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) HasScanApNum() bool {
+	if o != nil && !IsNil(o.ScanApNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetScanApNum gets a reference to the given int32 and assigns it to the ScanApNum field.
+func (o *BatchFullChannelDetectHistoryOpenApiVO) SetScanApNum(v int32) {
+	o.ScanApNum = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -116,8 +252,20 @@ func (o BatchFullChannelDetectHistoryOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o BatchFullChannelDetectHistoryOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DeviceInfoList) {
+		toSerialize["deviceInfoList"] = o.DeviceInfoList
+	}
+	if !IsNil(o.EnableInterference) {
+		toSerialize["enableInterference"] = o.EnableInterference
+	}
 	if !IsNil(o.HistoryId) {
 		toSerialize["historyId"] = o.HistoryId
+	}
+	if !IsNil(o.LastSeen) {
+		toSerialize["lastSeen"] = o.LastSeen
+	}
+	if !IsNil(o.ScanApNum) {
+		toSerialize["scanApNum"] = o.ScanApNum
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

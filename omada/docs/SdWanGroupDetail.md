@@ -5,12 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | The description of the SD-WAN group | [optional] 
+**EnableNat** | Pointer to **bool** | Whether the group enable SD-WAN virtual network Map | [optional] 
 **Id** | Pointer to **string** | The ID of the SD-WAN group | [optional] 
 **IpPoolEnd** | Pointer to **string** | The end of the IP pool of the SD-WAN group | [optional] 
 **IpPoolStart** | Pointer to **string** | The start of the IP pool of the SD-WAN group | [optional] 
 **LinkedSpokes** | Pointer to [**[]SdWanLinkedSpoke**](SdWanLinkedSpoke.md) | A list of linked-spokes of the SD-WAN group | [optional] 
 **MemberList** | Pointer to [**[]SdWanMemberInfo**](SdWanMemberInfo.md) | A list of members of the SD-WAN group | [optional] 
 **Name** | Pointer to **string** | The name of the SD-WAN group | [optional] 
+**NatInfo** | Pointer to [**SdWanNatInfo**](SdWanNatInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -55,6 +57,31 @@ SetDescription sets Description field to given value.
 `func (o *SdWanGroupDetail) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetEnableNat
+
+`func (o *SdWanGroupDetail) GetEnableNat() bool`
+
+GetEnableNat returns the EnableNat field if non-nil, zero value otherwise.
+
+### GetEnableNatOk
+
+`func (o *SdWanGroupDetail) GetEnableNatOk() (*bool, bool)`
+
+GetEnableNatOk returns a tuple with the EnableNat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableNat
+
+`func (o *SdWanGroupDetail) SetEnableNat(v bool)`
+
+SetEnableNat sets EnableNat field to given value.
+
+### HasEnableNat
+
+`func (o *SdWanGroupDetail) HasEnableNat() bool`
+
+HasEnableNat returns a boolean if a field has been set.
 
 ### GetId
 
@@ -205,6 +232,31 @@ SetName sets Name field to given value.
 `func (o *SdWanGroupDetail) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetNatInfo
+
+`func (o *SdWanGroupDetail) GetNatInfo() SdWanNatInfo`
+
+GetNatInfo returns the NatInfo field if non-nil, zero value otherwise.
+
+### GetNatInfoOk
+
+`func (o *SdWanGroupDetail) GetNatInfoOk() (*SdWanNatInfo, bool)`
+
+GetNatInfoOk returns a tuple with the NatInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNatInfo
+
+`func (o *SdWanGroupDetail) SetNatInfo(v SdWanNatInfo)`
+
+SetNatInfo sets NatInfo field to given value.
+
+### HasNatInfo
+
+`func (o *SdWanGroupDetail) HasNatInfo() bool`
+
+HasNatInfo returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LteWanSetting** | Pointer to [**LteWanSettingOpenApiVO**](LteWanSettingOpenApiVO.md) |  | [optional] 
-**Type** | Pointer to **int32** | The Type of the Internet port as follows: 0: WAN; 1: USB; 2: LTE; 3: DSL. | [optional] 
+**Type** | **int32** | The Type of the Internet port as follows: 0: WAN; 1: USB; 2: LTE; 3: DSL. | 
 **UsbLteSetting** | Pointer to [**UsbLteSettingOpenApiVO**](UsbLteSettingOpenApiVO.md) |  | [optional] 
 **WanPortSetting** | Pointer to [**WanPortSettingOpenApiVO**](WanPortSettingOpenApiVO.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewInternetPortOpenApiVO
 
-`func NewInternetPortOpenApiVO() *InternetPortOpenApiVO`
+`func NewInternetPortOpenApiVO(type_ int32, ) *InternetPortOpenApiVO`
 
 NewInternetPortOpenApiVO instantiates a new InternetPortOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *InternetPortOpenApiVO) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUsbLteSetting
 

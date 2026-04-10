@@ -6,13 +6,15 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**BatchDeleteOsgCustomAcls**](ACLAPI.md#batchdeleteosgcustomacls) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/gateway-acls/batch-delete | batch Delete Osg Custom Acls
 [**BatchEditOsgCustomAclStatus**](ACLAPI.md#batcheditosgcustomaclstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/gateway-acls/batch-edit | batch Edit Osg Custom Acls
+[**ClearOsgAclHitCounts**](ACLAPI.md#clearosgaclhitcounts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls/hit-counts | Clear gateway ACL hit counts
 [**ClearOsgHitCounts**](ACLAPI.md#clearosghitcounts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls/hit-counts | Clear gateway custom ACL hit counts
-[**CreateEapAcl**](ACLAPI.md#createeapacl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls | Create new eap ACL
+[**CreateEapAcl**](ACLAPI.md#createeapacl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls | Create new EAP ACL
 [**CreateOsgAcl**](ACLAPI.md#createosgacl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls | Create new gateway ACL
 [**CreateOswAcl**](ACLAPI.md#createoswacl) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/acls/osw-acls | Create new switch ACL
 [**DeleteAcl**](ACLAPI.md#deleteacl) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/acls/{aclId} | Delete ACL
+[**ExportOsgCustomAcl**](ACLAPI.md#exportosgcustomacl) | **Get** /openapi/v1/{omadacId}/files/sites/{siteId}/acls/export | Export gateway custom ACL rules
 [**GetAclConfigTypeSetting**](ACLAPI.md#getaclconfigtypesetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-config-mode | Get gateway ACL config mode
-[**GetEapAclList**](ACLAPI.md#geteapacllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls | Get eap ACL list
+[**GetEapAclList**](ACLAPI.md#geteapacllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/eap-acls | Get EAP ACL list
 [**GetOsgAclList**](ACLAPI.md#getosgacllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls | Get gateway ACL list
 [**GetOsgCustomAclList**](ACLAPI.md#getosgcustomacllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osg-custom-acls | Get osg custom ACL
 [**GetOswAclList**](ACLAPI.md#getoswacllist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/acls/osw-acls | Get switch ACL list
@@ -176,6 +178,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ClearOsgAclHitCounts
+
+> OperationResponseWithoutResult ClearOsgAclHitCounts(ctx, omadacId, siteId).Execute()
+
+Clear gateway ACL hit counts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ACLAPI.ClearOsgAclHitCounts(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ACLAPI.ClearOsgAclHitCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ClearOsgAclHitCounts`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `ACLAPI.ClearOsgAclHitCounts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiClearOsgAclHitCountsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ClearOsgHitCounts
 
 > OperationResponseWithoutResult ClearOsgHitCounts(ctx, omadacId, siteId).Execute()
@@ -253,7 +328,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult CreateEapAcl(ctx, omadacId, siteId).EapACLConfig(eapACLConfig).Execute()
 
-Create new eap ACL
+Create new EAP ACL
 
 
 
@@ -550,6 +625,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ExportOsgCustomAcl
+
+> OperationResponse ExportOsgCustomAcl(ctx, omadacId, siteId).Execute()
+
+Export gateway custom ACL rules
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ACLAPI.ExportOsgCustomAcl(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ACLAPI.ExportOsgCustomAcl``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportOsgCustomAcl`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `ACLAPI.ExportOsgCustomAcl`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiExportOsgCustomAclRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetAclConfigTypeSetting
 
 > OperationResponseGatewayACLConfigModeEntity GetAclConfigTypeSetting(ctx, omadacId, siteId).Execute()
@@ -627,7 +775,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseGridVOEapACLInfo GetEapAclList(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
 
-Get eap ACL list
+Get EAP ACL list
 
 
 

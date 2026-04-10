@@ -22,16 +22,18 @@ var _ MappedNullable = &WanPortIpv4SettingOpenApiVO{}
 // WanPortIpv4SettingOpenApiVO Port IPv4 setting
 type WanPortIpv4SettingOpenApiVO struct {
 	Ipv4Dhcp *Ipv4DhcpOpenApiVO `json:"ipv4Dhcp,omitempty"`
+	Ipv4Dslite *Ipv4DsLiteOpenApiVO `json:"ipv4Dslite,omitempty"`
 	Ipv4Ipoa *Ipv4IpoaOpenApiVO `json:"ipv4Ipoa,omitempty"`
 	Ipv4L2tp *Ipv4L2tpOpenApiVO `json:"ipv4L2tp,omitempty"`
+	Ipv4Mape *Ipv4MapEOpenApiVO `json:"ipv4Mape,omitempty"`
 	Ipv4Pppoa *Ipv4PppoaOpenApiVO `json:"ipv4Pppoa,omitempty"`
 	Ipv4Pppoe *Ipv4PppoeOpenApiVO `json:"ipv4Pppoe,omitempty"`
 	Ipv4Pptp *Ipv4PptpOpenApiVO `json:"ipv4Pptp,omitempty"`
 	Ipv4Static *Ipv4StaticOpenApiVO `json:"ipv4Static,omitempty"`
-	// IPv4 connection type should be a value as follows: 0:static; 1:DHCP; 2:PPPoE; 3:L2TP; 4:PPTP.
+	// IPv4 connection type should be one of the following values: 0:static; 1:DHCP; 2:PPPoE; 3:L2TP; 4:PPTP; 5:DS-Lite; 6:MAP-E.
 	ProtoType int32 `json:"protoType"`
 	// 802.1Q Tag. It takes effect when [vlanId] is not 0.
-	QosTag *bool `json:"qosTag,omitempty"`
+	QosTagEnable *bool `json:"qosTagEnable,omitempty"`
 	// VLAN ID should be within the range of 0–4094, 0 means disable.
 	VlanId int32 `json:"vlanId"`
 	// Vlan Priority. It takes effect when [vlanId] is not 0, and it should be within the range of 0–7.
@@ -89,6 +91,38 @@ func (o *WanPortIpv4SettingOpenApiVO) HasIpv4Dhcp() bool {
 // SetIpv4Dhcp gets a reference to the given Ipv4DhcpOpenApiVO and assigns it to the Ipv4Dhcp field.
 func (o *WanPortIpv4SettingOpenApiVO) SetIpv4Dhcp(v Ipv4DhcpOpenApiVO) {
 	o.Ipv4Dhcp = &v
+}
+
+// GetIpv4Dslite returns the Ipv4Dslite field value if set, zero value otherwise.
+func (o *WanPortIpv4SettingOpenApiVO) GetIpv4Dslite() Ipv4DsLiteOpenApiVO {
+	if o == nil || IsNil(o.Ipv4Dslite) {
+		var ret Ipv4DsLiteOpenApiVO
+		return ret
+	}
+	return *o.Ipv4Dslite
+}
+
+// GetIpv4DsliteOk returns a tuple with the Ipv4Dslite field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WanPortIpv4SettingOpenApiVO) GetIpv4DsliteOk() (*Ipv4DsLiteOpenApiVO, bool) {
+	if o == nil || IsNil(o.Ipv4Dslite) {
+		return nil, false
+	}
+	return o.Ipv4Dslite, true
+}
+
+// HasIpv4Dslite returns a boolean if a field has been set.
+func (o *WanPortIpv4SettingOpenApiVO) HasIpv4Dslite() bool {
+	if o != nil && !IsNil(o.Ipv4Dslite) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpv4Dslite gets a reference to the given Ipv4DsLiteOpenApiVO and assigns it to the Ipv4Dslite field.
+func (o *WanPortIpv4SettingOpenApiVO) SetIpv4Dslite(v Ipv4DsLiteOpenApiVO) {
+	o.Ipv4Dslite = &v
 }
 
 // GetIpv4Ipoa returns the Ipv4Ipoa field value if set, zero value otherwise.
@@ -153,6 +187,38 @@ func (o *WanPortIpv4SettingOpenApiVO) HasIpv4L2tp() bool {
 // SetIpv4L2tp gets a reference to the given Ipv4L2tpOpenApiVO and assigns it to the Ipv4L2tp field.
 func (o *WanPortIpv4SettingOpenApiVO) SetIpv4L2tp(v Ipv4L2tpOpenApiVO) {
 	o.Ipv4L2tp = &v
+}
+
+// GetIpv4Mape returns the Ipv4Mape field value if set, zero value otherwise.
+func (o *WanPortIpv4SettingOpenApiVO) GetIpv4Mape() Ipv4MapEOpenApiVO {
+	if o == nil || IsNil(o.Ipv4Mape) {
+		var ret Ipv4MapEOpenApiVO
+		return ret
+	}
+	return *o.Ipv4Mape
+}
+
+// GetIpv4MapeOk returns a tuple with the Ipv4Mape field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WanPortIpv4SettingOpenApiVO) GetIpv4MapeOk() (*Ipv4MapEOpenApiVO, bool) {
+	if o == nil || IsNil(o.Ipv4Mape) {
+		return nil, false
+	}
+	return o.Ipv4Mape, true
+}
+
+// HasIpv4Mape returns a boolean if a field has been set.
+func (o *WanPortIpv4SettingOpenApiVO) HasIpv4Mape() bool {
+	if o != nil && !IsNil(o.Ipv4Mape) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpv4Mape gets a reference to the given Ipv4MapEOpenApiVO and assigns it to the Ipv4Mape field.
+func (o *WanPortIpv4SettingOpenApiVO) SetIpv4Mape(v Ipv4MapEOpenApiVO) {
+	o.Ipv4Mape = &v
 }
 
 // GetIpv4Pppoa returns the Ipv4Pppoa field value if set, zero value otherwise.
@@ -307,36 +373,36 @@ func (o *WanPortIpv4SettingOpenApiVO) SetProtoType(v int32) {
 	o.ProtoType = v
 }
 
-// GetQosTag returns the QosTag field value if set, zero value otherwise.
-func (o *WanPortIpv4SettingOpenApiVO) GetQosTag() bool {
-	if o == nil || IsNil(o.QosTag) {
+// GetQosTagEnable returns the QosTagEnable field value if set, zero value otherwise.
+func (o *WanPortIpv4SettingOpenApiVO) GetQosTagEnable() bool {
+	if o == nil || IsNil(o.QosTagEnable) {
 		var ret bool
 		return ret
 	}
-	return *o.QosTag
+	return *o.QosTagEnable
 }
 
-// GetQosTagOk returns a tuple with the QosTag field value if set, nil otherwise
+// GetQosTagEnableOk returns a tuple with the QosTagEnable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WanPortIpv4SettingOpenApiVO) GetQosTagOk() (*bool, bool) {
-	if o == nil || IsNil(o.QosTag) {
+func (o *WanPortIpv4SettingOpenApiVO) GetQosTagEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.QosTagEnable) {
 		return nil, false
 	}
-	return o.QosTag, true
+	return o.QosTagEnable, true
 }
 
-// HasQosTag returns a boolean if a field has been set.
-func (o *WanPortIpv4SettingOpenApiVO) HasQosTag() bool {
-	if o != nil && !IsNil(o.QosTag) {
+// HasQosTagEnable returns a boolean if a field has been set.
+func (o *WanPortIpv4SettingOpenApiVO) HasQosTagEnable() bool {
+	if o != nil && !IsNil(o.QosTagEnable) {
 		return true
 	}
 
 	return false
 }
 
-// SetQosTag gets a reference to the given bool and assigns it to the QosTag field.
-func (o *WanPortIpv4SettingOpenApiVO) SetQosTag(v bool) {
-	o.QosTag = &v
+// SetQosTagEnable gets a reference to the given bool and assigns it to the QosTagEnable field.
+func (o *WanPortIpv4SettingOpenApiVO) SetQosTagEnable(v bool) {
+	o.QosTagEnable = &v
 }
 
 // GetVlanId returns the VlanId field value
@@ -408,11 +474,17 @@ func (o WanPortIpv4SettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Ipv4Dhcp) {
 		toSerialize["ipv4Dhcp"] = o.Ipv4Dhcp
 	}
+	if !IsNil(o.Ipv4Dslite) {
+		toSerialize["ipv4Dslite"] = o.Ipv4Dslite
+	}
 	if !IsNil(o.Ipv4Ipoa) {
 		toSerialize["ipv4Ipoa"] = o.Ipv4Ipoa
 	}
 	if !IsNil(o.Ipv4L2tp) {
 		toSerialize["ipv4L2tp"] = o.Ipv4L2tp
+	}
+	if !IsNil(o.Ipv4Mape) {
+		toSerialize["ipv4Mape"] = o.Ipv4Mape
 	}
 	if !IsNil(o.Ipv4Pppoa) {
 		toSerialize["ipv4Pppoa"] = o.Ipv4Pppoa
@@ -427,8 +499,8 @@ func (o WanPortIpv4SettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["ipv4Static"] = o.Ipv4Static
 	}
 	toSerialize["protoType"] = o.ProtoType
-	if !IsNil(o.QosTag) {
-		toSerialize["qosTag"] = o.QosTag
+	if !IsNil(o.QosTagEnable) {
+		toSerialize["qosTagEnable"] = o.QosTagEnable
 	}
 	toSerialize["vlanId"] = o.VlanId
 	if !IsNil(o.VlanPriority) {

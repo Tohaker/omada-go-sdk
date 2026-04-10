@@ -18,10 +18,13 @@ Name | Type | Description | Notes
 **Qos** | Pointer to **bool** |  | [optional] 
 **ServiceIptv** | Pointer to **bool** |  | [optional] 
 **ServiceType** | Pointer to **bool** |  | [optional] 
+**SiteToSiteVpn** | Pointer to **bool** |  | [optional] 
 **SslVpn** | Pointer to **bool** |  | [optional] 
 **SubVpn** | Pointer to **bool** |  | [optional] 
 **UrlCategory** | Pointer to **bool** |  | [optional] 
 **VirtualWan** | Pointer to **bool** |  | [optional] 
+**VpnClient** | Pointer to **bool** |  | [optional] 
+**VpnServer** | Pointer to **bool** |  | [optional] 
 **VpnUser** | Pointer to **bool** |  | [optional] 
 **Wireguard** | Pointer to **bool** |  | [optional] 
 
@@ -394,6 +397,31 @@ SetServiceType sets ServiceType field to given value.
 
 HasServiceType returns a boolean if a field has been set.
 
+### GetSiteToSiteVpn
+
+`func (o *ExistSiteSettingVO) GetSiteToSiteVpn() bool`
+
+GetSiteToSiteVpn returns the SiteToSiteVpn field if non-nil, zero value otherwise.
+
+### GetSiteToSiteVpnOk
+
+`func (o *ExistSiteSettingVO) GetSiteToSiteVpnOk() (*bool, bool)`
+
+GetSiteToSiteVpnOk returns a tuple with the SiteToSiteVpn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSiteToSiteVpn
+
+`func (o *ExistSiteSettingVO) SetSiteToSiteVpn(v bool)`
+
+SetSiteToSiteVpn sets SiteToSiteVpn field to given value.
+
+### HasSiteToSiteVpn
+
+`func (o *ExistSiteSettingVO) HasSiteToSiteVpn() bool`
+
+HasSiteToSiteVpn returns a boolean if a field has been set.
+
 ### GetSslVpn
 
 `func (o *ExistSiteSettingVO) GetSslVpn() bool`
@@ -493,6 +521,56 @@ SetVirtualWan sets VirtualWan field to given value.
 `func (o *ExistSiteSettingVO) HasVirtualWan() bool`
 
 HasVirtualWan returns a boolean if a field has been set.
+
+### GetVpnClient
+
+`func (o *ExistSiteSettingVO) GetVpnClient() bool`
+
+GetVpnClient returns the VpnClient field if non-nil, zero value otherwise.
+
+### GetVpnClientOk
+
+`func (o *ExistSiteSettingVO) GetVpnClientOk() (*bool, bool)`
+
+GetVpnClientOk returns a tuple with the VpnClient field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVpnClient
+
+`func (o *ExistSiteSettingVO) SetVpnClient(v bool)`
+
+SetVpnClient sets VpnClient field to given value.
+
+### HasVpnClient
+
+`func (o *ExistSiteSettingVO) HasVpnClient() bool`
+
+HasVpnClient returns a boolean if a field has been set.
+
+### GetVpnServer
+
+`func (o *ExistSiteSettingVO) GetVpnServer() bool`
+
+GetVpnServer returns the VpnServer field if non-nil, zero value otherwise.
+
+### GetVpnServerOk
+
+`func (o *ExistSiteSettingVO) GetVpnServerOk() (*bool, bool)`
+
+GetVpnServerOk returns a tuple with the VpnServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVpnServer
+
+`func (o *ExistSiteSettingVO) SetVpnServer(v bool)`
+
+SetVpnServer sets VpnServer field to given value.
+
+### HasVpnServer
+
+`func (o *ExistSiteSettingVO) HasVpnServer() bool`
+
+HasVpnServer returns a boolean if a field has been set.
 
 ### GetVpnUser
 

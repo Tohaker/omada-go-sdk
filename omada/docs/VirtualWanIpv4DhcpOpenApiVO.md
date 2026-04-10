@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **DhcpOptions** | Pointer to [**[]CustomDHCPOptions**](CustomDHCPOptions.md) | Virtual WAN custom DHCP options. | [optional] 
 **Dns1** | Pointer to **string** | Primary DNS server. | [optional] 
 **Dns2** | Pointer to **string** | Secondary DNS server. | [optional] 
-**Hostname** | Pointer to **string** | Host name. Parameter [hostname] should be up to 63 characters long and can only use numbers, letters, and underscores. | [optional] 
+**Hostname** | Pointer to **string** | Host name. Parameter [hostname] should be up to 63 characters long and can only use numbers, letters, and hyphen. | [optional] 
 **Mtu** | Pointer to **int32** | Parameter [mtu] should be a value between 576 and 1500. | [optional] 
 **Unicast** | Pointer to **string** | Subnet mask of virtual WAN. | [optional] 
 

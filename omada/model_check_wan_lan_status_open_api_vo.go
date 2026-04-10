@@ -19,6 +19,8 @@ var _ MappedNullable = &CheckWanLanStatusOpenApiVO{}
 
 // CheckWanLanStatusOpenApiVO struct for CheckWanLanStatusOpenApiVO
 type CheckWanLanStatusOpenApiVO struct {
+	// The WAN list of gateway
+	WanList []WanList `json:"WanList,omitempty"`
 	// Indicates whether the gateway is connected
 	AdoptedGateway *bool `json:"adoptedGateway,omitempty"`
 	// Whether adopt a gateway or enable WAN Settings Overrides.
@@ -37,8 +39,6 @@ type CheckWanLanStatusOpenApiVO struct {
 	PreOsgModel *int32 `json:"preOsgModel,omitempty"`
 	// IIndicates whether the gateway support IPv6
 	SupportIpv6 *int32 `json:"supportIpv6,omitempty"`
-	// The WAN list of gateway
-	WanList []map[string]interface{} `json:"wanList,omitempty"`
 }
 
 // NewCheckWanLanStatusOpenApiVO instantiates a new CheckWanLanStatusOpenApiVO object
@@ -56,6 +56,38 @@ func NewCheckWanLanStatusOpenApiVO() *CheckWanLanStatusOpenApiVO {
 func NewCheckWanLanStatusOpenApiVOWithDefaults() *CheckWanLanStatusOpenApiVO {
 	this := CheckWanLanStatusOpenApiVO{}
 	return &this
+}
+
+// GetWanList returns the WanList field value if set, zero value otherwise.
+func (o *CheckWanLanStatusOpenApiVO) GetWanList() []WanList {
+	if o == nil || IsNil(o.WanList) {
+		var ret []WanList
+		return ret
+	}
+	return o.WanList
+}
+
+// GetWanListOk returns a tuple with the WanList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CheckWanLanStatusOpenApiVO) GetWanListOk() ([]WanList, bool) {
+	if o == nil || IsNil(o.WanList) {
+		return nil, false
+	}
+	return o.WanList, true
+}
+
+// HasWanList returns a boolean if a field has been set.
+func (o *CheckWanLanStatusOpenApiVO) HasWanList() bool {
+	if o != nil && !IsNil(o.WanList) {
+		return true
+	}
+
+	return false
+}
+
+// SetWanList gets a reference to the given []WanList and assigns it to the WanList field.
+func (o *CheckWanLanStatusOpenApiVO) SetWanList(v []WanList) {
+	o.WanList = v
 }
 
 // GetAdoptedGateway returns the AdoptedGateway field value if set, zero value otherwise.
@@ -346,38 +378,6 @@ func (o *CheckWanLanStatusOpenApiVO) SetSupportIpv6(v int32) {
 	o.SupportIpv6 = &v
 }
 
-// GetWanList returns the WanList field value if set, zero value otherwise.
-func (o *CheckWanLanStatusOpenApiVO) GetWanList() []map[string]interface{} {
-	if o == nil || IsNil(o.WanList) {
-		var ret []map[string]interface{}
-		return ret
-	}
-	return o.WanList
-}
-
-// GetWanListOk returns a tuple with the WanList field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckWanLanStatusOpenApiVO) GetWanListOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.WanList) {
-		return nil, false
-	}
-	return o.WanList, true
-}
-
-// HasWanList returns a boolean if a field has been set.
-func (o *CheckWanLanStatusOpenApiVO) HasWanList() bool {
-	if o != nil && !IsNil(o.WanList) {
-		return true
-	}
-
-	return false
-}
-
-// SetWanList gets a reference to the given []map[string]interface{} and assigns it to the WanList field.
-func (o *CheckWanLanStatusOpenApiVO) SetWanList(v []map[string]interface{}) {
-	o.WanList = v
-}
-
 func (o CheckWanLanStatusOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -388,6 +388,9 @@ func (o CheckWanLanStatusOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o CheckWanLanStatusOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.WanList) {
+		toSerialize["WanList"] = o.WanList
+	}
 	if !IsNil(o.AdoptedGateway) {
 		toSerialize["adoptedGateway"] = o.AdoptedGateway
 	}
@@ -414,9 +417,6 @@ func (o CheckWanLanStatusOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportIpv6) {
 		toSerialize["supportIpv6"] = o.SupportIpv6
-	}
-	if !IsNil(o.WanList) {
-		toSerialize["wanList"] = o.WanList
 	}
 	return toSerialize, nil
 }

@@ -23,7 +23,7 @@ type VpnUser struct {
 	ClientMode *int32 `json:"clientMode,omitempty"`
 	// ID of the VPN user.
 	Id *string `json:"id,omitempty"`
-	// Local IP of the VPN user
+	// Local IP of the VPN user.
 	LocalIp *string `json:"localIp,omitempty"`
 	// Max connections should be within the range of 1–100.
 	MaxConnections *int32 `json:"maxConnections,omitempty"`

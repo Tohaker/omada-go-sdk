@@ -21,6 +21,10 @@ var _ MappedNullable = &AllTimeVoucherSummaryOpenApiVO{}
 type AllTimeVoucherSummaryOpenApiVO struct {
 	Created *VoucherSummaryOpenApiVO `json:"created,omitempty"`
 	Current *VoucherSummaryOpenApiVO `json:"current,omitempty"`
+	Expired *VoucherSummaryOpenApiVO `json:"expired,omitempty"`
+	Inuse *VoucherSummaryOpenApiVO `json:"inuse,omitempty"`
+	// Whether the controller support voucher traffic statistics
+	SupportVoucherTrafficStat *bool `json:"supportVoucherTrafficStat,omitempty"`
 	Unused *VoucherSummaryOpenApiVO `json:"unused,omitempty"`
 }
 
@@ -105,6 +109,102 @@ func (o *AllTimeVoucherSummaryOpenApiVO) SetCurrent(v VoucherSummaryOpenApiVO) {
 	o.Current = &v
 }
 
+// GetExpired returns the Expired field value if set, zero value otherwise.
+func (o *AllTimeVoucherSummaryOpenApiVO) GetExpired() VoucherSummaryOpenApiVO {
+	if o == nil || IsNil(o.Expired) {
+		var ret VoucherSummaryOpenApiVO
+		return ret
+	}
+	return *o.Expired
+}
+
+// GetExpiredOk returns a tuple with the Expired field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AllTimeVoucherSummaryOpenApiVO) GetExpiredOk() (*VoucherSummaryOpenApiVO, bool) {
+	if o == nil || IsNil(o.Expired) {
+		return nil, false
+	}
+	return o.Expired, true
+}
+
+// HasExpired returns a boolean if a field has been set.
+func (o *AllTimeVoucherSummaryOpenApiVO) HasExpired() bool {
+	if o != nil && !IsNil(o.Expired) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpired gets a reference to the given VoucherSummaryOpenApiVO and assigns it to the Expired field.
+func (o *AllTimeVoucherSummaryOpenApiVO) SetExpired(v VoucherSummaryOpenApiVO) {
+	o.Expired = &v
+}
+
+// GetInuse returns the Inuse field value if set, zero value otherwise.
+func (o *AllTimeVoucherSummaryOpenApiVO) GetInuse() VoucherSummaryOpenApiVO {
+	if o == nil || IsNil(o.Inuse) {
+		var ret VoucherSummaryOpenApiVO
+		return ret
+	}
+	return *o.Inuse
+}
+
+// GetInuseOk returns a tuple with the Inuse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AllTimeVoucherSummaryOpenApiVO) GetInuseOk() (*VoucherSummaryOpenApiVO, bool) {
+	if o == nil || IsNil(o.Inuse) {
+		return nil, false
+	}
+	return o.Inuse, true
+}
+
+// HasInuse returns a boolean if a field has been set.
+func (o *AllTimeVoucherSummaryOpenApiVO) HasInuse() bool {
+	if o != nil && !IsNil(o.Inuse) {
+		return true
+	}
+
+	return false
+}
+
+// SetInuse gets a reference to the given VoucherSummaryOpenApiVO and assigns it to the Inuse field.
+func (o *AllTimeVoucherSummaryOpenApiVO) SetInuse(v VoucherSummaryOpenApiVO) {
+	o.Inuse = &v
+}
+
+// GetSupportVoucherTrafficStat returns the SupportVoucherTrafficStat field value if set, zero value otherwise.
+func (o *AllTimeVoucherSummaryOpenApiVO) GetSupportVoucherTrafficStat() bool {
+	if o == nil || IsNil(o.SupportVoucherTrafficStat) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportVoucherTrafficStat
+}
+
+// GetSupportVoucherTrafficStatOk returns a tuple with the SupportVoucherTrafficStat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AllTimeVoucherSummaryOpenApiVO) GetSupportVoucherTrafficStatOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportVoucherTrafficStat) {
+		return nil, false
+	}
+	return o.SupportVoucherTrafficStat, true
+}
+
+// HasSupportVoucherTrafficStat returns a boolean if a field has been set.
+func (o *AllTimeVoucherSummaryOpenApiVO) HasSupportVoucherTrafficStat() bool {
+	if o != nil && !IsNil(o.SupportVoucherTrafficStat) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportVoucherTrafficStat gets a reference to the given bool and assigns it to the SupportVoucherTrafficStat field.
+func (o *AllTimeVoucherSummaryOpenApiVO) SetSupportVoucherTrafficStat(v bool) {
+	o.SupportVoucherTrafficStat = &v
+}
+
 // GetUnused returns the Unused field value if set, zero value otherwise.
 func (o *AllTimeVoucherSummaryOpenApiVO) GetUnused() VoucherSummaryOpenApiVO {
 	if o == nil || IsNil(o.Unused) {
@@ -152,6 +252,15 @@ func (o AllTimeVoucherSummaryOpenApiVO) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Current) {
 		toSerialize["current"] = o.Current
+	}
+	if !IsNil(o.Expired) {
+		toSerialize["expired"] = o.Expired
+	}
+	if !IsNil(o.Inuse) {
+		toSerialize["inuse"] = o.Inuse
+	}
+	if !IsNil(o.SupportVoucherTrafficStat) {
+		toSerialize["supportVoucherTrafficStat"] = o.SupportVoucherTrafficStat
 	}
 	if !IsNil(o.Unused) {
 		toSerialize["unused"] = o.Unused

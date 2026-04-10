@@ -1,0 +1,368 @@
+# VpnUserOpenApiGridVOVpnUserInfoVO
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**CurrentPage** | Pointer to **int32** | Current page number. | [optional] 
+**CurrentSize** | Pointer to **int32** | Number of entries per page. | [optional] 
+**Data** | Pointer to [**[]VpnUserInfoVO**](VpnUserInfoVO.md) |  | [optional] 
+**MaxConcurrentUser** | Pointer to **int32** | The maximum number of concurrent users supported by VPN. | [optional] 
+**SslVpnMaxConUserNum** | Pointer to **int32** | The maximum number of concurrent users supported by SSL VPN. | [optional] 
+**SubnetsLimitSize** | Pointer to **int32** | The maximum number of subnets allowed for a VPN user. | [optional] 
+**SupportL2TP** | Pointer to **bool** | Whether the L2TP configuration is supported by the VPN user. | [optional] 
+**SupportLocalIp** | Pointer to **bool** | Whether the local IP address configuration is supported by the VPN user. | [optional] 
+**SupportOpenVpn** | Pointer to **bool** | Whether the OpenVPN configuration is supported by the VPN user. | [optional] 
+**SupportProtocol** | Pointer to **bool** | Whether protocol configuration is supported of the VPN user | [optional] 
+**SupportServerOptional** | Pointer to **bool** | Whether VPN server is optional. | [optional] 
+**SupportSslVpn** | Pointer to **bool** | Whether the SSLVPN configuration is supported by the VPN user. | [optional] 
+**TotalRows** | Pointer to **int64** | Total rows of all items. | [optional] 
+
+## Methods
+
+### NewVpnUserOpenApiGridVOVpnUserInfoVO
+
+`func NewVpnUserOpenApiGridVOVpnUserInfoVO() *VpnUserOpenApiGridVOVpnUserInfoVO`
+
+NewVpnUserOpenApiGridVOVpnUserInfoVO instantiates a new VpnUserOpenApiGridVOVpnUserInfoVO object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewVpnUserOpenApiGridVOVpnUserInfoVOWithDefaults
+
+`func NewVpnUserOpenApiGridVOVpnUserInfoVOWithDefaults() *VpnUserOpenApiGridVOVpnUserInfoVO`
+
+NewVpnUserOpenApiGridVOVpnUserInfoVOWithDefaults instantiates a new VpnUserOpenApiGridVOVpnUserInfoVO object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetCurrentPage
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetCurrentPage() int32`
+
+GetCurrentPage returns the CurrentPage field if non-nil, zero value otherwise.
+
+### GetCurrentPageOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetCurrentPageOk() (*int32, bool)`
+
+GetCurrentPageOk returns a tuple with the CurrentPage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentPage
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetCurrentPage(v int32)`
+
+SetCurrentPage sets CurrentPage field to given value.
+
+### HasCurrentPage
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasCurrentPage() bool`
+
+HasCurrentPage returns a boolean if a field has been set.
+
+### GetCurrentSize
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetCurrentSize() int32`
+
+GetCurrentSize returns the CurrentSize field if non-nil, zero value otherwise.
+
+### GetCurrentSizeOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetCurrentSizeOk() (*int32, bool)`
+
+GetCurrentSizeOk returns a tuple with the CurrentSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentSize
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetCurrentSize(v int32)`
+
+SetCurrentSize sets CurrentSize field to given value.
+
+### HasCurrentSize
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasCurrentSize() bool`
+
+HasCurrentSize returns a boolean if a field has been set.
+
+### GetData
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetData() []VpnUserInfoVO`
+
+GetData returns the Data field if non-nil, zero value otherwise.
+
+### GetDataOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetDataOk() (*[]VpnUserInfoVO, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetData
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetData(v []VpnUserInfoVO)`
+
+SetData sets Data field to given value.
+
+### HasData
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasData() bool`
+
+HasData returns a boolean if a field has been set.
+
+### GetMaxConcurrentUser
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetMaxConcurrentUser() int32`
+
+GetMaxConcurrentUser returns the MaxConcurrentUser field if non-nil, zero value otherwise.
+
+### GetMaxConcurrentUserOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetMaxConcurrentUserOk() (*int32, bool)`
+
+GetMaxConcurrentUserOk returns a tuple with the MaxConcurrentUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxConcurrentUser
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetMaxConcurrentUser(v int32)`
+
+SetMaxConcurrentUser sets MaxConcurrentUser field to given value.
+
+### HasMaxConcurrentUser
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasMaxConcurrentUser() bool`
+
+HasMaxConcurrentUser returns a boolean if a field has been set.
+
+### GetSslVpnMaxConUserNum
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSslVpnMaxConUserNum() int32`
+
+GetSslVpnMaxConUserNum returns the SslVpnMaxConUserNum field if non-nil, zero value otherwise.
+
+### GetSslVpnMaxConUserNumOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSslVpnMaxConUserNumOk() (*int32, bool)`
+
+GetSslVpnMaxConUserNumOk returns a tuple with the SslVpnMaxConUserNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSslVpnMaxConUserNum
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetSslVpnMaxConUserNum(v int32)`
+
+SetSslVpnMaxConUserNum sets SslVpnMaxConUserNum field to given value.
+
+### HasSslVpnMaxConUserNum
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasSslVpnMaxConUserNum() bool`
+
+HasSslVpnMaxConUserNum returns a boolean if a field has been set.
+
+### GetSubnetsLimitSize
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSubnetsLimitSize() int32`
+
+GetSubnetsLimitSize returns the SubnetsLimitSize field if non-nil, zero value otherwise.
+
+### GetSubnetsLimitSizeOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSubnetsLimitSizeOk() (*int32, bool)`
+
+GetSubnetsLimitSizeOk returns a tuple with the SubnetsLimitSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubnetsLimitSize
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetSubnetsLimitSize(v int32)`
+
+SetSubnetsLimitSize sets SubnetsLimitSize field to given value.
+
+### HasSubnetsLimitSize
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasSubnetsLimitSize() bool`
+
+HasSubnetsLimitSize returns a boolean if a field has been set.
+
+### GetSupportL2TP
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportL2TP() bool`
+
+GetSupportL2TP returns the SupportL2TP field if non-nil, zero value otherwise.
+
+### GetSupportL2TPOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportL2TPOk() (*bool, bool)`
+
+GetSupportL2TPOk returns a tuple with the SupportL2TP field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportL2TP
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetSupportL2TP(v bool)`
+
+SetSupportL2TP sets SupportL2TP field to given value.
+
+### HasSupportL2TP
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasSupportL2TP() bool`
+
+HasSupportL2TP returns a boolean if a field has been set.
+
+### GetSupportLocalIp
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportLocalIp() bool`
+
+GetSupportLocalIp returns the SupportLocalIp field if non-nil, zero value otherwise.
+
+### GetSupportLocalIpOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportLocalIpOk() (*bool, bool)`
+
+GetSupportLocalIpOk returns a tuple with the SupportLocalIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportLocalIp
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetSupportLocalIp(v bool)`
+
+SetSupportLocalIp sets SupportLocalIp field to given value.
+
+### HasSupportLocalIp
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasSupportLocalIp() bool`
+
+HasSupportLocalIp returns a boolean if a field has been set.
+
+### GetSupportOpenVpn
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportOpenVpn() bool`
+
+GetSupportOpenVpn returns the SupportOpenVpn field if non-nil, zero value otherwise.
+
+### GetSupportOpenVpnOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportOpenVpnOk() (*bool, bool)`
+
+GetSupportOpenVpnOk returns a tuple with the SupportOpenVpn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportOpenVpn
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetSupportOpenVpn(v bool)`
+
+SetSupportOpenVpn sets SupportOpenVpn field to given value.
+
+### HasSupportOpenVpn
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasSupportOpenVpn() bool`
+
+HasSupportOpenVpn returns a boolean if a field has been set.
+
+### GetSupportProtocol
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportProtocol() bool`
+
+GetSupportProtocol returns the SupportProtocol field if non-nil, zero value otherwise.
+
+### GetSupportProtocolOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportProtocolOk() (*bool, bool)`
+
+GetSupportProtocolOk returns a tuple with the SupportProtocol field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportProtocol
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetSupportProtocol(v bool)`
+
+SetSupportProtocol sets SupportProtocol field to given value.
+
+### HasSupportProtocol
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasSupportProtocol() bool`
+
+HasSupportProtocol returns a boolean if a field has been set.
+
+### GetSupportServerOptional
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportServerOptional() bool`
+
+GetSupportServerOptional returns the SupportServerOptional field if non-nil, zero value otherwise.
+
+### GetSupportServerOptionalOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportServerOptionalOk() (*bool, bool)`
+
+GetSupportServerOptionalOk returns a tuple with the SupportServerOptional field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportServerOptional
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetSupportServerOptional(v bool)`
+
+SetSupportServerOptional sets SupportServerOptional field to given value.
+
+### HasSupportServerOptional
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasSupportServerOptional() bool`
+
+HasSupportServerOptional returns a boolean if a field has been set.
+
+### GetSupportSslVpn
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportSslVpn() bool`
+
+GetSupportSslVpn returns the SupportSslVpn field if non-nil, zero value otherwise.
+
+### GetSupportSslVpnOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetSupportSslVpnOk() (*bool, bool)`
+
+GetSupportSslVpnOk returns a tuple with the SupportSslVpn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportSslVpn
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetSupportSslVpn(v bool)`
+
+SetSupportSslVpn sets SupportSslVpn field to given value.
+
+### HasSupportSslVpn
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasSupportSslVpn() bool`
+
+HasSupportSslVpn returns a boolean if a field has been set.
+
+### GetTotalRows
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetTotalRows() int64`
+
+GetTotalRows returns the TotalRows field if non-nil, zero value otherwise.
+
+### GetTotalRowsOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) GetTotalRowsOk() (*int64, bool)`
+
+GetTotalRowsOk returns a tuple with the TotalRows field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalRows
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) SetTotalRows(v int64)`
+
+SetTotalRows sets TotalRows field to given value.
+
+### HasTotalRows
+
+`func (o *VpnUserOpenApiGridVOVpnUserInfoVO) HasTotalRows() bool`
+
+HasTotalRows returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

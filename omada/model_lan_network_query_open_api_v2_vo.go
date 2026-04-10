@@ -69,7 +69,7 @@ type LanNetworkQueryOpenApiV2VO struct {
 	Purpose int32 `json:"purpose"`
 	// Show RateLimit is enabled or not
 	RateLimit *bool `json:"rateLimit,omitempty"`
-	// When purpose is \"VLAN\" or purpose is \"interface\" and VLANType is 0, vlan should be within the range of 1-4090.
+	// Only Valid when vlanType is 0. Vlan should be within the range of 1-4094.
 	Vlan *int32 `json:"vlan,omitempty"`
 	// When purpose is interface, VLANType should be a value as follows: 0: Single; 1: Multiple
 	VlanType *int32 `json:"vlanType,omitempty"`

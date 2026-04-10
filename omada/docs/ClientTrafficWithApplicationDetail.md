@@ -7,13 +7,17 @@ Name | Type | Description | Notes
 **ApplicationList** | Pointer to [**[]ApplicationTrafficWithClientCount**](ApplicationTrafficWithClientCount.md) | The applications info using by the client. | [optional] 
 **ClientName** | Pointer to **string** | The name of the client. | [optional] 
 **Download** | Pointer to **int64** | The download traffic used by the client. | [optional] 
+**DownloadTrafficPercent** | Pointer to **float64** | The percentage of download traffic used by the client. | [optional] 
 **Mac** | Pointer to **string** | The mac of the client. | [optional] 
 **Manager** | Pointer to **bool** | Whether the client is managed by the controller.. | [optional] 
+**Network** | Pointer to **string** | Lan network name. | [optional] 
 **TotalApplications** | Pointer to **int32** | The number of applications using by the client. | [optional] 
 **Traffic** | Pointer to **int64** | The total amount of traffic used by the client. | [optional] 
-**TrafficPercent** | Pointer to **float64** | The percentage of download traffic used by the client. | [optional] 
+**TrafficPercent** | Pointer to **float64** | The percentage of traffic used by the client. | [optional] 
 **Type** | Pointer to **string** | The type of the client. | [optional] 
 **Upload** | Pointer to **int64** | The upload traffic used by the client. | [optional] 
+**UploadTrafficPercent** | Pointer to **float64** | The percentage of upload traffic used by the client. | [optional] 
+**VlanId** | Pointer to **string** | VLAN ID. The VLAN ID range is 1–4096 or Untag. | [optional] 
 
 ## Methods
 
@@ -109,6 +113,31 @@ SetDownload sets Download field to given value.
 
 HasDownload returns a boolean if a field has been set.
 
+### GetDownloadTrafficPercent
+
+`func (o *ClientTrafficWithApplicationDetail) GetDownloadTrafficPercent() float64`
+
+GetDownloadTrafficPercent returns the DownloadTrafficPercent field if non-nil, zero value otherwise.
+
+### GetDownloadTrafficPercentOk
+
+`func (o *ClientTrafficWithApplicationDetail) GetDownloadTrafficPercentOk() (*float64, bool)`
+
+GetDownloadTrafficPercentOk returns a tuple with the DownloadTrafficPercent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadTrafficPercent
+
+`func (o *ClientTrafficWithApplicationDetail) SetDownloadTrafficPercent(v float64)`
+
+SetDownloadTrafficPercent sets DownloadTrafficPercent field to given value.
+
+### HasDownloadTrafficPercent
+
+`func (o *ClientTrafficWithApplicationDetail) HasDownloadTrafficPercent() bool`
+
+HasDownloadTrafficPercent returns a boolean if a field has been set.
+
 ### GetMac
 
 `func (o *ClientTrafficWithApplicationDetail) GetMac() string`
@@ -158,6 +187,31 @@ SetManager sets Manager field to given value.
 `func (o *ClientTrafficWithApplicationDetail) HasManager() bool`
 
 HasManager returns a boolean if a field has been set.
+
+### GetNetwork
+
+`func (o *ClientTrafficWithApplicationDetail) GetNetwork() string`
+
+GetNetwork returns the Network field if non-nil, zero value otherwise.
+
+### GetNetworkOk
+
+`func (o *ClientTrafficWithApplicationDetail) GetNetworkOk() (*string, bool)`
+
+GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetwork
+
+`func (o *ClientTrafficWithApplicationDetail) SetNetwork(v string)`
+
+SetNetwork sets Network field to given value.
+
+### HasNetwork
+
+`func (o *ClientTrafficWithApplicationDetail) HasNetwork() bool`
+
+HasNetwork returns a boolean if a field has been set.
 
 ### GetTotalApplications
 
@@ -283,6 +337,56 @@ SetUpload sets Upload field to given value.
 `func (o *ClientTrafficWithApplicationDetail) HasUpload() bool`
 
 HasUpload returns a boolean if a field has been set.
+
+### GetUploadTrafficPercent
+
+`func (o *ClientTrafficWithApplicationDetail) GetUploadTrafficPercent() float64`
+
+GetUploadTrafficPercent returns the UploadTrafficPercent field if non-nil, zero value otherwise.
+
+### GetUploadTrafficPercentOk
+
+`func (o *ClientTrafficWithApplicationDetail) GetUploadTrafficPercentOk() (*float64, bool)`
+
+GetUploadTrafficPercentOk returns a tuple with the UploadTrafficPercent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUploadTrafficPercent
+
+`func (o *ClientTrafficWithApplicationDetail) SetUploadTrafficPercent(v float64)`
+
+SetUploadTrafficPercent sets UploadTrafficPercent field to given value.
+
+### HasUploadTrafficPercent
+
+`func (o *ClientTrafficWithApplicationDetail) HasUploadTrafficPercent() bool`
+
+HasUploadTrafficPercent returns a boolean if a field has been set.
+
+### GetVlanId
+
+`func (o *ClientTrafficWithApplicationDetail) GetVlanId() string`
+
+GetVlanId returns the VlanId field if non-nil, zero value otherwise.
+
+### GetVlanIdOk
+
+`func (o *ClientTrafficWithApplicationDetail) GetVlanIdOk() (*string, bool)`
+
+GetVlanIdOk returns a tuple with the VlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVlanId
+
+`func (o *ClientTrafficWithApplicationDetail) SetVlanId(v string)`
+
+SetVlanId sets VlanId field to given value.
+
+### HasVlanId
+
+`func (o *ClientTrafficWithApplicationDetail) HasVlanId() bool`
+
+HasVlanId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

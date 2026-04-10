@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **LoopbackDetectEnable** | Pointer to **bool** | LoopbackDetectEnable | [optional] 
 **MaxAge** | Pointer to **int32** | maxAge should be between 6 and 40. | [optional] 
 **MaxHops** | Pointer to **int32** | maxHops should be between 1 and 40. | [optional] 
-**Mstp** | Pointer to [**OswStpMstpConfig**](OswStpMstpConfig.md) |  | [optional] 
+**Mstp** | Pointer to [**OswStpMstpConfigOpenApiVO**](OswStpMstpConfigOpenApiVO.md) |  | [optional] 
 **Priority** | Pointer to **int32** | Parameter [priority] should be an integer from 0 to 61440 and divisible by 4096. | [optional] 
 **Stp** | Pointer to **int32** | STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP  | [optional] 
 **TxHoldCount** | Pointer to **int32** | txHoldCount should be between 1 and 20. | [optional] 
@@ -160,20 +160,20 @@ HasMaxHops returns a boolean if a field has been set.
 
 ### GetMstp
 
-`func (o *SwitchLoopbackControl) GetMstp() OswStpMstpConfig`
+`func (o *SwitchLoopbackControl) GetMstp() OswStpMstpConfigOpenApiVO`
 
 GetMstp returns the Mstp field if non-nil, zero value otherwise.
 
 ### GetMstpOk
 
-`func (o *SwitchLoopbackControl) GetMstpOk() (*OswStpMstpConfig, bool)`
+`func (o *SwitchLoopbackControl) GetMstpOk() (*OswStpMstpConfigOpenApiVO, bool)`
 
 GetMstpOk returns a tuple with the Mstp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMstp
 
-`func (o *SwitchLoopbackControl) SetMstp(v OswStpMstpConfig)`
+`func (o *SwitchLoopbackControl) SetMstp(v OswStpMstpConfigOpenApiVO)`
 
 SetMstp sets Mstp field to given value.
 

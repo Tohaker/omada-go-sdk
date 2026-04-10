@@ -37,6 +37,8 @@ type CreateRadiusProfileOpenApiVO struct {
 	Name string `json:"name"`
 	// Radius accounting enable status
 	RadiusAccountingEnable bool `json:"radiusAccountingEnable"`
+	// Message-Authenticator enable status
+	RequireMessageAuthenticator *bool `json:"requireMessageAuthenticator,omitempty"`
 	// VLAN assignment for wireless network enable status
 	WirelessVlanAssignment bool `json:"wirelessVlanAssignment"`
 }
@@ -296,6 +298,38 @@ func (o *CreateRadiusProfileOpenApiVO) SetRadiusAccountingEnable(v bool) {
 	o.RadiusAccountingEnable = v
 }
 
+// GetRequireMessageAuthenticator returns the RequireMessageAuthenticator field value if set, zero value otherwise.
+func (o *CreateRadiusProfileOpenApiVO) GetRequireMessageAuthenticator() bool {
+	if o == nil || IsNil(o.RequireMessageAuthenticator) {
+		var ret bool
+		return ret
+	}
+	return *o.RequireMessageAuthenticator
+}
+
+// GetRequireMessageAuthenticatorOk returns a tuple with the RequireMessageAuthenticator field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateRadiusProfileOpenApiVO) GetRequireMessageAuthenticatorOk() (*bool, bool) {
+	if o == nil || IsNil(o.RequireMessageAuthenticator) {
+		return nil, false
+	}
+	return o.RequireMessageAuthenticator, true
+}
+
+// HasRequireMessageAuthenticator returns a boolean if a field has been set.
+func (o *CreateRadiusProfileOpenApiVO) HasRequireMessageAuthenticator() bool {
+	if o != nil && !IsNil(o.RequireMessageAuthenticator) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequireMessageAuthenticator gets a reference to the given bool and assigns it to the RequireMessageAuthenticator field.
+func (o *CreateRadiusProfileOpenApiVO) SetRequireMessageAuthenticator(v bool) {
+	o.RequireMessageAuthenticator = &v
+}
+
 // GetWirelessVlanAssignment returns the WirelessVlanAssignment field value
 func (o *CreateRadiusProfileOpenApiVO) GetWirelessVlanAssignment() bool {
 	if o == nil {
@@ -348,6 +382,9 @@ func (o CreateRadiusProfileOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["radiusAccountingEnable"] = o.RadiusAccountingEnable
+	if !IsNil(o.RequireMessageAuthenticator) {
+		toSerialize["requireMessageAuthenticator"] = o.RequireMessageAuthenticator
+	}
 	toSerialize["wirelessVlanAssignment"] = o.WirelessVlanAssignment
 	return toSerialize, nil
 }

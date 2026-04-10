@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **QueueId** | Pointer to **int32** | QoS queue Id. | [optional] 
 **StackId** | Pointer to **string** | DHCP Server Device stackId. Only valid when deviceType is 2 and the selected device is stack | [optional] 
 **SubnetOverrideEnable** | Pointer to **bool** | The switch status of DHCP Settings Overrides. | [optional] 
-**Vlan** | Pointer to **int32** | Only Valid when vlanType is 0. When deviceType is 1, vlan should be within the range of 1-4090.When deviceType is 0 , 2 or 3, vlan could be within the range of 1-4094. | [optional] 
+**Vlan** | Pointer to **int32** | Only Valid when vlanType is 0. Vlan should be within the range of 1-4094. | [optional] 
 **VlanType** | Pointer to **int32** | VLANType should be a value as follows: 0: Single; 1: Multiple | [optional] 
 **Vlans** | Pointer to **string** | Only valid when vlanType is 1 and device type is 0 , 1 or 3. When device type is 0 or 3, batch create single vlan, when deviceType is 1 , create bridge vlan. VLAN format: 200, 1-100. | [optional] 
 **VrfId** | Pointer to **string** | VRF ID | [optional] 

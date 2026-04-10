@@ -4,15 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AvgDownRate** | Pointer to **int64** | Average downlink rate (Byte/s). | [optional] 
-**AvgRxR** | Pointer to **int64** | (Wireless) Average uplink negotiation rate (bit/s). | [optional] 
-**AvgSignal** | Pointer to **int32** | (Wireless) Average signal strength, unit: dBm. | [optional] 
-**AvgTxR** | Pointer to **int64** | (Wireless) Average downlink negotiation rate (bit/s). | [optional] 
-**AvgUpRate** | Pointer to **int64** | Average uplink rate (Byte/s). | [optional] 
-**Stats** | Pointer to [**[]ClientStatisticalDataDetail**](ClientStatisticalDataDetail.md) | Client Statistical Data Detail list. | [optional] 
-**TotalDown** | Pointer to **int64** | Client total downstream traffic (Byte). | [optional] 
-**TotalTxFP** | Pointer to **int64** | Total number of downstream failed packets. | [optional] 
-**TotalUp** | Pointer to **int64** | Client total upstream traffic (Byte). | [optional] 
+**Down** | Pointer to **int64** | Downstream traffic (Byte). | [optional] 
+**DownRate** | Pointer to **int64** | Downlink rate (Byte/s). | [optional] 
+**Mac** | Pointer to **string** | Client MAC Address. | [optional] 
+**RxR** | Pointer to **int64** | (Wireless) Uplink negotiation rate (bit/s). | [optional] 
+**Signal** | Pointer to **int32** | (Wireless) Signal strength, unit: dBm. | [optional] 
+**Time** | Pointer to **int64** | The statistical data collected timestamp, unit: second. | [optional] 
+**TxFP** | Pointer to **int64** | Number of downstream failed packets. | [optional] 
+**TxR** | Pointer to **int64** | (Wireless) Downlink negotiation rate (bit/s). | [optional] 
+**Up** | Pointer to **int64** | Upstream traffic (Byte). | [optional] 
+**UpRate** | Pointer to **int64** | Uplink rate (Byte/s). | [optional] 
+**Wireless** | Pointer to **bool** | true: Wireless client;  false: Not wireless client | [optional] 
 
 ## Methods
 
@@ -33,230 +35,280 @@ NewClientStatisticalDataDetailWithDefaults instantiates a new ClientStatisticalD
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAvgDownRate
+### GetDown
 
-`func (o *ClientStatisticalDataDetail) GetAvgDownRate() int64`
+`func (o *ClientStatisticalDataDetail) GetDown() int64`
 
-GetAvgDownRate returns the AvgDownRate field if non-nil, zero value otherwise.
+GetDown returns the Down field if non-nil, zero value otherwise.
 
-### GetAvgDownRateOk
+### GetDownOk
 
-`func (o *ClientStatisticalDataDetail) GetAvgDownRateOk() (*int64, bool)`
+`func (o *ClientStatisticalDataDetail) GetDownOk() (*int64, bool)`
 
-GetAvgDownRateOk returns a tuple with the AvgDownRate field if it's non-nil, zero value otherwise
+GetDownOk returns a tuple with the Down field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAvgDownRate
+### SetDown
 
-`func (o *ClientStatisticalDataDetail) SetAvgDownRate(v int64)`
+`func (o *ClientStatisticalDataDetail) SetDown(v int64)`
 
-SetAvgDownRate sets AvgDownRate field to given value.
+SetDown sets Down field to given value.
 
-### HasAvgDownRate
+### HasDown
 
-`func (o *ClientStatisticalDataDetail) HasAvgDownRate() bool`
+`func (o *ClientStatisticalDataDetail) HasDown() bool`
 
-HasAvgDownRate returns a boolean if a field has been set.
+HasDown returns a boolean if a field has been set.
 
-### GetAvgRxR
+### GetDownRate
 
-`func (o *ClientStatisticalDataDetail) GetAvgRxR() int64`
+`func (o *ClientStatisticalDataDetail) GetDownRate() int64`
 
-GetAvgRxR returns the AvgRxR field if non-nil, zero value otherwise.
+GetDownRate returns the DownRate field if non-nil, zero value otherwise.
 
-### GetAvgRxROk
+### GetDownRateOk
 
-`func (o *ClientStatisticalDataDetail) GetAvgRxROk() (*int64, bool)`
+`func (o *ClientStatisticalDataDetail) GetDownRateOk() (*int64, bool)`
 
-GetAvgRxROk returns a tuple with the AvgRxR field if it's non-nil, zero value otherwise
+GetDownRateOk returns a tuple with the DownRate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAvgRxR
+### SetDownRate
 
-`func (o *ClientStatisticalDataDetail) SetAvgRxR(v int64)`
+`func (o *ClientStatisticalDataDetail) SetDownRate(v int64)`
 
-SetAvgRxR sets AvgRxR field to given value.
+SetDownRate sets DownRate field to given value.
 
-### HasAvgRxR
+### HasDownRate
 
-`func (o *ClientStatisticalDataDetail) HasAvgRxR() bool`
+`func (o *ClientStatisticalDataDetail) HasDownRate() bool`
 
-HasAvgRxR returns a boolean if a field has been set.
+HasDownRate returns a boolean if a field has been set.
 
-### GetAvgSignal
+### GetMac
 
-`func (o *ClientStatisticalDataDetail) GetAvgSignal() int32`
+`func (o *ClientStatisticalDataDetail) GetMac() string`
 
-GetAvgSignal returns the AvgSignal field if non-nil, zero value otherwise.
+GetMac returns the Mac field if non-nil, zero value otherwise.
 
-### GetAvgSignalOk
+### GetMacOk
 
-`func (o *ClientStatisticalDataDetail) GetAvgSignalOk() (*int32, bool)`
+`func (o *ClientStatisticalDataDetail) GetMacOk() (*string, bool)`
 
-GetAvgSignalOk returns a tuple with the AvgSignal field if it's non-nil, zero value otherwise
+GetMacOk returns a tuple with the Mac field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAvgSignal
+### SetMac
 
-`func (o *ClientStatisticalDataDetail) SetAvgSignal(v int32)`
+`func (o *ClientStatisticalDataDetail) SetMac(v string)`
 
-SetAvgSignal sets AvgSignal field to given value.
+SetMac sets Mac field to given value.
 
-### HasAvgSignal
+### HasMac
 
-`func (o *ClientStatisticalDataDetail) HasAvgSignal() bool`
+`func (o *ClientStatisticalDataDetail) HasMac() bool`
 
-HasAvgSignal returns a boolean if a field has been set.
+HasMac returns a boolean if a field has been set.
 
-### GetAvgTxR
+### GetRxR
 
-`func (o *ClientStatisticalDataDetail) GetAvgTxR() int64`
+`func (o *ClientStatisticalDataDetail) GetRxR() int64`
 
-GetAvgTxR returns the AvgTxR field if non-nil, zero value otherwise.
+GetRxR returns the RxR field if non-nil, zero value otherwise.
 
-### GetAvgTxROk
+### GetRxROk
 
-`func (o *ClientStatisticalDataDetail) GetAvgTxROk() (*int64, bool)`
+`func (o *ClientStatisticalDataDetail) GetRxROk() (*int64, bool)`
 
-GetAvgTxROk returns a tuple with the AvgTxR field if it's non-nil, zero value otherwise
+GetRxROk returns a tuple with the RxR field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAvgTxR
+### SetRxR
 
-`func (o *ClientStatisticalDataDetail) SetAvgTxR(v int64)`
+`func (o *ClientStatisticalDataDetail) SetRxR(v int64)`
 
-SetAvgTxR sets AvgTxR field to given value.
+SetRxR sets RxR field to given value.
 
-### HasAvgTxR
+### HasRxR
 
-`func (o *ClientStatisticalDataDetail) HasAvgTxR() bool`
+`func (o *ClientStatisticalDataDetail) HasRxR() bool`
 
-HasAvgTxR returns a boolean if a field has been set.
+HasRxR returns a boolean if a field has been set.
 
-### GetAvgUpRate
+### GetSignal
 
-`func (o *ClientStatisticalDataDetail) GetAvgUpRate() int64`
+`func (o *ClientStatisticalDataDetail) GetSignal() int32`
 
-GetAvgUpRate returns the AvgUpRate field if non-nil, zero value otherwise.
+GetSignal returns the Signal field if non-nil, zero value otherwise.
 
-### GetAvgUpRateOk
+### GetSignalOk
 
-`func (o *ClientStatisticalDataDetail) GetAvgUpRateOk() (*int64, bool)`
+`func (o *ClientStatisticalDataDetail) GetSignalOk() (*int32, bool)`
 
-GetAvgUpRateOk returns a tuple with the AvgUpRate field if it's non-nil, zero value otherwise
+GetSignalOk returns a tuple with the Signal field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAvgUpRate
+### SetSignal
 
-`func (o *ClientStatisticalDataDetail) SetAvgUpRate(v int64)`
+`func (o *ClientStatisticalDataDetail) SetSignal(v int32)`
 
-SetAvgUpRate sets AvgUpRate field to given value.
+SetSignal sets Signal field to given value.
 
-### HasAvgUpRate
+### HasSignal
 
-`func (o *ClientStatisticalDataDetail) HasAvgUpRate() bool`
+`func (o *ClientStatisticalDataDetail) HasSignal() bool`
 
-HasAvgUpRate returns a boolean if a field has been set.
+HasSignal returns a boolean if a field has been set.
 
-### GetStats
+### GetTime
 
-`func (o *ClientStatisticalDataDetail) GetStats() []ClientStatisticalDataDetail`
+`func (o *ClientStatisticalDataDetail) GetTime() int64`
 
-GetStats returns the Stats field if non-nil, zero value otherwise.
+GetTime returns the Time field if non-nil, zero value otherwise.
 
-### GetStatsOk
+### GetTimeOk
 
-`func (o *ClientStatisticalDataDetail) GetStatsOk() (*[]ClientStatisticalDataDetail, bool)`
+`func (o *ClientStatisticalDataDetail) GetTimeOk() (*int64, bool)`
 
-GetStatsOk returns a tuple with the Stats field if it's non-nil, zero value otherwise
+GetTimeOk returns a tuple with the Time field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStats
+### SetTime
 
-`func (o *ClientStatisticalDataDetail) SetStats(v []ClientStatisticalDataDetail)`
+`func (o *ClientStatisticalDataDetail) SetTime(v int64)`
 
-SetStats sets Stats field to given value.
+SetTime sets Time field to given value.
 
-### HasStats
+### HasTime
 
-`func (o *ClientStatisticalDataDetail) HasStats() bool`
+`func (o *ClientStatisticalDataDetail) HasTime() bool`
 
-HasStats returns a boolean if a field has been set.
+HasTime returns a boolean if a field has been set.
 
-### GetTotalDown
+### GetTxFP
 
-`func (o *ClientStatisticalDataDetail) GetTotalDown() int64`
+`func (o *ClientStatisticalDataDetail) GetTxFP() int64`
 
-GetTotalDown returns the TotalDown field if non-nil, zero value otherwise.
+GetTxFP returns the TxFP field if non-nil, zero value otherwise.
 
-### GetTotalDownOk
+### GetTxFPOk
 
-`func (o *ClientStatisticalDataDetail) GetTotalDownOk() (*int64, bool)`
+`func (o *ClientStatisticalDataDetail) GetTxFPOk() (*int64, bool)`
 
-GetTotalDownOk returns a tuple with the TotalDown field if it's non-nil, zero value otherwise
+GetTxFPOk returns a tuple with the TxFP field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTotalDown
+### SetTxFP
 
-`func (o *ClientStatisticalDataDetail) SetTotalDown(v int64)`
+`func (o *ClientStatisticalDataDetail) SetTxFP(v int64)`
 
-SetTotalDown sets TotalDown field to given value.
+SetTxFP sets TxFP field to given value.
 
-### HasTotalDown
+### HasTxFP
 
-`func (o *ClientStatisticalDataDetail) HasTotalDown() bool`
+`func (o *ClientStatisticalDataDetail) HasTxFP() bool`
 
-HasTotalDown returns a boolean if a field has been set.
+HasTxFP returns a boolean if a field has been set.
 
-### GetTotalTxFP
+### GetTxR
 
-`func (o *ClientStatisticalDataDetail) GetTotalTxFP() int64`
+`func (o *ClientStatisticalDataDetail) GetTxR() int64`
 
-GetTotalTxFP returns the TotalTxFP field if non-nil, zero value otherwise.
+GetTxR returns the TxR field if non-nil, zero value otherwise.
 
-### GetTotalTxFPOk
+### GetTxROk
 
-`func (o *ClientStatisticalDataDetail) GetTotalTxFPOk() (*int64, bool)`
+`func (o *ClientStatisticalDataDetail) GetTxROk() (*int64, bool)`
 
-GetTotalTxFPOk returns a tuple with the TotalTxFP field if it's non-nil, zero value otherwise
+GetTxROk returns a tuple with the TxR field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTotalTxFP
+### SetTxR
 
-`func (o *ClientStatisticalDataDetail) SetTotalTxFP(v int64)`
+`func (o *ClientStatisticalDataDetail) SetTxR(v int64)`
 
-SetTotalTxFP sets TotalTxFP field to given value.
+SetTxR sets TxR field to given value.
 
-### HasTotalTxFP
+### HasTxR
 
-`func (o *ClientStatisticalDataDetail) HasTotalTxFP() bool`
+`func (o *ClientStatisticalDataDetail) HasTxR() bool`
 
-HasTotalTxFP returns a boolean if a field has been set.
+HasTxR returns a boolean if a field has been set.
 
-### GetTotalUp
+### GetUp
 
-`func (o *ClientStatisticalDataDetail) GetTotalUp() int64`
+`func (o *ClientStatisticalDataDetail) GetUp() int64`
 
-GetTotalUp returns the TotalUp field if non-nil, zero value otherwise.
+GetUp returns the Up field if non-nil, zero value otherwise.
 
-### GetTotalUpOk
+### GetUpOk
 
-`func (o *ClientStatisticalDataDetail) GetTotalUpOk() (*int64, bool)`
+`func (o *ClientStatisticalDataDetail) GetUpOk() (*int64, bool)`
 
-GetTotalUpOk returns a tuple with the TotalUp field if it's non-nil, zero value otherwise
+GetUpOk returns a tuple with the Up field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTotalUp
+### SetUp
 
-`func (o *ClientStatisticalDataDetail) SetTotalUp(v int64)`
+`func (o *ClientStatisticalDataDetail) SetUp(v int64)`
 
-SetTotalUp sets TotalUp field to given value.
+SetUp sets Up field to given value.
 
-### HasTotalUp
+### HasUp
 
-`func (o *ClientStatisticalDataDetail) HasTotalUp() bool`
+`func (o *ClientStatisticalDataDetail) HasUp() bool`
 
-HasTotalUp returns a boolean if a field has been set.
+HasUp returns a boolean if a field has been set.
+
+### GetUpRate
+
+`func (o *ClientStatisticalDataDetail) GetUpRate() int64`
+
+GetUpRate returns the UpRate field if non-nil, zero value otherwise.
+
+### GetUpRateOk
+
+`func (o *ClientStatisticalDataDetail) GetUpRateOk() (*int64, bool)`
+
+GetUpRateOk returns a tuple with the UpRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpRate
+
+`func (o *ClientStatisticalDataDetail) SetUpRate(v int64)`
+
+SetUpRate sets UpRate field to given value.
+
+### HasUpRate
+
+`func (o *ClientStatisticalDataDetail) HasUpRate() bool`
+
+HasUpRate returns a boolean if a field has been set.
+
+### GetWireless
+
+`func (o *ClientStatisticalDataDetail) GetWireless() bool`
+
+GetWireless returns the Wireless field if non-nil, zero value otherwise.
+
+### GetWirelessOk
+
+`func (o *ClientStatisticalDataDetail) GetWirelessOk() (*bool, bool)`
+
+GetWirelessOk returns a tuple with the Wireless field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWireless
+
+`func (o *ClientStatisticalDataDetail) SetWireless(v bool)`
+
+SetWireless sets Wireless field to given value.
+
+### HasWireless
+
+`func (o *ClientStatisticalDataDetail) HasWireless() bool`
+
+HasWireless returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

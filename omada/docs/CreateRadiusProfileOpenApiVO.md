@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **InterimUpdateInterval** | Pointer to **int32** | When interval update enables, interval update duration, unit: second. InterimUpdateInterval should be within the range of 60-86400 | [optional] 
 **Name** | **string** | Radius profile name should contain 1 to 64 characters | 
 **RadiusAccountingEnable** | **bool** | Radius accounting enable status | 
+**RequireMessageAuthenticator** | Pointer to **bool** | Message-Authenticator enable status | [optional] 
 **WirelessVlanAssignment** | **bool** | VLAN assignment for wireless network enable status | 
 
 ## Methods
@@ -217,6 +218,31 @@ and a boolean to check if the value has been set.
 
 SetRadiusAccountingEnable sets RadiusAccountingEnable field to given value.
 
+
+### GetRequireMessageAuthenticator
+
+`func (o *CreateRadiusProfileOpenApiVO) GetRequireMessageAuthenticator() bool`
+
+GetRequireMessageAuthenticator returns the RequireMessageAuthenticator field if non-nil, zero value otherwise.
+
+### GetRequireMessageAuthenticatorOk
+
+`func (o *CreateRadiusProfileOpenApiVO) GetRequireMessageAuthenticatorOk() (*bool, bool)`
+
+GetRequireMessageAuthenticatorOk returns a tuple with the RequireMessageAuthenticator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireMessageAuthenticator
+
+`func (o *CreateRadiusProfileOpenApiVO) SetRequireMessageAuthenticator(v bool)`
+
+SetRequireMessageAuthenticator sets RequireMessageAuthenticator field to given value.
+
+### HasRequireMessageAuthenticator
+
+`func (o *CreateRadiusProfileOpenApiVO) HasRequireMessageAuthenticator() bool`
+
+HasRequireMessageAuthenticator returns a boolean if a field has been set.
 
 ### GetWirelessVlanAssignment
 

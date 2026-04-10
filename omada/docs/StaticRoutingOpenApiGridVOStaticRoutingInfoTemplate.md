@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CurrentPage** | Pointer to **int32** | Current page number. | [optional] 
 **CurrentSize** | Pointer to **int32** | Number of entries per page. | [optional] 
 **Data** | Pointer to [**[]StaticRoutingInfoTemplate**](StaticRoutingInfoTemplate.md) |  | [optional] 
+**SupportByDsLiteAndMapE** | Pointer to **bool** | Whether this feature is supported for the DS-Lite or Map-E WAN connection types. | [optional] 
 **SupportVirtualWan** | Pointer to **bool** | Whether Virtual Wan is supported in Static Route. | [optional] 
 **SupportVpnClient** | Pointer to **bool** | Whether VPN Client is supported in Static Route. | [optional] 
 **TotalRows** | Pointer to **int64** | Total rows of all items. | [optional] 
@@ -104,6 +105,31 @@ SetData sets Data field to given value.
 `func (o *StaticRoutingOpenApiGridVOStaticRoutingInfoTemplate) HasData() bool`
 
 HasData returns a boolean if a field has been set.
+
+### GetSupportByDsLiteAndMapE
+
+`func (o *StaticRoutingOpenApiGridVOStaticRoutingInfoTemplate) GetSupportByDsLiteAndMapE() bool`
+
+GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field if non-nil, zero value otherwise.
+
+### GetSupportByDsLiteAndMapEOk
+
+`func (o *StaticRoutingOpenApiGridVOStaticRoutingInfoTemplate) GetSupportByDsLiteAndMapEOk() (*bool, bool)`
+
+GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportByDsLiteAndMapE
+
+`func (o *StaticRoutingOpenApiGridVOStaticRoutingInfoTemplate) SetSupportByDsLiteAndMapE(v bool)`
+
+SetSupportByDsLiteAndMapE sets SupportByDsLiteAndMapE field to given value.
+
+### HasSupportByDsLiteAndMapE
+
+`func (o *StaticRoutingOpenApiGridVOStaticRoutingInfoTemplate) HasSupportByDsLiteAndMapE() bool`
+
+HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
 
 ### GetSupportVirtualWan
 
