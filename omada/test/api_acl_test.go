@@ -52,6 +52,21 @@ func Test_omada_ACLAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ACLAPIService ClearOsgAclHitCounts", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ACLAPI.ClearOsgAclHitCounts(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ACLAPIService ClearOsgHitCounts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -121,6 +136,21 @@ func Test_omada_ACLAPIService(t *testing.T) {
 		var aclId string
 
 		resp, httpRes, err := apiClient.ACLAPI.DeleteAcl(context.Background(), omadacId, siteId, aclId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ACLAPIService ExportOsgCustomAcl", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ACLAPI.ExportOsgCustomAcl(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

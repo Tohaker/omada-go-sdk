@@ -197,6 +197,21 @@ func Test_omada_SwitchTemplateAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SwitchTemplateAPIService GetBatchSwitchTemplateExistNetworksV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.SwitchTemplateAPI.GetBatchSwitchTemplateExistNetworksV2(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SwitchTemplateAPIService GetGridPortAndLagNetworks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

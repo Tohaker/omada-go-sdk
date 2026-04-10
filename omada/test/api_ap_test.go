@@ -607,6 +607,22 @@ func Test_omada_ApAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ApAPIService GetParingWindowResult", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apMac string
+
+		resp, httpRes, err := apiClient.ApAPI.GetParingWindowResult(context.Background(), omadacId, siteId, apMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ApAPIService GetPowerSavingConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -824,6 +840,22 @@ func Test_omada_ApAPIService(t *testing.T) {
 		var apMac string
 
 		resp, httpRes, err := apiClient.ApAPI.ModifyApLoadBalanceConfig(context.Background(), omadacId, siteId, apMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApAPIService ModifyApManagementSsidConfig", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apMac string
+
+		resp, httpRes, err := apiClient.ApAPI.ModifyApManagementSsidConfig(context.Background(), omadacId, siteId, apMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1056,22 +1088,6 @@ func Test_omada_ApAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ApAPIService ModifyWlansConfig", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteId string
-		var apMac string
-
-		resp, httpRes, err := apiClient.ApAPI.ModifyWlansConfig(context.Background(), omadacId, siteId, apMac).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test ApAPIService ModifyWlansConfigV2", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1097,6 +1113,38 @@ func Test_omada_ApAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.ApAPI.MspMoveToCustomer3(context.Background(), mspId, customerId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApAPIService StartParingWindow", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apMac string
+
+		resp, httpRes, err := apiClient.ApAPI.StartParingWindow(context.Background(), omadacId, siteId, apMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApAPIService StopParingWindow", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apMac string
+
+		resp, httpRes, err := apiClient.ApAPI.StopParingWindow(context.Background(), omadacId, siteId, apMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

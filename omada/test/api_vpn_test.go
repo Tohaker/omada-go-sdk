@@ -22,6 +22,82 @@ func Test_omada_VPNAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test VPNAPIService BatchDeleteVpn", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.BatchDeleteVpn(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService BatchDeleteVpnUser", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.BatchDeleteVpnUser(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService CheckUsedInVpns", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.CheckUsedInVpns(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService CheckUsedVpn", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.CheckUsedVpn(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService CheckValueAvailable", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.CheckValueAvailable(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VPNAPIService CreateClientToSiteVpnClient", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -67,6 +143,36 @@ func Test_omada_VPNAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VPNAPIService CreateS2SAutoVpn", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.CreateS2SAutoVpn(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService CreateS2SManualVpn", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.CreateS2SManualVpn(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VPNAPIService CreateSiteToSiteVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -75,6 +181,36 @@ func Test_omada_VPNAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.VPNAPI.CreateSiteToSiteVpn(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService CreateVpnClient", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.CreateVpnClient(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService CreateVpnServer", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.CreateVpnServer(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -105,6 +241,21 @@ func Test_omada_VPNAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.VPNAPI.CreateVpnUserV2(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService CreateVpnUserV3", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.CreateVpnUserV3(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -208,6 +359,54 @@ func Test_omada_VPNAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VPNAPIService DeleteVpnV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.DeleteVpnV2(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService DisconnectSslVpnTunnel", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var tunnelId string
+
+		resp, httpRes, err := apiClient.VPNAPI.DisconnectSslVpnTunnel(context.Background(), omadacId, siteId, tunnelId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService DownloadVpnCertificate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.DownloadVpnCertificate(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VPNAPIService GetAllVpnList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -216,6 +415,22 @@ func Test_omada_VPNAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.VPNAPI.GetAllVpnList(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetBriefVpnUserByServerIdList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var serverId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetBriefVpnUserByServerIdList(context.Background(), omadacId, siteId, serverId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -300,6 +515,51 @@ func Test_omada_VPNAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VPNAPIService GetGridVpnClientV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetGridVpnClientV2(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetGridVpnS2SV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetGridVpnS2SV2(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetGridVpnServerV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetGridVpnServerV2(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VPNAPIService GetGridVpnUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -308,6 +568,21 @@ func Test_omada_VPNAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.VPNAPI.GetGridVpnUser(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetGridVpnUserV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetGridVpnUserV2(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -346,6 +621,52 @@ func Test_omada_VPNAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VPNAPIService GetSslVpnUserGroupBriefList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetSslVpnUserGroupBriefList(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetVpnAvailableIpPool", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetVpnAvailableIpPool(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetVpnClientDetailInfo", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetVpnClientDetailInfo(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VPNAPIService GetVpnClientToSiteClientInfo", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -362,6 +683,115 @@ func Test_omada_VPNAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VPNAPIService GetVpnDefaultValue", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetVpnDefaultValue(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetVpnPreSharedKey", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetVpnPreSharedKey(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetVpnS2SDetailInfo", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetVpnS2SDetailInfo(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetVpnServerDetailInfo", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetVpnServerDetailInfo(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetVpnServerUserListV3", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetVpnServerUserListV3(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetVpnUserList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var protocol string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetVpnUserList(context.Background(), omadacId, siteId, protocol).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService GetVpnUserServerList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.GetVpnUserServerList(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VPNAPIService ListRemoteSite", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -370,6 +800,38 @@ func Test_omada_VPNAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.VPNAPI.ListRemoteSite(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService LockSslVpnTunnel", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var tunnelId string
+
+		resp, httpRes, err := apiClient.VPNAPI.LockSslVpnTunnel(context.Background(), omadacId, siteId, tunnelId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService ModifyClientStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.ModifyClientStatus(context.Background(), omadacId, siteId, vpnId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -425,6 +887,38 @@ func Test_omada_VPNAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VPNAPIService ModifyS2SAutoVpn", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.ModifyS2SAutoVpn(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService ModifyS2SManualVpn", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.ModifyS2SManualVpn(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VPNAPIService ModifySiteToSiteVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -434,6 +928,38 @@ func Test_omada_VPNAPIService(t *testing.T) {
 		var vpnId string
 
 		resp, httpRes, err := apiClient.VPNAPI.ModifySiteToSiteVpn(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService ModifyVpnClient", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.ModifyVpnClient(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService ModifyVpnServer", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.VPNAPI.ModifyVpnServer(context.Background(), omadacId, siteId, vpnId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -473,6 +999,22 @@ func Test_omada_VPNAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VPNAPIService ModifyVpnUserV3", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var userId string
+
+		resp, httpRes, err := apiClient.VPNAPI.ModifyVpnUserV3(context.Background(), omadacId, siteId, userId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VPNAPIService UploadVpnCertificateFile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -481,6 +1023,21 @@ func Test_omada_VPNAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.VPNAPI.UploadVpnCertificateFile(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VPNAPIService UploadVpnCertificateFileV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VPNAPI.UploadVpnCertificateFileV2(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

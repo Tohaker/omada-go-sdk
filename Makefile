@@ -1,7 +1,13 @@
 fix:
 	go run tools/fix_spec.go
 
-generate:
+clean:
+	out="omada"; \
+    find "$$out" -mindepth 1 \
+        \( -path "$$out/.gitignore" -o -path "$$out/.openapi-generator-ignore" \) -prune \
+        -o -exec rm -rf {} +
+
+generate: clean
 	docker run --rm \
 		-w /local \
 		-v "${PWD}:/local" \

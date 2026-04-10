@@ -203,6 +203,22 @@ func Test_omada_DeviceAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DeviceAPIService CheckMacType", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var deviceMac string
+
+		resp, httpRes, err := apiClient.DeviceAPI.CheckMacType(context.Background(), omadacId, siteId, deviceMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DeviceAPIService CopyDeviceConfiguration", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

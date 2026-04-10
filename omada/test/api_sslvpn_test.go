@@ -22,6 +22,36 @@ func Test_omada_SSLVPNAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test SSLVPNAPIService BatchDeleteLockedSslVpnTunnel", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.SSLVPNAPI.BatchDeleteLockedSslVpnTunnel(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SSLVPNAPIService BatchDeleteSslVpnUserGroup", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.SSLVPNAPI.BatchDeleteSslVpnUserGroup(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SSLVPNAPIService CreateLockedSslVpnTunnuel", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -307,6 +337,22 @@ func Test_omada_SSLVPNAPIService(t *testing.T) {
 		var userGroupId string
 
 		resp, httpRes, err := apiClient.SSLVPNAPI.GetGridSslVpnUserInGroup(context.Background(), omadacId, siteId, userGroupId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SSLVPNAPIService GetGridSslVpnUserInGroupV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var userGroupId string
+
+		resp, httpRes, err := apiClient.SSLVPNAPI.GetGridSslVpnUserInGroupV2(context.Background(), omadacId, siteId, userGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -80,20 +80,6 @@ func Test_omada_LogAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test LogAPIService ExportAuditLogListForGlobal", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-
-		resp, httpRes, err := apiClient.LogAPI.ExportAuditLogListForGlobal(context.Background(), omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test LogAPIService ExportLogListForGlobal", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -130,64 +116,6 @@ func Test_omada_LogAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.LogAPI.GetAlertLogsForSite(context.Background(), omadacId, siteId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test LogAPIService GetAuditLogSettingForGlobal", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-
-		resp, httpRes, err := apiClient.LogAPI.GetAuditLogSettingForGlobal(context.Background(), omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test LogAPIService GetAuditLogSettingForMsp1", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteId string
-
-		resp, httpRes, err := apiClient.LogAPI.GetAuditLogSettingForMsp1(context.Background(), omadacId, siteId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test LogAPIService GetAuditLogsForGlobal", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-
-		resp, httpRes, err := apiClient.LogAPI.GetAuditLogsForGlobal(context.Background(), omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test LogAPIService GetAuditLogsForSite", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteId string
-
-		resp, httpRes, err := apiClient.LogAPI.GetAuditLogsForSite(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -304,35 +232,6 @@ func Test_omada_LogAPIService(t *testing.T) {
 		var omadacId string
 
 		resp, httpRes, err := apiClient.LogAPI.GetRemoteLoggingTip(context.Background(), omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test LogAPIService ModifyAuditLogSettingGlobal", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-
-		resp, httpRes, err := apiClient.LogAPI.ModifyAuditLogSettingGlobal(context.Background(), omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test LogAPIService ModifyAuditLogSettingSite1", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteId string
-
-		resp, httpRes, err := apiClient.LogAPI.ModifyAuditLogSettingSite1(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

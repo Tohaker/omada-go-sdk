@@ -178,34 +178,6 @@ func Test_omada_ControllerSettingsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ControllerSettingsAPIService GetRadiusProxy", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-
-		resp, httpRes, err := apiClient.ControllerSettingsAPI.GetRadiusProxy(context.Background(), omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ControllerSettingsAPIService GetRadiusServer", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-
-		resp, httpRes, err := apiClient.ControllerSettingsAPI.GetRadiusServer(context.Background(), omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test ControllerSettingsAPIService GetRemoteLogging", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -311,34 +283,6 @@ func Test_omada_ControllerSettingsAPIService(t *testing.T) {
 		var omadacId string
 
 		resp, httpRes, err := apiClient.ControllerSettingsAPI.ModifyGeneralSettings(context.Background(), omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ControllerSettingsAPIService ModifyRadiusProxy", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-
-		resp, httpRes, err := apiClient.ControllerSettingsAPI.ModifyRadiusProxy(context.Background(), omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ControllerSettingsAPIService ModifyRadiusServer", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-
-		resp, httpRes, err := apiClient.ControllerSettingsAPI.ModifyRadiusServer(context.Background(), omadacId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

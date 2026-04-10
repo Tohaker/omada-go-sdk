@@ -1,5 +1,5 @@
 /*
-Omada Open API - Authorization
+Omada Open API
 
 Testing AuthorizeAPIService
 

@@ -22,21 +22,6 @@ func Test_omada_LogTemplateAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LogTemplateAPIService GetAuditLogSettingForMsp", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-
-		resp, httpRes, err := apiClient.LogTemplateAPI.GetAuditLogSettingForMsp(context.Background(), omadacId, siteTemplateId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test LogTemplateAPIService GetLogSettingForSiteTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -45,21 +30,6 @@ func Test_omada_LogTemplateAPIService(t *testing.T) {
 		var siteTemplateId string
 
 		resp, httpRes, err := apiClient.LogTemplateAPI.GetLogSettingForSiteTemplate(context.Background(), omadacId, siteTemplateId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test LogTemplateAPIService ModifyAuditLogSettingSite", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-
-		resp, httpRes, err := apiClient.LogTemplateAPI.ModifyAuditLogSettingSite(context.Background(), omadacId, siteTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

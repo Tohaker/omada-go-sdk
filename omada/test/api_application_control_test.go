@@ -394,6 +394,21 @@ func Test_omada_ApplicationControlAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ApplicationControlAPIService GetApplicationControlTraffics", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ApplicationControlAPI.GetApplicationControlTraffics(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ApplicationControlAPIService GetApplications", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -524,6 +539,36 @@ func Test_omada_ApplicationControlAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.ApplicationControlAPI.GetClientTraffic(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApplicationControlAPIService GetClientTrafficList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ApplicationControlAPI.GetClientTrafficList(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApplicationControlAPIService GetClientTrafficV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ApplicationControlAPI.GetClientTrafficV2(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

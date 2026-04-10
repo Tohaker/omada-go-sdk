@@ -326,6 +326,21 @@ func Test_omada_ServiceAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ServiceAPIService GetMld", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ServiceAPI.GetMld(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ServiceAPIService GetSnmpSetting", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -487,6 +502,21 @@ func Test_omada_ServiceAPIService(t *testing.T) {
 		var mdnsId string
 
 		resp, httpRes, err := apiClient.ServiceAPI.ModifyMdns(context.Background(), omadacId, siteId, mdnsId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ServiceAPIService ModifyMld", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ServiceAPI.ModifyMld(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
