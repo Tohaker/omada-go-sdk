@@ -47,6 +47,7 @@ Name | Type | Description | Notes
 **InitialUnbindingLimit** | Pointer to **int32** | Initial unbind count for license(cloud base exclusive) | [optional] 
 **Ip** | Pointer to **string** |  | [optional] 
 **Ippt** | Pointer to **bool** |  | [optional] 
+**IpptPreconfig** | Pointer to **bool** |  | [optional] 
 **IptvSetting** | Pointer to [**OsgIptvVO**](OsgIptvVO.md) |  | [optional] 
 **Ipv6List** | Pointer to **[]string** |  | [optional] 
 **JumboOptions** | Pointer to **[]int32** |  | [optional] 
@@ -158,6 +159,7 @@ Name | Type | Description | Notes
 **SupportSpeedDuplex** | Pointer to **bool** |  | [optional] 
 **SupportStormCtrlAction** | Pointer to **bool** |  | [optional] 
 **SupportVirtualWan** | Pointer to **bool** |  | [optional] 
+**SupportWanSetPvid** | Pointer to **bool** |  | [optional] 
 **TagIds** | Pointer to **[]string** |  | [optional] 
 **Temp** | Pointer to **int32** |  | [optional] 
 **TemplateId** | Pointer to **string** | ID of the template bound to the device | [optional] 
@@ -1275,6 +1277,31 @@ SetIppt sets Ippt field to given value.
 `func (o *OsgDetailVO) HasIppt() bool`
 
 HasIppt returns a boolean if a field has been set.
+
+### GetIpptPreconfig
+
+`func (o *OsgDetailVO) GetIpptPreconfig() bool`
+
+GetIpptPreconfig returns the IpptPreconfig field if non-nil, zero value otherwise.
+
+### GetIpptPreconfigOk
+
+`func (o *OsgDetailVO) GetIpptPreconfigOk() (*bool, bool)`
+
+GetIpptPreconfigOk returns a tuple with the IpptPreconfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpptPreconfig
+
+`func (o *OsgDetailVO) SetIpptPreconfig(v bool)`
+
+SetIpptPreconfig sets IpptPreconfig field to given value.
+
+### HasIpptPreconfig
+
+`func (o *OsgDetailVO) HasIpptPreconfig() bool`
+
+HasIpptPreconfig returns a boolean if a field has been set.
 
 ### GetIptvSetting
 
@@ -4050,6 +4077,31 @@ SetSupportVirtualWan sets SupportVirtualWan field to given value.
 `func (o *OsgDetailVO) HasSupportVirtualWan() bool`
 
 HasSupportVirtualWan returns a boolean if a field has been set.
+
+### GetSupportWanSetPvid
+
+`func (o *OsgDetailVO) GetSupportWanSetPvid() bool`
+
+GetSupportWanSetPvid returns the SupportWanSetPvid field if non-nil, zero value otherwise.
+
+### GetSupportWanSetPvidOk
+
+`func (o *OsgDetailVO) GetSupportWanSetPvidOk() (*bool, bool)`
+
+GetSupportWanSetPvidOk returns a tuple with the SupportWanSetPvid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportWanSetPvid
+
+`func (o *OsgDetailVO) SetSupportWanSetPvid(v bool)`
+
+SetSupportWanSetPvid sets SupportWanSetPvid field to given value.
+
+### HasSupportWanSetPvid
+
+`func (o *OsgDetailVO) HasSupportWanSetPvid() bool`
+
+HasSupportWanSetPvid returns a boolean if a field has been set.
 
 ### GetTagIds
 

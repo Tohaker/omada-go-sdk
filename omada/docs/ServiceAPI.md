@@ -21,9 +21,10 @@ Method | HTTP request | Description
 [**GetDnsCacheSetting**](ServiceAPI.md#getdnscachesetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Get DNS cache
 [**GetDnsProxy**](ServiceAPI.md#getdnsproxy) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Get DNS proxy setting
 [**GetGridAllDhcpUserList**](ServiceAPI.md#getgridalldhcpuserlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list | Get the dhcp user list of all servers
-[**GetIgmp**](ServiceAPI.md#getigmp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Get IGMP setting
+[**GetIgmp**](ServiceAPI.md#getigmp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Get the IGMP settings
 [**GetIptv**](ServiceAPI.md#getiptv) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Get IPTV setting
 [**GetMdnsGrid**](ServiceAPI.md#getmdnsgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Get mDNS rule list
+[**GetMld**](ServiceAPI.md#getmld) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mld | Get the MLD settings
 [**GetSnmpSetting**](ServiceAPI.md#getsnmpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Get SNMP setting
 [**GetSshSetting**](ServiceAPI.md#getsshsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Get SSH setting
 [**GetUpnpSetting**](ServiceAPI.md#getupnpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Get UPnP setting
@@ -32,9 +33,10 @@ Method | HTTP request | Description
 [**ModifyDhcpReservation**](ServiceAPI.md#modifydhcpreservation) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac} | Modify an exist DHCP reservation
 [**ModifyDnsCacheSetting**](ServiceAPI.md#modifydnscachesetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Modify DNS cache setting
 [**ModifyDnsProxy**](ServiceAPI.md#modifydnsproxy) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Modify DNS proxy setting
-[**ModifyIgmp**](ServiceAPI.md#modifyigmp) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Modify IGMP setting
+[**ModifyIgmp**](ServiceAPI.md#modifyigmp) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Modify the IGMP settings
 [**ModifyIptv**](ServiceAPI.md#modifyiptv) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Modify IPTV setting
 [**ModifyMdns**](ServiceAPI.md#modifymdns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns/{mdnsId} | Modify an exist mDNS rule
+[**ModifyMld**](ServiceAPI.md#modifymld) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mld | Modify the MLD settings
 [**ModifySnmpSetting**](ServiceAPI.md#modifysnmpsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Modify SNMP setting
 [**ReservationFromDhcpUserList**](ServiceAPI.md#reservationfromdhcpuserlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list/reservation | Reservation From Dhcp User List
 [**UpdateSshSetting**](ServiceAPI.md#updatesshsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Modify SSH setting
@@ -1341,7 +1343,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseIgmpOpenApiVO GetIgmp(ctx, omadacId, siteId).Execute()
 
-Get IGMP setting
+Get the IGMP settings
 
 
 
@@ -1545,6 +1547,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseGridVOMdnsRuleOpenApiVO**](OperationResponseGridVOMdnsRuleOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMld
+
+> OperationResponseMldOpenApiVO GetMld(ctx, omadacId, siteId).Execute()
+
+Get the MLD settings
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAPI.GetMld(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.GetMld``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMld`: OperationResponseMldOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.GetMld`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMldRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseMldOpenApiVO**](OperationResponseMldOpenApiVO.md)
 
 ### Authorization
 
@@ -2164,7 +2239,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyIgmp(ctx, omadacId, siteId).IgmpOpenApiVO(igmpOpenApiVO).Execute()
 
-Modify IGMP setting
+Modify the IGMP settings
 
 
 
@@ -2388,6 +2463,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ModifyMld
+
+> OperationResponseWithoutResult ModifyMld(ctx, omadacId, siteId).MldOpenApiVO(mldOpenApiVO).Execute()
+
+Modify the MLD settings
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	mldOpenApiVO := *openapiclient.NewMldOpenApiVO(false, int32(123)) // MldOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAPI.ModifyMld(context.Background(), omadacId, siteId).MldOpenApiVO(mldOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ModifyMld``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyMld`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ModifyMld`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyMldRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **mldOpenApiVO** | [**MldOpenApiVO**](MldOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ModifySnmpSetting
 
 > OperationResponseWithoutResult ModifySnmpSetting(ctx, omadacId, siteId).SnmpSettingOpenApiVO(snmpSettingOpenApiVO).Execute()
@@ -2465,7 +2615,7 @@ Name | Type | Description  | Notes
 
 ## ReservationFromDhcpUserList
 
-> OperationResponseWithoutResult ReservationFromDhcpUserList(ctx, omadacId, siteId).DhcpUserFilterVO(dhcpUserFilterVO).Execute()
+> OperationResponseDhcpReservationErrorVO ReservationFromDhcpUserList(ctx, omadacId, siteId).DhcpUserFilterVO(dhcpUserFilterVO).Execute()
 
 Reservation From Dhcp User List
 
@@ -2486,7 +2636,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	dhcpUserFilterVO := *openapiclient.NewDhcpUserFilterVO(*openapiclient.NewBatchSelectMacsVO("SelectType_example")) // DhcpUserFilterVO | 
+	dhcpUserFilterVO := *openapiclient.NewDhcpUserFilterVO([]string{"SelectIps_example"}, *openapiclient.NewBatchSelectMacsVO("SelectType_example")) // DhcpUserFilterVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2495,7 +2645,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ReservationFromDhcpUserList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ReservationFromDhcpUserList`: OperationResponseWithoutResult
+	// response from `ReservationFromDhcpUserList`: OperationResponseDhcpReservationErrorVO
 	fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.ReservationFromDhcpUserList`: %v\n", resp)
 }
 ```
@@ -2522,7 +2672,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseDhcpReservationErrorVO**](OperationResponseDhcpReservationErrorVO.md)
 
 ### Authorization
 

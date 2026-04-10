@@ -33,10 +33,13 @@ type ExistSiteSettingVO struct {
 	Qos *bool `json:"qos,omitempty"`
 	ServiceIptv *bool `json:"serviceIptv,omitempty"`
 	ServiceType *bool `json:"serviceType,omitempty"`
+	SiteToSiteVpn *bool `json:"siteToSiteVpn,omitempty"`
 	SslVpn *bool `json:"sslVpn,omitempty"`
 	SubVpn *bool `json:"subVpn,omitempty"`
 	UrlCategory *bool `json:"urlCategory,omitempty"`
 	VirtualWan *bool `json:"virtualWan,omitempty"`
+	VpnClient *bool `json:"vpnClient,omitempty"`
+	VpnServer *bool `json:"vpnServer,omitempty"`
 	VpnUser *bool `json:"vpnUser,omitempty"`
 	Wireguard *bool `json:"wireguard,omitempty"`
 }
@@ -506,6 +509,38 @@ func (o *ExistSiteSettingVO) SetServiceType(v bool) {
 	o.ServiceType = &v
 }
 
+// GetSiteToSiteVpn returns the SiteToSiteVpn field value if set, zero value otherwise.
+func (o *ExistSiteSettingVO) GetSiteToSiteVpn() bool {
+	if o == nil || IsNil(o.SiteToSiteVpn) {
+		var ret bool
+		return ret
+	}
+	return *o.SiteToSiteVpn
+}
+
+// GetSiteToSiteVpnOk returns a tuple with the SiteToSiteVpn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExistSiteSettingVO) GetSiteToSiteVpnOk() (*bool, bool) {
+	if o == nil || IsNil(o.SiteToSiteVpn) {
+		return nil, false
+	}
+	return o.SiteToSiteVpn, true
+}
+
+// HasSiteToSiteVpn returns a boolean if a field has been set.
+func (o *ExistSiteSettingVO) HasSiteToSiteVpn() bool {
+	if o != nil && !IsNil(o.SiteToSiteVpn) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiteToSiteVpn gets a reference to the given bool and assigns it to the SiteToSiteVpn field.
+func (o *ExistSiteSettingVO) SetSiteToSiteVpn(v bool) {
+	o.SiteToSiteVpn = &v
+}
+
 // GetSslVpn returns the SslVpn field value if set, zero value otherwise.
 func (o *ExistSiteSettingVO) GetSslVpn() bool {
 	if o == nil || IsNil(o.SslVpn) {
@@ -634,6 +669,70 @@ func (o *ExistSiteSettingVO) SetVirtualWan(v bool) {
 	o.VirtualWan = &v
 }
 
+// GetVpnClient returns the VpnClient field value if set, zero value otherwise.
+func (o *ExistSiteSettingVO) GetVpnClient() bool {
+	if o == nil || IsNil(o.VpnClient) {
+		var ret bool
+		return ret
+	}
+	return *o.VpnClient
+}
+
+// GetVpnClientOk returns a tuple with the VpnClient field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExistSiteSettingVO) GetVpnClientOk() (*bool, bool) {
+	if o == nil || IsNil(o.VpnClient) {
+		return nil, false
+	}
+	return o.VpnClient, true
+}
+
+// HasVpnClient returns a boolean if a field has been set.
+func (o *ExistSiteSettingVO) HasVpnClient() bool {
+	if o != nil && !IsNil(o.VpnClient) {
+		return true
+	}
+
+	return false
+}
+
+// SetVpnClient gets a reference to the given bool and assigns it to the VpnClient field.
+func (o *ExistSiteSettingVO) SetVpnClient(v bool) {
+	o.VpnClient = &v
+}
+
+// GetVpnServer returns the VpnServer field value if set, zero value otherwise.
+func (o *ExistSiteSettingVO) GetVpnServer() bool {
+	if o == nil || IsNil(o.VpnServer) {
+		var ret bool
+		return ret
+	}
+	return *o.VpnServer
+}
+
+// GetVpnServerOk returns a tuple with the VpnServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExistSiteSettingVO) GetVpnServerOk() (*bool, bool) {
+	if o == nil || IsNil(o.VpnServer) {
+		return nil, false
+	}
+	return o.VpnServer, true
+}
+
+// HasVpnServer returns a boolean if a field has been set.
+func (o *ExistSiteSettingVO) HasVpnServer() bool {
+	if o != nil && !IsNil(o.VpnServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetVpnServer gets a reference to the given bool and assigns it to the VpnServer field.
+func (o *ExistSiteSettingVO) SetVpnServer(v bool) {
+	o.VpnServer = &v
+}
+
 // GetVpnUser returns the VpnUser field value if set, zero value otherwise.
 func (o *ExistSiteSettingVO) GetVpnUser() bool {
 	if o == nil || IsNil(o.VpnUser) {
@@ -750,6 +849,9 @@ func (o ExistSiteSettingVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServiceType) {
 		toSerialize["serviceType"] = o.ServiceType
 	}
+	if !IsNil(o.SiteToSiteVpn) {
+		toSerialize["siteToSiteVpn"] = o.SiteToSiteVpn
+	}
 	if !IsNil(o.SslVpn) {
 		toSerialize["sslVpn"] = o.SslVpn
 	}
@@ -761,6 +863,12 @@ func (o ExistSiteSettingVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VirtualWan) {
 		toSerialize["virtualWan"] = o.VirtualWan
+	}
+	if !IsNil(o.VpnClient) {
+		toSerialize["vpnClient"] = o.VpnClient
+	}
+	if !IsNil(o.VpnServer) {
+		toSerialize["vpnServer"] = o.VpnServer
 	}
 	if !IsNil(o.VpnUser) {
 		toSerialize["vpnUser"] = o.VpnUser

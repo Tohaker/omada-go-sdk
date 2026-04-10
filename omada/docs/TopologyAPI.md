@@ -1186,7 +1186,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	filtersDeviceStatus := "filtersDeviceStatus_example" // string | Filter query parameters, support field device status. 0: connected; 1: disconnected; 0,1: both. (optional)
+	filtersDeviceStatus := "filtersDeviceStatus_example" // string | Filter query parameters, support field device status. 0: connected; 1: disconnected; 0,1: both.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

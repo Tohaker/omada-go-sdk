@@ -27,6 +27,7 @@ type SiteSettingCapVO struct {
 	CertProfile *bool `json:"certProfile,omitempty"`
 	ClientRateLimit *bool `json:"clientRateLimit,omitempty"`
 	Cluster *bool `json:"cluster,omitempty"`
+	ClusterHsMode *bool `json:"clusterHsMode,omitempty"`
 	ClusterModeOn *bool `json:"clusterModeOn,omitempty"`
 	CustomAcl *bool `json:"customAcl,omitempty"`
 	Ddns *bool `json:"ddns,omitempty"`
@@ -35,9 +36,8 @@ type SiteSettingCapVO struct {
 	DnsCache *bool `json:"dnsCache,omitempty"`
 	DnsLoopUpSupport *bool `json:"dnsLoopUpSupport,omitempty"`
 	DnsProxy *bool `json:"dnsProxy,omitempty"`
-	// Deprecated
+	DomainNoPortGroup *bool `json:"domainNoPortGroup,omitempty"`
 	Dpi *bool `json:"dpi,omitempty"`
-	// Deprecated
 	DpiStat *bool `json:"dpiStat,omitempty"`
 	Dsl *bool `json:"dsl,omitempty"`
 	Firewall *bool `json:"firewall,omitempty"`
@@ -57,6 +57,7 @@ type SiteSettingCapVO struct {
 	LdapVpn *bool `json:"ldapVpn,omitempty"`
 	LockToAp *bool `json:"lockToAp,omitempty"`
 	MacFilter *bool `json:"macFilter,omitempty"`
+	NatTraversal *bool `json:"natTraversal,omitempty"`
 	NetworkCheckSupport *bool `json:"networkCheckSupport,omitempty"`
 	NetworkSecurity *bool `json:"networkSecurity,omitempty"`
 	OltVlan *bool `json:"oltVlan,omitempty"`
@@ -69,17 +70,22 @@ type SiteSettingCapVO struct {
 	PolicyRouting *bool `json:"policyRouting,omitempty"`
 	Qos *bool `json:"qos,omitempty"`
 	Radios *bool `json:"radios,omitempty"`
+	ServerClientWireguard *bool `json:"serverClientWireguard,omitempty"`
 	ServerOpenVpnGoogleLdap *bool `json:"serverOpenVpnGoogleLdap,omitempty"`
 	ServiceIptv *bool `json:"serviceIptv,omitempty"`
 	ServiceType *bool `json:"serviceType,omitempty"`
 	Sim *bool `json:"sim,omitempty"`
+	SiteToSiteVpn *bool `json:"siteToSiteVpn,omitempty"`
 	SnmpServiceSetting *bool `json:"snmpServiceSetting,omitempty"`
+	SpeedTest *bool `json:"speedTest,omitempty"`
+	SpeedTestSchedule *bool `json:"speedTestSchedule,omitempty"`
 	Ssh *bool `json:"ssh,omitempty"`
 	SslVpn *bool `json:"sslVpn,omitempty"`
 	Statistics *bool `json:"statistics,omitempty"`
 	SubVpn *bool `json:"subVpn,omitempty"`
 	SupportDpi *bool `json:"supportDpi,omitempty"`
 	SupportES *bool `json:"supportES,omitempty"`
+	SupportGetDhcpLeaseTime *bool `json:"supportGetDhcpLeaseTime,omitempty"`
 	SupportL2 *bool `json:"supportL2,omitempty"`
 	SupportL3 *bool `json:"supportL3,omitempty"`
 	SupportShowServerInReservation *bool `json:"supportShowServerInReservation,omitempty"`
@@ -90,6 +96,8 @@ type SiteSettingCapVO struct {
 	UrlCategory *bool `json:"urlCategory,omitempty"`
 	VirtualWan *bool `json:"virtualWan,omitempty"`
 	Voip *bool `json:"voip,omitempty"`
+	VpnClient *bool `json:"vpnClient,omitempty"`
+	VpnServer *bool `json:"vpnServer,omitempty"`
 	VpnStatus *bool `json:"vpnStatus,omitempty"`
 	VpnUser *bool `json:"vpnUser,omitempty"`
 	Wireguard *bool `json:"wireguard,omitempty"`
@@ -370,6 +378,38 @@ func (o *SiteSettingCapVO) SetCluster(v bool) {
 	o.Cluster = &v
 }
 
+// GetClusterHsMode returns the ClusterHsMode field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetClusterHsMode() bool {
+	if o == nil || IsNil(o.ClusterHsMode) {
+		var ret bool
+		return ret
+	}
+	return *o.ClusterHsMode
+}
+
+// GetClusterHsModeOk returns a tuple with the ClusterHsMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetClusterHsModeOk() (*bool, bool) {
+	if o == nil || IsNil(o.ClusterHsMode) {
+		return nil, false
+	}
+	return o.ClusterHsMode, true
+}
+
+// HasClusterHsMode returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasClusterHsMode() bool {
+	if o != nil && !IsNil(o.ClusterHsMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetClusterHsMode gets a reference to the given bool and assigns it to the ClusterHsMode field.
+func (o *SiteSettingCapVO) SetClusterHsMode(v bool) {
+	o.ClusterHsMode = &v
+}
+
 // GetClusterModeOn returns the ClusterModeOn field value if set, zero value otherwise.
 func (o *SiteSettingCapVO) GetClusterModeOn() bool {
 	if o == nil || IsNil(o.ClusterModeOn) {
@@ -626,8 +666,39 @@ func (o *SiteSettingCapVO) SetDnsProxy(v bool) {
 	o.DnsProxy = &v
 }
 
+// GetDomainNoPortGroup returns the DomainNoPortGroup field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetDomainNoPortGroup() bool {
+	if o == nil || IsNil(o.DomainNoPortGroup) {
+		var ret bool
+		return ret
+	}
+	return *o.DomainNoPortGroup
+}
+
+// GetDomainNoPortGroupOk returns a tuple with the DomainNoPortGroup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetDomainNoPortGroupOk() (*bool, bool) {
+	if o == nil || IsNil(o.DomainNoPortGroup) {
+		return nil, false
+	}
+	return o.DomainNoPortGroup, true
+}
+
+// HasDomainNoPortGroup returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasDomainNoPortGroup() bool {
+	if o != nil && !IsNil(o.DomainNoPortGroup) {
+		return true
+	}
+
+	return false
+}
+
+// SetDomainNoPortGroup gets a reference to the given bool and assigns it to the DomainNoPortGroup field.
+func (o *SiteSettingCapVO) SetDomainNoPortGroup(v bool) {
+	o.DomainNoPortGroup = &v
+}
+
 // GetDpi returns the Dpi field value if set, zero value otherwise.
-// Deprecated
 func (o *SiteSettingCapVO) GetDpi() bool {
 	if o == nil || IsNil(o.Dpi) {
 		var ret bool
@@ -638,7 +709,6 @@ func (o *SiteSettingCapVO) GetDpi() bool {
 
 // GetDpiOk returns a tuple with the Dpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// Deprecated
 func (o *SiteSettingCapVO) GetDpiOk() (*bool, bool) {
 	if o == nil || IsNil(o.Dpi) {
 		return nil, false
@@ -656,13 +726,11 @@ func (o *SiteSettingCapVO) HasDpi() bool {
 }
 
 // SetDpi gets a reference to the given bool and assigns it to the Dpi field.
-// Deprecated
 func (o *SiteSettingCapVO) SetDpi(v bool) {
 	o.Dpi = &v
 }
 
 // GetDpiStat returns the DpiStat field value if set, zero value otherwise.
-// Deprecated
 func (o *SiteSettingCapVO) GetDpiStat() bool {
 	if o == nil || IsNil(o.DpiStat) {
 		var ret bool
@@ -673,7 +741,6 @@ func (o *SiteSettingCapVO) GetDpiStat() bool {
 
 // GetDpiStatOk returns a tuple with the DpiStat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// Deprecated
 func (o *SiteSettingCapVO) GetDpiStatOk() (*bool, bool) {
 	if o == nil || IsNil(o.DpiStat) {
 		return nil, false
@@ -691,7 +758,6 @@ func (o *SiteSettingCapVO) HasDpiStat() bool {
 }
 
 // SetDpiStat gets a reference to the given bool and assigns it to the DpiStat field.
-// Deprecated
 func (o *SiteSettingCapVO) SetDpiStat(v bool) {
 	o.DpiStat = &v
 }
@@ -1272,6 +1338,38 @@ func (o *SiteSettingCapVO) SetMacFilter(v bool) {
 	o.MacFilter = &v
 }
 
+// GetNatTraversal returns the NatTraversal field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetNatTraversal() bool {
+	if o == nil || IsNil(o.NatTraversal) {
+		var ret bool
+		return ret
+	}
+	return *o.NatTraversal
+}
+
+// GetNatTraversalOk returns a tuple with the NatTraversal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetNatTraversalOk() (*bool, bool) {
+	if o == nil || IsNil(o.NatTraversal) {
+		return nil, false
+	}
+	return o.NatTraversal, true
+}
+
+// HasNatTraversal returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasNatTraversal() bool {
+	if o != nil && !IsNil(o.NatTraversal) {
+		return true
+	}
+
+	return false
+}
+
+// SetNatTraversal gets a reference to the given bool and assigns it to the NatTraversal field.
+func (o *SiteSettingCapVO) SetNatTraversal(v bool) {
+	o.NatTraversal = &v
+}
+
 // GetNetworkCheckSupport returns the NetworkCheckSupport field value if set, zero value otherwise.
 func (o *SiteSettingCapVO) GetNetworkCheckSupport() bool {
 	if o == nil || IsNil(o.NetworkCheckSupport) {
@@ -1656,6 +1754,38 @@ func (o *SiteSettingCapVO) SetRadios(v bool) {
 	o.Radios = &v
 }
 
+// GetServerClientWireguard returns the ServerClientWireguard field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetServerClientWireguard() bool {
+	if o == nil || IsNil(o.ServerClientWireguard) {
+		var ret bool
+		return ret
+	}
+	return *o.ServerClientWireguard
+}
+
+// GetServerClientWireguardOk returns a tuple with the ServerClientWireguard field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetServerClientWireguardOk() (*bool, bool) {
+	if o == nil || IsNil(o.ServerClientWireguard) {
+		return nil, false
+	}
+	return o.ServerClientWireguard, true
+}
+
+// HasServerClientWireguard returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasServerClientWireguard() bool {
+	if o != nil && !IsNil(o.ServerClientWireguard) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerClientWireguard gets a reference to the given bool and assigns it to the ServerClientWireguard field.
+func (o *SiteSettingCapVO) SetServerClientWireguard(v bool) {
+	o.ServerClientWireguard = &v
+}
+
 // GetServerOpenVpnGoogleLdap returns the ServerOpenVpnGoogleLdap field value if set, zero value otherwise.
 func (o *SiteSettingCapVO) GetServerOpenVpnGoogleLdap() bool {
 	if o == nil || IsNil(o.ServerOpenVpnGoogleLdap) {
@@ -1784,6 +1914,38 @@ func (o *SiteSettingCapVO) SetSim(v bool) {
 	o.Sim = &v
 }
 
+// GetSiteToSiteVpn returns the SiteToSiteVpn field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetSiteToSiteVpn() bool {
+	if o == nil || IsNil(o.SiteToSiteVpn) {
+		var ret bool
+		return ret
+	}
+	return *o.SiteToSiteVpn
+}
+
+// GetSiteToSiteVpnOk returns a tuple with the SiteToSiteVpn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetSiteToSiteVpnOk() (*bool, bool) {
+	if o == nil || IsNil(o.SiteToSiteVpn) {
+		return nil, false
+	}
+	return o.SiteToSiteVpn, true
+}
+
+// HasSiteToSiteVpn returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasSiteToSiteVpn() bool {
+	if o != nil && !IsNil(o.SiteToSiteVpn) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiteToSiteVpn gets a reference to the given bool and assigns it to the SiteToSiteVpn field.
+func (o *SiteSettingCapVO) SetSiteToSiteVpn(v bool) {
+	o.SiteToSiteVpn = &v
+}
+
 // GetSnmpServiceSetting returns the SnmpServiceSetting field value if set, zero value otherwise.
 func (o *SiteSettingCapVO) GetSnmpServiceSetting() bool {
 	if o == nil || IsNil(o.SnmpServiceSetting) {
@@ -1814,6 +1976,70 @@ func (o *SiteSettingCapVO) HasSnmpServiceSetting() bool {
 // SetSnmpServiceSetting gets a reference to the given bool and assigns it to the SnmpServiceSetting field.
 func (o *SiteSettingCapVO) SetSnmpServiceSetting(v bool) {
 	o.SnmpServiceSetting = &v
+}
+
+// GetSpeedTest returns the SpeedTest field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetSpeedTest() bool {
+	if o == nil || IsNil(o.SpeedTest) {
+		var ret bool
+		return ret
+	}
+	return *o.SpeedTest
+}
+
+// GetSpeedTestOk returns a tuple with the SpeedTest field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetSpeedTestOk() (*bool, bool) {
+	if o == nil || IsNil(o.SpeedTest) {
+		return nil, false
+	}
+	return o.SpeedTest, true
+}
+
+// HasSpeedTest returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasSpeedTest() bool {
+	if o != nil && !IsNil(o.SpeedTest) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpeedTest gets a reference to the given bool and assigns it to the SpeedTest field.
+func (o *SiteSettingCapVO) SetSpeedTest(v bool) {
+	o.SpeedTest = &v
+}
+
+// GetSpeedTestSchedule returns the SpeedTestSchedule field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetSpeedTestSchedule() bool {
+	if o == nil || IsNil(o.SpeedTestSchedule) {
+		var ret bool
+		return ret
+	}
+	return *o.SpeedTestSchedule
+}
+
+// GetSpeedTestScheduleOk returns a tuple with the SpeedTestSchedule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetSpeedTestScheduleOk() (*bool, bool) {
+	if o == nil || IsNil(o.SpeedTestSchedule) {
+		return nil, false
+	}
+	return o.SpeedTestSchedule, true
+}
+
+// HasSpeedTestSchedule returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasSpeedTestSchedule() bool {
+	if o != nil && !IsNil(o.SpeedTestSchedule) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpeedTestSchedule gets a reference to the given bool and assigns it to the SpeedTestSchedule field.
+func (o *SiteSettingCapVO) SetSpeedTestSchedule(v bool) {
+	o.SpeedTestSchedule = &v
 }
 
 // GetSsh returns the Ssh field value if set, zero value otherwise.
@@ -2006,6 +2232,38 @@ func (o *SiteSettingCapVO) HasSupportES() bool {
 // SetSupportES gets a reference to the given bool and assigns it to the SupportES field.
 func (o *SiteSettingCapVO) SetSupportES(v bool) {
 	o.SupportES = &v
+}
+
+// GetSupportGetDhcpLeaseTime returns the SupportGetDhcpLeaseTime field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetSupportGetDhcpLeaseTime() bool {
+	if o == nil || IsNil(o.SupportGetDhcpLeaseTime) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportGetDhcpLeaseTime
+}
+
+// GetSupportGetDhcpLeaseTimeOk returns a tuple with the SupportGetDhcpLeaseTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetSupportGetDhcpLeaseTimeOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportGetDhcpLeaseTime) {
+		return nil, false
+	}
+	return o.SupportGetDhcpLeaseTime, true
+}
+
+// HasSupportGetDhcpLeaseTime returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasSupportGetDhcpLeaseTime() bool {
+	if o != nil && !IsNil(o.SupportGetDhcpLeaseTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportGetDhcpLeaseTime gets a reference to the given bool and assigns it to the SupportGetDhcpLeaseTime field.
+func (o *SiteSettingCapVO) SetSupportGetDhcpLeaseTime(v bool) {
+	o.SupportGetDhcpLeaseTime = &v
 }
 
 // GetSupportL2 returns the SupportL2 field value if set, zero value otherwise.
@@ -2328,6 +2586,70 @@ func (o *SiteSettingCapVO) SetVoip(v bool) {
 	o.Voip = &v
 }
 
+// GetVpnClient returns the VpnClient field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetVpnClient() bool {
+	if o == nil || IsNil(o.VpnClient) {
+		var ret bool
+		return ret
+	}
+	return *o.VpnClient
+}
+
+// GetVpnClientOk returns a tuple with the VpnClient field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetVpnClientOk() (*bool, bool) {
+	if o == nil || IsNil(o.VpnClient) {
+		return nil, false
+	}
+	return o.VpnClient, true
+}
+
+// HasVpnClient returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasVpnClient() bool {
+	if o != nil && !IsNil(o.VpnClient) {
+		return true
+	}
+
+	return false
+}
+
+// SetVpnClient gets a reference to the given bool and assigns it to the VpnClient field.
+func (o *SiteSettingCapVO) SetVpnClient(v bool) {
+	o.VpnClient = &v
+}
+
+// GetVpnServer returns the VpnServer field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetVpnServer() bool {
+	if o == nil || IsNil(o.VpnServer) {
+		var ret bool
+		return ret
+	}
+	return *o.VpnServer
+}
+
+// GetVpnServerOk returns a tuple with the VpnServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetVpnServerOk() (*bool, bool) {
+	if o == nil || IsNil(o.VpnServer) {
+		return nil, false
+	}
+	return o.VpnServer, true
+}
+
+// HasVpnServer returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasVpnServer() bool {
+	if o != nil && !IsNil(o.VpnServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetVpnServer gets a reference to the given bool and assigns it to the VpnServer field.
+func (o *SiteSettingCapVO) SetVpnServer(v bool) {
+	o.VpnServer = &v
+}
+
 // GetVpnStatus returns the VpnStatus field value if set, zero value otherwise.
 func (o *SiteSettingCapVO) GetVpnStatus() bool {
 	if o == nil || IsNil(o.VpnStatus) {
@@ -2522,6 +2844,9 @@ func (o SiteSettingCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Cluster) {
 		toSerialize["cluster"] = o.Cluster
 	}
+	if !IsNil(o.ClusterHsMode) {
+		toSerialize["clusterHsMode"] = o.ClusterHsMode
+	}
 	if !IsNil(o.ClusterModeOn) {
 		toSerialize["clusterModeOn"] = o.ClusterModeOn
 	}
@@ -2545,6 +2870,9 @@ func (o SiteSettingCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.DnsProxy) {
 		toSerialize["dnsProxy"] = o.DnsProxy
+	}
+	if !IsNil(o.DomainNoPortGroup) {
+		toSerialize["domainNoPortGroup"] = o.DomainNoPortGroup
 	}
 	if !IsNil(o.Dpi) {
 		toSerialize["dpi"] = o.Dpi
@@ -2606,6 +2934,9 @@ func (o SiteSettingCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MacFilter) {
 		toSerialize["macFilter"] = o.MacFilter
 	}
+	if !IsNil(o.NatTraversal) {
+		toSerialize["natTraversal"] = o.NatTraversal
+	}
 	if !IsNil(o.NetworkCheckSupport) {
 		toSerialize["networkCheckSupport"] = o.NetworkCheckSupport
 	}
@@ -2642,6 +2973,9 @@ func (o SiteSettingCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Radios) {
 		toSerialize["radios"] = o.Radios
 	}
+	if !IsNil(o.ServerClientWireguard) {
+		toSerialize["serverClientWireguard"] = o.ServerClientWireguard
+	}
 	if !IsNil(o.ServerOpenVpnGoogleLdap) {
 		toSerialize["serverOpenVpnGoogleLdap"] = o.ServerOpenVpnGoogleLdap
 	}
@@ -2654,8 +2988,17 @@ func (o SiteSettingCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Sim) {
 		toSerialize["sim"] = o.Sim
 	}
+	if !IsNil(o.SiteToSiteVpn) {
+		toSerialize["siteToSiteVpn"] = o.SiteToSiteVpn
+	}
 	if !IsNil(o.SnmpServiceSetting) {
 		toSerialize["snmpServiceSetting"] = o.SnmpServiceSetting
+	}
+	if !IsNil(o.SpeedTest) {
+		toSerialize["speedTest"] = o.SpeedTest
+	}
+	if !IsNil(o.SpeedTestSchedule) {
+		toSerialize["speedTestSchedule"] = o.SpeedTestSchedule
 	}
 	if !IsNil(o.Ssh) {
 		toSerialize["ssh"] = o.Ssh
@@ -2674,6 +3017,9 @@ func (o SiteSettingCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportES) {
 		toSerialize["supportES"] = o.SupportES
+	}
+	if !IsNil(o.SupportGetDhcpLeaseTime) {
+		toSerialize["supportGetDhcpLeaseTime"] = o.SupportGetDhcpLeaseTime
 	}
 	if !IsNil(o.SupportL2) {
 		toSerialize["supportL2"] = o.SupportL2
@@ -2704,6 +3050,12 @@ func (o SiteSettingCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Voip) {
 		toSerialize["voip"] = o.Voip
+	}
+	if !IsNil(o.VpnClient) {
+		toSerialize["vpnClient"] = o.VpnClient
+	}
+	if !IsNil(o.VpnServer) {
+		toSerialize["vpnServer"] = o.VpnServer
 	}
 	if !IsNil(o.VpnStatus) {
 		toSerialize["vpnStatus"] = o.VpnStatus

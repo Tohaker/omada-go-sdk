@@ -51,6 +51,7 @@ type APLANPortList struct {
 	PoeState *int32 `json:"poeState,omitempty"`
 	// Port Number
 	Port *int32 `json:"port,omitempty"`
+	PortStatus *ApPortStatusVO `json:"portStatus,omitempty"`
 	// Port Type
 	PortType *int32 `json:"portType,omitempty"`
 	// Whether to disable the port, defaults to true.
@@ -644,6 +645,38 @@ func (o *APLANPortList) SetPort(v int32) {
 	o.Port = &v
 }
 
+// GetPortStatus returns the PortStatus field value if set, zero value otherwise.
+func (o *APLANPortList) GetPortStatus() ApPortStatusVO {
+	if o == nil || IsNil(o.PortStatus) {
+		var ret ApPortStatusVO
+		return ret
+	}
+	return *o.PortStatus
+}
+
+// GetPortStatusOk returns a tuple with the PortStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *APLANPortList) GetPortStatusOk() (*ApPortStatusVO, bool) {
+	if o == nil || IsNil(o.PortStatus) {
+		return nil, false
+	}
+	return o.PortStatus, true
+}
+
+// HasPortStatus returns a boolean if a field has been set.
+func (o *APLANPortList) HasPortStatus() bool {
+	if o != nil && !IsNil(o.PortStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortStatus gets a reference to the given ApPortStatusVO and assigns it to the PortStatus field.
+func (o *APLANPortList) SetPortStatus(v ApPortStatusVO) {
+	o.PortStatus = &v
+}
+
 // GetPortType returns the PortType field value if set, zero value otherwise.
 func (o *APLANPortList) GetPortType() int32 {
 	if o == nil || IsNil(o.PortType) {
@@ -1184,6 +1217,9 @@ func (o APLANPortList) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
+	}
+	if !IsNil(o.PortStatus) {
+		toSerialize["portStatus"] = o.PortStatus
 	}
 	if !IsNil(o.PortType) {
 		toSerialize["portType"] = o.PortType

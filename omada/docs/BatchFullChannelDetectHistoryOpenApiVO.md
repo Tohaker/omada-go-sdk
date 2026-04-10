@@ -4,8 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DeviceInfoList** | Pointer to [**[]ApInfoOpenApiVO**](ApInfoOpenApiVO.md) | Device information list | [optional] 
+**EnableInterference** | Pointer to **bool** | Whether to enable interference detect | [optional] 
 **HistoryId** | Pointer to **string** | Id of batch full channel detect history. | [optional] 
-**Status** | Pointer to **int32** | Status of full channel detect, status should be a value as follows: 0: finish; 1: scanning. | [optional] 
+**LastSeen** | Pointer to **int64** | Last full channel detect time. | [optional] 
+**ScanApNum** | Pointer to **int32** | The total number of APs participating in the full channel detect. | [optional] 
+**Status** | Pointer to **int32** | full channel detect status. 0: finish, 1: scanning. | [optional] 
 
 ## Methods
 
@@ -25,6 +29,56 @@ will change when the set of required properties is changed
 NewBatchFullChannelDetectHistoryOpenApiVOWithDefaults instantiates a new BatchFullChannelDetectHistoryOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDeviceInfoList
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) GetDeviceInfoList() []ApInfoOpenApiVO`
+
+GetDeviceInfoList returns the DeviceInfoList field if non-nil, zero value otherwise.
+
+### GetDeviceInfoListOk
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) GetDeviceInfoListOk() (*[]ApInfoOpenApiVO, bool)`
+
+GetDeviceInfoListOk returns a tuple with the DeviceInfoList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeviceInfoList
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) SetDeviceInfoList(v []ApInfoOpenApiVO)`
+
+SetDeviceInfoList sets DeviceInfoList field to given value.
+
+### HasDeviceInfoList
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) HasDeviceInfoList() bool`
+
+HasDeviceInfoList returns a boolean if a field has been set.
+
+### GetEnableInterference
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) GetEnableInterference() bool`
+
+GetEnableInterference returns the EnableInterference field if non-nil, zero value otherwise.
+
+### GetEnableInterferenceOk
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) GetEnableInterferenceOk() (*bool, bool)`
+
+GetEnableInterferenceOk returns a tuple with the EnableInterference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableInterference
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) SetEnableInterference(v bool)`
+
+SetEnableInterference sets EnableInterference field to given value.
+
+### HasEnableInterference
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) HasEnableInterference() bool`
+
+HasEnableInterference returns a boolean if a field has been set.
 
 ### GetHistoryId
 
@@ -50,6 +104,56 @@ SetHistoryId sets HistoryId field to given value.
 `func (o *BatchFullChannelDetectHistoryOpenApiVO) HasHistoryId() bool`
 
 HasHistoryId returns a boolean if a field has been set.
+
+### GetLastSeen
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) GetLastSeen() int64`
+
+GetLastSeen returns the LastSeen field if non-nil, zero value otherwise.
+
+### GetLastSeenOk
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) GetLastSeenOk() (*int64, bool)`
+
+GetLastSeenOk returns a tuple with the LastSeen field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastSeen
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) SetLastSeen(v int64)`
+
+SetLastSeen sets LastSeen field to given value.
+
+### HasLastSeen
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) HasLastSeen() bool`
+
+HasLastSeen returns a boolean if a field has been set.
+
+### GetScanApNum
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) GetScanApNum() int32`
+
+GetScanApNum returns the ScanApNum field if non-nil, zero value otherwise.
+
+### GetScanApNumOk
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) GetScanApNumOk() (*int32, bool)`
+
+GetScanApNumOk returns a tuple with the ScanApNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScanApNum
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) SetScanApNum(v int32)`
+
+SetScanApNum sets ScanApNum field to given value.
+
+### HasScanApNum
+
+`func (o *BatchFullChannelDetectHistoryOpenApiVO) HasScanApNum() bool`
+
+HasScanApNum returns a boolean if a field has been set.
 
 ### GetStatus
 

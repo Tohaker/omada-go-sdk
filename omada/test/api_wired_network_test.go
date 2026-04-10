@@ -546,6 +546,21 @@ func Test_omada_WiredNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WiredNetworkAPIService GetDevicePortSupportVlansInfo", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WiredNetworkAPI.GetDevicePortSupportVlansInfo(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WiredNetworkAPIService GetDhcpServerDevCapForNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -571,6 +586,21 @@ func Test_omada_WiredNetworkAPIService(t *testing.T) {
 		var networkId string
 
 		resp, httpRes, err := apiClient.WiredNetworkAPI.GetDhcpServerInfoForNetwork(context.Background(), omadacId, siteId, networkId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WiredNetworkAPIService GetGridAllClients1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WiredNetworkAPI.GetGridAllClients1(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1039,6 +1069,21 @@ func Test_omada_WiredNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WiredNetworkAPIService GetSpeedTestV2Setting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WiredNetworkAPI.GetSpeedTestV2Setting(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WiredNetworkAPIService GetSupportInfo", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1127,6 +1172,23 @@ func Test_omada_WiredNetworkAPIService(t *testing.T) {
 		var vlan string
 
 		resp, httpRes, err := apiClient.WiredNetworkAPI.GetVlanNetworkAffectedSsid1(context.Background(), omadacId, siteId, networkId, vlan).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WiredNetworkAPIService GetVlanNetworkDevicePortSupportVlanInfo", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var networkId string
+		var vlan string
+
+		resp, httpRes, err := apiClient.WiredNetworkAPI.GetVlanNetworkDevicePortSupportVlanInfo(context.Background(), omadacId, siteId, networkId, vlan).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1336,6 +1398,21 @@ func Test_omada_WiredNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WiredNetworkAPIService ModifySpeedTestV2Setting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WiredNetworkAPI.ModifySpeedTestV2Setting(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WiredNetworkAPIService ModifyVirtualWan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1421,6 +1498,21 @@ func Test_omada_WiredNetworkAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.WiredNetworkAPI.NetworkMapping(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WiredNetworkAPIService ObtainWanUnsupportedFunction", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WiredNetworkAPI.ObtainWanUnsupportedFunction(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

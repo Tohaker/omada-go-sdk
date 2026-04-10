@@ -21,6 +21,8 @@ var _ MappedNullable = &SdWanGroupDetail{}
 type SdWanGroupDetail struct {
 	// The description of the SD-WAN group
 	Description *string `json:"description,omitempty"`
+	// Whether the group enable SD-WAN virtual network Map
+	EnableNat *bool `json:"enableNat,omitempty"`
 	// The ID of the SD-WAN group
 	Id *string `json:"id,omitempty"`
 	// The end of the IP pool of the SD-WAN group
@@ -33,6 +35,7 @@ type SdWanGroupDetail struct {
 	MemberList []SdWanMemberInfo `json:"memberList,omitempty"`
 	// The name of the SD-WAN group
 	Name *string `json:"name,omitempty"`
+	NatInfo *SdWanNatInfo `json:"natInfo,omitempty"`
 }
 
 // NewSdWanGroupDetail instantiates a new SdWanGroupDetail object
@@ -82,6 +85,38 @@ func (o *SdWanGroupDetail) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *SdWanGroupDetail) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetEnableNat returns the EnableNat field value if set, zero value otherwise.
+func (o *SdWanGroupDetail) GetEnableNat() bool {
+	if o == nil || IsNil(o.EnableNat) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableNat
+}
+
+// GetEnableNatOk returns a tuple with the EnableNat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanGroupDetail) GetEnableNatOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableNat) {
+		return nil, false
+	}
+	return o.EnableNat, true
+}
+
+// HasEnableNat returns a boolean if a field has been set.
+func (o *SdWanGroupDetail) HasEnableNat() bool {
+	if o != nil && !IsNil(o.EnableNat) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableNat gets a reference to the given bool and assigns it to the EnableNat field.
+func (o *SdWanGroupDetail) SetEnableNat(v bool) {
+	o.EnableNat = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -276,6 +311,38 @@ func (o *SdWanGroupDetail) SetName(v string) {
 	o.Name = &v
 }
 
+// GetNatInfo returns the NatInfo field value if set, zero value otherwise.
+func (o *SdWanGroupDetail) GetNatInfo() SdWanNatInfo {
+	if o == nil || IsNil(o.NatInfo) {
+		var ret SdWanNatInfo
+		return ret
+	}
+	return *o.NatInfo
+}
+
+// GetNatInfoOk returns a tuple with the NatInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanGroupDetail) GetNatInfoOk() (*SdWanNatInfo, bool) {
+	if o == nil || IsNil(o.NatInfo) {
+		return nil, false
+	}
+	return o.NatInfo, true
+}
+
+// HasNatInfo returns a boolean if a field has been set.
+func (o *SdWanGroupDetail) HasNatInfo() bool {
+	if o != nil && !IsNil(o.NatInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetNatInfo gets a reference to the given SdWanNatInfo and assigns it to the NatInfo field.
+func (o *SdWanGroupDetail) SetNatInfo(v SdWanNatInfo) {
+	o.NatInfo = &v
+}
+
 func (o SdWanGroupDetail) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -288,6 +355,9 @@ func (o SdWanGroupDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.EnableNat) {
+		toSerialize["enableNat"] = o.EnableNat
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -306,6 +376,9 @@ func (o SdWanGroupDetail) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.NatInfo) {
+		toSerialize["natInfo"] = o.NatInfo
 	}
 	return toSerialize, nil
 }

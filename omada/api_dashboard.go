@@ -311,6 +311,40 @@ type DashboardAPI interface {
 	GetRetryAndDroppedRateExecute(r DashboardAPIGetRetryAndDroppedRateRequest) (*OperationResponseRetryDropRate, *http.Response, error)
 
 	/*
+	GetSpeedTestV2Result Get Speed Test Result
+
+	Get Speed Test Result.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	@return DashboardAPIGetSpeedTestV2ResultRequest
+	*/
+	GetSpeedTestV2Result(ctx context.Context, omadacId string, siteId string, gatewayMac string) DashboardAPIGetSpeedTestV2ResultRequest
+
+	// GetSpeedTestV2ResultExecute executes the request
+	//  @return OperationResponseSpeedTestV2ResultVO
+	GetSpeedTestV2ResultExecute(r DashboardAPIGetSpeedTestV2ResultRequest) (*OperationResponseSpeedTestV2ResultVO, *http.Response, error)
+
+	/*
+	GetSpeedTestV2ResultDateList Get date list of speed test results
+
+	Get date list of speed test results.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	@return DashboardAPIGetSpeedTestV2ResultDateListRequest
+	*/
+	GetSpeedTestV2ResultDateList(ctx context.Context, omadacId string, siteId string, gatewayMac string) DashboardAPIGetSpeedTestV2ResultDateListRequest
+
+	// GetSpeedTestV2ResultDateListExecute executes the request
+	//  @return OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO
+	GetSpeedTestV2ResultDateListExecute(r DashboardAPIGetSpeedTestV2ResultDateListRequest) (*OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO, *http.Response, error)
+
+	/*
 	GetSwitchSummary Get switch summary
 
 	Get switch summary<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only
@@ -470,6 +504,23 @@ type DashboardAPI interface {
 	// RemoveTabExecute executes the request
 	//  @return OperationResponseWithoutResult
 	RemoveTabExecute(r DashboardAPIRemoveTabRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	StartSpeedTestV2 Start Speed Test
+
+	Start Speed Test.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	@return DashboardAPIStartSpeedTestV2Request
+	*/
+	StartSpeedTestV2(ctx context.Context, omadacId string, siteId string, gatewayMac string) DashboardAPIStartSpeedTestV2Request
+
+	// StartSpeedTestV2Execute executes the request
+	//  @return OperationResponseStartSpeedTestV2ResultVO
+	StartSpeedTestV2Execute(r DashboardAPIStartSpeedTestV2Request) (*OperationResponseStartSpeedTestV2ResultVO, *http.Response, error)
 
 	/*
 	UpdateTab Modify an existing tab
@@ -2868,6 +2919,267 @@ func (a *DashboardAPIService) GetRetryAndDroppedRateExecute(r DashboardAPIGetRet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type DashboardAPIGetSpeedTestV2ResultRequest struct {
+	ctx context.Context
+	ApiService DashboardAPI
+	omadacId string
+	siteId string
+	gatewayMac string
+}
+
+func (r DashboardAPIGetSpeedTestV2ResultRequest) Execute() (*OperationResponseSpeedTestV2ResultVO, *http.Response, error) {
+	return r.ApiService.GetSpeedTestV2ResultExecute(r)
+}
+
+/*
+GetSpeedTestV2Result Get Speed Test Result
+
+Get Speed Test Result.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+ @return DashboardAPIGetSpeedTestV2ResultRequest
+*/
+func (a *DashboardAPIService) GetSpeedTestV2Result(ctx context.Context, omadacId string, siteId string, gatewayMac string) DashboardAPIGetSpeedTestV2ResultRequest {
+	return DashboardAPIGetSpeedTestV2ResultRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		gatewayMac: gatewayMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSpeedTestV2ResultVO
+func (a *DashboardAPIService) GetSpeedTestV2ResultExecute(r DashboardAPIGetSpeedTestV2ResultRequest) (*OperationResponseSpeedTestV2ResultVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSpeedTestV2ResultVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DashboardAPIService.GetSpeedTestV2Result")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/speedTestResult"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type DashboardAPIGetSpeedTestV2ResultDateListRequest struct {
+	ctx context.Context
+	ApiService DashboardAPI
+	omadacId string
+	siteId string
+	gatewayMac string
+	openApiQuerySpeedTestDateListVO *OpenApiQuerySpeedTestDateListVO
+}
+
+func (r DashboardAPIGetSpeedTestV2ResultDateListRequest) OpenApiQuerySpeedTestDateListVO(openApiQuerySpeedTestDateListVO OpenApiQuerySpeedTestDateListVO) DashboardAPIGetSpeedTestV2ResultDateListRequest {
+	r.openApiQuerySpeedTestDateListVO = &openApiQuerySpeedTestDateListVO
+	return r
+}
+
+func (r DashboardAPIGetSpeedTestV2ResultDateListRequest) Execute() (*OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetSpeedTestV2ResultDateListExecute(r)
+}
+
+/*
+GetSpeedTestV2ResultDateList Get date list of speed test results
+
+Get date list of speed test results.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+ @return DashboardAPIGetSpeedTestV2ResultDateListRequest
+*/
+func (a *DashboardAPIService) GetSpeedTestV2ResultDateList(ctx context.Context, omadacId string, siteId string, gatewayMac string) DashboardAPIGetSpeedTestV2ResultDateListRequest {
+	return DashboardAPIGetSpeedTestV2ResultDateListRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		gatewayMac: gatewayMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO
+func (a *DashboardAPIService) GetSpeedTestV2ResultDateListExecute(r DashboardAPIGetSpeedTestV2ResultDateListRequest) (*OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DashboardAPIService.GetSpeedTestV2ResultDateList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/speedTestResult/dateList"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.openApiQuerySpeedTestDateListVO == nil {
+		return localVarReturnValue, nil, reportError("openApiQuerySpeedTestDateListVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.openApiQuerySpeedTestDateListVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type DashboardAPIGetSwitchSummaryRequest struct {
 	ctx context.Context
 	ApiService DashboardAPI
@@ -4185,6 +4497,142 @@ func (a *DashboardAPIService) RemoveTabExecute(r DashboardAPIRemoveTabRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type DashboardAPIStartSpeedTestV2Request struct {
+	ctx context.Context
+	ApiService DashboardAPI
+	omadacId string
+	siteId string
+	gatewayMac string
+	openApiSpeedTestSelectPortsVO *OpenApiSpeedTestSelectPortsVO
+}
+
+func (r DashboardAPIStartSpeedTestV2Request) OpenApiSpeedTestSelectPortsVO(openApiSpeedTestSelectPortsVO OpenApiSpeedTestSelectPortsVO) DashboardAPIStartSpeedTestV2Request {
+	r.openApiSpeedTestSelectPortsVO = &openApiSpeedTestSelectPortsVO
+	return r
+}
+
+func (r DashboardAPIStartSpeedTestV2Request) Execute() (*OperationResponseStartSpeedTestV2ResultVO, *http.Response, error) {
+	return r.ApiService.StartSpeedTestV2Execute(r)
+}
+
+/*
+StartSpeedTestV2 Start Speed Test
+
+Start Speed Test.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+ @return DashboardAPIStartSpeedTestV2Request
+*/
+func (a *DashboardAPIService) StartSpeedTestV2(ctx context.Context, omadacId string, siteId string, gatewayMac string) DashboardAPIStartSpeedTestV2Request {
+	return DashboardAPIStartSpeedTestV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		gatewayMac: gatewayMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseStartSpeedTestV2ResultVO
+func (a *DashboardAPIService) StartSpeedTestV2Execute(r DashboardAPIStartSpeedTestV2Request) (*OperationResponseStartSpeedTestV2ResultVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseStartSpeedTestV2ResultVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DashboardAPIService.StartSpeedTestV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/speedTest"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.openApiSpeedTestSelectPortsVO == nil {
+		return localVarReturnValue, nil, reportError("openApiSpeedTestSelectPortsVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.openApiSpeedTestSelectPortsVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

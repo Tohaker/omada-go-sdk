@@ -6,6 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Created** | Pointer to [**VoucherSummaryOpenApiVO**](VoucherSummaryOpenApiVO.md) |  | [optional] 
 **Current** | Pointer to [**VoucherSummaryOpenApiVO**](VoucherSummaryOpenApiVO.md) |  | [optional] 
+**Expired** | Pointer to [**VoucherSummaryOpenApiVO**](VoucherSummaryOpenApiVO.md) |  | [optional] 
+**Inuse** | Pointer to [**VoucherSummaryOpenApiVO**](VoucherSummaryOpenApiVO.md) |  | [optional] 
+**SupportVoucherTrafficStat** | Pointer to **bool** | Whether the controller support voucher traffic statistics | [optional] 
 **Unused** | Pointer to [**VoucherSummaryOpenApiVO**](VoucherSummaryOpenApiVO.md) |  | [optional] 
 
 ## Methods
@@ -76,6 +79,81 @@ SetCurrent sets Current field to given value.
 `func (o *AllTimeVoucherSummaryOpenApiVO) HasCurrent() bool`
 
 HasCurrent returns a boolean if a field has been set.
+
+### GetExpired
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) GetExpired() VoucherSummaryOpenApiVO`
+
+GetExpired returns the Expired field if non-nil, zero value otherwise.
+
+### GetExpiredOk
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) GetExpiredOk() (*VoucherSummaryOpenApiVO, bool)`
+
+GetExpiredOk returns a tuple with the Expired field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpired
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) SetExpired(v VoucherSummaryOpenApiVO)`
+
+SetExpired sets Expired field to given value.
+
+### HasExpired
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) HasExpired() bool`
+
+HasExpired returns a boolean if a field has been set.
+
+### GetInuse
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) GetInuse() VoucherSummaryOpenApiVO`
+
+GetInuse returns the Inuse field if non-nil, zero value otherwise.
+
+### GetInuseOk
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) GetInuseOk() (*VoucherSummaryOpenApiVO, bool)`
+
+GetInuseOk returns a tuple with the Inuse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInuse
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) SetInuse(v VoucherSummaryOpenApiVO)`
+
+SetInuse sets Inuse field to given value.
+
+### HasInuse
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) HasInuse() bool`
+
+HasInuse returns a boolean if a field has been set.
+
+### GetSupportVoucherTrafficStat
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) GetSupportVoucherTrafficStat() bool`
+
+GetSupportVoucherTrafficStat returns the SupportVoucherTrafficStat field if non-nil, zero value otherwise.
+
+### GetSupportVoucherTrafficStatOk
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) GetSupportVoucherTrafficStatOk() (*bool, bool)`
+
+GetSupportVoucherTrafficStatOk returns a tuple with the SupportVoucherTrafficStat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportVoucherTrafficStat
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) SetSupportVoucherTrafficStat(v bool)`
+
+SetSupportVoucherTrafficStat sets SupportVoucherTrafficStat field to given value.
+
+### HasSupportVoucherTrafficStat
+
+`func (o *AllTimeVoucherSummaryOpenApiVO) HasSupportVoucherTrafficStat() bool`
+
+HasSupportVoucherTrafficStat returns a boolean if a field has been set.
 
 ### GetUnused
 

@@ -17,8 +17,10 @@ Name | Type | Description | Notes
 **SupportDhcpNextServer** | Pointer to **bool** | Whether DHCP Next Server is supported of the lan network. | [optional] 
 **SupportLanIpv6** | Pointer to **bool** | Whether it supports lan Ipv6. | [optional] 
 **SupportLanIpv6PassThrough** | Pointer to **bool** | Whether it supports Pass Through. | [optional] 
+**SupportMaxVlanNum** | Pointer to **int32** | The number of vlan supported by current gateway. | [optional] 
 **SupportMultiVlan** | Pointer to **bool** | Whether multi vlan configuration is supported of the lan netowrk. | [optional] 
 **SupportNetworkIsolation** | Pointer to **bool** | Whether it supports isolate network. | [optional] 
+**SupportPdOnDhcp** | Pointer to **bool** | Whether it supports \&quot;Get from Prefix Delegation\&quot; when disable Prefix Delegation on the corresponding WAN interface page. | [optional] 
 **SupportRA** | Pointer to **bool** | Whether Router Advertisement configuration is supported of the lan netowrk. | [optional] 
 **TotalRows** | Pointer to **int64** | Total rows of all items. | [optional] 
 **VlanNums** | Pointer to **int32** | The vlan num of the site. | [optional] 
@@ -367,6 +369,31 @@ SetSupportLanIpv6PassThrough sets SupportLanIpv6PassThrough field to given value
 
 HasSupportLanIpv6PassThrough returns a boolean if a field has been set.
 
+### GetSupportMaxVlanNum
+
+`func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportMaxVlanNum() int32`
+
+GetSupportMaxVlanNum returns the SupportMaxVlanNum field if non-nil, zero value otherwise.
+
+### GetSupportMaxVlanNumOk
+
+`func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportMaxVlanNumOk() (*int32, bool)`
+
+GetSupportMaxVlanNumOk returns a tuple with the SupportMaxVlanNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportMaxVlanNum
+
+`func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) SetSupportMaxVlanNum(v int32)`
+
+SetSupportMaxVlanNum sets SupportMaxVlanNum field to given value.
+
+### HasSupportMaxVlanNum
+
+`func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) HasSupportMaxVlanNum() bool`
+
+HasSupportMaxVlanNum returns a boolean if a field has been set.
+
 ### GetSupportMultiVlan
 
 `func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportMultiVlan() bool`
@@ -416,6 +443,31 @@ SetSupportNetworkIsolation sets SupportNetworkIsolation field to given value.
 `func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) HasSupportNetworkIsolation() bool`
 
 HasSupportNetworkIsolation returns a boolean if a field has been set.
+
+### GetSupportPdOnDhcp
+
+`func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportPdOnDhcp() bool`
+
+GetSupportPdOnDhcp returns the SupportPdOnDhcp field if non-nil, zero value otherwise.
+
+### GetSupportPdOnDhcpOk
+
+`func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportPdOnDhcpOk() (*bool, bool)`
+
+GetSupportPdOnDhcpOk returns a tuple with the SupportPdOnDhcp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportPdOnDhcp
+
+`func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) SetSupportPdOnDhcp(v bool)`
+
+SetSupportPdOnDhcp sets SupportPdOnDhcp field to given value.
+
+### HasSupportPdOnDhcp
+
+`func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) HasSupportPdOnDhcp() bool`
+
+HasSupportPdOnDhcp returns a boolean if a field has been set.
 
 ### GetSupportRA
 

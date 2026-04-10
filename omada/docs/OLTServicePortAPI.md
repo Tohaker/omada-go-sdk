@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 ## GetAutoServicePortConfigPage
 
-> OperationResponsePageResponseAutoServicePortVO GetAutoServicePortConfigPage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseAutoServicePortVO GetAutoServicePortConfigPage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get auto service port config page
 
@@ -589,11 +589,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewAutoServicePortQueryDTO() // AutoServicePortQueryDTO | 
+	queryParam := *openapiclient.NewAutoServicePortQueryDTO() // AutoServicePortQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTServicePortAPI.GetAutoServicePortConfigPage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTServicePortAPI.GetAutoServicePortConfigPage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTServicePortAPI.GetAutoServicePortConfigPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**AutoServicePortQueryDTO**](AutoServicePortQueryDTO.md) |  | 
+ **queryParam** | [**AutoServicePortQueryDTO**](AutoServicePortQueryDTO.md) |  | 
 
 ### Return type
 
@@ -645,7 +645,7 @@ Name | Type | Description  | Notes
 
 ## GetAutoServicePortList
 
-> OperationResponseListAutoServicePortVO GetAutoServicePortList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListAutoServicePortVO GetAutoServicePortList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get auto service port list
 
@@ -667,11 +667,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewAutoServicePortQueryDTO() // AutoServicePortQueryDTO | 
+	queryParam := *openapiclient.NewAutoServicePortQueryDTO() // AutoServicePortQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTServicePortAPI.GetAutoServicePortList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTServicePortAPI.GetAutoServicePortList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTServicePortAPI.GetAutoServicePortList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**AutoServicePortQueryDTO**](AutoServicePortQueryDTO.md) |  | 
+ **queryParam** | [**AutoServicePortQueryDTO**](AutoServicePortQueryDTO.md) |  | 
 
 ### Return type
 
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 ## GetServicePortList
 
-> OperationResponseListServicePortVO GetServicePortList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListServicePortVO GetServicePortList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get service port list
 
@@ -745,11 +745,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewServicePortQueryDTO() // ServicePortQueryDTO | 
+	queryParam := *openapiclient.NewServicePortQueryDTO() // ServicePortQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTServicePortAPI.GetServicePortList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTServicePortAPI.GetServicePortList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTServicePortAPI.GetServicePortList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**ServicePortQueryDTO**](ServicePortQueryDTO.md) |  | 
+ **queryParam** | [**ServicePortQueryDTO**](ServicePortQueryDTO.md) |  | 
 
 ### Return type
 
@@ -801,7 +801,7 @@ Name | Type | Description  | Notes
 
 ## GetServicePortPage
 
-> OperationResponsePageResponseServicePortVO GetServicePortPage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseServicePortVO GetServicePortPage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get service port page
 
@@ -823,11 +823,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewServicePortQueryDTO() // ServicePortQueryDTO | 
+	queryParam := *openapiclient.NewServicePortQueryDTO() // ServicePortQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTServicePortAPI.GetServicePortPage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTServicePortAPI.GetServicePortPage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTServicePortAPI.GetServicePortPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -857,7 +857,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**ServicePortQueryDTO**](ServicePortQueryDTO.md) |  | 
+ **queryParam** | [**ServicePortQueryDTO**](ServicePortQueryDTO.md) |  | 
 
 ### Return type
 
@@ -879,7 +879,7 @@ Name | Type | Description  | Notes
 
 ## GetStatisticInfoDetail
 
-> OperationResponseStatisticInfoDetailDTO GetStatisticInfoDetail(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseStatisticInfoDetailDTO GetStatisticInfoDetail(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get statistic info detail
 
@@ -901,11 +901,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewStatisticInfoDetailQueryDTO(int32(123)) // StatisticInfoDetailQueryDTO | 
+	queryParam := *openapiclient.NewStatisticInfoDetailQueryDTO(int32(123)) // StatisticInfoDetailQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTServicePortAPI.GetStatisticInfoDetail(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTServicePortAPI.GetStatisticInfoDetail(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTServicePortAPI.GetStatisticInfoDetail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -935,7 +935,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**StatisticInfoDetailQueryDTO**](StatisticInfoDetailQueryDTO.md) |  | 
+ **queryParam** | [**StatisticInfoDetailQueryDTO**](StatisticInfoDetailQueryDTO.md) |  | 
 
 ### Return type
 
@@ -957,7 +957,7 @@ Name | Type | Description  | Notes
 
 ## GetStatisticInfoList
 
-> OperationResponseListStatisticInfoDTO GetStatisticInfoList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListStatisticInfoDTO GetStatisticInfoList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get statistic info list
 
@@ -979,11 +979,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewStatisticInfoQueryDTO() // StatisticInfoQueryDTO | 
+	queryParam := *openapiclient.NewStatisticInfoQueryDTO() // StatisticInfoQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTServicePortAPI.GetStatisticInfoList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTServicePortAPI.GetStatisticInfoList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTServicePortAPI.GetStatisticInfoList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1013,7 +1013,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**StatisticInfoQueryDTO**](StatisticInfoQueryDTO.md) |  | 
+ **queryParam** | [**StatisticInfoQueryDTO**](StatisticInfoQueryDTO.md) |  | 
 
 ### Return type
 
@@ -1035,7 +1035,7 @@ Name | Type | Description  | Notes
 
 ## GetStatisticInfoPage
 
-> OperationResponsePageResponseStatisticInfoDTO GetStatisticInfoPage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseStatisticInfoDTO GetStatisticInfoPage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get statistic info page
 
@@ -1057,11 +1057,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewStatisticInfoQueryDTO() // StatisticInfoQueryDTO | 
+	queryParam := *openapiclient.NewStatisticInfoQueryDTO() // StatisticInfoQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTServicePortAPI.GetStatisticInfoPage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTServicePortAPI.GetStatisticInfoPage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTServicePortAPI.GetStatisticInfoPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1091,7 +1091,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**StatisticInfoQueryDTO**](StatisticInfoQueryDTO.md) |  | 
+ **queryParam** | [**StatisticInfoQueryDTO**](StatisticInfoQueryDTO.md) |  | 
 
 ### Return type
 

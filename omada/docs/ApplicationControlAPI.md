@@ -28,6 +28,7 @@ Method | HTTP request | Description
 [**GetAllowApp**](ApplicationControlAPI.md#getallowapp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/allowApp | Get allow app
 [**GetApplicationControlStatus**](ApplicationControlAPI.md#getapplicationcontrolstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/applicationControl/status | Get application control general settings
 [**GetApplicationControlStatusTemplate**](ApplicationControlAPI.md#getapplicationcontrolstatustemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/applicationControl/status | Get application control general settings
+[**GetApplicationControlTraffics**](ApplicationControlAPI.md#getapplicationcontroltraffics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/applicationControl/traffics | Get top 10 application traffics
 [**GetApplications**](ApplicationControlAPI.md#getapplications) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/applicationControl/applications | Get application list
 [**GetApplicationsTemplate**](ApplicationControlAPI.md#getapplicationstemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/applicationControl/applications | Get application list
 [**GetAssignRestrictions**](ApplicationControlAPI.md#getassignrestrictions) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/applicationControl/restrictions | Get application control assigned restriction list
@@ -37,6 +38,8 @@ Method | HTTP request | Description
 [**GetCategoryInfo**](ApplicationControlAPI.md#getcategoryinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/categoryInfo | Get category info
 [**GetCategoryUserInfo**](ApplicationControlAPI.md#getcategoryuserinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/categoryUserInfo/{familyId} | Get client traffic in specific category
 [**GetClientTraffic**](ApplicationControlAPI.md#getclienttraffic) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/clientTraffic | Get clients traffic
+[**GetClientTrafficList**](ApplicationControlAPI.md#getclienttrafficlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/dpi/clients/trafficList | Get clients traffic list
+[**GetClientTrafficV2**](ApplicationControlAPI.md#getclienttrafficv2) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/clientTraffic | Get clients traffic V2
 [**GetFamilies**](ApplicationControlAPI.md#getfamilies) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/applicationControl/families | Get family list
 [**GetFamiliesTemplate**](ApplicationControlAPI.md#getfamiliestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/applicationControl/families | Get family list
 [**GetFilters**](ApplicationControlAPI.md#getfilters) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/applicationControl/filters | Get filter list
@@ -51,7 +54,7 @@ Method | HTTP request | Description
 
 ## AddAssignRestriction
 
-> OperationResponseRestrictionEntity AddAssignRestriction(ctx, omadacId, siteId).RestrictionEntity(restrictionEntity).Execute()
+> OperationResponseRestrictionResultEntity AddAssignRestriction(ctx, omadacId, siteId).RestrictionEntity(restrictionEntity).Execute()
 
 Create new restriction assigned to lan network
 
@@ -81,7 +84,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.AddAssignRestriction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddAssignRestriction`: OperationResponseRestrictionEntity
+	// response from `AddAssignRestriction`: OperationResponseRestrictionResultEntity
 	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.AddAssignRestriction`: %v\n", resp)
 }
 ```
@@ -108,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseRestrictionEntity**](OperationResponseRestrictionEntity.md)
+[**OperationResponseRestrictionResultEntity**](OperationResponseRestrictionResultEntity.md)
 
 ### Authorization
 
@@ -126,7 +129,7 @@ Name | Type | Description  | Notes
 
 ## AddAssignRestrictionTemplate
 
-> OperationResponseRestrictionEntity AddAssignRestrictionTemplate(ctx, omadacId, siteTemplateId).RestrictionEntity(restrictionEntity).Execute()
+> OperationResponseRestrictionResultEntity AddAssignRestrictionTemplate(ctx, omadacId, siteTemplateId).RestrictionEntity(restrictionEntity).Execute()
 
 Create new restriction assigned to lan network
 
@@ -156,7 +159,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.AddAssignRestrictionTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddAssignRestrictionTemplate`: OperationResponseRestrictionEntity
+	// response from `AddAssignRestrictionTemplate`: OperationResponseRestrictionResultEntity
 	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.AddAssignRestrictionTemplate`: %v\n", resp)
 }
 ```
@@ -183,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseRestrictionEntity**](OperationResponseRestrictionEntity.md)
+[**OperationResponseRestrictionResultEntity**](OperationResponseRestrictionResultEntity.md)
 
 ### Authorization
 
@@ -351,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## AddRule
 
-> OperationResponseRuleEntity AddRule(ctx, omadacId, siteId).AddRuleEntity(addRuleEntity).Execute()
+> OperationResponseRuleResultEntity AddRule(ctx, omadacId, siteId).AddRuleEntity(addRuleEntity).Execute()
 
 Create new rule
 
@@ -381,7 +384,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.AddRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddRule`: OperationResponseRuleEntity
+	// response from `AddRule`: OperationResponseRuleResultEntity
 	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.AddRule`: %v\n", resp)
 }
 ```
@@ -408,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseRuleEntity**](OperationResponseRuleEntity.md)
+[**OperationResponseRuleResultEntity**](OperationResponseRuleResultEntity.md)
 
 ### Authorization
 
@@ -426,7 +429,7 @@ Name | Type | Description  | Notes
 
 ## AddRuleTemplate
 
-> OperationResponseRuleEntity AddRuleTemplate(ctx, omadacId, siteTemplateId).AddRuleEntity(addRuleEntity).Execute()
+> OperationResponseRuleResultEntity AddRuleTemplate(ctx, omadacId, siteTemplateId).AddRuleEntity(addRuleEntity).Execute()
 
 Create new rule
 
@@ -456,7 +459,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.AddRuleTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddRuleTemplate`: OperationResponseRuleEntity
+	// response from `AddRuleTemplate`: OperationResponseRuleResultEntity
 	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.AddRuleTemplate`: %v\n", resp)
 }
 ```
@@ -483,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseRuleEntity**](OperationResponseRuleEntity.md)
+[**OperationResponseRuleResultEntity**](OperationResponseRuleResultEntity.md)
 
 ### Authorization
 
@@ -1875,6 +1878,83 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetApplicationControlTraffics
+
+> OperationResponseListTrafficOpenApiVO GetApplicationControlTraffics(ctx, omadacId, siteId).DateStart(dateStart).DateEnd(dateEnd).Execute()
+
+Get top 10 application traffics
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	dateStart := int64(789) // int64 | Date Start
+	dateEnd := int64(789) // int64 | Date End
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApplicationControlAPI.GetApplicationControlTraffics(context.Background(), omadacId, siteId).DateStart(dateStart).DateEnd(dateEnd).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.GetApplicationControlTraffics``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApplicationControlTraffics`: OperationResponseListTrafficOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.GetApplicationControlTraffics`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetApplicationControlTrafficsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **dateStart** | **int64** | Date Start | 
+ **dateEnd** | **int64** | Date End | 
+
+### Return type
+
+[**OperationResponseListTrafficOpenApiVO**](OperationResponseListTrafficOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetApplications
 
 > OperationResponseGridVOApplicationEntity GetApplications(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).FiltersFamilyId(filtersFamilyId).Execute()
@@ -2039,7 +2119,7 @@ Name | Type | Description  | Notes
 
 ## GetAssignRestrictions
 
-> OperationResponseGridVORestrictionEntity GetAssignRestrictions(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseGridVORestrictionResultEntity GetAssignRestrictions(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
 
 Get application control assigned restriction list
 
@@ -2070,7 +2150,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.GetAssignRestrictions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAssignRestrictions`: OperationResponseGridVORestrictionEntity
+	// response from `GetAssignRestrictions`: OperationResponseGridVORestrictionResultEntity
 	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.GetAssignRestrictions`: %v\n", resp)
 }
 ```
@@ -2098,7 +2178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVORestrictionEntity**](OperationResponseGridVORestrictionEntity.md)
+[**OperationResponseGridVORestrictionResultEntity**](OperationResponseGridVORestrictionResultEntity.md)
 
 ### Authorization
 
@@ -2116,7 +2196,7 @@ Name | Type | Description  | Notes
 
 ## GetAssignRestrictionsTemplate
 
-> OperationResponseGridVORestrictionEntity GetAssignRestrictionsTemplate(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseGridVORestrictionResultEntity GetAssignRestrictionsTemplate(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).Execute()
 
 Get application control assigned restriction list
 
@@ -2147,7 +2227,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.GetAssignRestrictionsTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAssignRestrictionsTemplate`: OperationResponseGridVORestrictionEntity
+	// response from `GetAssignRestrictionsTemplate`: OperationResponseGridVORestrictionResultEntity
 	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.GetAssignRestrictionsTemplate`: %v\n", resp)
 }
 ```
@@ -2175,7 +2255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVORestrictionEntity**](OperationResponseGridVORestrictionEntity.md)
+[**OperationResponseGridVORestrictionResultEntity**](OperationResponseGridVORestrictionResultEntity.md)
 
 ### Authorization
 
@@ -2515,7 +2595,7 @@ Name | Type | Description  | Notes
 
 ## GetClientTraffic
 
-> OperationResponseGridVOClientTrafficWithApplicationDetail GetClientTraffic(ctx, omadacId, siteId).Start(start).End(end).Page(page).PageSize(pageSize).Execute()
+> OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail GetClientTraffic(ctx, omadacId, siteId).Start(start).End(end).Page(page).PageSize(pageSize).Execute()
 
 Get clients traffic
 
@@ -2548,7 +2628,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.GetClientTraffic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetClientTraffic`: OperationResponseGridVOClientTrafficWithApplicationDetail
+	// response from `GetClientTraffic`: OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail
 	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.GetClientTraffic`: %v\n", resp)
 }
 ```
@@ -2578,7 +2658,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVOClientTrafficWithApplicationDetail**](OperationResponseGridVOClientTrafficWithApplicationDetail.md)
+[**OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail**](OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail.md)
 
 ### Authorization
 
@@ -2587,6 +2667,156 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetClientTrafficList
+
+> OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO GetClientTrafficList(ctx, omadacId, siteId).ClientTrafficOpenApiQueryDataV2VO(clientTrafficOpenApiQueryDataV2VO).Execute()
+
+Get clients traffic list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	clientTrafficOpenApiQueryDataV2VO := *openapiclient.NewClientTrafficOpenApiQueryDataV2VO(int32(123), int32(123)) // ClientTrafficOpenApiQueryDataV2VO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApplicationControlAPI.GetClientTrafficList(context.Background(), omadacId, siteId).ClientTrafficOpenApiQueryDataV2VO(clientTrafficOpenApiQueryDataV2VO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.GetClientTrafficList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetClientTrafficList`: OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.GetClientTrafficList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetClientTrafficListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **clientTrafficOpenApiQueryDataV2VO** | [**ClientTrafficOpenApiQueryDataV2VO**](ClientTrafficOpenApiQueryDataV2VO.md) |  | 
+
+### Return type
+
+[**OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO**](OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetClientTrafficV2
+
+> OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail GetClientTrafficV2(ctx, omadacId, siteId).ClientTrafficOpenApiQueryDataVO(clientTrafficOpenApiQueryDataVO).Execute()
+
+Get clients traffic V2
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	clientTrafficOpenApiQueryDataVO := *openapiclient.NewClientTrafficOpenApiQueryDataVO(int32(123), int32(123)) // ClientTrafficOpenApiQueryDataVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApplicationControlAPI.GetClientTrafficV2(context.Background(), omadacId, siteId).ClientTrafficOpenApiQueryDataVO(clientTrafficOpenApiQueryDataVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.GetClientTrafficV2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetClientTrafficV2`: OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail
+	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.GetClientTrafficV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetClientTrafficV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **clientTrafficOpenApiQueryDataVO** | [**ClientTrafficOpenApiQueryDataVO**](ClientTrafficOpenApiQueryDataVO.md) |  | 
+
+### Return type
+
+[**OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail**](OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -2977,7 +3207,7 @@ Name | Type | Description  | Notes
 
 ## GetRules
 
-> OperationResponseGridVORuleEntity GetRules(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
+> OperationResponseGridVORuleResultEntity GetRules(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
 
 Get rule list
 
@@ -3009,7 +3239,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.GetRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRules`: OperationResponseGridVORuleEntity
+	// response from `GetRules`: OperationResponseGridVORuleResultEntity
 	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.GetRules`: %v\n", resp)
 }
 ```
@@ -3038,7 +3268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVORuleEntity**](OperationResponseGridVORuleEntity.md)
+[**OperationResponseGridVORuleResultEntity**](OperationResponseGridVORuleResultEntity.md)
 
 ### Authorization
 
@@ -3056,7 +3286,7 @@ Name | Type | Description  | Notes
 
 ## GetRulesTemplate
 
-> OperationResponseGridVORuleEntity GetRulesTemplate(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
+> OperationResponseGridVORuleResultEntity GetRulesTemplate(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
 
 Get rule list
 
@@ -3088,7 +3318,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApplicationControlAPI.GetRulesTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRulesTemplate`: OperationResponseGridVORuleEntity
+	// response from `GetRulesTemplate`: OperationResponseGridVORuleResultEntity
 	fmt.Fprintf(os.Stdout, "Response from `ApplicationControlAPI.GetRulesTemplate`: %v\n", resp)
 }
 ```
@@ -3117,7 +3347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVORuleEntity**](OperationResponseGridVORuleEntity.md)
+[**OperationResponseGridVORuleResultEntity**](OperationResponseGridVORuleResultEntity.md)
 
 ### Authorization
 

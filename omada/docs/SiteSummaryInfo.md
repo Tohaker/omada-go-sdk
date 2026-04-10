@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Latitude** | Pointer to **float64** | Latitude of the site should be within the range of -90 - 90. | [optional] 
 **Longitude** | Pointer to **float64** | Longitude of the site should be within the range of -180 - 180. | [optional] 
 **Name** | Pointer to **string** | Name of the site should contain 1 to 64 characters. | [optional] 
+**Primary** | Pointer to **bool** | Default Site mark | [optional] 
 **Region** | Pointer to **string** | Country/Region of the site; For the values of region, refer to the abbreviation of the ISO country code; For example, you need to input \&quot;United States\&quot; for the United States of America. | [optional] 
 **Scenario** | Pointer to **string** | For the values of the scenario of the site, refer to result of the interface for Get scenario list. | [optional] 
 **SiteId** | Pointer to **string** | Site ID | [optional] 
@@ -136,6 +137,31 @@ SetName sets Name field to given value.
 `func (o *SiteSummaryInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPrimary
+
+`func (o *SiteSummaryInfo) GetPrimary() bool`
+
+GetPrimary returns the Primary field if non-nil, zero value otherwise.
+
+### GetPrimaryOk
+
+`func (o *SiteSummaryInfo) GetPrimaryOk() (*bool, bool)`
+
+GetPrimaryOk returns a tuple with the Primary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrimary
+
+`func (o *SiteSummaryInfo) SetPrimary(v bool)`
+
+SetPrimary sets Primary field to given value.
+
+### HasPrimary
+
+`func (o *SiteSummaryInfo) HasPrimary() bool`
+
+HasPrimary returns a boolean if a field has been set.
 
 ### GetRegion
 

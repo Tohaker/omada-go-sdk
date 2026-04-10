@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CurrentVersion** | Pointer to **[]string** | Model firmware version list before upgrade ,such as \&quot;[2.5.0 Build 20190118 Rel. 64821, 2.4.8 Build 20190118 Rel. 64821]\&quot;. This field is the same as \&quot;PREVIOUS VERSION\&quot; in Controller Upgrade Logs | [optional] 
+**FailedDeviceNum** | Pointer to **int32** | The number of devices that failed to upgrade in this upgrade plan. | [optional] 
 **Id** | Pointer to **string** | Upgrade log ID. | [optional] 
 **ModelTypeInfo** | Pointer to [**ModelTypeInfoOpenApiVO**](ModelTypeInfoOpenApiVO.md) |  | [optional] 
 **Operator** | Pointer to **string** | Operator. | [optional] 
@@ -57,6 +58,31 @@ SetCurrentVersion sets CurrentVersion field to given value.
 `func (o *UpgradeLogOpenApiInfo) HasCurrentVersion() bool`
 
 HasCurrentVersion returns a boolean if a field has been set.
+
+### GetFailedDeviceNum
+
+`func (o *UpgradeLogOpenApiInfo) GetFailedDeviceNum() int32`
+
+GetFailedDeviceNum returns the FailedDeviceNum field if non-nil, zero value otherwise.
+
+### GetFailedDeviceNumOk
+
+`func (o *UpgradeLogOpenApiInfo) GetFailedDeviceNumOk() (*int32, bool)`
+
+GetFailedDeviceNumOk returns a tuple with the FailedDeviceNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFailedDeviceNum
+
+`func (o *UpgradeLogOpenApiInfo) SetFailedDeviceNum(v int32)`
+
+SetFailedDeviceNum sets FailedDeviceNum field to given value.
+
+### HasFailedDeviceNum
+
+`func (o *UpgradeLogOpenApiInfo) HasFailedDeviceNum() bool`
+
+HasFailedDeviceNum returns a boolean if a field has been set.
 
 ### GetId
 

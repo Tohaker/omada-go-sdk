@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Osw** | Pointer to **bool** |  | [optional] 
 **ShowModel** | Pointer to **string** | Device model name with version | [optional] 
 **StackGroup** | Pointer to **bool** | Stack Group | [optional] 
+**StackId** | Pointer to **string** | Stack Id | [optional] 
 **Status** | Pointer to **int32** | Status of device,status should be a value as follows: 0:Disconnected;1:Disconnected(Migrating);10:Provisioning;11:Configuring;12:Upgrading;13:Rebooting;14:Connected;15:Connected(Wireless);16:Connected(Migrating);17:Connected(Wireless,Migrating);20:Pending;21:Pending(Wireless);22:Adopting;23:Adopting(Wireless);24:Adopt Failed;25:Adopt Failed(Wireless);26:Managed By Others;27:Managed By Others(Wireless);30:Heartbeat Missed;31:Heartbeat Missed(Wireless);32:Heartbeat Missed(Migrating);33:Heartbeat Missed(Wireless,Migrating);40:Isolated;41:Isolated(Migrating);50:Slice Configuring | [optional] 
 **StatusCategory** | Pointer to **int32** | Device status should be a value as follows: 0: Disconnected; 1: Connected; 2: Pending; 3: Heartbeat Missed; 4: Isolated | [optional] 
 **SwitchInfo** | Pointer to [**SwitchInfo**](SwitchInfo.md) |  | [optional] 
@@ -468,6 +469,31 @@ SetStackGroup sets StackGroup field to given value.
 `func (o *DeviceNodeInfo) HasStackGroup() bool`
 
 HasStackGroup returns a boolean if a field has been set.
+
+### GetStackId
+
+`func (o *DeviceNodeInfo) GetStackId() string`
+
+GetStackId returns the StackId field if non-nil, zero value otherwise.
+
+### GetStackIdOk
+
+`func (o *DeviceNodeInfo) GetStackIdOk() (*string, bool)`
+
+GetStackIdOk returns a tuple with the StackId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackId
+
+`func (o *DeviceNodeInfo) SetStackId(v string)`
+
+SetStackId sets StackId field to given value.
+
+### HasStackId
+
+`func (o *DeviceNodeInfo) HasStackId() bool`
+
+HasStackId returns a boolean if a field has been set.
 
 ### GetStatus
 

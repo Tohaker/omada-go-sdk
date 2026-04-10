@@ -48,7 +48,7 @@ type GroupOpenApiVO struct {
 	PortMaskList []PortMaskOpenApiVO `json:"portMaskList,omitempty"`
 	// Port type. 0: port range 1: port mask. Valid when [type] is 1 or 4
 	PortType *int32 `json:"portType,omitempty"`
-	// Type of group profile. 0: IP Group; 1: IP Port Group; 2: MAC Group; 3: IPv6 Group; 4: IPv6 Port Group; 5: Country Group; 7: Domain Group
+	// Type of group profile. 0: IP Group; 1: IP Port Group; 2: MAC Group; 3: IPv6 Group; 4: IPv6 Port Group; 5: Country Group; 7: Domain Group;
 	Type *int32 `json:"type,omitempty"`
 }
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Dns1** | Pointer to **string** | Primary DNS server. | [optional] 
 **Dns2** | Pointer to **string** | Secondary DNS server. | [optional] 
-**Gateway** | Pointer to **string** | Gateway IP. | [optional] 
+**Gateway** | **string** | Gateway IP. | 
 **Ipaddr** | Pointer to **string** | IP address. | [optional] 
 **Mtu** | Pointer to **int32** | Parameter [mtu] should be a value between 576 and 1500. | [optional] 
 **Netmask** | Pointer to **string** | Subnet mask. | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualWanIpv4IpoaOpenApiVO
 
-`func NewVirtualWanIpv4IpoaOpenApiVO() *VirtualWanIpv4IpoaOpenApiVO`
+`func NewVirtualWanIpv4IpoaOpenApiVO(gateway string, ) *VirtualWanIpv4IpoaOpenApiVO`
 
 NewVirtualWanIpv4IpoaOpenApiVO instantiates a new VirtualWanIpv4IpoaOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -100,11 +100,6 @@ and a boolean to check if the value has been set.
 
 SetGateway sets Gateway field to given value.
 
-### HasGateway
-
-`func (o *VirtualWanIpv4IpoaOpenApiVO) HasGateway() bool`
-
-HasGateway returns a boolean if a field has been set.
 
 ### GetIpaddr
 

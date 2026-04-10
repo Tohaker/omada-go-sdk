@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **QosQueueEnable** | Pointer to **bool** | The switch of QoS queue. | [optional] 
 **QueueId** | Pointer to **int32** | QoS queue Id. | [optional] 
 **SubnetOverrideEnable** | Pointer to **bool** | The switch status of DHCP Settings Overrides. | [optional] 
-**Vlan** | Pointer to **int32** | When purpose is \&quot;VLAN\&quot; or purpose is \&quot;interface\&quot; and VLANType is 0, vlan should be within the range of 1-4090.When purpose is \&quot;VLAN\&quot; and VLANType is 0 and \&quot;application\&quot; is 1, vlan could be within the range of 1-4094. | [optional] 
+**Vlan** | Pointer to **int32** | Only Valid when vlanType is 0. Vlan should be within the range of 1-4094. | [optional] 
 **VlanType** | Pointer to **int32** | When purpose is interface, VLANType should be a value as follows: 0: Single; 1: Multiple | [optional] 
 **Vlans** | Pointer to **string** | When purpose is \&quot;interface\&quot; and VLANType is 1, batch create VLANs. VLAN format: 200, 1-100. | [optional] 
 

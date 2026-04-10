@@ -1143,11 +1143,11 @@ type OLTServicePortProfileAPIGetServicePortProfileListDetailRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *ServicePortProfileDetailListQueryDTO
+	queryParam *ServicePortProfileDetailListQueryDTO
 }
 
-func (r OLTServicePortProfileAPIGetServicePortProfileListDetailRequest) Dto(dto ServicePortProfileDetailListQueryDTO) OLTServicePortProfileAPIGetServicePortProfileListDetailRequest {
-	r.dto = &dto
+func (r OLTServicePortProfileAPIGetServicePortProfileListDetailRequest) QueryParam(queryParam ServicePortProfileDetailListQueryDTO) OLTServicePortProfileAPIGetServicePortProfileListDetailRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1199,11 +1199,11 @@ func (a *OLTServicePortProfileAPIService) GetServicePortProfileListDetailExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1278,11 +1278,11 @@ type OLTServicePortProfileAPIGetServicePortProfilePageRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *ServicePortProfilePageQueryDTO
+	queryParam *ServicePortProfilePageQueryDTO
 }
 
-func (r OLTServicePortProfileAPIGetServicePortProfilePageRequest) Dto(dto ServicePortProfilePageQueryDTO) OLTServicePortProfileAPIGetServicePortProfilePageRequest {
-	r.dto = &dto
+func (r OLTServicePortProfileAPIGetServicePortProfilePageRequest) QueryParam(queryParam ServicePortProfilePageQueryDTO) OLTServicePortProfileAPIGetServicePortProfilePageRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1334,11 +1334,11 @@ func (a *OLTServicePortProfileAPIService) GetServicePortProfilePageExecute(r OLT
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1413,11 +1413,11 @@ type OLTServicePortProfileAPIGetServicePortProfilePageDetailRequest struct {
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *ServicePortProfileDetailPageQueryDTO
+	queryParam *ServicePortProfileDetailPageQueryDTO
 }
 
-func (r OLTServicePortProfileAPIGetServicePortProfilePageDetailRequest) Dto(dto ServicePortProfileDetailPageQueryDTO) OLTServicePortProfileAPIGetServicePortProfilePageDetailRequest {
-	r.dto = &dto
+func (r OLTServicePortProfileAPIGetServicePortProfilePageDetailRequest) QueryParam(queryParam ServicePortProfileDetailPageQueryDTO) OLTServicePortProfileAPIGetServicePortProfilePageDetailRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -1469,11 +1469,11 @@ func (a *OLTServicePortProfileAPIService) GetServicePortProfilePageDetailExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

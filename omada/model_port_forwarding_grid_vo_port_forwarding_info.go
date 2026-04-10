@@ -28,6 +28,7 @@ type PortForwardingGridVOPortForwardingInfo struct {
 	ExistVirtualWan *bool `json:"existVirtualWan,omitempty"`
 	// Deprecated
 	ExistWanIp *bool `json:"existWanIp,omitempty"`
+	SupportByDsLiteAndMapE *bool `json:"supportByDsLiteAndMapE,omitempty"`
 	SupportVirtualWan *bool `json:"supportVirtualWan,omitempty"`
 	SupportWanIp *bool `json:"supportWanIp,omitempty"`
 	// Total rows of all items.
@@ -217,6 +218,38 @@ func (o *PortForwardingGridVOPortForwardingInfo) SetExistWanIp(v bool) {
 	o.ExistWanIp = &v
 }
 
+// GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field value if set, zero value otherwise.
+func (o *PortForwardingGridVOPortForwardingInfo) GetSupportByDsLiteAndMapE() bool {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportByDsLiteAndMapE
+}
+
+// GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortForwardingGridVOPortForwardingInfo) GetSupportByDsLiteAndMapEOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		return nil, false
+	}
+	return o.SupportByDsLiteAndMapE, true
+}
+
+// HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
+func (o *PortForwardingGridVOPortForwardingInfo) HasSupportByDsLiteAndMapE() bool {
+	if o != nil && !IsNil(o.SupportByDsLiteAndMapE) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportByDsLiteAndMapE gets a reference to the given bool and assigns it to the SupportByDsLiteAndMapE field.
+func (o *PortForwardingGridVOPortForwardingInfo) SetSupportByDsLiteAndMapE(v bool) {
+	o.SupportByDsLiteAndMapE = &v
+}
+
 // GetSupportVirtualWan returns the SupportVirtualWan field value if set, zero value otherwise.
 func (o *PortForwardingGridVOPortForwardingInfo) GetSupportVirtualWan() bool {
 	if o == nil || IsNil(o.SupportVirtualWan) {
@@ -337,6 +370,9 @@ func (o PortForwardingGridVOPortForwardingInfo) ToMap() (map[string]interface{},
 	}
 	if !IsNil(o.ExistWanIp) {
 		toSerialize["existWanIp"] = o.ExistWanIp
+	}
+	if !IsNil(o.SupportByDsLiteAndMapE) {
+		toSerialize["supportByDsLiteAndMapE"] = o.SupportByDsLiteAndMapE
 	}
 	if !IsNil(o.SupportVirtualWan) {
 		toSerialize["supportVirtualWan"] = o.SupportVirtualWan

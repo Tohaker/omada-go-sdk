@@ -19,59 +19,103 @@ import (
 // checks if the LanNetworkVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &LanNetworkVO{}
 
-// LanNetworkVO struct for LanNetworkVO
+// LanNetworkVO LANNetworkVO
 type LanNetworkVO struct {
+	// Site ID
 	Site *string `json:"Site,omitempty"`
+	// Show AccessControlRule is enabled or not
 	AccessControlRule *bool `json:"accessControlRule,omitempty"`
+	// When Internet pre-config is closed or Internet pre-config is Universal, allLAN is \"true\"; after adopting gateway, allLAN is \"false\".
 	AllLan *bool `json:"allLan,omitempty"`
+	// Effective device type should be a value as follows: 0: Gateway and Switch; 1: Switch
 	Application *int32 `json:"application,omitempty"`
+	// Enable arp detection. Only valid when deviceType is 1 and gateway supports this feature.
 	ArpDetectionEnable *bool `json:"arpDetectionEnable,omitempty"`
+	// DHCP Server Device mac. Only valid when deviceType is 1 or 2. When deviceType is 1, deviceMac can be empty when there is no gateway in the site.
 	DeviceMac *string `json:"deviceMac,omitempty"`
+	// DHCP Server Device type. It should be a value as follows: 0:External Device 1:gateway 2:switch 3:none
 	DeviceType *int32 `json:"deviceType,omitempty"`
-	DhcpGuard *DhcpGuardVO `json:"dhcpGuard,omitempty"`
+	DhcpGuard *DhcpServersSetting `json:"dhcpGuard,omitempty"`
+	// The switch of DHCP L2 relay
 	DhcpL2RelayEnable *bool `json:"dhcpL2RelayEnable,omitempty"`
 	DhcpRelay *OswDhcpRelayVO `json:"dhcpRelay,omitempty"`
 	DhcpServer *OswDhcpServerVO `json:"dhcpServer,omitempty"`
+	// The number of dhcp server devices in effect, Only valid when vlanType is 0.
 	DhcpServerNum *int32 `json:"dhcpServerNum,omitempty"`
-	DhcpSettings *DhcpSettingsVO `json:"dhcpSettings,omitempty"`
-	Dhcpv6Guard *Dhcpv6GuardVO `json:"dhcpv6Guard,omitempty"`
+	DhcpSettings *DhcpSettingInfo `json:"dhcpSettings,omitempty"`
+	Dhcpv6Guard *Dhcpv6ServersSetting `json:"dhcpv6Guard,omitempty"`
+	// The domain of this network
 	Domain *string `json:"domain,omitempty"`
+	// Whether Arp Detection is configured.
 	ExistArpDetection *bool `json:"existArpDetection,omitempty"`
+	// Whether custom DHCP Options has been configured.
 	ExistCustomDhcpOption *bool `json:"existCustomDhcpOption,omitempty"`
+	// Whether DHCP Next Server has been configured.
 	ExistDhcpNextServer *bool `json:"existDhcpNextServer,omitempty"`
+	// Whether VLAN Type is Multiple.
 	ExistMultiVlan *bool `json:"existMultiVlan,omitempty"`
+	// Whether Network Isolation is configured.
 	ExistNetworkIsolation *bool `json:"existNetworkIsolation,omitempty"`
+	// Whether RA has been configured.
 	ExistRA *bool `json:"existRA,omitempty"`
+	// IGMP Snooping fast leave enable status
 	FastLeaveEnable *bool `json:"fastLeaveEnable,omitempty"`
+	// When purpose is interface, gateway subnet is needed. Format: IP/Mask
 	GatewaySubnet *string `json:"gatewaySubnet,omitempty"`
+	// LAN network ID
 	Id *string `json:"id,omitempty"`
+	// Enable IGMP snooping
 	IgmpSnoopEnable bool `json:"igmpSnoopEnable"`
 	Interface *bool `json:"interface,omitempty"`
+	// Gateway LAN port IDs (acquired from \"Check WAN/LAN status\")
 	InterfaceIds []string `json:"interfaceIds,omitempty"`
 	Ip *OswIpSettingVO `json:"ip,omitempty"`
+	// Whether network isolated.
 	Isolation *bool `json:"isolation,omitempty"`
-	LanNetworkIpv6Config *LanNetworkIpv6ConfigVO `json:"lanNetworkIpv6Config,omitempty"`
+	LanNeworkIpv6Config *LanNetworkIPV6Config `json:"lanNeworkIpv6Config,omitempty"`
+	// Enable MLD snooping
 	MldSnoopEnable *bool `json:"mldSnoopEnable,omitempty"`
+	// DHCP mode. 0: None 1: DHCP Server 2: DHCP Relay. Only valid when deviceType is 2.
 	Mode *int32 `json:"mode,omitempty"`
+	// LAN network name should contain 1 to 128 characters.
 	Name string `json:"name"`
+	// Original name
 	OrigName *string `json:"origName,omitempty"`
+	// Show portal is enabled or not
 	Portal *bool `json:"portal,omitempty"`
+	// Show portal ID
 	PortalId *string `json:"portalId,omitempty"`
+	// Show related portal name
 	PortalName *string `json:"portalName,omitempty"`
+	// Primary
 	Primary *bool `json:"primary,omitempty"`
+	// LAN network purpose should be as follows: vlan or interface
 	Purpose string `json:"purpose"`
+	// The switch of QoS queue.
 	QosQueueEnable *bool `json:"qosQueueEnable,omitempty"`
+	// QoS queue Id.
 	QueueId *int32 `json:"queueId,omitempty"`
+	// Show RateLimit is enabled or not
 	RateLimit *bool `json:"rateLimit,omitempty"`
+	// Resource is a value as follows: 0: new created; 1: from template; 2: override
 	Resource *int32 `json:"resource,omitempty"`
+	// DHCP Server Device stackId. Only valid when deviceType is 2 and the selected device is stack
 	StackId *string `json:"stackId,omitempty"`
+	// Network delivering state. It should be a value as follows: 0: not in delivering 1:delivering 2. deliver done
 	State *int32 `json:"state,omitempty"`
+	// Subnet override
 	SubnetOverride *bool `json:"subnetOverride,omitempty"`
+	// Subnet override enable status
 	SubnetOverrideEnable *bool `json:"subnetOverrideEnable,omitempty"`
+	// Total ip num
 	TotalIpNum *int64 `json:"totalIpNum,omitempty"`
+	// Only Valid when vlanType is 0. Vlan should be within the range of 1-4094.
 	Vlan *int32 `json:"vlan,omitempty"`
+	// When purpose is interface, VLANType should be a value as follows: 0: Single; 1: Multiple
 	VlanType *int32 `json:"vlanType,omitempty"`
+	// When purpose is interface and VLANType is 1, batch create VLANs. VLAN format: 200, 1-100.
 	Vlans *string `json:"vlans,omitempty"`
+	// VRF ID
 	VrfId *string `json:"vrfId,omitempty"`
 }
 
@@ -322,9 +366,9 @@ func (o *LanNetworkVO) SetDeviceType(v int32) {
 }
 
 // GetDhcpGuard returns the DhcpGuard field value if set, zero value otherwise.
-func (o *LanNetworkVO) GetDhcpGuard() DhcpGuardVO {
+func (o *LanNetworkVO) GetDhcpGuard() DhcpServersSetting {
 	if o == nil || IsNil(o.DhcpGuard) {
-		var ret DhcpGuardVO
+		var ret DhcpServersSetting
 		return ret
 	}
 	return *o.DhcpGuard
@@ -332,7 +376,7 @@ func (o *LanNetworkVO) GetDhcpGuard() DhcpGuardVO {
 
 // GetDhcpGuardOk returns a tuple with the DhcpGuard field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LanNetworkVO) GetDhcpGuardOk() (*DhcpGuardVO, bool) {
+func (o *LanNetworkVO) GetDhcpGuardOk() (*DhcpServersSetting, bool) {
 	if o == nil || IsNil(o.DhcpGuard) {
 		return nil, false
 	}
@@ -348,8 +392,8 @@ func (o *LanNetworkVO) HasDhcpGuard() bool {
 	return false
 }
 
-// SetDhcpGuard gets a reference to the given DhcpGuardVO and assigns it to the DhcpGuard field.
-func (o *LanNetworkVO) SetDhcpGuard(v DhcpGuardVO) {
+// SetDhcpGuard gets a reference to the given DhcpServersSetting and assigns it to the DhcpGuard field.
+func (o *LanNetworkVO) SetDhcpGuard(v DhcpServersSetting) {
 	o.DhcpGuard = &v
 }
 
@@ -482,9 +526,9 @@ func (o *LanNetworkVO) SetDhcpServerNum(v int32) {
 }
 
 // GetDhcpSettings returns the DhcpSettings field value if set, zero value otherwise.
-func (o *LanNetworkVO) GetDhcpSettings() DhcpSettingsVO {
+func (o *LanNetworkVO) GetDhcpSettings() DhcpSettingInfo {
 	if o == nil || IsNil(o.DhcpSettings) {
-		var ret DhcpSettingsVO
+		var ret DhcpSettingInfo
 		return ret
 	}
 	return *o.DhcpSettings
@@ -492,7 +536,7 @@ func (o *LanNetworkVO) GetDhcpSettings() DhcpSettingsVO {
 
 // GetDhcpSettingsOk returns a tuple with the DhcpSettings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LanNetworkVO) GetDhcpSettingsOk() (*DhcpSettingsVO, bool) {
+func (o *LanNetworkVO) GetDhcpSettingsOk() (*DhcpSettingInfo, bool) {
 	if o == nil || IsNil(o.DhcpSettings) {
 		return nil, false
 	}
@@ -508,15 +552,15 @@ func (o *LanNetworkVO) HasDhcpSettings() bool {
 	return false
 }
 
-// SetDhcpSettings gets a reference to the given DhcpSettingsVO and assigns it to the DhcpSettings field.
-func (o *LanNetworkVO) SetDhcpSettings(v DhcpSettingsVO) {
+// SetDhcpSettings gets a reference to the given DhcpSettingInfo and assigns it to the DhcpSettings field.
+func (o *LanNetworkVO) SetDhcpSettings(v DhcpSettingInfo) {
 	o.DhcpSettings = &v
 }
 
 // GetDhcpv6Guard returns the Dhcpv6Guard field value if set, zero value otherwise.
-func (o *LanNetworkVO) GetDhcpv6Guard() Dhcpv6GuardVO {
+func (o *LanNetworkVO) GetDhcpv6Guard() Dhcpv6ServersSetting {
 	if o == nil || IsNil(o.Dhcpv6Guard) {
-		var ret Dhcpv6GuardVO
+		var ret Dhcpv6ServersSetting
 		return ret
 	}
 	return *o.Dhcpv6Guard
@@ -524,7 +568,7 @@ func (o *LanNetworkVO) GetDhcpv6Guard() Dhcpv6GuardVO {
 
 // GetDhcpv6GuardOk returns a tuple with the Dhcpv6Guard field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LanNetworkVO) GetDhcpv6GuardOk() (*Dhcpv6GuardVO, bool) {
+func (o *LanNetworkVO) GetDhcpv6GuardOk() (*Dhcpv6ServersSetting, bool) {
 	if o == nil || IsNil(o.Dhcpv6Guard) {
 		return nil, false
 	}
@@ -540,8 +584,8 @@ func (o *LanNetworkVO) HasDhcpv6Guard() bool {
 	return false
 }
 
-// SetDhcpv6Guard gets a reference to the given Dhcpv6GuardVO and assigns it to the Dhcpv6Guard field.
-func (o *LanNetworkVO) SetDhcpv6Guard(v Dhcpv6GuardVO) {
+// SetDhcpv6Guard gets a reference to the given Dhcpv6ServersSetting and assigns it to the Dhcpv6Guard field.
+func (o *LanNetworkVO) SetDhcpv6Guard(v Dhcpv6ServersSetting) {
 	o.Dhcpv6Guard = &v
 }
 
@@ -1017,36 +1061,36 @@ func (o *LanNetworkVO) SetIsolation(v bool) {
 	o.Isolation = &v
 }
 
-// GetLanNetworkIpv6Config returns the LanNetworkIpv6Config field value if set, zero value otherwise.
-func (o *LanNetworkVO) GetLanNetworkIpv6Config() LanNetworkIpv6ConfigVO {
-	if o == nil || IsNil(o.LanNetworkIpv6Config) {
-		var ret LanNetworkIpv6ConfigVO
+// GetLanNeworkIpv6Config returns the LanNeworkIpv6Config field value if set, zero value otherwise.
+func (o *LanNetworkVO) GetLanNeworkIpv6Config() LanNetworkIPV6Config {
+	if o == nil || IsNil(o.LanNeworkIpv6Config) {
+		var ret LanNetworkIPV6Config
 		return ret
 	}
-	return *o.LanNetworkIpv6Config
+	return *o.LanNeworkIpv6Config
 }
 
-// GetLanNetworkIpv6ConfigOk returns a tuple with the LanNetworkIpv6Config field value if set, nil otherwise
+// GetLanNeworkIpv6ConfigOk returns a tuple with the LanNeworkIpv6Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LanNetworkVO) GetLanNetworkIpv6ConfigOk() (*LanNetworkIpv6ConfigVO, bool) {
-	if o == nil || IsNil(o.LanNetworkIpv6Config) {
+func (o *LanNetworkVO) GetLanNeworkIpv6ConfigOk() (*LanNetworkIPV6Config, bool) {
+	if o == nil || IsNil(o.LanNeworkIpv6Config) {
 		return nil, false
 	}
-	return o.LanNetworkIpv6Config, true
+	return o.LanNeworkIpv6Config, true
 }
 
-// HasLanNetworkIpv6Config returns a boolean if a field has been set.
-func (o *LanNetworkVO) HasLanNetworkIpv6Config() bool {
-	if o != nil && !IsNil(o.LanNetworkIpv6Config) {
+// HasLanNeworkIpv6Config returns a boolean if a field has been set.
+func (o *LanNetworkVO) HasLanNeworkIpv6Config() bool {
+	if o != nil && !IsNil(o.LanNeworkIpv6Config) {
 		return true
 	}
 
 	return false
 }
 
-// SetLanNetworkIpv6Config gets a reference to the given LanNetworkIpv6ConfigVO and assigns it to the LanNetworkIpv6Config field.
-func (o *LanNetworkVO) SetLanNetworkIpv6Config(v LanNetworkIpv6ConfigVO) {
-	o.LanNetworkIpv6Config = &v
+// SetLanNeworkIpv6Config gets a reference to the given LanNetworkIPV6Config and assigns it to the LanNeworkIpv6Config field.
+func (o *LanNetworkVO) SetLanNeworkIpv6Config(v LanNetworkIPV6Config) {
+	o.LanNeworkIpv6Config = &v
 }
 
 // GetMldSnoopEnable returns the MldSnoopEnable field value if set, zero value otherwise.
@@ -1832,8 +1876,8 @@ func (o LanNetworkVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Isolation) {
 		toSerialize["isolation"] = o.Isolation
 	}
-	if !IsNil(o.LanNetworkIpv6Config) {
-		toSerialize["lanNetworkIpv6Config"] = o.LanNetworkIpv6Config
+	if !IsNil(o.LanNeworkIpv6Config) {
+		toSerialize["lanNeworkIpv6Config"] = o.LanNeworkIpv6Config
 	}
 	if !IsNil(o.MldSnoopEnable) {
 		toSerialize["mldSnoopEnable"] = o.MldSnoopEnable

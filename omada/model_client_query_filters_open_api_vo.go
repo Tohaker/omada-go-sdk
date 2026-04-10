@@ -33,6 +33,8 @@ type ClientQueryFiltersOpenApiVO struct {
 	Guest []bool `json:"guest,omitempty"`
 	// Filter by health score, 0:No Data, 1 : poor 2 : fair 3 : good
 	Health *int32 `json:"health,omitempty"`
+	// Filter by ipExist. true : Filter clients with existing IP addresses, false or null: unfiltered client.
+	IpExist *bool `json:"ipExist,omitempty"`
 	// Filter by ipcNvr, This filter will not affect clientStat result. true : filter by client type IPC or NVR, false or null: NOT filter by client type.
 	IpcNvr *bool `json:"ipcNvr,omitempty"`
 	// Filter by the model.
@@ -296,6 +298,38 @@ func (o *ClientQueryFiltersOpenApiVO) HasHealth() bool {
 // SetHealth gets a reference to the given int32 and assigns it to the Health field.
 func (o *ClientQueryFiltersOpenApiVO) SetHealth(v int32) {
 	o.Health = &v
+}
+
+// GetIpExist returns the IpExist field value if set, zero value otherwise.
+func (o *ClientQueryFiltersOpenApiVO) GetIpExist() bool {
+	if o == nil || IsNil(o.IpExist) {
+		var ret bool
+		return ret
+	}
+	return *o.IpExist
+}
+
+// GetIpExistOk returns a tuple with the IpExist field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientQueryFiltersOpenApiVO) GetIpExistOk() (*bool, bool) {
+	if o == nil || IsNil(o.IpExist) {
+		return nil, false
+	}
+	return o.IpExist, true
+}
+
+// HasIpExist returns a boolean if a field has been set.
+func (o *ClientQueryFiltersOpenApiVO) HasIpExist() bool {
+	if o != nil && !IsNil(o.IpExist) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpExist gets a reference to the given bool and assigns it to the IpExist field.
+func (o *ClientQueryFiltersOpenApiVO) SetIpExist(v bool) {
+	o.IpExist = &v
 }
 
 // GetIpcNvr returns the IpcNvr field value if set, zero value otherwise.
@@ -680,6 +714,9 @@ func (o ClientQueryFiltersOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Health) {
 		toSerialize["health"] = o.Health
+	}
+	if !IsNil(o.IpExist) {
+		toSerialize["ipExist"] = o.IpExist
 	}
 	if !IsNil(o.IpcNvr) {
 		toSerialize["ipcNvr"] = o.IpcNvr

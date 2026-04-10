@@ -23,7 +23,7 @@ type DslSettings struct {
 	AnnexType *int32 `json:"annexType,omitempty"`
 	// Enter a value as follows: 0-off, 1-on.
 	BitSwap *int32 `json:"bitSwap,omitempty"`
-	// Enter a value as follows: 0-Auto Sync-up, 2-ADSL2, 3-ADSL2+, 4-G.dmt, 5-T1.423, 6-VDSL2.
+	// Enter a value as follows: 0-Auto Sync-up, 2-ADSL2, 3-ADSL2+, 4-G.dmt, 5-T1.423, 6-VDSL2, 7-G.Lte.
 	ModulationType *int32 `json:"modulationType,omitempty"`
 	// Enter a value as follows: 0-off, 1-on.
 	Sra *int32 `json:"sra,omitempty"`

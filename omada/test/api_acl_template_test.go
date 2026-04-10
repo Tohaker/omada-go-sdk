@@ -68,6 +68,21 @@ func Test_omada_ACLTemplateAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ACLTemplateAPIService ExportOsgCustomAclTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.ACLTemplateAPI.ExportOsgCustomAclTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ACLTemplateAPIService GetAclConfigTypeSettingTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

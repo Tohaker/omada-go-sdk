@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetSiteList1
 
-> OperationResponseGridVOSiteSummaryInfo GetSiteList1(ctx, mspId).Page(page).PageSize(pageSize).SortsName(sortsName).SearchKey(searchKey).FiltersTag(filtersTag).FiltersType(filtersType).Execute()
+> OperationResponseGridVOMspSiteSummaryInfo GetSiteList1(ctx, mspId).Page(page).PageSize(pageSize).SortsName(sortsName).SearchKey(searchKey).FiltersTag(filtersTag).FiltersType(filtersType).Execute()
 
 Get msp site list
 
@@ -45,7 +45,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MSPSiteAPI.GetSiteList1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSiteList1`: OperationResponseGridVOSiteSummaryInfo
+	// response from `GetSiteList1`: OperationResponseGridVOMspSiteSummaryInfo
 	fmt.Fprintf(os.Stdout, "Response from `MSPSiteAPI.GetSiteList1`: %v\n", resp)
 }
 ```
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVOSiteSummaryInfo**](OperationResponseGridVOSiteSummaryInfo.md)
+[**OperationResponseGridVOMspSiteSummaryInfo**](OperationResponseGridVOMspSiteSummaryInfo.md)
 
 ### Authorization
 

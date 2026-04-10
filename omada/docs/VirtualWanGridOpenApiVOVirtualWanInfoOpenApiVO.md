@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CurrentSize** | Pointer to **int32** | Number of entries per page. | [optional] 
 **Data** | Pointer to [**[]VirtualWanInfoOpenApiVO**](VirtualWanInfoOpenApiVO.md) |  | [optional] 
 **NumReachLimit** | Pointer to **bool** | Whether the virtual WAN reaches number limit. | [optional] 
+**SupportByDsLiteAndMapE** | Pointer to **bool** | Whether this feature is supported for the DS-Lite or Map-E WAN connection types. | [optional] 
 **SupportMssClamping** | Pointer to **bool** | Whether the pppoe supports mss clamping. | [optional] 
 **SupportPppoeMru** | Pointer to **bool** | Whether the virtual WAN supports configuring pppoe mru. | [optional] 
 **TotalRows** | Pointer to **int64** | Total rows of all items. | [optional] 
@@ -130,6 +131,31 @@ SetNumReachLimit sets NumReachLimit field to given value.
 `func (o *VirtualWanGridOpenApiVOVirtualWanInfoOpenApiVO) HasNumReachLimit() bool`
 
 HasNumReachLimit returns a boolean if a field has been set.
+
+### GetSupportByDsLiteAndMapE
+
+`func (o *VirtualWanGridOpenApiVOVirtualWanInfoOpenApiVO) GetSupportByDsLiteAndMapE() bool`
+
+GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field if non-nil, zero value otherwise.
+
+### GetSupportByDsLiteAndMapEOk
+
+`func (o *VirtualWanGridOpenApiVOVirtualWanInfoOpenApiVO) GetSupportByDsLiteAndMapEOk() (*bool, bool)`
+
+GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportByDsLiteAndMapE
+
+`func (o *VirtualWanGridOpenApiVOVirtualWanInfoOpenApiVO) SetSupportByDsLiteAndMapE(v bool)`
+
+SetSupportByDsLiteAndMapE sets SupportByDsLiteAndMapE field to given value.
+
+### HasSupportByDsLiteAndMapE
+
+`func (o *VirtualWanGridOpenApiVOVirtualWanInfoOpenApiVO) HasSupportByDsLiteAndMapE() bool`
+
+HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
 
 ### GetSupportMssClamping
 

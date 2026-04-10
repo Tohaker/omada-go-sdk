@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Data** | Pointer to [**[]PortForwardingInfo**](PortForwardingInfo.md) |  | [optional] 
 **ExistVirtualWan** | Pointer to **bool** |  | [optional] 
 **ExistWanIp** | Pointer to **bool** |  | [optional] 
+**SupportByDsLiteAndMapE** | Pointer to **bool** |  | [optional] 
 **SupportVirtualWan** | Pointer to **bool** |  | [optional] 
 **SupportWanIp** | Pointer to **bool** |  | [optional] 
 **TotalRows** | Pointer to **int64** | Total rows of all items. | [optional] 
@@ -156,6 +157,31 @@ SetExistWanIp sets ExistWanIp field to given value.
 `func (o *PortForwardingGridVOPortForwardingInfo) HasExistWanIp() bool`
 
 HasExistWanIp returns a boolean if a field has been set.
+
+### GetSupportByDsLiteAndMapE
+
+`func (o *PortForwardingGridVOPortForwardingInfo) GetSupportByDsLiteAndMapE() bool`
+
+GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field if non-nil, zero value otherwise.
+
+### GetSupportByDsLiteAndMapEOk
+
+`func (o *PortForwardingGridVOPortForwardingInfo) GetSupportByDsLiteAndMapEOk() (*bool, bool)`
+
+GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportByDsLiteAndMapE
+
+`func (o *PortForwardingGridVOPortForwardingInfo) SetSupportByDsLiteAndMapE(v bool)`
+
+SetSupportByDsLiteAndMapE sets SupportByDsLiteAndMapE field to given value.
+
+### HasSupportByDsLiteAndMapE
+
+`func (o *PortForwardingGridVOPortForwardingInfo) HasSupportByDsLiteAndMapE() bool`
+
+HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
 
 ### GetSupportVirtualWan
 

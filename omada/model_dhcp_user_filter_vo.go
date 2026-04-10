@@ -25,12 +25,14 @@ type DhcpUserFilterVO struct {
 	NetId *string `json:"netId,omitempty"`
 	// Search Key
 	SearchKey *string `json:"searchKey,omitempty"`
+	// Selected Ips
+	SelectIps []string `json:"selectIps"`
 	SelectMacs BatchSelectMacsVO `json:"selectMacs"`
 	// Dhcp Server Macs
 	ServerMac *string `json:"serverMac,omitempty"`
 	// Dhcp Server StackIds
 	ServerStackId *string `json:"serverStackId,omitempty"`
-	// Type of Dhcp User
+	// Filter Type of Dhcp User: \"device\", \"client\" or \"device, client\"
 	Type *string `json:"type,omitempty"`
 }
 
@@ -40,8 +42,9 @@ type _DhcpUserFilterVO DhcpUserFilterVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDhcpUserFilterVO(selectMacs BatchSelectMacsVO) *DhcpUserFilterVO {
+func NewDhcpUserFilterVO(selectIps []string, selectMacs BatchSelectMacsVO) *DhcpUserFilterVO {
 	this := DhcpUserFilterVO{}
+	this.SelectIps = selectIps
 	this.SelectMacs = selectMacs
 	return &this
 }
@@ -116,6 +119,30 @@ func (o *DhcpUserFilterVO) HasSearchKey() bool {
 // SetSearchKey gets a reference to the given string and assigns it to the SearchKey field.
 func (o *DhcpUserFilterVO) SetSearchKey(v string) {
 	o.SearchKey = &v
+}
+
+// GetSelectIps returns the SelectIps field value
+func (o *DhcpUserFilterVO) GetSelectIps() []string {
+	if o == nil {
+		var ret []string
+		return ret
+	}
+
+	return o.SelectIps
+}
+
+// GetSelectIpsOk returns a tuple with the SelectIps field value
+// and a boolean to check if the value has been set.
+func (o *DhcpUserFilterVO) GetSelectIpsOk() ([]string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SelectIps, true
+}
+
+// SetSelectIps sets field value
+func (o *DhcpUserFilterVO) SetSelectIps(v []string) {
+	o.SelectIps = v
 }
 
 // GetSelectMacs returns the SelectMacs field value
@@ -254,6 +281,7 @@ func (o DhcpUserFilterVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SearchKey) {
 		toSerialize["searchKey"] = o.SearchKey
 	}
+	toSerialize["selectIps"] = o.SelectIps
 	toSerialize["selectMacs"] = o.SelectMacs
 	if !IsNil(o.ServerMac) {
 		toSerialize["serverMac"] = o.ServerMac
@@ -272,6 +300,7 @@ func (o *DhcpUserFilterVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"selectIps",
 		"selectMacs",
 	}
 

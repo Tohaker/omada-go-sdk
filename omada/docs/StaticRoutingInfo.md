@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **InterfaceType** | Pointer to **int32** | Only for routeType:1, interfaceType should be a value as follows: 0: Internet(WAN); 1: Network(LAN); 2: L2TP, 3: PPTP, 5: Virtual WAN. | [optional] 
 **Metric** | **int32** | Metric should be within the range of 0–15. | 
 **Name** | **string** | Name, name should contain 1 to 64 characters. | 
-**NextHopIp** | Pointer to **string** | Only for routeType:0 or routeType:1 and selected WAN is Static IP/Dynamic IP mode | [optional] 
+**NextHopIp** | Pointer to **string** | Only for routeType:0 or routeType:1 and selected WAN is Static IP/Dynamic IP/MAP-E mode | [optional] 
 **RouteType** | **int32** | RouteType should be a value as follows: 0: NextHop; 1: Interface | 
 **Status** | **bool** | Status | 
 

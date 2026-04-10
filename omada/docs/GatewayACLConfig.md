@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | **string** | ACL rule description, description should contain 1 to 512 characters. | 
 **DestinationIds** | Pointer to **[]string** | Source IDs, which depends on destinationType, for example: if destinationType is network, destinationIds should be LAN network ID. LAN Network can be created using &#39;Create LAN network&#39; interface, and LAN Network ID can be obtained from &#39;Get LAN network list&#39; interface. | [optional] 
-**DestinationType** | **int32** | DestinationType should be a value as follows: 0: network; 1: IP Group; 2: IP-Port Group; 6: IPv6 Group; 7: IPv6-Port Group;10: Domain Group. | 
+**DestinationType** | **int32** | DestinationType should be a value as follows: 0: network; 1: IP Group; 2: IP-Port Group; 6: IPv6 Group; 7: IPv6-Port Group;10: Domain Group; 11: !Network; 12: !IP Group；13: !IP-Port Group；14: !IPv6 Group；15: !IPv6-port Group | 
 **Direction** | [**GatewayDirectionEntity**](GatewayDirectionEntity.md) |  | 
 **Policy** | **int32** | Policy should be a value as follows: 0: drop; 1: allow; | 
 **Protocols** | **[]int32** | For the values of protocols, refer to section 5.5 of the Open API Access Guide. | 
 **SourceIds** | **[]string** | Source IDs, which depends on sourceType, for example: if sourceType is network, sourceIds should be LAN network ID. LAN Network can be created using &#39;Create LAN network&#39; interface, and LAN Network ID can be obtained from &#39;Get LAN network list&#39; interface. | 
-**SourceType** | **int32** | SourceType should be a value as follows: 0: network; 1: IP Group; 2: IP-Port Group; 4: SSID; 6: IPv6 Group; 7: IPv6-Port Group. | 
+**SourceType** | **int32** | SourceType should be a value as follows: 0: network; 1: IP Group; 2: IP-Port Group; 4: SSID; 6: IPv6 Group; 7: IPv6-Port Group; 8: Country; 9: Country Group; 11: !Network; 12: !IP Group; 13: !IP-Port Group; 14: !IPv6 Group; 15: !IPv6-port Group | 
 **StateMode** | **int32** | StateMode should be a value as follows: 0: auto; 1: manual | 
 **States** | Pointer to [**GatewayACLStatesEntity**](GatewayACLStatesEntity.md) |  | [optional] 
 **Status** | **bool** | Status should be a value as follows: 0: disable; 1: enable | 

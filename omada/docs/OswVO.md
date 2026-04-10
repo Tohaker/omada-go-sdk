@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **InWhitelist** | Pointer to **bool** | Whether the device is in white list | [optional] 
 **Ip** | Pointer to **string** | Ip address,such as 192.168.0.105 | [optional] 
 **Ippt** | Pointer to **bool** | Whether it is LTE Backup | [optional] 
+**IpptPreconfig** | Pointer to **bool** |  | [optional] 
 **Ipv6List** | Pointer to **[]string** | Ipv6 address List | [optional] 
 **LastSeen** | Pointer to **int64** | Last active time. | [optional] 
 **LatestVersion** | Pointer to **string** | Latest firmware version | [optional] 
@@ -52,6 +53,7 @@ Name | Type | Description | Notes
 **Loop** | Pointer to **string** | Set of loop port | [optional] 
 **LoopbackNum** | Pointer to **int32** | Number of loops | [optional] 
 **Mac** | Pointer to **string** | Mac address | [optional] 
+**MaxRelayServerNum** | Pointer to **int32** | Max DHCP relay server num | [optional] 
 **MaxStackGroups** | Pointer to **int32** | The maximum number of stacking port aggregation groups that can be configured | [optional] 
 **MaxStackUnitNumber** | Pointer to **int32** | The maximum unit number supported by the device | [optional] 
 **MemUtil** | Pointer to **int32** | Memory utilization | [optional] 
@@ -101,6 +103,7 @@ Name | Type | Description | Notes
 **SupportIppt** | Pointer to **bool** |  | [optional] 
 **SupportMacDelay** | Pointer to **bool** |  | [optional] 
 **SupportPowerAlert** | Pointer to **bool** | Indicates whether the switch supports power alert | [optional] 
+**SupportRelayMultiServer** | Pointer to **bool** | Whether the device supports DHCP relay multi Server | [optional] 
 **SupportRunningConfig** | Pointer to **bool** | Whether the device supports show running config. | [optional] 
 **SupportSdm** | Pointer to **bool** | Indicates whether the switch supports SDM template | [optional] 
 **SupportStp** | Pointer to **bool** | Indicates whether the switch supports stp | [optional] 
@@ -987,6 +990,31 @@ SetIppt sets Ippt field to given value.
 
 HasIppt returns a boolean if a field has been set.
 
+### GetIpptPreconfig
+
+`func (o *OswVO) GetIpptPreconfig() bool`
+
+GetIpptPreconfig returns the IpptPreconfig field if non-nil, zero value otherwise.
+
+### GetIpptPreconfigOk
+
+`func (o *OswVO) GetIpptPreconfigOk() (*bool, bool)`
+
+GetIpptPreconfigOk returns a tuple with the IpptPreconfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpptPreconfig
+
+`func (o *OswVO) SetIpptPreconfig(v bool)`
+
+SetIpptPreconfig sets IpptPreconfig field to given value.
+
+### HasIpptPreconfig
+
+`func (o *OswVO) HasIpptPreconfig() bool`
+
+HasIpptPreconfig returns a boolean if a field has been set.
+
 ### GetIpv6List
 
 `func (o *OswVO) GetIpv6List() []string`
@@ -1336,6 +1364,31 @@ SetMac sets Mac field to given value.
 `func (o *OswVO) HasMac() bool`
 
 HasMac returns a boolean if a field has been set.
+
+### GetMaxRelayServerNum
+
+`func (o *OswVO) GetMaxRelayServerNum() int32`
+
+GetMaxRelayServerNum returns the MaxRelayServerNum field if non-nil, zero value otherwise.
+
+### GetMaxRelayServerNumOk
+
+`func (o *OswVO) GetMaxRelayServerNumOk() (*int32, bool)`
+
+GetMaxRelayServerNumOk returns a tuple with the MaxRelayServerNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxRelayServerNum
+
+`func (o *OswVO) SetMaxRelayServerNum(v int32)`
+
+SetMaxRelayServerNum sets MaxRelayServerNum field to given value.
+
+### HasMaxRelayServerNum
+
+`func (o *OswVO) HasMaxRelayServerNum() bool`
+
+HasMaxRelayServerNum returns a boolean if a field has been set.
 
 ### GetMaxStackGroups
 
@@ -2561,6 +2614,31 @@ SetSupportPowerAlert sets SupportPowerAlert field to given value.
 `func (o *OswVO) HasSupportPowerAlert() bool`
 
 HasSupportPowerAlert returns a boolean if a field has been set.
+
+### GetSupportRelayMultiServer
+
+`func (o *OswVO) GetSupportRelayMultiServer() bool`
+
+GetSupportRelayMultiServer returns the SupportRelayMultiServer field if non-nil, zero value otherwise.
+
+### GetSupportRelayMultiServerOk
+
+`func (o *OswVO) GetSupportRelayMultiServerOk() (*bool, bool)`
+
+GetSupportRelayMultiServerOk returns a tuple with the SupportRelayMultiServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportRelayMultiServer
+
+`func (o *OswVO) SetSupportRelayMultiServer(v bool)`
+
+SetSupportRelayMultiServer sets SupportRelayMultiServer field to given value.
+
+### HasSupportRelayMultiServer
+
+`func (o *OswVO) HasSupportRelayMultiServer() bool`
+
+HasSupportRelayMultiServer returns a boolean if a field has been set.
 
 ### GetSupportRunningConfig
 

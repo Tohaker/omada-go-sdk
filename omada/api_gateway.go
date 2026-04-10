@@ -74,6 +74,41 @@ type GatewayAPI interface {
 	ChangeIpv6StateExecute(r GatewayAPIChangeIpv6StateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	ChangeOduMode Change mode for 5G-Outdoor
+
+	Change mode for 5G-Outdoor<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	@return GatewayAPIChangeOduModeRequest
+	*/
+	ChangeOduMode(ctx context.Context, omadacId string, siteId string, gatewayMac string) GatewayAPIChangeOduModeRequest
+
+	// ChangeOduModeExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ChangeOduModeExecute(r GatewayAPIChangeOduModeRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ChangeOduModeForMsp Change mode for 5G-Outdoor for msp
+
+	Change mode for 5G-Outdoor for msp.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mspId MSP ID
+	@param customerId Customer ID
+	@param siteId Site ID
+	@param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	@return GatewayAPIChangeOduModeForMspRequest
+	*/
+	ChangeOduModeForMsp(ctx context.Context, mspId string, customerId string, siteId string, gatewayMac string) GatewayAPIChangeOduModeForMspRequest
+
+	// ChangeOduModeForMspExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ChangeOduModeForMspExecute(r GatewayAPIChangeOduModeForMspRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	ChangePinSetting Modify PIN management information of an LTE model
 
 	Modify PIN management information of an LTE model.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35411  -  The gateway does not support Dual-SIM standby.<br/>-44301  -  Failed to get any response from the gateway.<br/>-44305  -  Do not make any configuration changes until the device is stably connected.<br/>-44308  -  Filed to change sim pin setting, please check your sim card status
@@ -109,6 +144,22 @@ type GatewayAPI interface {
 	DeleteIspFileExecute(r GatewayAPIDeleteIspFileRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	GetClientDhcpLeaseTimes Get gateway dhcp client lease time
+
+	Get gateway dhcp client lease time.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-35927  -  The current gateway does not support obtaining the DHCP Client List.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return GatewayAPIGetClientDhcpLeaseTimesRequest
+	*/
+	GetClientDhcpLeaseTimes(ctx context.Context, omadacId string, siteId string) GatewayAPIGetClientDhcpLeaseTimesRequest
+
+	// GetClientDhcpLeaseTimesExecute executes the request
+	//  @return OperationResponseListClientDhcpLeaseTimeOpenApiVO
+	GetClientDhcpLeaseTimesExecute(r GatewayAPIGetClientDhcpLeaseTimesRequest) (*OperationResponseListClientDhcpLeaseTimeOpenApiVO, *http.Response, error)
+
+	/*
 	GetEnableWanDetail Get enable wan port detail
 
 	Get enable wan port detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Health & Incident Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
@@ -124,23 +175,6 @@ type GatewayAPI interface {
 	// GetEnableWanDetailExecute executes the request
 	//  @return OperationResponseWanDetails
 	GetEnableWanDetailExecute(r GatewayAPIGetEnableWanDetailRequest) (*OperationResponseWanDetails, *http.Response, error)
-
-	/*
-	GetGatewayInfo Get gateway template info
-
-	Get gateway template info<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39507  -  Gateway mirroring port reaches max limit.<br/>-39706  -  Please choose at least one port or LAG to be mirrored.<br/>-39718  -  Mirrored ports contain invalid port.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
-	@return GatewayAPIGetGatewayInfoRequest
-	*/
-	GetGatewayInfo(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIGetGatewayInfoRequest
-
-	// GetGatewayInfoExecute executes the request
-	//  @return OperationResponseGatewayTemplateInfo
-	GetGatewayInfoExecute(r GatewayAPIGetGatewayInfoRequest) (*OperationResponseGatewayTemplateInfo, *http.Response, error)
 
 	/*
 	GetGatewayInfo1 Get gateway info
@@ -175,6 +209,23 @@ type GatewayAPI interface {
 	// GetGeneralConfig1Execute executes the request
 	//  @return OperationResponseGatewayGeneralConfig
 	GetGeneralConfig1Execute(r GatewayAPIGetGeneralConfig1Request) (*OperationResponseGatewayGeneralConfig, *http.Response, error)
+
+	/*
+	GetGridDhcpUserList1 Get gateway dhcp user list
+
+	Get gateway dhcp user list.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35912  -  Fail to obtain DHCP Client List.<br/>-35927  -  The current gateway does not support obtaining the DHCP Client List.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	@return GatewayAPIGetGridDhcpUserList1Request
+	*/
+	GetGridDhcpUserList1(ctx context.Context, omadacId string, siteId string, gatewayMac string) GatewayAPIGetGridDhcpUserList1Request
+
+	// GetGridDhcpUserList1Execute executes the request
+	//  @return OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO
+	GetGridDhcpUserList1Execute(r GatewayAPIGetGridDhcpUserList1Request) (*OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO, *http.Response, error)
 
 	/*
 	GetIpptLanIpv6 Get lan ipv6 config for ippt
@@ -245,23 +296,6 @@ type GatewayAPI interface {
 	GetPortsExecute(r GatewayAPIGetPortsRequest) (*OperationResponseGatewayPortInfos, *http.Response, error)
 
 	/*
-	GetPortsTemplate Get gateway template port info
-
-	Get gateway template port info<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
-	@return GatewayAPIGetPortsTemplateRequest
-	*/
-	GetPortsTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIGetPortsTemplateRequest
-
-	// GetPortsTemplateExecute executes the request
-	//  @return OperationResponseListOsgPortInfoOpenApiVO
-	GetPortsTemplateExecute(r GatewayAPIGetPortsTemplateRequest) (*OperationResponseListOsgPortInfoOpenApiVO, *http.Response, error)
-
-	/*
 	GetSimCardUsed Get SIM card used
 
 	Get SIM card used<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only
@@ -309,23 +343,6 @@ type GatewayAPI interface {
 	// GetSsidDetail1Execute executes the request
 	//  @return OperationResponseSsidDetailOpenApiVO
 	GetSsidDetail1Execute(r GatewayAPIGetSsidDetail1Request) (*OperationResponseSsidDetailOpenApiVO, *http.Response, error)
-
-	/*
-	GetSsidDetailTemplate1 Get SSID detail info
-
-	Get SSID detail info<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-39501  -  This gateway does not exist.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param omadacId Omada ID
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@return GatewayAPIGetSsidDetailTemplate1Request
-	*/
-	GetSsidDetailTemplate1(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayAPIGetSsidDetailTemplate1Request
-
-	// GetSsidDetailTemplate1Execute executes the request
-	//  @return OperationResponseSsidDetailOpenApiVO
-	GetSsidDetailTemplate1Execute(r GatewayAPIGetSsidDetailTemplate1Request) (*OperationResponseSsidDetailOpenApiVO, *http.Response, error)
 
 	/*
 	GetWanStatus Get gateway wan status
@@ -379,23 +396,6 @@ type GatewayAPI interface {
 	ModifyConfigAdvancedExecute(r GatewayAPIModifyConfigAdvancedRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyConfigAdvancedTemplate Modify gateway template advanced config
-
-	Modify gateway template advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
-	@return GatewayAPIModifyConfigAdvancedTemplateRequest
-	*/
-	ModifyConfigAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigAdvancedTemplateRequest
-
-	// ModifyConfigAdvancedTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ModifyConfigAdvancedTemplateExecute(r GatewayAPIModifyConfigAdvancedTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
 	ModifyConfigCommonAdvanced Modify gateway advanced common config
 
 	Modify gateway advanced common config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
@@ -411,23 +411,6 @@ type GatewayAPI interface {
 	// ModifyConfigCommonAdvancedExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifyConfigCommonAdvancedExecute(r GatewayAPIModifyConfigCommonAdvancedRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
-	ModifyConfigCommonAdvancedTemplate Modify gateway template common advanced config
-
-	Modify gateway template common advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
-	@return GatewayAPIModifyConfigCommonAdvancedTemplateRequest
-	*/
-	ModifyConfigCommonAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigCommonAdvancedTemplateRequest
-
-	// ModifyConfigCommonAdvancedTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ModifyConfigCommonAdvancedTemplateExecute(r GatewayAPIModifyConfigCommonAdvancedTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyConfigGeneral Modify gateway general config
@@ -447,23 +430,6 @@ type GatewayAPI interface {
 	ModifyConfigGeneralExecute(r GatewayAPIModifyConfigGeneralRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyConfigGeneralTemplate Modify gateway template general config
-
-	Modify gateway template general config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
-	@return GatewayAPIModifyConfigGeneralTemplateRequest
-	*/
-	ModifyConfigGeneralTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigGeneralTemplateRequest
-
-	// ModifyConfigGeneralTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ModifyConfigGeneralTemplateExecute(r GatewayAPIModifyConfigGeneralTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
 	ModifyConfigRadios Modify gateway radios config
 
 	Modify gateway radios config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39093  -  The length of the device name exceeds the limit.<br/>-39501  -  This gateway does not exist.<br/>-44405  -  The configuration has been overridden.
@@ -479,23 +445,6 @@ type GatewayAPI interface {
 	// ModifyConfigRadiosExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifyConfigRadiosExecute(r GatewayAPIModifyConfigRadiosRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
-	ModifyConfigRadiosTemplate Modify gateway template radios config
-
-	Modify gateway template radios config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
-	@return GatewayAPIModifyConfigRadiosTemplateRequest
-	*/
-	ModifyConfigRadiosTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigRadiosTemplateRequest
-
-	// ModifyConfigRadiosTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ModifyConfigRadiosTemplateExecute(r GatewayAPIModifyConfigRadiosTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyConfigServices Modify gateway config service
@@ -515,23 +464,6 @@ type GatewayAPI interface {
 	ModifyConfigServicesExecute(r GatewayAPIModifyConfigServicesRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyConfigServicesTemplate Modify gateway template services config
-
-	Modify gateway template services config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
-	@return GatewayAPIModifyConfigServicesTemplateRequest
-	*/
-	ModifyConfigServicesTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigServicesTemplateRequest
-
-	// ModifyConfigServicesTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ModifyConfigServicesTemplateExecute(r GatewayAPIModifyConfigServicesTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
 	ModifyConfigWirelessAdvanced Modify gateway advanced wireless config
 
 	Modify gateway advanced wireless config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
@@ -549,23 +481,6 @@ type GatewayAPI interface {
 	ModifyConfigWirelessAdvancedExecute(r GatewayAPIModifyConfigWirelessAdvancedRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyConfigWirelessAdvancedTemplate Modify gateway template wireless advanced config
-
-	Modify gateway template wireless advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
-	@return GatewayAPIModifyConfigWirelessAdvancedTemplateRequest
-	*/
-	ModifyConfigWirelessAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigWirelessAdvancedTemplateRequest
-
-	// ModifyConfigWirelessAdvancedTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ModifyConfigWirelessAdvancedTemplateExecute(r GatewayAPIModifyConfigWirelessAdvancedTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
 	ModifyConfigWlans Modify gateway wlans config
 
 	Modify gateway wlans config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33221  -  The SSID to be edited does not exist.<br/>-33222  -  The SSID should contain 1-32 characters.<br/>-33223  -  The security key can only contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33242  -  This SSID VLAN ID cannot be same as the exist default LanNetwork profile.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-39093  -  The length of the device name exceeds the limit.<br/>-39306  -  This WLAN group does not exist.<br/>-39307  -  Failed to add this AP to the WLAN group because this AP is not in the site of the WLAN group.<br/>-39350  -  The SSID of the WLAN group is used in Gateway ACL. Please delete the related ACL rule first.<br/>-39501  -  This gateway does not exist.<br/>-44405  -  The configuration has been overridden.
@@ -581,23 +496,6 @@ type GatewayAPI interface {
 	// ModifyConfigWlansExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifyConfigWlansExecute(r GatewayAPIModifyConfigWlansRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
-	ModifyConfigWlansTemplate Modify gateway template wlans config
-
-	Modify gateway template wlans config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33221  -  The SSID to be edited does not exist.<br/>-33222  -  The SSID should contain 1-32 characters.<br/>-33223  -  The security key can only contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-39306  -  This WLAN group does not exist.<br/>-39307  -  Failed to add this AP to the WLAN group because this AP is not in the site of the WLAN group.<br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
-	@return GatewayAPIModifyConfigWlansTemplateRequest
-	*/
-	ModifyConfigWlansTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigWlansTemplateRequest
-
-	// ModifyConfigWlansTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ModifyConfigWlansTemplateExecute(r GatewayAPIModifyConfigWlansTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyGeneralConfig1 Modify gateway general config
@@ -670,24 +568,6 @@ type GatewayAPI interface {
 	ModifyOsgConfigGeneralForMspExecute(r GatewayAPIModifyOsgConfigGeneralForMspRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyPortConfig Modify gateway template port config
-
-	Modify gateway template port config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39507  -  Gateway mirroring port reaches max limit.<br/>-39706  -  Please choose at least one port or LAG to be mirrored.<br/>-39718  -  Mirrored ports contain invalid port.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Device Template ID
-	@param port Gateway port number
-	@param omadacId omadacId
-	@return GatewayAPIModifyPortConfigRequest
-	*/
-	ModifyPortConfig(ctx context.Context, siteTemplateId string, deviceTemplateId string, port string, omadacId string) GatewayAPIModifyPortConfigRequest
-
-	// ModifyPortConfigExecute executes the request
-	//  @return OperationResponseGatewayTemplatePortSettingConfig
-	ModifyPortConfigExecute(r GatewayAPIModifyPortConfigRequest) (*OperationResponseGatewayTemplatePortSettingConfig, *http.Response, error)
-
-	/*
 	ModifyPortConfig1 Modify gateway port config
 
 	Modify gateway port config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39507  -  Gateway mirroring port reaches max limit.<br/>-39706  -  Please choose at least one port or LAG to be mirrored.<br/>-39718  -  Mirrored ports contain invalid port.
@@ -741,24 +621,6 @@ type GatewayAPI interface {
 	ModifySsidBasicConfigExecute(r GatewayAPIModifySsidBasicConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifySsidBasicConfigTemplate modify SSID basic config
-
-	modify SSID basic config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33235  -  PPSK without RADIUS do not support WPA Mode with WPA3-SAE.<br/>-33238  -  The number of SSIDs on %band% has reached the limit. At most 8 SSIDs can be created on each band.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param omadacId Omada ID
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Gateway MAC address, like AA-BB-CC-DD-EE-FF
-	@param ssidId Device Template ID
-	@return GatewayAPIModifySsidBasicConfigTemplateRequest
-	*/
-	ModifySsidBasicConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, ssidId string) GatewayAPIModifySsidBasicConfigTemplateRequest
-
-	// ModifySsidBasicConfigTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ModifySsidBasicConfigTemplateExecute(r GatewayAPIModifySsidBasicConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
 	ModifySsidMacFilterConfig Update SSID mac filter config
 
 	Update SSID MAC filter config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
@@ -775,24 +637,6 @@ type GatewayAPI interface {
 	// ModifySsidMacFilterConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifySsidMacFilterConfigExecute(r GatewayAPIModifySsidMacFilterConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
-
-	/*
-	ModifySsidMacFilterConfigTemplate Update SSID mac filter config
-
-	Update SSID MAC filter config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param omadacId Omada ID
-	@param siteTemplateId Site Template ID
-	@param deviceTemplateId Gateway MAC address, like AA-BB-CC-DD-EE-FF
-	@param ssidId Device Template ID
-	@return GatewayAPIModifySsidMacFilterConfigTemplateRequest
-	*/
-	ModifySsidMacFilterConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, ssidId string) GatewayAPIModifySsidMacFilterConfigTemplateRequest
-
-	// ModifySsidMacFilterConfigTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ModifySsidMacFilterConfigTemplateExecute(r GatewayAPIModifySsidMacFilterConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	MoveToSite1 Move devices to another site
@@ -1274,6 +1118,282 @@ func (a *GatewayAPIService) ChangeIpv6StateExecute(r GatewayAPIChangeIpv6StateRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type GatewayAPIChangeOduModeRequest struct {
+	ctx context.Context
+	ApiService GatewayAPI
+	omadacId string
+	siteId string
+	gatewayMac string
+	changeOduModeVO *ChangeOduModeVO
+}
+
+func (r GatewayAPIChangeOduModeRequest) ChangeOduModeVO(changeOduModeVO ChangeOduModeVO) GatewayAPIChangeOduModeRequest {
+	r.changeOduModeVO = &changeOduModeVO
+	return r
+}
+
+func (r GatewayAPIChangeOduModeRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ChangeOduModeExecute(r)
+}
+
+/*
+ChangeOduMode Change mode for 5G-Outdoor
+
+Change mode for 5G-Outdoor<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+ @return GatewayAPIChangeOduModeRequest
+*/
+func (a *GatewayAPIService) ChangeOduMode(ctx context.Context, omadacId string, siteId string, gatewayMac string) GatewayAPIChangeOduModeRequest {
+	return GatewayAPIChangeOduModeRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		gatewayMac: gatewayMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *GatewayAPIService) ChangeOduModeExecute(r GatewayAPIChangeOduModeRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ChangeOduMode")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/change-mode"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.changeOduModeVO == nil {
+		return localVarReturnValue, nil, reportError("changeOduModeVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.changeOduModeVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type GatewayAPIChangeOduModeForMspRequest struct {
+	ctx context.Context
+	ApiService GatewayAPI
+	mspId string
+	customerId string
+	siteId string
+	gatewayMac string
+	changeOduModeVO *ChangeOduModeVO
+}
+
+func (r GatewayAPIChangeOduModeForMspRequest) ChangeOduModeVO(changeOduModeVO ChangeOduModeVO) GatewayAPIChangeOduModeForMspRequest {
+	r.changeOduModeVO = &changeOduModeVO
+	return r
+}
+
+func (r GatewayAPIChangeOduModeForMspRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ChangeOduModeForMspExecute(r)
+}
+
+/*
+ChangeOduModeForMsp Change mode for 5G-Outdoor for msp
+
+Change mode for 5G-Outdoor for msp.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param mspId MSP ID
+ @param customerId Customer ID
+ @param siteId Site ID
+ @param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+ @return GatewayAPIChangeOduModeForMspRequest
+*/
+func (a *GatewayAPIService) ChangeOduModeForMsp(ctx context.Context, mspId string, customerId string, siteId string, gatewayMac string) GatewayAPIChangeOduModeForMspRequest {
+	return GatewayAPIChangeOduModeForMspRequest{
+		ApiService: a,
+		ctx: ctx,
+		mspId: mspId,
+		customerId: customerId,
+		siteId: siteId,
+		gatewayMac: gatewayMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *GatewayAPIService) ChangeOduModeForMspExecute(r GatewayAPIChangeOduModeForMspRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ChangeOduModeForMsp")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac}/change-mode"
+	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.changeOduModeVO == nil {
+		return localVarReturnValue, nil, reportError("changeOduModeVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.changeOduModeVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type GatewayAPIChangePinSettingRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
@@ -1539,6 +1659,138 @@ func (a *GatewayAPIService) DeleteIspFileExecute(r GatewayAPIDeleteIspFileReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type GatewayAPIGetClientDhcpLeaseTimesRequest struct {
+	ctx context.Context
+	ApiService GatewayAPI
+	omadacId string
+	siteId string
+	queryDhcpLeaseTimeVO *QueryDhcpLeaseTimeVO
+}
+
+func (r GatewayAPIGetClientDhcpLeaseTimesRequest) QueryDhcpLeaseTimeVO(queryDhcpLeaseTimeVO QueryDhcpLeaseTimeVO) GatewayAPIGetClientDhcpLeaseTimesRequest {
+	r.queryDhcpLeaseTimeVO = &queryDhcpLeaseTimeVO
+	return r
+}
+
+func (r GatewayAPIGetClientDhcpLeaseTimesRequest) Execute() (*OperationResponseListClientDhcpLeaseTimeOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetClientDhcpLeaseTimesExecute(r)
+}
+
+/*
+GetClientDhcpLeaseTimes Get gateway dhcp client lease time
+
+Get gateway dhcp client lease time.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-35927  -  The current gateway does not support obtaining the DHCP Client List.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return GatewayAPIGetClientDhcpLeaseTimesRequest
+*/
+func (a *GatewayAPIService) GetClientDhcpLeaseTimes(ctx context.Context, omadacId string, siteId string) GatewayAPIGetClientDhcpLeaseTimesRequest {
+	return GatewayAPIGetClientDhcpLeaseTimesRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseListClientDhcpLeaseTimeOpenApiVO
+func (a *GatewayAPIService) GetClientDhcpLeaseTimesExecute(r GatewayAPIGetClientDhcpLeaseTimesRequest) (*OperationResponseListClientDhcpLeaseTimeOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseListClientDhcpLeaseTimeOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.GetClientDhcpLeaseTimes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/dhcp-lease-time"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.queryDhcpLeaseTimeVO == nil {
+		return localVarReturnValue, nil, reportError("queryDhcpLeaseTimeVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.queryDhcpLeaseTimeVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type GatewayAPIGetEnableWanDetailRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
@@ -1591,131 +1843,6 @@ func (a *GatewayAPIService) GetEnableWanDetailExecute(r GatewayAPIGetEnableWanDe
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type GatewayAPIGetGatewayInfoRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	omadacId string
-}
-
-func (r GatewayAPIGetGatewayInfoRequest) Execute() (*OperationResponseGatewayTemplateInfo, *http.Response, error) {
-	return r.ApiService.GetGatewayInfoExecute(r)
-}
-
-/*
-GetGatewayInfo Get gateway template info
-
-Get gateway template info<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39507  -  Gateway mirroring port reaches max limit.<br/>-39706  -  Please choose at least one port or LAG to be mirrored.<br/>-39718  -  Mirrored ports contain invalid port.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param omadacId omadacId
- @return GatewayAPIGetGatewayInfoRequest
-*/
-func (a *GatewayAPIService) GetGatewayInfo(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIGetGatewayInfoRequest {
-	return GatewayAPIGetGatewayInfoRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseGatewayTemplateInfo
-func (a *GatewayAPIService) GetGatewayInfoExecute(r GatewayAPIGetGatewayInfoRequest) (*OperationResponseGatewayTemplateInfo, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGatewayTemplateInfo
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.GetGatewayInfo")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1971,6 +2098,153 @@ func (a *GatewayAPIService) GetGeneralConfig1Execute(r GatewayAPIGetGeneralConfi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type GatewayAPIGetGridDhcpUserList1Request struct {
+	ctx context.Context
+	ApiService GatewayAPI
+	omadacId string
+	siteId string
+	gatewayMac string
+	page *int32
+	pageSize *int32
+}
+
+// Start page number. Start from 1.
+func (r GatewayAPIGetGridDhcpUserList1Request) Page(page int32) GatewayAPIGetGridDhcpUserList1Request {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r GatewayAPIGetGridDhcpUserList1Request) PageSize(pageSize int32) GatewayAPIGetGridDhcpUserList1Request {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r GatewayAPIGetGridDhcpUserList1Request) Execute() (*OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO, *http.Response, error) {
+	return r.ApiService.GetGridDhcpUserList1Execute(r)
+}
+
+/*
+GetGridDhcpUserList1 Get gateway dhcp user list
+
+Get gateway dhcp user list.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35912  -  Fail to obtain DHCP Client List.<br/>-35927  -  The current gateway does not support obtaining the DHCP Client List.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
+ @return GatewayAPIGetGridDhcpUserList1Request
+*/
+func (a *GatewayAPIService) GetGridDhcpUserList1(ctx context.Context, omadacId string, siteId string, gatewayMac string) GatewayAPIGetGridDhcpUserList1Request {
+	return GatewayAPIGetGridDhcpUserList1Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		gatewayMac: gatewayMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO
+func (a *GatewayAPIService) GetGridDhcpUserList1Execute(r GatewayAPIGetGridDhcpUserList1Request) (*OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.GetGridDhcpUserList1")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/dhcp/user-list"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2539,131 +2813,6 @@ func (a *GatewayAPIService) GetPortsExecute(r GatewayAPIGetPortsRequest) (*Opera
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GatewayAPIGetPortsTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	omadacId string
-}
-
-func (r GatewayAPIGetPortsTemplateRequest) Execute() (*OperationResponseListOsgPortInfoOpenApiVO, *http.Response, error) {
-	return r.ApiService.GetPortsTemplateExecute(r)
-}
-
-/*
-GetPortsTemplate Get gateway template port info
-
-Get gateway template port info<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param omadacId omadacId
- @return GatewayAPIGetPortsTemplateRequest
-*/
-func (a *GatewayAPIService) GetPortsTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIGetPortsTemplateRequest {
-	return GatewayAPIGetPortsTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseListOsgPortInfoOpenApiVO
-func (a *GatewayAPIService) GetPortsTemplateExecute(r GatewayAPIGetPortsTemplateRequest) (*OperationResponseListOsgPortInfoOpenApiVO, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseListOsgPortInfoOpenApiVO
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.GetPortsTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/config"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type GatewayAPIGetSimCardUsedRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
@@ -2980,131 +3129,6 @@ func (a *GatewayAPIService) GetSsidDetail1Execute(r GatewayAPIGetSsidDetail1Requ
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type GatewayAPIGetSsidDetailTemplate1Request struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	omadacId string
-	siteTemplateId string
-	deviceTemplateId string
-}
-
-func (r GatewayAPIGetSsidDetailTemplate1Request) Execute() (*OperationResponseSsidDetailOpenApiVO, *http.Response, error) {
-	return r.ApiService.GetSsidDetailTemplate1Execute(r)
-}
-
-/*
-GetSsidDetailTemplate1 Get SSID detail info
-
-Get SSID detail info<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-39501  -  This gateway does not exist.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param omadacId Omada ID
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @return GatewayAPIGetSsidDetailTemplate1Request
-*/
-func (a *GatewayAPIService) GetSsidDetailTemplate1(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayAPIGetSsidDetailTemplate1Request {
-	return GatewayAPIGetSsidDetailTemplate1Request{
-		ApiService: a,
-		ctx: ctx,
-		omadacId: omadacId,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseSsidDetailOpenApiVO
-func (a *GatewayAPIService) GetSsidDetailTemplate1Execute(r GatewayAPIGetSsidDetailTemplate1Request) (*OperationResponseSsidDetailOpenApiVO, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseSsidDetailOpenApiVO
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.GetSsidDetailTemplate1")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid"
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3575,142 +3599,6 @@ func (a *GatewayAPIService) ModifyConfigAdvancedExecute(r GatewayAPIModifyConfig
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GatewayAPIModifyConfigAdvancedTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	omadacId string
-	osgConfigAdvancedOpenApiVO *OsgConfigAdvancedOpenApiVO
-}
-
-func (r GatewayAPIModifyConfigAdvancedTemplateRequest) OsgConfigAdvancedOpenApiVO(osgConfigAdvancedOpenApiVO OsgConfigAdvancedOpenApiVO) GatewayAPIModifyConfigAdvancedTemplateRequest {
-	r.osgConfigAdvancedOpenApiVO = &osgConfigAdvancedOpenApiVO
-	return r
-}
-
-func (r GatewayAPIModifyConfigAdvancedTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifyConfigAdvancedTemplateExecute(r)
-}
-
-/*
-ModifyConfigAdvancedTemplate Modify gateway template advanced config
-
-Modify gateway template advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param omadacId omadacId
- @return GatewayAPIModifyConfigAdvancedTemplateRequest
-*/
-func (a *GatewayAPIService) ModifyConfigAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigAdvancedTemplateRequest {
-	return GatewayAPIModifyConfigAdvancedTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *GatewayAPIService) ModifyConfigAdvancedTemplateExecute(r GatewayAPIModifyConfigAdvancedTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifyConfigAdvancedTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.osgConfigAdvancedOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("osgConfigAdvancedOpenApiVO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.osgConfigAdvancedOpenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type GatewayAPIModifyConfigCommonAdvancedRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
@@ -3769,142 +3657,6 @@ func (a *GatewayAPIService) ModifyConfigCommonAdvancedExecute(r GatewayAPIModify
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.osgConfigCommonAdvancedOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("osgConfigCommonAdvancedOpenApiVO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.osgConfigCommonAdvancedOpenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type GatewayAPIModifyConfigCommonAdvancedTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	omadacId string
-	osgConfigCommonAdvancedOpenApiVO *OsgConfigCommonAdvancedOpenApiVO
-}
-
-func (r GatewayAPIModifyConfigCommonAdvancedTemplateRequest) OsgConfigCommonAdvancedOpenApiVO(osgConfigCommonAdvancedOpenApiVO OsgConfigCommonAdvancedOpenApiVO) GatewayAPIModifyConfigCommonAdvancedTemplateRequest {
-	r.osgConfigCommonAdvancedOpenApiVO = &osgConfigCommonAdvancedOpenApiVO
-	return r
-}
-
-func (r GatewayAPIModifyConfigCommonAdvancedTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifyConfigCommonAdvancedTemplateExecute(r)
-}
-
-/*
-ModifyConfigCommonAdvancedTemplate Modify gateway template common advanced config
-
-Modify gateway template common advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param omadacId omadacId
- @return GatewayAPIModifyConfigCommonAdvancedTemplateRequest
-*/
-func (a *GatewayAPIService) ModifyConfigCommonAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigCommonAdvancedTemplateRequest {
-	return GatewayAPIModifyConfigCommonAdvancedTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *GatewayAPIService) ModifyConfigCommonAdvancedTemplateExecute(r GatewayAPIModifyConfigCommonAdvancedTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifyConfigCommonAdvancedTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/common"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4119,142 +3871,6 @@ func (a *GatewayAPIService) ModifyConfigGeneralExecute(r GatewayAPIModifyConfigG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GatewayAPIModifyConfigGeneralTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	omadacId string
-	osgGeneralConfigOpenApiV2VO *OsgGeneralConfigOpenApiV2VO
-}
-
-func (r GatewayAPIModifyConfigGeneralTemplateRequest) OsgGeneralConfigOpenApiV2VO(osgGeneralConfigOpenApiV2VO OsgGeneralConfigOpenApiV2VO) GatewayAPIModifyConfigGeneralTemplateRequest {
-	r.osgGeneralConfigOpenApiV2VO = &osgGeneralConfigOpenApiV2VO
-	return r
-}
-
-func (r GatewayAPIModifyConfigGeneralTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifyConfigGeneralTemplateExecute(r)
-}
-
-/*
-ModifyConfigGeneralTemplate Modify gateway template general config
-
-Modify gateway template general config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param omadacId omadacId
- @return GatewayAPIModifyConfigGeneralTemplateRequest
-*/
-func (a *GatewayAPIService) ModifyConfigGeneralTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigGeneralTemplateRequest {
-	return GatewayAPIModifyConfigGeneralTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *GatewayAPIService) ModifyConfigGeneralTemplateExecute(r GatewayAPIModifyConfigGeneralTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifyConfigGeneralTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/general"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.osgGeneralConfigOpenApiV2VO == nil {
-		return localVarReturnValue, nil, reportError("osgGeneralConfigOpenApiV2VO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.osgGeneralConfigOpenApiV2VO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type GatewayAPIModifyConfigRadiosRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
@@ -4313,142 +3929,6 @@ func (a *GatewayAPIService) ModifyConfigRadiosExecute(r GatewayAPIModifyConfigRa
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.osgConfigRadiosopenApiVO == nil {
-		return localVarReturnValue, nil, reportError("osgConfigRadiosopenApiVO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.osgConfigRadiosopenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type GatewayAPIModifyConfigRadiosTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	omadacId string
-	osgConfigRadiosopenApiVO *OsgConfigRadiosopenApiVO
-}
-
-func (r GatewayAPIModifyConfigRadiosTemplateRequest) OsgConfigRadiosopenApiVO(osgConfigRadiosopenApiVO OsgConfigRadiosopenApiVO) GatewayAPIModifyConfigRadiosTemplateRequest {
-	r.osgConfigRadiosopenApiVO = &osgConfigRadiosopenApiVO
-	return r
-}
-
-func (r GatewayAPIModifyConfigRadiosTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifyConfigRadiosTemplateExecute(r)
-}
-
-/*
-ModifyConfigRadiosTemplate Modify gateway template radios config
-
-Modify gateway template radios config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param omadacId omadacId
- @return GatewayAPIModifyConfigRadiosTemplateRequest
-*/
-func (a *GatewayAPIService) ModifyConfigRadiosTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigRadiosTemplateRequest {
-	return GatewayAPIModifyConfigRadiosTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *GatewayAPIService) ModifyConfigRadiosTemplateExecute(r GatewayAPIModifyConfigRadiosTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifyConfigRadiosTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/radios"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4663,142 +4143,6 @@ func (a *GatewayAPIService) ModifyConfigServicesExecute(r GatewayAPIModifyConfig
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GatewayAPIModifyConfigServicesTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	omadacId string
-	osgConfigServicesOpenApiVO *OsgConfigServicesOpenApiVO
-}
-
-func (r GatewayAPIModifyConfigServicesTemplateRequest) OsgConfigServicesOpenApiVO(osgConfigServicesOpenApiVO OsgConfigServicesOpenApiVO) GatewayAPIModifyConfigServicesTemplateRequest {
-	r.osgConfigServicesOpenApiVO = &osgConfigServicesOpenApiVO
-	return r
-}
-
-func (r GatewayAPIModifyConfigServicesTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifyConfigServicesTemplateExecute(r)
-}
-
-/*
-ModifyConfigServicesTemplate Modify gateway template services config
-
-Modify gateway template services config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param omadacId omadacId
- @return GatewayAPIModifyConfigServicesTemplateRequest
-*/
-func (a *GatewayAPIService) ModifyConfigServicesTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigServicesTemplateRequest {
-	return GatewayAPIModifyConfigServicesTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *GatewayAPIService) ModifyConfigServicesTemplateExecute(r GatewayAPIModifyConfigServicesTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifyConfigServicesTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/services"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.osgConfigServicesOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("osgConfigServicesOpenApiVO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.osgConfigServicesOpenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type GatewayAPIModifyConfigWirelessAdvancedRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
@@ -4935,142 +4279,6 @@ func (a *GatewayAPIService) ModifyConfigWirelessAdvancedExecute(r GatewayAPIModi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GatewayAPIModifyConfigWirelessAdvancedTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	omadacId string
-	osgConfigWirelessAdvancedOpenApiVO *OsgConfigWirelessAdvancedOpenApiVO
-}
-
-func (r GatewayAPIModifyConfigWirelessAdvancedTemplateRequest) OsgConfigWirelessAdvancedOpenApiVO(osgConfigWirelessAdvancedOpenApiVO OsgConfigWirelessAdvancedOpenApiVO) GatewayAPIModifyConfigWirelessAdvancedTemplateRequest {
-	r.osgConfigWirelessAdvancedOpenApiVO = &osgConfigWirelessAdvancedOpenApiVO
-	return r
-}
-
-func (r GatewayAPIModifyConfigWirelessAdvancedTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifyConfigWirelessAdvancedTemplateExecute(r)
-}
-
-/*
-ModifyConfigWirelessAdvancedTemplate Modify gateway template wireless advanced config
-
-Modify gateway template wireless advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param omadacId omadacId
- @return GatewayAPIModifyConfigWirelessAdvancedTemplateRequest
-*/
-func (a *GatewayAPIService) ModifyConfigWirelessAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigWirelessAdvancedTemplateRequest {
-	return GatewayAPIModifyConfigWirelessAdvancedTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *GatewayAPIService) ModifyConfigWirelessAdvancedTemplateExecute(r GatewayAPIModifyConfigWirelessAdvancedTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifyConfigWirelessAdvancedTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/wireless"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.osgConfigWirelessAdvancedOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("osgConfigWirelessAdvancedOpenApiVO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.osgConfigWirelessAdvancedOpenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type GatewayAPIModifyConfigWlansRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
@@ -5129,142 +4337,6 @@ func (a *GatewayAPIService) ModifyConfigWlansExecute(r GatewayAPIModifyConfigWla
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.osgConfigWlansOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("osgConfigWlansOpenApiVO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.osgConfigWlansOpenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type GatewayAPIModifyConfigWlansTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	omadacId string
-	osgConfigWlansOpenApiVO *OsgConfigWlansOpenApiVO
-}
-
-func (r GatewayAPIModifyConfigWlansTemplateRequest) OsgConfigWlansOpenApiVO(osgConfigWlansOpenApiVO OsgConfigWlansOpenApiVO) GatewayAPIModifyConfigWlansTemplateRequest {
-	r.osgConfigWlansOpenApiVO = &osgConfigWlansOpenApiVO
-	return r
-}
-
-func (r GatewayAPIModifyConfigWlansTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifyConfigWlansTemplateExecute(r)
-}
-
-/*
-ModifyConfigWlansTemplate Modify gateway template wlans config
-
-Modify gateway template wlans config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33221  -  The SSID to be edited does not exist.<br/>-33222  -  The SSID should contain 1-32 characters.<br/>-33223  -  The security key can only contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-39306  -  This WLAN group does not exist.<br/>-39307  -  Failed to add this AP to the WLAN group because this AP is not in the site of the WLAN group.<br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param omadacId omadacId
- @return GatewayAPIModifyConfigWlansTemplateRequest
-*/
-func (a *GatewayAPIService) ModifyConfigWlansTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayAPIModifyConfigWlansTemplateRequest {
-	return GatewayAPIModifyConfigWlansTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *GatewayAPIService) ModifyConfigWlansTemplateExecute(r GatewayAPIModifyConfigWlansTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifyConfigWlansTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5895,146 +4967,6 @@ func (a *GatewayAPIService) ModifyOsgConfigGeneralForMspExecute(r GatewayAPIModi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GatewayAPIModifyPortConfigRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	siteTemplateId string
-	deviceTemplateId string
-	port string
-	omadacId string
-	gatewayTemplatePortSettingConfig *GatewayTemplatePortSettingConfig
-}
-
-func (r GatewayAPIModifyPortConfigRequest) GatewayTemplatePortSettingConfig(gatewayTemplatePortSettingConfig GatewayTemplatePortSettingConfig) GatewayAPIModifyPortConfigRequest {
-	r.gatewayTemplatePortSettingConfig = &gatewayTemplatePortSettingConfig
-	return r
-}
-
-func (r GatewayAPIModifyPortConfigRequest) Execute() (*OperationResponseGatewayTemplatePortSettingConfig, *http.Response, error) {
-	return r.ApiService.ModifyPortConfigExecute(r)
-}
-
-/*
-ModifyPortConfig Modify gateway template port config
-
-Modify gateway template port config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39507  -  Gateway mirroring port reaches max limit.<br/>-39706  -  Please choose at least one port or LAG to be mirrored.<br/>-39718  -  Mirrored ports contain invalid port.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Device Template ID
- @param port Gateway port number
- @param omadacId omadacId
- @return GatewayAPIModifyPortConfigRequest
-*/
-func (a *GatewayAPIService) ModifyPortConfig(ctx context.Context, siteTemplateId string, deviceTemplateId string, port string, omadacId string) GatewayAPIModifyPortConfigRequest {
-	return GatewayAPIModifyPortConfigRequest{
-		ApiService: a,
-		ctx: ctx,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		port: port,
-		omadacId: omadacId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseGatewayTemplatePortSettingConfig
-func (a *GatewayAPIService) ModifyPortConfigExecute(r GatewayAPIModifyPortConfigRequest) (*OperationResponseGatewayTemplatePortSettingConfig, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGatewayTemplatePortSettingConfig
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifyPortConfig")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/{port}/config"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"port"+"}", url.PathEscape(parameterValueToString(r.port, "port")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.gatewayTemplatePortSettingConfig == nil {
-		return localVarReturnValue, nil, reportError("gatewayTemplatePortSettingConfig is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.gatewayTemplatePortSettingConfig
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type GatewayAPIModifyPortConfig1Request struct {
 	ctx context.Context
 	ApiService GatewayAPI
@@ -6451,146 +5383,6 @@ func (a *GatewayAPIService) ModifySsidBasicConfigExecute(r GatewayAPIModifySsidB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GatewayAPIModifySsidBasicConfigTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	omadacId string
-	siteTemplateId string
-	deviceTemplateId string
-	ssidId string
-	updateSsidBasicConfigForIpptOpenApiVO *UpdateSsidBasicConfigForIpptOpenApiVO
-}
-
-func (r GatewayAPIModifySsidBasicConfigTemplateRequest) UpdateSsidBasicConfigForIpptOpenApiVO(updateSsidBasicConfigForIpptOpenApiVO UpdateSsidBasicConfigForIpptOpenApiVO) GatewayAPIModifySsidBasicConfigTemplateRequest {
-	r.updateSsidBasicConfigForIpptOpenApiVO = &updateSsidBasicConfigForIpptOpenApiVO
-	return r
-}
-
-func (r GatewayAPIModifySsidBasicConfigTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifySsidBasicConfigTemplateExecute(r)
-}
-
-/*
-ModifySsidBasicConfigTemplate modify SSID basic config
-
-modify SSID basic config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33235  -  PPSK without RADIUS do not support WPA Mode with WPA3-SAE.<br/>-33238  -  The number of SSIDs on %band% has reached the limit. At most 8 SSIDs can be created on each band.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param omadacId Omada ID
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Gateway MAC address, like AA-BB-CC-DD-EE-FF
- @param ssidId Device Template ID
- @return GatewayAPIModifySsidBasicConfigTemplateRequest
-*/
-func (a *GatewayAPIService) ModifySsidBasicConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, ssidId string) GatewayAPIModifySsidBasicConfigTemplateRequest {
-	return GatewayAPIModifySsidBasicConfigTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		omadacId: omadacId,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		ssidId: ssidId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *GatewayAPIService) ModifySsidBasicConfigTemplateExecute(r GatewayAPIModifySsidBasicConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifySsidBasicConfigTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid/{ssidId}/basic-config"
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.updateSsidBasicConfigForIpptOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("updateSsidBasicConfigForIpptOpenApiVO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.updateSsidBasicConfigForIpptOpenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type GatewayAPIModifySsidMacFilterConfigRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
@@ -6652,146 +5444,6 @@ func (a *GatewayAPIService) ModifySsidMacFilterConfigExecute(r GatewayAPIModifyS
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.updateSsidMacFilterOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("updateSsidMacFilterOpenApiVO is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"*/*"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.updateSsidMacFilterOpenApiVO
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["AccessToken"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type GatewayAPIModifySsidMacFilterConfigTemplateRequest struct {
-	ctx context.Context
-	ApiService GatewayAPI
-	omadacId string
-	siteTemplateId string
-	deviceTemplateId string
-	ssidId string
-	updateSsidMacFilterOpenApiVO *UpdateSsidMacFilterOpenApiVO
-}
-
-func (r GatewayAPIModifySsidMacFilterConfigTemplateRequest) UpdateSsidMacFilterOpenApiVO(updateSsidMacFilterOpenApiVO UpdateSsidMacFilterOpenApiVO) GatewayAPIModifySsidMacFilterConfigTemplateRequest {
-	r.updateSsidMacFilterOpenApiVO = &updateSsidMacFilterOpenApiVO
-	return r
-}
-
-func (r GatewayAPIModifySsidMacFilterConfigTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifySsidMacFilterConfigTemplateExecute(r)
-}
-
-/*
-ModifySsidMacFilterConfigTemplate Update SSID mac filter config
-
-Update SSID MAC filter config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param omadacId Omada ID
- @param siteTemplateId Site Template ID
- @param deviceTemplateId Gateway MAC address, like AA-BB-CC-DD-EE-FF
- @param ssidId Device Template ID
- @return GatewayAPIModifySsidMacFilterConfigTemplateRequest
-*/
-func (a *GatewayAPIService) ModifySsidMacFilterConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, ssidId string) GatewayAPIModifySsidMacFilterConfigTemplateRequest {
-	return GatewayAPIModifySsidMacFilterConfigTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
-		omadacId: omadacId,
-		siteTemplateId: siteTemplateId,
-		deviceTemplateId: deviceTemplateId,
-		ssidId: ssidId,
-	}
-}
-
-// Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *GatewayAPIService) ModifySsidMacFilterConfigTemplateExecute(r GatewayAPIModifySsidMacFilterConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayAPIService.ModifySsidMacFilterConfigTemplate")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid/{ssidId}/mac-filter"
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7274,11 +5926,11 @@ type GatewayAPIUploadIspFileRequest struct {
 	omadacId string
 	siteId string
 	gatewayMac string
-	uploadCertificateRequest *UploadCertificateRequest
+	uploadSSLKeyRequest *UploadSSLKeyRequest
 }
 
-func (r GatewayAPIUploadIspFileRequest) UploadCertificateRequest(uploadCertificateRequest UploadCertificateRequest) GatewayAPIUploadIspFileRequest {
-	r.uploadCertificateRequest = &uploadCertificateRequest
+func (r GatewayAPIUploadIspFileRequest) UploadSSLKeyRequest(uploadSSLKeyRequest UploadSSLKeyRequest) GatewayAPIUploadIspFileRequest {
+	r.uploadSSLKeyRequest = &uploadSSLKeyRequest
 	return r
 }
 
@@ -7349,7 +6001,7 @@ func (a *GatewayAPIService) UploadIspFileExecute(r GatewayAPIUploadIspFileReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.uploadCertificateRequest
+	localVarPostBody = r.uploadSSLKeyRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

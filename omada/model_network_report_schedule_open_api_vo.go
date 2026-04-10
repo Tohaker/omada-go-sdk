@@ -27,7 +27,7 @@ type NetworkReportScheduleOpenApiVO struct {
 	DayOfMonth *int32 `json:"dayOfMonth,omitempty"`
 	// If timing type is weekly, enter and only enter [dayOfWeek].The value ranges from 0 to 6.('0' indicate Sunday)
 	DayOfWeek *int32 `json:"dayOfWeek,omitempty"`
-	// Email List. Example:[\"11@qq.com\",\"11@qq.com\"]
+	// Email List. Example:[\"11@qq.com\",\"11@qq.com\"]. If 'enable' is false, the parameter must be [].
 	EmailList []string `json:"emailList"`
 	// Whether to enable periodic report generation and sending.
 	Enable bool `json:"enable"`

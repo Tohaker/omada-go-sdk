@@ -176,6 +176,22 @@ func Test_omada_VoucherAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VoucherAPIService GetAllTimeVoucherSummaryForGroup", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var groupId string
+
+		resp, httpRes, err := apiClient.VoucherAPI.GetAllTimeVoucherSummaryForGroup(context.Background(), omadacId, siteId, groupId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VoucherAPIService GetGridVoucherGroups", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -252,6 +268,22 @@ func Test_omada_VoucherAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VoucherAPIService GetVoucherDistributionByDurationForGroup", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var groupId string
+
+		resp, httpRes, err := apiClient.VoucherAPI.GetVoucherDistributionByDurationForGroup(context.Background(), omadacId, siteId, groupId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VoucherAPIService GetVoucherDistributionByPrice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -260,6 +292,22 @@ func Test_omada_VoucherAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.VoucherAPI.GetVoucherDistributionByPrice(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VoucherAPIService GetVoucherDistributionByPriceForGroup", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var groupId string
+
+		resp, httpRes, err := apiClient.VoucherAPI.GetVoucherDistributionByPriceForGroup(context.Background(), omadacId, siteId, groupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -283,6 +331,21 @@ func Test_omada_VoucherAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test VoucherAPIService GetVoucherGroupOptions", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.VoucherAPI.GetVoucherGroupOptions(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VoucherAPIService GetVoucherHistoryStatistics", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -291,6 +354,22 @@ func Test_omada_VoucherAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.VoucherAPI.GetVoucherHistoryStatistics(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VoucherAPIService GetVoucherHistoryStatisticsForGroup", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var groupId string
+
+		resp, httpRes, err := apiClient.VoucherAPI.GetVoucherHistoryStatisticsForGroup(context.Background(), omadacId, siteId, groupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

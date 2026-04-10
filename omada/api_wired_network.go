@@ -166,8 +166,8 @@ type WiredNetworkAPI interface {
 	CheckWanLanStatus1(ctx context.Context, omadacId string, siteId string) WiredNetworkAPICheckWanLanStatus1Request
 
 	// CheckWanLanStatus1Execute executes the request
-	//  @return CheckWanLanStatusOpenApiVO
-	CheckWanLanStatus1Execute(r WiredNetworkAPICheckWanLanStatus1Request) (*CheckWanLanStatusOpenApiVO, *http.Response, error)
+	//  @return OperationResponseCheckWanLanStatusOpenApiVO
+	CheckWanLanStatus1Execute(r WiredNetworkAPICheckWanLanStatus1Request) (*OperationResponseCheckWanLanStatusOpenApiVO, *http.Response, error)
 
 	/*
 	ConfirmCreateVlanNetwork Confirm create lan network
@@ -205,7 +205,7 @@ type WiredNetworkAPI interface {
 	/*
 	CreateLanDns Create a LAN DNS rule
 
-	Create a LAN DNS rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.
+	Create a LAN DNS rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.<br/>-35313  -  The gateway does not support configuring TTL in LAN DNS.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -221,7 +221,7 @@ type WiredNetworkAPI interface {
 	/*
 	CreateLanNetwork Create LAN network
 
-	Create lan networkThis interface has been deprecated. Please use the following interface instead: Confirm create lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33506  -  This Profile name already exists.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33546  -  The number of networks has reached the limit of 4094.<br/>-33547  -  The number of VLANs has reached the limit of gateway.<br/>-33548  -  The number of VLANs has reached the limit of switch.
+	Create lan network. This interface has been deprecated. Please use the following interface instead: Confirm create lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33506  -  This Profile name already exists.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33546  -  The number of networks has reached the limit of 4094.<br/>-33547  -  The number of VLANs has reached the limit of gateway.<br/>-33548  -  The number of VLANs has reached the limit of switch.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -240,18 +240,21 @@ type WiredNetworkAPI interface {
 	/*
 	CreateLanNetworkV2 Create LAN network
 
-	Create lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33506  -  This Profile name already exists.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33546  -  The number of networks has reached the limit of 4094.<br/>-33547  -  The number of VLANs has reached the limit of gateway.<br/>-33548  -  The number of VLANs has reached the limit of switch.<br/>-33580  -  The device does not support multiple VLANs.<br/>-33581  -  The device does not support RA.<br/>-33582  -  The device does not support custom DHCP Options.<br/>-33583  -  The device does not support DHCP Next Server.<br/>-33584  -  The device does not support ARP Detection.
+	Create lan network. This interface has been deprecated. Please use the following interface instead: Confirm create lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33506  -  This Profile name already exists.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33546  -  The number of networks has reached the limit of 4094.<br/>-33547  -  The number of VLANs has reached the limit of gateway.<br/>-33548  -  The number of VLANs has reached the limit of switch.<br/>-33580  -  The device does not support multiple VLANs.<br/>-33581  -  The device does not support RA.<br/>-33582  -  The device does not support custom DHCP Options.<br/>-33583  -  The device does not support DHCP Next Server.<br/>-33584  -  The device does not support ARP Detection.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WiredNetworkAPICreateLanNetworkV2Request
+
+	Deprecated
 	*/
 	CreateLanNetworkV2(ctx context.Context, omadacId string, siteId string) WiredNetworkAPICreateLanNetworkV2Request
 
 	// CreateLanNetworkV2Execute executes the request
-	//  @return ResponseIdVO
-	CreateLanNetworkV2Execute(r WiredNetworkAPICreateLanNetworkV2Request) (*ResponseIdVO, *http.Response, error)
+	//  @return OperationResponseResponseIdVO
+	// Deprecated
+	CreateLanNetworkV2Execute(r WiredNetworkAPICreateLanNetworkV2Request) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
 	CreateLanProfile Create new LAN profile
@@ -288,7 +291,7 @@ type WiredNetworkAPI interface {
 	/*
 	CreateVirtualWan Create virtual WAN
 
-	Create virtual WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44701  -  This VLAN ID is already used by the Virtual WAN interface.<br/>-44702  -  Duplicate names of the virtual WAN.<br/>-44703  -  When no gateway is adopted, at most 3 virtual WAN ports can be added.<br/>-44704  -  The number of enabled WAN ports and virtual WAN ports cannot exceed the number of WAN ports plus 3.<br/>-44705  -  At most 3 virtual WAN ports can be mapped to each WAN port.<br/>-44706  -  DSL setting cannot be null when DSL WAN is selected.<br/>-44707  -  The gateway does not support MssClamping in Virtual WAN.<br/>-44708  -  The gateway does not support DHCP Options in Virtual WAN.<br/>-44709  -  The gateway does not support PppoeMru in Virtual WAN.<br/>-44710  -  The gateway does not support DslMer in Virtual WAN.<br/>-44711  -  The gateway does not support Virtual WAN.<br/>-44712  -  The gateway only support DSL WAN.
+	Create virtual WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-44701  -  This VLAN ID is already used by the Virtual WAN interface.<br/>-44702  -  Duplicate names of the virtual WAN.<br/>-44703  -  When no gateway is adopted, at most 3 virtual WAN ports can be added.<br/>-44704  -  The number of enabled WAN ports and virtual WAN ports cannot exceed the number of WAN ports plus 3.<br/>-44705  -  At most 3 virtual WAN ports can be mapped to each WAN port.<br/>-44706  -  DSL setting cannot be null when DSL WAN is selected.<br/>-44707  -  The gateway does not support MssClamping in Virtual WAN.<br/>-44708  -  The gateway does not support DHCP Options in Virtual WAN.<br/>-44709  -  The gateway does not support PppoeMru in Virtual WAN.<br/>-44710  -  The gateway does not support DslMer in Virtual WAN.<br/>-44711  -  The gateway does not support Virtual WAN.<br/>-44712  -  The gateway only support DSL WAN.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -431,8 +434,8 @@ type WiredNetworkAPI interface {
 	GetAllLanNetworks(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIGetAllLanNetworksRequest
 
 	// GetAllLanNetworksExecute executes the request
-	//  @return []LanNetworkVO
-	GetAllLanNetworksExecute(r WiredNetworkAPIGetAllLanNetworksRequest) ([]LanNetworkVO, *http.Response, error)
+	//  @return OperationResponseListLanNetworkVO
+	GetAllLanNetworksExecute(r WiredNetworkAPIGetAllLanNetworksRequest) (*OperationResponseListLanNetworkVO, *http.Response, error)
 
 	/*
 	GetAllValidVlansInSiteForSwitchOuiBasedVlan1 Get valid vlanList for switch oui based vlan
@@ -584,6 +587,22 @@ type WiredNetworkAPI interface {
 	GetDeliveringProcessWithoutConfigExecute(r WiredNetworkAPIGetDeliveringProcessWithoutConfigRequest) (*OperationResponseVlanNetworkDeliverBriefDataVO, *http.Response, error)
 
 	/*
+	GetDevicePortSupportVlansInfo Get device port info on whether support any of current vlans
+
+	Get device port info on whether support any of current vlans<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WiredNetworkAPIGetDevicePortSupportVlansInfoRequest
+	*/
+	GetDevicePortSupportVlansInfo(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIGetDevicePortSupportVlansInfoRequest
+
+	// GetDevicePortSupportVlansInfoExecute executes the request
+	//  @return OperationResponseVlanNetworkDeviceSupportInfoVO
+	GetDevicePortSupportVlansInfoExecute(r WiredNetworkAPIGetDevicePortSupportVlansInfoRequest) (*OperationResponseVlanNetworkDeviceSupportInfoVO, *http.Response, error)
+
+	/*
 	GetDhcpServerDevCapForNetwork Get the capabilities of the DHCP server under the network
 
 	Get the capabilities of the DHCP server under the network.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
@@ -618,6 +637,22 @@ type WiredNetworkAPI interface {
 	GetDhcpServerInfoForNetworkExecute(r WiredNetworkAPIGetDhcpServerInfoForNetworkRequest) (*OperationResponseDhcpServerForVlanVO, *http.Response, error)
 
 	/*
+	GetGridAllClients1 Get client list
+
+	Get all clients.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WiredNetworkAPIGetGridAllClients1Request
+	*/
+	GetGridAllClients1(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIGetGridAllClients1Request
+
+	// GetGridAllClients1Execute executes the request
+	//  @return OperationResponseGridVONetworkClientAllOpenApiVO
+	GetGridAllClients1Execute(r WiredNetworkAPIGetGridAllClients1Request) (*OperationResponseGridVONetworkClientAllOpenApiVO, *http.Response, error)
+
+	/*
 	GetGridLanDns Get LAN DNS list
 
 	Get LAN DNS list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
@@ -630,8 +665,8 @@ type WiredNetworkAPI interface {
 	GetGridLanDns(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIGetGridLanDnsRequest
 
 	// GetGridLanDnsExecute executes the request
-	//  @return OperationResponseGridVOLanDnsOpenApiVO
-	GetGridLanDnsExecute(r WiredNetworkAPIGetGridLanDnsRequest) (*OperationResponseGridVOLanDnsOpenApiVO, *http.Response, error)
+	//  @return OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO
+	GetGridLanDnsExecute(r WiredNetworkAPIGetGridLanDnsRequest) (*OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO, *http.Response, error)
 
 	/*
 	GetGridSupportVlanNetworkDevicesBySite Get devices list that can be dhcp server
@@ -1115,6 +1150,22 @@ type WiredNetworkAPI interface {
 	GetSimCardIspScanResultExecute(r WiredNetworkAPIGetSimCardIspScanResultRequest) (*OperationResponseIspScanResultOpenApiVO, *http.Response, error)
 
 	/*
+	GetSpeedTestV2Setting Get SpeedTest Setting
+
+	Get SpeedTest Setting.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WiredNetworkAPIGetSpeedTestV2SettingRequest
+	*/
+	GetSpeedTestV2Setting(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIGetSpeedTestV2SettingRequest
+
+	// GetSpeedTestV2SettingExecute executes the request
+	//  @return OperationResponseSpeedTestV2SettingVO
+	GetSpeedTestV2SettingExecute(r WiredNetworkAPIGetSpeedTestV2SettingRequest) (*OperationResponseSpeedTestV2SettingVO, *http.Response, error)
+
+	/*
 	GetSupportInfo Get supported gateway model list for pre-configuration
 
 	Get ID and name of supported gateway models for pre-configuration.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
@@ -1217,6 +1268,24 @@ type WiredNetworkAPI interface {
 	// GetVlanNetworkAffectedSsid1Execute executes the request
 	//  @return OperationResponseGridVOVlanNetworkAffectingSsidVO
 	GetVlanNetworkAffectedSsid1Execute(r WiredNetworkAPIGetVlanNetworkAffectedSsid1Request) (*OperationResponseGridVOVlanNetworkAffectingSsidVO, *http.Response, error)
+
+	/*
+	GetVlanNetworkDevicePortSupportVlanInfo Get device port info on whether support current vlan
+
+	Get device port info on whether support current vlan<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param networkId Network ID
+	@param vlan Vlan ID
+	@return WiredNetworkAPIGetVlanNetworkDevicePortSupportVlanInfoRequest
+	*/
+	GetVlanNetworkDevicePortSupportVlanInfo(ctx context.Context, omadacId string, siteId string, networkId string, vlan string) WiredNetworkAPIGetVlanNetworkDevicePortSupportVlanInfoRequest
+
+	// GetVlanNetworkDevicePortSupportVlanInfoExecute executes the request
+	//  @return OperationResponseVlanNetworkDeviceSupportInfoVO
+	GetVlanNetworkDevicePortSupportVlanInfoExecute(r WiredNetworkAPIGetVlanNetworkDevicePortSupportVlanInfoRequest) (*OperationResponseVlanNetworkDeviceSupportInfoVO, *http.Response, error)
 
 	/*
 	GetWanPortsConfig Get internet ports config
@@ -1335,7 +1404,7 @@ type WiredNetworkAPI interface {
 	/*
 	ModifyLanDns Modify an existing LAN DNS rule
 
-	Modify an existing LAN DNS rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.
+	Modify an existing LAN DNS rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.<br/>-35313  -  The gateway does not support configuring TTL in LAN DNS.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1352,7 +1421,7 @@ type WiredNetworkAPI interface {
 	/*
 	ModifyLanNetwork Modify LAN network
 
-	Modify LAN networkThis interface has been deprecated. Please use the following interface instead: Confirm modify lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33503  -  This network does not exist.<br/>-33506  -  This Profile name already exists.<br/>-33527  -  The interface of Default LAN cannot be modified.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33545  -  The VLAN Type of Default LAN cannot be modified.<br/>-34235  -  The VLAN cannot be set to 1 since it is used in OUI Based VLAN rules which do not allow VLAN 1.
+	Modify LAN network. This interface has been deprecated. Please use the following interface instead: Confirm modify lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33503  -  This network does not exist.<br/>-33506  -  This Profile name already exists.<br/>-33527  -  The interface of Default LAN cannot be modified.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33545  -  The VLAN Type of Default LAN cannot be modified.<br/>-34235  -  The VLAN cannot be set to 1 since it is used in OUI Based VLAN rules which do not allow VLAN 1.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1437,9 +1506,25 @@ type WiredNetworkAPI interface {
 	ModifyOswLanProfileExecute(r WiredNetworkAPIModifyOswLanProfileRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	ModifySpeedTestV2Setting Modify SpeedTest Setting
+
+	Modify SpeedTest Setting.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WiredNetworkAPIModifySpeedTestV2SettingRequest
+	*/
+	ModifySpeedTestV2Setting(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIModifySpeedTestV2SettingRequest
+
+	// ModifySpeedTestV2SettingExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifySpeedTestV2SettingExecute(r WiredNetworkAPIModifySpeedTestV2SettingRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	ModifyVirtualWan Modify virtual WAN
 
-	Modify virtual WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44700  -  This virtual WAN does not exist.<br/>-44701  -  This VLAN ID is already used by the Virtual WAN interface.<br/>-44702  -  Duplicate names of the virtual WAN.<br/>-44703  -  When no gateway is adopted, at most 3 virtual WAN ports can be added.<br/>-44704  -  The number of enabled WAN ports and virtual WAN ports cannot exceed the number of WAN ports plus 3.<br/>-44705  -  At most 3 virtual WAN ports can be mapped to each WAN port.<br/>-44706  -  DSL setting cannot be null when DSL WAN is selected.<br/>-44707  -  The gateway does not support MssClamping in Virtual WAN.<br/>-44708  -  The gateway does not support DHCP Options in Virtual WAN.<br/>-44709  -  The gateway does not support PppoeMru in Virtual WAN.<br/>-44710  -  The gateway does not support DslMer in Virtual WAN.<br/>-44711  -  The gateway does not support Virtual WAN.<br/>-44712  -  The gateway only support DSL WAN.
+	Modify virtual WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-44700  -  This virtual WAN does not exist.<br/>-44701  -  This VLAN ID is already used by the Virtual WAN interface.<br/>-44702  -  Duplicate names of the virtual WAN.<br/>-44703  -  When no gateway is adopted, at most 3 virtual WAN ports can be added.<br/>-44704  -  The number of enabled WAN ports and virtual WAN ports cannot exceed the number of WAN ports plus 3.<br/>-44705  -  At most 3 virtual WAN ports can be mapped to each WAN port.<br/>-44706  -  DSL setting cannot be null when DSL WAN is selected.<br/>-44707  -  The gateway does not support MssClamping in Virtual WAN.<br/>-44708  -  The gateway does not support DHCP Options in Virtual WAN.<br/>-44709  -  The gateway does not support PppoeMru in Virtual WAN.<br/>-44710  -  The gateway does not support DslMer in Virtual WAN.<br/>-44711  -  The gateway does not support Virtual WAN.<br/>-44712  -  The gateway only support DSL WAN.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1456,7 +1541,7 @@ type WiredNetworkAPI interface {
 	/*
 	ModifyVirtualWanStatus Modify virtual WAN status
 
-	Modify virtual WAN status.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44700  -  This virtual WAN does not exist.
+	Modify virtual WAN status.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-44700  -  This virtual WAN does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1505,7 +1590,7 @@ type WiredNetworkAPI interface {
 	/*
 	ModifyWanPortsConfig Modify internet ports config
 
-	Modify internet ports config. Make sure the parameter[preConfiguration] is true and all wan ports config is include, so the port configuration can take effect after you adopt a gateway.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33400  -  Current site has no WAN.<br/>-33413  -  The IP range you set for the WAN port conflicts with the IP range of LAN networks.<br/>-33414  -  The MAC address is not available because it has been used for another port.<br/>-33416  -  The IP range you set for the WAN port conflicts with the IP range of the other WAN port.<br/>-33426  -  The Secondary DNS cannot be the same as the Primary DNS. Please enter another IP address.<br/>-33427  -  The IP you set for DNS Server conflicts with the IP range of the LAN network.<br/>-33429  -  There are duplicate IPs in the WAN alias IPs and static IPs.<br/>-33431  -  VLAN ID ranges from 1 to 4086.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33531  -  This WAN port has been used by other networks.<br/>-34212  -  The WAN port is used for one-to-one NAT and can only use the Static IP type.
+	Modify internet ports config. Make sure the parameter[preConfiguration] is true and all wan ports config is include, so the port configuration can take effect after you adopt a gateway.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33400  -  Current site has no WAN.<br/>-33413  -  The IP range you set for the WAN port conflicts with the IP range of LAN networks.<br/>-33414  -  The MAC address is not available because it has been used for another port.<br/>-33416  -  The IP range you set for the WAN port conflicts with the IP range of the other WAN port.<br/>-33426  -  The Secondary DNS cannot be the same as the Primary DNS. Please enter another IP address.<br/>-33427  -  The IP you set for DNS Server conflicts with the IP range of the LAN network.<br/>-33429  -  There are duplicate IPs in the WAN alias IPs and static IPs.<br/>-33431  -  VLAN ID ranges from 1 to 4094.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33531  -  This WAN port has been used by other networks.<br/>-34212  -  The WAN port is used for one-to-one NAT and can only use the Static IP type.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1535,6 +1620,22 @@ type WiredNetworkAPI interface {
 	NetworkMappingExecute(r WiredNetworkAPINetworkMappingRequest) (*OperationResponseInternetOpenApiVO, *http.Response, error)
 
 	/*
+	ObtainWanUnsupportedFunction Get linkage functions that are not supported by WAN
+
+	Get linkage functions that are not supported by WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WiredNetworkAPIObtainWanUnsupportedFunctionRequest
+	*/
+	ObtainWanUnsupportedFunction(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIObtainWanUnsupportedFunctionRequest
+
+	// ObtainWanUnsupportedFunctionExecute executes the request
+	//  @return OperationResponseWanUnsupportedFunctionOpenApiVO
+	ObtainWanUnsupportedFunctionExecute(r WiredNetworkAPIObtainWanUnsupportedFunctionRequest) (*OperationResponseWanUnsupportedFunctionOpenApiVO, *http.Response, error)
+
+	/*
 	SpeedTest SpeedTest
 
 	SpeedTest.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only
@@ -1551,7 +1652,7 @@ type WiredNetworkAPI interface {
 	SpeedTestExecute(r WiredNetworkAPISpeedTestRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	StartBandScan BandScan
+	StartBandScan Start Band scan
 
 	Start band scan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-33439  -  Current site has already had a band scan progress.
 
@@ -1567,7 +1668,7 @@ type WiredNetworkAPI interface {
 	StartBandScanExecute(r WiredNetworkAPIStartBandScanRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	StartIspScan IspScan
+	StartIspScan Start Isp scan
 
 	Start ISP scan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-33439  -  Current site has already had a band scan progress.
 
@@ -2661,7 +2762,7 @@ type WiredNetworkAPICheckWanLanStatus1Request struct {
 	siteId string
 }
 
-func (r WiredNetworkAPICheckWanLanStatus1Request) Execute() (*CheckWanLanStatusOpenApiVO, *http.Response, error) {
+func (r WiredNetworkAPICheckWanLanStatus1Request) Execute() (*OperationResponseCheckWanLanStatusOpenApiVO, *http.Response, error) {
 	return r.ApiService.CheckWanLanStatus1Execute(r)
 }
 
@@ -2685,13 +2786,13 @@ func (a *WiredNetworkAPIService) CheckWanLanStatus1(ctx context.Context, omadacI
 }
 
 // Execute executes the request
-//  @return CheckWanLanStatusOpenApiVO
-func (a *WiredNetworkAPIService) CheckWanLanStatus1Execute(r WiredNetworkAPICheckWanLanStatus1Request) (*CheckWanLanStatusOpenApiVO, *http.Response, error) {
+//  @return OperationResponseCheckWanLanStatusOpenApiVO
+func (a *WiredNetworkAPIService) CheckWanLanStatus1Execute(r WiredNetworkAPICheckWanLanStatus1Request) (*OperationResponseCheckWanLanStatusOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CheckWanLanStatusOpenApiVO
+		localVarReturnValue  *OperationResponseCheckWanLanStatusOpenApiVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.CheckWanLanStatus1")
@@ -3063,7 +3164,7 @@ func (r WiredNetworkAPICreateLanDnsRequest) Execute() (*OperationResponseWithout
 /*
 CreateLanDns Create a LAN DNS rule
 
-Create a LAN DNS rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.
+Create a LAN DNS rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.<br/>-35313  -  The gateway does not support configuring TTL in LAN DNS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3195,7 +3296,7 @@ func (r WiredNetworkAPICreateLanNetworkRequest) Execute() (*ResponseIdVO, *http.
 /*
 CreateLanNetwork Create LAN network
 
-Create lan networkThis interface has been deprecated. Please use the following interface instead: Confirm create lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33506  -  This Profile name already exists.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33546  -  The number of networks has reached the limit of 4094.<br/>-33547  -  The number of VLANs has reached the limit of gateway.<br/>-33548  -  The number of VLANs has reached the limit of switch.
+Create lan network. This interface has been deprecated. Please use the following interface instead: Confirm create lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33506  -  This Profile name already exists.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33546  -  The number of networks has reached the limit of 4094.<br/>-33547  -  The number of VLANs has reached the limit of gateway.<br/>-33548  -  The number of VLANs has reached the limit of switch.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3323,19 +3424,21 @@ func (r WiredNetworkAPICreateLanNetworkV2Request) LanNetworkOpenApiV2VO(lanNetwo
 	return r
 }
 
-func (r WiredNetworkAPICreateLanNetworkV2Request) Execute() (*ResponseIdVO, *http.Response, error) {
+func (r WiredNetworkAPICreateLanNetworkV2Request) Execute() (*OperationResponseResponseIdVO, *http.Response, error) {
 	return r.ApiService.CreateLanNetworkV2Execute(r)
 }
 
 /*
 CreateLanNetworkV2 Create LAN network
 
-Create lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33506  -  This Profile name already exists.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33546  -  The number of networks has reached the limit of 4094.<br/>-33547  -  The number of VLANs has reached the limit of gateway.<br/>-33548  -  The number of VLANs has reached the limit of switch.<br/>-33580  -  The device does not support multiple VLANs.<br/>-33581  -  The device does not support RA.<br/>-33582  -  The device does not support custom DHCP Options.<br/>-33583  -  The device does not support DHCP Next Server.<br/>-33584  -  The device does not support ARP Detection.
+Create lan network. This interface has been deprecated. Please use the following interface instead: Confirm create lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33506  -  This Profile name already exists.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33546  -  The number of networks has reached the limit of 4094.<br/>-33547  -  The number of VLANs has reached the limit of gateway.<br/>-33548  -  The number of VLANs has reached the limit of switch.<br/>-33580  -  The device does not support multiple VLANs.<br/>-33581  -  The device does not support RA.<br/>-33582  -  The device does not support custom DHCP Options.<br/>-33583  -  The device does not support DHCP Next Server.<br/>-33584  -  The device does not support ARP Detection.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return WiredNetworkAPICreateLanNetworkV2Request
+
+Deprecated
 */
 func (a *WiredNetworkAPIService) CreateLanNetworkV2(ctx context.Context, omadacId string, siteId string) WiredNetworkAPICreateLanNetworkV2Request {
 	return WiredNetworkAPICreateLanNetworkV2Request{
@@ -3347,13 +3450,14 @@ func (a *WiredNetworkAPIService) CreateLanNetworkV2(ctx context.Context, omadacI
 }
 
 // Execute executes the request
-//  @return ResponseIdVO
-func (a *WiredNetworkAPIService) CreateLanNetworkV2Execute(r WiredNetworkAPICreateLanNetworkV2Request) (*ResponseIdVO, *http.Response, error) {
+//  @return OperationResponseResponseIdVO
+// Deprecated
+func (a *WiredNetworkAPIService) CreateLanNetworkV2Execute(r WiredNetworkAPICreateLanNetworkV2Request) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ResponseIdVO
+		localVarReturnValue  *OperationResponseResponseIdVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.CreateLanNetworkV2")
@@ -3726,7 +3830,7 @@ func (r WiredNetworkAPICreateVirtualWanRequest) Execute() (*OperationResponseWit
 /*
 CreateVirtualWan Create virtual WAN
 
-Create virtual WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44701  -  This VLAN ID is already used by the Virtual WAN interface.<br/>-44702  -  Duplicate names of the virtual WAN.<br/>-44703  -  When no gateway is adopted, at most 3 virtual WAN ports can be added.<br/>-44704  -  The number of enabled WAN ports and virtual WAN ports cannot exceed the number of WAN ports plus 3.<br/>-44705  -  At most 3 virtual WAN ports can be mapped to each WAN port.<br/>-44706  -  DSL setting cannot be null when DSL WAN is selected.<br/>-44707  -  The gateway does not support MssClamping in Virtual WAN.<br/>-44708  -  The gateway does not support DHCP Options in Virtual WAN.<br/>-44709  -  The gateway does not support PppoeMru in Virtual WAN.<br/>-44710  -  The gateway does not support DslMer in Virtual WAN.<br/>-44711  -  The gateway does not support Virtual WAN.<br/>-44712  -  The gateway only support DSL WAN.
+Create virtual WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-44701  -  This VLAN ID is already used by the Virtual WAN interface.<br/>-44702  -  Duplicate names of the virtual WAN.<br/>-44703  -  When no gateway is adopted, at most 3 virtual WAN ports can be added.<br/>-44704  -  The number of enabled WAN ports and virtual WAN ports cannot exceed the number of WAN ports plus 3.<br/>-44705  -  At most 3 virtual WAN ports can be mapped to each WAN port.<br/>-44706  -  DSL setting cannot be null when DSL WAN is selected.<br/>-44707  -  The gateway does not support MssClamping in Virtual WAN.<br/>-44708  -  The gateway does not support DHCP Options in Virtual WAN.<br/>-44709  -  The gateway does not support PppoeMru in Virtual WAN.<br/>-44710  -  The gateway does not support DslMer in Virtual WAN.<br/>-44711  -  The gateway does not support Virtual WAN.<br/>-44712  -  The gateway only support DSL WAN.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4743,7 +4847,7 @@ type WiredNetworkAPIGetAllLanNetworksRequest struct {
 	siteId string
 }
 
-func (r WiredNetworkAPIGetAllLanNetworksRequest) Execute() ([]LanNetworkVO, *http.Response, error) {
+func (r WiredNetworkAPIGetAllLanNetworksRequest) Execute() (*OperationResponseListLanNetworkVO, *http.Response, error) {
 	return r.ApiService.GetAllLanNetworksExecute(r)
 }
 
@@ -4767,13 +4871,13 @@ func (a *WiredNetworkAPIService) GetAllLanNetworks(ctx context.Context, omadacId
 }
 
 // Execute executes the request
-//  @return []LanNetworkVO
-func (a *WiredNetworkAPIService) GetAllLanNetworksExecute(r WiredNetworkAPIGetAllLanNetworksRequest) ([]LanNetworkVO, *http.Response, error) {
+//  @return OperationResponseListLanNetworkVO
+func (a *WiredNetworkAPIService) GetAllLanNetworksExecute(r WiredNetworkAPIGetAllLanNetworksRequest) (*OperationResponseListLanNetworkVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []LanNetworkVO
+		localVarReturnValue  *OperationResponseListLanNetworkVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.GetAllLanNetworks")
@@ -5533,7 +5637,7 @@ type WiredNetworkAPIGetAvailableWanPorts1Request struct {
 	function *int32
 }
 
-// function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3:IGMP_PROXY, 4: VIRTUAL_WAN
+// function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3: IGMP_PROXY, 4: VIRTUAL_WAN, 5: PORT_FROWARDING, 6: OTONAT, 7: BANDWIDTH_CONTROL, 8: STATIC_ROUTING, 9: POLICY_ROUTING, 10: VPN, 11: SSL_VPN, 12: DDNS, 13: UPNP, 14: MLD, 15: LAN
 func (r WiredNetworkAPIGetAvailableWanPorts1Request) Function(function int32) WiredNetworkAPIGetAvailableWanPorts1Request {
 	r.function = &function
 	return r
@@ -6032,6 +6136,138 @@ func (a *WiredNetworkAPIService) GetDeliveringProcessWithoutConfigExecute(r Wire
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WiredNetworkAPIGetDevicePortSupportVlansInfoRequest struct {
+	ctx context.Context
+	ApiService WiredNetworkAPI
+	omadacId string
+	siteId string
+	vlanNetworkVlansVO *VlanNetworkVlansVO
+}
+
+func (r WiredNetworkAPIGetDevicePortSupportVlansInfoRequest) VlanNetworkVlansVO(vlanNetworkVlansVO VlanNetworkVlansVO) WiredNetworkAPIGetDevicePortSupportVlansInfoRequest {
+	r.vlanNetworkVlansVO = &vlanNetworkVlansVO
+	return r
+}
+
+func (r WiredNetworkAPIGetDevicePortSupportVlansInfoRequest) Execute() (*OperationResponseVlanNetworkDeviceSupportInfoVO, *http.Response, error) {
+	return r.ApiService.GetDevicePortSupportVlansInfoExecute(r)
+}
+
+/*
+GetDevicePortSupportVlansInfo Get device port info on whether support any of current vlans
+
+Get device port info on whether support any of current vlans<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WiredNetworkAPIGetDevicePortSupportVlansInfoRequest
+*/
+func (a *WiredNetworkAPIService) GetDevicePortSupportVlansInfo(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIGetDevicePortSupportVlansInfoRequest {
+	return WiredNetworkAPIGetDevicePortSupportVlansInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVlanNetworkDeviceSupportInfoVO
+func (a *WiredNetworkAPIService) GetDevicePortSupportVlansInfoExecute(r WiredNetworkAPIGetDevicePortSupportVlansInfoRequest) (*OperationResponseVlanNetworkDeviceSupportInfoVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVlanNetworkDeviceSupportInfoVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.GetDevicePortSupportVlansInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/networks/device-support-ports"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vlanNetworkVlansVO == nil {
+		return localVarReturnValue, nil, reportError("vlanNetworkVlansVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vlanNetworkVlansVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WiredNetworkAPIGetDhcpServerDevCapForNetworkRequest struct {
 	ctx context.Context
 	ApiService WiredNetworkAPI
@@ -6282,6 +6518,159 @@ func (a *WiredNetworkAPIService) GetDhcpServerInfoForNetworkExecute(r WiredNetwo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WiredNetworkAPIGetGridAllClients1Request struct {
+	ctx context.Context
+	ApiService WiredNetworkAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+	searchKey *string
+}
+
+// Start page number. Start from 1.
+func (r WiredNetworkAPIGetGridAllClients1Request) Page(page int32) WiredNetworkAPIGetGridAllClients1Request {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r WiredNetworkAPIGetGridAllClients1Request) PageSize(pageSize int32) WiredNetworkAPIGetGridAllClients1Request {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Fuzzy query parameters, support field 
+func (r WiredNetworkAPIGetGridAllClients1Request) SearchKey(searchKey string) WiredNetworkAPIGetGridAllClients1Request {
+	r.searchKey = &searchKey
+	return r
+}
+
+func (r WiredNetworkAPIGetGridAllClients1Request) Execute() (*OperationResponseGridVONetworkClientAllOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetGridAllClients1Execute(r)
+}
+
+/*
+GetGridAllClients1 Get client list
+
+Get all clients.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WiredNetworkAPIGetGridAllClients1Request
+*/
+func (a *WiredNetworkAPIService) GetGridAllClients1(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIGetGridAllClients1Request {
+	return WiredNetworkAPIGetGridAllClients1Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVONetworkClientAllOpenApiVO
+func (a *WiredNetworkAPIService) GetGridAllClients1Execute(r WiredNetworkAPIGetGridAllClients1Request) (*OperationResponseGridVONetworkClientAllOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVONetworkClientAllOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.GetGridAllClients1")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/networks/client"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WiredNetworkAPIGetGridLanDnsRequest struct {
 	ctx context.Context
 	ApiService WiredNetworkAPI
@@ -6303,7 +6692,7 @@ func (r WiredNetworkAPIGetGridLanDnsRequest) PageSize(pageSize int32) WiredNetwo
 	return r
 }
 
-func (r WiredNetworkAPIGetGridLanDnsRequest) Execute() (*OperationResponseGridVOLanDnsOpenApiVO, *http.Response, error) {
+func (r WiredNetworkAPIGetGridLanDnsRequest) Execute() (*OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO, *http.Response, error) {
 	return r.ApiService.GetGridLanDnsExecute(r)
 }
 
@@ -6327,13 +6716,13 @@ func (a *WiredNetworkAPIService) GetGridLanDns(ctx context.Context, omadacId str
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVOLanDnsOpenApiVO
-func (a *WiredNetworkAPIService) GetGridLanDnsExecute(r WiredNetworkAPIGetGridLanDnsRequest) (*OperationResponseGridVOLanDnsOpenApiVO, *http.Response, error) {
+//  @return OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO
+func (a *WiredNetworkAPIService) GetGridLanDnsExecute(r WiredNetworkAPIGetGridLanDnsRequest) (*OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVOLanDnsOpenApiVO
+		localVarReturnValue  *OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.GetGridLanDns")
@@ -10289,6 +10678,127 @@ func (a *WiredNetworkAPIService) GetSimCardIspScanResultExecute(r WiredNetworkAP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WiredNetworkAPIGetSpeedTestV2SettingRequest struct {
+	ctx context.Context
+	ApiService WiredNetworkAPI
+	omadacId string
+	siteId string
+}
+
+func (r WiredNetworkAPIGetSpeedTestV2SettingRequest) Execute() (*OperationResponseSpeedTestV2SettingVO, *http.Response, error) {
+	return r.ApiService.GetSpeedTestV2SettingExecute(r)
+}
+
+/*
+GetSpeedTestV2Setting Get SpeedTest Setting
+
+Get SpeedTest Setting.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WiredNetworkAPIGetSpeedTestV2SettingRequest
+*/
+func (a *WiredNetworkAPIService) GetSpeedTestV2Setting(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIGetSpeedTestV2SettingRequest {
+	return WiredNetworkAPIGetSpeedTestV2SettingRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSpeedTestV2SettingVO
+func (a *WiredNetworkAPIService) GetSpeedTestV2SettingExecute(r WiredNetworkAPIGetSpeedTestV2SettingRequest) (*OperationResponseSpeedTestV2SettingVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSpeedTestV2SettingVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.GetSpeedTestV2Setting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/speedTest"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WiredNetworkAPIGetSupportInfoRequest struct {
 	ctx context.Context
 	ApiService WiredNetworkAPI
@@ -11036,6 +11546,135 @@ func (a *WiredNetworkAPIService) GetVlanNetworkAffectedSsid1Execute(r WiredNetwo
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WiredNetworkAPIGetVlanNetworkDevicePortSupportVlanInfoRequest struct {
+	ctx context.Context
+	ApiService WiredNetworkAPI
+	omadacId string
+	siteId string
+	networkId string
+	vlan string
+}
+
+func (r WiredNetworkAPIGetVlanNetworkDevicePortSupportVlanInfoRequest) Execute() (*OperationResponseVlanNetworkDeviceSupportInfoVO, *http.Response, error) {
+	return r.ApiService.GetVlanNetworkDevicePortSupportVlanInfoExecute(r)
+}
+
+/*
+GetVlanNetworkDevicePortSupportVlanInfo Get device port info on whether support current vlan
+
+Get device port info on whether support current vlan<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param networkId Network ID
+ @param vlan Vlan ID
+ @return WiredNetworkAPIGetVlanNetworkDevicePortSupportVlanInfoRequest
+*/
+func (a *WiredNetworkAPIService) GetVlanNetworkDevicePortSupportVlanInfo(ctx context.Context, omadacId string, siteId string, networkId string, vlan string) WiredNetworkAPIGetVlanNetworkDevicePortSupportVlanInfoRequest {
+	return WiredNetworkAPIGetVlanNetworkDevicePortSupportVlanInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		networkId: networkId,
+		vlan: vlan,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVlanNetworkDeviceSupportInfoVO
+func (a *WiredNetworkAPIService) GetVlanNetworkDevicePortSupportVlanInfoExecute(r WiredNetworkAPIGetVlanNetworkDevicePortSupportVlanInfoRequest) (*OperationResponseVlanNetworkDeviceSupportInfoVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVlanNetworkDeviceSupportInfoVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.GetVlanNetworkDevicePortSupportVlanInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/device-support-ports"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"networkId"+"}", url.PathEscape(parameterValueToString(r.networkId, "networkId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vlan"+"}", url.PathEscape(parameterValueToString(r.vlan, "vlan")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -12046,7 +12685,7 @@ func (r WiredNetworkAPIModifyLanDnsRequest) Execute() (*OperationResponseWithout
 /*
 ModifyLanDns Modify an existing LAN DNS rule
 
-Modify an existing LAN DNS rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.
+Modify an existing LAN DNS rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.<br/>-35313  -  The gateway does not support configuring TTL in LAN DNS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -12182,7 +12821,7 @@ func (r WiredNetworkAPIModifyLanNetworkRequest) Execute() (*OperationResponseWit
 /*
 ModifyLanNetwork Modify LAN network
 
-Modify LAN networkThis interface has been deprecated. Please use the following interface instead: Confirm modify lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33503  -  This network does not exist.<br/>-33506  -  This Profile name already exists.<br/>-33527  -  The interface of Default LAN cannot be modified.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33545  -  The VLAN Type of Default LAN cannot be modified.<br/>-34235  -  The VLAN cannot be set to 1 since it is used in OUI Based VLAN rules which do not allow VLAN 1.
+Modify LAN network. This interface has been deprecated. Please use the following interface instead: Confirm modify lan network<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33500  -  Network name already existed.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33503  -  This network does not exist.<br/>-33506  -  This Profile name already exists.<br/>-33527  -  The interface of Default LAN cannot be modified.<br/>-33544  -  The number of interfaces has reached the limit.<br/>-33545  -  The VLAN Type of Default LAN cannot be modified.<br/>-34235  -  The VLAN cannot be set to 1 since it is used in OUI Based VLAN rules which do not allow VLAN 1.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -12840,6 +13479,138 @@ func (a *WiredNetworkAPIService) ModifyOswLanProfileExecute(r WiredNetworkAPIMod
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WiredNetworkAPIModifySpeedTestV2SettingRequest struct {
+	ctx context.Context
+	ApiService WiredNetworkAPI
+	omadacId string
+	siteId string
+	modifySpeedTestV2SettingOpenApiVO *ModifySpeedTestV2SettingOpenApiVO
+}
+
+func (r WiredNetworkAPIModifySpeedTestV2SettingRequest) ModifySpeedTestV2SettingOpenApiVO(modifySpeedTestV2SettingOpenApiVO ModifySpeedTestV2SettingOpenApiVO) WiredNetworkAPIModifySpeedTestV2SettingRequest {
+	r.modifySpeedTestV2SettingOpenApiVO = &modifySpeedTestV2SettingOpenApiVO
+	return r
+}
+
+func (r WiredNetworkAPIModifySpeedTestV2SettingRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifySpeedTestV2SettingExecute(r)
+}
+
+/*
+ModifySpeedTestV2Setting Modify SpeedTest Setting
+
+Modify SpeedTest Setting.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WiredNetworkAPIModifySpeedTestV2SettingRequest
+*/
+func (a *WiredNetworkAPIService) ModifySpeedTestV2Setting(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIModifySpeedTestV2SettingRequest {
+	return WiredNetworkAPIModifySpeedTestV2SettingRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WiredNetworkAPIService) ModifySpeedTestV2SettingExecute(r WiredNetworkAPIModifySpeedTestV2SettingRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.ModifySpeedTestV2Setting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/speedTest"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.modifySpeedTestV2SettingOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("modifySpeedTestV2SettingOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.modifySpeedTestV2SettingOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WiredNetworkAPIModifyVirtualWanRequest struct {
 	ctx context.Context
 	ApiService WiredNetworkAPI
@@ -12861,7 +13632,7 @@ func (r WiredNetworkAPIModifyVirtualWanRequest) Execute() (*OperationResponseWit
 /*
 ModifyVirtualWan Modify virtual WAN
 
-Modify virtual WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44700  -  This virtual WAN does not exist.<br/>-44701  -  This VLAN ID is already used by the Virtual WAN interface.<br/>-44702  -  Duplicate names of the virtual WAN.<br/>-44703  -  When no gateway is adopted, at most 3 virtual WAN ports can be added.<br/>-44704  -  The number of enabled WAN ports and virtual WAN ports cannot exceed the number of WAN ports plus 3.<br/>-44705  -  At most 3 virtual WAN ports can be mapped to each WAN port.<br/>-44706  -  DSL setting cannot be null when DSL WAN is selected.<br/>-44707  -  The gateway does not support MssClamping in Virtual WAN.<br/>-44708  -  The gateway does not support DHCP Options in Virtual WAN.<br/>-44709  -  The gateway does not support PppoeMru in Virtual WAN.<br/>-44710  -  The gateway does not support DslMer in Virtual WAN.<br/>-44711  -  The gateway does not support Virtual WAN.<br/>-44712  -  The gateway only support DSL WAN.
+Modify virtual WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-44700  -  This virtual WAN does not exist.<br/>-44701  -  This VLAN ID is already used by the Virtual WAN interface.<br/>-44702  -  Duplicate names of the virtual WAN.<br/>-44703  -  When no gateway is adopted, at most 3 virtual WAN ports can be added.<br/>-44704  -  The number of enabled WAN ports and virtual WAN ports cannot exceed the number of WAN ports plus 3.<br/>-44705  -  At most 3 virtual WAN ports can be mapped to each WAN port.<br/>-44706  -  DSL setting cannot be null when DSL WAN is selected.<br/>-44707  -  The gateway does not support MssClamping in Virtual WAN.<br/>-44708  -  The gateway does not support DHCP Options in Virtual WAN.<br/>-44709  -  The gateway does not support PppoeMru in Virtual WAN.<br/>-44710  -  The gateway does not support DslMer in Virtual WAN.<br/>-44711  -  The gateway does not support Virtual WAN.<br/>-44712  -  The gateway only support DSL WAN.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -12997,7 +13768,7 @@ func (r WiredNetworkAPIModifyVirtualWanStatusRequest) Execute() (*OperationRespo
 /*
 ModifyVirtualWanStatus Modify virtual WAN status
 
-Modify virtual WAN status.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44700  -  This virtual WAN does not exist.
+Modify virtual WAN status.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-44700  -  This virtual WAN does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -13396,7 +14167,7 @@ func (r WiredNetworkAPIModifyWanPortsConfigRequest) Execute() (*OperationRespons
 /*
 ModifyWanPortsConfig Modify internet ports config
 
-Modify internet ports config. Make sure the parameter[preConfiguration] is true and all wan ports config is include, so the port configuration can take effect after you adopt a gateway.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33400  -  Current site has no WAN.<br/>-33413  -  The IP range you set for the WAN port conflicts with the IP range of LAN networks.<br/>-33414  -  The MAC address is not available because it has been used for another port.<br/>-33416  -  The IP range you set for the WAN port conflicts with the IP range of the other WAN port.<br/>-33426  -  The Secondary DNS cannot be the same as the Primary DNS. Please enter another IP address.<br/>-33427  -  The IP you set for DNS Server conflicts with the IP range of the LAN network.<br/>-33429  -  There are duplicate IPs in the WAN alias IPs and static IPs.<br/>-33431  -  VLAN ID ranges from 1 to 4086.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33531  -  This WAN port has been used by other networks.<br/>-34212  -  The WAN port is used for one-to-one NAT and can only use the Static IP type.
+Modify internet ports config. Make sure the parameter[preConfiguration] is true and all wan ports config is include, so the port configuration can take effect after you adopt a gateway.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33400  -  Current site has no WAN.<br/>-33413  -  The IP range you set for the WAN port conflicts with the IP range of LAN networks.<br/>-33414  -  The MAC address is not available because it has been used for another port.<br/>-33416  -  The IP range you set for the WAN port conflicts with the IP range of the other WAN port.<br/>-33426  -  The Secondary DNS cannot be the same as the Primary DNS. Please enter another IP address.<br/>-33427  -  The IP you set for DNS Server conflicts with the IP range of the LAN network.<br/>-33429  -  There are duplicate IPs in the WAN alias IPs and static IPs.<br/>-33431  -  VLAN ID ranges from 1 to 4094.<br/>-33501  -  This VLAN ID is already used by the WAN interface.<br/>-33531  -  This WAN port has been used by other networks.<br/>-34212  -  The WAN port is used for one-to-one NAT and can only use the Static IP type.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -13640,6 +14411,137 @@ func (a *WiredNetworkAPIService) NetworkMappingExecute(r WiredNetworkAPINetworkM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WiredNetworkAPIObtainWanUnsupportedFunctionRequest struct {
+	ctx context.Context
+	ApiService WiredNetworkAPI
+	omadacId string
+	siteId string
+	filter *int32
+}
+
+// 1: Obtain the functions that are not supported when you configure DS-Lite and MAP-E dial-up for IPv4 on the WAN port.
+func (r WiredNetworkAPIObtainWanUnsupportedFunctionRequest) Filter(filter int32) WiredNetworkAPIObtainWanUnsupportedFunctionRequest {
+	r.filter = &filter
+	return r
+}
+
+func (r WiredNetworkAPIObtainWanUnsupportedFunctionRequest) Execute() (*OperationResponseWanUnsupportedFunctionOpenApiVO, *http.Response, error) {
+	return r.ApiService.ObtainWanUnsupportedFunctionExecute(r)
+}
+
+/*
+ObtainWanUnsupportedFunction Get linkage functions that are not supported by WAN
+
+Get linkage functions that are not supported by WAN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WiredNetworkAPIObtainWanUnsupportedFunctionRequest
+*/
+func (a *WiredNetworkAPIService) ObtainWanUnsupportedFunction(ctx context.Context, omadacId string, siteId string) WiredNetworkAPIObtainWanUnsupportedFunctionRequest {
+	return WiredNetworkAPIObtainWanUnsupportedFunctionRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWanUnsupportedFunctionOpenApiVO
+func (a *WiredNetworkAPIService) ObtainWanUnsupportedFunctionExecute(r WiredNetworkAPIObtainWanUnsupportedFunctionRequest) (*OperationResponseWanUnsupportedFunctionOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWanUnsupportedFunctionOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkAPIService.ObtainWanUnsupportedFunction")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wan/networks/unsupportedFunction"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.filter != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WiredNetworkAPISpeedTestRequest struct {
 	ctx context.Context
 	ApiService WiredNetworkAPI
@@ -13790,7 +14692,7 @@ func (r WiredNetworkAPIStartBandScanRequest) Execute() (*OperationResponseWithou
 }
 
 /*
-StartBandScan BandScan
+StartBandScan Start Band scan
 
 Start band scan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-33439  -  Current site has already had a band scan progress.
 
@@ -13922,7 +14824,7 @@ func (r WiredNetworkAPIStartIspScanRequest) Execute() (*OperationResponseWithout
 }
 
 /*
-StartIspScan IspScan
+StartIspScan Start Isp scan
 
 Start ISP scan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33411  -  Current gateway is not connected.<br/>-33439  -  Current site has already had a band scan progress.
 

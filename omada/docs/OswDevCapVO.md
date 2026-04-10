@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **MaxLagNum** | Pointer to **int32** | Max Lag Num | [optional] 
 **MaxMirrorGroup** | Pointer to **int32** | Max Mirror Group | [optional] 
 **MaxMirroredPort** | Pointer to **int32** | Max Mirrored Port | [optional] 
+**MaxRelayServerNum** | Pointer to **int32** | Max DHCP relay server num | [optional] 
 **MaxStackGroupNumber** | Pointer to **int32** | Max Stack Group Number | [optional] 
 **MaxStackUnitNumber** | Pointer to **int32** | Max Stack Unit Number | [optional] 
 **MirrorSupport** | Pointer to **bool** |  | [optional] 
@@ -63,6 +64,7 @@ Name | Type | Description | Notes
 **StpExtendSupport** | Pointer to **bool** | STP Extend Support | [optional] 
 **SupportArpDetect** | Pointer to **bool** | Whether support arp detect | [optional] 
 **SupportBt** | Pointer to **bool** | Support Poe Bt | [optional] 
+**SupportClearCounters** | Pointer to **bool** | Whether the device supports clear counters | [optional] 
 **SupportConfigSync** | Pointer to **bool** | Whether the device supports config sync | [optional] 
 **SupportDhcpSnoop** | Pointer to **bool** | Whether support dhcp snoop | [optional] 
 **SupportEsHealth** | Pointer to **bool** |  | [optional] 
@@ -76,6 +78,7 @@ Name | Type | Description | Notes
 **SupportMad** | Pointer to **bool** |  | [optional] 
 **SupportMlag** | Pointer to **bool** |  | [optional] 
 **SupportMulticast** | Pointer to **bool** | Whether support multicast | [optional] 
+**SupportRelayMultiServer** | Pointer to **bool** | Whether the device supports DHCP relay multi Server | [optional] 
 **SupportRunningConfig** | Pointer to **bool** | Whether the device supports showing running config | [optional] 
 **SupportSdm** | Pointer to **bool** |  | [optional] 
 **SupportVrf** | Pointer to **bool** |  | [optional] 
@@ -906,6 +909,31 @@ SetMaxMirroredPort sets MaxMirroredPort field to given value.
 
 HasMaxMirroredPort returns a boolean if a field has been set.
 
+### GetMaxRelayServerNum
+
+`func (o *OswDevCapVO) GetMaxRelayServerNum() int32`
+
+GetMaxRelayServerNum returns the MaxRelayServerNum field if non-nil, zero value otherwise.
+
+### GetMaxRelayServerNumOk
+
+`func (o *OswDevCapVO) GetMaxRelayServerNumOk() (*int32, bool)`
+
+GetMaxRelayServerNumOk returns a tuple with the MaxRelayServerNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxRelayServerNum
+
+`func (o *OswDevCapVO) SetMaxRelayServerNum(v int32)`
+
+SetMaxRelayServerNum sets MaxRelayServerNum field to given value.
+
+### HasMaxRelayServerNum
+
+`func (o *OswDevCapVO) HasMaxRelayServerNum() bool`
+
+HasMaxRelayServerNum returns a boolean if a field has been set.
+
 ### GetMaxStackGroupNumber
 
 `func (o *OswDevCapVO) GetMaxStackGroupNumber() int32`
@@ -1581,6 +1609,31 @@ SetSupportBt sets SupportBt field to given value.
 
 HasSupportBt returns a boolean if a field has been set.
 
+### GetSupportClearCounters
+
+`func (o *OswDevCapVO) GetSupportClearCounters() bool`
+
+GetSupportClearCounters returns the SupportClearCounters field if non-nil, zero value otherwise.
+
+### GetSupportClearCountersOk
+
+`func (o *OswDevCapVO) GetSupportClearCountersOk() (*bool, bool)`
+
+GetSupportClearCountersOk returns a tuple with the SupportClearCounters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportClearCounters
+
+`func (o *OswDevCapVO) SetSupportClearCounters(v bool)`
+
+SetSupportClearCounters sets SupportClearCounters field to given value.
+
+### HasSupportClearCounters
+
+`func (o *OswDevCapVO) HasSupportClearCounters() bool`
+
+HasSupportClearCounters returns a boolean if a field has been set.
+
 ### GetSupportConfigSync
 
 `func (o *OswDevCapVO) GetSupportConfigSync() bool`
@@ -1905,6 +1958,31 @@ SetSupportMulticast sets SupportMulticast field to given value.
 `func (o *OswDevCapVO) HasSupportMulticast() bool`
 
 HasSupportMulticast returns a boolean if a field has been set.
+
+### GetSupportRelayMultiServer
+
+`func (o *OswDevCapVO) GetSupportRelayMultiServer() bool`
+
+GetSupportRelayMultiServer returns the SupportRelayMultiServer field if non-nil, zero value otherwise.
+
+### GetSupportRelayMultiServerOk
+
+`func (o *OswDevCapVO) GetSupportRelayMultiServerOk() (*bool, bool)`
+
+GetSupportRelayMultiServerOk returns a tuple with the SupportRelayMultiServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportRelayMultiServer
+
+`func (o *OswDevCapVO) SetSupportRelayMultiServer(v bool)`
+
+SetSupportRelayMultiServer sets SupportRelayMultiServer field to given value.
+
+### HasSupportRelayMultiServer
+
+`func (o *OswDevCapVO) HasSupportRelayMultiServer() bool`
+
+HasSupportRelayMultiServer returns a boolean if a field has been set.
 
 ### GetSupportRunningConfig
 

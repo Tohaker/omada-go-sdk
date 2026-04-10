@@ -28,6 +28,7 @@ type SslVpnUserOpenApiGridVOSslVpnUserEntity struct {
 	Data []SslVpnUserEntity `json:"data,omitempty"`
 	// Expired number of the SSL VPN user
 	Expired *int32 `json:"expired,omitempty"`
+	SslVpnMaxConUserNum *int32 `json:"sslVpnMaxConUserNum,omitempty"`
 	// Total number of the SSL VPN user
 	Total *int32 `json:"total,omitempty"`
 	// Total rows of all items.
@@ -211,6 +212,38 @@ func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) SetExpired(v int32) {
 	o.Expired = &v
 }
 
+// GetSslVpnMaxConUserNum returns the SslVpnMaxConUserNum field value if set, zero value otherwise.
+func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) GetSslVpnMaxConUserNum() int32 {
+	if o == nil || IsNil(o.SslVpnMaxConUserNum) {
+		var ret int32
+		return ret
+	}
+	return *o.SslVpnMaxConUserNum
+}
+
+// GetSslVpnMaxConUserNumOk returns a tuple with the SslVpnMaxConUserNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) GetSslVpnMaxConUserNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.SslVpnMaxConUserNum) {
+		return nil, false
+	}
+	return o.SslVpnMaxConUserNum, true
+}
+
+// HasSslVpnMaxConUserNum returns a boolean if a field has been set.
+func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) HasSslVpnMaxConUserNum() bool {
+	if o != nil && !IsNil(o.SslVpnMaxConUserNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetSslVpnMaxConUserNum gets a reference to the given int32 and assigns it to the SslVpnMaxConUserNum field.
+func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) SetSslVpnMaxConUserNum(v int32) {
+	o.SslVpnMaxConUserNum = &v
+}
+
 // GetTotal returns the Total field value if set, zero value otherwise.
 func (o *SslVpnUserOpenApiGridVOSslVpnUserEntity) GetTotal() int32 {
 	if o == nil || IsNil(o.Total) {
@@ -299,6 +332,9 @@ func (o SslVpnUserOpenApiGridVOSslVpnUserEntity) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.Expired) {
 		toSerialize["expired"] = o.Expired
+	}
+	if !IsNil(o.SslVpnMaxConUserNum) {
+		toSerialize["sslVpnMaxConUserNum"] = o.SslVpnMaxConUserNum
 	}
 	if !IsNil(o.Total) {
 		toSerialize["total"] = o.Total

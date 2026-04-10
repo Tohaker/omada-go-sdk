@@ -21,6 +21,7 @@ var _ MappedNullable = &MonitorClient{}
 
 // MonitorClient The client to be verified whether it can be monitored
 type MonitorClient struct {
+	ClientUplinkDevice *ClientUplinkDevice `json:"ClientUplinkDevice,omitempty"`
 	// Whether the device is a client
 	ClientFlag *bool `json:"clientFlag,omitempty"`
 	// The client Id
@@ -57,7 +58,6 @@ type MonitorClient struct {
 	StatusCategory *int32 `json:"statusCategory,omitempty"`
 	// The client type.Such as: ap, switch, gateway
 	Type *string `json:"type,omitempty"`
-	UplinkDevice *UplinkDevice `json:"uplinkDevice,omitempty"`
 }
 
 type _MonitorClient MonitorClient
@@ -78,6 +78,38 @@ func NewMonitorClient(mac string) *MonitorClient {
 func NewMonitorClientWithDefaults() *MonitorClient {
 	this := MonitorClient{}
 	return &this
+}
+
+// GetClientUplinkDevice returns the ClientUplinkDevice field value if set, zero value otherwise.
+func (o *MonitorClient) GetClientUplinkDevice() ClientUplinkDevice {
+	if o == nil || IsNil(o.ClientUplinkDevice) {
+		var ret ClientUplinkDevice
+		return ret
+	}
+	return *o.ClientUplinkDevice
+}
+
+// GetClientUplinkDeviceOk returns a tuple with the ClientUplinkDevice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MonitorClient) GetClientUplinkDeviceOk() (*ClientUplinkDevice, bool) {
+	if o == nil || IsNil(o.ClientUplinkDevice) {
+		return nil, false
+	}
+	return o.ClientUplinkDevice, true
+}
+
+// HasClientUplinkDevice returns a boolean if a field has been set.
+func (o *MonitorClient) HasClientUplinkDevice() bool {
+	if o != nil && !IsNil(o.ClientUplinkDevice) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientUplinkDevice gets a reference to the given ClientUplinkDevice and assigns it to the ClientUplinkDevice field.
+func (o *MonitorClient) SetClientUplinkDevice(v ClientUplinkDevice) {
+	o.ClientUplinkDevice = &v
 }
 
 // GetClientFlag returns the ClientFlag field value if set, zero value otherwise.
@@ -648,38 +680,6 @@ func (o *MonitorClient) SetType(v string) {
 	o.Type = &v
 }
 
-// GetUplinkDevice returns the UplinkDevice field value if set, zero value otherwise.
-func (o *MonitorClient) GetUplinkDevice() UplinkDevice {
-	if o == nil || IsNil(o.UplinkDevice) {
-		var ret UplinkDevice
-		return ret
-	}
-	return *o.UplinkDevice
-}
-
-// GetUplinkDeviceOk returns a tuple with the UplinkDevice field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MonitorClient) GetUplinkDeviceOk() (*UplinkDevice, bool) {
-	if o == nil || IsNil(o.UplinkDevice) {
-		return nil, false
-	}
-	return o.UplinkDevice, true
-}
-
-// HasUplinkDevice returns a boolean if a field has been set.
-func (o *MonitorClient) HasUplinkDevice() bool {
-	if o != nil && !IsNil(o.UplinkDevice) {
-		return true
-	}
-
-	return false
-}
-
-// SetUplinkDevice gets a reference to the given UplinkDevice and assigns it to the UplinkDevice field.
-func (o *MonitorClient) SetUplinkDevice(v UplinkDevice) {
-	o.UplinkDevice = &v
-}
-
 func (o MonitorClient) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -690,6 +690,9 @@ func (o MonitorClient) MarshalJSON() ([]byte, error) {
 
 func (o MonitorClient) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ClientUplinkDevice) {
+		toSerialize["ClientUplinkDevice"] = o.ClientUplinkDevice
+	}
 	if !IsNil(o.ClientFlag) {
 		toSerialize["clientFlag"] = o.ClientFlag
 	}
@@ -741,9 +744,6 @@ func (o MonitorClient) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
-	}
-	if !IsNil(o.UplinkDevice) {
-		toSerialize["uplinkDevice"] = o.UplinkDevice
 	}
 	return toSerialize, nil
 }

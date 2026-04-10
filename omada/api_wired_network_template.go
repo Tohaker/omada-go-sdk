@@ -166,8 +166,8 @@ type WiredNetworkTemplateAPI interface {
 	CheckWanLanStatus(ctx context.Context, omadacId string, siteTemplateId string) WiredNetworkTemplateAPICheckWanLanStatusRequest
 
 	// CheckWanLanStatusExecute executes the request
-	//  @return CheckWanLanStatusOpenApiVO
-	CheckWanLanStatusExecute(r WiredNetworkTemplateAPICheckWanLanStatusRequest) (*CheckWanLanStatusOpenApiVO, *http.Response, error)
+	//  @return OperationResponseCheckWanLanStatusOpenApiVO
+	CheckWanLanStatusExecute(r WiredNetworkTemplateAPICheckWanLanStatusRequest) (*OperationResponseCheckWanLanStatusOpenApiVO, *http.Response, error)
 
 	/*
 	ConfirmCreateVlanNetworkTemplate Confirm create lan network template
@@ -205,7 +205,7 @@ type WiredNetworkTemplateAPI interface {
 	/*
 	CreateLanDnsTemplate Create LAN Dns template
 
-	Create lan Dns template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.
+	Create lan Dns template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.<br/>-35313  -  The gateway does not support configuring TTL in LAN DNS.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -231,8 +231,8 @@ type WiredNetworkTemplateAPI interface {
 	CreateLanNetworkTemplate(ctx context.Context, omadacId string, siteTemplateId string) WiredNetworkTemplateAPICreateLanNetworkTemplateRequest
 
 	// CreateLanNetworkTemplateExecute executes the request
-	//  @return ResponseIdVO
-	CreateLanNetworkTemplateExecute(r WiredNetworkTemplateAPICreateLanNetworkTemplateRequest) (*ResponseIdVO, *http.Response, error)
+	//  @return OperationResponseResponseIdVO
+	CreateLanNetworkTemplateExecute(r WiredNetworkTemplateAPICreateLanNetworkTemplateRequest) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
 	CreateLanProfileTemplate Create new LAN profile template
@@ -622,8 +622,8 @@ type WiredNetworkTemplateAPI interface {
 	GetLanDnsTemplateList(ctx context.Context, omadacId string, siteTemplateId string) WiredNetworkTemplateAPIGetLanDnsTemplateListRequest
 
 	// GetLanDnsTemplateListExecute executes the request
-	//  @return OperationResponseGridVOLanDnsOpenApiVO
-	GetLanDnsTemplateListExecute(r WiredNetworkTemplateAPIGetLanDnsTemplateListRequest) (*OperationResponseGridVOLanDnsOpenApiVO, *http.Response, error)
+	//  @return OperationResponseLanDnsGridVOLanDnsOpenApiVO
+	GetLanDnsTemplateListExecute(r WiredNetworkTemplateAPIGetLanDnsTemplateListRequest) (*OperationResponseLanDnsGridVOLanDnsOpenApiVO, *http.Response, error)
 
 	/*
 	GetLanNetworkTemplate Get LAN network template
@@ -754,6 +754,22 @@ type WiredNetworkTemplateAPI interface {
 	// GetSelectDeviceTemplatePortsInfoWhenModifyExecute executes the request
 	//  @return OperationResponseListSelectDeviceForVlanTemplateVO
 	GetSelectDeviceTemplatePortsInfoWhenModifyExecute(r WiredNetworkTemplateAPIGetSelectDeviceTemplatePortsInfoWhenModifyRequest) (*OperationResponseListSelectDeviceForVlanTemplateVO, *http.Response, error)
+
+	/*
+	GetSpeedTestV2SettingTemplate Get SpeedTest Setting Template
+
+	Get SpeedTest Setting Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return WiredNetworkTemplateAPIGetSpeedTestV2SettingTemplateRequest
+	*/
+	GetSpeedTestV2SettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) WiredNetworkTemplateAPIGetSpeedTestV2SettingTemplateRequest
+
+	// GetSpeedTestV2SettingTemplateExecute executes the request
+	//  @return OperationResponseSpeedTestV2SettingVO
+	GetSpeedTestV2SettingTemplateExecute(r WiredNetworkTemplateAPIGetSpeedTestV2SettingTemplateRequest) (*OperationResponseSpeedTestV2SettingVO, *http.Response, error)
 
 	/*
 	GetSupportPortsDeviceTemplates Get grid devices templates that support ports config.
@@ -893,7 +909,7 @@ type WiredNetworkTemplateAPI interface {
 	/*
 	ModifyLanDnsTemplate Modify LAN Dns template
 
-	Modify LAN Dns template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.
+	Modify LAN Dns template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.<br/>-35313  -  The gateway does not support configuring TTL in LAN DNS.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -957,6 +973,22 @@ type WiredNetworkTemplateAPI interface {
 	// ModifyOswLanProfileTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifyOswLanProfileTemplateExecute(r WiredNetworkTemplateAPIModifyOswLanProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifySpeedTestV2SettingTemplate Modify SpeedTest Setting Template
+
+	Modify SpeedTest Setting Template.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest
+	*/
+	ModifySpeedTestV2SettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest
+
+	// ModifySpeedTestV2SettingTemplateExecute executes the request
+	//  @return OperationResponse
+	ModifySpeedTestV2SettingTemplateExecute(r WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest) (*OperationResponse, *http.Response, error)
 
 	/*
 	ModifyVirtualWanStatusTemplate Modify virtual WAN status template
@@ -2087,7 +2119,7 @@ type WiredNetworkTemplateAPICheckWanLanStatusRequest struct {
 	siteTemplateId string
 }
 
-func (r WiredNetworkTemplateAPICheckWanLanStatusRequest) Execute() (*CheckWanLanStatusOpenApiVO, *http.Response, error) {
+func (r WiredNetworkTemplateAPICheckWanLanStatusRequest) Execute() (*OperationResponseCheckWanLanStatusOpenApiVO, *http.Response, error) {
 	return r.ApiService.CheckWanLanStatusExecute(r)
 }
 
@@ -2111,13 +2143,13 @@ func (a *WiredNetworkTemplateAPIService) CheckWanLanStatus(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return CheckWanLanStatusOpenApiVO
-func (a *WiredNetworkTemplateAPIService) CheckWanLanStatusExecute(r WiredNetworkTemplateAPICheckWanLanStatusRequest) (*CheckWanLanStatusOpenApiVO, *http.Response, error) {
+//  @return OperationResponseCheckWanLanStatusOpenApiVO
+func (a *WiredNetworkTemplateAPIService) CheckWanLanStatusExecute(r WiredNetworkTemplateAPICheckWanLanStatusRequest) (*OperationResponseCheckWanLanStatusOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CheckWanLanStatusOpenApiVO
+		localVarReturnValue  *OperationResponseCheckWanLanStatusOpenApiVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkTemplateAPIService.CheckWanLanStatus")
@@ -2489,7 +2521,7 @@ func (r WiredNetworkTemplateAPICreateLanDnsTemplateRequest) Execute() (*Operatio
 /*
 CreateLanDnsTemplate Create LAN Dns template
 
-Create lan Dns template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.
+Create lan Dns template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.<br/>-35313  -  The gateway does not support configuring TTL in LAN DNS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2614,7 +2646,7 @@ func (r WiredNetworkTemplateAPICreateLanNetworkTemplateRequest) LanNetworkTempla
 	return r
 }
 
-func (r WiredNetworkTemplateAPICreateLanNetworkTemplateRequest) Execute() (*ResponseIdVO, *http.Response, error) {
+func (r WiredNetworkTemplateAPICreateLanNetworkTemplateRequest) Execute() (*OperationResponseResponseIdVO, *http.Response, error) {
 	return r.ApiService.CreateLanNetworkTemplateExecute(r)
 }
 
@@ -2638,13 +2670,13 @@ func (a *WiredNetworkTemplateAPIService) CreateLanNetworkTemplate(ctx context.Co
 }
 
 // Execute executes the request
-//  @return ResponseIdVO
-func (a *WiredNetworkTemplateAPIService) CreateLanNetworkTemplateExecute(r WiredNetworkTemplateAPICreateLanNetworkTemplateRequest) (*ResponseIdVO, *http.Response, error) {
+//  @return OperationResponseResponseIdVO
+func (a *WiredNetworkTemplateAPIService) CreateLanNetworkTemplateExecute(r WiredNetworkTemplateAPICreateLanNetworkTemplateRequest) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ResponseIdVO
+		localVarReturnValue  *OperationResponseResponseIdVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkTemplateAPIService.CreateLanNetworkTemplate")
@@ -4824,7 +4856,7 @@ type WiredNetworkTemplateAPIGetAvailableWanPortsRequest struct {
 	function *int32
 }
 
-// function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3:IGMP_PROXY, 4: VIRTUAL_WAN
+// function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3: IGMP_PROXY, 4: VIRTUAL_WAN, 5: PORT_FROWARDING, 6: OTONAT, 7: BANDWIDTH_CONTROL, 8: STATIC_ROUTING, 9: POLICY_ROUTING, 10: VPN, 11: SSL_VPN, 12: DDNS, 13: UPNP, 14: MLD, 15: LAN
 func (r WiredNetworkTemplateAPIGetAvailableWanPortsRequest) Function(function int32) WiredNetworkTemplateAPIGetAvailableWanPortsRequest {
 	r.function = &function
 	return r
@@ -5749,7 +5781,7 @@ func (r WiredNetworkTemplateAPIGetLanDnsTemplateListRequest) PageSize(pageSize i
 	return r
 }
 
-func (r WiredNetworkTemplateAPIGetLanDnsTemplateListRequest) Execute() (*OperationResponseGridVOLanDnsOpenApiVO, *http.Response, error) {
+func (r WiredNetworkTemplateAPIGetLanDnsTemplateListRequest) Execute() (*OperationResponseLanDnsGridVOLanDnsOpenApiVO, *http.Response, error) {
 	return r.ApiService.GetLanDnsTemplateListExecute(r)
 }
 
@@ -5773,13 +5805,13 @@ func (a *WiredNetworkTemplateAPIService) GetLanDnsTemplateList(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVOLanDnsOpenApiVO
-func (a *WiredNetworkTemplateAPIService) GetLanDnsTemplateListExecute(r WiredNetworkTemplateAPIGetLanDnsTemplateListRequest) (*OperationResponseGridVOLanDnsOpenApiVO, *http.Response, error) {
+//  @return OperationResponseLanDnsGridVOLanDnsOpenApiVO
+func (a *WiredNetworkTemplateAPIService) GetLanDnsTemplateListExecute(r WiredNetworkTemplateAPIGetLanDnsTemplateListRequest) (*OperationResponseLanDnsGridVOLanDnsOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVOLanDnsOpenApiVO
+		localVarReturnValue  *OperationResponseLanDnsGridVOLanDnsOpenApiVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkTemplateAPIService.GetLanDnsTemplateList")
@@ -6957,6 +6989,127 @@ func (a *WiredNetworkTemplateAPIService) GetSelectDeviceTemplatePortsInfoWhenMod
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WiredNetworkTemplateAPIGetSpeedTestV2SettingTemplateRequest struct {
+	ctx context.Context
+	ApiService WiredNetworkTemplateAPI
+	omadacId string
+	siteTemplateId string
+}
+
+func (r WiredNetworkTemplateAPIGetSpeedTestV2SettingTemplateRequest) Execute() (*OperationResponseSpeedTestV2SettingVO, *http.Response, error) {
+	return r.ApiService.GetSpeedTestV2SettingTemplateExecute(r)
+}
+
+/*
+GetSpeedTestV2SettingTemplate Get SpeedTest Setting Template
+
+Get SpeedTest Setting Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return WiredNetworkTemplateAPIGetSpeedTestV2SettingTemplateRequest
+*/
+func (a *WiredNetworkTemplateAPIService) GetSpeedTestV2SettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) WiredNetworkTemplateAPIGetSpeedTestV2SettingTemplateRequest {
+	return WiredNetworkTemplateAPIGetSpeedTestV2SettingTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSpeedTestV2SettingVO
+func (a *WiredNetworkTemplateAPIService) GetSpeedTestV2SettingTemplateExecute(r WiredNetworkTemplateAPIGetSpeedTestV2SettingTemplateRequest) (*OperationResponseSpeedTestV2SettingVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSpeedTestV2SettingVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkTemplateAPIService.GetSpeedTestV2SettingTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/speedTest"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WiredNetworkTemplateAPIGetSupportPortsDeviceTemplatesRequest struct {
 	ctx context.Context
 	ApiService WiredNetworkTemplateAPI
@@ -8073,7 +8226,7 @@ func (r WiredNetworkTemplateAPIModifyLanDnsTemplateRequest) Execute() (*Operatio
 /*
 ModifyLanDnsTemplate Modify LAN Dns template
 
-Modify LAN Dns template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.
+Modify LAN Dns template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35300  -  The LAN DNS does not exist.<br/>-35301  -  The number of LAN DNS entries has reached the limit.<br/>-35302  -  The configured IP addresses has reached the limit.<br/>-35305  -  IP address cannot be empty.<br/>-35306  -  There are duplicate IPv4 addresses.<br/>-35307  -  There are duplicate IPv6 addresses.<br/>-35308  -  CNAME cannot be empty.<br/>-35309  -  DNS server cannot be empty.<br/>-35310  -  There are duplicate DNS servers.<br/>-35311  -  Domain name and alias are duplicate.<br/>-35312  -  The gateway does not support LAN DNS.<br/>-35313  -  The gateway does not support configuring TTL in LAN DNS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8545,6 +8698,138 @@ func (a *WiredNetworkTemplateAPIService) ModifyOswLanProfileTemplateExecute(r Wi
 	}
 	// body params
 	localVarPostBody = r.lanProfileConfigOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest struct {
+	ctx context.Context
+	ApiService WiredNetworkTemplateAPI
+	omadacId string
+	siteTemplateId string
+	modifySpeedTestV2SettingOpenApiVO *ModifySpeedTestV2SettingOpenApiVO
+}
+
+func (r WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest) ModifySpeedTestV2SettingOpenApiVO(modifySpeedTestV2SettingOpenApiVO ModifySpeedTestV2SettingOpenApiVO) WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest {
+	r.modifySpeedTestV2SettingOpenApiVO = &modifySpeedTestV2SettingOpenApiVO
+	return r
+}
+
+func (r WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.ModifySpeedTestV2SettingTemplateExecute(r)
+}
+
+/*
+ModifySpeedTestV2SettingTemplate Modify SpeedTest Setting Template
+
+Modify SpeedTest Setting Template.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest
+*/
+func (a *WiredNetworkTemplateAPIService) ModifySpeedTestV2SettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest {
+	return WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WiredNetworkTemplateAPIService) ModifySpeedTestV2SettingTemplateExecute(r WiredNetworkTemplateAPIModifySpeedTestV2SettingTemplateRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkTemplateAPIService.ModifySpeedTestV2SettingTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/speedTest"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.modifySpeedTestV2SettingOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("modifySpeedTestV2SettingOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.modifySpeedTestV2SettingOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

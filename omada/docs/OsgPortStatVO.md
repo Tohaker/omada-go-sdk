@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **PoePower** | Pointer to **float64** | Port poe power | [optional] 
 **Port** | Pointer to **int32** | Port serial number | [optional] 
 **PortDesc** | Pointer to **string** | Port description | [optional] 
-**Proto** | Pointer to **string** | Wan ipv4 proto type, use static，dhcp，pppoe，l2tp，pptp. | [optional] 
+**Proto** | Pointer to **string** | WAN IPv4 connection type, it supports Static IP, DHCP, PPPoE, L2TP, PPTP, DS-Lite, and MAP-E. | [optional] 
 **RoamingStatus** | Pointer to **int32** |  | [optional] 
 **Rsrp** | Pointer to **int32** |  | [optional] 
 **Rsrq** | Pointer to **int32** |  | [optional] 
@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **RxPktRate** | Pointer to **int64** | Port rx Packet rate, Unit: Pkt/s; | [optional] 
 **RxRate** | Pointer to **int64** | Port rx rate, Unit: KB/s; | [optional] 
 **RxSnrMargin** | Pointer to **int64** |  | [optional] 
+**RxTrainingRate** | Pointer to **int64** |  | [optional] 
 **Signal** | Pointer to **int32** |  | [optional] 
 **SimCardUsed** | Pointer to **int32** |  | [optional] 
 **SmsOperator** | Pointer to **string** |  | [optional] 
@@ -61,6 +62,7 @@ Name | Type | Description | Notes
 **TxPktRate** | Pointer to **int64** | Port tx packet rate, Unit: Pkt/s; | [optional] 
 **TxRate** | Pointer to **int64** | Port tx rate, Unit: KB/s; | [optional] 
 **TxSnrMargin** | Pointer to **int64** |  | [optional] 
+**TxTrainingRate** | Pointer to **int64** |  | [optional] 
 **Type** | Pointer to **int32** | Port type, 0:WAN,1:WAN/LAN,2:LAN; | [optional] 
 **WanIpv6Comptent** | Pointer to **int32** | Gateway wan ipv6 component version | [optional] 
 **WanPortIpv4Config** | Pointer to [**OsgWanPortIpv4ConfigVO**](OsgWanPortIpv4ConfigVO.md) |  | [optional] 
@@ -1110,6 +1112,31 @@ SetRxSnrMargin sets RxSnrMargin field to given value.
 
 HasRxSnrMargin returns a boolean if a field has been set.
 
+### GetRxTrainingRate
+
+`func (o *OsgPortStatVO) GetRxTrainingRate() int64`
+
+GetRxTrainingRate returns the RxTrainingRate field if non-nil, zero value otherwise.
+
+### GetRxTrainingRateOk
+
+`func (o *OsgPortStatVO) GetRxTrainingRateOk() (*int64, bool)`
+
+GetRxTrainingRateOk returns a tuple with the RxTrainingRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRxTrainingRate
+
+`func (o *OsgPortStatVO) SetRxTrainingRate(v int64)`
+
+SetRxTrainingRate sets RxTrainingRate field to given value.
+
+### HasRxTrainingRate
+
+`func (o *OsgPortStatVO) HasRxTrainingRate() bool`
+
+HasRxTrainingRate returns a boolean if a field has been set.
+
 ### GetSignal
 
 `func (o *OsgPortStatVO) GetSignal() int32`
@@ -1509,6 +1536,31 @@ SetTxSnrMargin sets TxSnrMargin field to given value.
 `func (o *OsgPortStatVO) HasTxSnrMargin() bool`
 
 HasTxSnrMargin returns a boolean if a field has been set.
+
+### GetTxTrainingRate
+
+`func (o *OsgPortStatVO) GetTxTrainingRate() int64`
+
+GetTxTrainingRate returns the TxTrainingRate field if non-nil, zero value otherwise.
+
+### GetTxTrainingRateOk
+
+`func (o *OsgPortStatVO) GetTxTrainingRateOk() (*int64, bool)`
+
+GetTxTrainingRateOk returns a tuple with the TxTrainingRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTxTrainingRate
+
+`func (o *OsgPortStatVO) SetTxTrainingRate(v int64)`
+
+SetTxTrainingRate sets TxTrainingRate field to given value.
+
+### HasTxTrainingRate
+
+`func (o *OsgPortStatVO) HasTxTrainingRate() bool`
+
+HasTxTrainingRate returns a boolean if a field has been set.
 
 ### GetType
 

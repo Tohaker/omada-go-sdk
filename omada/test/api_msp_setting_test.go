@@ -136,34 +136,6 @@ func Test_omada_MspSettingAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test MspSettingAPIService GetMspRadiusProxy", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var mspId string
-
-		resp, httpRes, err := apiClient.MspSettingAPI.GetMspRadiusProxy(context.Background(), mspId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MspSettingAPIService GetMspRadiusServer", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var mspId string
-
-		resp, httpRes, err := apiClient.MspSettingAPI.GetMspRadiusServer(context.Background(), mspId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test MspSettingAPIService GetMspUserInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -248,20 +220,6 @@ func Test_omada_MspSettingAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test MspSettingAPIService ModifyMspRadiusServer", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var mspId string
-
-		resp, httpRes, err := apiClient.MspSettingAPI.ModifyMspRadiusServer(context.Background(), mspId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test MspSettingAPIService ModifyMspUserInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -269,20 +227,6 @@ func Test_omada_MspSettingAPIService(t *testing.T) {
 		var mspId string
 
 		resp, httpRes, err := apiClient.MspSettingAPI.ModifyMspUserInterface(context.Background(), mspId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MspSettingAPIService ModifyRadiusProxy1", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var mspId string
-
-		resp, httpRes, err := apiClient.MspSettingAPI.ModifyRadiusProxy1(context.Background(), mspId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

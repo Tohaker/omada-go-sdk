@@ -1313,7 +1313,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	dot1xSwitchOpenApiVO := *openapiclient.NewDot1xSwitchOpenApiVO(false) // Dot1xSwitchOpenApiVO | 
+	dot1xSwitchOpenApiVO := *openapiclient.NewDot1xSwitchOpenApiVO(int32(123), int32(123), false, false, int32(123), "RadiusProfileId_example", false) // Dot1xSwitchOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

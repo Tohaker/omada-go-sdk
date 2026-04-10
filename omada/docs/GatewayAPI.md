@@ -7,48 +7,39 @@ Method | HTTP request | Description
 [**BatchModifyPortConfig**](GatewayAPI.md#batchmodifyportconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/multi-ports/config | Batch modify gateway port config
 [**ChangeInternetState**](GatewayAPI.md#changeinternetstate) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/internet-state | Change Internet State
 [**ChangeIpv6State**](GatewayAPI.md#changeipv6state) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/{gatewayMac}/ipv6State | Modify IPv6 state
+[**ChangeOduMode**](GatewayAPI.md#changeodumode) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/change-mode | Change mode for 5G-Outdoor
+[**ChangeOduModeForMsp**](GatewayAPI.md#changeodumodeformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac}/change-mode | Change mode for 5G-Outdoor for msp
 [**ChangePinSetting**](GatewayAPI.md#changepinsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/pin | Modify PIN management information of an LTE model
 [**DeleteIspFile**](GatewayAPI.md#deleteispfile) | **Delete** /openapi/v1/{omadacId}/files/sites/{siteId}/gateways/{gatewayMac}/isp-upgrade/{fileId} | Delete isp file
+[**GetClientDhcpLeaseTimes**](GatewayAPI.md#getclientdhcpleasetimes) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/dhcp-lease-time | Get gateway dhcp client lease time
 [**GetEnableWanDetail**](GatewayAPI.md#getenablewandetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/health/gateways/{gatewayMac}/wans/details | Get enable wan port detail
-[**GetGatewayInfo**](GatewayAPI.md#getgatewayinfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId} | Get gateway template info
 [**GetGatewayInfo1**](GatewayAPI.md#getgatewayinfo1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac} | Get gateway info
 [**GetGeneralConfig1**](GatewayAPI.md#getgeneralconfig1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/general-config | Get gateway general config
+[**GetGridDhcpUserList1**](GatewayAPI.md#getgriddhcpuserlist1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/dhcp/user-list | Get gateway dhcp user list
 [**GetIpptLanIpv6**](GatewayAPI.md#getipptlanipv6) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/network/ipv6 | Get lan ipv6 config for ippt
 [**GetLanStatus**](GatewayAPI.md#getlanstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/lan-status | Get gateway lan status
 [**GetPinSetting**](GatewayAPI.md#getpinsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/pin | Get PIN setting
 [**GetPorts**](GatewayAPI.md#getports) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports | Get gateway ports
-[**GetPortsTemplate**](GatewayAPI.md#getportstemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/config | Get gateway template port info
 [**GetSimCardUsed**](GatewayAPI.md#getsimcardused) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/simCardUsed | Get SIM card used
 [**GetSpecifiedGatewayInfos**](GatewayAPI.md#getspecifiedgatewayinfos) | **Get** /openapi/v1/{omadacId}/global/gateways/wan-status | Get global gateways wan status
 [**GetSsidDetail1**](GatewayAPI.md#getssiddetail1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans/ssid | Get SSID detail info
-[**GetSsidDetailTemplate1**](GatewayAPI.md#getssiddetailtemplate1) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid | Get SSID detail info
 [**GetWanStatus**](GatewayAPI.md#getwanstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/wan-status | Get gateway wan status
 [**IspUpgrade**](GatewayAPI.md#ispupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/{gatewayMac}/isp-upgrade | Upgrade isp
 [**ModifyConfigAdvanced**](GatewayAPI.md#modifyconfigadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced | Modify gateway advanced config
-[**ModifyConfigAdvancedTemplate**](GatewayAPI.md#modifyconfigadvancedtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced | Modify gateway template advanced config
 [**ModifyConfigCommonAdvanced**](GatewayAPI.md#modifyconfigcommonadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/common | Modify gateway advanced common config
-[**ModifyConfigCommonAdvancedTemplate**](GatewayAPI.md#modifyconfigcommonadvancedtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/common | Modify gateway template common advanced config
 [**ModifyConfigGeneral**](GatewayAPI.md#modifyconfiggeneral) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify gateway general config
-[**ModifyConfigGeneralTemplate**](GatewayAPI.md#modifyconfiggeneraltemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/general | Modify gateway template general config
 [**ModifyConfigRadios**](GatewayAPI.md#modifyconfigradios) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/radios | Modify gateway radios config
-[**ModifyConfigRadiosTemplate**](GatewayAPI.md#modifyconfigradiostemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/radios | Modify gateway template radios config
 [**ModifyConfigServices**](GatewayAPI.md#modifyconfigservices) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/services | Modify gateway config service
-[**ModifyConfigServicesTemplate**](GatewayAPI.md#modifyconfigservicestemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/services | Modify gateway template services config
 [**ModifyConfigWirelessAdvanced**](GatewayAPI.md#modifyconfigwirelessadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/wireless | Modify gateway advanced wireless config
-[**ModifyConfigWirelessAdvancedTemplate**](GatewayAPI.md#modifyconfigwirelessadvancedtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/wireless | Modify gateway template wireless advanced config
 [**ModifyConfigWlans**](GatewayAPI.md#modifyconfigwlans) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans | Modify gateway wlans config
-[**ModifyConfigWlansTemplate**](GatewayAPI.md#modifyconfigwlanstemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans | Modify gateway template wlans config
 [**ModifyGeneralConfig1**](GatewayAPI.md#modifygeneralconfig1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/general-config | Modify gateway general config
 [**ModifyIpptLanIpv6**](GatewayAPI.md#modifyipptlanipv6) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/network/ipv6 | Modify lan ipv6 config for ippt
 [**ModifyOsgConfigForMsp**](GatewayAPI.md#modifyosgconfigformsp) | **Patch** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac} | Modify gateway config for msp
 [**ModifyOsgConfigGeneralForMsp**](GatewayAPI.md#modifyosgconfiggeneralformsp) | **Put** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify general gateway config for msp
-[**ModifyPortConfig**](GatewayAPI.md#modifyportconfig) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/{port}/config | Modify gateway template port config
 [**ModifyPortConfig1**](GatewayAPI.md#modifyportconfig1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports/{port}/config | Modify gateway port config
 [**ModifySshSettingByMac**](GatewayAPI.md#modifysshsettingbymac) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/services/ssh | Modify SSH setting by mac
 [**ModifySsidBasicConfig**](GatewayAPI.md#modifyssidbasicconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans/ssid/{ssidId}/basic-config | modify SSID basic config
-[**ModifySsidBasicConfigTemplate**](GatewayAPI.md#modifyssidbasicconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid/{ssidId}/basic-config | modify SSID basic config
 [**ModifySsidMacFilterConfig**](GatewayAPI.md#modifyssidmacfilterconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/wlans/ssid/{ssidId}/mac-filter | Update SSID mac filter config
-[**ModifySsidMacFilterConfigTemplate**](GatewayAPI.md#modifyssidmacfilterconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans/ssid/{ssidId}/mac-filter | Update SSID mac filter config
 [**MoveToSite1**](GatewayAPI.md#movetosite1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/move | Move devices to another site
 [**MspMoveToCustomer2**](GatewayAPI.md#mspmovetocustomer2) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/gateways/move | Move site to target customer
 [**RecoveryPoePort**](GatewayAPI.md#recoverypoeport) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports/{port}/restart | Recovery gateway poe port
@@ -290,6 +281,165 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ChangeOduMode
+
+> OperationResponseWithoutResult ChangeOduMode(ctx, omadacId, siteId, gatewayMac).ChangeOduModeVO(changeOduModeVO).Execute()
+
+Change mode for 5G-Outdoor
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	changeOduModeVO := *openapiclient.NewChangeOduModeVO() // ChangeOduModeVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.GatewayAPI.ChangeOduMode(context.Background(), omadacId, siteId, gatewayMac).ChangeOduModeVO(changeOduModeVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ChangeOduMode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ChangeOduMode`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ChangeOduMode`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**gatewayMac** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiChangeOduModeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **changeOduModeVO** | [**ChangeOduModeVO**](ChangeOduModeVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ChangeOduModeForMsp
+
+> OperationResponseWithoutResult ChangeOduModeForMsp(ctx, mspId, customerId, siteId, gatewayMac).ChangeOduModeVO(changeOduModeVO).Execute()
+
+Change mode for 5G-Outdoor for msp
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	mspId := "mspId_example" // string | MSP ID
+	customerId := "customerId_example" // string | Customer ID
+	siteId := "siteId_example" // string | Site ID
+	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	changeOduModeVO := *openapiclient.NewChangeOduModeVO() // ChangeOduModeVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.GatewayAPI.ChangeOduModeForMsp(context.Background(), mspId, customerId, siteId, gatewayMac).ChangeOduModeVO(changeOduModeVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ChangeOduModeForMsp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ChangeOduModeForMsp`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ChangeOduModeForMsp`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mspId** | **string** | MSP ID | 
+**customerId** | **string** | Customer ID | 
+**siteId** | **string** | Site ID | 
+**gatewayMac** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiChangeOduModeForMspRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **changeOduModeVO** | [**ChangeOduModeVO**](ChangeOduModeVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ChangePinSetting
 
 > OperationResponseOsgLtePinLockResultOpenApiVO ChangePinSetting(ctx, omadacId, siteId, gatewayMac).OsgLtePinOpenApiVO(osgLtePinOpenApiVO).Execute()
@@ -447,6 +597,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetClientDhcpLeaseTimes
+
+> OperationResponseListClientDhcpLeaseTimeOpenApiVO GetClientDhcpLeaseTimes(ctx, omadacId, siteId).QueryDhcpLeaseTimeVO(queryDhcpLeaseTimeVO).Execute()
+
+Get gateway dhcp client lease time
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	queryDhcpLeaseTimeVO := *openapiclient.NewQueryDhcpLeaseTimeVO([]openapiclient.QueryDhcpLeaseTimeParamVO{*openapiclient.NewQueryDhcpLeaseTimeParamVO("IpAddress_example", "Mac_example")}) // QueryDhcpLeaseTimeVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.GatewayAPI.GetClientDhcpLeaseTimes(context.Background(), omadacId, siteId).QueryDhcpLeaseTimeVO(queryDhcpLeaseTimeVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.GetClientDhcpLeaseTimes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetClientDhcpLeaseTimes`: OperationResponseListClientDhcpLeaseTimeOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.GetClientDhcpLeaseTimes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetClientDhcpLeaseTimesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **queryDhcpLeaseTimeVO** | [**QueryDhcpLeaseTimeVO**](QueryDhcpLeaseTimeVO.md) |  | 
+
+### Return type
+
+[**OperationResponseListClientDhcpLeaseTimeOpenApiVO**](OperationResponseListClientDhcpLeaseTimeOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetEnableWanDetail
 
 > OperationResponseWanDetails GetEnableWanDetail(ctx, omadacId, siteId, gatewayMac).Execute()
@@ -508,82 +733,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseWanDetails**](OperationResponseWanDetails.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetGatewayInfo
-
-> OperationResponseGatewayTemplateInfo GetGatewayInfo(ctx, siteTemplateId, deviceTemplateId, omadacId).Execute()
-
-Get gateway template info
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	omadacId := "omadacId_example" // string | omadacId
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.GetGatewayInfo(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.GetGatewayInfo``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetGatewayInfo`: OperationResponseGatewayTemplateInfo
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.GetGatewayInfo`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetGatewayInfoRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OperationResponseGatewayTemplateInfo**](OperationResponseGatewayTemplateInfo.md)
 
 ### Authorization
 
@@ -736,6 +885,86 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseGatewayGeneralConfig**](OperationResponseGatewayGeneralConfig.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridDhcpUserList1
+
+> OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO GetGridDhcpUserList1(ctx, omadacId, siteId, gatewayMac).Page(page).PageSize(pageSize).Execute()
+
+Get gateway dhcp user list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.GatewayAPI.GetGridDhcpUserList1(context.Background(), omadacId, siteId, gatewayMac).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.GetGridDhcpUserList1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridDhcpUserList1`: OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO
+	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.GetGridDhcpUserList1`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**gatewayMac** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridDhcpUserList1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO**](OperationResponseOsgDhcpUserGridVOOsgDhcpUserVO.md)
 
 ### Authorization
 
@@ -1055,82 +1284,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetPortsTemplate
-
-> OperationResponseListOsgPortInfoOpenApiVO GetPortsTemplate(ctx, siteTemplateId, deviceTemplateId, omadacId).Execute()
-
-Get gateway template port info
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	omadacId := "omadacId_example" // string | omadacId
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.GetPortsTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.GetPortsTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetPortsTemplate`: OperationResponseListOsgPortInfoOpenApiVO
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.GetPortsTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetPortsTemplateRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OperationResponseListOsgPortInfoOpenApiVO**](OperationResponseListOsgPortInfoOpenApiVO.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GetSimCardUsed
 
 > OperationResponseOsgSimCardOpenApiVO GetSimCardUsed(ctx, omadacId, siteId, gatewayMac).Execute()
@@ -1331,82 +1484,6 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetSsidDetail1Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OperationResponseSsidDetailOpenApiVO**](OperationResponseSsidDetailOpenApiVO.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetSsidDetailTemplate1
-
-> OperationResponseSsidDetailOpenApiVO GetSsidDetailTemplate1(ctx, omadacId, siteTemplateId, deviceTemplateId).Execute()
-
-Get SSID detail info
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.GetSsidDetailTemplate1(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.GetSsidDetailTemplate1``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetSsidDetailTemplate1`: OperationResponseSsidDetailOpenApiVO
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.GetSsidDetailTemplate1`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSsidDetailTemplate1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1665,84 +1742,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyConfigAdvancedTemplate
-
-> OperationResponseWithoutResult ModifyConfigAdvancedTemplate(ctx, siteTemplateId, deviceTemplateId, omadacId).OsgConfigAdvancedOpenApiVO(osgConfigAdvancedOpenApiVO).Execute()
-
-Modify gateway template advanced config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	omadacId := "omadacId_example" // string | omadacId
-	osgConfigAdvancedOpenApiVO := *openapiclient.NewOsgConfigAdvancedOpenApiVO() // OsgConfigAdvancedOpenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifyConfigAdvancedTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).OsgConfigAdvancedOpenApiVO(osgConfigAdvancedOpenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifyConfigAdvancedTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifyConfigAdvancedTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifyConfigAdvancedTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifyConfigAdvancedTemplateRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **osgConfigAdvancedOpenApiVO** | [**OsgConfigAdvancedOpenApiVO**](OsgConfigAdvancedOpenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ModifyConfigCommonAdvanced
 
 > OperationResponseWithoutResult ModifyConfigCommonAdvanced(ctx, omadacId, siteId, gatewayMac).OsgConfigCommonAdvancedOpenApiVO(osgConfigCommonAdvancedOpenApiVO).Execute()
@@ -1794,84 +1793,6 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiModifyConfigCommonAdvancedRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **osgConfigCommonAdvancedOpenApiVO** | [**OsgConfigCommonAdvancedOpenApiVO**](OsgConfigCommonAdvancedOpenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ModifyConfigCommonAdvancedTemplate
-
-> OperationResponseWithoutResult ModifyConfigCommonAdvancedTemplate(ctx, siteTemplateId, deviceTemplateId, omadacId).OsgConfigCommonAdvancedOpenApiVO(osgConfigCommonAdvancedOpenApiVO).Execute()
-
-Modify gateway template common advanced config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	omadacId := "omadacId_example" // string | omadacId
-	osgConfigCommonAdvancedOpenApiVO := *openapiclient.NewOsgConfigCommonAdvancedOpenApiVO() // OsgConfigCommonAdvancedOpenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifyConfigCommonAdvancedTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).OsgConfigCommonAdvancedOpenApiVO(osgConfigCommonAdvancedOpenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifyConfigCommonAdvancedTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifyConfigCommonAdvancedTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifyConfigCommonAdvancedTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifyConfigCommonAdvancedTemplateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1977,84 +1898,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyConfigGeneralTemplate
-
-> OperationResponseWithoutResult ModifyConfigGeneralTemplate(ctx, siteTemplateId, deviceTemplateId, omadacId).OsgGeneralConfigOpenApiV2VO(osgGeneralConfigOpenApiV2VO).Execute()
-
-Modify gateway template general config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	omadacId := "omadacId_example" // string | omadacId
-	osgGeneralConfigOpenApiV2VO := *openapiclient.NewOsgGeneralConfigOpenApiV2VO(int32(123)) // OsgGeneralConfigOpenApiV2VO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifyConfigGeneralTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).OsgGeneralConfigOpenApiV2VO(osgGeneralConfigOpenApiV2VO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifyConfigGeneralTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifyConfigGeneralTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifyConfigGeneralTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifyConfigGeneralTemplateRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **osgGeneralConfigOpenApiV2VO** | [**OsgGeneralConfigOpenApiV2VO**](OsgGeneralConfigOpenApiV2VO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ModifyConfigRadios
 
 > OperationResponseWithoutResult ModifyConfigRadios(ctx, omadacId, siteId, gatewayMac).OsgConfigRadiosopenApiVO(osgConfigRadiosopenApiVO).Execute()
@@ -2106,84 +1949,6 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiModifyConfigRadiosRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **osgConfigRadiosopenApiVO** | [**OsgConfigRadiosopenApiVO**](OsgConfigRadiosopenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ModifyConfigRadiosTemplate
-
-> OperationResponseWithoutResult ModifyConfigRadiosTemplate(ctx, siteTemplateId, deviceTemplateId, omadacId).OsgConfigRadiosopenApiVO(osgConfigRadiosopenApiVO).Execute()
-
-Modify gateway template radios config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	omadacId := "omadacId_example" // string | omadacId
-	osgConfigRadiosopenApiVO := *openapiclient.NewOsgConfigRadiosopenApiVO() // OsgConfigRadiosopenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifyConfigRadiosTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).OsgConfigRadiosopenApiVO(osgConfigRadiosopenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifyConfigRadiosTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifyConfigRadiosTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifyConfigRadiosTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifyConfigRadiosTemplateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2289,84 +2054,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyConfigServicesTemplate
-
-> OperationResponseWithoutResult ModifyConfigServicesTemplate(ctx, siteTemplateId, deviceTemplateId, omadacId).OsgConfigServicesOpenApiVO(osgConfigServicesOpenApiVO).Execute()
-
-Modify gateway template services config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	omadacId := "omadacId_example" // string | omadacId
-	osgConfigServicesOpenApiVO := *openapiclient.NewOsgConfigServicesOpenApiVO() // OsgConfigServicesOpenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifyConfigServicesTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).OsgConfigServicesOpenApiVO(osgConfigServicesOpenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifyConfigServicesTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifyConfigServicesTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifyConfigServicesTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifyConfigServicesTemplateRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **osgConfigServicesOpenApiVO** | [**OsgConfigServicesOpenApiVO**](OsgConfigServicesOpenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ModifyConfigWirelessAdvanced
 
 > OperationResponseWithoutResult ModifyConfigWirelessAdvanced(ctx, omadacId, siteId, gatewayMac).OsgConfigWirelessAdvancedOpenApiVO(osgConfigWirelessAdvancedOpenApiVO).Execute()
@@ -2445,84 +2132,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyConfigWirelessAdvancedTemplate
-
-> OperationResponseWithoutResult ModifyConfigWirelessAdvancedTemplate(ctx, siteTemplateId, deviceTemplateId, omadacId).OsgConfigWirelessAdvancedOpenApiVO(osgConfigWirelessAdvancedOpenApiVO).Execute()
-
-Modify gateway template wireless advanced config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	omadacId := "omadacId_example" // string | omadacId
-	osgConfigWirelessAdvancedOpenApiVO := *openapiclient.NewOsgConfigWirelessAdvancedOpenApiVO() // OsgConfigWirelessAdvancedOpenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifyConfigWirelessAdvancedTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).OsgConfigWirelessAdvancedOpenApiVO(osgConfigWirelessAdvancedOpenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifyConfigWirelessAdvancedTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifyConfigWirelessAdvancedTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifyConfigWirelessAdvancedTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifyConfigWirelessAdvancedTemplateRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **osgConfigWirelessAdvancedOpenApiVO** | [**OsgConfigWirelessAdvancedOpenApiVO**](OsgConfigWirelessAdvancedOpenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ModifyConfigWlans
 
 > OperationResponseWithoutResult ModifyConfigWlans(ctx, omadacId, siteId, gatewayMac).OsgConfigWlansOpenApiVO(osgConfigWlansOpenApiVO).Execute()
@@ -2574,84 +2183,6 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiModifyConfigWlansRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **osgConfigWlansOpenApiVO** | [**OsgConfigWlansOpenApiVO**](OsgConfigWlansOpenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ModifyConfigWlansTemplate
-
-> OperationResponseWithoutResult ModifyConfigWlansTemplate(ctx, siteTemplateId, deviceTemplateId, omadacId).OsgConfigWlansOpenApiVO(osgConfigWlansOpenApiVO).Execute()
-
-Modify gateway template wlans config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	omadacId := "omadacId_example" // string | omadacId
-	osgConfigWlansOpenApiVO := *openapiclient.NewOsgConfigWlansOpenApiVO([]openapiclient.OsgSsidOverrideOpenApiVO{*openapiclient.NewOsgSsidOverrideOpenApiVO(false, "GlobalSsid_example", false, int32(123), int32(123), "Ssid_example", false, false)}) // OsgConfigWlansOpenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifyConfigWlansTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).OsgConfigWlansOpenApiVO(osgConfigWlansOpenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifyConfigWlansTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifyConfigWlansTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifyConfigWlansTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifyConfigWlansTemplateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2997,87 +2528,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyPortConfig
-
-> OperationResponseGatewayTemplatePortSettingConfig ModifyPortConfig(ctx, siteTemplateId, deviceTemplateId, port, omadacId).GatewayTemplatePortSettingConfig(gatewayTemplatePortSettingConfig).Execute()
-
-Modify gateway template port config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	port := "port_example" // string | Gateway port number
-	omadacId := "omadacId_example" // string | omadacId
-	gatewayTemplatePortSettingConfig := *openapiclient.NewGatewayTemplatePortSettingConfig() // GatewayTemplatePortSettingConfig | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifyPortConfig(context.Background(), siteTemplateId, deviceTemplateId, port, omadacId).GatewayTemplatePortSettingConfig(gatewayTemplatePortSettingConfig).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifyPortConfig``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifyPortConfig`: OperationResponseGatewayTemplatePortSettingConfig
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifyPortConfig`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Device Template ID | 
-**port** | **string** | Gateway port number | 
-**omadacId** | **string** | omadacId | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifyPortConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
- **gatewayTemplatePortSettingConfig** | [**GatewayTemplatePortSettingConfig**](GatewayTemplatePortSettingConfig.md) |  | 
-
-### Return type
-
-[**OperationResponseGatewayTemplatePortSettingConfig**](OperationResponseGatewayTemplatePortSettingConfig.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ModifyPortConfig1
 
 > OperationResponseGatewayPortSettingConfig ModifyPortConfig1(ctx, omadacId, siteId, gatewayMac, port).GatewayPortSettingConfig(gatewayPortSettingConfig).Execute()
@@ -3318,87 +2768,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifySsidBasicConfigTemplate
-
-> OperationResponseWithoutResult ModifySsidBasicConfigTemplate(ctx, omadacId, siteTemplateId, deviceTemplateId, ssidId).UpdateSsidBasicConfigForIpptOpenApiVO(updateSsidBasicConfigForIpptOpenApiVO).Execute()
-
-modify SSID basic config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
-	ssidId := "ssidId_example" // string | Device Template ID
-	updateSsidBasicConfigForIpptOpenApiVO := *openapiclient.NewUpdateSsidBasicConfigForIpptOpenApiVO(int32(123), false, "Name_example", int32(123)) // UpdateSsidBasicConfigForIpptOpenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifySsidBasicConfigTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId, ssidId).UpdateSsidBasicConfigForIpptOpenApiVO(updateSsidBasicConfigForIpptOpenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifySsidBasicConfigTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifySsidBasicConfigTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifySsidBasicConfigTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
-**ssidId** | **string** | Device Template ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifySsidBasicConfigTemplateRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
- **updateSsidBasicConfigForIpptOpenApiVO** | [**UpdateSsidBasicConfigForIpptOpenApiVO**](UpdateSsidBasicConfigForIpptOpenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ModifySsidMacFilterConfig
 
 > OperationResponseWithoutResult ModifySsidMacFilterConfig(ctx, omadacId, siteId, gatewayMac, ssidId).UpdateSsidMacFilterOpenApiVO(updateSsidMacFilterOpenApiVO).Execute()
@@ -3452,87 +2821,6 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiModifySsidMacFilterConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
- **updateSsidMacFilterOpenApiVO** | [**UpdateSsidMacFilterOpenApiVO**](UpdateSsidMacFilterOpenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ModifySsidMacFilterConfigTemplate
-
-> OperationResponseWithoutResult ModifySsidMacFilterConfigTemplate(ctx, omadacId, siteTemplateId, deviceTemplateId, ssidId).UpdateSsidMacFilterOpenApiVO(updateSsidMacFilterOpenApiVO).Execute()
-
-Update SSID mac filter config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	deviceTemplateId := "deviceTemplateId_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
-	ssidId := "ssidId_example" // string | Device Template ID
-	updateSsidMacFilterOpenApiVO := *openapiclient.NewUpdateSsidMacFilterOpenApiVO(false) // UpdateSsidMacFilterOpenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.ModifySsidMacFilterConfigTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId, ssidId).UpdateSsidMacFilterOpenApiVO(updateSsidMacFilterOpenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.ModifySsidMacFilterConfigTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifySsidMacFilterConfigTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `GatewayAPI.ModifySsidMacFilterConfigTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | Site Template ID | 
-**deviceTemplateId** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
-**ssidId** | **string** | Device Template ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifySsidMacFilterConfigTemplateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3795,7 +3083,7 @@ Name | Type | Description  | Notes
 
 ## UploadIspFile
 
-> OperationResponseWithoutResult UploadIspFile(ctx, omadacId, siteId, gatewayMac).UploadCertificateRequest(uploadCertificateRequest).Execute()
+> OperationResponseWithoutResult UploadIspFile(ctx, omadacId, siteId, gatewayMac).UploadSSLKeyRequest(uploadSSLKeyRequest).Execute()
 
 Upload isp upgrade file
 
@@ -3817,11 +3105,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
-	uploadCertificateRequest := *openapiclient.NewUploadCertificateRequest("TODO") // UploadCertificateRequest |  (optional)
+	uploadSSLKeyRequest := *openapiclient.NewUploadSSLKeyRequest("TODO") // UploadSSLKeyRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.UploadIspFile(context.Background(), omadacId, siteId, gatewayMac).UploadCertificateRequest(uploadCertificateRequest).Execute()
+	resp, r, err := apiClient.GatewayAPI.UploadIspFile(context.Background(), omadacId, siteId, gatewayMac).UploadSSLKeyRequest(uploadSSLKeyRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.UploadIspFile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3851,7 +3139,7 @@ Name | Type | Description  | Notes
 
 
 
- **uploadCertificateRequest** | [**UploadCertificateRequest**](UploadCertificateRequest.md) |  | 
+ **uploadSSLKeyRequest** | [**UploadSSLKeyRequest**](UploadSSLKeyRequest.md) |  | 
 
 ### Return type
 

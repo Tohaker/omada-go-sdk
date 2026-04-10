@@ -85,6 +85,7 @@ type OswVO struct {
 	Ip *string `json:"ip,omitempty"`
 	// Whether it is LTE Backup
 	Ippt *bool `json:"ippt,omitempty"`
+	IpptPreconfig *bool `json:"ipptPreconfig,omitempty"`
 	// Ipv6 address List
 	Ipv6List []string `json:"ipv6List,omitempty"`
 	// Last active time.
@@ -111,6 +112,8 @@ type OswVO struct {
 	LoopbackNum *int32 `json:"loopbackNum,omitempty"`
 	// Mac address
 	Mac *string `json:"mac,omitempty"`
+	// Max DHCP relay server num
+	MaxRelayServerNum *int32 `json:"maxRelayServerNum,omitempty"`
 	// The maximum number of stacking port aggregation groups that can be configured
 	MaxStackGroups *int32 `json:"maxStackGroups,omitempty"`
 	// The maximum unit number supported by the device
@@ -201,6 +204,8 @@ type OswVO struct {
 	SupportMacDelay *bool `json:"supportMacDelay,omitempty"`
 	// Indicates whether the switch supports power alert
 	SupportPowerAlert *bool `json:"supportPowerAlert,omitempty"`
+	// Whether the device supports DHCP relay multi Server
+	SupportRelayMultiServer *bool `json:"supportRelayMultiServer,omitempty"`
 	// Whether the device supports show running config.
 	SupportRunningConfig *bool `json:"supportRunningConfig,omitempty"`
 	// Indicates whether the switch supports SDM template
@@ -218,10 +223,13 @@ type OswVO struct {
 	// Unit
 	Unit *int32 `json:"unit,omitempty"`
 	// Uplink device mac
+	// Deprecated
 	UplinkDeviceMac *string `json:"uplinkDeviceMac,omitempty"`
 	// Uplink device mac name
+	// Deprecated
 	UplinkDeviceName *string `json:"uplinkDeviceName,omitempty"`
 	// Uplink device port
+	// Deprecated
 	UplinkDevicePort *string `json:"uplinkDevicePort,omitempty"`
 	// Real-time total upstream traffic (bytes).
 	Upload *int64 `json:"upload,omitempty"`
@@ -1340,6 +1348,38 @@ func (o *OswVO) SetIppt(v bool) {
 	o.Ippt = &v
 }
 
+// GetIpptPreconfig returns the IpptPreconfig field value if set, zero value otherwise.
+func (o *OswVO) GetIpptPreconfig() bool {
+	if o == nil || IsNil(o.IpptPreconfig) {
+		var ret bool
+		return ret
+	}
+	return *o.IpptPreconfig
+}
+
+// GetIpptPreconfigOk returns a tuple with the IpptPreconfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetIpptPreconfigOk() (*bool, bool) {
+	if o == nil || IsNil(o.IpptPreconfig) {
+		return nil, false
+	}
+	return o.IpptPreconfig, true
+}
+
+// HasIpptPreconfig returns a boolean if a field has been set.
+func (o *OswVO) HasIpptPreconfig() bool {
+	if o != nil && !IsNil(o.IpptPreconfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpptPreconfig gets a reference to the given bool and assigns it to the IpptPreconfig field.
+func (o *OswVO) SetIpptPreconfig(v bool) {
+	o.IpptPreconfig = &v
+}
+
 // GetIpv6List returns the Ipv6List field value if set, zero value otherwise.
 func (o *OswVO) GetIpv6List() []string {
 	if o == nil || IsNil(o.Ipv6List) {
@@ -1786,6 +1826,38 @@ func (o *OswVO) HasMac() bool {
 // SetMac gets a reference to the given string and assigns it to the Mac field.
 func (o *OswVO) SetMac(v string) {
 	o.Mac = &v
+}
+
+// GetMaxRelayServerNum returns the MaxRelayServerNum field value if set, zero value otherwise.
+func (o *OswVO) GetMaxRelayServerNum() int32 {
+	if o == nil || IsNil(o.MaxRelayServerNum) {
+		var ret int32
+		return ret
+	}
+	return *o.MaxRelayServerNum
+}
+
+// GetMaxRelayServerNumOk returns a tuple with the MaxRelayServerNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetMaxRelayServerNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.MaxRelayServerNum) {
+		return nil, false
+	}
+	return o.MaxRelayServerNum, true
+}
+
+// HasMaxRelayServerNum returns a boolean if a field has been set.
+func (o *OswVO) HasMaxRelayServerNum() bool {
+	if o != nil && !IsNil(o.MaxRelayServerNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxRelayServerNum gets a reference to the given int32 and assigns it to the MaxRelayServerNum field.
+func (o *OswVO) SetMaxRelayServerNum(v int32) {
+	o.MaxRelayServerNum = &v
 }
 
 // GetMaxStackGroups returns the MaxStackGroups field value if set, zero value otherwise.
@@ -3356,6 +3428,38 @@ func (o *OswVO) SetSupportPowerAlert(v bool) {
 	o.SupportPowerAlert = &v
 }
 
+// GetSupportRelayMultiServer returns the SupportRelayMultiServer field value if set, zero value otherwise.
+func (o *OswVO) GetSupportRelayMultiServer() bool {
+	if o == nil || IsNil(o.SupportRelayMultiServer) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportRelayMultiServer
+}
+
+// GetSupportRelayMultiServerOk returns a tuple with the SupportRelayMultiServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetSupportRelayMultiServerOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportRelayMultiServer) {
+		return nil, false
+	}
+	return o.SupportRelayMultiServer, true
+}
+
+// HasSupportRelayMultiServer returns a boolean if a field has been set.
+func (o *OswVO) HasSupportRelayMultiServer() bool {
+	if o != nil && !IsNil(o.SupportRelayMultiServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportRelayMultiServer gets a reference to the given bool and assigns it to the SupportRelayMultiServer field.
+func (o *OswVO) SetSupportRelayMultiServer(v bool) {
+	o.SupportRelayMultiServer = &v
+}
+
 // GetSupportRunningConfig returns the SupportRunningConfig field value if set, zero value otherwise.
 func (o *OswVO) GetSupportRunningConfig() bool {
 	if o == nil || IsNil(o.SupportRunningConfig) {
@@ -3613,6 +3717,7 @@ func (o *OswVO) SetUnit(v int32) {
 }
 
 // GetUplinkDeviceMac returns the UplinkDeviceMac field value if set, zero value otherwise.
+// Deprecated
 func (o *OswVO) GetUplinkDeviceMac() string {
 	if o == nil || IsNil(o.UplinkDeviceMac) {
 		var ret string
@@ -3623,6 +3728,7 @@ func (o *OswVO) GetUplinkDeviceMac() string {
 
 // GetUplinkDeviceMacOk returns a tuple with the UplinkDeviceMac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *OswVO) GetUplinkDeviceMacOk() (*string, bool) {
 	if o == nil || IsNil(o.UplinkDeviceMac) {
 		return nil, false
@@ -3640,11 +3746,13 @@ func (o *OswVO) HasUplinkDeviceMac() bool {
 }
 
 // SetUplinkDeviceMac gets a reference to the given string and assigns it to the UplinkDeviceMac field.
+// Deprecated
 func (o *OswVO) SetUplinkDeviceMac(v string) {
 	o.UplinkDeviceMac = &v
 }
 
 // GetUplinkDeviceName returns the UplinkDeviceName field value if set, zero value otherwise.
+// Deprecated
 func (o *OswVO) GetUplinkDeviceName() string {
 	if o == nil || IsNil(o.UplinkDeviceName) {
 		var ret string
@@ -3655,6 +3763,7 @@ func (o *OswVO) GetUplinkDeviceName() string {
 
 // GetUplinkDeviceNameOk returns a tuple with the UplinkDeviceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *OswVO) GetUplinkDeviceNameOk() (*string, bool) {
 	if o == nil || IsNil(o.UplinkDeviceName) {
 		return nil, false
@@ -3672,11 +3781,13 @@ func (o *OswVO) HasUplinkDeviceName() bool {
 }
 
 // SetUplinkDeviceName gets a reference to the given string and assigns it to the UplinkDeviceName field.
+// Deprecated
 func (o *OswVO) SetUplinkDeviceName(v string) {
 	o.UplinkDeviceName = &v
 }
 
 // GetUplinkDevicePort returns the UplinkDevicePort field value if set, zero value otherwise.
+// Deprecated
 func (o *OswVO) GetUplinkDevicePort() string {
 	if o == nil || IsNil(o.UplinkDevicePort) {
 		var ret string
@@ -3687,6 +3798,7 @@ func (o *OswVO) GetUplinkDevicePort() string {
 
 // GetUplinkDevicePortOk returns a tuple with the UplinkDevicePort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *OswVO) GetUplinkDevicePortOk() (*string, bool) {
 	if o == nil || IsNil(o.UplinkDevicePort) {
 		return nil, false
@@ -3704,6 +3816,7 @@ func (o *OswVO) HasUplinkDevicePort() bool {
 }
 
 // SetUplinkDevicePort gets a reference to the given string and assigns it to the UplinkDevicePort field.
+// Deprecated
 func (o *OswVO) SetUplinkDevicePort(v string) {
 	o.UplinkDevicePort = &v
 }
@@ -3980,6 +4093,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Ippt) {
 		toSerialize["ippt"] = o.Ippt
 	}
+	if !IsNil(o.IpptPreconfig) {
+		toSerialize["ipptPreconfig"] = o.IpptPreconfig
+	}
 	if !IsNil(o.Ipv6List) {
 		toSerialize["ipv6List"] = o.Ipv6List
 	}
@@ -4021,6 +4137,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac
+	}
+	if !IsNil(o.MaxRelayServerNum) {
+		toSerialize["maxRelayServerNum"] = o.MaxRelayServerNum
 	}
 	if !IsNil(o.MaxStackGroups) {
 		toSerialize["maxStackGroups"] = o.MaxStackGroups
@@ -4168,6 +4287,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportPowerAlert) {
 		toSerialize["supportPowerAlert"] = o.SupportPowerAlert
+	}
+	if !IsNil(o.SupportRelayMultiServer) {
+		toSerialize["supportRelayMultiServer"] = o.SupportRelayMultiServer
 	}
 	if !IsNil(o.SupportRunningConfig) {
 		toSerialize["supportRunningConfig"] = o.SupportRunningConfig

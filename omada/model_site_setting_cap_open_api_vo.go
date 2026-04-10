@@ -91,6 +91,8 @@ type SiteSettingCapOpenApiVO struct {
 	ServiceType *bool `json:"serviceType,omitempty"`
 	// Whether support SIM configuration.
 	Sim *bool `json:"sim,omitempty"`
+	// Whether support speedTest.
+	SpeedTest *bool `json:"speedTest,omitempty"`
 	// Whether support SSL VPN configuration.
 	SslVpn *bool `json:"sslVpn,omitempty"`
 	// Whether support VPN menu in VPN module.
@@ -1260,6 +1262,38 @@ func (o *SiteSettingCapOpenApiVO) SetSim(v bool) {
 	o.Sim = &v
 }
 
+// GetSpeedTest returns the SpeedTest field value if set, zero value otherwise.
+func (o *SiteSettingCapOpenApiVO) GetSpeedTest() bool {
+	if o == nil || IsNil(o.SpeedTest) {
+		var ret bool
+		return ret
+	}
+	return *o.SpeedTest
+}
+
+// GetSpeedTestOk returns a tuple with the SpeedTest field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapOpenApiVO) GetSpeedTestOk() (*bool, bool) {
+	if o == nil || IsNil(o.SpeedTest) {
+		return nil, false
+	}
+	return o.SpeedTest, true
+}
+
+// HasSpeedTest returns a boolean if a field has been set.
+func (o *SiteSettingCapOpenApiVO) HasSpeedTest() bool {
+	if o != nil && !IsNil(o.SpeedTest) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpeedTest gets a reference to the given bool and assigns it to the SpeedTest field.
+func (o *SiteSettingCapOpenApiVO) SetSpeedTest(v bool) {
+	o.SpeedTest = &v
+}
+
 // GetSslVpn returns the SslVpn field value if set, zero value otherwise.
 func (o *SiteSettingCapOpenApiVO) GetSslVpn() bool {
 	if o == nil || IsNil(o.SslVpn) {
@@ -1758,6 +1792,9 @@ func (o SiteSettingCapOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Sim) {
 		toSerialize["sim"] = o.Sim
+	}
+	if !IsNil(o.SpeedTest) {
+		toSerialize["speedTest"] = o.SpeedTest
 	}
 	if !IsNil(o.SslVpn) {
 		toSerialize["sslVpn"] = o.SslVpn

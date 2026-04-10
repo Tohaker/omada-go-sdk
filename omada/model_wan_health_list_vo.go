@@ -19,7 +19,7 @@ var _ MappedNullable = &WanHealthListVO{}
 
 // WanHealthListVO WAN health score detail
 type WanHealthListVO struct {
-	WanList []WanHealthItemVO `json:"wanList,omitempty"`
+	WanList []WanHealthItemVO `json:"WanList,omitempty"`
 }
 
 // NewWanHealthListVO instantiates a new WanHealthListVO object
@@ -82,7 +82,7 @@ func (o WanHealthListVO) MarshalJSON() ([]byte, error) {
 func (o WanHealthListVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.WanList) {
-		toSerialize["wanList"] = o.WanList
+		toSerialize["WanList"] = o.WanList
 	}
 	return toSerialize, nil
 }

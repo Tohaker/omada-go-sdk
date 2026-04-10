@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 
 ## GetClientDetailStat5Min
 
-> OperationResponseClientStatisticalDataDetail GetClientDetailStat5Min(ctx, omadacId, siteId, clientMac).ClientStatQuery(clientStatQuery).Execute()
+> OperationResponseClientStatisticalDataDetailResult GetClientDetailStat5Min(ctx, omadacId, siteId, clientMac).ClientStatQuery(clientStatQuery).Execute()
 
 Get client statistical data details at a 5-minute interval.
 
@@ -747,7 +747,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetClientDetailStat5Min``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetClientDetailStat5Min`: OperationResponseClientStatisticalDataDetail
+	// response from `GetClientDetailStat5Min`: OperationResponseClientStatisticalDataDetailResult
 	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetClientDetailStat5Min`: %v\n", resp)
 }
 ```
@@ -776,7 +776,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseClientStatisticalDataDetail**](OperationResponseClientStatisticalDataDetail.md)
+[**OperationResponseClientStatisticalDataDetailResult**](OperationResponseClientStatisticalDataDetailResult.md)
 
 ### Authorization
 
@@ -794,7 +794,7 @@ Name | Type | Description  | Notes
 
 ## GetClientDetailStatDaily
 
-> OperationResponseClientStatisticalDataDetail GetClientDetailStatDaily(ctx, omadacId, siteId, clientMac).ClientStatQuery(clientStatQuery).Execute()
+> OperationResponseClientStatisticalDataDetailResult GetClientDetailStatDaily(ctx, omadacId, siteId, clientMac).ClientStatQuery(clientStatQuery).Execute()
 
 Get client statistical data details at a daily interval.
 
@@ -825,7 +825,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetClientDetailStatDaily``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetClientDetailStatDaily`: OperationResponseClientStatisticalDataDetail
+	// response from `GetClientDetailStatDaily`: OperationResponseClientStatisticalDataDetailResult
 	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetClientDetailStatDaily`: %v\n", resp)
 }
 ```
@@ -854,7 +854,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseClientStatisticalDataDetail**](OperationResponseClientStatisticalDataDetail.md)
+[**OperationResponseClientStatisticalDataDetailResult**](OperationResponseClientStatisticalDataDetailResult.md)
 
 ### Authorization
 
@@ -872,7 +872,7 @@ Name | Type | Description  | Notes
 
 ## GetClientDetailStatHourly
 
-> OperationResponseClientStatisticalDataDetail GetClientDetailStatHourly(ctx, omadacId, siteId, clientMac).ClientStatQuery(clientStatQuery).Execute()
+> OperationResponseClientStatisticalDataDetailResult GetClientDetailStatHourly(ctx, omadacId, siteId, clientMac).ClientStatQuery(clientStatQuery).Execute()
 
 Get client statistical data details at a hourly interval.
 
@@ -903,7 +903,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetClientDetailStatHourly``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetClientDetailStatHourly`: OperationResponseClientStatisticalDataDetail
+	// response from `GetClientDetailStatHourly`: OperationResponseClientStatisticalDataDetailResult
 	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetClientDetailStatHourly`: %v\n", resp)
 }
 ```
@@ -932,7 +932,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseClientStatisticalDataDetail**](OperationResponseClientStatisticalDataDetail.md)
+[**OperationResponseClientStatisticalDataDetailResult**](OperationResponseClientStatisticalDataDetailResult.md)
 
 ### Authorization
 
@@ -1331,7 +1331,7 @@ Name | Type | Description  | Notes
 
 ## GetGridActiveClients
 
-> OperationResponseClientGridVOClientInfo GetGridActiveClients(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SortsName(sortsName).SortsMac(sortsMac).SortsIp(sortsIp).FiltersWireless(filtersWireless).FiltersRadioId(filtersRadioId).FiltersApMac(filtersApMac).FiltersSwitchMac(filtersSwitchMac).FiltersGatewayMac(filtersGatewayMac).SearchKey(searchKey).Execute()
+> OperationResponseClientGridVOOpenApiClientInfo GetGridActiveClients(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SortsName(sortsName).SortsMac(sortsMac).SortsIp(sortsIp).FiltersWireless(filtersWireless).FiltersRadioId(filtersRadioId).FiltersApMac(filtersApMac).FiltersSwitchMac(filtersSwitchMac).FiltersGatewayMac(filtersGatewayMac).SearchKey(searchKey).Execute()
 
 Get client list
 
@@ -1371,7 +1371,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetGridActiveClients``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGridActiveClients`: OperationResponseClientGridVOClientInfo
+	// response from `GetGridActiveClients`: OperationResponseClientGridVOOpenApiClientInfo
 	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetGridActiveClients`: %v\n", resp)
 }
 ```
@@ -1408,7 +1408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseClientGridVOClientInfo**](OperationResponseClientGridVOClientInfo.md)
+[**OperationResponseClientGridVOOpenApiClientInfo**](OperationResponseClientGridVOOpenApiClientInfo.md)
 
 ### Authorization
 
@@ -1426,7 +1426,7 @@ Name | Type | Description  | Notes
 
 ## GetGridAllClients
 
-> OperationResponseClientGridVOClientInfo GetGridAllClients(ctx, omadacId, siteId).ClientQueryDataOpenApiVO(clientQueryDataOpenApiVO).Execute()
+> OperationResponseClientGridVOOpenApiClientInfo GetGridAllClients(ctx, omadacId, siteId).ClientQueryDataOpenApiVO(clientQueryDataOpenApiVO).Execute()
 
 Get all client list
 
@@ -1456,7 +1456,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetGridAllClients``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGridAllClients`: OperationResponseClientGridVOClientInfo
+	// response from `GetGridAllClients`: OperationResponseClientGridVOOpenApiClientInfo
 	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetGridAllClients`: %v\n", resp)
 }
 ```
@@ -1483,7 +1483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseClientGridVOClientInfo**](OperationResponseClientGridVOClientInfo.md)
+[**OperationResponseClientGridVOOpenApiClientInfo**](OperationResponseClientGridVOOpenApiClientInfo.md)
 
 ### Authorization
 
@@ -1605,7 +1605,7 @@ Name | Type | Description  | Notes
 
 ## GetVigiDetailStat5Min
 
-> OperationResponseClientStatisticalDataDetail GetVigiDetailStat5Min(ctx, omadacId, siteId, vigiMac).ClientStatQuery(clientStatQuery).Execute()
+> OperationResponseClientStatisticalDataDetailResult GetVigiDetailStat5Min(ctx, omadacId, siteId, vigiMac).ClientStatQuery(clientStatQuery).Execute()
 
 Get VIGI device statistical data details at a 5-minute interval.
 
@@ -1636,7 +1636,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetVigiDetailStat5Min``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetVigiDetailStat5Min`: OperationResponseClientStatisticalDataDetail
+	// response from `GetVigiDetailStat5Min`: OperationResponseClientStatisticalDataDetailResult
 	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetVigiDetailStat5Min`: %v\n", resp)
 }
 ```
@@ -1665,7 +1665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseClientStatisticalDataDetail**](OperationResponseClientStatisticalDataDetail.md)
+[**OperationResponseClientStatisticalDataDetailResult**](OperationResponseClientStatisticalDataDetailResult.md)
 
 ### Authorization
 
@@ -1683,7 +1683,7 @@ Name | Type | Description  | Notes
 
 ## GetVigiDetailStatDaily
 
-> OperationResponseClientStatisticalDataDetail GetVigiDetailStatDaily(ctx, omadacId, siteId, vigiMac).ClientStatQuery(clientStatQuery).Execute()
+> OperationResponseClientStatisticalDataDetailResult GetVigiDetailStatDaily(ctx, omadacId, siteId, vigiMac).ClientStatQuery(clientStatQuery).Execute()
 
 Get VIGI device statistical data details at a daily interval.
 
@@ -1714,7 +1714,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetVigiDetailStatDaily``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetVigiDetailStatDaily`: OperationResponseClientStatisticalDataDetail
+	// response from `GetVigiDetailStatDaily`: OperationResponseClientStatisticalDataDetailResult
 	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetVigiDetailStatDaily`: %v\n", resp)
 }
 ```
@@ -1743,7 +1743,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseClientStatisticalDataDetail**](OperationResponseClientStatisticalDataDetail.md)
+[**OperationResponseClientStatisticalDataDetailResult**](OperationResponseClientStatisticalDataDetailResult.md)
 
 ### Authorization
 
@@ -1761,7 +1761,7 @@ Name | Type | Description  | Notes
 
 ## GetVigiDetailStatHourly
 
-> OperationResponseClientStatisticalDataDetail GetVigiDetailStatHourly(ctx, omadacId, siteId, vigiMac).ClientStatQuery(clientStatQuery).Execute()
+> OperationResponseClientStatisticalDataDetailResult GetVigiDetailStatHourly(ctx, omadacId, siteId, vigiMac).ClientStatQuery(clientStatQuery).Execute()
 
 Get VIGI device statistical data details at a hourly interval.
 
@@ -1792,7 +1792,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetVigiDetailStatHourly``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetVigiDetailStatHourly`: OperationResponseClientStatisticalDataDetail
+	// response from `GetVigiDetailStatHourly`: OperationResponseClientStatisticalDataDetailResult
 	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetVigiDetailStatHourly`: %v\n", resp)
 }
 ```
@@ -1821,7 +1821,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseClientStatisticalDataDetail**](OperationResponseClientStatisticalDataDetail.md)
+[**OperationResponseClientStatisticalDataDetailResult**](OperationResponseClientStatisticalDataDetailResult.md)
 
 ### Authorization
 
@@ -2221,7 +2221,7 @@ Name | Type | Description  | Notes
 
 ## ModifyClientIpSetting
 
-> OperationResponseWithoutResult ModifyClientIpSetting(ctx, omadacId, siteId, clientMac).ClientIpSetting(clientIpSetting).Execute()
+> OperationResponseWithoutResult ModifyClientIpSetting(ctx, omadacId, siteId, clientMac).OpenApiClientIpSetting(openApiClientIpSetting).Execute()
 
 Set ip setting for given client
 
@@ -2243,11 +2243,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	clientMac := "clientMac_example" // string | Client MAC
-	clientIpSetting := *openapiclient.NewClientIpSetting(false) // ClientIpSetting | 
+	openApiClientIpSetting := *openapiclient.NewOpenApiClientIpSetting(false) // OpenApiClientIpSetting | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ClientAPI.ModifyClientIpSetting(context.Background(), omadacId, siteId, clientMac).ClientIpSetting(clientIpSetting).Execute()
+	resp, r, err := apiClient.ClientAPI.ModifyClientIpSetting(context.Background(), omadacId, siteId, clientMac).OpenApiClientIpSetting(openApiClientIpSetting).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.ModifyClientIpSetting``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2277,7 +2277,7 @@ Name | Type | Description  | Notes
 
 
 
- **clientIpSetting** | [**ClientIpSetting**](ClientIpSetting.md) |  | 
+ **openApiClientIpSetting** | [**OpenApiClientIpSetting**](OpenApiClientIpSetting.md) |  | 
 
 ### Return type
 

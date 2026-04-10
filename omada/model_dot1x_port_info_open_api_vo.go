@@ -19,8 +19,12 @@ var _ MappedNullable = &Dot1xPortInfoOpenApiVO{}
 
 // Dot1xPortInfoOpenApiVO Switch port information
 type Dot1xPortInfoOpenApiVO struct {
+	// The auth type of the port. AuthType should be a value as follows: 0: Authentication not enabled, 1: Only 802.1x auth enabled, 2: Only MAB auth enabled, 3: Both 802.1x auth and MAB auth, it will perform 802.1x auth first, and perform MAB auth after 802.1x auth failed.
+	AuthType *int32 `json:"authType,omitempty"`
 	// 802.1x enable status
 	Dot1xEnable *bool `json:"dot1xEnable,omitempty"`
+	// Whether the port is a lag port. Lag ports do not suppot 802.1x or MAB authentication.
+	Lag *bool `json:"lag,omitempty"`
 	// MAB enable status
 	MabEnable *bool `json:"mabEnable,omitempty"`
 	// switching or mirroring or aggregating
@@ -44,6 +48,38 @@ func NewDot1xPortInfoOpenApiVO() *Dot1xPortInfoOpenApiVO {
 func NewDot1xPortInfoOpenApiVOWithDefaults() *Dot1xPortInfoOpenApiVO {
 	this := Dot1xPortInfoOpenApiVO{}
 	return &this
+}
+
+// GetAuthType returns the AuthType field value if set, zero value otherwise.
+func (o *Dot1xPortInfoOpenApiVO) GetAuthType() int32 {
+	if o == nil || IsNil(o.AuthType) {
+		var ret int32
+		return ret
+	}
+	return *o.AuthType
+}
+
+// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Dot1xPortInfoOpenApiVO) GetAuthTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.AuthType) {
+		return nil, false
+	}
+	return o.AuthType, true
+}
+
+// HasAuthType returns a boolean if a field has been set.
+func (o *Dot1xPortInfoOpenApiVO) HasAuthType() bool {
+	if o != nil && !IsNil(o.AuthType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthType gets a reference to the given int32 and assigns it to the AuthType field.
+func (o *Dot1xPortInfoOpenApiVO) SetAuthType(v int32) {
+	o.AuthType = &v
 }
 
 // GetDot1xEnable returns the Dot1xEnable field value if set, zero value otherwise.
@@ -76,6 +112,38 @@ func (o *Dot1xPortInfoOpenApiVO) HasDot1xEnable() bool {
 // SetDot1xEnable gets a reference to the given bool and assigns it to the Dot1xEnable field.
 func (o *Dot1xPortInfoOpenApiVO) SetDot1xEnable(v bool) {
 	o.Dot1xEnable = &v
+}
+
+// GetLag returns the Lag field value if set, zero value otherwise.
+func (o *Dot1xPortInfoOpenApiVO) GetLag() bool {
+	if o == nil || IsNil(o.Lag) {
+		var ret bool
+		return ret
+	}
+	return *o.Lag
+}
+
+// GetLagOk returns a tuple with the Lag field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Dot1xPortInfoOpenApiVO) GetLagOk() (*bool, bool) {
+	if o == nil || IsNil(o.Lag) {
+		return nil, false
+	}
+	return o.Lag, true
+}
+
+// HasLag returns a boolean if a field has been set.
+func (o *Dot1xPortInfoOpenApiVO) HasLag() bool {
+	if o != nil && !IsNil(o.Lag) {
+		return true
+	}
+
+	return false
+}
+
+// SetLag gets a reference to the given bool and assigns it to the Lag field.
+func (o *Dot1xPortInfoOpenApiVO) SetLag(v bool) {
+	o.Lag = &v
 }
 
 // GetMabEnable returns the MabEnable field value if set, zero value otherwise.
@@ -184,8 +252,14 @@ func (o Dot1xPortInfoOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o Dot1xPortInfoOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AuthType) {
+		toSerialize["authType"] = o.AuthType
+	}
 	if !IsNil(o.Dot1xEnable) {
 		toSerialize["dot1xEnable"] = o.Dot1xEnable
+	}
+	if !IsNil(o.Lag) {
+		toSerialize["lag"] = o.Lag
 	}
 	if !IsNil(o.MabEnable) {
 		toSerialize["mabEnable"] = o.MabEnable

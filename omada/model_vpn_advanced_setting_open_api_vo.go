@@ -17,11 +17,11 @@ import (
 // checks if the VpnAdvancedSettingOpenApiVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &VpnAdvancedSettingOpenApiVO{}
 
-// VpnAdvancedSettingOpenApiVO Advanced setting list of the VPN, only for Manual IPSec type.
+// VpnAdvancedSettingOpenApiVO Advanced setting list of the VPN, only for IPSec type.
 type VpnAdvancedSettingOpenApiVO struct {
 	// DPD of the VPN advanced setting.
 	Dpd *bool `json:"dpd,omitempty"`
-	// DPD interval of the VPN advanced setting.
+	// DPD interval of the VPN advanced setting should be within the range of 1-300 seconds.
 	DpdInterval *int32 `json:"dpdInterval,omitempty"`
 	// Encapsulation mode should be a value as follows: 0: Tunnel Mode; 1: Transport Mode.
 	EncapsulationMode *int32 `json:"encapsulationMode,omitempty"`
@@ -37,7 +37,7 @@ type VpnAdvancedSettingOpenApiVO struct {
 	NegotiationMode *int32 `json:"negotiationMode,omitempty"`
 	// PFS should be a value as follows: 0: None; 1: dh1; 2: dh2; 3: dh5; 14: dh14; 15: dh15.
 	Pfs *int32 `json:"pfs,omitempty"`
-	// Phase1 proposal1 should be a value as follows: 0: MD5; 1: SHA1.
+	// Phase1 proposal1 should be a value as follows: 0: MD5; 1: SHA1; 2: SHA256; 3: SHA384; 4: SHA512.
 	Phase1Proposal1 *int32 `json:"phase1Proposal1,omitempty"`
 	// Phase1 proposal2 should be a value as follows: 0: DES; 1: 3DES; 2: AES128; 3: AES192; 4: AES256.
 	Phase1Proposal2 *int32 `json:"phase1Proposal2,omitempty"`
@@ -45,7 +45,7 @@ type VpnAdvancedSettingOpenApiVO struct {
 	Phase1Proposal3 *int32 `json:"phase1Proposal3,omitempty"`
 	// Phase2 proposal1 should be a value as follows: 0: AH; 1: ESP.
 	Phase2Proposal1 *int32 `json:"phase2Proposal1,omitempty"`
-	// Phase2 proposal2 should be a value as follows: 0: MD; 1: SHA1.
+	// Phase2 proposal2 should be a value as follows: 0: MD5; 1: SHA1; 2: SHA256; 3: SHA384; 4:SHA512.
 	Phase2Proposal2 *int32 `json:"phase2Proposal2,omitempty"`
 	// Phase2 proposal3 should be a value as follows: 0: DES; 1: 3DES; 2: AES128; 3: AES192; 4: AES256.
 	Phase2Proposal3 *int32 `json:"phase2Proposal3,omitempty"`
@@ -53,9 +53,9 @@ type VpnAdvancedSettingOpenApiVO struct {
 	RemoteIdType *int32 `json:"remoteIdType,omitempty"`
 	// Remote name of the VPN advanced setting.
 	RemoteName *string `json:"remoteName,omitempty"`
-	// SA lifetime of the VPN advanced setting.
+	// SA lifetime of the VPN advanced setting should be within the range of 60-604800 seconds.
 	SaLifetime *int32 `json:"saLifetime,omitempty"`
-	// SA lifetime2 of the VPN advanced setting.
+	// SA lifetime2 of the VPN advanced setting should be within the range of 120-604800 seconds.
 	SaLifetime2 *int32 `json:"saLifetime2,omitempty"`
 }
 

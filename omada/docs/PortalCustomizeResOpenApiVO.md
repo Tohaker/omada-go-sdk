@@ -5,13 +5,26 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Advertisement** | Pointer to [**AdvertisementSettingResOpenApiVO**](AdvertisementSettingResOpenApiVO.md) |  | [optional] 
-**Background** | Pointer to **int32** | Background type, should be a value as follows: 1: solid color, 2: picture | [optional] 
+**Background** | Pointer to **int32** | Background type, should be a value as follows: 0:library, 1: solid color, 2: picture | [optional] 
 **BackgroundColor** | Pointer to **string** | Portal background picture color. Hex color code such as: #ffffff | [optional] 
+**BackgroundMaskColor** | Pointer to **string** | Background mask color. Hex color code such as: #ffffff. | [optional] 
+**BackgroundMaskEnable** | Pointer to **bool** | Whether to enable multiple language. | [optional] 
+**BackgroundMaskOpacity** | Pointer to **int32** | Background mask opacity, should be within the range of 0–100. | [optional] 
 **BackgroundOpacity** | Pointer to **int32** | Portal background picture transparency percentage, should be within the range of 0–100 | [optional] 
 **BackgroundPicture** | Pointer to [**PortalPictureInfo**](PortalPictureInfo.md) |  | [optional] 
+**BackgroundPictureIndex** | Pointer to **int32** | Index of library background picture, should be within the range of 0-5. | [optional] 
+**BgPicCoordinatesOfLibrary** | Pointer to [**BgPicCoordinatesOfLibraryOpenApiVO**](BgPicCoordinatesOfLibraryOpenApiVO.md) |  | [optional] 
+**BodyContainerBgBlur** | Pointer to **int32** | Body container background blurriness, should be within the range of 0–10. | [optional] 
+**BodyContainerBgBlurEnable** | Pointer to **bool** | Whether to enable body container background blur. | [optional] 
+**BodyContainerColor** | Pointer to **string** | Body container color. Hex color code such as: #ffffff. | [optional] 
+**BodyContainerEnable** | Pointer to **bool** | Whether to enable body container. | [optional] 
+**BodyContainerOpacity** | Pointer to **int32** | Body container opacity, should be within the range of 0–100. | [optional] 
+**BodyContainerRadius** | Pointer to **int32** | Body container radius, should be within the range of 0–30. | [optional] 
+**BodyContainerType** | Pointer to **int32** | Type of body container, 0: none; 1: half; 2: all | [optional] 
 **ButtonColor** | Pointer to **string** | Button color. Hex color code such as: #ffffff | [optional] 
 **ButtonOpacity** | Pointer to **int32** | Button opacity, should be within the range of 0–100 | [optional] 
 **ButtonPositionRatio** | Pointer to **float32** | Button position ratio | [optional] 
+**ButtonRadius** | Pointer to **int32** | Button radius, should be within the range of 0–30. | [optional] 
 **ButtonText** | Pointer to **string** | Button text, should contain 0 to 32 characters, default value is \&quot;Log In\&quot; | [optional] 
 **ButtonTextColor** | Pointer to **string** | Button text color. Hex color code such as: #ffffff | [optional] 
 **ButtonTextOpacity** | Pointer to **int32** | Button text opacity, should be within the range of 0–100 | [optional] 
@@ -22,23 +35,36 @@ Name | Type | Description | Notes
 **CopyrightTextFontSize** | Pointer to **int32** | Copyright text font size, should be within the range of 12–18 | [optional] 
 **CopyrightTextOpacity** | Pointer to **int32** | Copyright text opacity, should be within the range of 0–100 | [optional] 
 **DefaultLanguage** | Pointer to **int32** | The controller automatically adjusts the language displayed on the Portal page according to the system language of the clients. If the language is not supported, the controller will use the default language specified here. DefaultLanguage should be a value as follows:&lt;br/&gt;1: en_US (English); 3: cs_CZ (Český); 4: de_DE (Deutsch); 5: da_DK (Dansk); 6: el_GR (ελληνικά);&lt;br/&gt;7: fr_FR (Français); 8: es_ES (Español); 9: nl_NL (Nederlands); 10: it_IT (Italiano); 11: pl_PL (Polski);&lt;br/&gt;12: pt_PT (Português); 13: ru_RU (Русский); 14: sv_SE (Svenska); 15: tr_TR (Türkçe);&lt;br/&gt;16: ar_SA (لغة عربية); &lt;br/&gt;17: ja_JP (日本語); 18: zh_TW (中文(繁體)); 19: th_TH (ไทย); 20: vi_VN (Tiếng Việt); 21: ko_KR (한국어) | [optional] 
+**DescriptionText** | Pointer to **string** | Description text, should contain 0 to 256 characters. | [optional] 
+**DescriptionTextColor** | Pointer to **string** | Description text color. Hex color code such as: #ffffff. | [optional] 
+**DescriptionTextFontSize** | Pointer to **int32** | Description text font size, should be within the range of 12–18. | [optional] 
+**DescriptionTextOpacity** | Pointer to **int32** | Description text opacity, should be within the range of 0–100. | [optional] 
+**EnableDeviceSpecificBg** | Pointer to **bool** | Whether to use different images in mobile and PC devices | [optional] 
 **FormAuthButtonText** | Pointer to **string** | Form auth button text, should contain 0 to 32 characters. Required when [authType] is 11 and hotspot [enabledTypes] contains 12. Default value is \&quot;Take the Survey\&quot; | [optional] 
+**InputBoxBorderColor** | Pointer to **string** | Input box border color. Hex color code such as: #ffffff. | [optional] 
+**InputBoxBorderOpacity** | Pointer to **int32** | Input box border opacity, should be within the range of 0–100. | [optional] 
 **InputBoxColor** | Pointer to **string** | Input box color. Hex color code such as: #ffffff | [optional] 
 **InputBoxOpacity** | Pointer to **int32** | Input box opacity, should be within the range of 0–100 | [optional] 
+**InputBoxRadius** | Pointer to **int32** | Input box radius, should be within the range of 0–30. | [optional] 
 **InputTextColor** | Pointer to **string** | Input text color. Hex color code such as: #ffffff | [optional] 
 **InputTextOpacity** | Pointer to **int32** | Input text opacity, should be within the range of 0–100 | [optional] 
 **LogoDisplay** | Pointer to **bool** | Whether to display the default logo | [optional] 
+**LogoHorizontalPosition** | Pointer to **int32** | Position of logo horizontal, 0: left; 1: medium; 2: right | [optional] 
 **LogoPicture** | Pointer to [**PortalPictureInfo**](PortalPictureInfo.md) |  | [optional] 
 **LogoPosition** | Pointer to **int32** | Logo position, should be a value as follow: 1: up; 2: middle; 3: lower | [optional] 
 **LogoPositionRatio** | Pointer to **float32** | Logo position ratio, should be within the range of 1-100, represents from high to low. | [optional] 
-**LogoSize** | Pointer to **int32** | Logo size, should be within the range of 30-100 | [optional] 
+**LogoSize** | Pointer to **int32** | Logo size, should be within the range of 1-300 | [optional] 
 **LogoTranslate** | Pointer to **int32** | Distance of the logo from the top of the container, range: above 0 | [optional] 
 **MobileBackgroundPicture** | Pointer to [**PortalPictureInfo**](PortalPictureInfo.md) |  | [optional] 
+**MobileBgPicCoordinatesOfLibrary** | Pointer to [**BgPicCoordinatesOfLibraryOpenApiVO**](BgPicCoordinatesOfLibraryOpenApiVO.md) |  | [optional] 
+**PcAlign** | Pointer to **int32** | Position of pc align, 0: left; 1: medium; 2: right | [optional] 
 **RedirectionCountDownEnable** | Pointer to **bool** | Whether to show redirection countdown after authorized | [optional] 
 **TermsOfService** | Pointer to **string** | Service Terms Content | [optional] 
 **TermsOfServiceEnable** | Pointer to **bool** | Whether to display terms of service | [optional] 
 **TermsOfServiceFontSize** | Pointer to **int32** | Terms of service text font size, should be within the range of 12–18 | [optional] 
 **TermsOfServiceText** | Pointer to **string** | Terms of service text, should contain 0 to 100 characters | [optional] 
+**TermsOfServiceTextColor** | Pointer to **string** | Terms of service text color. Hex color code such as: #ffffff. | [optional] 
+**TermsOfServiceTextOpacity** | Pointer to **int32** | Terms of service text opacity, should be within the range of 0–100. | [optional] 
 **TermsOfServiceUrlTexts** | Pointer to [**[]TermsOfServiceUrlVO**](TermsOfServiceUrlVO.md) | Terms of service URL texts, match the termsOfServiceText and turn the matching characters into an openable link. Up to 3 entries are allowed for the list | [optional] 
 **WelcomeEnable** | Pointer to **bool** | Whether to display the welcome info | [optional] 
 **WelcomeInformation** | Pointer to **string** | Welcome information, should contain 1 to 31 characters | [optional] 
@@ -140,6 +166,81 @@ SetBackgroundColor sets BackgroundColor field to given value.
 
 HasBackgroundColor returns a boolean if a field has been set.
 
+### GetBackgroundMaskColor
+
+`func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskColor() string`
+
+GetBackgroundMaskColor returns the BackgroundMaskColor field if non-nil, zero value otherwise.
+
+### GetBackgroundMaskColorOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskColorOk() (*string, bool)`
+
+GetBackgroundMaskColorOk returns a tuple with the BackgroundMaskColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackgroundMaskColor
+
+`func (o *PortalCustomizeResOpenApiVO) SetBackgroundMaskColor(v string)`
+
+SetBackgroundMaskColor sets BackgroundMaskColor field to given value.
+
+### HasBackgroundMaskColor
+
+`func (o *PortalCustomizeResOpenApiVO) HasBackgroundMaskColor() bool`
+
+HasBackgroundMaskColor returns a boolean if a field has been set.
+
+### GetBackgroundMaskEnable
+
+`func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskEnable() bool`
+
+GetBackgroundMaskEnable returns the BackgroundMaskEnable field if non-nil, zero value otherwise.
+
+### GetBackgroundMaskEnableOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskEnableOk() (*bool, bool)`
+
+GetBackgroundMaskEnableOk returns a tuple with the BackgroundMaskEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackgroundMaskEnable
+
+`func (o *PortalCustomizeResOpenApiVO) SetBackgroundMaskEnable(v bool)`
+
+SetBackgroundMaskEnable sets BackgroundMaskEnable field to given value.
+
+### HasBackgroundMaskEnable
+
+`func (o *PortalCustomizeResOpenApiVO) HasBackgroundMaskEnable() bool`
+
+HasBackgroundMaskEnable returns a boolean if a field has been set.
+
+### GetBackgroundMaskOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskOpacity() int32`
+
+GetBackgroundMaskOpacity returns the BackgroundMaskOpacity field if non-nil, zero value otherwise.
+
+### GetBackgroundMaskOpacityOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskOpacityOk() (*int32, bool)`
+
+GetBackgroundMaskOpacityOk returns a tuple with the BackgroundMaskOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackgroundMaskOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) SetBackgroundMaskOpacity(v int32)`
+
+SetBackgroundMaskOpacity sets BackgroundMaskOpacity field to given value.
+
+### HasBackgroundMaskOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) HasBackgroundMaskOpacity() bool`
+
+HasBackgroundMaskOpacity returns a boolean if a field has been set.
+
 ### GetBackgroundOpacity
 
 `func (o *PortalCustomizeResOpenApiVO) GetBackgroundOpacity() int32`
@@ -189,6 +290,231 @@ SetBackgroundPicture sets BackgroundPicture field to given value.
 `func (o *PortalCustomizeResOpenApiVO) HasBackgroundPicture() bool`
 
 HasBackgroundPicture returns a boolean if a field has been set.
+
+### GetBackgroundPictureIndex
+
+`func (o *PortalCustomizeResOpenApiVO) GetBackgroundPictureIndex() int32`
+
+GetBackgroundPictureIndex returns the BackgroundPictureIndex field if non-nil, zero value otherwise.
+
+### GetBackgroundPictureIndexOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBackgroundPictureIndexOk() (*int32, bool)`
+
+GetBackgroundPictureIndexOk returns a tuple with the BackgroundPictureIndex field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackgroundPictureIndex
+
+`func (o *PortalCustomizeResOpenApiVO) SetBackgroundPictureIndex(v int32)`
+
+SetBackgroundPictureIndex sets BackgroundPictureIndex field to given value.
+
+### HasBackgroundPictureIndex
+
+`func (o *PortalCustomizeResOpenApiVO) HasBackgroundPictureIndex() bool`
+
+HasBackgroundPictureIndex returns a boolean if a field has been set.
+
+### GetBgPicCoordinatesOfLibrary
+
+`func (o *PortalCustomizeResOpenApiVO) GetBgPicCoordinatesOfLibrary() BgPicCoordinatesOfLibraryOpenApiVO`
+
+GetBgPicCoordinatesOfLibrary returns the BgPicCoordinatesOfLibrary field if non-nil, zero value otherwise.
+
+### GetBgPicCoordinatesOfLibraryOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBgPicCoordinatesOfLibraryOk() (*BgPicCoordinatesOfLibraryOpenApiVO, bool)`
+
+GetBgPicCoordinatesOfLibraryOk returns a tuple with the BgPicCoordinatesOfLibrary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBgPicCoordinatesOfLibrary
+
+`func (o *PortalCustomizeResOpenApiVO) SetBgPicCoordinatesOfLibrary(v BgPicCoordinatesOfLibraryOpenApiVO)`
+
+SetBgPicCoordinatesOfLibrary sets BgPicCoordinatesOfLibrary field to given value.
+
+### HasBgPicCoordinatesOfLibrary
+
+`func (o *PortalCustomizeResOpenApiVO) HasBgPicCoordinatesOfLibrary() bool`
+
+HasBgPicCoordinatesOfLibrary returns a boolean if a field has been set.
+
+### GetBodyContainerBgBlur
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerBgBlur() int32`
+
+GetBodyContainerBgBlur returns the BodyContainerBgBlur field if non-nil, zero value otherwise.
+
+### GetBodyContainerBgBlurOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerBgBlurOk() (*int32, bool)`
+
+GetBodyContainerBgBlurOk returns a tuple with the BodyContainerBgBlur field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyContainerBgBlur
+
+`func (o *PortalCustomizeResOpenApiVO) SetBodyContainerBgBlur(v int32)`
+
+SetBodyContainerBgBlur sets BodyContainerBgBlur field to given value.
+
+### HasBodyContainerBgBlur
+
+`func (o *PortalCustomizeResOpenApiVO) HasBodyContainerBgBlur() bool`
+
+HasBodyContainerBgBlur returns a boolean if a field has been set.
+
+### GetBodyContainerBgBlurEnable
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerBgBlurEnable() bool`
+
+GetBodyContainerBgBlurEnable returns the BodyContainerBgBlurEnable field if non-nil, zero value otherwise.
+
+### GetBodyContainerBgBlurEnableOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerBgBlurEnableOk() (*bool, bool)`
+
+GetBodyContainerBgBlurEnableOk returns a tuple with the BodyContainerBgBlurEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyContainerBgBlurEnable
+
+`func (o *PortalCustomizeResOpenApiVO) SetBodyContainerBgBlurEnable(v bool)`
+
+SetBodyContainerBgBlurEnable sets BodyContainerBgBlurEnable field to given value.
+
+### HasBodyContainerBgBlurEnable
+
+`func (o *PortalCustomizeResOpenApiVO) HasBodyContainerBgBlurEnable() bool`
+
+HasBodyContainerBgBlurEnable returns a boolean if a field has been set.
+
+### GetBodyContainerColor
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerColor() string`
+
+GetBodyContainerColor returns the BodyContainerColor field if non-nil, zero value otherwise.
+
+### GetBodyContainerColorOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerColorOk() (*string, bool)`
+
+GetBodyContainerColorOk returns a tuple with the BodyContainerColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyContainerColor
+
+`func (o *PortalCustomizeResOpenApiVO) SetBodyContainerColor(v string)`
+
+SetBodyContainerColor sets BodyContainerColor field to given value.
+
+### HasBodyContainerColor
+
+`func (o *PortalCustomizeResOpenApiVO) HasBodyContainerColor() bool`
+
+HasBodyContainerColor returns a boolean if a field has been set.
+
+### GetBodyContainerEnable
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerEnable() bool`
+
+GetBodyContainerEnable returns the BodyContainerEnable field if non-nil, zero value otherwise.
+
+### GetBodyContainerEnableOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerEnableOk() (*bool, bool)`
+
+GetBodyContainerEnableOk returns a tuple with the BodyContainerEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyContainerEnable
+
+`func (o *PortalCustomizeResOpenApiVO) SetBodyContainerEnable(v bool)`
+
+SetBodyContainerEnable sets BodyContainerEnable field to given value.
+
+### HasBodyContainerEnable
+
+`func (o *PortalCustomizeResOpenApiVO) HasBodyContainerEnable() bool`
+
+HasBodyContainerEnable returns a boolean if a field has been set.
+
+### GetBodyContainerOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerOpacity() int32`
+
+GetBodyContainerOpacity returns the BodyContainerOpacity field if non-nil, zero value otherwise.
+
+### GetBodyContainerOpacityOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerOpacityOk() (*int32, bool)`
+
+GetBodyContainerOpacityOk returns a tuple with the BodyContainerOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyContainerOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) SetBodyContainerOpacity(v int32)`
+
+SetBodyContainerOpacity sets BodyContainerOpacity field to given value.
+
+### HasBodyContainerOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) HasBodyContainerOpacity() bool`
+
+HasBodyContainerOpacity returns a boolean if a field has been set.
+
+### GetBodyContainerRadius
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerRadius() int32`
+
+GetBodyContainerRadius returns the BodyContainerRadius field if non-nil, zero value otherwise.
+
+### GetBodyContainerRadiusOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerRadiusOk() (*int32, bool)`
+
+GetBodyContainerRadiusOk returns a tuple with the BodyContainerRadius field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyContainerRadius
+
+`func (o *PortalCustomizeResOpenApiVO) SetBodyContainerRadius(v int32)`
+
+SetBodyContainerRadius sets BodyContainerRadius field to given value.
+
+### HasBodyContainerRadius
+
+`func (o *PortalCustomizeResOpenApiVO) HasBodyContainerRadius() bool`
+
+HasBodyContainerRadius returns a boolean if a field has been set.
+
+### GetBodyContainerType
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerType() int32`
+
+GetBodyContainerType returns the BodyContainerType field if non-nil, zero value otherwise.
+
+### GetBodyContainerTypeOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetBodyContainerTypeOk() (*int32, bool)`
+
+GetBodyContainerTypeOk returns a tuple with the BodyContainerType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyContainerType
+
+`func (o *PortalCustomizeResOpenApiVO) SetBodyContainerType(v int32)`
+
+SetBodyContainerType sets BodyContainerType field to given value.
+
+### HasBodyContainerType
+
+`func (o *PortalCustomizeResOpenApiVO) HasBodyContainerType() bool`
+
+HasBodyContainerType returns a boolean if a field has been set.
 
 ### GetButtonColor
 
@@ -264,6 +590,31 @@ SetButtonPositionRatio sets ButtonPositionRatio field to given value.
 `func (o *PortalCustomizeResOpenApiVO) HasButtonPositionRatio() bool`
 
 HasButtonPositionRatio returns a boolean if a field has been set.
+
+### GetButtonRadius
+
+`func (o *PortalCustomizeResOpenApiVO) GetButtonRadius() int32`
+
+GetButtonRadius returns the ButtonRadius field if non-nil, zero value otherwise.
+
+### GetButtonRadiusOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetButtonRadiusOk() (*int32, bool)`
+
+GetButtonRadiusOk returns a tuple with the ButtonRadius field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetButtonRadius
+
+`func (o *PortalCustomizeResOpenApiVO) SetButtonRadius(v int32)`
+
+SetButtonRadius sets ButtonRadius field to given value.
+
+### HasButtonRadius
+
+`func (o *PortalCustomizeResOpenApiVO) HasButtonRadius() bool`
+
+HasButtonRadius returns a boolean if a field has been set.
 
 ### GetButtonText
 
@@ -515,6 +866,131 @@ SetDefaultLanguage sets DefaultLanguage field to given value.
 
 HasDefaultLanguage returns a boolean if a field has been set.
 
+### GetDescriptionText
+
+`func (o *PortalCustomizeResOpenApiVO) GetDescriptionText() string`
+
+GetDescriptionText returns the DescriptionText field if non-nil, zero value otherwise.
+
+### GetDescriptionTextOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextOk() (*string, bool)`
+
+GetDescriptionTextOk returns a tuple with the DescriptionText field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescriptionText
+
+`func (o *PortalCustomizeResOpenApiVO) SetDescriptionText(v string)`
+
+SetDescriptionText sets DescriptionText field to given value.
+
+### HasDescriptionText
+
+`func (o *PortalCustomizeResOpenApiVO) HasDescriptionText() bool`
+
+HasDescriptionText returns a boolean if a field has been set.
+
+### GetDescriptionTextColor
+
+`func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextColor() string`
+
+GetDescriptionTextColor returns the DescriptionTextColor field if non-nil, zero value otherwise.
+
+### GetDescriptionTextColorOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextColorOk() (*string, bool)`
+
+GetDescriptionTextColorOk returns a tuple with the DescriptionTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescriptionTextColor
+
+`func (o *PortalCustomizeResOpenApiVO) SetDescriptionTextColor(v string)`
+
+SetDescriptionTextColor sets DescriptionTextColor field to given value.
+
+### HasDescriptionTextColor
+
+`func (o *PortalCustomizeResOpenApiVO) HasDescriptionTextColor() bool`
+
+HasDescriptionTextColor returns a boolean if a field has been set.
+
+### GetDescriptionTextFontSize
+
+`func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextFontSize() int32`
+
+GetDescriptionTextFontSize returns the DescriptionTextFontSize field if non-nil, zero value otherwise.
+
+### GetDescriptionTextFontSizeOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextFontSizeOk() (*int32, bool)`
+
+GetDescriptionTextFontSizeOk returns a tuple with the DescriptionTextFontSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescriptionTextFontSize
+
+`func (o *PortalCustomizeResOpenApiVO) SetDescriptionTextFontSize(v int32)`
+
+SetDescriptionTextFontSize sets DescriptionTextFontSize field to given value.
+
+### HasDescriptionTextFontSize
+
+`func (o *PortalCustomizeResOpenApiVO) HasDescriptionTextFontSize() bool`
+
+HasDescriptionTextFontSize returns a boolean if a field has been set.
+
+### GetDescriptionTextOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextOpacity() int32`
+
+GetDescriptionTextOpacity returns the DescriptionTextOpacity field if non-nil, zero value otherwise.
+
+### GetDescriptionTextOpacityOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextOpacityOk() (*int32, bool)`
+
+GetDescriptionTextOpacityOk returns a tuple with the DescriptionTextOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescriptionTextOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) SetDescriptionTextOpacity(v int32)`
+
+SetDescriptionTextOpacity sets DescriptionTextOpacity field to given value.
+
+### HasDescriptionTextOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) HasDescriptionTextOpacity() bool`
+
+HasDescriptionTextOpacity returns a boolean if a field has been set.
+
+### GetEnableDeviceSpecificBg
+
+`func (o *PortalCustomizeResOpenApiVO) GetEnableDeviceSpecificBg() bool`
+
+GetEnableDeviceSpecificBg returns the EnableDeviceSpecificBg field if non-nil, zero value otherwise.
+
+### GetEnableDeviceSpecificBgOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetEnableDeviceSpecificBgOk() (*bool, bool)`
+
+GetEnableDeviceSpecificBgOk returns a tuple with the EnableDeviceSpecificBg field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableDeviceSpecificBg
+
+`func (o *PortalCustomizeResOpenApiVO) SetEnableDeviceSpecificBg(v bool)`
+
+SetEnableDeviceSpecificBg sets EnableDeviceSpecificBg field to given value.
+
+### HasEnableDeviceSpecificBg
+
+`func (o *PortalCustomizeResOpenApiVO) HasEnableDeviceSpecificBg() bool`
+
+HasEnableDeviceSpecificBg returns a boolean if a field has been set.
+
 ### GetFormAuthButtonText
 
 `func (o *PortalCustomizeResOpenApiVO) GetFormAuthButtonText() string`
@@ -539,6 +1015,56 @@ SetFormAuthButtonText sets FormAuthButtonText field to given value.
 `func (o *PortalCustomizeResOpenApiVO) HasFormAuthButtonText() bool`
 
 HasFormAuthButtonText returns a boolean if a field has been set.
+
+### GetInputBoxBorderColor
+
+`func (o *PortalCustomizeResOpenApiVO) GetInputBoxBorderColor() string`
+
+GetInputBoxBorderColor returns the InputBoxBorderColor field if non-nil, zero value otherwise.
+
+### GetInputBoxBorderColorOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetInputBoxBorderColorOk() (*string, bool)`
+
+GetInputBoxBorderColorOk returns a tuple with the InputBoxBorderColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInputBoxBorderColor
+
+`func (o *PortalCustomizeResOpenApiVO) SetInputBoxBorderColor(v string)`
+
+SetInputBoxBorderColor sets InputBoxBorderColor field to given value.
+
+### HasInputBoxBorderColor
+
+`func (o *PortalCustomizeResOpenApiVO) HasInputBoxBorderColor() bool`
+
+HasInputBoxBorderColor returns a boolean if a field has been set.
+
+### GetInputBoxBorderOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) GetInputBoxBorderOpacity() int32`
+
+GetInputBoxBorderOpacity returns the InputBoxBorderOpacity field if non-nil, zero value otherwise.
+
+### GetInputBoxBorderOpacityOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetInputBoxBorderOpacityOk() (*int32, bool)`
+
+GetInputBoxBorderOpacityOk returns a tuple with the InputBoxBorderOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInputBoxBorderOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) SetInputBoxBorderOpacity(v int32)`
+
+SetInputBoxBorderOpacity sets InputBoxBorderOpacity field to given value.
+
+### HasInputBoxBorderOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) HasInputBoxBorderOpacity() bool`
+
+HasInputBoxBorderOpacity returns a boolean if a field has been set.
 
 ### GetInputBoxColor
 
@@ -589,6 +1115,31 @@ SetInputBoxOpacity sets InputBoxOpacity field to given value.
 `func (o *PortalCustomizeResOpenApiVO) HasInputBoxOpacity() bool`
 
 HasInputBoxOpacity returns a boolean if a field has been set.
+
+### GetInputBoxRadius
+
+`func (o *PortalCustomizeResOpenApiVO) GetInputBoxRadius() int32`
+
+GetInputBoxRadius returns the InputBoxRadius field if non-nil, zero value otherwise.
+
+### GetInputBoxRadiusOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetInputBoxRadiusOk() (*int32, bool)`
+
+GetInputBoxRadiusOk returns a tuple with the InputBoxRadius field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInputBoxRadius
+
+`func (o *PortalCustomizeResOpenApiVO) SetInputBoxRadius(v int32)`
+
+SetInputBoxRadius sets InputBoxRadius field to given value.
+
+### HasInputBoxRadius
+
+`func (o *PortalCustomizeResOpenApiVO) HasInputBoxRadius() bool`
+
+HasInputBoxRadius returns a boolean if a field has been set.
 
 ### GetInputTextColor
 
@@ -664,6 +1215,31 @@ SetLogoDisplay sets LogoDisplay field to given value.
 `func (o *PortalCustomizeResOpenApiVO) HasLogoDisplay() bool`
 
 HasLogoDisplay returns a boolean if a field has been set.
+
+### GetLogoHorizontalPosition
+
+`func (o *PortalCustomizeResOpenApiVO) GetLogoHorizontalPosition() int32`
+
+GetLogoHorizontalPosition returns the LogoHorizontalPosition field if non-nil, zero value otherwise.
+
+### GetLogoHorizontalPositionOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetLogoHorizontalPositionOk() (*int32, bool)`
+
+GetLogoHorizontalPositionOk returns a tuple with the LogoHorizontalPosition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogoHorizontalPosition
+
+`func (o *PortalCustomizeResOpenApiVO) SetLogoHorizontalPosition(v int32)`
+
+SetLogoHorizontalPosition sets LogoHorizontalPosition field to given value.
+
+### HasLogoHorizontalPosition
+
+`func (o *PortalCustomizeResOpenApiVO) HasLogoHorizontalPosition() bool`
+
+HasLogoHorizontalPosition returns a boolean if a field has been set.
 
 ### GetLogoPicture
 
@@ -815,6 +1391,56 @@ SetMobileBackgroundPicture sets MobileBackgroundPicture field to given value.
 
 HasMobileBackgroundPicture returns a boolean if a field has been set.
 
+### GetMobileBgPicCoordinatesOfLibrary
+
+`func (o *PortalCustomizeResOpenApiVO) GetMobileBgPicCoordinatesOfLibrary() BgPicCoordinatesOfLibraryOpenApiVO`
+
+GetMobileBgPicCoordinatesOfLibrary returns the MobileBgPicCoordinatesOfLibrary field if non-nil, zero value otherwise.
+
+### GetMobileBgPicCoordinatesOfLibraryOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetMobileBgPicCoordinatesOfLibraryOk() (*BgPicCoordinatesOfLibraryOpenApiVO, bool)`
+
+GetMobileBgPicCoordinatesOfLibraryOk returns a tuple with the MobileBgPicCoordinatesOfLibrary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMobileBgPicCoordinatesOfLibrary
+
+`func (o *PortalCustomizeResOpenApiVO) SetMobileBgPicCoordinatesOfLibrary(v BgPicCoordinatesOfLibraryOpenApiVO)`
+
+SetMobileBgPicCoordinatesOfLibrary sets MobileBgPicCoordinatesOfLibrary field to given value.
+
+### HasMobileBgPicCoordinatesOfLibrary
+
+`func (o *PortalCustomizeResOpenApiVO) HasMobileBgPicCoordinatesOfLibrary() bool`
+
+HasMobileBgPicCoordinatesOfLibrary returns a boolean if a field has been set.
+
+### GetPcAlign
+
+`func (o *PortalCustomizeResOpenApiVO) GetPcAlign() int32`
+
+GetPcAlign returns the PcAlign field if non-nil, zero value otherwise.
+
+### GetPcAlignOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetPcAlignOk() (*int32, bool)`
+
+GetPcAlignOk returns a tuple with the PcAlign field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPcAlign
+
+`func (o *PortalCustomizeResOpenApiVO) SetPcAlign(v int32)`
+
+SetPcAlign sets PcAlign field to given value.
+
+### HasPcAlign
+
+`func (o *PortalCustomizeResOpenApiVO) HasPcAlign() bool`
+
+HasPcAlign returns a boolean if a field has been set.
+
 ### GetRedirectionCountDownEnable
 
 `func (o *PortalCustomizeResOpenApiVO) GetRedirectionCountDownEnable() bool`
@@ -939,6 +1565,56 @@ SetTermsOfServiceText sets TermsOfServiceText field to given value.
 `func (o *PortalCustomizeResOpenApiVO) HasTermsOfServiceText() bool`
 
 HasTermsOfServiceText returns a boolean if a field has been set.
+
+### GetTermsOfServiceTextColor
+
+`func (o *PortalCustomizeResOpenApiVO) GetTermsOfServiceTextColor() string`
+
+GetTermsOfServiceTextColor returns the TermsOfServiceTextColor field if non-nil, zero value otherwise.
+
+### GetTermsOfServiceTextColorOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetTermsOfServiceTextColorOk() (*string, bool)`
+
+GetTermsOfServiceTextColorOk returns a tuple with the TermsOfServiceTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTermsOfServiceTextColor
+
+`func (o *PortalCustomizeResOpenApiVO) SetTermsOfServiceTextColor(v string)`
+
+SetTermsOfServiceTextColor sets TermsOfServiceTextColor field to given value.
+
+### HasTermsOfServiceTextColor
+
+`func (o *PortalCustomizeResOpenApiVO) HasTermsOfServiceTextColor() bool`
+
+HasTermsOfServiceTextColor returns a boolean if a field has been set.
+
+### GetTermsOfServiceTextOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) GetTermsOfServiceTextOpacity() int32`
+
+GetTermsOfServiceTextOpacity returns the TermsOfServiceTextOpacity field if non-nil, zero value otherwise.
+
+### GetTermsOfServiceTextOpacityOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetTermsOfServiceTextOpacityOk() (*int32, bool)`
+
+GetTermsOfServiceTextOpacityOk returns a tuple with the TermsOfServiceTextOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTermsOfServiceTextOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) SetTermsOfServiceTextOpacity(v int32)`
+
+SetTermsOfServiceTextOpacity sets TermsOfServiceTextOpacity field to given value.
+
+### HasTermsOfServiceTextOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) HasTermsOfServiceTextOpacity() bool`
+
+HasTermsOfServiceTextOpacity returns a boolean if a field has been set.
 
 ### GetTermsOfServiceUrlTexts
 

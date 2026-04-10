@@ -79,11 +79,12 @@ type ClientDetail struct {
 	LagId *int32 `json:"lagId,omitempty"`
 	// Last found time, timestamp (ms).
 	LastSeen *int64 `json:"lastSeen,omitempty"`
+	// Whether locate function is enabled
+	LocateEnable *bool `json:"locateEnable,omitempty"`
 	// Client MAC Address.
 	Mac *string `json:"mac,omitempty"`
 	// Whether it is the client currently being managed.
 	Manager *bool `json:"manager,omitempty"`
-	ManagerAndHandleAuthstatus *ClientDetail `json:"managerAndHandleAuthstatus,omitempty"`
 	// Model of client device.
 	Model *string `json:"model,omitempty"`
 	// (Wireless) Client multifrequency info list.
@@ -113,12 +114,20 @@ type ClientDetail struct {
 	Snr *int32 `json:"snr,omitempty"`
 	// (Wireless)  SSID name.
 	Ssid *string `json:"ssid,omitempty"`
+	// Standard switch ports in Lag. Exists only when lagId exists and stackId exists
+	StPortsInLag []string `json:"stPortsInLag,omitempty"`
+	// Stack Id
+	StackId *string `json:"stackId,omitempty"`
 	// Standard port.
 	StandardPort *string `json:"standardPort,omitempty"`
+	// Whether the client supports locate.True when the client is wired connected to a switch or stack that supports locate port.
+	SupportLocate *bool `json:"supportLocate,omitempty"`
 	// (Wired, connectDevType=switch)  Switch MAC address.
 	SwitchMac *string `json:"switchMac,omitempty"`
 	// (Wired, connectDevType=switch)  Switch name.
 	SwitchName *string `json:"switchName,omitempty"`
+	// Switch ports in Lag. Exists only when lagId exists and stackId is null
+	SwitchPortsInLag []int32 `json:"switchPortsInLag,omitempty"`
 	// Device system name.
 	SystemName *string `json:"systemName,omitempty"`
 	// Downstream traffic (Byte).
@@ -1154,6 +1163,38 @@ func (o *ClientDetail) SetLastSeen(v int64) {
 	o.LastSeen = &v
 }
 
+// GetLocateEnable returns the LocateEnable field value if set, zero value otherwise.
+func (o *ClientDetail) GetLocateEnable() bool {
+	if o == nil || IsNil(o.LocateEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.LocateEnable
+}
+
+// GetLocateEnableOk returns a tuple with the LocateEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientDetail) GetLocateEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.LocateEnable) {
+		return nil, false
+	}
+	return o.LocateEnable, true
+}
+
+// HasLocateEnable returns a boolean if a field has been set.
+func (o *ClientDetail) HasLocateEnable() bool {
+	if o != nil && !IsNil(o.LocateEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetLocateEnable gets a reference to the given bool and assigns it to the LocateEnable field.
+func (o *ClientDetail) SetLocateEnable(v bool) {
+	o.LocateEnable = &v
+}
+
 // GetMac returns the Mac field value if set, zero value otherwise.
 func (o *ClientDetail) GetMac() string {
 	if o == nil || IsNil(o.Mac) {
@@ -1216,38 +1257,6 @@ func (o *ClientDetail) HasManager() bool {
 // SetManager gets a reference to the given bool and assigns it to the Manager field.
 func (o *ClientDetail) SetManager(v bool) {
 	o.Manager = &v
-}
-
-// GetManagerAndHandleAuthstatus returns the ManagerAndHandleAuthstatus field value if set, zero value otherwise.
-func (o *ClientDetail) GetManagerAndHandleAuthstatus() ClientDetail {
-	if o == nil || IsNil(o.ManagerAndHandleAuthstatus) {
-		var ret ClientDetail
-		return ret
-	}
-	return *o.ManagerAndHandleAuthstatus
-}
-
-// GetManagerAndHandleAuthstatusOk returns a tuple with the ManagerAndHandleAuthstatus field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClientDetail) GetManagerAndHandleAuthstatusOk() (*ClientDetail, bool) {
-	if o == nil || IsNil(o.ManagerAndHandleAuthstatus) {
-		return nil, false
-	}
-	return o.ManagerAndHandleAuthstatus, true
-}
-
-// HasManagerAndHandleAuthstatus returns a boolean if a field has been set.
-func (o *ClientDetail) HasManagerAndHandleAuthstatus() bool {
-	if o != nil && !IsNil(o.ManagerAndHandleAuthstatus) {
-		return true
-	}
-
-	return false
-}
-
-// SetManagerAndHandleAuthstatus gets a reference to the given ClientDetail and assigns it to the ManagerAndHandleAuthstatus field.
-func (o *ClientDetail) SetManagerAndHandleAuthstatus(v ClientDetail) {
-	o.ManagerAndHandleAuthstatus = &v
 }
 
 // GetModel returns the Model field value if set, zero value otherwise.
@@ -1730,6 +1739,70 @@ func (o *ClientDetail) SetSsid(v string) {
 	o.Ssid = &v
 }
 
+// GetStPortsInLag returns the StPortsInLag field value if set, zero value otherwise.
+func (o *ClientDetail) GetStPortsInLag() []string {
+	if o == nil || IsNil(o.StPortsInLag) {
+		var ret []string
+		return ret
+	}
+	return o.StPortsInLag
+}
+
+// GetStPortsInLagOk returns a tuple with the StPortsInLag field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientDetail) GetStPortsInLagOk() ([]string, bool) {
+	if o == nil || IsNil(o.StPortsInLag) {
+		return nil, false
+	}
+	return o.StPortsInLag, true
+}
+
+// HasStPortsInLag returns a boolean if a field has been set.
+func (o *ClientDetail) HasStPortsInLag() bool {
+	if o != nil && !IsNil(o.StPortsInLag) {
+		return true
+	}
+
+	return false
+}
+
+// SetStPortsInLag gets a reference to the given []string and assigns it to the StPortsInLag field.
+func (o *ClientDetail) SetStPortsInLag(v []string) {
+	o.StPortsInLag = v
+}
+
+// GetStackId returns the StackId field value if set, zero value otherwise.
+func (o *ClientDetail) GetStackId() string {
+	if o == nil || IsNil(o.StackId) {
+		var ret string
+		return ret
+	}
+	return *o.StackId
+}
+
+// GetStackIdOk returns a tuple with the StackId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientDetail) GetStackIdOk() (*string, bool) {
+	if o == nil || IsNil(o.StackId) {
+		return nil, false
+	}
+	return o.StackId, true
+}
+
+// HasStackId returns a boolean if a field has been set.
+func (o *ClientDetail) HasStackId() bool {
+	if o != nil && !IsNil(o.StackId) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackId gets a reference to the given string and assigns it to the StackId field.
+func (o *ClientDetail) SetStackId(v string) {
+	o.StackId = &v
+}
+
 // GetStandardPort returns the StandardPort field value if set, zero value otherwise.
 func (o *ClientDetail) GetStandardPort() string {
 	if o == nil || IsNil(o.StandardPort) {
@@ -1760,6 +1833,38 @@ func (o *ClientDetail) HasStandardPort() bool {
 // SetStandardPort gets a reference to the given string and assigns it to the StandardPort field.
 func (o *ClientDetail) SetStandardPort(v string) {
 	o.StandardPort = &v
+}
+
+// GetSupportLocate returns the SupportLocate field value if set, zero value otherwise.
+func (o *ClientDetail) GetSupportLocate() bool {
+	if o == nil || IsNil(o.SupportLocate) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportLocate
+}
+
+// GetSupportLocateOk returns a tuple with the SupportLocate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientDetail) GetSupportLocateOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportLocate) {
+		return nil, false
+	}
+	return o.SupportLocate, true
+}
+
+// HasSupportLocate returns a boolean if a field has been set.
+func (o *ClientDetail) HasSupportLocate() bool {
+	if o != nil && !IsNil(o.SupportLocate) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportLocate gets a reference to the given bool and assigns it to the SupportLocate field.
+func (o *ClientDetail) SetSupportLocate(v bool) {
+	o.SupportLocate = &v
 }
 
 // GetSwitchMac returns the SwitchMac field value if set, zero value otherwise.
@@ -1824,6 +1929,38 @@ func (o *ClientDetail) HasSwitchName() bool {
 // SetSwitchName gets a reference to the given string and assigns it to the SwitchName field.
 func (o *ClientDetail) SetSwitchName(v string) {
 	o.SwitchName = &v
+}
+
+// GetSwitchPortsInLag returns the SwitchPortsInLag field value if set, zero value otherwise.
+func (o *ClientDetail) GetSwitchPortsInLag() []int32 {
+	if o == nil || IsNil(o.SwitchPortsInLag) {
+		var ret []int32
+		return ret
+	}
+	return o.SwitchPortsInLag
+}
+
+// GetSwitchPortsInLagOk returns a tuple with the SwitchPortsInLag field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientDetail) GetSwitchPortsInLagOk() ([]int32, bool) {
+	if o == nil || IsNil(o.SwitchPortsInLag) {
+		return nil, false
+	}
+	return o.SwitchPortsInLag, true
+}
+
+// HasSwitchPortsInLag returns a boolean if a field has been set.
+func (o *ClientDetail) HasSwitchPortsInLag() bool {
+	if o != nil && !IsNil(o.SwitchPortsInLag) {
+		return true
+	}
+
+	return false
+}
+
+// SetSwitchPortsInLag gets a reference to the given []int32 and assigns it to the SwitchPortsInLag field.
+func (o *ClientDetail) SetSwitchPortsInLag(v []int32) {
+	o.SwitchPortsInLag = v
 }
 
 // GetSystemName returns the SystemName field value if set, zero value otherwise.
@@ -2313,14 +2450,14 @@ func (o ClientDetail) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastSeen) {
 		toSerialize["lastSeen"] = o.LastSeen
 	}
+	if !IsNil(o.LocateEnable) {
+		toSerialize["locateEnable"] = o.LocateEnable
+	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac
 	}
 	if !IsNil(o.Manager) {
 		toSerialize["manager"] = o.Manager
-	}
-	if !IsNil(o.ManagerAndHandleAuthstatus) {
-		toSerialize["managerAndHandleAuthstatus"] = o.ManagerAndHandleAuthstatus
 	}
 	if !IsNil(o.Model) {
 		toSerialize["model"] = o.Model
@@ -2367,14 +2504,26 @@ func (o ClientDetail) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Ssid) {
 		toSerialize["ssid"] = o.Ssid
 	}
+	if !IsNil(o.StPortsInLag) {
+		toSerialize["stPortsInLag"] = o.StPortsInLag
+	}
+	if !IsNil(o.StackId) {
+		toSerialize["stackId"] = o.StackId
+	}
 	if !IsNil(o.StandardPort) {
 		toSerialize["standardPort"] = o.StandardPort
+	}
+	if !IsNil(o.SupportLocate) {
+		toSerialize["supportLocate"] = o.SupportLocate
 	}
 	if !IsNil(o.SwitchMac) {
 		toSerialize["switchMac"] = o.SwitchMac
 	}
 	if !IsNil(o.SwitchName) {
 		toSerialize["switchName"] = o.SwitchName
+	}
+	if !IsNil(o.SwitchPortsInLag) {
+		toSerialize["switchPortsInLag"] = o.SwitchPortsInLag
 	}
 	if !IsNil(o.SystemName) {
 		toSerialize["systemName"] = o.SystemName

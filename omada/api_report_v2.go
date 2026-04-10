@@ -23,9 +23,9 @@ import (
 type ReportV2API interface {
 
 	/*
-	AddTabNetworkReport add new tab 
+	AddTabNetworkReport Add new tab 
 
-	add a new tab by user<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30206  -  Adding failed. Please try again later.
+	Add a new tab by user<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30206  -  Adding failed. Please try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -39,9 +39,9 @@ type ReportV2API interface {
 	AddTabNetworkReportExecute(r ReportV2APIAddTabNetworkReportRequest) (*OperationResponse, *http.Response, error)
 
 	/*
-	DeleteTabNetworkReport batch delete tabs
+	DeleteTabNetworkReport Batch delete tabs
 
-	batch delete the tabs by id list<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30211  -  Deleting failed. Please try again later.
+	Batch delete the tabs by id list<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30211  -  Deleting failed. Please try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -122,7 +122,7 @@ type ReportV2API interface {
 	/*
 	GetAllTabs Get report all tabs
 
-	get report all tabs<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30212  -  Unable to get the tab module information. Please try again later.
+	Get report all tabs<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30212  -  Unable to get the tab module information. Please try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -168,9 +168,9 @@ type ReportV2API interface {
 	GetScheduleTimeInfoV2Execute(r ReportV2APIGetScheduleTimeInfoV2Request) (*OperationResponse, *http.Response, error)
 
 	/*
-	GetTabById get all cards in a tab
+	GetTabById Get all cards in a tab
 
-	get all cards in a tab<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30212  -  Unable to get the tab module information. Please try again later.
+	Get all cards in a tab<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30212  -  Unable to get the tab module information. Please try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -185,9 +185,9 @@ type ReportV2API interface {
 	GetTabByIdExecute(r ReportV2APIGetTabByIdRequest) (*OperationResponse, *http.Response, error)
 
 	/*
-	RecordTabNetworkReport reorder the tab 
+	RecordTabNetworkReport Reorder the tab 
 
-	reorder the tab <br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30207  -  Editing failed. Please try again later.
+	Reorder the tab <br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30207  -  Editing failed. Please try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -201,9 +201,9 @@ type ReportV2API interface {
 	RecordTabNetworkReportExecute(r ReportV2APIRecordTabNetworkReportRequest) (*OperationResponse, *http.Response, error)
 
 	/*
-	UpdateTabNetworkReport update  tab 
+	UpdateTabNetworkReport Update tab
 
-	update the tab config<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30207  -  Editing failed. Please try again later.
+	Update the tab config<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30207  -  Editing failed. Please try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -238,9 +238,9 @@ func (r ReportV2APIAddTabNetworkReportRequest) Execute() (*OperationResponse, *h
 }
 
 /*
-AddTabNetworkReport add new tab 
+AddTabNetworkReport Add new tab 
 
-add a new tab by user<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30206  -  Adding failed. Please try again later.
+Add a new tab by user<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30206  -  Adding failed. Please try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -365,9 +365,9 @@ func (r ReportV2APIDeleteTabNetworkReportRequest) Execute() (*OperationResponse,
 }
 
 /*
-DeleteTabNetworkReport batch delete tabs
+DeleteTabNetworkReport Batch delete tabs
 
-batch delete the tabs by id list<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30211  -  Deleting failed. Please try again later.
+Batch delete the tabs by id list<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30211  -  Deleting failed. Please try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1016,7 +1016,7 @@ func (r ReportV2APIGetAllTabsRequest) Execute() (*OperationResponseListReportTab
 /*
 GetAllTabs Get report all tabs
 
-get report all tabs<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30212  -  Unable to get the tab module information. Please try again later.
+Get report all tabs<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30212  -  Unable to get the tab module information. Please try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1389,9 +1389,9 @@ func (r ReportV2APIGetTabByIdRequest) Execute() (*OperationResponse, *http.Respo
 }
 
 /*
-GetTabById get all cards in a tab
+GetTabById Get all cards in a tab
 
-get all cards in a tab<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30212  -  Unable to get the tab module information. Please try again later.
+Get all cards in a tab<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30212  -  Unable to get the tab module information. Please try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1519,9 +1519,9 @@ func (r ReportV2APIRecordTabNetworkReportRequest) Execute() (*OperationResponse,
 }
 
 /*
-RecordTabNetworkReport reorder the tab 
+RecordTabNetworkReport Reorder the tab 
 
-reorder the tab <br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30207  -  Editing failed. Please try again later.
+Reorder the tab <br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30207  -  Editing failed. Please try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1651,9 +1651,9 @@ func (r ReportV2APIUpdateTabNetworkReportRequest) Execute() (*OperationResponse,
 }
 
 /*
-UpdateTabNetworkReport update  tab 
+UpdateTabNetworkReport Update tab
 
-update the tab config<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30207  -  Editing failed. Please try again later.
+Update the tab config<br/><br/>The interface requires one of the permissions: <br/>Site Network Report Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30207  -  Editing failed. Please try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

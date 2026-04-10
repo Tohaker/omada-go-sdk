@@ -20,8 +20,10 @@ var _ MappedNullable = &OsgCapVO{}
 // OsgCapVO struct for OsgCapVO
 type OsgCapVO struct {
 	NeedFullSync *bool `json:"needFullSync,omitempty"`
+	SupportArpTableGet *bool `json:"supportArpTableGet,omitempty"`
 	SupportClientPortInfo *bool `json:"supportClientPortInfo,omitempty"`
 	SupportConfigSync *bool `json:"supportConfigSync,omitempty"`
+	SupportDhcpClient *bool `json:"supportDhcpClient,omitempty"`
 	SupportRunningConfig *bool `json:"supportRunningConfig,omitempty"`
 }
 
@@ -72,6 +74,38 @@ func (o *OsgCapVO) HasNeedFullSync() bool {
 // SetNeedFullSync gets a reference to the given bool and assigns it to the NeedFullSync field.
 func (o *OsgCapVO) SetNeedFullSync(v bool) {
 	o.NeedFullSync = &v
+}
+
+// GetSupportArpTableGet returns the SupportArpTableGet field value if set, zero value otherwise.
+func (o *OsgCapVO) GetSupportArpTableGet() bool {
+	if o == nil || IsNil(o.SupportArpTableGet) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportArpTableGet
+}
+
+// GetSupportArpTableGetOk returns a tuple with the SupportArpTableGet field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgCapVO) GetSupportArpTableGetOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportArpTableGet) {
+		return nil, false
+	}
+	return o.SupportArpTableGet, true
+}
+
+// HasSupportArpTableGet returns a boolean if a field has been set.
+func (o *OsgCapVO) HasSupportArpTableGet() bool {
+	if o != nil && !IsNil(o.SupportArpTableGet) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportArpTableGet gets a reference to the given bool and assigns it to the SupportArpTableGet field.
+func (o *OsgCapVO) SetSupportArpTableGet(v bool) {
+	o.SupportArpTableGet = &v
 }
 
 // GetSupportClientPortInfo returns the SupportClientPortInfo field value if set, zero value otherwise.
@@ -138,6 +172,38 @@ func (o *OsgCapVO) SetSupportConfigSync(v bool) {
 	o.SupportConfigSync = &v
 }
 
+// GetSupportDhcpClient returns the SupportDhcpClient field value if set, zero value otherwise.
+func (o *OsgCapVO) GetSupportDhcpClient() bool {
+	if o == nil || IsNil(o.SupportDhcpClient) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportDhcpClient
+}
+
+// GetSupportDhcpClientOk returns a tuple with the SupportDhcpClient field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgCapVO) GetSupportDhcpClientOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportDhcpClient) {
+		return nil, false
+	}
+	return o.SupportDhcpClient, true
+}
+
+// HasSupportDhcpClient returns a boolean if a field has been set.
+func (o *OsgCapVO) HasSupportDhcpClient() bool {
+	if o != nil && !IsNil(o.SupportDhcpClient) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportDhcpClient gets a reference to the given bool and assigns it to the SupportDhcpClient field.
+func (o *OsgCapVO) SetSupportDhcpClient(v bool) {
+	o.SupportDhcpClient = &v
+}
+
 // GetSupportRunningConfig returns the SupportRunningConfig field value if set, zero value otherwise.
 func (o *OsgCapVO) GetSupportRunningConfig() bool {
 	if o == nil || IsNil(o.SupportRunningConfig) {
@@ -183,11 +249,17 @@ func (o OsgCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NeedFullSync) {
 		toSerialize["needFullSync"] = o.NeedFullSync
 	}
+	if !IsNil(o.SupportArpTableGet) {
+		toSerialize["supportArpTableGet"] = o.SupportArpTableGet
+	}
 	if !IsNil(o.SupportClientPortInfo) {
 		toSerialize["supportClientPortInfo"] = o.SupportClientPortInfo
 	}
 	if !IsNil(o.SupportConfigSync) {
 		toSerialize["supportConfigSync"] = o.SupportConfigSync
+	}
+	if !IsNil(o.SupportDhcpClient) {
+		toSerialize["supportDhcpClient"] = o.SupportDhcpClient
 	}
 	if !IsNil(o.SupportRunningConfig) {
 		toSerialize["supportRunningConfig"] = o.SupportRunningConfig

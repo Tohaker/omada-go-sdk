@@ -23,6 +23,8 @@ var _ MappedNullable = &MultiSiteClientExportOpenApiVO{}
 type MultiSiteClientExportOpenApiVO struct {
 	// The information of client list for export.
 	ClientsDisplay []string `json:"clientsDisplay,omitempty"`
+	// Override the export columns for given siteIds.
+	ClientsDisplayOverride *map[string][]string `json:"clientsDisplayOverride,omitempty"`
 	// Format should be a value as follows: 0: csv; 1: xlsx.
 	Format int32 `json:"format"`
 	// Export columns mode. 0：All Columns  1: CurrentDisplayColumns.
@@ -86,6 +88,38 @@ func (o *MultiSiteClientExportOpenApiVO) HasClientsDisplay() bool {
 // SetClientsDisplay gets a reference to the given []string and assigns it to the ClientsDisplay field.
 func (o *MultiSiteClientExportOpenApiVO) SetClientsDisplay(v []string) {
 	o.ClientsDisplay = v
+}
+
+// GetClientsDisplayOverride returns the ClientsDisplayOverride field value if set, zero value otherwise.
+func (o *MultiSiteClientExportOpenApiVO) GetClientsDisplayOverride() map[string][]string {
+	if o == nil || IsNil(o.ClientsDisplayOverride) {
+		var ret map[string][]string
+		return ret
+	}
+	return *o.ClientsDisplayOverride
+}
+
+// GetClientsDisplayOverrideOk returns a tuple with the ClientsDisplayOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiSiteClientExportOpenApiVO) GetClientsDisplayOverrideOk() (*map[string][]string, bool) {
+	if o == nil || IsNil(o.ClientsDisplayOverride) {
+		return nil, false
+	}
+	return o.ClientsDisplayOverride, true
+}
+
+// HasClientsDisplayOverride returns a boolean if a field has been set.
+func (o *MultiSiteClientExportOpenApiVO) HasClientsDisplayOverride() bool {
+	if o != nil && !IsNil(o.ClientsDisplayOverride) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientsDisplayOverride gets a reference to the given map[string][]string and assigns it to the ClientsDisplayOverride field.
+func (o *MultiSiteClientExportOpenApiVO) SetClientsDisplayOverride(v map[string][]string) {
+	o.ClientsDisplayOverride = &v
 }
 
 // GetFormat returns the Format field value
@@ -196,6 +230,9 @@ func (o MultiSiteClientExportOpenApiVO) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ClientsDisplay) {
 		toSerialize["clientsDisplay"] = o.ClientsDisplay
+	}
+	if !IsNil(o.ClientsDisplayOverride) {
+		toSerialize["clientsDisplayOverride"] = o.ClientsDisplayOverride
 	}
 	toSerialize["format"] = o.Format
 	toSerialize["mode"] = o.Mode

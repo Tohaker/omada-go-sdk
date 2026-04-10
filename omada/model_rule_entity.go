@@ -17,20 +17,12 @@ import (
 // checks if the RuleEntity type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RuleEntity{}
 
-// RuleEntity struct for RuleEntity
+// RuleEntity Rule list
 type RuleEntity struct {
-	// Application list
-	Applications []ApplicationEntity `json:"applications,omitempty"`
-	// Enable qos. true:enable / false:disable
-	Qos *bool `json:"qos,omitempty"`
-	// Qos class category
-	QosClass *int32 `json:"qosClass,omitempty"`
 	// Rule ID
 	RuleId *int32 `json:"ruleId,omitempty"`
 	// Rule name
 	RuleName *string `json:"ruleName,omitempty"`
-	// Schedule profile ID
-	Schedule *string `json:"schedule,omitempty"`
 }
 
 // NewRuleEntity instantiates a new RuleEntity object
@@ -48,102 +40,6 @@ func NewRuleEntity() *RuleEntity {
 func NewRuleEntityWithDefaults() *RuleEntity {
 	this := RuleEntity{}
 	return &this
-}
-
-// GetApplications returns the Applications field value if set, zero value otherwise.
-func (o *RuleEntity) GetApplications() []ApplicationEntity {
-	if o == nil || IsNil(o.Applications) {
-		var ret []ApplicationEntity
-		return ret
-	}
-	return o.Applications
-}
-
-// GetApplicationsOk returns a tuple with the Applications field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RuleEntity) GetApplicationsOk() ([]ApplicationEntity, bool) {
-	if o == nil || IsNil(o.Applications) {
-		return nil, false
-	}
-	return o.Applications, true
-}
-
-// HasApplications returns a boolean if a field has been set.
-func (o *RuleEntity) HasApplications() bool {
-	if o != nil && !IsNil(o.Applications) {
-		return true
-	}
-
-	return false
-}
-
-// SetApplications gets a reference to the given []ApplicationEntity and assigns it to the Applications field.
-func (o *RuleEntity) SetApplications(v []ApplicationEntity) {
-	o.Applications = v
-}
-
-// GetQos returns the Qos field value if set, zero value otherwise.
-func (o *RuleEntity) GetQos() bool {
-	if o == nil || IsNil(o.Qos) {
-		var ret bool
-		return ret
-	}
-	return *o.Qos
-}
-
-// GetQosOk returns a tuple with the Qos field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RuleEntity) GetQosOk() (*bool, bool) {
-	if o == nil || IsNil(o.Qos) {
-		return nil, false
-	}
-	return o.Qos, true
-}
-
-// HasQos returns a boolean if a field has been set.
-func (o *RuleEntity) HasQos() bool {
-	if o != nil && !IsNil(o.Qos) {
-		return true
-	}
-
-	return false
-}
-
-// SetQos gets a reference to the given bool and assigns it to the Qos field.
-func (o *RuleEntity) SetQos(v bool) {
-	o.Qos = &v
-}
-
-// GetQosClass returns the QosClass field value if set, zero value otherwise.
-func (o *RuleEntity) GetQosClass() int32 {
-	if o == nil || IsNil(o.QosClass) {
-		var ret int32
-		return ret
-	}
-	return *o.QosClass
-}
-
-// GetQosClassOk returns a tuple with the QosClass field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RuleEntity) GetQosClassOk() (*int32, bool) {
-	if o == nil || IsNil(o.QosClass) {
-		return nil, false
-	}
-	return o.QosClass, true
-}
-
-// HasQosClass returns a boolean if a field has been set.
-func (o *RuleEntity) HasQosClass() bool {
-	if o != nil && !IsNil(o.QosClass) {
-		return true
-	}
-
-	return false
-}
-
-// SetQosClass gets a reference to the given int32 and assigns it to the QosClass field.
-func (o *RuleEntity) SetQosClass(v int32) {
-	o.QosClass = &v
 }
 
 // GetRuleId returns the RuleId field value if set, zero value otherwise.
@@ -210,38 +106,6 @@ func (o *RuleEntity) SetRuleName(v string) {
 	o.RuleName = &v
 }
 
-// GetSchedule returns the Schedule field value if set, zero value otherwise.
-func (o *RuleEntity) GetSchedule() string {
-	if o == nil || IsNil(o.Schedule) {
-		var ret string
-		return ret
-	}
-	return *o.Schedule
-}
-
-// GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RuleEntity) GetScheduleOk() (*string, bool) {
-	if o == nil || IsNil(o.Schedule) {
-		return nil, false
-	}
-	return o.Schedule, true
-}
-
-// HasSchedule returns a boolean if a field has been set.
-func (o *RuleEntity) HasSchedule() bool {
-	if o != nil && !IsNil(o.Schedule) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchedule gets a reference to the given string and assigns it to the Schedule field.
-func (o *RuleEntity) SetSchedule(v string) {
-	o.Schedule = &v
-}
-
 func (o RuleEntity) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -252,23 +116,11 @@ func (o RuleEntity) MarshalJSON() ([]byte, error) {
 
 func (o RuleEntity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Applications) {
-		toSerialize["applications"] = o.Applications
-	}
-	if !IsNil(o.Qos) {
-		toSerialize["qos"] = o.Qos
-	}
-	if !IsNil(o.QosClass) {
-		toSerialize["qosClass"] = o.QosClass
-	}
 	if !IsNil(o.RuleId) {
 		toSerialize["ruleId"] = o.RuleId
 	}
 	if !IsNil(o.RuleName) {
 		toSerialize["ruleName"] = o.RuleName
-	}
-	if !IsNil(o.Schedule) {
-		toSerialize["schedule"] = o.Schedule
 	}
 	return toSerialize, nil
 }

@@ -29,7 +29,7 @@ type SwitchLoopbackControl struct {
 	MaxAge *int32 `json:"maxAge,omitempty"`
 	// maxHops should be between 1 and 40.
 	MaxHops *int32 `json:"maxHops,omitempty"`
-	Mstp *OswStpMstpConfig `json:"mstp,omitempty"`
+	Mstp *OswStpMstpConfigOpenApiVO `json:"mstp,omitempty"`
 	// Parameter [priority] should be an integer from 0 to 61440 and divisible by 4096.
 	Priority *int32 `json:"priority,omitempty"`
 	// STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP 
@@ -216,9 +216,9 @@ func (o *SwitchLoopbackControl) SetMaxHops(v int32) {
 }
 
 // GetMstp returns the Mstp field value if set, zero value otherwise.
-func (o *SwitchLoopbackControl) GetMstp() OswStpMstpConfig {
+func (o *SwitchLoopbackControl) GetMstp() OswStpMstpConfigOpenApiVO {
 	if o == nil || IsNil(o.Mstp) {
-		var ret OswStpMstpConfig
+		var ret OswStpMstpConfigOpenApiVO
 		return ret
 	}
 	return *o.Mstp
@@ -226,7 +226,7 @@ func (o *SwitchLoopbackControl) GetMstp() OswStpMstpConfig {
 
 // GetMstpOk returns a tuple with the Mstp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SwitchLoopbackControl) GetMstpOk() (*OswStpMstpConfig, bool) {
+func (o *SwitchLoopbackControl) GetMstpOk() (*OswStpMstpConfigOpenApiVO, bool) {
 	if o == nil || IsNil(o.Mstp) {
 		return nil, false
 	}
@@ -242,8 +242,8 @@ func (o *SwitchLoopbackControl) HasMstp() bool {
 	return false
 }
 
-// SetMstp gets a reference to the given OswStpMstpConfig and assigns it to the Mstp field.
-func (o *SwitchLoopbackControl) SetMstp(v OswStpMstpConfig) {
+// SetMstp gets a reference to the given OswStpMstpConfigOpenApiVO and assigns it to the Mstp field.
+func (o *SwitchLoopbackControl) SetMstp(v OswStpMstpConfigOpenApiVO) {
 	o.Mstp = &v
 }
 

@@ -45,6 +45,8 @@ type OswLagStatusVO struct {
 	StandardPorts []OswStandPortVO `json:"standardPorts,omitempty"`
 	// STP Discarding
 	StpDiscarding *bool `json:"stpDiscarding,omitempty"`
+	// LACP state
+	TrunkState *int32 `json:"trunkState,omitempty"`
 	// Tx
 	Tx *int64 `json:"tx,omitempty"`
 	// Tx Rate
@@ -484,6 +486,38 @@ func (o *OswLagStatusVO) SetStpDiscarding(v bool) {
 	o.StpDiscarding = &v
 }
 
+// GetTrunkState returns the TrunkState field value if set, zero value otherwise.
+func (o *OswLagStatusVO) GetTrunkState() int32 {
+	if o == nil || IsNil(o.TrunkState) {
+		var ret int32
+		return ret
+	}
+	return *o.TrunkState
+}
+
+// GetTrunkStateOk returns a tuple with the TrunkState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswLagStatusVO) GetTrunkStateOk() (*int32, bool) {
+	if o == nil || IsNil(o.TrunkState) {
+		return nil, false
+	}
+	return o.TrunkState, true
+}
+
+// HasTrunkState returns a boolean if a field has been set.
+func (o *OswLagStatusVO) HasTrunkState() bool {
+	if o != nil && !IsNil(o.TrunkState) {
+		return true
+	}
+
+	return false
+}
+
+// SetTrunkState gets a reference to the given int32 and assigns it to the TrunkState field.
+func (o *OswLagStatusVO) SetTrunkState(v int32) {
+	o.TrunkState = &v
+}
+
 // GetTx returns the Tx field value if set, zero value otherwise.
 func (o *OswLagStatusVO) GetTx() int64 {
 	if o == nil || IsNil(o.Tx) {
@@ -596,6 +630,9 @@ func (o OswLagStatusVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.StpDiscarding) {
 		toSerialize["stpDiscarding"] = o.StpDiscarding
+	}
+	if !IsNil(o.TrunkState) {
+		toSerialize["trunkState"] = o.TrunkState
 	}
 	if !IsNil(o.Tx) {
 		toSerialize["tx"] = o.Tx

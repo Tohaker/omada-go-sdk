@@ -70,6 +70,39 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test GatewayAPIService ChangeOduMode", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var gatewayMac string
+
+		resp, httpRes, err := apiClient.GatewayAPI.ChangeOduMode(context.Background(), omadacId, siteId, gatewayMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayAPIService ChangeOduModeForMsp", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var mspId string
+		var customerId string
+		var siteId string
+		var gatewayMac string
+
+		resp, httpRes, err := apiClient.GatewayAPI.ChangeOduModeForMsp(context.Background(), mspId, customerId, siteId, gatewayMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test GatewayAPIService ChangePinSetting", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -103,6 +136,21 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test GatewayAPIService GetClientDhcpLeaseTimes", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.GatewayAPI.GetClientDhcpLeaseTimes(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test GatewayAPIService GetEnableWanDetail", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -112,22 +160,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 		var gatewayMac string
 
 		resp, httpRes, err := apiClient.GatewayAPI.GetEnableWanDetail(context.Background(), omadacId, siteId, gatewayMac).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test GatewayAPIService GetGatewayInfo", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.GetGatewayInfo(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -160,6 +192,22 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 		var gatewayMac string
 
 		resp, httpRes, err := apiClient.GatewayAPI.GetGeneralConfig1(context.Background(), omadacId, siteId, gatewayMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayAPIService GetGridDhcpUserList1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var gatewayMac string
+
+		resp, httpRes, err := apiClient.GatewayAPI.GetGridDhcpUserList1(context.Background(), omadacId, siteId, gatewayMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -231,22 +279,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test GatewayAPIService GetPortsTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.GetPortsTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test GatewayAPIService GetSimCardUsed", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -286,22 +318,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 		var gatewayMac string
 
 		resp, httpRes, err := apiClient.GatewayAPI.GetSsidDetail1(context.Background(), omadacId, siteId, gatewayMac).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test GatewayAPIService GetSsidDetailTemplate1", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-		var deviceTemplateId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.GetSsidDetailTemplate1(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -357,22 +373,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test GatewayAPIService ModifyConfigAdvancedTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigAdvancedTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test GatewayAPIService ModifyConfigCommonAdvanced", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -382,22 +382,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 		var gatewayMac string
 
 		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigCommonAdvanced(context.Background(), omadacId, siteId, gatewayMac).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test GatewayAPIService ModifyConfigCommonAdvancedTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigCommonAdvancedTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -421,22 +405,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test GatewayAPIService ModifyConfigGeneralTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigGeneralTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test GatewayAPIService ModifyConfigRadios", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -446,22 +414,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 		var gatewayMac string
 
 		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigRadios(context.Background(), omadacId, siteId, gatewayMac).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test GatewayAPIService ModifyConfigRadiosTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigRadiosTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -485,22 +437,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test GatewayAPIService ModifyConfigServicesTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigServicesTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test GatewayAPIService ModifyConfigWirelessAdvanced", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -517,22 +453,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test GatewayAPIService ModifyConfigWirelessAdvancedTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigWirelessAdvancedTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test GatewayAPIService ModifyConfigWlans", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -542,22 +462,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 		var gatewayMac string
 
 		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigWlans(context.Background(), omadacId, siteId, gatewayMac).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test GatewayAPIService ModifyConfigWlansTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifyConfigWlansTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -631,23 +535,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test GatewayAPIService ModifyPortConfig", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var siteTemplateId string
-		var deviceTemplateId string
-		var port string
-		var omadacId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifyPortConfig(context.Background(), siteTemplateId, deviceTemplateId, port, omadacId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test GatewayAPIService ModifyPortConfig1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -698,23 +585,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test GatewayAPIService ModifySsidBasicConfigTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-		var deviceTemplateId string
-		var ssidId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifySsidBasicConfigTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId, ssidId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test GatewayAPIService ModifySsidMacFilterConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -725,23 +595,6 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 		var ssidId string
 
 		resp, httpRes, err := apiClient.GatewayAPI.ModifySsidMacFilterConfig(context.Background(), omadacId, siteId, gatewayMac, ssidId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test GatewayAPIService ModifySsidMacFilterConfigTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-		var deviceTemplateId string
-		var ssidId string
-
-		resp, httpRes, err := apiClient.GatewayAPI.ModifySsidMacFilterConfigTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

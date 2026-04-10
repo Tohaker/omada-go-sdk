@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ## GetAlg
 
-> OperationResponseALGSetting GetAlg(ctx, omadacId, siteId).Execute()
+> OperationResponseGetAlgOpenApiVO GetAlg(ctx, omadacId, siteId).Execute()
 
 Get ALG Info
 
@@ -350,7 +350,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NATAPI.GetAlg``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlg`: OperationResponseALGSetting
+	// response from `GetAlg`: OperationResponseGetAlgOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `NATAPI.GetAlg`: %v\n", resp)
 }
 ```
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseALGSetting**](OperationResponseALGSetting.md)
+[**OperationResponseGetAlgOpenApiVO**](OperationResponseGetAlgOpenApiVO.md)
 
 ### Authorization
 

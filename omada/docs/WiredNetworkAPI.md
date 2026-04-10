@@ -38,8 +38,10 @@ Method | HTTP request | Description
 [**GetBandScanResult**](WiredNetworkAPI.md#getbandscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/band-scan/{portUuid} | Get band scan result.
 [**GetDeliveringProcess**](WiredNetworkAPI.md#getdeliveringprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/process | Get network delivering process and config
 [**GetDeliveringProcessWithoutConfig**](WiredNetworkAPI.md#getdeliveringprocesswithoutconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/brief-process | Get network delivering process
+[**GetDevicePortSupportVlansInfo**](WiredNetworkAPI.md#getdeviceportsupportvlansinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/device-support-ports | Get device port info on whether support any of current vlans
 [**GetDhcpServerDevCapForNetwork**](WiredNetworkAPI.md#getdhcpserverdevcapfornetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/dhcp-server/capabilities | Get the capabilities of the DHCP server under the network
 [**GetDhcpServerInfoForNetwork**](WiredNetworkAPI.md#getdhcpserverinfofornetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/dhcp-server-info | Get the address pool of the DHCP server under the network and the number of available IPs
+[**GetGridAllClients1**](WiredNetworkAPI.md#getgridallclients1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/client | Get client list
 [**GetGridLanDns**](WiredNetworkAPI.md#getgridlandns) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/lan/dns | Get LAN DNS list
 [**GetGridSupportVlanNetworkDevicesBySite**](WiredNetworkAPI.md#getgridsupportvlannetworkdevicesbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/devices | Get devices list that can be dhcp server
 [**GetGridVirtualWan**](WiredNetworkAPI.md#getgridvirtualwan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans | Query virtual WAN list
@@ -70,12 +72,14 @@ Method | HTTP request | Description
 [**GetSelectStackPortsInfoWhenModify**](WiredNetworkAPI.md#getselectstackportsinfowhenmodify) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/stack/ports | Get the port information of the selected stacks when modifying the network
 [**GetSimCardBandScanResult**](WiredNetworkAPI.md#getsimcardbandscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/band-scan/{portUuid}/{simCard} | Obtain the bandScan result of the corresponding SIM card
 [**GetSimCardIspScanResult**](WiredNetworkAPI.md#getsimcardispscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/isp-scan/{portUuid}/{simCard} | Obtain the ispScan result of the corresponding SIM card
+[**GetSpeedTestV2Setting**](WiredNetworkAPI.md#getspeedtestv2setting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/speedTest | Get SpeedTest Setting
 [**GetSupportInfo**](WiredNetworkAPI.md#getsupportinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/models | Get supported gateway model list for pre-configuration
 [**GetUseLanProfileES**](WiredNetworkAPI.md#getuselanprofilees) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles/{profileId}/es | Query Agile Series switches that used the profile
 [**GetUseNativeNetworkOsw**](WiredNetworkAPI.md#getusenativenetworkosw) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/es | Query switches that used the Native Network&#39;s profile
 [**GetUseNativeNetworkOswV2**](WiredNetworkAPI.md#getusenativenetworkoswv2) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/lan-networks/es-native | Query switches that used the Native Network&#39;s profile V2
 [**GetVlanNetworkAffectedDevice1**](WiredNetworkAPI.md#getvlannetworkaffecteddevice1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/devices | Get devices list that use the network
 [**GetVlanNetworkAffectedSsid1**](WiredNetworkAPI.md#getvlannetworkaffectedssid1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/ssids | Get grid ssid list that use the vlan
+[**GetVlanNetworkDevicePortSupportVlanInfo**](WiredNetworkAPI.md#getvlannetworkdeviceportsupportvlaninfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlan/{vlan}/device-support-ports | Get device port info on whether support current vlan
 [**GetWanPortsConfig**](WiredNetworkAPI.md#getwanportsconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/internet/ports-config | Get internet ports config
 [**GetWanPortsMaxSpeed1**](WiredNetworkAPI.md#getwanportsmaxspeed1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan-max-speed | Get wan ports max speed
 [**ModifyGatewayModel**](WiredNetworkAPI.md#modifygatewaymodel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/internet/change-model | Modify gateway mode for pre-configuration
@@ -89,15 +93,17 @@ Method | HTTP request | Description
 [**ModifyLanProfile**](WiredNetworkAPI.md#modifylanprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Modify a LAN profile
 [**ModifyLteWanPortConfig**](WiredNetworkAPI.md#modifyltewanportconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/lte/ports-config | Modify internet lte port config
 [**ModifyOswLanProfile**](WiredNetworkAPI.md#modifyoswlanprofile) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/lan-profiles/{profileId} | Modify a switch profile
+[**ModifySpeedTestV2Setting**](WiredNetworkAPI.md#modifyspeedtestv2setting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/speedTest | Modify SpeedTest Setting
 [**ModifyVirtualWan**](WiredNetworkAPI.md#modifyvirtualwan) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/{virtualWanId} | Modify virtual WAN
 [**ModifyVirtualWanStatus**](WiredNetworkAPI.md#modifyvirtualwanstatus) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/virtual-wans/{virtualWanId}/status | Modify virtual WAN status
 [**ModifyWanPortSettings**](WiredNetworkAPI.md#modifywanportsettings) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/port-setting | Modify Wan Port Settings
 [**ModifyWanPorts**](WiredNetworkAPI.md#modifywanports) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/wan-ports | Modify Wan Ports
 [**ModifyWanPortsConfig**](WiredNetworkAPI.md#modifywanportsconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/internet/ports-config | Modify internet ports config
 [**NetworkMapping**](WiredNetworkAPI.md#networkmapping) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/network-mapping | Network mapping
+[**ObtainWanUnsupportedFunction**](WiredNetworkAPI.md#obtainwanunsupportedfunction) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/unsupportedFunction | Get linkage functions that are not supported by WAN
 [**SpeedTest**](WiredNetworkAPI.md#speedtest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/speedTest | SpeedTest
-[**StartBandScan**](WiredNetworkAPI.md#startbandscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/band-scan | BandScan
-[**StartIspScan**](WiredNetworkAPI.md#startispscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/isp-scan | IspScan
+[**StartBandScan**](WiredNetworkAPI.md#startbandscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/band-scan | Start Band scan
+[**StartIspScan**](WiredNetworkAPI.md#startispscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/networks/isp-scan | Start Isp scan
 
 
 
@@ -712,7 +718,7 @@ Name | Type | Description  | Notes
 
 ## CheckWanLanStatus1
 
-> CheckWanLanStatusOpenApiVO CheckWanLanStatus1(ctx, omadacId, siteId).Execute()
+> OperationResponseCheckWanLanStatusOpenApiVO CheckWanLanStatus1(ctx, omadacId, siteId).Execute()
 
 Check WAN-LAN status
 
@@ -741,7 +747,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.CheckWanLanStatus1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CheckWanLanStatus1`: CheckWanLanStatusOpenApiVO
+	// response from `CheckWanLanStatus1`: OperationResponseCheckWanLanStatusOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.CheckWanLanStatus1`: %v\n", resp)
 }
 ```
@@ -767,7 +773,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CheckWanLanStatusOpenApiVO**](CheckWanLanStatusOpenApiVO.md)
+[**OperationResponseCheckWanLanStatusOpenApiVO**](OperationResponseCheckWanLanStatusOpenApiVO.md)
 
 ### Authorization
 
@@ -1088,7 +1094,7 @@ Name | Type | Description  | Notes
 
 ## CreateLanNetworkV2
 
-> ResponseIdVO CreateLanNetworkV2(ctx, omadacId, siteId).LanNetworkOpenApiV2VO(lanNetworkOpenApiV2VO).Execute()
+> OperationResponseResponseIdVO CreateLanNetworkV2(ctx, omadacId, siteId).LanNetworkOpenApiV2VO(lanNetworkOpenApiV2VO).Execute()
 
 Create LAN network
 
@@ -1118,7 +1124,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.CreateLanNetworkV2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateLanNetworkV2`: ResponseIdVO
+	// response from `CreateLanNetworkV2`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.CreateLanNetworkV2`: %v\n", resp)
 }
 ```
@@ -1145,7 +1151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseIdVO**](ResponseIdVO.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -1920,7 +1926,7 @@ Name | Type | Description  | Notes
 
 ## GetAllLanNetworks
 
-> []LanNetworkVO GetAllLanNetworks(ctx, omadacId, siteId).Execute()
+> OperationResponseListLanNetworkVO GetAllLanNetworks(ctx, omadacId, siteId).Execute()
 
 Get all networks for the omada id and site id
 
@@ -1949,7 +1955,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.GetAllLanNetworks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAllLanNetworks`: []LanNetworkVO
+	// response from `GetAllLanNetworks`: OperationResponseListLanNetworkVO
 	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.GetAllLanNetworks`: %v\n", resp)
 }
 ```
@@ -1975,7 +1981,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]LanNetworkVO**](LanNetworkVO.md)
+[**OperationResponseListLanNetworkVO**](OperationResponseListLanNetworkVO.md)
 
 ### Authorization
 
@@ -2395,7 +2401,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	function := int32(56) // int32 | function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3:IGMP_PROXY, 4: VIRTUAL_WAN
+	function := int32(56) // int32 | function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3: IGMP_PROXY, 4: VIRTUAL_WAN, 5: PORT_FROWARDING, 6: OTONAT, 7: BANDWIDTH_CONTROL, 8: STATIC_ROUTING, 9: POLICY_ROUTING, 10: VPN, 11: SSL_VPN, 12: DDNS, 13: UPNP, 14: MLD, 15: LAN
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2427,7 +2433,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **function** | **int32** | function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3:IGMP_PROXY, 4: VIRTUAL_WAN | 
+ **function** | **int32** | function used for wan ports query. 0: ACL, 1: QOS, 2: IP_MAC_BLINDING, 3: IGMP_PROXY, 4: VIRTUAL_WAN, 5: PORT_FROWARDING, 6: OTONAT, 7: BANDWIDTH_CONTROL, 8: STATIC_ROUTING, 9: POLICY_ROUTING, 10: VPN, 11: SSL_VPN, 12: DDNS, 13: UPNP, 14: MLD, 15: LAN | 
 
 ### Return type
 
@@ -2675,6 +2681,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetDevicePortSupportVlansInfo
+
+> OperationResponseVlanNetworkDeviceSupportInfoVO GetDevicePortSupportVlansInfo(ctx, omadacId, siteId).VlanNetworkVlansVO(vlanNetworkVlansVO).Execute()
+
+Get device port info on whether support any of current vlans
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	vlanNetworkVlansVO := *openapiclient.NewVlanNetworkVlansVO() // VlanNetworkVlansVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WiredNetworkAPI.GetDevicePortSupportVlansInfo(context.Background(), omadacId, siteId).VlanNetworkVlansVO(vlanNetworkVlansVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.GetDevicePortSupportVlansInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDevicePortSupportVlansInfo`: OperationResponseVlanNetworkDeviceSupportInfoVO
+	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.GetDevicePortSupportVlansInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDevicePortSupportVlansInfoRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **vlanNetworkVlansVO** | [**VlanNetworkVlansVO**](VlanNetworkVlansVO.md) |  | 
+
+### Return type
+
+[**OperationResponseVlanNetworkDeviceSupportInfoVO**](OperationResponseVlanNetworkDeviceSupportInfoVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetDhcpServerDevCapForNetwork
 
 > OperationResponseDhcpServerDevCapForVlanVO GetDhcpServerDevCapForNetwork(ctx, omadacId, siteId, networkId).Execute()
@@ -2827,9 +2908,88 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetGridAllClients1
+
+> OperationResponseGridVONetworkClientAllOpenApiVO GetGridAllClients1(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
+
+Get client list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	searchKey := "searchKey_example" // string | Fuzzy query parameters, support field  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WiredNetworkAPI.GetGridAllClients1(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.GetGridAllClients1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridAllClients1`: OperationResponseGridVONetworkClientAllOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.GetGridAllClients1`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridAllClients1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **searchKey** | **string** | Fuzzy query parameters, support field  | 
+
+### Return type
+
+[**OperationResponseGridVONetworkClientAllOpenApiVO**](OperationResponseGridVONetworkClientAllOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetGridLanDns
 
-> OperationResponseGridVOLanDnsOpenApiVO GetGridLanDns(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO GetGridLanDns(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
 
 Get LAN DNS list
 
@@ -2860,7 +3020,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.GetGridLanDns``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGridLanDns`: OperationResponseGridVOLanDnsOpenApiVO
+	// response from `GetGridLanDns`: OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.GetGridLanDns`: %v\n", resp)
 }
 ```
@@ -2888,7 +3048,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVOLanDnsOpenApiVO**](OperationResponseGridVOLanDnsOpenApiVO.md)
+[**OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO**](OperationResponseLanDnsGridVOLanDnsQueryOpenApiVO.md)
 
 ### Authorization
 
@@ -5110,6 +5270,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetSpeedTestV2Setting
+
+> OperationResponseSpeedTestV2SettingVO GetSpeedTestV2Setting(ctx, omadacId, siteId).Execute()
+
+Get SpeedTest Setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WiredNetworkAPI.GetSpeedTestV2Setting(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.GetSpeedTestV2Setting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSpeedTestV2Setting`: OperationResponseSpeedTestV2SettingVO
+	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.GetSpeedTestV2Setting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSpeedTestV2SettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseSpeedTestV2SettingVO**](OperationResponseSpeedTestV2SettingVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetSupportInfo
 
 > OperationResponseSupportOsgModelOpenApiAppVO GetSupportInfo(ctx, omadacId, siteId).Execute()
@@ -5560,6 +5793,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseGridVOVlanNetworkAffectingSsidVO**](OperationResponseGridVOVlanNetworkAffectingSsidVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetVlanNetworkDevicePortSupportVlanInfo
+
+> OperationResponseVlanNetworkDeviceSupportInfoVO GetVlanNetworkDevicePortSupportVlanInfo(ctx, omadacId, siteId, networkId, vlan).Execute()
+
+Get device port info on whether support current vlan
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	networkId := "networkId_example" // string | Network ID
+	vlan := "vlan_example" // string | Vlan ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WiredNetworkAPI.GetVlanNetworkDevicePortSupportVlanInfo(context.Background(), omadacId, siteId, networkId, vlan).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.GetVlanNetworkDevicePortSupportVlanInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetVlanNetworkDevicePortSupportVlanInfo`: OperationResponseVlanNetworkDeviceSupportInfoVO
+	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.GetVlanNetworkDevicePortSupportVlanInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**networkId** | **string** | Network ID | 
+**vlan** | **string** | Vlan ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetVlanNetworkDevicePortSupportVlanInfoRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**OperationResponseVlanNetworkDeviceSupportInfoVO**](OperationResponseVlanNetworkDeviceSupportInfoVO.md)
 
 ### Authorization
 
@@ -6569,6 +6881,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ModifySpeedTestV2Setting
+
+> OperationResponseWithoutResult ModifySpeedTestV2Setting(ctx, omadacId, siteId).ModifySpeedTestV2SettingOpenApiVO(modifySpeedTestV2SettingOpenApiVO).Execute()
+
+Modify SpeedTest Setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	modifySpeedTestV2SettingOpenApiVO := *openapiclient.NewModifySpeedTestV2SettingOpenApiVO(false) // ModifySpeedTestV2SettingOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WiredNetworkAPI.ModifySpeedTestV2Setting(context.Background(), omadacId, siteId).ModifySpeedTestV2SettingOpenApiVO(modifySpeedTestV2SettingOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.ModifySpeedTestV2Setting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifySpeedTestV2Setting`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.ModifySpeedTestV2Setting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifySpeedTestV2SettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **modifySpeedTestV2SettingOpenApiVO** | [**ModifySpeedTestV2SettingOpenApiVO**](ModifySpeedTestV2SettingOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ModifyVirtualWan
 
 > OperationResponseWithoutResult ModifyVirtualWan(ctx, omadacId, siteId, virtualWanId).VirtualWanConfigOpenApiVO(virtualWanConfigOpenApiVO).Execute()
@@ -6748,7 +7135,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	internetPortOpenApiVO := *openapiclient.NewInternetPortOpenApiVO() // InternetPortOpenApiVO | 
+	internetPortOpenApiVO := *openapiclient.NewInternetPortOpenApiVO(int32(123)) // InternetPortOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7025,6 +7412,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ObtainWanUnsupportedFunction
+
+> OperationResponseWanUnsupportedFunctionOpenApiVO ObtainWanUnsupportedFunction(ctx, omadacId, siteId).Filter(filter).Execute()
+
+Get linkage functions that are not supported by WAN
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	filter := int32(56) // int32 | 1: Obtain the functions that are not supported when you configure DS-Lite and MAP-E dial-up for IPv4 on the WAN port. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WiredNetworkAPI.ObtainWanUnsupportedFunction(context.Background(), omadacId, siteId).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkAPI.ObtainWanUnsupportedFunction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ObtainWanUnsupportedFunction`: OperationResponseWanUnsupportedFunctionOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `WiredNetworkAPI.ObtainWanUnsupportedFunction`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiObtainWanUnsupportedFunctionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **filter** | **int32** | 1: Obtain the functions that are not supported when you configure DS-Lite and MAP-E dial-up for IPv4 on the WAN port. | 
+
+### Return type
+
+[**OperationResponseWanUnsupportedFunctionOpenApiVO**](OperationResponseWanUnsupportedFunctionOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## SpeedTest
 
 > OperationResponseWithoutResult SpeedTest(ctx, omadacId, siteId).InternetOpenApiVO(internetOpenApiVO).Execute()
@@ -7104,7 +7566,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult StartBandScan(ctx, omadacId, siteId).BandScanStart(bandScanStart).Execute()
 
-BandScan
+Start Band scan
 
 
 
@@ -7179,7 +7641,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult StartIspScan(ctx, omadacId, siteId).IspScanStartOpenApiVO(ispScanStartOpenApiVO).Execute()
 
-IspScan
+Start Isp scan
 
 
 

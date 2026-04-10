@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ## GetLineProfileList
 
-> OperationResponseListLineProfileVO GetLineProfileList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListLineProfileVO GetLineProfileList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get line profile list
 
@@ -270,11 +270,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewLineProfileListQueryDTO() // LineProfileListQueryDTO | 
+	queryParam := *openapiclient.NewLineProfileListQueryDTO() // LineProfileListQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTLineProfileAPI.GetLineProfileList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTLineProfileAPI.GetLineProfileList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTLineProfileAPI.GetLineProfileList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**LineProfileListQueryDTO**](LineProfileListQueryDTO.md) |  | 
+ **queryParam** | [**LineProfileListQueryDTO**](LineProfileListQueryDTO.md) |  | 
 
 ### Return type
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ## GetLineProfilePage
 
-> OperationResponsePageResponseLineProfileVO GetLineProfilePage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseLineProfileVO GetLineProfilePage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get line profile page
 
@@ -348,11 +348,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewLineProfilePageQueryDTO() // LineProfilePageQueryDTO | 
+	queryParam := *openapiclient.NewLineProfilePageQueryDTO() // LineProfilePageQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTLineProfileAPI.GetLineProfilePage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTLineProfileAPI.GetLineProfilePage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTLineProfileAPI.GetLineProfilePage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**LineProfilePageQueryDTO**](LineProfilePageQueryDTO.md) |  | 
+ **queryParam** | [**LineProfilePageQueryDTO**](LineProfilePageQueryDTO.md) |  | 
 
 ### Return type
 

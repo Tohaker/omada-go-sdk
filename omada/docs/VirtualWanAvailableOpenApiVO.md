@@ -5,9 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ipv4Proto** | Pointer to **string** | Virtual WAN IPv4 proto. | [optional] 
+**MaxBandwidth** | Pointer to **int64** | Port max bandwidth. | [optional] 
 **Name** | Pointer to **string** | Virtual WAN name. | [optional] 
 **PhysicalWanId** | Pointer to **string** | Physical WAN ID. | [optional] 
 **Type** | Pointer to **int32** | Physical WAN port type, 0: WAN; 1:WAN/LAN; 2:LAN; 3:SFP WAN; 4:USB LTE WAN; 5: LTE WAN; 6:DSL WAN; | [optional] 
+**VirtualEntryId** | Pointer to **int32** | Virtual WAN Entry ID. | [optional] 
 **VirtualWanId** | Pointer to **string** | Virtual WAN ID. | [optional] 
 
 ## Methods
@@ -53,6 +55,31 @@ SetIpv4Proto sets Ipv4Proto field to given value.
 `func (o *VirtualWanAvailableOpenApiVO) HasIpv4Proto() bool`
 
 HasIpv4Proto returns a boolean if a field has been set.
+
+### GetMaxBandwidth
+
+`func (o *VirtualWanAvailableOpenApiVO) GetMaxBandwidth() int64`
+
+GetMaxBandwidth returns the MaxBandwidth field if non-nil, zero value otherwise.
+
+### GetMaxBandwidthOk
+
+`func (o *VirtualWanAvailableOpenApiVO) GetMaxBandwidthOk() (*int64, bool)`
+
+GetMaxBandwidthOk returns a tuple with the MaxBandwidth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxBandwidth
+
+`func (o *VirtualWanAvailableOpenApiVO) SetMaxBandwidth(v int64)`
+
+SetMaxBandwidth sets MaxBandwidth field to given value.
+
+### HasMaxBandwidth
+
+`func (o *VirtualWanAvailableOpenApiVO) HasMaxBandwidth() bool`
+
+HasMaxBandwidth returns a boolean if a field has been set.
 
 ### GetName
 
@@ -128,6 +155,31 @@ SetType sets Type field to given value.
 `func (o *VirtualWanAvailableOpenApiVO) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetVirtualEntryId
+
+`func (o *VirtualWanAvailableOpenApiVO) GetVirtualEntryId() int32`
+
+GetVirtualEntryId returns the VirtualEntryId field if non-nil, zero value otherwise.
+
+### GetVirtualEntryIdOk
+
+`func (o *VirtualWanAvailableOpenApiVO) GetVirtualEntryIdOk() (*int32, bool)`
+
+GetVirtualEntryIdOk returns a tuple with the VirtualEntryId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVirtualEntryId
+
+`func (o *VirtualWanAvailableOpenApiVO) SetVirtualEntryId(v int32)`
+
+SetVirtualEntryId sets VirtualEntryId field to given value.
+
+### HasVirtualEntryId
+
+`func (o *VirtualWanAvailableOpenApiVO) HasVirtualEntryId() bool`
+
+HasVirtualEntryId returns a boolean if a field has been set.
 
 ### GetVirtualWanId
 

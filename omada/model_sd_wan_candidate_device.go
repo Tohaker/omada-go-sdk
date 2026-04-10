@@ -43,6 +43,8 @@ type SdWanCandidateDevice struct {
 	SiteName *string `json:"siteName,omitempty"`
 	// The online status of the candidate.
 	Status *int32 `json:"status,omitempty"`
+	// Whether the device support SD-WAN NAT.
+	SupportSdWanNat *bool `json:"supportSdWanNat,omitempty"`
 	// The maximum number of VPN tunnels that can be created.
 	TunnelLimit *int32 `json:"tunnelLimit,omitempty"`
 	// The device type of a SD-WAN candidate device.
@@ -452,6 +454,38 @@ func (o *SdWanCandidateDevice) SetStatus(v int32) {
 	o.Status = &v
 }
 
+// GetSupportSdWanNat returns the SupportSdWanNat field value if set, zero value otherwise.
+func (o *SdWanCandidateDevice) GetSupportSdWanNat() bool {
+	if o == nil || IsNil(o.SupportSdWanNat) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportSdWanNat
+}
+
+// GetSupportSdWanNatOk returns a tuple with the SupportSdWanNat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanCandidateDevice) GetSupportSdWanNatOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportSdWanNat) {
+		return nil, false
+	}
+	return o.SupportSdWanNat, true
+}
+
+// HasSupportSdWanNat returns a boolean if a field has been set.
+func (o *SdWanCandidateDevice) HasSupportSdWanNat() bool {
+	if o != nil && !IsNil(o.SupportSdWanNat) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportSdWanNat gets a reference to the given bool and assigns it to the SupportSdWanNat field.
+func (o *SdWanCandidateDevice) SetSupportSdWanNat(v bool) {
+	o.SupportSdWanNat = &v
+}
+
 // GetTunnelLimit returns the TunnelLimit field value if set, zero value otherwise.
 func (o *SdWanCandidateDevice) GetTunnelLimit() int32 {
 	if o == nil || IsNil(o.TunnelLimit) {
@@ -593,6 +627,9 @@ func (o SdWanCandidateDevice) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.SupportSdWanNat) {
+		toSerialize["supportSdWanNat"] = o.SupportSdWanNat
 	}
 	if !IsNil(o.TunnelLimit) {
 		toSerialize["tunnelLimit"] = o.TunnelLimit

@@ -188,6 +188,23 @@ type VoucherAPI interface {
 	GetAllTimeVoucherSummaryExecute(r VoucherAPIGetAllTimeVoucherSummaryRequest) (*OperationResponseAllTimeVoucherSummaryOpenApiVO, *http.Response, error)
 
 	/*
+	GetAllTimeVoucherSummaryForGroup Get voucher summary for voucher group
+
+	Get voucher summary of all time in the voucher group.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param groupId Voucher group ID
+	@return VoucherAPIGetAllTimeVoucherSummaryForGroupRequest
+	*/
+	GetAllTimeVoucherSummaryForGroup(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIGetAllTimeVoucherSummaryForGroupRequest
+
+	// GetAllTimeVoucherSummaryForGroupExecute executes the request
+	//  @return OperationResponseAllTimeVoucherSummaryOpenApiVO
+	GetAllTimeVoucherSummaryForGroupExecute(r VoucherAPIGetAllTimeVoucherSummaryForGroupRequest) (*OperationResponseAllTimeVoucherSummaryOpenApiVO, *http.Response, error)
+
+	/*
 	GetGridVoucherGroups Get Voucher Group List
 
 	Get Voucher Group List with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
@@ -269,6 +286,23 @@ type VoucherAPI interface {
 	GetVoucherDistributionByDurationExecute(r VoucherAPIGetVoucherDistributionByDurationRequest) (*OperationResponseGridVOVoucherDurationDistributionOpenApiVO, *http.Response, error)
 
 	/*
+	GetVoucherDistributionByDurationForGroup Get voucher distribution of voucher group by duration
+
+	Get voucher distribution of voucher group by duration.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param groupId groupId
+	@return VoucherAPIGetVoucherDistributionByDurationForGroupRequest
+	*/
+	GetVoucherDistributionByDurationForGroup(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIGetVoucherDistributionByDurationForGroupRequest
+
+	// GetVoucherDistributionByDurationForGroupExecute executes the request
+	//  @return OperationResponseGridVOVoucherDurationDistributionOpenApiVO
+	GetVoucherDistributionByDurationForGroupExecute(r VoucherAPIGetVoucherDistributionByDurationForGroupRequest) (*OperationResponseGridVOVoucherDurationDistributionOpenApiVO, *http.Response, error)
+
+	/*
 	GetVoucherDistributionByPrice Get voucher distribution by price
 
 	Get voucher distribution by price.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
@@ -283,6 +317,23 @@ type VoucherAPI interface {
 	// GetVoucherDistributionByPriceExecute executes the request
 	//  @return OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO
 	GetVoucherDistributionByPriceExecute(r VoucherAPIGetVoucherDistributionByPriceRequest) (*OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO, *http.Response, error)
+
+	/*
+	GetVoucherDistributionByPriceForGroup Get voucher distribution of voucher group by price
+
+	Get voucher distribution of voucher group by price.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param groupId groupId
+	@return VoucherAPIGetVoucherDistributionByPriceForGroupRequest
+	*/
+	GetVoucherDistributionByPriceForGroup(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIGetVoucherDistributionByPriceForGroupRequest
+
+	// GetVoucherDistributionByPriceForGroupExecute executes the request
+	//  @return OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO
+	GetVoucherDistributionByPriceForGroupExecute(r VoucherAPIGetVoucherDistributionByPriceForGroupRequest) (*OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO, *http.Response, error)
 
 	/*
 	GetVoucherGroupDetail Get Voucher Group Detail
@@ -302,6 +353,22 @@ type VoucherAPI interface {
 	GetVoucherGroupDetailExecute(r VoucherAPIGetVoucherGroupDetailRequest) (*OperationResponseVoucherGroupGridOpenApiVO, *http.Response, error)
 
 	/*
+	GetVoucherGroupOptions Get voucher group options
+
+	Get voucher group options.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VoucherAPIGetVoucherGroupOptionsRequest
+	*/
+	GetVoucherGroupOptions(ctx context.Context, omadacId string, siteId string) VoucherAPIGetVoucherGroupOptionsRequest
+
+	// GetVoucherGroupOptionsExecute executes the request
+	//  @return OperationResponseGridVOVoucherGroupOptionOpenApiVO
+	GetVoucherGroupOptionsExecute(r VoucherAPIGetVoucherGroupOptionsRequest) (*OperationResponseGridVOVoucherGroupOptionOpenApiVO, *http.Response, error)
+
+	/*
 	GetVoucherHistoryStatistics Get voucher history statistics
 
 	Get voucher history statistics.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
@@ -316,6 +383,23 @@ type VoucherAPI interface {
 	// GetVoucherHistoryStatisticsExecute executes the request
 	//  @return OperationResponseVoucherStatisticsHistoryOpenApiVO
 	GetVoucherHistoryStatisticsExecute(r VoucherAPIGetVoucherHistoryStatisticsRequest) (*OperationResponseVoucherStatisticsHistoryOpenApiVO, *http.Response, error)
+
+	/*
+	GetVoucherHistoryStatisticsForGroup Get voucher history statistics of voucher group
+
+	Get voucher history statistics of voucher group.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param groupId groupId
+	@return VoucherAPIGetVoucherHistoryStatisticsForGroupRequest
+	*/
+	GetVoucherHistoryStatisticsForGroup(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIGetVoucherHistoryStatisticsForGroupRequest
+
+	// GetVoucherHistoryStatisticsForGroupExecute executes the request
+	//  @return OperationResponseVoucherStatisticsHistoryOpenApiVO
+	GetVoucherHistoryStatisticsForGroupExecute(r VoucherAPIGetVoucherHistoryStatisticsForGroupRequest) (*OperationResponseVoucherStatisticsHistoryOpenApiVO, *http.Response, error)
 
 	/*
 	GetVoucherLogo Get voucher logo
@@ -1711,6 +1795,131 @@ func (a *VoucherAPIService) GetAllTimeVoucherSummaryExecute(r VoucherAPIGetAllTi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VoucherAPIGetAllTimeVoucherSummaryForGroupRequest struct {
+	ctx context.Context
+	ApiService VoucherAPI
+	omadacId string
+	siteId string
+	groupId string
+}
+
+func (r VoucherAPIGetAllTimeVoucherSummaryForGroupRequest) Execute() (*OperationResponseAllTimeVoucherSummaryOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetAllTimeVoucherSummaryForGroupExecute(r)
+}
+
+/*
+GetAllTimeVoucherSummaryForGroup Get voucher summary for voucher group
+
+Get voucher summary of all time in the voucher group.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param groupId Voucher group ID
+ @return VoucherAPIGetAllTimeVoucherSummaryForGroupRequest
+*/
+func (a *VoucherAPIService) GetAllTimeVoucherSummaryForGroup(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIGetAllTimeVoucherSummaryForGroupRequest {
+	return VoucherAPIGetAllTimeVoucherSummaryForGroupRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		groupId: groupId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseAllTimeVoucherSummaryOpenApiVO
+func (a *VoucherAPIService) GetAllTimeVoucherSummaryForGroupExecute(r VoucherAPIGetAllTimeVoucherSummaryForGroupRequest) (*OperationResponseAllTimeVoucherSummaryOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseAllTimeVoucherSummaryOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoucherAPIService.GetAllTimeVoucherSummaryForGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/summary/voucher-groups/{groupId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"groupId"+"}", url.PathEscape(parameterValueToString(r.groupId, "groupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VoucherAPIGetGridVoucherGroupsRequest struct {
 	ctx context.Context
 	ApiService VoucherAPI
@@ -2414,6 +2623,175 @@ func (a *VoucherAPIService) GetVoucherDistributionByDurationExecute(r VoucherAPI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VoucherAPIGetVoucherDistributionByDurationForGroupRequest struct {
+	ctx context.Context
+	ApiService VoucherAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+	filtersTimeStart *int64
+	filtersTimeEnd *int64
+	groupId string
+}
+
+// Start page number. Start from 1.
+func (r VoucherAPIGetVoucherDistributionByDurationForGroupRequest) Page(page int32) VoucherAPIGetVoucherDistributionByDurationForGroupRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r VoucherAPIGetVoucherDistributionByDurationForGroupRequest) PageSize(pageSize int32) VoucherAPIGetVoucherDistributionByDurationForGroupRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Filter query parameters, support field time range: start timestamp (second).
+func (r VoucherAPIGetVoucherDistributionByDurationForGroupRequest) FiltersTimeStart(filtersTimeStart int64) VoucherAPIGetVoucherDistributionByDurationForGroupRequest {
+	r.filtersTimeStart = &filtersTimeStart
+	return r
+}
+
+// Filter query parameters, support field time range: end timestamp (second).
+func (r VoucherAPIGetVoucherDistributionByDurationForGroupRequest) FiltersTimeEnd(filtersTimeEnd int64) VoucherAPIGetVoucherDistributionByDurationForGroupRequest {
+	r.filtersTimeEnd = &filtersTimeEnd
+	return r
+}
+
+func (r VoucherAPIGetVoucherDistributionByDurationForGroupRequest) Execute() (*OperationResponseGridVOVoucherDurationDistributionOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetVoucherDistributionByDurationForGroupExecute(r)
+}
+
+/*
+GetVoucherDistributionByDurationForGroup Get voucher distribution of voucher group by duration
+
+Get voucher distribution of voucher group by duration.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param groupId groupId
+ @return VoucherAPIGetVoucherDistributionByDurationForGroupRequest
+*/
+func (a *VoucherAPIService) GetVoucherDistributionByDurationForGroup(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIGetVoucherDistributionByDurationForGroupRequest {
+	return VoucherAPIGetVoucherDistributionByDurationForGroupRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		groupId: groupId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOVoucherDurationDistributionOpenApiVO
+func (a *VoucherAPIService) GetVoucherDistributionByDurationForGroupExecute(r VoucherAPIGetVoucherDistributionByDurationForGroupRequest) (*OperationResponseGridVOVoucherDurationDistributionOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOVoucherDurationDistributionOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoucherAPIService.GetVoucherDistributionByDurationForGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/duration/voucher-groups/{groupId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"groupId"+"}", url.PathEscape(parameterValueToString(r.groupId, "groupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+	if r.filtersTimeStart == nil {
+		return localVarReturnValue, nil, reportError("filtersTimeStart is required and must be specified")
+	}
+	if r.filtersTimeEnd == nil {
+		return localVarReturnValue, nil, reportError("filtersTimeEnd is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.timeStart", r.filtersTimeStart, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.timeEnd", r.filtersTimeEnd, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VoucherAPIGetVoucherDistributionByPriceRequest struct {
 	ctx context.Context
 	ApiService VoucherAPI
@@ -2487,6 +2865,175 @@ func (a *VoucherAPIService) GetVoucherDistributionByPriceExecute(r VoucherAPIGet
 		return localVarReturnValue, nil, reportError("filtersTimeEnd is required and must be specified")
 	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.timeStart", r.filtersTimeStart, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.timeEnd", r.filtersTimeEnd, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VoucherAPIGetVoucherDistributionByPriceForGroupRequest struct {
+	ctx context.Context
+	ApiService VoucherAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+	filtersTimeStart *int64
+	filtersTimeEnd *int64
+	groupId string
+}
+
+// Start page number. Start from 1.
+func (r VoucherAPIGetVoucherDistributionByPriceForGroupRequest) Page(page int32) VoucherAPIGetVoucherDistributionByPriceForGroupRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r VoucherAPIGetVoucherDistributionByPriceForGroupRequest) PageSize(pageSize int32) VoucherAPIGetVoucherDistributionByPriceForGroupRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Filter query parameters, support field time range: start timestamp (second).
+func (r VoucherAPIGetVoucherDistributionByPriceForGroupRequest) FiltersTimeStart(filtersTimeStart int64) VoucherAPIGetVoucherDistributionByPriceForGroupRequest {
+	r.filtersTimeStart = &filtersTimeStart
+	return r
+}
+
+// Filter query parameters, support field time range: end timestamp (second).
+func (r VoucherAPIGetVoucherDistributionByPriceForGroupRequest) FiltersTimeEnd(filtersTimeEnd int64) VoucherAPIGetVoucherDistributionByPriceForGroupRequest {
+	r.filtersTimeEnd = &filtersTimeEnd
+	return r
+}
+
+func (r VoucherAPIGetVoucherDistributionByPriceForGroupRequest) Execute() (*OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetVoucherDistributionByPriceForGroupExecute(r)
+}
+
+/*
+GetVoucherDistributionByPriceForGroup Get voucher distribution of voucher group by price
+
+Get voucher distribution of voucher group by price.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param groupId groupId
+ @return VoucherAPIGetVoucherDistributionByPriceForGroupRequest
+*/
+func (a *VoucherAPIService) GetVoucherDistributionByPriceForGroup(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIGetVoucherDistributionByPriceForGroupRequest {
+	return VoucherAPIGetVoucherDistributionByPriceForGroupRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		groupId: groupId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO
+func (a *VoucherAPIService) GetVoucherDistributionByPriceForGroupExecute(r VoucherAPIGetVoucherDistributionByPriceForGroupRequest) (*OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoucherAPIService.GetVoucherDistributionByPriceForGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/unit-price/voucher-groups/{groupId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"groupId"+"}", url.PathEscape(parameterValueToString(r.groupId, "groupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+	if r.filtersTimeStart == nil {
+		return localVarReturnValue, nil, reportError("filtersTimeStart is required and must be specified")
+	}
+	if r.filtersTimeEnd == nil {
+		return localVarReturnValue, nil, reportError("filtersTimeEnd is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.timeStart", r.filtersTimeStart, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.timeEnd", r.filtersTimeEnd, "form", "")
 	// to determine the Content-Type header
@@ -2734,6 +3281,149 @@ func (a *VoucherAPIService) GetVoucherGroupDetailExecute(r VoucherAPIGetVoucherG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VoucherAPIGetVoucherGroupOptionsRequest struct {
+	ctx context.Context
+	ApiService VoucherAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+}
+
+// Start page number. Start from 1.
+func (r VoucherAPIGetVoucherGroupOptionsRequest) Page(page int32) VoucherAPIGetVoucherGroupOptionsRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r VoucherAPIGetVoucherGroupOptionsRequest) PageSize(pageSize int32) VoucherAPIGetVoucherGroupOptionsRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r VoucherAPIGetVoucherGroupOptionsRequest) Execute() (*OperationResponseGridVOVoucherGroupOptionOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetVoucherGroupOptionsExecute(r)
+}
+
+/*
+GetVoucherGroupOptions Get voucher group options
+
+Get voucher group options.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VoucherAPIGetVoucherGroupOptionsRequest
+*/
+func (a *VoucherAPIService) GetVoucherGroupOptions(ctx context.Context, omadacId string, siteId string) VoucherAPIGetVoucherGroupOptionsRequest {
+	return VoucherAPIGetVoucherGroupOptionsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOVoucherGroupOptionOpenApiVO
+func (a *VoucherAPIService) GetVoucherGroupOptionsExecute(r VoucherAPIGetVoucherGroupOptionsRequest) (*OperationResponseGridVOVoucherGroupOptionOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOVoucherGroupOptionOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoucherAPIService.GetVoucherGroupOptions")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-group-options"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VoucherAPIGetVoucherHistoryStatisticsRequest struct {
 	ctx context.Context
 	ApiService VoucherAPI
@@ -2796,6 +3486,153 @@ func (a *VoucherAPIService) GetVoucherHistoryStatisticsExecute(r VoucherAPIGetVo
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.filtersTimeStart == nil {
+		return localVarReturnValue, nil, reportError("filtersTimeStart is required and must be specified")
+	}
+	if r.filtersTimeEnd == nil {
+		return localVarReturnValue, nil, reportError("filtersTimeEnd is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.timeStart", r.filtersTimeStart, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.timeEnd", r.filtersTimeEnd, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VoucherAPIGetVoucherHistoryStatisticsForGroupRequest struct {
+	ctx context.Context
+	ApiService VoucherAPI
+	omadacId string
+	siteId string
+	filtersTimeStart *int64
+	filtersTimeEnd *int64
+	groupId string
+}
+
+// Filter query parameters, support field time range: start timestamp (second).
+func (r VoucherAPIGetVoucherHistoryStatisticsForGroupRequest) FiltersTimeStart(filtersTimeStart int64) VoucherAPIGetVoucherHistoryStatisticsForGroupRequest {
+	r.filtersTimeStart = &filtersTimeStart
+	return r
+}
+
+// Filter query parameters, support field time range: end timestamp (second).
+func (r VoucherAPIGetVoucherHistoryStatisticsForGroupRequest) FiltersTimeEnd(filtersTimeEnd int64) VoucherAPIGetVoucherHistoryStatisticsForGroupRequest {
+	r.filtersTimeEnd = &filtersTimeEnd
+	return r
+}
+
+func (r VoucherAPIGetVoucherHistoryStatisticsForGroupRequest) Execute() (*OperationResponseVoucherStatisticsHistoryOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetVoucherHistoryStatisticsForGroupExecute(r)
+}
+
+/*
+GetVoucherHistoryStatisticsForGroup Get voucher history statistics of voucher group
+
+Get voucher history statistics of voucher group.<br/><br/>The interface requires one of the permissions: <br/>Site Hotspot Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44111  -  The Grant Type is Invalid.<br/>-44112  -  The access token has expired. Please re-initiate the refreshToken process to obtain the access token.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param groupId groupId
+ @return VoucherAPIGetVoucherHistoryStatisticsForGroupRequest
+*/
+func (a *VoucherAPIService) GetVoucherHistoryStatisticsForGroup(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIGetVoucherHistoryStatisticsForGroupRequest {
+	return VoucherAPIGetVoucherHistoryStatisticsForGroupRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		groupId: groupId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVoucherStatisticsHistoryOpenApiVO
+func (a *VoucherAPIService) GetVoucherHistoryStatisticsForGroupExecute(r VoucherAPIGetVoucherHistoryStatisticsForGroupRequest) (*OperationResponseVoucherStatisticsHistoryOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVoucherStatisticsHistoryOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoucherAPIService.GetVoucherHistoryStatisticsForGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/voucher-groups/{groupId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"groupId"+"}", url.PathEscape(parameterValueToString(r.groupId, "groupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

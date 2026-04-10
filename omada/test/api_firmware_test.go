@@ -200,6 +200,20 @@ func Test_omada_FirmwareAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test FirmwareAPIService GetEmailReminderSwitchStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+
+		resp, httpRes, err := apiClient.FirmwareAPI.GetEmailReminderSwitchStatus(context.Background(), omadacId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FirmwareAPIService GetGridAutoCheckUpgrade", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -355,6 +369,20 @@ func Test_omada_FirmwareAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test FirmwareAPIService GetTryBetaChannel", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+
+		resp, httpRes, err := apiClient.FirmwareAPI.GetTryBetaChannel(context.Background(), omadacId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FirmwareAPIService GetTryBetaStatus", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -406,6 +434,34 @@ func Test_omada_FirmwareAPIService(t *testing.T) {
 		var omadacId string
 
 		resp, httpRes, err := apiClient.FirmwareAPI.GetcriticalModelNum(context.Background(), omadacId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FirmwareAPIService ModifyEmailReminderSwitchStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+
+		resp, httpRes, err := apiClient.FirmwareAPI.ModifyEmailReminderSwitchStatus(context.Background(), omadacId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FirmwareAPIService ModifyTryBetaChannel", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+
+		resp, httpRes, err := apiClient.FirmwareAPI.ModifyTryBetaChannel(context.Background(), omadacId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

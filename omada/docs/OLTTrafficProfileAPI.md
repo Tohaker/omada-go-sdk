@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ## GetTrafficProfileList
 
-> OperationResponseListTrafficProfileVO GetTrafficProfileList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListTrafficProfileVO GetTrafficProfileList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get traffic profile list
 
@@ -270,11 +270,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewTrafficProfileListQueryDTO() // TrafficProfileListQueryDTO | 
+	queryParam := *openapiclient.NewTrafficProfileListQueryDTO() // TrafficProfileListQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTTrafficProfileAPI.GetTrafficProfileList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTTrafficProfileAPI.GetTrafficProfileList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTTrafficProfileAPI.GetTrafficProfileList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**TrafficProfileListQueryDTO**](TrafficProfileListQueryDTO.md) |  | 
+ **queryParam** | [**TrafficProfileListQueryDTO**](TrafficProfileListQueryDTO.md) |  | 
 
 ### Return type
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ## GetTrafficProfilePage
 
-> OperationResponsePageResponseTrafficProfileVO GetTrafficProfilePage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseTrafficProfileVO GetTrafficProfilePage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get traffic profile page
 
@@ -348,11 +348,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewTrafficProfilePageQueryDTO() // TrafficProfilePageQueryDTO | 
+	queryParam := *openapiclient.NewTrafficProfilePageQueryDTO() // TrafficProfilePageQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTTrafficProfileAPI.GetTrafficProfilePage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTTrafficProfileAPI.GetTrafficProfilePage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTTrafficProfileAPI.GetTrafficProfilePage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**TrafficProfilePageQueryDTO**](TrafficProfilePageQueryDTO.md) |  | 
+ **queryParam** | [**TrafficProfilePageQueryDTO**](TrafficProfilePageQueryDTO.md) |  | 
 
 ### Return type
 

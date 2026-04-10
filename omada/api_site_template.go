@@ -414,7 +414,7 @@ type SiteTemplateAPI interface {
 	/*
 	GetSiteTemplateModules Get function modules which can be selected when creating site template
 
-	Get function modules which can be selected when creating site template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+	Get function modules which can be selected when creating site template. This interface has been deprecated. Please use the following interface instead: Get all function modules which can be selected when creating site template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -3751,7 +3751,7 @@ func (r SiteTemplateAPIGetSiteTemplateModulesRequest) Execute() (*OperationRespo
 /*
 GetSiteTemplateModules Get function modules which can be selected when creating site template
 
-Get function modules which can be selected when creating site template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+Get function modules which can be selected when creating site template. This interface has been deprecated. Please use the following interface instead: Get all function modules which can be selected when creating site template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

@@ -543,11 +543,11 @@ type OLTTContAPIGetTcontListRequest struct {
 	siteId string
 	deviceMac string
 	lineProfileId string
-	dto *TcontListQueryDTO
+	queryParam *TcontListQueryDTO
 }
 
-func (r OLTTContAPIGetTcontListRequest) Dto(dto TcontListQueryDTO) OLTTContAPIGetTcontListRequest {
-	r.dto = &dto
+func (r OLTTContAPIGetTcontListRequest) QueryParam(queryParam TcontListQueryDTO) OLTTContAPIGetTcontListRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -602,11 +602,11 @@ func (a *OLTTContAPIService) GetTcontListExecute(r OLTTContAPIGetTcontListReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -682,11 +682,11 @@ type OLTTContAPIGetTcontPageRequest struct {
 	siteId string
 	deviceMac string
 	lineProfileId string
-	dto *TcontPageQueryDTO
+	queryParam *TcontPageQueryDTO
 }
 
-func (r OLTTContAPIGetTcontPageRequest) Dto(dto TcontPageQueryDTO) OLTTContAPIGetTcontPageRequest {
-	r.dto = &dto
+func (r OLTTContAPIGetTcontPageRequest) QueryParam(queryParam TcontPageQueryDTO) OLTTContAPIGetTcontPageRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -741,11 +741,11 @@ func (a *OLTTContAPIService) GetTcontPageExecute(r OLTTContAPIGetTcontPageReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

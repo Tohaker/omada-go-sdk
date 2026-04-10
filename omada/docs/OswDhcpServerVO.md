@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Gateway** | Pointer to **string** |  | [optional] 
-**Ip** | **string** |  | 
-**Leasetime** | **int32** |  | 
-**Netmask** | **string** |  | 
-**Option138** | Pointer to **string** |  | [optional] 
-**Options** | Pointer to [**[]DhcpOptionVO**](DhcpOptionVO.md) |  | [optional] 
-**PriDns** | **string** |  | 
-**Range** | Pointer to [**[]OswDhcpServerRangeVO**](OswDhcpServerRangeVO.md) |  | [optional] 
-**SndDns** | Pointer to **string** |  | [optional] 
-**VrfId** | Pointer to **string** |  | [optional] 
+**Gateway** | Pointer to **string** | Gateway IP, like 192.168.0.1 | [optional] 
+**Ip** | **string** | DHCP Server IP, like 192.168.0.1. | 
+**Leasetime** | **int32** | Lease time should be within the range of 2–2880 | 
+**Netmask** | **string** | Parameter [netmask] should not within the range of 1-30 | 
+**Option138** | Pointer to **string** | option138 ip, like 192.168.0.1 | [optional] 
+**Options** | Pointer to [**[]CustomDHCPOptions**](CustomDHCPOptions.md) | Custom DHCP options. | [optional] 
+**PriDns** | **string** | Primary DNS, like 192.0.0.1 | 
+**Range** | Pointer to [**[]OswDhcpServerRangeVO**](OswDhcpServerRangeVO.md) | The list of DHCP Range | [optional] 
+**SndDns** | Pointer to **string** | Second DNS, like 8.8.8.8 | [optional] 
+**VrfId** | Pointer to **string** | VRF ID | [optional] 
 
 ## Methods
 
@@ -146,20 +146,20 @@ HasOption138 returns a boolean if a field has been set.
 
 ### GetOptions
 
-`func (o *OswDhcpServerVO) GetOptions() []DhcpOptionVO`
+`func (o *OswDhcpServerVO) GetOptions() []CustomDHCPOptions`
 
 GetOptions returns the Options field if non-nil, zero value otherwise.
 
 ### GetOptionsOk
 
-`func (o *OswDhcpServerVO) GetOptionsOk() (*[]DhcpOptionVO, bool)`
+`func (o *OswDhcpServerVO) GetOptionsOk() (*[]CustomDHCPOptions, bool)`
 
 GetOptionsOk returns a tuple with the Options field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptions
 
-`func (o *OswDhcpServerVO) SetOptions(v []DhcpOptionVO)`
+`func (o *OswDhcpServerVO) SetOptions(v []CustomDHCPOptions)`
 
 SetOptions sets Options field to given value.
 

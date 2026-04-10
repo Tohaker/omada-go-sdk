@@ -85,6 +85,7 @@ type OsgDetailVO struct {
 	InitialUnbindingLimit *int32 `json:"initialUnbindingLimit,omitempty"`
 	Ip *string `json:"ip,omitempty"`
 	Ippt *bool `json:"ippt,omitempty"`
+	IpptPreconfig *bool `json:"ipptPreconfig,omitempty"`
 	IptvSetting *OsgIptvVO `json:"iptvSetting,omitempty"`
 	Ipv6List []string `json:"ipv6List,omitempty"`
 	JumboOptions []int32 `json:"jumboOptions,omitempty"`
@@ -219,6 +220,7 @@ type OsgDetailVO struct {
 	SupportSpeedDuplex *bool `json:"supportSpeedDuplex,omitempty"`
 	SupportStormCtrlAction *bool `json:"supportStormCtrlAction,omitempty"`
 	SupportVirtualWan *bool `json:"supportVirtualWan,omitempty"`
+	SupportWanSetPvid *bool `json:"supportWanSetPvid,omitempty"`
 	TagIds []string `json:"tagIds,omitempty"`
 	Temp *int32 `json:"temp,omitempty"`
 	// ID of the template bound to the device
@@ -1639,6 +1641,38 @@ func (o *OsgDetailVO) HasIppt() bool {
 // SetIppt gets a reference to the given bool and assigns it to the Ippt field.
 func (o *OsgDetailVO) SetIppt(v bool) {
 	o.Ippt = &v
+}
+
+// GetIpptPreconfig returns the IpptPreconfig field value if set, zero value otherwise.
+func (o *OsgDetailVO) GetIpptPreconfig() bool {
+	if o == nil || IsNil(o.IpptPreconfig) {
+		var ret bool
+		return ret
+	}
+	return *o.IpptPreconfig
+}
+
+// GetIpptPreconfigOk returns a tuple with the IpptPreconfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgDetailVO) GetIpptPreconfigOk() (*bool, bool) {
+	if o == nil || IsNil(o.IpptPreconfig) {
+		return nil, false
+	}
+	return o.IpptPreconfig, true
+}
+
+// HasIpptPreconfig returns a boolean if a field has been set.
+func (o *OsgDetailVO) HasIpptPreconfig() bool {
+	if o != nil && !IsNil(o.IpptPreconfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpptPreconfig gets a reference to the given bool and assigns it to the IpptPreconfig field.
+func (o *OsgDetailVO) SetIpptPreconfig(v bool) {
+	o.IpptPreconfig = &v
 }
 
 // GetIptvSetting returns the IptvSetting field value if set, zero value otherwise.
@@ -5196,6 +5230,38 @@ func (o *OsgDetailVO) SetSupportVirtualWan(v bool) {
 	o.SupportVirtualWan = &v
 }
 
+// GetSupportWanSetPvid returns the SupportWanSetPvid field value if set, zero value otherwise.
+func (o *OsgDetailVO) GetSupportWanSetPvid() bool {
+	if o == nil || IsNil(o.SupportWanSetPvid) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportWanSetPvid
+}
+
+// GetSupportWanSetPvidOk returns a tuple with the SupportWanSetPvid field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgDetailVO) GetSupportWanSetPvidOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportWanSetPvid) {
+		return nil, false
+	}
+	return o.SupportWanSetPvid, true
+}
+
+// HasSupportWanSetPvid returns a boolean if a field has been set.
+func (o *OsgDetailVO) HasSupportWanSetPvid() bool {
+	if o != nil && !IsNil(o.SupportWanSetPvid) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportWanSetPvid gets a reference to the given bool and assigns it to the SupportWanSetPvid field.
+func (o *OsgDetailVO) SetSupportWanSetPvid(v bool) {
+	o.SupportWanSetPvid = &v
+}
+
 // GetTagIds returns the TagIds field value if set, zero value otherwise.
 func (o *OsgDetailVO) GetTagIds() []string {
 	if o == nil || IsNil(o.TagIds) {
@@ -6071,6 +6137,9 @@ func (o OsgDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Ippt) {
 		toSerialize["ippt"] = o.Ippt
 	}
+	if !IsNil(o.IpptPreconfig) {
+		toSerialize["ipptPreconfig"] = o.IpptPreconfig
+	}
 	if !IsNil(o.IptvSetting) {
 		toSerialize["iptvSetting"] = o.IptvSetting
 	}
@@ -6403,6 +6472,9 @@ func (o OsgDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportVirtualWan) {
 		toSerialize["supportVirtualWan"] = o.SupportVirtualWan
+	}
+	if !IsNil(o.SupportWanSetPvid) {
+		toSerialize["supportWanSetPvid"] = o.SupportWanSetPvid
 	}
 	if !IsNil(o.TagIds) {
 		toSerialize["tagIds"] = o.TagIds

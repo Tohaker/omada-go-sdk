@@ -19,17 +19,27 @@ import (
 // checks if the OswDhcpServerVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswDhcpServerVO{}
 
-// OswDhcpServerVO struct for OswDhcpServerVO
+// OswDhcpServerVO Network DHCP server settings. Only valid when deviceType is 2 and mode is 1.
 type OswDhcpServerVO struct {
+	// Gateway IP, like 192.168.0.1
 	Gateway *string `json:"gateway,omitempty"`
+	// DHCP Server IP, like 192.168.0.1.
 	Ip string `json:"ip"`
+	// Lease time should be within the range of 2–2880
 	Leasetime int32 `json:"leasetime"`
+	// Parameter [netmask] should not within the range of 1-30
 	Netmask string `json:"netmask"`
+	// option138 ip, like 192.168.0.1
 	Option138 *string `json:"option138,omitempty"`
-	Options []DhcpOptionVO `json:"options,omitempty"`
+	// Custom DHCP options.
+	Options []CustomDHCPOptions `json:"options,omitempty"`
+	// Primary DNS, like 192.0.0.1
 	PriDns string `json:"priDns"`
+	// The list of DHCP Range
 	Range []OswDhcpServerRangeVO `json:"range,omitempty"`
+	// Second DNS, like 8.8.8.8
 	SndDns *string `json:"sndDns,omitempty"`
+	// VRF ID
 	VrfId *string `json:"vrfId,omitempty"`
 }
 
@@ -193,9 +203,9 @@ func (o *OswDhcpServerVO) SetOption138(v string) {
 }
 
 // GetOptions returns the Options field value if set, zero value otherwise.
-func (o *OswDhcpServerVO) GetOptions() []DhcpOptionVO {
+func (o *OswDhcpServerVO) GetOptions() []CustomDHCPOptions {
 	if o == nil || IsNil(o.Options) {
-		var ret []DhcpOptionVO
+		var ret []CustomDHCPOptions
 		return ret
 	}
 	return o.Options
@@ -203,7 +213,7 @@ func (o *OswDhcpServerVO) GetOptions() []DhcpOptionVO {
 
 // GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OswDhcpServerVO) GetOptionsOk() ([]DhcpOptionVO, bool) {
+func (o *OswDhcpServerVO) GetOptionsOk() ([]CustomDHCPOptions, bool) {
 	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
@@ -219,8 +229,8 @@ func (o *OswDhcpServerVO) HasOptions() bool {
 	return false
 }
 
-// SetOptions gets a reference to the given []DhcpOptionVO and assigns it to the Options field.
-func (o *OswDhcpServerVO) SetOptions(v []DhcpOptionVO) {
+// SetOptions gets a reference to the given []CustomDHCPOptions and assigns it to the Options field.
+func (o *OswDhcpServerVO) SetOptions(v []CustomDHCPOptions) {
 	o.Options = v
 }
 

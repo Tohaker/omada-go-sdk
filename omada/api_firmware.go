@@ -213,6 +213,21 @@ type FirmwareAPI interface {
 	EditUpgradePlanExecute(r FirmwareAPIEditUpgradePlanRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	GetEmailReminderSwitchStatus Get Email Reminder Switch Status
+
+	You can get email reminder switch status<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@return FirmwareAPIGetEmailReminderSwitchStatusRequest
+	*/
+	GetEmailReminderSwitchStatus(ctx context.Context, omadacId string) FirmwareAPIGetEmailReminderSwitchStatusRequest
+
+	// GetEmailReminderSwitchStatusExecute executes the request
+	//  @return OperationResponseUpgradeSettingEmailReminder
+	GetEmailReminderSwitchStatusExecute(r FirmwareAPIGetEmailReminderSwitchStatusRequest) (*OperationResponseUpgradeSettingEmailReminder, *http.Response, error)
+
+	/*
 	GetGridAutoCheckUpgrade Get autocheck upgrade plan
 
 	Paging to get autocheck upgrade plan<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7131  -  Controller ID not exist.
@@ -379,6 +394,21 @@ type FirmwareAPI interface {
 	GetTargetFirmwareAllSitesExecute(r FirmwareAPIGetTargetFirmwareAllSitesRequest) (*OperationResponseAllTargetSites, *http.Response, error)
 
 	/*
+	GetTryBetaChannel Get try-beta Channel Info
+
+	You can get try-beta channel info<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@return FirmwareAPIGetTryBetaChannelRequest
+	*/
+	GetTryBetaChannel(ctx context.Context, omadacId string) FirmwareAPIGetTryBetaChannelRequest
+
+	// GetTryBetaChannelExecute executes the request
+	//  @return OperationResponseUpgradeSettingTryBetaChannel
+	GetTryBetaChannelExecute(r FirmwareAPIGetTryBetaChannelRequest) (*OperationResponseUpgradeSettingTryBetaChannel, *http.Response, error)
+
+	/*
 	GetTryBetaStatus Get try-beta switch status
 
 	You can get try-beta switch status<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade View Only
@@ -439,6 +469,36 @@ type FirmwareAPI interface {
 	// GetcriticalModelNumExecute executes the request
 	//  @return OperationResponseCriticalModelNum
 	GetcriticalModelNumExecute(r FirmwareAPIGetcriticalModelNumRequest) (*OperationResponseCriticalModelNum, *http.Response, error)
+
+	/*
+	ModifyEmailReminderSwitchStatus Modify Email Reminder Switch Status
+
+	You can modify email reminder switch status<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-34598  -  The Device Update Notifications is disabled. Cannot configure Email notifications.<br/>-7131  -  Controller ID not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@return FirmwareAPIModifyEmailReminderSwitchStatusRequest
+	*/
+	ModifyEmailReminderSwitchStatus(ctx context.Context, omadacId string) FirmwareAPIModifyEmailReminderSwitchStatusRequest
+
+	// ModifyEmailReminderSwitchStatusExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyEmailReminderSwitchStatusExecute(r FirmwareAPIModifyEmailReminderSwitchStatusRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyTryBetaChannel Modify try-beta Channel Info
+
+	You can modify try-beta channel info<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-34599  -  The "Join Early Access Program" option is not selected. Cannot configure the firmware channel subscription.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@return FirmwareAPIModifyTryBetaChannelRequest
+	*/
+	ModifyTryBetaChannel(ctx context.Context, omadacId string) FirmwareAPIModifyTryBetaChannelRequest
+
+	// ModifyTryBetaChannelExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyTryBetaChannelExecute(r FirmwareAPIModifyTryBetaChannelRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyTryBetaStatus Modify try-beta switch status
@@ -1955,6 +2015,123 @@ func (a *FirmwareAPIService) EditUpgradePlanExecute(r FirmwareAPIEditUpgradePlan
 	}
 	// body params
 	localVarPostBody = r.planUpgradeEditInfo
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type FirmwareAPIGetEmailReminderSwitchStatusRequest struct {
+	ctx context.Context
+	ApiService FirmwareAPI
+	omadacId string
+}
+
+func (r FirmwareAPIGetEmailReminderSwitchStatusRequest) Execute() (*OperationResponseUpgradeSettingEmailReminder, *http.Response, error) {
+	return r.ApiService.GetEmailReminderSwitchStatusExecute(r)
+}
+
+/*
+GetEmailReminderSwitchStatus Get Email Reminder Switch Status
+
+You can get email reminder switch status<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @return FirmwareAPIGetEmailReminderSwitchStatusRequest
+*/
+func (a *FirmwareAPIService) GetEmailReminderSwitchStatus(ctx context.Context, omadacId string) FirmwareAPIGetEmailReminderSwitchStatusRequest {
+	return FirmwareAPIGetEmailReminderSwitchStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseUpgradeSettingEmailReminder
+func (a *FirmwareAPIService) GetEmailReminderSwitchStatusExecute(r FirmwareAPIGetEmailReminderSwitchStatusRequest) (*OperationResponseUpgradeSettingEmailReminder, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseUpgradeSettingEmailReminder
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareAPIService.GetEmailReminderSwitchStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/upgrade/overview/mail/reminder"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -3614,6 +3791,123 @@ func (a *FirmwareAPIService) GetTargetFirmwareAllSitesExecute(r FirmwareAPIGetTa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type FirmwareAPIGetTryBetaChannelRequest struct {
+	ctx context.Context
+	ApiService FirmwareAPI
+	omadacId string
+}
+
+func (r FirmwareAPIGetTryBetaChannelRequest) Execute() (*OperationResponseUpgradeSettingTryBetaChannel, *http.Response, error) {
+	return r.ApiService.GetTryBetaChannelExecute(r)
+}
+
+/*
+GetTryBetaChannel Get try-beta Channel Info
+
+You can get try-beta channel info<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @return FirmwareAPIGetTryBetaChannelRequest
+*/
+func (a *FirmwareAPIService) GetTryBetaChannel(ctx context.Context, omadacId string) FirmwareAPIGetTryBetaChannelRequest {
+	return FirmwareAPIGetTryBetaChannelRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseUpgradeSettingTryBetaChannel
+func (a *FirmwareAPIService) GetTryBetaChannelExecute(r FirmwareAPIGetTryBetaChannelRequest) (*OperationResponseUpgradeSettingTryBetaChannel, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseUpgradeSettingTryBetaChannel
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareAPIService.GetTryBetaChannel")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/upgrade/overview/try-beta/channel"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type FirmwareAPIGetTryBetaStatusRequest struct {
 	ctx context.Context
 	ApiService FirmwareAPI
@@ -4061,6 +4355,262 @@ func (a *FirmwareAPIService) GetcriticalModelNumExecute(r FirmwareAPIGetcritical
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type FirmwareAPIModifyEmailReminderSwitchStatusRequest struct {
+	ctx context.Context
+	ApiService FirmwareAPI
+	omadacId string
+	upgradeSettingEmailReminder *UpgradeSettingEmailReminder
+}
+
+func (r FirmwareAPIModifyEmailReminderSwitchStatusRequest) UpgradeSettingEmailReminder(upgradeSettingEmailReminder UpgradeSettingEmailReminder) FirmwareAPIModifyEmailReminderSwitchStatusRequest {
+	r.upgradeSettingEmailReminder = &upgradeSettingEmailReminder
+	return r
+}
+
+func (r FirmwareAPIModifyEmailReminderSwitchStatusRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyEmailReminderSwitchStatusExecute(r)
+}
+
+/*
+ModifyEmailReminderSwitchStatus Modify Email Reminder Switch Status
+
+You can modify email reminder switch status<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-34598  -  The Device Update Notifications is disabled. Cannot configure Email notifications.<br/>-7131  -  Controller ID not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @return FirmwareAPIModifyEmailReminderSwitchStatusRequest
+*/
+func (a *FirmwareAPIService) ModifyEmailReminderSwitchStatus(ctx context.Context, omadacId string) FirmwareAPIModifyEmailReminderSwitchStatusRequest {
+	return FirmwareAPIModifyEmailReminderSwitchStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *FirmwareAPIService) ModifyEmailReminderSwitchStatusExecute(r FirmwareAPIModifyEmailReminderSwitchStatusRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareAPIService.ModifyEmailReminderSwitchStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/upgrade/overview/mail/reminder"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.upgradeSettingEmailReminder == nil {
+		return localVarReturnValue, nil, reportError("upgradeSettingEmailReminder is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.upgradeSettingEmailReminder
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type FirmwareAPIModifyTryBetaChannelRequest struct {
+	ctx context.Context
+	ApiService FirmwareAPI
+	omadacId string
+	upgradeSettingTryBetaChannel *UpgradeSettingTryBetaChannel
+}
+
+func (r FirmwareAPIModifyTryBetaChannelRequest) UpgradeSettingTryBetaChannel(upgradeSettingTryBetaChannel UpgradeSettingTryBetaChannel) FirmwareAPIModifyTryBetaChannelRequest {
+	r.upgradeSettingTryBetaChannel = &upgradeSettingTryBetaChannel
+	return r
+}
+
+func (r FirmwareAPIModifyTryBetaChannelRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyTryBetaChannelExecute(r)
+}
+
+/*
+ModifyTryBetaChannel Modify try-beta Channel Info
+
+You can modify try-beta channel info<br/><br/>The interface requires one of the permissions: <br/>Site Manual Firmware Upgrade Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-34599  -  The "Join Early Access Program" option is not selected. Cannot configure the firmware channel subscription.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @return FirmwareAPIModifyTryBetaChannelRequest
+*/
+func (a *FirmwareAPIService) ModifyTryBetaChannel(ctx context.Context, omadacId string) FirmwareAPIModifyTryBetaChannelRequest {
+	return FirmwareAPIModifyTryBetaChannelRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *FirmwareAPIService) ModifyTryBetaChannelExecute(r FirmwareAPIModifyTryBetaChannelRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareAPIService.ModifyTryBetaChannel")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/upgrade/overview/try-beta/channel"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.upgradeSettingTryBetaChannel == nil {
+		return localVarReturnValue, nil, reportError("upgradeSettingTryBetaChannel is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.upgradeSettingTryBetaChannel
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -25,30 +25,48 @@ type HistoryRetention struct {
 	ClientDataTrendDaily *int32 `json:"clientDataTrendDaily,omitempty"`
 	// Whether the client data trend records is recorded.
 	ClientDataTrendEnable *bool `json:"clientDataTrendEnable,omitempty"`
+	// Whether client health is enabled. When enabled, client health data will be recorded, which may consume a significant amount of storage space.
+	ClientHealthEnable *bool `json:"clientHealthEnable,omitempty"`
 	// Retention configuration of client History(only effective in local controller), clientHistory should be a value as follows: -1: Disabled; 0: All Time(Windows, Linux Only); 7: 7days; 31: 31days; 90: 90days; 180: 180days; 365: 365days.
 	ClientHistory *int32 `json:"clientHistory,omitempty"`
+	// Provide optional clientHistory data Retention Configuration list.
+	ClientHistoryAvailableRetentionDays []int32 `json:"clientHistoryAvailableRetentionDays,omitempty"`
+	// Whether client recognition is enabled. With the feature enabled, network devices will report client information in real time to ensure the accuracy of client recognition. Cloud Access is required for client recognition. This feature is not supported in the MSP view.
+	ClientRecognitionEnable *bool `json:"clientRecognitionEnable,omitempty"`
+	// Provide optional clientDataTrendDaily data Retention Configuration list.
+	ClientTrendAvailableRetentionDays []int32 `json:"clientTrendAvailableRetentionDays,omitempty"`
 	// Whether the clients' history data is recorded.
 	ClientsDataEnable bool `json:"clientsDataEnable"`
 	// Retention configuration of time series with daily granularity, daily should be a value as follows: 90: 90days; 180: 180days; 365: 365days(Fixed value in Cloud Based Controller as 365 days).
 	Daily *int32 `json:"daily,omitempty"`
+	// Provide optional daily data Retention Configuration list.
+	DailyAvailableRetentionDays []int32 `json:"dailyAvailableRetentionDays,omitempty"`
 	// Retention configuration of Time Series with 5 Minutes Granularity. It is fixed to 2days and cannot be changed.
 	FiveMin *int32 `json:"fiveMin,omitempty"`
 	// Retention configuration of time series with hourly granularity, hourly should be a value as follows: 7: 7days.
 	Hourly *int32 `json:"hourly,omitempty"`
 	// Retention configuration of known client Data, knownClient should be a value as follows: -1: Disabled; 0: All Time(Windows, Linux Only); 1: 1day; 7: 7days; 31: 31days; 90: 90days; 180: 180days; 365: 365days.
 	KnownClient *int32 `json:"knownClient,omitempty"`
+	// Provide optional knownClient data Retention Configuration list.
+	KnownClientAvailableRetentionDays []int32 `json:"knownClientAvailableRetentionDays,omitempty"`
 	// Retention Configuration of log data(only effective in local controller), log should be a value as follows: 0: All Time(Windows, Linux Only); 31: 31days; 90: 90days; 180: 180days; 365: 365days.
 	Log *int32 `json:"log,omitempty"`
+	// Provide optional log data Retention Configuration list.
+	LogAvailableRetentionDays []int32 `json:"logAvailableRetentionDays,omitempty"`
 	// Whether the customer overrides the retention configuration of MSP.
 	Override *bool `json:"override,omitempty"`
 	// Retention configuration of portal authentication records, portalAuth should be a value as follows: 0: All Time(Windows, Linux Only); 7: 7days; 31: 31days; 90: 90days; 180: 180days; 365: 365days.
 	PortalAuth *int32 `json:"portalAuth,omitempty"`
+	// Provide optional portalAuth data Retention Configuration list.
+	PortalAuthAvailableRetentionDays []int32 `json:"portalAuthAvailableRetentionDays,omitempty"`
 	// Retention Configuration of rogue ap data, rogueAp should be a value as follows: 0: All Time(Windows, Linux Only); 31: 31days; 90: 90days; 180: 180days; 365: 365days.
 	RogueAp *int32 `json:"rogueAp,omitempty"`
 	// Retention configuration of Time Series with 10 Minutes Granularity, only for Lite Cloud-Based Controller. It is fixed to 2days and cannot be changed.
 	TenMin *int32 `json:"tenMin,omitempty"`
 	// Retention configuration of time series with weekly granularity, weekly should be a value as follows: 31: 31days; 90: 90days; 180: 180days; 365: 365days.
 	Weekly *int32 `json:"weekly,omitempty"`
+	// Provide optional weekly data Retention Configuration list.
+	WeeklyAvailableRetentionDays []int32 `json:"weeklyAvailableRetentionDays,omitempty"`
 	// Retention Configuration of wids data(only effective in local pro controller), widsData should be a value as follows: 0: All Time(Windows, Linux Only); 90: 90days; 180: 180days; 365: 365days.
 	WidsData *int32 `json:"widsData,omitempty"`
 }
@@ -137,6 +155,38 @@ func (o *HistoryRetention) SetClientDataTrendEnable(v bool) {
 	o.ClientDataTrendEnable = &v
 }
 
+// GetClientHealthEnable returns the ClientHealthEnable field value if set, zero value otherwise.
+func (o *HistoryRetention) GetClientHealthEnable() bool {
+	if o == nil || IsNil(o.ClientHealthEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.ClientHealthEnable
+}
+
+// GetClientHealthEnableOk returns a tuple with the ClientHealthEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryRetention) GetClientHealthEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.ClientHealthEnable) {
+		return nil, false
+	}
+	return o.ClientHealthEnable, true
+}
+
+// HasClientHealthEnable returns a boolean if a field has been set.
+func (o *HistoryRetention) HasClientHealthEnable() bool {
+	if o != nil && !IsNil(o.ClientHealthEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientHealthEnable gets a reference to the given bool and assigns it to the ClientHealthEnable field.
+func (o *HistoryRetention) SetClientHealthEnable(v bool) {
+	o.ClientHealthEnable = &v
+}
+
 // GetClientHistory returns the ClientHistory field value if set, zero value otherwise.
 func (o *HistoryRetention) GetClientHistory() int32 {
 	if o == nil || IsNil(o.ClientHistory) {
@@ -167,6 +217,102 @@ func (o *HistoryRetention) HasClientHistory() bool {
 // SetClientHistory gets a reference to the given int32 and assigns it to the ClientHistory field.
 func (o *HistoryRetention) SetClientHistory(v int32) {
 	o.ClientHistory = &v
+}
+
+// GetClientHistoryAvailableRetentionDays returns the ClientHistoryAvailableRetentionDays field value if set, zero value otherwise.
+func (o *HistoryRetention) GetClientHistoryAvailableRetentionDays() []int32 {
+	if o == nil || IsNil(o.ClientHistoryAvailableRetentionDays) {
+		var ret []int32
+		return ret
+	}
+	return o.ClientHistoryAvailableRetentionDays
+}
+
+// GetClientHistoryAvailableRetentionDaysOk returns a tuple with the ClientHistoryAvailableRetentionDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryRetention) GetClientHistoryAvailableRetentionDaysOk() ([]int32, bool) {
+	if o == nil || IsNil(o.ClientHistoryAvailableRetentionDays) {
+		return nil, false
+	}
+	return o.ClientHistoryAvailableRetentionDays, true
+}
+
+// HasClientHistoryAvailableRetentionDays returns a boolean if a field has been set.
+func (o *HistoryRetention) HasClientHistoryAvailableRetentionDays() bool {
+	if o != nil && !IsNil(o.ClientHistoryAvailableRetentionDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientHistoryAvailableRetentionDays gets a reference to the given []int32 and assigns it to the ClientHistoryAvailableRetentionDays field.
+func (o *HistoryRetention) SetClientHistoryAvailableRetentionDays(v []int32) {
+	o.ClientHistoryAvailableRetentionDays = v
+}
+
+// GetClientRecognitionEnable returns the ClientRecognitionEnable field value if set, zero value otherwise.
+func (o *HistoryRetention) GetClientRecognitionEnable() bool {
+	if o == nil || IsNil(o.ClientRecognitionEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.ClientRecognitionEnable
+}
+
+// GetClientRecognitionEnableOk returns a tuple with the ClientRecognitionEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryRetention) GetClientRecognitionEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.ClientRecognitionEnable) {
+		return nil, false
+	}
+	return o.ClientRecognitionEnable, true
+}
+
+// HasClientRecognitionEnable returns a boolean if a field has been set.
+func (o *HistoryRetention) HasClientRecognitionEnable() bool {
+	if o != nil && !IsNil(o.ClientRecognitionEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientRecognitionEnable gets a reference to the given bool and assigns it to the ClientRecognitionEnable field.
+func (o *HistoryRetention) SetClientRecognitionEnable(v bool) {
+	o.ClientRecognitionEnable = &v
+}
+
+// GetClientTrendAvailableRetentionDays returns the ClientTrendAvailableRetentionDays field value if set, zero value otherwise.
+func (o *HistoryRetention) GetClientTrendAvailableRetentionDays() []int32 {
+	if o == nil || IsNil(o.ClientTrendAvailableRetentionDays) {
+		var ret []int32
+		return ret
+	}
+	return o.ClientTrendAvailableRetentionDays
+}
+
+// GetClientTrendAvailableRetentionDaysOk returns a tuple with the ClientTrendAvailableRetentionDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryRetention) GetClientTrendAvailableRetentionDaysOk() ([]int32, bool) {
+	if o == nil || IsNil(o.ClientTrendAvailableRetentionDays) {
+		return nil, false
+	}
+	return o.ClientTrendAvailableRetentionDays, true
+}
+
+// HasClientTrendAvailableRetentionDays returns a boolean if a field has been set.
+func (o *HistoryRetention) HasClientTrendAvailableRetentionDays() bool {
+	if o != nil && !IsNil(o.ClientTrendAvailableRetentionDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientTrendAvailableRetentionDays gets a reference to the given []int32 and assigns it to the ClientTrendAvailableRetentionDays field.
+func (o *HistoryRetention) SetClientTrendAvailableRetentionDays(v []int32) {
+	o.ClientTrendAvailableRetentionDays = v
 }
 
 // GetClientsDataEnable returns the ClientsDataEnable field value
@@ -223,6 +369,38 @@ func (o *HistoryRetention) HasDaily() bool {
 // SetDaily gets a reference to the given int32 and assigns it to the Daily field.
 func (o *HistoryRetention) SetDaily(v int32) {
 	o.Daily = &v
+}
+
+// GetDailyAvailableRetentionDays returns the DailyAvailableRetentionDays field value if set, zero value otherwise.
+func (o *HistoryRetention) GetDailyAvailableRetentionDays() []int32 {
+	if o == nil || IsNil(o.DailyAvailableRetentionDays) {
+		var ret []int32
+		return ret
+	}
+	return o.DailyAvailableRetentionDays
+}
+
+// GetDailyAvailableRetentionDaysOk returns a tuple with the DailyAvailableRetentionDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryRetention) GetDailyAvailableRetentionDaysOk() ([]int32, bool) {
+	if o == nil || IsNil(o.DailyAvailableRetentionDays) {
+		return nil, false
+	}
+	return o.DailyAvailableRetentionDays, true
+}
+
+// HasDailyAvailableRetentionDays returns a boolean if a field has been set.
+func (o *HistoryRetention) HasDailyAvailableRetentionDays() bool {
+	if o != nil && !IsNil(o.DailyAvailableRetentionDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetDailyAvailableRetentionDays gets a reference to the given []int32 and assigns it to the DailyAvailableRetentionDays field.
+func (o *HistoryRetention) SetDailyAvailableRetentionDays(v []int32) {
+	o.DailyAvailableRetentionDays = v
 }
 
 // GetFiveMin returns the FiveMin field value if set, zero value otherwise.
@@ -321,6 +499,38 @@ func (o *HistoryRetention) SetKnownClient(v int32) {
 	o.KnownClient = &v
 }
 
+// GetKnownClientAvailableRetentionDays returns the KnownClientAvailableRetentionDays field value if set, zero value otherwise.
+func (o *HistoryRetention) GetKnownClientAvailableRetentionDays() []int32 {
+	if o == nil || IsNil(o.KnownClientAvailableRetentionDays) {
+		var ret []int32
+		return ret
+	}
+	return o.KnownClientAvailableRetentionDays
+}
+
+// GetKnownClientAvailableRetentionDaysOk returns a tuple with the KnownClientAvailableRetentionDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryRetention) GetKnownClientAvailableRetentionDaysOk() ([]int32, bool) {
+	if o == nil || IsNil(o.KnownClientAvailableRetentionDays) {
+		return nil, false
+	}
+	return o.KnownClientAvailableRetentionDays, true
+}
+
+// HasKnownClientAvailableRetentionDays returns a boolean if a field has been set.
+func (o *HistoryRetention) HasKnownClientAvailableRetentionDays() bool {
+	if o != nil && !IsNil(o.KnownClientAvailableRetentionDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetKnownClientAvailableRetentionDays gets a reference to the given []int32 and assigns it to the KnownClientAvailableRetentionDays field.
+func (o *HistoryRetention) SetKnownClientAvailableRetentionDays(v []int32) {
+	o.KnownClientAvailableRetentionDays = v
+}
+
 // GetLog returns the Log field value if set, zero value otherwise.
 func (o *HistoryRetention) GetLog() int32 {
 	if o == nil || IsNil(o.Log) {
@@ -351,6 +561,38 @@ func (o *HistoryRetention) HasLog() bool {
 // SetLog gets a reference to the given int32 and assigns it to the Log field.
 func (o *HistoryRetention) SetLog(v int32) {
 	o.Log = &v
+}
+
+// GetLogAvailableRetentionDays returns the LogAvailableRetentionDays field value if set, zero value otherwise.
+func (o *HistoryRetention) GetLogAvailableRetentionDays() []int32 {
+	if o == nil || IsNil(o.LogAvailableRetentionDays) {
+		var ret []int32
+		return ret
+	}
+	return o.LogAvailableRetentionDays
+}
+
+// GetLogAvailableRetentionDaysOk returns a tuple with the LogAvailableRetentionDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryRetention) GetLogAvailableRetentionDaysOk() ([]int32, bool) {
+	if o == nil || IsNil(o.LogAvailableRetentionDays) {
+		return nil, false
+	}
+	return o.LogAvailableRetentionDays, true
+}
+
+// HasLogAvailableRetentionDays returns a boolean if a field has been set.
+func (o *HistoryRetention) HasLogAvailableRetentionDays() bool {
+	if o != nil && !IsNil(o.LogAvailableRetentionDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetLogAvailableRetentionDays gets a reference to the given []int32 and assigns it to the LogAvailableRetentionDays field.
+func (o *HistoryRetention) SetLogAvailableRetentionDays(v []int32) {
+	o.LogAvailableRetentionDays = v
 }
 
 // GetOverride returns the Override field value if set, zero value otherwise.
@@ -415,6 +657,38 @@ func (o *HistoryRetention) HasPortalAuth() bool {
 // SetPortalAuth gets a reference to the given int32 and assigns it to the PortalAuth field.
 func (o *HistoryRetention) SetPortalAuth(v int32) {
 	o.PortalAuth = &v
+}
+
+// GetPortalAuthAvailableRetentionDays returns the PortalAuthAvailableRetentionDays field value if set, zero value otherwise.
+func (o *HistoryRetention) GetPortalAuthAvailableRetentionDays() []int32 {
+	if o == nil || IsNil(o.PortalAuthAvailableRetentionDays) {
+		var ret []int32
+		return ret
+	}
+	return o.PortalAuthAvailableRetentionDays
+}
+
+// GetPortalAuthAvailableRetentionDaysOk returns a tuple with the PortalAuthAvailableRetentionDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryRetention) GetPortalAuthAvailableRetentionDaysOk() ([]int32, bool) {
+	if o == nil || IsNil(o.PortalAuthAvailableRetentionDays) {
+		return nil, false
+	}
+	return o.PortalAuthAvailableRetentionDays, true
+}
+
+// HasPortalAuthAvailableRetentionDays returns a boolean if a field has been set.
+func (o *HistoryRetention) HasPortalAuthAvailableRetentionDays() bool {
+	if o != nil && !IsNil(o.PortalAuthAvailableRetentionDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortalAuthAvailableRetentionDays gets a reference to the given []int32 and assigns it to the PortalAuthAvailableRetentionDays field.
+func (o *HistoryRetention) SetPortalAuthAvailableRetentionDays(v []int32) {
+	o.PortalAuthAvailableRetentionDays = v
 }
 
 // GetRogueAp returns the RogueAp field value if set, zero value otherwise.
@@ -513,6 +787,38 @@ func (o *HistoryRetention) SetWeekly(v int32) {
 	o.Weekly = &v
 }
 
+// GetWeeklyAvailableRetentionDays returns the WeeklyAvailableRetentionDays field value if set, zero value otherwise.
+func (o *HistoryRetention) GetWeeklyAvailableRetentionDays() []int32 {
+	if o == nil || IsNil(o.WeeklyAvailableRetentionDays) {
+		var ret []int32
+		return ret
+	}
+	return o.WeeklyAvailableRetentionDays
+}
+
+// GetWeeklyAvailableRetentionDaysOk returns a tuple with the WeeklyAvailableRetentionDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryRetention) GetWeeklyAvailableRetentionDaysOk() ([]int32, bool) {
+	if o == nil || IsNil(o.WeeklyAvailableRetentionDays) {
+		return nil, false
+	}
+	return o.WeeklyAvailableRetentionDays, true
+}
+
+// HasWeeklyAvailableRetentionDays returns a boolean if a field has been set.
+func (o *HistoryRetention) HasWeeklyAvailableRetentionDays() bool {
+	if o != nil && !IsNil(o.WeeklyAvailableRetentionDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetWeeklyAvailableRetentionDays gets a reference to the given []int32 and assigns it to the WeeklyAvailableRetentionDays field.
+func (o *HistoryRetention) SetWeeklyAvailableRetentionDays(v []int32) {
+	o.WeeklyAvailableRetentionDays = v
+}
+
 // GetWidsData returns the WidsData field value if set, zero value otherwise.
 func (o *HistoryRetention) GetWidsData() int32 {
 	if o == nil || IsNil(o.WidsData) {
@@ -561,12 +867,27 @@ func (o HistoryRetention) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ClientDataTrendEnable) {
 		toSerialize["clientDataTrendEnable"] = o.ClientDataTrendEnable
 	}
+	if !IsNil(o.ClientHealthEnable) {
+		toSerialize["clientHealthEnable"] = o.ClientHealthEnable
+	}
 	if !IsNil(o.ClientHistory) {
 		toSerialize["clientHistory"] = o.ClientHistory
+	}
+	if !IsNil(o.ClientHistoryAvailableRetentionDays) {
+		toSerialize["clientHistoryAvailableRetentionDays"] = o.ClientHistoryAvailableRetentionDays
+	}
+	if !IsNil(o.ClientRecognitionEnable) {
+		toSerialize["clientRecognitionEnable"] = o.ClientRecognitionEnable
+	}
+	if !IsNil(o.ClientTrendAvailableRetentionDays) {
+		toSerialize["clientTrendAvailableRetentionDays"] = o.ClientTrendAvailableRetentionDays
 	}
 	toSerialize["clientsDataEnable"] = o.ClientsDataEnable
 	if !IsNil(o.Daily) {
 		toSerialize["daily"] = o.Daily
+	}
+	if !IsNil(o.DailyAvailableRetentionDays) {
+		toSerialize["dailyAvailableRetentionDays"] = o.DailyAvailableRetentionDays
 	}
 	if !IsNil(o.FiveMin) {
 		toSerialize["fiveMin"] = o.FiveMin
@@ -577,14 +898,23 @@ func (o HistoryRetention) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.KnownClient) {
 		toSerialize["knownClient"] = o.KnownClient
 	}
+	if !IsNil(o.KnownClientAvailableRetentionDays) {
+		toSerialize["knownClientAvailableRetentionDays"] = o.KnownClientAvailableRetentionDays
+	}
 	if !IsNil(o.Log) {
 		toSerialize["log"] = o.Log
+	}
+	if !IsNil(o.LogAvailableRetentionDays) {
+		toSerialize["logAvailableRetentionDays"] = o.LogAvailableRetentionDays
 	}
 	if !IsNil(o.Override) {
 		toSerialize["override"] = o.Override
 	}
 	if !IsNil(o.PortalAuth) {
 		toSerialize["portalAuth"] = o.PortalAuth
+	}
+	if !IsNil(o.PortalAuthAvailableRetentionDays) {
+		toSerialize["portalAuthAvailableRetentionDays"] = o.PortalAuthAvailableRetentionDays
 	}
 	if !IsNil(o.RogueAp) {
 		toSerialize["rogueAp"] = o.RogueAp
@@ -594,6 +924,9 @@ func (o HistoryRetention) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Weekly) {
 		toSerialize["weekly"] = o.Weekly
+	}
+	if !IsNil(o.WeeklyAvailableRetentionDays) {
+		toSerialize["weeklyAvailableRetentionDays"] = o.WeeklyAvailableRetentionDays
 	}
 	if !IsNil(o.WidsData) {
 		toSerialize["widsData"] = o.WidsData

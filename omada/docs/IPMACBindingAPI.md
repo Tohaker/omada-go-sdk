@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ## ImportIpMacBindingListFromFile
 
-> OperationResponseWithoutResult ImportIpMacBindingListFromFile(ctx, omadacId, siteId).UploadCertificateRequest(uploadCertificateRequest).Execute()
+> OperationResponseWithoutResult ImportIpMacBindingListFromFile(ctx, omadacId, siteId).UploadSSLKeyRequest(uploadSSLKeyRequest).Execute()
 
 Import IP-MAC bindings from file
 
@@ -490,11 +490,11 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	uploadCertificateRequest := *openapiclient.NewUploadCertificateRequest("TODO") // UploadCertificateRequest |  (optional)
+	uploadSSLKeyRequest := *openapiclient.NewUploadSSLKeyRequest("TODO") // UploadSSLKeyRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IPMACBindingAPI.ImportIpMacBindingListFromFile(context.Background(), omadacId, siteId).UploadCertificateRequest(uploadCertificateRequest).Execute()
+	resp, r, err := apiClient.IPMACBindingAPI.ImportIpMacBindingListFromFile(context.Background(), omadacId, siteId).UploadSSLKeyRequest(uploadSSLKeyRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IPMACBindingAPI.ImportIpMacBindingListFromFile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **uploadCertificateRequest** | [**UploadCertificateRequest**](UploadCertificateRequest.md) |  | 
+ **uploadSSLKeyRequest** | [**UploadSSLKeyRequest**](UploadSSLKeyRequest.md) |  | 
 
 ### Return type
 

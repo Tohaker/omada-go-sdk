@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CurrentPage** | Pointer to **int32** | Current page number. | [optional] 
 **CurrentSize** | Pointer to **int32** | Number of entries per page. | [optional] 
 **Data** | Pointer to [**[]PolicyRoutingInfo**](PolicyRoutingInfo.md) |  | [optional] 
+**SupportByDsLiteAndMapE** | Pointer to **bool** | Whether this feature is supported for the DS-Lite or Map-E WAN connection types. | [optional] 
 **SupportDomainGroupDest** | Pointer to **bool** | Whether Domain Group is supported as Interface in Policy Routing. | [optional] 
 **SupportLocationGroupDest** | Pointer to **bool** | Whether Location Group is supported as Destination in Policy Routing. | [optional] 
 **SupportMulti** | Pointer to **bool** | Whether multiple WAN interface is supported in Policy Routing. | [optional] 
@@ -106,6 +107,31 @@ SetData sets Data field to given value.
 `func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) HasData() bool`
 
 HasData returns a boolean if a field has been set.
+
+### GetSupportByDsLiteAndMapE
+
+`func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) GetSupportByDsLiteAndMapE() bool`
+
+GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field if non-nil, zero value otherwise.
+
+### GetSupportByDsLiteAndMapEOk
+
+`func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) GetSupportByDsLiteAndMapEOk() (*bool, bool)`
+
+GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportByDsLiteAndMapE
+
+`func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) SetSupportByDsLiteAndMapE(v bool)`
+
+SetSupportByDsLiteAndMapE sets SupportByDsLiteAndMapE field to given value.
+
+### HasSupportByDsLiteAndMapE
+
+`func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) HasSupportByDsLiteAndMapE() bool`
+
+HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
 
 ### GetSupportDomainGroupDest
 

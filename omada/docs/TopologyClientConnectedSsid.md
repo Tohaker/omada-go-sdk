@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ClientVlanId** | Pointer to **int32** | Client Report Vlan Id. | [optional] 
 **Id** | Pointer to **string** | SSID ID. | [optional] 
 **Name** | Pointer to **string** | SSID Name. | [optional] 
 **VlanEnable** | Pointer to **bool** | Whether the SSID enable vlan. | [optional] 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewTopologyClientConnectedSsidWithDefaults instantiates a new TopologyClientConnectedSsid object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetClientVlanId
+
+`func (o *TopologyClientConnectedSsid) GetClientVlanId() int32`
+
+GetClientVlanId returns the ClientVlanId field if non-nil, zero value otherwise.
+
+### GetClientVlanIdOk
+
+`func (o *TopologyClientConnectedSsid) GetClientVlanIdOk() (*int32, bool)`
+
+GetClientVlanIdOk returns a tuple with the ClientVlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientVlanId
+
+`func (o *TopologyClientConnectedSsid) SetClientVlanId(v int32)`
+
+SetClientVlanId sets ClientVlanId field to given value.
+
+### HasClientVlanId
+
+`func (o *TopologyClientConnectedSsid) HasClientVlanId() bool`
+
+HasClientVlanId returns a boolean if a field has been set.
 
 ### GetId
 

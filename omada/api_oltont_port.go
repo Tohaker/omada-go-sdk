@@ -385,11 +385,11 @@ type OLTONTPortAPIGetOntEthPortListRequest struct {
 	siteId string
 	deviceMac string
 	serviceId string
-	dto *OntEthPortListQueryDTO
+	queryParam *OntEthPortListQueryDTO
 }
 
-func (r OLTONTPortAPIGetOntEthPortListRequest) Dto(dto OntEthPortListQueryDTO) OLTONTPortAPIGetOntEthPortListRequest {
-	r.dto = &dto
+func (r OLTONTPortAPIGetOntEthPortListRequest) QueryParam(queryParam OntEthPortListQueryDTO) OLTONTPortAPIGetOntEthPortListRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -444,11 +444,11 @@ func (a *OLTONTPortAPIService) GetOntEthPortListExecute(r OLTONTPortAPIGetOntEth
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -524,11 +524,11 @@ type OLTONTPortAPIGetOntPotsPortListRequest struct {
 	siteId string
 	deviceMac string
 	serviceId string
-	dto *OntPotsPortListQueryDTO
+	queryParam *OntPotsPortListQueryDTO
 }
 
-func (r OLTONTPortAPIGetOntPotsPortListRequest) Dto(dto OntPotsPortListQueryDTO) OLTONTPortAPIGetOntPotsPortListRequest {
-	r.dto = &dto
+func (r OLTONTPortAPIGetOntPotsPortListRequest) QueryParam(queryParam OntPotsPortListQueryDTO) OLTONTPortAPIGetOntPotsPortListRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -583,11 +583,11 @@ func (a *OLTONTPortAPIService) GetOntPotsPortListExecute(r OLTONTPortAPIGetOntPo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

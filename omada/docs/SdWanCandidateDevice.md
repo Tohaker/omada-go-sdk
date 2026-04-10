@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **SiteId** | Pointer to **string** | The ID of the site where the a SD-WAN candidate device located. | [optional] 
 **SiteName** | Pointer to **string** | The name of the site where the a SD-WAN candidate device located. | [optional] 
 **Status** | Pointer to **int32** | The online status of the candidate. | [optional] 
+**SupportSdWanNat** | Pointer to **bool** | Whether the device support SD-WAN NAT. | [optional] 
 **TunnelLimit** | Pointer to **int32** | The maximum number of VPN tunnels that can be created. | [optional] 
 **Type** | Pointer to **string** | The device type of a SD-WAN candidate device. | [optional] 
 **WanIp** | Pointer to **string** | The wan IP of the a SD-WAN candidate device. | [optional] 
@@ -338,6 +339,31 @@ SetStatus sets Status field to given value.
 `func (o *SdWanCandidateDevice) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetSupportSdWanNat
+
+`func (o *SdWanCandidateDevice) GetSupportSdWanNat() bool`
+
+GetSupportSdWanNat returns the SupportSdWanNat field if non-nil, zero value otherwise.
+
+### GetSupportSdWanNatOk
+
+`func (o *SdWanCandidateDevice) GetSupportSdWanNatOk() (*bool, bool)`
+
+GetSupportSdWanNatOk returns a tuple with the SupportSdWanNat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportSdWanNat
+
+`func (o *SdWanCandidateDevice) SetSupportSdWanNat(v bool)`
+
+SetSupportSdWanNat sets SupportSdWanNat field to given value.
+
+### HasSupportSdWanNat
+
+`func (o *SdWanCandidateDevice) HasSupportSdWanNat() bool`
+
+HasSupportSdWanNat returns a boolean if a field has been set.
 
 ### GetTunnelLimit
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Enable** | Pointer to **bool** | Whether to enable Advertisement setting | [optional] 
 **PictureInterval** | Pointer to **int32** | Advertisement picture interval, should be within the range of 1–10 seconds | [optional] 
 **Pictures** | Pointer to [**[]PortalPictureInfo**](PortalPictureInfo.md) | Advertisement picture list. Up to 5 entries are allowed for the pictures list | [optional] 
+**SkipDelay** | Pointer to **int32** | Skip delay, should be within the range of 1–10, time unit is second. | [optional] 
 **SkipEnable** | Pointer to **bool** | Whether to allow users to skip the advertisement | [optional] 
 **TotalDuration** | Pointer to **int32** | Total duration of advertisement, should be within the range of 1–30 seconds | [optional] 
 
@@ -103,6 +104,31 @@ SetPictures sets Pictures field to given value.
 `func (o *AdvertisementSettingResOpenApiVO) HasPictures() bool`
 
 HasPictures returns a boolean if a field has been set.
+
+### GetSkipDelay
+
+`func (o *AdvertisementSettingResOpenApiVO) GetSkipDelay() int32`
+
+GetSkipDelay returns the SkipDelay field if non-nil, zero value otherwise.
+
+### GetSkipDelayOk
+
+`func (o *AdvertisementSettingResOpenApiVO) GetSkipDelayOk() (*int32, bool)`
+
+GetSkipDelayOk returns a tuple with the SkipDelay field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkipDelay
+
+`func (o *AdvertisementSettingResOpenApiVO) SetSkipDelay(v int32)`
+
+SetSkipDelay sets SkipDelay field to given value.
+
+### HasSkipDelay
+
+`func (o *AdvertisementSettingResOpenApiVO) HasSkipDelay() bool`
+
+HasSkipDelay returns a boolean if a field has been set.
 
 ### GetSkipEnable
 

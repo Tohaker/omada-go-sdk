@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateLanMulticast
 
-> ResponseIdVO CreateLanMulticast(ctx, omadacId, siteId).LanMulticastVO(lanMulticastVO).Execute()
+> OperationResponseResponseIdVO CreateLanMulticast(ctx, omadacId, siteId).LanMulticastVO(lanMulticastVO).Execute()
 
 Create new lan multicast
 
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LanMulticastAPI.CreateLanMulticast``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateLanMulticast`: ResponseIdVO
+	// response from `CreateLanMulticast`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `LanMulticastAPI.CreateLanMulticast`: %v\n", resp)
 }
 ```
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseIdVO**](ResponseIdVO.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## GetGridLanMulticasts
 
-> OperationResponse GetGridLanMulticasts(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseGridVOLanMulticastVO GetGridLanMulticasts(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
 
 Get lan multicast list
 
@@ -195,7 +195,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LanMulticastAPI.GetGridLanMulticasts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGridLanMulticasts`: OperationResponse
+	// response from `GetGridLanMulticasts`: OperationResponseGridVOLanMulticastVO
 	fmt.Fprintf(os.Stdout, "Response from `LanMulticastAPI.GetGridLanMulticasts`: %v\n", resp)
 }
 ```
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseGridVOLanMulticastVO**](OperationResponseGridVOLanMulticastVO.md)
 
 ### Authorization
 

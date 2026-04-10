@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ## GetDBAProfileList
 
-> OperationResponseListDBAProfileVO GetDBAProfileList(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseListDBAProfileVO GetDBAProfileList(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get DBA profile list
 
@@ -270,11 +270,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewDBAProfileListQueryDTO() // DBAProfileListQueryDTO | 
+	queryParam := *openapiclient.NewDBAProfileListQueryDTO() // DBAProfileListQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTDBAAPI.GetDBAProfileList(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTDBAAPI.GetDBAProfileList(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTDBAAPI.GetDBAProfileList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**DBAProfileListQueryDTO**](DBAProfileListQueryDTO.md) |  | 
+ **queryParam** | [**DBAProfileListQueryDTO**](DBAProfileListQueryDTO.md) |  | 
 
 ### Return type
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ## GetDBAProfilePage
 
-> OperationResponsePageResponseDBAProfileVO GetDBAProfilePage(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponsePageResponseDBAProfileVO GetDBAProfilePage(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get DBA profile page
 
@@ -348,11 +348,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewDBAProfilePageQueryDTO() // DBAProfilePageQueryDTO | 
+	queryParam := *openapiclient.NewDBAProfilePageQueryDTO() // DBAProfilePageQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTDBAAPI.GetDBAProfilePage(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTDBAAPI.GetDBAProfilePage(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTDBAAPI.GetDBAProfilePage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**DBAProfilePageQueryDTO**](DBAProfilePageQueryDTO.md) |  | 
+ **queryParam** | [**DBAProfilePageQueryDTO**](DBAProfilePageQueryDTO.md) |  | 
 
 ### Return type
 

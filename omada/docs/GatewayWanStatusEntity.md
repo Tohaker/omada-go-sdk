@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **PoePower** | Pointer to **float64** | Port poe power | [optional] 
 **Port** | Pointer to **int32** | Port serial number | [optional] 
 **PortDesc** | Pointer to **string** | Port description | [optional] 
-**Proto** | Pointer to **string** | Wan ipv4 proto type, use static，dhcp，pppoe，l2tp，pptp. | [optional] 
+**Proto** | Pointer to **string** | WAN IPv4 connection type, it supports Static IP, DHCP, PPPoE, L2TP, PPTP, DS-Lite, and MAP-E. | [optional] 
 **RoamingStatus** | Pointer to **int32** |  | [optional] 
 **Rsrp** | Pointer to **int32** |  | [optional] 
 **Rsrq** | Pointer to **int32** |  | [optional] 

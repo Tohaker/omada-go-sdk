@@ -22,6 +22,34 @@ func Test_omada_SDWANAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test SDWANAPIService AutoCreateMappingNetwork", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+
+		resp, httpRes, err := apiClient.SDWANAPI.AutoCreateMappingNetwork(context.Background(), omadacId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SDWANAPIService AutoCreateSdWanGroupName", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+
+		resp, httpRes, err := apiClient.SDWANAPI.AutoCreateSdWanGroupName(context.Background(), omadacId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SDWANAPIService AutoSelectWanPortRecommendResult", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -36,13 +64,13 @@ func Test_omada_SDWANAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SDWANAPIService CheckSdWanGroupIpPool", func(t *testing.T) {
+	t.Run("Test SDWANAPIService CheckModifiedMappedNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var omadacId string
 
-		resp, httpRes, err := apiClient.SDWANAPI.CheckSdWanGroupIpPool(context.Background(), omadacId).Execute()
+		resp, httpRes, err := apiClient.SDWANAPI.CheckModifiedMappedNetwork(context.Background(), omadacId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +78,13 @@ func Test_omada_SDWANAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SDWANAPIService CheckSelectedLanNetworkConflict", func(t *testing.T) {
+	t.Run("Test SDWANAPIService CheckSdWanGroupIpPool", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var omadacId string
 
-		resp, httpRes, err := apiClient.SDWANAPI.CheckSelectedLanNetworkConflict(context.Background(), omadacId).Execute()
+		resp, httpRes, err := apiClient.SDWANAPI.CheckSdWanGroupIpPool(context.Background(), omadacId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -202,6 +230,21 @@ func Test_omada_SDWANAPIService(t *testing.T) {
 		var groupId string
 
 		resp, httpRes, err := apiClient.SDWANAPI.ModifySdWanGroup(context.Background(), omadacId, groupId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SDWANAPIService ModifySdWanGroupNetWorkMap", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var groupId string
+
+		resp, httpRes, err := apiClient.SDWANAPI.ModifySdWanGroupNetWorkMap(context.Background(), omadacId, groupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

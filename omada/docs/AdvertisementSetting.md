@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Enable** | **bool** | Advertisement enable. | 
 **PictureIds** | Pointer to **[]string** | Picture ID list, Up to 5 entries are allowed for the pictureIds list. | [optional] 
 **PictureInterval** | Pointer to **int32** | Advertisement picture interval, should be within the range of 1–10, time unit is second. | [optional] 
+**SkipDelay** | Pointer to **int32** | Skip delay, should be within the range of 1–10, time unit is second. | [optional] 
 **SkipEnable** | Pointer to **bool** | Whether allow users to skip the advertisement. | [optional] 
 **TotalDuration** | Pointer to **int32** | Advertisement totalDuration, should be within the range of 1–30, time unit is second. | [optional] 
 
@@ -98,6 +99,31 @@ SetPictureInterval sets PictureInterval field to given value.
 `func (o *AdvertisementSetting) HasPictureInterval() bool`
 
 HasPictureInterval returns a boolean if a field has been set.
+
+### GetSkipDelay
+
+`func (o *AdvertisementSetting) GetSkipDelay() int32`
+
+GetSkipDelay returns the SkipDelay field if non-nil, zero value otherwise.
+
+### GetSkipDelayOk
+
+`func (o *AdvertisementSetting) GetSkipDelayOk() (*int32, bool)`
+
+GetSkipDelayOk returns a tuple with the SkipDelay field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkipDelay
+
+`func (o *AdvertisementSetting) SetSkipDelay(v int32)`
+
+SetSkipDelay sets SkipDelay field to given value.
+
+### HasSkipDelay
+
+`func (o *AdvertisementSetting) HasSkipDelay() bool`
+
+HasSkipDelay returns a boolean if a field has been set.
 
 ### GetSkipEnable
 

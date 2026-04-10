@@ -24,68 +24,225 @@ import (
 type VPNAPI interface {
 
 	/*
+	BatchDeleteVpn Batch delete VPN
+
+	Batch delete VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIBatchDeleteVpnRequest
+	*/
+	BatchDeleteVpn(ctx context.Context, omadacId string, siteId string) VPNAPIBatchDeleteVpnRequest
+
+	// BatchDeleteVpnExecute executes the request
+	//  @return OperationResponseWithoutResult
+	BatchDeleteVpnExecute(r VPNAPIBatchDeleteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	BatchDeleteVpnUser Batch delete VPN user
+
+	Batch delete VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIBatchDeleteVpnUserRequest
+	*/
+	BatchDeleteVpnUser(ctx context.Context, omadacId string, siteId string) VPNAPIBatchDeleteVpnUserRequest
+
+	// BatchDeleteVpnUserExecute executes the request
+	//  @return OperationResponseWithoutResult
+	BatchDeleteVpnUserExecute(r VPNAPIBatchDeleteVpnUserRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	CheckUsedInVpns Check used function for multiple VPN items
+
+	Check used function for multiple VPN items.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPICheckUsedInVpnsRequest
+	*/
+	CheckUsedInVpns(ctx context.Context, omadacId string, siteId string) VPNAPICheckUsedInVpnsRequest
+
+	// CheckUsedInVpnsExecute executes the request
+	//  @return OperationResponseVpnListUsedFunctionOpenApiVO
+	CheckUsedInVpnsExecute(r VPNAPICheckUsedInVpnsRequest) (*OperationResponseVpnListUsedFunctionOpenApiVO, *http.Response, error)
+
+	/*
+	CheckUsedVpn Check used function for single VPN item
+
+	Check used function for single VPN item.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPICheckUsedVpnRequest
+	*/
+	CheckUsedVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPICheckUsedVpnRequest
+
+	// CheckUsedVpnExecute executes the request
+	//  @return OperationResponseFunctionOpenApiVO
+	CheckUsedVpnExecute(r VPNAPICheckUsedVpnRequest) (*OperationResponseFunctionOpenApiVO, *http.Response, error)
+
+	/*
+	CheckValueAvailable Check whether vpn value is available
+
+	Check whether vpn value is available.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPICheckValueAvailableRequest
+	*/
+	CheckValueAvailable(ctx context.Context, omadacId string, siteId string) VPNAPICheckValueAvailableRequest
+
+	// CheckValueAvailableExecute executes the request
+	//  @return OperationResponseWithoutResult
+	CheckValueAvailableExecute(r VPNAPICheckValueAvailableRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	CreateClientToSiteVpnClient Create client-to-site VPN client
 
-	Create client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Create client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN client V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPICreateClientToSiteVpnClientRequest
+
+	Deprecated
 	*/
 	CreateClientToSiteVpnClient(ctx context.Context, omadacId string, siteId string) VPNAPICreateClientToSiteVpnClientRequest
 
 	// CreateClientToSiteVpnClientExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	CreateClientToSiteVpnClientExecute(r VPNAPICreateClientToSiteVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	CreateClientToSiteVpnServer Create client-to-site VPN server
 
-	Create client-to-site VPN server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35708  -  The device does not support IPSec Source NAT.
+	Create client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPICreateClientToSiteVpnServerRequest
+
+	Deprecated
 	*/
 	CreateClientToSiteVpnServer(ctx context.Context, omadacId string, siteId string) VPNAPICreateClientToSiteVpnServerRequest
 
 	// CreateClientToSiteVpnServerExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	CreateClientToSiteVpnServerExecute(r VPNAPICreateClientToSiteVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	CreateIpsecFailover Create IPsec failover
 
-	Create IPsec failover.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
+	Create IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual or Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPICreateIpsecFailoverRequest
+
+	Deprecated
 	*/
 	CreateIpsecFailover(ctx context.Context, omadacId string, siteId string) VPNAPICreateIpsecFailoverRequest
 
 	// CreateIpsecFailoverExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	CreateIpsecFailoverExecute(r VPNAPICreateIpsecFailoverRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	CreateS2SAutoVpn Create site-to-site VPN by auto
+
+	Create site-to-site VPN by auto.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPICreateS2SAutoVpnRequest
+	*/
+	CreateS2SAutoVpn(ctx context.Context, omadacId string, siteId string) VPNAPICreateS2SAutoVpnRequest
+
+	// CreateS2SAutoVpnExecute executes the request
+	//  @return OperationResponseWithoutResult
+	CreateS2SAutoVpnExecute(r VPNAPICreateS2SAutoVpnRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	CreateS2SManualVpn Create site-to-site VPN by manual
+
+	Create site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPICreateS2SManualVpnRequest
+	*/
+	CreateS2SManualVpn(ctx context.Context, omadacId string, siteId string) VPNAPICreateS2SManualVpnRequest
+
+	// CreateS2SManualVpnExecute executes the request
+	//  @return OperationResponseWithoutResult
+	CreateS2SManualVpnExecute(r VPNAPICreateS2SManualVpnRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	CreateSiteToSiteVpn Create site-to-site VPN
 
-	Create site-to-site VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35708  -  The device does not support IPSec Source NAT.
+	Create site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by auto or Create site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPICreateSiteToSiteVpnRequest
+
+	Deprecated
 	*/
 	CreateSiteToSiteVpn(ctx context.Context, omadacId string, siteId string) VPNAPICreateSiteToSiteVpnRequest
 
 	// CreateSiteToSiteVpnExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	CreateSiteToSiteVpnExecute(r VPNAPICreateSiteToSiteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	CreateVpnClient Create client-to-site VPN client V2
+
+	Create client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPICreateVpnClientRequest
+	*/
+	CreateVpnClient(ctx context.Context, omadacId string, siteId string) VPNAPICreateVpnClientRequest
+
+	// CreateVpnClientExecute executes the request
+	//  @return OperationResponseWithoutResult
+	CreateVpnClientExecute(r VPNAPICreateVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	CreateVpnServer Create client-to-site VPN server V2
+
+	Create client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPICreateVpnServerRequest
+	*/
+	CreateVpnServer(ctx context.Context, omadacId string, siteId string) VPNAPICreateVpnServerRequest
+
+	// CreateVpnServerExecute executes the request
+	//  @return OperationResponseWithoutResult
+	CreateVpnServerExecute(r VPNAPICreateVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	CreateVpnUser Create VPN user
@@ -109,102 +266,136 @@ type VPNAPI interface {
 	/*
 	CreateVpnUserV2 Create VPN user V2
 
-	Create VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  The device does not support configuring the VPN type for VPN users.<br/>-35719  -  The device does not support configuring VPN users.
+	Create VPN user. This interface has been deprecated. Please use the following interfaces instead: Create VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPICreateVpnUserV2Request
+
+	Deprecated
 	*/
 	CreateVpnUserV2(ctx context.Context, omadacId string, siteId string) VPNAPICreateVpnUserV2Request
 
 	// CreateVpnUserV2Execute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	CreateVpnUserV2Execute(r VPNAPICreateVpnUserV2Request) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	CreateVpnUserV3 Create VPN user V3
+
+	Create VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPICreateVpnUserV3Request
+	*/
+	CreateVpnUserV3(ctx context.Context, omadacId string, siteId string) VPNAPICreateVpnUserV3Request
+
+	// CreateVpnUserV3Execute executes the request
+	//  @return OperationResponseVpnUserBriefVO
+	CreateVpnUserV3Execute(r VPNAPICreateVpnUserV3Request) (*OperationResponseVpnUserBriefVO, *http.Response, error)
 
 	/*
 	DeleteClientToSiteVpnClient Delete client-to-site VPN client
 
-	Delete client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34682  -  This VPN entry has been used by Static Route, and thus it cannot be deleted.<br/>-34683  -  This VPN entry has been used by Policy Routing, and thus it cannot be deleted.<br/>-34684  -  This VPN entry has been used by Static Route and Policy Routing, and thus it cannot be deleted.<br/>-35706  -  This VPN entry has been used by Gateway ACL, and thus it cannot be deleted.
+	Delete client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34682  -  This VPN entry has been used by Static Route, and thus it cannot be deleted.<br/>-34683  -  This VPN entry has been used by Policy Routing, and thus it cannot be deleted.<br/>-34684  -  This VPN entry has been used by Static Route and Policy Routing, and thus it cannot be deleted.<br/>-35706  -  This VPN entry has been used by Gateway ACL, and thus it cannot be deleted.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIDeleteClientToSiteVpnClientRequest
+
+	Deprecated
 	*/
 	DeleteClientToSiteVpnClient(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteClientToSiteVpnClientRequest
 
 	// DeleteClientToSiteVpnClientExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteClientToSiteVpnClientExecute(r VPNAPIDeleteClientToSiteVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	DeleteClientToSiteVpnServer Delete client-to-site VPN server
 
-	Delete client-to-site VPN server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIDeleteClientToSiteVpnServerRequest
+
+	Deprecated
 	*/
 	DeleteClientToSiteVpnServer(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteClientToSiteVpnServerRequest
 
 	// DeleteClientToSiteVpnServerExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteClientToSiteVpnServerExecute(r VPNAPIDeleteClientToSiteVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	DeleteIpsecFailover Delete IPsec failover
 
-	Delete IPsec failover.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param failoverId IPSec failover ID
 	@return VPNAPIDeleteIpsecFailoverRequest
+
+	Deprecated
 	*/
 	DeleteIpsecFailover(ctx context.Context, omadacId string, siteId string, failoverId string) VPNAPIDeleteIpsecFailoverRequest
 
 	// DeleteIpsecFailoverExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteIpsecFailoverExecute(r VPNAPIDeleteIpsecFailoverRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	DeleteSiteToSiteVpn Delete site-to-site VPN
 
-	Delete site-to-site VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIDeleteSiteToSiteVpnRequest
+
+	Deprecated
 	*/
 	DeleteSiteToSiteVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteSiteToSiteVpnRequest
 
 	// DeleteSiteToSiteVpnExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteSiteToSiteVpnExecute(r VPNAPIDeleteSiteToSiteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	DeleteVpn Delete VPN
 
-	Delete VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIDeleteVpnRequest
+
+	Deprecated
 	*/
 	DeleteVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteVpnRequest
 
 	// DeleteVpnExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteVpnExecute(r VPNAPIDeleteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
@@ -225,68 +416,148 @@ type VPNAPI interface {
 	DeleteVpnUserExecute(r VPNAPIDeleteVpnUserRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	DeleteVpnV2 Delete VPN V2
+
+	Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIDeleteVpnV2Request
+	*/
+	DeleteVpnV2(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteVpnV2Request
+
+	// DeleteVpnV2Execute executes the request
+	//  @return OperationResponseWithoutResult
+	DeleteVpnV2Execute(r VPNAPIDeleteVpnV2Request) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	DisconnectSslVpnTunnel Disconnect SSL VPN tunnel
+
+	Disconnect SSL VPN tunnel by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param tunnelId SSL VPN tunnel ID
+	@return VPNAPIDisconnectSslVpnTunnelRequest
+	*/
+	DisconnectSslVpnTunnel(ctx context.Context, omadacId string, siteId string, tunnelId string) VPNAPIDisconnectSslVpnTunnelRequest
+
+	// DisconnectSslVpnTunnelExecute executes the request
+	//  @return OperationResponseWithoutResult
+	DisconnectSslVpnTunnelExecute(r VPNAPIDisconnectSslVpnTunnelRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	DownloadVpnCertificate Download Open VPN or SSL VPN certificate
+
+	Download Open VPN or SSL VPN certificate. Filename is a UTF-8 string encoded by URL Encoder.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34606  -  No gateway in this site.<br/>-34607  -  Failed to get the VPN certificate.<br/>-34624  -  Failed to get any response from the gateway.<br/>-34685  -  It takes about 5 minutes to generate the file, please export it later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIDownloadVpnCertificateRequest
+	*/
+	DownloadVpnCertificate(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDownloadVpnCertificateRequest
+
+	// DownloadVpnCertificateExecute executes the request
+	//  @return OperationResponse
+	DownloadVpnCertificateExecute(r VPNAPIDownloadVpnCertificateRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	GetAllVpnList Get All VPN list
 
-	Get All VPN list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get All VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info;Get VPN Client summary list and Get client-to-site VPN client detail info;Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPIGetAllVpnListRequest
+
+	Deprecated
 	*/
 	GetAllVpnList(ctx context.Context, omadacId string, siteId string) VPNAPIGetAllVpnListRequest
 
 	// GetAllVpnListExecute executes the request
 	//  @return OperationResponseVpnOpenApiGridVOVPN
+	// Deprecated
 	GetAllVpnListExecute(r VPNAPIGetAllVpnListRequest) (*OperationResponseVpnOpenApiGridVOVPN, *http.Response, error)
+
+	/*
+	GetBriefVpnUserByServerIdList Get brief VPN user list by VPN server ID without page
+
+	Get brief VPN user list by VPN server ID without page.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param serverId VPN server ID
+	@return VPNAPIGetBriefVpnUserByServerIdListRequest
+	*/
+	GetBriefVpnUserByServerIdList(ctx context.Context, omadacId string, siteId string, serverId string) VPNAPIGetBriefVpnUserByServerIdListRequest
+
+	// GetBriefVpnUserByServerIdListExecute executes the request
+	//  @return OperationResponseListVpnUserBriefVO
+	GetBriefVpnUserByServerIdListExecute(r VPNAPIGetBriefVpnUserByServerIdListRequest) (*OperationResponseListVpnUserBriefVO, *http.Response, error)
 
 	/*
 	GetClientToSiteVpnClientList Get client-to-site VPN client list
 
-	Get client-to-site VPN client list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get client-to-site VPN client list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPIGetClientToSiteVpnClientListRequest
+
+	Deprecated
 	*/
 	GetClientToSiteVpnClientList(ctx context.Context, omadacId string, siteId string) VPNAPIGetClientToSiteVpnClientListRequest
 
 	// GetClientToSiteVpnClientListExecute executes the request
 	//  @return OperationResponseVpnOpenApiGridVOClientToSiteVpnClient
+	// Deprecated
 	GetClientToSiteVpnClientListExecute(r VPNAPIGetClientToSiteVpnClientListRequest) (*OperationResponseVpnOpenApiGridVOClientToSiteVpnClient, *http.Response, error)
 
 	/*
 	GetClientToSiteVpnServerInfo Get client-to-site VPN server info
 
-	Get client-to-site VPN server info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get client-to-site VPN server info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIGetClientToSiteVpnServerInfoRequest
+
+	Deprecated
 	*/
 	GetClientToSiteVpnServerInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetClientToSiteVpnServerInfoRequest
 
 	// GetClientToSiteVpnServerInfoExecute executes the request
 	//  @return OperationResponseClientToSiteVpnServer
+	// Deprecated
 	GetClientToSiteVpnServerInfoExecute(r VPNAPIGetClientToSiteVpnServerInfoRequest) (*OperationResponseClientToSiteVpnServer, *http.Response, error)
 
 	/*
 	GetClientToSiteVpnServerList Get client-to-site VPN server list
 
-	Get client-to-site VPN server list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get client-to-site VPN server list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPIGetClientToSiteVpnServerListRequest
+
+	Deprecated
 	*/
 	GetClientToSiteVpnServerList(ctx context.Context, omadacId string, siteId string) VPNAPIGetClientToSiteVpnServerListRequest
 
 	// GetClientToSiteVpnServerListExecute executes the request
 	//  @return OperationResponseVpnOpenApiGridVOClientToSiteVpnServer
+	// Deprecated
 	GetClientToSiteVpnServerListExecute(r VPNAPIGetClientToSiteVpnServerListRequest) (*OperationResponseVpnOpenApiGridVOClientToSiteVpnServer, *http.Response, error)
 
 	/*
@@ -309,84 +580,328 @@ type VPNAPI interface {
 	/*
 	GetGridIpsecFailover Get IPsec failover list
 
-	Get IPsec failover list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get IPsec failover list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPIGetGridIpsecFailoverRequest
+
+	Deprecated
 	*/
 	GetGridIpsecFailover(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridIpsecFailoverRequest
 
 	// GetGridIpsecFailoverExecute executes the request
-	//  @return OperationResponseGridVOIPsecFailover
-	GetGridIpsecFailoverExecute(r VPNAPIGetGridIpsecFailoverRequest) (*OperationResponseGridVOIPsecFailover, *http.Response, error)
+	//  @return OperationResponseGridVOIPsecFailoverInformation
+	// Deprecated
+	GetGridIpsecFailoverExecute(r VPNAPIGetGridIpsecFailoverRequest) (*OperationResponseGridVOIPsecFailoverInformation, *http.Response, error)
+
+	/*
+	GetGridVpnClientV2 Get VPN Client summary list
+
+	Get VPN Client summary list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIGetGridVpnClientV2Request
+	*/
+	GetGridVpnClientV2(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnClientV2Request
+
+	// GetGridVpnClientV2Execute executes the request
+	//  @return OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO
+	GetGridVpnClientV2Execute(r VPNAPIGetGridVpnClientV2Request) (*OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO, *http.Response, error)
+
+	/*
+	GetGridVpnS2SV2 Get VPN Site to Site summary list
+
+	Get VPN Site to Site summary list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIGetGridVpnS2SV2Request
+	*/
+	GetGridVpnS2SV2(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnS2SV2Request
+
+	// GetGridVpnS2SV2Execute executes the request
+	//  @return OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO
+	GetGridVpnS2SV2Execute(r VPNAPIGetGridVpnS2SV2Request) (*OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO, *http.Response, error)
+
+	/*
+	GetGridVpnServerV2 Get VPN Server summary list
+
+	Get VPN Server summary list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIGetGridVpnServerV2Request
+	*/
+	GetGridVpnServerV2(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnServerV2Request
+
+	// GetGridVpnServerV2Execute executes the request
+	//  @return OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO
+	GetGridVpnServerV2Execute(r VPNAPIGetGridVpnServerV2Request) (*OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO, *http.Response, error)
 
 	/*
 	GetGridVpnUser Get VPN user list
 
-	Get VPN user list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get VPN user list. This interface has been deprecated. Please use the following interfaces instead: Get VPN user list V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPIGetGridVpnUserRequest
+
+	Deprecated
 	*/
 	GetGridVpnUser(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnUserRequest
 
 	// GetGridVpnUserExecute executes the request
 	//  @return OperationResponseVpnUserOpenApiGridVOVpnUserResponse
+	// Deprecated
 	GetGridVpnUserExecute(r VPNAPIGetGridVpnUserRequest) (*OperationResponseVpnUserOpenApiGridVOVpnUserResponse, *http.Response, error)
+
+	/*
+	GetGridVpnUserV2 Get VPN user list V2
+
+	Get VPN user list V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIGetGridVpnUserV2Request
+	*/
+	GetGridVpnUserV2(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnUserV2Request
+
+	// GetGridVpnUserV2Execute executes the request
+	//  @return OperationResponseVpnUserOpenApiGridVOVpnUserInfoVO
+	GetGridVpnUserV2Execute(r VPNAPIGetGridVpnUserV2Request) (*OperationResponseVpnUserOpenApiGridVOVpnUserInfoVO, *http.Response, error)
 
 	/*
 	GetSiteToSiteVpnInfo Get site-to-site VPN info
 
-	Get site-to-site VPN info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get site-to-site VPN info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIGetSiteToSiteVpnInfoRequest
+
+	Deprecated
 	*/
 	GetSiteToSiteVpnInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetSiteToSiteVpnInfoRequest
 
 	// GetSiteToSiteVpnInfoExecute executes the request
 	//  @return OperationResponseSiteToSiteVpn
+	// Deprecated
 	GetSiteToSiteVpnInfoExecute(r VPNAPIGetSiteToSiteVpnInfoRequest) (*OperationResponseSiteToSiteVpn, *http.Response, error)
 
 	/*
 	GetSiteToSiteVpnList Get site-to-site VPN list
 
-	Get site-to-site VPN list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get site-to-site VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return VPNAPIGetSiteToSiteVpnListRequest
+
+	Deprecated
 	*/
 	GetSiteToSiteVpnList(ctx context.Context, omadacId string, siteId string) VPNAPIGetSiteToSiteVpnListRequest
 
 	// GetSiteToSiteVpnListExecute executes the request
 	//  @return OperationResponseListSiteToSiteVpn
+	// Deprecated
 	GetSiteToSiteVpnListExecute(r VPNAPIGetSiteToSiteVpnListRequest) (*OperationResponseListSiteToSiteVpn, *http.Response, error)
+
+	/*
+	GetSslVpnUserGroupBriefList Get SSL VPN user Group list V2
+
+	Get SSL VPN user Group brief information list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIGetSslVpnUserGroupBriefListRequest
+	*/
+	GetSslVpnUserGroupBriefList(ctx context.Context, omadacId string, siteId string) VPNAPIGetSslVpnUserGroupBriefListRequest
+
+	// GetSslVpnUserGroupBriefListExecute executes the request
+	//  @return OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupBriefVO
+	GetSslVpnUserGroupBriefListExecute(r VPNAPIGetSslVpnUserGroupBriefListRequest) (*OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupBriefVO, *http.Response, error)
+
+	/*
+	GetVpnAvailableIpPool Get available IP pools for VPN
+
+	Get available IP pools for VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIGetVpnAvailableIpPoolRequest
+	*/
+	GetVpnAvailableIpPool(ctx context.Context, omadacId string, siteId string) VPNAPIGetVpnAvailableIpPoolRequest
+
+	// GetVpnAvailableIpPoolExecute executes the request
+	//  @return OperationResponseVpnAvailableIpPoolVO
+	GetVpnAvailableIpPoolExecute(r VPNAPIGetVpnAvailableIpPoolRequest) (*OperationResponseVpnAvailableIpPoolVO, *http.Response, error)
+
+	/*
+	GetVpnClientDetailInfo Get client-to-site VPN client detail info
+
+	Get client-to-site VPN client detail information by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIGetVpnClientDetailInfoRequest
+	*/
+	GetVpnClientDetailInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnClientDetailInfoRequest
+
+	// GetVpnClientDetailInfoExecute executes the request
+	//  @return OperationResponseVpnClientDetailVO
+	GetVpnClientDetailInfoExecute(r VPNAPIGetVpnClientDetailInfoRequest) (*OperationResponseVpnClientDetailVO, *http.Response, error)
 
 	/*
 	GetVpnClientToSiteClientInfo Get client-to-site VPN client info
 
-	Get client-to-site VPN client info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get client-to-site VPN client info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIGetVpnClientToSiteClientInfoRequest
+
+	Deprecated
 	*/
 	GetVpnClientToSiteClientInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnClientToSiteClientInfoRequest
 
 	// GetVpnClientToSiteClientInfoExecute executes the request
 	//  @return OperationResponseClientToSiteVpnClient
+	// Deprecated
 	GetVpnClientToSiteClientInfoExecute(r VPNAPIGetVpnClientToSiteClientInfoRequest) (*OperationResponseClientToSiteVpnClient, *http.Response, error)
+
+	/*
+	GetVpnDefaultValue Get default value for VPN
+
+	Get default value for VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIGetVpnDefaultValueRequest
+	*/
+	GetVpnDefaultValue(ctx context.Context, omadacId string, siteId string) VPNAPIGetVpnDefaultValueRequest
+
+	// GetVpnDefaultValueExecute executes the request
+	//  @return OperationResponseVpnDefaultValueRespVO
+	GetVpnDefaultValueExecute(r VPNAPIGetVpnDefaultValueRequest) (*OperationResponseVpnDefaultValueRespVO, *http.Response, error)
+
+	/*
+	GetVpnPreSharedKey Generate a random pre-shared key for IPSec
+
+	Generate a random pre-shared key for IPSec.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIGetVpnPreSharedKeyRequest
+	*/
+	GetVpnPreSharedKey(ctx context.Context, omadacId string, siteId string) VPNAPIGetVpnPreSharedKeyRequest
+
+	// GetVpnPreSharedKeyExecute executes the request
+	//  @return OperationResponseVpnPreSharedKeyVO
+	GetVpnPreSharedKeyExecute(r VPNAPIGetVpnPreSharedKeyRequest) (*OperationResponseVpnPreSharedKeyVO, *http.Response, error)
+
+	/*
+	GetVpnS2SDetailInfo Get site-to-site VPN detail info
+
+	Get site-to-site VPN detail information by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIGetVpnS2SDetailInfoRequest
+	*/
+	GetVpnS2SDetailInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnS2SDetailInfoRequest
+
+	// GetVpnS2SDetailInfoExecute executes the request
+	//  @return OperationResponseVpnSiteToSiteDetailOpenApiVO
+	GetVpnS2SDetailInfoExecute(r VPNAPIGetVpnS2SDetailInfoRequest) (*OperationResponseVpnSiteToSiteDetailOpenApiVO, *http.Response, error)
+
+	/*
+	GetVpnServerDetailInfo Get client-to-site VPN server detail info
+
+	Get client-to-site VPN server detail information by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIGetVpnServerDetailInfoRequest
+	*/
+	GetVpnServerDetailInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnServerDetailInfoRequest
+
+	// GetVpnServerDetailInfoExecute executes the request
+	//  @return OperationResponseVpnServerDetailVO
+	GetVpnServerDetailInfoExecute(r VPNAPIGetVpnServerDetailInfoRequest) (*OperationResponseVpnServerDetailVO, *http.Response, error)
+
+	/*
+	GetVpnServerUserListV3 Get user list by VPN server ID
+
+	Get user list by VPN server ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIGetVpnServerUserListV3Request
+	*/
+	GetVpnServerUserListV3(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnServerUserListV3Request
+
+	// GetVpnServerUserListV3Execute executes the request
+	//  @return OperationResponseVpnUserServerGridVOVpnUserInfoVO
+	GetVpnServerUserListV3Execute(r VPNAPIGetVpnServerUserListV3Request) (*OperationResponseVpnUserServerGridVOVpnUserInfoVO, *http.Response, error)
+
+	/*
+	GetVpnUserList Get VPN user list without page
+
+	Get VPN user list without page.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param protocol 0: L2TP or PPTP; 1: OpenVPN; 2: SSL VPN
+	@return VPNAPIGetVpnUserListRequest
+	*/
+	GetVpnUserList(ctx context.Context, omadacId string, siteId string, protocol string) VPNAPIGetVpnUserListRequest
+
+	// GetVpnUserListExecute executes the request
+	//  @return OperationResponseVpnUserOpenApiGridVOVpnUserResponse
+	GetVpnUserListExecute(r VPNAPIGetVpnUserListRequest) (*OperationResponseVpnUserOpenApiGridVOVpnUserResponse, *http.Response, error)
+
+	/*
+	GetVpnUserServerList Get VPN server list for user
+
+	Get VPN server list for user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIGetVpnUserServerListRequest
+	*/
+	GetVpnUserServerList(ctx context.Context, omadacId string, siteId string) VPNAPIGetVpnUserServerListRequest
+
+	// GetVpnUserServerListExecute executes the request
+	//  @return OperationResponseListVpnUserServerBriefVO
+	GetVpnUserServerListExecute(r VPNAPIGetVpnUserServerListRequest) (*OperationResponseListVpnUserServerBriefVO, *http.Response, error)
 
 	/*
 	ListRemoteSite List Remote Site
@@ -405,77 +920,191 @@ type VPNAPI interface {
 	ListRemoteSiteExecute(r VPNAPIListRemoteSiteRequest) (*OperationResponseMapStringObject, *http.Response, error)
 
 	/*
+	LockSslVpnTunnel Lock SSL VPN tunnel
+
+	Lock SSL VPN tunnel by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param tunnelId SSL VPN tunnel ID
+	@return VPNAPILockSslVpnTunnelRequest
+	*/
+	LockSslVpnTunnel(ctx context.Context, omadacId string, siteId string, tunnelId string) VPNAPILockSslVpnTunnelRequest
+
+	// LockSslVpnTunnelExecute executes the request
+	//  @return OperationResponseWithoutResult
+	LockSslVpnTunnelExecute(r VPNAPILockSslVpnTunnelRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyClientStatus Modify VPN status
+
+	Modify VPN status.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIModifyClientStatusRequest
+	*/
+	ModifyClientStatus(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyClientStatusRequest
+
+	// ModifyClientStatusExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyClientStatusExecute(r VPNAPIModifyClientStatusRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	ModifyClientToSiteVpnClient Modify client-to-site VPN client
 
-	Modify client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
+	Modify client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN client V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIModifyClientToSiteVpnClientRequest
+
+	Deprecated
 	*/
 	ModifyClientToSiteVpnClient(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyClientToSiteVpnClientRequest
 
 	// ModifyClientToSiteVpnClientExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyClientToSiteVpnClientExecute(r VPNAPIModifyClientToSiteVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyClientToSiteVpnServer Modify client-to-site VPN server
 
-	Modify client-to-site VPN server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35708  -  The device does not support IPSec Source NAT.
+	Modify client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIModifyClientToSiteVpnServerRequest
+
+	Deprecated
 	*/
 	ModifyClientToSiteVpnServer(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyClientToSiteVpnServerRequest
 
 	// ModifyClientToSiteVpnServerExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyClientToSiteVpnServerExecute(r VPNAPIModifyClientToSiteVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyIpsecFailover Modify IPsec failover
 
-	Modify IPsec failover.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
+	Modify IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param failoverId IPSec failover ID
 	@return VPNAPIModifyIpsecFailoverRequest
+
+	Deprecated
 	*/
 	ModifyIpsecFailover(ctx context.Context, omadacId string, siteId string, failoverId string) VPNAPIModifyIpsecFailoverRequest
 
 	// ModifyIpsecFailoverExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyIpsecFailoverExecute(r VPNAPIModifyIpsecFailoverRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyS2SAutoVpn Modify site-to-site VPN by auto
+
+	Modify site-to-site VPN by auto.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIModifyS2SAutoVpnRequest
+	*/
+	ModifyS2SAutoVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyS2SAutoVpnRequest
+
+	// ModifyS2SAutoVpnExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyS2SAutoVpnExecute(r VPNAPIModifyS2SAutoVpnRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyS2SManualVpn Modify site-to-site VPN by manual
+
+	Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIModifyS2SManualVpnRequest
+	*/
+	ModifyS2SManualVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyS2SManualVpnRequest
+
+	// ModifyS2SManualVpnExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyS2SManualVpnExecute(r VPNAPIModifyS2SManualVpnRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifySiteToSiteVpn Modify site-to-site VPN
 
-	Modify site-to-site VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35708  -  The device does not support IPSec Source NAT.
+	Modify site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by auto or Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param vpnId VPN ID
 	@return VPNAPIModifySiteToSiteVpnRequest
+
+	Deprecated
 	*/
 	ModifySiteToSiteVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifySiteToSiteVpnRequest
 
 	// ModifySiteToSiteVpnExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifySiteToSiteVpnExecute(r VPNAPIModifySiteToSiteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyVpnClient Modify client-to-site VPN client V2
+
+	Modify client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIModifyVpnClientRequest
+	*/
+	ModifyVpnClient(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyVpnClientRequest
+
+	// ModifyVpnClientExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyVpnClientExecute(r VPNAPIModifyVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyVpnServer Modify client-to-site VPN server V2
+
+	Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return VPNAPIModifyVpnServerRequest
+	*/
+	ModifyVpnServer(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyVpnServerRequest
+
+	// ModifyVpnServerExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyVpnServerExecute(r VPNAPIModifyVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyVpnUser Modify VPN user
 
-	Modify VPN user. This interface has been deprecated. Please use the following interface instead: Modify VPN user V2<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Modify VPN user. This interface has been deprecated. Please use the following interface instead: Modify VPN user V3<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -495,39 +1124,731 @@ type VPNAPI interface {
 	/*
 	ModifyVpnUserV2 Modify VPN user V2
 
-	Modify VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  The device does not support configuring the VPN type for VPN users.<br/>-35719  -  The device does not support configuring VPN users.
+	Modify VPN user. This interface has been deprecated. Please use the following interfaces instead: Modify VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param userId VPN user ID
 	@return VPNAPIModifyVpnUserV2Request
+
+	Deprecated
 	*/
 	ModifyVpnUserV2(ctx context.Context, omadacId string, siteId string, userId string) VPNAPIModifyVpnUserV2Request
 
 	// ModifyVpnUserV2Execute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyVpnUserV2Execute(r VPNAPIModifyVpnUserV2Request) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	ModifyVpnUserV3 Modify VPN user V3
+
+	Modify VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param userId VPN user ID
+	@return VPNAPIModifyVpnUserV3Request
+	*/
+	ModifyVpnUserV3(ctx context.Context, omadacId string, siteId string, userId string) VPNAPIModifyVpnUserV3Request
+
+	// ModifyVpnUserV3Execute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyVpnUserV3Execute(r VPNAPIModifyVpnUserV3Request) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	UploadVpnCertificateFile Upload VPN certificate file
+
+	Upload VPN certificate file. This interface has been deprecated. Please use the following interfaces instead: Upload VPN certificate file V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return VPNAPIUploadVpnCertificateFileRequest
+
+	Deprecated
+	*/
+	UploadVpnCertificateFile(ctx context.Context, omadacId string, siteId string) VPNAPIUploadVpnCertificateFileRequest
+
+	// UploadVpnCertificateFileExecute executes the request
+	//  @return OperationResponseVpnCertificateVO
+	// Deprecated
+	UploadVpnCertificateFileExecute(r VPNAPIUploadVpnCertificateFileRequest) (*OperationResponseVpnCertificateVO, *http.Response, error)
+
+	/*
+	UploadVpnCertificateFileV2 Upload VPN certificate file V2
 
 	Upload VPN certificate file.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@return VPNAPIUploadVpnCertificateFileRequest
+	@return VPNAPIUploadVpnCertificateFileV2Request
 	*/
-	UploadVpnCertificateFile(ctx context.Context, omadacId string, siteId string) VPNAPIUploadVpnCertificateFileRequest
+	UploadVpnCertificateFileV2(ctx context.Context, omadacId string, siteId string) VPNAPIUploadVpnCertificateFileV2Request
 
-	// UploadVpnCertificateFileExecute executes the request
-	//  @return OperationResponseWithoutResult
-	UploadVpnCertificateFileExecute(r VPNAPIUploadVpnCertificateFileRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	// UploadVpnCertificateFileV2Execute executes the request
+	//  @return OperationResponseVpnCertificateVO
+	UploadVpnCertificateFileV2Execute(r VPNAPIUploadVpnCertificateFileV2Request) (*OperationResponseVpnCertificateVO, *http.Response, error)
 }
 
 // VPNAPIService VPNAPI service
 type VPNAPIService service
+
+type VPNAPIBatchDeleteVpnRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	batchSelectVpnVO *BatchSelectVpnVO
+}
+
+func (r VPNAPIBatchDeleteVpnRequest) BatchSelectVpnVO(batchSelectVpnVO BatchSelectVpnVO) VPNAPIBatchDeleteVpnRequest {
+	r.batchSelectVpnVO = &batchSelectVpnVO
+	return r
+}
+
+func (r VPNAPIBatchDeleteVpnRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.BatchDeleteVpnExecute(r)
+}
+
+/*
+BatchDeleteVpn Batch delete VPN
+
+Batch delete VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIBatchDeleteVpnRequest
+*/
+func (a *VPNAPIService) BatchDeleteVpn(ctx context.Context, omadacId string, siteId string) VPNAPIBatchDeleteVpnRequest {
+	return VPNAPIBatchDeleteVpnRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) BatchDeleteVpnExecute(r VPNAPIBatchDeleteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.BatchDeleteVpn")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.batchSelectVpnVO == nil {
+		return localVarReturnValue, nil, reportError("batchSelectVpnVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.batchSelectVpnVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIBatchDeleteVpnUserRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	batchSelectVpnUserVO *BatchSelectVpnUserVO
+}
+
+func (r VPNAPIBatchDeleteVpnUserRequest) BatchSelectVpnUserVO(batchSelectVpnUserVO BatchSelectVpnUserVO) VPNAPIBatchDeleteVpnUserRequest {
+	r.batchSelectVpnUserVO = &batchSelectVpnUserVO
+	return r
+}
+
+func (r VPNAPIBatchDeleteVpnUserRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.BatchDeleteVpnUserExecute(r)
+}
+
+/*
+BatchDeleteVpnUser Batch delete VPN user
+
+Batch delete VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIBatchDeleteVpnUserRequest
+*/
+func (a *VPNAPIService) BatchDeleteVpnUser(ctx context.Context, omadacId string, siteId string) VPNAPIBatchDeleteVpnUserRequest {
+	return VPNAPIBatchDeleteVpnUserRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) BatchDeleteVpnUserExecute(r VPNAPIBatchDeleteVpnUserRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.BatchDeleteVpnUser")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/users"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.batchSelectVpnUserVO == nil {
+		return localVarReturnValue, nil, reportError("batchSelectVpnUserVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.batchSelectVpnUserVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPICheckUsedInVpnsRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	batchSelectVpnVO *BatchSelectVpnVO
+}
+
+func (r VPNAPICheckUsedInVpnsRequest) BatchSelectVpnVO(batchSelectVpnVO BatchSelectVpnVO) VPNAPICheckUsedInVpnsRequest {
+	r.batchSelectVpnVO = &batchSelectVpnVO
+	return r
+}
+
+func (r VPNAPICheckUsedInVpnsRequest) Execute() (*OperationResponseVpnListUsedFunctionOpenApiVO, *http.Response, error) {
+	return r.ApiService.CheckUsedInVpnsExecute(r)
+}
+
+/*
+CheckUsedInVpns Check used function for multiple VPN items
+
+Check used function for multiple VPN items.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPICheckUsedInVpnsRequest
+*/
+func (a *VPNAPIService) CheckUsedInVpns(ctx context.Context, omadacId string, siteId string) VPNAPICheckUsedInVpnsRequest {
+	return VPNAPICheckUsedInVpnsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnListUsedFunctionOpenApiVO
+func (a *VPNAPIService) CheckUsedInVpnsExecute(r VPNAPICheckUsedInVpnsRequest) (*OperationResponseVpnListUsedFunctionOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnListUsedFunctionOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.CheckUsedInVpns")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/checkUsed"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.batchSelectVpnVO == nil {
+		return localVarReturnValue, nil, reportError("batchSelectVpnVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.batchSelectVpnVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPICheckUsedVpnRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+}
+
+func (r VPNAPICheckUsedVpnRequest) Execute() (*OperationResponseFunctionOpenApiVO, *http.Response, error) {
+	return r.ApiService.CheckUsedVpnExecute(r)
+}
+
+/*
+CheckUsedVpn Check used function for single VPN item
+
+Check used function for single VPN item.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPICheckUsedVpnRequest
+*/
+func (a *VPNAPIService) CheckUsedVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPICheckUsedVpnRequest {
+	return VPNAPICheckUsedVpnRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseFunctionOpenApiVO
+func (a *VPNAPIService) CheckUsedVpnExecute(r VPNAPICheckUsedVpnRequest) (*OperationResponseFunctionOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseFunctionOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.CheckUsedVpn")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/{vpnId}/checkUsed"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPICheckValueAvailableRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnValueAvailableVO *VpnValueAvailableVO
+}
+
+func (r VPNAPICheckValueAvailableRequest) VpnValueAvailableVO(vpnValueAvailableVO VpnValueAvailableVO) VPNAPICheckValueAvailableRequest {
+	r.vpnValueAvailableVO = &vpnValueAvailableVO
+	return r
+}
+
+func (r VPNAPICheckValueAvailableRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CheckValueAvailableExecute(r)
+}
+
+/*
+CheckValueAvailable Check whether vpn value is available
+
+Check whether vpn value is available.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPICheckValueAvailableRequest
+*/
+func (a *VPNAPIService) CheckValueAvailable(ctx context.Context, omadacId string, siteId string) VPNAPICheckValueAvailableRequest {
+	return VPNAPICheckValueAvailableRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) CheckValueAvailableExecute(r VPNAPICheckValueAvailableRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.CheckValueAvailable")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/checkValue"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnValueAvailableVO == nil {
+		return localVarReturnValue, nil, reportError("vpnValueAvailableVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnValueAvailableVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type VPNAPICreateClientToSiteVpnClientRequest struct {
 	ctx context.Context
@@ -549,12 +1870,14 @@ func (r VPNAPICreateClientToSiteVpnClientRequest) Execute() (*OperationResponseW
 /*
 CreateClientToSiteVpnClient Create client-to-site VPN client
 
-Create client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Create client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN client V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPICreateClientToSiteVpnClientRequest
+
+Deprecated
 */
 func (a *VPNAPIService) CreateClientToSiteVpnClient(ctx context.Context, omadacId string, siteId string) VPNAPICreateClientToSiteVpnClientRequest {
 	return VPNAPICreateClientToSiteVpnClientRequest{
@@ -567,6 +1890,7 @@ func (a *VPNAPIService) CreateClientToSiteVpnClient(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) CreateClientToSiteVpnClientExecute(r VPNAPICreateClientToSiteVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -681,12 +2005,14 @@ func (r VPNAPICreateClientToSiteVpnServerRequest) Execute() (*OperationResponseW
 /*
 CreateClientToSiteVpnServer Create client-to-site VPN server
 
-Create client-to-site VPN server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35708  -  The device does not support IPSec Source NAT.
+Create client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPICreateClientToSiteVpnServerRequest
+
+Deprecated
 */
 func (a *VPNAPIService) CreateClientToSiteVpnServer(ctx context.Context, omadacId string, siteId string) VPNAPICreateClientToSiteVpnServerRequest {
 	return VPNAPICreateClientToSiteVpnServerRequest{
@@ -699,6 +2025,7 @@ func (a *VPNAPIService) CreateClientToSiteVpnServer(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) CreateClientToSiteVpnServerExecute(r VPNAPICreateClientToSiteVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -798,11 +2125,11 @@ type VPNAPICreateIpsecFailoverRequest struct {
 	ApiService VPNAPI
 	omadacId string
 	siteId string
-	iPsecFailover *IPsecFailover
+	iPsecFailoverConfiguration *IPsecFailoverConfiguration
 }
 
-func (r VPNAPICreateIpsecFailoverRequest) IPsecFailover(iPsecFailover IPsecFailover) VPNAPICreateIpsecFailoverRequest {
-	r.iPsecFailover = &iPsecFailover
+func (r VPNAPICreateIpsecFailoverRequest) IPsecFailoverConfiguration(iPsecFailoverConfiguration IPsecFailoverConfiguration) VPNAPICreateIpsecFailoverRequest {
+	r.iPsecFailoverConfiguration = &iPsecFailoverConfiguration
 	return r
 }
 
@@ -813,12 +2140,14 @@ func (r VPNAPICreateIpsecFailoverRequest) Execute() (*OperationResponseWithoutRe
 /*
 CreateIpsecFailover Create IPsec failover
 
-Create IPsec failover.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
+Create IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual or Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPICreateIpsecFailoverRequest
+
+Deprecated
 */
 func (a *VPNAPIService) CreateIpsecFailover(ctx context.Context, omadacId string, siteId string) VPNAPICreateIpsecFailoverRequest {
 	return VPNAPICreateIpsecFailoverRequest{
@@ -831,6 +2160,7 @@ func (a *VPNAPIService) CreateIpsecFailover(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) CreateIpsecFailoverExecute(r VPNAPICreateIpsecFailoverRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -851,8 +2181,8 @@ func (a *VPNAPIService) CreateIpsecFailoverExecute(r VPNAPICreateIpsecFailoverRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.iPsecFailover == nil {
-		return localVarReturnValue, nil, reportError("iPsecFailover is required and must be specified")
+	if r.iPsecFailoverConfiguration == nil {
+		return localVarReturnValue, nil, reportError("iPsecFailoverConfiguration is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -873,7 +2203,271 @@ func (a *VPNAPIService) CreateIpsecFailoverExecute(r VPNAPICreateIpsecFailoverRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.iPsecFailover
+	localVarPostBody = r.iPsecFailoverConfiguration
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPICreateS2SAutoVpnRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnSiteToSiteAutoConfigOpenApiVO *VpnSiteToSiteAutoConfigOpenApiVO
+}
+
+func (r VPNAPICreateS2SAutoVpnRequest) VpnSiteToSiteAutoConfigOpenApiVO(vpnSiteToSiteAutoConfigOpenApiVO VpnSiteToSiteAutoConfigOpenApiVO) VPNAPICreateS2SAutoVpnRequest {
+	r.vpnSiteToSiteAutoConfigOpenApiVO = &vpnSiteToSiteAutoConfigOpenApiVO
+	return r
+}
+
+func (r VPNAPICreateS2SAutoVpnRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CreateS2SAutoVpnExecute(r)
+}
+
+/*
+CreateS2SAutoVpn Create site-to-site VPN by auto
+
+Create site-to-site VPN by auto.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPICreateS2SAutoVpnRequest
+*/
+func (a *VPNAPIService) CreateS2SAutoVpn(ctx context.Context, omadacId string, siteId string) VPNAPICreateS2SAutoVpnRequest {
+	return VPNAPICreateS2SAutoVpnRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) CreateS2SAutoVpnExecute(r VPNAPICreateS2SAutoVpnRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.CreateS2SAutoVpn")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/auto"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnSiteToSiteAutoConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("vpnSiteToSiteAutoConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnSiteToSiteAutoConfigOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPICreateS2SManualVpnRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnSiteToSiteManualConfigOpenApiVO *VpnSiteToSiteManualConfigOpenApiVO
+}
+
+func (r VPNAPICreateS2SManualVpnRequest) VpnSiteToSiteManualConfigOpenApiVO(vpnSiteToSiteManualConfigOpenApiVO VpnSiteToSiteManualConfigOpenApiVO) VPNAPICreateS2SManualVpnRequest {
+	r.vpnSiteToSiteManualConfigOpenApiVO = &vpnSiteToSiteManualConfigOpenApiVO
+	return r
+}
+
+func (r VPNAPICreateS2SManualVpnRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CreateS2SManualVpnExecute(r)
+}
+
+/*
+CreateS2SManualVpn Create site-to-site VPN by manual
+
+Create site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPICreateS2SManualVpnRequest
+*/
+func (a *VPNAPIService) CreateS2SManualVpn(ctx context.Context, omadacId string, siteId string) VPNAPICreateS2SManualVpnRequest {
+	return VPNAPICreateS2SManualVpnRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) CreateS2SManualVpnExecute(r VPNAPICreateS2SManualVpnRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.CreateS2SManualVpn")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnSiteToSiteManualConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("vpnSiteToSiteManualConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnSiteToSiteManualConfigOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -945,12 +2539,14 @@ func (r VPNAPICreateSiteToSiteVpnRequest) Execute() (*OperationResponseWithoutRe
 /*
 CreateSiteToSiteVpn Create site-to-site VPN
 
-Create site-to-site VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35708  -  The device does not support IPSec Source NAT.
+Create site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by auto or Create site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPICreateSiteToSiteVpnRequest
+
+Deprecated
 */
 func (a *VPNAPIService) CreateSiteToSiteVpn(ctx context.Context, omadacId string, siteId string) VPNAPICreateSiteToSiteVpnRequest {
 	return VPNAPICreateSiteToSiteVpnRequest{
@@ -963,6 +2559,7 @@ func (a *VPNAPIService) CreateSiteToSiteVpn(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) CreateSiteToSiteVpnExecute(r VPNAPICreateSiteToSiteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -1006,6 +2603,270 @@ func (a *VPNAPIService) CreateSiteToSiteVpnExecute(r VPNAPICreateSiteToSiteVpnRe
 	}
 	// body params
 	localVarPostBody = r.siteToSiteVpn
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPICreateVpnClientRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnClientConfigOpenApiVO *VpnClientConfigOpenApiVO
+}
+
+func (r VPNAPICreateVpnClientRequest) VpnClientConfigOpenApiVO(vpnClientConfigOpenApiVO VpnClientConfigOpenApiVO) VPNAPICreateVpnClientRequest {
+	r.vpnClientConfigOpenApiVO = &vpnClientConfigOpenApiVO
+	return r
+}
+
+func (r VPNAPICreateVpnClientRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CreateVpnClientExecute(r)
+}
+
+/*
+CreateVpnClient Create client-to-site VPN client V2
+
+Create client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPICreateVpnClientRequest
+*/
+func (a *VPNAPIService) CreateVpnClient(ctx context.Context, omadacId string, siteId string) VPNAPICreateVpnClientRequest {
+	return VPNAPICreateVpnClientRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) CreateVpnClientExecute(r VPNAPICreateVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.CreateVpnClient")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnClientConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("vpnClientConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnClientConfigOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPICreateVpnServerRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnServerConfigOpenApiVO *VpnServerConfigOpenApiVO
+}
+
+func (r VPNAPICreateVpnServerRequest) VpnServerConfigOpenApiVO(vpnServerConfigOpenApiVO VpnServerConfigOpenApiVO) VPNAPICreateVpnServerRequest {
+	r.vpnServerConfigOpenApiVO = &vpnServerConfigOpenApiVO
+	return r
+}
+
+func (r VPNAPICreateVpnServerRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CreateVpnServerExecute(r)
+}
+
+/*
+CreateVpnServer Create client-to-site VPN server V2
+
+Create client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPICreateVpnServerRequest
+*/
+func (a *VPNAPIService) CreateVpnServer(ctx context.Context, omadacId string, siteId string) VPNAPICreateVpnServerRequest {
+	return VPNAPICreateVpnServerRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) CreateVpnServerExecute(r VPNAPICreateVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.CreateVpnServer")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnServerConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("vpnServerConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnServerConfigOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1212,12 +3073,14 @@ func (r VPNAPICreateVpnUserV2Request) Execute() (*OperationResponseWithoutResult
 /*
 CreateVpnUserV2 Create VPN user V2
 
-Create VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  The device does not support configuring the VPN type for VPN users.<br/>-35719  -  The device does not support configuring VPN users.
+Create VPN user. This interface has been deprecated. Please use the following interfaces instead: Create VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPICreateVpnUserV2Request
+
+Deprecated
 */
 func (a *VPNAPIService) CreateVpnUserV2(ctx context.Context, omadacId string, siteId string) VPNAPICreateVpnUserV2Request {
 	return VPNAPICreateVpnUserV2Request{
@@ -1230,6 +3093,7 @@ func (a *VPNAPIService) CreateVpnUserV2(ctx context.Context, omadacId string, si
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) CreateVpnUserV2Execute(r VPNAPICreateVpnUserV2Request) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -1324,6 +3188,138 @@ func (a *VPNAPIService) CreateVpnUserV2Execute(r VPNAPICreateVpnUserV2Request) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VPNAPICreateVpnUserV3Request struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnUserConfigVO *VpnUserConfigVO
+}
+
+func (r VPNAPICreateVpnUserV3Request) VpnUserConfigVO(vpnUserConfigVO VpnUserConfigVO) VPNAPICreateVpnUserV3Request {
+	r.vpnUserConfigVO = &vpnUserConfigVO
+	return r
+}
+
+func (r VPNAPICreateVpnUserV3Request) Execute() (*OperationResponseVpnUserBriefVO, *http.Response, error) {
+	return r.ApiService.CreateVpnUserV3Execute(r)
+}
+
+/*
+CreateVpnUserV3 Create VPN user V3
+
+Create VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPICreateVpnUserV3Request
+*/
+func (a *VPNAPIService) CreateVpnUserV3(ctx context.Context, omadacId string, siteId string) VPNAPICreateVpnUserV3Request {
+	return VPNAPICreateVpnUserV3Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnUserBriefVO
+func (a *VPNAPIService) CreateVpnUserV3Execute(r VPNAPICreateVpnUserV3Request) (*OperationResponseVpnUserBriefVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnUserBriefVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.CreateVpnUserV3")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v3/{omadacId}/sites/{siteId}/vpn/users"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnUserConfigVO == nil {
+		return localVarReturnValue, nil, reportError("vpnUserConfigVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnUserConfigVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VPNAPIDeleteClientToSiteVpnClientRequest struct {
 	ctx context.Context
 	ApiService VPNAPI
@@ -1339,13 +3335,15 @@ func (r VPNAPIDeleteClientToSiteVpnClientRequest) Execute() (*OperationResponseW
 /*
 DeleteClientToSiteVpnClient Delete client-to-site VPN client
 
-Delete client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34682  -  This VPN entry has been used by Static Route, and thus it cannot be deleted.<br/>-34683  -  This VPN entry has been used by Policy Routing, and thus it cannot be deleted.<br/>-34684  -  This VPN entry has been used by Static Route and Policy Routing, and thus it cannot be deleted.<br/>-35706  -  This VPN entry has been used by Gateway ACL, and thus it cannot be deleted.
+Delete client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34682  -  This VPN entry has been used by Static Route, and thus it cannot be deleted.<br/>-34683  -  This VPN entry has been used by Policy Routing, and thus it cannot be deleted.<br/>-34684  -  This VPN entry has been used by Static Route and Policy Routing, and thus it cannot be deleted.<br/>-35706  -  This VPN entry has been used by Gateway ACL, and thus it cannot be deleted.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIDeleteClientToSiteVpnClientRequest
+
+Deprecated
 */
 func (a *VPNAPIService) DeleteClientToSiteVpnClient(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteClientToSiteVpnClientRequest {
 	return VPNAPIDeleteClientToSiteVpnClientRequest{
@@ -1359,6 +3357,7 @@ func (a *VPNAPIService) DeleteClientToSiteVpnClient(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) DeleteClientToSiteVpnClientExecute(r VPNAPIDeleteClientToSiteVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -1464,13 +3463,15 @@ func (r VPNAPIDeleteClientToSiteVpnServerRequest) Execute() (*OperationResponseW
 /*
 DeleteClientToSiteVpnServer Delete client-to-site VPN server
 
-Delete client-to-site VPN server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIDeleteClientToSiteVpnServerRequest
+
+Deprecated
 */
 func (a *VPNAPIService) DeleteClientToSiteVpnServer(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteClientToSiteVpnServerRequest {
 	return VPNAPIDeleteClientToSiteVpnServerRequest{
@@ -1484,6 +3485,7 @@ func (a *VPNAPIService) DeleteClientToSiteVpnServer(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) DeleteClientToSiteVpnServerExecute(r VPNAPIDeleteClientToSiteVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -1589,13 +3591,15 @@ func (r VPNAPIDeleteIpsecFailoverRequest) Execute() (*OperationResponseWithoutRe
 /*
 DeleteIpsecFailover Delete IPsec failover
 
-Delete IPsec failover.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param failoverId IPSec failover ID
  @return VPNAPIDeleteIpsecFailoverRequest
+
+Deprecated
 */
 func (a *VPNAPIService) DeleteIpsecFailover(ctx context.Context, omadacId string, siteId string, failoverId string) VPNAPIDeleteIpsecFailoverRequest {
 	return VPNAPIDeleteIpsecFailoverRequest{
@@ -1609,6 +3613,7 @@ func (a *VPNAPIService) DeleteIpsecFailover(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) DeleteIpsecFailoverExecute(r VPNAPIDeleteIpsecFailoverRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -1714,13 +3719,15 @@ func (r VPNAPIDeleteSiteToSiteVpnRequest) Execute() (*OperationResponseWithoutRe
 /*
 DeleteSiteToSiteVpn Delete site-to-site VPN
 
-Delete site-to-site VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIDeleteSiteToSiteVpnRequest
+
+Deprecated
 */
 func (a *VPNAPIService) DeleteSiteToSiteVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteSiteToSiteVpnRequest {
 	return VPNAPIDeleteSiteToSiteVpnRequest{
@@ -1734,6 +3741,7 @@ func (a *VPNAPIService) DeleteSiteToSiteVpn(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) DeleteSiteToSiteVpnExecute(r VPNAPIDeleteSiteToSiteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -1839,13 +3847,15 @@ func (r VPNAPIDeleteVpnRequest) Execute() (*OperationResponseWithoutResult, *htt
 /*
 DeleteVpn Delete VPN
 
-Delete VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIDeleteVpnRequest
+
+Deprecated
 */
 func (a *VPNAPIService) DeleteVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteVpnRequest {
 	return VPNAPIDeleteVpnRequest{
@@ -1859,6 +3869,7 @@ func (a *VPNAPIService) DeleteVpn(ctx context.Context, omadacId string, siteId s
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) DeleteVpnExecute(r VPNAPIDeleteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -2074,6 +4085,381 @@ func (a *VPNAPIService) DeleteVpnUserExecute(r VPNAPIDeleteVpnUserRequest) (*Ope
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VPNAPIDeleteVpnV2Request struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+}
+
+func (r VPNAPIDeleteVpnV2Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.DeleteVpnV2Execute(r)
+}
+
+/*
+DeleteVpnV2 Delete VPN V2
+
+Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIDeleteVpnV2Request
+*/
+func (a *VPNAPIService) DeleteVpnV2(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDeleteVpnV2Request {
+	return VPNAPIDeleteVpnV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) DeleteVpnV2Execute(r VPNAPIDeleteVpnV2Request) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.DeleteVpnV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/{vpnId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIDisconnectSslVpnTunnelRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	tunnelId string
+}
+
+func (r VPNAPIDisconnectSslVpnTunnelRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.DisconnectSslVpnTunnelExecute(r)
+}
+
+/*
+DisconnectSslVpnTunnel Disconnect SSL VPN tunnel
+
+Disconnect SSL VPN tunnel by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param tunnelId SSL VPN tunnel ID
+ @return VPNAPIDisconnectSslVpnTunnelRequest
+*/
+func (a *VPNAPIService) DisconnectSslVpnTunnel(ctx context.Context, omadacId string, siteId string, tunnelId string) VPNAPIDisconnectSslVpnTunnelRequest {
+	return VPNAPIDisconnectSslVpnTunnelRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		tunnelId: tunnelId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) DisconnectSslVpnTunnelExecute(r VPNAPIDisconnectSslVpnTunnelRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.DisconnectSslVpnTunnel")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/stats/sslvpn/tunnel/{tunnelId}/disconnect"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"tunnelId"+"}", url.PathEscape(parameterValueToString(r.tunnelId, "tunnelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIDownloadVpnCertificateRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+}
+
+func (r VPNAPIDownloadVpnCertificateRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.DownloadVpnCertificateExecute(r)
+}
+
+/*
+DownloadVpnCertificate Download Open VPN or SSL VPN certificate
+
+Download Open VPN or SSL VPN certificate. Filename is a UTF-8 string encoded by URL Encoder.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34606  -  No gateway in this site.<br/>-34607  -  Failed to get the VPN certificate.<br/>-34624  -  Failed to get any response from the gateway.<br/>-34685  -  It takes about 5 minutes to generate the file, please export it later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIDownloadVpnCertificateRequest
+*/
+func (a *VPNAPIService) DownloadVpnCertificate(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIDownloadVpnCertificateRequest {
+	return VPNAPIDownloadVpnCertificateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *VPNAPIService) DownloadVpnCertificateExecute(r VPNAPIDownloadVpnCertificateRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.DownloadVpnCertificate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/files/sites/{siteId}/vpn/{vpnId}/certificate"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VPNAPIGetAllVpnListRequest struct {
 	ctx context.Context
 	ApiService VPNAPI
@@ -2088,12 +4474,14 @@ func (r VPNAPIGetAllVpnListRequest) Execute() (*OperationResponseVpnOpenApiGridV
 /*
 GetAllVpnList Get All VPN list
 
-Get All VPN list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get All VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info;Get VPN Client summary list and Get client-to-site VPN client detail info;Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPIGetAllVpnListRequest
+
+Deprecated
 */
 func (a *VPNAPIService) GetAllVpnList(ctx context.Context, omadacId string, siteId string) VPNAPIGetAllVpnListRequest {
 	return VPNAPIGetAllVpnListRequest{
@@ -2106,6 +4494,7 @@ func (a *VPNAPIService) GetAllVpnList(ctx context.Context, omadacId string, site
 
 // Execute executes the request
 //  @return OperationResponseVpnOpenApiGridVOVPN
+// Deprecated
 func (a *VPNAPIService) GetAllVpnListExecute(r VPNAPIGetAllVpnListRequest) (*OperationResponseVpnOpenApiGridVOVPN, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -2195,6 +4584,131 @@ func (a *VPNAPIService) GetAllVpnListExecute(r VPNAPIGetAllVpnListRequest) (*Ope
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VPNAPIGetBriefVpnUserByServerIdListRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	serverId string
+}
+
+func (r VPNAPIGetBriefVpnUserByServerIdListRequest) Execute() (*OperationResponseListVpnUserBriefVO, *http.Response, error) {
+	return r.ApiService.GetBriefVpnUserByServerIdListExecute(r)
+}
+
+/*
+GetBriefVpnUserByServerIdList Get brief VPN user list by VPN server ID without page
+
+Get brief VPN user list by VPN server ID without page.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param serverId VPN server ID
+ @return VPNAPIGetBriefVpnUserByServerIdListRequest
+*/
+func (a *VPNAPIService) GetBriefVpnUserByServerIdList(ctx context.Context, omadacId string, siteId string, serverId string) VPNAPIGetBriefVpnUserByServerIdListRequest {
+	return VPNAPIGetBriefVpnUserByServerIdListRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		serverId: serverId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseListVpnUserBriefVO
+func (a *VPNAPIService) GetBriefVpnUserByServerIdListExecute(r VPNAPIGetBriefVpnUserByServerIdListRequest) (*OperationResponseListVpnUserBriefVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseListVpnUserBriefVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetBriefVpnUserByServerIdList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/userlist/server/{serverId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"serverId"+"}", url.PathEscape(parameterValueToString(r.serverId, "serverId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VPNAPIGetClientToSiteVpnClientListRequest struct {
 	ctx context.Context
 	ApiService VPNAPI
@@ -2209,12 +4723,14 @@ func (r VPNAPIGetClientToSiteVpnClientListRequest) Execute() (*OperationResponse
 /*
 GetClientToSiteVpnClientList Get client-to-site VPN client list
 
-Get client-to-site VPN client list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get client-to-site VPN client list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPIGetClientToSiteVpnClientListRequest
+
+Deprecated
 */
 func (a *VPNAPIService) GetClientToSiteVpnClientList(ctx context.Context, omadacId string, siteId string) VPNAPIGetClientToSiteVpnClientListRequest {
 	return VPNAPIGetClientToSiteVpnClientListRequest{
@@ -2227,6 +4743,7 @@ func (a *VPNAPIService) GetClientToSiteVpnClientList(ctx context.Context, omadac
 
 // Execute executes the request
 //  @return OperationResponseVpnOpenApiGridVOClientToSiteVpnClient
+// Deprecated
 func (a *VPNAPIService) GetClientToSiteVpnClientListExecute(r VPNAPIGetClientToSiteVpnClientListRequest) (*OperationResponseVpnOpenApiGridVOClientToSiteVpnClient, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -2331,13 +4848,15 @@ func (r VPNAPIGetClientToSiteVpnServerInfoRequest) Execute() (*OperationResponse
 /*
 GetClientToSiteVpnServerInfo Get client-to-site VPN server info
 
-Get client-to-site VPN server info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get client-to-site VPN server info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIGetClientToSiteVpnServerInfoRequest
+
+Deprecated
 */
 func (a *VPNAPIService) GetClientToSiteVpnServerInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetClientToSiteVpnServerInfoRequest {
 	return VPNAPIGetClientToSiteVpnServerInfoRequest{
@@ -2351,6 +4870,7 @@ func (a *VPNAPIService) GetClientToSiteVpnServerInfo(ctx context.Context, omadac
 
 // Execute executes the request
 //  @return OperationResponseClientToSiteVpnServer
+// Deprecated
 func (a *VPNAPIService) GetClientToSiteVpnServerInfoExecute(r VPNAPIGetClientToSiteVpnServerInfoRequest) (*OperationResponseClientToSiteVpnServer, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -2455,12 +4975,14 @@ func (r VPNAPIGetClientToSiteVpnServerListRequest) Execute() (*OperationResponse
 /*
 GetClientToSiteVpnServerList Get client-to-site VPN server list
 
-Get client-to-site VPN server list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get client-to-site VPN server list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPIGetClientToSiteVpnServerListRequest
+
+Deprecated
 */
 func (a *VPNAPIService) GetClientToSiteVpnServerList(ctx context.Context, omadacId string, siteId string) VPNAPIGetClientToSiteVpnServerListRequest {
 	return VPNAPIGetClientToSiteVpnServerListRequest{
@@ -2473,6 +4995,7 @@ func (a *VPNAPIService) GetClientToSiteVpnServerList(ctx context.Context, omadac
 
 // Execute executes the request
 //  @return OperationResponseVpnOpenApiGridVOClientToSiteVpnServer
+// Deprecated
 func (a *VPNAPIService) GetClientToSiteVpnServerListExecute(r VPNAPIGetClientToSiteVpnServerListRequest) (*OperationResponseVpnOpenApiGridVOClientToSiteVpnServer, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -2708,19 +5231,21 @@ func (r VPNAPIGetGridIpsecFailoverRequest) PageSize(pageSize int32) VPNAPIGetGri
 	return r
 }
 
-func (r VPNAPIGetGridIpsecFailoverRequest) Execute() (*OperationResponseGridVOIPsecFailover, *http.Response, error) {
+func (r VPNAPIGetGridIpsecFailoverRequest) Execute() (*OperationResponseGridVOIPsecFailoverInformation, *http.Response, error) {
 	return r.ApiService.GetGridIpsecFailoverExecute(r)
 }
 
 /*
 GetGridIpsecFailover Get IPsec failover list
 
-Get IPsec failover list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get IPsec failover list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPIGetGridIpsecFailoverRequest
+
+Deprecated
 */
 func (a *VPNAPIService) GetGridIpsecFailover(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridIpsecFailoverRequest {
 	return VPNAPIGetGridIpsecFailoverRequest{
@@ -2732,13 +5257,14 @@ func (a *VPNAPIService) GetGridIpsecFailover(ctx context.Context, omadacId strin
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVOIPsecFailover
-func (a *VPNAPIService) GetGridIpsecFailoverExecute(r VPNAPIGetGridIpsecFailoverRequest) (*OperationResponseGridVOIPsecFailover, *http.Response, error) {
+//  @return OperationResponseGridVOIPsecFailoverInformation
+// Deprecated
+func (a *VPNAPIService) GetGridIpsecFailoverExecute(r VPNAPIGetGridIpsecFailoverRequest) (*OperationResponseGridVOIPsecFailoverInformation, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVOIPsecFailover
+		localVarReturnValue  *OperationResponseGridVOIPsecFailoverInformation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetGridIpsecFailover")
@@ -2760,6 +5286,525 @@ func (a *VPNAPIService) GetGridIpsecFailoverExecute(r VPNAPIGetGridIpsecFailover
 		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
 	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetGridVpnClientV2Request struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+	searchKey *string
+	filtersVpnType *string
+	sortsWans *string
+}
+
+// Start page number. Start from 1.
+func (r VPNAPIGetGridVpnClientV2Request) Page(page int32) VPNAPIGetGridVpnClientV2Request {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r VPNAPIGetGridVpnClientV2Request) PageSize(pageSize int32) VPNAPIGetGridVpnClientV2Request {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Fuzzy query parameters, support field name.
+func (r VPNAPIGetGridVpnClientV2Request) SearchKey(searchKey string) VPNAPIGetGridVpnClientV2Request {
+	r.searchKey = &searchKey
+	return r
+}
+
+// Filter query parameters, support field vpnType. 0: L2TP; 1: PPTP; 3: OpenVPN; 4: WireGuard;.
+func (r VPNAPIGetGridVpnClientV2Request) FiltersVpnType(filtersVpnType string) VPNAPIGetGridVpnClientV2Request {
+	r.filtersVpnType = &filtersVpnType
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r VPNAPIGetGridVpnClientV2Request) SortsWans(sortsWans string) VPNAPIGetGridVpnClientV2Request {
+	r.sortsWans = &sortsWans
+	return r
+}
+
+func (r VPNAPIGetGridVpnClientV2Request) Execute() (*OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO, *http.Response, error) {
+	return r.ApiService.GetGridVpnClientV2Execute(r)
+}
+
+/*
+GetGridVpnClientV2 Get VPN Client summary list
+
+Get VPN Client summary list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIGetGridVpnClientV2Request
+*/
+func (a *VPNAPIService) GetGridVpnClientV2(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnClientV2Request {
+	return VPNAPIGetGridVpnClientV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO
+func (a *VPNAPIService) GetGridVpnClientV2Execute(r VPNAPIGetGridVpnClientV2Request) (*OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetGridVpnClientV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	if r.filtersVpnType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.vpnType", r.filtersVpnType, "form", "")
+	}
+	if r.sortsWans != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.wans", r.sortsWans, "form", "")
+	}
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetGridVpnS2SV2Request struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+	searchKey *string
+	filtersVpnType *string
+	sortsWans *string
+}
+
+// Start page number. Start from 1.
+func (r VPNAPIGetGridVpnS2SV2Request) Page(page int32) VPNAPIGetGridVpnS2SV2Request {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r VPNAPIGetGridVpnS2SV2Request) PageSize(pageSize int32) VPNAPIGetGridVpnS2SV2Request {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Fuzzy query parameters, support field name.
+func (r VPNAPIGetGridVpnS2SV2Request) SearchKey(searchKey string) VPNAPIGetGridVpnS2SV2Request {
+	r.searchKey = &searchKey
+	return r
+}
+
+// Filter query parameters, support field vpnType. 2: IPSec; 4: WireGuard; 5: SSL VPN.
+func (r VPNAPIGetGridVpnS2SV2Request) FiltersVpnType(filtersVpnType string) VPNAPIGetGridVpnS2SV2Request {
+	r.filtersVpnType = &filtersVpnType
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r VPNAPIGetGridVpnS2SV2Request) SortsWans(sortsWans string) VPNAPIGetGridVpnS2SV2Request {
+	r.sortsWans = &sortsWans
+	return r
+}
+
+func (r VPNAPIGetGridVpnS2SV2Request) Execute() (*OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO, *http.Response, error) {
+	return r.ApiService.GetGridVpnS2SV2Execute(r)
+}
+
+/*
+GetGridVpnS2SV2 Get VPN Site to Site summary list
+
+Get VPN Site to Site summary list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIGetGridVpnS2SV2Request
+*/
+func (a *VPNAPIService) GetGridVpnS2SV2(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnS2SV2Request {
+	return VPNAPIGetGridVpnS2SV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO
+func (a *VPNAPIService) GetGridVpnS2SV2Execute(r VPNAPIGetGridVpnS2SV2Request) (*OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetGridVpnS2SV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	if r.filtersVpnType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.vpnType", r.filtersVpnType, "form", "")
+	}
+	if r.sortsWans != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.wans", r.sortsWans, "form", "")
+	}
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetGridVpnServerV2Request struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+	searchKey *string
+	filtersVpnType *string
+	sortsWans *string
+}
+
+// Start page number. Start from 1.
+func (r VPNAPIGetGridVpnServerV2Request) Page(page int32) VPNAPIGetGridVpnServerV2Request {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r VPNAPIGetGridVpnServerV2Request) PageSize(pageSize int32) VPNAPIGetGridVpnServerV2Request {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Fuzzy query parameters, support field name.
+func (r VPNAPIGetGridVpnServerV2Request) SearchKey(searchKey string) VPNAPIGetGridVpnServerV2Request {
+	r.searchKey = &searchKey
+	return r
+}
+
+// Filter query parameters, support field vpnType. 0: L2TP; 1: PPTP; 2: IPSec; 3: OpenVPN; 4: WireGuard; 5: SSL VPN.
+func (r VPNAPIGetGridVpnServerV2Request) FiltersVpnType(filtersVpnType string) VPNAPIGetGridVpnServerV2Request {
+	r.filtersVpnType = &filtersVpnType
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r VPNAPIGetGridVpnServerV2Request) SortsWans(sortsWans string) VPNAPIGetGridVpnServerV2Request {
+	r.sortsWans = &sortsWans
+	return r
+}
+
+func (r VPNAPIGetGridVpnServerV2Request) Execute() (*OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO, *http.Response, error) {
+	return r.ApiService.GetGridVpnServerV2Execute(r)
+}
+
+/*
+GetGridVpnServerV2 Get VPN Server summary list
+
+Get VPN Server summary list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIGetGridVpnServerV2Request
+*/
+func (a *VPNAPIService) GetGridVpnServerV2(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnServerV2Request {
+	return VPNAPIGetGridVpnServerV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO
+func (a *VPNAPIService) GetGridVpnServerV2Execute(r VPNAPIGetGridVpnServerV2Request) (*OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnSummaryOpenApiGridVOVpnSummaryVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetGridVpnServerV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	if r.filtersVpnType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.vpnType", r.filtersVpnType, "form", "")
+	}
+	if r.sortsWans != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.wans", r.sortsWans, "form", "")
+	}
 	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	// to determine the Content-Type header
@@ -2865,12 +5910,14 @@ func (r VPNAPIGetGridVpnUserRequest) Execute() (*OperationResponseVpnUserOpenApi
 /*
 GetGridVpnUser Get VPN user list
 
-Get VPN user list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get VPN user list. This interface has been deprecated. Please use the following interfaces instead: Get VPN user list V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPIGetGridVpnUserRequest
+
+Deprecated
 */
 func (a *VPNAPIService) GetGridVpnUser(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnUserRequest {
 	return VPNAPIGetGridVpnUserRequest{
@@ -2883,6 +5930,7 @@ func (a *VPNAPIService) GetGridVpnUser(ctx context.Context, omadacId string, sit
 
 // Execute executes the request
 //  @return OperationResponseVpnUserOpenApiGridVOVpnUserResponse
+// Deprecated
 func (a *VPNAPIService) GetGridVpnUserExecute(r VPNAPIGetGridVpnUserRequest) (*OperationResponseVpnUserOpenApiGridVOVpnUserResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -2983,6 +6031,199 @@ func (a *VPNAPIService) GetGridVpnUserExecute(r VPNAPIGetGridVpnUserRequest) (*O
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VPNAPIGetGridVpnUserV2Request struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+	searchKey *string
+	filtersProtocol *string
+	filtersClientMode *string
+	sortsMaxConnections *string
+	sortsValidity *string
+}
+
+// Start page number. Start from 1.
+func (r VPNAPIGetGridVpnUserV2Request) Page(page int32) VPNAPIGetGridVpnUserV2Request {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r VPNAPIGetGridVpnUserV2Request) PageSize(pageSize int32) VPNAPIGetGridVpnUserV2Request {
+	r.pageSize = &pageSize
+	return r
+}
+
+// searchKey
+func (r VPNAPIGetGridVpnUserV2Request) SearchKey(searchKey string) VPNAPIGetGridVpnUserV2Request {
+	r.searchKey = &searchKey
+	return r
+}
+
+// Filter query parameters, support field protocol. 0: L2TP or PPTP; 1: OpenVPN; 2: SSL VPN.
+func (r VPNAPIGetGridVpnUserV2Request) FiltersProtocol(filtersProtocol string) VPNAPIGetGridVpnUserV2Request {
+	r.filtersProtocol = &filtersProtocol
+	return r
+}
+
+// Filter query parameters, support field clientMode. 0: Network Extension Mode; 1: Client.
+func (r VPNAPIGetGridVpnUserV2Request) FiltersClientMode(filtersClientMode string) VPNAPIGetGridVpnUserV2Request {
+	r.filtersClientMode = &filtersClientMode
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r VPNAPIGetGridVpnUserV2Request) SortsMaxConnections(sortsMaxConnections string) VPNAPIGetGridVpnUserV2Request {
+	r.sortsMaxConnections = &sortsMaxConnections
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r VPNAPIGetGridVpnUserV2Request) SortsValidity(sortsValidity string) VPNAPIGetGridVpnUserV2Request {
+	r.sortsValidity = &sortsValidity
+	return r
+}
+
+func (r VPNAPIGetGridVpnUserV2Request) Execute() (*OperationResponseVpnUserOpenApiGridVOVpnUserInfoVO, *http.Response, error) {
+	return r.ApiService.GetGridVpnUserV2Execute(r)
+}
+
+/*
+GetGridVpnUserV2 Get VPN user list V2
+
+Get VPN user list V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIGetGridVpnUserV2Request
+*/
+func (a *VPNAPIService) GetGridVpnUserV2(ctx context.Context, omadacId string, siteId string) VPNAPIGetGridVpnUserV2Request {
+	return VPNAPIGetGridVpnUserV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnUserOpenApiGridVOVpnUserInfoVO
+func (a *VPNAPIService) GetGridVpnUserV2Execute(r VPNAPIGetGridVpnUserV2Request) (*OperationResponseVpnUserOpenApiGridVOVpnUserInfoVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnUserOpenApiGridVOVpnUserInfoVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetGridVpnUserV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/users"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	if r.filtersProtocol != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.protocol", r.filtersProtocol, "form", "")
+	}
+	if r.filtersClientMode != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.clientMode", r.filtersClientMode, "form", "")
+	}
+	if r.sortsMaxConnections != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.maxConnections", r.sortsMaxConnections, "form", "")
+	}
+	if r.sortsValidity != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.validity", r.sortsValidity, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VPNAPIGetSiteToSiteVpnInfoRequest struct {
 	ctx context.Context
 	ApiService VPNAPI
@@ -2998,13 +6239,15 @@ func (r VPNAPIGetSiteToSiteVpnInfoRequest) Execute() (*OperationResponseSiteToSi
 /*
 GetSiteToSiteVpnInfo Get site-to-site VPN info
 
-Get site-to-site VPN info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get site-to-site VPN info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIGetSiteToSiteVpnInfoRequest
+
+Deprecated
 */
 func (a *VPNAPIService) GetSiteToSiteVpnInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetSiteToSiteVpnInfoRequest {
 	return VPNAPIGetSiteToSiteVpnInfoRequest{
@@ -3018,6 +6261,7 @@ func (a *VPNAPIService) GetSiteToSiteVpnInfo(ctx context.Context, omadacId strin
 
 // Execute executes the request
 //  @return OperationResponseSiteToSiteVpn
+// Deprecated
 func (a *VPNAPIService) GetSiteToSiteVpnInfoExecute(r VPNAPIGetSiteToSiteVpnInfoRequest) (*OperationResponseSiteToSiteVpn, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -3122,12 +6366,14 @@ func (r VPNAPIGetSiteToSiteVpnListRequest) Execute() (*OperationResponseListSite
 /*
 GetSiteToSiteVpnList Get site-to-site VPN list
 
-Get site-to-site VPN list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get site-to-site VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPIGetSiteToSiteVpnListRequest
+
+Deprecated
 */
 func (a *VPNAPIService) GetSiteToSiteVpnList(ctx context.Context, omadacId string, siteId string) VPNAPIGetSiteToSiteVpnListRequest {
 	return VPNAPIGetSiteToSiteVpnListRequest{
@@ -3140,6 +6386,7 @@ func (a *VPNAPIService) GetSiteToSiteVpnList(ctx context.Context, omadacId strin
 
 // Execute executes the request
 //  @return OperationResponseListSiteToSiteVpn
+// Deprecated
 func (a *VPNAPIService) GetSiteToSiteVpnListExecute(r VPNAPIGetSiteToSiteVpnListRequest) (*OperationResponseListSiteToSiteVpn, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -3229,6 +6476,373 @@ func (a *VPNAPIService) GetSiteToSiteVpnListExecute(r VPNAPIGetSiteToSiteVpnList
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VPNAPIGetSslVpnUserGroupBriefListRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+}
+
+func (r VPNAPIGetSslVpnUserGroupBriefListRequest) Execute() (*OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupBriefVO, *http.Response, error) {
+	return r.ApiService.GetSslVpnUserGroupBriefListExecute(r)
+}
+
+/*
+GetSslVpnUserGroupBriefList Get SSL VPN user Group list V2
+
+Get SSL VPN user Group brief information list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIGetSslVpnUserGroupBriefListRequest
+*/
+func (a *VPNAPIService) GetSslVpnUserGroupBriefList(ctx context.Context, omadacId string, siteId string) VPNAPIGetSslVpnUserGroupBriefListRequest {
+	return VPNAPIGetSslVpnUserGroupBriefListRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupBriefVO
+func (a *VPNAPIService) GetSslVpnUserGroupBriefListExecute(r VPNAPIGetSslVpnUserGroupBriefListRequest) (*OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupBriefVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupBriefVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetSslVpnUserGroupBriefList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/briefusergroups"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetVpnAvailableIpPoolRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+}
+
+func (r VPNAPIGetVpnAvailableIpPoolRequest) Execute() (*OperationResponseVpnAvailableIpPoolVO, *http.Response, error) {
+	return r.ApiService.GetVpnAvailableIpPoolExecute(r)
+}
+
+/*
+GetVpnAvailableIpPool Get available IP pools for VPN
+
+Get available IP pools for VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIGetVpnAvailableIpPoolRequest
+*/
+func (a *VPNAPIService) GetVpnAvailableIpPool(ctx context.Context, omadacId string, siteId string) VPNAPIGetVpnAvailableIpPoolRequest {
+	return VPNAPIGetVpnAvailableIpPoolRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnAvailableIpPoolVO
+func (a *VPNAPIService) GetVpnAvailableIpPoolExecute(r VPNAPIGetVpnAvailableIpPoolRequest) (*OperationResponseVpnAvailableIpPoolVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnAvailableIpPoolVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetVpnAvailableIpPool")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/ippool"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetVpnClientDetailInfoRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+}
+
+func (r VPNAPIGetVpnClientDetailInfoRequest) Execute() (*OperationResponseVpnClientDetailVO, *http.Response, error) {
+	return r.ApiService.GetVpnClientDetailInfoExecute(r)
+}
+
+/*
+GetVpnClientDetailInfo Get client-to-site VPN client detail info
+
+Get client-to-site VPN client detail information by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIGetVpnClientDetailInfoRequest
+*/
+func (a *VPNAPIService) GetVpnClientDetailInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnClientDetailInfoRequest {
+	return VPNAPIGetVpnClientDetailInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnClientDetailVO
+func (a *VPNAPIService) GetVpnClientDetailInfoExecute(r VPNAPIGetVpnClientDetailInfoRequest) (*OperationResponseVpnClientDetailVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnClientDetailVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetVpnClientDetailInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients/{vpnId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VPNAPIGetVpnClientToSiteClientInfoRequest struct {
 	ctx context.Context
 	ApiService VPNAPI
@@ -3244,13 +6858,15 @@ func (r VPNAPIGetVpnClientToSiteClientInfoRequest) Execute() (*OperationResponse
 /*
 GetVpnClientToSiteClientInfo Get client-to-site VPN client info
 
-Get client-to-site VPN client info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get client-to-site VPN client info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIGetVpnClientToSiteClientInfoRequest
+
+Deprecated
 */
 func (a *VPNAPIService) GetVpnClientToSiteClientInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnClientToSiteClientInfoRequest {
 	return VPNAPIGetVpnClientToSiteClientInfoRequest{
@@ -3264,6 +6880,7 @@ func (a *VPNAPIService) GetVpnClientToSiteClientInfo(ctx context.Context, omadac
 
 // Execute executes the request
 //  @return OperationResponseClientToSiteVpnClient
+// Deprecated
 func (a *VPNAPIService) GetVpnClientToSiteClientInfoExecute(r VPNAPIGetVpnClientToSiteClientInfoRequest) (*OperationResponseClientToSiteVpnClient, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -3281,6 +6898,922 @@ func (a *VPNAPIService) GetVpnClientToSiteClientInfoExecute(r VPNAPIGetVpnClient
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetVpnDefaultValueRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnDefaultValueReqVO *VpnDefaultValueReqVO
+}
+
+func (r VPNAPIGetVpnDefaultValueRequest) VpnDefaultValueReqVO(vpnDefaultValueReqVO VpnDefaultValueReqVO) VPNAPIGetVpnDefaultValueRequest {
+	r.vpnDefaultValueReqVO = &vpnDefaultValueReqVO
+	return r
+}
+
+func (r VPNAPIGetVpnDefaultValueRequest) Execute() (*OperationResponseVpnDefaultValueRespVO, *http.Response, error) {
+	return r.ApiService.GetVpnDefaultValueExecute(r)
+}
+
+/*
+GetVpnDefaultValue Get default value for VPN
+
+Get default value for VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIGetVpnDefaultValueRequest
+*/
+func (a *VPNAPIService) GetVpnDefaultValue(ctx context.Context, omadacId string, siteId string) VPNAPIGetVpnDefaultValueRequest {
+	return VPNAPIGetVpnDefaultValueRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnDefaultValueRespVO
+func (a *VPNAPIService) GetVpnDefaultValueExecute(r VPNAPIGetVpnDefaultValueRequest) (*OperationResponseVpnDefaultValueRespVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnDefaultValueRespVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetVpnDefaultValue")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/defaultValue"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnDefaultValueReqVO == nil {
+		return localVarReturnValue, nil, reportError("vpnDefaultValueReqVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnDefaultValueReqVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetVpnPreSharedKeyRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+}
+
+func (r VPNAPIGetVpnPreSharedKeyRequest) Execute() (*OperationResponseVpnPreSharedKeyVO, *http.Response, error) {
+	return r.ApiService.GetVpnPreSharedKeyExecute(r)
+}
+
+/*
+GetVpnPreSharedKey Generate a random pre-shared key for IPSec
+
+Generate a random pre-shared key for IPSec.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIGetVpnPreSharedKeyRequest
+*/
+func (a *VPNAPIService) GetVpnPreSharedKey(ctx context.Context, omadacId string, siteId string) VPNAPIGetVpnPreSharedKeyRequest {
+	return VPNAPIGetVpnPreSharedKeyRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnPreSharedKeyVO
+func (a *VPNAPIService) GetVpnPreSharedKeyExecute(r VPNAPIGetVpnPreSharedKeyRequest) (*OperationResponseVpnPreSharedKeyVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnPreSharedKeyVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetVpnPreSharedKey")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/psk"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetVpnS2SDetailInfoRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+}
+
+func (r VPNAPIGetVpnS2SDetailInfoRequest) Execute() (*OperationResponseVpnSiteToSiteDetailOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetVpnS2SDetailInfoExecute(r)
+}
+
+/*
+GetVpnS2SDetailInfo Get site-to-site VPN detail info
+
+Get site-to-site VPN detail information by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIGetVpnS2SDetailInfoRequest
+*/
+func (a *VPNAPIService) GetVpnS2SDetailInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnS2SDetailInfoRequest {
+	return VPNAPIGetVpnS2SDetailInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnSiteToSiteDetailOpenApiVO
+func (a *VPNAPIService) GetVpnS2SDetailInfoExecute(r VPNAPIGetVpnS2SDetailInfoRequest) (*OperationResponseVpnSiteToSiteDetailOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnSiteToSiteDetailOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetVpnS2SDetailInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/{vpnId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetVpnServerDetailInfoRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+}
+
+func (r VPNAPIGetVpnServerDetailInfoRequest) Execute() (*OperationResponseVpnServerDetailVO, *http.Response, error) {
+	return r.ApiService.GetVpnServerDetailInfoExecute(r)
+}
+
+/*
+GetVpnServerDetailInfo Get client-to-site VPN server detail info
+
+Get client-to-site VPN server detail information by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIGetVpnServerDetailInfoRequest
+*/
+func (a *VPNAPIService) GetVpnServerDetailInfo(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnServerDetailInfoRequest {
+	return VPNAPIGetVpnServerDetailInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnServerDetailVO
+func (a *VPNAPIService) GetVpnServerDetailInfoExecute(r VPNAPIGetVpnServerDetailInfoRequest) (*OperationResponseVpnServerDetailVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnServerDetailVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetVpnServerDetailInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetVpnServerUserListV3Request struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+	page *int32
+	pageSize *int32
+	filtersClientMode *string
+	sortsMaxConnections *string
+}
+
+// Start page number. Start from 1.
+func (r VPNAPIGetVpnServerUserListV3Request) Page(page int32) VPNAPIGetVpnServerUserListV3Request {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r VPNAPIGetVpnServerUserListV3Request) PageSize(pageSize int32) VPNAPIGetVpnServerUserListV3Request {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Filter query parameters, support field clientMode. 0: Network Extension Mode; 1: Client.
+func (r VPNAPIGetVpnServerUserListV3Request) FiltersClientMode(filtersClientMode string) VPNAPIGetVpnServerUserListV3Request {
+	r.filtersClientMode = &filtersClientMode
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r VPNAPIGetVpnServerUserListV3Request) SortsMaxConnections(sortsMaxConnections string) VPNAPIGetVpnServerUserListV3Request {
+	r.sortsMaxConnections = &sortsMaxConnections
+	return r
+}
+
+func (r VPNAPIGetVpnServerUserListV3Request) Execute() (*OperationResponseVpnUserServerGridVOVpnUserInfoVO, *http.Response, error) {
+	return r.ApiService.GetVpnServerUserListV3Execute(r)
+}
+
+/*
+GetVpnServerUserListV3 Get user list by VPN server ID
+
+Get user list by VPN server ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIGetVpnServerUserListV3Request
+*/
+func (a *VPNAPIService) GetVpnServerUserListV3(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIGetVpnServerUserListV3Request {
+	return VPNAPIGetVpnServerUserListV3Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnUserServerGridVOVpnUserInfoVO
+func (a *VPNAPIService) GetVpnServerUserListV3Execute(r VPNAPIGetVpnServerUserListV3Request) (*OperationResponseVpnUserServerGridVOVpnUserInfoVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnUserServerGridVOVpnUserInfoVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetVpnServerUserListV3")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v3/{omadacId}/sites/{siteId}/vpn/{vpnId}/users"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	if r.filtersClientMode != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.clientMode", r.filtersClientMode, "form", "")
+	}
+	if r.sortsMaxConnections != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.maxConnections", r.sortsMaxConnections, "form", "")
+	}
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetVpnUserListRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	protocol string
+}
+
+func (r VPNAPIGetVpnUserListRequest) Execute() (*OperationResponseVpnUserOpenApiGridVOVpnUserResponse, *http.Response, error) {
+	return r.ApiService.GetVpnUserListExecute(r)
+}
+
+/*
+GetVpnUserList Get VPN user list without page
+
+Get VPN user list without page.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param protocol 0: L2TP or PPTP; 1: OpenVPN; 2: SSL VPN
+ @return VPNAPIGetVpnUserListRequest
+*/
+func (a *VPNAPIService) GetVpnUserList(ctx context.Context, omadacId string, siteId string, protocol string) VPNAPIGetVpnUserListRequest {
+	return VPNAPIGetVpnUserListRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		protocol: protocol,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnUserOpenApiGridVOVpnUserResponse
+func (a *VPNAPIService) GetVpnUserListExecute(r VPNAPIGetVpnUserListRequest) (*OperationResponseVpnUserOpenApiGridVOVpnUserResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnUserOpenApiGridVOVpnUserResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetVpnUserList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/userlist/{protocol}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"protocol"+"}", url.PathEscape(parameterValueToString(r.protocol, "protocol")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIGetVpnUserServerListRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+}
+
+func (r VPNAPIGetVpnUserServerListRequest) Execute() (*OperationResponseListVpnUserServerBriefVO, *http.Response, error) {
+	return r.ApiService.GetVpnUserServerListExecute(r)
+}
+
+/*
+GetVpnUserServerList Get VPN server list for user
+
+Get VPN server list for user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIGetVpnUserServerListRequest
+*/
+func (a *VPNAPIService) GetVpnUserServerList(ctx context.Context, omadacId string, siteId string) VPNAPIGetVpnUserServerListRequest {
+	return VPNAPIGetVpnUserServerListRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseListVpnUserServerBriefVO
+func (a *VPNAPIService) GetVpnUserServerListExecute(r VPNAPIGetVpnUserServerListRequest) (*OperationResponseListVpnUserServerBriefVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseListVpnUserServerBriefVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.GetVpnUserServerList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/userServers"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3475,6 +8008,267 @@ func (a *VPNAPIService) ListRemoteSiteExecute(r VPNAPIListRemoteSiteRequest) (*O
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VPNAPILockSslVpnTunnelRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	tunnelId string
+}
+
+func (r VPNAPILockSslVpnTunnelRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.LockSslVpnTunnelExecute(r)
+}
+
+/*
+LockSslVpnTunnel Lock SSL VPN tunnel
+
+Lock SSL VPN tunnel by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param tunnelId SSL VPN tunnel ID
+ @return VPNAPILockSslVpnTunnelRequest
+*/
+func (a *VPNAPIService) LockSslVpnTunnel(ctx context.Context, omadacId string, siteId string, tunnelId string) VPNAPILockSslVpnTunnelRequest {
+	return VPNAPILockSslVpnTunnelRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		tunnelId: tunnelId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) LockSslVpnTunnelExecute(r VPNAPILockSslVpnTunnelRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.LockSslVpnTunnel")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/stats/sslvpn/tunnel/{tunnelId}/lock"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"tunnelId"+"}", url.PathEscape(parameterValueToString(r.tunnelId, "tunnelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIModifyClientStatusRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+	vpnStatusVO *VpnStatusVO
+}
+
+func (r VPNAPIModifyClientStatusRequest) VpnStatusVO(vpnStatusVO VpnStatusVO) VPNAPIModifyClientStatusRequest {
+	r.vpnStatusVO = &vpnStatusVO
+	return r
+}
+
+func (r VPNAPIModifyClientStatusRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyClientStatusExecute(r)
+}
+
+/*
+ModifyClientStatus Modify VPN status
+
+Modify VPN status.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIModifyClientStatusRequest
+*/
+func (a *VPNAPIService) ModifyClientStatus(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyClientStatusRequest {
+	return VPNAPIModifyClientStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) ModifyClientStatusExecute(r VPNAPIModifyClientStatusRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.ModifyClientStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vpn/{vpnId}/status"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnStatusVO == nil {
+		return localVarReturnValue, nil, reportError("vpnStatusVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnStatusVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VPNAPIModifyClientToSiteVpnClientRequest struct {
 	ctx context.Context
 	ApiService VPNAPI
@@ -3496,13 +8290,15 @@ func (r VPNAPIModifyClientToSiteVpnClientRequest) Execute() (*OperationResponseW
 /*
 ModifyClientToSiteVpnClient Modify client-to-site VPN client
 
-Modify client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
+Modify client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN client V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIModifyClientToSiteVpnClientRequest
+
+Deprecated
 */
 func (a *VPNAPIService) ModifyClientToSiteVpnClient(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyClientToSiteVpnClientRequest {
 	return VPNAPIModifyClientToSiteVpnClientRequest{
@@ -3516,6 +8312,7 @@ func (a *VPNAPIService) ModifyClientToSiteVpnClient(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) ModifyClientToSiteVpnClientExecute(r VPNAPIModifyClientToSiteVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -3632,13 +8429,15 @@ func (r VPNAPIModifyClientToSiteVpnServerRequest) Execute() (*OperationResponseW
 /*
 ModifyClientToSiteVpnServer Modify client-to-site VPN server
 
-Modify client-to-site VPN server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35708  -  The device does not support IPSec Source NAT.
+Modify client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIModifyClientToSiteVpnServerRequest
+
+Deprecated
 */
 func (a *VPNAPIService) ModifyClientToSiteVpnServer(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyClientToSiteVpnServerRequest {
 	return VPNAPIModifyClientToSiteVpnServerRequest{
@@ -3652,6 +8451,7 @@ func (a *VPNAPIService) ModifyClientToSiteVpnServer(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) ModifyClientToSiteVpnServerExecute(r VPNAPIModifyClientToSiteVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -3753,11 +8553,11 @@ type VPNAPIModifyIpsecFailoverRequest struct {
 	omadacId string
 	siteId string
 	failoverId string
-	iPsecFailover *IPsecFailover
+	iPsecFailoverConfiguration *IPsecFailoverConfiguration
 }
 
-func (r VPNAPIModifyIpsecFailoverRequest) IPsecFailover(iPsecFailover IPsecFailover) VPNAPIModifyIpsecFailoverRequest {
-	r.iPsecFailover = &iPsecFailover
+func (r VPNAPIModifyIpsecFailoverRequest) IPsecFailoverConfiguration(iPsecFailoverConfiguration IPsecFailoverConfiguration) VPNAPIModifyIpsecFailoverRequest {
+	r.iPsecFailoverConfiguration = &iPsecFailoverConfiguration
 	return r
 }
 
@@ -3768,13 +8568,15 @@ func (r VPNAPIModifyIpsecFailoverRequest) Execute() (*OperationResponseWithoutRe
 /*
 ModifyIpsecFailover Modify IPsec failover
 
-Modify IPsec failover.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
+Modify IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param failoverId IPSec failover ID
  @return VPNAPIModifyIpsecFailoverRequest
+
+Deprecated
 */
 func (a *VPNAPIService) ModifyIpsecFailover(ctx context.Context, omadacId string, siteId string, failoverId string) VPNAPIModifyIpsecFailoverRequest {
 	return VPNAPIModifyIpsecFailoverRequest{
@@ -3788,6 +8590,7 @@ func (a *VPNAPIService) ModifyIpsecFailover(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) ModifyIpsecFailoverExecute(r VPNAPIModifyIpsecFailoverRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -3809,8 +8612,8 @@ func (a *VPNAPIService) ModifyIpsecFailoverExecute(r VPNAPIModifyIpsecFailoverRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.iPsecFailover == nil {
-		return localVarReturnValue, nil, reportError("iPsecFailover is required and must be specified")
+	if r.iPsecFailoverConfiguration == nil {
+		return localVarReturnValue, nil, reportError("iPsecFailoverConfiguration is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -3831,7 +8634,279 @@ func (a *VPNAPIService) ModifyIpsecFailoverExecute(r VPNAPIModifyIpsecFailoverRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.iPsecFailover
+	localVarPostBody = r.iPsecFailoverConfiguration
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIModifyS2SAutoVpnRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+	vpnSiteToSiteAutoConfigOpenApiVO *VpnSiteToSiteAutoConfigOpenApiVO
+}
+
+func (r VPNAPIModifyS2SAutoVpnRequest) VpnSiteToSiteAutoConfigOpenApiVO(vpnSiteToSiteAutoConfigOpenApiVO VpnSiteToSiteAutoConfigOpenApiVO) VPNAPIModifyS2SAutoVpnRequest {
+	r.vpnSiteToSiteAutoConfigOpenApiVO = &vpnSiteToSiteAutoConfigOpenApiVO
+	return r
+}
+
+func (r VPNAPIModifyS2SAutoVpnRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyS2SAutoVpnExecute(r)
+}
+
+/*
+ModifyS2SAutoVpn Modify site-to-site VPN by auto
+
+Modify site-to-site VPN by auto.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIModifyS2SAutoVpnRequest
+*/
+func (a *VPNAPIService) ModifyS2SAutoVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyS2SAutoVpnRequest {
+	return VPNAPIModifyS2SAutoVpnRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) ModifyS2SAutoVpnExecute(r VPNAPIModifyS2SAutoVpnRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.ModifyS2SAutoVpn")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/auto/{vpnId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnSiteToSiteAutoConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("vpnSiteToSiteAutoConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnSiteToSiteAutoConfigOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIModifyS2SManualVpnRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+	vpnSiteToSiteManualConfigOpenApiVO *VpnSiteToSiteManualConfigOpenApiVO
+}
+
+func (r VPNAPIModifyS2SManualVpnRequest) VpnSiteToSiteManualConfigOpenApiVO(vpnSiteToSiteManualConfigOpenApiVO VpnSiteToSiteManualConfigOpenApiVO) VPNAPIModifyS2SManualVpnRequest {
+	r.vpnSiteToSiteManualConfigOpenApiVO = &vpnSiteToSiteManualConfigOpenApiVO
+	return r
+}
+
+func (r VPNAPIModifyS2SManualVpnRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyS2SManualVpnExecute(r)
+}
+
+/*
+ModifyS2SManualVpn Modify site-to-site VPN by manual
+
+Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIModifyS2SManualVpnRequest
+*/
+func (a *VPNAPIService) ModifyS2SManualVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyS2SManualVpnRequest {
+	return VPNAPIModifyS2SManualVpnRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) ModifyS2SManualVpnExecute(r VPNAPIModifyS2SManualVpnRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.ModifyS2SManualVpn")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/site-to-site-vpns/{vpnId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnSiteToSiteManualConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("vpnSiteToSiteManualConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnSiteToSiteManualConfigOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -3904,13 +8979,15 @@ func (r VPNAPIModifySiteToSiteVpnRequest) Execute() (*OperationResponseWithoutRe
 /*
 ModifySiteToSiteVpn Modify site-to-site VPN
 
-Modify site-to-site VPN.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35708  -  The device does not support IPSec Source NAT.
+Modify site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by auto or Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param vpnId VPN ID
  @return VPNAPIModifySiteToSiteVpnRequest
+
+Deprecated
 */
 func (a *VPNAPIService) ModifySiteToSiteVpn(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifySiteToSiteVpnRequest {
 	return VPNAPIModifySiteToSiteVpnRequest{
@@ -3924,6 +9001,7 @@ func (a *VPNAPIService) ModifySiteToSiteVpn(ctx context.Context, omadacId string
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) ModifySiteToSiteVpnExecute(r VPNAPIModifySiteToSiteVpnRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -4019,6 +9097,278 @@ func (a *VPNAPIService) ModifySiteToSiteVpnExecute(r VPNAPIModifySiteToSiteVpnRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VPNAPIModifyVpnClientRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+	vpnClientConfigOpenApiVO *VpnClientConfigOpenApiVO
+}
+
+func (r VPNAPIModifyVpnClientRequest) VpnClientConfigOpenApiVO(vpnClientConfigOpenApiVO VpnClientConfigOpenApiVO) VPNAPIModifyVpnClientRequest {
+	r.vpnClientConfigOpenApiVO = &vpnClientConfigOpenApiVO
+	return r
+}
+
+func (r VPNAPIModifyVpnClientRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyVpnClientExecute(r)
+}
+
+/*
+ModifyVpnClient Modify client-to-site VPN client V2
+
+Modify client-to-site VPN client.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIModifyVpnClientRequest
+*/
+func (a *VPNAPIService) ModifyVpnClient(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyVpnClientRequest {
+	return VPNAPIModifyVpnClientRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) ModifyVpnClientExecute(r VPNAPIModifyVpnClientRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.ModifyVpnClient")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-clients/{vpnId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnClientConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("vpnClientConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnClientConfigOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIModifyVpnServerRequest struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	vpnId string
+	vpnServerConfigOpenApiVO *VpnServerConfigOpenApiVO
+}
+
+func (r VPNAPIModifyVpnServerRequest) VpnServerConfigOpenApiVO(vpnServerConfigOpenApiVO VpnServerConfigOpenApiVO) VPNAPIModifyVpnServerRequest {
+	r.vpnServerConfigOpenApiVO = &vpnServerConfigOpenApiVO
+	return r
+}
+
+func (r VPNAPIModifyVpnServerRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyVpnServerExecute(r)
+}
+
+/*
+ModifyVpnServer Modify client-to-site VPN server V2
+
+Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return VPNAPIModifyVpnServerRequest
+*/
+func (a *VPNAPIService) ModifyVpnServer(ctx context.Context, omadacId string, siteId string, vpnId string) VPNAPIModifyVpnServerRequest {
+	return VPNAPIModifyVpnServerRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) ModifyVpnServerExecute(r VPNAPIModifyVpnServerRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.ModifyVpnServer")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/vpn/client-to-site-vpn-servers/{vpnId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnServerConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("vpnServerConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnServerConfigOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VPNAPIModifyVpnUserRequest struct {
 	ctx context.Context
 	ApiService VPNAPI
@@ -4040,7 +9390,7 @@ func (r VPNAPIModifyVpnUserRequest) Execute() (*OperationResponseWithoutResult, 
 /*
 ModifyVpnUser Modify VPN user
 
-Modify VPN user. This interface has been deprecated. Please use the following interface instead: Modify VPN user V2<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Modify VPN user. This interface has been deprecated. Please use the following interface instead: Modify VPN user V3<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4179,13 +9529,15 @@ func (r VPNAPIModifyVpnUserV2Request) Execute() (*OperationResponseWithoutResult
 /*
 ModifyVpnUserV2 Modify VPN user V2
 
-Modify VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  The device does not support configuring the VPN type for VPN users.<br/>-35719  -  The device does not support configuring VPN users.
+Modify VPN user. This interface has been deprecated. Please use the following interfaces instead: Modify VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param userId VPN user ID
  @return VPNAPIModifyVpnUserV2Request
+
+Deprecated
 */
 func (a *VPNAPIService) ModifyVpnUserV2(ctx context.Context, omadacId string, siteId string, userId string) VPNAPIModifyVpnUserV2Request {
 	return VPNAPIModifyVpnUserV2Request{
@@ -4199,6 +9551,7 @@ func (a *VPNAPIService) ModifyVpnUserV2(ctx context.Context, omadacId string, si
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *VPNAPIService) ModifyVpnUserV2Execute(r VPNAPIModifyVpnUserV2Request) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -4294,12 +9647,148 @@ func (a *VPNAPIService) ModifyVpnUserV2Execute(r VPNAPIModifyVpnUserV2Request) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type VPNAPIModifyVpnUserV3Request struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	userId string
+	vpnUserConfigVO *VpnUserConfigVO
+}
+
+func (r VPNAPIModifyVpnUserV3Request) VpnUserConfigVO(vpnUserConfigVO VpnUserConfigVO) VPNAPIModifyVpnUserV3Request {
+	r.vpnUserConfigVO = &vpnUserConfigVO
+	return r
+}
+
+func (r VPNAPIModifyVpnUserV3Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyVpnUserV3Execute(r)
+}
+
+/*
+ModifyVpnUserV3 Modify VPN user V3
+
+Modify VPN user.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param userId VPN user ID
+ @return VPNAPIModifyVpnUserV3Request
+*/
+func (a *VPNAPIService) ModifyVpnUserV3(ctx context.Context, omadacId string, siteId string, userId string) VPNAPIModifyVpnUserV3Request {
+	return VPNAPIModifyVpnUserV3Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		userId: userId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *VPNAPIService) ModifyVpnUserV3Execute(r VPNAPIModifyVpnUserV3Request) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.ModifyVpnUserV3")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v3/{omadacId}/sites/{siteId}/vpn/users/{userId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.vpnUserConfigVO == nil {
+		return localVarReturnValue, nil, reportError("vpnUserConfigVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.vpnUserConfigVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type VPNAPIUploadVpnCertificateFileRequest struct {
 	ctx context.Context
 	ApiService VPNAPI
-	file *os.File
 	omadacId string
 	siteId string
+	file *os.File
 }
 
 func (r VPNAPIUploadVpnCertificateFileRequest) File(file *os.File) VPNAPIUploadVpnCertificateFileRequest {
@@ -4307,19 +9796,21 @@ func (r VPNAPIUploadVpnCertificateFileRequest) File(file *os.File) VPNAPIUploadV
 	return r
 }
 
-func (r VPNAPIUploadVpnCertificateFileRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+func (r VPNAPIUploadVpnCertificateFileRequest) Execute() (*OperationResponseVpnCertificateVO, *http.Response, error) {
 	return r.ApiService.UploadVpnCertificateFileExecute(r)
 }
 
 /*
 UploadVpnCertificateFile Upload VPN certificate file
 
-Upload VPN certificate file.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Upload VPN certificate file. This interface has been deprecated. Please use the following interfaces instead: Upload VPN certificate file V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return VPNAPIUploadVpnCertificateFileRequest
+
+Deprecated
 */
 func (a *VPNAPIService) UploadVpnCertificateFile(ctx context.Context, omadacId string, siteId string) VPNAPIUploadVpnCertificateFileRequest {
 	return VPNAPIUploadVpnCertificateFileRequest{
@@ -4331,13 +9822,14 @@ func (a *VPNAPIService) UploadVpnCertificateFile(ctx context.Context, omadacId s
 }
 
 // Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *VPNAPIService) UploadVpnCertificateFileExecute(r VPNAPIUploadVpnCertificateFileRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+//  @return OperationResponseVpnCertificateVO
+// Deprecated
+func (a *VPNAPIService) UploadVpnCertificateFileExecute(r VPNAPIUploadVpnCertificateFileRequest) (*OperationResponseVpnCertificateVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
+		localVarReturnValue  *OperationResponseVpnCertificateVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.UploadVpnCertificateFile")
@@ -4356,9 +9848,8 @@ func (a *VPNAPIService) UploadVpnCertificateFileExecute(r VPNAPIUploadVpnCertifi
 		return localVarReturnValue, nil, reportError("file is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "file", r.file, "form", "")
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"multipart/form-data"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -4373,6 +9864,166 @@ func (a *VPNAPIService) UploadVpnCertificateFileExecute(r VPNAPIUploadVpnCertifi
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	var fileLocalVarFormFileName string
+	var fileLocalVarFileName     string
+	var fileLocalVarFileBytes    []byte
+
+	fileLocalVarFormFileName = "file"
+	fileLocalVarFile := r.file
+
+	if fileLocalVarFile != nil {
+		fbs, _ := io.ReadAll(fileLocalVarFile)
+
+		fileLocalVarFileBytes = fbs
+		fileLocalVarFileName = fileLocalVarFile.Name()
+		fileLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type VPNAPIUploadVpnCertificateFileV2Request struct {
+	ctx context.Context
+	ApiService VPNAPI
+	omadacId string
+	siteId string
+	file *os.File
+}
+
+func (r VPNAPIUploadVpnCertificateFileV2Request) File(file *os.File) VPNAPIUploadVpnCertificateFileV2Request {
+	r.file = file
+	return r
+}
+
+func (r VPNAPIUploadVpnCertificateFileV2Request) Execute() (*OperationResponseVpnCertificateVO, *http.Response, error) {
+	return r.ApiService.UploadVpnCertificateFileV2Execute(r)
+}
+
+/*
+UploadVpnCertificateFileV2 Upload VPN certificate file V2
+
+Upload VPN certificate file.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return VPNAPIUploadVpnCertificateFileV2Request
+*/
+func (a *VPNAPIService) UploadVpnCertificateFileV2(ctx context.Context, omadacId string, siteId string) VPNAPIUploadVpnCertificateFileV2Request {
+	return VPNAPIUploadVpnCertificateFileV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnCertificateVO
+func (a *VPNAPIService) UploadVpnCertificateFileV2Execute(r VPNAPIUploadVpnCertificateFileV2Request) (*OperationResponseVpnCertificateVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnCertificateVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VPNAPIService.UploadVpnCertificateFileV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/files/sites/{siteId}/vpn/certificate"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.file == nil {
+		return localVarReturnValue, nil, reportError("file is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	var fileLocalVarFormFileName string
+	var fileLocalVarFileName     string
+	var fileLocalVarFileBytes    []byte
+
+	fileLocalVarFormFileName = "file"
+	fileLocalVarFile := r.file
+
+	if fileLocalVarFile != nil {
+		fbs, _ := io.ReadAll(fileLocalVarFile)
+
+		fileLocalVarFileBytes = fbs
+		fileLocalVarFileName = fileLocalVarFile.Name()
+		fileLocalVarFile.Close()
+		formFiles = append(formFiles, formFile{fileBytes: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
 	}
 	if r.ctx != nil {
 		// API Key Authentication

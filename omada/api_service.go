@@ -57,7 +57,7 @@ type ServiceAPI interface {
 	/*
 	CreateDdns Create a new Dynamic DNS entry
 
-	Create a new Dynamic DNS entry with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34500  -  Dynamic DNS Entries can be created with only one service provider for one WAN port.<br/>-34510  -  The domain name and service provider of different Dynamic DNS Entries should be different.<br/>-34516  -  The username already exists under the selected service provider.<br/>-34563  -  Only one TP-Link Dynamic DNS is allowed for one site.<br/>-34564  -  The TP-Link Dynamic DNS domain name cannot contain sensitive fields such as email, tp-link, tplink, and www.<br/>-34565  -  The TP-Link Dynamic DNS domain name should end with ".tplinkdns.com".<br/>-34566  -  The TP-Link Dynamic DNS domain name is invalid.
+	Create a new Dynamic DNS entry with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34500  -  Dynamic DNS Entries can be created with only one service provider for one WAN port.<br/>-34510  -  The domain name and service provider of different Dynamic DNS Entries should be different.<br/>-34516  -  The username already exists under the selected service provider.<br/>-34563  -  Only one TP-Link Dynamic DNS is allowed for one site.<br/>-34564  -  The TP-Link Dynamic DNS domain name cannot contain sensitive fields such as email, tp-link, tplink, and www.<br/>-34565  -  The TP-Link Dynamic DNS domain name should end with ".tplinkdns.com".<br/>-34566  -  The TP-Link Dynamic DNS domain name is invalid.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -299,9 +299,9 @@ type ServiceAPI interface {
 	GetGridAllDhcpUserListExecute(r ServiceAPIGetGridAllDhcpUserListRequest) (*OperationResponseDhcpUserGridVODhcpUserVO, *http.Response, error)
 
 	/*
-	GetIgmp Get IGMP setting
+	GetIgmp Get the IGMP settings
 
-	Get IGMP setting of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+	Get the IGMP settings of the site with the given Omada ID and Site ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -345,6 +345,22 @@ type ServiceAPI interface {
 	// GetMdnsGridExecute executes the request
 	//  @return OperationResponseGridVOMdnsRuleOpenApiVO
 	GetMdnsGridExecute(r ServiceAPIGetMdnsGridRequest) (*OperationResponseGridVOMdnsRuleOpenApiVO, *http.Response, error)
+
+	/*
+	GetMld Get the MLD settings
+
+	Get the MLD settings of the site with the given Omada ID and Site ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ServiceAPIGetMldRequest
+	*/
+	GetMld(ctx context.Context, omadacId string, siteId string) ServiceAPIGetMldRequest
+
+	// GetMldExecute executes the request
+	//  @return OperationResponseMldOpenApiVO
+	GetMldExecute(r ServiceAPIGetMldRequest) (*OperationResponseMldOpenApiVO, *http.Response, error)
 
 	/*
 	GetSnmpSetting Get SNMP setting
@@ -413,7 +429,7 @@ type ServiceAPI interface {
 	/*
 	ModifyDdns Modify an exist Dynamic DNS entry
 
-	Modify an exist Dynamic DNS entry with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34500  -  Dynamic DNS Entries can be created with only one service provider for one WAN port.<br/>-34510  -  The domain name and service provider of different Dynamic DNS Entries should be different.<br/>-34516  -  The username already exists under the selected service provider.<br/>-34564  -  The TP-Link Dynamic DNS domain name cannot contain sensitive fields such as email, tp-link, tplink, and www.<br/>-34565  -  The TP-Link Dynamic DNS domain name should end with ".tplinkdns.com".<br/>-34566  -  The TP-Link Dynamic DNS domain name is invalid.
+	Modify an exist Dynamic DNS entry with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34500  -  Dynamic DNS Entries can be created with only one service provider for one WAN port.<br/>-34510  -  The domain name and service provider of different Dynamic DNS Entries should be different.<br/>-34516  -  The username already exists under the selected service provider.<br/>-34564  -  The TP-Link Dynamic DNS domain name cannot contain sensitive fields such as email, tp-link, tplink, and www.<br/>-34565  -  The TP-Link Dynamic DNS domain name should end with ".tplinkdns.com".<br/>-34566  -  The TP-Link Dynamic DNS domain name is invalid.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -477,9 +493,9 @@ type ServiceAPI interface {
 	ModifyDnsProxyExecute(r ServiceAPIModifyDnsProxyRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyIgmp Modify IGMP setting
+	ModifyIgmp Modify the IGMP settings
 
-	Modify IGMP setting info of the site with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+	Modify the IGMP settings of the site with the given parameters.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -526,6 +542,22 @@ type ServiceAPI interface {
 	ModifyMdnsExecute(r ServiceAPIModifyMdnsRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	ModifyMld Modify the MLD settings
+
+	Modify the MLD settings of the site with the given parameters.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-33477  -  Only IPv6-enabled WAN ports can be selected as MLD Interface.<br/>-33478  -  MLD does not support the 6to4 Tunnel and Pass-Through(Bridge) IPv6 dial-up modes.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ServiceAPIModifyMldRequest
+	*/
+	ModifyMld(ctx context.Context, omadacId string, siteId string) ServiceAPIModifyMldRequest
+
+	// ModifyMldExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyMldExecute(r ServiceAPIModifyMldRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	ModifySnmpSetting Modify SNMP setting
 
 	Modify SNMP setting info of the site with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34503  -  Community String cannot be the same as the username.
@@ -554,8 +586,8 @@ type ServiceAPI interface {
 	ReservationFromDhcpUserList(ctx context.Context, omadacId string, siteId string) ServiceAPIReservationFromDhcpUserListRequest
 
 	// ReservationFromDhcpUserListExecute executes the request
-	//  @return OperationResponseWithoutResult
-	ReservationFromDhcpUserListExecute(r ServiceAPIReservationFromDhcpUserListRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	//  @return OperationResponseDhcpReservationErrorVO
+	ReservationFromDhcpUserListExecute(r ServiceAPIReservationFromDhcpUserListRequest) (*OperationResponseDhcpReservationErrorVO, *http.Response, error)
 
 	/*
 	UpdateSshSetting Modify SSH setting
@@ -576,7 +608,7 @@ type ServiceAPI interface {
 	/*
 	UpdateUpnpSetting Modify UPnP setting
 
-	Modify UPnP setting<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify
+	Modify UPnP setting<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -866,7 +898,7 @@ func (r ServiceAPICreateDdnsRequest) Execute() (*OperationResponseResIdOpenApiVO
 /*
 CreateDdns Create a new Dynamic DNS entry
 
-Create a new Dynamic DNS entry with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34500  -  Dynamic DNS Entries can be created with only one service provider for one WAN port.<br/>-34510  -  The domain name and service provider of different Dynamic DNS Entries should be different.<br/>-34516  -  The username already exists under the selected service provider.<br/>-34563  -  Only one TP-Link Dynamic DNS is allowed for one site.<br/>-34564  -  The TP-Link Dynamic DNS domain name cannot contain sensitive fields such as email, tp-link, tplink, and www.<br/>-34565  -  The TP-Link Dynamic DNS domain name should end with ".tplinkdns.com".<br/>-34566  -  The TP-Link Dynamic DNS domain name is invalid.
+Create a new Dynamic DNS entry with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34500  -  Dynamic DNS Entries can be created with only one service provider for one WAN port.<br/>-34510  -  The domain name and service provider of different Dynamic DNS Entries should be different.<br/>-34516  -  The username already exists under the selected service provider.<br/>-34563  -  Only one TP-Link Dynamic DNS is allowed for one site.<br/>-34564  -  The TP-Link Dynamic DNS domain name cannot contain sensitive fields such as email, tp-link, tplink, and www.<br/>-34565  -  The TP-Link Dynamic DNS domain name should end with ".tplinkdns.com".<br/>-34566  -  The TP-Link Dynamic DNS domain name is invalid.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2899,9 +2931,9 @@ func (r ServiceAPIGetIgmpRequest) Execute() (*OperationResponseIgmpOpenApiVO, *h
 }
 
 /*
-GetIgmp Get IGMP setting
+GetIgmp Get the IGMP settings
 
-Get IGMP setting of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+Get the IGMP settings of the site with the given Omada ID and Site ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3204,6 +3236,127 @@ func (a *ServiceAPIService) GetMdnsGridExecute(r ServiceAPIGetMdnsGridRequest) (
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ServiceAPIGetMldRequest struct {
+	ctx context.Context
+	ApiService ServiceAPI
+	omadacId string
+	siteId string
+}
+
+func (r ServiceAPIGetMldRequest) Execute() (*OperationResponseMldOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetMldExecute(r)
+}
+
+/*
+GetMld Get the MLD settings
+
+Get the MLD settings of the site with the given Omada ID and Site ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ServiceAPIGetMldRequest
+*/
+func (a *ServiceAPIService) GetMld(ctx context.Context, omadacId string, siteId string) ServiceAPIGetMldRequest {
+	return ServiceAPIGetMldRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseMldOpenApiVO
+func (a *ServiceAPIService) GetMldExecute(r ServiceAPIGetMldRequest) (*OperationResponseMldOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseMldOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.GetMld")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/service/mld"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3785,7 +3938,7 @@ func (r ServiceAPIModifyDdnsRequest) Execute() (*OperationResponseWithoutResult,
 /*
 ModifyDdns Modify an exist Dynamic DNS entry
 
-Modify an exist Dynamic DNS entry with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34500  -  Dynamic DNS Entries can be created with only one service provider for one WAN port.<br/>-34510  -  The domain name and service provider of different Dynamic DNS Entries should be different.<br/>-34516  -  The username already exists under the selected service provider.<br/>-34564  -  The TP-Link Dynamic DNS domain name cannot contain sensitive fields such as email, tp-link, tplink, and www.<br/>-34565  -  The TP-Link Dynamic DNS domain name should end with ".tplinkdns.com".<br/>-34566  -  The TP-Link Dynamic DNS domain name is invalid.
+Modify an exist Dynamic DNS entry with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34500  -  Dynamic DNS Entries can be created with only one service provider for one WAN port.<br/>-34510  -  The domain name and service provider of different Dynamic DNS Entries should be different.<br/>-34516  -  The username already exists under the selected service provider.<br/>-34564  -  The TP-Link Dynamic DNS domain name cannot contain sensitive fields such as email, tp-link, tplink, and www.<br/>-34565  -  The TP-Link Dynamic DNS domain name should end with ".tplinkdns.com".<br/>-34566  -  The TP-Link Dynamic DNS domain name is invalid.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4318,9 +4471,9 @@ func (r ServiceAPIModifyIgmpRequest) Execute() (*OperationResponseWithoutResult,
 }
 
 /*
-ModifyIgmp Modify IGMP setting
+ModifyIgmp Modify the IGMP settings
 
-Modify IGMP setting info of the site with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+Modify the IGMP settings of the site with the given parameters.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4700,6 +4853,138 @@ func (a *ServiceAPIService) ModifyMdnsExecute(r ServiceAPIModifyMdnsRequest) (*O
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ServiceAPIModifyMldRequest struct {
+	ctx context.Context
+	ApiService ServiceAPI
+	omadacId string
+	siteId string
+	mldOpenApiVO *MldOpenApiVO
+}
+
+func (r ServiceAPIModifyMldRequest) MldOpenApiVO(mldOpenApiVO MldOpenApiVO) ServiceAPIModifyMldRequest {
+	r.mldOpenApiVO = &mldOpenApiVO
+	return r
+}
+
+func (r ServiceAPIModifyMldRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyMldExecute(r)
+}
+
+/*
+ModifyMld Modify the MLD settings
+
+Modify the MLD settings of the site with the given parameters.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-33477  -  Only IPv6-enabled WAN ports can be selected as MLD Interface.<br/>-33478  -  MLD does not support the 6to4 Tunnel and Pass-Through(Bridge) IPv6 dial-up modes.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ServiceAPIModifyMldRequest
+*/
+func (a *ServiceAPIService) ModifyMld(ctx context.Context, omadacId string, siteId string) ServiceAPIModifyMldRequest {
+	return ServiceAPIModifyMldRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *ServiceAPIService) ModifyMldExecute(r ServiceAPIModifyMldRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.ModifyMld")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/service/mld"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.mldOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("mldOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.mldOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ServiceAPIModifySnmpSettingRequest struct {
 	ctx context.Context
 	ApiService ServiceAPI
@@ -4845,7 +5130,7 @@ func (r ServiceAPIReservationFromDhcpUserListRequest) DhcpUserFilterVO(dhcpUserF
 	return r
 }
 
-func (r ServiceAPIReservationFromDhcpUserListRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+func (r ServiceAPIReservationFromDhcpUserListRequest) Execute() (*OperationResponseDhcpReservationErrorVO, *http.Response, error) {
 	return r.ApiService.ReservationFromDhcpUserListExecute(r)
 }
 
@@ -4869,13 +5154,13 @@ func (a *ServiceAPIService) ReservationFromDhcpUserList(ctx context.Context, oma
 }
 
 // Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *ServiceAPIService) ReservationFromDhcpUserListExecute(r ServiceAPIReservationFromDhcpUserListRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+//  @return OperationResponseDhcpReservationErrorVO
+func (a *ServiceAPIService) ReservationFromDhcpUserListExecute(r ServiceAPIReservationFromDhcpUserListRequest) (*OperationResponseDhcpReservationErrorVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
+		localVarReturnValue  *OperationResponseDhcpReservationErrorVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.ReservationFromDhcpUserList")
@@ -5116,7 +5401,7 @@ func (r ServiceAPIUpdateUpnpSettingRequest) Execute() (*OperationResponseWithout
 /*
 UpdateUpnpSetting Modify UPnP setting
 
-Modify UPnP setting<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify
+Modify UPnP setting<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

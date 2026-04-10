@@ -22,21 +22,25 @@ var _ MappedNullable = &Dot1xSwitchOpenApiVO{}
 // Dot1xSwitchOpenApiVO struct for Dot1xSwitchOpenApiVO
 type Dot1xSwitchOpenApiVO struct {
 	// Mode of authentication protocol. AuthMode should be a value as follows: 0: PAP, 1: EAP
-	AuthMode *int32 `json:"authMode,omitempty"`
-	// Type of the authentication. AuthType should be a value as follows: 0: MAC based, 1: Port based
-	AuthType *int32 `json:"authType,omitempty"`
+	AuthMode int32 `json:"authMode"`
+	// Type of the authentication. AuthType should be a value as follows: 0: Port based, 1: Mac based
+	AuthType int32 `json:"authType"`
 	// Switch 802.1x function enable status
 	Enable bool `json:"enable"`
+	// Guest VLAN, clients that have not been authorized will be added to the guest VLAN.The value of guest VLAN should be selected from the created LAN Network.
+	GuestVlan *int32 `json:"guestVlan,omitempty"`
 	// MAB enable status
-	Mab *bool `json:"mab,omitempty"`
+	Mab bool `json:"mab"`
 	// Format of the MAC address. MacFormat should be a value as follows: 0: aabbccddeeff, 1: aa-bb-cc-dd-ee-ff, 2: aa:bb:cc:dd:ee:ff, 3: AABBCCDDEEFF, 4: AA-BB-CC-DD-EE-FF, 5: AA:BB:CC:DD:EE:FF
-	MacFormat *int32 `json:"macFormat,omitempty"`
+	MacFormat int32 `json:"macFormat"`
+	// Nas ID,NasId should contain 1~31 characters, except the question mark (?) and double quote (\").
+	NasId *string `json:"nasId,omitempty"`
 	// This field represents radius profile ID. Radius profile can be created using 'Create a new Radius profile' ('Create a new Radius profile template') interface, and radius profile ID can be obtained from 'Get Radius profile list' ('Get Radius profile template list') interface
-	RadiusProfileId *string `json:"radiusProfileId,omitempty"`
+	RadiusProfileId string `json:"radiusProfileId"`
 	// Enabled switch ports, optional when update switch 802.1x setting
 	Switches []Dot1xSwitchSettingOpenApiVO `json:"switches,omitempty"`
 	// VLAN Assignment enable status
-	VlanAssign *bool `json:"vlanAssign,omitempty"`
+	VlanAssign bool `json:"vlanAssign"`
 }
 
 type _Dot1xSwitchOpenApiVO Dot1xSwitchOpenApiVO
@@ -45,9 +49,15 @@ type _Dot1xSwitchOpenApiVO Dot1xSwitchOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDot1xSwitchOpenApiVO(enable bool) *Dot1xSwitchOpenApiVO {
+func NewDot1xSwitchOpenApiVO(authMode int32, authType int32, enable bool, mab bool, macFormat int32, radiusProfileId string, vlanAssign bool) *Dot1xSwitchOpenApiVO {
 	this := Dot1xSwitchOpenApiVO{}
+	this.AuthMode = authMode
+	this.AuthType = authType
 	this.Enable = enable
+	this.Mab = mab
+	this.MacFormat = macFormat
+	this.RadiusProfileId = radiusProfileId
+	this.VlanAssign = vlanAssign
 	return &this
 }
 
@@ -59,68 +69,52 @@ func NewDot1xSwitchOpenApiVOWithDefaults() *Dot1xSwitchOpenApiVO {
 	return &this
 }
 
-// GetAuthMode returns the AuthMode field value if set, zero value otherwise.
+// GetAuthMode returns the AuthMode field value
 func (o *Dot1xSwitchOpenApiVO) GetAuthMode() int32 {
-	if o == nil || IsNil(o.AuthMode) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.AuthMode
+
+	return o.AuthMode
 }
 
-// GetAuthModeOk returns a tuple with the AuthMode field value if set, nil otherwise
+// GetAuthModeOk returns a tuple with the AuthMode field value
 // and a boolean to check if the value has been set.
 func (o *Dot1xSwitchOpenApiVO) GetAuthModeOk() (*int32, bool) {
-	if o == nil || IsNil(o.AuthMode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AuthMode, true
+	return &o.AuthMode, true
 }
 
-// HasAuthMode returns a boolean if a field has been set.
-func (o *Dot1xSwitchOpenApiVO) HasAuthMode() bool {
-	if o != nil && !IsNil(o.AuthMode) {
-		return true
-	}
-
-	return false
-}
-
-// SetAuthMode gets a reference to the given int32 and assigns it to the AuthMode field.
+// SetAuthMode sets field value
 func (o *Dot1xSwitchOpenApiVO) SetAuthMode(v int32) {
-	o.AuthMode = &v
+	o.AuthMode = v
 }
 
-// GetAuthType returns the AuthType field value if set, zero value otherwise.
+// GetAuthType returns the AuthType field value
 func (o *Dot1xSwitchOpenApiVO) GetAuthType() int32 {
-	if o == nil || IsNil(o.AuthType) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.AuthType
+
+	return o.AuthType
 }
 
-// GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
+// GetAuthTypeOk returns a tuple with the AuthType field value
 // and a boolean to check if the value has been set.
 func (o *Dot1xSwitchOpenApiVO) GetAuthTypeOk() (*int32, bool) {
-	if o == nil || IsNil(o.AuthType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AuthType, true
+	return &o.AuthType, true
 }
 
-// HasAuthType returns a boolean if a field has been set.
-func (o *Dot1xSwitchOpenApiVO) HasAuthType() bool {
-	if o != nil && !IsNil(o.AuthType) {
-		return true
-	}
-
-	return false
-}
-
-// SetAuthType gets a reference to the given int32 and assigns it to the AuthType field.
+// SetAuthType sets field value
 func (o *Dot1xSwitchOpenApiVO) SetAuthType(v int32) {
-	o.AuthType = &v
+	o.AuthType = v
 }
 
 // GetEnable returns the Enable field value
@@ -147,100 +141,140 @@ func (o *Dot1xSwitchOpenApiVO) SetEnable(v bool) {
 	o.Enable = v
 }
 
-// GetMab returns the Mab field value if set, zero value otherwise.
-func (o *Dot1xSwitchOpenApiVO) GetMab() bool {
-	if o == nil || IsNil(o.Mab) {
-		var ret bool
-		return ret
-	}
-	return *o.Mab
-}
-
-// GetMabOk returns a tuple with the Mab field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Dot1xSwitchOpenApiVO) GetMabOk() (*bool, bool) {
-	if o == nil || IsNil(o.Mab) {
-		return nil, false
-	}
-	return o.Mab, true
-}
-
-// HasMab returns a boolean if a field has been set.
-func (o *Dot1xSwitchOpenApiVO) HasMab() bool {
-	if o != nil && !IsNil(o.Mab) {
-		return true
-	}
-
-	return false
-}
-
-// SetMab gets a reference to the given bool and assigns it to the Mab field.
-func (o *Dot1xSwitchOpenApiVO) SetMab(v bool) {
-	o.Mab = &v
-}
-
-// GetMacFormat returns the MacFormat field value if set, zero value otherwise.
-func (o *Dot1xSwitchOpenApiVO) GetMacFormat() int32 {
-	if o == nil || IsNil(o.MacFormat) {
+// GetGuestVlan returns the GuestVlan field value if set, zero value otherwise.
+func (o *Dot1xSwitchOpenApiVO) GetGuestVlan() int32 {
+	if o == nil || IsNil(o.GuestVlan) {
 		var ret int32
 		return ret
 	}
-	return *o.MacFormat
+	return *o.GuestVlan
 }
 
-// GetMacFormatOk returns a tuple with the MacFormat field value if set, nil otherwise
+// GetGuestVlanOk returns a tuple with the GuestVlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Dot1xSwitchOpenApiVO) GetMacFormatOk() (*int32, bool) {
-	if o == nil || IsNil(o.MacFormat) {
+func (o *Dot1xSwitchOpenApiVO) GetGuestVlanOk() (*int32, bool) {
+	if o == nil || IsNil(o.GuestVlan) {
 		return nil, false
 	}
-	return o.MacFormat, true
+	return o.GuestVlan, true
 }
 
-// HasMacFormat returns a boolean if a field has been set.
-func (o *Dot1xSwitchOpenApiVO) HasMacFormat() bool {
-	if o != nil && !IsNil(o.MacFormat) {
+// HasGuestVlan returns a boolean if a field has been set.
+func (o *Dot1xSwitchOpenApiVO) HasGuestVlan() bool {
+	if o != nil && !IsNil(o.GuestVlan) {
 		return true
 	}
 
 	return false
 }
 
-// SetMacFormat gets a reference to the given int32 and assigns it to the MacFormat field.
-func (o *Dot1xSwitchOpenApiVO) SetMacFormat(v int32) {
-	o.MacFormat = &v
+// SetGuestVlan gets a reference to the given int32 and assigns it to the GuestVlan field.
+func (o *Dot1xSwitchOpenApiVO) SetGuestVlan(v int32) {
+	o.GuestVlan = &v
 }
 
-// GetRadiusProfileId returns the RadiusProfileId field value if set, zero value otherwise.
-func (o *Dot1xSwitchOpenApiVO) GetRadiusProfileId() string {
-	if o == nil || IsNil(o.RadiusProfileId) {
+// GetMab returns the Mab field value
+func (o *Dot1xSwitchOpenApiVO) GetMab() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.Mab
+}
+
+// GetMabOk returns a tuple with the Mab field value
+// and a boolean to check if the value has been set.
+func (o *Dot1xSwitchOpenApiVO) GetMabOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Mab, true
+}
+
+// SetMab sets field value
+func (o *Dot1xSwitchOpenApiVO) SetMab(v bool) {
+	o.Mab = v
+}
+
+// GetMacFormat returns the MacFormat field value
+func (o *Dot1xSwitchOpenApiVO) GetMacFormat() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.MacFormat
+}
+
+// GetMacFormatOk returns a tuple with the MacFormat field value
+// and a boolean to check if the value has been set.
+func (o *Dot1xSwitchOpenApiVO) GetMacFormatOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MacFormat, true
+}
+
+// SetMacFormat sets field value
+func (o *Dot1xSwitchOpenApiVO) SetMacFormat(v int32) {
+	o.MacFormat = v
+}
+
+// GetNasId returns the NasId field value if set, zero value otherwise.
+func (o *Dot1xSwitchOpenApiVO) GetNasId() string {
+	if o == nil || IsNil(o.NasId) {
 		var ret string
 		return ret
 	}
-	return *o.RadiusProfileId
+	return *o.NasId
 }
 
-// GetRadiusProfileIdOk returns a tuple with the RadiusProfileId field value if set, nil otherwise
+// GetNasIdOk returns a tuple with the NasId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Dot1xSwitchOpenApiVO) GetRadiusProfileIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RadiusProfileId) {
+func (o *Dot1xSwitchOpenApiVO) GetNasIdOk() (*string, bool) {
+	if o == nil || IsNil(o.NasId) {
 		return nil, false
 	}
-	return o.RadiusProfileId, true
+	return o.NasId, true
 }
 
-// HasRadiusProfileId returns a boolean if a field has been set.
-func (o *Dot1xSwitchOpenApiVO) HasRadiusProfileId() bool {
-	if o != nil && !IsNil(o.RadiusProfileId) {
+// HasNasId returns a boolean if a field has been set.
+func (o *Dot1xSwitchOpenApiVO) HasNasId() bool {
+	if o != nil && !IsNil(o.NasId) {
 		return true
 	}
 
 	return false
 }
 
-// SetRadiusProfileId gets a reference to the given string and assigns it to the RadiusProfileId field.
+// SetNasId gets a reference to the given string and assigns it to the NasId field.
+func (o *Dot1xSwitchOpenApiVO) SetNasId(v string) {
+	o.NasId = &v
+}
+
+// GetRadiusProfileId returns the RadiusProfileId field value
+func (o *Dot1xSwitchOpenApiVO) GetRadiusProfileId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.RadiusProfileId
+}
+
+// GetRadiusProfileIdOk returns a tuple with the RadiusProfileId field value
+// and a boolean to check if the value has been set.
+func (o *Dot1xSwitchOpenApiVO) GetRadiusProfileIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.RadiusProfileId, true
+}
+
+// SetRadiusProfileId sets field value
 func (o *Dot1xSwitchOpenApiVO) SetRadiusProfileId(v string) {
-	o.RadiusProfileId = &v
+	o.RadiusProfileId = v
 }
 
 // GetSwitches returns the Switches field value if set, zero value otherwise.
@@ -275,36 +309,28 @@ func (o *Dot1xSwitchOpenApiVO) SetSwitches(v []Dot1xSwitchSettingOpenApiVO) {
 	o.Switches = v
 }
 
-// GetVlanAssign returns the VlanAssign field value if set, zero value otherwise.
+// GetVlanAssign returns the VlanAssign field value
 func (o *Dot1xSwitchOpenApiVO) GetVlanAssign() bool {
-	if o == nil || IsNil(o.VlanAssign) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.VlanAssign
+
+	return o.VlanAssign
 }
 
-// GetVlanAssignOk returns a tuple with the VlanAssign field value if set, nil otherwise
+// GetVlanAssignOk returns a tuple with the VlanAssign field value
 // and a boolean to check if the value has been set.
 func (o *Dot1xSwitchOpenApiVO) GetVlanAssignOk() (*bool, bool) {
-	if o == nil || IsNil(o.VlanAssign) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VlanAssign, true
+	return &o.VlanAssign, true
 }
 
-// HasVlanAssign returns a boolean if a field has been set.
-func (o *Dot1xSwitchOpenApiVO) HasVlanAssign() bool {
-	if o != nil && !IsNil(o.VlanAssign) {
-		return true
-	}
-
-	return false
-}
-
-// SetVlanAssign gets a reference to the given bool and assigns it to the VlanAssign field.
+// SetVlanAssign sets field value
 func (o *Dot1xSwitchOpenApiVO) SetVlanAssign(v bool) {
-	o.VlanAssign = &v
+	o.VlanAssign = v
 }
 
 func (o Dot1xSwitchOpenApiVO) MarshalJSON() ([]byte, error) {
@@ -317,28 +343,22 @@ func (o Dot1xSwitchOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o Dot1xSwitchOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthMode) {
-		toSerialize["authMode"] = o.AuthMode
-	}
-	if !IsNil(o.AuthType) {
-		toSerialize["authType"] = o.AuthType
-	}
+	toSerialize["authMode"] = o.AuthMode
+	toSerialize["authType"] = o.AuthType
 	toSerialize["enable"] = o.Enable
-	if !IsNil(o.Mab) {
-		toSerialize["mab"] = o.Mab
+	if !IsNil(o.GuestVlan) {
+		toSerialize["guestVlan"] = o.GuestVlan
 	}
-	if !IsNil(o.MacFormat) {
-		toSerialize["macFormat"] = o.MacFormat
+	toSerialize["mab"] = o.Mab
+	toSerialize["macFormat"] = o.MacFormat
+	if !IsNil(o.NasId) {
+		toSerialize["nasId"] = o.NasId
 	}
-	if !IsNil(o.RadiusProfileId) {
-		toSerialize["radiusProfileId"] = o.RadiusProfileId
-	}
+	toSerialize["radiusProfileId"] = o.RadiusProfileId
 	if !IsNil(o.Switches) {
 		toSerialize["switches"] = o.Switches
 	}
-	if !IsNil(o.VlanAssign) {
-		toSerialize["vlanAssign"] = o.VlanAssign
-	}
+	toSerialize["vlanAssign"] = o.VlanAssign
 	return toSerialize, nil
 }
 
@@ -347,7 +367,13 @@ func (o *Dot1xSwitchOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"authMode",
+		"authType",
 		"enable",
+		"mab",
+		"macFormat",
+		"radiusProfileId",
+		"vlanAssign",
 	}
 
 	allProperties := make(map[string]interface{})

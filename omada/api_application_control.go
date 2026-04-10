@@ -35,8 +35,8 @@ type ApplicationControlAPI interface {
 	AddAssignRestriction(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIAddAssignRestrictionRequest
 
 	// AddAssignRestrictionExecute executes the request
-	//  @return OperationResponseRestrictionEntity
-	AddAssignRestrictionExecute(r ApplicationControlAPIAddAssignRestrictionRequest) (*OperationResponseRestrictionEntity, *http.Response, error)
+	//  @return OperationResponseRestrictionResultEntity
+	AddAssignRestrictionExecute(r ApplicationControlAPIAddAssignRestrictionRequest) (*OperationResponseRestrictionResultEntity, *http.Response, error)
 
 	/*
 	AddAssignRestrictionTemplate Create new restriction assigned to lan network
@@ -51,8 +51,8 @@ type ApplicationControlAPI interface {
 	AddAssignRestrictionTemplate(ctx context.Context, omadacId string, siteTemplateId string) ApplicationControlAPIAddAssignRestrictionTemplateRequest
 
 	// AddAssignRestrictionTemplateExecute executes the request
-	//  @return OperationResponseRestrictionEntity
-	AddAssignRestrictionTemplateExecute(r ApplicationControlAPIAddAssignRestrictionTemplateRequest) (*OperationResponseRestrictionEntity, *http.Response, error)
+	//  @return OperationResponseRestrictionResultEntity
+	AddAssignRestrictionTemplateExecute(r ApplicationControlAPIAddAssignRestrictionTemplateRequest) (*OperationResponseRestrictionResultEntity, *http.Response, error)
 
 	/*
 	AddFilter Create new filter
@@ -99,8 +99,8 @@ type ApplicationControlAPI interface {
 	AddRule(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIAddRuleRequest
 
 	// AddRuleExecute executes the request
-	//  @return OperationResponseRuleEntity
-	AddRuleExecute(r ApplicationControlAPIAddRuleRequest) (*OperationResponseRuleEntity, *http.Response, error)
+	//  @return OperationResponseRuleResultEntity
+	AddRuleExecute(r ApplicationControlAPIAddRuleRequest) (*OperationResponseRuleResultEntity, *http.Response, error)
 
 	/*
 	AddRuleTemplate Create new rule
@@ -115,8 +115,8 @@ type ApplicationControlAPI interface {
 	AddRuleTemplate(ctx context.Context, omadacId string, siteTemplateId string) ApplicationControlAPIAddRuleTemplateRequest
 
 	// AddRuleTemplateExecute executes the request
-	//  @return OperationResponseRuleEntity
-	AddRuleTemplateExecute(r ApplicationControlAPIAddRuleTemplateRequest) (*OperationResponseRuleEntity, *http.Response, error)
+	//  @return OperationResponseRuleResultEntity
+	AddRuleTemplateExecute(r ApplicationControlAPIAddRuleTemplateRequest) (*OperationResponseRuleResultEntity, *http.Response, error)
 
 	/*
 	ClearDpiData Clear DPI data
@@ -419,6 +419,22 @@ type ApplicationControlAPI interface {
 	GetApplicationControlStatusTemplateExecute(r ApplicationControlAPIGetApplicationControlStatusTemplateRequest) (*OperationResponseDpiSettings, *http.Response, error)
 
 	/*
+	GetApplicationControlTraffics Get top 10 application traffics
+
+	Get top 10 application traffics
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ApplicationControlAPIGetApplicationControlTrafficsRequest
+	*/
+	GetApplicationControlTraffics(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIGetApplicationControlTrafficsRequest
+
+	// GetApplicationControlTrafficsExecute executes the request
+	//  @return OperationResponseListTrafficOpenApiVO
+	GetApplicationControlTrafficsExecute(r ApplicationControlAPIGetApplicationControlTrafficsRequest) (*OperationResponseListTrafficOpenApiVO, *http.Response, error)
+
+	/*
 	GetApplications Get application list
 
 	Get application list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35107  -  Dpi protocols are updating.<br/>-35112  -  Gateway is not existed<br/>-35113  -  Gateway is not support dpi
@@ -463,8 +479,8 @@ type ApplicationControlAPI interface {
 	GetAssignRestrictions(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIGetAssignRestrictionsRequest
 
 	// GetAssignRestrictionsExecute executes the request
-	//  @return OperationResponseGridVORestrictionEntity
-	GetAssignRestrictionsExecute(r ApplicationControlAPIGetAssignRestrictionsRequest) (*OperationResponseGridVORestrictionEntity, *http.Response, error)
+	//  @return OperationResponseGridVORestrictionResultEntity
+	GetAssignRestrictionsExecute(r ApplicationControlAPIGetAssignRestrictionsRequest) (*OperationResponseGridVORestrictionResultEntity, *http.Response, error)
 
 	/*
 	GetAssignRestrictionsTemplate Get application control assigned restriction list
@@ -479,8 +495,8 @@ type ApplicationControlAPI interface {
 	GetAssignRestrictionsTemplate(ctx context.Context, omadacId string, siteTemplateId string) ApplicationControlAPIGetAssignRestrictionsTemplateRequest
 
 	// GetAssignRestrictionsTemplateExecute executes the request
-	//  @return OperationResponseGridVORestrictionEntity
-	GetAssignRestrictionsTemplateExecute(r ApplicationControlAPIGetAssignRestrictionsTemplateRequest) (*OperationResponseGridVORestrictionEntity, *http.Response, error)
+	//  @return OperationResponseGridVORestrictionResultEntity
+	GetAssignRestrictionsTemplateExecute(r ApplicationControlAPIGetAssignRestrictionsTemplateRequest) (*OperationResponseGridVORestrictionResultEntity, *http.Response, error)
 
 	/*
 	GetBlockApp Get block app
@@ -561,8 +577,40 @@ type ApplicationControlAPI interface {
 	GetClientTraffic(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIGetClientTrafficRequest
 
 	// GetClientTrafficExecute executes the request
-	//  @return OperationResponseGridVOClientTrafficWithApplicationDetail
-	GetClientTrafficExecute(r ApplicationControlAPIGetClientTrafficRequest) (*OperationResponseGridVOClientTrafficWithApplicationDetail, *http.Response, error)
+	//  @return OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail
+	GetClientTrafficExecute(r ApplicationControlAPIGetClientTrafficRequest) (*OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail, *http.Response, error)
+
+	/*
+	GetClientTrafficList Get clients traffic list
+
+	Get clients traffic list.<br/><br/>The interface requires one of the permissions: <br/>Site Statics Manager View Only<br/>Site Network Report Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ApplicationControlAPIGetClientTrafficListRequest
+	*/
+	GetClientTrafficList(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIGetClientTrafficListRequest
+
+	// GetClientTrafficListExecute executes the request
+	//  @return OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO
+	GetClientTrafficListExecute(r ApplicationControlAPIGetClientTrafficListRequest) (*OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO, *http.Response, error)
+
+	/*
+	GetClientTrafficV2 Get clients traffic V2
+
+	Get clients traffic V2.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ApplicationControlAPIGetClientTrafficV2Request
+	*/
+	GetClientTrafficV2(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIGetClientTrafficV2Request
+
+	// GetClientTrafficV2Execute executes the request
+	//  @return OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail
+	GetClientTrafficV2Execute(r ApplicationControlAPIGetClientTrafficV2Request) (*OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail, *http.Response, error)
 
 	/*
 	GetFamilies Get family list
@@ -657,8 +705,8 @@ type ApplicationControlAPI interface {
 	GetRules(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIGetRulesRequest
 
 	// GetRulesExecute executes the request
-	//  @return OperationResponseGridVORuleEntity
-	GetRulesExecute(r ApplicationControlAPIGetRulesRequest) (*OperationResponseGridVORuleEntity, *http.Response, error)
+	//  @return OperationResponseGridVORuleResultEntity
+	GetRulesExecute(r ApplicationControlAPIGetRulesRequest) (*OperationResponseGridVORuleResultEntity, *http.Response, error)
 
 	/*
 	GetRulesTemplate Get rule list
@@ -673,8 +721,8 @@ type ApplicationControlAPI interface {
 	GetRulesTemplate(ctx context.Context, omadacId string, siteTemplateId string) ApplicationControlAPIGetRulesTemplateRequest
 
 	// GetRulesTemplateExecute executes the request
-	//  @return OperationResponseGridVORuleEntity
-	GetRulesTemplateExecute(r ApplicationControlAPIGetRulesTemplateRequest) (*OperationResponseGridVORuleEntity, *http.Response, error)
+	//  @return OperationResponseGridVORuleResultEntity
+	GetRulesTemplateExecute(r ApplicationControlAPIGetRulesTemplateRequest) (*OperationResponseGridVORuleResultEntity, *http.Response, error)
 
 	/*
 	GetSpecificAppInfo Get client traffic in specific app
@@ -727,7 +775,7 @@ func (r ApplicationControlAPIAddAssignRestrictionRequest) RestrictionEntity(rest
 	return r
 }
 
-func (r ApplicationControlAPIAddAssignRestrictionRequest) Execute() (*OperationResponseRestrictionEntity, *http.Response, error) {
+func (r ApplicationControlAPIAddAssignRestrictionRequest) Execute() (*OperationResponseRestrictionResultEntity, *http.Response, error) {
 	return r.ApiService.AddAssignRestrictionExecute(r)
 }
 
@@ -751,13 +799,13 @@ func (a *ApplicationControlAPIService) AddAssignRestriction(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OperationResponseRestrictionEntity
-func (a *ApplicationControlAPIService) AddAssignRestrictionExecute(r ApplicationControlAPIAddAssignRestrictionRequest) (*OperationResponseRestrictionEntity, *http.Response, error) {
+//  @return OperationResponseRestrictionResultEntity
+func (a *ApplicationControlAPIService) AddAssignRestrictionExecute(r ApplicationControlAPIAddAssignRestrictionRequest) (*OperationResponseRestrictionResultEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseRestrictionEntity
+		localVarReturnValue  *OperationResponseRestrictionResultEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.AddAssignRestriction")
@@ -859,7 +907,7 @@ func (r ApplicationControlAPIAddAssignRestrictionTemplateRequest) RestrictionEnt
 	return r
 }
 
-func (r ApplicationControlAPIAddAssignRestrictionTemplateRequest) Execute() (*OperationResponseRestrictionEntity, *http.Response, error) {
+func (r ApplicationControlAPIAddAssignRestrictionTemplateRequest) Execute() (*OperationResponseRestrictionResultEntity, *http.Response, error) {
 	return r.ApiService.AddAssignRestrictionTemplateExecute(r)
 }
 
@@ -883,13 +931,13 @@ func (a *ApplicationControlAPIService) AddAssignRestrictionTemplate(ctx context.
 }
 
 // Execute executes the request
-//  @return OperationResponseRestrictionEntity
-func (a *ApplicationControlAPIService) AddAssignRestrictionTemplateExecute(r ApplicationControlAPIAddAssignRestrictionTemplateRequest) (*OperationResponseRestrictionEntity, *http.Response, error) {
+//  @return OperationResponseRestrictionResultEntity
+func (a *ApplicationControlAPIService) AddAssignRestrictionTemplateExecute(r ApplicationControlAPIAddAssignRestrictionTemplateRequest) (*OperationResponseRestrictionResultEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseRestrictionEntity
+		localVarReturnValue  *OperationResponseRestrictionResultEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.AddAssignRestrictionTemplate")
@@ -1255,7 +1303,7 @@ func (r ApplicationControlAPIAddRuleRequest) AddRuleEntity(addRuleEntity AddRule
 	return r
 }
 
-func (r ApplicationControlAPIAddRuleRequest) Execute() (*OperationResponseRuleEntity, *http.Response, error) {
+func (r ApplicationControlAPIAddRuleRequest) Execute() (*OperationResponseRuleResultEntity, *http.Response, error) {
 	return r.ApiService.AddRuleExecute(r)
 }
 
@@ -1279,13 +1327,13 @@ func (a *ApplicationControlAPIService) AddRule(ctx context.Context, omadacId str
 }
 
 // Execute executes the request
-//  @return OperationResponseRuleEntity
-func (a *ApplicationControlAPIService) AddRuleExecute(r ApplicationControlAPIAddRuleRequest) (*OperationResponseRuleEntity, *http.Response, error) {
+//  @return OperationResponseRuleResultEntity
+func (a *ApplicationControlAPIService) AddRuleExecute(r ApplicationControlAPIAddRuleRequest) (*OperationResponseRuleResultEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseRuleEntity
+		localVarReturnValue  *OperationResponseRuleResultEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.AddRule")
@@ -1387,7 +1435,7 @@ func (r ApplicationControlAPIAddRuleTemplateRequest) AddRuleEntity(addRuleEntity
 	return r
 }
 
-func (r ApplicationControlAPIAddRuleTemplateRequest) Execute() (*OperationResponseRuleEntity, *http.Response, error) {
+func (r ApplicationControlAPIAddRuleTemplateRequest) Execute() (*OperationResponseRuleResultEntity, *http.Response, error) {
 	return r.ApiService.AddRuleTemplateExecute(r)
 }
 
@@ -1411,13 +1459,13 @@ func (a *ApplicationControlAPIService) AddRuleTemplate(ctx context.Context, omad
 }
 
 // Execute executes the request
-//  @return OperationResponseRuleEntity
-func (a *ApplicationControlAPIService) AddRuleTemplateExecute(r ApplicationControlAPIAddRuleTemplateRequest) (*OperationResponseRuleEntity, *http.Response, error) {
+//  @return OperationResponseRuleResultEntity
+func (a *ApplicationControlAPIService) AddRuleTemplateExecute(r ApplicationControlAPIAddRuleTemplateRequest) (*OperationResponseRuleResultEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseRuleEntity
+		localVarReturnValue  *OperationResponseRuleResultEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.AddRuleTemplate")
@@ -3875,6 +3923,149 @@ func (a *ApplicationControlAPIService) GetApplicationControlStatusTemplateExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApplicationControlAPIGetApplicationControlTrafficsRequest struct {
+	ctx context.Context
+	ApiService ApplicationControlAPI
+	omadacId string
+	siteId string
+	dateStart *int64
+	dateEnd *int64
+}
+
+// Date Start
+func (r ApplicationControlAPIGetApplicationControlTrafficsRequest) DateStart(dateStart int64) ApplicationControlAPIGetApplicationControlTrafficsRequest {
+	r.dateStart = &dateStart
+	return r
+}
+
+// Date End
+func (r ApplicationControlAPIGetApplicationControlTrafficsRequest) DateEnd(dateEnd int64) ApplicationControlAPIGetApplicationControlTrafficsRequest {
+	r.dateEnd = &dateEnd
+	return r
+}
+
+func (r ApplicationControlAPIGetApplicationControlTrafficsRequest) Execute() (*OperationResponseListTrafficOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetApplicationControlTrafficsExecute(r)
+}
+
+/*
+GetApplicationControlTraffics Get top 10 application traffics
+
+Get top 10 application traffics
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ApplicationControlAPIGetApplicationControlTrafficsRequest
+*/
+func (a *ApplicationControlAPIService) GetApplicationControlTraffics(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIGetApplicationControlTrafficsRequest {
+	return ApplicationControlAPIGetApplicationControlTrafficsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseListTrafficOpenApiVO
+func (a *ApplicationControlAPIService) GetApplicationControlTrafficsExecute(r ApplicationControlAPIGetApplicationControlTrafficsRequest) (*OperationResponseListTrafficOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseListTrafficOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.GetApplicationControlTraffics")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/applicationControl/traffics"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.dateStart == nil {
+		return localVarReturnValue, nil, reportError("dateStart is required and must be specified")
+	}
+	if r.dateEnd == nil {
+		return localVarReturnValue, nil, reportError("dateEnd is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "dateStart", r.dateStart, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "dateEnd", r.dateEnd, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApplicationControlAPIGetApplicationsRequest struct {
 	ctx context.Context
 	ApiService ApplicationControlAPI
@@ -4222,7 +4413,7 @@ func (r ApplicationControlAPIGetAssignRestrictionsRequest) PageSize(pageSize int
 	return r
 }
 
-func (r ApplicationControlAPIGetAssignRestrictionsRequest) Execute() (*OperationResponseGridVORestrictionEntity, *http.Response, error) {
+func (r ApplicationControlAPIGetAssignRestrictionsRequest) Execute() (*OperationResponseGridVORestrictionResultEntity, *http.Response, error) {
 	return r.ApiService.GetAssignRestrictionsExecute(r)
 }
 
@@ -4246,13 +4437,13 @@ func (a *ApplicationControlAPIService) GetAssignRestrictions(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVORestrictionEntity
-func (a *ApplicationControlAPIService) GetAssignRestrictionsExecute(r ApplicationControlAPIGetAssignRestrictionsRequest) (*OperationResponseGridVORestrictionEntity, *http.Response, error) {
+//  @return OperationResponseGridVORestrictionResultEntity
+func (a *ApplicationControlAPIService) GetAssignRestrictionsExecute(r ApplicationControlAPIGetAssignRestrictionsRequest) (*OperationResponseGridVORestrictionResultEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVORestrictionEntity
+		localVarReturnValue  *OperationResponseGridVORestrictionResultEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.GetAssignRestrictions")
@@ -4365,7 +4556,7 @@ func (r ApplicationControlAPIGetAssignRestrictionsTemplateRequest) PageSize(page
 	return r
 }
 
-func (r ApplicationControlAPIGetAssignRestrictionsTemplateRequest) Execute() (*OperationResponseGridVORestrictionEntity, *http.Response, error) {
+func (r ApplicationControlAPIGetAssignRestrictionsTemplateRequest) Execute() (*OperationResponseGridVORestrictionResultEntity, *http.Response, error) {
 	return r.ApiService.GetAssignRestrictionsTemplateExecute(r)
 }
 
@@ -4389,13 +4580,13 @@ func (a *ApplicationControlAPIService) GetAssignRestrictionsTemplate(ctx context
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVORestrictionEntity
-func (a *ApplicationControlAPIService) GetAssignRestrictionsTemplateExecute(r ApplicationControlAPIGetAssignRestrictionsTemplateRequest) (*OperationResponseGridVORestrictionEntity, *http.Response, error) {
+//  @return OperationResponseGridVORestrictionResultEntity
+func (a *ApplicationControlAPIService) GetAssignRestrictionsTemplateExecute(r ApplicationControlAPIGetAssignRestrictionsTemplateRequest) (*OperationResponseGridVORestrictionResultEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVORestrictionEntity
+		localVarReturnValue  *OperationResponseGridVORestrictionResultEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.GetAssignRestrictionsTemplate")
@@ -5146,7 +5337,7 @@ func (r ApplicationControlAPIGetClientTrafficRequest) PageSize(pageSize int32) A
 	return r
 }
 
-func (r ApplicationControlAPIGetClientTrafficRequest) Execute() (*OperationResponseGridVOClientTrafficWithApplicationDetail, *http.Response, error) {
+func (r ApplicationControlAPIGetClientTrafficRequest) Execute() (*OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail, *http.Response, error) {
 	return r.ApiService.GetClientTrafficExecute(r)
 }
 
@@ -5170,13 +5361,13 @@ func (a *ApplicationControlAPIService) GetClientTraffic(ctx context.Context, oma
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVOClientTrafficWithApplicationDetail
-func (a *ApplicationControlAPIService) GetClientTrafficExecute(r ApplicationControlAPIGetClientTrafficRequest) (*OperationResponseGridVOClientTrafficWithApplicationDetail, *http.Response, error) {
+//  @return OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail
+func (a *ApplicationControlAPIService) GetClientTrafficExecute(r ApplicationControlAPIGetClientTrafficRequest) (*OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVOClientTrafficWithApplicationDetail
+		localVarReturnValue  *OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.GetClientTraffic")
@@ -5225,6 +5416,270 @@ func (a *ApplicationControlAPIService) GetClientTrafficExecute(r ApplicationCont
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApplicationControlAPIGetClientTrafficListRequest struct {
+	ctx context.Context
+	ApiService ApplicationControlAPI
+	omadacId string
+	siteId string
+	clientTrafficOpenApiQueryDataV2VO *ClientTrafficOpenApiQueryDataV2VO
+}
+
+func (r ApplicationControlAPIGetClientTrafficListRequest) ClientTrafficOpenApiQueryDataV2VO(clientTrafficOpenApiQueryDataV2VO ClientTrafficOpenApiQueryDataV2VO) ApplicationControlAPIGetClientTrafficListRequest {
+	r.clientTrafficOpenApiQueryDataV2VO = &clientTrafficOpenApiQueryDataV2VO
+	return r
+}
+
+func (r ApplicationControlAPIGetClientTrafficListRequest) Execute() (*OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetClientTrafficListExecute(r)
+}
+
+/*
+GetClientTrafficList Get clients traffic list
+
+Get clients traffic list.<br/><br/>The interface requires one of the permissions: <br/>Site Statics Manager View Only<br/>Site Network Report Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ApplicationControlAPIGetClientTrafficListRequest
+*/
+func (a *ApplicationControlAPIService) GetClientTrafficList(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIGetClientTrafficListRequest {
+	return ApplicationControlAPIGetClientTrafficListRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO
+func (a *ApplicationControlAPIService) GetClientTrafficListExecute(r ApplicationControlAPIGetClientTrafficListRequest) (*OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseClientTrafficGridVOClientUpDownTrafficDetailOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.GetClientTrafficList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/stat/dpi/clients/trafficList"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.clientTrafficOpenApiQueryDataV2VO == nil {
+		return localVarReturnValue, nil, reportError("clientTrafficOpenApiQueryDataV2VO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.clientTrafficOpenApiQueryDataV2VO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApplicationControlAPIGetClientTrafficV2Request struct {
+	ctx context.Context
+	ApiService ApplicationControlAPI
+	omadacId string
+	siteId string
+	clientTrafficOpenApiQueryDataVO *ClientTrafficOpenApiQueryDataVO
+}
+
+func (r ApplicationControlAPIGetClientTrafficV2Request) ClientTrafficOpenApiQueryDataVO(clientTrafficOpenApiQueryDataVO ClientTrafficOpenApiQueryDataVO) ApplicationControlAPIGetClientTrafficV2Request {
+	r.clientTrafficOpenApiQueryDataVO = &clientTrafficOpenApiQueryDataVO
+	return r
+}
+
+func (r ApplicationControlAPIGetClientTrafficV2Request) Execute() (*OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail, *http.Response, error) {
+	return r.ApiService.GetClientTrafficV2Execute(r)
+}
+
+/*
+GetClientTrafficV2 Get clients traffic V2
+
+Get clients traffic V2.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ApplicationControlAPIGetClientTrafficV2Request
+*/
+func (a *ApplicationControlAPIService) GetClientTrafficV2(ctx context.Context, omadacId string, siteId string) ApplicationControlAPIGetClientTrafficV2Request {
+	return ApplicationControlAPIGetClientTrafficV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail
+func (a *ApplicationControlAPIService) GetClientTrafficV2Execute(r ApplicationControlAPIGetClientTrafficV2Request) (*OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseClientTrafficGridVOClientTrafficWithApplicationDetail
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.GetClientTrafficV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/dashboard/clientTraffic"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.clientTrafficOpenApiQueryDataVO == nil {
+		return localVarReturnValue, nil, reportError("clientTrafficOpenApiQueryDataVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.clientTrafficOpenApiQueryDataVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -5995,7 +6450,7 @@ func (r ApplicationControlAPIGetRulesRequest) SearchKey(searchKey string) Applic
 	return r
 }
 
-func (r ApplicationControlAPIGetRulesRequest) Execute() (*OperationResponseGridVORuleEntity, *http.Response, error) {
+func (r ApplicationControlAPIGetRulesRequest) Execute() (*OperationResponseGridVORuleResultEntity, *http.Response, error) {
 	return r.ApiService.GetRulesExecute(r)
 }
 
@@ -6019,13 +6474,13 @@ func (a *ApplicationControlAPIService) GetRules(ctx context.Context, omadacId st
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVORuleEntity
-func (a *ApplicationControlAPIService) GetRulesExecute(r ApplicationControlAPIGetRulesRequest) (*OperationResponseGridVORuleEntity, *http.Response, error) {
+//  @return OperationResponseGridVORuleResultEntity
+func (a *ApplicationControlAPIService) GetRulesExecute(r ApplicationControlAPIGetRulesRequest) (*OperationResponseGridVORuleResultEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVORuleEntity
+		localVarReturnValue  *OperationResponseGridVORuleResultEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.GetRules")
@@ -6148,7 +6603,7 @@ func (r ApplicationControlAPIGetRulesTemplateRequest) SearchKey(searchKey string
 	return r
 }
 
-func (r ApplicationControlAPIGetRulesTemplateRequest) Execute() (*OperationResponseGridVORuleEntity, *http.Response, error) {
+func (r ApplicationControlAPIGetRulesTemplateRequest) Execute() (*OperationResponseGridVORuleResultEntity, *http.Response, error) {
 	return r.ApiService.GetRulesTemplateExecute(r)
 }
 
@@ -6172,13 +6627,13 @@ func (a *ApplicationControlAPIService) GetRulesTemplate(ctx context.Context, oma
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVORuleEntity
-func (a *ApplicationControlAPIService) GetRulesTemplateExecute(r ApplicationControlAPIGetRulesTemplateRequest) (*OperationResponseGridVORuleEntity, *http.Response, error) {
+//  @return OperationResponseGridVORuleResultEntity
+func (a *ApplicationControlAPIService) GetRulesTemplateExecute(r ApplicationControlAPIGetRulesTemplateRequest) (*OperationResponseGridVORuleResultEntity, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVORuleEntity
+		localVarReturnValue  *OperationResponseGridVORuleResultEntity
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationControlAPIService.GetRulesTemplate")

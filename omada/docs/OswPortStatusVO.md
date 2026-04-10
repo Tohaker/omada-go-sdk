@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **StkStatus** | Pointer to **int32** | Stk Status | [optional] 
 **Stp** | Pointer to **string** | STP Status | [optional] 
 **StpDiscarding** | Pointer to **bool** | STP Discarding | [optional] 
+**TrunkState** | Pointer to **int32** | LACP port state | [optional] 
 **Tx** | Pointer to **int64** | Tx | [optional] 
 **TxRate** | Pointer to **int64** | Tx Rate | [optional] 
 
@@ -519,6 +520,31 @@ SetStpDiscarding sets StpDiscarding field to given value.
 `func (o *OswPortStatusVO) HasStpDiscarding() bool`
 
 HasStpDiscarding returns a boolean if a field has been set.
+
+### GetTrunkState
+
+`func (o *OswPortStatusVO) GetTrunkState() int32`
+
+GetTrunkState returns the TrunkState field if non-nil, zero value otherwise.
+
+### GetTrunkStateOk
+
+`func (o *OswPortStatusVO) GetTrunkStateOk() (*int32, bool)`
+
+GetTrunkStateOk returns a tuple with the TrunkState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrunkState
+
+`func (o *OswPortStatusVO) SetTrunkState(v int32)`
+
+SetTrunkState sets TrunkState field to given value.
+
+### HasTrunkState
+
+`func (o *OswPortStatusVO) HasTrunkState() bool`
+
+HasTrunkState returns a boolean if a field has been set.
 
 ### GetTx
 

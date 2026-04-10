@@ -5,8 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Configured** | Pointer to **bool** | qos configured | [optional] 
+**Ip** | Pointer to **string** | IPv4 address. | [optional] 
+**Ipv6** | Pointer to **bool** | IPv6 enable. | [optional] 
+**Ipv6Proto** | Pointer to **string** | IPv6 connection type: 0: static; 1: dynamic; 2: PPPoE; 3: 6to4Tunnel; 4: bridge. | [optional] 
 **PortName** | Pointer to **string** | port name | [optional] 
 **PortUuid** | Pointer to **string** | port id | [optional] 
+**Proto** | Pointer to **string** | WAN IPv4 connection type, it supports Static IP, DHCP, PPPoE, L2TP, PPTP, DS-Lite, and MAP-E. | [optional] 
+**RecommendedWan** | Pointer to **bool** | Recommended WAN port. | [optional] 
 **SupportIptv** | Pointer to **bool** | support iptv? | [optional] 
 **Type** | Pointer to **int32** | wan type | [optional] 
 **VirtualWanNum** | Pointer to **int32** | How many virtual wan does this wan port support | [optional] 
@@ -54,6 +59,81 @@ SetConfigured sets Configured field to given value.
 `func (o *AvailableWanPortOpenApiVO) HasConfigured() bool`
 
 HasConfigured returns a boolean if a field has been set.
+
+### GetIp
+
+`func (o *AvailableWanPortOpenApiVO) GetIp() string`
+
+GetIp returns the Ip field if non-nil, zero value otherwise.
+
+### GetIpOk
+
+`func (o *AvailableWanPortOpenApiVO) GetIpOk() (*string, bool)`
+
+GetIpOk returns a tuple with the Ip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIp
+
+`func (o *AvailableWanPortOpenApiVO) SetIp(v string)`
+
+SetIp sets Ip field to given value.
+
+### HasIp
+
+`func (o *AvailableWanPortOpenApiVO) HasIp() bool`
+
+HasIp returns a boolean if a field has been set.
+
+### GetIpv6
+
+`func (o *AvailableWanPortOpenApiVO) GetIpv6() bool`
+
+GetIpv6 returns the Ipv6 field if non-nil, zero value otherwise.
+
+### GetIpv6Ok
+
+`func (o *AvailableWanPortOpenApiVO) GetIpv6Ok() (*bool, bool)`
+
+GetIpv6Ok returns a tuple with the Ipv6 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpv6
+
+`func (o *AvailableWanPortOpenApiVO) SetIpv6(v bool)`
+
+SetIpv6 sets Ipv6 field to given value.
+
+### HasIpv6
+
+`func (o *AvailableWanPortOpenApiVO) HasIpv6() bool`
+
+HasIpv6 returns a boolean if a field has been set.
+
+### GetIpv6Proto
+
+`func (o *AvailableWanPortOpenApiVO) GetIpv6Proto() string`
+
+GetIpv6Proto returns the Ipv6Proto field if non-nil, zero value otherwise.
+
+### GetIpv6ProtoOk
+
+`func (o *AvailableWanPortOpenApiVO) GetIpv6ProtoOk() (*string, bool)`
+
+GetIpv6ProtoOk returns a tuple with the Ipv6Proto field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpv6Proto
+
+`func (o *AvailableWanPortOpenApiVO) SetIpv6Proto(v string)`
+
+SetIpv6Proto sets Ipv6Proto field to given value.
+
+### HasIpv6Proto
+
+`func (o *AvailableWanPortOpenApiVO) HasIpv6Proto() bool`
+
+HasIpv6Proto returns a boolean if a field has been set.
 
 ### GetPortName
 
@@ -104,6 +184,56 @@ SetPortUuid sets PortUuid field to given value.
 `func (o *AvailableWanPortOpenApiVO) HasPortUuid() bool`
 
 HasPortUuid returns a boolean if a field has been set.
+
+### GetProto
+
+`func (o *AvailableWanPortOpenApiVO) GetProto() string`
+
+GetProto returns the Proto field if non-nil, zero value otherwise.
+
+### GetProtoOk
+
+`func (o *AvailableWanPortOpenApiVO) GetProtoOk() (*string, bool)`
+
+GetProtoOk returns a tuple with the Proto field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProto
+
+`func (o *AvailableWanPortOpenApiVO) SetProto(v string)`
+
+SetProto sets Proto field to given value.
+
+### HasProto
+
+`func (o *AvailableWanPortOpenApiVO) HasProto() bool`
+
+HasProto returns a boolean if a field has been set.
+
+### GetRecommendedWan
+
+`func (o *AvailableWanPortOpenApiVO) GetRecommendedWan() bool`
+
+GetRecommendedWan returns the RecommendedWan field if non-nil, zero value otherwise.
+
+### GetRecommendedWanOk
+
+`func (o *AvailableWanPortOpenApiVO) GetRecommendedWanOk() (*bool, bool)`
+
+GetRecommendedWanOk returns a tuple with the RecommendedWan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecommendedWan
+
+`func (o *AvailableWanPortOpenApiVO) SetRecommendedWan(v bool)`
+
+SetRecommendedWan sets RecommendedWan field to given value.
+
+### HasRecommendedWan
+
+`func (o *AvailableWanPortOpenApiVO) HasRecommendedWan() bool`
+
+HasRecommendedWan returns a boolean if a field has been set.
 
 ### GetSupportIptv
 

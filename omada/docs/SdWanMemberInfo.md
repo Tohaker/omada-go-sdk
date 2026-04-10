@@ -4,20 +4,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Address** | Pointer to **string** | The address where the site is located. | [optional] 
 **DeviceMac** | Pointer to **string** | The device MAC of the sdWan member. | [optional] 
 **DeviceName** | Pointer to **string** | The device name of the sdWan member. | [optional] 
 **LanNetworkInfo** | Pointer to [**[]LanNetworkBrief**](LanNetworkBrief.md) | A list of lan network info for SdWan Member. | [optional] 
+**Latitude** | Pointer to **float64** | The map latitude of the site. | [optional] 
 **LinkedToHub** | Pointer to **int32** | If a member is a spoke, the link connection to the hub is identified. | [optional] 
+**Longitude** | Pointer to **float64** | The map longitude of the site. | [optional] 
 **Model** | Pointer to **string** | The device model of the sdWan member. | [optional] 
 **ModelVersion** | Pointer to **string** | The device model version of the sdWan member. | [optional] 
 **OnlineStatus** | Pointer to **int32** | The device online status of the sdWan member. | [optional] 
 **PublicIp** | Pointer to **bool** | Whether the sdWan member has a public IP. | [optional] 
+**Region** | Pointer to **string** | The region where the site is located. | [optional] 
+**RegionLatitude** | Pointer to **float64** | The region latitude of the site. | [optional] 
+**RegionLongitude** | Pointer to **float64** | The region longitude of the site. | [optional] 
 **Role** | **int32** | The role of sdWan member, hub or spoke. | 
 **SdWanIp** | Pointer to **string** | The sdWan IP of the sdWan member. | [optional] 
 **ShowModel** | Pointer to **string** | The device showmodel of the sdWan member. | [optional] 
 **SiteId** | Pointer to **string** | The ID of the site where the sdWan member is located. | [optional] 
 **SiteName** | Pointer to **string** | The name of the site where the sdWan member is located. | [optional] 
+**SupportSdWanNat** | Pointer to **bool** | Whether the device support SD-WAN NAT. | [optional] 
 **Type** | Pointer to **string** | The device type of the sdWan member. | [optional] 
+**Unplaced** | Pointer to **bool** | Whether the site is placed on the map. | [optional] 
 **WanPortsInfo** | Pointer to [**[]OsgPortStatBrief**](OsgPortStatBrief.md) | A list of device port status info for SdWan Member. | [optional] 
 
 ## Methods
@@ -38,6 +46,31 @@ will change when the set of required properties is changed
 NewSdWanMemberInfoWithDefaults instantiates a new SdWanMemberInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAddress
+
+`func (o *SdWanMemberInfo) GetAddress() string`
+
+GetAddress returns the Address field if non-nil, zero value otherwise.
+
+### GetAddressOk
+
+`func (o *SdWanMemberInfo) GetAddressOk() (*string, bool)`
+
+GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddress
+
+`func (o *SdWanMemberInfo) SetAddress(v string)`
+
+SetAddress sets Address field to given value.
+
+### HasAddress
+
+`func (o *SdWanMemberInfo) HasAddress() bool`
+
+HasAddress returns a boolean if a field has been set.
 
 ### GetDeviceMac
 
@@ -114,6 +147,31 @@ SetLanNetworkInfo sets LanNetworkInfo field to given value.
 
 HasLanNetworkInfo returns a boolean if a field has been set.
 
+### GetLatitude
+
+`func (o *SdWanMemberInfo) GetLatitude() float64`
+
+GetLatitude returns the Latitude field if non-nil, zero value otherwise.
+
+### GetLatitudeOk
+
+`func (o *SdWanMemberInfo) GetLatitudeOk() (*float64, bool)`
+
+GetLatitudeOk returns a tuple with the Latitude field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatitude
+
+`func (o *SdWanMemberInfo) SetLatitude(v float64)`
+
+SetLatitude sets Latitude field to given value.
+
+### HasLatitude
+
+`func (o *SdWanMemberInfo) HasLatitude() bool`
+
+HasLatitude returns a boolean if a field has been set.
+
 ### GetLinkedToHub
 
 `func (o *SdWanMemberInfo) GetLinkedToHub() int32`
@@ -138,6 +196,31 @@ SetLinkedToHub sets LinkedToHub field to given value.
 `func (o *SdWanMemberInfo) HasLinkedToHub() bool`
 
 HasLinkedToHub returns a boolean if a field has been set.
+
+### GetLongitude
+
+`func (o *SdWanMemberInfo) GetLongitude() float64`
+
+GetLongitude returns the Longitude field if non-nil, zero value otherwise.
+
+### GetLongitudeOk
+
+`func (o *SdWanMemberInfo) GetLongitudeOk() (*float64, bool)`
+
+GetLongitudeOk returns a tuple with the Longitude field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLongitude
+
+`func (o *SdWanMemberInfo) SetLongitude(v float64)`
+
+SetLongitude sets Longitude field to given value.
+
+### HasLongitude
+
+`func (o *SdWanMemberInfo) HasLongitude() bool`
+
+HasLongitude returns a boolean if a field has been set.
 
 ### GetModel
 
@@ -238,6 +321,81 @@ SetPublicIp sets PublicIp field to given value.
 `func (o *SdWanMemberInfo) HasPublicIp() bool`
 
 HasPublicIp returns a boolean if a field has been set.
+
+### GetRegion
+
+`func (o *SdWanMemberInfo) GetRegion() string`
+
+GetRegion returns the Region field if non-nil, zero value otherwise.
+
+### GetRegionOk
+
+`func (o *SdWanMemberInfo) GetRegionOk() (*string, bool)`
+
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegion
+
+`func (o *SdWanMemberInfo) SetRegion(v string)`
+
+SetRegion sets Region field to given value.
+
+### HasRegion
+
+`func (o *SdWanMemberInfo) HasRegion() bool`
+
+HasRegion returns a boolean if a field has been set.
+
+### GetRegionLatitude
+
+`func (o *SdWanMemberInfo) GetRegionLatitude() float64`
+
+GetRegionLatitude returns the RegionLatitude field if non-nil, zero value otherwise.
+
+### GetRegionLatitudeOk
+
+`func (o *SdWanMemberInfo) GetRegionLatitudeOk() (*float64, bool)`
+
+GetRegionLatitudeOk returns a tuple with the RegionLatitude field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegionLatitude
+
+`func (o *SdWanMemberInfo) SetRegionLatitude(v float64)`
+
+SetRegionLatitude sets RegionLatitude field to given value.
+
+### HasRegionLatitude
+
+`func (o *SdWanMemberInfo) HasRegionLatitude() bool`
+
+HasRegionLatitude returns a boolean if a field has been set.
+
+### GetRegionLongitude
+
+`func (o *SdWanMemberInfo) GetRegionLongitude() float64`
+
+GetRegionLongitude returns the RegionLongitude field if non-nil, zero value otherwise.
+
+### GetRegionLongitudeOk
+
+`func (o *SdWanMemberInfo) GetRegionLongitudeOk() (*float64, bool)`
+
+GetRegionLongitudeOk returns a tuple with the RegionLongitude field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegionLongitude
+
+`func (o *SdWanMemberInfo) SetRegionLongitude(v float64)`
+
+SetRegionLongitude sets RegionLongitude field to given value.
+
+### HasRegionLongitude
+
+`func (o *SdWanMemberInfo) HasRegionLongitude() bool`
+
+HasRegionLongitude returns a boolean if a field has been set.
 
 ### GetRole
 
@@ -359,6 +517,31 @@ SetSiteName sets SiteName field to given value.
 
 HasSiteName returns a boolean if a field has been set.
 
+### GetSupportSdWanNat
+
+`func (o *SdWanMemberInfo) GetSupportSdWanNat() bool`
+
+GetSupportSdWanNat returns the SupportSdWanNat field if non-nil, zero value otherwise.
+
+### GetSupportSdWanNatOk
+
+`func (o *SdWanMemberInfo) GetSupportSdWanNatOk() (*bool, bool)`
+
+GetSupportSdWanNatOk returns a tuple with the SupportSdWanNat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportSdWanNat
+
+`func (o *SdWanMemberInfo) SetSupportSdWanNat(v bool)`
+
+SetSupportSdWanNat sets SupportSdWanNat field to given value.
+
+### HasSupportSdWanNat
+
+`func (o *SdWanMemberInfo) HasSupportSdWanNat() bool`
+
+HasSupportSdWanNat returns a boolean if a field has been set.
+
 ### GetType
 
 `func (o *SdWanMemberInfo) GetType() string`
@@ -383,6 +566,31 @@ SetType sets Type field to given value.
 `func (o *SdWanMemberInfo) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetUnplaced
+
+`func (o *SdWanMemberInfo) GetUnplaced() bool`
+
+GetUnplaced returns the Unplaced field if non-nil, zero value otherwise.
+
+### GetUnplacedOk
+
+`func (o *SdWanMemberInfo) GetUnplacedOk() (*bool, bool)`
+
+GetUnplacedOk returns a tuple with the Unplaced field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnplaced
+
+`func (o *SdWanMemberInfo) SetUnplaced(v bool)`
+
+SetUnplaced sets Unplaced field to given value.
+
+### HasUnplaced
+
+`func (o *SdWanMemberInfo) HasUnplaced() bool`
+
+HasUnplaced returns a boolean if a field has been set.
 
 ### GetWanPortsInfo
 

@@ -21,10 +21,10 @@ var _ MappedNullable = &SslVpnUserGroupEntity{}
 
 // SslVpnUserGroupEntity struct for SslVpnUserGroupEntity
 type SslVpnUserGroupEntity struct {
-	// Attribute value used for LDAP authentication
-	LDAPAttribute *string `json:"LDAPAttribute,omitempty"`
 	// ID of the SSL VPN user group
 	Id *string `json:"id,omitempty"`
+	// Attribute value used for LDAP authentication
+	LdapAttribute *string `json:"ldapAttribute,omitempty"`
 	// Name of the SSL VPN user group
 	Name string `json:"name"`
 	// Attribute value used for radius authentication
@@ -57,38 +57,6 @@ func NewSslVpnUserGroupEntityWithDefaults() *SslVpnUserGroupEntity {
 	return &this
 }
 
-// GetLDAPAttribute returns the LDAPAttribute field value if set, zero value otherwise.
-func (o *SslVpnUserGroupEntity) GetLDAPAttribute() string {
-	if o == nil || IsNil(o.LDAPAttribute) {
-		var ret string
-		return ret
-	}
-	return *o.LDAPAttribute
-}
-
-// GetLDAPAttributeOk returns a tuple with the LDAPAttribute field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SslVpnUserGroupEntity) GetLDAPAttributeOk() (*string, bool) {
-	if o == nil || IsNil(o.LDAPAttribute) {
-		return nil, false
-	}
-	return o.LDAPAttribute, true
-}
-
-// HasLDAPAttribute returns a boolean if a field has been set.
-func (o *SslVpnUserGroupEntity) HasLDAPAttribute() bool {
-	if o != nil && !IsNil(o.LDAPAttribute) {
-		return true
-	}
-
-	return false
-}
-
-// SetLDAPAttribute gets a reference to the given string and assigns it to the LDAPAttribute field.
-func (o *SslVpnUserGroupEntity) SetLDAPAttribute(v string) {
-	o.LDAPAttribute = &v
-}
-
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *SslVpnUserGroupEntity) GetId() string {
 	if o == nil || IsNil(o.Id) {
@@ -119,6 +87,38 @@ func (o *SslVpnUserGroupEntity) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *SslVpnUserGroupEntity) SetId(v string) {
 	o.Id = &v
+}
+
+// GetLdapAttribute returns the LdapAttribute field value if set, zero value otherwise.
+func (o *SslVpnUserGroupEntity) GetLdapAttribute() string {
+	if o == nil || IsNil(o.LdapAttribute) {
+		var ret string
+		return ret
+	}
+	return *o.LdapAttribute
+}
+
+// GetLdapAttributeOk returns a tuple with the LdapAttribute field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SslVpnUserGroupEntity) GetLdapAttributeOk() (*string, bool) {
+	if o == nil || IsNil(o.LdapAttribute) {
+		return nil, false
+	}
+	return o.LdapAttribute, true
+}
+
+// HasLdapAttribute returns a boolean if a field has been set.
+func (o *SslVpnUserGroupEntity) HasLdapAttribute() bool {
+	if o != nil && !IsNil(o.LdapAttribute) {
+		return true
+	}
+
+	return false
+}
+
+// SetLdapAttribute gets a reference to the given string and assigns it to the LdapAttribute field.
+func (o *SslVpnUserGroupEntity) SetLdapAttribute(v string) {
+	o.LdapAttribute = &v
 }
 
 // GetName returns the Name field value
@@ -283,11 +283,11 @@ func (o SslVpnUserGroupEntity) MarshalJSON() ([]byte, error) {
 
 func (o SslVpnUserGroupEntity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LDAPAttribute) {
-		toSerialize["LDAPAttribute"] = o.LDAPAttribute
-	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.LdapAttribute) {
+		toSerialize["ldapAttribute"] = o.LdapAttribute
 	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.RadiusAttribute) {

@@ -25,7 +25,7 @@ type BandwidthControlAPI interface {
 	/*
 	CreateBandwidthCtrlRule Create bandwidth control rule
 
-	Create bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify
+	Create bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -90,7 +90,7 @@ type BandwidthControlAPI interface {
 	/*
 	ModifyBandwidthCtrl Modify bandwidth control
 
-	Modify bandwidth control.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify
+	Modify bandwidth control.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -106,7 +106,7 @@ type BandwidthControlAPI interface {
 	/*
 	ModifyBandwidthCtrlRule Modify bandwidth control rule
 
-	Modify bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify
+	Modify bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -160,7 +160,7 @@ func (r BandwidthControlAPICreateBandwidthCtrlRuleRequest) Execute() (*Operation
 /*
 CreateBandwidthCtrlRule Create bandwidth control rule
 
-Create bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify
+Create bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -681,7 +681,7 @@ func (r BandwidthControlAPIModifyBandwidthCtrlRequest) Execute() (*OperationResp
 /*
 ModifyBandwidthCtrl Modify bandwidth control
 
-Modify bandwidth control.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify
+Modify bandwidth control.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -814,7 +814,7 @@ func (r BandwidthControlAPIModifyBandwidthCtrlRuleRequest) Execute() (*Operation
 /*
 ModifyBandwidthCtrlRule Modify bandwidth control rule
 
-Modify bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify
+Modify bandwidth control rule.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Device Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

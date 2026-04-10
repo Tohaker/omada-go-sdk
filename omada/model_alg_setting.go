@@ -23,6 +23,8 @@ var _ MappedNullable = &ALGSetting{}
 type ALGSetting struct {
 	// Whether to enable the FTP ALG
 	Ftp bool `json:"ftp"`
+	// The listening port for FTP signaling messages, the default port is 21
+	FtpPorts []int32 `json:"ftpPorts,omitempty"`
 	// Whether to enable the H323 ALG
 	H323 bool `json:"h323"`
 	// Whether to enable the IPSec ALG
@@ -31,6 +33,22 @@ type ALGSetting struct {
 	Pptp bool `json:"pptp"`
 	// Whether to enable the SIP ALG
 	Sip bool `json:"sip"`
+	// Enable this option if you want SIP media connections to only arrive from registered IP addresses.
+	SipDirectMedia *bool `json:"sipDirectMedia,omitempty"`
+	// Enable this option if you want SIP signaling connections to only arrive from registered IP addresses, enabled by default.
+	SipDirectSignaling *bool `json:"sipDirectSignaling,omitempty"`
+	// Modify this item if you want to adjust the timeout duration for SIP media sessions (1 – 86,400 seconds).
+	SipMediaTimeout *int32 `json:"sipMediaTimeout,omitempty"`
+	// The listening ports for SIP signaling messages, the default ports are 5060 and 5061
+	SipPorts []int32 `json:"sipPorts,omitempty"`
+	// Modify this item if you want to adjust the timeout duration for SIP signaling sessions (1 – 86,400 seconds).
+	SipSignalingTimeout *int32 `json:"sipSignalingTimeout,omitempty"`
+	// Enable this option if your SIP signaling uses the TCP protocol and the device needs to modify the IP address and port in SIP messages, enabled by default.
+	SipTcp *bool `json:"sipTcp,omitempty"`
+	// Enable this option if you want to apply timeout limits to SIP signaling and media connections on the device.
+	SipTimeout *bool `json:"sipTimeout,omitempty"`
+	// Enable this option if your SIP signaling uses the UDP protocol and the device needs to modify the IP address and port in SIP signaling messages, enabled by default.
+	SipUdp *bool `json:"sipUdp,omitempty"`
 }
 
 type _ALGSetting ALGSetting
@@ -79,6 +97,38 @@ func (o *ALGSetting) GetFtpOk() (*bool, bool) {
 // SetFtp sets field value
 func (o *ALGSetting) SetFtp(v bool) {
 	o.Ftp = v
+}
+
+// GetFtpPorts returns the FtpPorts field value if set, zero value otherwise.
+func (o *ALGSetting) GetFtpPorts() []int32 {
+	if o == nil || IsNil(o.FtpPorts) {
+		var ret []int32
+		return ret
+	}
+	return o.FtpPorts
+}
+
+// GetFtpPortsOk returns a tuple with the FtpPorts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ALGSetting) GetFtpPortsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.FtpPorts) {
+		return nil, false
+	}
+	return o.FtpPorts, true
+}
+
+// HasFtpPorts returns a boolean if a field has been set.
+func (o *ALGSetting) HasFtpPorts() bool {
+	if o != nil && !IsNil(o.FtpPorts) {
+		return true
+	}
+
+	return false
+}
+
+// SetFtpPorts gets a reference to the given []int32 and assigns it to the FtpPorts field.
+func (o *ALGSetting) SetFtpPorts(v []int32) {
+	o.FtpPorts = v
 }
 
 // GetH323 returns the H323 field value
@@ -177,6 +227,262 @@ func (o *ALGSetting) SetSip(v bool) {
 	o.Sip = v
 }
 
+// GetSipDirectMedia returns the SipDirectMedia field value if set, zero value otherwise.
+func (o *ALGSetting) GetSipDirectMedia() bool {
+	if o == nil || IsNil(o.SipDirectMedia) {
+		var ret bool
+		return ret
+	}
+	return *o.SipDirectMedia
+}
+
+// GetSipDirectMediaOk returns a tuple with the SipDirectMedia field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ALGSetting) GetSipDirectMediaOk() (*bool, bool) {
+	if o == nil || IsNil(o.SipDirectMedia) {
+		return nil, false
+	}
+	return o.SipDirectMedia, true
+}
+
+// HasSipDirectMedia returns a boolean if a field has been set.
+func (o *ALGSetting) HasSipDirectMedia() bool {
+	if o != nil && !IsNil(o.SipDirectMedia) {
+		return true
+	}
+
+	return false
+}
+
+// SetSipDirectMedia gets a reference to the given bool and assigns it to the SipDirectMedia field.
+func (o *ALGSetting) SetSipDirectMedia(v bool) {
+	o.SipDirectMedia = &v
+}
+
+// GetSipDirectSignaling returns the SipDirectSignaling field value if set, zero value otherwise.
+func (o *ALGSetting) GetSipDirectSignaling() bool {
+	if o == nil || IsNil(o.SipDirectSignaling) {
+		var ret bool
+		return ret
+	}
+	return *o.SipDirectSignaling
+}
+
+// GetSipDirectSignalingOk returns a tuple with the SipDirectSignaling field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ALGSetting) GetSipDirectSignalingOk() (*bool, bool) {
+	if o == nil || IsNil(o.SipDirectSignaling) {
+		return nil, false
+	}
+	return o.SipDirectSignaling, true
+}
+
+// HasSipDirectSignaling returns a boolean if a field has been set.
+func (o *ALGSetting) HasSipDirectSignaling() bool {
+	if o != nil && !IsNil(o.SipDirectSignaling) {
+		return true
+	}
+
+	return false
+}
+
+// SetSipDirectSignaling gets a reference to the given bool and assigns it to the SipDirectSignaling field.
+func (o *ALGSetting) SetSipDirectSignaling(v bool) {
+	o.SipDirectSignaling = &v
+}
+
+// GetSipMediaTimeout returns the SipMediaTimeout field value if set, zero value otherwise.
+func (o *ALGSetting) GetSipMediaTimeout() int32 {
+	if o == nil || IsNil(o.SipMediaTimeout) {
+		var ret int32
+		return ret
+	}
+	return *o.SipMediaTimeout
+}
+
+// GetSipMediaTimeoutOk returns a tuple with the SipMediaTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ALGSetting) GetSipMediaTimeoutOk() (*int32, bool) {
+	if o == nil || IsNil(o.SipMediaTimeout) {
+		return nil, false
+	}
+	return o.SipMediaTimeout, true
+}
+
+// HasSipMediaTimeout returns a boolean if a field has been set.
+func (o *ALGSetting) HasSipMediaTimeout() bool {
+	if o != nil && !IsNil(o.SipMediaTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSipMediaTimeout gets a reference to the given int32 and assigns it to the SipMediaTimeout field.
+func (o *ALGSetting) SetSipMediaTimeout(v int32) {
+	o.SipMediaTimeout = &v
+}
+
+// GetSipPorts returns the SipPorts field value if set, zero value otherwise.
+func (o *ALGSetting) GetSipPorts() []int32 {
+	if o == nil || IsNil(o.SipPorts) {
+		var ret []int32
+		return ret
+	}
+	return o.SipPorts
+}
+
+// GetSipPortsOk returns a tuple with the SipPorts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ALGSetting) GetSipPortsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.SipPorts) {
+		return nil, false
+	}
+	return o.SipPorts, true
+}
+
+// HasSipPorts returns a boolean if a field has been set.
+func (o *ALGSetting) HasSipPorts() bool {
+	if o != nil && !IsNil(o.SipPorts) {
+		return true
+	}
+
+	return false
+}
+
+// SetSipPorts gets a reference to the given []int32 and assigns it to the SipPorts field.
+func (o *ALGSetting) SetSipPorts(v []int32) {
+	o.SipPorts = v
+}
+
+// GetSipSignalingTimeout returns the SipSignalingTimeout field value if set, zero value otherwise.
+func (o *ALGSetting) GetSipSignalingTimeout() int32 {
+	if o == nil || IsNil(o.SipSignalingTimeout) {
+		var ret int32
+		return ret
+	}
+	return *o.SipSignalingTimeout
+}
+
+// GetSipSignalingTimeoutOk returns a tuple with the SipSignalingTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ALGSetting) GetSipSignalingTimeoutOk() (*int32, bool) {
+	if o == nil || IsNil(o.SipSignalingTimeout) {
+		return nil, false
+	}
+	return o.SipSignalingTimeout, true
+}
+
+// HasSipSignalingTimeout returns a boolean if a field has been set.
+func (o *ALGSetting) HasSipSignalingTimeout() bool {
+	if o != nil && !IsNil(o.SipSignalingTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSipSignalingTimeout gets a reference to the given int32 and assigns it to the SipSignalingTimeout field.
+func (o *ALGSetting) SetSipSignalingTimeout(v int32) {
+	o.SipSignalingTimeout = &v
+}
+
+// GetSipTcp returns the SipTcp field value if set, zero value otherwise.
+func (o *ALGSetting) GetSipTcp() bool {
+	if o == nil || IsNil(o.SipTcp) {
+		var ret bool
+		return ret
+	}
+	return *o.SipTcp
+}
+
+// GetSipTcpOk returns a tuple with the SipTcp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ALGSetting) GetSipTcpOk() (*bool, bool) {
+	if o == nil || IsNil(o.SipTcp) {
+		return nil, false
+	}
+	return o.SipTcp, true
+}
+
+// HasSipTcp returns a boolean if a field has been set.
+func (o *ALGSetting) HasSipTcp() bool {
+	if o != nil && !IsNil(o.SipTcp) {
+		return true
+	}
+
+	return false
+}
+
+// SetSipTcp gets a reference to the given bool and assigns it to the SipTcp field.
+func (o *ALGSetting) SetSipTcp(v bool) {
+	o.SipTcp = &v
+}
+
+// GetSipTimeout returns the SipTimeout field value if set, zero value otherwise.
+func (o *ALGSetting) GetSipTimeout() bool {
+	if o == nil || IsNil(o.SipTimeout) {
+		var ret bool
+		return ret
+	}
+	return *o.SipTimeout
+}
+
+// GetSipTimeoutOk returns a tuple with the SipTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ALGSetting) GetSipTimeoutOk() (*bool, bool) {
+	if o == nil || IsNil(o.SipTimeout) {
+		return nil, false
+	}
+	return o.SipTimeout, true
+}
+
+// HasSipTimeout returns a boolean if a field has been set.
+func (o *ALGSetting) HasSipTimeout() bool {
+	if o != nil && !IsNil(o.SipTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSipTimeout gets a reference to the given bool and assigns it to the SipTimeout field.
+func (o *ALGSetting) SetSipTimeout(v bool) {
+	o.SipTimeout = &v
+}
+
+// GetSipUdp returns the SipUdp field value if set, zero value otherwise.
+func (o *ALGSetting) GetSipUdp() bool {
+	if o == nil || IsNil(o.SipUdp) {
+		var ret bool
+		return ret
+	}
+	return *o.SipUdp
+}
+
+// GetSipUdpOk returns a tuple with the SipUdp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ALGSetting) GetSipUdpOk() (*bool, bool) {
+	if o == nil || IsNil(o.SipUdp) {
+		return nil, false
+	}
+	return o.SipUdp, true
+}
+
+// HasSipUdp returns a boolean if a field has been set.
+func (o *ALGSetting) HasSipUdp() bool {
+	if o != nil && !IsNil(o.SipUdp) {
+		return true
+	}
+
+	return false
+}
+
+// SetSipUdp gets a reference to the given bool and assigns it to the SipUdp field.
+func (o *ALGSetting) SetSipUdp(v bool) {
+	o.SipUdp = &v
+}
+
 func (o ALGSetting) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -188,10 +494,37 @@ func (o ALGSetting) MarshalJSON() ([]byte, error) {
 func (o ALGSetting) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ftp"] = o.Ftp
+	if !IsNil(o.FtpPorts) {
+		toSerialize["ftpPorts"] = o.FtpPorts
+	}
 	toSerialize["h323"] = o.H323
 	toSerialize["ipSec"] = o.IpSec
 	toSerialize["pptp"] = o.Pptp
 	toSerialize["sip"] = o.Sip
+	if !IsNil(o.SipDirectMedia) {
+		toSerialize["sipDirectMedia"] = o.SipDirectMedia
+	}
+	if !IsNil(o.SipDirectSignaling) {
+		toSerialize["sipDirectSignaling"] = o.SipDirectSignaling
+	}
+	if !IsNil(o.SipMediaTimeout) {
+		toSerialize["sipMediaTimeout"] = o.SipMediaTimeout
+	}
+	if !IsNil(o.SipPorts) {
+		toSerialize["sipPorts"] = o.SipPorts
+	}
+	if !IsNil(o.SipSignalingTimeout) {
+		toSerialize["sipSignalingTimeout"] = o.SipSignalingTimeout
+	}
+	if !IsNil(o.SipTcp) {
+		toSerialize["sipTcp"] = o.SipTcp
+	}
+	if !IsNil(o.SipTimeout) {
+		toSerialize["sipTimeout"] = o.SipTimeout
+	}
+	if !IsNil(o.SipUdp) {
+		toSerialize["sipUdp"] = o.SipUdp
+	}
 	return toSerialize, nil
 }
 

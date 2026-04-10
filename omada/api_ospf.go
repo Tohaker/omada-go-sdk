@@ -57,7 +57,7 @@ type OSPFAPI interface {
 	/*
 	CreateOspfInterface Create Ospf Interface
 
-	Create Ospf Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist<br/>-43904  -  The interface ID already exists.<br/>-43916  -  The device does not support OSPF.<br/>-43917  -  The device does not support loopback interface.<br/>-43921  -  The Dead Interval cannot be smaller than the Hello Interval.
+	Create Ospf Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist<br/>-43904  -  The interface ID already exists.<br/>-43916  -  The device does not support OSPF.<br/>-43917  -  The device does not support loopback interface.<br/>-43921  -  The Dead Interval cannot be smaller than or equal to the Hello Interval.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -190,7 +190,7 @@ type OSPFAPI interface {
 	/*
 	ModifyOspfInterface Modify Ospf Interface
 
-	Modify Ospf Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist<br/>-43904  -  The interface ID already exists.<br/>-43905  -  OSPF Interface does not exist.<br/>-43914  -  The device name cannot be changed.<br/>-43916  -  The device does not support OSPF.<br/>-43917  -  The device does not support loopback interface.<br/>-43921  -  The Dead Interval cannot be smaller than the Hello Interval.
+	Modify Ospf Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist<br/>-43904  -  The interface ID already exists.<br/>-43905  -  OSPF Interface does not exist.<br/>-43914  -  The device name cannot be changed.<br/>-43916  -  The device does not support OSPF.<br/>-43917  -  The device does not support loopback interface.<br/>-43921  -  The Dead Interval cannot be smaller than or equal to the Hello Interval.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -509,7 +509,7 @@ func (r OSPFAPICreateOspfInterfaceRequest) Execute() (*OperationResponseWithoutR
 /*
 CreateOspfInterface Create Ospf Interface
 
-Create Ospf Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist<br/>-43904  -  The interface ID already exists.<br/>-43916  -  The device does not support OSPF.<br/>-43917  -  The device does not support loopback interface.<br/>-43921  -  The Dead Interval cannot be smaller than the Hello Interval.
+Create Ospf Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist<br/>-43904  -  The interface ID already exists.<br/>-43916  -  The device does not support OSPF.<br/>-43917  -  The device does not support loopback interface.<br/>-43921  -  The Dead Interval cannot be smaller than or equal to the Hello Interval.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1580,7 +1580,7 @@ func (r OSPFAPIModifyOspfInterfaceRequest) Execute() (*OperationResponseWithoutR
 /*
 ModifyOspfInterface Modify Ospf Interface
 
-Modify Ospf Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist<br/>-43904  -  The interface ID already exists.<br/>-43905  -  OSPF Interface does not exist.<br/>-43914  -  The device name cannot be changed.<br/>-43916  -  The device does not support OSPF.<br/>-43917  -  The device does not support loopback interface.<br/>-43921  -  The Dead Interval cannot be smaller than the Hello Interval.
+Modify Ospf Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist<br/>-43904  -  The interface ID already exists.<br/>-43905  -  OSPF Interface does not exist.<br/>-43914  -  The device name cannot be changed.<br/>-43916  -  The device does not support OSPF.<br/>-43917  -  The device does not support loopback interface.<br/>-43921  -  The Dead Interval cannot be smaller than or equal to the Hello Interval.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

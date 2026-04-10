@@ -23,14 +23,18 @@ var _ MappedNullable = &Dot1xSwitchResOpenApiVO{}
 type Dot1xSwitchResOpenApiVO struct {
 	// Mode of authentication protocol. AuthMode should be a value as follows: 0: PAP, 1: EAP
 	AuthMode *int32 `json:"authMode,omitempty"`
-	// Type of the authentication. AuthType should be a value as follows: 0: MAC based, 1: Port based
+	// Type of the authentication. AuthType should be a value as follows: 0: Port based, 1: Mac based
 	AuthType *int32 `json:"authType,omitempty"`
 	// Switch 802.1x function enable status
 	Enable bool `json:"enable"`
+	// Guest VLAN, clients that have not been authorized will be added to the guest VLAN.The value of guest VLAN should be selected from the created LAN Network.
+	GuestVlan *int32 `json:"guestVlan,omitempty"`
 	// MAB enable status
 	Mab *bool `json:"mab,omitempty"`
 	// Format of the MAC address. MacFormat should be a value as follows: 0: aabbccddeeff, 1: aa-bb-cc-dd-ee-ff, 2: aa:bb:cc:dd:ee:ff, 3: AABBCCDDEEFF, 4: AA-BB-CC-DD-EE-FF, 5: AA:BB:CC:DD:EE:FF
 	MacFormat *int32 `json:"macFormat,omitempty"`
+	// Nas ID,NasId should contain 1~31 characters, except the question mark (?) and double quote (\").
+	NasId *string `json:"nasId,omitempty"`
 	// This field represents radius profile ID. Radius profile can be created using 'Create a new Radius profile' ('Create a new Radius profile template') interface, and radius profile ID can be obtained from 'Get Radius profile list' ('Get Radius profile template list') interface
 	RadiusProfileId *string `json:"radiusProfileId,omitempty"`
 	// VLAN Assignment enable status
@@ -145,6 +149,38 @@ func (o *Dot1xSwitchResOpenApiVO) SetEnable(v bool) {
 	o.Enable = v
 }
 
+// GetGuestVlan returns the GuestVlan field value if set, zero value otherwise.
+func (o *Dot1xSwitchResOpenApiVO) GetGuestVlan() int32 {
+	if o == nil || IsNil(o.GuestVlan) {
+		var ret int32
+		return ret
+	}
+	return *o.GuestVlan
+}
+
+// GetGuestVlanOk returns a tuple with the GuestVlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Dot1xSwitchResOpenApiVO) GetGuestVlanOk() (*int32, bool) {
+	if o == nil || IsNil(o.GuestVlan) {
+		return nil, false
+	}
+	return o.GuestVlan, true
+}
+
+// HasGuestVlan returns a boolean if a field has been set.
+func (o *Dot1xSwitchResOpenApiVO) HasGuestVlan() bool {
+	if o != nil && !IsNil(o.GuestVlan) {
+		return true
+	}
+
+	return false
+}
+
+// SetGuestVlan gets a reference to the given int32 and assigns it to the GuestVlan field.
+func (o *Dot1xSwitchResOpenApiVO) SetGuestVlan(v int32) {
+	o.GuestVlan = &v
+}
+
 // GetMab returns the Mab field value if set, zero value otherwise.
 func (o *Dot1xSwitchResOpenApiVO) GetMab() bool {
 	if o == nil || IsNil(o.Mab) {
@@ -207,6 +243,38 @@ func (o *Dot1xSwitchResOpenApiVO) HasMacFormat() bool {
 // SetMacFormat gets a reference to the given int32 and assigns it to the MacFormat field.
 func (o *Dot1xSwitchResOpenApiVO) SetMacFormat(v int32) {
 	o.MacFormat = &v
+}
+
+// GetNasId returns the NasId field value if set, zero value otherwise.
+func (o *Dot1xSwitchResOpenApiVO) GetNasId() string {
+	if o == nil || IsNil(o.NasId) {
+		var ret string
+		return ret
+	}
+	return *o.NasId
+}
+
+// GetNasIdOk returns a tuple with the NasId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Dot1xSwitchResOpenApiVO) GetNasIdOk() (*string, bool) {
+	if o == nil || IsNil(o.NasId) {
+		return nil, false
+	}
+	return o.NasId, true
+}
+
+// HasNasId returns a boolean if a field has been set.
+func (o *Dot1xSwitchResOpenApiVO) HasNasId() bool {
+	if o != nil && !IsNil(o.NasId) {
+		return true
+	}
+
+	return false
+}
+
+// SetNasId gets a reference to the given string and assigns it to the NasId field.
+func (o *Dot1xSwitchResOpenApiVO) SetNasId(v string) {
+	o.NasId = &v
 }
 
 // GetRadiusProfileId returns the RadiusProfileId field value if set, zero value otherwise.
@@ -290,11 +358,17 @@ func (o Dot1xSwitchResOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["authType"] = o.AuthType
 	}
 	toSerialize["enable"] = o.Enable
+	if !IsNil(o.GuestVlan) {
+		toSerialize["guestVlan"] = o.GuestVlan
+	}
 	if !IsNil(o.Mab) {
 		toSerialize["mab"] = o.Mab
 	}
 	if !IsNil(o.MacFormat) {
 		toSerialize["macFormat"] = o.MacFormat
+	}
+	if !IsNil(o.NasId) {
+		toSerialize["nasId"] = o.NasId
 	}
 	if !IsNil(o.RadiusProfileId) {
 		toSerialize["radiusProfileId"] = o.RadiusProfileId

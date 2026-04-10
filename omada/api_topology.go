@@ -2298,10 +2298,11 @@ func (a *TopologyAPIService) GetV3TopologyExecute(r TopologyAPIGetV3TopologyRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-
-	if r.filtersDeviceStatus != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.deviceStatus", r.filtersDeviceStatus, "form", "")
+	if r.filtersDeviceStatus == nil {
+		return localVarReturnValue, nil, reportError("filtersDeviceStatus is required and must be specified")
 	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.deviceStatus", r.filtersDeviceStatus, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

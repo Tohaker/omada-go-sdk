@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **MldSnoopEnable** | Pointer to **bool** | Enable MLD snooping | [optional] 
 **Name** | **string** | LAN network name should contain 1 to 128 characters. | 
 **Purpose** | **int32** | LAN network purpose should be a value as follows: 0: VLAN; 1: interface | 
-**Vlan** | Pointer to **int32** | When purpose is \&quot;VLAN\&quot; or purpose is \&quot;interface\&quot; and VLANType is 0, vlan should be within the range of 1-4090. | [optional] 
+**Vlan** | Pointer to **int32** | Only Valid when vlanType is 0. Vlan should be within the range of 1-4094. | [optional] 
 **VlanType** | Pointer to **int32** | When purpose is interface, VLANType should be a value as follows: 0: Single; 1: Multiple | [optional] 
 **Vlans** | Pointer to **string** | When purpose is \&quot;interface\&quot; and VLANType is 1, batch create VLANs. VLAN format: 200, 1-100. | [optional] 
 

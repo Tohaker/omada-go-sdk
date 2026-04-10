@@ -19,7 +19,7 @@ import (
 // checks if the OswDhcpServerRangeVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswDhcpServerRangeVO{}
 
-// OswDhcpServerRangeVO struct for OswDhcpServerRangeVO
+// OswDhcpServerRangeVO The list of DHCP Range
 type OswDhcpServerRangeVO struct {
 	EndIp string `json:"endIp"`
 	StartIp string `json:"startIp"`

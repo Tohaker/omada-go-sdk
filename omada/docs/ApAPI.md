@@ -4,79 +4,81 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchModifyAntSwitchConfig**](ApAPI.md#batchmodifyantswitchconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/ant-switch | Batch Modify AP antSwitch Setting
-[**BatchModifyApVlanConfig**](ApAPI.md#batchmodifyapvlanconfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/vlan | Batch Modify Ap Vlan Config
-[**BatchModifyMultiApPorts**](ApAPI.md#batchmodifymultiapports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/config | Batch modify multiple aps port config
+[**BatchModifyAntSwitchConfig**](ApAPI.md#batchmodifyantswitchconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/ant-switch | Batch modify AP antSwitch setting
+[**BatchModifyApVlanConfig**](ApAPI.md#batchmodifyapvlanconfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/vlan | Batch modify AP vlan config
+[**BatchModifyMultiApPorts**](ApAPI.md#batchmodifymultiapports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/config | Batch modify multiple APs port config
 [**BatchModifyPowerSavingConfig**](ApAPI.md#batchmodifypowersavingconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/power-saving | Batch Modify ap power saving config
-[**ChangeP2pRole**](ApAPI.md#changep2prole) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/change-role | Change p2p ap role
-[**GetAfcConfig**](ApAPI.md#getafcconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc-config | Get ap AFC config
-[**GetAfcInfo**](ApAPI.md#getafcinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc | Get ap AFC Status Info
-[**GetAllApBriefInfosBySite**](ApAPI.md#getallapbriefinfosbysite) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lockToAp/aps | Get Lock to Ap brief APs
-[**GetAntSwitchConfig**](ApAPI.md#getantswitchconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ant-switch | Get AP antSwitch Setting
+[**ChangeP2pRole**](ApAPI.md#changep2prole) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/change-role | Change p2p AP role
+[**GetAfcConfig**](ApAPI.md#getafcconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc-config | Get AP AFC config
+[**GetAfcInfo**](ApAPI.md#getafcinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc | Get AP AFC Status Info
+[**GetAllApBriefInfosBySite**](ApAPI.md#getallapbriefinfosbysite) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/lockToAp/aps | Get lock to AP brief APs
+[**GetAntSwitchConfig**](ApAPI.md#getantswitchconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ant-switch | Get AP antSwitch setting
 [**GetAntennaGainConfig**](ApAPI.md#getantennagainconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Get AP antenna gain config
 [**GetApBridgeInfo**](ApAPI.md#getapbridgeinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Get P2P bridge config
-[**GetApL3AccessConfig**](ApAPI.md#getapl3accessconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/l3access | Get Ap L3Access Config
+[**GetApL3AccessConfig**](ApAPI.md#getapl3accessconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/l3access | Get AP l3Access config
 [**GetApListChannelInfo**](ApAPI.md#getaplistchannelinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/channel-info | Get ap list channel info.
-[**GetApLldpConfig**](ApAPI.md#getaplldpconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lldp | Get Ap LLDP Config
-[**GetApLoadBalanceConfig**](ApAPI.md#getaploadbalanceconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Get Ap Load Balance Config
-[**GetApOfdmaConfig**](ApAPI.md#getapofdmaconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Get ap OFDMA config
+[**GetApLldpConfig**](ApAPI.md#getaplldpconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lldp | Get AP lldp config
+[**GetApLoadBalanceConfig**](ApAPI.md#getaploadbalanceconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Get AP load balance config
+[**GetApOfdmaConfig**](ApAPI.md#getapofdmaconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Get AP OFDMA config
 [**GetApP2pInfo**](ApAPI.md#getapp2pinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/p2pInfo | Get P2P bridge group info
-[**GetApPortList**](ApAPI.md#getapportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ports | Get Ap port list
-[**GetApPortVlans**](ApAPI.md#getapportvlans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/port-vlans | Get ap current vlans config
-[**GetApQoSConfig**](ApAPI.md#getapqosconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/qos | Get Ap QoS Config
-[**GetApSnmpConfig**](ApAPI.md#getapsnmpconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/snmp | Get Ap Snmp Config
-[**GetApTrunkSettingConfig**](ApAPI.md#getaptrunksettingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/trunk-setting | Get Ap Trunk Setting Config
-[**GetApUplinkConfig**](ApAPI.md#getapuplinkconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/uplink-config | Get Ap Uplink Config
-[**GetApVlanConfig**](ApAPI.md#getapvlanconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Get Ap Vlan Config
-[**GetApVlanConfigV2**](ApAPI.md#getapvlanconfigv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Get Ap Vlan Config v2
-[**GetAvailableChannelOfAp**](ApAPI.md#getavailablechannelofap) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/available-channel | Get available channel list of ap
-[**GetChannelLimitConfig**](ApAPI.md#getchannellimitconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-limit | Get ap channel limit config
-[**GetDownlinkWiredDevices**](ApAPI.md#getdownlinkwireddevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wired-downlink | Get ap downlink(wired) device list
-[**GetGeneralConfig2**](ApAPI.md#getgeneralconfig2) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/general-config | Get ap general config
+[**GetApPortList**](ApAPI.md#getapportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ports | Get AP port list
+[**GetApPortVlans**](ApAPI.md#getapportvlans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/port-vlans | Get AP current vlans config
+[**GetApQoSConfig**](ApAPI.md#getapqosconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/qos | Get AP qos config
+[**GetApSnmpConfig**](ApAPI.md#getapsnmpconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/snmp | Get AP snmp config
+[**GetApTrunkSettingConfig**](ApAPI.md#getaptrunksettingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/trunk-setting | Get AP trunk setting config
+[**GetApUplinkConfig**](ApAPI.md#getapuplinkconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/uplink-config | Get AP uplink config
+[**GetApVlanConfig**](ApAPI.md#getapvlanconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Get AP vlan config
+[**GetApVlanConfigV2**](ApAPI.md#getapvlanconfigv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Get AP vlan config v2
+[**GetAvailableChannelOfAp**](ApAPI.md#getavailablechannelofap) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/available-channel | Get available channel list of AP
+[**GetChannelLimitConfig**](ApAPI.md#getchannellimitconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-limit | Get AP channel limit config
+[**GetDownlinkWiredDevices**](ApAPI.md#getdownlinkwireddevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wired-downlink | Get AP downlink(wired) device list
+[**GetGeneralConfig2**](ApAPI.md#getgeneralconfig2) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/general-config | Get AP general config
 [**GetGridMeshCandiParentsForAdopt**](ApAPI.md#getgridmeshcandiparentsforadopt) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/grid/mesh/candiParents | Get the candidate parent AP of the mesh AP
-[**GetIpSettingConfig**](ApAPI.md#getipsettingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ip-setting | Get ap ip setting
-[**GetIpv6SettingConfig**](ApAPI.md#getipv6settingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ipv6-setting | Get ap ipv6 setting
-[**GetLanDetail**](ApAPI.md#getlandetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lan-traffic-info | Get ap lan traffic info
-[**GetMeshStatistics**](ApAPI.md#getmeshstatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get ap mesh statistics
-[**GetMeshStatisticsForMsp**](ApAPI.md#getmeshstatisticsformsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get ap mesh statistics for MSP view
-[**GetMultiApPortList**](ApAPI.md#getmultiapportlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/capability | Get multiple aps port list
-[**GetOverviewDetail**](ApAPI.md#getoverviewdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac} | Get ap info
-[**GetPowerSavingConfig**](ApAPI.md#getpowersavingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Get ap power saving config
+[**GetIpSettingConfig**](ApAPI.md#getipsettingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ip-setting | Get AP ip setting
+[**GetIpv6SettingConfig**](ApAPI.md#getipv6settingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ipv6-setting | Get AP ipv6 setting
+[**GetLanDetail**](ApAPI.md#getlandetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lan-traffic-info | Get AP lan traffic info
+[**GetMeshStatistics**](ApAPI.md#getmeshstatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get AP mesh statistics
+[**GetMeshStatisticsForMsp**](ApAPI.md#getmeshstatisticsformsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get AP mesh statistics for MSP view
+[**GetMultiApPortList**](ApAPI.md#getmultiapportlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/capability | Get multiple APs port list
+[**GetOverviewDetail**](ApAPI.md#getoverviewdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac} | Get AP info
+[**GetParingWindowResult**](ApAPI.md#getparingwindowresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/paring-window-result | Get Paring Window Result
+[**GetPowerSavingConfig**](ApAPI.md#getpowersavingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Get AP power saving config
 [**GetRFScanResult**](ApAPI.md#getrfscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/rf-scan-result | Get rf scan result
 [**GetRFScanResultV2**](ApAPI.md#getrfscanresultv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/rf-scan-result | Get rf scan result v2
-[**GetRadiosConfig**](ApAPI.md#getradiosconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radio-config | Get ap radio config
-[**GetRadiosDetail**](ApAPI.md#getradiosdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radios | Get ap radio detail
+[**GetRadiosConfig**](ApAPI.md#getradiosconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radio-config | Get AP radio config
+[**GetRadiosDetail**](ApAPI.md#getradiosdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radios | Get AP radio detail
 [**GetSpeedTestResults**](ApAPI.md#getspeedtestresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/speed-test-result | Get speed test result
-[**GetUplinkWiredDetail**](ApAPI.md#getuplinkwireddetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wired-uplink | Get ap uplink(wired) detail
-[**GetWlansConfig**](ApAPI.md#getwlansconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/override | Get ap WLANs override config
-[**GetWlansConfigV2**](ApAPI.md#getwlansconfigv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/override | Get ap WLANs override config V2
-[**ModifyAfcConfig**](ApAPI.md#modifyafcconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc-config | Modify ap AFC config
-[**ModifyAntSwitchConfig**](ApAPI.md#modifyantswitchconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ant-switch | Modify AP antSwitch Setting
+[**GetUplinkWiredDetail**](ApAPI.md#getuplinkwireddetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wired-uplink | Get AP uplink(wired) detail
+[**GetWlansConfigV2**](ApAPI.md#getwlansconfigv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/override | Get AP WLANs override config V2
+[**ModifyAfcConfig**](ApAPI.md#modifyafcconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/afc-config | Modify AP AFC config
+[**ModifyAntSwitchConfig**](ApAPI.md#modifyantswitchconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ant-switch | Modify AP antSwitch setting
 [**ModifyAntennaGainConfig**](ApAPI.md#modifyantennagainconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Modify AP antenna gain config
 [**ModifyApBridgeInfo**](ApAPI.md#modifyapbridgeinfo) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Modify P2P bridge config
-[**ModifyApChannelConfig**](ApAPI.md#modifyapchannelconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-config | Modify ap channel config
-[**ModifyApLoadBalanceConfig**](ApAPI.md#modifyaploadbalanceconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Modify Ap Load Balance Config
-[**ModifyApOfdmaConfig**](ApAPI.md#modifyapofdmaconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Modify ap OFDMA config
-[**ModifyApPort**](ApAPI.md#modifyapport) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ports/{port} | Modify Ap Port Config
-[**ModifyApQosConfig**](ApAPI.md#modifyapqosconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/qos | Modify Ap QoS Config
-[**ModifyApServicesConfig**](ApAPI.md#modifyapservicesconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/service-config | Modify AP Service Config
-[**ModifyApTrunkSettingConfig**](ApAPI.md#modifyaptrunksettingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/trunk-setting | Modify Ap Trunk Setting Config
-[**ModifyApUpLinkConfig**](ApAPI.md#modifyapuplinkconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/uplink-config | Modify Ap Uplink Config
-[**ModifyApVlanConfig**](ApAPI.md#modifyapvlanconfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Modify Ap Vlan Config
-[**ModifyApWlanGroup**](ApAPI.md#modifyapwlangroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wlan-group | Switch ap&#39;s wlan group
-[**ModifyChannelLimitConfig**](ApAPI.md#modifychannellimitconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-limit | Modify ap channel limit config
-[**ModifyGeneralConfig2**](ApAPI.md#modifygeneralconfig2) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/general-config | Modify ap general config
-[**ModifyIpSettingConfig**](ApAPI.md#modifyipsettingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ip-setting | Modify ap ip setting
-[**ModifyIpv6SettingConfig**](ApAPI.md#modifyipv6settingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ipv6-setting | Modify ap ipv6 setting
-[**ModifyPowerSavingConfig**](ApAPI.md#modifypowersavingconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Modify ap power saving config
-[**ModifyRadiosConfig**](ApAPI.md#modifyradiosconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radio-config | Modify ap radio config
-[**ModifyWlansConfig**](ApAPI.md#modifywlansconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/override | Modify ap WLANs override config
-[**ModifyWlansConfigV2**](ApAPI.md#modifywlansconfigv2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/override | Modify ap WLANs override config V2
+[**ModifyApChannelConfig**](ApAPI.md#modifyapchannelconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-config | Modify AP channel config
+[**ModifyApLoadBalanceConfig**](ApAPI.md#modifyaploadbalanceconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Modify AP load balance config
+[**ModifyApManagementSsidConfig**](ApAPI.md#modifyapmanagementssidconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/management-wlan | Modify AP management ssid config
+[**ModifyApOfdmaConfig**](ApAPI.md#modifyapofdmaconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Modify AP OFDMA config
+[**ModifyApPort**](ApAPI.md#modifyapport) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ports/{port} | Modify AP port config
+[**ModifyApQosConfig**](ApAPI.md#modifyapqosconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/qos | Modify AP qos config
+[**ModifyApServicesConfig**](ApAPI.md#modifyapservicesconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/service-config | Modify AP service config
+[**ModifyApTrunkSettingConfig**](ApAPI.md#modifyaptrunksettingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/trunk-setting | Modify AP trunk setting config
+[**ModifyApUpLinkConfig**](ApAPI.md#modifyapuplinkconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/uplink-config | Modify AP uplink config
+[**ModifyApVlanConfig**](ApAPI.md#modifyapvlanconfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/vlan | Modify AP vlan config
+[**ModifyApWlanGroup**](ApAPI.md#modifyapwlangroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/wlan-group | Switch AP&#39;s wlan group
+[**ModifyChannelLimitConfig**](ApAPI.md#modifychannellimitconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-limit | Modify AP channel limit config
+[**ModifyGeneralConfig2**](ApAPI.md#modifygeneralconfig2) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/general-config | Modify AP general config
+[**ModifyIpSettingConfig**](ApAPI.md#modifyipsettingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ip-setting | Modify AP ip setting
+[**ModifyIpv6SettingConfig**](ApAPI.md#modifyipv6settingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ipv6-setting | Modify AP ipv6 setting
+[**ModifyPowerSavingConfig**](ApAPI.md#modifypowersavingconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Modify AP power saving config
+[**ModifyRadiosConfig**](ApAPI.md#modifyradiosconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/radio-config | Modify AP radio config
+[**ModifyWlansConfigV2**](ApAPI.md#modifywlansconfigv2) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/override | Modify AP WLANs override config V2
 [**MspMoveToCustomer3**](ApAPI.md#mspmovetocustomer3) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/aps/move | Move site to target customer
+[**StartParingWindow**](ApAPI.md#startparingwindow) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/start-paring-window | Bridge AP Start Paring Window
+[**StopParingWindow**](ApAPI.md#stopparingwindow) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/stop-paring-window | Bridge AP Stop Paring Window
 [**TriggerRadioFrequencyScan**](ApAPI.md#triggerradiofrequencyscan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/start-rf-scan | Start rf scan
 [**TriggerRadioFrequencyScanV2**](ApAPI.md#triggerradiofrequencyscanv2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/aps/{apMac}/start-rf-scan | Start rf scan v2
 [**TriggerSpeedTest**](ApAPI.md#triggerspeedtest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/start-speed-test | Start speed test
-[**UpdateApLocationUseGps**](ApAPI.md#updateaplocationusegps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/location-gps | Update ap location info use GPS
+[**UpdateApLocationUseGps**](ApAPI.md#updateaplocationusegps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/location-gps | Update AP location info use GPS
 
 
 
@@ -84,7 +86,7 @@ Method | HTTP request | Description
 
 > OperationResponseWithoutResult BatchModifyAntSwitchConfig(ctx, omadacId, siteId).BatchUpdateApAntSwitchOpenApiVO(batchUpdateApAntSwitchOpenApiVO).Execute()
 
-Batch Modify AP antSwitch Setting
+Batch modify AP antSwitch setting
 
 
 
@@ -159,7 +161,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult BatchModifyApVlanConfig(ctx, omadacId, siteId).BatchUpdateApVlanOpenApiVO(batchUpdateApVlanOpenApiVO).Execute()
 
-Batch Modify Ap Vlan Config
+Batch modify AP vlan config
 
 
 
@@ -234,7 +236,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult BatchModifyMultiApPorts(ctx, omadacId, siteId).BatchUpdateMultiApPortsOpenApiVO(batchUpdateMultiApPortsOpenApiVO).Execute()
 
-Batch modify multiple aps port config
+Batch modify multiple APs port config
 
 
 
@@ -384,7 +386,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ChangeP2pRole(ctx, omadacId, siteId).ChangeP2pRole(changeP2pRole).Execute()
 
-Change p2p ap role
+Change p2p AP role
 
 
 
@@ -459,7 +461,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseAfcConfigOpenApiVO GetAfcConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap AFC config
+Get AP AFC config
 
 
 
@@ -535,7 +537,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApAfcInfoOpenApiVO GetAfcInfo(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap AFC Status Info
+Get AP AFC Status Info
 
 
 
@@ -611,7 +613,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseListApBriefInfo GetAllApBriefInfosBySite(ctx, omadacId, siteId).Execute()
 
-Get Lock to Ap brief APs
+Get lock to AP brief APs
 
 
 
@@ -684,7 +686,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApAntSwitchConfigOpenApiVO GetAntSwitchConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get AP antSwitch Setting
+Get AP antSwitch setting
 
 
 
@@ -912,7 +914,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApL3AccessConfigOpenApiVO GetApL3AccessConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap L3Access Config
+Get AP l3Access config
 
 
 
@@ -1063,7 +1065,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApLldpConfigOpenApiVO GetApLldpConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap LLDP Config
+Get AP lldp config
 
 
 
@@ -1139,7 +1141,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApAdvancedLoadBalanceOpenApiVO GetApLoadBalanceConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap Load Balance Config
+Get AP load balance config
 
 
 
@@ -1215,7 +1217,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApOfdmaConfigOpenApiVO GetApOfdmaConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap OFDMA config
+Get AP OFDMA config
 
 
 
@@ -1367,7 +1369,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseListAPLANPortList GetApPortList(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap port list
+Get AP port list
 
 
 
@@ -1443,7 +1445,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseGridVOApVlansVO GetApPortVlans(ctx, omadacId, siteId, apMac).Page(page).PageSize(pageSize).Execute()
 
-Get ap current vlans config
+Get AP current vlans config
 
 
 
@@ -1523,7 +1525,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApAdvancedQosOpenApiVO GetApQoSConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap QoS Config
+Get AP qos config
 
 
 
@@ -1599,7 +1601,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApSnmpConfigOpenApiVO GetApSnmpConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap Snmp Config
+Get AP snmp config
 
 
 
@@ -1675,7 +1677,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApTrunkSettingOpenApiVO GetApTrunkSettingConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap Trunk Setting Config
+Get AP trunk setting config
 
 
 
@@ -1751,7 +1753,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseListApUplinkConfigOpenApiVO GetApUplinkConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap Uplink Config
+Get AP uplink config
 
 
 
@@ -1827,7 +1829,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApVlanConfigOpenApiVO GetApVlanConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap Vlan Config
+Get AP vlan config
 
 
 
@@ -1903,7 +1905,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApVlanConfigV2OpenApiVO GetApVlanConfigV2(ctx, omadacId, siteId, apMac).Execute()
 
-Get Ap Vlan Config v2
+Get AP vlan config v2
 
 
 
@@ -1979,7 +1981,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApAvailableChannelOpenApiVO GetAvailableChannelOfAp(ctx, omadacId, siteId, apMac).Execute()
 
-Get available channel list of ap
+Get available channel list of AP
 
 
 
@@ -2055,7 +2057,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseChannelLimitConfigOpenApiVO GetChannelLimitConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap channel limit config
+Get AP channel limit config
 
 
 
@@ -2131,7 +2133,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApWiredDownlink GetDownlinkWiredDevices(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap downlink(wired) device list
+Get AP downlink(wired) device list
 
 
 
@@ -2207,7 +2209,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApGeneralConfig GetGeneralConfig2(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap general config
+Get AP general config
 
 
 
@@ -2363,7 +2365,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApIPSetting GetIpSettingConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap ip setting
+Get AP ip setting
 
 
 
@@ -2439,7 +2441,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApIPv6Setting GetIpv6SettingConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap ipv6 setting
+Get AP ipv6 setting
 
 
 
@@ -2515,7 +2517,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApLanTraffic GetLanDetail(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap lan traffic info
+Get AP lan traffic info
 
 
 
@@ -2591,7 +2593,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApMeshStatisticsOpenApiVO GetMeshStatistics(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap mesh statistics
+Get AP mesh statistics
 
 
 
@@ -2667,7 +2669,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApMeshStatisticsOpenApiVO GetMeshStatisticsForMsp(ctx, mspId, customerId, siteId, apMac).Execute()
 
-Get ap mesh statistics for MSP view
+Get AP mesh statistics for MSP view
 
 
 
@@ -2746,7 +2748,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseListAPLANPortList GetMultiApPortList(ctx, omadacId, siteId).MultiApPortCapOpenApiVO(multiApPortCapOpenApiVO).Execute()
 
-Get multiple aps port list
+Get multiple APs port list
 
 
 
@@ -2821,7 +2823,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApOverviewInfo GetOverviewDetail(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap info
+Get AP info
 
 
 
@@ -2893,11 +2895,87 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetParingWindowResult
+
+> OperationResponseAPBridgeParingWindowResult GetParingWindowResult(ctx, omadacId, siteId, apMac).Execute()
+
+Get Paring Window Result
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApAPI.GetParingWindowResult(context.Background(), omadacId, siteId, apMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.GetParingWindowResult``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetParingWindowResult`: OperationResponseAPBridgeParingWindowResult
+	fmt.Fprintf(os.Stdout, "Response from `ApAPI.GetParingWindowResult`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetParingWindowResultRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseAPBridgeParingWindowResult**](OperationResponseAPBridgeParingWindowResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetPowerSavingConfig
 
 > OperationResponseApPowerSavingConfigOpenApiVO GetPowerSavingConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap power saving config
+Get AP power saving config
 
 
 
@@ -3125,7 +3203,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApRadiosConfig GetRadiosConfig(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap radio config
+Get AP radio config
 
 
 
@@ -3201,7 +3279,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApRadiosDetail GetRadiosDetail(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap radio detail
+Get AP radio detail
 
 
 
@@ -3353,7 +3431,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApWiredUplink GetUplinkWiredDetail(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap uplink(wired) detail
+Get AP uplink(wired) detail
 
 
 
@@ -3425,87 +3503,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetWlansConfig
-
-> OperationResponseApSsidWlansOpenApiVO GetWlansConfig(ctx, omadacId, siteId, apMac).Execute()
-
-Get ap WLANs override config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteId := "siteId_example" // string | Site ID
-	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ApAPI.GetWlansConfig(context.Background(), omadacId, siteId, apMac).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.GetWlansConfig``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetWlansConfig`: OperationResponseApSsidWlansOpenApiVO
-	fmt.Fprintf(os.Stdout, "Response from `ApAPI.GetWlansConfig`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteId** | **string** | Site ID | 
-**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetWlansConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OperationResponseApSsidWlansOpenApiVO**](OperationResponseApSsidWlansOpenApiVO.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GetWlansConfigV2
 
 > OperationResponseApSsidWlansOpenApiV2VO GetWlansConfigV2(ctx, omadacId, siteId, apMac).Execute()
 
-Get ap WLANs override config V2
+Get AP WLANs override config V2
 
 
 
@@ -3581,7 +3583,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyAfcConfig(ctx, omadacId, siteId, apMac).UpdateAfcConfigOpenApiVO(updateAfcConfigOpenApiVO).Execute()
 
-Modify ap AFC config
+Modify AP AFC config
 
 
 
@@ -3659,7 +3661,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyAntSwitchConfig(ctx, omadacId, siteId, apMac).UpdateApAntSwitchConfig(updateApAntSwitchConfig).Execute()
 
-Modify AP antSwitch Setting
+Modify AP antSwitch setting
 
 
 
@@ -3893,7 +3895,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyApChannelConfig(ctx, omadacId, siteId, apMac).UpdateApChannelConfigOpenApiVO(updateApChannelConfigOpenApiVO).Execute()
 
-Modify ap channel config
+Modify AP channel config
 
 
 
@@ -3971,7 +3973,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyApLoadBalanceConfig(ctx, omadacId, siteId, apMac).UpdateApAdvancedLoadBalanceOpenApiVO(updateApAdvancedLoadBalanceOpenApiVO).Execute()
 
-Modify Ap Load Balance Config
+Modify AP load balance config
 
 
 
@@ -4045,11 +4047,89 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ModifyApManagementSsidConfig
+
+> OperationResponseWithoutResult ModifyApManagementSsidConfig(ctx, omadacId, siteId, apMac).ApManagementSsidConfig(apManagementSsidConfig).Execute()
+
+Modify AP management ssid config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+	apManagementSsidConfig := *openapiclient.NewApManagementSsidConfig(false, "Name_example", int32(123), false) // ApManagementSsidConfig | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApAPI.ModifyApManagementSsidConfig(context.Background(), omadacId, siteId, apMac).ApManagementSsidConfig(apManagementSsidConfig).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.ModifyApManagementSsidConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyApManagementSsidConfig`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `ApAPI.ModifyApManagementSsidConfig`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyApManagementSsidConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **apManagementSsidConfig** | [**ApManagementSsidConfig**](ApManagementSsidConfig.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ModifyApOfdmaConfig
 
 > OperationResponseWithoutResult ModifyApOfdmaConfig(ctx, omadacId, siteId, apMac).UpdateApOfdmaConfigOpenApiVO(updateApOfdmaConfigOpenApiVO).Execute()
 
-Modify ap OFDMA config
+Modify AP OFDMA config
 
 
 
@@ -4127,7 +4207,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyApPort(ctx, omadacId, siteId, apMac, port).ModifyAPLANPort(modifyAPLANPort).Execute()
 
-Modify Ap Port Config
+Modify AP port config
 
 
 
@@ -4208,7 +4288,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyApQosConfig(ctx, omadacId, siteId, apMac).ModifyApAdvancedQosOpenApiVO(modifyApAdvancedQosOpenApiVO).Execute()
 
-Modify Ap QoS Config
+Modify AP qos config
 
 
 
@@ -4286,7 +4366,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApServicesConfigOpenApiVO ModifyApServicesConfig(ctx, omadacId, siteId, apMac).ApServicesConfigOpenApiVO(apServicesConfigOpenApiVO).Execute()
 
-Modify AP Service Config
+Modify AP service config
 
 
 
@@ -4364,7 +4444,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyApTrunkSettingConfig(ctx, omadacId, siteId, apMac).UpdateApTrunkSettingOpenApiVO(updateApTrunkSettingOpenApiVO).Execute()
 
-Modify Ap Trunk Setting Config
+Modify AP trunk setting config
 
 
 
@@ -4442,7 +4522,7 @@ Name | Type | Description  | Notes
 
 > ApUplinkConfigOpenApiVO ModifyApUpLinkConfig(ctx, omadacId, siteId, apMac).ApUplinkConfigOpenApiVO(apUplinkConfigOpenApiVO).Execute()
 
-Modify Ap Uplink Config
+Modify AP uplink config
 
 
 
@@ -4520,7 +4600,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApVlanConfigV2OpenApiVO ModifyApVlanConfig(ctx, omadacId, siteId, apMac).UpdateApVlanOpenApiVO(updateApVlanOpenApiVO).Execute()
 
-Modify Ap Vlan Config
+Modify AP vlan config
 
 
 
@@ -4598,7 +4678,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyApWlanGroup(ctx, omadacId, siteId, apMac).ApUpdateWlanGroupOpenApiVO(apUpdateWlanGroupOpenApiVO).Execute()
 
-Switch ap's wlan group
+Switch AP's wlan group
 
 
 
@@ -4676,7 +4756,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyChannelLimitConfig(ctx, omadacId, siteId, apMac).UpdateChannelLimitConfigOpenApiVO(updateChannelLimitConfigOpenApiVO).Execute()
 
-Modify ap channel limit config
+Modify AP channel limit config
 
 
 
@@ -4754,7 +4834,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyGeneralConfig2(ctx, omadacId, siteId, apMac).ApGeneralConfig(apGeneralConfig).Execute()
 
-Modify ap general config
+Modify AP general config
 
 
 
@@ -4832,7 +4912,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyIpSettingConfig(ctx, omadacId, siteId, apMac).ApIPSetting(apIPSetting).Execute()
 
-Modify ap ip setting
+Modify AP ip setting
 
 
 
@@ -4910,7 +4990,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyIpv6SettingConfig(ctx, omadacId, siteId, apMac).ApIPv6Setting(apIPv6Setting).Execute()
 
-Modify ap ipv6 setting
+Modify AP ipv6 setting
 
 
 
@@ -4988,7 +5068,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyPowerSavingConfig(ctx, omadacId, siteId, apMac).UpdateApPowerSavingConfigOpenApiVO(updateApPowerSavingConfigOpenApiVO).Execute()
 
-Modify ap power saving config
+Modify AP power saving config
 
 
 
@@ -5066,7 +5146,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyRadiosConfig(ctx, omadacId, siteId, apMac).ApRadiosConfig(apRadiosConfig).Execute()
 
-Modify ap radio config
+Modify AP radio config
 
 
 
@@ -5140,89 +5220,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyWlansConfig
-
-> OperationResponseWithoutResult ModifyWlansConfig(ctx, omadacId, siteId, apMac).ApSsidOverrideOpenApiVO(apSsidOverrideOpenApiVO).Execute()
-
-Modify ap WLANs override config
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteId := "siteId_example" // string | Site ID
-	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
-	apSsidOverrideOpenApiVO := *openapiclient.NewApSsidOverrideOpenApiVO([]openapiclient.SsidOverrideOpenApiVO{*openapiclient.NewSsidOverrideOpenApiVO(false, "OverrideSsidName_example", false, false, int32(123))}) // ApSsidOverrideOpenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ApAPI.ModifyWlansConfig(context.Background(), omadacId, siteId, apMac).ApSsidOverrideOpenApiVO(apSsidOverrideOpenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.ModifyWlansConfig``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifyWlansConfig`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `ApAPI.ModifyWlansConfig`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteId** | **string** | Site ID | 
-**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifyWlansConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **apSsidOverrideOpenApiVO** | [**ApSsidOverrideOpenApiVO**](ApSsidOverrideOpenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ModifyWlansConfigV2
 
 > OperationResponseWithoutResult ModifyWlansConfigV2(ctx, omadacId, siteId, apMac).ApSsidOverrideOpenApiV2VO(apSsidOverrideOpenApiV2VO).Execute()
 
-Modify ap WLANs override config V2
+Modify AP WLANs override config V2
 
 
 
@@ -5367,6 +5369,158 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StartParingWindow
+
+> OperationResponseWithoutResult StartParingWindow(ctx, omadacId, siteId, apMac).Execute()
+
+Bridge AP Start Paring Window
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApAPI.StartParingWindow(context.Background(), omadacId, siteId, apMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.StartParingWindow``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `StartParingWindow`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `ApAPI.StartParingWindow`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStartParingWindowRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StopParingWindow
+
+> OperationResponseWithoutResult StopParingWindow(ctx, omadacId, siteId, apMac).Execute()
+
+Bridge AP Stop Paring Window
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApAPI.StopParingWindow(context.Background(), omadacId, siteId, apMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.StopParingWindow``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `StopParingWindow`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `ApAPI.StopParingWindow`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStopParingWindowRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -5610,7 +5764,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseApLocationConfigOpenApiVO UpdateApLocationUseGps(ctx, omadacId, siteId, apMac).Execute()
 
-Update ap location info use GPS
+Update AP location info use GPS
 
 
 

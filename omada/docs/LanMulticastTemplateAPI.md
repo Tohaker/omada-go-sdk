@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateLanMulticastTemplate
 
-> ResponseIdVO CreateLanMulticastTemplate(ctx, omadacId, siteTemplateId).LanMulticastVO(lanMulticastVO).Execute()
+> OperationResponseResponseIdVO CreateLanMulticastTemplate(ctx, omadacId, siteTemplateId).LanMulticastVO(lanMulticastVO).Execute()
 
 Create new lan multicast template
 
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LanMulticastTemplateAPI.CreateLanMulticastTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateLanMulticastTemplate`: ResponseIdVO
+	// response from `CreateLanMulticastTemplate`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `LanMulticastTemplateAPI.CreateLanMulticastTemplate`: %v\n", resp)
 }
 ```
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseIdVO**](ResponseIdVO.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## GetGridLanMulticastTemplates
 
-> OperationResponse GetGridLanMulticastTemplates(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseGridVOLanMulticastVO GetGridLanMulticastTemplates(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).Execute()
 
 Get lan multicast template list
 
@@ -195,7 +195,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LanMulticastTemplateAPI.GetGridLanMulticastTemplates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGridLanMulticastTemplates`: OperationResponse
+	// response from `GetGridLanMulticastTemplates`: OperationResponseGridVOLanMulticastVO
 	fmt.Fprintf(os.Stdout, "Response from `LanMulticastTemplateAPI.GetGridLanMulticastTemplates`: %v\n", resp)
 }
 ```
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseGridVOLanMulticastVO**](OperationResponseGridVOLanMulticastVO.md)
 
 ### Authorization
 

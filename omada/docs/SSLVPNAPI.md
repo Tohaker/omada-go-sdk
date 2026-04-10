@@ -4,6 +4,8 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**BatchDeleteLockedSslVpnTunnel**](SSLVPNAPI.md#batchdeletelockedsslvpntunnel) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels | Batch delete SSL VPN locked tunnel
+[**BatchDeleteSslVpnUserGroup**](SSLVPNAPI.md#batchdeletesslvpnusergroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups | Batch delete SSL VPN user group
 [**CreateLockedSslVpnTunnuel**](SSLVPNAPI.md#createlockedsslvpntunnuel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels | Create locked SSL VPN tunnel
 [**CreateLockedSslVpnUser**](SSLVPNAPI.md#createlockedsslvpnuser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-users | Create SSL VPN locked user
 [**CreateSslVpnResource**](SSLVPNAPI.md#createsslvpnresource) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/resources | Create SSL VPN resource
@@ -23,6 +25,7 @@ Method | HTTP request | Description
 [**GetGridSslVpnServerUser**](SSLVPNAPI.md#getgridsslvpnserveruser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users | Get user list for SSL VPN server
 [**GetGridSslVpnServerUserGroup**](SSLVPNAPI.md#getgridsslvpnserverusergroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups | Get user group list for SSL VPN server
 [**GetGridSslVpnUserInGroup**](SSLVPNAPI.md#getgridsslvpnuseringroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/usergroups/{userGroupId}/users | Get SSL VPN user list in group.
+[**GetGridSslVpnUserInGroupV2**](SSLVPNAPI.md#getgridsslvpnuseringroupv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/vpn/usergroups/{userGroupId}/users | Get SSL VPN user list in group V2.
 [**GetLockedSslVpnTunnuels**](SSLVPNAPI.md#getlockedsslvpntunnuels) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels | Get locked SSL VPN tunnel.
 [**GetRadiusServerInfo**](SSLVPNAPI.md#getradiusserverinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/radius | Get radius server for SSL VPN server
 [**GetSslVpnResourceGroupList**](SSLVPNAPI.md#getsslvpnresourcegrouplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/briefresourcegroups | Get SSL VPN resource group list.
@@ -37,6 +40,156 @@ Method | HTTP request | Description
 [**ModifySslVpnUser**](SSLVPNAPI.md#modifysslvpnuser) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/users/{id} | Modify SSL VPN user
 [**ModifySslVpnUserGroup**](SSLVPNAPI.md#modifysslvpnusergroup) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups/{id} | Modify SSL VPN user group
 
+
+
+## BatchDeleteLockedSslVpnTunnel
+
+> OperationResponseWithoutResult BatchDeleteLockedSslVpnTunnel(ctx, omadacId, siteId).BatchSelectSslUserVO(batchSelectSslUserVO).Execute()
+
+Batch delete SSL VPN locked tunnel
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	batchSelectSslUserVO := *openapiclient.NewBatchSelectSslUserVO() // BatchSelectSslUserVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SSLVPNAPI.BatchDeleteLockedSslVpnTunnel(context.Background(), omadacId, siteId).BatchSelectSslUserVO(batchSelectSslUserVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SSLVPNAPI.BatchDeleteLockedSslVpnTunnel``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `BatchDeleteLockedSslVpnTunnel`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SSLVPNAPI.BatchDeleteLockedSslVpnTunnel`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBatchDeleteLockedSslVpnTunnelRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **batchSelectSslUserVO** | [**BatchSelectSslUserVO**](BatchSelectSslUserVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## BatchDeleteSslVpnUserGroup
+
+> OperationResponseWithoutResult BatchDeleteSslVpnUserGroup(ctx, omadacId, siteId).BatchSelectSslUserVO(batchSelectSslUserVO).Execute()
+
+Batch delete SSL VPN user group
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	batchSelectSslUserVO := *openapiclient.NewBatchSelectSslUserVO() // BatchSelectSslUserVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SSLVPNAPI.BatchDeleteSslVpnUserGroup(context.Background(), omadacId, siteId).BatchSelectSslUserVO(batchSelectSslUserVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SSLVPNAPI.BatchDeleteSslVpnUserGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `BatchDeleteSslVpnUserGroup`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SSLVPNAPI.BatchDeleteSslVpnUserGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBatchDeleteSslVpnUserGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **batchSelectSslUserVO** | [**BatchSelectSslUserVO**](BatchSelectSslUserVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## CreateLockedSslVpnTunnuel
@@ -1022,7 +1175,7 @@ Name | Type | Description  | Notes
 
 ## GetGridLockedSslVpnServerUser
 
-> OperationResponseGridVOSSLVPNLockEntity GetGridLockedSslVpnServerUser(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseGridVOSSLVPNLockEntity GetGridLockedSslVpnServerUser(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).SortsUserName(sortsUserName).SortsIp(sortsIp).SortsLeftLockTime(sortsLeftLockTime).Execute()
 
 Get locked user list for SSL VPN server
 
@@ -1045,10 +1198,14 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	page := int32(56) // int32 | Start page number. Start from 1.
 	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	searchKey := "searchKey_example" // string | Fuzzy query parameters, support field name. (optional)
+	sortsUserName := "sortsUserName_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
+	sortsIp := "sortsIp_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
+	sortsLeftLockTime := "sortsLeftLockTime_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SSLVPNAPI.GetGridLockedSslVpnServerUser(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+	resp, r, err := apiClient.SSLVPNAPI.GetGridLockedSslVpnServerUser(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).SortsUserName(sortsUserName).SortsIp(sortsIp).SortsLeftLockTime(sortsLeftLockTime).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SSLVPNAPI.GetGridLockedSslVpnServerUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1078,6 +1235,10 @@ Name | Type | Description  | Notes
 
  **page** | **int32** | Start page number. Start from 1. | 
  **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **searchKey** | **string** | Fuzzy query parameters, support field name. | 
+ **sortsUserName** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect | 
+ **sortsIp** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect | 
+ **sortsLeftLockTime** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect | 
 
 ### Return type
 
@@ -1099,7 +1260,7 @@ Name | Type | Description  | Notes
 
 ## GetGridSslVpnServerResource
 
-> OperationResponseGridVOSslVpnResourceEntity GetGridSslVpnServerResource(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseGridVOSslVpnResourceEntity GetGridSslVpnServerResource(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
 
 Get resource list for SSL VPN server
 
@@ -1122,10 +1283,11 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	page := int32(56) // int32 | Start page number. Start from 1.
 	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	searchKey := "searchKey_example" // string | Fuzzy query parameters, support field name. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SSLVPNAPI.GetGridSslVpnServerResource(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+	resp, r, err := apiClient.SSLVPNAPI.GetGridSslVpnServerResource(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SSLVPNAPI.GetGridSslVpnServerResource``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1155,6 +1317,7 @@ Name | Type | Description  | Notes
 
  **page** | **int32** | Start page number. Start from 1. | 
  **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **searchKey** | **string** | Fuzzy query parameters, support field name. | 
 
 ### Return type
 
@@ -1330,7 +1493,7 @@ Name | Type | Description  | Notes
 
 ## GetGridSslVpnServerUserGroup
 
-> OperationResponseGridVOSslVpnUserGroupEntity GetGridSslVpnServerUserGroup(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity GetGridSslVpnServerUserGroup(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
 
 Get user group list for SSL VPN server
 
@@ -1353,15 +1516,16 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	page := int32(56) // int32 | Start page number. Start from 1.
 	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	searchKey := "searchKey_example" // string | Fuzzy query parameters, support field name. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SSLVPNAPI.GetGridSslVpnServerUserGroup(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+	resp, r, err := apiClient.SSLVPNAPI.GetGridSslVpnServerUserGroup(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SSLVPNAPI.GetGridSslVpnServerUserGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGridSslVpnServerUserGroup`: OperationResponseGridVOSslVpnUserGroupEntity
+	// response from `GetGridSslVpnServerUserGroup`: OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity
 	fmt.Fprintf(os.Stdout, "Response from `SSLVPNAPI.GetGridSslVpnServerUserGroup`: %v\n", resp)
 }
 ```
@@ -1386,10 +1550,11 @@ Name | Type | Description  | Notes
 
  **page** | **int32** | Start page number. Start from 1. | 
  **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **searchKey** | **string** | Fuzzy query parameters, support field name. | 
 
 ### Return type
 
-[**OperationResponseGridVOSslVpnUserGroupEntity**](OperationResponseGridVOSslVpnUserGroupEntity.md)
+[**OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity**](OperationResponseSslVpnUserGroupGridVOSslVpnUserGroupEntity.md)
 
 ### Authorization
 
@@ -1470,6 +1635,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity**](OperationResponseSslVpnUserOpenApiGridVOSslVpnUserEntity.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridSslVpnUserInGroupV2
+
+> OperationResponseSslVpnUserGridVOVpnUserInfoVO GetGridSslVpnUserInGroupV2(ctx, omadacId, siteId, userGroupId).Page(page).PageSize(pageSize).SearchKey(searchKey).SortsUsername(sortsUsername).Execute()
+
+Get SSL VPN user list in group V2.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	userGroupId := "userGroupId_example" // string | User Group Id
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	searchKey := "searchKey_example" // string | Fuzzy query parameters, support field user name. (optional)
+	sortsUsername := "sortsUsername_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effectuser name. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SSLVPNAPI.GetGridSslVpnUserInGroupV2(context.Background(), omadacId, siteId, userGroupId).Page(page).PageSize(pageSize).SearchKey(searchKey).SortsUsername(sortsUsername).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SSLVPNAPI.GetGridSslVpnUserInGroupV2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridSslVpnUserInGroupV2`: OperationResponseSslVpnUserGridVOVpnUserInfoVO
+	fmt.Fprintf(os.Stdout, "Response from `SSLVPNAPI.GetGridSslVpnUserInGroupV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**userGroupId** | **string** | User Group Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridSslVpnUserInGroupV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **searchKey** | **string** | Fuzzy query parameters, support field user name. | 
+ **sortsUsername** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effectuser name. | 
+
+### Return type
+
+[**OperationResponseSslVpnUserGridVOVpnUserInfoVO**](OperationResponseSslVpnUserGridVOVpnUserInfoVO.md)
 
 ### Authorization
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CurrentSize** | Pointer to **int32** | Number of entries per page. | [optional] 
 **Data** | Pointer to [**[]DhcpUserVO**](DhcpUserVO.md) |  | [optional] 
 **NetNameToIdMap** | Pointer to **map[string]string** | Mapping between lan network name and lan network ID | [optional] 
+**SelectedNum** | Pointer to **int64** | The number of DHCP users that cannot be selected when adding from the user list in DHCP reservation. | [optional] 
 **ServerNameToMacMap** | Pointer to **map[string][]string** | Mapping between server name and macs | [optional] 
 **ServerNameToStackIdMap** | Pointer to **map[string][]string** | Mapping between server name and stack IDs | [optional] 
 **TotalRows** | Pointer to **int64** | Total rows of all items. | [optional] 
@@ -130,6 +131,31 @@ SetNetNameToIdMap sets NetNameToIdMap field to given value.
 `func (o *DhcpUserGridVODhcpUserVO) HasNetNameToIdMap() bool`
 
 HasNetNameToIdMap returns a boolean if a field has been set.
+
+### GetSelectedNum
+
+`func (o *DhcpUserGridVODhcpUserVO) GetSelectedNum() int64`
+
+GetSelectedNum returns the SelectedNum field if non-nil, zero value otherwise.
+
+### GetSelectedNumOk
+
+`func (o *DhcpUserGridVODhcpUserVO) GetSelectedNumOk() (*int64, bool)`
+
+GetSelectedNumOk returns a tuple with the SelectedNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelectedNum
+
+`func (o *DhcpUserGridVODhcpUserVO) SetSelectedNum(v int64)`
+
+SetSelectedNum sets SelectedNum field to given value.
+
+### HasSelectedNum
+
+`func (o *DhcpUserGridVODhcpUserVO) HasSelectedNum() bool`
+
+HasSelectedNum returns a boolean if a field has been set.
 
 ### GetServerNameToMacMap
 

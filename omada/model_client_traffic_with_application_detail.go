@@ -25,20 +25,28 @@ type ClientTrafficWithApplicationDetail struct {
 	ClientName *string `json:"clientName,omitempty"`
 	// The download traffic used by the client.
 	Download *int64 `json:"download,omitempty"`
+	// The percentage of download traffic used by the client.
+	DownloadTrafficPercent *float64 `json:"downloadTrafficPercent,omitempty"`
 	// The mac of the client.
 	Mac *string `json:"mac,omitempty"`
 	// Whether the client is managed by the controller..
 	Manager *bool `json:"manager,omitempty"`
+	// Lan network name.
+	Network *string `json:"network,omitempty"`
 	// The number of applications using by the client.
 	TotalApplications *int32 `json:"totalApplications,omitempty"`
 	// The total amount of traffic used by the client.
 	Traffic *int64 `json:"traffic,omitempty"`
-	// The percentage of download traffic used by the client.
+	// The percentage of traffic used by the client.
 	TrafficPercent *float64 `json:"trafficPercent,omitempty"`
 	// The type of the client.
 	Type *string `json:"type,omitempty"`
 	// The upload traffic used by the client.
 	Upload *int64 `json:"upload,omitempty"`
+	// The percentage of upload traffic used by the client.
+	UploadTrafficPercent *float64 `json:"uploadTrafficPercent,omitempty"`
+	// VLAN ID. The VLAN ID range is 1–4096 or Untag.
+	VlanId *string `json:"vlanId,omitempty"`
 }
 
 // NewClientTrafficWithApplicationDetail instantiates a new ClientTrafficWithApplicationDetail object
@@ -154,6 +162,38 @@ func (o *ClientTrafficWithApplicationDetail) SetDownload(v int64) {
 	o.Download = &v
 }
 
+// GetDownloadTrafficPercent returns the DownloadTrafficPercent field value if set, zero value otherwise.
+func (o *ClientTrafficWithApplicationDetail) GetDownloadTrafficPercent() float64 {
+	if o == nil || IsNil(o.DownloadTrafficPercent) {
+		var ret float64
+		return ret
+	}
+	return *o.DownloadTrafficPercent
+}
+
+// GetDownloadTrafficPercentOk returns a tuple with the DownloadTrafficPercent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientTrafficWithApplicationDetail) GetDownloadTrafficPercentOk() (*float64, bool) {
+	if o == nil || IsNil(o.DownloadTrafficPercent) {
+		return nil, false
+	}
+	return o.DownloadTrafficPercent, true
+}
+
+// HasDownloadTrafficPercent returns a boolean if a field has been set.
+func (o *ClientTrafficWithApplicationDetail) HasDownloadTrafficPercent() bool {
+	if o != nil && !IsNil(o.DownloadTrafficPercent) {
+		return true
+	}
+
+	return false
+}
+
+// SetDownloadTrafficPercent gets a reference to the given float64 and assigns it to the DownloadTrafficPercent field.
+func (o *ClientTrafficWithApplicationDetail) SetDownloadTrafficPercent(v float64) {
+	o.DownloadTrafficPercent = &v
+}
+
 // GetMac returns the Mac field value if set, zero value otherwise.
 func (o *ClientTrafficWithApplicationDetail) GetMac() string {
 	if o == nil || IsNil(o.Mac) {
@@ -216,6 +256,38 @@ func (o *ClientTrafficWithApplicationDetail) HasManager() bool {
 // SetManager gets a reference to the given bool and assigns it to the Manager field.
 func (o *ClientTrafficWithApplicationDetail) SetManager(v bool) {
 	o.Manager = &v
+}
+
+// GetNetwork returns the Network field value if set, zero value otherwise.
+func (o *ClientTrafficWithApplicationDetail) GetNetwork() string {
+	if o == nil || IsNil(o.Network) {
+		var ret string
+		return ret
+	}
+	return *o.Network
+}
+
+// GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientTrafficWithApplicationDetail) GetNetworkOk() (*string, bool) {
+	if o == nil || IsNil(o.Network) {
+		return nil, false
+	}
+	return o.Network, true
+}
+
+// HasNetwork returns a boolean if a field has been set.
+func (o *ClientTrafficWithApplicationDetail) HasNetwork() bool {
+	if o != nil && !IsNil(o.Network) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetwork gets a reference to the given string and assigns it to the Network field.
+func (o *ClientTrafficWithApplicationDetail) SetNetwork(v string) {
+	o.Network = &v
 }
 
 // GetTotalApplications returns the TotalApplications field value if set, zero value otherwise.
@@ -378,6 +450,70 @@ func (o *ClientTrafficWithApplicationDetail) SetUpload(v int64) {
 	o.Upload = &v
 }
 
+// GetUploadTrafficPercent returns the UploadTrafficPercent field value if set, zero value otherwise.
+func (o *ClientTrafficWithApplicationDetail) GetUploadTrafficPercent() float64 {
+	if o == nil || IsNil(o.UploadTrafficPercent) {
+		var ret float64
+		return ret
+	}
+	return *o.UploadTrafficPercent
+}
+
+// GetUploadTrafficPercentOk returns a tuple with the UploadTrafficPercent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientTrafficWithApplicationDetail) GetUploadTrafficPercentOk() (*float64, bool) {
+	if o == nil || IsNil(o.UploadTrafficPercent) {
+		return nil, false
+	}
+	return o.UploadTrafficPercent, true
+}
+
+// HasUploadTrafficPercent returns a boolean if a field has been set.
+func (o *ClientTrafficWithApplicationDetail) HasUploadTrafficPercent() bool {
+	if o != nil && !IsNil(o.UploadTrafficPercent) {
+		return true
+	}
+
+	return false
+}
+
+// SetUploadTrafficPercent gets a reference to the given float64 and assigns it to the UploadTrafficPercent field.
+func (o *ClientTrafficWithApplicationDetail) SetUploadTrafficPercent(v float64) {
+	o.UploadTrafficPercent = &v
+}
+
+// GetVlanId returns the VlanId field value if set, zero value otherwise.
+func (o *ClientTrafficWithApplicationDetail) GetVlanId() string {
+	if o == nil || IsNil(o.VlanId) {
+		var ret string
+		return ret
+	}
+	return *o.VlanId
+}
+
+// GetVlanIdOk returns a tuple with the VlanId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientTrafficWithApplicationDetail) GetVlanIdOk() (*string, bool) {
+	if o == nil || IsNil(o.VlanId) {
+		return nil, false
+	}
+	return o.VlanId, true
+}
+
+// HasVlanId returns a boolean if a field has been set.
+func (o *ClientTrafficWithApplicationDetail) HasVlanId() bool {
+	if o != nil && !IsNil(o.VlanId) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanId gets a reference to the given string and assigns it to the VlanId field.
+func (o *ClientTrafficWithApplicationDetail) SetVlanId(v string) {
+	o.VlanId = &v
+}
+
 func (o ClientTrafficWithApplicationDetail) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -397,11 +533,17 @@ func (o ClientTrafficWithApplicationDetail) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Download) {
 		toSerialize["download"] = o.Download
 	}
+	if !IsNil(o.DownloadTrafficPercent) {
+		toSerialize["downloadTrafficPercent"] = o.DownloadTrafficPercent
+	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac
 	}
 	if !IsNil(o.Manager) {
 		toSerialize["manager"] = o.Manager
+	}
+	if !IsNil(o.Network) {
+		toSerialize["network"] = o.Network
 	}
 	if !IsNil(o.TotalApplications) {
 		toSerialize["totalApplications"] = o.TotalApplications
@@ -417,6 +559,12 @@ func (o ClientTrafficWithApplicationDetail) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.Upload) {
 		toSerialize["upload"] = o.Upload
+	}
+	if !IsNil(o.UploadTrafficPercent) {
+		toSerialize["uploadTrafficPercent"] = o.UploadTrafficPercent
+	}
+	if !IsNil(o.VlanId) {
+		toSerialize["vlanId"] = o.VlanId
 	}
 	return toSerialize, nil
 }

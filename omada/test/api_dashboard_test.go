@@ -292,6 +292,38 @@ func Test_omada_DashboardAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DashboardAPIService GetSpeedTestV2Result", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var gatewayMac string
+
+		resp, httpRes, err := apiClient.DashboardAPI.GetSpeedTestV2Result(context.Background(), omadacId, siteId, gatewayMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DashboardAPIService GetSpeedTestV2ResultDateList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var gatewayMac string
+
+		resp, httpRes, err := apiClient.DashboardAPI.GetSpeedTestV2ResultDateList(context.Background(), omadacId, siteId, gatewayMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DashboardAPIService GetSwitchSummary", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -436,6 +468,22 @@ func Test_omada_DashboardAPIService(t *testing.T) {
 		var tabId string
 
 		resp, httpRes, err := apiClient.DashboardAPI.RemoveTab(context.Background(), omadacId, siteId, tabId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DashboardAPIService StartSpeedTestV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var gatewayMac string
+
+		resp, httpRes, err := apiClient.DashboardAPI.StartSpeedTestV2(context.Background(), omadacId, siteId, gatewayMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

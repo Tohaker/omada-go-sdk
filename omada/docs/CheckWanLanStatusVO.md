@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**WanList** | Pointer to [**[]OsgWanStatusVO**](OsgWanStatusVO.md) |  | [optional] 
 **AdoptedGateway** | Pointer to **bool** |  | [optional] 
 **HasGateway** | Pointer to **bool** |  | [optional] 
 **IptvPorts** | Pointer to **[]string** |  | [optional] 
@@ -14,7 +15,6 @@ Name | Type | Description | Notes
 **PortName** | Pointer to **map[string]string** |  | [optional] 
 **PreOsgModel** | Pointer to **int32** |  | [optional] 
 **SupportIpv6** | Pointer to **int32** |  | [optional] 
-**WanList** | Pointer to [**[]OsgWanStatusVO**](OsgWanStatusVO.md) |  | [optional] 
 **WirelessRouter** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -35,6 +35,31 @@ will change when the set of required properties is changed
 NewCheckWanLanStatusVOWithDefaults instantiates a new CheckWanLanStatusVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetWanList
+
+`func (o *CheckWanLanStatusVO) GetWanList() []OsgWanStatusVO`
+
+GetWanList returns the WanList field if non-nil, zero value otherwise.
+
+### GetWanListOk
+
+`func (o *CheckWanLanStatusVO) GetWanListOk() (*[]OsgWanStatusVO, bool)`
+
+GetWanListOk returns a tuple with the WanList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWanList
+
+`func (o *CheckWanLanStatusVO) SetWanList(v []OsgWanStatusVO)`
+
+SetWanList sets WanList field to given value.
+
+### HasWanList
+
+`func (o *CheckWanLanStatusVO) HasWanList() bool`
+
+HasWanList returns a boolean if a field has been set.
 
 ### GetAdoptedGateway
 
@@ -285,31 +310,6 @@ SetSupportIpv6 sets SupportIpv6 field to given value.
 `func (o *CheckWanLanStatusVO) HasSupportIpv6() bool`
 
 HasSupportIpv6 returns a boolean if a field has been set.
-
-### GetWanList
-
-`func (o *CheckWanLanStatusVO) GetWanList() []OsgWanStatusVO`
-
-GetWanList returns the WanList field if non-nil, zero value otherwise.
-
-### GetWanListOk
-
-`func (o *CheckWanLanStatusVO) GetWanListOk() (*[]OsgWanStatusVO, bool)`
-
-GetWanListOk returns a tuple with the WanList field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWanList
-
-`func (o *CheckWanLanStatusVO) SetWanList(v []OsgWanStatusVO)`
-
-SetWanList sets WanList field to given value.
-
-### HasWanList
-
-`func (o *CheckWanLanStatusVO) HasWanList() bool`
-
-HasWanList returns a boolean if a field has been set.
 
 ### GetWirelessRouter
 

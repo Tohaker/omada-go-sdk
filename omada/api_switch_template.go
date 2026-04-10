@@ -209,6 +209,22 @@ type SwitchTemplateAPI interface {
 	GetBatchSwitchTemplateExistNetworksExecute(r SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksRequest) (*OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO, *http.Response, error)
 
 	/*
+	GetBatchSwitchTemplateExistNetworksV2 Get the networks intersections existing on multiple switch templates V2
+
+	Get the networks intersections existing on multiple switch templates.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44402  -  Device template does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request
+	*/
+	GetBatchSwitchTemplateExistNetworksV2(ctx context.Context, omadacId string, siteTemplateId string) SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request
+
+	// GetBatchSwitchTemplateExistNetworksV2Execute executes the request
+	//  @return OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO
+	GetBatchSwitchTemplateExistNetworksV2Execute(r SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request) (*OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO, *http.Response, error)
+
+	/*
 	GetGridPortAndLagNetworks Get the networks used on switch template's ports and LAGs
 
 	Get the networks used on switch template's ports and LAGs.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44402  -  Device template does not exist.
@@ -1928,6 +1944,138 @@ func (a *SwitchTemplateAPIService) GetBatchSwitchTemplateExistNetworksExecute(r 
 	}
 	// body params
 	localVarPostBody = r.oswMacListVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request struct {
+	ctx context.Context
+	ApiService SwitchTemplateAPI
+	omadacId string
+	siteTemplateId string
+	oswDeviceTemplateIdListVO *OswDeviceTemplateIdListVO
+}
+
+func (r SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request) OswDeviceTemplateIdListVO(oswDeviceTemplateIdListVO OswDeviceTemplateIdListVO) SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request {
+	r.oswDeviceTemplateIdListVO = &oswDeviceTemplateIdListVO
+	return r
+}
+
+func (r SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request) Execute() (*OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetBatchSwitchTemplateExistNetworksV2Execute(r)
+}
+
+/*
+GetBatchSwitchTemplateExistNetworksV2 Get the networks intersections existing on multiple switch templates V2
+
+Get the networks intersections existing on multiple switch templates.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44402  -  Device template does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request
+*/
+func (a *SwitchTemplateAPIService) GetBatchSwitchTemplateExistNetworksV2(ctx context.Context, omadacId string, siteTemplateId string) SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request {
+	return SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO
+func (a *SwitchTemplateAPIService) GetBatchSwitchTemplateExistNetworksV2Execute(r SwitchTemplateAPIGetBatchSwitchTemplateExistNetworksV2Request) (*OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchTemplateAPIService.GetBatchSwitchTemplateExistNetworksV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/exist-network"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.oswDeviceTemplateIdListVO == nil {
+		return localVarReturnValue, nil, reportError("oswDeviceTemplateIdListVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.oswDeviceTemplateIdListVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -14,14 +14,19 @@ Method | HTTP request | Description
 [**EditVoucherGroupPattern**](VoucherAPI.md#editvouchergrouppattern) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId}/pattern | Edit voucher group pattern
 [**ExportVouchersWithSiteByCloudAccess**](VoucherAPI.md#exportvoucherswithsitebycloudaccess) | **Post** /openapi/v1/{omadacId}/files/hotspot/sites/{siteId}/vouchers/export | Export voucher list to file
 [**GetAllTimeVoucherSummary**](VoucherAPI.md#getalltimevouchersummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/summary | Get voucher summary
+[**GetAllTimeVoucherSummaryForGroup**](VoucherAPI.md#getalltimevouchersummaryforgroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/summary/voucher-groups/{groupId} | Get voucher summary for voucher group
 [**GetGridVoucherGroups**](VoucherAPI.md#getgridvouchergroups) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups | Get Voucher Group List
 [**GetGroupConfigLimit**](VoucherAPI.md#getgroupconfiglimit) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/config-limit | Get voucher group config limit
 [**GetVoucher**](VoucherAPI.md#getvoucher) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/{id} | Get a voucher
 [**GetVoucherCurrencyCandidates**](VoucherAPI.md#getvouchercurrencycandidates) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/currency-list | Get voucher currency candidates
 [**GetVoucherDistributionByDuration**](VoucherAPI.md#getvoucherdistributionbyduration) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/duration | Get voucher distribution by duration
+[**GetVoucherDistributionByDurationForGroup**](VoucherAPI.md#getvoucherdistributionbydurationforgroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/duration/voucher-groups/{groupId} | Get voucher distribution of voucher group by duration
 [**GetVoucherDistributionByPrice**](VoucherAPI.md#getvoucherdistributionbyprice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/unit-price | Get voucher distribution by price
+[**GetVoucherDistributionByPriceForGroup**](VoucherAPI.md#getvoucherdistributionbypriceforgroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/distribution/unit-price/voucher-groups/{groupId} | Get voucher distribution of voucher group by price
 [**GetVoucherGroupDetail**](VoucherAPI.md#getvouchergroupdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/{groupId} | Get Voucher Group Detail
+[**GetVoucherGroupOptions**](VoucherAPI.md#getvouchergroupoptions) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-group-options | Get voucher group options
 [**GetVoucherHistoryStatistics**](VoucherAPI.md#getvoucherhistorystatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history | Get voucher history statistics
+[**GetVoucherHistoryStatisticsForGroup**](VoucherAPI.md#getvoucherhistorystatisticsforgroup) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/vouchers/statistics/history/voucher-groups/{groupId} | Get voucher history statistics of voucher group
 [**GetVoucherLogo**](VoucherAPI.md#getvoucherlogo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/files/voucher/logos/{picId} | Get voucher logo
 [**ModifyHotspotSetting**](VoucherAPI.md#modifyhotspotsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/setting | Modify voucher currency
 [**PrintSelectedVoucherGroups**](VoucherAPI.md#printselectedvouchergroups) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/voucher-groups/batch/print-unused | Get unused vouchers in selected voucher groups
@@ -785,6 +790,82 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetAllTimeVoucherSummaryForGroup
+
+> OperationResponseAllTimeVoucherSummaryOpenApiVO GetAllTimeVoucherSummaryForGroup(ctx, omadacId, siteId, groupId).Execute()
+
+Get voucher summary for voucher group
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	groupId := "groupId_example" // string | Voucher group ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoucherAPI.GetAllTimeVoucherSummaryForGroup(context.Background(), omadacId, siteId, groupId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoucherAPI.GetAllTimeVoucherSummaryForGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAllTimeVoucherSummaryForGroup`: OperationResponseAllTimeVoucherSummaryOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `VoucherAPI.GetAllTimeVoucherSummaryForGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**groupId** | **string** | Voucher group ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAllTimeVoucherSummaryForGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseAllTimeVoucherSummaryOpenApiVO**](OperationResponseAllTimeVoucherSummaryOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetGridVoucherGroups
 
 > OperationResponseGridVOVoucherGroupOpenApiVO GetGridVoucherGroups(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SortsName(sortsName).SortsCreateTime(sortsCreateTime).FiltersTimeStart(filtersTimeStart).FiltersTimeEnd(filtersTimeEnd).SearchKey(searchKey).Execute()
@@ -1171,6 +1252,90 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetVoucherDistributionByDurationForGroup
+
+> OperationResponseGridVOVoucherDurationDistributionOpenApiVO GetVoucherDistributionByDurationForGroup(ctx, omadacId, siteId, groupId).Page(page).PageSize(pageSize).FiltersTimeStart(filtersTimeStart).FiltersTimeEnd(filtersTimeEnd).Execute()
+
+Get voucher distribution of voucher group by duration
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	filtersTimeStart := int64(789) // int64 | Filter query parameters, support field time range: start timestamp (second).
+	filtersTimeEnd := int64(789) // int64 | Filter query parameters, support field time range: end timestamp (second).
+	groupId := "groupId_example" // string | groupId
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoucherAPI.GetVoucherDistributionByDurationForGroup(context.Background(), omadacId, siteId, groupId).Page(page).PageSize(pageSize).FiltersTimeStart(filtersTimeStart).FiltersTimeEnd(filtersTimeEnd).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoucherAPI.GetVoucherDistributionByDurationForGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetVoucherDistributionByDurationForGroup`: OperationResponseGridVOVoucherDurationDistributionOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `VoucherAPI.GetVoucherDistributionByDurationForGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**groupId** | **string** | groupId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetVoucherDistributionByDurationForGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **filtersTimeStart** | **int64** | Filter query parameters, support field time range: start timestamp (second). | 
+ **filtersTimeEnd** | **int64** | Filter query parameters, support field time range: end timestamp (second). | 
+
+
+### Return type
+
+[**OperationResponseGridVOVoucherDurationDistributionOpenApiVO**](OperationResponseGridVOVoucherDurationDistributionOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetVoucherDistributionByPrice
 
 > OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO GetVoucherDistributionByPrice(ctx, omadacId, siteId).FiltersTimeStart(filtersTimeStart).FiltersTimeEnd(filtersTimeEnd).Execute()
@@ -1229,6 +1394,90 @@ Name | Type | Description  | Notes
 
  **filtersTimeStart** | **int64** | Filter query parameters, support field time range: start timestamp (second). | 
  **filtersTimeEnd** | **int64** | Filter query parameters, support field time range: end timestamp (second). | 
+
+### Return type
+
+[**OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO**](OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetVoucherDistributionByPriceForGroup
+
+> OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO GetVoucherDistributionByPriceForGroup(ctx, omadacId, siteId, groupId).Page(page).PageSize(pageSize).FiltersTimeStart(filtersTimeStart).FiltersTimeEnd(filtersTimeEnd).Execute()
+
+Get voucher distribution of voucher group by price
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	filtersTimeStart := int64(789) // int64 | Filter query parameters, support field time range: start timestamp (second).
+	filtersTimeEnd := int64(789) // int64 | Filter query parameters, support field time range: end timestamp (second).
+	groupId := "groupId_example" // string | groupId
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoucherAPI.GetVoucherDistributionByPriceForGroup(context.Background(), omadacId, siteId, groupId).Page(page).PageSize(pageSize).FiltersTimeStart(filtersTimeStart).FiltersTimeEnd(filtersTimeEnd).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoucherAPI.GetVoucherDistributionByPriceForGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetVoucherDistributionByPriceForGroup`: OperationResponseGridVOVoucherUnitPriceDistributionOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `VoucherAPI.GetVoucherDistributionByPriceForGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**groupId** | **string** | groupId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetVoucherDistributionByPriceForGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **filtersTimeStart** | **int64** | Filter query parameters, support field time range: start timestamp (second). | 
+ **filtersTimeEnd** | **int64** | Filter query parameters, support field time range: end timestamp (second). | 
+
 
 ### Return type
 
@@ -1334,6 +1583,83 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetVoucherGroupOptions
+
+> OperationResponseGridVOVoucherGroupOptionOpenApiVO GetVoucherGroupOptions(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+
+Get voucher group options
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoucherAPI.GetVoucherGroupOptions(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoucherAPI.GetVoucherGroupOptions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetVoucherGroupOptions`: OperationResponseGridVOVoucherGroupOptionOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `VoucherAPI.GetVoucherGroupOptions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetVoucherGroupOptionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseGridVOVoucherGroupOptionOpenApiVO**](OperationResponseGridVOVoucherGroupOptionOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetVoucherHistoryStatistics
 
 > OperationResponseVoucherStatisticsHistoryOpenApiVO GetVoucherHistoryStatistics(ctx, omadacId, siteId).FiltersTimeStart(filtersTimeStart).FiltersTimeEnd(filtersTimeEnd).Execute()
@@ -1392,6 +1718,86 @@ Name | Type | Description  | Notes
 
  **filtersTimeStart** | **int64** | Filter query parameters, support field time range: start timestamp (second). | 
  **filtersTimeEnd** | **int64** | Filter query parameters, support field time range: end timestamp (second). | 
+
+### Return type
+
+[**OperationResponseVoucherStatisticsHistoryOpenApiVO**](OperationResponseVoucherStatisticsHistoryOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetVoucherHistoryStatisticsForGroup
+
+> OperationResponseVoucherStatisticsHistoryOpenApiVO GetVoucherHistoryStatisticsForGroup(ctx, omadacId, siteId, groupId).FiltersTimeStart(filtersTimeStart).FiltersTimeEnd(filtersTimeEnd).Execute()
+
+Get voucher history statistics of voucher group
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	filtersTimeStart := int64(789) // int64 | Filter query parameters, support field time range: start timestamp (second).
+	filtersTimeEnd := int64(789) // int64 | Filter query parameters, support field time range: end timestamp (second).
+	groupId := "groupId_example" // string | groupId
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoucherAPI.GetVoucherHistoryStatisticsForGroup(context.Background(), omadacId, siteId, groupId).FiltersTimeStart(filtersTimeStart).FiltersTimeEnd(filtersTimeEnd).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoucherAPI.GetVoucherHistoryStatisticsForGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetVoucherHistoryStatisticsForGroup`: OperationResponseVoucherStatisticsHistoryOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `VoucherAPI.GetVoucherHistoryStatisticsForGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**groupId** | **string** | groupId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetVoucherHistoryStatisticsForGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **filtersTimeStart** | **int64** | Filter query parameters, support field time range: start timestamp (second). | 
+ **filtersTimeEnd** | **int64** | Filter query parameters, support field time range: end timestamp (second). | 
+
 
 ### Return type
 

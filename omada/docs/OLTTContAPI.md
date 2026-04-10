@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ## GetTcontList
 
-> OperationResponseListTcontVO GetTcontList(ctx, omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+> OperationResponseListTcontVO GetTcontList(ctx, omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 
 Get t-cont list
 
@@ -280,11 +280,11 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
 	lineProfileId := "lineProfileId_example" // string | Line Profile ID should be a number between 0-512
-	dto := *openapiclient.NewTcontListQueryDTO() // TcontListQueryDTO | 
+	queryParam := *openapiclient.NewTcontListQueryDTO() // TcontListQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTTContAPI.GetTcontList(context.Background(), omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTTContAPI.GetTcontList(context.Background(), omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTTContAPI.GetTcontList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**TcontListQueryDTO**](TcontListQueryDTO.md) |  | 
+ **queryParam** | [**TcontListQueryDTO**](TcontListQueryDTO.md) |  | 
 
 ### Return type
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ## GetTcontPage
 
-> OperationResponsePageResponseTcontVO GetTcontPage(ctx, omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+> OperationResponsePageResponseTcontVO GetTcontPage(ctx, omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 
 Get t-cont page
 
@@ -361,11 +361,11 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
 	lineProfileId := "lineProfileId_example" // string | Line Profile ID should be a number between 0-512
-	dto := *openapiclient.NewTcontPageQueryDTO() // TcontPageQueryDTO | 
+	queryParam := *openapiclient.NewTcontPageQueryDTO() // TcontPageQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTTContAPI.GetTcontPage(context.Background(), omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTTContAPI.GetTcontPage(context.Background(), omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTTContAPI.GetTcontPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**TcontPageQueryDTO**](TcontPageQueryDTO.md) |  | 
+ **queryParam** | [**TcontPageQueryDTO**](TcontPageQueryDTO.md) |  | 
 
 ### Return type
 

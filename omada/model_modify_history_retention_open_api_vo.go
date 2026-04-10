@@ -25,8 +25,12 @@ type ModifyHistoryRetentionOpenApiVO struct {
 	ClientDataTrendDaily *int32 `json:"clientDataTrendDaily,omitempty"`
 	// Whether the client data trend records is recorded.
 	ClientDataTrendEnable *bool `json:"clientDataTrendEnable,omitempty"`
+	// Whether client health is enabled. When enabled, client health data will be recorded, which may consume a significant amount of storage space.
+	ClientHealthEnable *bool `json:"clientHealthEnable,omitempty"`
 	// Retention configuration of client History(only effective in local controller), clientHistory should be a value as follows: -1: Disabled; 0: All Time(Windows, Linux Only); 7: 7days; 31: 31days; 90: 90days; 180: 180days; 365: 365days.
 	ClientHistory *int32 `json:"clientHistory,omitempty"`
+	// Whether client recognition is enabled. With the feature enabled, network devices will report client information in real time to ensure the accuracy of client recognition. Cloud Access is required for client recognition.
+	ClientRecognitionEnable *bool `json:"clientRecognitionEnable,omitempty"`
 	// Whether the clients' history data is recorded.
 	ClientsDataEnable bool `json:"clientsDataEnable"`
 	// Retention configuration of time series with daily granularity, daily should be a value as follows: 90: 90days; 180: 180days; 365: 365days(Fixed value in Cloud Based Controller as 365 days).
@@ -131,6 +135,38 @@ func (o *ModifyHistoryRetentionOpenApiVO) SetClientDataTrendEnable(v bool) {
 	o.ClientDataTrendEnable = &v
 }
 
+// GetClientHealthEnable returns the ClientHealthEnable field value if set, zero value otherwise.
+func (o *ModifyHistoryRetentionOpenApiVO) GetClientHealthEnable() bool {
+	if o == nil || IsNil(o.ClientHealthEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.ClientHealthEnable
+}
+
+// GetClientHealthEnableOk returns a tuple with the ClientHealthEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModifyHistoryRetentionOpenApiVO) GetClientHealthEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.ClientHealthEnable) {
+		return nil, false
+	}
+	return o.ClientHealthEnable, true
+}
+
+// HasClientHealthEnable returns a boolean if a field has been set.
+func (o *ModifyHistoryRetentionOpenApiVO) HasClientHealthEnable() bool {
+	if o != nil && !IsNil(o.ClientHealthEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientHealthEnable gets a reference to the given bool and assigns it to the ClientHealthEnable field.
+func (o *ModifyHistoryRetentionOpenApiVO) SetClientHealthEnable(v bool) {
+	o.ClientHealthEnable = &v
+}
+
 // GetClientHistory returns the ClientHistory field value if set, zero value otherwise.
 func (o *ModifyHistoryRetentionOpenApiVO) GetClientHistory() int32 {
 	if o == nil || IsNil(o.ClientHistory) {
@@ -161,6 +197,38 @@ func (o *ModifyHistoryRetentionOpenApiVO) HasClientHistory() bool {
 // SetClientHistory gets a reference to the given int32 and assigns it to the ClientHistory field.
 func (o *ModifyHistoryRetentionOpenApiVO) SetClientHistory(v int32) {
 	o.ClientHistory = &v
+}
+
+// GetClientRecognitionEnable returns the ClientRecognitionEnable field value if set, zero value otherwise.
+func (o *ModifyHistoryRetentionOpenApiVO) GetClientRecognitionEnable() bool {
+	if o == nil || IsNil(o.ClientRecognitionEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.ClientRecognitionEnable
+}
+
+// GetClientRecognitionEnableOk returns a tuple with the ClientRecognitionEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModifyHistoryRetentionOpenApiVO) GetClientRecognitionEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.ClientRecognitionEnable) {
+		return nil, false
+	}
+	return o.ClientRecognitionEnable, true
+}
+
+// HasClientRecognitionEnable returns a boolean if a field has been set.
+func (o *ModifyHistoryRetentionOpenApiVO) HasClientRecognitionEnable() bool {
+	if o != nil && !IsNil(o.ClientRecognitionEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientRecognitionEnable gets a reference to the given bool and assigns it to the ClientRecognitionEnable field.
+func (o *ModifyHistoryRetentionOpenApiVO) SetClientRecognitionEnable(v bool) {
+	o.ClientRecognitionEnable = &v
 }
 
 // GetClientsDataEnable returns the ClientsDataEnable field value
@@ -459,8 +527,14 @@ func (o ModifyHistoryRetentionOpenApiVO) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.ClientDataTrendEnable) {
 		toSerialize["clientDataTrendEnable"] = o.ClientDataTrendEnable
 	}
+	if !IsNil(o.ClientHealthEnable) {
+		toSerialize["clientHealthEnable"] = o.ClientHealthEnable
+	}
 	if !IsNil(o.ClientHistory) {
 		toSerialize["clientHistory"] = o.ClientHistory
+	}
+	if !IsNil(o.ClientRecognitionEnable) {
+		toSerialize["clientRecognitionEnable"] = o.ClientRecognitionEnable
 	}
 	toSerialize["clientsDataEnable"] = o.ClientsDataEnable
 	if !IsNil(o.Daily) {

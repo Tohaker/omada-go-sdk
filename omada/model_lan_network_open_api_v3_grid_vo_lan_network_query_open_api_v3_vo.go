@@ -44,10 +44,14 @@ type LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO struct {
 	SupportLanIpv6 *bool `json:"supportLanIpv6,omitempty"`
 	// Whether it supports Pass Through.
 	SupportLanIpv6PassThrough *bool `json:"supportLanIpv6PassThrough,omitempty"`
+	// The number of vlan supported by current gateway.
+	SupportMaxVlanNum *int32 `json:"supportMaxVlanNum,omitempty"`
 	// Whether multi vlan configuration is supported of the lan netowrk.
 	SupportMultiVlan *bool `json:"supportMultiVlan,omitempty"`
 	// Whether it supports isolate network.
 	SupportNetworkIsolation *bool `json:"supportNetworkIsolation,omitempty"`
+	// Whether it supports \"Get from Prefix Delegation\" when disable Prefix Delegation on the corresponding WAN interface page.
+	SupportPdOnDhcp *bool `json:"supportPdOnDhcp,omitempty"`
 	// Whether Router Advertisement configuration is supported of the lan netowrk.
 	SupportRA *bool `json:"supportRA,omitempty"`
 	// Total rows of all items.
@@ -489,6 +493,38 @@ func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) SetSupportLanIpv6P
 	o.SupportLanIpv6PassThrough = &v
 }
 
+// GetSupportMaxVlanNum returns the SupportMaxVlanNum field value if set, zero value otherwise.
+func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportMaxVlanNum() int32 {
+	if o == nil || IsNil(o.SupportMaxVlanNum) {
+		var ret int32
+		return ret
+	}
+	return *o.SupportMaxVlanNum
+}
+
+// GetSupportMaxVlanNumOk returns a tuple with the SupportMaxVlanNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportMaxVlanNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.SupportMaxVlanNum) {
+		return nil, false
+	}
+	return o.SupportMaxVlanNum, true
+}
+
+// HasSupportMaxVlanNum returns a boolean if a field has been set.
+func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) HasSupportMaxVlanNum() bool {
+	if o != nil && !IsNil(o.SupportMaxVlanNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportMaxVlanNum gets a reference to the given int32 and assigns it to the SupportMaxVlanNum field.
+func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) SetSupportMaxVlanNum(v int32) {
+	o.SupportMaxVlanNum = &v
+}
+
 // GetSupportMultiVlan returns the SupportMultiVlan field value if set, zero value otherwise.
 func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportMultiVlan() bool {
 	if o == nil || IsNil(o.SupportMultiVlan) {
@@ -551,6 +587,38 @@ func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) HasSupportNetworkI
 // SetSupportNetworkIsolation gets a reference to the given bool and assigns it to the SupportNetworkIsolation field.
 func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) SetSupportNetworkIsolation(v bool) {
 	o.SupportNetworkIsolation = &v
+}
+
+// GetSupportPdOnDhcp returns the SupportPdOnDhcp field value if set, zero value otherwise.
+func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportPdOnDhcp() bool {
+	if o == nil || IsNil(o.SupportPdOnDhcp) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportPdOnDhcp
+}
+
+// GetSupportPdOnDhcpOk returns a tuple with the SupportPdOnDhcp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) GetSupportPdOnDhcpOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportPdOnDhcp) {
+		return nil, false
+	}
+	return o.SupportPdOnDhcp, true
+}
+
+// HasSupportPdOnDhcp returns a boolean if a field has been set.
+func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) HasSupportPdOnDhcp() bool {
+	if o != nil && !IsNil(o.SupportPdOnDhcp) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportPdOnDhcp gets a reference to the given bool and assigns it to the SupportPdOnDhcp field.
+func (o *LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) SetSupportPdOnDhcp(v bool) {
+	o.SupportPdOnDhcp = &v
 }
 
 // GetSupportRA returns the SupportRA field value if set, zero value otherwise.
@@ -698,11 +766,17 @@ func (o LanNetworkOpenApiV3GridVOLanNetworkQueryOpenApiV3VO) ToMap() (map[string
 	if !IsNil(o.SupportLanIpv6PassThrough) {
 		toSerialize["supportLanIpv6PassThrough"] = o.SupportLanIpv6PassThrough
 	}
+	if !IsNil(o.SupportMaxVlanNum) {
+		toSerialize["supportMaxVlanNum"] = o.SupportMaxVlanNum
+	}
 	if !IsNil(o.SupportMultiVlan) {
 		toSerialize["supportMultiVlan"] = o.SupportMultiVlan
 	}
 	if !IsNil(o.SupportNetworkIsolation) {
 		toSerialize["supportNetworkIsolation"] = o.SupportNetworkIsolation
+	}
+	if !IsNil(o.SupportPdOnDhcp) {
+		toSerialize["supportPdOnDhcp"] = o.SupportPdOnDhcp
 	}
 	if !IsNil(o.SupportRA) {
 		toSerialize["supportRA"] = o.SupportRA

@@ -17,11 +17,11 @@ import (
 // checks if the VpnCertificateOpenApiVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &VpnCertificateOpenApiVO{}
 
-// VpnCertificateOpenApiVO VPN configuration of the VPN
+// VpnCertificateOpenApiVO VPN configuration of the VPN.
 type VpnCertificateOpenApiVO struct {
-	// File name of the VPN certificate
+	// File name of the VPN certificate.
 	FileName *string `json:"fileName,omitempty"`
-	// ID of the VPN certificate
+	// ID of the VPN certificate.
 	Id *string `json:"id,omitempty"`
 }
 

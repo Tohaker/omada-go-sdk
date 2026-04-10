@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**BatchApplyStackNetworks**](StackAPI.md#batchapplystacknetworks) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/networks | Batch modify stack vlan interface status
 [**BatchModifyOswStackPorts**](StackAPI.md#batchmodifyoswstackports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/ports/config | Batch modify stack port
-[**BatchModifySwitchStackPortSetting**](StackAPI.md#batchmodifyswitchstackportsetting) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/multi-ports/config | Batch modify stack port
+[**BatchModifySwitchStackPortSetting**](StackAPI.md#batchmodifyswitchstackportsetting) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/multi-ports/config | Batch modify stack port V2
 [**CancelStackCableTest**](StackAPI.md#cancelstackcabletest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/stacks/{stackId}/cancel | Cancel stack cable test
 [**CreateOswStack**](StackAPI.md#createoswstack) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks | Create Switch Stack
 [**CreateStackStaticRouting**](StackAPI.md#createstackstaticrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/staticRoutings | Create stack staticRouting
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**DeleteOswStackLag**](StackAPI.md#deleteoswstacklag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Delete stack lag
 [**DeleteStackStaticRouting**](StackAPI.md#deletestackstaticrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/staticRoutings/{staticRoutingId} | Delete stack staticRouting
 [**DeleteStackVrf**](StackAPI.md#deletestackvrf) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/vrfs/{vrfId} | Delete an existing stack vrf
-[**DeleteSwitchStackLagSetting**](StackAPI.md#deleteswitchstacklagsetting) | **Delete** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Delete stack lag
+[**DeleteSwitchStackLagSetting**](StackAPI.md#deleteswitchstacklagsetting) | **Delete** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Delete stack lag V2
 [**DetectSwitchStackMembers**](StackAPI.md#detectswitchstackmembers) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/detect/{stackId} | Detect switch stack members
 [**DetectSwitchStackMembersForAllStacks**](StackAPI.md#detectswitchstackmembersforallstacks) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/detect | Detect switch stacks members for all stacks
 [**DownloadStackDeviceInfo**](StackAPI.md#downloadstackdeviceinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/downloadDeviceInfo | Download stack device info.
@@ -55,8 +55,8 @@ Method | HTTP request | Description
 [**ModifyStackRememberMe**](StackAPI.md#modifystackrememberme) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/remember | Modify stack remember Config
 [**ModifyStackStaticRouting**](StackAPI.md#modifystackstaticrouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/staticRoutings/{staticRoutingId} | Modify stack staticRouting
 [**ModifyStackVrf**](StackAPI.md#modifystackvrf) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/vrfs/{vrfId} | Modify an existing stack vrf
-[**ModifySwitchStackLagSetting**](StackAPI.md#modifyswitchstacklagsetting) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Modify stack lag
-[**ModifySwitchStackPortSetting**](StackAPI.md#modifyswitchstackportsetting) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/ports/{port} | Modify stack port
+[**ModifySwitchStackLagSetting**](StackAPI.md#modifyswitchstacklagsetting) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Modify stack lag V2
+[**ModifySwitchStackPortSetting**](StackAPI.md#modifyswitchstackportsetting) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/ports/{port} | Modify stack port V2
 [**RebootOswStack**](StackAPI.md#rebootoswstack) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/stacks/{stackId}/reboot | Reboot switch stack
 [**StartStackCableTest**](StackAPI.md#startstackcabletest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/stacks/{stackId}/start | Start stack cable test
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult BatchModifySwitchStackPortSetting(ctx, omadacId, siteId, stackId).BatchStackPortSettingVO(batchStackPortSettingVO).Execute()
 
-Batch modify stack port
+Batch modify stack port V2
 
 
 
@@ -920,7 +920,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult DeleteSwitchStackLagSetting(ctx, omadacId, siteId, stackId, lagId).Execute()
 
-Delete stack lag
+Delete stack lag V2
 
 
 
@@ -4050,7 +4050,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifySwitchStackLagSetting(ctx, omadacId, siteId, stackId, lagId).StackLagSettingVO(stackLagSettingVO).Execute()
 
-Modify stack lag
+Modify stack lag V2
 
 
 
@@ -4131,7 +4131,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifySwitchStackPortSetting(ctx, omadacId, siteId, stackId, port).StackPortSettingVO(stackPortSettingVO).Execute()
 
-Modify stack port
+Modify stack port V2
 
 
 

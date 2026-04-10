@@ -40,6 +40,8 @@ type TopologyV3OpenApiNodeVO struct {
 	ClientHealth *ClientAggHealthDTO `json:"clientHealth,omitempty"`
 	// Type of Third Party Device, if type is other
 	ClientType *string `json:"clientType,omitempty"`
+	// Vlan Id Of Client That Exists In Topology As Other Device
+	ClientVlanId *int32 `json:"clientVlanId,omitempty"`
 	// The Compatibility Type Of Device Firmware And Controller
 	Compatible *int32 `json:"compatible,omitempty"`
 	// Connected Channel Of IPC/NVR
@@ -520,6 +522,38 @@ func (o *TopologyV3OpenApiNodeVO) HasClientType() bool {
 // SetClientType gets a reference to the given string and assigns it to the ClientType field.
 func (o *TopologyV3OpenApiNodeVO) SetClientType(v string) {
 	o.ClientType = &v
+}
+
+// GetClientVlanId returns the ClientVlanId field value if set, zero value otherwise.
+func (o *TopologyV3OpenApiNodeVO) GetClientVlanId() int32 {
+	if o == nil || IsNil(o.ClientVlanId) {
+		var ret int32
+		return ret
+	}
+	return *o.ClientVlanId
+}
+
+// GetClientVlanIdOk returns a tuple with the ClientVlanId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyV3OpenApiNodeVO) GetClientVlanIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.ClientVlanId) {
+		return nil, false
+	}
+	return o.ClientVlanId, true
+}
+
+// HasClientVlanId returns a boolean if a field has been set.
+func (o *TopologyV3OpenApiNodeVO) HasClientVlanId() bool {
+	if o != nil && !IsNil(o.ClientVlanId) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientVlanId gets a reference to the given int32 and assigns it to the ClientVlanId field.
+func (o *TopologyV3OpenApiNodeVO) SetClientVlanId(v int32) {
+	o.ClientVlanId = &v
 }
 
 // GetCompatible returns the Compatible field value if set, zero value otherwise.
@@ -2420,6 +2454,9 @@ func (o TopologyV3OpenApiNodeVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ClientType) {
 		toSerialize["clientType"] = o.ClientType
+	}
+	if !IsNil(o.ClientVlanId) {
+		toSerialize["clientVlanId"] = o.ClientVlanId
 	}
 	if !IsNil(o.Compatible) {
 		toSerialize["compatible"] = o.Compatible

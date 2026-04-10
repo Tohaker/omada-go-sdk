@@ -9,8 +9,9 @@ Name | Type | Description | Notes
 **BackupWan** | Pointer to **string** | Backup WAN ID. It is required when [linkBackup] is true. | [optional] 
 **LinkBackup** | **bool** | Link Backup | 
 **Method** | Pointer to **string** | effective only for &#39;linkBackup: true&#39; | [optional] 
-**Mode** | Pointer to **int32** | It is required when [linkBackup] is true. 0: Enable backup link when any primary WAN fails. 1: Enable backup link when all primary WANs fail. | [optional] 
+**Mode** | Pointer to **int32** | It is required when [linkBackup] is true. 0: Enable backup link when any primary WAN fails. 1: Enable backup link when all primary WANs fail. 2: Timing | [optional] 
 **PrimaryWans** | Pointer to **[]string** | Primary WAN port IDs. It is required when [linkBackup] is true. | [optional] 
+**TimeRangeId** | Pointer to **string** | Time Range ID. It is required when [mode] is timing. | [optional] 
 **VirtualWanWeights** | Pointer to [**[]VirtualWanWeightOpenApiVO**](VirtualWanWeightOpenApiVO.md) | virtual wan load balance | [optional] 
 **Weights** | **[]int32** | Load Balancing Weights,item of weights should be within the range of 1 to the max int value(2147483647). It is sorted by port ID. | 
 
@@ -197,6 +198,31 @@ SetPrimaryWans sets PrimaryWans field to given value.
 `func (o *WanLoadBalanceOpenApiVO) HasPrimaryWans() bool`
 
 HasPrimaryWans returns a boolean if a field has been set.
+
+### GetTimeRangeId
+
+`func (o *WanLoadBalanceOpenApiVO) GetTimeRangeId() string`
+
+GetTimeRangeId returns the TimeRangeId field if non-nil, zero value otherwise.
+
+### GetTimeRangeIdOk
+
+`func (o *WanLoadBalanceOpenApiVO) GetTimeRangeIdOk() (*string, bool)`
+
+GetTimeRangeIdOk returns a tuple with the TimeRangeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimeRangeId
+
+`func (o *WanLoadBalanceOpenApiVO) SetTimeRangeId(v string)`
+
+SetTimeRangeId sets TimeRangeId field to given value.
+
+### HasTimeRangeId
+
+`func (o *WanLoadBalanceOpenApiVO) HasTimeRangeId() bool`
+
+HasTimeRangeId returns a boolean if a field has been set.
 
 ### GetVirtualWanWeights
 

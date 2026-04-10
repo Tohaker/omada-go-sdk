@@ -49,6 +49,8 @@ type SslVpnServerSetting struct {
 	ServicePort *int32 `json:"servicePort,omitempty"`
 	// Status of the SSL VPN server.
 	Status bool `json:"status"`
+	// Whether this feature is supported for the DS-Lite or Map-E WAN connection types.
+	SupportByDsLiteAndMapE *bool `json:"supportByDsLiteAndMapE,omitempty"`
 	// Whether the adopted gateway supports LDAP.
 	SupportLDAP *bool `json:"supportLDAP,omitempty"`
 	// Whether the adopted gateway supports Radius.
@@ -585,6 +587,38 @@ func (o *SslVpnServerSetting) SetStatus(v bool) {
 	o.Status = v
 }
 
+// GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field value if set, zero value otherwise.
+func (o *SslVpnServerSetting) GetSupportByDsLiteAndMapE() bool {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportByDsLiteAndMapE
+}
+
+// GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SslVpnServerSetting) GetSupportByDsLiteAndMapEOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		return nil, false
+	}
+	return o.SupportByDsLiteAndMapE, true
+}
+
+// HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
+func (o *SslVpnServerSetting) HasSupportByDsLiteAndMapE() bool {
+	if o != nil && !IsNil(o.SupportByDsLiteAndMapE) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportByDsLiteAndMapE gets a reference to the given bool and assigns it to the SupportByDsLiteAndMapE field.
+func (o *SslVpnServerSetting) SetSupportByDsLiteAndMapE(v bool) {
+	o.SupportByDsLiteAndMapE = &v
+}
+
 // GetSupportLDAP returns the SupportLDAP field value if set, zero value otherwise.
 func (o *SslVpnServerSetting) GetSupportLDAP() bool {
 	if o == nil || IsNil(o.SupportLDAP) {
@@ -801,6 +835,9 @@ func (o SslVpnServerSetting) ToMap() (map[string]interface{}, error) {
 		toSerialize["servicePort"] = o.ServicePort
 	}
 	toSerialize["status"] = o.Status
+	if !IsNil(o.SupportByDsLiteAndMapE) {
+		toSerialize["supportByDsLiteAndMapE"] = o.SupportByDsLiteAndMapE
+	}
 	if !IsNil(o.SupportLDAP) {
 		toSerialize["supportLDAP"] = o.SupportLDAP
 	}

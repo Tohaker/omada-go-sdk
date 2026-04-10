@@ -27,6 +27,8 @@ type AdvertisementSetting struct {
 	PictureIds []string `json:"pictureIds,omitempty"`
 	// Advertisement picture interval, should be within the range of 1–10, time unit is second.
 	PictureInterval *int32 `json:"pictureInterval,omitempty"`
+	// Skip delay, should be within the range of 1–10, time unit is second.
+	SkipDelay *int32 `json:"skipDelay,omitempty"`
 	// Whether allow users to skip the advertisement.
 	SkipEnable *bool `json:"skipEnable,omitempty"`
 	// Advertisement totalDuration, should be within the range of 1–30, time unit is second.
@@ -141,6 +143,38 @@ func (o *AdvertisementSetting) SetPictureInterval(v int32) {
 	o.PictureInterval = &v
 }
 
+// GetSkipDelay returns the SkipDelay field value if set, zero value otherwise.
+func (o *AdvertisementSetting) GetSkipDelay() int32 {
+	if o == nil || IsNil(o.SkipDelay) {
+		var ret int32
+		return ret
+	}
+	return *o.SkipDelay
+}
+
+// GetSkipDelayOk returns a tuple with the SkipDelay field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AdvertisementSetting) GetSkipDelayOk() (*int32, bool) {
+	if o == nil || IsNil(o.SkipDelay) {
+		return nil, false
+	}
+	return o.SkipDelay, true
+}
+
+// HasSkipDelay returns a boolean if a field has been set.
+func (o *AdvertisementSetting) HasSkipDelay() bool {
+	if o != nil && !IsNil(o.SkipDelay) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkipDelay gets a reference to the given int32 and assigns it to the SkipDelay field.
+func (o *AdvertisementSetting) SetSkipDelay(v int32) {
+	o.SkipDelay = &v
+}
+
 // GetSkipEnable returns the SkipEnable field value if set, zero value otherwise.
 func (o *AdvertisementSetting) GetSkipEnable() bool {
 	if o == nil || IsNil(o.SkipEnable) {
@@ -221,6 +255,9 @@ func (o AdvertisementSetting) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PictureInterval) {
 		toSerialize["pictureInterval"] = o.PictureInterval
+	}
+	if !IsNil(o.SkipDelay) {
+		toSerialize["skipDelay"] = o.SkipDelay
 	}
 	if !IsNil(o.SkipEnable) {
 		toSerialize["skipEnable"] = o.SkipEnable

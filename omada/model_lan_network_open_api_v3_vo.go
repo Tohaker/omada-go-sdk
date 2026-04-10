@@ -58,7 +58,7 @@ type LanNetworkOpenApiV3VO struct {
 	StackId *string `json:"stackId,omitempty"`
 	// The switch status of DHCP Settings Overrides.
 	SubnetOverrideEnable *bool `json:"subnetOverrideEnable,omitempty"`
-	// Only Valid when vlanType is 0. When deviceType is 1, vlan should be within the range of 1-4090.When deviceType is 0 , 2 or 3, vlan could be within the range of 1-4094.
+	// Only Valid when vlanType is 0. Vlan should be within the range of 1-4094.
 	Vlan *int32 `json:"vlan,omitempty"`
 	// VLANType should be a value as follows: 0: Single; 1: Multiple
 	VlanType *int32 `json:"vlanType,omitempty"`

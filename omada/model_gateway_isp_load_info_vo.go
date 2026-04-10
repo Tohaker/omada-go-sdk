@@ -24,8 +24,12 @@ type GatewayIspLoadInfoVO struct {
 	Mac *string `json:"mac,omitempty"`
 	// Gateway name.
 	Name *string `json:"name,omitempty"`
+	// The limited bandwidth of the gateway speed test.
+	SpeedTestLimit *int64 `json:"speedTestLimit,omitempty"`
 	// Gateway status, should be a value as follows:-1 : disconnected1 : active0 : backup gateway under multiple gateways
 	Status *int32 `json:"status,omitempty"`
+	// Whether speed measurement is supported.
+	SupportSpeedTest *bool `json:"supportSpeedTest,omitempty"`
 }
 
 // NewGatewayIspLoadInfoVO instantiates a new GatewayIspLoadInfoVO object
@@ -141,6 +145,38 @@ func (o *GatewayIspLoadInfoVO) SetName(v string) {
 	o.Name = &v
 }
 
+// GetSpeedTestLimit returns the SpeedTestLimit field value if set, zero value otherwise.
+func (o *GatewayIspLoadInfoVO) GetSpeedTestLimit() int64 {
+	if o == nil || IsNil(o.SpeedTestLimit) {
+		var ret int64
+		return ret
+	}
+	return *o.SpeedTestLimit
+}
+
+// GetSpeedTestLimitOk returns a tuple with the SpeedTestLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GatewayIspLoadInfoVO) GetSpeedTestLimitOk() (*int64, bool) {
+	if o == nil || IsNil(o.SpeedTestLimit) {
+		return nil, false
+	}
+	return o.SpeedTestLimit, true
+}
+
+// HasSpeedTestLimit returns a boolean if a field has been set.
+func (o *GatewayIspLoadInfoVO) HasSpeedTestLimit() bool {
+	if o != nil && !IsNil(o.SpeedTestLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpeedTestLimit gets a reference to the given int64 and assigns it to the SpeedTestLimit field.
+func (o *GatewayIspLoadInfoVO) SetSpeedTestLimit(v int64) {
+	o.SpeedTestLimit = &v
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *GatewayIspLoadInfoVO) GetStatus() int32 {
 	if o == nil || IsNil(o.Status) {
@@ -173,6 +209,38 @@ func (o *GatewayIspLoadInfoVO) SetStatus(v int32) {
 	o.Status = &v
 }
 
+// GetSupportSpeedTest returns the SupportSpeedTest field value if set, zero value otherwise.
+func (o *GatewayIspLoadInfoVO) GetSupportSpeedTest() bool {
+	if o == nil || IsNil(o.SupportSpeedTest) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportSpeedTest
+}
+
+// GetSupportSpeedTestOk returns a tuple with the SupportSpeedTest field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GatewayIspLoadInfoVO) GetSupportSpeedTestOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportSpeedTest) {
+		return nil, false
+	}
+	return o.SupportSpeedTest, true
+}
+
+// HasSupportSpeedTest returns a boolean if a field has been set.
+func (o *GatewayIspLoadInfoVO) HasSupportSpeedTest() bool {
+	if o != nil && !IsNil(o.SupportSpeedTest) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportSpeedTest gets a reference to the given bool and assigns it to the SupportSpeedTest field.
+func (o *GatewayIspLoadInfoVO) SetSupportSpeedTest(v bool) {
+	o.SupportSpeedTest = &v
+}
+
 func (o GatewayIspLoadInfoVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -192,8 +260,14 @@ func (o GatewayIspLoadInfoVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+	if !IsNil(o.SpeedTestLimit) {
+		toSerialize["speedTestLimit"] = o.SpeedTestLimit
+	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.SupportSpeedTest) {
+		toSerialize["supportSpeedTest"] = o.SupportSpeedTest
 	}
 	return toSerialize, nil
 }

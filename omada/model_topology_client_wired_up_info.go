@@ -24,6 +24,7 @@ type TopologyClientWiredUpInfo struct {
 	// Link Speed, it should be a value as follows: 1:10Mbps, 2:100Mbps, 3:1000Mbps, 4:2.5Gbps, 5:10Gbps, 6:5Gbps, 7:25Gbps.
 	LinkSpeed *int32 `json:"linkSpeed,omitempty"`
 	Port *TopologyClientUplinkPort `json:"port,omitempty"`
+	UplinkPort *WiredPortV3DTO `json:"uplinkPort,omitempty"`
 }
 
 // NewTopologyClientWiredUpInfo instantiates a new TopologyClientWiredUpInfo object
@@ -139,6 +140,38 @@ func (o *TopologyClientWiredUpInfo) SetPort(v TopologyClientUplinkPort) {
 	o.Port = &v
 }
 
+// GetUplinkPort returns the UplinkPort field value if set, zero value otherwise.
+func (o *TopologyClientWiredUpInfo) GetUplinkPort() WiredPortV3DTO {
+	if o == nil || IsNil(o.UplinkPort) {
+		var ret WiredPortV3DTO
+		return ret
+	}
+	return *o.UplinkPort
+}
+
+// GetUplinkPortOk returns a tuple with the UplinkPort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyClientWiredUpInfo) GetUplinkPortOk() (*WiredPortV3DTO, bool) {
+	if o == nil || IsNil(o.UplinkPort) {
+		return nil, false
+	}
+	return o.UplinkPort, true
+}
+
+// HasUplinkPort returns a boolean if a field has been set.
+func (o *TopologyClientWiredUpInfo) HasUplinkPort() bool {
+	if o != nil && !IsNil(o.UplinkPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetUplinkPort gets a reference to the given WiredPortV3DTO and assigns it to the UplinkPort field.
+func (o *TopologyClientWiredUpInfo) SetUplinkPort(v WiredPortV3DTO) {
+	o.UplinkPort = &v
+}
+
 func (o TopologyClientWiredUpInfo) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -157,6 +190,9 @@ func (o TopologyClientWiredUpInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
+	}
+	if !IsNil(o.UplinkPort) {
+		toSerialize["uplinkPort"] = o.UplinkPort
 	}
 	return toSerialize, nil
 }

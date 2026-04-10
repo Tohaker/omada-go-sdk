@@ -68,6 +68,8 @@ type OswDevCapVO struct {
 	MaxMirrorGroup *int32 `json:"maxMirrorGroup,omitempty"`
 	// Max Mirrored Port
 	MaxMirroredPort *int32 `json:"maxMirroredPort,omitempty"`
+	// Max DHCP relay server num
+	MaxRelayServerNum *int32 `json:"maxRelayServerNum,omitempty"`
 	// Max Stack Group Number
 	MaxStackGroupNumber *int32 `json:"maxStackGroupNumber,omitempty"`
 	// Max Stack Unit Number
@@ -115,6 +117,8 @@ type OswDevCapVO struct {
 	SupportArpDetect *bool `json:"supportArpDetect,omitempty"`
 	// Support Poe Bt
 	SupportBt *bool `json:"supportBt,omitempty"`
+	// Whether the device supports clear counters
+	SupportClearCounters *bool `json:"supportClearCounters,omitempty"`
 	// Whether the device supports config sync
 	SupportConfigSync *bool `json:"supportConfigSync,omitempty"`
 	// Whether support dhcp snoop
@@ -134,6 +138,8 @@ type OswDevCapVO struct {
 	SupportMlag *bool `json:"supportMlag,omitempty"`
 	// Whether support multicast
 	SupportMulticast *bool `json:"supportMulticast,omitempty"`
+	// Whether the device supports DHCP relay multi Server
+	SupportRelayMultiServer *bool `json:"supportRelayMultiServer,omitempty"`
 	// Whether the device supports showing running config
 	SupportRunningConfig *bool `json:"supportRunningConfig,omitempty"`
 	SupportSdm *bool `json:"supportSdm,omitempty"`
@@ -1190,6 +1196,38 @@ func (o *OswDevCapVO) SetMaxMirroredPort(v int32) {
 	o.MaxMirroredPort = &v
 }
 
+// GetMaxRelayServerNum returns the MaxRelayServerNum field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetMaxRelayServerNum() int32 {
+	if o == nil || IsNil(o.MaxRelayServerNum) {
+		var ret int32
+		return ret
+	}
+	return *o.MaxRelayServerNum
+}
+
+// GetMaxRelayServerNumOk returns a tuple with the MaxRelayServerNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetMaxRelayServerNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.MaxRelayServerNum) {
+		return nil, false
+	}
+	return o.MaxRelayServerNum, true
+}
+
+// HasMaxRelayServerNum returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasMaxRelayServerNum() bool {
+	if o != nil && !IsNil(o.MaxRelayServerNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxRelayServerNum gets a reference to the given int32 and assigns it to the MaxRelayServerNum field.
+func (o *OswDevCapVO) SetMaxRelayServerNum(v int32) {
+	o.MaxRelayServerNum = &v
+}
+
 // GetMaxStackGroupNumber returns the MaxStackGroupNumber field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetMaxStackGroupNumber() int32 {
 	if o == nil || IsNil(o.MaxStackGroupNumber) {
@@ -2054,6 +2092,38 @@ func (o *OswDevCapVO) SetSupportBt(v bool) {
 	o.SupportBt = &v
 }
 
+// GetSupportClearCounters returns the SupportClearCounters field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetSupportClearCounters() bool {
+	if o == nil || IsNil(o.SupportClearCounters) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportClearCounters
+}
+
+// GetSupportClearCountersOk returns a tuple with the SupportClearCounters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetSupportClearCountersOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportClearCounters) {
+		return nil, false
+	}
+	return o.SupportClearCounters, true
+}
+
+// HasSupportClearCounters returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasSupportClearCounters() bool {
+	if o != nil && !IsNil(o.SupportClearCounters) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportClearCounters gets a reference to the given bool and assigns it to the SupportClearCounters field.
+func (o *OswDevCapVO) SetSupportClearCounters(v bool) {
+	o.SupportClearCounters = &v
+}
+
 // GetSupportConfigSync returns the SupportConfigSync field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetSupportConfigSync() bool {
 	if o == nil || IsNil(o.SupportConfigSync) {
@@ -2468,6 +2538,38 @@ func (o *OswDevCapVO) HasSupportMulticast() bool {
 // SetSupportMulticast gets a reference to the given bool and assigns it to the SupportMulticast field.
 func (o *OswDevCapVO) SetSupportMulticast(v bool) {
 	o.SupportMulticast = &v
+}
+
+// GetSupportRelayMultiServer returns the SupportRelayMultiServer field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetSupportRelayMultiServer() bool {
+	if o == nil || IsNil(o.SupportRelayMultiServer) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportRelayMultiServer
+}
+
+// GetSupportRelayMultiServerOk returns a tuple with the SupportRelayMultiServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetSupportRelayMultiServerOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportRelayMultiServer) {
+		return nil, false
+	}
+	return o.SupportRelayMultiServer, true
+}
+
+// HasSupportRelayMultiServer returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasSupportRelayMultiServer() bool {
+	if o != nil && !IsNil(o.SupportRelayMultiServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportRelayMultiServer gets a reference to the given bool and assigns it to the SupportRelayMultiServer field.
+func (o *OswDevCapVO) SetSupportRelayMultiServer(v bool) {
+	o.SupportRelayMultiServer = &v
 }
 
 // GetSupportRunningConfig returns the SupportRunningConfig field value if set, zero value otherwise.
@@ -2896,6 +2998,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MaxMirroredPort) {
 		toSerialize["maxMirroredPort"] = o.MaxMirroredPort
 	}
+	if !IsNil(o.MaxRelayServerNum) {
+		toSerialize["maxRelayServerNum"] = o.MaxRelayServerNum
+	}
 	if !IsNil(o.MaxStackGroupNumber) {
 		toSerialize["maxStackGroupNumber"] = o.MaxStackGroupNumber
 	}
@@ -2977,6 +3082,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SupportBt) {
 		toSerialize["supportBt"] = o.SupportBt
 	}
+	if !IsNil(o.SupportClearCounters) {
+		toSerialize["supportClearCounters"] = o.SupportClearCounters
+	}
 	if !IsNil(o.SupportConfigSync) {
 		toSerialize["supportConfigSync"] = o.SupportConfigSync
 	}
@@ -3015,6 +3123,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportMulticast) {
 		toSerialize["supportMulticast"] = o.SupportMulticast
+	}
+	if !IsNil(o.SupportRelayMultiServer) {
+		toSerialize["supportRelayMultiServer"] = o.SupportRelayMultiServer
 	}
 	if !IsNil(o.SupportRunningConfig) {
 		toSerialize["supportRunningConfig"] = o.SupportRunningConfig

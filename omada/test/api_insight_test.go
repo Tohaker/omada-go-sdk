@@ -286,6 +286,21 @@ func Test_omada_InsightAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test InsightAPIService GetGridVpnClientStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.InsightAPI.GetGridVpnClientStatus(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test InsightAPIService GetGridVpnIpSec", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -294,6 +309,68 @@ func Test_omada_InsightAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.InsightAPI.GetGridVpnIpSec(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InsightAPIService GetGridVpnS2SPeersStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.InsightAPI.GetGridVpnS2SPeersStatus(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InsightAPIService GetGridVpnS2SStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.InsightAPI.GetGridVpnS2SStatus(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InsightAPIService GetGridVpnServerClientsStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var vpnId string
+
+		resp, httpRes, err := apiClient.InsightAPI.GetGridVpnServerClientsStatus(context.Background(), omadacId, siteId, vpnId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InsightAPIService GetGridVpnServerStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.InsightAPI.GetGridVpnServerStatus(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

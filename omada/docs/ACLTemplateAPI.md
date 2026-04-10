@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateEapAclTemplate**](ACLTemplateAPI.md#createeapacltemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/eap-acls | Create new eap template ACL
 [**CreateOsgAclTemplate**](ACLTemplateAPI.md#createosgacltemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-acls | Create new gateway template ACL
 [**DeleteAclTemplate**](ACLTemplateAPI.md#deleteacltemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/{aclId} | Delete Gateway/AP ACL template
+[**ExportOsgCustomAclTemplate**](ACLTemplateAPI.md#exportosgcustomacltemplate) | **Get** /openapi/v1/{omadacId}/files/sitetemplates/{siteTemplateId}/acls/export | Export gateway custom ACL template rules
 [**GetAclConfigTypeSettingTemplate**](ACLTemplateAPI.md#getaclconfigtypesettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-config-mode | Get gateway ACL config mode template
 [**GetEapAclListTemplate**](ACLTemplateAPI.md#geteapacllisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/eap-acls | Get eap ACL template list
 [**GetOsgAclListTemplate**](ACLTemplateAPI.md#getosgacllisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-acls | Get gateway ACL template list
@@ -231,6 +232,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ExportOsgCustomAclTemplate
+
+> OperationResponse ExportOsgCustomAclTemplate(ctx, omadacId, siteTemplateId).Execute()
+
+Export gateway custom ACL template rules
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ACLTemplateAPI.ExportOsgCustomAclTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ACLTemplateAPI.ExportOsgCustomAclTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportOsgCustomAclTemplate`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `ACLTemplateAPI.ExportOsgCustomAclTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiExportOsgCustomAclTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
 
 ### Authorization
 

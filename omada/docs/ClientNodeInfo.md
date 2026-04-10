@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DevTxRate** | Pointer to **int64** | Client real-time uploadRate | [optional] 
 **Guest** | Pointer to **bool** | (Wireless) Whether it is Guest (used to display the wireless Guest client icon). | [optional] 
 **HealthScore** | Pointer to **int32** | Health Score, 1~3: poor; 4~7: fair; 0: no data; 8~10 good. | [optional] 
+**Ip** | Pointer to **string** | Client IP. | [optional] 
 **Mac** | Pointer to **string** | Client MAC Address. | [optional] 
 **Manager** | Pointer to **bool** | Whether it is the device currently accessing the Controller itself. | [optional] 
 **Model** | Pointer to **string** | Model of client device. | [optional] 
@@ -187,6 +188,31 @@ SetHealthScore sets HealthScore field to given value.
 `func (o *ClientNodeInfo) HasHealthScore() bool`
 
 HasHealthScore returns a boolean if a field has been set.
+
+### GetIp
+
+`func (o *ClientNodeInfo) GetIp() string`
+
+GetIp returns the Ip field if non-nil, zero value otherwise.
+
+### GetIpOk
+
+`func (o *ClientNodeInfo) GetIpOk() (*string, bool)`
+
+GetIpOk returns a tuple with the Ip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIp
+
+`func (o *ClientNodeInfo) SetIp(v string)`
+
+SetIp sets Ip field to given value.
+
+### HasIp
+
+`func (o *ClientNodeInfo) HasIp() bool`
+
+HasIp returns a boolean if a field has been set.
 
 ### GetMac
 

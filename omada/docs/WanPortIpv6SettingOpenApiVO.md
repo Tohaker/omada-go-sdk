@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Enable** | **bool** |  | 
+**Enable** | **bool** | IPv6 enable. | 
 **Ipv6Dynamic** | Pointer to [**Ipv6DynamicOpenApiVO**](Ipv6DynamicOpenApiVO.md) |  | [optional] 
 **Ipv6Pppoe** | Pointer to [**Ipv6PppoeOpenApiVO**](Ipv6PppoeOpenApiVO.md) |  | [optional] 
 **Ipv6Static** | Pointer to [**Ipv6StaticOpenApiVO**](Ipv6StaticOpenApiVO.md) |  | [optional] 
 **Ipv6Tunnel** | Pointer to [**Ipv6TunnelOpenApiVO**](Ipv6TunnelOpenApiVO.md) |  | [optional] 
-**ProtoType** | Pointer to **int32** | IPv4 connection type should be a value as follows: 0: static; 1: dynamic; 2: PPPoE; 3: 6to4Tunnel; 4: bridge. | [optional] 
+**ProtoType** | Pointer to **int32** | IPv6 connection type should be a value as follows: 0: static; 1: dynamic; 2: PPPoE; 3: 6to4Tunnel; 4: bridge. | [optional] 
 
 ## Methods
 

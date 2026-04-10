@@ -35,8 +35,8 @@ type LanMulticastTemplateAPI interface {
 	CreateLanMulticastTemplate(ctx context.Context, omadacId string, siteTemplateId string) LanMulticastTemplateAPICreateLanMulticastTemplateRequest
 
 	// CreateLanMulticastTemplateExecute executes the request
-	//  @return ResponseIdVO
-	CreateLanMulticastTemplateExecute(r LanMulticastTemplateAPICreateLanMulticastTemplateRequest) (*ResponseIdVO, *http.Response, error)
+	//  @return OperationResponseResponseIdVO
+	CreateLanMulticastTemplateExecute(r LanMulticastTemplateAPICreateLanMulticastTemplateRequest) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
 	DeleteLanMulticastTemplate Delete an existing lan multicast template
@@ -68,8 +68,8 @@ type LanMulticastTemplateAPI interface {
 	GetGridLanMulticastTemplates(ctx context.Context, omadacId string, siteTemplateId string) LanMulticastTemplateAPIGetGridLanMulticastTemplatesRequest
 
 	// GetGridLanMulticastTemplatesExecute executes the request
-	//  @return OperationResponse
-	GetGridLanMulticastTemplatesExecute(r LanMulticastTemplateAPIGetGridLanMulticastTemplatesRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseGridVOLanMulticastVO
+	GetGridLanMulticastTemplatesExecute(r LanMulticastTemplateAPIGetGridLanMulticastTemplatesRequest) (*OperationResponseGridVOLanMulticastVO, *http.Response, error)
 
 	/*
 	ModifyLanMulticastTemplate Modify a lan multicast template
@@ -105,7 +105,7 @@ func (r LanMulticastTemplateAPICreateLanMulticastTemplateRequest) LanMulticastVO
 	return r
 }
 
-func (r LanMulticastTemplateAPICreateLanMulticastTemplateRequest) Execute() (*ResponseIdVO, *http.Response, error) {
+func (r LanMulticastTemplateAPICreateLanMulticastTemplateRequest) Execute() (*OperationResponseResponseIdVO, *http.Response, error) {
 	return r.ApiService.CreateLanMulticastTemplateExecute(r)
 }
 
@@ -129,13 +129,13 @@ func (a *LanMulticastTemplateAPIService) CreateLanMulticastTemplate(ctx context.
 }
 
 // Execute executes the request
-//  @return ResponseIdVO
-func (a *LanMulticastTemplateAPIService) CreateLanMulticastTemplateExecute(r LanMulticastTemplateAPICreateLanMulticastTemplateRequest) (*ResponseIdVO, *http.Response, error) {
+//  @return OperationResponseResponseIdVO
+func (a *LanMulticastTemplateAPIService) CreateLanMulticastTemplateExecute(r LanMulticastTemplateAPICreateLanMulticastTemplateRequest) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ResponseIdVO
+		localVarReturnValue  *OperationResponseResponseIdVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanMulticastTemplateAPIService.CreateLanMulticastTemplate")
@@ -370,7 +370,7 @@ func (r LanMulticastTemplateAPIGetGridLanMulticastTemplatesRequest) PageSize(pag
 	return r
 }
 
-func (r LanMulticastTemplateAPIGetGridLanMulticastTemplatesRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r LanMulticastTemplateAPIGetGridLanMulticastTemplatesRequest) Execute() (*OperationResponseGridVOLanMulticastVO, *http.Response, error) {
 	return r.ApiService.GetGridLanMulticastTemplatesExecute(r)
 }
 
@@ -394,13 +394,13 @@ func (a *LanMulticastTemplateAPIService) GetGridLanMulticastTemplates(ctx contex
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *LanMulticastTemplateAPIService) GetGridLanMulticastTemplatesExecute(r LanMulticastTemplateAPIGetGridLanMulticastTemplatesRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseGridVOLanMulticastVO
+func (a *LanMulticastTemplateAPIService) GetGridLanMulticastTemplatesExecute(r LanMulticastTemplateAPIGetGridLanMulticastTemplatesRequest) (*OperationResponseGridVOLanMulticastVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseGridVOLanMulticastVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanMulticastTemplateAPIService.GetGridLanMulticastTemplates")

@@ -5,8 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NeedFullSync** | Pointer to **bool** |  | [optional] 
+**SupportArpTableGet** | Pointer to **bool** |  | [optional] 
 **SupportClientPortInfo** | Pointer to **bool** |  | [optional] 
 **SupportConfigSync** | Pointer to **bool** |  | [optional] 
+**SupportDhcpClient** | Pointer to **bool** |  | [optional] 
 **SupportRunningConfig** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -52,6 +54,31 @@ SetNeedFullSync sets NeedFullSync field to given value.
 `func (o *OsgCapVO) HasNeedFullSync() bool`
 
 HasNeedFullSync returns a boolean if a field has been set.
+
+### GetSupportArpTableGet
+
+`func (o *OsgCapVO) GetSupportArpTableGet() bool`
+
+GetSupportArpTableGet returns the SupportArpTableGet field if non-nil, zero value otherwise.
+
+### GetSupportArpTableGetOk
+
+`func (o *OsgCapVO) GetSupportArpTableGetOk() (*bool, bool)`
+
+GetSupportArpTableGetOk returns a tuple with the SupportArpTableGet field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportArpTableGet
+
+`func (o *OsgCapVO) SetSupportArpTableGet(v bool)`
+
+SetSupportArpTableGet sets SupportArpTableGet field to given value.
+
+### HasSupportArpTableGet
+
+`func (o *OsgCapVO) HasSupportArpTableGet() bool`
+
+HasSupportArpTableGet returns a boolean if a field has been set.
 
 ### GetSupportClientPortInfo
 
@@ -102,6 +129,31 @@ SetSupportConfigSync sets SupportConfigSync field to given value.
 `func (o *OsgCapVO) HasSupportConfigSync() bool`
 
 HasSupportConfigSync returns a boolean if a field has been set.
+
+### GetSupportDhcpClient
+
+`func (o *OsgCapVO) GetSupportDhcpClient() bool`
+
+GetSupportDhcpClient returns the SupportDhcpClient field if non-nil, zero value otherwise.
+
+### GetSupportDhcpClientOk
+
+`func (o *OsgCapVO) GetSupportDhcpClientOk() (*bool, bool)`
+
+GetSupportDhcpClientOk returns a tuple with the SupportDhcpClient field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportDhcpClient
+
+`func (o *OsgCapVO) SetSupportDhcpClient(v bool)`
+
+SetSupportDhcpClient sets SupportDhcpClient field to given value.
+
+### HasSupportDhcpClient
+
+`func (o *OsgCapVO) HasSupportDhcpClient() bool`
+
+HasSupportDhcpClient returns a boolean if a field has been set.
 
 ### GetSupportRunningConfig
 

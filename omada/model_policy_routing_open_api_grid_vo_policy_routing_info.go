@@ -24,6 +24,8 @@ type PolicyRoutingOpenApiGridVOPolicyRoutingInfo struct {
 	// Number of entries per page.
 	CurrentSize *int32 `json:"currentSize,omitempty"`
 	Data []PolicyRoutingInfo `json:"data,omitempty"`
+	// Whether this feature is supported for the DS-Lite or Map-E WAN connection types.
+	SupportByDsLiteAndMapE *bool `json:"supportByDsLiteAndMapE,omitempty"`
 	// Whether Domain Group is supported as Interface in Policy Routing.
 	SupportDomainGroupDest *bool `json:"supportDomainGroupDest,omitempty"`
 	// Whether Location Group is supported as Destination in Policy Routing.
@@ -147,6 +149,38 @@ func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) HasData() bool {
 // SetData gets a reference to the given []PolicyRoutingInfo and assigns it to the Data field.
 func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) SetData(v []PolicyRoutingInfo) {
 	o.Data = v
+}
+
+// GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field value if set, zero value otherwise.
+func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) GetSupportByDsLiteAndMapE() bool {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportByDsLiteAndMapE
+}
+
+// GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) GetSupportByDsLiteAndMapEOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportByDsLiteAndMapE) {
+		return nil, false
+	}
+	return o.SupportByDsLiteAndMapE, true
+}
+
+// HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
+func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) HasSupportByDsLiteAndMapE() bool {
+	if o != nil && !IsNil(o.SupportByDsLiteAndMapE) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportByDsLiteAndMapE gets a reference to the given bool and assigns it to the SupportByDsLiteAndMapE field.
+func (o *PolicyRoutingOpenApiGridVOPolicyRoutingInfo) SetSupportByDsLiteAndMapE(v bool) {
+	o.SupportByDsLiteAndMapE = &v
 }
 
 // GetSupportDomainGroupDest returns the SupportDomainGroupDest field value if set, zero value otherwise.
@@ -327,6 +361,9 @@ func (o PolicyRoutingOpenApiGridVOPolicyRoutingInfo) ToMap() (map[string]interfa
 	}
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
+	}
+	if !IsNil(o.SupportByDsLiteAndMapE) {
+		toSerialize["supportByDsLiteAndMapE"] = o.SupportByDsLiteAndMapE
 	}
 	if !IsNil(o.SupportDomainGroupDest) {
 		toSerialize["supportDomainGroupDest"] = o.SupportDomainGroupDest

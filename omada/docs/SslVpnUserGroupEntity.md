@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LDAPAttribute** | Pointer to **string** | Attribute value used for LDAP authentication | [optional] 
 **Id** | Pointer to **string** | ID of the SSL VPN user group | [optional] 
+**LdapAttribute** | Pointer to **string** | Attribute value used for LDAP authentication | [optional] 
 **Name** | **string** | Name of the SSL VPN user group | 
 **RadiusAttribute** | Pointer to **string** | Attribute value used for radius authentication | [optional] 
 **ResourceGroupList** | Pointer to [**[]SslVpnResourceGroupBriefInfo**](SslVpnResourceGroupBriefInfo.md) | Resource group list of the SSL VPN user group | [optional] 
@@ -31,31 +31,6 @@ NewSslVpnUserGroupEntityWithDefaults instantiates a new SslVpnUserGroupEntity ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetLDAPAttribute
-
-`func (o *SslVpnUserGroupEntity) GetLDAPAttribute() string`
-
-GetLDAPAttribute returns the LDAPAttribute field if non-nil, zero value otherwise.
-
-### GetLDAPAttributeOk
-
-`func (o *SslVpnUserGroupEntity) GetLDAPAttributeOk() (*string, bool)`
-
-GetLDAPAttributeOk returns a tuple with the LDAPAttribute field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLDAPAttribute
-
-`func (o *SslVpnUserGroupEntity) SetLDAPAttribute(v string)`
-
-SetLDAPAttribute sets LDAPAttribute field to given value.
-
-### HasLDAPAttribute
-
-`func (o *SslVpnUserGroupEntity) HasLDAPAttribute() bool`
-
-HasLDAPAttribute returns a boolean if a field has been set.
-
 ### GetId
 
 `func (o *SslVpnUserGroupEntity) GetId() string`
@@ -80,6 +55,31 @@ SetId sets Id field to given value.
 `func (o *SslVpnUserGroupEntity) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetLdapAttribute
+
+`func (o *SslVpnUserGroupEntity) GetLdapAttribute() string`
+
+GetLdapAttribute returns the LdapAttribute field if non-nil, zero value otherwise.
+
+### GetLdapAttributeOk
+
+`func (o *SslVpnUserGroupEntity) GetLdapAttributeOk() (*string, bool)`
+
+GetLdapAttributeOk returns a tuple with the LdapAttribute field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLdapAttribute
+
+`func (o *SslVpnUserGroupEntity) SetLdapAttribute(v string)`
+
+SetLdapAttribute sets LdapAttribute field to given value.
+
+### HasLdapAttribute
+
+`func (o *SslVpnUserGroupEntity) HasLdapAttribute() bool`
+
+HasLdapAttribute returns a boolean if a field has been set.
 
 ### GetName
 

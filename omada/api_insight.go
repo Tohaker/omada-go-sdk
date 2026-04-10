@@ -134,8 +134,8 @@ type InsightAPI interface {
 	GetBatchFullChannelDetectStatus(ctx context.Context, omadacId string, siteId string) InsightAPIGetBatchFullChannelDetectStatusRequest
 
 	// GetBatchFullChannelDetectStatusExecute executes the request
-	//  @return OperationResponseListBatchFullChannelDetectHistoryOpenApiVO
-	GetBatchFullChannelDetectStatusExecute(r InsightAPIGetBatchFullChannelDetectStatusRequest) (*OperationResponseListBatchFullChannelDetectHistoryOpenApiVO, *http.Response, error)
+	//  @return OperationResponseListBatchFullChannelDetectStatusOpenApiVO
+	GetBatchFullChannelDetectStatusExecute(r InsightAPIGetBatchFullChannelDetectStatusRequest) (*OperationResponseListBatchFullChannelDetectStatusOpenApiVO, *http.Response, error)
 
 	/*
 	GetBatchWifiInterferencesResult Get WiFi interference results of batch interference detection
@@ -304,6 +304,22 @@ type InsightAPI interface {
 	GetGridStackRoutingTableExecute(r InsightAPIGetGridStackRoutingTableRequest) (*OperationResponseGridVOStackRoutingOpenApiVO, *http.Response, error)
 
 	/*
+	GetGridVpnClientStatus Get VPN Client status list
+
+	Get VPN Client status list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return InsightAPIGetGridVpnClientStatusRequest
+	*/
+	GetGridVpnClientStatus(ctx context.Context, omadacId string, siteId string) InsightAPIGetGridVpnClientStatusRequest
+
+	// GetGridVpnClientStatusExecute executes the request
+	//  @return OperationResponseGridVOVpnTunnelStatusVO
+	GetGridVpnClientStatusExecute(r InsightAPIGetGridVpnClientStatusRequest) (*OperationResponseGridVOVpnTunnelStatusVO, *http.Response, error)
+
+	/*
 	GetGridVpnIpSec Query the vpnStats ipsec list
 
 	Query the vpnStats ipsec list<br/><br/>The interface requires one of the permissions: <br/>Site Insight Manager View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
@@ -318,6 +334,72 @@ type InsightAPI interface {
 	// GetGridVpnIpSecExecute executes the request
 	//  @return OperationResponseGridVOOsgVpnIpSecOpenApiVO
 	GetGridVpnIpSecExecute(r InsightAPIGetGridVpnIpSecRequest) (*OperationResponseGridVOOsgVpnIpSecOpenApiVO, *http.Response, error)
+
+	/*
+	GetGridVpnS2SPeersStatus Get VPN Site-to-Site's peers status list
+
+	Get VPN Site-to-Site's peers status list by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return InsightAPIGetGridVpnS2SPeersStatusRequest
+	*/
+	GetGridVpnS2SPeersStatus(ctx context.Context, omadacId string, siteId string, vpnId string) InsightAPIGetGridVpnS2SPeersStatusRequest
+
+	// GetGridVpnS2SPeersStatusExecute executes the request
+	//  @return OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO
+	GetGridVpnS2SPeersStatusExecute(r InsightAPIGetGridVpnS2SPeersStatusRequest) (*OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO, *http.Response, error)
+
+	/*
+	GetGridVpnS2SStatus Get VPN Site-to-Site status list
+
+	Get VPN Site-to-Site status list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return InsightAPIGetGridVpnS2SStatusRequest
+	*/
+	GetGridVpnS2SStatus(ctx context.Context, omadacId string, siteId string) InsightAPIGetGridVpnS2SStatusRequest
+
+	// GetGridVpnS2SStatusExecute executes the request
+	//  @return OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO
+	GetGridVpnS2SStatusExecute(r InsightAPIGetGridVpnS2SStatusRequest) (*OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO, *http.Response, error)
+
+	/*
+	GetGridVpnServerClientsStatus Get VPN Server's clients status list
+
+	Get VPN Server's clients status list by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param vpnId VPN ID
+	@return InsightAPIGetGridVpnServerClientsStatusRequest
+	*/
+	GetGridVpnServerClientsStatus(ctx context.Context, omadacId string, siteId string, vpnId string) InsightAPIGetGridVpnServerClientsStatusRequest
+
+	// GetGridVpnServerClientsStatusExecute executes the request
+	//  @return OperationResponseGridVOVpnTunnelRemoteStatusVO
+	GetGridVpnServerClientsStatusExecute(r InsightAPIGetGridVpnServerClientsStatusRequest) (*OperationResponseGridVOVpnTunnelRemoteStatusVO, *http.Response, error)
+
+	/*
+	GetGridVpnServerStatus Get VPN Server status list
+
+	Get VPN Server status list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return InsightAPIGetGridVpnServerStatusRequest
+	*/
+	GetGridVpnServerStatus(ctx context.Context, omadacId string, siteId string) InsightAPIGetGridVpnServerStatusRequest
+
+	// GetGridVpnServerStatusExecute executes the request
+	//  @return OperationResponseVpnTunnelGridVOVpnTunnelStatusVO
+	GetGridVpnServerStatusExecute(r InsightAPIGetGridVpnServerStatusRequest) (*OperationResponseVpnTunnelGridVOVpnTunnelStatusVO, *http.Response, error)
 
 	/*
 	GetGridVpnTunnel Query the vpnStats tunnel list
@@ -1339,7 +1421,7 @@ func (r InsightAPIGetBatchFullChannelDetectStatusRequest) QueryBatchFullChannelD
 	return r
 }
 
-func (r InsightAPIGetBatchFullChannelDetectStatusRequest) Execute() (*OperationResponseListBatchFullChannelDetectHistoryOpenApiVO, *http.Response, error) {
+func (r InsightAPIGetBatchFullChannelDetectStatusRequest) Execute() (*OperationResponseListBatchFullChannelDetectStatusOpenApiVO, *http.Response, error) {
 	return r.ApiService.GetBatchFullChannelDetectStatusExecute(r)
 }
 
@@ -1363,13 +1445,13 @@ func (a *InsightAPIService) GetBatchFullChannelDetectStatus(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OperationResponseListBatchFullChannelDetectHistoryOpenApiVO
-func (a *InsightAPIService) GetBatchFullChannelDetectStatusExecute(r InsightAPIGetBatchFullChannelDetectStatusRequest) (*OperationResponseListBatchFullChannelDetectHistoryOpenApiVO, *http.Response, error) {
+//  @return OperationResponseListBatchFullChannelDetectStatusOpenApiVO
+func (a *InsightAPIService) GetBatchFullChannelDetectStatusExecute(r InsightAPIGetBatchFullChannelDetectStatusRequest) (*OperationResponseListBatchFullChannelDetectStatusOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseListBatchFullChannelDetectHistoryOpenApiVO
+		localVarReturnValue  *OperationResponseListBatchFullChannelDetectStatusOpenApiVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetBatchFullChannelDetectStatus")
@@ -2937,6 +3019,160 @@ func (a *InsightAPIService) GetGridStackRoutingTableExecute(r InsightAPIGetGridS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type InsightAPIGetGridVpnClientStatusRequest struct {
+	ctx context.Context
+	ApiService InsightAPI
+	omadacId string
+	siteId string
+	filtersVpnType *string
+	page *int32
+	pageSize *int32
+}
+
+// Filter query parameters, support field vpnType. 0: L2TP; 1: PPTP; 3: OpenVPN; 4: WireGuard.
+func (r InsightAPIGetGridVpnClientStatusRequest) FiltersVpnType(filtersVpnType string) InsightAPIGetGridVpnClientStatusRequest {
+	r.filtersVpnType = &filtersVpnType
+	return r
+}
+
+// Start page number. Start from 1.
+func (r InsightAPIGetGridVpnClientStatusRequest) Page(page int32) InsightAPIGetGridVpnClientStatusRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r InsightAPIGetGridVpnClientStatusRequest) PageSize(pageSize int32) InsightAPIGetGridVpnClientStatusRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r InsightAPIGetGridVpnClientStatusRequest) Execute() (*OperationResponseGridVOVpnTunnelStatusVO, *http.Response, error) {
+	return r.ApiService.GetGridVpnClientStatusExecute(r)
+}
+
+/*
+GetGridVpnClientStatus Get VPN Client status list
+
+Get VPN Client status list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return InsightAPIGetGridVpnClientStatusRequest
+*/
+func (a *InsightAPIService) GetGridVpnClientStatus(ctx context.Context, omadacId string, siteId string) InsightAPIGetGridVpnClientStatusRequest {
+	return InsightAPIGetGridVpnClientStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOVpnTunnelStatusVO
+func (a *InsightAPIService) GetGridVpnClientStatusExecute(r InsightAPIGetGridVpnClientStatusRequest) (*OperationResponseGridVOVpnTunnelStatusVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOVpnTunnelStatusVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetGridVpnClientStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/client"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.filtersVpnType == nil {
+		return localVarReturnValue, nil, reportError("filtersVpnType is required and must be specified")
+	}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.vpnType", r.filtersVpnType, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type InsightAPIGetGridVpnIpSecRequest struct {
 	ctx context.Context
 	ApiService InsightAPI
@@ -3010,6 +3246,678 @@ func (a *InsightAPIService) GetGridVpnIpSecExecute(r InsightAPIGetGridVpnIpSecRe
 		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
 	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type InsightAPIGetGridVpnS2SPeersStatusRequest struct {
+	ctx context.Context
+	ApiService InsightAPI
+	omadacId string
+	siteId string
+	vpnId string
+	page *int32
+	pageSize *int32
+	filtersStatus *string
+	searchKey *string
+}
+
+// Start page number. Start from 1.
+func (r InsightAPIGetGridVpnS2SPeersStatusRequest) Page(page int32) InsightAPIGetGridVpnS2SPeersStatusRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r InsightAPIGetGridVpnS2SPeersStatusRequest) PageSize(pageSize int32) InsightAPIGetGridVpnS2SPeersStatusRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Filter query parameters, support field status. 0: disconnected; 1: connected.
+func (r InsightAPIGetGridVpnS2SPeersStatusRequest) FiltersStatus(filtersStatus string) InsightAPIGetGridVpnS2SPeersStatusRequest {
+	r.filtersStatus = &filtersStatus
+	return r
+}
+
+// searchKey
+func (r InsightAPIGetGridVpnS2SPeersStatusRequest) SearchKey(searchKey string) InsightAPIGetGridVpnS2SPeersStatusRequest {
+	r.searchKey = &searchKey
+	return r
+}
+
+func (r InsightAPIGetGridVpnS2SPeersStatusRequest) Execute() (*OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO, *http.Response, error) {
+	return r.ApiService.GetGridVpnS2SPeersStatusExecute(r)
+}
+
+/*
+GetGridVpnS2SPeersStatus Get VPN Site-to-Site's peers status list
+
+Get VPN Site-to-Site's peers status list by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return InsightAPIGetGridVpnS2SPeersStatusRequest
+*/
+func (a *InsightAPIService) GetGridVpnS2SPeersStatus(ctx context.Context, omadacId string, siteId string, vpnId string) InsightAPIGetGridVpnS2SPeersStatusRequest {
+	return InsightAPIGetGridVpnS2SPeersStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO
+func (a *InsightAPIService) GetGridVpnS2SPeersStatusExecute(r InsightAPIGetGridVpnS2SPeersStatusRequest) (*OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGetVpnResponseGridVOVpnTunnelRemoteStatusVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetGridVpnS2SPeersStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/s2s/{vpnId}/peer"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	if r.filtersStatus != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.status", r.filtersStatus, "form", "")
+	}
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type InsightAPIGetGridVpnS2SStatusRequest struct {
+	ctx context.Context
+	ApiService InsightAPI
+	omadacId string
+	siteId string
+	filtersVpnType *string
+	page *int32
+	pageSize *int32
+}
+
+// Filter query parameters, support field vpnType. 2: IPSec; 4: WireGuard.
+func (r InsightAPIGetGridVpnS2SStatusRequest) FiltersVpnType(filtersVpnType string) InsightAPIGetGridVpnS2SStatusRequest {
+	r.filtersVpnType = &filtersVpnType
+	return r
+}
+
+// Start page number. Start from 1.
+func (r InsightAPIGetGridVpnS2SStatusRequest) Page(page int32) InsightAPIGetGridVpnS2SStatusRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r InsightAPIGetGridVpnS2SStatusRequest) PageSize(pageSize int32) InsightAPIGetGridVpnS2SStatusRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r InsightAPIGetGridVpnS2SStatusRequest) Execute() (*OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO, *http.Response, error) {
+	return r.ApiService.GetGridVpnS2SStatusExecute(r)
+}
+
+/*
+GetGridVpnS2SStatus Get VPN Site-to-Site status list
+
+Get VPN Site-to-Site status list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return InsightAPIGetGridVpnS2SStatusRequest
+*/
+func (a *InsightAPIService) GetGridVpnS2SStatus(ctx context.Context, omadacId string, siteId string) InsightAPIGetGridVpnS2SStatusRequest {
+	return InsightAPIGetGridVpnS2SStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO
+func (a *InsightAPIService) GetGridVpnS2SStatusExecute(r InsightAPIGetGridVpnS2SStatusRequest) (*OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGetVpnResponseGridVOVpnTunnelStatusVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetGridVpnS2SStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/s2s"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.filtersVpnType == nil {
+		return localVarReturnValue, nil, reportError("filtersVpnType is required and must be specified")
+	}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.vpnType", r.filtersVpnType, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type InsightAPIGetGridVpnServerClientsStatusRequest struct {
+	ctx context.Context
+	ApiService InsightAPI
+	omadacId string
+	siteId string
+	vpnId string
+	page *int32
+	pageSize *int32
+	filtersStatus *string
+	searchKey *string
+}
+
+// Start page number. Start from 1.
+func (r InsightAPIGetGridVpnServerClientsStatusRequest) Page(page int32) InsightAPIGetGridVpnServerClientsStatusRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r InsightAPIGetGridVpnServerClientsStatusRequest) PageSize(pageSize int32) InsightAPIGetGridVpnServerClientsStatusRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Filter query parameters, support field status. 0: disconnected; 1: connected.
+func (r InsightAPIGetGridVpnServerClientsStatusRequest) FiltersStatus(filtersStatus string) InsightAPIGetGridVpnServerClientsStatusRequest {
+	r.filtersStatus = &filtersStatus
+	return r
+}
+
+// searchKey
+func (r InsightAPIGetGridVpnServerClientsStatusRequest) SearchKey(searchKey string) InsightAPIGetGridVpnServerClientsStatusRequest {
+	r.searchKey = &searchKey
+	return r
+}
+
+func (r InsightAPIGetGridVpnServerClientsStatusRequest) Execute() (*OperationResponseGridVOVpnTunnelRemoteStatusVO, *http.Response, error) {
+	return r.ApiService.GetGridVpnServerClientsStatusExecute(r)
+}
+
+/*
+GetGridVpnServerClientsStatus Get VPN Server's clients status list
+
+Get VPN Server's clients status list by VPN ID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param vpnId VPN ID
+ @return InsightAPIGetGridVpnServerClientsStatusRequest
+*/
+func (a *InsightAPIService) GetGridVpnServerClientsStatus(ctx context.Context, omadacId string, siteId string, vpnId string) InsightAPIGetGridVpnServerClientsStatusRequest {
+	return InsightAPIGetGridVpnServerClientsStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		vpnId: vpnId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOVpnTunnelRemoteStatusVO
+func (a *InsightAPIService) GetGridVpnServerClientsStatusExecute(r InsightAPIGetGridVpnServerClientsStatusRequest) (*OperationResponseGridVOVpnTunnelRemoteStatusVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOVpnTunnelRemoteStatusVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetGridVpnServerClientsStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/server/{vpnId}/client"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"vpnId"+"}", url.PathEscape(parameterValueToString(r.vpnId, "vpnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	if r.filtersStatus != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.status", r.filtersStatus, "form", "")
+	}
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type InsightAPIGetGridVpnServerStatusRequest struct {
+	ctx context.Context
+	ApiService InsightAPI
+	omadacId string
+	siteId string
+	filtersVpnType *string
+	page *int32
+	pageSize *int32
+	filtersClientMode *string
+	sortsActiveClients *string
+	sortsClients *string
+}
+
+// Filter query parameters, support field vpnType. 0: L2TP; 1: PPTP; 2: IPSec; 3: OpenVPN; 4: WireGuard; 5: SSL VPN.
+func (r InsightAPIGetGridVpnServerStatusRequest) FiltersVpnType(filtersVpnType string) InsightAPIGetGridVpnServerStatusRequest {
+	r.filtersVpnType = &filtersVpnType
+	return r
+}
+
+// Start page number. Start from 1.
+func (r InsightAPIGetGridVpnServerStatusRequest) Page(page int32) InsightAPIGetGridVpnServerStatusRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r InsightAPIGetGridVpnServerStatusRequest) PageSize(pageSize int32) InsightAPIGetGridVpnServerStatusRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Filter query parameters, support field Client mode for VPN user. 0: NEM(Network Extension Mode) ; 1: Client.
+func (r InsightAPIGetGridVpnServerStatusRequest) FiltersClientMode(filtersClientMode string) InsightAPIGetGridVpnServerStatusRequest {
+	r.filtersClientMode = &filtersClientMode
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r InsightAPIGetGridVpnServerStatusRequest) SortsActiveClients(sortsActiveClients string) InsightAPIGetGridVpnServerStatusRequest {
+	r.sortsActiveClients = &sortsActiveClients
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r InsightAPIGetGridVpnServerStatusRequest) SortsClients(sortsClients string) InsightAPIGetGridVpnServerStatusRequest {
+	r.sortsClients = &sortsClients
+	return r
+}
+
+func (r InsightAPIGetGridVpnServerStatusRequest) Execute() (*OperationResponseVpnTunnelGridVOVpnTunnelStatusVO, *http.Response, error) {
+	return r.ApiService.GetGridVpnServerStatusExecute(r)
+}
+
+/*
+GetGridVpnServerStatus Get VPN Server status list
+
+Get VPN Server status list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return InsightAPIGetGridVpnServerStatusRequest
+*/
+func (a *InsightAPIService) GetGridVpnServerStatus(ctx context.Context, omadacId string, siteId string) InsightAPIGetGridVpnServerStatusRequest {
+	return InsightAPIGetGridVpnServerStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseVpnTunnelGridVOVpnTunnelStatusVO
+func (a *InsightAPIService) GetGridVpnServerStatusExecute(r InsightAPIGetGridVpnServerStatusRequest) (*OperationResponseVpnTunnelGridVOVpnTunnelStatusVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseVpnTunnelGridVOVpnTunnelStatusVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetGridVpnServerStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/vpn/stats/server"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.filtersVpnType == nil {
+		return localVarReturnValue, nil, reportError("filtersVpnType is required and must be specified")
+	}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.vpnType", r.filtersVpnType, "form", "")
+	if r.filtersClientMode != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.clientMode", r.filtersClientMode, "form", "")
+	}
+	if r.sortsActiveClients != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.activeClients", r.sortsActiveClients, "form", "")
+	}
+	if r.sortsClients != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.clients", r.sortsClients, "form", "")
+	}
 	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	// to determine the Content-Type header

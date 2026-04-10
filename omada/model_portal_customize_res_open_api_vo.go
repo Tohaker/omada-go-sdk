@@ -20,19 +20,44 @@ var _ MappedNullable = &PortalCustomizeResOpenApiVO{}
 // PortalCustomizeResOpenApiVO Portal customize setting, required when parameter [pageType] is 1
 type PortalCustomizeResOpenApiVO struct {
 	Advertisement *AdvertisementSettingResOpenApiVO `json:"advertisement,omitempty"`
-	// Background type, should be a value as follows: 1: solid color, 2: picture
+	// Background type, should be a value as follows: 0:library, 1: solid color, 2: picture
 	Background *int32 `json:"background,omitempty"`
 	// Portal background picture color. Hex color code such as: #ffffff
 	BackgroundColor *string `json:"backgroundColor,omitempty"`
+	// Background mask color. Hex color code such as: #ffffff.
+	BackgroundMaskColor *string `json:"backgroundMaskColor,omitempty"`
+	// Whether to enable multiple language.
+	BackgroundMaskEnable *bool `json:"backgroundMaskEnable,omitempty"`
+	// Background mask opacity, should be within the range of 0–100.
+	BackgroundMaskOpacity *int32 `json:"backgroundMaskOpacity,omitempty"`
 	// Portal background picture transparency percentage, should be within the range of 0–100
 	BackgroundOpacity *int32 `json:"backgroundOpacity,omitempty"`
 	BackgroundPicture *PortalPictureInfo `json:"backgroundPicture,omitempty"`
+	// Index of library background picture, should be within the range of 0-5.
+	BackgroundPictureIndex *int32 `json:"backgroundPictureIndex,omitempty"`
+	BgPicCoordinatesOfLibrary *BgPicCoordinatesOfLibraryOpenApiVO `json:"bgPicCoordinatesOfLibrary,omitempty"`
+	// Body container background blurriness, should be within the range of 0–10.
+	BodyContainerBgBlur *int32 `json:"bodyContainerBgBlur,omitempty"`
+	// Whether to enable body container background blur.
+	BodyContainerBgBlurEnable *bool `json:"bodyContainerBgBlurEnable,omitempty"`
+	// Body container color. Hex color code such as: #ffffff.
+	BodyContainerColor *string `json:"bodyContainerColor,omitempty"`
+	// Whether to enable body container.
+	BodyContainerEnable *bool `json:"bodyContainerEnable,omitempty"`
+	// Body container opacity, should be within the range of 0–100.
+	BodyContainerOpacity *int32 `json:"bodyContainerOpacity,omitempty"`
+	// Body container radius, should be within the range of 0–30.
+	BodyContainerRadius *int32 `json:"bodyContainerRadius,omitempty"`
+	// Type of body container, 0: none; 1: half; 2: all
+	BodyContainerType *int32 `json:"bodyContainerType,omitempty"`
 	// Button color. Hex color code such as: #ffffff
 	ButtonColor *string `json:"buttonColor,omitempty"`
 	// Button opacity, should be within the range of 0–100
 	ButtonOpacity *int32 `json:"buttonOpacity,omitempty"`
 	// Button position ratio
 	ButtonPositionRatio *float32 `json:"buttonPositionRatio,omitempty"`
+	// Button radius, should be within the range of 0–30.
+	ButtonRadius *int32 `json:"buttonRadius,omitempty"`
 	// Button text, should contain 0 to 32 characters, default value is \"Log In\"
 	ButtonText *string `json:"buttonText,omitempty"`
 	// Button text color. Hex color code such as: #ffffff
@@ -53,28 +78,49 @@ type PortalCustomizeResOpenApiVO struct {
 	CopyrightTextOpacity *int32 `json:"copyrightTextOpacity,omitempty"`
 	// The controller automatically adjusts the language displayed on the Portal page according to the system language of the clients. If the language is not supported, the controller will use the default language specified here. DefaultLanguage should be a value as follows:<br/>1: en_US (English); 3: cs_CZ (Český); 4: de_DE (Deutsch); 5: da_DK (Dansk); 6: el_GR (ελληνικά);<br/>7: fr_FR (Français); 8: es_ES (Español); 9: nl_NL (Nederlands); 10: it_IT (Italiano); 11: pl_PL (Polski);<br/>12: pt_PT (Português); 13: ru_RU (Русский); 14: sv_SE (Svenska); 15: tr_TR (Türkçe);<br/>16: ar_SA (لغة عربية); <br/>17: ja_JP (日本語); 18: zh_TW (中文(繁體)); 19: th_TH (ไทย); 20: vi_VN (Tiếng Việt); 21: ko_KR (한국어)
 	DefaultLanguage *int32 `json:"defaultLanguage,omitempty"`
+	// Description text, should contain 0 to 256 characters.
+	DescriptionText *string `json:"descriptionText,omitempty"`
+	// Description text color. Hex color code such as: #ffffff.
+	DescriptionTextColor *string `json:"descriptionTextColor,omitempty"`
+	// Description text font size, should be within the range of 12–18.
+	DescriptionTextFontSize *int32 `json:"descriptionTextFontSize,omitempty"`
+	// Description text opacity, should be within the range of 0–100.
+	DescriptionTextOpacity *int32 `json:"descriptionTextOpacity,omitempty"`
+	// Whether to use different images in mobile and PC devices
+	EnableDeviceSpecificBg *bool `json:"enableDeviceSpecificBg,omitempty"`
 	// Form auth button text, should contain 0 to 32 characters. Required when [authType] is 11 and hotspot [enabledTypes] contains 12. Default value is \"Take the Survey\"
 	FormAuthButtonText *string `json:"formAuthButtonText,omitempty"`
+	// Input box border color. Hex color code such as: #ffffff.
+	InputBoxBorderColor *string `json:"inputBoxBorderColor,omitempty"`
+	// Input box border opacity, should be within the range of 0–100.
+	InputBoxBorderOpacity *int32 `json:"inputBoxBorderOpacity,omitempty"`
 	// Input box color. Hex color code such as: #ffffff
 	InputBoxColor *string `json:"inputBoxColor,omitempty"`
 	// Input box opacity, should be within the range of 0–100
 	InputBoxOpacity *int32 `json:"inputBoxOpacity,omitempty"`
+	// Input box radius, should be within the range of 0–30.
+	InputBoxRadius *int32 `json:"inputBoxRadius,omitempty"`
 	// Input text color. Hex color code such as: #ffffff
 	InputTextColor *string `json:"inputTextColor,omitempty"`
 	// Input text opacity, should be within the range of 0–100
 	InputTextOpacity *int32 `json:"inputTextOpacity,omitempty"`
 	// Whether to display the default logo
 	LogoDisplay *bool `json:"logoDisplay,omitempty"`
+	// Position of logo horizontal, 0: left; 1: medium; 2: right
+	LogoHorizontalPosition *int32 `json:"logoHorizontalPosition,omitempty"`
 	LogoPicture *PortalPictureInfo `json:"logoPicture,omitempty"`
 	// Logo position, should be a value as follow: 1: up; 2: middle; 3: lower
 	LogoPosition *int32 `json:"logoPosition,omitempty"`
 	// Logo position ratio, should be within the range of 1-100, represents from high to low.
 	LogoPositionRatio *float32 `json:"logoPositionRatio,omitempty"`
-	// Logo size, should be within the range of 30-100
+	// Logo size, should be within the range of 1-300
 	LogoSize *int32 `json:"logoSize,omitempty"`
 	// Distance of the logo from the top of the container, range: above 0
 	LogoTranslate *int32 `json:"logoTranslate,omitempty"`
 	MobileBackgroundPicture *PortalPictureInfo `json:"mobileBackgroundPicture,omitempty"`
+	MobileBgPicCoordinatesOfLibrary *BgPicCoordinatesOfLibraryOpenApiVO `json:"mobileBgPicCoordinatesOfLibrary,omitempty"`
+	// Position of pc align, 0: left; 1: medium; 2: right
+	PcAlign *int32 `json:"pcAlign,omitempty"`
 	// Whether to show redirection countdown after authorized
 	RedirectionCountDownEnable *bool `json:"redirectionCountDownEnable,omitempty"`
 	// Service Terms Content
@@ -85,6 +131,10 @@ type PortalCustomizeResOpenApiVO struct {
 	TermsOfServiceFontSize *int32 `json:"termsOfServiceFontSize,omitempty"`
 	// Terms of service text, should contain 0 to 100 characters
 	TermsOfServiceText *string `json:"termsOfServiceText,omitempty"`
+	// Terms of service text color. Hex color code such as: #ffffff.
+	TermsOfServiceTextColor *string `json:"termsOfServiceTextColor,omitempty"`
+	// Terms of service text opacity, should be within the range of 0–100.
+	TermsOfServiceTextOpacity *int32 `json:"termsOfServiceTextOpacity,omitempty"`
 	// Terms of service URL texts, match the termsOfServiceText and turn the matching characters into an openable link. Up to 3 entries are allowed for the list
 	TermsOfServiceUrlTexts []TermsOfServiceUrlVO `json:"termsOfServiceUrlTexts,omitempty"`
 	// Whether to display the welcome info
@@ -212,6 +262,102 @@ func (o *PortalCustomizeResOpenApiVO) SetBackgroundColor(v string) {
 	o.BackgroundColor = &v
 }
 
+// GetBackgroundMaskColor returns the BackgroundMaskColor field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskColor() string {
+	if o == nil || IsNil(o.BackgroundMaskColor) {
+		var ret string
+		return ret
+	}
+	return *o.BackgroundMaskColor
+}
+
+// GetBackgroundMaskColorOk returns a tuple with the BackgroundMaskColor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskColorOk() (*string, bool) {
+	if o == nil || IsNil(o.BackgroundMaskColor) {
+		return nil, false
+	}
+	return o.BackgroundMaskColor, true
+}
+
+// HasBackgroundMaskColor returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBackgroundMaskColor() bool {
+	if o != nil && !IsNil(o.BackgroundMaskColor) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackgroundMaskColor gets a reference to the given string and assigns it to the BackgroundMaskColor field.
+func (o *PortalCustomizeResOpenApiVO) SetBackgroundMaskColor(v string) {
+	o.BackgroundMaskColor = &v
+}
+
+// GetBackgroundMaskEnable returns the BackgroundMaskEnable field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskEnable() bool {
+	if o == nil || IsNil(o.BackgroundMaskEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.BackgroundMaskEnable
+}
+
+// GetBackgroundMaskEnableOk returns a tuple with the BackgroundMaskEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.BackgroundMaskEnable) {
+		return nil, false
+	}
+	return o.BackgroundMaskEnable, true
+}
+
+// HasBackgroundMaskEnable returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBackgroundMaskEnable() bool {
+	if o != nil && !IsNil(o.BackgroundMaskEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackgroundMaskEnable gets a reference to the given bool and assigns it to the BackgroundMaskEnable field.
+func (o *PortalCustomizeResOpenApiVO) SetBackgroundMaskEnable(v bool) {
+	o.BackgroundMaskEnable = &v
+}
+
+// GetBackgroundMaskOpacity returns the BackgroundMaskOpacity field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskOpacity() int32 {
+	if o == nil || IsNil(o.BackgroundMaskOpacity) {
+		var ret int32
+		return ret
+	}
+	return *o.BackgroundMaskOpacity
+}
+
+// GetBackgroundMaskOpacityOk returns a tuple with the BackgroundMaskOpacity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBackgroundMaskOpacityOk() (*int32, bool) {
+	if o == nil || IsNil(o.BackgroundMaskOpacity) {
+		return nil, false
+	}
+	return o.BackgroundMaskOpacity, true
+}
+
+// HasBackgroundMaskOpacity returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBackgroundMaskOpacity() bool {
+	if o != nil && !IsNil(o.BackgroundMaskOpacity) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackgroundMaskOpacity gets a reference to the given int32 and assigns it to the BackgroundMaskOpacity field.
+func (o *PortalCustomizeResOpenApiVO) SetBackgroundMaskOpacity(v int32) {
+	o.BackgroundMaskOpacity = &v
+}
+
 // GetBackgroundOpacity returns the BackgroundOpacity field value if set, zero value otherwise.
 func (o *PortalCustomizeResOpenApiVO) GetBackgroundOpacity() int32 {
 	if o == nil || IsNil(o.BackgroundOpacity) {
@@ -274,6 +420,294 @@ func (o *PortalCustomizeResOpenApiVO) HasBackgroundPicture() bool {
 // SetBackgroundPicture gets a reference to the given PortalPictureInfo and assigns it to the BackgroundPicture field.
 func (o *PortalCustomizeResOpenApiVO) SetBackgroundPicture(v PortalPictureInfo) {
 	o.BackgroundPicture = &v
+}
+
+// GetBackgroundPictureIndex returns the BackgroundPictureIndex field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBackgroundPictureIndex() int32 {
+	if o == nil || IsNil(o.BackgroundPictureIndex) {
+		var ret int32
+		return ret
+	}
+	return *o.BackgroundPictureIndex
+}
+
+// GetBackgroundPictureIndexOk returns a tuple with the BackgroundPictureIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBackgroundPictureIndexOk() (*int32, bool) {
+	if o == nil || IsNil(o.BackgroundPictureIndex) {
+		return nil, false
+	}
+	return o.BackgroundPictureIndex, true
+}
+
+// HasBackgroundPictureIndex returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBackgroundPictureIndex() bool {
+	if o != nil && !IsNil(o.BackgroundPictureIndex) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackgroundPictureIndex gets a reference to the given int32 and assigns it to the BackgroundPictureIndex field.
+func (o *PortalCustomizeResOpenApiVO) SetBackgroundPictureIndex(v int32) {
+	o.BackgroundPictureIndex = &v
+}
+
+// GetBgPicCoordinatesOfLibrary returns the BgPicCoordinatesOfLibrary field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBgPicCoordinatesOfLibrary() BgPicCoordinatesOfLibraryOpenApiVO {
+	if o == nil || IsNil(o.BgPicCoordinatesOfLibrary) {
+		var ret BgPicCoordinatesOfLibraryOpenApiVO
+		return ret
+	}
+	return *o.BgPicCoordinatesOfLibrary
+}
+
+// GetBgPicCoordinatesOfLibraryOk returns a tuple with the BgPicCoordinatesOfLibrary field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBgPicCoordinatesOfLibraryOk() (*BgPicCoordinatesOfLibraryOpenApiVO, bool) {
+	if o == nil || IsNil(o.BgPicCoordinatesOfLibrary) {
+		return nil, false
+	}
+	return o.BgPicCoordinatesOfLibrary, true
+}
+
+// HasBgPicCoordinatesOfLibrary returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBgPicCoordinatesOfLibrary() bool {
+	if o != nil && !IsNil(o.BgPicCoordinatesOfLibrary) {
+		return true
+	}
+
+	return false
+}
+
+// SetBgPicCoordinatesOfLibrary gets a reference to the given BgPicCoordinatesOfLibraryOpenApiVO and assigns it to the BgPicCoordinatesOfLibrary field.
+func (o *PortalCustomizeResOpenApiVO) SetBgPicCoordinatesOfLibrary(v BgPicCoordinatesOfLibraryOpenApiVO) {
+	o.BgPicCoordinatesOfLibrary = &v
+}
+
+// GetBodyContainerBgBlur returns the BodyContainerBgBlur field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerBgBlur() int32 {
+	if o == nil || IsNil(o.BodyContainerBgBlur) {
+		var ret int32
+		return ret
+	}
+	return *o.BodyContainerBgBlur
+}
+
+// GetBodyContainerBgBlurOk returns a tuple with the BodyContainerBgBlur field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerBgBlurOk() (*int32, bool) {
+	if o == nil || IsNil(o.BodyContainerBgBlur) {
+		return nil, false
+	}
+	return o.BodyContainerBgBlur, true
+}
+
+// HasBodyContainerBgBlur returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBodyContainerBgBlur() bool {
+	if o != nil && !IsNil(o.BodyContainerBgBlur) {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyContainerBgBlur gets a reference to the given int32 and assigns it to the BodyContainerBgBlur field.
+func (o *PortalCustomizeResOpenApiVO) SetBodyContainerBgBlur(v int32) {
+	o.BodyContainerBgBlur = &v
+}
+
+// GetBodyContainerBgBlurEnable returns the BodyContainerBgBlurEnable field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerBgBlurEnable() bool {
+	if o == nil || IsNil(o.BodyContainerBgBlurEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.BodyContainerBgBlurEnable
+}
+
+// GetBodyContainerBgBlurEnableOk returns a tuple with the BodyContainerBgBlurEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerBgBlurEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.BodyContainerBgBlurEnable) {
+		return nil, false
+	}
+	return o.BodyContainerBgBlurEnable, true
+}
+
+// HasBodyContainerBgBlurEnable returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBodyContainerBgBlurEnable() bool {
+	if o != nil && !IsNil(o.BodyContainerBgBlurEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyContainerBgBlurEnable gets a reference to the given bool and assigns it to the BodyContainerBgBlurEnable field.
+func (o *PortalCustomizeResOpenApiVO) SetBodyContainerBgBlurEnable(v bool) {
+	o.BodyContainerBgBlurEnable = &v
+}
+
+// GetBodyContainerColor returns the BodyContainerColor field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerColor() string {
+	if o == nil || IsNil(o.BodyContainerColor) {
+		var ret string
+		return ret
+	}
+	return *o.BodyContainerColor
+}
+
+// GetBodyContainerColorOk returns a tuple with the BodyContainerColor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerColorOk() (*string, bool) {
+	if o == nil || IsNil(o.BodyContainerColor) {
+		return nil, false
+	}
+	return o.BodyContainerColor, true
+}
+
+// HasBodyContainerColor returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBodyContainerColor() bool {
+	if o != nil && !IsNil(o.BodyContainerColor) {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyContainerColor gets a reference to the given string and assigns it to the BodyContainerColor field.
+func (o *PortalCustomizeResOpenApiVO) SetBodyContainerColor(v string) {
+	o.BodyContainerColor = &v
+}
+
+// GetBodyContainerEnable returns the BodyContainerEnable field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerEnable() bool {
+	if o == nil || IsNil(o.BodyContainerEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.BodyContainerEnable
+}
+
+// GetBodyContainerEnableOk returns a tuple with the BodyContainerEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.BodyContainerEnable) {
+		return nil, false
+	}
+	return o.BodyContainerEnable, true
+}
+
+// HasBodyContainerEnable returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBodyContainerEnable() bool {
+	if o != nil && !IsNil(o.BodyContainerEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyContainerEnable gets a reference to the given bool and assigns it to the BodyContainerEnable field.
+func (o *PortalCustomizeResOpenApiVO) SetBodyContainerEnable(v bool) {
+	o.BodyContainerEnable = &v
+}
+
+// GetBodyContainerOpacity returns the BodyContainerOpacity field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerOpacity() int32 {
+	if o == nil || IsNil(o.BodyContainerOpacity) {
+		var ret int32
+		return ret
+	}
+	return *o.BodyContainerOpacity
+}
+
+// GetBodyContainerOpacityOk returns a tuple with the BodyContainerOpacity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerOpacityOk() (*int32, bool) {
+	if o == nil || IsNil(o.BodyContainerOpacity) {
+		return nil, false
+	}
+	return o.BodyContainerOpacity, true
+}
+
+// HasBodyContainerOpacity returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBodyContainerOpacity() bool {
+	if o != nil && !IsNil(o.BodyContainerOpacity) {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyContainerOpacity gets a reference to the given int32 and assigns it to the BodyContainerOpacity field.
+func (o *PortalCustomizeResOpenApiVO) SetBodyContainerOpacity(v int32) {
+	o.BodyContainerOpacity = &v
+}
+
+// GetBodyContainerRadius returns the BodyContainerRadius field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerRadius() int32 {
+	if o == nil || IsNil(o.BodyContainerRadius) {
+		var ret int32
+		return ret
+	}
+	return *o.BodyContainerRadius
+}
+
+// GetBodyContainerRadiusOk returns a tuple with the BodyContainerRadius field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerRadiusOk() (*int32, bool) {
+	if o == nil || IsNil(o.BodyContainerRadius) {
+		return nil, false
+	}
+	return o.BodyContainerRadius, true
+}
+
+// HasBodyContainerRadius returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBodyContainerRadius() bool {
+	if o != nil && !IsNil(o.BodyContainerRadius) {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyContainerRadius gets a reference to the given int32 and assigns it to the BodyContainerRadius field.
+func (o *PortalCustomizeResOpenApiVO) SetBodyContainerRadius(v int32) {
+	o.BodyContainerRadius = &v
+}
+
+// GetBodyContainerType returns the BodyContainerType field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerType() int32 {
+	if o == nil || IsNil(o.BodyContainerType) {
+		var ret int32
+		return ret
+	}
+	return *o.BodyContainerType
+}
+
+// GetBodyContainerTypeOk returns a tuple with the BodyContainerType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetBodyContainerTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.BodyContainerType) {
+		return nil, false
+	}
+	return o.BodyContainerType, true
+}
+
+// HasBodyContainerType returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasBodyContainerType() bool {
+	if o != nil && !IsNil(o.BodyContainerType) {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyContainerType gets a reference to the given int32 and assigns it to the BodyContainerType field.
+func (o *PortalCustomizeResOpenApiVO) SetBodyContainerType(v int32) {
+	o.BodyContainerType = &v
 }
 
 // GetButtonColor returns the ButtonColor field value if set, zero value otherwise.
@@ -370,6 +804,38 @@ func (o *PortalCustomizeResOpenApiVO) HasButtonPositionRatio() bool {
 // SetButtonPositionRatio gets a reference to the given float32 and assigns it to the ButtonPositionRatio field.
 func (o *PortalCustomizeResOpenApiVO) SetButtonPositionRatio(v float32) {
 	o.ButtonPositionRatio = &v
+}
+
+// GetButtonRadius returns the ButtonRadius field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetButtonRadius() int32 {
+	if o == nil || IsNil(o.ButtonRadius) {
+		var ret int32
+		return ret
+	}
+	return *o.ButtonRadius
+}
+
+// GetButtonRadiusOk returns a tuple with the ButtonRadius field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetButtonRadiusOk() (*int32, bool) {
+	if o == nil || IsNil(o.ButtonRadius) {
+		return nil, false
+	}
+	return o.ButtonRadius, true
+}
+
+// HasButtonRadius returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasButtonRadius() bool {
+	if o != nil && !IsNil(o.ButtonRadius) {
+		return true
+	}
+
+	return false
+}
+
+// SetButtonRadius gets a reference to the given int32 and assigns it to the ButtonRadius field.
+func (o *PortalCustomizeResOpenApiVO) SetButtonRadius(v int32) {
+	o.ButtonRadius = &v
 }
 
 // GetButtonText returns the ButtonText field value if set, zero value otherwise.
@@ -692,6 +1158,166 @@ func (o *PortalCustomizeResOpenApiVO) SetDefaultLanguage(v int32) {
 	o.DefaultLanguage = &v
 }
 
+// GetDescriptionText returns the DescriptionText field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetDescriptionText() string {
+	if o == nil || IsNil(o.DescriptionText) {
+		var ret string
+		return ret
+	}
+	return *o.DescriptionText
+}
+
+// GetDescriptionTextOk returns a tuple with the DescriptionText field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextOk() (*string, bool) {
+	if o == nil || IsNil(o.DescriptionText) {
+		return nil, false
+	}
+	return o.DescriptionText, true
+}
+
+// HasDescriptionText returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasDescriptionText() bool {
+	if o != nil && !IsNil(o.DescriptionText) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescriptionText gets a reference to the given string and assigns it to the DescriptionText field.
+func (o *PortalCustomizeResOpenApiVO) SetDescriptionText(v string) {
+	o.DescriptionText = &v
+}
+
+// GetDescriptionTextColor returns the DescriptionTextColor field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextColor() string {
+	if o == nil || IsNil(o.DescriptionTextColor) {
+		var ret string
+		return ret
+	}
+	return *o.DescriptionTextColor
+}
+
+// GetDescriptionTextColorOk returns a tuple with the DescriptionTextColor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextColorOk() (*string, bool) {
+	if o == nil || IsNil(o.DescriptionTextColor) {
+		return nil, false
+	}
+	return o.DescriptionTextColor, true
+}
+
+// HasDescriptionTextColor returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasDescriptionTextColor() bool {
+	if o != nil && !IsNil(o.DescriptionTextColor) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescriptionTextColor gets a reference to the given string and assigns it to the DescriptionTextColor field.
+func (o *PortalCustomizeResOpenApiVO) SetDescriptionTextColor(v string) {
+	o.DescriptionTextColor = &v
+}
+
+// GetDescriptionTextFontSize returns the DescriptionTextFontSize field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextFontSize() int32 {
+	if o == nil || IsNil(o.DescriptionTextFontSize) {
+		var ret int32
+		return ret
+	}
+	return *o.DescriptionTextFontSize
+}
+
+// GetDescriptionTextFontSizeOk returns a tuple with the DescriptionTextFontSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextFontSizeOk() (*int32, bool) {
+	if o == nil || IsNil(o.DescriptionTextFontSize) {
+		return nil, false
+	}
+	return o.DescriptionTextFontSize, true
+}
+
+// HasDescriptionTextFontSize returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasDescriptionTextFontSize() bool {
+	if o != nil && !IsNil(o.DescriptionTextFontSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescriptionTextFontSize gets a reference to the given int32 and assigns it to the DescriptionTextFontSize field.
+func (o *PortalCustomizeResOpenApiVO) SetDescriptionTextFontSize(v int32) {
+	o.DescriptionTextFontSize = &v
+}
+
+// GetDescriptionTextOpacity returns the DescriptionTextOpacity field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextOpacity() int32 {
+	if o == nil || IsNil(o.DescriptionTextOpacity) {
+		var ret int32
+		return ret
+	}
+	return *o.DescriptionTextOpacity
+}
+
+// GetDescriptionTextOpacityOk returns a tuple with the DescriptionTextOpacity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetDescriptionTextOpacityOk() (*int32, bool) {
+	if o == nil || IsNil(o.DescriptionTextOpacity) {
+		return nil, false
+	}
+	return o.DescriptionTextOpacity, true
+}
+
+// HasDescriptionTextOpacity returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasDescriptionTextOpacity() bool {
+	if o != nil && !IsNil(o.DescriptionTextOpacity) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescriptionTextOpacity gets a reference to the given int32 and assigns it to the DescriptionTextOpacity field.
+func (o *PortalCustomizeResOpenApiVO) SetDescriptionTextOpacity(v int32) {
+	o.DescriptionTextOpacity = &v
+}
+
+// GetEnableDeviceSpecificBg returns the EnableDeviceSpecificBg field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetEnableDeviceSpecificBg() bool {
+	if o == nil || IsNil(o.EnableDeviceSpecificBg) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableDeviceSpecificBg
+}
+
+// GetEnableDeviceSpecificBgOk returns a tuple with the EnableDeviceSpecificBg field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetEnableDeviceSpecificBgOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableDeviceSpecificBg) {
+		return nil, false
+	}
+	return o.EnableDeviceSpecificBg, true
+}
+
+// HasEnableDeviceSpecificBg returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasEnableDeviceSpecificBg() bool {
+	if o != nil && !IsNil(o.EnableDeviceSpecificBg) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableDeviceSpecificBg gets a reference to the given bool and assigns it to the EnableDeviceSpecificBg field.
+func (o *PortalCustomizeResOpenApiVO) SetEnableDeviceSpecificBg(v bool) {
+	o.EnableDeviceSpecificBg = &v
+}
+
 // GetFormAuthButtonText returns the FormAuthButtonText field value if set, zero value otherwise.
 func (o *PortalCustomizeResOpenApiVO) GetFormAuthButtonText() string {
 	if o == nil || IsNil(o.FormAuthButtonText) {
@@ -722,6 +1348,70 @@ func (o *PortalCustomizeResOpenApiVO) HasFormAuthButtonText() bool {
 // SetFormAuthButtonText gets a reference to the given string and assigns it to the FormAuthButtonText field.
 func (o *PortalCustomizeResOpenApiVO) SetFormAuthButtonText(v string) {
 	o.FormAuthButtonText = &v
+}
+
+// GetInputBoxBorderColor returns the InputBoxBorderColor field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetInputBoxBorderColor() string {
+	if o == nil || IsNil(o.InputBoxBorderColor) {
+		var ret string
+		return ret
+	}
+	return *o.InputBoxBorderColor
+}
+
+// GetInputBoxBorderColorOk returns a tuple with the InputBoxBorderColor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetInputBoxBorderColorOk() (*string, bool) {
+	if o == nil || IsNil(o.InputBoxBorderColor) {
+		return nil, false
+	}
+	return o.InputBoxBorderColor, true
+}
+
+// HasInputBoxBorderColor returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasInputBoxBorderColor() bool {
+	if o != nil && !IsNil(o.InputBoxBorderColor) {
+		return true
+	}
+
+	return false
+}
+
+// SetInputBoxBorderColor gets a reference to the given string and assigns it to the InputBoxBorderColor field.
+func (o *PortalCustomizeResOpenApiVO) SetInputBoxBorderColor(v string) {
+	o.InputBoxBorderColor = &v
+}
+
+// GetInputBoxBorderOpacity returns the InputBoxBorderOpacity field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetInputBoxBorderOpacity() int32 {
+	if o == nil || IsNil(o.InputBoxBorderOpacity) {
+		var ret int32
+		return ret
+	}
+	return *o.InputBoxBorderOpacity
+}
+
+// GetInputBoxBorderOpacityOk returns a tuple with the InputBoxBorderOpacity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetInputBoxBorderOpacityOk() (*int32, bool) {
+	if o == nil || IsNil(o.InputBoxBorderOpacity) {
+		return nil, false
+	}
+	return o.InputBoxBorderOpacity, true
+}
+
+// HasInputBoxBorderOpacity returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasInputBoxBorderOpacity() bool {
+	if o != nil && !IsNil(o.InputBoxBorderOpacity) {
+		return true
+	}
+
+	return false
+}
+
+// SetInputBoxBorderOpacity gets a reference to the given int32 and assigns it to the InputBoxBorderOpacity field.
+func (o *PortalCustomizeResOpenApiVO) SetInputBoxBorderOpacity(v int32) {
+	o.InputBoxBorderOpacity = &v
 }
 
 // GetInputBoxColor returns the InputBoxColor field value if set, zero value otherwise.
@@ -786,6 +1476,38 @@ func (o *PortalCustomizeResOpenApiVO) HasInputBoxOpacity() bool {
 // SetInputBoxOpacity gets a reference to the given int32 and assigns it to the InputBoxOpacity field.
 func (o *PortalCustomizeResOpenApiVO) SetInputBoxOpacity(v int32) {
 	o.InputBoxOpacity = &v
+}
+
+// GetInputBoxRadius returns the InputBoxRadius field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetInputBoxRadius() int32 {
+	if o == nil || IsNil(o.InputBoxRadius) {
+		var ret int32
+		return ret
+	}
+	return *o.InputBoxRadius
+}
+
+// GetInputBoxRadiusOk returns a tuple with the InputBoxRadius field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetInputBoxRadiusOk() (*int32, bool) {
+	if o == nil || IsNil(o.InputBoxRadius) {
+		return nil, false
+	}
+	return o.InputBoxRadius, true
+}
+
+// HasInputBoxRadius returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasInputBoxRadius() bool {
+	if o != nil && !IsNil(o.InputBoxRadius) {
+		return true
+	}
+
+	return false
+}
+
+// SetInputBoxRadius gets a reference to the given int32 and assigns it to the InputBoxRadius field.
+func (o *PortalCustomizeResOpenApiVO) SetInputBoxRadius(v int32) {
+	o.InputBoxRadius = &v
 }
 
 // GetInputTextColor returns the InputTextColor field value if set, zero value otherwise.
@@ -882,6 +1604,38 @@ func (o *PortalCustomizeResOpenApiVO) HasLogoDisplay() bool {
 // SetLogoDisplay gets a reference to the given bool and assigns it to the LogoDisplay field.
 func (o *PortalCustomizeResOpenApiVO) SetLogoDisplay(v bool) {
 	o.LogoDisplay = &v
+}
+
+// GetLogoHorizontalPosition returns the LogoHorizontalPosition field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetLogoHorizontalPosition() int32 {
+	if o == nil || IsNil(o.LogoHorizontalPosition) {
+		var ret int32
+		return ret
+	}
+	return *o.LogoHorizontalPosition
+}
+
+// GetLogoHorizontalPositionOk returns a tuple with the LogoHorizontalPosition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetLogoHorizontalPositionOk() (*int32, bool) {
+	if o == nil || IsNil(o.LogoHorizontalPosition) {
+		return nil, false
+	}
+	return o.LogoHorizontalPosition, true
+}
+
+// HasLogoHorizontalPosition returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasLogoHorizontalPosition() bool {
+	if o != nil && !IsNil(o.LogoHorizontalPosition) {
+		return true
+	}
+
+	return false
+}
+
+// SetLogoHorizontalPosition gets a reference to the given int32 and assigns it to the LogoHorizontalPosition field.
+func (o *PortalCustomizeResOpenApiVO) SetLogoHorizontalPosition(v int32) {
+	o.LogoHorizontalPosition = &v
 }
 
 // GetLogoPicture returns the LogoPicture field value if set, zero value otherwise.
@@ -1076,6 +1830,70 @@ func (o *PortalCustomizeResOpenApiVO) SetMobileBackgroundPicture(v PortalPicture
 	o.MobileBackgroundPicture = &v
 }
 
+// GetMobileBgPicCoordinatesOfLibrary returns the MobileBgPicCoordinatesOfLibrary field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetMobileBgPicCoordinatesOfLibrary() BgPicCoordinatesOfLibraryOpenApiVO {
+	if o == nil || IsNil(o.MobileBgPicCoordinatesOfLibrary) {
+		var ret BgPicCoordinatesOfLibraryOpenApiVO
+		return ret
+	}
+	return *o.MobileBgPicCoordinatesOfLibrary
+}
+
+// GetMobileBgPicCoordinatesOfLibraryOk returns a tuple with the MobileBgPicCoordinatesOfLibrary field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetMobileBgPicCoordinatesOfLibraryOk() (*BgPicCoordinatesOfLibraryOpenApiVO, bool) {
+	if o == nil || IsNil(o.MobileBgPicCoordinatesOfLibrary) {
+		return nil, false
+	}
+	return o.MobileBgPicCoordinatesOfLibrary, true
+}
+
+// HasMobileBgPicCoordinatesOfLibrary returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasMobileBgPicCoordinatesOfLibrary() bool {
+	if o != nil && !IsNil(o.MobileBgPicCoordinatesOfLibrary) {
+		return true
+	}
+
+	return false
+}
+
+// SetMobileBgPicCoordinatesOfLibrary gets a reference to the given BgPicCoordinatesOfLibraryOpenApiVO and assigns it to the MobileBgPicCoordinatesOfLibrary field.
+func (o *PortalCustomizeResOpenApiVO) SetMobileBgPicCoordinatesOfLibrary(v BgPicCoordinatesOfLibraryOpenApiVO) {
+	o.MobileBgPicCoordinatesOfLibrary = &v
+}
+
+// GetPcAlign returns the PcAlign field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetPcAlign() int32 {
+	if o == nil || IsNil(o.PcAlign) {
+		var ret int32
+		return ret
+	}
+	return *o.PcAlign
+}
+
+// GetPcAlignOk returns a tuple with the PcAlign field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetPcAlignOk() (*int32, bool) {
+	if o == nil || IsNil(o.PcAlign) {
+		return nil, false
+	}
+	return o.PcAlign, true
+}
+
+// HasPcAlign returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasPcAlign() bool {
+	if o != nil && !IsNil(o.PcAlign) {
+		return true
+	}
+
+	return false
+}
+
+// SetPcAlign gets a reference to the given int32 and assigns it to the PcAlign field.
+func (o *PortalCustomizeResOpenApiVO) SetPcAlign(v int32) {
+	o.PcAlign = &v
+}
+
 // GetRedirectionCountDownEnable returns the RedirectionCountDownEnable field value if set, zero value otherwise.
 func (o *PortalCustomizeResOpenApiVO) GetRedirectionCountDownEnable() bool {
 	if o == nil || IsNil(o.RedirectionCountDownEnable) {
@@ -1234,6 +2052,70 @@ func (o *PortalCustomizeResOpenApiVO) HasTermsOfServiceText() bool {
 // SetTermsOfServiceText gets a reference to the given string and assigns it to the TermsOfServiceText field.
 func (o *PortalCustomizeResOpenApiVO) SetTermsOfServiceText(v string) {
 	o.TermsOfServiceText = &v
+}
+
+// GetTermsOfServiceTextColor returns the TermsOfServiceTextColor field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetTermsOfServiceTextColor() string {
+	if o == nil || IsNil(o.TermsOfServiceTextColor) {
+		var ret string
+		return ret
+	}
+	return *o.TermsOfServiceTextColor
+}
+
+// GetTermsOfServiceTextColorOk returns a tuple with the TermsOfServiceTextColor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetTermsOfServiceTextColorOk() (*string, bool) {
+	if o == nil || IsNil(o.TermsOfServiceTextColor) {
+		return nil, false
+	}
+	return o.TermsOfServiceTextColor, true
+}
+
+// HasTermsOfServiceTextColor returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasTermsOfServiceTextColor() bool {
+	if o != nil && !IsNil(o.TermsOfServiceTextColor) {
+		return true
+	}
+
+	return false
+}
+
+// SetTermsOfServiceTextColor gets a reference to the given string and assigns it to the TermsOfServiceTextColor field.
+func (o *PortalCustomizeResOpenApiVO) SetTermsOfServiceTextColor(v string) {
+	o.TermsOfServiceTextColor = &v
+}
+
+// GetTermsOfServiceTextOpacity returns the TermsOfServiceTextOpacity field value if set, zero value otherwise.
+func (o *PortalCustomizeResOpenApiVO) GetTermsOfServiceTextOpacity() int32 {
+	if o == nil || IsNil(o.TermsOfServiceTextOpacity) {
+		var ret int32
+		return ret
+	}
+	return *o.TermsOfServiceTextOpacity
+}
+
+// GetTermsOfServiceTextOpacityOk returns a tuple with the TermsOfServiceTextOpacity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeResOpenApiVO) GetTermsOfServiceTextOpacityOk() (*int32, bool) {
+	if o == nil || IsNil(o.TermsOfServiceTextOpacity) {
+		return nil, false
+	}
+	return o.TermsOfServiceTextOpacity, true
+}
+
+// HasTermsOfServiceTextOpacity returns a boolean if a field has been set.
+func (o *PortalCustomizeResOpenApiVO) HasTermsOfServiceTextOpacity() bool {
+	if o != nil && !IsNil(o.TermsOfServiceTextOpacity) {
+		return true
+	}
+
+	return false
+}
+
+// SetTermsOfServiceTextOpacity gets a reference to the given int32 and assigns it to the TermsOfServiceTextOpacity field.
+func (o *PortalCustomizeResOpenApiVO) SetTermsOfServiceTextOpacity(v int32) {
+	o.TermsOfServiceTextOpacity = &v
 }
 
 // GetTermsOfServiceUrlTexts returns the TermsOfServiceUrlTexts field value if set, zero value otherwise.
@@ -1447,11 +2329,47 @@ func (o PortalCustomizeResOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BackgroundColor) {
 		toSerialize["backgroundColor"] = o.BackgroundColor
 	}
+	if !IsNil(o.BackgroundMaskColor) {
+		toSerialize["backgroundMaskColor"] = o.BackgroundMaskColor
+	}
+	if !IsNil(o.BackgroundMaskEnable) {
+		toSerialize["backgroundMaskEnable"] = o.BackgroundMaskEnable
+	}
+	if !IsNil(o.BackgroundMaskOpacity) {
+		toSerialize["backgroundMaskOpacity"] = o.BackgroundMaskOpacity
+	}
 	if !IsNil(o.BackgroundOpacity) {
 		toSerialize["backgroundOpacity"] = o.BackgroundOpacity
 	}
 	if !IsNil(o.BackgroundPicture) {
 		toSerialize["backgroundPicture"] = o.BackgroundPicture
+	}
+	if !IsNil(o.BackgroundPictureIndex) {
+		toSerialize["backgroundPictureIndex"] = o.BackgroundPictureIndex
+	}
+	if !IsNil(o.BgPicCoordinatesOfLibrary) {
+		toSerialize["bgPicCoordinatesOfLibrary"] = o.BgPicCoordinatesOfLibrary
+	}
+	if !IsNil(o.BodyContainerBgBlur) {
+		toSerialize["bodyContainerBgBlur"] = o.BodyContainerBgBlur
+	}
+	if !IsNil(o.BodyContainerBgBlurEnable) {
+		toSerialize["bodyContainerBgBlurEnable"] = o.BodyContainerBgBlurEnable
+	}
+	if !IsNil(o.BodyContainerColor) {
+		toSerialize["bodyContainerColor"] = o.BodyContainerColor
+	}
+	if !IsNil(o.BodyContainerEnable) {
+		toSerialize["bodyContainerEnable"] = o.BodyContainerEnable
+	}
+	if !IsNil(o.BodyContainerOpacity) {
+		toSerialize["bodyContainerOpacity"] = o.BodyContainerOpacity
+	}
+	if !IsNil(o.BodyContainerRadius) {
+		toSerialize["bodyContainerRadius"] = o.BodyContainerRadius
+	}
+	if !IsNil(o.BodyContainerType) {
+		toSerialize["bodyContainerType"] = o.BodyContainerType
 	}
 	if !IsNil(o.ButtonColor) {
 		toSerialize["buttonColor"] = o.ButtonColor
@@ -1461,6 +2379,9 @@ func (o PortalCustomizeResOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ButtonPositionRatio) {
 		toSerialize["buttonPositionRatio"] = o.ButtonPositionRatio
+	}
+	if !IsNil(o.ButtonRadius) {
+		toSerialize["buttonRadius"] = o.ButtonRadius
 	}
 	if !IsNil(o.ButtonText) {
 		toSerialize["buttonText"] = o.ButtonText
@@ -1492,14 +2413,38 @@ func (o PortalCustomizeResOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DefaultLanguage) {
 		toSerialize["defaultLanguage"] = o.DefaultLanguage
 	}
+	if !IsNil(o.DescriptionText) {
+		toSerialize["descriptionText"] = o.DescriptionText
+	}
+	if !IsNil(o.DescriptionTextColor) {
+		toSerialize["descriptionTextColor"] = o.DescriptionTextColor
+	}
+	if !IsNil(o.DescriptionTextFontSize) {
+		toSerialize["descriptionTextFontSize"] = o.DescriptionTextFontSize
+	}
+	if !IsNil(o.DescriptionTextOpacity) {
+		toSerialize["descriptionTextOpacity"] = o.DescriptionTextOpacity
+	}
+	if !IsNil(o.EnableDeviceSpecificBg) {
+		toSerialize["enableDeviceSpecificBg"] = o.EnableDeviceSpecificBg
+	}
 	if !IsNil(o.FormAuthButtonText) {
 		toSerialize["formAuthButtonText"] = o.FormAuthButtonText
+	}
+	if !IsNil(o.InputBoxBorderColor) {
+		toSerialize["inputBoxBorderColor"] = o.InputBoxBorderColor
+	}
+	if !IsNil(o.InputBoxBorderOpacity) {
+		toSerialize["inputBoxBorderOpacity"] = o.InputBoxBorderOpacity
 	}
 	if !IsNil(o.InputBoxColor) {
 		toSerialize["inputBoxColor"] = o.InputBoxColor
 	}
 	if !IsNil(o.InputBoxOpacity) {
 		toSerialize["inputBoxOpacity"] = o.InputBoxOpacity
+	}
+	if !IsNil(o.InputBoxRadius) {
+		toSerialize["inputBoxRadius"] = o.InputBoxRadius
 	}
 	if !IsNil(o.InputTextColor) {
 		toSerialize["inputTextColor"] = o.InputTextColor
@@ -1509,6 +2454,9 @@ func (o PortalCustomizeResOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LogoDisplay) {
 		toSerialize["logoDisplay"] = o.LogoDisplay
+	}
+	if !IsNil(o.LogoHorizontalPosition) {
+		toSerialize["logoHorizontalPosition"] = o.LogoHorizontalPosition
 	}
 	if !IsNil(o.LogoPicture) {
 		toSerialize["logoPicture"] = o.LogoPicture
@@ -1528,6 +2476,12 @@ func (o PortalCustomizeResOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MobileBackgroundPicture) {
 		toSerialize["mobileBackgroundPicture"] = o.MobileBackgroundPicture
 	}
+	if !IsNil(o.MobileBgPicCoordinatesOfLibrary) {
+		toSerialize["mobileBgPicCoordinatesOfLibrary"] = o.MobileBgPicCoordinatesOfLibrary
+	}
+	if !IsNil(o.PcAlign) {
+		toSerialize["pcAlign"] = o.PcAlign
+	}
 	if !IsNil(o.RedirectionCountDownEnable) {
 		toSerialize["redirectionCountDownEnable"] = o.RedirectionCountDownEnable
 	}
@@ -1542,6 +2496,12 @@ func (o PortalCustomizeResOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TermsOfServiceText) {
 		toSerialize["termsOfServiceText"] = o.TermsOfServiceText
+	}
+	if !IsNil(o.TermsOfServiceTextColor) {
+		toSerialize["termsOfServiceTextColor"] = o.TermsOfServiceTextColor
+	}
+	if !IsNil(o.TermsOfServiceTextOpacity) {
+		toSerialize["termsOfServiceTextOpacity"] = o.TermsOfServiceTextOpacity
 	}
 	if !IsNil(o.TermsOfServiceUrlTexts) {
 		toSerialize["termsOfServiceUrlTexts"] = o.TermsOfServiceUrlTexts

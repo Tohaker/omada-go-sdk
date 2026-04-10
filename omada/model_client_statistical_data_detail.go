@@ -17,26 +17,30 @@ import (
 // checks if the ClientStatisticalDataDetail type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ClientStatisticalDataDetail{}
 
-// ClientStatisticalDataDetail struct for ClientStatisticalDataDetail
+// ClientStatisticalDataDetail Client Statistical Data Detail list.
 type ClientStatisticalDataDetail struct {
-	// Average downlink rate (Byte/s).
-	AvgDownRate *int64 `json:"avgDownRate,omitempty"`
-	// (Wireless) Average uplink negotiation rate (bit/s).
-	AvgRxR *int64 `json:"avgRxR,omitempty"`
-	// (Wireless) Average signal strength, unit: dBm.
-	AvgSignal *int32 `json:"avgSignal,omitempty"`
-	// (Wireless) Average downlink negotiation rate (bit/s).
-	AvgTxR *int64 `json:"avgTxR,omitempty"`
-	// Average uplink rate (Byte/s).
-	AvgUpRate *int64 `json:"avgUpRate,omitempty"`
-	// Client Statistical Data Detail list.
-	Stats []ClientStatisticalDataDetail `json:"stats,omitempty"`
-	// Client total downstream traffic (Byte).
-	TotalDown *int64 `json:"totalDown,omitempty"`
-	// Total number of downstream failed packets.
-	TotalTxFP *int64 `json:"totalTxFP,omitempty"`
-	// Client total upstream traffic (Byte).
-	TotalUp *int64 `json:"totalUp,omitempty"`
+	// Downstream traffic (Byte).
+	Down *int64 `json:"down,omitempty"`
+	// Downlink rate (Byte/s).
+	DownRate *int64 `json:"downRate,omitempty"`
+	// Client MAC Address.
+	Mac *string `json:"mac,omitempty"`
+	// (Wireless) Uplink negotiation rate (bit/s).
+	RxR *int64 `json:"rxR,omitempty"`
+	// (Wireless) Signal strength, unit: dBm.
+	Signal *int32 `json:"signal,omitempty"`
+	// The statistical data collected timestamp, unit: second.
+	Time *int64 `json:"time,omitempty"`
+	// Number of downstream failed packets.
+	TxFP *int64 `json:"txFP,omitempty"`
+	// (Wireless) Downlink negotiation rate (bit/s).
+	TxR *int64 `json:"txR,omitempty"`
+	// Upstream traffic (Byte).
+	Up *int64 `json:"up,omitempty"`
+	// Uplink rate (Byte/s).
+	UpRate *int64 `json:"upRate,omitempty"`
+	// true: Wireless client;  false: Not wireless client
+	Wireless *bool `json:"wireless,omitempty"`
 }
 
 // NewClientStatisticalDataDetail instantiates a new ClientStatisticalDataDetail object
@@ -56,292 +60,356 @@ func NewClientStatisticalDataDetailWithDefaults() *ClientStatisticalDataDetail {
 	return &this
 }
 
-// GetAvgDownRate returns the AvgDownRate field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetail) GetAvgDownRate() int64 {
-	if o == nil || IsNil(o.AvgDownRate) {
+// GetDown returns the Down field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetDown() int64 {
+	if o == nil || IsNil(o.Down) {
 		var ret int64
 		return ret
 	}
-	return *o.AvgDownRate
+	return *o.Down
 }
 
-// GetAvgDownRateOk returns a tuple with the AvgDownRate field value if set, nil otherwise
+// GetDownOk returns a tuple with the Down field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetail) GetAvgDownRateOk() (*int64, bool) {
-	if o == nil || IsNil(o.AvgDownRate) {
+func (o *ClientStatisticalDataDetail) GetDownOk() (*int64, bool) {
+	if o == nil || IsNil(o.Down) {
 		return nil, false
 	}
-	return o.AvgDownRate, true
+	return o.Down, true
 }
 
-// HasAvgDownRate returns a boolean if a field has been set.
-func (o *ClientStatisticalDataDetail) HasAvgDownRate() bool {
-	if o != nil && !IsNil(o.AvgDownRate) {
+// HasDown returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasDown() bool {
+	if o != nil && !IsNil(o.Down) {
 		return true
 	}
 
 	return false
 }
 
-// SetAvgDownRate gets a reference to the given int64 and assigns it to the AvgDownRate field.
-func (o *ClientStatisticalDataDetail) SetAvgDownRate(v int64) {
-	o.AvgDownRate = &v
+// SetDown gets a reference to the given int64 and assigns it to the Down field.
+func (o *ClientStatisticalDataDetail) SetDown(v int64) {
+	o.Down = &v
 }
 
-// GetAvgRxR returns the AvgRxR field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetail) GetAvgRxR() int64 {
-	if o == nil || IsNil(o.AvgRxR) {
+// GetDownRate returns the DownRate field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetDownRate() int64 {
+	if o == nil || IsNil(o.DownRate) {
 		var ret int64
 		return ret
 	}
-	return *o.AvgRxR
+	return *o.DownRate
 }
 
-// GetAvgRxROk returns a tuple with the AvgRxR field value if set, nil otherwise
+// GetDownRateOk returns a tuple with the DownRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetail) GetAvgRxROk() (*int64, bool) {
-	if o == nil || IsNil(o.AvgRxR) {
+func (o *ClientStatisticalDataDetail) GetDownRateOk() (*int64, bool) {
+	if o == nil || IsNil(o.DownRate) {
 		return nil, false
 	}
-	return o.AvgRxR, true
+	return o.DownRate, true
 }
 
-// HasAvgRxR returns a boolean if a field has been set.
-func (o *ClientStatisticalDataDetail) HasAvgRxR() bool {
-	if o != nil && !IsNil(o.AvgRxR) {
+// HasDownRate returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasDownRate() bool {
+	if o != nil && !IsNil(o.DownRate) {
 		return true
 	}
 
 	return false
 }
 
-// SetAvgRxR gets a reference to the given int64 and assigns it to the AvgRxR field.
-func (o *ClientStatisticalDataDetail) SetAvgRxR(v int64) {
-	o.AvgRxR = &v
+// SetDownRate gets a reference to the given int64 and assigns it to the DownRate field.
+func (o *ClientStatisticalDataDetail) SetDownRate(v int64) {
+	o.DownRate = &v
 }
 
-// GetAvgSignal returns the AvgSignal field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetail) GetAvgSignal() int32 {
-	if o == nil || IsNil(o.AvgSignal) {
+// GetMac returns the Mac field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetMac() string {
+	if o == nil || IsNil(o.Mac) {
+		var ret string
+		return ret
+	}
+	return *o.Mac
+}
+
+// GetMacOk returns a tuple with the Mac field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientStatisticalDataDetail) GetMacOk() (*string, bool) {
+	if o == nil || IsNil(o.Mac) {
+		return nil, false
+	}
+	return o.Mac, true
+}
+
+// HasMac returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasMac() bool {
+	if o != nil && !IsNil(o.Mac) {
+		return true
+	}
+
+	return false
+}
+
+// SetMac gets a reference to the given string and assigns it to the Mac field.
+func (o *ClientStatisticalDataDetail) SetMac(v string) {
+	o.Mac = &v
+}
+
+// GetRxR returns the RxR field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetRxR() int64 {
+	if o == nil || IsNil(o.RxR) {
+		var ret int64
+		return ret
+	}
+	return *o.RxR
+}
+
+// GetRxROk returns a tuple with the RxR field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientStatisticalDataDetail) GetRxROk() (*int64, bool) {
+	if o == nil || IsNil(o.RxR) {
+		return nil, false
+	}
+	return o.RxR, true
+}
+
+// HasRxR returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasRxR() bool {
+	if o != nil && !IsNil(o.RxR) {
+		return true
+	}
+
+	return false
+}
+
+// SetRxR gets a reference to the given int64 and assigns it to the RxR field.
+func (o *ClientStatisticalDataDetail) SetRxR(v int64) {
+	o.RxR = &v
+}
+
+// GetSignal returns the Signal field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetSignal() int32 {
+	if o == nil || IsNil(o.Signal) {
 		var ret int32
 		return ret
 	}
-	return *o.AvgSignal
+	return *o.Signal
 }
 
-// GetAvgSignalOk returns a tuple with the AvgSignal field value if set, nil otherwise
+// GetSignalOk returns a tuple with the Signal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetail) GetAvgSignalOk() (*int32, bool) {
-	if o == nil || IsNil(o.AvgSignal) {
+func (o *ClientStatisticalDataDetail) GetSignalOk() (*int32, bool) {
+	if o == nil || IsNil(o.Signal) {
 		return nil, false
 	}
-	return o.AvgSignal, true
+	return o.Signal, true
 }
 
-// HasAvgSignal returns a boolean if a field has been set.
-func (o *ClientStatisticalDataDetail) HasAvgSignal() bool {
-	if o != nil && !IsNil(o.AvgSignal) {
+// HasSignal returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasSignal() bool {
+	if o != nil && !IsNil(o.Signal) {
 		return true
 	}
 
 	return false
 }
 
-// SetAvgSignal gets a reference to the given int32 and assigns it to the AvgSignal field.
-func (o *ClientStatisticalDataDetail) SetAvgSignal(v int32) {
-	o.AvgSignal = &v
+// SetSignal gets a reference to the given int32 and assigns it to the Signal field.
+func (o *ClientStatisticalDataDetail) SetSignal(v int32) {
+	o.Signal = &v
 }
 
-// GetAvgTxR returns the AvgTxR field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetail) GetAvgTxR() int64 {
-	if o == nil || IsNil(o.AvgTxR) {
+// GetTime returns the Time field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetTime() int64 {
+	if o == nil || IsNil(o.Time) {
 		var ret int64
 		return ret
 	}
-	return *o.AvgTxR
+	return *o.Time
 }
 
-// GetAvgTxROk returns a tuple with the AvgTxR field value if set, nil otherwise
+// GetTimeOk returns a tuple with the Time field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetail) GetAvgTxROk() (*int64, bool) {
-	if o == nil || IsNil(o.AvgTxR) {
+func (o *ClientStatisticalDataDetail) GetTimeOk() (*int64, bool) {
+	if o == nil || IsNil(o.Time) {
 		return nil, false
 	}
-	return o.AvgTxR, true
+	return o.Time, true
 }
 
-// HasAvgTxR returns a boolean if a field has been set.
-func (o *ClientStatisticalDataDetail) HasAvgTxR() bool {
-	if o != nil && !IsNil(o.AvgTxR) {
+// HasTime returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasTime() bool {
+	if o != nil && !IsNil(o.Time) {
 		return true
 	}
 
 	return false
 }
 
-// SetAvgTxR gets a reference to the given int64 and assigns it to the AvgTxR field.
-func (o *ClientStatisticalDataDetail) SetAvgTxR(v int64) {
-	o.AvgTxR = &v
+// SetTime gets a reference to the given int64 and assigns it to the Time field.
+func (o *ClientStatisticalDataDetail) SetTime(v int64) {
+	o.Time = &v
 }
 
-// GetAvgUpRate returns the AvgUpRate field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetail) GetAvgUpRate() int64 {
-	if o == nil || IsNil(o.AvgUpRate) {
+// GetTxFP returns the TxFP field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetTxFP() int64 {
+	if o == nil || IsNil(o.TxFP) {
 		var ret int64
 		return ret
 	}
-	return *o.AvgUpRate
+	return *o.TxFP
 }
 
-// GetAvgUpRateOk returns a tuple with the AvgUpRate field value if set, nil otherwise
+// GetTxFPOk returns a tuple with the TxFP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetail) GetAvgUpRateOk() (*int64, bool) {
-	if o == nil || IsNil(o.AvgUpRate) {
+func (o *ClientStatisticalDataDetail) GetTxFPOk() (*int64, bool) {
+	if o == nil || IsNil(o.TxFP) {
 		return nil, false
 	}
-	return o.AvgUpRate, true
+	return o.TxFP, true
 }
 
-// HasAvgUpRate returns a boolean if a field has been set.
-func (o *ClientStatisticalDataDetail) HasAvgUpRate() bool {
-	if o != nil && !IsNil(o.AvgUpRate) {
+// HasTxFP returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasTxFP() bool {
+	if o != nil && !IsNil(o.TxFP) {
 		return true
 	}
 
 	return false
 }
 
-// SetAvgUpRate gets a reference to the given int64 and assigns it to the AvgUpRate field.
-func (o *ClientStatisticalDataDetail) SetAvgUpRate(v int64) {
-	o.AvgUpRate = &v
+// SetTxFP gets a reference to the given int64 and assigns it to the TxFP field.
+func (o *ClientStatisticalDataDetail) SetTxFP(v int64) {
+	o.TxFP = &v
 }
 
-// GetStats returns the Stats field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetail) GetStats() []ClientStatisticalDataDetail {
-	if o == nil || IsNil(o.Stats) {
-		var ret []ClientStatisticalDataDetail
-		return ret
-	}
-	return o.Stats
-}
-
-// GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetail) GetStatsOk() ([]ClientStatisticalDataDetail, bool) {
-	if o == nil || IsNil(o.Stats) {
-		return nil, false
-	}
-	return o.Stats, true
-}
-
-// HasStats returns a boolean if a field has been set.
-func (o *ClientStatisticalDataDetail) HasStats() bool {
-	if o != nil && !IsNil(o.Stats) {
-		return true
-	}
-
-	return false
-}
-
-// SetStats gets a reference to the given []ClientStatisticalDataDetail and assigns it to the Stats field.
-func (o *ClientStatisticalDataDetail) SetStats(v []ClientStatisticalDataDetail) {
-	o.Stats = v
-}
-
-// GetTotalDown returns the TotalDown field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetail) GetTotalDown() int64 {
-	if o == nil || IsNil(o.TotalDown) {
+// GetTxR returns the TxR field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetTxR() int64 {
+	if o == nil || IsNil(o.TxR) {
 		var ret int64
 		return ret
 	}
-	return *o.TotalDown
+	return *o.TxR
 }
 
-// GetTotalDownOk returns a tuple with the TotalDown field value if set, nil otherwise
+// GetTxROk returns a tuple with the TxR field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetail) GetTotalDownOk() (*int64, bool) {
-	if o == nil || IsNil(o.TotalDown) {
+func (o *ClientStatisticalDataDetail) GetTxROk() (*int64, bool) {
+	if o == nil || IsNil(o.TxR) {
 		return nil, false
 	}
-	return o.TotalDown, true
+	return o.TxR, true
 }
 
-// HasTotalDown returns a boolean if a field has been set.
-func (o *ClientStatisticalDataDetail) HasTotalDown() bool {
-	if o != nil && !IsNil(o.TotalDown) {
+// HasTxR returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasTxR() bool {
+	if o != nil && !IsNil(o.TxR) {
 		return true
 	}
 
 	return false
 }
 
-// SetTotalDown gets a reference to the given int64 and assigns it to the TotalDown field.
-func (o *ClientStatisticalDataDetail) SetTotalDown(v int64) {
-	o.TotalDown = &v
+// SetTxR gets a reference to the given int64 and assigns it to the TxR field.
+func (o *ClientStatisticalDataDetail) SetTxR(v int64) {
+	o.TxR = &v
 }
 
-// GetTotalTxFP returns the TotalTxFP field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetail) GetTotalTxFP() int64 {
-	if o == nil || IsNil(o.TotalTxFP) {
+// GetUp returns the Up field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetUp() int64 {
+	if o == nil || IsNil(o.Up) {
 		var ret int64
 		return ret
 	}
-	return *o.TotalTxFP
+	return *o.Up
 }
 
-// GetTotalTxFPOk returns a tuple with the TotalTxFP field value if set, nil otherwise
+// GetUpOk returns a tuple with the Up field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetail) GetTotalTxFPOk() (*int64, bool) {
-	if o == nil || IsNil(o.TotalTxFP) {
+func (o *ClientStatisticalDataDetail) GetUpOk() (*int64, bool) {
+	if o == nil || IsNil(o.Up) {
 		return nil, false
 	}
-	return o.TotalTxFP, true
+	return o.Up, true
 }
 
-// HasTotalTxFP returns a boolean if a field has been set.
-func (o *ClientStatisticalDataDetail) HasTotalTxFP() bool {
-	if o != nil && !IsNil(o.TotalTxFP) {
+// HasUp returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasUp() bool {
+	if o != nil && !IsNil(o.Up) {
 		return true
 	}
 
 	return false
 }
 
-// SetTotalTxFP gets a reference to the given int64 and assigns it to the TotalTxFP field.
-func (o *ClientStatisticalDataDetail) SetTotalTxFP(v int64) {
-	o.TotalTxFP = &v
+// SetUp gets a reference to the given int64 and assigns it to the Up field.
+func (o *ClientStatisticalDataDetail) SetUp(v int64) {
+	o.Up = &v
 }
 
-// GetTotalUp returns the TotalUp field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetail) GetTotalUp() int64 {
-	if o == nil || IsNil(o.TotalUp) {
+// GetUpRate returns the UpRate field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetUpRate() int64 {
+	if o == nil || IsNil(o.UpRate) {
 		var ret int64
 		return ret
 	}
-	return *o.TotalUp
+	return *o.UpRate
 }
 
-// GetTotalUpOk returns a tuple with the TotalUp field value if set, nil otherwise
+// GetUpRateOk returns a tuple with the UpRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetail) GetTotalUpOk() (*int64, bool) {
-	if o == nil || IsNil(o.TotalUp) {
+func (o *ClientStatisticalDataDetail) GetUpRateOk() (*int64, bool) {
+	if o == nil || IsNil(o.UpRate) {
 		return nil, false
 	}
-	return o.TotalUp, true
+	return o.UpRate, true
 }
 
-// HasTotalUp returns a boolean if a field has been set.
-func (o *ClientStatisticalDataDetail) HasTotalUp() bool {
-	if o != nil && !IsNil(o.TotalUp) {
+// HasUpRate returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasUpRate() bool {
+	if o != nil && !IsNil(o.UpRate) {
 		return true
 	}
 
 	return false
 }
 
-// SetTotalUp gets a reference to the given int64 and assigns it to the TotalUp field.
-func (o *ClientStatisticalDataDetail) SetTotalUp(v int64) {
-	o.TotalUp = &v
+// SetUpRate gets a reference to the given int64 and assigns it to the UpRate field.
+func (o *ClientStatisticalDataDetail) SetUpRate(v int64) {
+	o.UpRate = &v
+}
+
+// GetWireless returns the Wireless field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetWireless() bool {
+	if o == nil || IsNil(o.Wireless) {
+		var ret bool
+		return ret
+	}
+	return *o.Wireless
+}
+
+// GetWirelessOk returns a tuple with the Wireless field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientStatisticalDataDetail) GetWirelessOk() (*bool, bool) {
+	if o == nil || IsNil(o.Wireless) {
+		return nil, false
+	}
+	return o.Wireless, true
+}
+
+// HasWireless returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasWireless() bool {
+	if o != nil && !IsNil(o.Wireless) {
+		return true
+	}
+
+	return false
+}
+
+// SetWireless gets a reference to the given bool and assigns it to the Wireless field.
+func (o *ClientStatisticalDataDetail) SetWireless(v bool) {
+	o.Wireless = &v
 }
 
 func (o ClientStatisticalDataDetail) MarshalJSON() ([]byte, error) {
@@ -354,32 +422,38 @@ func (o ClientStatisticalDataDetail) MarshalJSON() ([]byte, error) {
 
 func (o ClientStatisticalDataDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AvgDownRate) {
-		toSerialize["avgDownRate"] = o.AvgDownRate
+	if !IsNil(o.Down) {
+		toSerialize["down"] = o.Down
 	}
-	if !IsNil(o.AvgRxR) {
-		toSerialize["avgRxR"] = o.AvgRxR
+	if !IsNil(o.DownRate) {
+		toSerialize["downRate"] = o.DownRate
 	}
-	if !IsNil(o.AvgSignal) {
-		toSerialize["avgSignal"] = o.AvgSignal
+	if !IsNil(o.Mac) {
+		toSerialize["mac"] = o.Mac
 	}
-	if !IsNil(o.AvgTxR) {
-		toSerialize["avgTxR"] = o.AvgTxR
+	if !IsNil(o.RxR) {
+		toSerialize["rxR"] = o.RxR
 	}
-	if !IsNil(o.AvgUpRate) {
-		toSerialize["avgUpRate"] = o.AvgUpRate
+	if !IsNil(o.Signal) {
+		toSerialize["signal"] = o.Signal
 	}
-	if !IsNil(o.Stats) {
-		toSerialize["stats"] = o.Stats
+	if !IsNil(o.Time) {
+		toSerialize["time"] = o.Time
 	}
-	if !IsNil(o.TotalDown) {
-		toSerialize["totalDown"] = o.TotalDown
+	if !IsNil(o.TxFP) {
+		toSerialize["txFP"] = o.TxFP
 	}
-	if !IsNil(o.TotalTxFP) {
-		toSerialize["totalTxFP"] = o.TotalTxFP
+	if !IsNil(o.TxR) {
+		toSerialize["txR"] = o.TxR
 	}
-	if !IsNil(o.TotalUp) {
-		toSerialize["totalUp"] = o.TotalUp
+	if !IsNil(o.Up) {
+		toSerialize["up"] = o.Up
+	}
+	if !IsNil(o.UpRate) {
+		toSerialize["upRate"] = o.UpRate
+	}
+	if !IsNil(o.Wireless) {
+		toSerialize["wireless"] = o.Wireless
 	}
 	return toSerialize, nil
 }

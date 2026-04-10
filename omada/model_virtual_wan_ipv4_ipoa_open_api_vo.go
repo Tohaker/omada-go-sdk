@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the VirtualWanIpv4IpoaOpenApiVO type satisfies the MappedNullable interface at compile time
@@ -24,7 +26,7 @@ type VirtualWanIpv4IpoaOpenApiVO struct {
 	// Secondary DNS server.
 	Dns2 *string `json:"dns2,omitempty"`
 	// Gateway IP.
-	Gateway *string `json:"gateway,omitempty"`
+	Gateway string `json:"gateway"`
 	// IP address.
 	Ipaddr *string `json:"ipaddr,omitempty"`
 	// Parameter [mtu] should be a value between 576 and 1500.
@@ -34,12 +36,15 @@ type VirtualWanIpv4IpoaOpenApiVO struct {
 	WanMultipleIps []VirtualWanMultipleIpVO `json:"wanMultipleIps,omitempty"`
 }
 
+type _VirtualWanIpv4IpoaOpenApiVO VirtualWanIpv4IpoaOpenApiVO
+
 // NewVirtualWanIpv4IpoaOpenApiVO instantiates a new VirtualWanIpv4IpoaOpenApiVO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualWanIpv4IpoaOpenApiVO() *VirtualWanIpv4IpoaOpenApiVO {
+func NewVirtualWanIpv4IpoaOpenApiVO(gateway string) *VirtualWanIpv4IpoaOpenApiVO {
 	this := VirtualWanIpv4IpoaOpenApiVO{}
+	this.Gateway = gateway
 	return &this
 }
 
@@ -115,36 +120,28 @@ func (o *VirtualWanIpv4IpoaOpenApiVO) SetDns2(v string) {
 	o.Dns2 = &v
 }
 
-// GetGateway returns the Gateway field value if set, zero value otherwise.
+// GetGateway returns the Gateway field value
 func (o *VirtualWanIpv4IpoaOpenApiVO) GetGateway() string {
-	if o == nil || IsNil(o.Gateway) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Gateway
+
+	return o.Gateway
 }
 
-// GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
+// GetGatewayOk returns a tuple with the Gateway field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4IpoaOpenApiVO) GetGatewayOk() (*string, bool) {
-	if o == nil || IsNil(o.Gateway) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Gateway, true
+	return &o.Gateway, true
 }
 
-// HasGateway returns a boolean if a field has been set.
-func (o *VirtualWanIpv4IpoaOpenApiVO) HasGateway() bool {
-	if o != nil && !IsNil(o.Gateway) {
-		return true
-	}
-
-	return false
-}
-
-// SetGateway gets a reference to the given string and assigns it to the Gateway field.
+// SetGateway sets field value
 func (o *VirtualWanIpv4IpoaOpenApiVO) SetGateway(v string) {
-	o.Gateway = &v
+	o.Gateway = v
 }
 
 // GetIpaddr returns the Ipaddr field value if set, zero value otherwise.
@@ -291,9 +288,7 @@ func (o VirtualWanIpv4IpoaOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Dns2) {
 		toSerialize["dns2"] = o.Dns2
 	}
-	if !IsNil(o.Gateway) {
-		toSerialize["gateway"] = o.Gateway
-	}
+	toSerialize["gateway"] = o.Gateway
 	if !IsNil(o.Ipaddr) {
 		toSerialize["ipaddr"] = o.Ipaddr
 	}
@@ -307,6 +302,43 @@ func (o VirtualWanIpv4IpoaOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["wanMultipleIps"] = o.WanMultipleIps
 	}
 	return toSerialize, nil
+}
+
+func (o *VirtualWanIpv4IpoaOpenApiVO) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"gateway",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varVirtualWanIpv4IpoaOpenApiVO := _VirtualWanIpv4IpoaOpenApiVO{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varVirtualWanIpv4IpoaOpenApiVO)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VirtualWanIpv4IpoaOpenApiVO(varVirtualWanIpv4IpoaOpenApiVO)
+
+	return err
 }
 
 type NullableVirtualWanIpv4IpoaOpenApiVO struct {

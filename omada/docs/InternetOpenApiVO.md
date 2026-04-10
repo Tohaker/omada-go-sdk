@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **NetworkNames** | Pointer to **[]string** | A list of the name of the LanNetwork entry that was invalidated on the frontend. | [optional] 
 **OmadacId** | Pointer to **string** | Omadac ID. | [optional] 
 **OsgPortInfo** | Pointer to [**OsgPortInfoOpenApiVO**](OsgPortInfoOpenApiVO.md) |  | [optional] 
+**PortOnlineStatus** | Pointer to [**PortOnlineStatusOpenApiVO**](PortOnlineStatusOpenApiVO.md) |  | [optional] 
 **PortUuids** | Pointer to **[]string** | The list of wan port UUID. | [optional] 
 **Resource** | Pointer to **int32** | Resource of data. | [optional] 
 **SiteId** | **string** | Site ID. | 
@@ -20,15 +21,18 @@ Name | Type | Description | Notes
 **SupportCustomInterval** | Pointer to **bool** | Whether the device supports Custom Interval. | [optional] 
 **SupportDhcpOptions** | Pointer to **bool** | Whether WAN port dhcpOptions can be customized. | [optional] 
 **SupportDiscreteWan** | Pointer to **bool** | Whether the device supports Discrete Wan. | [optional] 
+**SupportDsLite** | Pointer to **bool** | Whether the WAN port supports configuring DS-Lite. | [optional] 
 **SupportDsl** | Pointer to **bool** | Whether it supports DSL. | [optional] 
 **SupportDualSim** | Pointer to **int32** | Whether it supports dual SIM single standby: 0: not support, 1: support. | [optional] 
 **SupportIpv6NonAddress** | Pointer to **bool** | Whether the IPv6 configuration supports Non-Address. | [optional] 
 **SupportLte** | Pointer to **bool** | Whether to configure LTE Wan. | [optional] 
+**SupportMapE** | Pointer to **bool** | Whether the WAN port supports configuring MAP-E. | [optional] 
 **SupportMaxWanNum** | Pointer to **int32** | The maximum number of wans supported. | [optional] 
 **SupportMssClamping** | Pointer to **bool** | Whether MSS clamping is supported for PPPoE, L2TP, and PPTP. | [optional] 
 **SupportNetworkIsolation** | Pointer to **bool** | Whether it supports isolate network. | [optional] 
 **SupportPppoeMru** | Pointer to **bool** | Whether to configure PPPoE MRUs. | [optional] 
 **SupportReduceUsbRfi** | Pointer to **bool** | Whether the device supports Reduce USB 3.0 Interference Reduction. | [optional] 
+**SupportTimingMode** | Pointer to **bool** | Whether the Load Balance Failover supports Timing mode. | [optional] 
 **SupportUsbDhcpOptions** | Pointer to **bool** | Whether USB port dhcpOptions can be customized. | [optional] 
 **SupportVirtualWan** | Pointer to **bool** | Whether it supports virtual wan. | [optional] 
 **SupportWanMultipleIp** | Pointer to **bool** | Whether to configure multiple IP addresses for wan ports. | [optional] 
@@ -282,6 +286,31 @@ SetOsgPortInfo sets OsgPortInfo field to given value.
 
 HasOsgPortInfo returns a boolean if a field has been set.
 
+### GetPortOnlineStatus
+
+`func (o *InternetOpenApiVO) GetPortOnlineStatus() PortOnlineStatusOpenApiVO`
+
+GetPortOnlineStatus returns the PortOnlineStatus field if non-nil, zero value otherwise.
+
+### GetPortOnlineStatusOk
+
+`func (o *InternetOpenApiVO) GetPortOnlineStatusOk() (*PortOnlineStatusOpenApiVO, bool)`
+
+GetPortOnlineStatusOk returns a tuple with the PortOnlineStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPortOnlineStatus
+
+`func (o *InternetOpenApiVO) SetPortOnlineStatus(v PortOnlineStatusOpenApiVO)`
+
+SetPortOnlineStatus sets PortOnlineStatus field to given value.
+
+### HasPortOnlineStatus
+
+`func (o *InternetOpenApiVO) HasPortOnlineStatus() bool`
+
+HasPortOnlineStatus returns a boolean if a field has been set.
+
 ### GetPortUuids
 
 `func (o *InternetOpenApiVO) GetPortUuids() []string`
@@ -452,6 +481,31 @@ SetSupportDiscreteWan sets SupportDiscreteWan field to given value.
 
 HasSupportDiscreteWan returns a boolean if a field has been set.
 
+### GetSupportDsLite
+
+`func (o *InternetOpenApiVO) GetSupportDsLite() bool`
+
+GetSupportDsLite returns the SupportDsLite field if non-nil, zero value otherwise.
+
+### GetSupportDsLiteOk
+
+`func (o *InternetOpenApiVO) GetSupportDsLiteOk() (*bool, bool)`
+
+GetSupportDsLiteOk returns a tuple with the SupportDsLite field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportDsLite
+
+`func (o *InternetOpenApiVO) SetSupportDsLite(v bool)`
+
+SetSupportDsLite sets SupportDsLite field to given value.
+
+### HasSupportDsLite
+
+`func (o *InternetOpenApiVO) HasSupportDsLite() bool`
+
+HasSupportDsLite returns a boolean if a field has been set.
+
 ### GetSupportDsl
 
 `func (o *InternetOpenApiVO) GetSupportDsl() bool`
@@ -551,6 +605,31 @@ SetSupportLte sets SupportLte field to given value.
 `func (o *InternetOpenApiVO) HasSupportLte() bool`
 
 HasSupportLte returns a boolean if a field has been set.
+
+### GetSupportMapE
+
+`func (o *InternetOpenApiVO) GetSupportMapE() bool`
+
+GetSupportMapE returns the SupportMapE field if non-nil, zero value otherwise.
+
+### GetSupportMapEOk
+
+`func (o *InternetOpenApiVO) GetSupportMapEOk() (*bool, bool)`
+
+GetSupportMapEOk returns a tuple with the SupportMapE field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportMapE
+
+`func (o *InternetOpenApiVO) SetSupportMapE(v bool)`
+
+SetSupportMapE sets SupportMapE field to given value.
+
+### HasSupportMapE
+
+`func (o *InternetOpenApiVO) HasSupportMapE() bool`
+
+HasSupportMapE returns a boolean if a field has been set.
 
 ### GetSupportMaxWanNum
 
@@ -676,6 +755,31 @@ SetSupportReduceUsbRfi sets SupportReduceUsbRfi field to given value.
 `func (o *InternetOpenApiVO) HasSupportReduceUsbRfi() bool`
 
 HasSupportReduceUsbRfi returns a boolean if a field has been set.
+
+### GetSupportTimingMode
+
+`func (o *InternetOpenApiVO) GetSupportTimingMode() bool`
+
+GetSupportTimingMode returns the SupportTimingMode field if non-nil, zero value otherwise.
+
+### GetSupportTimingModeOk
+
+`func (o *InternetOpenApiVO) GetSupportTimingModeOk() (*bool, bool)`
+
+GetSupportTimingModeOk returns a tuple with the SupportTimingMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportTimingMode
+
+`func (o *InternetOpenApiVO) SetSupportTimingMode(v bool)`
+
+SetSupportTimingMode sets SupportTimingMode field to given value.
+
+### HasSupportTimingMode
+
+`func (o *InternetOpenApiVO) HasSupportTimingMode() bool`
+
+HasSupportTimingMode returns a boolean if a field has been set.
 
 ### GetSupportUsbDhcpOptions
 

@@ -23,7 +23,7 @@ var _ MappedNullable = &VpnUserRequest{}
 type VpnUserRequest struct {
 	// Client mode should be a value as follows: 0: Client-To-Site, 1: Site-To-Site.
 	ClientMode *int32 `json:"clientMode,omitempty"`
-	// Local IP of the VPN user
+	// Local IP of the VPN user.
 	LocalIp *string `json:"localIp,omitempty"`
 	// Max connections should be within the range of 1–100.
 	MaxConnections *int32 `json:"maxConnections,omitempty"`

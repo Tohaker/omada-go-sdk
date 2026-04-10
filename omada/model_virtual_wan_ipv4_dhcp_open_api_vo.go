@@ -25,7 +25,7 @@ type VirtualWanIpv4DhcpOpenApiVO struct {
 	Dns1 *string `json:"dns1,omitempty"`
 	// Secondary DNS server.
 	Dns2 *string `json:"dns2,omitempty"`
-	// Host name. Parameter [hostname] should be up to 63 characters long and can only use numbers, letters, and underscores.
+	// Host name. Parameter [hostname] should be up to 63 characters long and can only use numbers, letters, and hyphen.
 	Hostname *string `json:"hostname,omitempty"`
 	// Parameter [mtu] should be a value between 576 and 1500.
 	Mtu *int32 `json:"mtu,omitempty"`

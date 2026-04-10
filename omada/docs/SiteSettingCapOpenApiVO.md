@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **ServiceIptv** | Pointer to **bool** | Whether support IGMP or IPTV. | [optional] 
 **ServiceType** | Pointer to **bool** | Whether support serviceType configuration. | [optional] 
 **Sim** | Pointer to **bool** | Whether support SIM configuration. | [optional] 
+**SpeedTest** | Pointer to **bool** | Whether support speedTest. | [optional] 
 **SslVpn** | Pointer to **bool** | Whether support SSL VPN configuration. | [optional] 
 **SubVpn** | Pointer to **bool** | Whether support VPN menu in VPN module. | [optional] 
 **SupportDpi** | Pointer to **bool** | Whether support Dpi. | [optional] 
@@ -945,6 +946,31 @@ SetSim sets Sim field to given value.
 `func (o *SiteSettingCapOpenApiVO) HasSim() bool`
 
 HasSim returns a boolean if a field has been set.
+
+### GetSpeedTest
+
+`func (o *SiteSettingCapOpenApiVO) GetSpeedTest() bool`
+
+GetSpeedTest returns the SpeedTest field if non-nil, zero value otherwise.
+
+### GetSpeedTestOk
+
+`func (o *SiteSettingCapOpenApiVO) GetSpeedTestOk() (*bool, bool)`
+
+GetSpeedTestOk returns a tuple with the SpeedTest field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpeedTest
+
+`func (o *SiteSettingCapOpenApiVO) SetSpeedTest(v bool)`
+
+SetSpeedTest sets SpeedTest field to given value.
+
+### HasSpeedTest
+
+`func (o *SiteSettingCapOpenApiVO) HasSpeedTest() bool`
+
+HasSpeedTest returns a boolean if a field has been set.
 
 ### GetSslVpn
 

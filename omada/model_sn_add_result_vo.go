@@ -23,6 +23,8 @@ type SnAddResultVO struct {
 	CustomerName *string `json:"customerName,omitempty"`
 	// Device key(QR code)
 	DeviceKey *string `json:"deviceKey,omitempty"`
+	// Device mac
+	Mac *string `json:"mac,omitempty"`
 	// Device name
 	Name *string `json:"name,omitempty"`
 	// Device online or offline
@@ -33,6 +35,8 @@ type SnAddResultVO struct {
 	Sn *string `json:"sn,omitempty"`
 	// Device add status should be a value as follows: 0: success; 1: waiting to do; 2：importing; -51451：Device ID not found; -52201：Device is offline; -52202：Device is already bounded; -52208：Device is offline during processing; -52200：Device not exit; -53100：Invalid SN code; -53101：SN code already exists; -53102：Incorrect local Username/Password; -53103：Device error; -53113: Too many PRECONFIGURED devices in this account. Available licenses are not enough; -53114: This device has been added by another Controller; -53118: Omada Pro devices can only be added on the Omada Pro Controller; -53119: Omada devices can only be added on the Omada Controller; -39045: Failed to add the device due to duplicate SN codes. Please contact our TP-Link Support.
 	Status *int32 `json:"status,omitempty"`
+	// Support ip pass-through or not。
+	SupportIppt *bool `json:"supportIppt,omitempty"`
 }
 
 // NewSnAddResultVO instantiates a new SnAddResultVO object
@@ -114,6 +118,38 @@ func (o *SnAddResultVO) HasDeviceKey() bool {
 // SetDeviceKey gets a reference to the given string and assigns it to the DeviceKey field.
 func (o *SnAddResultVO) SetDeviceKey(v string) {
 	o.DeviceKey = &v
+}
+
+// GetMac returns the Mac field value if set, zero value otherwise.
+func (o *SnAddResultVO) GetMac() string {
+	if o == nil || IsNil(o.Mac) {
+		var ret string
+		return ret
+	}
+	return *o.Mac
+}
+
+// GetMacOk returns a tuple with the Mac field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnAddResultVO) GetMacOk() (*string, bool) {
+	if o == nil || IsNil(o.Mac) {
+		return nil, false
+	}
+	return o.Mac, true
+}
+
+// HasMac returns a boolean if a field has been set.
+func (o *SnAddResultVO) HasMac() bool {
+	if o != nil && !IsNil(o.Mac) {
+		return true
+	}
+
+	return false
+}
+
+// SetMac gets a reference to the given string and assigns it to the Mac field.
+func (o *SnAddResultVO) SetMac(v string) {
+	o.Mac = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -276,6 +312,38 @@ func (o *SnAddResultVO) SetStatus(v int32) {
 	o.Status = &v
 }
 
+// GetSupportIppt returns the SupportIppt field value if set, zero value otherwise.
+func (o *SnAddResultVO) GetSupportIppt() bool {
+	if o == nil || IsNil(o.SupportIppt) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportIppt
+}
+
+// GetSupportIpptOk returns a tuple with the SupportIppt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnAddResultVO) GetSupportIpptOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportIppt) {
+		return nil, false
+	}
+	return o.SupportIppt, true
+}
+
+// HasSupportIppt returns a boolean if a field has been set.
+func (o *SnAddResultVO) HasSupportIppt() bool {
+	if o != nil && !IsNil(o.SupportIppt) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportIppt gets a reference to the given bool and assigns it to the SupportIppt field.
+func (o *SnAddResultVO) SetSupportIppt(v bool) {
+	o.SupportIppt = &v
+}
+
 func (o SnAddResultVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -292,6 +360,9 @@ func (o SnAddResultVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DeviceKey) {
 		toSerialize["deviceKey"] = o.DeviceKey
 	}
+	if !IsNil(o.Mac) {
+		toSerialize["mac"] = o.Mac
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
@@ -306,6 +377,9 @@ func (o SnAddResultVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.SupportIppt) {
+		toSerialize["supportIppt"] = o.SupportIppt
 	}
 	return toSerialize, nil
 }

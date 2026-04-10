@@ -38,6 +38,8 @@ nav:
     - ARP Detection: docs/ArpDetectionAPI.md
     - Attack Defense: docs/AttackDefenseAPI.md
     - Attack Defense Template: docs/AttackDefenseTemplateAPI.md
+    - Audit Log: docs/AuditLogAPI.md
+    - Audit Log Template: docs/AuditLogTemplateAPI.md
     - Authentication: docs/AuthenticationAPI.md
     - Authentication Template: docs/AuthenticationTemplateAPI.md
     - Authorize: docs/AuthorizeAPI.md
@@ -55,6 +57,7 @@ nav:
     - Client: docs/ClientAPI.md
     - Client Insight: docs/ClientInsightAPI.md
     - Cloud User: docs/CloudUserAPI.md
+    - Cluster: docs/ClusterAPI.md
     - Controller Settings: docs/ControllerSettingsAPI.md
     - Customer: docs/CustomerAPI.md
     - Dashboard: docs/DashboardAPI.md
@@ -71,6 +74,7 @@ nav:
     - Gateway: docs/GatewayAPI.md
     - Gateway QoS: docs/GatewayQoSAPI.md
     - Gateway QoS Template: docs/GatewayQOSTemplateAPI.md
+    - Gateway Template: docs/GatewayTemplateAPI.md
     - Global Dashboard Overview: docs/GlobalDashboardOverviewAPI.md
     - Global Security: docs/GlobalSecurityAPI.md
     - Health: docs/HealthAPI.md
@@ -126,6 +130,7 @@ nav:
     - Profiles: docs/ProfilesAPI.md
     - Profiles Template: docs/ProfilesTemplateAPI.md
     - Quick Action: docs/QuickActionAPI.md
+    - Remote Access: docs/RemoteAccessAPI.md
     - Report V2: docs/ReportV2API.md
     - Routing: docs/RoutingAPI.md
     - Routing Template: docs/RoutingTemplateAPI.md

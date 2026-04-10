@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ## GetGemMappingList
 
-> OperationResponseListGemMappingDTO GetGemMappingList(ctx, omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+> OperationResponseListGemMappingDTO GetGemMappingList(ctx, omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 
 Get gem mapping list
 
@@ -280,11 +280,11 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
 	lineProfileId := "lineProfileId_example" // string | Line Profile ID should be a number between 0-512
-	dto := *openapiclient.NewGemMappingListQueryDTO() // GemMappingListQueryDTO | 
+	queryParam := *openapiclient.NewGemMappingListQueryDTO() // GemMappingListQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTGemMappingAPI.GetGemMappingList(context.Background(), omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTGemMappingAPI.GetGemMappingList(context.Background(), omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTGemMappingAPI.GetGemMappingList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**GemMappingListQueryDTO**](GemMappingListQueryDTO.md) |  | 
+ **queryParam** | [**GemMappingListQueryDTO**](GemMappingListQueryDTO.md) |  | 
 
 ### Return type
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ## GetGemMappingPage
 
-> OperationResponsePageResponseGemMappingDTO GetGemMappingPage(ctx, omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+> OperationResponsePageResponseGemMappingDTO GetGemMappingPage(ctx, omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 
 Get gem mapping page
 
@@ -361,11 +361,11 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
 	lineProfileId := "lineProfileId_example" // string | Line Profile ID should be a number between 0-512
-	dto := *openapiclient.NewGemMappingPageQueryDTO() // GemMappingPageQueryDTO | 
+	queryParam := *openapiclient.NewGemMappingPageQueryDTO() // GemMappingPageQueryDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTGemMappingAPI.GetGemMappingPage(context.Background(), omadacId, siteId, deviceMac, lineProfileId).Dto(dto).Execute()
+	resp, r, err := apiClient.OLTGemMappingAPI.GetGemMappingPage(context.Background(), omadacId, siteId, deviceMac, lineProfileId).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTGemMappingAPI.GetGemMappingPage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**GemMappingPageQueryDTO**](GemMappingPageQueryDTO.md) |  | 
+ **queryParam** | [**GemMappingPageQueryDTO**](GemMappingPageQueryDTO.md) |  | 
 
 ### Return type
 

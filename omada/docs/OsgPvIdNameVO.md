@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PvId** | Pointer to **int32** |  | [optional] 
 **PvName** | Pointer to **string** |  | [optional] 
+**QosTagEnable** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetPvName sets PvName field to given value.
 `func (o *OsgPvIdNameVO) HasPvName() bool`
 
 HasPvName returns a boolean if a field has been set.
+
+### GetQosTagEnable
+
+`func (o *OsgPvIdNameVO) GetQosTagEnable() bool`
+
+GetQosTagEnable returns the QosTagEnable field if non-nil, zero value otherwise.
+
+### GetQosTagEnableOk
+
+`func (o *OsgPvIdNameVO) GetQosTagEnableOk() (*bool, bool)`
+
+GetQosTagEnableOk returns a tuple with the QosTagEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQosTagEnable
+
+`func (o *OsgPvIdNameVO) SetQosTagEnable(v bool)`
+
+SetQosTagEnable sets QosTagEnable field to given value.
+
+### HasQosTagEnable
+
+`func (o *OsgPvIdNameVO) HasQosTagEnable() bool`
+
+HasQosTagEnable returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

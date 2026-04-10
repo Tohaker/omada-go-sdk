@@ -145,7 +145,7 @@ type MspLogAPI interface {
 	/*
 	GetLogSettingForMsp Get MSP log notification
 
-	Get msp log notification.This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
+	Get msp log notification.This interface has been deprecated.Please use the following interface instead: Get MSP log notification v2.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -161,7 +161,7 @@ type MspLogAPI interface {
 	GetLogSettingForMspExecute(r MspLogAPIGetLogSettingForMspRequest) (*OperationResponseLogNotificationSettingOpenApiVO, *http.Response, error)
 
 	/*
-	GetLogSettingForMspV2 Get MSP log notification
+	GetLogSettingForMspV2 Get MSP log notification v2
 
 	Get msp log notification.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
 
@@ -193,7 +193,7 @@ type MspLogAPI interface {
 	/*
 	ModifyLogSettingMsp Modify MSP log notification
 
-	Modify MSP log notification.This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
+	Modify MSP log notification.This interface has been deprecated.Please use the following interface instead: Modify MSP log notification v2.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -209,7 +209,7 @@ type MspLogAPI interface {
 	ModifyLogSettingMspExecute(r MspLogAPIModifyLogSettingMspRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyLogSettingMspV2 Modify MSP log notification
+	ModifyLogSettingMspV2 Modify MSP log notification v2
 
 	Modify MSP log notification.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
 
@@ -1450,7 +1450,7 @@ func (r MspLogAPIGetLogSettingForMspRequest) Execute() (*OperationResponseLogNot
 /*
 GetLogSettingForMsp Get MSP log notification
 
-Get msp log notification.This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
+Get msp log notification.This interface has been deprecated.Please use the following interface instead: Get MSP log notification v2.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -1568,7 +1568,7 @@ func (r MspLogAPIGetLogSettingForMspV2Request) Execute() (*OperationResponseLogN
 }
 
 /*
-GetLogSettingForMspV2 Get MSP log notification
+GetLogSettingForMspV2 Get MSP log notification v2
 
 Get msp log notification.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
 
@@ -1821,7 +1821,7 @@ func (r MspLogAPIModifyLogSettingMspRequest) Execute() (*OperationResponseWithou
 /*
 ModifyLogSettingMsp Modify MSP log notification
 
-Modify MSP log notification.This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
+Modify MSP log notification.This interface has been deprecated.Please use the following interface instead: Modify MSP log notification v2.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -1950,7 +1950,7 @@ func (r MspLogAPIModifyLogSettingMspV2Request) Execute() (*OperationResponseWith
 }
 
 /*
-ModifyLogSettingMspV2 Modify MSP log notification
+ModifyLogSettingMspV2 Modify MSP log notification v2
 
 Modify MSP log notification.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
 

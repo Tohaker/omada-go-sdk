@@ -21,25 +21,28 @@ var _ MappedNullable = &LanDnsOpenApiVO{}
 
 // LanDnsOpenApiVO struct for LanDnsOpenApiVO
 type LanDnsOpenApiVO struct {
-	// Name of Lan Dns Item
+	// If a server provides different services and has multiple domain names, you can configure them in the Alias Domain Name.
 	Aliases []string `json:"aliases,omitempty"`
 	// When Type is CNAME, set the domain name to which Domain Name and Alias Domain Name need to be mapped.
 	Cname *string `json:"cname,omitempty"`
+	// When custom TTL is activated, TTL will take effect as custom value. Otherwise, TTL will take effect as default(3600).
+	CustomTtl *bool `json:"customTtl,omitempty"`
 	// When the Type is FORWARD, set the Domain Name and Alias Domain Name to be forwarded to a specific DNS Server, up to two DNS Servers can be configured.
 	DnsServers []string `json:"dnsServers,omitempty"`
 	// Enter the domain name.
 	Domain string `json:"domain"`
 	// off:false, on: true
 	Enable bool `json:"enable"`
-	Id *string `json:"id,omitempty"`
 	// When the Type is IP, it is the IPv4 address of the returned DNS response.
 	IpAddresses []string `json:"ipAddresses,omitempty"`
 	// When the Type is IP, it is the IPv6 address of the returned DNS response.
 	Ipv6Addresses []string `json:"ipv6Addresses,omitempty"`
-	// The ids of Lan Network.
+	// The ids of Lan Network. When the Type is IP or CNAME, it is the LAN network to which the rule applies.
 	LanNetworkIds []string `json:"lanNetworkIds,omitempty"`
 	// Name of Lan Dns Item
 	Name string `json:"name"`
+	// The amount of time DNS information is allowed to be cached. The range of TTL should be 1-86400. It is recommended to use the default TTL for each record.
+	Ttl *int32 `json:"ttl,omitempty"`
 	// There are three options, IP:0, CNAME:1, and FORWARD:2.
 	Type int32 `json:"type"`
 }
@@ -131,6 +134,38 @@ func (o *LanDnsOpenApiVO) SetCname(v string) {
 	o.Cname = &v
 }
 
+// GetCustomTtl returns the CustomTtl field value if set, zero value otherwise.
+func (o *LanDnsOpenApiVO) GetCustomTtl() bool {
+	if o == nil || IsNil(o.CustomTtl) {
+		var ret bool
+		return ret
+	}
+	return *o.CustomTtl
+}
+
+// GetCustomTtlOk returns a tuple with the CustomTtl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanDnsOpenApiVO) GetCustomTtlOk() (*bool, bool) {
+	if o == nil || IsNil(o.CustomTtl) {
+		return nil, false
+	}
+	return o.CustomTtl, true
+}
+
+// HasCustomTtl returns a boolean if a field has been set.
+func (o *LanDnsOpenApiVO) HasCustomTtl() bool {
+	if o != nil && !IsNil(o.CustomTtl) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomTtl gets a reference to the given bool and assigns it to the CustomTtl field.
+func (o *LanDnsOpenApiVO) SetCustomTtl(v bool) {
+	o.CustomTtl = &v
+}
+
 // GetDnsServers returns the DnsServers field value if set, zero value otherwise.
 func (o *LanDnsOpenApiVO) GetDnsServers() []string {
 	if o == nil || IsNil(o.DnsServers) {
@@ -209,38 +244,6 @@ func (o *LanDnsOpenApiVO) GetEnableOk() (*bool, bool) {
 // SetEnable sets field value
 func (o *LanDnsOpenApiVO) SetEnable(v bool) {
 	o.Enable = v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *LanDnsOpenApiVO) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LanDnsOpenApiVO) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *LanDnsOpenApiVO) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *LanDnsOpenApiVO) SetId(v string) {
-	o.Id = &v
 }
 
 // GetIpAddresses returns the IpAddresses field value if set, zero value otherwise.
@@ -363,6 +366,38 @@ func (o *LanDnsOpenApiVO) SetName(v string) {
 	o.Name = v
 }
 
+// GetTtl returns the Ttl field value if set, zero value otherwise.
+func (o *LanDnsOpenApiVO) GetTtl() int32 {
+	if o == nil || IsNil(o.Ttl) {
+		var ret int32
+		return ret
+	}
+	return *o.Ttl
+}
+
+// GetTtlOk returns a tuple with the Ttl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanDnsOpenApiVO) GetTtlOk() (*int32, bool) {
+	if o == nil || IsNil(o.Ttl) {
+		return nil, false
+	}
+	return o.Ttl, true
+}
+
+// HasTtl returns a boolean if a field has been set.
+func (o *LanDnsOpenApiVO) HasTtl() bool {
+	if o != nil && !IsNil(o.Ttl) {
+		return true
+	}
+
+	return false
+}
+
+// SetTtl gets a reference to the given int32 and assigns it to the Ttl field.
+func (o *LanDnsOpenApiVO) SetTtl(v int32) {
+	o.Ttl = &v
+}
+
 // GetType returns the Type field value
 func (o *LanDnsOpenApiVO) GetType() int32 {
 	if o == nil {
@@ -403,14 +438,14 @@ func (o LanDnsOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Cname) {
 		toSerialize["cname"] = o.Cname
 	}
+	if !IsNil(o.CustomTtl) {
+		toSerialize["customTtl"] = o.CustomTtl
+	}
 	if !IsNil(o.DnsServers) {
 		toSerialize["dnsServers"] = o.DnsServers
 	}
 	toSerialize["domain"] = o.Domain
 	toSerialize["enable"] = o.Enable
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
 	if !IsNil(o.IpAddresses) {
 		toSerialize["ipAddresses"] = o.IpAddresses
 	}
@@ -421,6 +456,9 @@ func (o LanDnsOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["lanNetworkIds"] = o.LanNetworkIds
 	}
 	toSerialize["name"] = o.Name
+	if !IsNil(o.Ttl) {
+		toSerialize["ttl"] = o.Ttl
+	}
 	toSerialize["type"] = o.Type
 	return toSerialize, nil
 }

@@ -22,11 +22,11 @@ var _ MappedNullable = &IgmpOpenApiVO{}
 // IgmpOpenApiVO IGMP's configuration.
 type IgmpOpenApiVO struct {
 	Enable bool `json:"enable"`
-	// Version should be a value as follows: 2:v2; 3:v3.
+	// Version should be one of the following values: 2:v2; 3:v3.
 	Version int32 `json:"version"`
-	// Virtual WAN ID, can be obtained from 'Query virtual WAN list' interface. At least one of the wanPortId or virtualWanId should not be null.
+	// Virtual WAN ID, can be obtained from 'Query virtual WAN list' interface. At least one of the WAN Port IDs or Virtual WAN Port IDs should not be null.
 	VirtualWanId *string `json:"virtualWanId,omitempty"`
-	// WAN port ID, can be obtained from 'Get internet basic info' interface. At least one of the wanPortId or virtualWanId should not be null.
+	// WAN port ID, can be obtained from 'Get internet basic info' interface. At least one of the WAN Port IDs or Virtual WAN Port IDs should not be null.
 	WanPortId *string `json:"wanPortId,omitempty"`
 }
 

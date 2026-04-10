@@ -23,13 +23,15 @@ type VpnUserResponse struct {
 	Site *string `json:"Site,omitempty"`
 	// Client mode should be a value as follows: 0: Client-To-Site, 1: Site-To-Site.
 	ClientMode *int32 `json:"clientMode,omitempty"`
-	// Whether Local IP has been configured.
+	// Whether the Local IP is configured.
 	ExistLocalIp *bool `json:"existLocalIp,omitempty"`
-	// Whether OpenVPN has configured as VPN Type.
+	// Whether an OpenVPN user exists.
 	ExistProtocol *bool `json:"existProtocol,omitempty"`
+	// Group ID of the SSL VPN user. User group can be created using 'Create SSL VPN user group' interface, and User Group ID can be obtained from 'Get user group list for SSL VPN server' interface.
+	GroupId *string `json:"groupId,omitempty"`
 	// ID of the VPN user.
 	Id *string `json:"id,omitempty"`
-	// Local IP of the VPN user
+	// Local IP of the VPN user.
 	LocalIp *string `json:"localIp,omitempty"`
 	// Max connections should be within the range of 1–100.
 	MaxConnections *int32 `json:"maxConnections,omitempty"`
@@ -43,10 +45,14 @@ type VpnUserResponse struct {
 	ServerNames *string `json:"serverNames,omitempty"`
 	// Servers of the VPN user. Server can be created using 'Create client-to-site VPN server' interface, and server ID can be obtained from 'Get client-to-site VPN server list' interface.
 	Servers []string `json:"servers,omitempty"`
+	// Status of the SSL VPN user.
+	Status *bool `json:"status,omitempty"`
 	// User remote subnets of the VPN user.
 	UserRemoteSubnets []IPSubnetsVO `json:"userRemoteSubnets,omitempty"`
 	// Username of the VPN user.
 	Username *string `json:"username,omitempty"`
+	// Validity of the SSL VPN user. The format is Month/Day/Year, for example 08/20/2022.
+	Validity *string `json:"validity,omitempty"`
 }
 
 // NewVpnUserResponse instantiates a new VpnUserResponse object
@@ -192,6 +198,38 @@ func (o *VpnUserResponse) HasExistProtocol() bool {
 // SetExistProtocol gets a reference to the given bool and assigns it to the ExistProtocol field.
 func (o *VpnUserResponse) SetExistProtocol(v bool) {
 	o.ExistProtocol = &v
+}
+
+// GetGroupId returns the GroupId field value if set, zero value otherwise.
+func (o *VpnUserResponse) GetGroupId() string {
+	if o == nil || IsNil(o.GroupId) {
+		var ret string
+		return ret
+	}
+	return *o.GroupId
+}
+
+// GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserResponse) GetGroupIdOk() (*string, bool) {
+	if o == nil || IsNil(o.GroupId) {
+		return nil, false
+	}
+	return o.GroupId, true
+}
+
+// HasGroupId returns a boolean if a field has been set.
+func (o *VpnUserResponse) HasGroupId() bool {
+	if o != nil && !IsNil(o.GroupId) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroupId gets a reference to the given string and assigns it to the GroupId field.
+func (o *VpnUserResponse) SetGroupId(v string) {
+	o.GroupId = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -450,6 +488,38 @@ func (o *VpnUserResponse) SetServers(v []string) {
 	o.Servers = v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *VpnUserResponse) GetStatus() bool {
+	if o == nil || IsNil(o.Status) {
+		var ret bool
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserResponse) GetStatusOk() (*bool, bool) {
+	if o == nil || IsNil(o.Status) {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *VpnUserResponse) HasStatus() bool {
+	if o != nil && !IsNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given bool and assigns it to the Status field.
+func (o *VpnUserResponse) SetStatus(v bool) {
+	o.Status = &v
+}
+
 // GetUserRemoteSubnets returns the UserRemoteSubnets field value if set, zero value otherwise.
 func (o *VpnUserResponse) GetUserRemoteSubnets() []IPSubnetsVO {
 	if o == nil || IsNil(o.UserRemoteSubnets) {
@@ -514,6 +584,38 @@ func (o *VpnUserResponse) SetUsername(v string) {
 	o.Username = &v
 }
 
+// GetValidity returns the Validity field value if set, zero value otherwise.
+func (o *VpnUserResponse) GetValidity() string {
+	if o == nil || IsNil(o.Validity) {
+		var ret string
+		return ret
+	}
+	return *o.Validity
+}
+
+// GetValidityOk returns a tuple with the Validity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserResponse) GetValidityOk() (*string, bool) {
+	if o == nil || IsNil(o.Validity) {
+		return nil, false
+	}
+	return o.Validity, true
+}
+
+// HasValidity returns a boolean if a field has been set.
+func (o *VpnUserResponse) HasValidity() bool {
+	if o != nil && !IsNil(o.Validity) {
+		return true
+	}
+
+	return false
+}
+
+// SetValidity gets a reference to the given string and assigns it to the Validity field.
+func (o *VpnUserResponse) SetValidity(v string) {
+	o.Validity = &v
+}
+
 func (o VpnUserResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -535,6 +637,9 @@ func (o VpnUserResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ExistProtocol) {
 		toSerialize["existProtocol"] = o.ExistProtocol
+	}
+	if !IsNil(o.GroupId) {
+		toSerialize["groupId"] = o.GroupId
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -560,11 +665,17 @@ func (o VpnUserResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Servers) {
 		toSerialize["servers"] = o.Servers
 	}
+	if !IsNil(o.Status) {
+		toSerialize["status"] = o.Status
+	}
 	if !IsNil(o.UserRemoteSubnets) {
 		toSerialize["userRemoteSubnets"] = o.UserRemoteSubnets
 	}
 	if !IsNil(o.Username) {
 		toSerialize["username"] = o.Username
+	}
+	if !IsNil(o.Validity) {
+		toSerialize["validity"] = o.Validity
 	}
 	return toSerialize, nil
 }

@@ -23,6 +23,8 @@ var _ MappedNullable = &TermsOfServiceUrlVO{}
 type TermsOfServiceUrlVO struct {
 	// Terms of service URL content.
 	Content string `json:"content"`
+	// Index of hyperlink position.
+	Index *int32 `json:"index,omitempty"`
 	// Terms of service URL title.
 	Text string `json:"text"`
 }
@@ -72,6 +74,38 @@ func (o *TermsOfServiceUrlVO) SetContent(v string) {
 	o.Content = v
 }
 
+// GetIndex returns the Index field value if set, zero value otherwise.
+func (o *TermsOfServiceUrlVO) GetIndex() int32 {
+	if o == nil || IsNil(o.Index) {
+		var ret int32
+		return ret
+	}
+	return *o.Index
+}
+
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TermsOfServiceUrlVO) GetIndexOk() (*int32, bool) {
+	if o == nil || IsNil(o.Index) {
+		return nil, false
+	}
+	return o.Index, true
+}
+
+// HasIndex returns a boolean if a field has been set.
+func (o *TermsOfServiceUrlVO) HasIndex() bool {
+	if o != nil && !IsNil(o.Index) {
+		return true
+	}
+
+	return false
+}
+
+// SetIndex gets a reference to the given int32 and assigns it to the Index field.
+func (o *TermsOfServiceUrlVO) SetIndex(v int32) {
+	o.Index = &v
+}
+
 // GetText returns the Text field value
 func (o *TermsOfServiceUrlVO) GetText() string {
 	if o == nil {
@@ -107,6 +141,9 @@ func (o TermsOfServiceUrlVO) MarshalJSON() ([]byte, error) {
 func (o TermsOfServiceUrlVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["content"] = o.Content
+	if !IsNil(o.Index) {
+		toSerialize["index"] = o.Index
+	}
 	toSerialize["text"] = o.Text
 	return toSerialize, nil
 }

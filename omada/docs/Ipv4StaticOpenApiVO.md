@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultGateway** | Pointer to **string** |  | [optional] 
+**DefaultGateway** | **string** |  | 
 **IpAddress** | **string** | IP address | 
 **Mtu** | **int32** | 576-1500, default:1500 | 
 **PrimaryDns** | Pointer to **string** | Primary DNS | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewIpv4StaticOpenApiVO
 
-`func NewIpv4StaticOpenApiVO(ipAddress string, mtu int32, subnetMask string, ) *Ipv4StaticOpenApiVO`
+`func NewIpv4StaticOpenApiVO(defaultGateway string, ipAddress string, mtu int32, subnetMask string, ) *Ipv4StaticOpenApiVO`
 
 NewIpv4StaticOpenApiVO instantiates a new Ipv4StaticOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -50,11 +50,6 @@ and a boolean to check if the value has been set.
 
 SetDefaultGateway sets DefaultGateway field to given value.
 
-### HasDefaultGateway
-
-`func (o *Ipv4StaticOpenApiVO) HasDefaultGateway() bool`
-
-HasDefaultGateway returns a boolean if a field has been set.
 
 ### GetIpAddress
 

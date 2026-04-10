@@ -1420,7 +1420,7 @@ Name | Type | Description  | Notes
 
 ## DeleteVoipTelephoneBook
 
-> OperationResponseWithoutResult DeleteVoipTelephoneBook(ctx, omadacId, siteId, contactId).Execute()
+> OperationResponseWithoutResult DeleteVoipTelephoneBook(ctx, omadacId, siteId, contactId).VoipDeleteTelephoneBook(voipDeleteTelephoneBook).Execute()
 
 Delete Contact Person
 
@@ -1442,10 +1442,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	contactId := "contactId_example" // string | Voip Contact Person ID
+	voipDeleteTelephoneBook := *openapiclient.NewVoipDeleteTelephoneBook(false) // VoipDeleteTelephoneBook | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VoIPAPI.DeleteVoipTelephoneBook(context.Background(), omadacId, siteId, contactId).Execute()
+	resp, r, err := apiClient.VoIPAPI.DeleteVoipTelephoneBook(context.Background(), omadacId, siteId, contactId).VoipDeleteTelephoneBook(voipDeleteTelephoneBook).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VoIPAPI.DeleteVoipTelephoneBook``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1475,6 +1476,7 @@ Name | Type | Description  | Notes
 
 
 
+ **voipDeleteTelephoneBook** | [**VoipDeleteTelephoneBook**](VoipDeleteTelephoneBook.md) |  | 
 
 ### Return type
 
@@ -1486,7 +1488,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -2464,7 +2466,7 @@ Name | Type | Description  | Notes
 
 ## GetTelephoneNumberBatchConfigList
 
-> OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO GetTelephoneNumberBatchConfigList(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO GetTelephoneNumberBatchConfigList(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
 
 Get Telephone Number Config List
 
@@ -2495,7 +2497,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VoIPAPI.GetTelephoneNumberBatchConfigList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTelephoneNumberBatchConfigList`: OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO
+	// response from `GetTelephoneNumberBatchConfigList`: OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `VoIPAPI.GetTelephoneNumberBatchConfigList`: %v\n", resp)
 }
 ```
@@ -2523,7 +2525,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO**](OperationResponseGridVOTelephoneNumberWithStatusOpenApiVO.md)
+[**OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO**](OperationResponseTelephoneNumberWithStatusGridVOTelephoneNumberWithStatusOpenApiVO.md)
 
 ### Authorization
 
@@ -3223,7 +3225,7 @@ Name | Type | Description  | Notes
 
 ## ImportTelephoneNumberListFromFile
 
-> OperationResponseWithoutResult ImportTelephoneNumberListFromFile(ctx, omadacId, siteId).UploadCertificateRequest(uploadCertificateRequest).Execute()
+> OperationResponseWithoutResult ImportTelephoneNumberListFromFile(ctx, omadacId, siteId).UploadSSLKeyRequest(uploadSSLKeyRequest).Execute()
 
 Import telephone number list from file
 
@@ -3244,11 +3246,11 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	uploadCertificateRequest := *openapiclient.NewUploadCertificateRequest("TODO") // UploadCertificateRequest |  (optional)
+	uploadSSLKeyRequest := *openapiclient.NewUploadSSLKeyRequest("TODO") // UploadSSLKeyRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VoIPAPI.ImportTelephoneNumberListFromFile(context.Background(), omadacId, siteId).UploadCertificateRequest(uploadCertificateRequest).Execute()
+	resp, r, err := apiClient.VoIPAPI.ImportTelephoneNumberListFromFile(context.Background(), omadacId, siteId).UploadSSLKeyRequest(uploadSSLKeyRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VoIPAPI.ImportTelephoneNumberListFromFile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3276,7 +3278,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **uploadCertificateRequest** | [**UploadCertificateRequest**](UploadCertificateRequest.md) |  | 
+ **uploadSSLKeyRequest** | [**UploadSSLKeyRequest**](UploadSSLKeyRequest.md) |  | 
 
 ### Return type
 

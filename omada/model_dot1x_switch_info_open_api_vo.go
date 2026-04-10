@@ -31,12 +31,16 @@ type Dot1xSwitchInfoOpenApiVO struct {
 	Model *string `json:"model,omitempty"`
 	// Switch name
 	Name *string `json:"name,omitempty"`
+	// Is there any port configured with 802.1x or MAB authentication.
+	PortConfigured *bool `json:"portConfigured,omitempty"`
 	// Switch port information
 	Ports []Dot1xPortInfoOpenApiVO `json:"ports,omitempty"`
 	// Device status
 	Status *string `json:"status,omitempty"`
 	// Device status category, 0: Disconnected, 1: Connected, 2: Pending,3: Heartbeat Missed, 4: Isolated
 	StatusCategory *int32 `json:"statusCategory,omitempty"`
+	// Whether the switch supports single MAB Authentication.If not supported, it will not take effect when configuring single MAB authentication for the port of the switch.
+	SupportSingleMabAuth *bool `json:"supportSingleMabAuth,omitempty"`
 	// Whether the switch supports VRF
 	SupportVrf *bool `json:"supportVrf,omitempty"`
 	// Switch firmwareVersion
@@ -252,6 +256,38 @@ func (o *Dot1xSwitchInfoOpenApiVO) SetName(v string) {
 	o.Name = &v
 }
 
+// GetPortConfigured returns the PortConfigured field value if set, zero value otherwise.
+func (o *Dot1xSwitchInfoOpenApiVO) GetPortConfigured() bool {
+	if o == nil || IsNil(o.PortConfigured) {
+		var ret bool
+		return ret
+	}
+	return *o.PortConfigured
+}
+
+// GetPortConfiguredOk returns a tuple with the PortConfigured field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Dot1xSwitchInfoOpenApiVO) GetPortConfiguredOk() (*bool, bool) {
+	if o == nil || IsNil(o.PortConfigured) {
+		return nil, false
+	}
+	return o.PortConfigured, true
+}
+
+// HasPortConfigured returns a boolean if a field has been set.
+func (o *Dot1xSwitchInfoOpenApiVO) HasPortConfigured() bool {
+	if o != nil && !IsNil(o.PortConfigured) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortConfigured gets a reference to the given bool and assigns it to the PortConfigured field.
+func (o *Dot1xSwitchInfoOpenApiVO) SetPortConfigured(v bool) {
+	o.PortConfigured = &v
+}
+
 // GetPorts returns the Ports field value if set, zero value otherwise.
 func (o *Dot1xSwitchInfoOpenApiVO) GetPorts() []Dot1xPortInfoOpenApiVO {
 	if o == nil || IsNil(o.Ports) {
@@ -348,6 +384,38 @@ func (o *Dot1xSwitchInfoOpenApiVO) SetStatusCategory(v int32) {
 	o.StatusCategory = &v
 }
 
+// GetSupportSingleMabAuth returns the SupportSingleMabAuth field value if set, zero value otherwise.
+func (o *Dot1xSwitchInfoOpenApiVO) GetSupportSingleMabAuth() bool {
+	if o == nil || IsNil(o.SupportSingleMabAuth) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportSingleMabAuth
+}
+
+// GetSupportSingleMabAuthOk returns a tuple with the SupportSingleMabAuth field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Dot1xSwitchInfoOpenApiVO) GetSupportSingleMabAuthOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportSingleMabAuth) {
+		return nil, false
+	}
+	return o.SupportSingleMabAuth, true
+}
+
+// HasSupportSingleMabAuth returns a boolean if a field has been set.
+func (o *Dot1xSwitchInfoOpenApiVO) HasSupportSingleMabAuth() bool {
+	if o != nil && !IsNil(o.SupportSingleMabAuth) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportSingleMabAuth gets a reference to the given bool and assigns it to the SupportSingleMabAuth field.
+func (o *Dot1xSwitchInfoOpenApiVO) SetSupportSingleMabAuth(v bool) {
+	o.SupportSingleMabAuth = &v
+}
+
 // GetSupportVrf returns the SupportVrf field value if set, zero value otherwise.
 func (o *Dot1xSwitchInfoOpenApiVO) GetSupportVrf() bool {
 	if o == nil || IsNil(o.SupportVrf) {
@@ -440,6 +508,9 @@ func (o Dot1xSwitchInfoOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+	if !IsNil(o.PortConfigured) {
+		toSerialize["portConfigured"] = o.PortConfigured
+	}
 	if !IsNil(o.Ports) {
 		toSerialize["ports"] = o.Ports
 	}
@@ -448,6 +519,9 @@ func (o Dot1xSwitchInfoOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.StatusCategory) {
 		toSerialize["statusCategory"] = o.StatusCategory
+	}
+	if !IsNil(o.SupportSingleMabAuth) {
+		toSerialize["supportSingleMabAuth"] = o.SupportSingleMabAuth
 	}
 	if !IsNil(o.SupportVrf) {
 		toSerialize["supportVrf"] = o.SupportVrf

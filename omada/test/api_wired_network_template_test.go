@@ -710,6 +710,21 @@ func Test_omada_WiredNetworkTemplateAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WiredNetworkTemplateAPIService GetSpeedTestV2SettingTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.WiredNetworkTemplateAPI.GetSpeedTestV2SettingTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WiredNetworkTemplateAPIService GetSupportPortsDeviceTemplates", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -894,6 +909,21 @@ func Test_omada_WiredNetworkTemplateAPIService(t *testing.T) {
 		var profileId string
 
 		resp, httpRes, err := apiClient.WiredNetworkTemplateAPI.ModifyOswLanProfileTemplate(context.Background(), omadacId, siteTemplateId, profileId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WiredNetworkTemplateAPIService ModifySpeedTestV2SettingTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.WiredNetworkTemplateAPI.ModifySpeedTestV2SettingTemplate(context.Background(), omadacId, siteTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

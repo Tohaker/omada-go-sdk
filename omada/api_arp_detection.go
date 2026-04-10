@@ -814,11 +814,11 @@ type ArpDetectionAPIImportArpDetectImpbsFromFileRequest struct {
 	ApiService ArpDetectionAPI
 	omadacId string
 	siteId string
-	uploadCertificateRequest *UploadCertificateRequest
+	uploadSSLKeyRequest *UploadSSLKeyRequest
 }
 
-func (r ArpDetectionAPIImportArpDetectImpbsFromFileRequest) UploadCertificateRequest(uploadCertificateRequest UploadCertificateRequest) ArpDetectionAPIImportArpDetectImpbsFromFileRequest {
-	r.uploadCertificateRequest = &uploadCertificateRequest
+func (r ArpDetectionAPIImportArpDetectImpbsFromFileRequest) UploadSSLKeyRequest(uploadSSLKeyRequest UploadSSLKeyRequest) ArpDetectionAPIImportArpDetectImpbsFromFileRequest {
+	r.uploadSSLKeyRequest = &uploadSSLKeyRequest
 	return r
 }
 
@@ -886,7 +886,7 @@ func (a *ArpDetectionAPIService) ImportArpDetectImpbsFromFileExecute(r ArpDetect
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.uploadCertificateRequest
+	localVarPostBody = r.uploadSSLKeyRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

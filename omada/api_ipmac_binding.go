@@ -962,11 +962,11 @@ type IPMACBindingAPIImportIpMacBindingListFromFileRequest struct {
 	ApiService IPMACBindingAPI
 	omadacId string
 	siteId string
-	uploadCertificateRequest *UploadCertificateRequest
+	uploadSSLKeyRequest *UploadSSLKeyRequest
 }
 
-func (r IPMACBindingAPIImportIpMacBindingListFromFileRequest) UploadCertificateRequest(uploadCertificateRequest UploadCertificateRequest) IPMACBindingAPIImportIpMacBindingListFromFileRequest {
-	r.uploadCertificateRequest = &uploadCertificateRequest
+func (r IPMACBindingAPIImportIpMacBindingListFromFileRequest) UploadSSLKeyRequest(uploadSSLKeyRequest UploadSSLKeyRequest) IPMACBindingAPIImportIpMacBindingListFromFileRequest {
+	r.uploadSSLKeyRequest = &uploadSSLKeyRequest
 	return r
 }
 
@@ -1034,7 +1034,7 @@ func (a *IPMACBindingAPIService) ImportIpMacBindingListFromFileExecute(r IPMACBi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.uploadCertificateRequest
+	localVarPostBody = r.uploadSSLKeyRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

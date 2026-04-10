@@ -133,8 +133,8 @@ type NATTemplateAPI interface {
 	GetTemplateAlg(ctx context.Context, omadacId string, siteTemplateId string) NATTemplateAPIGetTemplateAlgRequest
 
 	// GetTemplateAlgExecute executes the request
-	//  @return OperationResponseALGSetting
-	GetTemplateAlgExecute(r NATTemplateAPIGetTemplateAlgRequest) (*OperationResponseALGSetting, *http.Response, error)
+	//  @return OperationResponseGetAlgOpenApiVO
+	GetTemplateAlgExecute(r NATTemplateAPIGetTemplateAlgRequest) (*OperationResponseGetAlgOpenApiVO, *http.Response, error)
 
 	/*
 	GetTemplatePortForwardingList Get site template's port forwarding list
@@ -1002,7 +1002,7 @@ type NATTemplateAPIGetTemplateAlgRequest struct {
 	siteTemplateId string
 }
 
-func (r NATTemplateAPIGetTemplateAlgRequest) Execute() (*OperationResponseALGSetting, *http.Response, error) {
+func (r NATTemplateAPIGetTemplateAlgRequest) Execute() (*OperationResponseGetAlgOpenApiVO, *http.Response, error) {
 	return r.ApiService.GetTemplateAlgExecute(r)
 }
 
@@ -1026,13 +1026,13 @@ func (a *NATTemplateAPIService) GetTemplateAlg(ctx context.Context, omadacId str
 }
 
 // Execute executes the request
-//  @return OperationResponseALGSetting
-func (a *NATTemplateAPIService) GetTemplateAlgExecute(r NATTemplateAPIGetTemplateAlgRequest) (*OperationResponseALGSetting, *http.Response, error) {
+//  @return OperationResponseGetAlgOpenApiVO
+func (a *NATTemplateAPIService) GetTemplateAlgExecute(r NATTemplateAPIGetTemplateAlgRequest) (*OperationResponseGetAlgOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseALGSetting
+		localVarReturnValue  *OperationResponseGetAlgOpenApiVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NATTemplateAPIService.GetTemplateAlg")

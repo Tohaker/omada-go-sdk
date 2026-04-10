@@ -10,14 +10,15 @@ Name | Type | Description | Notes
 **PfsCap** | Pointer to **[]int32** | All PFS configuration types supported by the device, 1:dh1; 2:dh2; 3:dh3; 14:dh14; 15:dh15. Default: dh1、dh2、dh5 | [optional] 
 **Phase1Proposal1Cap** | Pointer to **[]int32** | Proposal options for IKE negotiation phase-1. 0: MD5, 1: SHA1, 2:SHA256, 3:SHA384, 4:SHA512. Default: MD5, SHA1 and SHA256 | [optional] 
 **Phase2Proposal2Cap** | Pointer to **[]int32** | Proposal options for IKE negotiation phase-2. 0: MD5, 1: SHA1, 2:SHA256, 3:SHA384, 4:SHA512.+ Default: MD5, SHA1 and SHA256 | [optional] 
+**SubnetsLimitSize** | Pointer to **int32** | The limit on the number of entries for remote subnets and local network. | [optional] 
 **SupportAccountAuth** | Pointer to **bool** | Whether account auth configuration is supported of the VPN | [optional] 
+**SupportByDsLiteAndMapE** | Pointer to **bool** | Whether this feature is supported for the DS-Lite or Map-E WAN connection types. | [optional] 
 **SupportCustomDns** | Pointer to **bool** | Whether custom dns configuration is supported of the VPN | [optional] 
 **SupportCustomNetwork** | Pointer to **bool** | Whether custom network configuration is supported of the VPN | [optional] 
 **SupportIPsec** | Pointer to **bool** | Whether IPsec VPN is supported. | [optional] 
 **SupportIpRange** | Pointer to **bool** | Whether ip range configuration is supported of the VPN | [optional] 
-**SupportIpSNat** | Pointer to **bool** | Whether IPSec Source NAT is supported of the VPN | [optional] 
 **SupportL2TP** | Pointer to **bool** | Whether L2TP VPN is supported. | [optional] 
-**SupportLdap** | Pointer to **bool** | Whether LDAP authentication mode is supported of the VPN client | [optional] 
+**SupportLdap** | Pointer to **bool** | Whether LDAP authentication mode is supported of the VPN server | [optional] 
 **SupportOpenVpnDomain** | Pointer to **bool** | Whether OpenVPN supports inputting domain | [optional] 
 **SupportTunnelMode** | Pointer to **bool** | Whether tunnel mode configuration is supported of the VPN | [optional] 
 **SupportVpnUserTab** | Pointer to **bool** | Whether user tab configuration is supported of the VPN | [optional] 
@@ -192,6 +193,31 @@ SetPhase2Proposal2Cap sets Phase2Proposal2Cap field to given value.
 
 HasPhase2Proposal2Cap returns a boolean if a field has been set.
 
+### GetSubnetsLimitSize
+
+`func (o *VpnOpenApiGridVOVPN) GetSubnetsLimitSize() int32`
+
+GetSubnetsLimitSize returns the SubnetsLimitSize field if non-nil, zero value otherwise.
+
+### GetSubnetsLimitSizeOk
+
+`func (o *VpnOpenApiGridVOVPN) GetSubnetsLimitSizeOk() (*int32, bool)`
+
+GetSubnetsLimitSizeOk returns a tuple with the SubnetsLimitSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubnetsLimitSize
+
+`func (o *VpnOpenApiGridVOVPN) SetSubnetsLimitSize(v int32)`
+
+SetSubnetsLimitSize sets SubnetsLimitSize field to given value.
+
+### HasSubnetsLimitSize
+
+`func (o *VpnOpenApiGridVOVPN) HasSubnetsLimitSize() bool`
+
+HasSubnetsLimitSize returns a boolean if a field has been set.
+
 ### GetSupportAccountAuth
 
 `func (o *VpnOpenApiGridVOVPN) GetSupportAccountAuth() bool`
@@ -216,6 +242,31 @@ SetSupportAccountAuth sets SupportAccountAuth field to given value.
 `func (o *VpnOpenApiGridVOVPN) HasSupportAccountAuth() bool`
 
 HasSupportAccountAuth returns a boolean if a field has been set.
+
+### GetSupportByDsLiteAndMapE
+
+`func (o *VpnOpenApiGridVOVPN) GetSupportByDsLiteAndMapE() bool`
+
+GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field if non-nil, zero value otherwise.
+
+### GetSupportByDsLiteAndMapEOk
+
+`func (o *VpnOpenApiGridVOVPN) GetSupportByDsLiteAndMapEOk() (*bool, bool)`
+
+GetSupportByDsLiteAndMapEOk returns a tuple with the SupportByDsLiteAndMapE field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportByDsLiteAndMapE
+
+`func (o *VpnOpenApiGridVOVPN) SetSupportByDsLiteAndMapE(v bool)`
+
+SetSupportByDsLiteAndMapE sets SupportByDsLiteAndMapE field to given value.
+
+### HasSupportByDsLiteAndMapE
+
+`func (o *VpnOpenApiGridVOVPN) HasSupportByDsLiteAndMapE() bool`
+
+HasSupportByDsLiteAndMapE returns a boolean if a field has been set.
 
 ### GetSupportCustomDns
 
@@ -316,31 +367,6 @@ SetSupportIpRange sets SupportIpRange field to given value.
 `func (o *VpnOpenApiGridVOVPN) HasSupportIpRange() bool`
 
 HasSupportIpRange returns a boolean if a field has been set.
-
-### GetSupportIpSNat
-
-`func (o *VpnOpenApiGridVOVPN) GetSupportIpSNat() bool`
-
-GetSupportIpSNat returns the SupportIpSNat field if non-nil, zero value otherwise.
-
-### GetSupportIpSNatOk
-
-`func (o *VpnOpenApiGridVOVPN) GetSupportIpSNatOk() (*bool, bool)`
-
-GetSupportIpSNatOk returns a tuple with the SupportIpSNat field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSupportIpSNat
-
-`func (o *VpnOpenApiGridVOVPN) SetSupportIpSNat(v bool)`
-
-SetSupportIpSNat sets SupportIpSNat field to given value.
-
-### HasSupportIpSNat
-
-`func (o *VpnOpenApiGridVOVPN) HasSupportIpSNat() bool`
-
-HasSupportIpSNat returns a boolean if a field has been set.
 
 ### GetSupportL2TP
 

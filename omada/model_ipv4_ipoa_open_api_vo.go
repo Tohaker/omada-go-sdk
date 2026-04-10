@@ -21,7 +21,7 @@ var _ MappedNullable = &Ipv4IpoaOpenApiVO{}
 
 // Ipv4IpoaOpenApiVO It is required when [protoType] is 8.
 type Ipv4IpoaOpenApiVO struct {
-	DefaultGateway *string `json:"defaultGateway,omitempty"`
+	DefaultGateway string `json:"defaultGateway"`
 	// IP address
 	IpAddress string `json:"ipAddress"`
 	// 576-1500, default:1500
@@ -40,8 +40,9 @@ type _Ipv4IpoaOpenApiVO Ipv4IpoaOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIpv4IpoaOpenApiVO(ipAddress string, mtu int32, subnetMask string) *Ipv4IpoaOpenApiVO {
+func NewIpv4IpoaOpenApiVO(defaultGateway string, ipAddress string, mtu int32, subnetMask string) *Ipv4IpoaOpenApiVO {
 	this := Ipv4IpoaOpenApiVO{}
+	this.DefaultGateway = defaultGateway
 	this.IpAddress = ipAddress
 	this.Mtu = mtu
 	this.SubnetMask = subnetMask
@@ -56,36 +57,28 @@ func NewIpv4IpoaOpenApiVOWithDefaults() *Ipv4IpoaOpenApiVO {
 	return &this
 }
 
-// GetDefaultGateway returns the DefaultGateway field value if set, zero value otherwise.
+// GetDefaultGateway returns the DefaultGateway field value
 func (o *Ipv4IpoaOpenApiVO) GetDefaultGateway() string {
-	if o == nil || IsNil(o.DefaultGateway) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DefaultGateway
+
+	return o.DefaultGateway
 }
 
-// GetDefaultGatewayOk returns a tuple with the DefaultGateway field value if set, nil otherwise
+// GetDefaultGatewayOk returns a tuple with the DefaultGateway field value
 // and a boolean to check if the value has been set.
 func (o *Ipv4IpoaOpenApiVO) GetDefaultGatewayOk() (*string, bool) {
-	if o == nil || IsNil(o.DefaultGateway) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultGateway, true
+	return &o.DefaultGateway, true
 }
 
-// HasDefaultGateway returns a boolean if a field has been set.
-func (o *Ipv4IpoaOpenApiVO) HasDefaultGateway() bool {
-	if o != nil && !IsNil(o.DefaultGateway) {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultGateway gets a reference to the given string and assigns it to the DefaultGateway field.
+// SetDefaultGateway sets field value
 func (o *Ipv4IpoaOpenApiVO) SetDefaultGateway(v string) {
-	o.DefaultGateway = &v
+	o.DefaultGateway = v
 }
 
 // GetIpAddress returns the IpAddress field value
@@ -266,9 +259,7 @@ func (o Ipv4IpoaOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o Ipv4IpoaOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DefaultGateway) {
-		toSerialize["defaultGateway"] = o.DefaultGateway
-	}
+	toSerialize["defaultGateway"] = o.DefaultGateway
 	toSerialize["ipAddress"] = o.IpAddress
 	toSerialize["mtu"] = o.Mtu
 	if !IsNil(o.PrimaryDns) {
@@ -289,6 +280,7 @@ func (o *Ipv4IpoaOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"defaultGateway",
 		"ipAddress",
 		"mtu",
 		"subnetMask",

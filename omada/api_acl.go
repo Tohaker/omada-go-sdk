@@ -55,6 +55,22 @@ type ACLAPI interface {
 	BatchEditOsgCustomAclStatusExecute(r ACLAPIBatchEditOsgCustomAclStatusRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	ClearOsgAclHitCounts Clear gateway ACL hit counts
+
+	Clear gateway ACL hit counts<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ACLAPIClearOsgAclHitCountsRequest
+	*/
+	ClearOsgAclHitCounts(ctx context.Context, omadacId string, siteId string) ACLAPIClearOsgAclHitCountsRequest
+
+	// ClearOsgAclHitCountsExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ClearOsgAclHitCountsExecute(r ACLAPIClearOsgAclHitCountsRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	ClearOsgHitCounts Clear gateway custom ACL hit counts
 
 	Clear gateway custom ACL hit counts<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify
@@ -71,9 +87,9 @@ type ACLAPI interface {
 	ClearOsgHitCountsExecute(r ACLAPIClearOsgHitCountsRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	CreateEapAcl Create new eap ACL
+	CreateEapAcl Create new EAP ACL
 
-	Create new eap ACL.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Create new EAP ACL.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -136,6 +152,22 @@ type ACLAPI interface {
 	DeleteAclExecute(r ACLAPIDeleteAclRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	ExportOsgCustomAcl Export gateway custom ACL rules
+
+	Export gateway custom ACL rules<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ACLAPIExportOsgCustomAclRequest
+	*/
+	ExportOsgCustomAcl(ctx context.Context, omadacId string, siteId string) ACLAPIExportOsgCustomAclRequest
+
+	// ExportOsgCustomAclExecute executes the request
+	//  @return OperationResponse
+	ExportOsgCustomAclExecute(r ACLAPIExportOsgCustomAclRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	GetAclConfigTypeSetting Get gateway ACL config mode
 
 	Get gateway ACL config mode<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only
@@ -152,9 +184,9 @@ type ACLAPI interface {
 	GetAclConfigTypeSettingExecute(r ACLAPIGetAclConfigTypeSettingRequest) (*OperationResponseGatewayACLConfigModeEntity, *http.Response, error)
 
 	/*
-	GetEapAclList Get eap ACL list
+	GetEapAclList Get EAP ACL list
 
-	Get eap ACL list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get EAP ACL list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -598,6 +630,127 @@ func (a *ACLAPIService) BatchEditOsgCustomAclStatusExecute(r ACLAPIBatchEditOsgC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ACLAPIClearOsgAclHitCountsRequest struct {
+	ctx context.Context
+	ApiService ACLAPI
+	omadacId string
+	siteId string
+}
+
+func (r ACLAPIClearOsgAclHitCountsRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ClearOsgAclHitCountsExecute(r)
+}
+
+/*
+ClearOsgAclHitCounts Clear gateway ACL hit counts
+
+Clear gateway ACL hit counts<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ACLAPIClearOsgAclHitCountsRequest
+*/
+func (a *ACLAPIService) ClearOsgAclHitCounts(ctx context.Context, omadacId string, siteId string) ACLAPIClearOsgAclHitCountsRequest {
+	return ACLAPIClearOsgAclHitCountsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *ACLAPIService) ClearOsgAclHitCountsExecute(r ACLAPIClearOsgAclHitCountsRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLAPIService.ClearOsgAclHitCounts")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/acls/osg-acls/hit-counts"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ACLAPIClearOsgHitCountsRequest struct {
 	ctx context.Context
 	ApiService ACLAPI
@@ -737,9 +890,9 @@ func (r ACLAPICreateEapAclRequest) Execute() (*OperationResponseWithoutResult, *
 }
 
 /*
-CreateEapAcl Create new eap ACL
+CreateEapAcl Create new EAP ACL
 
-Create new eap ACL.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Create new EAP ACL.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1240,6 +1393,127 @@ func (a *ACLAPIService) DeleteAclExecute(r ACLAPIDeleteAclRequest) (*OperationRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ACLAPIExportOsgCustomAclRequest struct {
+	ctx context.Context
+	ApiService ACLAPI
+	omadacId string
+	siteId string
+}
+
+func (r ACLAPIExportOsgCustomAclRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.ExportOsgCustomAclExecute(r)
+}
+
+/*
+ExportOsgCustomAcl Export gateway custom ACL rules
+
+Export gateway custom ACL rules<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ACLAPIExportOsgCustomAclRequest
+*/
+func (a *ACLAPIService) ExportOsgCustomAcl(ctx context.Context, omadacId string, siteId string) ACLAPIExportOsgCustomAclRequest {
+	return ACLAPIExportOsgCustomAclRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *ACLAPIService) ExportOsgCustomAclExecute(r ACLAPIExportOsgCustomAclRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLAPIService.ExportOsgCustomAcl")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/files/sites/{siteId}/acls/export"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ACLAPIGetAclConfigTypeSettingRequest struct {
 	ctx context.Context
 	ApiService ACLAPI
@@ -1387,9 +1661,9 @@ func (r ACLAPIGetEapAclListRequest) Execute() (*OperationResponseGridVOEapACLInf
 }
 
 /*
-GetEapAclList Get eap ACL list
+GetEapAclList Get EAP ACL list
 
-Get eap ACL list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get EAP ACL list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

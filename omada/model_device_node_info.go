@@ -48,6 +48,8 @@ type DeviceNodeInfo struct {
 	ShowModel *string `json:"showModel,omitempty"`
 	// Stack Group
 	StackGroup *bool `json:"stackGroup,omitempty"`
+	// Stack Id
+	StackId *string `json:"stackId,omitempty"`
 	// Status of device,status should be a value as follows: 0:Disconnected;1:Disconnected(Migrating);10:Provisioning;11:Configuring;12:Upgrading;13:Rebooting;14:Connected;15:Connected(Wireless);16:Connected(Migrating);17:Connected(Wireless,Migrating);20:Pending;21:Pending(Wireless);22:Adopting;23:Adopting(Wireless);24:Adopt Failed;25:Adopt Failed(Wireless);26:Managed By Others;27:Managed By Others(Wireless);30:Heartbeat Missed;31:Heartbeat Missed(Wireless);32:Heartbeat Missed(Migrating);33:Heartbeat Missed(Wireless,Migrating);40:Isolated;41:Isolated(Migrating);50:Slice Configuring
 	Status *int32 `json:"status,omitempty"`
 	// Device status should be a value as follows: 0: Disconnected; 1: Connected; 2: Pending; 3: Heartbeat Missed; 4: Isolated
@@ -616,6 +618,38 @@ func (o *DeviceNodeInfo) SetStackGroup(v bool) {
 	o.StackGroup = &v
 }
 
+// GetStackId returns the StackId field value if set, zero value otherwise.
+func (o *DeviceNodeInfo) GetStackId() string {
+	if o == nil || IsNil(o.StackId) {
+		var ret string
+		return ret
+	}
+	return *o.StackId
+}
+
+// GetStackIdOk returns a tuple with the StackId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceNodeInfo) GetStackIdOk() (*string, bool) {
+	if o == nil || IsNil(o.StackId) {
+		return nil, false
+	}
+	return o.StackId, true
+}
+
+// HasStackId returns a boolean if a field has been set.
+func (o *DeviceNodeInfo) HasStackId() bool {
+	if o != nil && !IsNil(o.StackId) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackId gets a reference to the given string and assigns it to the StackId field.
+func (o *DeviceNodeInfo) SetStackId(v string) {
+	o.StackId = &v
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *DeviceNodeInfo) GetStatus() int32 {
 	if o == nil || IsNil(o.Status) {
@@ -772,6 +806,9 @@ func (o DeviceNodeInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.StackGroup) {
 		toSerialize["stackGroup"] = o.StackGroup
+	}
+	if !IsNil(o.StackId) {
+		toSerialize["stackId"] = o.StackId
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

@@ -6,11 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomerName** | Pointer to **string** | If device management records exist when adding devices by SN, you need to forget devices in this customer. Otherwise this field will have no value. | [optional] 
 **DeviceKey** | Pointer to **string** | Device key(QR code) | [optional] 
+**Mac** | Pointer to **string** | Device mac | [optional] 
 **Name** | Pointer to **string** | Device name | [optional] 
 **Online** | Pointer to **bool** | Device online or offline | [optional] 
 **SiteName** | Pointer to **string** | If device management records exist when adding devices by SN, you need to forget devices in this site. Otherwise this field will have no value. | [optional] 
 **Sn** | Pointer to **string** | Serial number | [optional] 
 **Status** | Pointer to **int32** | Device add status should be a value as follows: 0: success; 1: waiting to do; 2：importing; -51451：Device ID not found; -52201：Device is offline; -52202：Device is already bounded; -52208：Device is offline during processing; -52200：Device not exit; -53100：Invalid SN code; -53101：SN code already exists; -53102：Incorrect local Username/Password; -53103：Device error; -53113: Too many PRECONFIGURED devices in this account. Available licenses are not enough; -53114: This device has been added by another Controller; -53118: Omada Pro devices can only be added on the Omada Pro Controller; -53119: Omada devices can only be added on the Omada Controller; -39045: Failed to add the device due to duplicate SN codes. Please contact our TP-Link Support. | [optional] 
+**SupportIppt** | Pointer to **bool** | Support ip pass-through or not。 | [optional] 
 
 ## Methods
 
@@ -80,6 +82,31 @@ SetDeviceKey sets DeviceKey field to given value.
 `func (o *SnAddResultVO) HasDeviceKey() bool`
 
 HasDeviceKey returns a boolean if a field has been set.
+
+### GetMac
+
+`func (o *SnAddResultVO) GetMac() string`
+
+GetMac returns the Mac field if non-nil, zero value otherwise.
+
+### GetMacOk
+
+`func (o *SnAddResultVO) GetMacOk() (*string, bool)`
+
+GetMacOk returns a tuple with the Mac field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMac
+
+`func (o *SnAddResultVO) SetMac(v string)`
+
+SetMac sets Mac field to given value.
+
+### HasMac
+
+`func (o *SnAddResultVO) HasMac() bool`
+
+HasMac returns a boolean if a field has been set.
 
 ### GetName
 
@@ -205,6 +232,31 @@ SetStatus sets Status field to given value.
 `func (o *SnAddResultVO) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetSupportIppt
+
+`func (o *SnAddResultVO) GetSupportIppt() bool`
+
+GetSupportIppt returns the SupportIppt field if non-nil, zero value otherwise.
+
+### GetSupportIpptOk
+
+`func (o *SnAddResultVO) GetSupportIpptOk() (*bool, bool)`
+
+GetSupportIpptOk returns a tuple with the SupportIppt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportIppt
+
+`func (o *SnAddResultVO) SetSupportIppt(v bool)`
+
+SetSupportIppt sets SupportIppt field to given value.
+
+### HasSupportIppt
+
+`func (o *SnAddResultVO) HasSupportIppt() bool`
+
+HasSupportIppt returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

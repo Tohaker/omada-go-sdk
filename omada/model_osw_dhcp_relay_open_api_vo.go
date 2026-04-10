@@ -12,8 +12,6 @@ package omada
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the OswDhcpRelayOpenApiVO type satisfies the MappedNullable interface at compile time
@@ -22,20 +20,19 @@ var _ MappedNullable = &OswDhcpRelayOpenApiVO{}
 // OswDhcpRelayOpenApiVO Network DHCP relay settings. Only valid when deviceType is 2 and mode is 2
 type OswDhcpRelayOpenApiVO struct {
 	// Address IP, like 192.168.0.1
-	Addr string `json:"addr"`
+	Addr *string `json:"addr,omitempty"`
+	// Server Address IP List, like 192.168.0.1
+	ServerAddrs []string `json:"serverAddrs,omitempty"`
 	// VRF ID
 	VrfId *string `json:"vrfId,omitempty"`
 }
-
-type _OswDhcpRelayOpenApiVO OswDhcpRelayOpenApiVO
 
 // NewOswDhcpRelayOpenApiVO instantiates a new OswDhcpRelayOpenApiVO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOswDhcpRelayOpenApiVO(addr string) *OswDhcpRelayOpenApiVO {
+func NewOswDhcpRelayOpenApiVO() *OswDhcpRelayOpenApiVO {
 	this := OswDhcpRelayOpenApiVO{}
-	this.Addr = addr
 	return &this
 }
 
@@ -47,28 +44,68 @@ func NewOswDhcpRelayOpenApiVOWithDefaults() *OswDhcpRelayOpenApiVO {
 	return &this
 }
 
-// GetAddr returns the Addr field value
+// GetAddr returns the Addr field value if set, zero value otherwise.
 func (o *OswDhcpRelayOpenApiVO) GetAddr() string {
-	if o == nil {
+	if o == nil || IsNil(o.Addr) {
 		var ret string
 		return ret
 	}
-
-	return o.Addr
+	return *o.Addr
 }
 
-// GetAddrOk returns a tuple with the Addr field value
+// GetAddrOk returns a tuple with the Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OswDhcpRelayOpenApiVO) GetAddrOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Addr) {
 		return nil, false
 	}
-	return &o.Addr, true
+	return o.Addr, true
 }
 
-// SetAddr sets field value
+// HasAddr returns a boolean if a field has been set.
+func (o *OswDhcpRelayOpenApiVO) HasAddr() bool {
+	if o != nil && !IsNil(o.Addr) {
+		return true
+	}
+
+	return false
+}
+
+// SetAddr gets a reference to the given string and assigns it to the Addr field.
 func (o *OswDhcpRelayOpenApiVO) SetAddr(v string) {
-	o.Addr = v
+	o.Addr = &v
+}
+
+// GetServerAddrs returns the ServerAddrs field value if set, zero value otherwise.
+func (o *OswDhcpRelayOpenApiVO) GetServerAddrs() []string {
+	if o == nil || IsNil(o.ServerAddrs) {
+		var ret []string
+		return ret
+	}
+	return o.ServerAddrs
+}
+
+// GetServerAddrsOk returns a tuple with the ServerAddrs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDhcpRelayOpenApiVO) GetServerAddrsOk() ([]string, bool) {
+	if o == nil || IsNil(o.ServerAddrs) {
+		return nil, false
+	}
+	return o.ServerAddrs, true
+}
+
+// HasServerAddrs returns a boolean if a field has been set.
+func (o *OswDhcpRelayOpenApiVO) HasServerAddrs() bool {
+	if o != nil && !IsNil(o.ServerAddrs) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerAddrs gets a reference to the given []string and assigns it to the ServerAddrs field.
+func (o *OswDhcpRelayOpenApiVO) SetServerAddrs(v []string) {
+	o.ServerAddrs = v
 }
 
 // GetVrfId returns the VrfId field value if set, zero value otherwise.
@@ -113,48 +150,16 @@ func (o OswDhcpRelayOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o OswDhcpRelayOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["addr"] = o.Addr
+	if !IsNil(o.Addr) {
+		toSerialize["addr"] = o.Addr
+	}
+	if !IsNil(o.ServerAddrs) {
+		toSerialize["serverAddrs"] = o.ServerAddrs
+	}
 	if !IsNil(o.VrfId) {
 		toSerialize["vrfId"] = o.VrfId
 	}
 	return toSerialize, nil
-}
-
-func (o *OswDhcpRelayOpenApiVO) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"addr",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varOswDhcpRelayOpenApiVO := _OswDhcpRelayOpenApiVO{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varOswDhcpRelayOpenApiVO)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OswDhcpRelayOpenApiVO(varOswDhcpRelayOpenApiVO)
-
-	return err
 }
 
 type NullableOswDhcpRelayOpenApiVO struct {
