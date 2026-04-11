@@ -2,7 +2,7 @@
 name: Specification issue
 about: Report an issue with the underlying OpenAPI specification
 title: "[SPEC]: "
-labels: ''
+labels: specification
 assignees: Tohaker
 
 ---
