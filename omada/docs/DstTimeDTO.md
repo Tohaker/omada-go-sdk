@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Day** | **int32** | Day of the DST config should be a value as follows: 1: Monday; 2: Tuesday; 3: Wednesday; 4: Thursday; 5: Friday; 6: Saturday; 7: Sunday. | 
-**Hour** | **int32** | Hour of the DST config should be within the range of 0–23. | 
-**Minute** | **int32** | Minute of the DST config should be within the range of 0–59. | 
-**Month** | **int32** | Month of the DST config should be a value as follows: 1: January; 2: February; 3: March; 4: April; 5: May; 6: June; 7: July; 8: August; 9: September; 10: October; 11: November; 12: December. | 
-**Serial** | **int32** | Week of the DST config should be a value as follows: 1: 1st; 2: 2nd; 3: 3rd; 4: 4th; 5: Last. | 
+**Day** | Pointer to **int32** | Day of the DST config should be a value as follows: 1: Monday; 2: Tuesday; 3: Wednesday; 4: Thursday; 5: Friday; 6: Saturday; 7: Sunday. | [optional] 
+**Hour** | Pointer to **int32** | Hour of the DST config should be within the range of 0–23. | [optional] 
+**Minute** | Pointer to **int32** | Minute of the DST config should be within the range of 0–59. | [optional] 
+**Month** | Pointer to **int32** | Month of the DST config should be a value as follows: 1: January; 2: February; 3: March; 4: April; 5: May; 6: June; 7: July; 8: August; 9: September; 10: October; 11: November; 12: December. | [optional] 
+**Serial** | Pointer to **int32** | Week of the DST config should be a value as follows: 1: 1st; 2: 2nd; 3: 3rd; 4: 4th; 5: Last. | [optional] 
 
 ## Methods
 
 ### NewDstTimeDTO
 
-`func NewDstTimeDTO(day int32, hour int32, minute int32, month int32, serial int32, ) *DstTimeDTO`
+`func NewDstTimeDTO() *DstTimeDTO`
 
 NewDstTimeDTO instantiates a new DstTimeDTO object
 This constructor will assign default values to properties that have it defined,
@@ -48,6 +48,11 @@ and a boolean to check if the value has been set.
 
 SetDay sets Day field to given value.
 
+### HasDay
+
+`func (o *DstTimeDTO) HasDay() bool`
+
+HasDay returns a boolean if a field has been set.
 
 ### GetHour
 
@@ -68,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetHour sets Hour field to given value.
 
+### HasHour
+
+`func (o *DstTimeDTO) HasHour() bool`
+
+HasHour returns a boolean if a field has been set.
 
 ### GetMinute
 
@@ -88,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetMinute sets Minute field to given value.
 
+### HasMinute
+
+`func (o *DstTimeDTO) HasMinute() bool`
+
+HasMinute returns a boolean if a field has been set.
 
 ### GetMonth
 
@@ -108,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetMonth sets Month field to given value.
 
+### HasMonth
+
+`func (o *DstTimeDTO) HasMonth() bool`
+
+HasMonth returns a boolean if a field has been set.
 
 ### GetSerial
 
@@ -128,6 +148,11 @@ and a boolean to check if the value has been set.
 
 SetSerial sets Serial field to given value.
 
+### HasSerial
+
+`func (o *DstTimeDTO) HasSerial() bool`
+
+HasSerial returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

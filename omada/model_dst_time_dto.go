@@ -12,8 +12,6 @@ package omada
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the DstTimeDTO type satisfies the MappedNullable interface at compile time
@@ -22,30 +20,23 @@ var _ MappedNullable = &DstTimeDTO{}
 // DstTimeDTO DST end time config
 type DstTimeDTO struct {
 	// Day of the DST config should be a value as follows: 1: Monday; 2: Tuesday; 3: Wednesday; 4: Thursday; 5: Friday; 6: Saturday; 7: Sunday.
-	Day int32 `json:"day"`
+	Day *int32 `json:"day,omitempty"`
 	// Hour of the DST config should be within the range of 0–23.
-	Hour int32 `json:"hour"`
+	Hour *int32 `json:"hour,omitempty"`
 	// Minute of the DST config should be within the range of 0–59.
-	Minute int32 `json:"minute"`
+	Minute *int32 `json:"minute,omitempty"`
 	// Month of the DST config should be a value as follows: 1: January; 2: February; 3: March; 4: April; 5: May; 6: June; 7: July; 8: August; 9: September; 10: October; 11: November; 12: December.
-	Month int32 `json:"month"`
+	Month *int32 `json:"month,omitempty"`
 	// Week of the DST config should be a value as follows: 1: 1st; 2: 2nd; 3: 3rd; 4: 4th; 5: Last.
-	Serial int32 `json:"serial"`
+	Serial *int32 `json:"serial,omitempty"`
 }
-
-type _DstTimeDTO DstTimeDTO
 
 // NewDstTimeDTO instantiates a new DstTimeDTO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDstTimeDTO(day int32, hour int32, minute int32, month int32, serial int32) *DstTimeDTO {
+func NewDstTimeDTO() *DstTimeDTO {
 	this := DstTimeDTO{}
-	this.Day = day
-	this.Hour = hour
-	this.Minute = minute
-	this.Month = month
-	this.Serial = serial
 	return &this
 }
 
@@ -57,124 +48,164 @@ func NewDstTimeDTOWithDefaults() *DstTimeDTO {
 	return &this
 }
 
-// GetDay returns the Day field value
+// GetDay returns the Day field value if set, zero value otherwise.
 func (o *DstTimeDTO) GetDay() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Day) {
 		var ret int32
 		return ret
 	}
-
-	return o.Day
+	return *o.Day
 }
 
-// GetDayOk returns a tuple with the Day field value
+// GetDayOk returns a tuple with the Day field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DstTimeDTO) GetDayOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Day) {
 		return nil, false
 	}
-	return &o.Day, true
+	return o.Day, true
 }
 
-// SetDay sets field value
+// HasDay returns a boolean if a field has been set.
+func (o *DstTimeDTO) HasDay() bool {
+	if o != nil && !IsNil(o.Day) {
+		return true
+	}
+
+	return false
+}
+
+// SetDay gets a reference to the given int32 and assigns it to the Day field.
 func (o *DstTimeDTO) SetDay(v int32) {
-	o.Day = v
+	o.Day = &v
 }
 
-// GetHour returns the Hour field value
+// GetHour returns the Hour field value if set, zero value otherwise.
 func (o *DstTimeDTO) GetHour() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Hour) {
 		var ret int32
 		return ret
 	}
-
-	return o.Hour
+	return *o.Hour
 }
 
-// GetHourOk returns a tuple with the Hour field value
+// GetHourOk returns a tuple with the Hour field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DstTimeDTO) GetHourOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Hour) {
 		return nil, false
 	}
-	return &o.Hour, true
+	return o.Hour, true
 }
 
-// SetHour sets field value
+// HasHour returns a boolean if a field has been set.
+func (o *DstTimeDTO) HasHour() bool {
+	if o != nil && !IsNil(o.Hour) {
+		return true
+	}
+
+	return false
+}
+
+// SetHour gets a reference to the given int32 and assigns it to the Hour field.
 func (o *DstTimeDTO) SetHour(v int32) {
-	o.Hour = v
+	o.Hour = &v
 }
 
-// GetMinute returns the Minute field value
+// GetMinute returns the Minute field value if set, zero value otherwise.
 func (o *DstTimeDTO) GetMinute() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Minute) {
 		var ret int32
 		return ret
 	}
-
-	return o.Minute
+	return *o.Minute
 }
 
-// GetMinuteOk returns a tuple with the Minute field value
+// GetMinuteOk returns a tuple with the Minute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DstTimeDTO) GetMinuteOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Minute) {
 		return nil, false
 	}
-	return &o.Minute, true
+	return o.Minute, true
 }
 
-// SetMinute sets field value
+// HasMinute returns a boolean if a field has been set.
+func (o *DstTimeDTO) HasMinute() bool {
+	if o != nil && !IsNil(o.Minute) {
+		return true
+	}
+
+	return false
+}
+
+// SetMinute gets a reference to the given int32 and assigns it to the Minute field.
 func (o *DstTimeDTO) SetMinute(v int32) {
-	o.Minute = v
+	o.Minute = &v
 }
 
-// GetMonth returns the Month field value
+// GetMonth returns the Month field value if set, zero value otherwise.
 func (o *DstTimeDTO) GetMonth() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Month) {
 		var ret int32
 		return ret
 	}
-
-	return o.Month
+	return *o.Month
 }
 
-// GetMonthOk returns a tuple with the Month field value
+// GetMonthOk returns a tuple with the Month field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DstTimeDTO) GetMonthOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Month) {
 		return nil, false
 	}
-	return &o.Month, true
+	return o.Month, true
 }
 
-// SetMonth sets field value
+// HasMonth returns a boolean if a field has been set.
+func (o *DstTimeDTO) HasMonth() bool {
+	if o != nil && !IsNil(o.Month) {
+		return true
+	}
+
+	return false
+}
+
+// SetMonth gets a reference to the given int32 and assigns it to the Month field.
 func (o *DstTimeDTO) SetMonth(v int32) {
-	o.Month = v
+	o.Month = &v
 }
 
-// GetSerial returns the Serial field value
+// GetSerial returns the Serial field value if set, zero value otherwise.
 func (o *DstTimeDTO) GetSerial() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Serial) {
 		var ret int32
 		return ret
 	}
-
-	return o.Serial
+	return *o.Serial
 }
 
-// GetSerialOk returns a tuple with the Serial field value
+// GetSerialOk returns a tuple with the Serial field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DstTimeDTO) GetSerialOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Serial) {
 		return nil, false
 	}
-	return &o.Serial, true
+	return o.Serial, true
 }
 
-// SetSerial sets field value
+// HasSerial returns a boolean if a field has been set.
+func (o *DstTimeDTO) HasSerial() bool {
+	if o != nil && !IsNil(o.Serial) {
+		return true
+	}
+
+	return false
+}
+
+// SetSerial gets a reference to the given int32 and assigns it to the Serial field.
 func (o *DstTimeDTO) SetSerial(v int32) {
-	o.Serial = v
+	o.Serial = &v
 }
 
 func (o DstTimeDTO) MarshalJSON() ([]byte, error) {
@@ -187,53 +218,22 @@ func (o DstTimeDTO) MarshalJSON() ([]byte, error) {
 
 func (o DstTimeDTO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["day"] = o.Day
-	toSerialize["hour"] = o.Hour
-	toSerialize["minute"] = o.Minute
-	toSerialize["month"] = o.Month
-	toSerialize["serial"] = o.Serial
+	if !IsNil(o.Day) {
+		toSerialize["day"] = o.Day
+	}
+	if !IsNil(o.Hour) {
+		toSerialize["hour"] = o.Hour
+	}
+	if !IsNil(o.Minute) {
+		toSerialize["minute"] = o.Minute
+	}
+	if !IsNil(o.Month) {
+		toSerialize["month"] = o.Month
+	}
+	if !IsNil(o.Serial) {
+		toSerialize["serial"] = o.Serial
+	}
 	return toSerialize, nil
-}
-
-func (o *DstTimeDTO) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"day",
-		"hour",
-		"minute",
-		"month",
-		"serial",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varDstTimeDTO := _DstTimeDTO{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varDstTimeDTO)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DstTimeDTO(varDstTimeDTO)
-
-	return err
 }
 
 type NullableDstTimeDTO struct {
