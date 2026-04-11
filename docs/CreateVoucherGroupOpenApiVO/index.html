@@ -1,0 +1,5994 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tohaker.github.io/omada-go-sdk/docs/CreateVoucherGroupOpenApiVO/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>CreateVoucherGroupOpenApiVO - Omada Go SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#createvouchergroupopenapivo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Omada Go SDK" class="md-header__button md-logo" aria-label="Omada Go SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Omada Go SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CreateVoucherGroupOpenApiVO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Tohaker/omada-go-sdk" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tohaker/omada-go-sdk
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Omada Go SDK" class="md-nav__button md-logo" aria-label="Omada Go SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Omada Go SDK
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Tohaker/omada-go-sdk" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tohaker/omada-go-sdk
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SDK Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AbnormalDetectAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abnormal Detect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AccessControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AccessControlTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACLAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACLTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACL Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ApAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ApplicationControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ArpDetectionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARP Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttackDefenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attack Defense
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttackDefenseTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attack Defense Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuditLogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuditLogTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Log Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthenticationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthenticationTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthorizeAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorize
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthorizedClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorized Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BackupAndRestoreAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BandwidthControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bandwidth Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BandwidthControlTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bandwidth Control Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BatchOpenAPIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BluetoothAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BluetoothTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CertProfilesAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cert Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CertProfilesTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cert Profiles Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLITemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClientInsightAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client Insight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CloudUserAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClusterAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cluster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ControllerSettingsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controller Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CustomerAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DashboardAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataExportAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceManagementSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Management Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DhcpSnoopingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP Snooping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DisableNatAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disable NAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EoGRETunnelAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EoGRE Tunnel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirewallAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirewallTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirmwareAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FormAuthDataAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Form Auth Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayQoSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway QoS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayQOSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway QoS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GlobalDashboardOverviewAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Dashboard Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GlobalSecurityAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HealthAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HistoryDataRetentionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History Data Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotspotOperatorsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hotspot Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDSIPSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDSIPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDSIPSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDSIPS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../InsightAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntelliRecoverClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IntelliRecover Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntelliRecoverDeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IntelliRecover Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPMACBindingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP-MAC Binding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPMACBindingTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP-MAC Binding Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LanMulticastAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAN Multicast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LanMulticastTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAN Multicast Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LicenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LocalUserAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MACFilteringAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC Filtering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MACFilteringTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC Filtering Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MlagAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPBatchOpenAPIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Batch OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPDeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPHistoryDataRetentionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP History Data Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspLicenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspLogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPSiteAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPSSOAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP SSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPUserAndRoleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP User and Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspWebhookSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Webhook Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAT Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetworkAnalyzeAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Analyze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetworkReportAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTDBAAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT DBA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTGemMappingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT GEM Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTGemPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT GEM Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTLineProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Line Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONTPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONT Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONUManagementAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONU Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONURegisterAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONU Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTPonPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT PON Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServicePortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServicePortProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Port Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServiceProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTTContAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT TCont
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTTrafficProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Traffic Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSPFAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OUIBasedVLANAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OUI-Based VLAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OUIBasedVLANTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OUI-Based VLAN Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProfilesAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProfilesTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QuickActionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Action
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RemoteAccessAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ReportV2API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report V2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RoutingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RoutingTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RrmAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RRM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScheduleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScheduleTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDWANAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD-WAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServiceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServiceTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SessionLimitAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Limit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SessionLimitTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Limit Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIMAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIMTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIM Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteConfigurationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteTemplateConfigurationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Template Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSLVPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSL VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSOAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StackAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StatisticAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchQoSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch QoS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemSettingsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ThreatManagementAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TopologyAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../URLFilteringAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Filtering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../URLFilteringTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Filtering Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserAndRoleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User and Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoIPAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoIPTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VoIP Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoucherAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voucher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VRRPAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VRRP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebhookSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webhook Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WiredNetworkAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wired Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WiredNetworkTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wired Network Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WireguardVPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WireGuard VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessIDSIPSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless IDSIPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessIDSIPSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless IDSIPS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessNetworkAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessNetworkTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Network Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WLANOptimizationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WLAN Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newcreatevouchergroupopenapivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NewCreateVoucherGroupOpenApiVO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newcreatevouchergroupopenapivowithdefaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NewCreateVoucherGroupOpenApiVOWithDefaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetAmount
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getamountok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetAmountOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetAmount
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getapplytoallportals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetApplyToAllPortals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getapplytoallportalsok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetApplyToAllPortalsOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setapplytoallportals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetApplyToAllPortals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcodeform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCodeForm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcodeformok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCodeFormOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcodeform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetCodeForm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcodelength" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCodeLength
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcodelengthok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCodeLengthOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcodelength" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetCodeLength
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCurrency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrencyok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCurrencyOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetCurrency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hascurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasCurrency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescription
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescriptionok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescriptionOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdescription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDescription
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasdescription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasDescription
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getduration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdurationok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDurationOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setduration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdurationtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDurationType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdurationtypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDurationTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdurationtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDurationType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geteffectivetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetEffectiveTime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geteffectivetimeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetEffectiveTimeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seteffectivetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetEffectiveTime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haseffectivetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasEffectiveTime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getexpirationtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetExpirationTime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getexpirationtimeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetExpirationTimeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setexpirationtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetExpirationTime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasexpirationtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasExpirationTime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlimitnum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLimitNum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlimitnumok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLimitNumOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlimitnum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetLimitNum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haslimitnum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasLimitNum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlimittype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLimitType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlimittypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLimitTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlimittype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetLimitType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLogout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogoutok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLogoutOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlogout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetLogout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haslogout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasLogout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetName
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnameok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetNameOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetName
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getportals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPortals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getportalsok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPortalsOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setportals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPortals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasportals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasPortals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getprintcomments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPrintComments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getprintcommentsok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPrintCommentsOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprintcomments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPrintComments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasprintcomments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasPrintComments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getratelimit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRateLimit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getratelimitok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRateLimitOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setratelimit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRateLimit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getschedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSchedule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getscheduleok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetScheduleOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setschedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetSchedule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasschedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasSchedule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettimingtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTimingType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettimingtypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTimingTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settimingtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTimingType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettrafficlimit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTrafficLimit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettrafficlimitok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTrafficLimitOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settrafficlimit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTrafficLimit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastrafficlimit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTrafficLimit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettrafficlimitenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTrafficLimitEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettrafficlimitenableok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTrafficLimitEnableOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settrafficlimitenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTrafficLimitEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettrafficlimitfrequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTrafficLimitFrequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettrafficlimitfrequencyok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTrafficLimitFrequencyOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settrafficlimitfrequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTrafficLimitFrequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastrafficlimitfrequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTrafficLimitFrequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getunitprice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetUnitPrice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getunitpriceok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetUnitPriceOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setunitprice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetUnitPrice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasunitprice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasUnitPrice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvaliditytype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetValidityType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvaliditytypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetValidityTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvaliditytype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetValidityType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasvaliditytype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasValidityType
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="createvouchergroupopenapivo">CreateVoucherGroupOpenApiVO</h1>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amount</strong></td>
+<td><strong>int32</strong></td>
+<td>The amount of vouchers created. It should be within the range of 1-5000</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ApplyToAllPortals</strong></td>
+<td><strong>bool</strong></td>
+<td>Is the voucher effective for all portals, including all newly created portals</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>CodeForm</strong></td>
+<td><strong>[]int32</strong></td>
+<td>The character types contained in the voucher code. It should be a value as follows: 0: Number, 1: Letter. For example, [0] indicates that the code only contains numbers; [0, 1] indicates that the code contains numbers and letters</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>CodeLength</strong></td>
+<td><strong>int32</strong></td>
+<td>The length of voucher code. It should be within the range of 6–10.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Currency</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Currency Short Code of voucher. For the values of Currency Short Code, refer to section 5.4.2 of the Open API Access Guide.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Description of the voucher group</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td><strong>int64</strong></td>
+<td>Duration of one use, unit: minute. It should be within the range of 1–14400000.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>DurationType</strong></td>
+<td><strong>int32</strong></td>
+<td>The duration type of the voucher. It should be a value as follows: 0: Client duration, each client expires after the duration is used. 1: Voucher duration, after reaching the voucher duration, clients using the voucher will expire</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>EffectiveTime</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>The timestamp when the voucher takes effect, unit: millisecond. When parameter [validityType] is 1, parameter [effectiveTime] is required</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>ExpirationTime</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>The timestamp of the expiration of the voucher, unit: millisecond. When parameter [validityType] is 1, parameter [expirationTime] is required</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>LimitNum</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>The number of limitations. It should be within the range of 1–999. If Parameter [limitType] is 0 or 1, [limitNum] should not be null.When Parameter [limitType] is 0, [limitNum] represents the maximum number of times this voucher can be used.When Parameter [limitType] is 1, [limitNum] represents the maximum number of users this voucher can be used at the same time.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>LimitType</strong></td>
+<td><strong>int32</strong></td>
+<td>The limitations of the voucher. It should be a value as follows: 0: Limited Usage Counts, 1: Limited Online Users, 2: Unlimited</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Logout</strong></td>
+<td>Pointer to <strong>bool</strong></td>
+<td>Whether the voucher support portal logout functionality</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>string</strong></td>
+<td>Voucher group name. It should contain 1-32 characters</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Portals</strong></td>
+<td>Pointer to <strong>[]string</strong></td>
+<td>Bound portal ID list. Portal can be created using &#39;Add portal&#39; interface, and portal ID can be obtained from &#39;Get portal list in a site&#39; interface</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>PrintComments</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Print comments of the voucher group</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RateLimit</strong></td>
+<td><a href="../RateLimitOpenApiVO/"><strong>RateLimitOpenApiVO</strong></a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Schedule</strong></td>
+<td>Pointer to <a href="../VoucherScheduleOpenApiVO/"><strong>VoucherScheduleOpenApiVO</strong></a></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TimingType</strong></td>
+<td><strong>int32</strong></td>
+<td>The timing type of the voucher. It should be a value as follows: 0: Timing by time, clients can use vouchers for specified time duration. 1: Timing by usage, clients can use vouchers for the duration of actual usage</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TrafficLimit</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Traffic limit in MB. It should be within the range of 1–10485760</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TrafficLimitEnable</strong></td>
+<td><strong>bool</strong></td>
+<td>Whether to enable traffic limit</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TrafficLimitFrequency</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Frequency of traffic limit should be a value as follows: 0: total; 1: daily; 2: weekly; 3: monthly.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>UnitPrice</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Price of single voucher. It should be within the range of 1–999999999</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>ValidityType</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>The validity type of the voucher. It should be a value as follows: 0: Voucher can be used at any time, parameter [effectiveTime], [expirationTime] and [schedule] should be null. 1: Voucher can be used between the effective time and expiration time, parameter [effectiveTime] and [expirationTime] should not be null, parameter [schedule] should be null. 2: Voucher can be used within a specified time period by schedule, parameter [effectiveTime] and [expirationTime] should be null, parameter [schedule] should not be null</td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<h3 id="newcreatevouchergroupopenapivo">NewCreateVoucherGroupOpenApiVO</h3>
+<p><code>func NewCreateVoucherGroupOpenApiVO(amount int32, applyToAllPortals bool, codeForm []int32, codeLength int32, duration int64, durationType int32, limitType int32, name string, rateLimit RateLimitOpenApiVO, timingType int32, trafficLimitEnable bool, ) *CreateVoucherGroupOpenApiVO</code></p>
+<p>NewCreateVoucherGroupOpenApiVO instantiates a new CreateVoucherGroupOpenApiVO object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed</p>
+<h3 id="newcreatevouchergroupopenapivowithdefaults">NewCreateVoucherGroupOpenApiVOWithDefaults</h3>
+<p><code>func NewCreateVoucherGroupOpenApiVOWithDefaults() *CreateVoucherGroupOpenApiVO</code></p>
+<p>NewCreateVoucherGroupOpenApiVOWithDefaults instantiates a new CreateVoucherGroupOpenApiVO object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set</p>
+<h3 id="getamount">GetAmount</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetAmount() int32</code></p>
+<p>GetAmount returns the Amount field if non-nil, zero value otherwise.</p>
+<h3 id="getamountok">GetAmountOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetAmountOk() (*int32, bool)</code></p>
+<p>GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setamount">SetAmount</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetAmount(v int32)</code></p>
+<p>SetAmount sets Amount field to given value.</p>
+<h3 id="getapplytoallportals">GetApplyToAllPortals</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetApplyToAllPortals() bool</code></p>
+<p>GetApplyToAllPortals returns the ApplyToAllPortals field if non-nil, zero value otherwise.</p>
+<h3 id="getapplytoallportalsok">GetApplyToAllPortalsOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetApplyToAllPortalsOk() (*bool, bool)</code></p>
+<p>GetApplyToAllPortalsOk returns a tuple with the ApplyToAllPortals field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setapplytoallportals">SetApplyToAllPortals</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetApplyToAllPortals(v bool)</code></p>
+<p>SetApplyToAllPortals sets ApplyToAllPortals field to given value.</p>
+<h3 id="getcodeform">GetCodeForm</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetCodeForm() []int32</code></p>
+<p>GetCodeForm returns the CodeForm field if non-nil, zero value otherwise.</p>
+<h3 id="getcodeformok">GetCodeFormOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetCodeFormOk() (*[]int32, bool)</code></p>
+<p>GetCodeFormOk returns a tuple with the CodeForm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setcodeform">SetCodeForm</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetCodeForm(v []int32)</code></p>
+<p>SetCodeForm sets CodeForm field to given value.</p>
+<h3 id="getcodelength">GetCodeLength</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetCodeLength() int32</code></p>
+<p>GetCodeLength returns the CodeLength field if non-nil, zero value otherwise.</p>
+<h3 id="getcodelengthok">GetCodeLengthOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetCodeLengthOk() (*int32, bool)</code></p>
+<p>GetCodeLengthOk returns a tuple with the CodeLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setcodelength">SetCodeLength</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetCodeLength(v int32)</code></p>
+<p>SetCodeLength sets CodeLength field to given value.</p>
+<h3 id="getcurrency">GetCurrency</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetCurrency() string</code></p>
+<p>GetCurrency returns the Currency field if non-nil, zero value otherwise.</p>
+<h3 id="getcurrencyok">GetCurrencyOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetCurrencyOk() (*string, bool)</code></p>
+<p>GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setcurrency">SetCurrency</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetCurrency(v string)</code></p>
+<p>SetCurrency sets Currency field to given value.</p>
+<h3 id="hascurrency">HasCurrency</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasCurrency() bool</code></p>
+<p>HasCurrency returns a boolean if a field has been set.</p>
+<h3 id="getdescription">GetDescription</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetDescription() string</code></p>
+<p>GetDescription returns the Description field if non-nil, zero value otherwise.</p>
+<h3 id="getdescriptionok">GetDescriptionOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetDescriptionOk() (*string, bool)</code></p>
+<p>GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setdescription">SetDescription</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetDescription(v string)</code></p>
+<p>SetDescription sets Description field to given value.</p>
+<h3 id="hasdescription">HasDescription</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasDescription() bool</code></p>
+<p>HasDescription returns a boolean if a field has been set.</p>
+<h3 id="getduration">GetDuration</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetDuration() int64</code></p>
+<p>GetDuration returns the Duration field if non-nil, zero value otherwise.</p>
+<h3 id="getdurationok">GetDurationOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetDurationOk() (*int64, bool)</code></p>
+<p>GetDurationOk returns a tuple with the Duration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setduration">SetDuration</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetDuration(v int64)</code></p>
+<p>SetDuration sets Duration field to given value.</p>
+<h3 id="getdurationtype">GetDurationType</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetDurationType() int32</code></p>
+<p>GetDurationType returns the DurationType field if non-nil, zero value otherwise.</p>
+<h3 id="getdurationtypeok">GetDurationTypeOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetDurationTypeOk() (*int32, bool)</code></p>
+<p>GetDurationTypeOk returns a tuple with the DurationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setdurationtype">SetDurationType</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetDurationType(v int32)</code></p>
+<p>SetDurationType sets DurationType field to given value.</p>
+<h3 id="geteffectivetime">GetEffectiveTime</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetEffectiveTime() int64</code></p>
+<p>GetEffectiveTime returns the EffectiveTime field if non-nil, zero value otherwise.</p>
+<h3 id="geteffectivetimeok">GetEffectiveTimeOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetEffectiveTimeOk() (*int64, bool)</code></p>
+<p>GetEffectiveTimeOk returns a tuple with the EffectiveTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="seteffectivetime">SetEffectiveTime</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetEffectiveTime(v int64)</code></p>
+<p>SetEffectiveTime sets EffectiveTime field to given value.</p>
+<h3 id="haseffectivetime">HasEffectiveTime</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasEffectiveTime() bool</code></p>
+<p>HasEffectiveTime returns a boolean if a field has been set.</p>
+<h3 id="getexpirationtime">GetExpirationTime</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetExpirationTime() int64</code></p>
+<p>GetExpirationTime returns the ExpirationTime field if non-nil, zero value otherwise.</p>
+<h3 id="getexpirationtimeok">GetExpirationTimeOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetExpirationTimeOk() (*int64, bool)</code></p>
+<p>GetExpirationTimeOk returns a tuple with the ExpirationTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setexpirationtime">SetExpirationTime</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetExpirationTime(v int64)</code></p>
+<p>SetExpirationTime sets ExpirationTime field to given value.</p>
+<h3 id="hasexpirationtime">HasExpirationTime</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasExpirationTime() bool</code></p>
+<p>HasExpirationTime returns a boolean if a field has been set.</p>
+<h3 id="getlimitnum">GetLimitNum</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetLimitNum() int32</code></p>
+<p>GetLimitNum returns the LimitNum field if non-nil, zero value otherwise.</p>
+<h3 id="getlimitnumok">GetLimitNumOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetLimitNumOk() (*int32, bool)</code></p>
+<p>GetLimitNumOk returns a tuple with the LimitNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setlimitnum">SetLimitNum</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetLimitNum(v int32)</code></p>
+<p>SetLimitNum sets LimitNum field to given value.</p>
+<h3 id="haslimitnum">HasLimitNum</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasLimitNum() bool</code></p>
+<p>HasLimitNum returns a boolean if a field has been set.</p>
+<h3 id="getlimittype">GetLimitType</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetLimitType() int32</code></p>
+<p>GetLimitType returns the LimitType field if non-nil, zero value otherwise.</p>
+<h3 id="getlimittypeok">GetLimitTypeOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetLimitTypeOk() (*int32, bool)</code></p>
+<p>GetLimitTypeOk returns a tuple with the LimitType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setlimittype">SetLimitType</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetLimitType(v int32)</code></p>
+<p>SetLimitType sets LimitType field to given value.</p>
+<h3 id="getlogout">GetLogout</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetLogout() bool</code></p>
+<p>GetLogout returns the Logout field if non-nil, zero value otherwise.</p>
+<h3 id="getlogoutok">GetLogoutOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetLogoutOk() (*bool, bool)</code></p>
+<p>GetLogoutOk returns a tuple with the Logout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setlogout">SetLogout</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetLogout(v bool)</code></p>
+<p>SetLogout sets Logout field to given value.</p>
+<h3 id="haslogout">HasLogout</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasLogout() bool</code></p>
+<p>HasLogout returns a boolean if a field has been set.</p>
+<h3 id="getname">GetName</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetName() string</code></p>
+<p>GetName returns the Name field if non-nil, zero value otherwise.</p>
+<h3 id="getnameok">GetNameOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetNameOk() (*string, bool)</code></p>
+<p>GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setname">SetName</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetName(v string)</code></p>
+<p>SetName sets Name field to given value.</p>
+<h3 id="getportals">GetPortals</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetPortals() []string</code></p>
+<p>GetPortals returns the Portals field if non-nil, zero value otherwise.</p>
+<h3 id="getportalsok">GetPortalsOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetPortalsOk() (*[]string, bool)</code></p>
+<p>GetPortalsOk returns a tuple with the Portals field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setportals">SetPortals</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetPortals(v []string)</code></p>
+<p>SetPortals sets Portals field to given value.</p>
+<h3 id="hasportals">HasPortals</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasPortals() bool</code></p>
+<p>HasPortals returns a boolean if a field has been set.</p>
+<h3 id="getprintcomments">GetPrintComments</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetPrintComments() string</code></p>
+<p>GetPrintComments returns the PrintComments field if non-nil, zero value otherwise.</p>
+<h3 id="getprintcommentsok">GetPrintCommentsOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetPrintCommentsOk() (*string, bool)</code></p>
+<p>GetPrintCommentsOk returns a tuple with the PrintComments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setprintcomments">SetPrintComments</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetPrintComments(v string)</code></p>
+<p>SetPrintComments sets PrintComments field to given value.</p>
+<h3 id="hasprintcomments">HasPrintComments</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasPrintComments() bool</code></p>
+<p>HasPrintComments returns a boolean if a field has been set.</p>
+<h3 id="getratelimit">GetRateLimit</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetRateLimit() RateLimitOpenApiVO</code></p>
+<p>GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.</p>
+<h3 id="getratelimitok">GetRateLimitOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetRateLimitOk() (*RateLimitOpenApiVO, bool)</code></p>
+<p>GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setratelimit">SetRateLimit</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetRateLimit(v RateLimitOpenApiVO)</code></p>
+<p>SetRateLimit sets RateLimit field to given value.</p>
+<h3 id="getschedule">GetSchedule</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetSchedule() VoucherScheduleOpenApiVO</code></p>
+<p>GetSchedule returns the Schedule field if non-nil, zero value otherwise.</p>
+<h3 id="getscheduleok">GetScheduleOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetScheduleOk() (*VoucherScheduleOpenApiVO, bool)</code></p>
+<p>GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setschedule">SetSchedule</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetSchedule(v VoucherScheduleOpenApiVO)</code></p>
+<p>SetSchedule sets Schedule field to given value.</p>
+<h3 id="hasschedule">HasSchedule</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasSchedule() bool</code></p>
+<p>HasSchedule returns a boolean if a field has been set.</p>
+<h3 id="gettimingtype">GetTimingType</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetTimingType() int32</code></p>
+<p>GetTimingType returns the TimingType field if non-nil, zero value otherwise.</p>
+<h3 id="gettimingtypeok">GetTimingTypeOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetTimingTypeOk() (*int32, bool)</code></p>
+<p>GetTimingTypeOk returns a tuple with the TimingType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settimingtype">SetTimingType</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetTimingType(v int32)</code></p>
+<p>SetTimingType sets TimingType field to given value.</p>
+<h3 id="gettrafficlimit">GetTrafficLimit</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetTrafficLimit() int64</code></p>
+<p>GetTrafficLimit returns the TrafficLimit field if non-nil, zero value otherwise.</p>
+<h3 id="gettrafficlimitok">GetTrafficLimitOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetTrafficLimitOk() (*int64, bool)</code></p>
+<p>GetTrafficLimitOk returns a tuple with the TrafficLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settrafficlimit">SetTrafficLimit</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetTrafficLimit(v int64)</code></p>
+<p>SetTrafficLimit sets TrafficLimit field to given value.</p>
+<h3 id="hastrafficlimit">HasTrafficLimit</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasTrafficLimit() bool</code></p>
+<p>HasTrafficLimit returns a boolean if a field has been set.</p>
+<h3 id="gettrafficlimitenable">GetTrafficLimitEnable</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetTrafficLimitEnable() bool</code></p>
+<p>GetTrafficLimitEnable returns the TrafficLimitEnable field if non-nil, zero value otherwise.</p>
+<h3 id="gettrafficlimitenableok">GetTrafficLimitEnableOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetTrafficLimitEnableOk() (*bool, bool)</code></p>
+<p>GetTrafficLimitEnableOk returns a tuple with the TrafficLimitEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settrafficlimitenable">SetTrafficLimitEnable</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetTrafficLimitEnable(v bool)</code></p>
+<p>SetTrafficLimitEnable sets TrafficLimitEnable field to given value.</p>
+<h3 id="gettrafficlimitfrequency">GetTrafficLimitFrequency</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetTrafficLimitFrequency() int32</code></p>
+<p>GetTrafficLimitFrequency returns the TrafficLimitFrequency field if non-nil, zero value otherwise.</p>
+<h3 id="gettrafficlimitfrequencyok">GetTrafficLimitFrequencyOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetTrafficLimitFrequencyOk() (*int32, bool)</code></p>
+<p>GetTrafficLimitFrequencyOk returns a tuple with the TrafficLimitFrequency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settrafficlimitfrequency">SetTrafficLimitFrequency</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetTrafficLimitFrequency(v int32)</code></p>
+<p>SetTrafficLimitFrequency sets TrafficLimitFrequency field to given value.</p>
+<h3 id="hastrafficlimitfrequency">HasTrafficLimitFrequency</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasTrafficLimitFrequency() bool</code></p>
+<p>HasTrafficLimitFrequency returns a boolean if a field has been set.</p>
+<h3 id="getunitprice">GetUnitPrice</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetUnitPrice() int64</code></p>
+<p>GetUnitPrice returns the UnitPrice field if non-nil, zero value otherwise.</p>
+<h3 id="getunitpriceok">GetUnitPriceOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetUnitPriceOk() (*int64, bool)</code></p>
+<p>GetUnitPriceOk returns a tuple with the UnitPrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setunitprice">SetUnitPrice</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetUnitPrice(v int64)</code></p>
+<p>SetUnitPrice sets UnitPrice field to given value.</p>
+<h3 id="hasunitprice">HasUnitPrice</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasUnitPrice() bool</code></p>
+<p>HasUnitPrice returns a boolean if a field has been set.</p>
+<h3 id="getvaliditytype">GetValidityType</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetValidityType() int32</code></p>
+<p>GetValidityType returns the ValidityType field if non-nil, zero value otherwise.</p>
+<h3 id="getvaliditytypeok">GetValidityTypeOk</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) GetValidityTypeOk() (*int32, bool)</code></p>
+<p>GetValidityTypeOk returns a tuple with the ValidityType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setvaliditytype">SetValidityType</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) SetValidityType(v int32)</code></p>
+<p>SetValidityType sets ValidityType field to given value.</p>
+<h3 id="hasvaliditytype">HasValidityType</h3>
+<p><code>func (o *CreateVoucherGroupOpenApiVO) HasValidityType() bool</code></p>
+<p>HasValidityType returns a boolean if a field has been set.</p>
+<p><a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../">[Back to README]</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

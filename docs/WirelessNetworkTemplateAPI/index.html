@@ -1,0 +1,9577 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tohaker.github.io/omada-go-sdk/docs/WirelessNetworkTemplateAPI/">
+      
+      
+        <link rel="prev" href="../WirelessNetworkAPI/">
+      
+      
+        <link rel="next" href="../WLANOptimizationAPI/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Wireless Network Template - Omada Go SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wirelessnetworktemplateapi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Omada Go SDK" class="md-header__button md-logo" aria-label="Omada Go SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Omada Go SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Wireless Network Template
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Tohaker/omada-go-sdk" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tohaker/omada-go-sdk
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Omada Go SDK" class="md-nav__button md-logo" aria-label="Omada Go SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Omada Go SDK
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Tohaker/omada-go-sdk" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tohaker/omada-go-sdk
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SDK Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AbnormalDetectAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abnormal Detect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AccessControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AccessControlTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACLAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACLTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACL Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ApAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ApplicationControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ArpDetectionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARP Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttackDefenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attack Defense
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttackDefenseTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attack Defense Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuditLogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuditLogTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Log Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthenticationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthenticationTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthorizeAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorize
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthorizedClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorized Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BackupAndRestoreAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BandwidthControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bandwidth Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BandwidthControlTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bandwidth Control Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BatchOpenAPIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BluetoothAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BluetoothTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CertProfilesAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cert Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CertProfilesTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cert Profiles Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLITemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClientInsightAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client Insight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CloudUserAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClusterAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cluster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ControllerSettingsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controller Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CustomerAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DashboardAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataExportAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceManagementSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Management Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DhcpSnoopingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP Snooping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DisableNatAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disable NAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EoGRETunnelAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EoGRE Tunnel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirewallAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirewallTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirmwareAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FormAuthDataAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Form Auth Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayQoSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway QoS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayQOSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway QoS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GlobalDashboardOverviewAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Dashboard Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GlobalSecurityAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HealthAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HistoryDataRetentionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History Data Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotspotOperatorsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hotspot Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDSIPSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDSIPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDSIPSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDSIPS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../InsightAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntelliRecoverClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IntelliRecover Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntelliRecoverDeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IntelliRecover Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPMACBindingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP-MAC Binding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPMACBindingTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP-MAC Binding Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LanMulticastAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAN Multicast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LanMulticastTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAN Multicast Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LicenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LocalUserAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MACFilteringAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC Filtering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MACFilteringTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC Filtering Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MlagAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPBatchOpenAPIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Batch OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPDeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPHistoryDataRetentionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP History Data Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspLicenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspLogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPSiteAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPSSOAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP SSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPUserAndRoleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP User and Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspWebhookSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Webhook Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAT Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetworkAnalyzeAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Analyze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetworkReportAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTDBAAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT DBA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTGemMappingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT GEM Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTGemPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT GEM Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTLineProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Line Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONTPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONT Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONUManagementAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONU Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONURegisterAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONU Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTPonPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT PON Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServicePortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServicePortProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Port Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServiceProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTTContAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT TCont
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTTrafficProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Traffic Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSPFAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OUIBasedVLANAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OUI-Based VLAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OUIBasedVLANTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OUI-Based VLAN Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProfilesAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProfilesTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QuickActionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Action
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RemoteAccessAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ReportV2API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report V2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RoutingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RoutingTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RrmAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RRM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScheduleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScheduleTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDWANAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD-WAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServiceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServiceTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SessionLimitAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Limit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SessionLimitTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Limit Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIMAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIMTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIM Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteConfigurationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteTemplateConfigurationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Template Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSLVPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSL VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSOAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StackAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StatisticAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchQoSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch QoS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemSettingsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ThreatManagementAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TopologyAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../URLFilteringAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Filtering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../URLFilteringTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Filtering Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserAndRoleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User and Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoIPAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoIPTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VoIP Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoucherAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voucher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VRRPAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VRRP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebhookSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webhook Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WiredNetworkAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wired Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WiredNetworkTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wired Network Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WireguardVPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WireGuard VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessIDSIPSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless IDSIPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessIDSIPSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless IDSIPS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessNetworkAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Network Template
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Network Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#countwlanstemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CountWlansTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CountWlansTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createssidtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CreateSsidTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CreateSsidTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createwlangrouptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CreateWlanGroupTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CreateWlanGroupTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletessidtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeleteSsidTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DeleteSsidTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletewlangrouptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeleteWlanGroupTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DeleteWlanGroupTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getgridwlangrouptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetGridWlanGroupTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GetGridWlanGroupTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getssiddetailtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSsidDetailTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GetSsidDetailTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getssidlisttemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSsidListTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GetSsidListTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getwlangrouplisttemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWlanGroupListTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GetWlanGroupListTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidbasicconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidBasicConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidBasicConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessiddhcpoptionconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidDhcpOptionConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidDhcpOptionConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidhotspotv2settingtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidHotspotV2SettingTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidHotspotV2SettingTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidmacfilterconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidMacFilterConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidMacFilterConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidmulticastconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidMultiCastConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidMultiCastConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidratecontrolconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidRateControlConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidRateControlConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidratelimitconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidRateLimitConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidRateLimitConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidwlanscheduletemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidWlanScheduleTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidWlanScheduleTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatewlangrouptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateWlanGroupTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateWlanGroupTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WLANOptimizationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WLAN Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#countwlanstemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CountWlansTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CountWlansTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createssidtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CreateSsidTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CreateSsidTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#createwlangrouptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CreateWlanGroupTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CreateWlanGroupTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletessidtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeleteSsidTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DeleteSsidTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletewlangrouptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeleteWlanGroupTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DeleteWlanGroupTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getgridwlangrouptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetGridWlanGroupTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GetGridWlanGroupTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getssiddetailtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSsidDetailTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GetSsidDetailTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getssidlisttemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSsidListTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GetSsidListTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getwlangrouplisttemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWlanGroupListTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GetWlanGroupListTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidbasicconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidBasicConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidBasicConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessiddhcpoptionconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidDhcpOptionConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidDhcpOptionConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidhotspotv2settingtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidHotspotV2SettingTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidHotspotV2SettingTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidmacfilterconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidMacFilterConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidMacFilterConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidmulticastconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidMultiCastConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidMultiCastConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidratecontrolconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidRateControlConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidRateControlConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidratelimitconfigtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidRateLimitConfigTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidRateLimitConfigTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatessidwlanscheduletemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateSsidWlanScheduleTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateSsidWlanScheduleTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatewlangrouptemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UpdateWlanGroupTemplate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UpdateWlanGroupTemplate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-parameters_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-parameters_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-type_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-headers_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP request headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="wirelessnetworktemplateapi">WirelessNetworkTemplateAPI</h1>
+<p>All URIs are relative to <em>https://use1-omada-northbound.tplinkcloud.com</em></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>HTTP request</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./#countwlanstemplate"><strong>CountWlansTemplate</strong></a></td>
+<td><strong>Get</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/cmd/countWlans</td>
+<td>Check if the number of WLAN groups is out of limit</td>
+</tr>
+<tr>
+<td><a href="./#createssidtemplate"><strong>CreateSsidTemplate</strong></a></td>
+<td><strong>Post</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids</td>
+<td>Create new SSID template</td>
+</tr>
+<tr>
+<td><a href="./#createwlangrouptemplate"><strong>CreateWlanGroupTemplate</strong></a></td>
+<td><strong>Post</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans</td>
+<td>Create new WLAN group template</td>
+</tr>
+<tr>
+<td><a href="./#deletessidtemplate"><strong>DeleteSsidTemplate</strong></a></td>
+<td><strong>Delete</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}</td>
+<td>Delete an existing SSID template</td>
+</tr>
+<tr>
+<td><a href="./#deletewlangrouptemplate"><strong>DeleteWlanGroupTemplate</strong></a></td>
+<td><strong>Delete</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}</td>
+<td>Delete an existing WLAN group template</td>
+</tr>
+<tr>
+<td><a href="./#getgridwlangrouptemplate"><strong>GetGridWlanGroupTemplate</strong></a></td>
+<td><strong>Get</strong> /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans</td>
+<td>Get WLAN group template list paging query</td>
+</tr>
+<tr>
+<td><a href="./#getssiddetailtemplate"><strong>GetSsidDetailTemplate</strong></a></td>
+<td><strong>Get</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}</td>
+<td>Get SSID template detail info</td>
+</tr>
+<tr>
+<td><a href="./#getssidlisttemplate"><strong>GetSsidListTemplate</strong></a></td>
+<td><strong>Get</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids</td>
+<td>Get SSID template list</td>
+</tr>
+<tr>
+<td><a href="./#getwlangrouplisttemplate"><strong>GetWlanGroupListTemplate</strong></a></td>
+<td><strong>Get</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans</td>
+<td>Get WLAN group template list</td>
+</tr>
+<tr>
+<td><a href="./#updatessidbasicconfigtemplate"><strong>UpdateSsidBasicConfigTemplate</strong></a></td>
+<td><strong>Patch</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-basic-config</td>
+<td>Update SSID template basic config</td>
+</tr>
+<tr>
+<td><a href="./#updatessiddhcpoptionconfigtemplate"><strong>UpdateSsidDhcpOptionConfigTemplate</strong></a></td>
+<td><strong>Patch</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-dhcp-option</td>
+<td>Update SSID template DHCP option 82 config</td>
+</tr>
+<tr>
+<td><a href="./#updatessidhotspotv2settingtemplate"><strong>UpdateSsidHotspotV2SettingTemplate</strong></a></td>
+<td><strong>Patch</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-hotspotv2</td>
+<td>Update SSID template Hotspot2.0 config</td>
+</tr>
+<tr>
+<td><a href="./#updatessidmacfilterconfigtemplate"><strong>UpdateSsidMacFilterConfigTemplate</strong></a></td>
+<td><strong>Patch</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-mac-filter</td>
+<td>Update SSID template mac filter config</td>
+</tr>
+<tr>
+<td><a href="./#updatessidmulticastconfigtemplate"><strong>UpdateSsidMultiCastConfigTemplate</strong></a></td>
+<td><strong>Patch</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-multicast-config</td>
+<td>Update SSID template Multicast/Broadcast management config</td>
+</tr>
+<tr>
+<td><a href="./#updatessidratecontrolconfigtemplate"><strong>UpdateSsidRateControlConfigTemplate</strong></a></td>
+<td><strong>Patch</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-control</td>
+<td>Update SSID template 802.11 rate control config</td>
+</tr>
+<tr>
+<td><a href="./#updatessidratelimitconfigtemplate"><strong>UpdateSsidRateLimitConfigTemplate</strong></a></td>
+<td><strong>Patch</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-limit</td>
+<td>Update SSID template rate limit config</td>
+</tr>
+<tr>
+<td><a href="./#updatessidwlanscheduletemplate"><strong>UpdateSsidWlanScheduleTemplate</strong></a></td>
+<td><strong>Patch</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wlan-schedule</td>
+<td>Update SSID template WLAN schedule config</td>
+</tr>
+<tr>
+<td><a href="./#updatewlangrouptemplate"><strong>UpdateWlanGroupTemplate</strong></a></td>
+<td><strong>Patch</strong> /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}</td>
+<td>Modify an existing WLAN group template</td>
+</tr>
+</tbody>
+</table>
+<h2 id="countwlanstemplate">CountWlansTemplate</h2>
+<blockquote>
+<p>OperationResponseWlanGroupStatusOpenApiVO CountWlansTemplate(ctx, omadacId, siteTemplateId).Execute()</p>
+</blockquote>
+<p>Check if the number of WLAN groups is out of limit</p>
+<h3 id="example">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | siteTemplateId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.CountWlansTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.CountWlansTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `CountWlansTemplate`: OperationResponseWlanGroupStatusOpenApiVO
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.CountWlansTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>siteTemplateId</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiCountWlansTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type">Return type</h3>
+<p><a href="../OperationResponseWlanGroupStatusOpenApiVO/"><strong>OperationResponseWlanGroupStatusOpenApiVO</strong></a></p>
+<h3 id="authorization">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="createssidtemplate">CreateSsidTemplate</h2>
+<blockquote>
+<p>OperationResponse CreateSsidTemplate(ctx, omadacId, siteTemplateId, wlanId).CreateSsidOpenApiVO(createSsidOpenApiVO).Execute()</p>
+</blockquote>
+<p>Create new SSID template</p>
+<h3 id="example_1">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    createSsidOpenApiVO := *openapiclient.NewCreateSsidOpenApiVO(int32(123), false, int32(123), false, false, false, false, &quot;Name_example&quot;, int32(123), int32(123), false) // CreateSsidOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.CreateSsidTemplate(context.Background(), omadacId, siteTemplateId, wlanId).CreateSsidOpenApiVO(createSsidOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.CreateSsidTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `CreateSsidTemplate`: OperationResponse
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.CreateSsidTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_1">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_1">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiCreateSsidTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>createSsidOpenApiVO</strong> | <a href="../CreateSsidOpenApiVO/"><strong>CreateSsidOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_1">Return type</h3>
+<p><a href="../OperationResponse/"><strong>OperationResponse</strong></a></p>
+<h3 id="authorization_1">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_1">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="createwlangrouptemplate">CreateWlanGroupTemplate</h2>
+<blockquote>
+<p>OperationResponse CreateWlanGroupTemplate(ctx, omadacId, siteTemplateId).CreateWlanGroupOpenApiVO(createWlanGroupOpenApiVO).Execute()</p>
+</blockquote>
+<p>Create new WLAN group template</p>
+<h3 id="example_2">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    createWlanGroupOpenApiVO := *openapiclient.NewCreateWlanGroupOpenApiVO(false, &quot;Name_example&quot;) // CreateWlanGroupOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.CreateWlanGroupTemplate(context.Background(), omadacId, siteTemplateId).CreateWlanGroupOpenApiVO(createWlanGroupOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.CreateWlanGroupTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `CreateWlanGroupTemplate`: OperationResponse
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.CreateWlanGroupTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_2">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_2">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiCreateWlanGroupTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>createWlanGroupOpenApiVO</strong> | <a href="../CreateWlanGroupOpenApiVO/"><strong>CreateWlanGroupOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_2">Return type</h3>
+<p><a href="../OperationResponse/"><strong>OperationResponse</strong></a></p>
+<h3 id="authorization_2">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_2">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="deletessidtemplate">DeleteSsidTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult DeleteSsidTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).Execute()</p>
+</blockquote>
+<p>Delete an existing SSID template</p>
+<h3 id="example_3">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    ssidId := &quot;ssidId_example&quot; // string | SSID ID
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.DeleteSsidTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.DeleteSsidTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `DeleteSsidTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.DeleteSsidTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_3">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>SSID ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_3">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiDeleteSsidTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_3">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_3">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_3">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="deletewlangrouptemplate">DeleteWlanGroupTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult DeleteWlanGroupTemplate(ctx, omadacId, siteTemplateId, wlanId).Execute()</p>
+</blockquote>
+<p>Delete an existing WLAN group template</p>
+<h3 id="example_4">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.DeleteWlanGroupTemplate(context.Background(), omadacId, siteTemplateId, wlanId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.DeleteWlanGroupTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `DeleteWlanGroupTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.DeleteWlanGroupTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_4">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_4">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiDeleteWlanGroupTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_4">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_4">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_4">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="getgridwlangrouptemplate">GetGridWlanGroupTemplate</h2>
+<blockquote>
+<p>OperationResponseWlanGroupGridOpenApiVO GetGridWlanGroupTemplate(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()</p>
+</blockquote>
+<p>Get WLAN group template list paging query</p>
+<h3 id="example_5">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site ID
+    page := int32(56) // int32 | Start page number. Start from 1.
+    pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+    searchKey := &quot;searchKey_example&quot; // string | Fuzzy query parameters, support field name (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.GetGridWlanGroupTemplate(context.Background(), omadacId, siteTemplateId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.GetGridWlanGroupTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `GetGridWlanGroupTemplate`: OperationResponseWlanGroupGridOpenApiVO
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.GetGridWlanGroupTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_5">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_5">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiGetGridWlanGroupTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>page</strong> | <strong>int32</strong> | Start page number. Start from 1. | 
+ <strong>pageSize</strong> | <strong>int32</strong> | Number of entries per page. It should be within the range of 1–1000. | 
+ <strong>searchKey</strong> | <strong>string</strong> | Fuzzy query parameters, support field name | </p>
+<h3 id="return-type_5">Return type</h3>
+<p><a href="../OperationResponseWlanGroupGridOpenApiVO/"><strong>OperationResponseWlanGroupGridOpenApiVO</strong></a></p>
+<h3 id="authorization_5">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_5">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="getssiddetailtemplate">GetSsidDetailTemplate</h2>
+<blockquote>
+<p>OperationResponseSsidDetailOpenApiVO GetSsidDetailTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).Execute()</p>
+</blockquote>
+<p>Get SSID template detail info</p>
+<h3 id="example_6">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    ssidId := &quot;ssidId_example&quot; // string | SSID ID
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.GetSsidDetailTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.GetSsidDetailTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `GetSsidDetailTemplate`: OperationResponseSsidDetailOpenApiVO
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.GetSsidDetailTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_6">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>SSID ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_6">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiGetSsidDetailTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_6">Return type</h3>
+<p><a href="../OperationResponseSsidDetailOpenApiVO/"><strong>OperationResponseSsidDetailOpenApiVO</strong></a></p>
+<h3 id="authorization_6">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_6">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="getssidlisttemplate">GetSsidListTemplate</h2>
+<blockquote>
+<p>OperationResponseGridVOSsidOpenApiVO GetSsidListTemplate(ctx, omadacId, siteTemplateId, wlanId).Page(page).PageSize(pageSize).Execute()</p>
+</blockquote>
+<p>Get SSID template list</p>
+<h3 id="example_7">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    page := int32(56) // int32 | Start page number. Start from 1.
+    pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.GetSsidListTemplate(context.Background(), omadacId, siteTemplateId, wlanId).Page(page).PageSize(pageSize).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.GetSsidListTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `GetSsidListTemplate`: OperationResponseGridVOSsidOpenApiVO
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.GetSsidListTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_7">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_7">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiGetSsidListTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>page</strong> | <strong>int32</strong> | Start page number. Start from 1. | 
+ <strong>pageSize</strong> | <strong>int32</strong> | Number of entries per page. It should be within the range of 1–1000. | </p>
+<h3 id="return-type_7">Return type</h3>
+<p><a href="../OperationResponseGridVOSsidOpenApiVO/"><strong>OperationResponseGridVOSsidOpenApiVO</strong></a></p>
+<h3 id="authorization_7">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_7">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="getwlangrouplisttemplate">GetWlanGroupListTemplate</h2>
+<blockquote>
+<p>OperationResponseListWlanGroupOpenApiVO GetWlanGroupListTemplate(ctx, omadacId, siteTemplateId).Execute()</p>
+</blockquote>
+<p>Get WLAN group template list</p>
+<h3 id="example_8">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.GetWlanGroupListTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.GetWlanGroupListTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `GetWlanGroupListTemplate`: OperationResponseListWlanGroupOpenApiVO
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.GetWlanGroupListTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_8">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_8">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiGetWlanGroupListTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="return-type_8">Return type</h3>
+<p><a href="../OperationResponseListWlanGroupOpenApiVO/"><strong>OperationResponseListWlanGroupOpenApiVO</strong></a></p>
+<h3 id="authorization_8">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_8">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: Not defined</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="updatessidbasicconfigtemplate">UpdateSsidBasicConfigTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult UpdateSsidBasicConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidBasicConfigOpenApiVO(updateSsidBasicConfigOpenApiVO).Execute()</p>
+</blockquote>
+<p>Update SSID template basic config</p>
+<h3 id="example_9">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    ssidId := &quot;ssidId_example&quot; // string | SSID ID
+    updateSsidBasicConfigOpenApiVO := *openapiclient.NewUpdateSsidBasicConfigOpenApiVO(int32(123), false, false, false, false, &quot;Name_example&quot;, int32(123), int32(123), false) // UpdateSsidBasicConfigOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidBasicConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidBasicConfigOpenApiVO(updateSsidBasicConfigOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.UpdateSsidBasicConfigTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `UpdateSsidBasicConfigTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.UpdateSsidBasicConfigTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_9">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>SSID ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_9">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiUpdateSsidBasicConfigTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>updateSsidBasicConfigOpenApiVO</strong> | <a href="../UpdateSsidBasicConfigOpenApiVO/"><strong>UpdateSsidBasicConfigOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_9">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_9">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_9">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="updatessiddhcpoptionconfigtemplate">UpdateSsidDhcpOptionConfigTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult UpdateSsidDhcpOptionConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidDhcpOptionOpenApiVO(updateSsidDhcpOptionOpenApiVO).Execute()</p>
+</blockquote>
+<p>Update SSID template DHCP option 82 config</p>
+<h3 id="example_10">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    ssidId := &quot;ssidId_example&quot; // string | SSID ID
+    updateSsidDhcpOptionOpenApiVO := *openapiclient.NewUpdateSsidDhcpOptionOpenApiVO(false) // UpdateSsidDhcpOptionOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidDhcpOptionConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidDhcpOptionOpenApiVO(updateSsidDhcpOptionOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.UpdateSsidDhcpOptionConfigTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `UpdateSsidDhcpOptionConfigTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.UpdateSsidDhcpOptionConfigTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_10">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>SSID ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_10">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiUpdateSsidDhcpOptionConfigTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>updateSsidDhcpOptionOpenApiVO</strong> | <a href="../UpdateSsidDhcpOptionOpenApiVO/"><strong>UpdateSsidDhcpOptionOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_10">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_10">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_10">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="updatessidhotspotv2settingtemplate">UpdateSsidHotspotV2SettingTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult UpdateSsidHotspotV2SettingTemplate(ctx, omadacId, wlanId, siteTemplateId, ssidId).UpdateSsidHotspotV2SettingOpenApiVO(updateSsidHotspotV2SettingOpenApiVO).Execute()</p>
+</blockquote>
+<p>Update SSID template Hotspot2.0 config</p>
+<h3 id="example_11">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | siteTemplateId
+    ssidId := &quot;ssidId_example&quot; // string | ssidId
+    updateSsidHotspotV2SettingOpenApiVO := *openapiclient.NewUpdateSsidHotspotV2SettingOpenApiVO(false) // UpdateSsidHotspotV2SettingOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidHotspotV2SettingTemplate(context.Background(), omadacId, wlanId, siteTemplateId, ssidId).UpdateSsidHotspotV2SettingOpenApiVO(updateSsidHotspotV2SettingOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.UpdateSsidHotspotV2SettingTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `UpdateSsidHotspotV2SettingTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.UpdateSsidHotspotV2SettingTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_11">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>siteTemplateId</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>ssidId</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_11">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiUpdateSsidHotspotV2SettingTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>updateSsidHotspotV2SettingOpenApiVO</strong> | <a href="../UpdateSsidHotspotV2SettingOpenApiVO/"><strong>UpdateSsidHotspotV2SettingOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_11">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_11">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_11">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="updatessidmacfilterconfigtemplate">UpdateSsidMacFilterConfigTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult UpdateSsidMacFilterConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidMacFilterOpenApiVO(updateSsidMacFilterOpenApiVO).Execute()</p>
+</blockquote>
+<p>Update SSID template mac filter config</p>
+<h3 id="example_12">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    ssidId := &quot;ssidId_example&quot; // string | SSID ID
+    updateSsidMacFilterOpenApiVO := *openapiclient.NewUpdateSsidMacFilterOpenApiVO(false) // UpdateSsidMacFilterOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidMacFilterConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidMacFilterOpenApiVO(updateSsidMacFilterOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.UpdateSsidMacFilterConfigTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `UpdateSsidMacFilterConfigTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.UpdateSsidMacFilterConfigTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_12">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>SSID ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_12">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiUpdateSsidMacFilterConfigTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>updateSsidMacFilterOpenApiVO</strong> | <a href="../UpdateSsidMacFilterOpenApiVO/"><strong>UpdateSsidMacFilterOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_12">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_12">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_12">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="updatessidmulticastconfigtemplate">UpdateSsidMultiCastConfigTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult UpdateSsidMultiCastConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidMultiCastOpenApiVO(updateSsidMultiCastOpenApiVO).Execute()</p>
+</blockquote>
+<p>Update SSID template Multicast/Broadcast management config</p>
+<h3 id="example_13">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    ssidId := &quot;ssidId_example&quot; // string | SSID ID
+    updateSsidMultiCastOpenApiVO := *openapiclient.NewUpdateSsidMultiCastOpenApiVO(false, int32(123), false, false, false) // UpdateSsidMultiCastOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidMultiCastConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidMultiCastOpenApiVO(updateSsidMultiCastOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.UpdateSsidMultiCastConfigTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `UpdateSsidMultiCastConfigTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.UpdateSsidMultiCastConfigTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_13">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>SSID ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_13">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiUpdateSsidMultiCastConfigTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>updateSsidMultiCastOpenApiVO</strong> | <a href="../UpdateSsidMultiCastOpenApiVO/"><strong>UpdateSsidMultiCastOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_13">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_13">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_13">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="updatessidratecontrolconfigtemplate">UpdateSsidRateControlConfigTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult UpdateSsidRateControlConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidRateControlOpenApiVO(updateSsidRateControlOpenApiVO).Execute()</p>
+</blockquote>
+<p>Update SSID template 802.11 rate control config</p>
+<h3 id="example_14">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    ssidId := &quot;ssidId_example&quot; // string | SSID ID
+    updateSsidRateControlOpenApiVO := *openapiclient.NewUpdateSsidRateControlOpenApiVO(false, false) // UpdateSsidRateControlOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidRateControlConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidRateControlOpenApiVO(updateSsidRateControlOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.UpdateSsidRateControlConfigTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `UpdateSsidRateControlConfigTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.UpdateSsidRateControlConfigTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_14">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>SSID ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_14">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiUpdateSsidRateControlConfigTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>updateSsidRateControlOpenApiVO</strong> | <a href="../UpdateSsidRateControlOpenApiVO/"><strong>UpdateSsidRateControlOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_14">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_14">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_14">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="updatessidratelimitconfigtemplate">UpdateSsidRateLimitConfigTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult UpdateSsidRateLimitConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidRateLimitOpenApiVO(updateSsidRateLimitOpenApiVO).Execute()</p>
+</blockquote>
+<p>Update SSID template rate limit config</p>
+<h3 id="example_15">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    ssidId := &quot;ssidId_example&quot; // string | SSID ID
+    updateSsidRateLimitOpenApiVO := *openapiclient.NewUpdateSsidRateLimitOpenApiVO() // UpdateSsidRateLimitOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidRateLimitConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidRateLimitOpenApiVO(updateSsidRateLimitOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.UpdateSsidRateLimitConfigTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `UpdateSsidRateLimitConfigTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.UpdateSsidRateLimitConfigTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_15">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>SSID ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_15">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiUpdateSsidRateLimitConfigTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>updateSsidRateLimitOpenApiVO</strong> | <a href="../UpdateSsidRateLimitOpenApiVO/"><strong>UpdateSsidRateLimitOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_15">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_15">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_15">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="updatessidwlanscheduletemplate">UpdateSsidWlanScheduleTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult UpdateSsidWlanScheduleTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidWlanScheduleOpenApiVO(updateSsidWlanScheduleOpenApiVO).Execute()</p>
+</blockquote>
+<p>Update SSID template WLAN schedule config</p>
+<h3 id="example_16">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    ssidId := &quot;ssidId_example&quot; // string | SSID ID
+    updateSsidWlanScheduleOpenApiVO := *openapiclient.NewUpdateSsidWlanScheduleOpenApiVO(false) // UpdateSsidWlanScheduleOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidWlanScheduleTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidWlanScheduleOpenApiVO(updateSsidWlanScheduleOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.UpdateSsidWlanScheduleTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `UpdateSsidWlanScheduleTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.UpdateSsidWlanScheduleTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_16">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ssidId</strong></td>
+<td><strong>string</strong></td>
+<td>SSID ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_16">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiUpdateSsidWlanScheduleTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>updateSsidWlanScheduleOpenApiVO</strong> | <a href="../UpdateSsidWlanScheduleOpenApiVO/"><strong>UpdateSsidWlanScheduleOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_16">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_16">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_16">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+<h2 id="updatewlangrouptemplate">UpdateWlanGroupTemplate</h2>
+<blockquote>
+<p>OperationResponseWithoutResult UpdateWlanGroupTemplate(ctx, omadacId, siteTemplateId, wlanId).UpdateWlanGroupOpenApiVO(updateWlanGroupOpenApiVO).Execute()</p>
+</blockquote>
+<p>Modify an existing WLAN group template</p>
+<h3 id="example_17">Example</h3>
+<pre><code class="language-go">package main
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;os&quot;
+    openapiclient &quot;github.com/Tohaker/omada-go-sdk/omada&quot;
+)
+
+func main() {
+    omadacId := &quot;omadacId_example&quot; // string | Omada ID
+    siteTemplateId := &quot;siteTemplateId_example&quot; // string | Site Template ID
+    wlanId := &quot;wlanId_example&quot; // string | WLAN ID
+    updateWlanGroupOpenApiVO := *openapiclient.NewUpdateWlanGroupOpenApiVO(&quot;Name_example&quot;) // UpdateWlanGroupOpenApiVO | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateWlanGroupTemplate(context.Background(), omadacId, siteTemplateId, wlanId).UpdateWlanGroupOpenApiVO(updateWlanGroupOpenApiVO).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, &quot;Error when calling `WirelessNetworkTemplateAPI.UpdateWlanGroupTemplate``: %v\n&quot;, err)
+        fmt.Fprintf(os.Stderr, &quot;Full HTTP response: %v\n&quot;, r)
+    }
+    // response from `UpdateWlanGroupTemplate`: OperationResponseWithoutResult
+    fmt.Fprintf(os.Stdout, &quot;Response from `WirelessNetworkTemplateAPI.UpdateWlanGroupTemplate`: %v\n&quot;, resp)
+}
+</code></pre>
+<h3 id="path-parameters_17">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><strong>context.Context</strong></td>
+<td>context for authentication, logging, cancellation, deadlines, tracing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>omadacId</strong></td>
+<td><strong>string</strong></td>
+<td>Omada ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>siteTemplateId</strong></td>
+<td><strong>string</strong></td>
+<td>Site Template ID</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>wlanId</strong></td>
+<td><strong>string</strong></td>
+<td>WLAN ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-parameters_17">Other Parameters</h3>
+<p>Other parameters are passed through a pointer to a apiUpdateWlanGroupTemplateRequest struct via the builder pattern</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>updateWlanGroupOpenApiVO</strong> | <a href="../UpdateWlanGroupOpenApiVO/"><strong>UpdateWlanGroupOpenApiVO</strong></a> |  | </p>
+<h3 id="return-type_17">Return type</h3>
+<p><a href="../OperationResponseWithoutResult/"><strong>OperationResponseWithoutResult</strong></a></p>
+<h3 id="authorization_17">Authorization</h3>
+<p><a href="../../#accesstoken">AccessToken</a></p>
+<h3 id="http-request-headers_17">HTTP request headers</h3>
+<ul>
+<li><strong>Content-Type</strong>: application/json</li>
+<li><strong>Accept</strong>: <em>/</em></li>
+</ul>
+<p><a href="#">[Back to top]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a>
+<a href="../../#documentation-for-models">[Back to Model list]</a>
+<a href="../../">[Back to README]</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

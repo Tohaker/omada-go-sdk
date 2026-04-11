@@ -1,0 +1,8094 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tohaker.github.io/omada-go-sdk/docs/PortalCustomizeOpenApiVO/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PortalCustomizeOpenApiVO - Omada Go SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#portalcustomizeopenapivo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Omada Go SDK" class="md-header__button md-logo" aria-label="Omada Go SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Omada Go SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PortalCustomizeOpenApiVO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Tohaker/omada-go-sdk" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tohaker/omada-go-sdk
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Omada Go SDK" class="md-nav__button md-logo" aria-label="Omada Go SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Omada Go SDK
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Tohaker/omada-go-sdk" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tohaker/omada-go-sdk
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SDK Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AbnormalDetectAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abnormal Detect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AccessControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AccessControlTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACLAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACLTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACL Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ApAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ApplicationControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ArpDetectionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARP Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttackDefenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attack Defense
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttackDefenseTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attack Defense Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuditLogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuditLogTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Log Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthenticationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthenticationTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthorizeAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorize
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthorizedClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorized Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BackupAndRestoreAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BandwidthControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bandwidth Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BandwidthControlTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bandwidth Control Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BatchOpenAPIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BluetoothAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BluetoothTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CertProfilesAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cert Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CertProfilesTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cert Profiles Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLITemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClientInsightAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client Insight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CloudUserAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClusterAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cluster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ControllerSettingsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controller Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CustomerAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DashboardAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataExportAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceManagementSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Management Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DhcpSnoopingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP Snooping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DisableNatAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disable NAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EoGRETunnelAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EoGRE Tunnel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirewallAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirewallTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirmwareAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FormAuthDataAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Form Auth Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayQoSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway QoS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayQOSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway QoS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GlobalDashboardOverviewAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Dashboard Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GlobalSecurityAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HealthAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HistoryDataRetentionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History Data Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotspotOperatorsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hotspot Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDSIPSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDSIPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDSIPSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDSIPS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../InsightAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntelliRecoverClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IntelliRecover Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntelliRecoverDeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IntelliRecover Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPMACBindingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP-MAC Binding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPMACBindingTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP-MAC Binding Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LanMulticastAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAN Multicast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LanMulticastTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAN Multicast Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LicenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LocalUserAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MACFilteringAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC Filtering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MACFilteringTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC Filtering Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MlagAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPBatchOpenAPIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Batch OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPDeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPHistoryDataRetentionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP History Data Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspLicenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspLogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPSiteAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPSSOAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP SSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPUserAndRoleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP User and Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspWebhookSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Webhook Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAT Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetworkAnalyzeAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Analyze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetworkReportAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTDBAAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT DBA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTGemMappingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT GEM Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTGemPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT GEM Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTLineProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Line Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONTPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONT Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONUManagementAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONU Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONURegisterAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONU Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTPonPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT PON Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServicePortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServicePortProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Port Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServiceProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTTContAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT TCont
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTTrafficProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Traffic Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSPFAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OUIBasedVLANAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OUI-Based VLAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OUIBasedVLANTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OUI-Based VLAN Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProfilesAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProfilesTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QuickActionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Action
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RemoteAccessAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ReportV2API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report V2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RoutingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RoutingTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RrmAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RRM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScheduleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScheduleTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDWANAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD-WAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServiceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServiceTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SessionLimitAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Limit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SessionLimitTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Limit Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIMAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIMTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIM Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteConfigurationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteTemplateConfigurationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Template Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSLVPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSL VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSOAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StackAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StatisticAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchQoSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch QoS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemSettingsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ThreatManagementAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TopologyAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../URLFilteringAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Filtering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../URLFilteringTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Filtering Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserAndRoleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User and Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoIPAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoIPTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VoIP Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoucherAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voucher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VRRPAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VRRP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebhookSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webhook Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WiredNetworkAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wired Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WiredNetworkTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wired Network Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WireguardVPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WireGuard VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessIDSIPSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless IDSIPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessIDSIPSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless IDSIPS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessNetworkAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessNetworkTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Network Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WLANOptimizationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WLAN Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newportalcustomizeopenapivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NewPortalCustomizeOpenApiVO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newportalcustomizeopenapivowithdefaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NewPortalCustomizeOpenApiVOWithDefaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getadvertisement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetAdvertisement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getadvertisementok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetAdvertisementOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setadvertisement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetAdvertisement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasadvertisement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasAdvertisement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundmaskcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundMaskColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundmaskcolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundMaskColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbackgroundmaskcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBackgroundMaskColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbackgroundmaskcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBackgroundMaskColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundmaskenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundMaskEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundmaskenableok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundMaskEnableOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbackgroundmaskenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBackgroundMaskEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbackgroundmaskenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBackgroundMaskEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundmaskopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundMaskOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundmaskopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundMaskOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbackgroundmaskopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBackgroundMaskOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbackgroundmaskopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBackgroundMaskOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundpictureid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundPictureId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundpictureidok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundPictureIdOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbackgroundpictureid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBackgroundPictureId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbackgroundpictureid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBackgroundPictureId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundpictureindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundPictureIndex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbackgroundpictureindexok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBackgroundPictureIndexOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbackgroundpictureindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBackgroundPictureIndex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbackgroundpictureindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBackgroundPictureIndex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbgpiccoordinatesoflibrary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBgPicCoordinatesOfLibrary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbgpiccoordinatesoflibraryok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBgPicCoordinatesOfLibraryOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbgpiccoordinatesoflibrary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBgPicCoordinatesOfLibrary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbgpiccoordinatesoflibrary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBgPicCoordinatesOfLibrary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainerbgblur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerBgBlur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainerbgblurok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerBgBlurOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbodycontainerbgblur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBodyContainerBgBlur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbodycontainerbgblur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBodyContainerBgBlur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainerbgblurenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerBgBlurEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainerbgblurenableok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerBgBlurEnableOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbodycontainerbgblurenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBodyContainerBgBlurEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbodycontainerbgblurenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBodyContainerBgBlurEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainercolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainercolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbodycontainercolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBodyContainerColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbodycontainercolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBodyContainerColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainerenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainerenableok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerEnableOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbodycontainerenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBodyContainerEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbodycontainerenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBodyContainerEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontaineropacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontaineropacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbodycontaineropacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBodyContainerOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbodycontaineropacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBodyContainerOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainerradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerRadius
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainerradiusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerRadiusOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbodycontainerradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBodyContainerRadius
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbodycontainerradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBodyContainerRadius
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainertype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbodycontainertypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBodyContainerTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbodycontainertype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBodyContainerType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbodycontainertype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBodyContainerType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttoncolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttoncolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbuttoncolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetButtonColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbuttoncolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasButtonColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttonopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttonopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbuttonopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetButtonOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbuttonopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasButtonOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttonradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonRadius
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttonradiusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonRadiusOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbuttonradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetButtonRadius
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbuttonradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasButtonRadius
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttontextok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonTextOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbuttontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetButtonText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbuttontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasButtonText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttontextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttontextcolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonTextColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbuttontextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetButtonTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbuttontextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasButtonTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttontextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbuttontextopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetButtonTextOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbuttontextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetButtonTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasbuttontextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasButtonTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyright
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyrightok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyrightOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcopyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetCopyright
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hascopyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasCopyright
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyrightenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyrightEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyrightenableok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyrightEnableOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcopyrightenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetCopyrightEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyrighttextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyrightTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyrighttextcolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyrightTextColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcopyrighttextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetCopyrightTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hascopyrighttextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasCopyrightTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyrighttextfontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyrightTextFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyrighttextfontsizeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyrightTextFontSizeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcopyrighttextfontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetCopyrightTextFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hascopyrighttextfontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasCopyrightTextFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyrighttextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyrightTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcopyrighttextopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCopyrightTextOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcopyrighttextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetCopyrightTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hascopyrighttextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasCopyrightTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdefaultlanguage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDefaultLanguage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdefaultlanguageok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDefaultLanguageOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdefaultlanguage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDefaultLanguage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescriptiontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescriptionText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescriptiontextok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescriptionTextOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdescriptiontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDescriptionText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasdescriptiontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasDescriptionText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescriptiontextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescriptionTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescriptiontextcolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescriptionTextColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdescriptiontextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDescriptionTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasdescriptiontextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasDescriptionTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescriptiontextfontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescriptionTextFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescriptiontextfontsizeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescriptionTextFontSizeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdescriptiontextfontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDescriptionTextFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasdescriptiontextfontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasDescriptionTextFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescriptiontextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescriptionTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdescriptiontextopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDescriptionTextOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdescriptiontextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDescriptionTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasdescriptiontextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasDescriptionTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getenabledevicespecificbg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetEnableDeviceSpecificBg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getenabledevicespecificbgok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetEnableDeviceSpecificBgOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setenabledevicespecificbg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetEnableDeviceSpecificBg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasenabledevicespecificbg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasEnableDeviceSpecificBg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getformauthbuttontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetFormAuthButtonText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getformauthbuttontextok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetFormAuthButtonTextOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setformauthbuttontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetFormAuthButtonText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasformauthbuttontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasFormAuthButtonText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxbordercolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxBorderColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxbordercolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxBorderColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinputboxbordercolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetInputBoxBorderColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasinputboxbordercolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasInputBoxBorderColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxborderopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxBorderOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxborderopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxBorderOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinputboxborderopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetInputBoxBorderOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasinputboxborderopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasInputBoxBorderOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxcolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinputboxcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetInputBoxColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasinputboxcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasInputBoxColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinputboxopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetInputBoxOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasinputboxopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasInputBoxOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxRadius
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputboxradiusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputBoxRadiusOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinputboxradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetInputBoxRadius
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasinputboxradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasInputBoxRadius
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputtextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputtextcolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputTextColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinputtextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetInputTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasinputtextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasInputTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputtextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinputtextopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInputTextOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinputtextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetInputTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasinputtextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasInputTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogodisplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLogoDisplay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogodisplayok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLogoDisplayOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlogodisplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetLogoDisplay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogohorizontalposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLogoHorizontalPosition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogohorizontalpositionok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLogoHorizontalPositionOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlogohorizontalposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetLogoHorizontalPosition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haslogohorizontalposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasLogoHorizontalPosition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogopictureid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLogoPictureId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlogopictureidok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLogoPictureIdOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlogopictureid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetLogoPictureId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haslogopictureid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasLogoPictureId
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmobilebgpiccoordinatesoflibrary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMobileBgPicCoordinatesOfLibrary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmobilebgpiccoordinatesoflibraryok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMobileBgPicCoordinatesOfLibraryOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmobilebgpiccoordinatesoflibrary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMobileBgPicCoordinatesOfLibrary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasmobilebgpiccoordinatesoflibrary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasMobileBgPicCoordinatesOfLibrary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpcalign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPcAlign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpcalignok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPcAlignOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpcalign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPcAlign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haspcalign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasPcAlign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getredirectioncountdownenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRedirectionCountDownEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getredirectioncountdownenableok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRedirectionCountDownEnableOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setredirectioncountdownenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRedirectionCountDownEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasredirectioncountdownenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRedirectionCountDownEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofserviceenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofserviceenableok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceEnableOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settermsofserviceenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTermsOfServiceEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofservicefontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofservicefontsizeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceFontSizeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settermsofservicefontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTermsOfServiceFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastermsofservicefontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTermsOfServiceFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofservicetext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofservicetextok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceTextOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settermsofservicetext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTermsOfServiceText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastermsofservicetext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTermsOfServiceText
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofservicetextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofservicetextcolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceTextColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settermsofservicetextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTermsOfServiceTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastermsofservicetextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTermsOfServiceTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofservicetextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofservicetextopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceTextOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settermsofservicetextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTermsOfServiceTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastermsofservicetextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTermsOfServiceTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofserviceurltexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceUrlTexts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettermsofserviceurltextsok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTermsOfServiceUrlTextsOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settermsofserviceurltexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTermsOfServiceUrlTexts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastermsofserviceurltexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTermsOfServiceUrlTexts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcomeenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcomeenableok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeEnableOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwelcomeenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetWelcomeEnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcomeinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeInformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcomeinformationok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeInformationOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwelcomeinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetWelcomeInformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haswelcomeinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasWelcomeInformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcometextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcometextcolorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeTextColorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwelcometextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetWelcomeTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haswelcometextcolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasWelcomeTextColor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcometextfontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeTextFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcometextfontsizeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeTextFontSizeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwelcometextfontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetWelcomeTextFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haswelcometextfontsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasWelcomeTextFontSize
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcometextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwelcometextopacityok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWelcomeTextOpacityOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwelcometextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetWelcomeTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haswelcometextopacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasWelcomeTextOpacity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="portalcustomizeopenapivo">PortalCustomizeOpenApiVO</h1>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Advertisement</strong></td>
+<td>Pointer to <a href="../AdvertisementSetting/"><strong>AdvertisementSetting</strong></a></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BackgroundMaskColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Background mask color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BackgroundMaskEnable</strong></td>
+<td>Pointer to <strong>bool</strong></td>
+<td>Whether to enable multiple language.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BackgroundMaskOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Background mask opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BackgroundPictureId</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Background picture ID</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BackgroundPictureIndex</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Index of library background picture, should be within the range of 0-5.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BgPicCoordinatesOfLibrary</strong></td>
+<td>Pointer to <a href="../BgPicCoordinatesOfLibraryOpenApiVO/"><strong>BgPicCoordinatesOfLibraryOpenApiVO</strong></a></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BodyContainerBgBlur</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Body container background blurriness, should be within the range of 0–10.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BodyContainerBgBlurEnable</strong></td>
+<td>Pointer to <strong>bool</strong></td>
+<td>Whether to enable body container background blur.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BodyContainerColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Body container color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BodyContainerEnable</strong></td>
+<td>Pointer to <strong>bool</strong></td>
+<td>Whether to enable body container.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BodyContainerOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Body container opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BodyContainerRadius</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Body container radius, should be within the range of 0–30.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>BodyContainerType</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Type of body container, 0: none; 1: half; 2: all</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>ButtonColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Button color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>ButtonOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Button opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>ButtonRadius</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Button radius, should be within the range of 0–30.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>ButtonText</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Button text, should contain 0 to 32 characters, default value is \&quot;Log In\&quot;.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>ButtonTextColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Button text color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>ButtonTextOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Button text opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Copyright</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Copyright text, should contain 0 to 200 characters.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>CopyrightEnable</strong></td>
+<td><strong>bool</strong></td>
+<td>Whether to dispaly the copyright.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>CopyrightTextColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Copyright text color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>CopyrightTextFontSize</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Copyright text font size, should be within the range of 12–18.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>CopyrightTextOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Copyright text opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>DefaultLanguage</strong></td>
+<td><strong>int32</strong></td>
+<td>The controller automatically adjusts the language displayed on the Portal page according to the system language of the clients.If the language is not supported, the controller will use the default language specified here.&lt;br/&gt;1: en_US (English); 3: cs_CZ (Český); 4: de_DE (Deutsch); 5: da_DK (Dansk); 6: el_GR (ελληνικά);&lt;br/&gt;7: fr_FR (Français); 8: es_ES (Español); 9: nl_NL (Nederlands); 10: it_IT (Italiano); 11: pl_PL (Polski);&lt;br/&gt;12: pt_PT (Português); 13: ru_RU (Русский); 14: sv_SE (Svenska); 15: tr_TR (Türkçe);&lt;br/&gt;16: ar_SA (لغة عربية); &lt;br/&gt;17: ja_JP (日本語); 18: zh_TW (中文(繁體)); 19: th_TH (ไทย); 20: vi_VN (Tiếng Việt); 21: ko_KR (한국어)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>DescriptionText</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Description text, should contain 0 to 256 characters.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>DescriptionTextColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Description text color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>DescriptionTextFontSize</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Description text font size, should be within the range of 12–18.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>DescriptionTextOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Description text opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>EnableDeviceSpecificBg</strong></td>
+<td>Pointer to <strong>bool</strong></td>
+<td>Whether to use different images in mobile and PC devices</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>FormAuthButtonText</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Form auth button text, should contain 0 to 32 characters, required when [authType] is 11 and hotspot [enabledTypes] contains 12.Default value is \&quot;Take the Survey\&quot;.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>InputBoxBorderColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Input box border color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>InputBoxBorderOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Input box border opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>InputBoxColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Input box color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>InputBoxOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Input box opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>InputBoxRadius</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Input box radius, should be within the range of 0–30.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>InputTextColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Input text color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>InputTextOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Input text opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>LogoDisplay</strong></td>
+<td><strong>bool</strong></td>
+<td>Whether to display the default logo.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LogoHorizontalPosition</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Position of logo horizontal, 0: left; 1: medium; 2: right</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>LogoPictureId</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Logo picture ID</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>MobileBgPicCoordinatesOfLibrary</strong></td>
+<td>Pointer to <a href="../BgPicCoordinatesOfLibraryOpenApiVO/"><strong>BgPicCoordinatesOfLibraryOpenApiVO</strong></a></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>PcAlign</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Position of pc align, 0: left; 1: medium; 2: right</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RedirectionCountDownEnable</strong></td>
+<td>Pointer to <strong>bool</strong></td>
+<td>Whether to show redirection countdown after authorized.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TermsOfServiceEnable</strong></td>
+<td><strong>bool</strong></td>
+<td>Whether to display terms of service.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TermsOfServiceFontSize</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Terms of service text font size, should be within the range of 12–18.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TermsOfServiceText</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Terms of service text, should contain 0 to 100 characters.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TermsOfServiceTextColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Terms of service text color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TermsOfServiceTextOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Terms of service text opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TermsOfServiceUrlTexts</strong></td>
+<td>Pointer to <a href="../TermsOfServiceUrlVO/"><strong>[]TermsOfServiceUrlVO</strong></a></td>
+<td>Terms of service url texts, match the termsOfServiceText and turn the matching characters into an openable link, Up to 3 entries are allowed for the list.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>WelcomeEnable</strong></td>
+<td><strong>bool</strong></td>
+<td>Whether to display the welcome info</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>WelcomeInformation</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Welcome Information, should contain 1 to 31 characters.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>WelcomeTextColor</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Welcome text color. Hex color code such as: #ffffff.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>WelcomeTextFontSize</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Welcome text font size, should be within the range of 12–18.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>WelcomeTextOpacity</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Welcome text opacity, should be within the range of 0–100.</td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<h3 id="newportalcustomizeopenapivo">NewPortalCustomizeOpenApiVO</h3>
+<p><code>func NewPortalCustomizeOpenApiVO(copyrightEnable bool, defaultLanguage int32, logoDisplay bool, termsOfServiceEnable bool, welcomeEnable bool, ) *PortalCustomizeOpenApiVO</code></p>
+<p>NewPortalCustomizeOpenApiVO instantiates a new PortalCustomizeOpenApiVO object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed</p>
+<h3 id="newportalcustomizeopenapivowithdefaults">NewPortalCustomizeOpenApiVOWithDefaults</h3>
+<p><code>func NewPortalCustomizeOpenApiVOWithDefaults() *PortalCustomizeOpenApiVO</code></p>
+<p>NewPortalCustomizeOpenApiVOWithDefaults instantiates a new PortalCustomizeOpenApiVO object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set</p>
+<h3 id="getadvertisement">GetAdvertisement</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetAdvertisement() AdvertisementSetting</code></p>
+<p>GetAdvertisement returns the Advertisement field if non-nil, zero value otherwise.</p>
+<h3 id="getadvertisementok">GetAdvertisementOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetAdvertisementOk() (*AdvertisementSetting, bool)</code></p>
+<p>GetAdvertisementOk returns a tuple with the Advertisement field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setadvertisement">SetAdvertisement</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetAdvertisement(v AdvertisementSetting)</code></p>
+<p>SetAdvertisement sets Advertisement field to given value.</p>
+<h3 id="hasadvertisement">HasAdvertisement</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasAdvertisement() bool</code></p>
+<p>HasAdvertisement returns a boolean if a field has been set.</p>
+<h3 id="getbackgroundmaskcolor">GetBackgroundMaskColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundMaskColor() string</code></p>
+<p>GetBackgroundMaskColor returns the BackgroundMaskColor field if non-nil, zero value otherwise.</p>
+<h3 id="getbackgroundmaskcolorok">GetBackgroundMaskColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundMaskColorOk() (*string, bool)</code></p>
+<p>GetBackgroundMaskColorOk returns a tuple with the BackgroundMaskColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbackgroundmaskcolor">SetBackgroundMaskColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBackgroundMaskColor(v string)</code></p>
+<p>SetBackgroundMaskColor sets BackgroundMaskColor field to given value.</p>
+<h3 id="hasbackgroundmaskcolor">HasBackgroundMaskColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBackgroundMaskColor() bool</code></p>
+<p>HasBackgroundMaskColor returns a boolean if a field has been set.</p>
+<h3 id="getbackgroundmaskenable">GetBackgroundMaskEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundMaskEnable() bool</code></p>
+<p>GetBackgroundMaskEnable returns the BackgroundMaskEnable field if non-nil, zero value otherwise.</p>
+<h3 id="getbackgroundmaskenableok">GetBackgroundMaskEnableOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundMaskEnableOk() (*bool, bool)</code></p>
+<p>GetBackgroundMaskEnableOk returns a tuple with the BackgroundMaskEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbackgroundmaskenable">SetBackgroundMaskEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBackgroundMaskEnable(v bool)</code></p>
+<p>SetBackgroundMaskEnable sets BackgroundMaskEnable field to given value.</p>
+<h3 id="hasbackgroundmaskenable">HasBackgroundMaskEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBackgroundMaskEnable() bool</code></p>
+<p>HasBackgroundMaskEnable returns a boolean if a field has been set.</p>
+<h3 id="getbackgroundmaskopacity">GetBackgroundMaskOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundMaskOpacity() int32</code></p>
+<p>GetBackgroundMaskOpacity returns the BackgroundMaskOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getbackgroundmaskopacityok">GetBackgroundMaskOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundMaskOpacityOk() (*int32, bool)</code></p>
+<p>GetBackgroundMaskOpacityOk returns a tuple with the BackgroundMaskOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbackgroundmaskopacity">SetBackgroundMaskOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBackgroundMaskOpacity(v int32)</code></p>
+<p>SetBackgroundMaskOpacity sets BackgroundMaskOpacity field to given value.</p>
+<h3 id="hasbackgroundmaskopacity">HasBackgroundMaskOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBackgroundMaskOpacity() bool</code></p>
+<p>HasBackgroundMaskOpacity returns a boolean if a field has been set.</p>
+<h3 id="getbackgroundpictureid">GetBackgroundPictureId</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundPictureId() string</code></p>
+<p>GetBackgroundPictureId returns the BackgroundPictureId field if non-nil, zero value otherwise.</p>
+<h3 id="getbackgroundpictureidok">GetBackgroundPictureIdOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundPictureIdOk() (*string, bool)</code></p>
+<p>GetBackgroundPictureIdOk returns a tuple with the BackgroundPictureId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbackgroundpictureid">SetBackgroundPictureId</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBackgroundPictureId(v string)</code></p>
+<p>SetBackgroundPictureId sets BackgroundPictureId field to given value.</p>
+<h3 id="hasbackgroundpictureid">HasBackgroundPictureId</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBackgroundPictureId() bool</code></p>
+<p>HasBackgroundPictureId returns a boolean if a field has been set.</p>
+<h3 id="getbackgroundpictureindex">GetBackgroundPictureIndex</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundPictureIndex() int32</code></p>
+<p>GetBackgroundPictureIndex returns the BackgroundPictureIndex field if non-nil, zero value otherwise.</p>
+<h3 id="getbackgroundpictureindexok">GetBackgroundPictureIndexOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBackgroundPictureIndexOk() (*int32, bool)</code></p>
+<p>GetBackgroundPictureIndexOk returns a tuple with the BackgroundPictureIndex field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbackgroundpictureindex">SetBackgroundPictureIndex</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBackgroundPictureIndex(v int32)</code></p>
+<p>SetBackgroundPictureIndex sets BackgroundPictureIndex field to given value.</p>
+<h3 id="hasbackgroundpictureindex">HasBackgroundPictureIndex</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBackgroundPictureIndex() bool</code></p>
+<p>HasBackgroundPictureIndex returns a boolean if a field has been set.</p>
+<h3 id="getbgpiccoordinatesoflibrary">GetBgPicCoordinatesOfLibrary</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBgPicCoordinatesOfLibrary() BgPicCoordinatesOfLibraryOpenApiVO</code></p>
+<p>GetBgPicCoordinatesOfLibrary returns the BgPicCoordinatesOfLibrary field if non-nil, zero value otherwise.</p>
+<h3 id="getbgpiccoordinatesoflibraryok">GetBgPicCoordinatesOfLibraryOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBgPicCoordinatesOfLibraryOk() (*BgPicCoordinatesOfLibraryOpenApiVO, bool)</code></p>
+<p>GetBgPicCoordinatesOfLibraryOk returns a tuple with the BgPicCoordinatesOfLibrary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbgpiccoordinatesoflibrary">SetBgPicCoordinatesOfLibrary</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBgPicCoordinatesOfLibrary(v BgPicCoordinatesOfLibraryOpenApiVO)</code></p>
+<p>SetBgPicCoordinatesOfLibrary sets BgPicCoordinatesOfLibrary field to given value.</p>
+<h3 id="hasbgpiccoordinatesoflibrary">HasBgPicCoordinatesOfLibrary</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBgPicCoordinatesOfLibrary() bool</code></p>
+<p>HasBgPicCoordinatesOfLibrary returns a boolean if a field has been set.</p>
+<h3 id="getbodycontainerbgblur">GetBodyContainerBgBlur</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerBgBlur() int32</code></p>
+<p>GetBodyContainerBgBlur returns the BodyContainerBgBlur field if non-nil, zero value otherwise.</p>
+<h3 id="getbodycontainerbgblurok">GetBodyContainerBgBlurOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerBgBlurOk() (*int32, bool)</code></p>
+<p>GetBodyContainerBgBlurOk returns a tuple with the BodyContainerBgBlur field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbodycontainerbgblur">SetBodyContainerBgBlur</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBodyContainerBgBlur(v int32)</code></p>
+<p>SetBodyContainerBgBlur sets BodyContainerBgBlur field to given value.</p>
+<h3 id="hasbodycontainerbgblur">HasBodyContainerBgBlur</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBodyContainerBgBlur() bool</code></p>
+<p>HasBodyContainerBgBlur returns a boolean if a field has been set.</p>
+<h3 id="getbodycontainerbgblurenable">GetBodyContainerBgBlurEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerBgBlurEnable() bool</code></p>
+<p>GetBodyContainerBgBlurEnable returns the BodyContainerBgBlurEnable field if non-nil, zero value otherwise.</p>
+<h3 id="getbodycontainerbgblurenableok">GetBodyContainerBgBlurEnableOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerBgBlurEnableOk() (*bool, bool)</code></p>
+<p>GetBodyContainerBgBlurEnableOk returns a tuple with the BodyContainerBgBlurEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbodycontainerbgblurenable">SetBodyContainerBgBlurEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBodyContainerBgBlurEnable(v bool)</code></p>
+<p>SetBodyContainerBgBlurEnable sets BodyContainerBgBlurEnable field to given value.</p>
+<h3 id="hasbodycontainerbgblurenable">HasBodyContainerBgBlurEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBodyContainerBgBlurEnable() bool</code></p>
+<p>HasBodyContainerBgBlurEnable returns a boolean if a field has been set.</p>
+<h3 id="getbodycontainercolor">GetBodyContainerColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerColor() string</code></p>
+<p>GetBodyContainerColor returns the BodyContainerColor field if non-nil, zero value otherwise.</p>
+<h3 id="getbodycontainercolorok">GetBodyContainerColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerColorOk() (*string, bool)</code></p>
+<p>GetBodyContainerColorOk returns a tuple with the BodyContainerColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbodycontainercolor">SetBodyContainerColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBodyContainerColor(v string)</code></p>
+<p>SetBodyContainerColor sets BodyContainerColor field to given value.</p>
+<h3 id="hasbodycontainercolor">HasBodyContainerColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBodyContainerColor() bool</code></p>
+<p>HasBodyContainerColor returns a boolean if a field has been set.</p>
+<h3 id="getbodycontainerenable">GetBodyContainerEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerEnable() bool</code></p>
+<p>GetBodyContainerEnable returns the BodyContainerEnable field if non-nil, zero value otherwise.</p>
+<h3 id="getbodycontainerenableok">GetBodyContainerEnableOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerEnableOk() (*bool, bool)</code></p>
+<p>GetBodyContainerEnableOk returns a tuple with the BodyContainerEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbodycontainerenable">SetBodyContainerEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBodyContainerEnable(v bool)</code></p>
+<p>SetBodyContainerEnable sets BodyContainerEnable field to given value.</p>
+<h3 id="hasbodycontainerenable">HasBodyContainerEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBodyContainerEnable() bool</code></p>
+<p>HasBodyContainerEnable returns a boolean if a field has been set.</p>
+<h3 id="getbodycontaineropacity">GetBodyContainerOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerOpacity() int32</code></p>
+<p>GetBodyContainerOpacity returns the BodyContainerOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getbodycontaineropacityok">GetBodyContainerOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerOpacityOk() (*int32, bool)</code></p>
+<p>GetBodyContainerOpacityOk returns a tuple with the BodyContainerOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbodycontaineropacity">SetBodyContainerOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBodyContainerOpacity(v int32)</code></p>
+<p>SetBodyContainerOpacity sets BodyContainerOpacity field to given value.</p>
+<h3 id="hasbodycontaineropacity">HasBodyContainerOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBodyContainerOpacity() bool</code></p>
+<p>HasBodyContainerOpacity returns a boolean if a field has been set.</p>
+<h3 id="getbodycontainerradius">GetBodyContainerRadius</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerRadius() int32</code></p>
+<p>GetBodyContainerRadius returns the BodyContainerRadius field if non-nil, zero value otherwise.</p>
+<h3 id="getbodycontainerradiusok">GetBodyContainerRadiusOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerRadiusOk() (*int32, bool)</code></p>
+<p>GetBodyContainerRadiusOk returns a tuple with the BodyContainerRadius field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbodycontainerradius">SetBodyContainerRadius</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBodyContainerRadius(v int32)</code></p>
+<p>SetBodyContainerRadius sets BodyContainerRadius field to given value.</p>
+<h3 id="hasbodycontainerradius">HasBodyContainerRadius</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBodyContainerRadius() bool</code></p>
+<p>HasBodyContainerRadius returns a boolean if a field has been set.</p>
+<h3 id="getbodycontainertype">GetBodyContainerType</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerType() int32</code></p>
+<p>GetBodyContainerType returns the BodyContainerType field if non-nil, zero value otherwise.</p>
+<h3 id="getbodycontainertypeok">GetBodyContainerTypeOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetBodyContainerTypeOk() (*int32, bool)</code></p>
+<p>GetBodyContainerTypeOk returns a tuple with the BodyContainerType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbodycontainertype">SetBodyContainerType</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetBodyContainerType(v int32)</code></p>
+<p>SetBodyContainerType sets BodyContainerType field to given value.</p>
+<h3 id="hasbodycontainertype">HasBodyContainerType</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasBodyContainerType() bool</code></p>
+<p>HasBodyContainerType returns a boolean if a field has been set.</p>
+<h3 id="getbuttoncolor">GetButtonColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonColor() string</code></p>
+<p>GetButtonColor returns the ButtonColor field if non-nil, zero value otherwise.</p>
+<h3 id="getbuttoncolorok">GetButtonColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonColorOk() (*string, bool)</code></p>
+<p>GetButtonColorOk returns a tuple with the ButtonColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbuttoncolor">SetButtonColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetButtonColor(v string)</code></p>
+<p>SetButtonColor sets ButtonColor field to given value.</p>
+<h3 id="hasbuttoncolor">HasButtonColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasButtonColor() bool</code></p>
+<p>HasButtonColor returns a boolean if a field has been set.</p>
+<h3 id="getbuttonopacity">GetButtonOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonOpacity() int32</code></p>
+<p>GetButtonOpacity returns the ButtonOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getbuttonopacityok">GetButtonOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonOpacityOk() (*int32, bool)</code></p>
+<p>GetButtonOpacityOk returns a tuple with the ButtonOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbuttonopacity">SetButtonOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetButtonOpacity(v int32)</code></p>
+<p>SetButtonOpacity sets ButtonOpacity field to given value.</p>
+<h3 id="hasbuttonopacity">HasButtonOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasButtonOpacity() bool</code></p>
+<p>HasButtonOpacity returns a boolean if a field has been set.</p>
+<h3 id="getbuttonradius">GetButtonRadius</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonRadius() int32</code></p>
+<p>GetButtonRadius returns the ButtonRadius field if non-nil, zero value otherwise.</p>
+<h3 id="getbuttonradiusok">GetButtonRadiusOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonRadiusOk() (*int32, bool)</code></p>
+<p>GetButtonRadiusOk returns a tuple with the ButtonRadius field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbuttonradius">SetButtonRadius</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetButtonRadius(v int32)</code></p>
+<p>SetButtonRadius sets ButtonRadius field to given value.</p>
+<h3 id="hasbuttonradius">HasButtonRadius</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasButtonRadius() bool</code></p>
+<p>HasButtonRadius returns a boolean if a field has been set.</p>
+<h3 id="getbuttontext">GetButtonText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonText() string</code></p>
+<p>GetButtonText returns the ButtonText field if non-nil, zero value otherwise.</p>
+<h3 id="getbuttontextok">GetButtonTextOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonTextOk() (*string, bool)</code></p>
+<p>GetButtonTextOk returns a tuple with the ButtonText field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbuttontext">SetButtonText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetButtonText(v string)</code></p>
+<p>SetButtonText sets ButtonText field to given value.</p>
+<h3 id="hasbuttontext">HasButtonText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasButtonText() bool</code></p>
+<p>HasButtonText returns a boolean if a field has been set.</p>
+<h3 id="getbuttontextcolor">GetButtonTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonTextColor() string</code></p>
+<p>GetButtonTextColor returns the ButtonTextColor field if non-nil, zero value otherwise.</p>
+<h3 id="getbuttontextcolorok">GetButtonTextColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonTextColorOk() (*string, bool)</code></p>
+<p>GetButtonTextColorOk returns a tuple with the ButtonTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbuttontextcolor">SetButtonTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetButtonTextColor(v string)</code></p>
+<p>SetButtonTextColor sets ButtonTextColor field to given value.</p>
+<h3 id="hasbuttontextcolor">HasButtonTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasButtonTextColor() bool</code></p>
+<p>HasButtonTextColor returns a boolean if a field has been set.</p>
+<h3 id="getbuttontextopacity">GetButtonTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonTextOpacity() int32</code></p>
+<p>GetButtonTextOpacity returns the ButtonTextOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getbuttontextopacityok">GetButtonTextOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetButtonTextOpacityOk() (*int32, bool)</code></p>
+<p>GetButtonTextOpacityOk returns a tuple with the ButtonTextOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setbuttontextopacity">SetButtonTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetButtonTextOpacity(v int32)</code></p>
+<p>SetButtonTextOpacity sets ButtonTextOpacity field to given value.</p>
+<h3 id="hasbuttontextopacity">HasButtonTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasButtonTextOpacity() bool</code></p>
+<p>HasButtonTextOpacity returns a boolean if a field has been set.</p>
+<h3 id="getcopyright">GetCopyright</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyright() string</code></p>
+<p>GetCopyright returns the Copyright field if non-nil, zero value otherwise.</p>
+<h3 id="getcopyrightok">GetCopyrightOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyrightOk() (*string, bool)</code></p>
+<p>GetCopyrightOk returns a tuple with the Copyright field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setcopyright">SetCopyright</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetCopyright(v string)</code></p>
+<p>SetCopyright sets Copyright field to given value.</p>
+<h3 id="hascopyright">HasCopyright</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasCopyright() bool</code></p>
+<p>HasCopyright returns a boolean if a field has been set.</p>
+<h3 id="getcopyrightenable">GetCopyrightEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyrightEnable() bool</code></p>
+<p>GetCopyrightEnable returns the CopyrightEnable field if non-nil, zero value otherwise.</p>
+<h3 id="getcopyrightenableok">GetCopyrightEnableOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyrightEnableOk() (*bool, bool)</code></p>
+<p>GetCopyrightEnableOk returns a tuple with the CopyrightEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setcopyrightenable">SetCopyrightEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetCopyrightEnable(v bool)</code></p>
+<p>SetCopyrightEnable sets CopyrightEnable field to given value.</p>
+<h3 id="getcopyrighttextcolor">GetCopyrightTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyrightTextColor() string</code></p>
+<p>GetCopyrightTextColor returns the CopyrightTextColor field if non-nil, zero value otherwise.</p>
+<h3 id="getcopyrighttextcolorok">GetCopyrightTextColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyrightTextColorOk() (*string, bool)</code></p>
+<p>GetCopyrightTextColorOk returns a tuple with the CopyrightTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setcopyrighttextcolor">SetCopyrightTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetCopyrightTextColor(v string)</code></p>
+<p>SetCopyrightTextColor sets CopyrightTextColor field to given value.</p>
+<h3 id="hascopyrighttextcolor">HasCopyrightTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasCopyrightTextColor() bool</code></p>
+<p>HasCopyrightTextColor returns a boolean if a field has been set.</p>
+<h3 id="getcopyrighttextfontsize">GetCopyrightTextFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyrightTextFontSize() int32</code></p>
+<p>GetCopyrightTextFontSize returns the CopyrightTextFontSize field if non-nil, zero value otherwise.</p>
+<h3 id="getcopyrighttextfontsizeok">GetCopyrightTextFontSizeOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyrightTextFontSizeOk() (*int32, bool)</code></p>
+<p>GetCopyrightTextFontSizeOk returns a tuple with the CopyrightTextFontSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setcopyrighttextfontsize">SetCopyrightTextFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetCopyrightTextFontSize(v int32)</code></p>
+<p>SetCopyrightTextFontSize sets CopyrightTextFontSize field to given value.</p>
+<h3 id="hascopyrighttextfontsize">HasCopyrightTextFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasCopyrightTextFontSize() bool</code></p>
+<p>HasCopyrightTextFontSize returns a boolean if a field has been set.</p>
+<h3 id="getcopyrighttextopacity">GetCopyrightTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyrightTextOpacity() int32</code></p>
+<p>GetCopyrightTextOpacity returns the CopyrightTextOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getcopyrighttextopacityok">GetCopyrightTextOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetCopyrightTextOpacityOk() (*int32, bool)</code></p>
+<p>GetCopyrightTextOpacityOk returns a tuple with the CopyrightTextOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setcopyrighttextopacity">SetCopyrightTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetCopyrightTextOpacity(v int32)</code></p>
+<p>SetCopyrightTextOpacity sets CopyrightTextOpacity field to given value.</p>
+<h3 id="hascopyrighttextopacity">HasCopyrightTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasCopyrightTextOpacity() bool</code></p>
+<p>HasCopyrightTextOpacity returns a boolean if a field has been set.</p>
+<h3 id="getdefaultlanguage">GetDefaultLanguage</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDefaultLanguage() int32</code></p>
+<p>GetDefaultLanguage returns the DefaultLanguage field if non-nil, zero value otherwise.</p>
+<h3 id="getdefaultlanguageok">GetDefaultLanguageOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDefaultLanguageOk() (*int32, bool)</code></p>
+<p>GetDefaultLanguageOk returns a tuple with the DefaultLanguage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setdefaultlanguage">SetDefaultLanguage</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetDefaultLanguage(v int32)</code></p>
+<p>SetDefaultLanguage sets DefaultLanguage field to given value.</p>
+<h3 id="getdescriptiontext">GetDescriptionText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDescriptionText() string</code></p>
+<p>GetDescriptionText returns the DescriptionText field if non-nil, zero value otherwise.</p>
+<h3 id="getdescriptiontextok">GetDescriptionTextOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDescriptionTextOk() (*string, bool)</code></p>
+<p>GetDescriptionTextOk returns a tuple with the DescriptionText field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setdescriptiontext">SetDescriptionText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetDescriptionText(v string)</code></p>
+<p>SetDescriptionText sets DescriptionText field to given value.</p>
+<h3 id="hasdescriptiontext">HasDescriptionText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasDescriptionText() bool</code></p>
+<p>HasDescriptionText returns a boolean if a field has been set.</p>
+<h3 id="getdescriptiontextcolor">GetDescriptionTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDescriptionTextColor() string</code></p>
+<p>GetDescriptionTextColor returns the DescriptionTextColor field if non-nil, zero value otherwise.</p>
+<h3 id="getdescriptiontextcolorok">GetDescriptionTextColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDescriptionTextColorOk() (*string, bool)</code></p>
+<p>GetDescriptionTextColorOk returns a tuple with the DescriptionTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setdescriptiontextcolor">SetDescriptionTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetDescriptionTextColor(v string)</code></p>
+<p>SetDescriptionTextColor sets DescriptionTextColor field to given value.</p>
+<h3 id="hasdescriptiontextcolor">HasDescriptionTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasDescriptionTextColor() bool</code></p>
+<p>HasDescriptionTextColor returns a boolean if a field has been set.</p>
+<h3 id="getdescriptiontextfontsize">GetDescriptionTextFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDescriptionTextFontSize() int32</code></p>
+<p>GetDescriptionTextFontSize returns the DescriptionTextFontSize field if non-nil, zero value otherwise.</p>
+<h3 id="getdescriptiontextfontsizeok">GetDescriptionTextFontSizeOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDescriptionTextFontSizeOk() (*int32, bool)</code></p>
+<p>GetDescriptionTextFontSizeOk returns a tuple with the DescriptionTextFontSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setdescriptiontextfontsize">SetDescriptionTextFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetDescriptionTextFontSize(v int32)</code></p>
+<p>SetDescriptionTextFontSize sets DescriptionTextFontSize field to given value.</p>
+<h3 id="hasdescriptiontextfontsize">HasDescriptionTextFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasDescriptionTextFontSize() bool</code></p>
+<p>HasDescriptionTextFontSize returns a boolean if a field has been set.</p>
+<h3 id="getdescriptiontextopacity">GetDescriptionTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDescriptionTextOpacity() int32</code></p>
+<p>GetDescriptionTextOpacity returns the DescriptionTextOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getdescriptiontextopacityok">GetDescriptionTextOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetDescriptionTextOpacityOk() (*int32, bool)</code></p>
+<p>GetDescriptionTextOpacityOk returns a tuple with the DescriptionTextOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setdescriptiontextopacity">SetDescriptionTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetDescriptionTextOpacity(v int32)</code></p>
+<p>SetDescriptionTextOpacity sets DescriptionTextOpacity field to given value.</p>
+<h3 id="hasdescriptiontextopacity">HasDescriptionTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasDescriptionTextOpacity() bool</code></p>
+<p>HasDescriptionTextOpacity returns a boolean if a field has been set.</p>
+<h3 id="getenabledevicespecificbg">GetEnableDeviceSpecificBg</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetEnableDeviceSpecificBg() bool</code></p>
+<p>GetEnableDeviceSpecificBg returns the EnableDeviceSpecificBg field if non-nil, zero value otherwise.</p>
+<h3 id="getenabledevicespecificbgok">GetEnableDeviceSpecificBgOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetEnableDeviceSpecificBgOk() (*bool, bool)</code></p>
+<p>GetEnableDeviceSpecificBgOk returns a tuple with the EnableDeviceSpecificBg field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setenabledevicespecificbg">SetEnableDeviceSpecificBg</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetEnableDeviceSpecificBg(v bool)</code></p>
+<p>SetEnableDeviceSpecificBg sets EnableDeviceSpecificBg field to given value.</p>
+<h3 id="hasenabledevicespecificbg">HasEnableDeviceSpecificBg</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasEnableDeviceSpecificBg() bool</code></p>
+<p>HasEnableDeviceSpecificBg returns a boolean if a field has been set.</p>
+<h3 id="getformauthbuttontext">GetFormAuthButtonText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetFormAuthButtonText() string</code></p>
+<p>GetFormAuthButtonText returns the FormAuthButtonText field if non-nil, zero value otherwise.</p>
+<h3 id="getformauthbuttontextok">GetFormAuthButtonTextOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetFormAuthButtonTextOk() (*string, bool)</code></p>
+<p>GetFormAuthButtonTextOk returns a tuple with the FormAuthButtonText field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setformauthbuttontext">SetFormAuthButtonText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetFormAuthButtonText(v string)</code></p>
+<p>SetFormAuthButtonText sets FormAuthButtonText field to given value.</p>
+<h3 id="hasformauthbuttontext">HasFormAuthButtonText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasFormAuthButtonText() bool</code></p>
+<p>HasFormAuthButtonText returns a boolean if a field has been set.</p>
+<h3 id="getinputboxbordercolor">GetInputBoxBorderColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxBorderColor() string</code></p>
+<p>GetInputBoxBorderColor returns the InputBoxBorderColor field if non-nil, zero value otherwise.</p>
+<h3 id="getinputboxbordercolorok">GetInputBoxBorderColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxBorderColorOk() (*string, bool)</code></p>
+<p>GetInputBoxBorderColorOk returns a tuple with the InputBoxBorderColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setinputboxbordercolor">SetInputBoxBorderColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetInputBoxBorderColor(v string)</code></p>
+<p>SetInputBoxBorderColor sets InputBoxBorderColor field to given value.</p>
+<h3 id="hasinputboxbordercolor">HasInputBoxBorderColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasInputBoxBorderColor() bool</code></p>
+<p>HasInputBoxBorderColor returns a boolean if a field has been set.</p>
+<h3 id="getinputboxborderopacity">GetInputBoxBorderOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxBorderOpacity() int32</code></p>
+<p>GetInputBoxBorderOpacity returns the InputBoxBorderOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getinputboxborderopacityok">GetInputBoxBorderOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxBorderOpacityOk() (*int32, bool)</code></p>
+<p>GetInputBoxBorderOpacityOk returns a tuple with the InputBoxBorderOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setinputboxborderopacity">SetInputBoxBorderOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetInputBoxBorderOpacity(v int32)</code></p>
+<p>SetInputBoxBorderOpacity sets InputBoxBorderOpacity field to given value.</p>
+<h3 id="hasinputboxborderopacity">HasInputBoxBorderOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasInputBoxBorderOpacity() bool</code></p>
+<p>HasInputBoxBorderOpacity returns a boolean if a field has been set.</p>
+<h3 id="getinputboxcolor">GetInputBoxColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxColor() string</code></p>
+<p>GetInputBoxColor returns the InputBoxColor field if non-nil, zero value otherwise.</p>
+<h3 id="getinputboxcolorok">GetInputBoxColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxColorOk() (*string, bool)</code></p>
+<p>GetInputBoxColorOk returns a tuple with the InputBoxColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setinputboxcolor">SetInputBoxColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetInputBoxColor(v string)</code></p>
+<p>SetInputBoxColor sets InputBoxColor field to given value.</p>
+<h3 id="hasinputboxcolor">HasInputBoxColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasInputBoxColor() bool</code></p>
+<p>HasInputBoxColor returns a boolean if a field has been set.</p>
+<h3 id="getinputboxopacity">GetInputBoxOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxOpacity() int32</code></p>
+<p>GetInputBoxOpacity returns the InputBoxOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getinputboxopacityok">GetInputBoxOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxOpacityOk() (*int32, bool)</code></p>
+<p>GetInputBoxOpacityOk returns a tuple with the InputBoxOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setinputboxopacity">SetInputBoxOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetInputBoxOpacity(v int32)</code></p>
+<p>SetInputBoxOpacity sets InputBoxOpacity field to given value.</p>
+<h3 id="hasinputboxopacity">HasInputBoxOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasInputBoxOpacity() bool</code></p>
+<p>HasInputBoxOpacity returns a boolean if a field has been set.</p>
+<h3 id="getinputboxradius">GetInputBoxRadius</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxRadius() int32</code></p>
+<p>GetInputBoxRadius returns the InputBoxRadius field if non-nil, zero value otherwise.</p>
+<h3 id="getinputboxradiusok">GetInputBoxRadiusOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputBoxRadiusOk() (*int32, bool)</code></p>
+<p>GetInputBoxRadiusOk returns a tuple with the InputBoxRadius field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setinputboxradius">SetInputBoxRadius</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetInputBoxRadius(v int32)</code></p>
+<p>SetInputBoxRadius sets InputBoxRadius field to given value.</p>
+<h3 id="hasinputboxradius">HasInputBoxRadius</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasInputBoxRadius() bool</code></p>
+<p>HasInputBoxRadius returns a boolean if a field has been set.</p>
+<h3 id="getinputtextcolor">GetInputTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputTextColor() string</code></p>
+<p>GetInputTextColor returns the InputTextColor field if non-nil, zero value otherwise.</p>
+<h3 id="getinputtextcolorok">GetInputTextColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputTextColorOk() (*string, bool)</code></p>
+<p>GetInputTextColorOk returns a tuple with the InputTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setinputtextcolor">SetInputTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetInputTextColor(v string)</code></p>
+<p>SetInputTextColor sets InputTextColor field to given value.</p>
+<h3 id="hasinputtextcolor">HasInputTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasInputTextColor() bool</code></p>
+<p>HasInputTextColor returns a boolean if a field has been set.</p>
+<h3 id="getinputtextopacity">GetInputTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputTextOpacity() int32</code></p>
+<p>GetInputTextOpacity returns the InputTextOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getinputtextopacityok">GetInputTextOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetInputTextOpacityOk() (*int32, bool)</code></p>
+<p>GetInputTextOpacityOk returns a tuple with the InputTextOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setinputtextopacity">SetInputTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetInputTextOpacity(v int32)</code></p>
+<p>SetInputTextOpacity sets InputTextOpacity field to given value.</p>
+<h3 id="hasinputtextopacity">HasInputTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasInputTextOpacity() bool</code></p>
+<p>HasInputTextOpacity returns a boolean if a field has been set.</p>
+<h3 id="getlogodisplay">GetLogoDisplay</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetLogoDisplay() bool</code></p>
+<p>GetLogoDisplay returns the LogoDisplay field if non-nil, zero value otherwise.</p>
+<h3 id="getlogodisplayok">GetLogoDisplayOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetLogoDisplayOk() (*bool, bool)</code></p>
+<p>GetLogoDisplayOk returns a tuple with the LogoDisplay field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setlogodisplay">SetLogoDisplay</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetLogoDisplay(v bool)</code></p>
+<p>SetLogoDisplay sets LogoDisplay field to given value.</p>
+<h3 id="getlogohorizontalposition">GetLogoHorizontalPosition</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetLogoHorizontalPosition() int32</code></p>
+<p>GetLogoHorizontalPosition returns the LogoHorizontalPosition field if non-nil, zero value otherwise.</p>
+<h3 id="getlogohorizontalpositionok">GetLogoHorizontalPositionOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetLogoHorizontalPositionOk() (*int32, bool)</code></p>
+<p>GetLogoHorizontalPositionOk returns a tuple with the LogoHorizontalPosition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setlogohorizontalposition">SetLogoHorizontalPosition</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetLogoHorizontalPosition(v int32)</code></p>
+<p>SetLogoHorizontalPosition sets LogoHorizontalPosition field to given value.</p>
+<h3 id="haslogohorizontalposition">HasLogoHorizontalPosition</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasLogoHorizontalPosition() bool</code></p>
+<p>HasLogoHorizontalPosition returns a boolean if a field has been set.</p>
+<h3 id="getlogopictureid">GetLogoPictureId</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetLogoPictureId() string</code></p>
+<p>GetLogoPictureId returns the LogoPictureId field if non-nil, zero value otherwise.</p>
+<h3 id="getlogopictureidok">GetLogoPictureIdOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetLogoPictureIdOk() (*string, bool)</code></p>
+<p>GetLogoPictureIdOk returns a tuple with the LogoPictureId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setlogopictureid">SetLogoPictureId</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetLogoPictureId(v string)</code></p>
+<p>SetLogoPictureId sets LogoPictureId field to given value.</p>
+<h3 id="haslogopictureid">HasLogoPictureId</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasLogoPictureId() bool</code></p>
+<p>HasLogoPictureId returns a boolean if a field has been set.</p>
+<h3 id="getmobilebgpiccoordinatesoflibrary">GetMobileBgPicCoordinatesOfLibrary</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetMobileBgPicCoordinatesOfLibrary() BgPicCoordinatesOfLibraryOpenApiVO</code></p>
+<p>GetMobileBgPicCoordinatesOfLibrary returns the MobileBgPicCoordinatesOfLibrary field if non-nil, zero value otherwise.</p>
+<h3 id="getmobilebgpiccoordinatesoflibraryok">GetMobileBgPicCoordinatesOfLibraryOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetMobileBgPicCoordinatesOfLibraryOk() (*BgPicCoordinatesOfLibraryOpenApiVO, bool)</code></p>
+<p>GetMobileBgPicCoordinatesOfLibraryOk returns a tuple with the MobileBgPicCoordinatesOfLibrary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setmobilebgpiccoordinatesoflibrary">SetMobileBgPicCoordinatesOfLibrary</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetMobileBgPicCoordinatesOfLibrary(v BgPicCoordinatesOfLibraryOpenApiVO)</code></p>
+<p>SetMobileBgPicCoordinatesOfLibrary sets MobileBgPicCoordinatesOfLibrary field to given value.</p>
+<h3 id="hasmobilebgpiccoordinatesoflibrary">HasMobileBgPicCoordinatesOfLibrary</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasMobileBgPicCoordinatesOfLibrary() bool</code></p>
+<p>HasMobileBgPicCoordinatesOfLibrary returns a boolean if a field has been set.</p>
+<h3 id="getpcalign">GetPcAlign</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetPcAlign() int32</code></p>
+<p>GetPcAlign returns the PcAlign field if non-nil, zero value otherwise.</p>
+<h3 id="getpcalignok">GetPcAlignOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetPcAlignOk() (*int32, bool)</code></p>
+<p>GetPcAlignOk returns a tuple with the PcAlign field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setpcalign">SetPcAlign</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetPcAlign(v int32)</code></p>
+<p>SetPcAlign sets PcAlign field to given value.</p>
+<h3 id="haspcalign">HasPcAlign</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasPcAlign() bool</code></p>
+<p>HasPcAlign returns a boolean if a field has been set.</p>
+<h3 id="getredirectioncountdownenable">GetRedirectionCountDownEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetRedirectionCountDownEnable() bool</code></p>
+<p>GetRedirectionCountDownEnable returns the RedirectionCountDownEnable field if non-nil, zero value otherwise.</p>
+<h3 id="getredirectioncountdownenableok">GetRedirectionCountDownEnableOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetRedirectionCountDownEnableOk() (*bool, bool)</code></p>
+<p>GetRedirectionCountDownEnableOk returns a tuple with the RedirectionCountDownEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setredirectioncountdownenable">SetRedirectionCountDownEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetRedirectionCountDownEnable(v bool)</code></p>
+<p>SetRedirectionCountDownEnable sets RedirectionCountDownEnable field to given value.</p>
+<h3 id="hasredirectioncountdownenable">HasRedirectionCountDownEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasRedirectionCountDownEnable() bool</code></p>
+<p>HasRedirectionCountDownEnable returns a boolean if a field has been set.</p>
+<h3 id="gettermsofserviceenable">GetTermsOfServiceEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceEnable() bool</code></p>
+<p>GetTermsOfServiceEnable returns the TermsOfServiceEnable field if non-nil, zero value otherwise.</p>
+<h3 id="gettermsofserviceenableok">GetTermsOfServiceEnableOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceEnableOk() (*bool, bool)</code></p>
+<p>GetTermsOfServiceEnableOk returns a tuple with the TermsOfServiceEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settermsofserviceenable">SetTermsOfServiceEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetTermsOfServiceEnable(v bool)</code></p>
+<p>SetTermsOfServiceEnable sets TermsOfServiceEnable field to given value.</p>
+<h3 id="gettermsofservicefontsize">GetTermsOfServiceFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceFontSize() int32</code></p>
+<p>GetTermsOfServiceFontSize returns the TermsOfServiceFontSize field if non-nil, zero value otherwise.</p>
+<h3 id="gettermsofservicefontsizeok">GetTermsOfServiceFontSizeOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceFontSizeOk() (*int32, bool)</code></p>
+<p>GetTermsOfServiceFontSizeOk returns a tuple with the TermsOfServiceFontSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settermsofservicefontsize">SetTermsOfServiceFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetTermsOfServiceFontSize(v int32)</code></p>
+<p>SetTermsOfServiceFontSize sets TermsOfServiceFontSize field to given value.</p>
+<h3 id="hastermsofservicefontsize">HasTermsOfServiceFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasTermsOfServiceFontSize() bool</code></p>
+<p>HasTermsOfServiceFontSize returns a boolean if a field has been set.</p>
+<h3 id="gettermsofservicetext">GetTermsOfServiceText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceText() string</code></p>
+<p>GetTermsOfServiceText returns the TermsOfServiceText field if non-nil, zero value otherwise.</p>
+<h3 id="gettermsofservicetextok">GetTermsOfServiceTextOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceTextOk() (*string, bool)</code></p>
+<p>GetTermsOfServiceTextOk returns a tuple with the TermsOfServiceText field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settermsofservicetext">SetTermsOfServiceText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetTermsOfServiceText(v string)</code></p>
+<p>SetTermsOfServiceText sets TermsOfServiceText field to given value.</p>
+<h3 id="hastermsofservicetext">HasTermsOfServiceText</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasTermsOfServiceText() bool</code></p>
+<p>HasTermsOfServiceText returns a boolean if a field has been set.</p>
+<h3 id="gettermsofservicetextcolor">GetTermsOfServiceTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceTextColor() string</code></p>
+<p>GetTermsOfServiceTextColor returns the TermsOfServiceTextColor field if non-nil, zero value otherwise.</p>
+<h3 id="gettermsofservicetextcolorok">GetTermsOfServiceTextColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceTextColorOk() (*string, bool)</code></p>
+<p>GetTermsOfServiceTextColorOk returns a tuple with the TermsOfServiceTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settermsofservicetextcolor">SetTermsOfServiceTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetTermsOfServiceTextColor(v string)</code></p>
+<p>SetTermsOfServiceTextColor sets TermsOfServiceTextColor field to given value.</p>
+<h3 id="hastermsofservicetextcolor">HasTermsOfServiceTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasTermsOfServiceTextColor() bool</code></p>
+<p>HasTermsOfServiceTextColor returns a boolean if a field has been set.</p>
+<h3 id="gettermsofservicetextopacity">GetTermsOfServiceTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceTextOpacity() int32</code></p>
+<p>GetTermsOfServiceTextOpacity returns the TermsOfServiceTextOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="gettermsofservicetextopacityok">GetTermsOfServiceTextOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceTextOpacityOk() (*int32, bool)</code></p>
+<p>GetTermsOfServiceTextOpacityOk returns a tuple with the TermsOfServiceTextOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settermsofservicetextopacity">SetTermsOfServiceTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetTermsOfServiceTextOpacity(v int32)</code></p>
+<p>SetTermsOfServiceTextOpacity sets TermsOfServiceTextOpacity field to given value.</p>
+<h3 id="hastermsofservicetextopacity">HasTermsOfServiceTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasTermsOfServiceTextOpacity() bool</code></p>
+<p>HasTermsOfServiceTextOpacity returns a boolean if a field has been set.</p>
+<h3 id="gettermsofserviceurltexts">GetTermsOfServiceUrlTexts</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceUrlTexts() []TermsOfServiceUrlVO</code></p>
+<p>GetTermsOfServiceUrlTexts returns the TermsOfServiceUrlTexts field if non-nil, zero value otherwise.</p>
+<h3 id="gettermsofserviceurltextsok">GetTermsOfServiceUrlTextsOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetTermsOfServiceUrlTextsOk() (*[]TermsOfServiceUrlVO, bool)</code></p>
+<p>GetTermsOfServiceUrlTextsOk returns a tuple with the TermsOfServiceUrlTexts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settermsofserviceurltexts">SetTermsOfServiceUrlTexts</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetTermsOfServiceUrlTexts(v []TermsOfServiceUrlVO)</code></p>
+<p>SetTermsOfServiceUrlTexts sets TermsOfServiceUrlTexts field to given value.</p>
+<h3 id="hastermsofserviceurltexts">HasTermsOfServiceUrlTexts</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasTermsOfServiceUrlTexts() bool</code></p>
+<p>HasTermsOfServiceUrlTexts returns a boolean if a field has been set.</p>
+<h3 id="getwelcomeenable">GetWelcomeEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeEnable() bool</code></p>
+<p>GetWelcomeEnable returns the WelcomeEnable field if non-nil, zero value otherwise.</p>
+<h3 id="getwelcomeenableok">GetWelcomeEnableOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeEnableOk() (*bool, bool)</code></p>
+<p>GetWelcomeEnableOk returns a tuple with the WelcomeEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setwelcomeenable">SetWelcomeEnable</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetWelcomeEnable(v bool)</code></p>
+<p>SetWelcomeEnable sets WelcomeEnable field to given value.</p>
+<h3 id="getwelcomeinformation">GetWelcomeInformation</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeInformation() string</code></p>
+<p>GetWelcomeInformation returns the WelcomeInformation field if non-nil, zero value otherwise.</p>
+<h3 id="getwelcomeinformationok">GetWelcomeInformationOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeInformationOk() (*string, bool)</code></p>
+<p>GetWelcomeInformationOk returns a tuple with the WelcomeInformation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setwelcomeinformation">SetWelcomeInformation</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetWelcomeInformation(v string)</code></p>
+<p>SetWelcomeInformation sets WelcomeInformation field to given value.</p>
+<h3 id="haswelcomeinformation">HasWelcomeInformation</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasWelcomeInformation() bool</code></p>
+<p>HasWelcomeInformation returns a boolean if a field has been set.</p>
+<h3 id="getwelcometextcolor">GetWelcomeTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeTextColor() string</code></p>
+<p>GetWelcomeTextColor returns the WelcomeTextColor field if non-nil, zero value otherwise.</p>
+<h3 id="getwelcometextcolorok">GetWelcomeTextColorOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeTextColorOk() (*string, bool)</code></p>
+<p>GetWelcomeTextColorOk returns a tuple with the WelcomeTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setwelcometextcolor">SetWelcomeTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetWelcomeTextColor(v string)</code></p>
+<p>SetWelcomeTextColor sets WelcomeTextColor field to given value.</p>
+<h3 id="haswelcometextcolor">HasWelcomeTextColor</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasWelcomeTextColor() bool</code></p>
+<p>HasWelcomeTextColor returns a boolean if a field has been set.</p>
+<h3 id="getwelcometextfontsize">GetWelcomeTextFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeTextFontSize() int32</code></p>
+<p>GetWelcomeTextFontSize returns the WelcomeTextFontSize field if non-nil, zero value otherwise.</p>
+<h3 id="getwelcometextfontsizeok">GetWelcomeTextFontSizeOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeTextFontSizeOk() (*int32, bool)</code></p>
+<p>GetWelcomeTextFontSizeOk returns a tuple with the WelcomeTextFontSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setwelcometextfontsize">SetWelcomeTextFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetWelcomeTextFontSize(v int32)</code></p>
+<p>SetWelcomeTextFontSize sets WelcomeTextFontSize field to given value.</p>
+<h3 id="haswelcometextfontsize">HasWelcomeTextFontSize</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasWelcomeTextFontSize() bool</code></p>
+<p>HasWelcomeTextFontSize returns a boolean if a field has been set.</p>
+<h3 id="getwelcometextopacity">GetWelcomeTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeTextOpacity() int32</code></p>
+<p>GetWelcomeTextOpacity returns the WelcomeTextOpacity field if non-nil, zero value otherwise.</p>
+<h3 id="getwelcometextopacityok">GetWelcomeTextOpacityOk</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) GetWelcomeTextOpacityOk() (*int32, bool)</code></p>
+<p>GetWelcomeTextOpacityOk returns a tuple with the WelcomeTextOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setwelcometextopacity">SetWelcomeTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) SetWelcomeTextOpacity(v int32)</code></p>
+<p>SetWelcomeTextOpacity sets WelcomeTextOpacity field to given value.</p>
+<h3 id="haswelcometextopacity">HasWelcomeTextOpacity</h3>
+<p><code>func (o *PortalCustomizeOpenApiVO) HasWelcomeTextOpacity() bool</code></p>
+<p>HasWelcomeTextOpacity returns a boolean if a field has been set.</p>
+<p><a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../">[Back to README]</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

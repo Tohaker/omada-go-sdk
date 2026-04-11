@@ -1,0 +1,8605 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tohaker.github.io/omada-go-sdk/docs/OsgPortStatVO/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>OsgPortStatVO - Omada Go SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#osgportstatvo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Omada Go SDK" class="md-header__button md-logo" aria-label="Omada Go SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Omada Go SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OsgPortStatVO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Tohaker/omada-go-sdk" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tohaker/omada-go-sdk
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Omada Go SDK" class="md-nav__button md-logo" aria-label="Omada Go SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Omada Go SDK
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Tohaker/omada-go-sdk" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tohaker/omada-go-sdk
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SDK Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AbnormalDetectAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abnormal Detect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AccessControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AccessControlTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Control Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACLAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ACLTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACL Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ApAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ApplicationControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ArpDetectionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARP Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttackDefenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attack Defense
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AttackDefenseTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attack Defense Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuditLogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuditLogTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit Log Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthenticationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthenticationTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthorizeAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorize
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuthorizedClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorized Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BackupAndRestoreAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BandwidthControlAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bandwidth Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BandwidthControlTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bandwidth Control Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BatchOpenAPIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BluetoothAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BluetoothTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CertProfilesAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cert Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CertProfilesTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cert Profiles Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLITemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClientInsightAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client Insight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CloudUserAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClusterAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cluster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ControllerSettingsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controller Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CustomerAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DashboardAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataExportAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceManagementSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Management Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DhcpSnoopingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DHCP Snooping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DisableNatAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disable NAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EoGRETunnelAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EoGRE Tunnel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirewallAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirewallTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FirmwareAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FormAuthDataAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Form Auth Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayQoSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway QoS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayQOSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway QoS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GatewayTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GlobalDashboardOverviewAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Dashboard Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GlobalSecurityAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HealthAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HistoryDataRetentionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History Data Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HotspotOperatorsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hotspot Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDSIPSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDSIPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDSIPSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDSIPS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../InsightAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntelliRecoverClientAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IntelliRecover Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntelliRecoverDeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IntelliRecover Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPMACBindingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP-MAC Binding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPMACBindingTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP-MAC Binding Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LanMulticastAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAN Multicast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LanMulticastTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LAN Multicast Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LicenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LocalUserAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MACFilteringAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC Filtering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MACFilteringTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MAC Filtering Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MlagAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPBatchOpenAPIAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Batch OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPDeviceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Device
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPHistoryDataRetentionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP History Data Retention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspLicenseAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspLogAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPSiteAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPSSOAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP SSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MSPUserAndRoleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP User and Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MspWebhookSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSP Webhook Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NATTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAT Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetworkAnalyzeAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Analyze
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NetworkReportAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTDBAAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT DBA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTGemMappingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT GEM Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTGemPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT GEM Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTLineProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Line Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONTPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONT Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONUManagementAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONU Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTONURegisterAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT ONU Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTPonPortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT PON Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServicePortAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Port
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServicePortProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Port Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTServiceProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Service Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTTContAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT TCont
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OLTTrafficProfileAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLT Traffic Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSPFAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OUIBasedVLANAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OUI-Based VLAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OUIBasedVLANTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OUI-Based VLAN Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProfilesAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProfilesTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QuickActionAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Action
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RemoteAccessAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ReportV2API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report V2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RoutingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RoutingTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RrmAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RRM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScheduleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScheduleTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDWANAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SD-WAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServiceAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ServiceTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SessionLimitAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Limit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SessionLimitTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Limit Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIMAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SIMTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIM Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteConfigurationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SiteTemplateConfigurationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Template Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSLVPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSL VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSOAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StackAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StatisticAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchQoSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch QoS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwitchTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switch Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemSettingsAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ThreatManagementAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TopologyAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../URLFilteringAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Filtering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../URLFilteringTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    URL Filtering Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserAndRoleAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User and Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoIPAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoIPTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VoIP Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VoucherAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voucher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VRRPAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VRRP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebhookSettingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webhook Setting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WiredNetworkAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wired Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WiredNetworkTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wired Network Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WireguardVPNAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WireGuard VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessIDSIPSAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless IDSIPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessIDSIPSTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless IDSIPS Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessNetworkAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WirelessNetworkTemplateAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless Network Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WLANOptimizationAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WLAN Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newosgportstatvo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NewOsgPortStatVO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newosgportstatvowithdefaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NewOsgPortStatVOWithDefaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getannextype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetAnnexType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getannextypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetAnnexTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setannextype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetAnnexType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasannextype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasAnnexType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbandok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetBandOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetBand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasband" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasBand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcardstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCardStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcardstatusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetCardStatusOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcardstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetCardStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hascardstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasCardStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getchargemode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetChargeMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getchargemodeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetChargeModeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setchargemode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetChargeMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haschargemode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasChargeMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdatausage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDataUsage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdatausageok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDataUsageOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdatausage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDataUsage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasdatausage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasDataUsage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdslmodulationtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDslModulationType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdslmodulationtypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDslModulationTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdslmodulationtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDslModulationType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasdslmodulationtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasDslModulationType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getduplex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDuplex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getduplexok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetDuplexOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setduplex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetDuplex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasduplex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasDuplex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gethealthlevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetHealthLevel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gethealthlevelok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetHealthLevelOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sethealthlevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetHealthLevel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashealthlevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasHealthLevel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinternetstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInternetState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinternetstateok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInternetStateOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinternetstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetInternetState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasinternetstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasInternetState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinternetstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInternetStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getinternetstatusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetInternetStatusOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinternetstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetInternetStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasinternetstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasInternetStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetIp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getipok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetIpOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetIp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasIp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getip2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetIp2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getip2ok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetIp2Ok
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setip2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetIp2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasip2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasIp2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getisp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetIsp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getispok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetIspOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setisp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetIsp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasisp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasIsp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getispversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetIspVersion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getispversionok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetIspVersionOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setispversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetIspVersion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasispversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasIspVersion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlatency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLatency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlatencyok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLatencyOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlatency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetLatency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haslatency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasLatency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlinestatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLineStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlinestatusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLineStatusOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setlinestatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetLineStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haslinestatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasLineStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getloss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLoss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlossok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetLossOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setloss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetLoss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasloss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasLoss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMac
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmacok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMacOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMac
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasmac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasMac
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxrxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMaxRxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxrxrateok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMaxRxRateOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmaxrxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMaxRxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasmaxrxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasMaxRxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxtxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMaxTxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxtxrateok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMaxTxRateOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmaxtxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMaxTxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasmaxtxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasMaxTxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmirroredports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMirroredPorts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmirroredportsok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMirroredPortsOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmirroredports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMirroredPorts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasmirroredports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasMirroredPorts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmodeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetModeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasMode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetName
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnameok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetNameOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetName
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasName
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnettype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetNetType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getnettypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetNetTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setnettype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetNetType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasnettype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasNetType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getonlinedetection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetOnlineDetection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getonlinedetectionok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetOnlineDetectionOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setonlinedetection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetOnlineDetection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasonlinedetection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasOnlineDetection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getphysicaltype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPhysicalType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getphysicaltypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPhysicalTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setphysicaltype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPhysicalType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasphysicaltype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasPhysicalType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPoe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpoeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPoeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPoe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haspoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasPoe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpoepower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPoePower
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpoepowerok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPoePowerOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpoepower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPoePower
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haspoepower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasPoePower
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPort
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getportok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPortOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPort
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasPort
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getportdesc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPortDesc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getportdescok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPortDescOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setportdesc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPortDesc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasportdesc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasPortDesc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getproto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetProto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getprotook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetProtoOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setproto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetProto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasproto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasProto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getroamingstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRoamingStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getroamingstatusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRoamingStatusOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setroamingstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRoamingStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasroamingstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRoamingStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrsrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRsrp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrsrpok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRsrpOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrsrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRsrp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrsrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRsrp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrsrq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRsrq
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrsrqok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRsrqOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrsrq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRsrq
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrsrq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRsrq
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxerrorpkts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxErrorPkts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxerrorpktsok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxErrorPktsOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrxerrorpkts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRxErrorPkts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrxerrorpkts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRxErrorPkts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxlineattenuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxLineAttenuation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxlineattenuationok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxLineAttenuationOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrxlineattenuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRxLineAttenuation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrxlineattenuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRxLineAttenuation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxpkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxPkt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxpktok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxPktOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrxpkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRxPkt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrxpkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRxPkt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxpktrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxPktRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxpktrateok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxPktRateOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrxpktrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRxPktRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrxpktrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRxPktRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxrateok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxRateOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxsnrmargin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxSnrMargin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxsnrmarginok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxSnrMarginOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrxsnrmargin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRxSnrMargin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrxsnrmargin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRxSnrMargin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxtrainingrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxTrainingRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrxtrainingrateok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetRxTrainingRateOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrxtrainingrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetRxTrainingRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasrxtrainingrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasRxTrainingRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSignal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignalok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSignalOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsignal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetSignal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hassignal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasSignal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsimcardused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSimCardUsed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsimcardusedok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSimCardUsedOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsimcardused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetSimCardUsed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hassimcardused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasSimCardUsed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsmsoperator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSmsOperator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsmsoperatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSmsOperatorOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsmsoperator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetSmsOperator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hassmsoperator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasSmsOperator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsnr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSnr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsnrok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSnrOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsnr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetSnr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hassnr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasSnr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getspeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSpeed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getspeedok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSpeedOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setspeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetSpeed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasspeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasSpeed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstatusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetStatusOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsupportsms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSupportSms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsupportsmsok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetSupportSmsOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsupportsms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetSupportSms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hassupportsms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasSupportSms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettotaldata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTotalData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettotaldataok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTotalDataOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settotaldata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTotalData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastotaldata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTotalData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettrafficstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTrafficStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettrafficstatusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTrafficStatusOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settrafficstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTrafficStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastrafficstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTrafficStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxerrorpkts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxErrorPkts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxerrorpktsok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxErrorPktsOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settxerrorpkts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTxErrorPkts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastxerrorpkts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTxErrorPkts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxlineattenuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxLineAttenuation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxlineattenuationok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxLineAttenuationOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settxlineattenuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTxLineAttenuation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastxlineattenuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTxLineAttenuation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxpkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxPkt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxpktok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxPktOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settxpkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTxPkt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastxpkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTxPkt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxpktrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxPktRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxpktrateok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxPktRateOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settxpktrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTxPktRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastxpktrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTxPktRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxrateok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxRateOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastxrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTxRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxsnrmargin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxSnrMargin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxsnrmarginok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxSnrMarginOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settxsnrmargin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTxSnrMargin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastxsnrmargin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTxSnrMargin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxtrainingrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxTrainingRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettxtrainingrateok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTxTrainingRateOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settxtrainingrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTxTrainingRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastxtrainingrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasTxTrainingRate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettypeok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTypeOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hastype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwanipv6comptent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWanIpv6Comptent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwanipv6comptentok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWanIpv6ComptentOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwanipv6comptent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetWanIpv6Comptent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haswanipv6comptent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasWanIpv6Comptent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwanportipv4config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWanPortIpv4Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwanportipv4configok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWanPortIpv4ConfigOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwanportipv4config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetWanPortIpv4Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haswanportipv4config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasWanPortIpv4Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwanportipv6config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWanPortIpv6Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwanportipv6configok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWanPortIpv6ConfigOk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setwanportipv6config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetWanPortIpv6Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haswanportipv6config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HasWanPortIpv6Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="osgportstatvo">OsgPortStatVO</h1>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AnnexType</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Band</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>CardStatus</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>ChargeMode</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>DataUsage</strong></td>
+<td>Pointer to <strong>float32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>DslModulationType</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Duplex</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Port duplex, 1-”Half”，2-“Full”</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>HealthLevel</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Wan health level</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>InternetState</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Wan internet state, 0-disconnected; 1-connected;</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>InternetStatus</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Ip</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Ip</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Ip2</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Ip2</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Isp</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>IspVersion</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Latency</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Wan latency, when mode is wan and device is connected, Unit: ms</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>LineStatus</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Loss</strong></td>
+<td>Pointer to <strong>float64</strong></td>
+<td>Wan packet loss rate, Unit : %</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Mac</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Port mac</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>MaxRxRate</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>MaxTxRate</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>MirroredPorts</strong></td>
+<td>Pointer to <a href="../MirroredPort/"><strong>[]MirroredPort</strong></a></td>
+<td>Mirrored ports</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Mode</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Port mode, 0:WAN,1:LAN;</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Port name</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>NetType</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>OnlineDetection</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>PhysicalType</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Poe</strong></td>
+<td>Pointer to <strong>bool</strong></td>
+<td>Port poe power supply, 1 for active, 0 or null for not</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>PoePower</strong></td>
+<td>Pointer to <strong>float64</strong></td>
+<td>Port poe power</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Port serial number</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>PortDesc</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>Port description</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Proto</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td>WAN IPv4 connection type, it supports Static IP, DHCP, PPPoE, L2TP, PPTP, DS-Lite, and MAP-E.</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RoamingStatus</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Rsrp</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Rsrq</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Rx</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Port total rx bytes</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RxErrorPkts</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RxLineAttenuation</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RxPkt</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Port total rx packets</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RxPktRate</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Port rx Packet rate, Unit: Pkt/s;</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RxRate</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Port rx rate, Unit: KB/s;</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RxSnrMargin</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>RxTrainingRate</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Signal</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>SimCardUsed</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>SmsOperator</strong></td>
+<td>Pointer to <strong>string</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Snr</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Speed</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Port speed, 1-“10M”，2-“100M”，3-“1000M”</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Port status, 0-disconnected; 1-connected;</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>SupportSms</strong></td>
+<td>Pointer to <strong>bool</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TotalData</strong></td>
+<td>Pointer to <strong>float32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TrafficStatus</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Tx</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Port total tx bytes</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TxErrorPkts</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TxLineAttenuation</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TxPkt</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Port total tx packets</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TxPktRate</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Port tx packet rate, Unit: Pkt/s;</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TxRate</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td>Port tx rate, Unit: KB/s;</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TxSnrMargin</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>TxTrainingRate</strong></td>
+<td>Pointer to <strong>int64</strong></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Port type, 0:WAN,1:WAN/LAN,2:LAN;</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>WanIpv6Comptent</strong></td>
+<td>Pointer to <strong>int32</strong></td>
+<td>Gateway wan ipv6 component version</td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>WanPortIpv4Config</strong></td>
+<td>Pointer to <a href="../OsgWanPortIpv4ConfigVO/"><strong>OsgWanPortIpv4ConfigVO</strong></a></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+<tr>
+<td><strong>WanPortIpv6Config</strong></td>
+<td>Pointer to <a href="../OsgWanPortIpv6ConfigVO/"><strong>OsgWanPortIpv6ConfigVO</strong></a></td>
+<td></td>
+<td>[optional]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<h3 id="newosgportstatvo">NewOsgPortStatVO</h3>
+<p><code>func NewOsgPortStatVO() *OsgPortStatVO</code></p>
+<p>NewOsgPortStatVO instantiates a new OsgPortStatVO object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed</p>
+<h3 id="newosgportstatvowithdefaults">NewOsgPortStatVOWithDefaults</h3>
+<p><code>func NewOsgPortStatVOWithDefaults() *OsgPortStatVO</code></p>
+<p>NewOsgPortStatVOWithDefaults instantiates a new OsgPortStatVO object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set</p>
+<h3 id="getannextype">GetAnnexType</h3>
+<p><code>func (o *OsgPortStatVO) GetAnnexType() int32</code></p>
+<p>GetAnnexType returns the AnnexType field if non-nil, zero value otherwise.</p>
+<h3 id="getannextypeok">GetAnnexTypeOk</h3>
+<p><code>func (o *OsgPortStatVO) GetAnnexTypeOk() (*int32, bool)</code></p>
+<p>GetAnnexTypeOk returns a tuple with the AnnexType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setannextype">SetAnnexType</h3>
+<p><code>func (o *OsgPortStatVO) SetAnnexType(v int32)</code></p>
+<p>SetAnnexType sets AnnexType field to given value.</p>
+<h3 id="hasannextype">HasAnnexType</h3>
+<p><code>func (o *OsgPortStatVO) HasAnnexType() bool</code></p>
+<p>HasAnnexType returns a boolean if a field has been set.</p>
+<h3 id="getband">GetBand</h3>
+<p><code>func (o *OsgPortStatVO) GetBand() string</code></p>
+<p>GetBand returns the Band field if non-nil, zero value otherwise.</p>
+<h3 id="getbandok">GetBandOk</h3>
+<p><code>func (o *OsgPortStatVO) GetBandOk() (*string, bool)</code></p>
+<p>GetBandOk returns a tuple with the Band field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setband">SetBand</h3>
+<p><code>func (o *OsgPortStatVO) SetBand(v string)</code></p>
+<p>SetBand sets Band field to given value.</p>
+<h3 id="hasband">HasBand</h3>
+<p><code>func (o *OsgPortStatVO) HasBand() bool</code></p>
+<p>HasBand returns a boolean if a field has been set.</p>
+<h3 id="getcardstatus">GetCardStatus</h3>
+<p><code>func (o *OsgPortStatVO) GetCardStatus() int32</code></p>
+<p>GetCardStatus returns the CardStatus field if non-nil, zero value otherwise.</p>
+<h3 id="getcardstatusok">GetCardStatusOk</h3>
+<p><code>func (o *OsgPortStatVO) GetCardStatusOk() (*int32, bool)</code></p>
+<p>GetCardStatusOk returns a tuple with the CardStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setcardstatus">SetCardStatus</h3>
+<p><code>func (o *OsgPortStatVO) SetCardStatus(v int32)</code></p>
+<p>SetCardStatus sets CardStatus field to given value.</p>
+<h3 id="hascardstatus">HasCardStatus</h3>
+<p><code>func (o *OsgPortStatVO) HasCardStatus() bool</code></p>
+<p>HasCardStatus returns a boolean if a field has been set.</p>
+<h3 id="getchargemode">GetChargeMode</h3>
+<p><code>func (o *OsgPortStatVO) GetChargeMode() int32</code></p>
+<p>GetChargeMode returns the ChargeMode field if non-nil, zero value otherwise.</p>
+<h3 id="getchargemodeok">GetChargeModeOk</h3>
+<p><code>func (o *OsgPortStatVO) GetChargeModeOk() (*int32, bool)</code></p>
+<p>GetChargeModeOk returns a tuple with the ChargeMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setchargemode">SetChargeMode</h3>
+<p><code>func (o *OsgPortStatVO) SetChargeMode(v int32)</code></p>
+<p>SetChargeMode sets ChargeMode field to given value.</p>
+<h3 id="haschargemode">HasChargeMode</h3>
+<p><code>func (o *OsgPortStatVO) HasChargeMode() bool</code></p>
+<p>HasChargeMode returns a boolean if a field has been set.</p>
+<h3 id="getdatausage">GetDataUsage</h3>
+<p><code>func (o *OsgPortStatVO) GetDataUsage() float32</code></p>
+<p>GetDataUsage returns the DataUsage field if non-nil, zero value otherwise.</p>
+<h3 id="getdatausageok">GetDataUsageOk</h3>
+<p><code>func (o *OsgPortStatVO) GetDataUsageOk() (*float32, bool)</code></p>
+<p>GetDataUsageOk returns a tuple with the DataUsage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setdatausage">SetDataUsage</h3>
+<p><code>func (o *OsgPortStatVO) SetDataUsage(v float32)</code></p>
+<p>SetDataUsage sets DataUsage field to given value.</p>
+<h3 id="hasdatausage">HasDataUsage</h3>
+<p><code>func (o *OsgPortStatVO) HasDataUsage() bool</code></p>
+<p>HasDataUsage returns a boolean if a field has been set.</p>
+<h3 id="getdslmodulationtype">GetDslModulationType</h3>
+<p><code>func (o *OsgPortStatVO) GetDslModulationType() int32</code></p>
+<p>GetDslModulationType returns the DslModulationType field if non-nil, zero value otherwise.</p>
+<h3 id="getdslmodulationtypeok">GetDslModulationTypeOk</h3>
+<p><code>func (o *OsgPortStatVO) GetDslModulationTypeOk() (*int32, bool)</code></p>
+<p>GetDslModulationTypeOk returns a tuple with the DslModulationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setdslmodulationtype">SetDslModulationType</h3>
+<p><code>func (o *OsgPortStatVO) SetDslModulationType(v int32)</code></p>
+<p>SetDslModulationType sets DslModulationType field to given value.</p>
+<h3 id="hasdslmodulationtype">HasDslModulationType</h3>
+<p><code>func (o *OsgPortStatVO) HasDslModulationType() bool</code></p>
+<p>HasDslModulationType returns a boolean if a field has been set.</p>
+<h3 id="getduplex">GetDuplex</h3>
+<p><code>func (o *OsgPortStatVO) GetDuplex() int32</code></p>
+<p>GetDuplex returns the Duplex field if non-nil, zero value otherwise.</p>
+<h3 id="getduplexok">GetDuplexOk</h3>
+<p><code>func (o *OsgPortStatVO) GetDuplexOk() (*int32, bool)</code></p>
+<p>GetDuplexOk returns a tuple with the Duplex field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setduplex">SetDuplex</h3>
+<p><code>func (o *OsgPortStatVO) SetDuplex(v int32)</code></p>
+<p>SetDuplex sets Duplex field to given value.</p>
+<h3 id="hasduplex">HasDuplex</h3>
+<p><code>func (o *OsgPortStatVO) HasDuplex() bool</code></p>
+<p>HasDuplex returns a boolean if a field has been set.</p>
+<h3 id="gethealthlevel">GetHealthLevel</h3>
+<p><code>func (o *OsgPortStatVO) GetHealthLevel() int32</code></p>
+<p>GetHealthLevel returns the HealthLevel field if non-nil, zero value otherwise.</p>
+<h3 id="gethealthlevelok">GetHealthLevelOk</h3>
+<p><code>func (o *OsgPortStatVO) GetHealthLevelOk() (*int32, bool)</code></p>
+<p>GetHealthLevelOk returns a tuple with the HealthLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="sethealthlevel">SetHealthLevel</h3>
+<p><code>func (o *OsgPortStatVO) SetHealthLevel(v int32)</code></p>
+<p>SetHealthLevel sets HealthLevel field to given value.</p>
+<h3 id="hashealthlevel">HasHealthLevel</h3>
+<p><code>func (o *OsgPortStatVO) HasHealthLevel() bool</code></p>
+<p>HasHealthLevel returns a boolean if a field has been set.</p>
+<h3 id="getinternetstate">GetInternetState</h3>
+<p><code>func (o *OsgPortStatVO) GetInternetState() int32</code></p>
+<p>GetInternetState returns the InternetState field if non-nil, zero value otherwise.</p>
+<h3 id="getinternetstateok">GetInternetStateOk</h3>
+<p><code>func (o *OsgPortStatVO) GetInternetStateOk() (*int32, bool)</code></p>
+<p>GetInternetStateOk returns a tuple with the InternetState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setinternetstate">SetInternetState</h3>
+<p><code>func (o *OsgPortStatVO) SetInternetState(v int32)</code></p>
+<p>SetInternetState sets InternetState field to given value.</p>
+<h3 id="hasinternetstate">HasInternetState</h3>
+<p><code>func (o *OsgPortStatVO) HasInternetState() bool</code></p>
+<p>HasInternetState returns a boolean if a field has been set.</p>
+<h3 id="getinternetstatus">GetInternetStatus</h3>
+<p><code>func (o *OsgPortStatVO) GetInternetStatus() int32</code></p>
+<p>GetInternetStatus returns the InternetStatus field if non-nil, zero value otherwise.</p>
+<h3 id="getinternetstatusok">GetInternetStatusOk</h3>
+<p><code>func (o *OsgPortStatVO) GetInternetStatusOk() (*int32, bool)</code></p>
+<p>GetInternetStatusOk returns a tuple with the InternetStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setinternetstatus">SetInternetStatus</h3>
+<p><code>func (o *OsgPortStatVO) SetInternetStatus(v int32)</code></p>
+<p>SetInternetStatus sets InternetStatus field to given value.</p>
+<h3 id="hasinternetstatus">HasInternetStatus</h3>
+<p><code>func (o *OsgPortStatVO) HasInternetStatus() bool</code></p>
+<p>HasInternetStatus returns a boolean if a field has been set.</p>
+<h3 id="getip">GetIp</h3>
+<p><code>func (o *OsgPortStatVO) GetIp() string</code></p>
+<p>GetIp returns the Ip field if non-nil, zero value otherwise.</p>
+<h3 id="getipok">GetIpOk</h3>
+<p><code>func (o *OsgPortStatVO) GetIpOk() (*string, bool)</code></p>
+<p>GetIpOk returns a tuple with the Ip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setip">SetIp</h3>
+<p><code>func (o *OsgPortStatVO) SetIp(v string)</code></p>
+<p>SetIp sets Ip field to given value.</p>
+<h3 id="hasip">HasIp</h3>
+<p><code>func (o *OsgPortStatVO) HasIp() bool</code></p>
+<p>HasIp returns a boolean if a field has been set.</p>
+<h3 id="getip2">GetIp2</h3>
+<p><code>func (o *OsgPortStatVO) GetIp2() string</code></p>
+<p>GetIp2 returns the Ip2 field if non-nil, zero value otherwise.</p>
+<h3 id="getip2ok">GetIp2Ok</h3>
+<p><code>func (o *OsgPortStatVO) GetIp2Ok() (*string, bool)</code></p>
+<p>GetIp2Ok returns a tuple with the Ip2 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setip2">SetIp2</h3>
+<p><code>func (o *OsgPortStatVO) SetIp2(v string)</code></p>
+<p>SetIp2 sets Ip2 field to given value.</p>
+<h3 id="hasip2">HasIp2</h3>
+<p><code>func (o *OsgPortStatVO) HasIp2() bool</code></p>
+<p>HasIp2 returns a boolean if a field has been set.</p>
+<h3 id="getisp">GetIsp</h3>
+<p><code>func (o *OsgPortStatVO) GetIsp() string</code></p>
+<p>GetIsp returns the Isp field if non-nil, zero value otherwise.</p>
+<h3 id="getispok">GetIspOk</h3>
+<p><code>func (o *OsgPortStatVO) GetIspOk() (*string, bool)</code></p>
+<p>GetIspOk returns a tuple with the Isp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setisp">SetIsp</h3>
+<p><code>func (o *OsgPortStatVO) SetIsp(v string)</code></p>
+<p>SetIsp sets Isp field to given value.</p>
+<h3 id="hasisp">HasIsp</h3>
+<p><code>func (o *OsgPortStatVO) HasIsp() bool</code></p>
+<p>HasIsp returns a boolean if a field has been set.</p>
+<h3 id="getispversion">GetIspVersion</h3>
+<p><code>func (o *OsgPortStatVO) GetIspVersion() string</code></p>
+<p>GetIspVersion returns the IspVersion field if non-nil, zero value otherwise.</p>
+<h3 id="getispversionok">GetIspVersionOk</h3>
+<p><code>func (o *OsgPortStatVO) GetIspVersionOk() (*string, bool)</code></p>
+<p>GetIspVersionOk returns a tuple with the IspVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setispversion">SetIspVersion</h3>
+<p><code>func (o *OsgPortStatVO) SetIspVersion(v string)</code></p>
+<p>SetIspVersion sets IspVersion field to given value.</p>
+<h3 id="hasispversion">HasIspVersion</h3>
+<p><code>func (o *OsgPortStatVO) HasIspVersion() bool</code></p>
+<p>HasIspVersion returns a boolean if a field has been set.</p>
+<h3 id="getlatency">GetLatency</h3>
+<p><code>func (o *OsgPortStatVO) GetLatency() int32</code></p>
+<p>GetLatency returns the Latency field if non-nil, zero value otherwise.</p>
+<h3 id="getlatencyok">GetLatencyOk</h3>
+<p><code>func (o *OsgPortStatVO) GetLatencyOk() (*int32, bool)</code></p>
+<p>GetLatencyOk returns a tuple with the Latency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setlatency">SetLatency</h3>
+<p><code>func (o *OsgPortStatVO) SetLatency(v int32)</code></p>
+<p>SetLatency sets Latency field to given value.</p>
+<h3 id="haslatency">HasLatency</h3>
+<p><code>func (o *OsgPortStatVO) HasLatency() bool</code></p>
+<p>HasLatency returns a boolean if a field has been set.</p>
+<h3 id="getlinestatus">GetLineStatus</h3>
+<p><code>func (o *OsgPortStatVO) GetLineStatus() int32</code></p>
+<p>GetLineStatus returns the LineStatus field if non-nil, zero value otherwise.</p>
+<h3 id="getlinestatusok">GetLineStatusOk</h3>
+<p><code>func (o *OsgPortStatVO) GetLineStatusOk() (*int32, bool)</code></p>
+<p>GetLineStatusOk returns a tuple with the LineStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setlinestatus">SetLineStatus</h3>
+<p><code>func (o *OsgPortStatVO) SetLineStatus(v int32)</code></p>
+<p>SetLineStatus sets LineStatus field to given value.</p>
+<h3 id="haslinestatus">HasLineStatus</h3>
+<p><code>func (o *OsgPortStatVO) HasLineStatus() bool</code></p>
+<p>HasLineStatus returns a boolean if a field has been set.</p>
+<h3 id="getloss">GetLoss</h3>
+<p><code>func (o *OsgPortStatVO) GetLoss() float64</code></p>
+<p>GetLoss returns the Loss field if non-nil, zero value otherwise.</p>
+<h3 id="getlossok">GetLossOk</h3>
+<p><code>func (o *OsgPortStatVO) GetLossOk() (*float64, bool)</code></p>
+<p>GetLossOk returns a tuple with the Loss field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setloss">SetLoss</h3>
+<p><code>func (o *OsgPortStatVO) SetLoss(v float64)</code></p>
+<p>SetLoss sets Loss field to given value.</p>
+<h3 id="hasloss">HasLoss</h3>
+<p><code>func (o *OsgPortStatVO) HasLoss() bool</code></p>
+<p>HasLoss returns a boolean if a field has been set.</p>
+<h3 id="getmac">GetMac</h3>
+<p><code>func (o *OsgPortStatVO) GetMac() string</code></p>
+<p>GetMac returns the Mac field if non-nil, zero value otherwise.</p>
+<h3 id="getmacok">GetMacOk</h3>
+<p><code>func (o *OsgPortStatVO) GetMacOk() (*string, bool)</code></p>
+<p>GetMacOk returns a tuple with the Mac field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setmac">SetMac</h3>
+<p><code>func (o *OsgPortStatVO) SetMac(v string)</code></p>
+<p>SetMac sets Mac field to given value.</p>
+<h3 id="hasmac">HasMac</h3>
+<p><code>func (o *OsgPortStatVO) HasMac() bool</code></p>
+<p>HasMac returns a boolean if a field has been set.</p>
+<h3 id="getmaxrxrate">GetMaxRxRate</h3>
+<p><code>func (o *OsgPortStatVO) GetMaxRxRate() int64</code></p>
+<p>GetMaxRxRate returns the MaxRxRate field if non-nil, zero value otherwise.</p>
+<h3 id="getmaxrxrateok">GetMaxRxRateOk</h3>
+<p><code>func (o *OsgPortStatVO) GetMaxRxRateOk() (*int64, bool)</code></p>
+<p>GetMaxRxRateOk returns a tuple with the MaxRxRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setmaxrxrate">SetMaxRxRate</h3>
+<p><code>func (o *OsgPortStatVO) SetMaxRxRate(v int64)</code></p>
+<p>SetMaxRxRate sets MaxRxRate field to given value.</p>
+<h3 id="hasmaxrxrate">HasMaxRxRate</h3>
+<p><code>func (o *OsgPortStatVO) HasMaxRxRate() bool</code></p>
+<p>HasMaxRxRate returns a boolean if a field has been set.</p>
+<h3 id="getmaxtxrate">GetMaxTxRate</h3>
+<p><code>func (o *OsgPortStatVO) GetMaxTxRate() int64</code></p>
+<p>GetMaxTxRate returns the MaxTxRate field if non-nil, zero value otherwise.</p>
+<h3 id="getmaxtxrateok">GetMaxTxRateOk</h3>
+<p><code>func (o *OsgPortStatVO) GetMaxTxRateOk() (*int64, bool)</code></p>
+<p>GetMaxTxRateOk returns a tuple with the MaxTxRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setmaxtxrate">SetMaxTxRate</h3>
+<p><code>func (o *OsgPortStatVO) SetMaxTxRate(v int64)</code></p>
+<p>SetMaxTxRate sets MaxTxRate field to given value.</p>
+<h3 id="hasmaxtxrate">HasMaxTxRate</h3>
+<p><code>func (o *OsgPortStatVO) HasMaxTxRate() bool</code></p>
+<p>HasMaxTxRate returns a boolean if a field has been set.</p>
+<h3 id="getmirroredports">GetMirroredPorts</h3>
+<p><code>func (o *OsgPortStatVO) GetMirroredPorts() []MirroredPort</code></p>
+<p>GetMirroredPorts returns the MirroredPorts field if non-nil, zero value otherwise.</p>
+<h3 id="getmirroredportsok">GetMirroredPortsOk</h3>
+<p><code>func (o *OsgPortStatVO) GetMirroredPortsOk() (*[]MirroredPort, bool)</code></p>
+<p>GetMirroredPortsOk returns a tuple with the MirroredPorts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setmirroredports">SetMirroredPorts</h3>
+<p><code>func (o *OsgPortStatVO) SetMirroredPorts(v []MirroredPort)</code></p>
+<p>SetMirroredPorts sets MirroredPorts field to given value.</p>
+<h3 id="hasmirroredports">HasMirroredPorts</h3>
+<p><code>func (o *OsgPortStatVO) HasMirroredPorts() bool</code></p>
+<p>HasMirroredPorts returns a boolean if a field has been set.</p>
+<h3 id="getmode">GetMode</h3>
+<p><code>func (o *OsgPortStatVO) GetMode() int32</code></p>
+<p>GetMode returns the Mode field if non-nil, zero value otherwise.</p>
+<h3 id="getmodeok">GetModeOk</h3>
+<p><code>func (o *OsgPortStatVO) GetModeOk() (*int32, bool)</code></p>
+<p>GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setmode">SetMode</h3>
+<p><code>func (o *OsgPortStatVO) SetMode(v int32)</code></p>
+<p>SetMode sets Mode field to given value.</p>
+<h3 id="hasmode">HasMode</h3>
+<p><code>func (o *OsgPortStatVO) HasMode() bool</code></p>
+<p>HasMode returns a boolean if a field has been set.</p>
+<h3 id="getname">GetName</h3>
+<p><code>func (o *OsgPortStatVO) GetName() string</code></p>
+<p>GetName returns the Name field if non-nil, zero value otherwise.</p>
+<h3 id="getnameok">GetNameOk</h3>
+<p><code>func (o *OsgPortStatVO) GetNameOk() (*string, bool)</code></p>
+<p>GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setname">SetName</h3>
+<p><code>func (o *OsgPortStatVO) SetName(v string)</code></p>
+<p>SetName sets Name field to given value.</p>
+<h3 id="hasname">HasName</h3>
+<p><code>func (o *OsgPortStatVO) HasName() bool</code></p>
+<p>HasName returns a boolean if a field has been set.</p>
+<h3 id="getnettype">GetNetType</h3>
+<p><code>func (o *OsgPortStatVO) GetNetType() int32</code></p>
+<p>GetNetType returns the NetType field if non-nil, zero value otherwise.</p>
+<h3 id="getnettypeok">GetNetTypeOk</h3>
+<p><code>func (o *OsgPortStatVO) GetNetTypeOk() (*int32, bool)</code></p>
+<p>GetNetTypeOk returns a tuple with the NetType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setnettype">SetNetType</h3>
+<p><code>func (o *OsgPortStatVO) SetNetType(v int32)</code></p>
+<p>SetNetType sets NetType field to given value.</p>
+<h3 id="hasnettype">HasNetType</h3>
+<p><code>func (o *OsgPortStatVO) HasNetType() bool</code></p>
+<p>HasNetType returns a boolean if a field has been set.</p>
+<h3 id="getonlinedetection">GetOnlineDetection</h3>
+<p><code>func (o *OsgPortStatVO) GetOnlineDetection() int32</code></p>
+<p>GetOnlineDetection returns the OnlineDetection field if non-nil, zero value otherwise.</p>
+<h3 id="getonlinedetectionok">GetOnlineDetectionOk</h3>
+<p><code>func (o *OsgPortStatVO) GetOnlineDetectionOk() (*int32, bool)</code></p>
+<p>GetOnlineDetectionOk returns a tuple with the OnlineDetection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setonlinedetection">SetOnlineDetection</h3>
+<p><code>func (o *OsgPortStatVO) SetOnlineDetection(v int32)</code></p>
+<p>SetOnlineDetection sets OnlineDetection field to given value.</p>
+<h3 id="hasonlinedetection">HasOnlineDetection</h3>
+<p><code>func (o *OsgPortStatVO) HasOnlineDetection() bool</code></p>
+<p>HasOnlineDetection returns a boolean if a field has been set.</p>
+<h3 id="getphysicaltype">GetPhysicalType</h3>
+<p><code>func (o *OsgPortStatVO) GetPhysicalType() int32</code></p>
+<p>GetPhysicalType returns the PhysicalType field if non-nil, zero value otherwise.</p>
+<h3 id="getphysicaltypeok">GetPhysicalTypeOk</h3>
+<p><code>func (o *OsgPortStatVO) GetPhysicalTypeOk() (*int32, bool)</code></p>
+<p>GetPhysicalTypeOk returns a tuple with the PhysicalType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setphysicaltype">SetPhysicalType</h3>
+<p><code>func (o *OsgPortStatVO) SetPhysicalType(v int32)</code></p>
+<p>SetPhysicalType sets PhysicalType field to given value.</p>
+<h3 id="hasphysicaltype">HasPhysicalType</h3>
+<p><code>func (o *OsgPortStatVO) HasPhysicalType() bool</code></p>
+<p>HasPhysicalType returns a boolean if a field has been set.</p>
+<h3 id="getpoe">GetPoe</h3>
+<p><code>func (o *OsgPortStatVO) GetPoe() bool</code></p>
+<p>GetPoe returns the Poe field if non-nil, zero value otherwise.</p>
+<h3 id="getpoeok">GetPoeOk</h3>
+<p><code>func (o *OsgPortStatVO) GetPoeOk() (*bool, bool)</code></p>
+<p>GetPoeOk returns a tuple with the Poe field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setpoe">SetPoe</h3>
+<p><code>func (o *OsgPortStatVO) SetPoe(v bool)</code></p>
+<p>SetPoe sets Poe field to given value.</p>
+<h3 id="haspoe">HasPoe</h3>
+<p><code>func (o *OsgPortStatVO) HasPoe() bool</code></p>
+<p>HasPoe returns a boolean if a field has been set.</p>
+<h3 id="getpoepower">GetPoePower</h3>
+<p><code>func (o *OsgPortStatVO) GetPoePower() float64</code></p>
+<p>GetPoePower returns the PoePower field if non-nil, zero value otherwise.</p>
+<h3 id="getpoepowerok">GetPoePowerOk</h3>
+<p><code>func (o *OsgPortStatVO) GetPoePowerOk() (*float64, bool)</code></p>
+<p>GetPoePowerOk returns a tuple with the PoePower field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setpoepower">SetPoePower</h3>
+<p><code>func (o *OsgPortStatVO) SetPoePower(v float64)</code></p>
+<p>SetPoePower sets PoePower field to given value.</p>
+<h3 id="haspoepower">HasPoePower</h3>
+<p><code>func (o *OsgPortStatVO) HasPoePower() bool</code></p>
+<p>HasPoePower returns a boolean if a field has been set.</p>
+<h3 id="getport">GetPort</h3>
+<p><code>func (o *OsgPortStatVO) GetPort() int32</code></p>
+<p>GetPort returns the Port field if non-nil, zero value otherwise.</p>
+<h3 id="getportok">GetPortOk</h3>
+<p><code>func (o *OsgPortStatVO) GetPortOk() (*int32, bool)</code></p>
+<p>GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setport">SetPort</h3>
+<p><code>func (o *OsgPortStatVO) SetPort(v int32)</code></p>
+<p>SetPort sets Port field to given value.</p>
+<h3 id="hasport">HasPort</h3>
+<p><code>func (o *OsgPortStatVO) HasPort() bool</code></p>
+<p>HasPort returns a boolean if a field has been set.</p>
+<h3 id="getportdesc">GetPortDesc</h3>
+<p><code>func (o *OsgPortStatVO) GetPortDesc() string</code></p>
+<p>GetPortDesc returns the PortDesc field if non-nil, zero value otherwise.</p>
+<h3 id="getportdescok">GetPortDescOk</h3>
+<p><code>func (o *OsgPortStatVO) GetPortDescOk() (*string, bool)</code></p>
+<p>GetPortDescOk returns a tuple with the PortDesc field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setportdesc">SetPortDesc</h3>
+<p><code>func (o *OsgPortStatVO) SetPortDesc(v string)</code></p>
+<p>SetPortDesc sets PortDesc field to given value.</p>
+<h3 id="hasportdesc">HasPortDesc</h3>
+<p><code>func (o *OsgPortStatVO) HasPortDesc() bool</code></p>
+<p>HasPortDesc returns a boolean if a field has been set.</p>
+<h3 id="getproto">GetProto</h3>
+<p><code>func (o *OsgPortStatVO) GetProto() string</code></p>
+<p>GetProto returns the Proto field if non-nil, zero value otherwise.</p>
+<h3 id="getprotook">GetProtoOk</h3>
+<p><code>func (o *OsgPortStatVO) GetProtoOk() (*string, bool)</code></p>
+<p>GetProtoOk returns a tuple with the Proto field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setproto">SetProto</h3>
+<p><code>func (o *OsgPortStatVO) SetProto(v string)</code></p>
+<p>SetProto sets Proto field to given value.</p>
+<h3 id="hasproto">HasProto</h3>
+<p><code>func (o *OsgPortStatVO) HasProto() bool</code></p>
+<p>HasProto returns a boolean if a field has been set.</p>
+<h3 id="getroamingstatus">GetRoamingStatus</h3>
+<p><code>func (o *OsgPortStatVO) GetRoamingStatus() int32</code></p>
+<p>GetRoamingStatus returns the RoamingStatus field if non-nil, zero value otherwise.</p>
+<h3 id="getroamingstatusok">GetRoamingStatusOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRoamingStatusOk() (*int32, bool)</code></p>
+<p>GetRoamingStatusOk returns a tuple with the RoamingStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setroamingstatus">SetRoamingStatus</h3>
+<p><code>func (o *OsgPortStatVO) SetRoamingStatus(v int32)</code></p>
+<p>SetRoamingStatus sets RoamingStatus field to given value.</p>
+<h3 id="hasroamingstatus">HasRoamingStatus</h3>
+<p><code>func (o *OsgPortStatVO) HasRoamingStatus() bool</code></p>
+<p>HasRoamingStatus returns a boolean if a field has been set.</p>
+<h3 id="getrsrp">GetRsrp</h3>
+<p><code>func (o *OsgPortStatVO) GetRsrp() int32</code></p>
+<p>GetRsrp returns the Rsrp field if non-nil, zero value otherwise.</p>
+<h3 id="getrsrpok">GetRsrpOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRsrpOk() (*int32, bool)</code></p>
+<p>GetRsrpOk returns a tuple with the Rsrp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrsrp">SetRsrp</h3>
+<p><code>func (o *OsgPortStatVO) SetRsrp(v int32)</code></p>
+<p>SetRsrp sets Rsrp field to given value.</p>
+<h3 id="hasrsrp">HasRsrp</h3>
+<p><code>func (o *OsgPortStatVO) HasRsrp() bool</code></p>
+<p>HasRsrp returns a boolean if a field has been set.</p>
+<h3 id="getrsrq">GetRsrq</h3>
+<p><code>func (o *OsgPortStatVO) GetRsrq() int32</code></p>
+<p>GetRsrq returns the Rsrq field if non-nil, zero value otherwise.</p>
+<h3 id="getrsrqok">GetRsrqOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRsrqOk() (*int32, bool)</code></p>
+<p>GetRsrqOk returns a tuple with the Rsrq field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrsrq">SetRsrq</h3>
+<p><code>func (o *OsgPortStatVO) SetRsrq(v int32)</code></p>
+<p>SetRsrq sets Rsrq field to given value.</p>
+<h3 id="hasrsrq">HasRsrq</h3>
+<p><code>func (o *OsgPortStatVO) HasRsrq() bool</code></p>
+<p>HasRsrq returns a boolean if a field has been set.</p>
+<h3 id="getrx">GetRx</h3>
+<p><code>func (o *OsgPortStatVO) GetRx() int64</code></p>
+<p>GetRx returns the Rx field if non-nil, zero value otherwise.</p>
+<h3 id="getrxok">GetRxOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRxOk() (*int64, bool)</code></p>
+<p>GetRxOk returns a tuple with the Rx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrx">SetRx</h3>
+<p><code>func (o *OsgPortStatVO) SetRx(v int64)</code></p>
+<p>SetRx sets Rx field to given value.</p>
+<h3 id="hasrx">HasRx</h3>
+<p><code>func (o *OsgPortStatVO) HasRx() bool</code></p>
+<p>HasRx returns a boolean if a field has been set.</p>
+<h3 id="getrxerrorpkts">GetRxErrorPkts</h3>
+<p><code>func (o *OsgPortStatVO) GetRxErrorPkts() int64</code></p>
+<p>GetRxErrorPkts returns the RxErrorPkts field if non-nil, zero value otherwise.</p>
+<h3 id="getrxerrorpktsok">GetRxErrorPktsOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRxErrorPktsOk() (*int64, bool)</code></p>
+<p>GetRxErrorPktsOk returns a tuple with the RxErrorPkts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrxerrorpkts">SetRxErrorPkts</h3>
+<p><code>func (o *OsgPortStatVO) SetRxErrorPkts(v int64)</code></p>
+<p>SetRxErrorPkts sets RxErrorPkts field to given value.</p>
+<h3 id="hasrxerrorpkts">HasRxErrorPkts</h3>
+<p><code>func (o *OsgPortStatVO) HasRxErrorPkts() bool</code></p>
+<p>HasRxErrorPkts returns a boolean if a field has been set.</p>
+<h3 id="getrxlineattenuation">GetRxLineAttenuation</h3>
+<p><code>func (o *OsgPortStatVO) GetRxLineAttenuation() int64</code></p>
+<p>GetRxLineAttenuation returns the RxLineAttenuation field if non-nil, zero value otherwise.</p>
+<h3 id="getrxlineattenuationok">GetRxLineAttenuationOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRxLineAttenuationOk() (*int64, bool)</code></p>
+<p>GetRxLineAttenuationOk returns a tuple with the RxLineAttenuation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrxlineattenuation">SetRxLineAttenuation</h3>
+<p><code>func (o *OsgPortStatVO) SetRxLineAttenuation(v int64)</code></p>
+<p>SetRxLineAttenuation sets RxLineAttenuation field to given value.</p>
+<h3 id="hasrxlineattenuation">HasRxLineAttenuation</h3>
+<p><code>func (o *OsgPortStatVO) HasRxLineAttenuation() bool</code></p>
+<p>HasRxLineAttenuation returns a boolean if a field has been set.</p>
+<h3 id="getrxpkt">GetRxPkt</h3>
+<p><code>func (o *OsgPortStatVO) GetRxPkt() int64</code></p>
+<p>GetRxPkt returns the RxPkt field if non-nil, zero value otherwise.</p>
+<h3 id="getrxpktok">GetRxPktOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRxPktOk() (*int64, bool)</code></p>
+<p>GetRxPktOk returns a tuple with the RxPkt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrxpkt">SetRxPkt</h3>
+<p><code>func (o *OsgPortStatVO) SetRxPkt(v int64)</code></p>
+<p>SetRxPkt sets RxPkt field to given value.</p>
+<h3 id="hasrxpkt">HasRxPkt</h3>
+<p><code>func (o *OsgPortStatVO) HasRxPkt() bool</code></p>
+<p>HasRxPkt returns a boolean if a field has been set.</p>
+<h3 id="getrxpktrate">GetRxPktRate</h3>
+<p><code>func (o *OsgPortStatVO) GetRxPktRate() int64</code></p>
+<p>GetRxPktRate returns the RxPktRate field if non-nil, zero value otherwise.</p>
+<h3 id="getrxpktrateok">GetRxPktRateOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRxPktRateOk() (*int64, bool)</code></p>
+<p>GetRxPktRateOk returns a tuple with the RxPktRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrxpktrate">SetRxPktRate</h3>
+<p><code>func (o *OsgPortStatVO) SetRxPktRate(v int64)</code></p>
+<p>SetRxPktRate sets RxPktRate field to given value.</p>
+<h3 id="hasrxpktrate">HasRxPktRate</h3>
+<p><code>func (o *OsgPortStatVO) HasRxPktRate() bool</code></p>
+<p>HasRxPktRate returns a boolean if a field has been set.</p>
+<h3 id="getrxrate">GetRxRate</h3>
+<p><code>func (o *OsgPortStatVO) GetRxRate() int64</code></p>
+<p>GetRxRate returns the RxRate field if non-nil, zero value otherwise.</p>
+<h3 id="getrxrateok">GetRxRateOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRxRateOk() (*int64, bool)</code></p>
+<p>GetRxRateOk returns a tuple with the RxRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrxrate">SetRxRate</h3>
+<p><code>func (o *OsgPortStatVO) SetRxRate(v int64)</code></p>
+<p>SetRxRate sets RxRate field to given value.</p>
+<h3 id="hasrxrate">HasRxRate</h3>
+<p><code>func (o *OsgPortStatVO) HasRxRate() bool</code></p>
+<p>HasRxRate returns a boolean if a field has been set.</p>
+<h3 id="getrxsnrmargin">GetRxSnrMargin</h3>
+<p><code>func (o *OsgPortStatVO) GetRxSnrMargin() int64</code></p>
+<p>GetRxSnrMargin returns the RxSnrMargin field if non-nil, zero value otherwise.</p>
+<h3 id="getrxsnrmarginok">GetRxSnrMarginOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRxSnrMarginOk() (*int64, bool)</code></p>
+<p>GetRxSnrMarginOk returns a tuple with the RxSnrMargin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrxsnrmargin">SetRxSnrMargin</h3>
+<p><code>func (o *OsgPortStatVO) SetRxSnrMargin(v int64)</code></p>
+<p>SetRxSnrMargin sets RxSnrMargin field to given value.</p>
+<h3 id="hasrxsnrmargin">HasRxSnrMargin</h3>
+<p><code>func (o *OsgPortStatVO) HasRxSnrMargin() bool</code></p>
+<p>HasRxSnrMargin returns a boolean if a field has been set.</p>
+<h3 id="getrxtrainingrate">GetRxTrainingRate</h3>
+<p><code>func (o *OsgPortStatVO) GetRxTrainingRate() int64</code></p>
+<p>GetRxTrainingRate returns the RxTrainingRate field if non-nil, zero value otherwise.</p>
+<h3 id="getrxtrainingrateok">GetRxTrainingRateOk</h3>
+<p><code>func (o *OsgPortStatVO) GetRxTrainingRateOk() (*int64, bool)</code></p>
+<p>GetRxTrainingRateOk returns a tuple with the RxTrainingRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setrxtrainingrate">SetRxTrainingRate</h3>
+<p><code>func (o *OsgPortStatVO) SetRxTrainingRate(v int64)</code></p>
+<p>SetRxTrainingRate sets RxTrainingRate field to given value.</p>
+<h3 id="hasrxtrainingrate">HasRxTrainingRate</h3>
+<p><code>func (o *OsgPortStatVO) HasRxTrainingRate() bool</code></p>
+<p>HasRxTrainingRate returns a boolean if a field has been set.</p>
+<h3 id="getsignal">GetSignal</h3>
+<p><code>func (o *OsgPortStatVO) GetSignal() int32</code></p>
+<p>GetSignal returns the Signal field if non-nil, zero value otherwise.</p>
+<h3 id="getsignalok">GetSignalOk</h3>
+<p><code>func (o *OsgPortStatVO) GetSignalOk() (*int32, bool)</code></p>
+<p>GetSignalOk returns a tuple with the Signal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setsignal">SetSignal</h3>
+<p><code>func (o *OsgPortStatVO) SetSignal(v int32)</code></p>
+<p>SetSignal sets Signal field to given value.</p>
+<h3 id="hassignal">HasSignal</h3>
+<p><code>func (o *OsgPortStatVO) HasSignal() bool</code></p>
+<p>HasSignal returns a boolean if a field has been set.</p>
+<h3 id="getsimcardused">GetSimCardUsed</h3>
+<p><code>func (o *OsgPortStatVO) GetSimCardUsed() int32</code></p>
+<p>GetSimCardUsed returns the SimCardUsed field if non-nil, zero value otherwise.</p>
+<h3 id="getsimcardusedok">GetSimCardUsedOk</h3>
+<p><code>func (o *OsgPortStatVO) GetSimCardUsedOk() (*int32, bool)</code></p>
+<p>GetSimCardUsedOk returns a tuple with the SimCardUsed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setsimcardused">SetSimCardUsed</h3>
+<p><code>func (o *OsgPortStatVO) SetSimCardUsed(v int32)</code></p>
+<p>SetSimCardUsed sets SimCardUsed field to given value.</p>
+<h3 id="hassimcardused">HasSimCardUsed</h3>
+<p><code>func (o *OsgPortStatVO) HasSimCardUsed() bool</code></p>
+<p>HasSimCardUsed returns a boolean if a field has been set.</p>
+<h3 id="getsmsoperator">GetSmsOperator</h3>
+<p><code>func (o *OsgPortStatVO) GetSmsOperator() string</code></p>
+<p>GetSmsOperator returns the SmsOperator field if non-nil, zero value otherwise.</p>
+<h3 id="getsmsoperatorok">GetSmsOperatorOk</h3>
+<p><code>func (o *OsgPortStatVO) GetSmsOperatorOk() (*string, bool)</code></p>
+<p>GetSmsOperatorOk returns a tuple with the SmsOperator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setsmsoperator">SetSmsOperator</h3>
+<p><code>func (o *OsgPortStatVO) SetSmsOperator(v string)</code></p>
+<p>SetSmsOperator sets SmsOperator field to given value.</p>
+<h3 id="hassmsoperator">HasSmsOperator</h3>
+<p><code>func (o *OsgPortStatVO) HasSmsOperator() bool</code></p>
+<p>HasSmsOperator returns a boolean if a field has been set.</p>
+<h3 id="getsnr">GetSnr</h3>
+<p><code>func (o *OsgPortStatVO) GetSnr() int32</code></p>
+<p>GetSnr returns the Snr field if non-nil, zero value otherwise.</p>
+<h3 id="getsnrok">GetSnrOk</h3>
+<p><code>func (o *OsgPortStatVO) GetSnrOk() (*int32, bool)</code></p>
+<p>GetSnrOk returns a tuple with the Snr field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setsnr">SetSnr</h3>
+<p><code>func (o *OsgPortStatVO) SetSnr(v int32)</code></p>
+<p>SetSnr sets Snr field to given value.</p>
+<h3 id="hassnr">HasSnr</h3>
+<p><code>func (o *OsgPortStatVO) HasSnr() bool</code></p>
+<p>HasSnr returns a boolean if a field has been set.</p>
+<h3 id="getspeed">GetSpeed</h3>
+<p><code>func (o *OsgPortStatVO) GetSpeed() int32</code></p>
+<p>GetSpeed returns the Speed field if non-nil, zero value otherwise.</p>
+<h3 id="getspeedok">GetSpeedOk</h3>
+<p><code>func (o *OsgPortStatVO) GetSpeedOk() (*int32, bool)</code></p>
+<p>GetSpeedOk returns a tuple with the Speed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setspeed">SetSpeed</h3>
+<p><code>func (o *OsgPortStatVO) SetSpeed(v int32)</code></p>
+<p>SetSpeed sets Speed field to given value.</p>
+<h3 id="hasspeed">HasSpeed</h3>
+<p><code>func (o *OsgPortStatVO) HasSpeed() bool</code></p>
+<p>HasSpeed returns a boolean if a field has been set.</p>
+<h3 id="getstatus">GetStatus</h3>
+<p><code>func (o *OsgPortStatVO) GetStatus() int32</code></p>
+<p>GetStatus returns the Status field if non-nil, zero value otherwise.</p>
+<h3 id="getstatusok">GetStatusOk</h3>
+<p><code>func (o *OsgPortStatVO) GetStatusOk() (*int32, bool)</code></p>
+<p>GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setstatus">SetStatus</h3>
+<p><code>func (o *OsgPortStatVO) SetStatus(v int32)</code></p>
+<p>SetStatus sets Status field to given value.</p>
+<h3 id="hasstatus">HasStatus</h3>
+<p><code>func (o *OsgPortStatVO) HasStatus() bool</code></p>
+<p>HasStatus returns a boolean if a field has been set.</p>
+<h3 id="getsupportsms">GetSupportSms</h3>
+<p><code>func (o *OsgPortStatVO) GetSupportSms() bool</code></p>
+<p>GetSupportSms returns the SupportSms field if non-nil, zero value otherwise.</p>
+<h3 id="getsupportsmsok">GetSupportSmsOk</h3>
+<p><code>func (o *OsgPortStatVO) GetSupportSmsOk() (*bool, bool)</code></p>
+<p>GetSupportSmsOk returns a tuple with the SupportSms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setsupportsms">SetSupportSms</h3>
+<p><code>func (o *OsgPortStatVO) SetSupportSms(v bool)</code></p>
+<p>SetSupportSms sets SupportSms field to given value.</p>
+<h3 id="hassupportsms">HasSupportSms</h3>
+<p><code>func (o *OsgPortStatVO) HasSupportSms() bool</code></p>
+<p>HasSupportSms returns a boolean if a field has been set.</p>
+<h3 id="gettotaldata">GetTotalData</h3>
+<p><code>func (o *OsgPortStatVO) GetTotalData() float32</code></p>
+<p>GetTotalData returns the TotalData field if non-nil, zero value otherwise.</p>
+<h3 id="gettotaldataok">GetTotalDataOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTotalDataOk() (*float32, bool)</code></p>
+<p>GetTotalDataOk returns a tuple with the TotalData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settotaldata">SetTotalData</h3>
+<p><code>func (o *OsgPortStatVO) SetTotalData(v float32)</code></p>
+<p>SetTotalData sets TotalData field to given value.</p>
+<h3 id="hastotaldata">HasTotalData</h3>
+<p><code>func (o *OsgPortStatVO) HasTotalData() bool</code></p>
+<p>HasTotalData returns a boolean if a field has been set.</p>
+<h3 id="gettrafficstatus">GetTrafficStatus</h3>
+<p><code>func (o *OsgPortStatVO) GetTrafficStatus() int32</code></p>
+<p>GetTrafficStatus returns the TrafficStatus field if non-nil, zero value otherwise.</p>
+<h3 id="gettrafficstatusok">GetTrafficStatusOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTrafficStatusOk() (*int32, bool)</code></p>
+<p>GetTrafficStatusOk returns a tuple with the TrafficStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settrafficstatus">SetTrafficStatus</h3>
+<p><code>func (o *OsgPortStatVO) SetTrafficStatus(v int32)</code></p>
+<p>SetTrafficStatus sets TrafficStatus field to given value.</p>
+<h3 id="hastrafficstatus">HasTrafficStatus</h3>
+<p><code>func (o *OsgPortStatVO) HasTrafficStatus() bool</code></p>
+<p>HasTrafficStatus returns a boolean if a field has been set.</p>
+<h3 id="gettx">GetTx</h3>
+<p><code>func (o *OsgPortStatVO) GetTx() int64</code></p>
+<p>GetTx returns the Tx field if non-nil, zero value otherwise.</p>
+<h3 id="gettxok">GetTxOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTxOk() (*int64, bool)</code></p>
+<p>GetTxOk returns a tuple with the Tx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settx">SetTx</h3>
+<p><code>func (o *OsgPortStatVO) SetTx(v int64)</code></p>
+<p>SetTx sets Tx field to given value.</p>
+<h3 id="hastx">HasTx</h3>
+<p><code>func (o *OsgPortStatVO) HasTx() bool</code></p>
+<p>HasTx returns a boolean if a field has been set.</p>
+<h3 id="gettxerrorpkts">GetTxErrorPkts</h3>
+<p><code>func (o *OsgPortStatVO) GetTxErrorPkts() int64</code></p>
+<p>GetTxErrorPkts returns the TxErrorPkts field if non-nil, zero value otherwise.</p>
+<h3 id="gettxerrorpktsok">GetTxErrorPktsOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTxErrorPktsOk() (*int64, bool)</code></p>
+<p>GetTxErrorPktsOk returns a tuple with the TxErrorPkts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settxerrorpkts">SetTxErrorPkts</h3>
+<p><code>func (o *OsgPortStatVO) SetTxErrorPkts(v int64)</code></p>
+<p>SetTxErrorPkts sets TxErrorPkts field to given value.</p>
+<h3 id="hastxerrorpkts">HasTxErrorPkts</h3>
+<p><code>func (o *OsgPortStatVO) HasTxErrorPkts() bool</code></p>
+<p>HasTxErrorPkts returns a boolean if a field has been set.</p>
+<h3 id="gettxlineattenuation">GetTxLineAttenuation</h3>
+<p><code>func (o *OsgPortStatVO) GetTxLineAttenuation() int64</code></p>
+<p>GetTxLineAttenuation returns the TxLineAttenuation field if non-nil, zero value otherwise.</p>
+<h3 id="gettxlineattenuationok">GetTxLineAttenuationOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTxLineAttenuationOk() (*int64, bool)</code></p>
+<p>GetTxLineAttenuationOk returns a tuple with the TxLineAttenuation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settxlineattenuation">SetTxLineAttenuation</h3>
+<p><code>func (o *OsgPortStatVO) SetTxLineAttenuation(v int64)</code></p>
+<p>SetTxLineAttenuation sets TxLineAttenuation field to given value.</p>
+<h3 id="hastxlineattenuation">HasTxLineAttenuation</h3>
+<p><code>func (o *OsgPortStatVO) HasTxLineAttenuation() bool</code></p>
+<p>HasTxLineAttenuation returns a boolean if a field has been set.</p>
+<h3 id="gettxpkt">GetTxPkt</h3>
+<p><code>func (o *OsgPortStatVO) GetTxPkt() int64</code></p>
+<p>GetTxPkt returns the TxPkt field if non-nil, zero value otherwise.</p>
+<h3 id="gettxpktok">GetTxPktOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTxPktOk() (*int64, bool)</code></p>
+<p>GetTxPktOk returns a tuple with the TxPkt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settxpkt">SetTxPkt</h3>
+<p><code>func (o *OsgPortStatVO) SetTxPkt(v int64)</code></p>
+<p>SetTxPkt sets TxPkt field to given value.</p>
+<h3 id="hastxpkt">HasTxPkt</h3>
+<p><code>func (o *OsgPortStatVO) HasTxPkt() bool</code></p>
+<p>HasTxPkt returns a boolean if a field has been set.</p>
+<h3 id="gettxpktrate">GetTxPktRate</h3>
+<p><code>func (o *OsgPortStatVO) GetTxPktRate() int64</code></p>
+<p>GetTxPktRate returns the TxPktRate field if non-nil, zero value otherwise.</p>
+<h3 id="gettxpktrateok">GetTxPktRateOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTxPktRateOk() (*int64, bool)</code></p>
+<p>GetTxPktRateOk returns a tuple with the TxPktRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settxpktrate">SetTxPktRate</h3>
+<p><code>func (o *OsgPortStatVO) SetTxPktRate(v int64)</code></p>
+<p>SetTxPktRate sets TxPktRate field to given value.</p>
+<h3 id="hastxpktrate">HasTxPktRate</h3>
+<p><code>func (o *OsgPortStatVO) HasTxPktRate() bool</code></p>
+<p>HasTxPktRate returns a boolean if a field has been set.</p>
+<h3 id="gettxrate">GetTxRate</h3>
+<p><code>func (o *OsgPortStatVO) GetTxRate() int64</code></p>
+<p>GetTxRate returns the TxRate field if non-nil, zero value otherwise.</p>
+<h3 id="gettxrateok">GetTxRateOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTxRateOk() (*int64, bool)</code></p>
+<p>GetTxRateOk returns a tuple with the TxRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settxrate">SetTxRate</h3>
+<p><code>func (o *OsgPortStatVO) SetTxRate(v int64)</code></p>
+<p>SetTxRate sets TxRate field to given value.</p>
+<h3 id="hastxrate">HasTxRate</h3>
+<p><code>func (o *OsgPortStatVO) HasTxRate() bool</code></p>
+<p>HasTxRate returns a boolean if a field has been set.</p>
+<h3 id="gettxsnrmargin">GetTxSnrMargin</h3>
+<p><code>func (o *OsgPortStatVO) GetTxSnrMargin() int64</code></p>
+<p>GetTxSnrMargin returns the TxSnrMargin field if non-nil, zero value otherwise.</p>
+<h3 id="gettxsnrmarginok">GetTxSnrMarginOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTxSnrMarginOk() (*int64, bool)</code></p>
+<p>GetTxSnrMarginOk returns a tuple with the TxSnrMargin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settxsnrmargin">SetTxSnrMargin</h3>
+<p><code>func (o *OsgPortStatVO) SetTxSnrMargin(v int64)</code></p>
+<p>SetTxSnrMargin sets TxSnrMargin field to given value.</p>
+<h3 id="hastxsnrmargin">HasTxSnrMargin</h3>
+<p><code>func (o *OsgPortStatVO) HasTxSnrMargin() bool</code></p>
+<p>HasTxSnrMargin returns a boolean if a field has been set.</p>
+<h3 id="gettxtrainingrate">GetTxTrainingRate</h3>
+<p><code>func (o *OsgPortStatVO) GetTxTrainingRate() int64</code></p>
+<p>GetTxTrainingRate returns the TxTrainingRate field if non-nil, zero value otherwise.</p>
+<h3 id="gettxtrainingrateok">GetTxTrainingRateOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTxTrainingRateOk() (*int64, bool)</code></p>
+<p>GetTxTrainingRateOk returns a tuple with the TxTrainingRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settxtrainingrate">SetTxTrainingRate</h3>
+<p><code>func (o *OsgPortStatVO) SetTxTrainingRate(v int64)</code></p>
+<p>SetTxTrainingRate sets TxTrainingRate field to given value.</p>
+<h3 id="hastxtrainingrate">HasTxTrainingRate</h3>
+<p><code>func (o *OsgPortStatVO) HasTxTrainingRate() bool</code></p>
+<p>HasTxTrainingRate returns a boolean if a field has been set.</p>
+<h3 id="gettype">GetType</h3>
+<p><code>func (o *OsgPortStatVO) GetType() int32</code></p>
+<p>GetType returns the Type field if non-nil, zero value otherwise.</p>
+<h3 id="gettypeok">GetTypeOk</h3>
+<p><code>func (o *OsgPortStatVO) GetTypeOk() (*int32, bool)</code></p>
+<p>GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="settype">SetType</h3>
+<p><code>func (o *OsgPortStatVO) SetType(v int32)</code></p>
+<p>SetType sets Type field to given value.</p>
+<h3 id="hastype">HasType</h3>
+<p><code>func (o *OsgPortStatVO) HasType() bool</code></p>
+<p>HasType returns a boolean if a field has been set.</p>
+<h3 id="getwanipv6comptent">GetWanIpv6Comptent</h3>
+<p><code>func (o *OsgPortStatVO) GetWanIpv6Comptent() int32</code></p>
+<p>GetWanIpv6Comptent returns the WanIpv6Comptent field if non-nil, zero value otherwise.</p>
+<h3 id="getwanipv6comptentok">GetWanIpv6ComptentOk</h3>
+<p><code>func (o *OsgPortStatVO) GetWanIpv6ComptentOk() (*int32, bool)</code></p>
+<p>GetWanIpv6ComptentOk returns a tuple with the WanIpv6Comptent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setwanipv6comptent">SetWanIpv6Comptent</h3>
+<p><code>func (o *OsgPortStatVO) SetWanIpv6Comptent(v int32)</code></p>
+<p>SetWanIpv6Comptent sets WanIpv6Comptent field to given value.</p>
+<h3 id="haswanipv6comptent">HasWanIpv6Comptent</h3>
+<p><code>func (o *OsgPortStatVO) HasWanIpv6Comptent() bool</code></p>
+<p>HasWanIpv6Comptent returns a boolean if a field has been set.</p>
+<h3 id="getwanportipv4config">GetWanPortIpv4Config</h3>
+<p><code>func (o *OsgPortStatVO) GetWanPortIpv4Config() OsgWanPortIpv4ConfigVO</code></p>
+<p>GetWanPortIpv4Config returns the WanPortIpv4Config field if non-nil, zero value otherwise.</p>
+<h3 id="getwanportipv4configok">GetWanPortIpv4ConfigOk</h3>
+<p><code>func (o *OsgPortStatVO) GetWanPortIpv4ConfigOk() (*OsgWanPortIpv4ConfigVO, bool)</code></p>
+<p>GetWanPortIpv4ConfigOk returns a tuple with the WanPortIpv4Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setwanportipv4config">SetWanPortIpv4Config</h3>
+<p><code>func (o *OsgPortStatVO) SetWanPortIpv4Config(v OsgWanPortIpv4ConfigVO)</code></p>
+<p>SetWanPortIpv4Config sets WanPortIpv4Config field to given value.</p>
+<h3 id="haswanportipv4config">HasWanPortIpv4Config</h3>
+<p><code>func (o *OsgPortStatVO) HasWanPortIpv4Config() bool</code></p>
+<p>HasWanPortIpv4Config returns a boolean if a field has been set.</p>
+<h3 id="getwanportipv6config">GetWanPortIpv6Config</h3>
+<p><code>func (o *OsgPortStatVO) GetWanPortIpv6Config() OsgWanPortIpv6ConfigVO</code></p>
+<p>GetWanPortIpv6Config returns the WanPortIpv6Config field if non-nil, zero value otherwise.</p>
+<h3 id="getwanportipv6configok">GetWanPortIpv6ConfigOk</h3>
+<p><code>func (o *OsgPortStatVO) GetWanPortIpv6ConfigOk() (*OsgWanPortIpv6ConfigVO, bool)</code></p>
+<p>GetWanPortIpv6ConfigOk returns a tuple with the WanPortIpv6Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.</p>
+<h3 id="setwanportipv6config">SetWanPortIpv6Config</h3>
+<p><code>func (o *OsgPortStatVO) SetWanPortIpv6Config(v OsgWanPortIpv6ConfigVO)</code></p>
+<p>SetWanPortIpv6Config sets WanPortIpv6Config field to given value.</p>
+<h3 id="haswanportipv6config">HasWanPortIpv6Config</h3>
+<p><code>func (o *OsgPortStatVO) HasWanPortIpv6Config() bool</code></p>
+<p>HasWanPortIpv6Config returns a boolean if a field has been set.</p>
+<p><a href="../../#documentation-for-models">[Back to Model list]</a> <a href="../../#documentation-for-api-endpoints">[Back to API list]</a> <a href="../../">[Back to README]</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
