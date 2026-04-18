@@ -63,4 +63,5 @@ jobs:
                   --title "chore: update generated SDK" \
                   --body "Automated SDK regeneration from latest OpenAPI spec." \
                   --head ${{ env.BRANCH }}
+              gh pr merge --auto --squash
           fi
