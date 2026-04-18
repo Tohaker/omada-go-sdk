@@ -1,56 +1,66 @@
 on:
-    schedule:
-        - cron: "0 1 * * *"
+  schedule:
+    - cron: "0 1 * * *"
 
 permissions:
-    contents: write
-    pull-requests: write
+  contents: write
+  pull-requests: write
 
 env:
-    BRANCH: chore/update-sdk
+  BRANCH: chore/update-sdk
 
 jobs:
-    update:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v6
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
 
-            - name: Configure Git Credentials
-              run: |
-                git config user.name github-actions[bot]
-                git config user.email github-actions[bot]@users.noreply.github.com
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
 
-            - uses: actions/setup-go@v6
-              with:
-                go-version-file: go.mod
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
 
-            - name: Generate SDK
-              run: make all
+      - name: Generate SDK
+        run: make all
 
-            - name: Check for changes
-              id: check_changes
-              run: |
-                if [[ -n $(git status --porcelain) ]]; then
-                    echo "has_changes=true" >> $GITHUB_OUTPUT
-                fi
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+              echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
 
-            - name: Commit and push changes
-              if: ${{ steps.check_changes.outputs.has_changes == 'true' }}
-              run: |
-                git checkout -B "${{ env.BRANCH }}"
-                git add --all
-                git commit -m "chore: update generated SDK"
-                git push --force origin "${{ env.BRANCH }}"
-                
-            - name: Create PR
-              if: ${{ steps.check_changes.outputs.has_changes == 'true' }}
-              run: |
-                existing=$(gh pr list --head ${{ env.BRANCH }} --json number --jq '.[0].number')
-                if [[ -z "$existing" ]]; then
-                    gh pr create \
-                        --title "chore: update generated SDK" \
-                        --body "Automated SDK regeneration from latest OpenAPI spec." \
-                        --head ${{ env.BRANCH }}
-                fi
-            
-              
+      - name: Create changeset
+        if: ${{ steps.check_changes.outputs.has_changes == 'true' }}
+        run: |
+          mkdir -p .changeset/
+          cat <<EOF > .changeset/update_sdk_changeset.md
+          ---
+          omada-go-sdk: minor
+          ---
+
+          chore: Updating generated SDK to match latest OpenAPI spec
+          EOF
+
+      - name: Commit and push changes
+        if: ${{ steps.check_changes.outputs.has_changes == 'true' }}
+        run: |
+          git checkout -B "${{ env.BRANCH }}"
+          git add --all
+          git commit -m "chore: update generated SDK"
+          git push --force origin "${{ env.BRANCH }}"
+
+      - name: Create PR
+        if: ${{ steps.check_changes.outputs.has_changes == 'true' }}
+        run: |
+          existing=$(gh pr list --head ${{ env.BRANCH }} --json number --jq '.[0].number')
+          if [[ -z "$existing" ]]; then
+              gh pr create \
+                  --title "chore: update generated SDK" \
+                  --body "Automated SDK regeneration from latest OpenAPI spec." \
+                  --head ${{ env.BRANCH }}
+          fi
