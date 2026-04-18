@@ -4,7 +4,7 @@ fix:
 clean:
 	out="omada"; \
     find "$$out" -mindepth 1 \
-        \( -path "$$out/.gitignore" -o -path "$$out/.openapi-generator-ignore" \) -prune \
+        \( -path "$$out/.gitignore" -o -path "$$out/.openapi-generator-ignore" -o -path "$$out/.nav.yml" \) -prune \
         -o -exec rm -rf {} +
 
 generate: clean
