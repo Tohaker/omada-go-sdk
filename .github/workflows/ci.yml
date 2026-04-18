@@ -18,7 +18,7 @@ jobs:
 
       - uses: actions/setup-python@v6
         with:
-          python-version: '3.13'
+          python-version: "3.13"
 
       - name: Install openapi-spec-validator
         run: pip install openapi-spec-validator
@@ -38,11 +38,5 @@ jobs:
         with:
           go-version-file: go.mod
 
-      - name: Generate SDK
-        run: make all
-
-      - name: Check for uncommitted changes
-        run: |
-          if [[ -n $(git status --porcelain) ]]; then
-              echo "::error::SDK changes detected. Make sure you have pushed all generated changes" && exit 1
-          fi
+      - name: Check SDK builds
+        run: make tidy verify
