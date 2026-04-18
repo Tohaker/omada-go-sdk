@@ -143,6 +143,7 @@ Otherwise, if you haven't done so already, follow their [getting started](https:
 
 You must also install the following extra plugins;
 - `mkdocs-exclude`
+- `mkdocs-awesome-nav`
 
 To preview the docs locally, just run
 
