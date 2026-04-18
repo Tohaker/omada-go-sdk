@@ -11,3 +11,5 @@ git_push.sh
 # Travis CI config (not needed)
 .travis.yml
 
+# mkdocs-awesome-nav
+.nav.yml

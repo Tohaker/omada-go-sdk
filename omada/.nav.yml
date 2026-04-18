@@ -1,0 +1,7 @@
+nav:
+  - Home: README.md
+  - API Reference:
+    - "docs/*API.md"
+  - Model Reference:
+    - glob: "docs/*.md"
+      ignore: "docs/*API.md"

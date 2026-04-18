@@ -8,7 +8,7 @@
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers-extra/features/mkdocs:2": {
-			"plugins": "mkdocs-material mkdocs-exclude"
+			"plugins": "mkdocs-material mkdocs-exclude mkdocs-awesome-nav"
 		},
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"moby": false
