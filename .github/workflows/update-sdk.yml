@@ -1,3 +1,5 @@
+name: update-sdk
+
 on:
   workflow_dispatch:
   schedule:
