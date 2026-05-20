@@ -69,6 +69,8 @@ type SiteSettingCapOpenApiVO struct {
 	LockToAp *bool `json:"lockToAp,omitempty"`
 	// Whether support network security-mac filter configuration.
 	MacFilter *bool `json:"macFilter,omitempty"`
+	// Whether support natTraversal.
+	NatTraversal *bool `json:"natTraversal,omitempty"`
 	// An OLT device exists.
 	OltVlan *bool `json:"oltVlan,omitempty"`
 	// Whether support one-to-one NAT configuration.
@@ -908,6 +910,38 @@ func (o *SiteSettingCapOpenApiVO) HasMacFilter() bool {
 // SetMacFilter gets a reference to the given bool and assigns it to the MacFilter field.
 func (o *SiteSettingCapOpenApiVO) SetMacFilter(v bool) {
 	o.MacFilter = &v
+}
+
+// GetNatTraversal returns the NatTraversal field value if set, zero value otherwise.
+func (o *SiteSettingCapOpenApiVO) GetNatTraversal() bool {
+	if o == nil || IsNil(o.NatTraversal) {
+		var ret bool
+		return ret
+	}
+	return *o.NatTraversal
+}
+
+// GetNatTraversalOk returns a tuple with the NatTraversal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapOpenApiVO) GetNatTraversalOk() (*bool, bool) {
+	if o == nil || IsNil(o.NatTraversal) {
+		return nil, false
+	}
+	return o.NatTraversal, true
+}
+
+// HasNatTraversal returns a boolean if a field has been set.
+func (o *SiteSettingCapOpenApiVO) HasNatTraversal() bool {
+	if o != nil && !IsNil(o.NatTraversal) {
+		return true
+	}
+
+	return false
+}
+
+// SetNatTraversal gets a reference to the given bool and assigns it to the NatTraversal field.
+func (o *SiteSettingCapOpenApiVO) SetNatTraversal(v bool) {
+	o.NatTraversal = &v
 }
 
 // GetOltVlan returns the OltVlan field value if set, zero value otherwise.
@@ -1759,6 +1793,9 @@ func (o SiteSettingCapOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MacFilter) {
 		toSerialize["macFilter"] = o.MacFilter
+	}
+	if !IsNil(o.NatTraversal) {
+		toSerialize["natTraversal"] = o.NatTraversal
 	}
 	if !IsNil(o.OltVlan) {
 		toSerialize["oltVlan"] = o.OltVlan

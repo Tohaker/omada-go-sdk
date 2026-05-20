@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RxTraffic** | Pointer to **int64** | rx traffic | [optional] 
+**RxTraffic** | Pointer to **int64** | client rx traffic | [optional] 
 **Time** | Pointer to **int64** | time | [optional] 
 **TotalTraffic** | Pointer to **int64** | total traffic | [optional] 
-**TxTraffic** | Pointer to **int64** | tx traffic | [optional] 
+**TxTraffic** | Pointer to **int64** | client tx traffic | [optional] 
 **WiredCount** | Pointer to **int32** | number of wired device | [optional] 
 **WirelessCount** | Pointer to **int32** | number of wireless device | [optional] 
 

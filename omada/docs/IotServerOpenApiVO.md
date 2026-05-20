@@ -4,28 +4,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessToken** | Pointer to **string** | This parameter becomes mandatory when the authentication method is set to \&quot;Use Token\&quot;.&lt;br/&gt;Note:The parameter [clientId] should be 1 ~ 128 characters. | [optional] 
-**Authentication** | **int32** | The parameter [authentication] should be a value as follows:[0:Use Token]. | 
-**BlePeriodicTelemetry** | **bool** | Whether to enable the BLE Periodic Telemetry. When disabled no periodic packets will be uploaded. | 
-**ClientId** | Pointer to **string** | This parameter becomes mandatory when the authentication method is set to \&quot;Use Token\&quot;.&lt;br /&gt;Note:The parameter [clientId] should be 1 ~ 128 characters. | [optional] 
-**CountOnly** | Pointer to **bool** | A switch that controls whether the AP device exclusively reports the count of IoT devices. | [optional] 
-**DeviceClasses** | **[]int32** | Supports protocol-based filtering during IoT data reporting processes.&lt;br /&gt;The device class list should contain the value as follows: [0:minew; 1:iBeacon; 2:Eddystone]. | 
-**Enable** | **bool** | Whether to enable the IoT Transport Stream setting. | 
-**Filters** | Pointer to **map[string][]string** | The keys in the [filters] map represent the filter types, while the values correspond to the specific filtering criteria or values associated with each filter type.&lt;br /&gt;Note:&lt;br /&gt;Filter type &#x3D; 0, The Company Identifier must conform to a 4-digit or 6-digit hexadecimal encoding. It is only applicable to ibeacon devices&lt;br /&gt;Filter type &#x3D; 1, The Vendor should not exceed 255 bytes in length.&lt;br /&gt;Filter type &#x3D; 2, The Local Name should not exceed 120 bytes in length. It is only applicable to minew devices.&lt;br /&gt;Filter type &#x3D; 3, The Service UUID must conform to a 4-digit hexadecimal encoding. It is only applicable to minew and eddystone devices.&lt;br /&gt;Filter type &#x3D; 4, The Mac Oui must conform to a 6-digit hexadecimal encoding.&lt;br /&gt;Filter type &#x3D; 5, The iBeacon UUID must conform to a 32-digit hexadecimal encoding. It is only applicable to iBeacon devices.&lt;br /&gt;Filter type &#x3D; 6, The UID must conform to a 20-digit or 32-digit hexadecimal encoding. It is only applicable to eddystone devices.&lt;br /&gt;Filter type &#x3D; 7, The URL should not include a scheme. It is only applicable to eddystone devices.&lt;br /&gt; | [optional] 
-**FiltersType** | Pointer to **[]int32** | User-defined settings to manage AP device filtering rules for IoT devices.&lt;br /&gt;The parameter [filtersType] should contain the value as follows:[0:Company Identifier; 1:Vendor; 2:Local Name; 3:Service UUID; 4:Mac Oui; 5:iBeacon UUID; 6:UID; 7:URL]. | [optional] 
+**AccessTokenIotServer** | Pointer to **string** | This parameter becomes mandatory when the authentication method is set to \&quot;Use Token\&quot;.&lt;br/&gt;Note:The parameter [clientId] should be 1 ~ 128 characters. | [optional] 
+**AuthenticationIotServer** | **int32** | The parameter [authentication] should be a value as follows:[0:Use Token]. | 
+**BlePeriodicTelemetryIotServer** | **bool** | Whether to enable the BLE Periodic Telemetry. When disabled no periodic packets will be uploaded. | 
+**ClientIdIotServer** | Pointer to **string** | This parameter becomes mandatory when the authentication method is set to \&quot;Use Token\&quot;.&lt;br /&gt;Note:The parameter [clientId] should be 1 ~ 128 characters. | [optional] 
+**CountOnlyIotServer** | Pointer to **bool** | A switch that controls whether the AP device exclusively reports the count of IoT devices. | [optional] 
+**DeviceClassesIotServer** | **[]int32** | Supports protocol-based filtering during IoT data reporting processes.&lt;br /&gt;The device class list should contain the value as follows: [0:minew; 1:iBeacon; 2:Eddystone]. | 
+**EnableIotServer** | **bool** | Whether to enable the IoT Transport Stream setting. | 
+**FiltersTypeIotServer** | Pointer to **[]int32** | User-defined settings to manage AP device filtering rules for IoT devices.&lt;br /&gt;The parameter [filtersType] should contain the value as follows:[0:Company Identifier; 1:Vendor; 2:Local Name; 3:Service UUID; 4:Mac Oui; 5:iBeacon UUID; 6:UID; 7:URL]. | [optional] 
+**FiltersIotServer** | Pointer to **map[string][]string** | The keys in the [filters] map represent the filter types, while the values correspond to the specific filtering criteria or values associated with each filter type.&lt;br /&gt;Note:&lt;br /&gt;Filter type &#x3D; 0, The Company Identifier must conform to a 4-digit or 6-digit hexadecimal encoding. It is only applicable to ibeacon devices&lt;br /&gt;Filter type &#x3D; 1, The Vendor should not exceed 255 bytes in length.&lt;br /&gt;Filter type &#x3D; 2, The Local Name should not exceed 120 bytes in length. It is only applicable to minew devices.&lt;br /&gt;Filter type &#x3D; 3, The Service UUID must conform to a 4-digit hexadecimal encoding. It is only applicable to minew and eddystone devices.&lt;br /&gt;Filter type &#x3D; 4, The Mac Oui must conform to a 6-digit hexadecimal encoding.&lt;br /&gt;Filter type &#x3D; 5, The iBeacon UUID must conform to a 32-digit hexadecimal encoding. It is only applicable to iBeacon devices.&lt;br /&gt;Filter type &#x3D; 6, The UID must conform to a 20-digit or 32-digit hexadecimal encoding. It is only applicable to eddystone devices.&lt;br /&gt;Filter type &#x3D; 7, The URL should not include a scheme. It is only applicable to eddystone devices.&lt;br /&gt; | [optional] 
 **Id** | Pointer to **string** | The IoT Transport Stream entry ID. | [optional] 
-**Name** | **string** | IoT Transport Stream setting name. | 
-**RawData** | **bool** | Whether to enable the BLE Data Forwarding. When enabled, the AP directly reports the Bluetooth packet rawData to the server. | 
-**ReportInterval** | Pointer to **int32** | Data reporting interval configuration for AP devices in IoT systems. | [optional] 
-**RssiFormat** | **int32** | The signal strength reporting format currently supports five types: [0:Average; 1:Max; 2:Last; 3:Smooth; 4:Bulk]. | 
-**ServerType** | **int32** | The server type should be a value as follows: [0: http]. | 
-**ServerUrl** | **string** | If the service type is http, the server URL must start with http://. | 
+**NameIotServer** | **string** | IoT Transport Stream setting name. | 
+**RawDataIotServer** | **bool** | Whether to enable the BLE Data Forwarding. When enabled, the AP directly reports the Bluetooth packet rawData to the server. | 
+**ReportIntervalIotServer** | Pointer to **int32** | Data reporting interval configuration for AP devices in IoT systems. | [optional] 
+**RssiFormatIotServer** | **int32** | The signal strength reporting format currently supports five types: [0:Average; 1:Max; 2:Last; 3:Smooth; 4:Bulk]. | 
+**ServerTypeIotServer** | **int32** | The server type should be a value as follows: [0: http]. | 
+**ServerUrlIotServer** | **string** | If the service type is http, the server URL must start with http://. | 
 
 ## Methods
 
 ### NewIotServerOpenApiVO
 
-`func NewIotServerOpenApiVO(authentication int32, blePeriodicTelemetry bool, deviceClasses []int32, enable bool, name string, rawData bool, rssiFormat int32, serverType int32, serverUrl string, ) *IotServerOpenApiVO`
+`func NewIotServerOpenApiVO(authenticationIotServer int32, blePeriodicTelemetryIotServer bool, deviceClassesIotServer []int32, enableIotServer bool, nameIotServer string, rawDataIotServer bool, rssiFormatIotServer int32, serverTypeIotServer int32, serverUrlIotServer string, ) *IotServerOpenApiVO`
 
 NewIotServerOpenApiVO instantiates a new IotServerOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -40,210 +40,210 @@ NewIotServerOpenApiVOWithDefaults instantiates a new IotServerOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAccessToken
+### GetAccessTokenIotServer
 
-`func (o *IotServerOpenApiVO) GetAccessToken() string`
+`func (o *IotServerOpenApiVO) GetAccessTokenIotServer() string`
 
-GetAccessToken returns the AccessToken field if non-nil, zero value otherwise.
+GetAccessTokenIotServer returns the AccessTokenIotServer field if non-nil, zero value otherwise.
 
-### GetAccessTokenOk
+### GetAccessTokenIotServerOk
 
-`func (o *IotServerOpenApiVO) GetAccessTokenOk() (*string, bool)`
+`func (o *IotServerOpenApiVO) GetAccessTokenIotServerOk() (*string, bool)`
 
-GetAccessTokenOk returns a tuple with the AccessToken field if it's non-nil, zero value otherwise
+GetAccessTokenIotServerOk returns a tuple with the AccessTokenIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccessToken
+### SetAccessTokenIotServer
 
-`func (o *IotServerOpenApiVO) SetAccessToken(v string)`
+`func (o *IotServerOpenApiVO) SetAccessTokenIotServer(v string)`
 
-SetAccessToken sets AccessToken field to given value.
+SetAccessTokenIotServer sets AccessTokenIotServer field to given value.
 
-### HasAccessToken
+### HasAccessTokenIotServer
 
-`func (o *IotServerOpenApiVO) HasAccessToken() bool`
+`func (o *IotServerOpenApiVO) HasAccessTokenIotServer() bool`
 
-HasAccessToken returns a boolean if a field has been set.
+HasAccessTokenIotServer returns a boolean if a field has been set.
 
-### GetAuthentication
+### GetAuthenticationIotServer
 
-`func (o *IotServerOpenApiVO) GetAuthentication() int32`
+`func (o *IotServerOpenApiVO) GetAuthenticationIotServer() int32`
 
-GetAuthentication returns the Authentication field if non-nil, zero value otherwise.
+GetAuthenticationIotServer returns the AuthenticationIotServer field if non-nil, zero value otherwise.
 
-### GetAuthenticationOk
+### GetAuthenticationIotServerOk
 
-`func (o *IotServerOpenApiVO) GetAuthenticationOk() (*int32, bool)`
+`func (o *IotServerOpenApiVO) GetAuthenticationIotServerOk() (*int32, bool)`
 
-GetAuthenticationOk returns a tuple with the Authentication field if it's non-nil, zero value otherwise
+GetAuthenticationIotServerOk returns a tuple with the AuthenticationIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAuthentication
+### SetAuthenticationIotServer
 
-`func (o *IotServerOpenApiVO) SetAuthentication(v int32)`
+`func (o *IotServerOpenApiVO) SetAuthenticationIotServer(v int32)`
 
-SetAuthentication sets Authentication field to given value.
+SetAuthenticationIotServer sets AuthenticationIotServer field to given value.
 
 
-### GetBlePeriodicTelemetry
+### GetBlePeriodicTelemetryIotServer
 
-`func (o *IotServerOpenApiVO) GetBlePeriodicTelemetry() bool`
+`func (o *IotServerOpenApiVO) GetBlePeriodicTelemetryIotServer() bool`
 
-GetBlePeriodicTelemetry returns the BlePeriodicTelemetry field if non-nil, zero value otherwise.
+GetBlePeriodicTelemetryIotServer returns the BlePeriodicTelemetryIotServer field if non-nil, zero value otherwise.
 
-### GetBlePeriodicTelemetryOk
+### GetBlePeriodicTelemetryIotServerOk
 
-`func (o *IotServerOpenApiVO) GetBlePeriodicTelemetryOk() (*bool, bool)`
+`func (o *IotServerOpenApiVO) GetBlePeriodicTelemetryIotServerOk() (*bool, bool)`
 
-GetBlePeriodicTelemetryOk returns a tuple with the BlePeriodicTelemetry field if it's non-nil, zero value otherwise
+GetBlePeriodicTelemetryIotServerOk returns a tuple with the BlePeriodicTelemetryIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBlePeriodicTelemetry
+### SetBlePeriodicTelemetryIotServer
 
-`func (o *IotServerOpenApiVO) SetBlePeriodicTelemetry(v bool)`
+`func (o *IotServerOpenApiVO) SetBlePeriodicTelemetryIotServer(v bool)`
 
-SetBlePeriodicTelemetry sets BlePeriodicTelemetry field to given value.
+SetBlePeriodicTelemetryIotServer sets BlePeriodicTelemetryIotServer field to given value.
 
 
-### GetClientId
+### GetClientIdIotServer
 
-`func (o *IotServerOpenApiVO) GetClientId() string`
+`func (o *IotServerOpenApiVO) GetClientIdIotServer() string`
 
-GetClientId returns the ClientId field if non-nil, zero value otherwise.
+GetClientIdIotServer returns the ClientIdIotServer field if non-nil, zero value otherwise.
 
-### GetClientIdOk
+### GetClientIdIotServerOk
 
-`func (o *IotServerOpenApiVO) GetClientIdOk() (*string, bool)`
+`func (o *IotServerOpenApiVO) GetClientIdIotServerOk() (*string, bool)`
 
-GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+GetClientIdIotServerOk returns a tuple with the ClientIdIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetClientId
+### SetClientIdIotServer
 
-`func (o *IotServerOpenApiVO) SetClientId(v string)`
+`func (o *IotServerOpenApiVO) SetClientIdIotServer(v string)`
 
-SetClientId sets ClientId field to given value.
+SetClientIdIotServer sets ClientIdIotServer field to given value.
 
-### HasClientId
+### HasClientIdIotServer
 
-`func (o *IotServerOpenApiVO) HasClientId() bool`
+`func (o *IotServerOpenApiVO) HasClientIdIotServer() bool`
 
-HasClientId returns a boolean if a field has been set.
+HasClientIdIotServer returns a boolean if a field has been set.
 
-### GetCountOnly
+### GetCountOnlyIotServer
 
-`func (o *IotServerOpenApiVO) GetCountOnly() bool`
+`func (o *IotServerOpenApiVO) GetCountOnlyIotServer() bool`
 
-GetCountOnly returns the CountOnly field if non-nil, zero value otherwise.
+GetCountOnlyIotServer returns the CountOnlyIotServer field if non-nil, zero value otherwise.
 
-### GetCountOnlyOk
+### GetCountOnlyIotServerOk
 
-`func (o *IotServerOpenApiVO) GetCountOnlyOk() (*bool, bool)`
+`func (o *IotServerOpenApiVO) GetCountOnlyIotServerOk() (*bool, bool)`
 
-GetCountOnlyOk returns a tuple with the CountOnly field if it's non-nil, zero value otherwise
+GetCountOnlyIotServerOk returns a tuple with the CountOnlyIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCountOnly
+### SetCountOnlyIotServer
 
-`func (o *IotServerOpenApiVO) SetCountOnly(v bool)`
+`func (o *IotServerOpenApiVO) SetCountOnlyIotServer(v bool)`
 
-SetCountOnly sets CountOnly field to given value.
+SetCountOnlyIotServer sets CountOnlyIotServer field to given value.
 
-### HasCountOnly
+### HasCountOnlyIotServer
 
-`func (o *IotServerOpenApiVO) HasCountOnly() bool`
+`func (o *IotServerOpenApiVO) HasCountOnlyIotServer() bool`
 
-HasCountOnly returns a boolean if a field has been set.
+HasCountOnlyIotServer returns a boolean if a field has been set.
 
-### GetDeviceClasses
+### GetDeviceClassesIotServer
 
-`func (o *IotServerOpenApiVO) GetDeviceClasses() []int32`
+`func (o *IotServerOpenApiVO) GetDeviceClassesIotServer() []int32`
 
-GetDeviceClasses returns the DeviceClasses field if non-nil, zero value otherwise.
+GetDeviceClassesIotServer returns the DeviceClassesIotServer field if non-nil, zero value otherwise.
 
-### GetDeviceClassesOk
+### GetDeviceClassesIotServerOk
 
-`func (o *IotServerOpenApiVO) GetDeviceClassesOk() (*[]int32, bool)`
+`func (o *IotServerOpenApiVO) GetDeviceClassesIotServerOk() (*[]int32, bool)`
 
-GetDeviceClassesOk returns a tuple with the DeviceClasses field if it's non-nil, zero value otherwise
+GetDeviceClassesIotServerOk returns a tuple with the DeviceClassesIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDeviceClasses
+### SetDeviceClassesIotServer
 
-`func (o *IotServerOpenApiVO) SetDeviceClasses(v []int32)`
+`func (o *IotServerOpenApiVO) SetDeviceClassesIotServer(v []int32)`
 
-SetDeviceClasses sets DeviceClasses field to given value.
+SetDeviceClassesIotServer sets DeviceClassesIotServer field to given value.
 
 
-### GetEnable
+### GetEnableIotServer
 
-`func (o *IotServerOpenApiVO) GetEnable() bool`
+`func (o *IotServerOpenApiVO) GetEnableIotServer() bool`
 
-GetEnable returns the Enable field if non-nil, zero value otherwise.
+GetEnableIotServer returns the EnableIotServer field if non-nil, zero value otherwise.
 
-### GetEnableOk
+### GetEnableIotServerOk
 
-`func (o *IotServerOpenApiVO) GetEnableOk() (*bool, bool)`
+`func (o *IotServerOpenApiVO) GetEnableIotServerOk() (*bool, bool)`
 
-GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
+GetEnableIotServerOk returns a tuple with the EnableIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnable
+### SetEnableIotServer
 
-`func (o *IotServerOpenApiVO) SetEnable(v bool)`
+`func (o *IotServerOpenApiVO) SetEnableIotServer(v bool)`
 
-SetEnable sets Enable field to given value.
+SetEnableIotServer sets EnableIotServer field to given value.
 
 
-### GetFilters
+### GetFiltersTypeIotServer
 
-`func (o *IotServerOpenApiVO) GetFilters() map[string][]string`
+`func (o *IotServerOpenApiVO) GetFiltersTypeIotServer() []int32`
 
-GetFilters returns the Filters field if non-nil, zero value otherwise.
+GetFiltersTypeIotServer returns the FiltersTypeIotServer field if non-nil, zero value otherwise.
 
-### GetFiltersOk
+### GetFiltersTypeIotServerOk
 
-`func (o *IotServerOpenApiVO) GetFiltersOk() (*map[string][]string, bool)`
+`func (o *IotServerOpenApiVO) GetFiltersTypeIotServerOk() (*[]int32, bool)`
 
-GetFiltersOk returns a tuple with the Filters field if it's non-nil, zero value otherwise
+GetFiltersTypeIotServerOk returns a tuple with the FiltersTypeIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFilters
+### SetFiltersTypeIotServer
 
-`func (o *IotServerOpenApiVO) SetFilters(v map[string][]string)`
+`func (o *IotServerOpenApiVO) SetFiltersTypeIotServer(v []int32)`
 
-SetFilters sets Filters field to given value.
+SetFiltersTypeIotServer sets FiltersTypeIotServer field to given value.
 
-### HasFilters
+### HasFiltersTypeIotServer
 
-`func (o *IotServerOpenApiVO) HasFilters() bool`
+`func (o *IotServerOpenApiVO) HasFiltersTypeIotServer() bool`
 
-HasFilters returns a boolean if a field has been set.
+HasFiltersTypeIotServer returns a boolean if a field has been set.
 
-### GetFiltersType
+### GetFiltersIotServer
 
-`func (o *IotServerOpenApiVO) GetFiltersType() []int32`
+`func (o *IotServerOpenApiVO) GetFiltersIotServer() map[string][]string`
 
-GetFiltersType returns the FiltersType field if non-nil, zero value otherwise.
+GetFiltersIotServer returns the FiltersIotServer field if non-nil, zero value otherwise.
 
-### GetFiltersTypeOk
+### GetFiltersIotServerOk
 
-`func (o *IotServerOpenApiVO) GetFiltersTypeOk() (*[]int32, bool)`
+`func (o *IotServerOpenApiVO) GetFiltersIotServerOk() (*map[string][]string, bool)`
 
-GetFiltersTypeOk returns a tuple with the FiltersType field if it's non-nil, zero value otherwise
+GetFiltersIotServerOk returns a tuple with the FiltersIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFiltersType
+### SetFiltersIotServer
 
-`func (o *IotServerOpenApiVO) SetFiltersType(v []int32)`
+`func (o *IotServerOpenApiVO) SetFiltersIotServer(v map[string][]string)`
 
-SetFiltersType sets FiltersType field to given value.
+SetFiltersIotServer sets FiltersIotServer field to given value.
 
-### HasFiltersType
+### HasFiltersIotServer
 
-`func (o *IotServerOpenApiVO) HasFiltersType() bool`
+`func (o *IotServerOpenApiVO) HasFiltersIotServer() bool`
 
-HasFiltersType returns a boolean if a field has been set.
+HasFiltersIotServer returns a boolean if a field has been set.
 
 ### GetId
 
@@ -270,129 +270,129 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetName
+### GetNameIotServer
 
-`func (o *IotServerOpenApiVO) GetName() string`
+`func (o *IotServerOpenApiVO) GetNameIotServer() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetNameIotServer returns the NameIotServer field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetNameIotServerOk
 
-`func (o *IotServerOpenApiVO) GetNameOk() (*string, bool)`
+`func (o *IotServerOpenApiVO) GetNameIotServerOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetNameIotServerOk returns a tuple with the NameIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetNameIotServer
 
-`func (o *IotServerOpenApiVO) SetName(v string)`
+`func (o *IotServerOpenApiVO) SetNameIotServer(v string)`
 
-SetName sets Name field to given value.
+SetNameIotServer sets NameIotServer field to given value.
 
 
-### GetRawData
+### GetRawDataIotServer
 
-`func (o *IotServerOpenApiVO) GetRawData() bool`
+`func (o *IotServerOpenApiVO) GetRawDataIotServer() bool`
 
-GetRawData returns the RawData field if non-nil, zero value otherwise.
+GetRawDataIotServer returns the RawDataIotServer field if non-nil, zero value otherwise.
 
-### GetRawDataOk
+### GetRawDataIotServerOk
 
-`func (o *IotServerOpenApiVO) GetRawDataOk() (*bool, bool)`
+`func (o *IotServerOpenApiVO) GetRawDataIotServerOk() (*bool, bool)`
 
-GetRawDataOk returns a tuple with the RawData field if it's non-nil, zero value otherwise
+GetRawDataIotServerOk returns a tuple with the RawDataIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRawData
+### SetRawDataIotServer
 
-`func (o *IotServerOpenApiVO) SetRawData(v bool)`
+`func (o *IotServerOpenApiVO) SetRawDataIotServer(v bool)`
 
-SetRawData sets RawData field to given value.
+SetRawDataIotServer sets RawDataIotServer field to given value.
 
 
-### GetReportInterval
+### GetReportIntervalIotServer
 
-`func (o *IotServerOpenApiVO) GetReportInterval() int32`
+`func (o *IotServerOpenApiVO) GetReportIntervalIotServer() int32`
 
-GetReportInterval returns the ReportInterval field if non-nil, zero value otherwise.
+GetReportIntervalIotServer returns the ReportIntervalIotServer field if non-nil, zero value otherwise.
 
-### GetReportIntervalOk
+### GetReportIntervalIotServerOk
 
-`func (o *IotServerOpenApiVO) GetReportIntervalOk() (*int32, bool)`
+`func (o *IotServerOpenApiVO) GetReportIntervalIotServerOk() (*int32, bool)`
 
-GetReportIntervalOk returns a tuple with the ReportInterval field if it's non-nil, zero value otherwise
+GetReportIntervalIotServerOk returns a tuple with the ReportIntervalIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetReportInterval
+### SetReportIntervalIotServer
 
-`func (o *IotServerOpenApiVO) SetReportInterval(v int32)`
+`func (o *IotServerOpenApiVO) SetReportIntervalIotServer(v int32)`
 
-SetReportInterval sets ReportInterval field to given value.
+SetReportIntervalIotServer sets ReportIntervalIotServer field to given value.
 
-### HasReportInterval
+### HasReportIntervalIotServer
 
-`func (o *IotServerOpenApiVO) HasReportInterval() bool`
+`func (o *IotServerOpenApiVO) HasReportIntervalIotServer() bool`
 
-HasReportInterval returns a boolean if a field has been set.
+HasReportIntervalIotServer returns a boolean if a field has been set.
 
-### GetRssiFormat
+### GetRssiFormatIotServer
 
-`func (o *IotServerOpenApiVO) GetRssiFormat() int32`
+`func (o *IotServerOpenApiVO) GetRssiFormatIotServer() int32`
 
-GetRssiFormat returns the RssiFormat field if non-nil, zero value otherwise.
+GetRssiFormatIotServer returns the RssiFormatIotServer field if non-nil, zero value otherwise.
 
-### GetRssiFormatOk
+### GetRssiFormatIotServerOk
 
-`func (o *IotServerOpenApiVO) GetRssiFormatOk() (*int32, bool)`
+`func (o *IotServerOpenApiVO) GetRssiFormatIotServerOk() (*int32, bool)`
 
-GetRssiFormatOk returns a tuple with the RssiFormat field if it's non-nil, zero value otherwise
+GetRssiFormatIotServerOk returns a tuple with the RssiFormatIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRssiFormat
+### SetRssiFormatIotServer
 
-`func (o *IotServerOpenApiVO) SetRssiFormat(v int32)`
+`func (o *IotServerOpenApiVO) SetRssiFormatIotServer(v int32)`
 
-SetRssiFormat sets RssiFormat field to given value.
+SetRssiFormatIotServer sets RssiFormatIotServer field to given value.
 
 
-### GetServerType
+### GetServerTypeIotServer
 
-`func (o *IotServerOpenApiVO) GetServerType() int32`
+`func (o *IotServerOpenApiVO) GetServerTypeIotServer() int32`
 
-GetServerType returns the ServerType field if non-nil, zero value otherwise.
+GetServerTypeIotServer returns the ServerTypeIotServer field if non-nil, zero value otherwise.
 
-### GetServerTypeOk
+### GetServerTypeIotServerOk
 
-`func (o *IotServerOpenApiVO) GetServerTypeOk() (*int32, bool)`
+`func (o *IotServerOpenApiVO) GetServerTypeIotServerOk() (*int32, bool)`
 
-GetServerTypeOk returns a tuple with the ServerType field if it's non-nil, zero value otherwise
+GetServerTypeIotServerOk returns a tuple with the ServerTypeIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServerType
+### SetServerTypeIotServer
 
-`func (o *IotServerOpenApiVO) SetServerType(v int32)`
+`func (o *IotServerOpenApiVO) SetServerTypeIotServer(v int32)`
 
-SetServerType sets ServerType field to given value.
+SetServerTypeIotServer sets ServerTypeIotServer field to given value.
 
 
-### GetServerUrl
+### GetServerUrlIotServer
 
-`func (o *IotServerOpenApiVO) GetServerUrl() string`
+`func (o *IotServerOpenApiVO) GetServerUrlIotServer() string`
 
-GetServerUrl returns the ServerUrl field if non-nil, zero value otherwise.
+GetServerUrlIotServer returns the ServerUrlIotServer field if non-nil, zero value otherwise.
 
-### GetServerUrlOk
+### GetServerUrlIotServerOk
 
-`func (o *IotServerOpenApiVO) GetServerUrlOk() (*string, bool)`
+`func (o *IotServerOpenApiVO) GetServerUrlIotServerOk() (*string, bool)`
 
-GetServerUrlOk returns a tuple with the ServerUrl field if it's non-nil, zero value otherwise
+GetServerUrlIotServerOk returns a tuple with the ServerUrlIotServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServerUrl
+### SetServerUrlIotServer
 
-`func (o *IotServerOpenApiVO) SetServerUrl(v string)`
+`func (o *IotServerOpenApiVO) SetServerUrlIotServer(v string)`
 
-SetServerUrl sets ServerUrl field to given value.
+SetServerUrlIotServer sets ServerUrlIotServer field to given value.
 
 
 

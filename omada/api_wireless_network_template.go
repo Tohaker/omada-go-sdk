@@ -174,6 +174,24 @@ type WirelessNetworkTemplateAPI interface {
 	GetWlanGroupListTemplateExecute(r WirelessNetworkTemplateAPIGetWlanGroupListTemplateRequest) (*OperationResponseListWlanGroupOpenApiVO, *http.Response, error)
 
 	/*
+	UpdateSsidBandSteerConfigTemplate Update SSID template band steer config
+
+	Update SSID template band steer config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param wlanId WLAN ID
+	@param ssidId SSID ID
+	@return WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest
+	*/
+	UpdateSsidBandSteerConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, wlanId string, ssidId string) WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest
+
+	// UpdateSsidBandSteerConfigTemplateExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidBandSteerConfigTemplateExecute(r WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	UpdateSsidBasicConfigTemplate Update SSID template basic config
 
 	Update SSID template basic config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33235  -  PPSK without RADIUS do not support WPA Mode with WPA3-SAE.<br/>-33238  -  The number of SSIDs on %band% has reached the limit. At most 8 SSIDs can be created on each band.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
@@ -226,6 +244,24 @@ type WirelessNetworkTemplateAPI interface {
 	// UpdateSsidHotspotV2SettingTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
 	UpdateSsidHotspotV2SettingTemplateExecute(r WirelessNetworkTemplateAPIUpdateSsidHotspotV2SettingTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidLoadBalanceConfigTemplate Update SSID template load balance config
+
+	Update SSID template load balance config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param wlanId WLAN ID
+	@param ssidId SSID ID
+	@return WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest
+	*/
+	UpdateSsidLoadBalanceConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, wlanId string, ssidId string) WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest
+
+	// UpdateSsidLoadBalanceConfigTemplateExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidLoadBalanceConfigTemplateExecute(r WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidMacFilterConfigTemplate Update SSID template mac filter config
@@ -298,6 +334,24 @@ type WirelessNetworkTemplateAPI interface {
 	// UpdateSsidRateLimitConfigTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
 	UpdateSsidRateLimitConfigTemplateExecute(r WirelessNetworkTemplateAPIUpdateSsidRateLimitConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidWifiCallingConfigTemplate Update SSID template wifi calling config
+
+	Update SSID template Wi-Fi Calling config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param wlanId WLAN ID
+	@param ssidId SSID ID
+	@return WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest
+	*/
+	UpdateSsidWifiCallingConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, wlanId string, ssidId string) WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest
+
+	// UpdateSsidWifiCallingConfigTemplateExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidWifiCallingConfigTemplateExecute(r WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidWlanScheduleTemplate Update SSID template WLAN schedule config
@@ -1531,6 +1585,146 @@ func (a *WirelessNetworkTemplateAPIService) GetWlanGroupListTemplateExecute(r Wi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkTemplateAPI
+	omadacId string
+	siteTemplateId string
+	wlanId string
+	ssidId string
+	updateSsidBandSteerOpenApiVO *UpdateSsidBandSteerOpenApiVO
+}
+
+func (r WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest) UpdateSsidBandSteerOpenApiVO(updateSsidBandSteerOpenApiVO UpdateSsidBandSteerOpenApiVO) WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest {
+	r.updateSsidBandSteerOpenApiVO = &updateSsidBandSteerOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidBandSteerConfigTemplateExecute(r)
+}
+
+/*
+UpdateSsidBandSteerConfigTemplate Update SSID template band steer config
+
+Update SSID template band steer config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param wlanId WLAN ID
+ @param ssidId SSID ID
+ @return WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest
+*/
+func (a *WirelessNetworkTemplateAPIService) UpdateSsidBandSteerConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, wlanId string, ssidId string) WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest {
+	return WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		wlanId: wlanId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkTemplateAPIService) UpdateSsidBandSteerConfigTemplateExecute(r WirelessNetworkTemplateAPIUpdateSsidBandSteerConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkTemplateAPIService.UpdateSsidBandSteerConfigTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-band-steer"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidBandSteerOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidBandSteerOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidBandSteerOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WirelessNetworkTemplateAPIUpdateSsidBasicConfigTemplateRequest struct {
 	ctx context.Context
 	ApiService WirelessNetworkTemplateAPI
@@ -1900,6 +2094,146 @@ func (a *WirelessNetworkTemplateAPIService) UpdateSsidHotspotV2SettingTemplateEx
 	}
 	// body params
 	localVarPostBody = r.updateSsidHotspotV2SettingOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkTemplateAPI
+	omadacId string
+	siteTemplateId string
+	wlanId string
+	ssidId string
+	updateSsidLoadBalanceOpenApiVO *UpdateSsidLoadBalanceOpenApiVO
+}
+
+func (r WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest) UpdateSsidLoadBalanceOpenApiVO(updateSsidLoadBalanceOpenApiVO UpdateSsidLoadBalanceOpenApiVO) WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest {
+	r.updateSsidLoadBalanceOpenApiVO = &updateSsidLoadBalanceOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidLoadBalanceConfigTemplateExecute(r)
+}
+
+/*
+UpdateSsidLoadBalanceConfigTemplate Update SSID template load balance config
+
+Update SSID template load balance config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param wlanId WLAN ID
+ @param ssidId SSID ID
+ @return WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest
+*/
+func (a *WirelessNetworkTemplateAPIService) UpdateSsidLoadBalanceConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, wlanId string, ssidId string) WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest {
+	return WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		wlanId: wlanId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkTemplateAPIService) UpdateSsidLoadBalanceConfigTemplateExecute(r WirelessNetworkTemplateAPIUpdateSsidLoadBalanceConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkTemplateAPIService.UpdateSsidLoadBalanceConfigTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-load-balance"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidLoadBalanceOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidLoadBalanceOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidLoadBalanceOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2460,6 +2794,146 @@ func (a *WirelessNetworkTemplateAPIService) UpdateSsidRateLimitConfigTemplateExe
 	}
 	// body params
 	localVarPostBody = r.updateSsidRateLimitOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkTemplateAPI
+	omadacId string
+	siteTemplateId string
+	wlanId string
+	ssidId string
+	updateWifiCallingOpenApiVO *UpdateWifiCallingOpenApiVO
+}
+
+func (r WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest) UpdateWifiCallingOpenApiVO(updateWifiCallingOpenApiVO UpdateWifiCallingOpenApiVO) WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest {
+	r.updateWifiCallingOpenApiVO = &updateWifiCallingOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidWifiCallingConfigTemplateExecute(r)
+}
+
+/*
+UpdateSsidWifiCallingConfigTemplate Update SSID template wifi calling config
+
+Update SSID template Wi-Fi Calling config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param wlanId WLAN ID
+ @param ssidId SSID ID
+ @return WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest
+*/
+func (a *WirelessNetworkTemplateAPIService) UpdateSsidWifiCallingConfigTemplate(ctx context.Context, omadacId string, siteTemplateId string, wlanId string, ssidId string) WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest {
+	return WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		wlanId: wlanId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkTemplateAPIService) UpdateSsidWifiCallingConfigTemplateExecute(r WirelessNetworkTemplateAPIUpdateSsidWifiCallingConfigTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkTemplateAPIService.UpdateSsidWifiCallingConfigTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wifi-calling"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateWifiCallingOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateWifiCallingOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateWifiCallingOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

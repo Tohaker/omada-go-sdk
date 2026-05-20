@@ -39,6 +39,8 @@ type ApPlanningHistoryDetailVO struct {
 	Radio6g *ApPlanningRadioVO `json:"radio6g,omitempty"`
 	// Parameter [support5g2] indicates whether the device supports 5 GHz-2.
 	Support5g2 *bool `json:"support5g2,omitempty"`
+	// Trigger reason. 0: none. 1: Strong Interference. 2: new ap
+	TriggerReason *int32 `json:"triggerReason,omitempty"`
 	// Device type.
 	Type *string `json:"type,omitempty"`
 }
@@ -444,6 +446,38 @@ func (o *ApPlanningHistoryDetailVO) SetSupport5g2(v bool) {
 	o.Support5g2 = &v
 }
 
+// GetTriggerReason returns the TriggerReason field value if set, zero value otherwise.
+func (o *ApPlanningHistoryDetailVO) GetTriggerReason() int32 {
+	if o == nil || IsNil(o.TriggerReason) {
+		var ret int32
+		return ret
+	}
+	return *o.TriggerReason
+}
+
+// GetTriggerReasonOk returns a tuple with the TriggerReason field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApPlanningHistoryDetailVO) GetTriggerReasonOk() (*int32, bool) {
+	if o == nil || IsNil(o.TriggerReason) {
+		return nil, false
+	}
+	return o.TriggerReason, true
+}
+
+// HasTriggerReason returns a boolean if a field has been set.
+func (o *ApPlanningHistoryDetailVO) HasTriggerReason() bool {
+	if o != nil && !IsNil(o.TriggerReason) {
+		return true
+	}
+
+	return false
+}
+
+// SetTriggerReason gets a reference to the given int32 and assigns it to the TriggerReason field.
+func (o *ApPlanningHistoryDetailVO) SetTriggerReason(v int32) {
+	o.TriggerReason = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ApPlanningHistoryDetailVO) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -521,6 +555,9 @@ func (o ApPlanningHistoryDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Support5g2) {
 		toSerialize["support5g2"] = o.Support5g2
+	}
+	if !IsNil(o.TriggerReason) {
+		toSerialize["triggerReason"] = o.TriggerReason
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

@@ -262,7 +262,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	rrmSettingOpenApiVO := *openapiclient.NewRrmSettingOpenApiVO(int32(123)) // RrmSettingOpenApiVO | 
+	rrmSettingOpenApiVO := *openapiclient.NewRrmSettingOpenApiVO(int32(123), false) // RrmSettingOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -337,7 +337,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	rrmSettingOpenApiVO := *openapiclient.NewRrmSettingOpenApiVO(int32(123)) // RrmSettingOpenApiVO | 
+	rrmSettingOpenApiVO := *openapiclient.NewRrmSettingOpenApiVO(int32(123), false) // RrmSettingOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

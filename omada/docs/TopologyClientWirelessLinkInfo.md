@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Channel** | Pointer to **int32** | Channel. | [optional] 
 **RadioId** | Pointer to **int32** | RadioId, it should be a value as follows: 0:2G, 1:5G, 2:5G2, 3:6G. | [optional] 
+**Rssi** | Pointer to **int32** | Signal strength, unit: dBm | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetRadioId sets RadioId field to given value.
 `func (o *TopologyClientWirelessLinkInfo) HasRadioId() bool`
 
 HasRadioId returns a boolean if a field has been set.
+
+### GetRssi
+
+`func (o *TopologyClientWirelessLinkInfo) GetRssi() int32`
+
+GetRssi returns the Rssi field if non-nil, zero value otherwise.
+
+### GetRssiOk
+
+`func (o *TopologyClientWirelessLinkInfo) GetRssiOk() (*int32, bool)`
+
+GetRssiOk returns a tuple with the Rssi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRssi
+
+`func (o *TopologyClientWirelessLinkInfo) SetRssi(v int32)`
+
+SetRssi sets Rssi field to given value.
+
+### HasRssi
+
+`func (o *TopologyClientWirelessLinkInfo) HasRssi() bool`
+
+HasRssi returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

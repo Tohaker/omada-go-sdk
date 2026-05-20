@@ -28,11 +28,11 @@ type VirtualWanIpv4StaticOpenApiVO struct {
 	// Gateway IP.
 	Gateway string `json:"gateway"`
 	// IP address.
-	Ipaddr *string `json:"ipaddr,omitempty"`
+	Ipaddr string `json:"ipaddr"`
 	// Parameter [mtu] should be a value between 576 and 1500.
-	Mtu *int32 `json:"mtu,omitempty"`
+	Mtu int32 `json:"mtu"`
 	// Subnet mask.
-	Netmask *string `json:"netmask,omitempty"`
+	Netmask string `json:"netmask"`
 }
 
 type _VirtualWanIpv4StaticOpenApiVO VirtualWanIpv4StaticOpenApiVO
@@ -41,9 +41,12 @@ type _VirtualWanIpv4StaticOpenApiVO VirtualWanIpv4StaticOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualWanIpv4StaticOpenApiVO(gateway string) *VirtualWanIpv4StaticOpenApiVO {
+func NewVirtualWanIpv4StaticOpenApiVO(gateway string, ipaddr string, mtu int32, netmask string) *VirtualWanIpv4StaticOpenApiVO {
 	this := VirtualWanIpv4StaticOpenApiVO{}
 	this.Gateway = gateway
+	this.Ipaddr = ipaddr
+	this.Mtu = mtu
+	this.Netmask = netmask
 	return &this
 }
 
@@ -143,100 +146,76 @@ func (o *VirtualWanIpv4StaticOpenApiVO) SetGateway(v string) {
 	o.Gateway = v
 }
 
-// GetIpaddr returns the Ipaddr field value if set, zero value otherwise.
+// GetIpaddr returns the Ipaddr field value
 func (o *VirtualWanIpv4StaticOpenApiVO) GetIpaddr() string {
-	if o == nil || IsNil(o.Ipaddr) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Ipaddr
+
+	return o.Ipaddr
 }
 
-// GetIpaddrOk returns a tuple with the Ipaddr field value if set, nil otherwise
+// GetIpaddrOk returns a tuple with the Ipaddr field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4StaticOpenApiVO) GetIpaddrOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipaddr) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Ipaddr, true
+	return &o.Ipaddr, true
 }
 
-// HasIpaddr returns a boolean if a field has been set.
-func (o *VirtualWanIpv4StaticOpenApiVO) HasIpaddr() bool {
-	if o != nil && !IsNil(o.Ipaddr) {
-		return true
-	}
-
-	return false
-}
-
-// SetIpaddr gets a reference to the given string and assigns it to the Ipaddr field.
+// SetIpaddr sets field value
 func (o *VirtualWanIpv4StaticOpenApiVO) SetIpaddr(v string) {
-	o.Ipaddr = &v
+	o.Ipaddr = v
 }
 
-// GetMtu returns the Mtu field value if set, zero value otherwise.
+// GetMtu returns the Mtu field value
 func (o *VirtualWanIpv4StaticOpenApiVO) GetMtu() int32 {
-	if o == nil || IsNil(o.Mtu) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Mtu
+
+	return o.Mtu
 }
 
-// GetMtuOk returns a tuple with the Mtu field value if set, nil otherwise
+// GetMtuOk returns a tuple with the Mtu field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4StaticOpenApiVO) GetMtuOk() (*int32, bool) {
-	if o == nil || IsNil(o.Mtu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Mtu, true
+	return &o.Mtu, true
 }
 
-// HasMtu returns a boolean if a field has been set.
-func (o *VirtualWanIpv4StaticOpenApiVO) HasMtu() bool {
-	if o != nil && !IsNil(o.Mtu) {
-		return true
-	}
-
-	return false
-}
-
-// SetMtu gets a reference to the given int32 and assigns it to the Mtu field.
+// SetMtu sets field value
 func (o *VirtualWanIpv4StaticOpenApiVO) SetMtu(v int32) {
-	o.Mtu = &v
+	o.Mtu = v
 }
 
-// GetNetmask returns the Netmask field value if set, zero value otherwise.
+// GetNetmask returns the Netmask field value
 func (o *VirtualWanIpv4StaticOpenApiVO) GetNetmask() string {
-	if o == nil || IsNil(o.Netmask) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Netmask
+
+	return o.Netmask
 }
 
-// GetNetmaskOk returns a tuple with the Netmask field value if set, nil otherwise
+// GetNetmaskOk returns a tuple with the Netmask field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4StaticOpenApiVO) GetNetmaskOk() (*string, bool) {
-	if o == nil || IsNil(o.Netmask) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Netmask, true
+	return &o.Netmask, true
 }
 
-// HasNetmask returns a boolean if a field has been set.
-func (o *VirtualWanIpv4StaticOpenApiVO) HasNetmask() bool {
-	if o != nil && !IsNil(o.Netmask) {
-		return true
-	}
-
-	return false
-}
-
-// SetNetmask gets a reference to the given string and assigns it to the Netmask field.
+// SetNetmask sets field value
 func (o *VirtualWanIpv4StaticOpenApiVO) SetNetmask(v string) {
-	o.Netmask = &v
+	o.Netmask = v
 }
 
 func (o VirtualWanIpv4StaticOpenApiVO) MarshalJSON() ([]byte, error) {
@@ -256,15 +235,9 @@ func (o VirtualWanIpv4StaticOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["dns2"] = o.Dns2
 	}
 	toSerialize["gateway"] = o.Gateway
-	if !IsNil(o.Ipaddr) {
-		toSerialize["ipaddr"] = o.Ipaddr
-	}
-	if !IsNil(o.Mtu) {
-		toSerialize["mtu"] = o.Mtu
-	}
-	if !IsNil(o.Netmask) {
-		toSerialize["netmask"] = o.Netmask
-	}
+	toSerialize["ipaddr"] = o.Ipaddr
+	toSerialize["mtu"] = o.Mtu
+	toSerialize["netmask"] = o.Netmask
 	return toSerialize, nil
 }
 
@@ -274,6 +247,9 @@ func (o *VirtualWanIpv4StaticOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"gateway",
+		"ipaddr",
+		"mtu",
+		"netmask",
 	}
 
 	allProperties := make(map[string]interface{})

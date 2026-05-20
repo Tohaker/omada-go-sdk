@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **Dns1** | Pointer to **string** | Primary DNS. | [optional] 
 **Dns2** | Pointer to **string** | Secondary DNS. | [optional] 
 **Gateway** | **string** | Gateway IP. | 
-**Ipaddr** | Pointer to **string** | IP address. | [optional] 
-**Mtu** | Pointer to **int32** | Parameter [mtu] should be a value between 576 and 1500. | [optional] 
-**Netmask** | Pointer to **string** | Subnet mask. | [optional] 
+**Ipaddr** | **string** | IP address. | 
+**Mtu** | **int32** | Parameter [mtu] should be a value between 576 and 1500. | 
+**Netmask** | **string** | Subnet mask. | 
 
 ## Methods
 
 ### NewVirtualWanIpv4StaticOpenApiVO
 
-`func NewVirtualWanIpv4StaticOpenApiVO(gateway string, ) *VirtualWanIpv4StaticOpenApiVO`
+`func NewVirtualWanIpv4StaticOpenApiVO(gateway string, ipaddr string, mtu int32, netmask string, ) *VirtualWanIpv4StaticOpenApiVO`
 
 NewVirtualWanIpv4StaticOpenApiVO instantiates a new VirtualWanIpv4StaticOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetIpaddr sets Ipaddr field to given value.
 
-### HasIpaddr
-
-`func (o *VirtualWanIpv4StaticOpenApiVO) HasIpaddr() bool`
-
-HasIpaddr returns a boolean if a field has been set.
 
 ### GetMtu
 
@@ -144,11 +139,6 @@ and a boolean to check if the value has been set.
 
 SetMtu sets Mtu field to given value.
 
-### HasMtu
-
-`func (o *VirtualWanIpv4StaticOpenApiVO) HasMtu() bool`
-
-HasMtu returns a boolean if a field has been set.
 
 ### GetNetmask
 
@@ -169,11 +159,6 @@ and a boolean to check if the value has been set.
 
 SetNetmask sets Netmask field to given value.
 
-### HasNetmask
-
-`func (o *VirtualWanIpv4StaticOpenApiVO) HasNetmask() bool`
-
-HasNetmask returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

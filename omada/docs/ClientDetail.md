@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Capabilities** | Pointer to **[]string** | One or more of the following values: Station、DOCSIS cable device、Telephone、Router、WLAN access point、Bridge、Repeater、other. | [optional] 
 **Channel** | Pointer to **int32** | (Wireless)  Actual channel. | [optional] 
 **ClientLockToApSetting** | Pointer to [**ClientLockToApDetailSetting**](ClientLockToApDetailSetting.md) |  | [optional] 
+**ClientSupportNatTraversal** | Pointer to **bool** | Whether client support NAT traversal | [optional] 
 **ConnectDevType** | Pointer to **string** | connect device type should be a value as follows: ap, switch, gateway. | [optional] 
 **ConnectType** | Pointer to **int32** | Connect type should be a value as follows: 0: wireless guest; 1: wireless user; 2: wired user. | [optional] 
 **ConnectedToWirelessRouter** | Pointer to **bool** | true: Client is connecting to a wireless router. | [optional] 
@@ -366,6 +367,31 @@ SetClientLockToApSetting sets ClientLockToApSetting field to given value.
 `func (o *ClientDetail) HasClientLockToApSetting() bool`
 
 HasClientLockToApSetting returns a boolean if a field has been set.
+
+### GetClientSupportNatTraversal
+
+`func (o *ClientDetail) GetClientSupportNatTraversal() bool`
+
+GetClientSupportNatTraversal returns the ClientSupportNatTraversal field if non-nil, zero value otherwise.
+
+### GetClientSupportNatTraversalOk
+
+`func (o *ClientDetail) GetClientSupportNatTraversalOk() (*bool, bool)`
+
+GetClientSupportNatTraversalOk returns a tuple with the ClientSupportNatTraversal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSupportNatTraversal
+
+`func (o *ClientDetail) SetClientSupportNatTraversal(v bool)`
+
+SetClientSupportNatTraversal sets ClientSupportNatTraversal field to given value.
+
+### HasClientSupportNatTraversal
+
+`func (o *ClientDetail) HasClientSupportNatTraversal() bool`
+
+HasClientSupportNatTraversal returns a boolean if a field has been set.
 
 ### GetConnectDevType
 

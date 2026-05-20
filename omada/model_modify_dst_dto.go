@@ -19,12 +19,13 @@ var _ MappedNullable = &ModifyDstDTO{}
 
 // ModifyDstDTO Daylight Saving Time config of the site
 type ModifyDstDTO struct {
-	// DST config status; If false, other parameters are not required.
+	// DST config status; If false, other parameters are not required. Deprecated, use mode instead.
+	// Deprecated
 	Enable *bool `json:"enable,omitempty"`
 	End *DstTimeOpenApiDTO `json:"end,omitempty"`
 	// DST config mode; If disable, other parameters are not required. 0: disable, 1: auto, 2: manually
 	Mode *int32 `json:"mode,omitempty"`
-	// DST offset config(Unit: ms); It should be a value as follows: [1800000, 3600000, 5400000, 7200000].
+	// DST offset config(Unit: ms); It should be a value as follows: [1800000, 3600000, 5400000, 7200000]. When DST mode is 2(manually), offset is required.
 	Offset *int64 `json:"offset,omitempty"`
 	Start *DstTimeOpenApiDTO `json:"start,omitempty"`
 }
@@ -47,6 +48,7 @@ func NewModifyDstDTOWithDefaults() *ModifyDstDTO {
 }
 
 // GetEnable returns the Enable field value if set, zero value otherwise.
+// Deprecated
 func (o *ModifyDstDTO) GetEnable() bool {
 	if o == nil || IsNil(o.Enable) {
 		var ret bool
@@ -57,6 +59,7 @@ func (o *ModifyDstDTO) GetEnable() bool {
 
 // GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *ModifyDstDTO) GetEnableOk() (*bool, bool) {
 	if o == nil || IsNil(o.Enable) {
 		return nil, false
@@ -74,6 +77,7 @@ func (o *ModifyDstDTO) HasEnable() bool {
 }
 
 // SetEnable gets a reference to the given bool and assigns it to the Enable field.
+// Deprecated
 func (o *ModifyDstDTO) SetEnable(v bool) {
 	o.Enable = &v
 }

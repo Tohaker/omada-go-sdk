@@ -53,7 +53,7 @@ func Test_omada_InsightAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test InsightAPIService ExportBatchFullChannelDetectResultData", func(t *testing.T) {
+	t.Run("Test InsightAPIService ExportBatchFullChannelDetectResultData1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -61,7 +61,23 @@ func Test_omada_InsightAPIService(t *testing.T) {
 		var siteId string
 		var historyId string
 
-		resp, httpRes, err := apiClient.InsightAPI.ExportBatchFullChannelDetectResultData(context.Background(), omadacId, siteId, historyId).Execute()
+		resp, httpRes, err := apiClient.InsightAPI.ExportBatchFullChannelDetectResultData1(context.Background(), omadacId, siteId, historyId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InsightAPIService ExportFullChannelDetectResult", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apMac string
+
+		resp, httpRes, err := apiClient.InsightAPI.ExportFullChannelDetectResult(context.Background(), omadacId, siteId, apMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

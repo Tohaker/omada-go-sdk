@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Duplex** | Pointer to **int32** | Duplex, it should be a value as follows: 1:Half Duplex. | [optional] 
 **LinkSpeed** | Pointer to **int32** | Link Speed, it should be a value as follows: 1:10Mbps, 2:100Mbps, 3:1000Mbps, 4:2.5Gbps, 5:10Gbps, 6:5Gbps, 7:25Gbps. | [optional] 
 **Port** | Pointer to [**TopologyClientUplinkPort**](TopologyClientUplinkPort.md) |  | [optional] 
-**UplinkPort** | Pointer to [**WiredPortV3DTO**](WiredPortV3DTO.md) |  | [optional] 
+**UpLinkPort** | Pointer to [**WiredPortV3DTO**](WiredPortV3DTO.md) |  | [optional] 
 
 ## Methods
 
@@ -103,30 +103,30 @@ SetPort sets Port field to given value.
 
 HasPort returns a boolean if a field has been set.
 
-### GetUplinkPort
+### GetUpLinkPort
 
-`func (o *TopologyClientWiredUpInfo) GetUplinkPort() WiredPortV3DTO`
+`func (o *TopologyClientWiredUpInfo) GetUpLinkPort() WiredPortV3DTO`
 
-GetUplinkPort returns the UplinkPort field if non-nil, zero value otherwise.
+GetUpLinkPort returns the UpLinkPort field if non-nil, zero value otherwise.
 
-### GetUplinkPortOk
+### GetUpLinkPortOk
 
-`func (o *TopologyClientWiredUpInfo) GetUplinkPortOk() (*WiredPortV3DTO, bool)`
+`func (o *TopologyClientWiredUpInfo) GetUpLinkPortOk() (*WiredPortV3DTO, bool)`
 
-GetUplinkPortOk returns a tuple with the UplinkPort field if it's non-nil, zero value otherwise
+GetUpLinkPortOk returns a tuple with the UpLinkPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUplinkPort
+### SetUpLinkPort
 
-`func (o *TopologyClientWiredUpInfo) SetUplinkPort(v WiredPortV3DTO)`
+`func (o *TopologyClientWiredUpInfo) SetUpLinkPort(v WiredPortV3DTO)`
 
-SetUplinkPort sets UplinkPort field to given value.
+SetUpLinkPort sets UpLinkPort field to given value.
 
-### HasUplinkPort
+### HasUpLinkPort
 
-`func (o *TopologyClientWiredUpInfo) HasUplinkPort() bool`
+`func (o *TopologyClientWiredUpInfo) HasUpLinkPort() bool`
 
-HasUplinkPort returns a boolean if a field has been set.
+HasUpLinkPort returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

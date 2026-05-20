@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **LocatePortSupport** | Pointer to **bool** | Locate port Support | [optional] 
 **LoopbackInterfaceSupport** | Pointer to **bool** | Loopback Interface Support | [optional] 
 **LoopbackVlanBasedSupport** | Pointer to **bool** | Loopback Detect Vlan Based Support | [optional] 
-**MaxLagMember** | Pointer to **int32** | Max Lag Member | [optional] 
+**MaxLagMember** | Pointer to **int32** | Max Lacp Member | [optional] 
 **MaxLagNum** | Pointer to **int32** | Max Lag Num | [optional] 
 **MaxMirrorGroup** | Pointer to **int32** | Max Mirror Group | [optional] 
 **MaxMirroredPort** | Pointer to **int32** | Max Mirrored Port | [optional] 
@@ -42,6 +42,7 @@ Name | Type | Description | Notes
 **MirrorSupport** | Pointer to **bool** |  | [optional] 
 **MlagGroupId** | Pointer to **int32** |  | [optional] 
 **MlagVersion** | Pointer to **string** |  | [optional] 
+**MstpInsNo** | Pointer to **int32** | Mstp Max InstanceId | [optional] 
 **MstpInsNum** | Pointer to **int32** | Mstp Instance Num | [optional] 
 **NeedFullSync** | Pointer to **bool** | Need full sync | [optional] 
 **NetworkCheckSupport** | Pointer to **bool** |  | [optional] 
@@ -54,6 +55,8 @@ Name | Type | Description | Notes
 **PoeSupport** | Pointer to **bool** | Poe Support | [optional] 
 **QosForVlanSupport** | Pointer to **bool** | Qos for Vlan Support | [optional] 
 **QosSupport** | Pointer to **bool** | QoS Support | [optional] 
+**RpvstExtendSupport** | Pointer to **bool** | RPVST Extend Support | [optional] 
+**RpvstInsNum** | Pointer to **int32** | Max Rpvst Instance Num | [optional] 
 **SfpBeginNum** | Pointer to **int32** | SFP Begin Num | [optional] 
 **SfpNum** | Pointer to **int32** | SFP Num | [optional] 
 **StackPortCap** | Pointer to **map[string][]string** | Stack Port Capability | [optional] 
@@ -81,6 +84,7 @@ Name | Type | Description | Notes
 **SupportRelayMultiServer** | Pointer to **bool** | Whether the device supports DHCP relay multi Server | [optional] 
 **SupportRunningConfig** | Pointer to **bool** | Whether the device supports showing running config | [optional] 
 **SupportSdm** | Pointer to **bool** |  | [optional] 
+**SupportTpclResInfo** | Pointer to **bool** | Whether the device supports returning TPCL resource information | [optional] 
 **SupportVrf** | Pointer to **bool** |  | [optional] 
 **TerminalSupport** | Pointer to **bool** |  | [optional] 
 **TracerouteSupport** | Pointer to **bool** |  | [optional] 
@@ -1059,6 +1063,31 @@ SetMlagVersion sets MlagVersion field to given value.
 
 HasMlagVersion returns a boolean if a field has been set.
 
+### GetMstpInsNo
+
+`func (o *OswDevCapVO) GetMstpInsNo() int32`
+
+GetMstpInsNo returns the MstpInsNo field if non-nil, zero value otherwise.
+
+### GetMstpInsNoOk
+
+`func (o *OswDevCapVO) GetMstpInsNoOk() (*int32, bool)`
+
+GetMstpInsNoOk returns a tuple with the MstpInsNo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMstpInsNo
+
+`func (o *OswDevCapVO) SetMstpInsNo(v int32)`
+
+SetMstpInsNo sets MstpInsNo field to given value.
+
+### HasMstpInsNo
+
+`func (o *OswDevCapVO) HasMstpInsNo() bool`
+
+HasMstpInsNo returns a boolean if a field has been set.
+
 ### GetMstpInsNum
 
 `func (o *OswDevCapVO) GetMstpInsNum() int32`
@@ -1358,6 +1387,56 @@ SetQosSupport sets QosSupport field to given value.
 `func (o *OswDevCapVO) HasQosSupport() bool`
 
 HasQosSupport returns a boolean if a field has been set.
+
+### GetRpvstExtendSupport
+
+`func (o *OswDevCapVO) GetRpvstExtendSupport() bool`
+
+GetRpvstExtendSupport returns the RpvstExtendSupport field if non-nil, zero value otherwise.
+
+### GetRpvstExtendSupportOk
+
+`func (o *OswDevCapVO) GetRpvstExtendSupportOk() (*bool, bool)`
+
+GetRpvstExtendSupportOk returns a tuple with the RpvstExtendSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRpvstExtendSupport
+
+`func (o *OswDevCapVO) SetRpvstExtendSupport(v bool)`
+
+SetRpvstExtendSupport sets RpvstExtendSupport field to given value.
+
+### HasRpvstExtendSupport
+
+`func (o *OswDevCapVO) HasRpvstExtendSupport() bool`
+
+HasRpvstExtendSupport returns a boolean if a field has been set.
+
+### GetRpvstInsNum
+
+`func (o *OswDevCapVO) GetRpvstInsNum() int32`
+
+GetRpvstInsNum returns the RpvstInsNum field if non-nil, zero value otherwise.
+
+### GetRpvstInsNumOk
+
+`func (o *OswDevCapVO) GetRpvstInsNumOk() (*int32, bool)`
+
+GetRpvstInsNumOk returns a tuple with the RpvstInsNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRpvstInsNum
+
+`func (o *OswDevCapVO) SetRpvstInsNum(v int32)`
+
+SetRpvstInsNum sets RpvstInsNum field to given value.
+
+### HasRpvstInsNum
+
+`func (o *OswDevCapVO) HasRpvstInsNum() bool`
+
+HasRpvstInsNum returns a boolean if a field has been set.
 
 ### GetSfpBeginNum
 
@@ -2033,6 +2112,31 @@ SetSupportSdm sets SupportSdm field to given value.
 `func (o *OswDevCapVO) HasSupportSdm() bool`
 
 HasSupportSdm returns a boolean if a field has been set.
+
+### GetSupportTpclResInfo
+
+`func (o *OswDevCapVO) GetSupportTpclResInfo() bool`
+
+GetSupportTpclResInfo returns the SupportTpclResInfo field if non-nil, zero value otherwise.
+
+### GetSupportTpclResInfoOk
+
+`func (o *OswDevCapVO) GetSupportTpclResInfoOk() (*bool, bool)`
+
+GetSupportTpclResInfoOk returns a tuple with the SupportTpclResInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportTpclResInfo
+
+`func (o *OswDevCapVO) SetSupportTpclResInfo(v bool)`
+
+SetSupportTpclResInfo sets SupportTpclResInfo field to given value.
+
+### HasSupportTpclResInfo
+
+`func (o *OswDevCapVO) HasSupportTpclResInfo() bool`
+
+HasSupportTpclResInfo returns a boolean if a field has been set.
 
 ### GetSupportVrf
 

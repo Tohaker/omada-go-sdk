@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the SdWanIpPoolRange type satisfies the MappedNullable interface at compile time
@@ -22,19 +24,24 @@ type SdWanIpPoolRange struct {
 	// The SD-WAN group ID.
 	GroupId *string `json:"groupId,omitempty"`
 	// The end of the IP pool of the sdWan group.
-	IpPoolEnd *string `json:"ipPoolEnd,omitempty"`
+	IpPoolEnd string `json:"ipPoolEnd"`
 	// The start of the IP pool of the sdWan group.
-	IpPoolStart *string `json:"ipPoolStart,omitempty"`
-	// Maximum number of tunnels that each SD-WAN device.
-	TunnelLimit *int32 `json:"tunnelLimit,omitempty"`
+	IpPoolStart string `json:"ipPoolStart"`
+	// Enter the number of tunnels required by this group to determine if the number of IPs in the IP pool is sufficient.
+	TunnelLimit int32 `json:"tunnelLimit"`
 }
+
+type _SdWanIpPoolRange SdWanIpPoolRange
 
 // NewSdWanIpPoolRange instantiates a new SdWanIpPoolRange object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSdWanIpPoolRange() *SdWanIpPoolRange {
+func NewSdWanIpPoolRange(ipPoolEnd string, ipPoolStart string, tunnelLimit int32) *SdWanIpPoolRange {
 	this := SdWanIpPoolRange{}
+	this.IpPoolEnd = ipPoolEnd
+	this.IpPoolStart = ipPoolStart
+	this.TunnelLimit = tunnelLimit
 	return &this
 }
 
@@ -78,100 +85,76 @@ func (o *SdWanIpPoolRange) SetGroupId(v string) {
 	o.GroupId = &v
 }
 
-// GetIpPoolEnd returns the IpPoolEnd field value if set, zero value otherwise.
+// GetIpPoolEnd returns the IpPoolEnd field value
 func (o *SdWanIpPoolRange) GetIpPoolEnd() string {
-	if o == nil || IsNil(o.IpPoolEnd) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.IpPoolEnd
+
+	return o.IpPoolEnd
 }
 
-// GetIpPoolEndOk returns a tuple with the IpPoolEnd field value if set, nil otherwise
+// GetIpPoolEndOk returns a tuple with the IpPoolEnd field value
 // and a boolean to check if the value has been set.
 func (o *SdWanIpPoolRange) GetIpPoolEndOk() (*string, bool) {
-	if o == nil || IsNil(o.IpPoolEnd) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IpPoolEnd, true
+	return &o.IpPoolEnd, true
 }
 
-// HasIpPoolEnd returns a boolean if a field has been set.
-func (o *SdWanIpPoolRange) HasIpPoolEnd() bool {
-	if o != nil && !IsNil(o.IpPoolEnd) {
-		return true
-	}
-
-	return false
-}
-
-// SetIpPoolEnd gets a reference to the given string and assigns it to the IpPoolEnd field.
+// SetIpPoolEnd sets field value
 func (o *SdWanIpPoolRange) SetIpPoolEnd(v string) {
-	o.IpPoolEnd = &v
+	o.IpPoolEnd = v
 }
 
-// GetIpPoolStart returns the IpPoolStart field value if set, zero value otherwise.
+// GetIpPoolStart returns the IpPoolStart field value
 func (o *SdWanIpPoolRange) GetIpPoolStart() string {
-	if o == nil || IsNil(o.IpPoolStart) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.IpPoolStart
+
+	return o.IpPoolStart
 }
 
-// GetIpPoolStartOk returns a tuple with the IpPoolStart field value if set, nil otherwise
+// GetIpPoolStartOk returns a tuple with the IpPoolStart field value
 // and a boolean to check if the value has been set.
 func (o *SdWanIpPoolRange) GetIpPoolStartOk() (*string, bool) {
-	if o == nil || IsNil(o.IpPoolStart) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IpPoolStart, true
+	return &o.IpPoolStart, true
 }
 
-// HasIpPoolStart returns a boolean if a field has been set.
-func (o *SdWanIpPoolRange) HasIpPoolStart() bool {
-	if o != nil && !IsNil(o.IpPoolStart) {
-		return true
-	}
-
-	return false
-}
-
-// SetIpPoolStart gets a reference to the given string and assigns it to the IpPoolStart field.
+// SetIpPoolStart sets field value
 func (o *SdWanIpPoolRange) SetIpPoolStart(v string) {
-	o.IpPoolStart = &v
+	o.IpPoolStart = v
 }
 
-// GetTunnelLimit returns the TunnelLimit field value if set, zero value otherwise.
+// GetTunnelLimit returns the TunnelLimit field value
 func (o *SdWanIpPoolRange) GetTunnelLimit() int32 {
-	if o == nil || IsNil(o.TunnelLimit) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.TunnelLimit
+
+	return o.TunnelLimit
 }
 
-// GetTunnelLimitOk returns a tuple with the TunnelLimit field value if set, nil otherwise
+// GetTunnelLimitOk returns a tuple with the TunnelLimit field value
 // and a boolean to check if the value has been set.
 func (o *SdWanIpPoolRange) GetTunnelLimitOk() (*int32, bool) {
-	if o == nil || IsNil(o.TunnelLimit) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TunnelLimit, true
+	return &o.TunnelLimit, true
 }
 
-// HasTunnelLimit returns a boolean if a field has been set.
-func (o *SdWanIpPoolRange) HasTunnelLimit() bool {
-	if o != nil && !IsNil(o.TunnelLimit) {
-		return true
-	}
-
-	return false
-}
-
-// SetTunnelLimit gets a reference to the given int32 and assigns it to the TunnelLimit field.
+// SetTunnelLimit sets field value
 func (o *SdWanIpPoolRange) SetTunnelLimit(v int32) {
-	o.TunnelLimit = &v
+	o.TunnelLimit = v
 }
 
 func (o SdWanIpPoolRange) MarshalJSON() ([]byte, error) {
@@ -187,16 +170,49 @@ func (o SdWanIpPoolRange) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !IsNil(o.IpPoolEnd) {
-		toSerialize["ipPoolEnd"] = o.IpPoolEnd
-	}
-	if !IsNil(o.IpPoolStart) {
-		toSerialize["ipPoolStart"] = o.IpPoolStart
-	}
-	if !IsNil(o.TunnelLimit) {
-		toSerialize["tunnelLimit"] = o.TunnelLimit
-	}
+	toSerialize["ipPoolEnd"] = o.IpPoolEnd
+	toSerialize["ipPoolStart"] = o.IpPoolStart
+	toSerialize["tunnelLimit"] = o.TunnelLimit
 	return toSerialize, nil
+}
+
+func (o *SdWanIpPoolRange) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"ipPoolEnd",
+		"ipPoolStart",
+		"tunnelLimit",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSdWanIpPoolRange := _SdWanIpPoolRange{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varSdWanIpPoolRange)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SdWanIpPoolRange(varSdWanIpPoolRange)
+
+	return err
 }
 
 type NullableSdWanIpPoolRange struct {

@@ -97,6 +97,10 @@ type PortalCustomizeOpenApiVO struct {
 	InputTextColor *string `json:"inputTextColor,omitempty"`
 	// Input text opacity, should be within the range of 0–100.
 	InputTextOpacity *int32 `json:"inputTextOpacity,omitempty"`
+	// Language Selector text color. Hex color code such as: #ffffff.
+	LanguageSelectorTextColor *string `json:"languageSelectorTextColor,omitempty"`
+	// Language Selector text opacity, should be within the range of 0–100.
+	LanguageSelectorTextOpacity *int32 `json:"languageSelectorTextOpacity,omitempty"`
 	// Whether to display the default logo.
 	LogoDisplay bool `json:"logoDisplay"`
 	// Position of logo horizontal, 0: left; 1: medium; 2: right
@@ -112,7 +116,7 @@ type PortalCustomizeOpenApiVO struct {
 	TermsOfServiceEnable bool `json:"termsOfServiceEnable"`
 	// Terms of service text font size, should be within the range of 12–18.
 	TermsOfServiceFontSize *int32 `json:"termsOfServiceFontSize,omitempty"`
-	// Terms of service text, should contain 0 to 100 characters.
+	// Terms of service text, should contain 0 to 512 characters.
 	TermsOfServiceText *string `json:"termsOfServiceText,omitempty"`
 	// Terms of service text color. Hex color code such as: #ffffff.
 	TermsOfServiceTextColor *string `json:"termsOfServiceTextColor,omitempty"`
@@ -1388,6 +1392,70 @@ func (o *PortalCustomizeOpenApiVO) SetInputTextOpacity(v int32) {
 	o.InputTextOpacity = &v
 }
 
+// GetLanguageSelectorTextColor returns the LanguageSelectorTextColor field value if set, zero value otherwise.
+func (o *PortalCustomizeOpenApiVO) GetLanguageSelectorTextColor() string {
+	if o == nil || IsNil(o.LanguageSelectorTextColor) {
+		var ret string
+		return ret
+	}
+	return *o.LanguageSelectorTextColor
+}
+
+// GetLanguageSelectorTextColorOk returns a tuple with the LanguageSelectorTextColor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeOpenApiVO) GetLanguageSelectorTextColorOk() (*string, bool) {
+	if o == nil || IsNil(o.LanguageSelectorTextColor) {
+		return nil, false
+	}
+	return o.LanguageSelectorTextColor, true
+}
+
+// HasLanguageSelectorTextColor returns a boolean if a field has been set.
+func (o *PortalCustomizeOpenApiVO) HasLanguageSelectorTextColor() bool {
+	if o != nil && !IsNil(o.LanguageSelectorTextColor) {
+		return true
+	}
+
+	return false
+}
+
+// SetLanguageSelectorTextColor gets a reference to the given string and assigns it to the LanguageSelectorTextColor field.
+func (o *PortalCustomizeOpenApiVO) SetLanguageSelectorTextColor(v string) {
+	o.LanguageSelectorTextColor = &v
+}
+
+// GetLanguageSelectorTextOpacity returns the LanguageSelectorTextOpacity field value if set, zero value otherwise.
+func (o *PortalCustomizeOpenApiVO) GetLanguageSelectorTextOpacity() int32 {
+	if o == nil || IsNil(o.LanguageSelectorTextOpacity) {
+		var ret int32
+		return ret
+	}
+	return *o.LanguageSelectorTextOpacity
+}
+
+// GetLanguageSelectorTextOpacityOk returns a tuple with the LanguageSelectorTextOpacity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortalCustomizeOpenApiVO) GetLanguageSelectorTextOpacityOk() (*int32, bool) {
+	if o == nil || IsNil(o.LanguageSelectorTextOpacity) {
+		return nil, false
+	}
+	return o.LanguageSelectorTextOpacity, true
+}
+
+// HasLanguageSelectorTextOpacity returns a boolean if a field has been set.
+func (o *PortalCustomizeOpenApiVO) HasLanguageSelectorTextOpacity() bool {
+	if o != nil && !IsNil(o.LanguageSelectorTextOpacity) {
+		return true
+	}
+
+	return false
+}
+
+// SetLanguageSelectorTextOpacity gets a reference to the given int32 and assigns it to the LanguageSelectorTextOpacity field.
+func (o *PortalCustomizeOpenApiVO) SetLanguageSelectorTextOpacity(v int32) {
+	o.LanguageSelectorTextOpacity = &v
+}
+
 // GetLogoDisplay returns the LogoDisplay field value
 func (o *PortalCustomizeOpenApiVO) GetLogoDisplay() bool {
 	if o == nil {
@@ -2030,6 +2098,12 @@ func (o PortalCustomizeOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.InputTextOpacity) {
 		toSerialize["inputTextOpacity"] = o.InputTextOpacity
+	}
+	if !IsNil(o.LanguageSelectorTextColor) {
+		toSerialize["languageSelectorTextColor"] = o.LanguageSelectorTextColor
+	}
+	if !IsNil(o.LanguageSelectorTextOpacity) {
+		toSerialize["languageSelectorTextOpacity"] = o.LanguageSelectorTextOpacity
 	}
 	toSerialize["logoDisplay"] = o.LogoDisplay
 	if !IsNil(o.LogoHorizontalPosition) {

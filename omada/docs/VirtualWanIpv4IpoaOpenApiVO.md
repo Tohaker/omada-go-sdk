@@ -7,16 +7,16 @@ Name | Type | Description | Notes
 **Dns1** | Pointer to **string** | Primary DNS server. | [optional] 
 **Dns2** | Pointer to **string** | Secondary DNS server. | [optional] 
 **Gateway** | **string** | Gateway IP. | 
-**Ipaddr** | Pointer to **string** | IP address. | [optional] 
-**Mtu** | Pointer to **int32** | Parameter [mtu] should be a value between 576 and 1500. | [optional] 
-**Netmask** | Pointer to **string** | Subnet mask. | [optional] 
+**Ipaddr** | **string** | IP address. | 
+**Mtu** | **int32** | Parameter [mtu] should be a value between 576 and 1500. | 
+**Netmask** | **string** | Subnet mask. | 
 **WanMultipleIps** | Pointer to [**[]VirtualWanMultipleIpVO**](VirtualWanMultipleIpVO.md) |  | [optional] 
 
 ## Methods
 
 ### NewVirtualWanIpv4IpoaOpenApiVO
 
-`func NewVirtualWanIpv4IpoaOpenApiVO(gateway string, ) *VirtualWanIpv4IpoaOpenApiVO`
+`func NewVirtualWanIpv4IpoaOpenApiVO(gateway string, ipaddr string, mtu int32, netmask string, ) *VirtualWanIpv4IpoaOpenApiVO`
 
 NewVirtualWanIpv4IpoaOpenApiVO instantiates a new VirtualWanIpv4IpoaOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -120,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetIpaddr sets Ipaddr field to given value.
 
-### HasIpaddr
-
-`func (o *VirtualWanIpv4IpoaOpenApiVO) HasIpaddr() bool`
-
-HasIpaddr returns a boolean if a field has been set.
 
 ### GetMtu
 
@@ -145,11 +140,6 @@ and a boolean to check if the value has been set.
 
 SetMtu sets Mtu field to given value.
 
-### HasMtu
-
-`func (o *VirtualWanIpv4IpoaOpenApiVO) HasMtu() bool`
-
-HasMtu returns a boolean if a field has been set.
 
 ### GetNetmask
 
@@ -170,11 +160,6 @@ and a boolean to check if the value has been set.
 
 SetNetmask sets Netmask field to given value.
 
-### HasNetmask
-
-`func (o *VirtualWanIpv4IpoaOpenApiVO) HasNetmask() bool`
-
-HasNetmask returns a boolean if a field has been set.
 
 ### GetWanMultipleIps
 

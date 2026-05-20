@@ -19,6 +19,8 @@ var _ MappedNullable = &SdWanSelectedMapNetwork{}
 
 // SdWanSelectedMapNetwork struct for SdWanSelectedMapNetwork
 type SdWanSelectedMapNetwork struct {
+	// A list of original custom route
+	CustomNetwork []SdWanLanNetworkNatReq `json:"customNetwork,omitempty"`
 	// The SD-WAN group ID.
 	GroupId *string `json:"groupId,omitempty"`
 	// A list of original lan network
@@ -26,7 +28,7 @@ type SdWanSelectedMapNetwork struct {
 	// A list of map network range
 	MapNetworkList []string `json:"mapNetworkList,omitempty"`
 	// A list of members of the SD-WAN group
-	MemberList []SdWanMemberBriefInfo `json:"memberList,omitempty"`
+	MemberList []SdWanMemberSelected `json:"memberList,omitempty"`
 }
 
 // NewSdWanSelectedMapNetwork instantiates a new SdWanSelectedMapNetwork object
@@ -44,6 +46,38 @@ func NewSdWanSelectedMapNetwork() *SdWanSelectedMapNetwork {
 func NewSdWanSelectedMapNetworkWithDefaults() *SdWanSelectedMapNetwork {
 	this := SdWanSelectedMapNetwork{}
 	return &this
+}
+
+// GetCustomNetwork returns the CustomNetwork field value if set, zero value otherwise.
+func (o *SdWanSelectedMapNetwork) GetCustomNetwork() []SdWanLanNetworkNatReq {
+	if o == nil || IsNil(o.CustomNetwork) {
+		var ret []SdWanLanNetworkNatReq
+		return ret
+	}
+	return o.CustomNetwork
+}
+
+// GetCustomNetworkOk returns a tuple with the CustomNetwork field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanSelectedMapNetwork) GetCustomNetworkOk() ([]SdWanLanNetworkNatReq, bool) {
+	if o == nil || IsNil(o.CustomNetwork) {
+		return nil, false
+	}
+	return o.CustomNetwork, true
+}
+
+// HasCustomNetwork returns a boolean if a field has been set.
+func (o *SdWanSelectedMapNetwork) HasCustomNetwork() bool {
+	if o != nil && !IsNil(o.CustomNetwork) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomNetwork gets a reference to the given []SdWanLanNetworkNatReq and assigns it to the CustomNetwork field.
+func (o *SdWanSelectedMapNetwork) SetCustomNetwork(v []SdWanLanNetworkNatReq) {
+	o.CustomNetwork = v
 }
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
@@ -143,9 +177,9 @@ func (o *SdWanSelectedMapNetwork) SetMapNetworkList(v []string) {
 }
 
 // GetMemberList returns the MemberList field value if set, zero value otherwise.
-func (o *SdWanSelectedMapNetwork) GetMemberList() []SdWanMemberBriefInfo {
+func (o *SdWanSelectedMapNetwork) GetMemberList() []SdWanMemberSelected {
 	if o == nil || IsNil(o.MemberList) {
-		var ret []SdWanMemberBriefInfo
+		var ret []SdWanMemberSelected
 		return ret
 	}
 	return o.MemberList
@@ -153,7 +187,7 @@ func (o *SdWanSelectedMapNetwork) GetMemberList() []SdWanMemberBriefInfo {
 
 // GetMemberListOk returns a tuple with the MemberList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SdWanSelectedMapNetwork) GetMemberListOk() ([]SdWanMemberBriefInfo, bool) {
+func (o *SdWanSelectedMapNetwork) GetMemberListOk() ([]SdWanMemberSelected, bool) {
 	if o == nil || IsNil(o.MemberList) {
 		return nil, false
 	}
@@ -169,8 +203,8 @@ func (o *SdWanSelectedMapNetwork) HasMemberList() bool {
 	return false
 }
 
-// SetMemberList gets a reference to the given []SdWanMemberBriefInfo and assigns it to the MemberList field.
-func (o *SdWanSelectedMapNetwork) SetMemberList(v []SdWanMemberBriefInfo) {
+// SetMemberList gets a reference to the given []SdWanMemberSelected and assigns it to the MemberList field.
+func (o *SdWanSelectedMapNetwork) SetMemberList(v []SdWanMemberSelected) {
 	o.MemberList = v
 }
 
@@ -184,6 +218,9 @@ func (o SdWanSelectedMapNetwork) MarshalJSON() ([]byte, error) {
 
 func (o SdWanSelectedMapNetwork) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CustomNetwork) {
+		toSerialize["customNetwork"] = o.CustomNetwork
+	}
 	if !IsNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}

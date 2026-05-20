@@ -4,14 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BridgeSsidName** | **string** | Bridge SSID name. It should contain 1 to 32 UTF-8 characters. | 
-**BridgeSsidPassword** | **string** | Bridge SSID password. It should contain 8-63 printable ASCII characters. | 
+**BridgeSsidName** | Pointer to **string** | Bridge SSID name. It should contain 1 to 32 UTF-8 characters. | [optional] 
+**BridgeSsidPassword** | Pointer to **string** | Bridge SSID password. It should contain 8-63 printable ASCII characters. | [optional] 
+**HwSwitch** | Pointer to **int32** | Bridge DIP Switch config status. 0: disable, 1: enable. | [optional] 
+**TdmaConfig** | Pointer to [**ApBridgeTdmaConfigVO**](ApBridgeTdmaConfigVO.md) |  | [optional] 
 
 ## Methods
 
 ### NewApBridgeConfig
 
-`func NewApBridgeConfig(bridgeSsidName string, bridgeSsidPassword string, ) *ApBridgeConfig`
+`func NewApBridgeConfig() *ApBridgeConfig`
 
 NewApBridgeConfig instantiates a new ApBridgeConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +47,11 @@ and a boolean to check if the value has been set.
 
 SetBridgeSsidName sets BridgeSsidName field to given value.
 
+### HasBridgeSsidName
+
+`func (o *ApBridgeConfig) HasBridgeSsidName() bool`
+
+HasBridgeSsidName returns a boolean if a field has been set.
 
 ### GetBridgeSsidPassword
 
@@ -65,6 +72,61 @@ and a boolean to check if the value has been set.
 
 SetBridgeSsidPassword sets BridgeSsidPassword field to given value.
 
+### HasBridgeSsidPassword
+
+`func (o *ApBridgeConfig) HasBridgeSsidPassword() bool`
+
+HasBridgeSsidPassword returns a boolean if a field has been set.
+
+### GetHwSwitch
+
+`func (o *ApBridgeConfig) GetHwSwitch() int32`
+
+GetHwSwitch returns the HwSwitch field if non-nil, zero value otherwise.
+
+### GetHwSwitchOk
+
+`func (o *ApBridgeConfig) GetHwSwitchOk() (*int32, bool)`
+
+GetHwSwitchOk returns a tuple with the HwSwitch field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHwSwitch
+
+`func (o *ApBridgeConfig) SetHwSwitch(v int32)`
+
+SetHwSwitch sets HwSwitch field to given value.
+
+### HasHwSwitch
+
+`func (o *ApBridgeConfig) HasHwSwitch() bool`
+
+HasHwSwitch returns a boolean if a field has been set.
+
+### GetTdmaConfig
+
+`func (o *ApBridgeConfig) GetTdmaConfig() ApBridgeTdmaConfigVO`
+
+GetTdmaConfig returns the TdmaConfig field if non-nil, zero value otherwise.
+
+### GetTdmaConfigOk
+
+`func (o *ApBridgeConfig) GetTdmaConfigOk() (*ApBridgeTdmaConfigVO, bool)`
+
+GetTdmaConfigOk returns a tuple with the TdmaConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTdmaConfig
+
+`func (o *ApBridgeConfig) SetTdmaConfig(v ApBridgeTdmaConfigVO)`
+
+SetTdmaConfig sets TdmaConfig field to given value.
+
+### HasTdmaConfig
+
+`func (o *ApBridgeConfig) HasTdmaConfig() bool`
+
+HasTdmaConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

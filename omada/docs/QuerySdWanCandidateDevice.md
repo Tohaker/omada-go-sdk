@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 **SearchField** | Pointer to **string** |  | [optional] 
 **SearchKey** | Pointer to **string** | Look for a specific piece of data. | [optional] 
 **Sorts** | Pointer to **map[string]string** |  | [optional] 
-**TunnelLimit** | Pointer to **int32** | The maximum number of VPN tunnels that can be created. | [optional] 
+**TunnelLimit** | **int32** | The maximum number of VPN tunnels that can be created. Used to filter devices that meet the minimum supported tunnel count. Only those that support a tunnel count greater than the minimum will be listed. | 
 
 ## Methods
 
 ### NewQuerySdWanCandidateDevice
 
-`func NewQuerySdWanCandidateDevice(page int32, pageSize int32, role int32, ) *QuerySdWanCandidateDevice`
+`func NewQuerySdWanCandidateDevice(page int32, pageSize int32, role int32, tunnelLimit int32, ) *QuerySdWanCandidateDevice`
 
 NewQuerySdWanCandidateDevice instantiates a new QuerySdWanCandidateDevice object
 This constructor will assign default values to properties that have it defined,
@@ -263,11 +263,6 @@ and a boolean to check if the value has been set.
 
 SetTunnelLimit sets TunnelLimit field to given value.
 
-### HasTunnelLimit
-
-`func (o *QuerySdWanCandidateDevice) HasTunnelLimit() bool`
-
-HasTunnelLimit returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

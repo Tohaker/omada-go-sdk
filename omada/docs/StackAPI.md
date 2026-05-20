@@ -36,6 +36,7 @@ Method | HTTP request | Description
 [**GetOswStackLag**](StackAPI.md#getoswstacklag) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Get stack lag
 [**GetOswStackLagList**](StackAPI.md#getoswstacklaglist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/lags | Get stack lag List
 [**GetOswStackPortList**](StackAPI.md#getoswstackportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/ports | Get stack port List
+[**GetRpvstInstancesDetail**](StackAPI.md#getrpvstinstancesdetail) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/stp/instance-detail | Get Stack StpInstanceDetail
 [**GetStackCableTestFullResults**](StackAPI.md#getstackcabletestfullresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/stacks/{stackId}/full-results | Get stack cable test full results
 [**GetStackCableTestIncrementResults**](StackAPI.md#getstackcabletestincrementresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/stacks/{stackId}/increment-results | Get stack cable test increment results
 [**GetStackCableTestLogs**](StackAPI.md#getstackcabletestlogs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/stacks/{stackId}/logs | Get stack cable test logs
@@ -44,6 +45,8 @@ Method | HTTP request | Description
 [**GetStackNetworkList**](StackAPI.md#getstacknetworklist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/networks | Get stack vlan interface List
 [**GetStackPortAndLagNetwork**](StackAPI.md#getstackportandlagnetwork) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/port-lag-networks/{networkId}/vlan/{vlan} | Get the stack&#39;s ports and LAGs that the network affects
 [**GetStackRememberMe**](StackAPI.md#getstackrememberme) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/remember | Get stack remember Config
+[**GetStackRpvstInstances**](StackAPI.md#getstackrpvstinstances) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/rpvst-instances | Get Stack Rpvst Instances
+[**GetStackUsedSdmNum**](StackAPI.md#getstackusedsdmnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/sdm-used | Get the used sdm template num on the stack
 [**GetStackableSwitches**](StackAPI.md#getstackableswitches) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stacks/switches | Get stackable switches
 [**LocateOswStack**](StackAPI.md#locateoswstack) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/stacks/{stackId}/locate | Locate switch stack
 [**ModifyOswStack**](StackAPI.md#modifyoswstack) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId} | Modify Switch Stack
@@ -395,7 +398,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	oswStackConfigOpenApiVO := *openapiclient.NewOswStackConfigOpenApiVO([]openapiclient.OswStackMemberVO{*openapiclient.NewOswStackMemberVO("Mac_example", int32(123), []openapiclient.OswStackPortGroupVO{*openapiclient.NewOswStackPortGroupVO(int32(123), []openapiclient.OswStandPortVO{*openapiclient.NewOswStandPortVO(int32(123), int32(123), int32(123))})}, int32(123))}, "Name_example") // OswStackConfigOpenApiVO | 
+	oswStackConfigOpenApiVO := *openapiclient.NewOswStackConfigOpenApiVO([]openapiclient.OswStackMemberVO{*openapiclient.NewOswStackMemberVO("Mac_example", int32(123), []openapiclient.OswStackPortGroupVO{*openapiclient.NewOswStackPortGroupVO(int32(123))}, int32(123))}, "Name_example") // OswStackConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2554,6 +2557,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetRpvstInstancesDetail
+
+> OperationResponse GetRpvstInstancesDetail(ctx, omadacId, siteId, stackId).StpInstanceDetailVO(stpInstanceDetailVO).Execute()
+
+Get Stack StpInstanceDetail
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+	stpInstanceDetailVO := *openapiclient.NewStpInstanceDetailVO(int32(123)) // StpInstanceDetailVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StackAPI.GetRpvstInstancesDetail(context.Background(), omadacId, siteId, stackId).StpInstanceDetailVO(stpInstanceDetailVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.GetRpvstInstancesDetail``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRpvstInstancesDetail`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `StackAPI.GetRpvstInstancesDetail`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRpvstInstancesDetailRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **stpInstanceDetailVO** | [**StpInstanceDetailVO**](StpInstanceDetailVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetStackCableTestFullResults
 
 > OperationResponseOswCableTestResultWithStatusVO GetStackCableTestFullResults(ctx, omadacId, siteId, stackId).Execute()
@@ -3176,6 +3257,158 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetStackRpvstInstances
+
+> OperationResponse GetStackRpvstInstances(ctx, omadacId, siteId, stackId).Execute()
+
+Get Stack Rpvst Instances
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StackAPI.GetStackRpvstInstances(context.Background(), omadacId, siteId, stackId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.GetStackRpvstInstances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetStackRpvstInstances`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `StackAPI.GetStackRpvstInstances`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetStackRpvstInstancesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetStackUsedSdmNum
+
+> OperationResponseOswStackSdmApplicationVO GetStackUsedSdmNum(ctx, omadacId, siteId, stackId).Execute()
+
+Get the used sdm template num on the stack
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StackAPI.GetStackUsedSdmNum(context.Background(), omadacId, siteId, stackId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.GetStackUsedSdmNum``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetStackUsedSdmNum`: OperationResponseOswStackSdmApplicationVO
+	fmt.Fprintf(os.Stdout, "Response from `StackAPI.GetStackUsedSdmNum`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetStackUsedSdmNumRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseOswStackSdmApplicationVO**](OperationResponseOswStackSdmApplicationVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetStackableSwitches
 
 > OperationResponseOswStackSwitchVO GetStackableSwitches(ctx, omadacId, siteId).StackId(stackId).Execute()
@@ -3353,7 +3586,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	stackId := "stackId_example" // string | Stack ID
-	oswStackConfigOpenApiVO := *openapiclient.NewOswStackConfigOpenApiVO([]openapiclient.OswStackMemberVO{*openapiclient.NewOswStackMemberVO("Mac_example", int32(123), []openapiclient.OswStackPortGroupVO{*openapiclient.NewOswStackPortGroupVO(int32(123), []openapiclient.OswStandPortVO{*openapiclient.NewOswStandPortVO(int32(123), int32(123), int32(123))})}, int32(123))}, "Name_example") // OswStackConfigOpenApiVO | 
+	oswStackConfigOpenApiVO := *openapiclient.NewOswStackConfigOpenApiVO([]openapiclient.OswStackMemberVO{*openapiclient.NewOswStackMemberVO("Mac_example", int32(123), []openapiclient.OswStackPortGroupVO{*openapiclient.NewOswStackPortGroupVO(int32(123))}, int32(123))}, "Name_example") // OswStackConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

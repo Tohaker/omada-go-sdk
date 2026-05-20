@@ -21,10 +21,18 @@ var _ MappedNullable = &SnmpSettingOpenApiVO{}
 
 // SnmpSettingOpenApiVO struct for SnmpSettingOpenApiVO
 type SnmpSettingOpenApiVO struct {
+	// Authentication Mode should be a value as follows: 1: MD5; 2: SHA. When Security Level is AuthNoPriv or AuthPriv, this field is required
+	AuthMode *int32 `json:"authMode,omitempty"`
 	// Community string, valid when parameter [snmpV1V2CEnable] is true. The communityString should contain at least 10 characters, using a combination of numbers, letters or special characters.  The communityString should not contain consecutive identical characters.
 	CommunityString *string `json:"communityString,omitempty"`
 	// The password should contain at least 10 characters, using a combination of numbers, letters or special characters.  The password should not contain consecutive identical characters.  Username and Password should not be the same.
 	Password *string `json:"password,omitempty"`
+	// Privacy Mode should be a value as follows: 1: DES; 2: AES. When Security Level is AuthPriv, this field is required
+	PrivacyMode *int32 `json:"privacyMode,omitempty"`
+	// The privacy password should contain at least 10 characters, using a combination of numbers, letters or special characters.  The privacy password should not contain consecutive identical characters.  Username and privacy password should not be the same.
+	PrivacyPassword *string `json:"privacyPassword,omitempty"`
+	// Security Level should be a value as follows: 0: NoAuthNoPriv; 1: AuthNoPriv; 2: AuthPriv
+	SecurityLevel *int32 `json:"securityLevel,omitempty"`
 	// SNMPv1 & SNMPv2c enable status
 	SnmpV1V2CEnable bool `json:"snmpV1V2CEnable"`
 	// SNMPv3 enable status
@@ -52,6 +60,38 @@ func NewSnmpSettingOpenApiVO(snmpV1V2CEnable bool, snmpV3Enable bool) *SnmpSetti
 func NewSnmpSettingOpenApiVOWithDefaults() *SnmpSettingOpenApiVO {
 	this := SnmpSettingOpenApiVO{}
 	return &this
+}
+
+// GetAuthMode returns the AuthMode field value if set, zero value otherwise.
+func (o *SnmpSettingOpenApiVO) GetAuthMode() int32 {
+	if o == nil || IsNil(o.AuthMode) {
+		var ret int32
+		return ret
+	}
+	return *o.AuthMode
+}
+
+// GetAuthModeOk returns a tuple with the AuthMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnmpSettingOpenApiVO) GetAuthModeOk() (*int32, bool) {
+	if o == nil || IsNil(o.AuthMode) {
+		return nil, false
+	}
+	return o.AuthMode, true
+}
+
+// HasAuthMode returns a boolean if a field has been set.
+func (o *SnmpSettingOpenApiVO) HasAuthMode() bool {
+	if o != nil && !IsNil(o.AuthMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthMode gets a reference to the given int32 and assigns it to the AuthMode field.
+func (o *SnmpSettingOpenApiVO) SetAuthMode(v int32) {
+	o.AuthMode = &v
 }
 
 // GetCommunityString returns the CommunityString field value if set, zero value otherwise.
@@ -116,6 +156,102 @@ func (o *SnmpSettingOpenApiVO) HasPassword() bool {
 // SetPassword gets a reference to the given string and assigns it to the Password field.
 func (o *SnmpSettingOpenApiVO) SetPassword(v string) {
 	o.Password = &v
+}
+
+// GetPrivacyMode returns the PrivacyMode field value if set, zero value otherwise.
+func (o *SnmpSettingOpenApiVO) GetPrivacyMode() int32 {
+	if o == nil || IsNil(o.PrivacyMode) {
+		var ret int32
+		return ret
+	}
+	return *o.PrivacyMode
+}
+
+// GetPrivacyModeOk returns a tuple with the PrivacyMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnmpSettingOpenApiVO) GetPrivacyModeOk() (*int32, bool) {
+	if o == nil || IsNil(o.PrivacyMode) {
+		return nil, false
+	}
+	return o.PrivacyMode, true
+}
+
+// HasPrivacyMode returns a boolean if a field has been set.
+func (o *SnmpSettingOpenApiVO) HasPrivacyMode() bool {
+	if o != nil && !IsNil(o.PrivacyMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrivacyMode gets a reference to the given int32 and assigns it to the PrivacyMode field.
+func (o *SnmpSettingOpenApiVO) SetPrivacyMode(v int32) {
+	o.PrivacyMode = &v
+}
+
+// GetPrivacyPassword returns the PrivacyPassword field value if set, zero value otherwise.
+func (o *SnmpSettingOpenApiVO) GetPrivacyPassword() string {
+	if o == nil || IsNil(o.PrivacyPassword) {
+		var ret string
+		return ret
+	}
+	return *o.PrivacyPassword
+}
+
+// GetPrivacyPasswordOk returns a tuple with the PrivacyPassword field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnmpSettingOpenApiVO) GetPrivacyPasswordOk() (*string, bool) {
+	if o == nil || IsNil(o.PrivacyPassword) {
+		return nil, false
+	}
+	return o.PrivacyPassword, true
+}
+
+// HasPrivacyPassword returns a boolean if a field has been set.
+func (o *SnmpSettingOpenApiVO) HasPrivacyPassword() bool {
+	if o != nil && !IsNil(o.PrivacyPassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrivacyPassword gets a reference to the given string and assigns it to the PrivacyPassword field.
+func (o *SnmpSettingOpenApiVO) SetPrivacyPassword(v string) {
+	o.PrivacyPassword = &v
+}
+
+// GetSecurityLevel returns the SecurityLevel field value if set, zero value otherwise.
+func (o *SnmpSettingOpenApiVO) GetSecurityLevel() int32 {
+	if o == nil || IsNil(o.SecurityLevel) {
+		var ret int32
+		return ret
+	}
+	return *o.SecurityLevel
+}
+
+// GetSecurityLevelOk returns a tuple with the SecurityLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnmpSettingOpenApiVO) GetSecurityLevelOk() (*int32, bool) {
+	if o == nil || IsNil(o.SecurityLevel) {
+		return nil, false
+	}
+	return o.SecurityLevel, true
+}
+
+// HasSecurityLevel returns a boolean if a field has been set.
+func (o *SnmpSettingOpenApiVO) HasSecurityLevel() bool {
+	if o != nil && !IsNil(o.SecurityLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetSecurityLevel gets a reference to the given int32 and assigns it to the SecurityLevel field.
+func (o *SnmpSettingOpenApiVO) SetSecurityLevel(v int32) {
+	o.SecurityLevel = &v
 }
 
 // GetSnmpV1V2CEnable returns the SnmpV1V2CEnable field value
@@ -208,11 +344,23 @@ func (o SnmpSettingOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o SnmpSettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AuthMode) {
+		toSerialize["authMode"] = o.AuthMode
+	}
 	if !IsNil(o.CommunityString) {
 		toSerialize["communityString"] = o.CommunityString
 	}
 	if !IsNil(o.Password) {
 		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.PrivacyMode) {
+		toSerialize["privacyMode"] = o.PrivacyMode
+	}
+	if !IsNil(o.PrivacyPassword) {
+		toSerialize["privacyPassword"] = o.PrivacyPassword
+	}
+	if !IsNil(o.SecurityLevel) {
+		toSerialize["securityLevel"] = o.SecurityLevel
 	}
 	toSerialize["snmpV1V2CEnable"] = o.SnmpV1V2CEnable
 	toSerialize["snmpV3Enable"] = o.SnmpV3Enable

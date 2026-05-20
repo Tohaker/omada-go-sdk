@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ClosureTime** | Pointer to **int64** | Closure time of the remote access tunnel. | [optional] 
 **CustomTunnel** | Pointer to **bool** | If the remote access tunnel is a custom tunnel. | [optional] 
 **Duration** | Pointer to **int32** | Valid duration time of the remote access tunnel, 1-24 hours. | [optional] 
+**EwebHost** | Pointer to **string** | Nat traversal tunnel eweb host | [optional] 
 **Id** | Pointer to **string** | ID of the remote access tunnel. | [optional] 
 **JumpMac** | Pointer to **string** | Mac of the jumper device. | [optional] 
 **LocalAddress** | Pointer to **string** | IP address of the local target device. | [optional] 
@@ -21,6 +22,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name of the remote access tunnel. | [optional] 
 **OpenStatus** | Pointer to **bool** | Open Status of the remote access tunnel. | [optional] 
 **Status** | Pointer to **int32** | Status of the remote access tunnel. 0: Disconnected, 1: Connected, 2: Opening, -1: Heartbeat Missed, -2: Expired. | [optional] 
+**SupportHttpHttpsTunnel** | Pointer to **bool** | If the remote access tunnel supports HTTP and HTTPS connections. | [optional] 
 **SupportSshTelnetTunnel** | Pointer to **bool** | If the remote access tunnel supports SSH and telnet connections. | [optional] 
 **SupportWebAutoLogin** | Pointer to **bool** | If the remote access tunnel supports web auto login. | [optional] 
 **TunnelEntryType** | Pointer to **int32** | Entry of the remote access tunnel.1: custom tunnel 2: device tunnel 3:device detail 4:client detail | [optional] 
@@ -271,6 +273,31 @@ SetDuration sets Duration field to given value.
 
 HasDuration returns a boolean if a field has been set.
 
+### GetEwebHost
+
+`func (o *NatTraversalTunnelVO) GetEwebHost() string`
+
+GetEwebHost returns the EwebHost field if non-nil, zero value otherwise.
+
+### GetEwebHostOk
+
+`func (o *NatTraversalTunnelVO) GetEwebHostOk() (*string, bool)`
+
+GetEwebHostOk returns a tuple with the EwebHost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEwebHost
+
+`func (o *NatTraversalTunnelVO) SetEwebHost(v string)`
+
+SetEwebHost sets EwebHost field to given value.
+
+### HasEwebHost
+
+`func (o *NatTraversalTunnelVO) HasEwebHost() bool`
+
+HasEwebHost returns a boolean if a field has been set.
+
 ### GetId
 
 `func (o *NatTraversalTunnelVO) GetId() string`
@@ -465,6 +492,31 @@ SetStatus sets Status field to given value.
 `func (o *NatTraversalTunnelVO) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetSupportHttpHttpsTunnel
+
+`func (o *NatTraversalTunnelVO) GetSupportHttpHttpsTunnel() bool`
+
+GetSupportHttpHttpsTunnel returns the SupportHttpHttpsTunnel field if non-nil, zero value otherwise.
+
+### GetSupportHttpHttpsTunnelOk
+
+`func (o *NatTraversalTunnelVO) GetSupportHttpHttpsTunnelOk() (*bool, bool)`
+
+GetSupportHttpHttpsTunnelOk returns a tuple with the SupportHttpHttpsTunnel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportHttpHttpsTunnel
+
+`func (o *NatTraversalTunnelVO) SetSupportHttpHttpsTunnel(v bool)`
+
+SetSupportHttpHttpsTunnel sets SupportHttpHttpsTunnel field to given value.
+
+### HasSupportHttpHttpsTunnel
+
+`func (o *NatTraversalTunnelVO) HasSupportHttpHttpsTunnel() bool`
+
+HasSupportHttpHttpsTunnel returns a boolean if a field has been set.
 
 ### GetSupportSshTelnetTunnel
 

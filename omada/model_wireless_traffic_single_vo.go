@@ -19,12 +19,12 @@ var _ MappedNullable = &WirelessTrafficSingleVO{}
 
 // WirelessTrafficSingleVO struct for WirelessTrafficSingleVO
 type WirelessTrafficSingleVO struct {
-	// rx traffic
+	// client rx traffic
 	RxTraffic *int64 `json:"rxTraffic,omitempty"`
 	// total traffic
 	TotalTraffic *int64 `json:"totalTraffic,omitempty"`
 	TrafficTrend []WirelessTrafficTrendVO `json:"trafficTrend,omitempty"`
-	// tx traffic
+	// client tx traffic
 	TxTraffic *int64 `json:"txTraffic,omitempty"`
 }
 

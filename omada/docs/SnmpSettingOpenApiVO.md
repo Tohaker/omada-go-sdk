@@ -4,8 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AuthMode** | Pointer to **int32** | Authentication Mode should be a value as follows: 1: MD5; 2: SHA. When Security Level is AuthNoPriv or AuthPriv, this field is required | [optional] 
 **CommunityString** | Pointer to **string** | Community string, valid when parameter [snmpV1V2CEnable] is true. The communityString should contain at least 10 characters, using a combination of numbers, letters or special characters.  The communityString should not contain consecutive identical characters. | [optional] 
 **Password** | Pointer to **string** | The password should contain at least 10 characters, using a combination of numbers, letters or special characters.  The password should not contain consecutive identical characters.  Username and Password should not be the same. | [optional] 
+**PrivacyMode** | Pointer to **int32** | Privacy Mode should be a value as follows: 1: DES; 2: AES. When Security Level is AuthPriv, this field is required | [optional] 
+**PrivacyPassword** | Pointer to **string** | The privacy password should contain at least 10 characters, using a combination of numbers, letters or special characters.  The privacy password should not contain consecutive identical characters.  Username and privacy password should not be the same. | [optional] 
+**SecurityLevel** | Pointer to **int32** | Security Level should be a value as follows: 0: NoAuthNoPriv; 1: AuthNoPriv; 2: AuthPriv | [optional] 
 **SnmpV1V2CEnable** | **bool** | SNMPv1 &amp; SNMPv2c enable status | 
 **SnmpV3Enable** | **bool** | SNMPv3 enable status | 
 **Username** | Pointer to **string** | Username, valid when parameter [snmpV3Enable] is true. Username should contain 1 to 30 characters | [optional] 
@@ -28,6 +32,31 @@ will change when the set of required properties is changed
 NewSnmpSettingOpenApiVOWithDefaults instantiates a new SnmpSettingOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAuthMode
+
+`func (o *SnmpSettingOpenApiVO) GetAuthMode() int32`
+
+GetAuthMode returns the AuthMode field if non-nil, zero value otherwise.
+
+### GetAuthModeOk
+
+`func (o *SnmpSettingOpenApiVO) GetAuthModeOk() (*int32, bool)`
+
+GetAuthModeOk returns a tuple with the AuthMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthMode
+
+`func (o *SnmpSettingOpenApiVO) SetAuthMode(v int32)`
+
+SetAuthMode sets AuthMode field to given value.
+
+### HasAuthMode
+
+`func (o *SnmpSettingOpenApiVO) HasAuthMode() bool`
+
+HasAuthMode returns a boolean if a field has been set.
 
 ### GetCommunityString
 
@@ -78,6 +107,81 @@ SetPassword sets Password field to given value.
 `func (o *SnmpSettingOpenApiVO) HasPassword() bool`
 
 HasPassword returns a boolean if a field has been set.
+
+### GetPrivacyMode
+
+`func (o *SnmpSettingOpenApiVO) GetPrivacyMode() int32`
+
+GetPrivacyMode returns the PrivacyMode field if non-nil, zero value otherwise.
+
+### GetPrivacyModeOk
+
+`func (o *SnmpSettingOpenApiVO) GetPrivacyModeOk() (*int32, bool)`
+
+GetPrivacyModeOk returns a tuple with the PrivacyMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrivacyMode
+
+`func (o *SnmpSettingOpenApiVO) SetPrivacyMode(v int32)`
+
+SetPrivacyMode sets PrivacyMode field to given value.
+
+### HasPrivacyMode
+
+`func (o *SnmpSettingOpenApiVO) HasPrivacyMode() bool`
+
+HasPrivacyMode returns a boolean if a field has been set.
+
+### GetPrivacyPassword
+
+`func (o *SnmpSettingOpenApiVO) GetPrivacyPassword() string`
+
+GetPrivacyPassword returns the PrivacyPassword field if non-nil, zero value otherwise.
+
+### GetPrivacyPasswordOk
+
+`func (o *SnmpSettingOpenApiVO) GetPrivacyPasswordOk() (*string, bool)`
+
+GetPrivacyPasswordOk returns a tuple with the PrivacyPassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrivacyPassword
+
+`func (o *SnmpSettingOpenApiVO) SetPrivacyPassword(v string)`
+
+SetPrivacyPassword sets PrivacyPassword field to given value.
+
+### HasPrivacyPassword
+
+`func (o *SnmpSettingOpenApiVO) HasPrivacyPassword() bool`
+
+HasPrivacyPassword returns a boolean if a field has been set.
+
+### GetSecurityLevel
+
+`func (o *SnmpSettingOpenApiVO) GetSecurityLevel() int32`
+
+GetSecurityLevel returns the SecurityLevel field if non-nil, zero value otherwise.
+
+### GetSecurityLevelOk
+
+`func (o *SnmpSettingOpenApiVO) GetSecurityLevelOk() (*int32, bool)`
+
+GetSecurityLevelOk returns a tuple with the SecurityLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecurityLevel
+
+`func (o *SnmpSettingOpenApiVO) SetSecurityLevel(v int32)`
+
+SetSecurityLevel sets SecurityLevel field to given value.
+
+### HasSecurityLevel
+
+`func (o *SnmpSettingOpenApiVO) HasSecurityLevel() bool`
+
+HasSecurityLevel returns a boolean if a field has been set.
 
 ### GetSnmpV1V2CEnable
 

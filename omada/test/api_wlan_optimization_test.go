@@ -38,6 +38,21 @@ func Test_omada_WLANOptimizationAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WLANOptimizationAPIService BatchDeletePlanningHistory", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.BatchDeletePlanningHistory(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WLANOptimizationAPIService CancelRadioFrequencyPlanning", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -46,6 +61,21 @@ func Test_omada_WLANOptimizationAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.WLANOptimizationAPI.CancelRadioFrequencyPlanning(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WLANOptimizationAPIService DeleteExcludeAps", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.DeleteExcludeAps(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -62,6 +92,36 @@ func Test_omada_WLANOptimizationAPIService(t *testing.T) {
 		var id string
 
 		resp, httpRes, err := apiClient.WLANOptimizationAPI.DeletePlanningHistory(context.Background(), omadacId, siteId, id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WLANOptimizationAPIService ExportRfPlanningHistory", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.ExportRfPlanningHistory(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WLANOptimizationAPIService GetExcludeAps", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.GetExcludeAps(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -99,6 +159,21 @@ func Test_omada_WLANOptimizationAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WLANOptimizationAPIService GetLast20PlanningHistorys", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.GetLast20PlanningHistorys(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WLANOptimizationAPIService GetPlanningHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -108,6 +183,21 @@ func Test_omada_WLANOptimizationAPIService(t *testing.T) {
 		var id string
 
 		resp, httpRes, err := apiClient.WLANOptimizationAPI.GetPlanningHistory(context.Background(), omadacId, siteId, id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WLANOptimizationAPIService GetPlanningHistorysByTime", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.GetPlanningHistorysByTime(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -175,6 +265,21 @@ func Test_omada_WLANOptimizationAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WLANOptimizationAPIService GetTimeLinePlanningHistorys", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.GetTimeLinePlanningHistorys(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WLANOptimizationAPIService ModifyExcludeAps", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -213,6 +318,66 @@ func Test_omada_WLANOptimizationAPIService(t *testing.T) {
 		var siteTemplateId string
 
 		resp, httpRes, err := apiClient.WLANOptimizationAPI.ModifyRFPlanningDeployConfigTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WLANOptimizationAPIService ModifyRFPlanningScheduleConfig", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.ModifyRFPlanningScheduleConfig(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WLANOptimizationAPIService QueryRFPlanningBoard", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.QueryRFPlanningBoard(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WLANOptimizationAPIService QueryRFPlanningBoardStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.QueryRFPlanningBoardStatus(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WLANOptimizationAPIService QueryRFPlanningDashboardHistory", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WLANOptimizationAPI.QueryRFPlanningDashboardHistory(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

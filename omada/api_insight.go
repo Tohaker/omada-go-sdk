@@ -56,7 +56,7 @@ type InsightAPI interface {
 	DeleteBatchFullChannelDetectHistoryExecute(r InsightAPIDeleteBatchFullChannelDetectHistoryRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ExportBatchFullChannelDetectResultData Export batch interference detection results
+	ExportBatchFullChannelDetectResultData1 Export batch interference detection results
 
 	Export batch interference detection results<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
 
@@ -64,13 +64,30 @@ type InsightAPI interface {
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param historyId Customer ID
-	@return InsightAPIExportBatchFullChannelDetectResultDataRequest
+	@return InsightAPIExportBatchFullChannelDetectResultData1Request
 	*/
-	ExportBatchFullChannelDetectResultData(ctx context.Context, omadacId string, siteId string, historyId string) InsightAPIExportBatchFullChannelDetectResultDataRequest
+	ExportBatchFullChannelDetectResultData1(ctx context.Context, omadacId string, siteId string, historyId string) InsightAPIExportBatchFullChannelDetectResultData1Request
 
-	// ExportBatchFullChannelDetectResultDataExecute executes the request
+	// ExportBatchFullChannelDetectResultData1Execute executes the request
 	//  @return OperationResponseWithoutResult
-	ExportBatchFullChannelDetectResultDataExecute(r InsightAPIExportBatchFullChannelDetectResultDataRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	ExportBatchFullChannelDetectResultData1Execute(r InsightAPIExportBatchFullChannelDetectResultData1Request) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ExportFullChannelDetectResult Export interference detection results
+
+	Export interference detection results<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+	@return InsightAPIExportFullChannelDetectResultRequest
+	*/
+	ExportFullChannelDetectResult(ctx context.Context, omadacId string, siteId string, apMac string) InsightAPIExportFullChannelDetectResultRequest
+
+	// ExportFullChannelDetectResultExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ExportFullChannelDetectResultExecute(r InsightAPIExportFullChannelDetectResultRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ExportRogueApsGlobal Export global Rogue AP scan results
@@ -277,7 +294,7 @@ type InsightAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param type_ type
+	@param type_ Device type, the type should be gateway, switch.
 	@return InsightAPIGetGridRoutingRequest
 	*/
 	GetGridRouting(ctx context.Context, omadacId string, siteId string, type_ string) InsightAPIGetGridRoutingRequest
@@ -883,7 +900,7 @@ func (a *InsightAPIService) DeleteBatchFullChannelDetectHistoryExecute(r Insight
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InsightAPIExportBatchFullChannelDetectResultDataRequest struct {
+type InsightAPIExportBatchFullChannelDetectResultData1Request struct {
 	ctx context.Context
 	ApiService InsightAPI
 	omadacId string
@@ -893,17 +910,17 @@ type InsightAPIExportBatchFullChannelDetectResultDataRequest struct {
 }
 
 // export data format
-func (r InsightAPIExportBatchFullChannelDetectResultDataRequest) Format(format int32) InsightAPIExportBatchFullChannelDetectResultDataRequest {
+func (r InsightAPIExportBatchFullChannelDetectResultData1Request) Format(format int32) InsightAPIExportBatchFullChannelDetectResultData1Request {
 	r.format = &format
 	return r
 }
 
-func (r InsightAPIExportBatchFullChannelDetectResultDataRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ExportBatchFullChannelDetectResultDataExecute(r)
+func (r InsightAPIExportBatchFullChannelDetectResultData1Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ExportBatchFullChannelDetectResultData1Execute(r)
 }
 
 /*
-ExportBatchFullChannelDetectResultData Export batch interference detection results
+ExportBatchFullChannelDetectResultData1 Export batch interference detection results
 
 Export batch interference detection results<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
 
@@ -911,10 +928,10 @@ Export batch interference detection results<br/><br/>The interface requires one 
  @param omadacId Omada ID
  @param siteId Site ID
  @param historyId Customer ID
- @return InsightAPIExportBatchFullChannelDetectResultDataRequest
+ @return InsightAPIExportBatchFullChannelDetectResultData1Request
 */
-func (a *InsightAPIService) ExportBatchFullChannelDetectResultData(ctx context.Context, omadacId string, siteId string, historyId string) InsightAPIExportBatchFullChannelDetectResultDataRequest {
-	return InsightAPIExportBatchFullChannelDetectResultDataRequest{
+func (a *InsightAPIService) ExportBatchFullChannelDetectResultData1(ctx context.Context, omadacId string, siteId string, historyId string) InsightAPIExportBatchFullChannelDetectResultData1Request {
+	return InsightAPIExportBatchFullChannelDetectResultData1Request{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
@@ -925,7 +942,7 @@ func (a *InsightAPIService) ExportBatchFullChannelDetectResultData(ctx context.C
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
-func (a *InsightAPIService) ExportBatchFullChannelDetectResultDataExecute(r InsightAPIExportBatchFullChannelDetectResultDataRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+func (a *InsightAPIService) ExportBatchFullChannelDetectResultData1Execute(r InsightAPIExportBatchFullChannelDetectResultData1Request) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -933,7 +950,7 @@ func (a *InsightAPIService) ExportBatchFullChannelDetectResultDataExecute(r Insi
 		localVarReturnValue  *OperationResponseWithoutResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.ExportBatchFullChannelDetectResultData")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.ExportBatchFullChannelDetectResultData1")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -942,6 +959,142 @@ func (a *InsightAPIService) ExportBatchFullChannelDetectResultDataExecute(r Insi
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"historyId"+"}", url.PathEscape(parameterValueToString(r.historyId, "historyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.format == nil {
+		return localVarReturnValue, nil, reportError("format is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "format", r.format, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type InsightAPIExportFullChannelDetectResultRequest struct {
+	ctx context.Context
+	ApiService InsightAPI
+	omadacId string
+	siteId string
+	apMac string
+	format *int32
+}
+
+// export data format
+func (r InsightAPIExportFullChannelDetectResultRequest) Format(format int32) InsightAPIExportFullChannelDetectResultRequest {
+	r.format = &format
+	return r
+}
+
+func (r InsightAPIExportFullChannelDetectResultRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ExportFullChannelDetectResultExecute(r)
+}
+
+/*
+ExportFullChannelDetectResult Export interference detection results
+
+Export interference detection results<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+ @return InsightAPIExportFullChannelDetectResultRequest
+*/
+func (a *InsightAPIService) ExportFullChannelDetectResult(ctx context.Context, omadacId string, siteId string, apMac string) InsightAPIExportFullChannelDetectResultRequest {
+	return InsightAPIExportFullChannelDetectResultRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apMac: apMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *InsightAPIService) ExportFullChannelDetectResultExecute(r InsightAPIExportFullChannelDetectResultRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.ExportFullChannelDetectResult")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/files/sites/{siteId}/aps/{apMac}/full-channel-detect/export"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2729,7 +2882,7 @@ Get the routing table data interface<br/><br/>The interface requires one of the 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param type_ type
+ @param type_ Device type, the type should be gateway, switch.
  @return InsightAPIGetGridRoutingRequest
 */
 func (a *InsightAPIService) GetGridRouting(ctx context.Context, omadacId string, siteId string, type_ string) InsightAPIGetGridRoutingRequest {

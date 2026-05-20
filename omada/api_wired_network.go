@@ -1638,17 +1638,20 @@ type WiredNetworkAPI interface {
 	/*
 	SpeedTest SpeedTest
 
-	SpeedTest.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only
+	SpeedTest. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WiredNetworkAPISpeedTestRequest
+
+	Deprecated
 	*/
 	SpeedTest(ctx context.Context, omadacId string, siteId string) WiredNetworkAPISpeedTestRequest
 
 	// SpeedTestExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	SpeedTestExecute(r WiredNetworkAPISpeedTestRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
@@ -14562,12 +14565,14 @@ func (r WiredNetworkAPISpeedTestRequest) Execute() (*OperationResponseWithoutRes
 /*
 SpeedTest SpeedTest
 
-SpeedTest.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only
+SpeedTest. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return WiredNetworkAPISpeedTestRequest
+
+Deprecated
 */
 func (a *WiredNetworkAPIService) SpeedTest(ctx context.Context, omadacId string, siteId string) WiredNetworkAPISpeedTestRequest {
 	return WiredNetworkAPISpeedTestRequest{
@@ -14580,6 +14585,7 @@ func (a *WiredNetworkAPIService) SpeedTest(ctx context.Context, omadacId string,
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WiredNetworkAPIService) SpeedTestExecute(r WiredNetworkAPISpeedTestRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost

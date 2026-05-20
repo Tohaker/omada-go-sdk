@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Category** | Pointer to **string** | Category of license | [optional] 
 **Compatible** | Pointer to **int32** | Device firmware and controller compatibility type.Compatible should be a value as follows: 0:COMPATIBLE;1:HIGH_MAJOR_VER;2:LOW_MAJOR_VER;3:HIGH_MINOR_VER;4:LOW_MINOR_VER;7:HIGH_COMPONENT_VER;10:DEVICE_NOT_COMPATIBLE;11:HIGH_ADOPT_COMMPONENT;12:DEVICE_CATEGORY_NOT_COMPATIBLE;14:DEVICE_NOT_COMPATIBLE_IN_CLUSTER | [optional] 
 **CompoundModel** | Pointer to **string** | Model complex used in the backend.Ap：model+(country)+modelVersion,  EAP225(EU) v3.0 Ap: specialModel+modelVersion, EAP225-Outdoor-1a20a950b8d950e8 v1.0  Gateway/Switch：model+modelVersion, Osg v3.0 | [optional] 
+**CpuUtil** | Pointer to **int32** |  | [optional] 
 **CustomId** | Pointer to **string** | Customer ID | [optional] 
 **CustomName** | Pointer to **string** | Customer name | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -50,6 +51,7 @@ Name | Type | Description | Notes
 **LoopbackNum** | Pointer to **int32** |  | [optional] 
 **Mac** | Pointer to **string** | Device mac | [optional] 
 **ManagerMark** | Pointer to **int32** |  | [optional] 
+**MemUtil** | Pointer to **int32** |  | [optional] 
 **Model** | Pointer to **string** | Model of device,for example:EAP225 | [optional] 
 **ModelVersion** | Pointer to **string** | Model version of device,for example:3.0 | [optional] 
 **MoveSiteId** | Pointer to **string** | Record that the device is in a moveSite operation; if it is null, then it is not in the moveSite operation. | [optional] 
@@ -322,6 +324,31 @@ SetCompoundModel sets CompoundModel field to given value.
 `func (o *ESDetailVO) HasCompoundModel() bool`
 
 HasCompoundModel returns a boolean if a field has been set.
+
+### GetCpuUtil
+
+`func (o *ESDetailVO) GetCpuUtil() int32`
+
+GetCpuUtil returns the CpuUtil field if non-nil, zero value otherwise.
+
+### GetCpuUtilOk
+
+`func (o *ESDetailVO) GetCpuUtilOk() (*int32, bool)`
+
+GetCpuUtilOk returns a tuple with the CpuUtil field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuUtil
+
+`func (o *ESDetailVO) SetCpuUtil(v int32)`
+
+SetCpuUtil sets CpuUtil field to given value.
+
+### HasCpuUtil
+
+`func (o *ESDetailVO) HasCpuUtil() bool`
+
+HasCpuUtil returns a boolean if a field has been set.
 
 ### GetCustomId
 
@@ -1272,6 +1299,31 @@ SetManagerMark sets ManagerMark field to given value.
 `func (o *ESDetailVO) HasManagerMark() bool`
 
 HasManagerMark returns a boolean if a field has been set.
+
+### GetMemUtil
+
+`func (o *ESDetailVO) GetMemUtil() int32`
+
+GetMemUtil returns the MemUtil field if non-nil, zero value otherwise.
+
+### GetMemUtilOk
+
+`func (o *ESDetailVO) GetMemUtilOk() (*int32, bool)`
+
+GetMemUtilOk returns a tuple with the MemUtil field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemUtil
+
+`func (o *ESDetailVO) SetMemUtil(v int32)`
+
+SetMemUtil sets MemUtil field to given value.
+
+### HasMemUtil
+
+`func (o *ESDetailVO) HasMemUtil() bool`
+
+HasMemUtil returns a boolean if a field has been set.
 
 ### GetModel
 

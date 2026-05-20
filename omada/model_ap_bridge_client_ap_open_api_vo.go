@@ -20,6 +20,10 @@ var _ MappedNullable = &ApBridgeClientApOpenApiVO{}
 // ApBridgeClientApOpenApiVO struct for ApBridgeClientApOpenApiVO
 type ApBridgeClientApOpenApiVO struct {
 	Mac *string `json:"mac,omitempty"`
+	// Model of device,for example:EAP225
+	Model *string `json:"model,omitempty"`
+	// Model version of device,for example:3.0
+	ModelVersion *string `json:"modelVersion,omitempty"`
 	Rssi *int32 `json:"rssi,omitempty"`
 	// Status of device,status should be a value as follows: 0:Disconnected;1:Disconnected(Migrating);10:Provisioning;11:Configuring;12:Upgrading;13:Rebooting;14:Connected;15:Connected(Wireless);16:Connected(Migrating);17:Connected(Wireless,Migrating);20:Pending;21:Pending(Wireless);22:Adopting;23:Adopting(Wireless);24:Adopt Failed;25:Adopt Failed(Wireless);26:Managed By Others;27:Managed By Others(Wireless);30:Heartbeat Missed;31:Heartbeat Missed(Wireless);32:Heartbeat Missed(Migrating);33:Heartbeat Missed(Wireless,Migrating);40:Isolated;41:Isolated(Migrating);50:Slice Configuring
 	Status *int32 `json:"status,omitempty"`
@@ -72,6 +76,70 @@ func (o *ApBridgeClientApOpenApiVO) HasMac() bool {
 // SetMac gets a reference to the given string and assigns it to the Mac field.
 func (o *ApBridgeClientApOpenApiVO) SetMac(v string) {
 	o.Mac = &v
+}
+
+// GetModel returns the Model field value if set, zero value otherwise.
+func (o *ApBridgeClientApOpenApiVO) GetModel() string {
+	if o == nil || IsNil(o.Model) {
+		var ret string
+		return ret
+	}
+	return *o.Model
+}
+
+// GetModelOk returns a tuple with the Model field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApBridgeClientApOpenApiVO) GetModelOk() (*string, bool) {
+	if o == nil || IsNil(o.Model) {
+		return nil, false
+	}
+	return o.Model, true
+}
+
+// HasModel returns a boolean if a field has been set.
+func (o *ApBridgeClientApOpenApiVO) HasModel() bool {
+	if o != nil && !IsNil(o.Model) {
+		return true
+	}
+
+	return false
+}
+
+// SetModel gets a reference to the given string and assigns it to the Model field.
+func (o *ApBridgeClientApOpenApiVO) SetModel(v string) {
+	o.Model = &v
+}
+
+// GetModelVersion returns the ModelVersion field value if set, zero value otherwise.
+func (o *ApBridgeClientApOpenApiVO) GetModelVersion() string {
+	if o == nil || IsNil(o.ModelVersion) {
+		var ret string
+		return ret
+	}
+	return *o.ModelVersion
+}
+
+// GetModelVersionOk returns a tuple with the ModelVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApBridgeClientApOpenApiVO) GetModelVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.ModelVersion) {
+		return nil, false
+	}
+	return o.ModelVersion, true
+}
+
+// HasModelVersion returns a boolean if a field has been set.
+func (o *ApBridgeClientApOpenApiVO) HasModelVersion() bool {
+	if o != nil && !IsNil(o.ModelVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetModelVersion gets a reference to the given string and assigns it to the ModelVersion field.
+func (o *ApBridgeClientApOpenApiVO) SetModelVersion(v string) {
+	o.ModelVersion = &v
 }
 
 // GetRssi returns the Rssi field value if set, zero value otherwise.
@@ -150,6 +218,12 @@ func (o ApBridgeClientApOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac
+	}
+	if !IsNil(o.Model) {
+		toSerialize["model"] = o.Model
+	}
+	if !IsNil(o.ModelVersion) {
+		toSerialize["modelVersion"] = o.ModelVersion
 	}
 	if !IsNil(o.Rssi) {
 		toSerialize["rssi"] = o.Rssi

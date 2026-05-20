@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the CheckMappedNetwork type satisfies the MappedNullable interface at compile time
@@ -22,17 +24,21 @@ type CheckMappedNetwork struct {
 	// A list of current mapped network of the SD-WAN group
 	MappedNetworks []string `json:"mappedNetworks,omitempty"`
 	// A list of members of the SD-WAN group
-	MemberList []SdWanMemberBriefInfo `json:"memberList,omitempty"`
+	MemberList []SdWanMemberSelected `json:"memberList"`
 	// The IP Subnet of the modified network
-	ModifiedNetwork *string `json:"modifiedNetwork,omitempty"`
+	ModifiedNetwork string `json:"modifiedNetwork"`
 }
+
+type _CheckMappedNetwork CheckMappedNetwork
 
 // NewCheckMappedNetwork instantiates a new CheckMappedNetwork object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckMappedNetwork() *CheckMappedNetwork {
+func NewCheckMappedNetwork(memberList []SdWanMemberSelected, modifiedNetwork string) *CheckMappedNetwork {
 	this := CheckMappedNetwork{}
+	this.MemberList = memberList
+	this.ModifiedNetwork = modifiedNetwork
 	return &this
 }
 
@@ -76,68 +82,52 @@ func (o *CheckMappedNetwork) SetMappedNetworks(v []string) {
 	o.MappedNetworks = v
 }
 
-// GetMemberList returns the MemberList field value if set, zero value otherwise.
-func (o *CheckMappedNetwork) GetMemberList() []SdWanMemberBriefInfo {
-	if o == nil || IsNil(o.MemberList) {
-		var ret []SdWanMemberBriefInfo
+// GetMemberList returns the MemberList field value
+func (o *CheckMappedNetwork) GetMemberList() []SdWanMemberSelected {
+	if o == nil {
+		var ret []SdWanMemberSelected
 		return ret
 	}
+
 	return o.MemberList
 }
 
-// GetMemberListOk returns a tuple with the MemberList field value if set, nil otherwise
+// GetMemberListOk returns a tuple with the MemberList field value
 // and a boolean to check if the value has been set.
-func (o *CheckMappedNetwork) GetMemberListOk() ([]SdWanMemberBriefInfo, bool) {
-	if o == nil || IsNil(o.MemberList) {
+func (o *CheckMappedNetwork) GetMemberListOk() ([]SdWanMemberSelected, bool) {
+	if o == nil {
 		return nil, false
 	}
 	return o.MemberList, true
 }
 
-// HasMemberList returns a boolean if a field has been set.
-func (o *CheckMappedNetwork) HasMemberList() bool {
-	if o != nil && !IsNil(o.MemberList) {
-		return true
-	}
-
-	return false
-}
-
-// SetMemberList gets a reference to the given []SdWanMemberBriefInfo and assigns it to the MemberList field.
-func (o *CheckMappedNetwork) SetMemberList(v []SdWanMemberBriefInfo) {
+// SetMemberList sets field value
+func (o *CheckMappedNetwork) SetMemberList(v []SdWanMemberSelected) {
 	o.MemberList = v
 }
 
-// GetModifiedNetwork returns the ModifiedNetwork field value if set, zero value otherwise.
+// GetModifiedNetwork returns the ModifiedNetwork field value
 func (o *CheckMappedNetwork) GetModifiedNetwork() string {
-	if o == nil || IsNil(o.ModifiedNetwork) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.ModifiedNetwork
+
+	return o.ModifiedNetwork
 }
 
-// GetModifiedNetworkOk returns a tuple with the ModifiedNetwork field value if set, nil otherwise
+// GetModifiedNetworkOk returns a tuple with the ModifiedNetwork field value
 // and a boolean to check if the value has been set.
 func (o *CheckMappedNetwork) GetModifiedNetworkOk() (*string, bool) {
-	if o == nil || IsNil(o.ModifiedNetwork) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ModifiedNetwork, true
+	return &o.ModifiedNetwork, true
 }
 
-// HasModifiedNetwork returns a boolean if a field has been set.
-func (o *CheckMappedNetwork) HasModifiedNetwork() bool {
-	if o != nil && !IsNil(o.ModifiedNetwork) {
-		return true
-	}
-
-	return false
-}
-
-// SetModifiedNetwork gets a reference to the given string and assigns it to the ModifiedNetwork field.
+// SetModifiedNetwork sets field value
 func (o *CheckMappedNetwork) SetModifiedNetwork(v string) {
-	o.ModifiedNetwork = &v
+	o.ModifiedNetwork = v
 }
 
 func (o CheckMappedNetwork) MarshalJSON() ([]byte, error) {
@@ -153,13 +143,47 @@ func (o CheckMappedNetwork) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MappedNetworks) {
 		toSerialize["mappedNetworks"] = o.MappedNetworks
 	}
-	if !IsNil(o.MemberList) {
-		toSerialize["memberList"] = o.MemberList
-	}
-	if !IsNil(o.ModifiedNetwork) {
-		toSerialize["modifiedNetwork"] = o.ModifiedNetwork
-	}
+	toSerialize["memberList"] = o.MemberList
+	toSerialize["modifiedNetwork"] = o.ModifiedNetwork
 	return toSerialize, nil
+}
+
+func (o *CheckMappedNetwork) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"memberList",
+		"modifiedNetwork",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCheckMappedNetwork := _CheckMappedNetwork{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varCheckMappedNetwork)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckMappedNetwork(varCheckMappedNetwork)
+
+	return err
 }
 
 type NullableCheckMappedNetwork struct {

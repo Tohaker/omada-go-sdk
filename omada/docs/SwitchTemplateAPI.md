@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**DeleteOswVrfTemplate**](SwitchTemplateAPI.md#deleteoswvrftemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs/{vrfId} | Delete vrf template
 [**DeletePortTagTemplate**](SwitchTemplateAPI.md#deleteporttagtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Delete an existing template port label
 [**DeleteSwitchLagTemplate**](SwitchTemplateAPI.md#deleteswitchlagtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/lags/{lagId} | Delete switch template lag
+[**GetBatchRpvstInstancesTemplate**](SwitchTemplateAPI.md#getbatchrpvstinstancestemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/rpvst-instances | Get Batch Rpvst Instances Template
 [**GetBatchSwitchTemplateExistNetworks**](SwitchTemplateAPI.md#getbatchswitchtemplateexistnetworks) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/exist-network | Get the networks intersections existing on multiple switch templates
 [**GetBatchSwitchTemplateExistNetworksV2**](SwitchTemplateAPI.md#getbatchswitchtemplateexistnetworksv2) | **Post** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/exist-network | Get the networks intersections existing on multiple switch templates V2
 [**GetGridPortAndLagNetworks**](SwitchTemplateAPI.md#getgridportandlagnetworks) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/port-lag-networks | Get the networks used on switch template&#39;s ports and LAGs
@@ -22,6 +23,8 @@ Method | HTTP request | Description
 [**GetOswsDetailsTemplate**](SwitchTemplateAPI.md#getoswsdetailstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switches/details | Get the details of osw templates with given omadacid, siteid and macs and stackIds.
 [**GetPortAndLagNetwork**](SwitchTemplateAPI.md#getportandlagnetwork) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/port-lag-networks/{networkId}/vlan/{vlan} | Get the switch template&#39;s ports and LAGs that the network affects
 [**GetPortTagTemplates**](SwitchTemplateAPI.md#getporttagtemplates) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Get template port label list
+[**GetRpvstInstancesDetailTemplate**](SwitchTemplateAPI.md#getrpvstinstancesdetailtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/stp/instance-detail | Get StpInstanceDetail Template
+[**GetRpvstInstancesTemplate**](SwitchTemplateAPI.md#getrpvstinstancestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/rpvst-instances | Get Rpvst Instances Template
 [**GetSwitchTemplateExistNetworks**](SwitchTemplateAPI.md#getswitchtemplateexistnetworks) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/exist-network | Get the networks existing on the switch template
 [**GetSwitchTemplateInfo**](SwitchTemplateAPI.md#getswitchtemplateinfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId} | Get switch template info
 [**ModifyOswVrfTemplate**](SwitchTemplateAPI.md#modifyoswvrftemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs/{vrfId} | Modify vrf template
@@ -812,6 +815,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetBatchRpvstInstancesTemplate
+
+> OperationResponse GetBatchRpvstInstancesTemplate(ctx, omadacId, siteTemplateId).RequestBody(requestBody).Execute()
+
+Get Batch Rpvst Instances Template
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	requestBody := []string{"Property_example"} // []string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchTemplateAPI.GetBatchRpvstInstancesTemplate(context.Background(), omadacId, siteTemplateId).RequestBody(requestBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchTemplateAPI.GetBatchRpvstInstancesTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBatchRpvstInstancesTemplate`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchTemplateAPI.GetBatchRpvstInstancesTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBatchRpvstInstancesTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **requestBody** | **[]string** |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetBatchSwitchTemplateExistNetworks
 
 > OperationResponseLanNetworkOpenApiV2GridVOLanNetworkSplitOpenApiVO GetBatchSwitchTemplateExistNetworks(ctx, omadacId, siteTemplateId).OswMacListVO(oswMacListVO).Execute()
@@ -1416,6 +1494,160 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]PortTagOpenApiVO**](PortTagOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRpvstInstancesDetailTemplate
+
+> OperationResponse GetRpvstInstancesDetailTemplate(ctx, omadacId, siteTemplateId, deviceTemplateId).StpInstanceDetailVO(stpInstanceDetailVO).Execute()
+
+Get StpInstanceDetail Template
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
+	stpInstanceDetailVO := *openapiclient.NewStpInstanceDetailVO(int32(123)) // StpInstanceDetailVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchTemplateAPI.GetRpvstInstancesDetailTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).StpInstanceDetailVO(stpInstanceDetailVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchTemplateAPI.GetRpvstInstancesDetailTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRpvstInstancesDetailTemplate`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchTemplateAPI.GetRpvstInstancesDetailTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+**deviceTemplateId** | **string** | Device Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRpvstInstancesDetailTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **stpInstanceDetailVO** | [**StpInstanceDetailVO**](StpInstanceDetailVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRpvstInstancesTemplate
+
+> OperationResponse GetRpvstInstancesTemplate(ctx, omadacId, siteTemplateId, deviceTemplateId).Execute()
+
+Get Rpvst Instances Template
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchTemplateAPI.GetRpvstInstancesTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchTemplateAPI.GetRpvstInstancesTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRpvstInstancesTemplate`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchTemplateAPI.GetRpvstInstancesTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+**deviceTemplateId** | **string** | Device Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRpvstInstancesTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
 
 ### Authorization
 

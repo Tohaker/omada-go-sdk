@@ -126,24 +126,27 @@ type SwitchTemplateAPI interface {
 	/*
 	CreateOswVrfTemplate Create new vrf template
 
-	Create new vrf template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+	Create new vrf template. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
 	@return SwitchTemplateAPICreateOswVrfTemplateRequest
+
+	Deprecated
 	*/
 	CreateOswVrfTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPICreateOswVrfTemplateRequest
 
 	// CreateOswVrfTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	CreateOswVrfTemplateExecute(r SwitchTemplateAPICreateOswVrfTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	DeleteOswVrfTemplate Delete vrf template
 
-	Delete vrf template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+	Delete vrf template. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -151,11 +154,14 @@ type SwitchTemplateAPI interface {
 	@param deviceTemplateId Device Template ID
 	@param vrfId VRF ID
 	@return SwitchTemplateAPIDeleteOswVrfTemplateRequest
+
+	Deprecated
 	*/
 	DeleteOswVrfTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, vrfId string) SwitchTemplateAPIDeleteOswVrfTemplateRequest
 
 	// DeleteOswVrfTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteOswVrfTemplateExecute(r SwitchTemplateAPIDeleteOswVrfTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
@@ -191,6 +197,22 @@ type SwitchTemplateAPI interface {
 	// DeleteSwitchLagTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
 	DeleteSwitchLagTemplateExecute(r SwitchTemplateAPIDeleteSwitchLagTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	GetBatchRpvstInstancesTemplate Get Batch Rpvst Instances Template
+
+	Get Batch Rpvst Instances Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest
+	*/
+	GetBatchRpvstInstancesTemplate(ctx context.Context, omadacId string, siteTemplateId string) SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest
+
+	// GetBatchRpvstInstancesTemplateExecute executes the request
+	//  @return OperationResponse
+	GetBatchRpvstInstancesTemplateExecute(r SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest) (*OperationResponse, *http.Response, error)
 
 	/*
 	GetBatchSwitchTemplateExistNetworks Get the networks intersections existing on multiple switch templates
@@ -244,18 +266,21 @@ type SwitchTemplateAPI interface {
 	/*
 	GetGridVrfTemplate Get the vrfs on the switch template
 
-	Get the vrfs on the switch template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+	Get the vrfs on the switch template. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
 	@return SwitchTemplateAPIGetGridVrfTemplateRequest
+
+	Deprecated
 	*/
 	GetGridVrfTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIGetGridVrfTemplateRequest
 
 	// GetGridVrfTemplateExecute executes the request
 	//  @return OperationResponseGridVOOswVrfOpenApiVO
+	// Deprecated
 	GetGridVrfTemplateExecute(r SwitchTemplateAPIGetGridVrfTemplateRequest) (*OperationResponseGridVOOswVrfOpenApiVO, *http.Response, error)
 
 	/*
@@ -328,6 +353,40 @@ type SwitchTemplateAPI interface {
 	GetPortTagTemplatesExecute(r SwitchTemplateAPIGetPortTagTemplatesRequest) ([]PortTagOpenApiVO, *http.Response, error)
 
 	/*
+	GetRpvstInstancesDetailTemplate Get StpInstanceDetail Template
+
+	Get StpInstanceDetail Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param deviceTemplateId Device Template ID
+	@return SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest
+	*/
+	GetRpvstInstancesDetailTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest
+
+	// GetRpvstInstancesDetailTemplateExecute executes the request
+	//  @return OperationResponse
+	GetRpvstInstancesDetailTemplateExecute(r SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	GetRpvstInstancesTemplate Get Rpvst Instances Template
+
+	Get Rpvst Instances Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param deviceTemplateId Device Template ID
+	@return SwitchTemplateAPIGetRpvstInstancesTemplateRequest
+	*/
+	GetRpvstInstancesTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIGetRpvstInstancesTemplateRequest
+
+	// GetRpvstInstancesTemplateExecute executes the request
+	//  @return OperationResponse
+	GetRpvstInstancesTemplateExecute(r SwitchTemplateAPIGetRpvstInstancesTemplateRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	GetSwitchTemplateExistNetworks Get the networks existing on the switch template
 
 	Get the networks existing on the switch template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44402  -  Device template does not exist.
@@ -364,7 +423,7 @@ type SwitchTemplateAPI interface {
 	/*
 	ModifyOswVrfTemplate Modify vrf template
 
-	Modify vrf template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+	Modify vrf template. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -372,11 +431,14 @@ type SwitchTemplateAPI interface {
 	@param deviceTemplateId Device Template ID
 	@param vrfId VRF ID
 	@return SwitchTemplateAPIModifyOswVrfTemplateRequest
+
+	Deprecated
 	*/
 	ModifyOswVrfTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, vrfId string) SwitchTemplateAPIModifyOswVrfTemplateRequest
 
 	// ModifyOswVrfTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyOswVrfTemplateExecute(r SwitchTemplateAPIModifyOswVrfTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
@@ -1358,13 +1420,15 @@ func (r SwitchTemplateAPICreateOswVrfTemplateRequest) Execute() (*OperationRespo
 /*
 CreateOswVrfTemplate Create new vrf template
 
-Create new vrf template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+Create new vrf template. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
  @return SwitchTemplateAPICreateOswVrfTemplateRequest
+
+Deprecated
 */
 func (a *SwitchTemplateAPIService) CreateOswVrfTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPICreateOswVrfTemplateRequest {
 	return SwitchTemplateAPICreateOswVrfTemplateRequest{
@@ -1378,6 +1442,7 @@ func (a *SwitchTemplateAPIService) CreateOswVrfTemplate(ctx context.Context, oma
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *SwitchTemplateAPIService) CreateOswVrfTemplateExecute(r SwitchTemplateAPICreateOswVrfTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -1489,7 +1554,7 @@ func (r SwitchTemplateAPIDeleteOswVrfTemplateRequest) Execute() (*OperationRespo
 /*
 DeleteOswVrfTemplate Delete vrf template
 
-Delete vrf template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+Delete vrf template. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1497,6 +1562,8 @@ Delete vrf template.<br/><br/>The interface requires one of the permissions: <br
  @param deviceTemplateId Device Template ID
  @param vrfId VRF ID
  @return SwitchTemplateAPIDeleteOswVrfTemplateRequest
+
+Deprecated
 */
 func (a *SwitchTemplateAPIService) DeleteOswVrfTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, vrfId string) SwitchTemplateAPIDeleteOswVrfTemplateRequest {
 	return SwitchTemplateAPIDeleteOswVrfTemplateRequest{
@@ -1511,6 +1578,7 @@ func (a *SwitchTemplateAPIService) DeleteOswVrfTemplate(ctx context.Context, oma
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *SwitchTemplateAPIService) DeleteOswVrfTemplateExecute(r SwitchTemplateAPIDeleteOswVrfTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -1812,6 +1880,138 @@ func (a *SwitchTemplateAPIService) DeleteSwitchLagTemplateExecute(r SwitchTempla
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest struct {
+	ctx context.Context
+	ApiService SwitchTemplateAPI
+	omadacId string
+	siteTemplateId string
+	requestBody *[]string
+}
+
+func (r SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest) RequestBody(requestBody []string) SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest {
+	r.requestBody = &requestBody
+	return r
+}
+
+func (r SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetBatchRpvstInstancesTemplateExecute(r)
+}
+
+/*
+GetBatchRpvstInstancesTemplate Get Batch Rpvst Instances Template
+
+Get Batch Rpvst Instances Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest
+*/
+func (a *SwitchTemplateAPIService) GetBatchRpvstInstancesTemplate(ctx context.Context, omadacId string, siteTemplateId string) SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest {
+	return SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *SwitchTemplateAPIService) GetBatchRpvstInstancesTemplateExecute(r SwitchTemplateAPIGetBatchRpvstInstancesTemplateRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchTemplateAPIService.GetBatchRpvstInstancesTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/rpvst-instances"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.requestBody == nil {
+		return localVarReturnValue, nil, reportError("requestBody is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2289,13 +2489,15 @@ func (r SwitchTemplateAPIGetGridVrfTemplateRequest) Execute() (*OperationRespons
 /*
 GetGridVrfTemplate Get the vrfs on the switch template
 
-Get the vrfs on the switch template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+Get the vrfs on the switch template. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
  @return SwitchTemplateAPIGetGridVrfTemplateRequest
+
+Deprecated
 */
 func (a *SwitchTemplateAPIService) GetGridVrfTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIGetGridVrfTemplateRequest {
 	return SwitchTemplateAPIGetGridVrfTemplateRequest{
@@ -2309,6 +2511,7 @@ func (a *SwitchTemplateAPIService) GetGridVrfTemplate(ctx context.Context, omada
 
 // Execute executes the request
 //  @return OperationResponseGridVOOswVrfOpenApiVO
+// Deprecated
 func (a *SwitchTemplateAPIService) GetGridVrfTemplateExecute(r SwitchTemplateAPIGetGridVrfTemplateRequest) (*OperationResponseGridVOOswVrfOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -2936,6 +3139,267 @@ func (a *SwitchTemplateAPIService) GetPortTagTemplatesExecute(r SwitchTemplateAP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest struct {
+	ctx context.Context
+	ApiService SwitchTemplateAPI
+	omadacId string
+	siteTemplateId string
+	deviceTemplateId string
+	stpInstanceDetailVO *StpInstanceDetailVO
+}
+
+func (r SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest) StpInstanceDetailVO(stpInstanceDetailVO StpInstanceDetailVO) SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest {
+	r.stpInstanceDetailVO = &stpInstanceDetailVO
+	return r
+}
+
+func (r SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetRpvstInstancesDetailTemplateExecute(r)
+}
+
+/*
+GetRpvstInstancesDetailTemplate Get StpInstanceDetail Template
+
+Get StpInstanceDetail Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param deviceTemplateId Device Template ID
+ @return SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest
+*/
+func (a *SwitchTemplateAPIService) GetRpvstInstancesDetailTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest {
+	return SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		deviceTemplateId: deviceTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *SwitchTemplateAPIService) GetRpvstInstancesDetailTemplateExecute(r SwitchTemplateAPIGetRpvstInstancesDetailTemplateRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchTemplateAPIService.GetRpvstInstancesDetailTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/stp/instance-detail"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.stpInstanceDetailVO == nil {
+		return localVarReturnValue, nil, reportError("stpInstanceDetailVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.stpInstanceDetailVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SwitchTemplateAPIGetRpvstInstancesTemplateRequest struct {
+	ctx context.Context
+	ApiService SwitchTemplateAPI
+	omadacId string
+	siteTemplateId string
+	deviceTemplateId string
+}
+
+func (r SwitchTemplateAPIGetRpvstInstancesTemplateRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetRpvstInstancesTemplateExecute(r)
+}
+
+/*
+GetRpvstInstancesTemplate Get Rpvst Instances Template
+
+Get Rpvst Instances Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param deviceTemplateId Device Template ID
+ @return SwitchTemplateAPIGetRpvstInstancesTemplateRequest
+*/
+func (a *SwitchTemplateAPIService) GetRpvstInstancesTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIGetRpvstInstancesTemplateRequest {
+	return SwitchTemplateAPIGetRpvstInstancesTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		deviceTemplateId: deviceTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *SwitchTemplateAPIService) GetRpvstInstancesTemplateExecute(r SwitchTemplateAPIGetRpvstInstancesTemplateRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchTemplateAPIService.GetRpvstInstancesTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/rpvst-instances"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type SwitchTemplateAPIGetSwitchTemplateExistNetworksRequest struct {
 	ctx context.Context
 	ApiService SwitchTemplateAPI
@@ -3208,7 +3672,7 @@ func (r SwitchTemplateAPIModifyOswVrfTemplateRequest) Execute() (*OperationRespo
 /*
 ModifyOswVrfTemplate Modify vrf template
 
-Modify vrf template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+Modify vrf template. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3216,6 +3680,8 @@ Modify vrf template.<br/><br/>The interface requires one of the permissions: <br
  @param deviceTemplateId Device Template ID
  @param vrfId VRF ID
  @return SwitchTemplateAPIModifyOswVrfTemplateRequest
+
+Deprecated
 */
 func (a *SwitchTemplateAPIService) ModifyOswVrfTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, vrfId string) SwitchTemplateAPIModifyOswVrfTemplateRequest {
 	return SwitchTemplateAPIModifyOswVrfTemplateRequest{
@@ -3230,6 +3696,7 @@ func (a *SwitchTemplateAPIService) ModifyOswVrfTemplate(ctx context.Context, oma
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *SwitchTemplateAPIService) ModifyOswVrfTemplateExecute(r SwitchTemplateAPIModifyOswVrfTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut

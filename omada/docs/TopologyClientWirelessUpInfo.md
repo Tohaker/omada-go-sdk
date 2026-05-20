@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Channel** | Pointer to **int32** | Channel. | [optional] 
 **MultiLink** | Pointer to [**[]TopologyClientWirelessLinkInfo**](TopologyClientWirelessLinkInfo.md) | Client link information while client connects to multiple frequency bands. | [optional] 
 **Radio** | Pointer to **int32** | Radio, it should be a value as follows: 0:2G, 1:5G, 2:5G2, 3:6G. | [optional] 
+**Rssi** | Pointer to **int32** | Signal strength, unit: dBm | [optional] 
 **Ssid** | Pointer to **string** | Ssid. | [optional] 
 **Support5g2** | Pointer to **bool** | Whether the device supports the 5G2 frequency band. | [optional] 
 
@@ -103,6 +104,31 @@ SetRadio sets Radio field to given value.
 `func (o *TopologyClientWirelessUpInfo) HasRadio() bool`
 
 HasRadio returns a boolean if a field has been set.
+
+### GetRssi
+
+`func (o *TopologyClientWirelessUpInfo) GetRssi() int32`
+
+GetRssi returns the Rssi field if non-nil, zero value otherwise.
+
+### GetRssiOk
+
+`func (o *TopologyClientWirelessUpInfo) GetRssiOk() (*int32, bool)`
+
+GetRssiOk returns a tuple with the Rssi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRssi
+
+`func (o *TopologyClientWirelessUpInfo) SetRssi(v int32)`
+
+SetRssi sets Rssi field to given value.
+
+### HasRssi
+
+`func (o *TopologyClientWirelessUpInfo) HasRssi() bool`
+
+HasRssi returns a boolean if a field has been set.
 
 ### GetSsid
 

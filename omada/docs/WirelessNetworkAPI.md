@@ -14,14 +14,18 @@ Method | HTTP request | Description
 [**GetSsidDetail**](WirelessNetworkAPI.md#getssiddetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Get SSID detail info
 [**GetSsidList**](WirelessNetworkAPI.md#getssidlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids | Get SSID list
 [**GetSsidsBySite**](WirelessNetworkAPI.md#getssidsbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids | Get all ssids of the site
+[**GetWlanGroup**](WirelessNetworkAPI.md#getwlangroup) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Get WLAN group by wlan id
 [**GetWlanGroupList**](WirelessNetworkAPI.md#getwlangrouplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans | Get WLAN group list
+[**UpdateSsidBandSteerConfig**](WirelessNetworkAPI.md#updatessidbandsteerconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-band-steer | Update SSID band steer config
 [**UpdateSsidBasicConfig**](WirelessNetworkAPI.md#updatessidbasicconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-basic-config | Update SSID basic config
 [**UpdateSsidDhcpOptionConfig**](WirelessNetworkAPI.md#updatessiddhcpoptionconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-dhcp-option | Update SSID DHCP option 82 config
 [**UpdateSsidHotspotV2Setting**](WirelessNetworkAPI.md#updatessidhotspotv2setting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-hotspotv2 | Update SSID Hotspot2.0 config
+[**UpdateSsidLoadBalanceConfig**](WirelessNetworkAPI.md#updatessidloadbalanceconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-load-balance | Update SSID load balance config
 [**UpdateSsidMacFilterConfig**](WirelessNetworkAPI.md#updatessidmacfilterconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-mac-filter | Update SSID mac filter config
 [**UpdateSsidMultiCastConfig**](WirelessNetworkAPI.md#updatessidmulticastconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-multicast-config | Update SSID Multicast/Broadcast management config
 [**UpdateSsidRateControlConfig**](WirelessNetworkAPI.md#updatessidratecontrolconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-control | Update SSID 802.11 rate control config
 [**UpdateSsidRateLimitConfig**](WirelessNetworkAPI.md#updatessidratelimitconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-limit | Update SSID rate limit config
+[**UpdateSsidWifiCallingConfig**](WirelessNetworkAPI.md#updatessidwificallingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wifi-calling | Update SSID wifi calling config
 [**UpdateSsidWlanSchedule**](WirelessNetworkAPI.md#updatessidwlanschedule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wlan-schedule | Update SSID WLAN schedule config
 [**UpdateWlanGroup**](WirelessNetworkAPI.md#updatewlangroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN group
 
@@ -794,6 +798,82 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetWlanGroup
+
+> OperationResponseWlanGroupOpenApiVO GetWlanGroup(ctx, omadacId, siteId, wlanId).Execute()
+
+Get WLAN group by wlan id
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	wlanId := "wlanId_example" // string | WLAN ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WirelessNetworkAPI.GetWlanGroup(context.Background(), omadacId, siteId, wlanId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WirelessNetworkAPI.GetWlanGroup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetWlanGroup`: OperationResponseWlanGroupOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `WirelessNetworkAPI.GetWlanGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**wlanId** | **string** | WLAN ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetWlanGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseWlanGroupOpenApiVO**](OperationResponseWlanGroupOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetWlanGroupList
 
 > OperationResponseListWlanGroupOpenApiVO GetWlanGroupList(ctx, omadacId, siteId).Execute()
@@ -860,6 +940,87 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSsidBandSteerConfig
+
+> OperationResponseWithoutResult UpdateSsidBandSteerConfig(ctx, omadacId, siteId, wlanId, ssidId).UpdateSsidBandSteerOpenApiVO(updateSsidBandSteerOpenApiVO).Execute()
+
+Update SSID band steer config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	wlanId := "wlanId_example" // string | WLAN ID
+	ssidId := "ssidId_example" // string | SSID ID
+	updateSsidBandSteerOpenApiVO := *openapiclient.NewUpdateSsidBandSteerOpenApiVO(int32(123)) // UpdateSsidBandSteerOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WirelessNetworkAPI.UpdateSsidBandSteerConfig(context.Background(), omadacId, siteId, wlanId, ssidId).UpdateSsidBandSteerOpenApiVO(updateSsidBandSteerOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WirelessNetworkAPI.UpdateSsidBandSteerConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSsidBandSteerConfig`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `WirelessNetworkAPI.UpdateSsidBandSteerConfig`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**wlanId** | **string** | WLAN ID | 
+**ssidId** | **string** | SSID ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSsidBandSteerConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **updateSsidBandSteerOpenApiVO** | [**UpdateSsidBandSteerOpenApiVO**](UpdateSsidBandSteerOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1091,6 +1252,87 @@ Name | Type | Description  | Notes
 
 
  **updateSsidHotspotV2SettingOpenApiVO** | [**UpdateSsidHotspotV2SettingOpenApiVO**](UpdateSsidHotspotV2SettingOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSsidLoadBalanceConfig
+
+> OperationResponseWithoutResult UpdateSsidLoadBalanceConfig(ctx, omadacId, siteId, wlanId, ssidId).UpdateSsidLoadBalanceOpenApiVO(updateSsidLoadBalanceOpenApiVO).Execute()
+
+Update SSID load balance config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	wlanId := "wlanId_example" // string | WLAN ID
+	ssidId := "ssidId_example" // string | SSID ID
+	updateSsidLoadBalanceOpenApiVO := *openapiclient.NewUpdateSsidLoadBalanceOpenApiVO(false) // UpdateSsidLoadBalanceOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WirelessNetworkAPI.UpdateSsidLoadBalanceConfig(context.Background(), omadacId, siteId, wlanId, ssidId).UpdateSsidLoadBalanceOpenApiVO(updateSsidLoadBalanceOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WirelessNetworkAPI.UpdateSsidLoadBalanceConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSsidLoadBalanceConfig`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `WirelessNetworkAPI.UpdateSsidLoadBalanceConfig`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**wlanId** | **string** | WLAN ID | 
+**ssidId** | **string** | SSID ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSsidLoadBalanceConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **updateSsidLoadBalanceOpenApiVO** | [**UpdateSsidLoadBalanceOpenApiVO**](UpdateSsidLoadBalanceOpenApiVO.md) |  | 
 
 ### Return type
 
@@ -1415,6 +1657,87 @@ Name | Type | Description  | Notes
 
 
  **updateSsidRateLimitOpenApiVO** | [**UpdateSsidRateLimitOpenApiVO**](UpdateSsidRateLimitOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSsidWifiCallingConfig
+
+> OperationResponseWithoutResult UpdateSsidWifiCallingConfig(ctx, omadacId, siteId, wlanId, ssidId).UpdateWifiCallingOpenApiVO(updateWifiCallingOpenApiVO).Execute()
+
+Update SSID wifi calling config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	wlanId := "wlanId_example" // string | WLAN ID
+	ssidId := "ssidId_example" // string | SSID ID
+	updateWifiCallingOpenApiVO := *openapiclient.NewUpdateWifiCallingOpenApiVO(false) // UpdateWifiCallingOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WirelessNetworkAPI.UpdateSsidWifiCallingConfig(context.Background(), omadacId, siteId, wlanId, ssidId).UpdateWifiCallingOpenApiVO(updateWifiCallingOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WirelessNetworkAPI.UpdateSsidWifiCallingConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSsidWifiCallingConfig`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `WirelessNetworkAPI.UpdateSsidWifiCallingConfig`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**wlanId** | **string** | WLAN ID | 
+**ssidId** | **string** | SSID ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSsidWifiCallingConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **updateWifiCallingOpenApiVO** | [**UpdateWifiCallingOpenApiVO**](UpdateWifiCallingOpenApiVO.md) |  | 
 
 ### Return type
 

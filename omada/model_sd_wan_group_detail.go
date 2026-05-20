@@ -26,8 +26,10 @@ type SdWanGroupDetail struct {
 	// The ID of the SD-WAN group
 	Id *string `json:"id,omitempty"`
 	// The end of the IP pool of the SD-WAN group
+	// Deprecated
 	IpPoolEnd *string `json:"ipPoolEnd,omitempty"`
 	// The start of the IP pool of the SD-WAN group
+	// Deprecated
 	IpPoolStart *string `json:"ipPoolStart,omitempty"`
 	// A list of linked-spokes of the SD-WAN group
 	LinkedSpokes []SdWanLinkedSpoke `json:"linkedSpokes,omitempty"`
@@ -152,6 +154,7 @@ func (o *SdWanGroupDetail) SetId(v string) {
 }
 
 // GetIpPoolEnd returns the IpPoolEnd field value if set, zero value otherwise.
+// Deprecated
 func (o *SdWanGroupDetail) GetIpPoolEnd() string {
 	if o == nil || IsNil(o.IpPoolEnd) {
 		var ret string
@@ -162,6 +165,7 @@ func (o *SdWanGroupDetail) GetIpPoolEnd() string {
 
 // GetIpPoolEndOk returns a tuple with the IpPoolEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *SdWanGroupDetail) GetIpPoolEndOk() (*string, bool) {
 	if o == nil || IsNil(o.IpPoolEnd) {
 		return nil, false
@@ -179,11 +183,13 @@ func (o *SdWanGroupDetail) HasIpPoolEnd() bool {
 }
 
 // SetIpPoolEnd gets a reference to the given string and assigns it to the IpPoolEnd field.
+// Deprecated
 func (o *SdWanGroupDetail) SetIpPoolEnd(v string) {
 	o.IpPoolEnd = &v
 }
 
 // GetIpPoolStart returns the IpPoolStart field value if set, zero value otherwise.
+// Deprecated
 func (o *SdWanGroupDetail) GetIpPoolStart() string {
 	if o == nil || IsNil(o.IpPoolStart) {
 		var ret string
@@ -194,6 +200,7 @@ func (o *SdWanGroupDetail) GetIpPoolStart() string {
 
 // GetIpPoolStartOk returns a tuple with the IpPoolStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *SdWanGroupDetail) GetIpPoolStartOk() (*string, bool) {
 	if o == nil || IsNil(o.IpPoolStart) {
 		return nil, false
@@ -211,6 +218,7 @@ func (o *SdWanGroupDetail) HasIpPoolStart() bool {
 }
 
 // SetIpPoolStart gets a reference to the given string and assigns it to the IpPoolStart field.
+// Deprecated
 func (o *SdWanGroupDetail) SetIpPoolStart(v string) {
 	o.IpPoolStart = &v
 }

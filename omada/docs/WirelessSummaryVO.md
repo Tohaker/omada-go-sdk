@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **RxTotal** | Pointer to **int64** | rx traffic | [optional] 
 **Total** | Pointer to **int64** | total traffic | [optional] 
 **TxTotal** | Pointer to **int64** | tx traffic | [optional] 
-**Wireless2gRx** | Pointer to **int64** | 2g rx traffic | [optional] 
+**Wireless2gRx** | Pointer to **int64** | 2g client rx traffic | [optional] 
 **Wireless2gTotal** | Pointer to **int64** | 2g traffic | [optional] 
-**Wireless2gTx** | Pointer to **int64** | 2g rx traffic | [optional] 
-**Wireless5gRx** | Pointer to **int64** | 5g rx traffic | [optional] 
+**Wireless2gTx** | Pointer to **int64** | 2g client tx traffic | [optional] 
+**Wireless5gRx** | Pointer to **int64** | 5g client rx traffic | [optional] 
 **Wireless5gTotal** | Pointer to **int64** | 5g traffic | [optional] 
-**Wireless5gTx** | Pointer to **int64** | 5g tx traffic | [optional] 
-**Wireless6gRx** | Pointer to **int64** | 6g rx traffic | [optional] 
+**Wireless5gTx** | Pointer to **int64** | 5g client tx traffic | [optional] 
+**Wireless6gRx** | Pointer to **int64** | 6g client rx traffic | [optional] 
 **Wireless6gTotal** | Pointer to **int64** | 6g traffic | [optional] 
-**Wireless6gTx** | Pointer to **int64** | 6g tx traffic | [optional] 
+**Wireless6gTx** | Pointer to **int64** | 6g client tx traffic | [optional] 
 
 ## Methods
 

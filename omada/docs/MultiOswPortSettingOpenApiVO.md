@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **NativeNetworkId** | Pointer to **string** | Native Network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks. | [optional] 
 **NetworkTagsSetting** | Pointer to **int32** | Network Tags Setting should be a value as follows: 0: Allow All; 1: Block All; 2: Custom | [optional] 
 **ProfileId** | Pointer to **string** | Profile ID | [optional] 
-**ProfileOverrideEnable** | Pointer to **bool** | Indicates whether to enable Profile Override | [optional] 
+**ProfileOverrideEnable** | Pointer to **bool** | Indicates whether to enable Profile Override before v6.2.10; Indicates the fill mode of port configuration after v6.2.10: true: custom; false: follow profile | [optional] 
+**ProfileVlanOverrideEnable** | Pointer to **bool** | Indicates the fill mode of vlan configuration: true: custom; false: follow profile | [optional] 
 **SearchKey** | Pointer to **string** | The keywords of the searchIt is effected when [selectAll] is &#39;true&#39;. | [optional] 
 **SelectAll** | **bool** | Indicates whether select all switch ports.false: include selected switch ports and lags in Parameter [switchList], true: all switch ports and lags but exclude selected switch ports and lags in Parameter [switchList]. | 
 **SwitchList** | [**[]OswPortLagListVO**](OswPortLagListVO.md) | Switch List with port and LAG info | 
@@ -190,6 +191,31 @@ SetProfileOverrideEnable sets ProfileOverrideEnable field to given value.
 `func (o *MultiOswPortSettingOpenApiVO) HasProfileOverrideEnable() bool`
 
 HasProfileOverrideEnable returns a boolean if a field has been set.
+
+### GetProfileVlanOverrideEnable
+
+`func (o *MultiOswPortSettingOpenApiVO) GetProfileVlanOverrideEnable() bool`
+
+GetProfileVlanOverrideEnable returns the ProfileVlanOverrideEnable field if non-nil, zero value otherwise.
+
+### GetProfileVlanOverrideEnableOk
+
+`func (o *MultiOswPortSettingOpenApiVO) GetProfileVlanOverrideEnableOk() (*bool, bool)`
+
+GetProfileVlanOverrideEnableOk returns a tuple with the ProfileVlanOverrideEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProfileVlanOverrideEnable
+
+`func (o *MultiOswPortSettingOpenApiVO) SetProfileVlanOverrideEnable(v bool)`
+
+SetProfileVlanOverrideEnable sets ProfileVlanOverrideEnable field to given value.
+
+### HasProfileVlanOverrideEnable
+
+`func (o *MultiOswPortSettingOpenApiVO) HasProfileVlanOverrideEnable() bool`
+
+HasProfileVlanOverrideEnable returns a boolean if a field has been set.
 
 ### GetSearchKey
 

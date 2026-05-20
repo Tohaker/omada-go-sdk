@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChannelLimitType** | Pointer to **int32** | Channel limit enable status. It should be a value as follows: 0: default, 1: false, 2: true. | [optional] 
+**DefaultInstType5g** | Pointer to **bool** | default mode in 5g radio. true: outdoor; false: indoor | [optional] 
+**DefaultInstType6g** | Pointer to **bool** | default mode in 6g radio. true: outdoor; false: indoor | [optional] 
 **SupportChannelLimit** | Pointer to **bool** | Indicates whether the device supports channel limit | [optional] 
 
 ## Methods
@@ -50,6 +52,56 @@ SetChannelLimitType sets ChannelLimitType field to given value.
 `func (o *ChannelLimitConfigOpenApiVO) HasChannelLimitType() bool`
 
 HasChannelLimitType returns a boolean if a field has been set.
+
+### GetDefaultInstType5g
+
+`func (o *ChannelLimitConfigOpenApiVO) GetDefaultInstType5g() bool`
+
+GetDefaultInstType5g returns the DefaultInstType5g field if non-nil, zero value otherwise.
+
+### GetDefaultInstType5gOk
+
+`func (o *ChannelLimitConfigOpenApiVO) GetDefaultInstType5gOk() (*bool, bool)`
+
+GetDefaultInstType5gOk returns a tuple with the DefaultInstType5g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultInstType5g
+
+`func (o *ChannelLimitConfigOpenApiVO) SetDefaultInstType5g(v bool)`
+
+SetDefaultInstType5g sets DefaultInstType5g field to given value.
+
+### HasDefaultInstType5g
+
+`func (o *ChannelLimitConfigOpenApiVO) HasDefaultInstType5g() bool`
+
+HasDefaultInstType5g returns a boolean if a field has been set.
+
+### GetDefaultInstType6g
+
+`func (o *ChannelLimitConfigOpenApiVO) GetDefaultInstType6g() bool`
+
+GetDefaultInstType6g returns the DefaultInstType6g field if non-nil, zero value otherwise.
+
+### GetDefaultInstType6gOk
+
+`func (o *ChannelLimitConfigOpenApiVO) GetDefaultInstType6gOk() (*bool, bool)`
+
+GetDefaultInstType6gOk returns a tuple with the DefaultInstType6g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultInstType6g
+
+`func (o *ChannelLimitConfigOpenApiVO) SetDefaultInstType6g(v bool)`
+
+SetDefaultInstType6g sets DefaultInstType6g field to given value.
+
+### HasDefaultInstType6g
+
+`func (o *ChannelLimitConfigOpenApiVO) HasDefaultInstType6g() bool`
+
+HasDefaultInstType6g returns a boolean if a field has been set.
 
 ### GetSupportChannelLimit
 

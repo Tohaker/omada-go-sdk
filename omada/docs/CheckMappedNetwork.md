@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MappedNetworks** | Pointer to **[]string** | A list of current mapped network of the SD-WAN group | [optional] 
-**MemberList** | Pointer to [**[]SdWanMemberBriefInfo**](SdWanMemberBriefInfo.md) | A list of members of the SD-WAN group | [optional] 
-**ModifiedNetwork** | Pointer to **string** | The IP Subnet of the modified network | [optional] 
+**MemberList** | [**[]SdWanMemberSelected**](SdWanMemberSelected.md) | A list of members of the SD-WAN group | 
+**ModifiedNetwork** | **string** | The IP Subnet of the modified network | 
 
 ## Methods
 
 ### NewCheckMappedNetwork
 
-`func NewCheckMappedNetwork() *CheckMappedNetwork`
+`func NewCheckMappedNetwork(memberList []SdWanMemberSelected, modifiedNetwork string, ) *CheckMappedNetwork`
 
 NewCheckMappedNetwork instantiates a new CheckMappedNetwork object
 This constructor will assign default values to properties that have it defined,
@@ -54,28 +54,23 @@ HasMappedNetworks returns a boolean if a field has been set.
 
 ### GetMemberList
 
-`func (o *CheckMappedNetwork) GetMemberList() []SdWanMemberBriefInfo`
+`func (o *CheckMappedNetwork) GetMemberList() []SdWanMemberSelected`
 
 GetMemberList returns the MemberList field if non-nil, zero value otherwise.
 
 ### GetMemberListOk
 
-`func (o *CheckMappedNetwork) GetMemberListOk() (*[]SdWanMemberBriefInfo, bool)`
+`func (o *CheckMappedNetwork) GetMemberListOk() (*[]SdWanMemberSelected, bool)`
 
 GetMemberListOk returns a tuple with the MemberList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemberList
 
-`func (o *CheckMappedNetwork) SetMemberList(v []SdWanMemberBriefInfo)`
+`func (o *CheckMappedNetwork) SetMemberList(v []SdWanMemberSelected)`
 
 SetMemberList sets MemberList field to given value.
 
-### HasMemberList
-
-`func (o *CheckMappedNetwork) HasMemberList() bool`
-
-HasMemberList returns a boolean if a field has been set.
 
 ### GetModifiedNetwork
 
@@ -96,11 +91,6 @@ and a boolean to check if the value has been set.
 
 SetModifiedNetwork sets ModifiedNetwork field to given value.
 
-### HasModifiedNetwork
-
-`func (o *CheckMappedNetwork) HasModifiedNetwork() bool`
-
-HasModifiedNetwork returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -80,6 +80,8 @@ type VpnSummaryOpenApiGridVOVpnSummaryVO struct {
 	SupportWgDomain *bool `json:"supportWgDomain,omitempty"`
 	// Total rows of all items.
 	TotalRows *int64 `json:"totalRows,omitempty"`
+	// The limit on the number of entries for peer in WireGuard.
+	WgPeerLimitSize *int32 `json:"wgPeerLimitSize,omitempty"`
 }
 
 // NewVpnSummaryOpenApiGridVOVpnSummaryVO instantiates a new VpnSummaryOpenApiGridVOVpnSummaryVO object
@@ -1091,6 +1093,38 @@ func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) SetTotalRows(v int64) {
 	o.TotalRows = &v
 }
 
+// GetWgPeerLimitSize returns the WgPeerLimitSize field value if set, zero value otherwise.
+func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) GetWgPeerLimitSize() int32 {
+	if o == nil || IsNil(o.WgPeerLimitSize) {
+		var ret int32
+		return ret
+	}
+	return *o.WgPeerLimitSize
+}
+
+// GetWgPeerLimitSizeOk returns a tuple with the WgPeerLimitSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) GetWgPeerLimitSizeOk() (*int32, bool) {
+	if o == nil || IsNil(o.WgPeerLimitSize) {
+		return nil, false
+	}
+	return o.WgPeerLimitSize, true
+}
+
+// HasWgPeerLimitSize returns a boolean if a field has been set.
+func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) HasWgPeerLimitSize() bool {
+	if o != nil && !IsNil(o.WgPeerLimitSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetWgPeerLimitSize gets a reference to the given int32 and assigns it to the WgPeerLimitSize field.
+func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) SetWgPeerLimitSize(v int32) {
+	o.WgPeerLimitSize = &v
+}
+
 func (o VpnSummaryOpenApiGridVOVpnSummaryVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -1193,6 +1227,9 @@ func (o VpnSummaryOpenApiGridVOVpnSummaryVO) ToMap() (map[string]interface{}, er
 	}
 	if !IsNil(o.TotalRows) {
 		toSerialize["totalRows"] = o.TotalRows
+	}
+	if !IsNil(o.WgPeerLimitSize) {
+		toSerialize["wgPeerLimitSize"] = o.WgPeerLimitSize
 	}
 	return toSerialize, nil
 }

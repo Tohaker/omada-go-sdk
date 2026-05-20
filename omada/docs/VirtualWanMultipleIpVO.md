@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IP** | Pointer to **string** |  | [optional] 
-**Enable** | Pointer to **bool** |  | [optional] 
+**IP** | **string** |  | 
+**Enable** | **bool** |  | 
 
 ## Methods
 
 ### NewVirtualWanMultipleIpVO
 
-`func NewVirtualWanMultipleIpVO() *VirtualWanMultipleIpVO`
+`func NewVirtualWanMultipleIpVO(iP string, enable bool, ) *VirtualWanMultipleIpVO`
 
 NewVirtualWanMultipleIpVO instantiates a new VirtualWanMultipleIpVO object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetIP sets IP field to given value.
 
-### HasIP
-
-`func (o *VirtualWanMultipleIpVO) HasIP() bool`
-
-HasIP returns a boolean if a field has been set.
 
 ### GetEnable
 
@@ -70,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetEnable sets Enable field to given value.
 
-### HasEnable
-
-`func (o *VirtualWanMultipleIpVO) HasEnable() bool`
-
-HasEnable returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

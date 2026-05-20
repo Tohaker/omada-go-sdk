@@ -26,11 +26,14 @@ Name | Type | Description | Notes
 **PskSetting** | Pointer to [**SsidPskSettingOpenApiVO**](SsidPskSettingOpenApiVO.md) |  | [optional] 
 **RateControl** | Pointer to [**SsidRateControlOpenApiVO**](SsidRateControlOpenApiVO.md) |  | [optional] 
 **Security** | Pointer to **int32** | SSID security mode; Security should be a value as follows: 0: None; 2: WPA-Enterprise; 3: WPA-Personal; 4: PPSK without RADIUS; 5: PPSK with RADIUS. | [optional] 
+**SsidDhcpOption** | Pointer to [**BandSteerOpenApiVO**](BandSteerOpenApiVO.md) |  | [optional] 
 **SsidId** | Pointer to **string** | SSID ID | [optional] 
 **SsidRateLimit** | Pointer to [**RateLimitSettingOpenApiVO**](RateLimitSettingOpenApiVO.md) |  | [optional] 
 **VlanEnable** | Pointer to **bool** | SSID VLAN config status. True: enable, false: disable. | [optional] 
 **VlanId** | Pointer to **int32** | SSID VLAN ID. This field is required when Parameter [vlanEnable] is true; It should be within the range of 1–4094. | [optional] 
 **VlanSetting** | Pointer to [**SsidVlanSettingOpenApiVO**](SsidVlanSettingOpenApiVO.md) |  | [optional] 
+**WifiCallingEnable** | Pointer to **bool** | SSID Wifi Calling config status. True: enable, false: disable. | [optional] 
+**WifiCallingId** | Pointer to **string** | The ID of the Wi-Fi calling profile bound to the SSID. When parameter [wifiCallingEnable] is true, it should not be null. | [optional] 
 **WlanSchedule** | Pointer to [**SsidWlanScheduleOpenApiVO**](SsidWlanScheduleOpenApiVO.md) |  | [optional] 
 
 ## Methods
@@ -602,6 +605,31 @@ SetSecurity sets Security field to given value.
 
 HasSecurity returns a boolean if a field has been set.
 
+### GetSsidDhcpOption
+
+`func (o *SsidDetailOpenApiVO) GetSsidDhcpOption() BandSteerOpenApiVO`
+
+GetSsidDhcpOption returns the SsidDhcpOption field if non-nil, zero value otherwise.
+
+### GetSsidDhcpOptionOk
+
+`func (o *SsidDetailOpenApiVO) GetSsidDhcpOptionOk() (*BandSteerOpenApiVO, bool)`
+
+GetSsidDhcpOptionOk returns a tuple with the SsidDhcpOption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSsidDhcpOption
+
+`func (o *SsidDetailOpenApiVO) SetSsidDhcpOption(v BandSteerOpenApiVO)`
+
+SetSsidDhcpOption sets SsidDhcpOption field to given value.
+
+### HasSsidDhcpOption
+
+`func (o *SsidDetailOpenApiVO) HasSsidDhcpOption() bool`
+
+HasSsidDhcpOption returns a boolean if a field has been set.
+
 ### GetSsidId
 
 `func (o *SsidDetailOpenApiVO) GetSsidId() string`
@@ -726,6 +754,56 @@ SetVlanSetting sets VlanSetting field to given value.
 `func (o *SsidDetailOpenApiVO) HasVlanSetting() bool`
 
 HasVlanSetting returns a boolean if a field has been set.
+
+### GetWifiCallingEnable
+
+`func (o *SsidDetailOpenApiVO) GetWifiCallingEnable() bool`
+
+GetWifiCallingEnable returns the WifiCallingEnable field if non-nil, zero value otherwise.
+
+### GetWifiCallingEnableOk
+
+`func (o *SsidDetailOpenApiVO) GetWifiCallingEnableOk() (*bool, bool)`
+
+GetWifiCallingEnableOk returns a tuple with the WifiCallingEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWifiCallingEnable
+
+`func (o *SsidDetailOpenApiVO) SetWifiCallingEnable(v bool)`
+
+SetWifiCallingEnable sets WifiCallingEnable field to given value.
+
+### HasWifiCallingEnable
+
+`func (o *SsidDetailOpenApiVO) HasWifiCallingEnable() bool`
+
+HasWifiCallingEnable returns a boolean if a field has been set.
+
+### GetWifiCallingId
+
+`func (o *SsidDetailOpenApiVO) GetWifiCallingId() string`
+
+GetWifiCallingId returns the WifiCallingId field if non-nil, zero value otherwise.
+
+### GetWifiCallingIdOk
+
+`func (o *SsidDetailOpenApiVO) GetWifiCallingIdOk() (*string, bool)`
+
+GetWifiCallingIdOk returns a tuple with the WifiCallingId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWifiCallingId
+
+`func (o *SsidDetailOpenApiVO) SetWifiCallingId(v string)`
+
+SetWifiCallingId sets WifiCallingId field to given value.
+
+### HasWifiCallingId
+
+`func (o *SsidDetailOpenApiVO) HasWifiCallingId() bool`
+
+HasWifiCallingId returns a boolean if a field has been set.
 
 ### GetWlanSchedule
 

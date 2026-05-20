@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Token** | Pointer to **string** | Token for transfer operation | [optional] 
 **UserId** | **string** | Target user ID for new owner | 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewTransferRootOpenApiVOWithDefaults instantiates a new TransferRootOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetToken
+
+`func (o *TransferRootOpenApiVO) GetToken() string`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *TransferRootOpenApiVO) GetTokenOk() (*string, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *TransferRootOpenApiVO) SetToken(v string)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *TransferRootOpenApiVO) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
 
 ### GetUserId
 

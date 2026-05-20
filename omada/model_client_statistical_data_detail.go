@@ -25,6 +25,10 @@ type ClientStatisticalDataDetail struct {
 	DownRate *int64 `json:"downRate,omitempty"`
 	// Client MAC Address.
 	Mac *string `json:"mac,omitempty"`
+	// (MLO) Client multi link info.
+	MultiLinks []ClientMultiLinkInfo `json:"multiLinks,omitempty"`
+	// (Wireless) Radio ID should be a value as follows: 0: 2.4GHz; 1: 5GHz; 2:5GHz-2; 3: 6GHz
+	RadioId *int32 `json:"radioId,omitempty"`
 	// (Wireless) Uplink negotiation rate (bit/s).
 	RxR *int64 `json:"rxR,omitempty"`
 	// (Wireless) Signal strength, unit: dBm.
@@ -154,6 +158,70 @@ func (o *ClientStatisticalDataDetail) HasMac() bool {
 // SetMac gets a reference to the given string and assigns it to the Mac field.
 func (o *ClientStatisticalDataDetail) SetMac(v string) {
 	o.Mac = &v
+}
+
+// GetMultiLinks returns the MultiLinks field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetMultiLinks() []ClientMultiLinkInfo {
+	if o == nil || IsNil(o.MultiLinks) {
+		var ret []ClientMultiLinkInfo
+		return ret
+	}
+	return o.MultiLinks
+}
+
+// GetMultiLinksOk returns a tuple with the MultiLinks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientStatisticalDataDetail) GetMultiLinksOk() ([]ClientMultiLinkInfo, bool) {
+	if o == nil || IsNil(o.MultiLinks) {
+		return nil, false
+	}
+	return o.MultiLinks, true
+}
+
+// HasMultiLinks returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasMultiLinks() bool {
+	if o != nil && !IsNil(o.MultiLinks) {
+		return true
+	}
+
+	return false
+}
+
+// SetMultiLinks gets a reference to the given []ClientMultiLinkInfo and assigns it to the MultiLinks field.
+func (o *ClientStatisticalDataDetail) SetMultiLinks(v []ClientMultiLinkInfo) {
+	o.MultiLinks = v
+}
+
+// GetRadioId returns the RadioId field value if set, zero value otherwise.
+func (o *ClientStatisticalDataDetail) GetRadioId() int32 {
+	if o == nil || IsNil(o.RadioId) {
+		var ret int32
+		return ret
+	}
+	return *o.RadioId
+}
+
+// GetRadioIdOk returns a tuple with the RadioId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientStatisticalDataDetail) GetRadioIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.RadioId) {
+		return nil, false
+	}
+	return o.RadioId, true
+}
+
+// HasRadioId returns a boolean if a field has been set.
+func (o *ClientStatisticalDataDetail) HasRadioId() bool {
+	if o != nil && !IsNil(o.RadioId) {
+		return true
+	}
+
+	return false
+}
+
+// SetRadioId gets a reference to the given int32 and assigns it to the RadioId field.
+func (o *ClientStatisticalDataDetail) SetRadioId(v int32) {
+	o.RadioId = &v
 }
 
 // GetRxR returns the RxR field value if set, zero value otherwise.
@@ -430,6 +498,12 @@ func (o ClientStatisticalDataDetail) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac
+	}
+	if !IsNil(o.MultiLinks) {
+		toSerialize["multiLinks"] = o.MultiLinks
+	}
+	if !IsNil(o.RadioId) {
+		toSerialize["radioId"] = o.RadioId
 	}
 	if !IsNil(o.RxR) {
 		toSerialize["rxR"] = o.RxR

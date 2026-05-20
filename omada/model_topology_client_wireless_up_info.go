@@ -25,6 +25,8 @@ type TopologyClientWirelessUpInfo struct {
 	MultiLink []TopologyClientWirelessLinkInfo `json:"multiLink,omitempty"`
 	// Radio, it should be a value as follows: 0:2G, 1:5G, 2:5G2, 3:6G.
 	Radio *int32 `json:"radio,omitempty"`
+	// Signal strength, unit: dBm
+	Rssi *int32 `json:"rssi,omitempty"`
 	// Ssid.
 	Ssid *string `json:"ssid,omitempty"`
 	// Whether the device supports the 5G2 frequency band.
@@ -144,6 +146,38 @@ func (o *TopologyClientWirelessUpInfo) SetRadio(v int32) {
 	o.Radio = &v
 }
 
+// GetRssi returns the Rssi field value if set, zero value otherwise.
+func (o *TopologyClientWirelessUpInfo) GetRssi() int32 {
+	if o == nil || IsNil(o.Rssi) {
+		var ret int32
+		return ret
+	}
+	return *o.Rssi
+}
+
+// GetRssiOk returns a tuple with the Rssi field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyClientWirelessUpInfo) GetRssiOk() (*int32, bool) {
+	if o == nil || IsNil(o.Rssi) {
+		return nil, false
+	}
+	return o.Rssi, true
+}
+
+// HasRssi returns a boolean if a field has been set.
+func (o *TopologyClientWirelessUpInfo) HasRssi() bool {
+	if o != nil && !IsNil(o.Rssi) {
+		return true
+	}
+
+	return false
+}
+
+// SetRssi gets a reference to the given int32 and assigns it to the Rssi field.
+func (o *TopologyClientWirelessUpInfo) SetRssi(v int32) {
+	o.Rssi = &v
+}
+
 // GetSsid returns the Ssid field value if set, zero value otherwise.
 func (o *TopologyClientWirelessUpInfo) GetSsid() string {
 	if o == nil || IsNil(o.Ssid) {
@@ -226,6 +260,9 @@ func (o TopologyClientWirelessUpInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Radio) {
 		toSerialize["radio"] = o.Radio
+	}
+	if !IsNil(o.Rssi) {
+		toSerialize["rssi"] = o.Rssi
 	}
 	if !IsNil(o.Ssid) {
 		toSerialize["ssid"] = o.Ssid

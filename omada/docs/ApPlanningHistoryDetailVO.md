@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Radio5g2** | Pointer to [**ApPlanningRadioVO**](ApPlanningRadioVO.md) |  | [optional] 
 **Radio6g** | Pointer to [**ApPlanningRadioVO**](ApPlanningRadioVO.md) |  | [optional] 
 **Support5g2** | Pointer to **bool** | Parameter [support5g2] indicates whether the device supports 5 GHz-2. | [optional] 
+**TriggerReason** | Pointer to **int32** | Trigger reason. 0: none. 1: Strong Interference. 2: new ap | [optional] 
 **Type** | Pointer to **string** | Device type. | [optional] 
 
 ## Methods
@@ -336,6 +337,31 @@ SetSupport5g2 sets Support5g2 field to given value.
 `func (o *ApPlanningHistoryDetailVO) HasSupport5g2() bool`
 
 HasSupport5g2 returns a boolean if a field has been set.
+
+### GetTriggerReason
+
+`func (o *ApPlanningHistoryDetailVO) GetTriggerReason() int32`
+
+GetTriggerReason returns the TriggerReason field if non-nil, zero value otherwise.
+
+### GetTriggerReasonOk
+
+`func (o *ApPlanningHistoryDetailVO) GetTriggerReasonOk() (*int32, bool)`
+
+GetTriggerReasonOk returns a tuple with the TriggerReason field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTriggerReason
+
+`func (o *ApPlanningHistoryDetailVO) SetTriggerReason(v int32)`
+
+SetTriggerReason sets TriggerReason field to given value.
+
+### HasTriggerReason
+
+`func (o *ApPlanningHistoryDetailVO) HasTriggerReason() bool`
+
+HasTriggerReason returns a boolean if a field has been set.
 
 ### GetType
 

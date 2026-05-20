@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Dhcp Server Name | [optional] 
 **Ranges** | Pointer to [**[]DhcpRangeOpenApiVO**](DhcpRangeOpenApiVO.md) | Dhcp Server Ranges | [optional] 
 **StackId** | Pointer to **string** | Dhcp Server Stack ID | [optional] 
+**SupportDhcpReservation** | Pointer to **bool** | Whether the device supports DHCP Reservation | [optional] 
 **Type** | Pointer to **string** | Device Type | [optional] 
 
 ## Methods
@@ -232,6 +233,31 @@ SetStackId sets StackId field to given value.
 `func (o *BriefServerDeviceVO) HasStackId() bool`
 
 HasStackId returns a boolean if a field has been set.
+
+### GetSupportDhcpReservation
+
+`func (o *BriefServerDeviceVO) GetSupportDhcpReservation() bool`
+
+GetSupportDhcpReservation returns the SupportDhcpReservation field if non-nil, zero value otherwise.
+
+### GetSupportDhcpReservationOk
+
+`func (o *BriefServerDeviceVO) GetSupportDhcpReservationOk() (*bool, bool)`
+
+GetSupportDhcpReservationOk returns a tuple with the SupportDhcpReservation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportDhcpReservation
+
+`func (o *BriefServerDeviceVO) SetSupportDhcpReservation(v bool)`
+
+SetSupportDhcpReservation sets SupportDhcpReservation field to given value.
+
+### HasSupportDhcpReservation
+
+`func (o *BriefServerDeviceVO) HasSupportDhcpReservation() bool`
+
+HasSupportDhcpReservation returns a boolean if a field has been set.
 
 ### GetType
 

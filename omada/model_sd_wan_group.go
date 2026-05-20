@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the SdWanGroup type satisfies the MappedNullable interface at compile time
@@ -22,26 +24,33 @@ type SdWanGroup struct {
 	// The description of the SD-WAN group
 	Description *string `json:"description,omitempty"`
 	// Whether the group enable SD-WAN virtual network Map
-	EnableNat *bool `json:"enableNat,omitempty"`
-	// The end of the IP pool of the SD-WAN group， it is recommended to ignore it as it will be generated automatically
+	EnableNat bool `json:"enableNat"`
+	// The end of the IP pool of the SD-WAN group, it is recommended to ignore it as it will be generated automatically
+	// Deprecated
 	IpPoolEnd *string `json:"ipPoolEnd,omitempty"`
 	// The start of the IP pool of the SD-WAN group, it is recommended to ignore it as it will be generated automatically
+	// Deprecated
 	IpPoolStart *string `json:"ipPoolStart,omitempty"`
 	// A list of linked-spokes of the SD-WAN group
-	LinkedSpokes []SdWanLinkedSpoke `json:"linkedSpokes,omitempty"`
+	LinkedSpokes []SdWanLinkedSpokeConfig `json:"linkedSpokes,omitempty"`
 	// A list of members of the SD-WAN group
-	MemberList []SdWanMemberInfo `json:"memberList,omitempty"`
+	MemberList []SdWanMemberConfig `json:"memberList"`
 	// The name of the SD-WAN group
-	Name *string `json:"name,omitempty"`
-	NatInfo *SdWanNatInfo `json:"natInfo,omitempty"`
+	Name string `json:"name"`
+	NatInfo *SdWanNatInfoConfig `json:"natInfo,omitempty"`
 }
+
+type _SdWanGroup SdWanGroup
 
 // NewSdWanGroup instantiates a new SdWanGroup object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSdWanGroup() *SdWanGroup {
+func NewSdWanGroup(enableNat bool, memberList []SdWanMemberConfig, name string) *SdWanGroup {
 	this := SdWanGroup{}
+	this.EnableNat = enableNat
+	this.MemberList = memberList
+	this.Name = name
 	return &this
 }
 
@@ -85,39 +94,32 @@ func (o *SdWanGroup) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetEnableNat returns the EnableNat field value if set, zero value otherwise.
+// GetEnableNat returns the EnableNat field value
 func (o *SdWanGroup) GetEnableNat() bool {
-	if o == nil || IsNil(o.EnableNat) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.EnableNat
+
+	return o.EnableNat
 }
 
-// GetEnableNatOk returns a tuple with the EnableNat field value if set, nil otherwise
+// GetEnableNatOk returns a tuple with the EnableNat field value
 // and a boolean to check if the value has been set.
 func (o *SdWanGroup) GetEnableNatOk() (*bool, bool) {
-	if o == nil || IsNil(o.EnableNat) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EnableNat, true
+	return &o.EnableNat, true
 }
 
-// HasEnableNat returns a boolean if a field has been set.
-func (o *SdWanGroup) HasEnableNat() bool {
-	if o != nil && !IsNil(o.EnableNat) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnableNat gets a reference to the given bool and assigns it to the EnableNat field.
+// SetEnableNat sets field value
 func (o *SdWanGroup) SetEnableNat(v bool) {
-	o.EnableNat = &v
+	o.EnableNat = v
 }
 
 // GetIpPoolEnd returns the IpPoolEnd field value if set, zero value otherwise.
+// Deprecated
 func (o *SdWanGroup) GetIpPoolEnd() string {
 	if o == nil || IsNil(o.IpPoolEnd) {
 		var ret string
@@ -128,6 +130,7 @@ func (o *SdWanGroup) GetIpPoolEnd() string {
 
 // GetIpPoolEndOk returns a tuple with the IpPoolEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *SdWanGroup) GetIpPoolEndOk() (*string, bool) {
 	if o == nil || IsNil(o.IpPoolEnd) {
 		return nil, false
@@ -145,11 +148,13 @@ func (o *SdWanGroup) HasIpPoolEnd() bool {
 }
 
 // SetIpPoolEnd gets a reference to the given string and assigns it to the IpPoolEnd field.
+// Deprecated
 func (o *SdWanGroup) SetIpPoolEnd(v string) {
 	o.IpPoolEnd = &v
 }
 
 // GetIpPoolStart returns the IpPoolStart field value if set, zero value otherwise.
+// Deprecated
 func (o *SdWanGroup) GetIpPoolStart() string {
 	if o == nil || IsNil(o.IpPoolStart) {
 		var ret string
@@ -160,6 +165,7 @@ func (o *SdWanGroup) GetIpPoolStart() string {
 
 // GetIpPoolStartOk returns a tuple with the IpPoolStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *SdWanGroup) GetIpPoolStartOk() (*string, bool) {
 	if o == nil || IsNil(o.IpPoolStart) {
 		return nil, false
@@ -177,14 +183,15 @@ func (o *SdWanGroup) HasIpPoolStart() bool {
 }
 
 // SetIpPoolStart gets a reference to the given string and assigns it to the IpPoolStart field.
+// Deprecated
 func (o *SdWanGroup) SetIpPoolStart(v string) {
 	o.IpPoolStart = &v
 }
 
 // GetLinkedSpokes returns the LinkedSpokes field value if set, zero value otherwise.
-func (o *SdWanGroup) GetLinkedSpokes() []SdWanLinkedSpoke {
+func (o *SdWanGroup) GetLinkedSpokes() []SdWanLinkedSpokeConfig {
 	if o == nil || IsNil(o.LinkedSpokes) {
-		var ret []SdWanLinkedSpoke
+		var ret []SdWanLinkedSpokeConfig
 		return ret
 	}
 	return o.LinkedSpokes
@@ -192,7 +199,7 @@ func (o *SdWanGroup) GetLinkedSpokes() []SdWanLinkedSpoke {
 
 // GetLinkedSpokesOk returns a tuple with the LinkedSpokes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SdWanGroup) GetLinkedSpokesOk() ([]SdWanLinkedSpoke, bool) {
+func (o *SdWanGroup) GetLinkedSpokesOk() ([]SdWanLinkedSpokeConfig, bool) {
 	if o == nil || IsNil(o.LinkedSpokes) {
 		return nil, false
 	}
@@ -208,79 +215,63 @@ func (o *SdWanGroup) HasLinkedSpokes() bool {
 	return false
 }
 
-// SetLinkedSpokes gets a reference to the given []SdWanLinkedSpoke and assigns it to the LinkedSpokes field.
-func (o *SdWanGroup) SetLinkedSpokes(v []SdWanLinkedSpoke) {
+// SetLinkedSpokes gets a reference to the given []SdWanLinkedSpokeConfig and assigns it to the LinkedSpokes field.
+func (o *SdWanGroup) SetLinkedSpokes(v []SdWanLinkedSpokeConfig) {
 	o.LinkedSpokes = v
 }
 
-// GetMemberList returns the MemberList field value if set, zero value otherwise.
-func (o *SdWanGroup) GetMemberList() []SdWanMemberInfo {
-	if o == nil || IsNil(o.MemberList) {
-		var ret []SdWanMemberInfo
+// GetMemberList returns the MemberList field value
+func (o *SdWanGroup) GetMemberList() []SdWanMemberConfig {
+	if o == nil {
+		var ret []SdWanMemberConfig
 		return ret
 	}
+
 	return o.MemberList
 }
 
-// GetMemberListOk returns a tuple with the MemberList field value if set, nil otherwise
+// GetMemberListOk returns a tuple with the MemberList field value
 // and a boolean to check if the value has been set.
-func (o *SdWanGroup) GetMemberListOk() ([]SdWanMemberInfo, bool) {
-	if o == nil || IsNil(o.MemberList) {
+func (o *SdWanGroup) GetMemberListOk() ([]SdWanMemberConfig, bool) {
+	if o == nil {
 		return nil, false
 	}
 	return o.MemberList, true
 }
 
-// HasMemberList returns a boolean if a field has been set.
-func (o *SdWanGroup) HasMemberList() bool {
-	if o != nil && !IsNil(o.MemberList) {
-		return true
-	}
-
-	return false
-}
-
-// SetMemberList gets a reference to the given []SdWanMemberInfo and assigns it to the MemberList field.
-func (o *SdWanGroup) SetMemberList(v []SdWanMemberInfo) {
+// SetMemberList sets field value
+func (o *SdWanGroup) SetMemberList(v []SdWanMemberConfig) {
 	o.MemberList = v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *SdWanGroup) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *SdWanGroup) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *SdWanGroup) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *SdWanGroup) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetNatInfo returns the NatInfo field value if set, zero value otherwise.
-func (o *SdWanGroup) GetNatInfo() SdWanNatInfo {
+func (o *SdWanGroup) GetNatInfo() SdWanNatInfoConfig {
 	if o == nil || IsNil(o.NatInfo) {
-		var ret SdWanNatInfo
+		var ret SdWanNatInfoConfig
 		return ret
 	}
 	return *o.NatInfo
@@ -288,7 +279,7 @@ func (o *SdWanGroup) GetNatInfo() SdWanNatInfo {
 
 // GetNatInfoOk returns a tuple with the NatInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SdWanGroup) GetNatInfoOk() (*SdWanNatInfo, bool) {
+func (o *SdWanGroup) GetNatInfoOk() (*SdWanNatInfoConfig, bool) {
 	if o == nil || IsNil(o.NatInfo) {
 		return nil, false
 	}
@@ -304,8 +295,8 @@ func (o *SdWanGroup) HasNatInfo() bool {
 	return false
 }
 
-// SetNatInfo gets a reference to the given SdWanNatInfo and assigns it to the NatInfo field.
-func (o *SdWanGroup) SetNatInfo(v SdWanNatInfo) {
+// SetNatInfo gets a reference to the given SdWanNatInfoConfig and assigns it to the NatInfo field.
+func (o *SdWanGroup) SetNatInfo(v SdWanNatInfoConfig) {
 	o.NatInfo = &v
 }
 
@@ -322,9 +313,7 @@ func (o SdWanGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.EnableNat) {
-		toSerialize["enableNat"] = o.EnableNat
-	}
+	toSerialize["enableNat"] = o.EnableNat
 	if !IsNil(o.IpPoolEnd) {
 		toSerialize["ipPoolEnd"] = o.IpPoolEnd
 	}
@@ -334,16 +323,51 @@ func (o SdWanGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LinkedSpokes) {
 		toSerialize["linkedSpokes"] = o.LinkedSpokes
 	}
-	if !IsNil(o.MemberList) {
-		toSerialize["memberList"] = o.MemberList
-	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["memberList"] = o.MemberList
+	toSerialize["name"] = o.Name
 	if !IsNil(o.NatInfo) {
 		toSerialize["natInfo"] = o.NatInfo
 	}
 	return toSerialize, nil
+}
+
+func (o *SdWanGroup) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"enableNat",
+		"memberList",
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSdWanGroup := _SdWanGroup{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varSdWanGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SdWanGroup(varSdWanGroup)
+
+	return err
 }
 
 type NullableSdWanGroup struct {

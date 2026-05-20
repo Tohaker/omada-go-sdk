@@ -259,7 +259,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	checkMappedNetwork := *openapiclient.NewCheckMappedNetwork() // CheckMappedNetwork | 
+	checkMappedNetwork := *openapiclient.NewCheckMappedNetwork([]openapiclient.SdWanMemberSelected{*openapiclient.NewSdWanMemberSelected("DeviceMac_example", "SiteId_example")}, "ModifiedNetwork_example") // CheckMappedNetwork | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -331,7 +331,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	sdWanIpPoolRange := *openapiclient.NewSdWanIpPoolRange() // SdWanIpPoolRange | 
+	sdWanIpPoolRange := *openapiclient.NewSdWanIpPoolRange("IpPoolEnd_example", "IpPoolStart_example", int32(123)) // SdWanIpPoolRange | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -403,7 +403,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	sdWanGroup := *openapiclient.NewSdWanGroup() // SdWanGroup | 
+	sdWanGroup := *openapiclient.NewSdWanGroup(false, []openapiclient.SdWanMemberConfig{*openapiclient.NewSdWanMemberConfig("DeviceMac_example", int32(123), "SiteId_example")}, "Name_example") // SdWanGroup | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 ## GetCurrentSdWanGroup
 
-> OperationResponseSdWanGroup GetCurrentSdWanGroup(ctx, omadacId, groupId).Execute()
+> OperationResponseSdWanGroupDetail GetCurrentSdWanGroup(ctx, omadacId, groupId).Execute()
 
 Get SD-WAN Group.
 
@@ -630,7 +630,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SDWANAPI.GetCurrentSdWanGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCurrentSdWanGroup`: OperationResponseSdWanGroup
+	// response from `GetCurrentSdWanGroup`: OperationResponseSdWanGroupDetail
 	fmt.Fprintf(os.Stdout, "Response from `SDWANAPI.GetCurrentSdWanGroup`: %v\n", resp)
 }
 ```
@@ -656,7 +656,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseSdWanGroup**](OperationResponseSdWanGroup.md)
+[**OperationResponseSdWanGroupDetail**](OperationResponseSdWanGroupDetail.md)
 
 ### Authorization
 
@@ -842,7 +842,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	querySdWanCandidateDevice := *openapiclient.NewQuerySdWanCandidateDevice(int32(123), int32(123), int32(123)) // QuerySdWanCandidateDevice | 
+	querySdWanCandidateDevice := *openapiclient.NewQuerySdWanCandidateDevice(int32(123), int32(123), int32(123), int32(123)) // QuerySdWanCandidateDevice | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -967,7 +967,7 @@ Name | Type | Description  | Notes
 
 ## ModifyLanIpRange
 
-> OperationResponseWithoutResult ModifyLanIpRange(ctx, omadacId).LanNetworkBrief(lanNetworkBrief).Execute()
+> OperationResponseWithoutResult ModifyLanIpRange(ctx, omadacId).ModifyLanNetworkBrief(modifyLanNetworkBrief).Execute()
 
 Modify selected LanNetwork IP.
 
@@ -987,11 +987,11 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	lanNetworkBrief := *openapiclient.NewLanNetworkBrief() // LanNetworkBrief | 
+	modifyLanNetworkBrief := *openapiclient.NewModifyLanNetworkBrief("GatewaySubnet_example", "Id_example", "IpaddrEnd_example", "IpaddrStart_example", "Name_example", "SiteId_example") // ModifyLanNetworkBrief | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SDWANAPI.ModifyLanIpRange(context.Background(), omadacId).LanNetworkBrief(lanNetworkBrief).Execute()
+	resp, r, err := apiClient.SDWANAPI.ModifyLanIpRange(context.Background(), omadacId).ModifyLanNetworkBrief(modifyLanNetworkBrief).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SDWANAPI.ModifyLanIpRange``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1017,7 +1017,7 @@ Other parameters are passed through a pointer to a apiModifyLanIpRangeRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **lanNetworkBrief** | [**LanNetworkBrief**](LanNetworkBrief.md) |  | 
+ **modifyLanNetworkBrief** | [**ModifyLanNetworkBrief**](ModifyLanNetworkBrief.md) |  | 
 
 ### Return type
 
@@ -1060,7 +1060,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	groupId := "groupId_example" // string | The ID of a SD-WAN Group
-	sdWanGroup := *openapiclient.NewSdWanGroup() // SdWanGroup | 
+	sdWanGroup := *openapiclient.NewSdWanGroup(false, []openapiclient.SdWanMemberConfig{*openapiclient.NewSdWanMemberConfig("DeviceMac_example", int32(123), "SiteId_example")}, "Name_example") // SdWanGroup | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1114,7 +1114,7 @@ Name | Type | Description  | Notes
 
 ## ModifySdWanGroupNetWorkMap
 
-> OperationResponseWithoutResult ModifySdWanGroupNetWorkMap(ctx, omadacId, groupId).SdWanNatInfo(sdWanNatInfo).Execute()
+> OperationResponseWithoutResult ModifySdWanGroupNetWorkMap(ctx, omadacId, groupId).SdWanNatInfoConfig(sdWanNatInfoConfig).Execute()
 
 Modify SD-WAN Group NAT info.
 
@@ -1135,11 +1135,11 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	groupId := "groupId_example" // string | The ID of a SD-WAN Group
-	sdWanNatInfo := *openapiclient.NewSdWanNatInfo() // SdWanNatInfo | 
+	sdWanNatInfoConfig := *openapiclient.NewSdWanNatInfoConfig() // SdWanNatInfoConfig | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SDWANAPI.ModifySdWanGroupNetWorkMap(context.Background(), omadacId, groupId).SdWanNatInfo(sdWanNatInfo).Execute()
+	resp, r, err := apiClient.SDWANAPI.ModifySdWanGroupNetWorkMap(context.Background(), omadacId, groupId).SdWanNatInfoConfig(sdWanNatInfoConfig).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SDWANAPI.ModifySdWanGroupNetWorkMap``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1167,7 +1167,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **sdWanNatInfo** | [**SdWanNatInfo**](SdWanNatInfo.md) |  | 
+ **sdWanNatInfoConfig** | [**SdWanNatInfoConfig**](SdWanNatInfoConfig.md) |  | 
 
 ### Return type
 

@@ -200,8 +200,8 @@ type ApAPI interface {
 	GetApBridgeInfo(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIGetApBridgeInfoRequest
 
 	// GetApBridgeInfoExecute executes the request
-	//  @return OperationResponseApBridgeConfig
-	GetApBridgeInfoExecute(r ApAPIGetApBridgeInfoRequest) (*OperationResponseApBridgeConfig, *http.Response, error)
+	//  @return OperationResponseApBridgeInfo
+	GetApBridgeInfoExecute(r ApAPIGetApBridgeInfoRequest) (*OperationResponseApBridgeInfo, *http.Response, error)
 
 	/*
 	GetApL3AccessConfig Get AP l3Access config
@@ -269,6 +269,23 @@ type ApAPI interface {
 	// GetApLoadBalanceConfigExecute executes the request
 	//  @return OperationResponseApAdvancedLoadBalanceOpenApiVO
 	GetApLoadBalanceConfigExecute(r ApAPIGetApLoadBalanceConfigRequest) (*OperationResponseApAdvancedLoadBalanceOpenApiVO, *http.Response, error)
+
+	/*
+	GetApManagementSsidConfig Get AP management ssid config
+
+	Get AP management ssid config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+	@return ApAPIGetApManagementSsidConfigRequest
+	*/
+	GetApManagementSsidConfig(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIGetApManagementSsidConfigRequest
+
+	// GetApManagementSsidConfigExecute executes the request
+	//  @return OperationResponseApManagementSsidConfig
+	GetApManagementSsidConfigExecute(r ApAPIGetApManagementSsidConfigRequest) (*OperationResponseApManagementSsidConfig, *http.Response, error)
 
 	/*
 	GetApOfdmaConfig Get AP OFDMA config
@@ -457,8 +474,8 @@ type ApAPI interface {
 	GetAvailableChannelOfAp(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIGetAvailableChannelOfApRequest
 
 	// GetAvailableChannelOfApExecute executes the request
-	//  @return OperationResponseApAvailableChannelOpenApiVO
-	GetAvailableChannelOfApExecute(r ApAPIGetAvailableChannelOfApRequest) (*OperationResponseApAvailableChannelOpenApiVO, *http.Response, error)
+	//  @return OperationResponseListApAvailableChannelOpenApiVO
+	GetAvailableChannelOfApExecute(r ApAPIGetAvailableChannelOfApRequest) (*OperationResponseListApAvailableChannelOpenApiVO, *http.Response, error)
 
 	/*
 	GetChannelLimitConfig Get AP channel limit config
@@ -988,8 +1005,8 @@ type ApAPI interface {
 	ModifyApServicesConfig(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIModifyApServicesConfigRequest
 
 	// ModifyApServicesConfigExecute executes the request
-	//  @return OperationResponseApServicesConfigOpenApiVO
-	ModifyApServicesConfigExecute(r ApAPIModifyApServicesConfigRequest) (*OperationResponseApServicesConfigOpenApiVO, *http.Response, error)
+	//  @return OperationResponseWithoutResult
+	ModifyApServicesConfigExecute(r ApAPIModifyApServicesConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyApTrunkSettingConfig Modify AP trunk setting config
@@ -2593,7 +2610,7 @@ type ApAPIGetApBridgeInfoRequest struct {
 	apMac string
 }
 
-func (r ApAPIGetApBridgeInfoRequest) Execute() (*OperationResponseApBridgeConfig, *http.Response, error) {
+func (r ApAPIGetApBridgeInfoRequest) Execute() (*OperationResponseApBridgeInfo, *http.Response, error) {
 	return r.ApiService.GetApBridgeInfoExecute(r)
 }
 
@@ -2619,13 +2636,13 @@ func (a *ApAPIService) GetApBridgeInfo(ctx context.Context, omadacId string, sit
 }
 
 // Execute executes the request
-//  @return OperationResponseApBridgeConfig
-func (a *ApAPIService) GetApBridgeInfoExecute(r ApAPIGetApBridgeInfoRequest) (*OperationResponseApBridgeConfig, *http.Response, error) {
+//  @return OperationResponseApBridgeInfo
+func (a *ApAPIService) GetApBridgeInfoExecute(r ApAPIGetApBridgeInfoRequest) (*OperationResponseApBridgeInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseApBridgeConfig
+		localVarReturnValue  *OperationResponseApBridgeInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.GetApBridgeInfo")
@@ -3141,6 +3158,131 @@ func (a *ApAPIService) GetApLoadBalanceConfigExecute(r ApAPIGetApLoadBalanceConf
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApAPIGetApManagementSsidConfigRequest struct {
+	ctx context.Context
+	ApiService ApAPI
+	omadacId string
+	siteId string
+	apMac string
+}
+
+func (r ApAPIGetApManagementSsidConfigRequest) Execute() (*OperationResponseApManagementSsidConfig, *http.Response, error) {
+	return r.ApiService.GetApManagementSsidConfigExecute(r)
+}
+
+/*
+GetApManagementSsidConfig Get AP management ssid config
+
+Get AP management ssid config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+ @return ApAPIGetApManagementSsidConfigRequest
+*/
+func (a *ApAPIService) GetApManagementSsidConfig(ctx context.Context, omadacId string, siteId string, apMac string) ApAPIGetApManagementSsidConfigRequest {
+	return ApAPIGetApManagementSsidConfigRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apMac: apMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseApManagementSsidConfig
+func (a *ApAPIService) GetApManagementSsidConfigExecute(r ApAPIGetApManagementSsidConfigRequest) (*OperationResponseApManagementSsidConfig, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseApManagementSsidConfig
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.GetApManagementSsidConfig")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/management-wlan"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
@@ -4500,7 +4642,7 @@ type ApAPIGetAvailableChannelOfApRequest struct {
 	apMac string
 }
 
-func (r ApAPIGetAvailableChannelOfApRequest) Execute() (*OperationResponseApAvailableChannelOpenApiVO, *http.Response, error) {
+func (r ApAPIGetAvailableChannelOfApRequest) Execute() (*OperationResponseListApAvailableChannelOpenApiVO, *http.Response, error) {
 	return r.ApiService.GetAvailableChannelOfApExecute(r)
 }
 
@@ -4526,13 +4668,13 @@ func (a *ApAPIService) GetAvailableChannelOfAp(ctx context.Context, omadacId str
 }
 
 // Execute executes the request
-//  @return OperationResponseApAvailableChannelOpenApiVO
-func (a *ApAPIService) GetAvailableChannelOfApExecute(r ApAPIGetAvailableChannelOfApRequest) (*OperationResponseApAvailableChannelOpenApiVO, *http.Response, error) {
+//  @return OperationResponseListApAvailableChannelOpenApiVO
+func (a *ApAPIService) GetAvailableChannelOfApExecute(r ApAPIGetAvailableChannelOfApRequest) (*OperationResponseListApAvailableChannelOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseApAvailableChannelOpenApiVO
+		localVarReturnValue  *OperationResponseListApAvailableChannelOpenApiVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.GetAvailableChannelOfAp")
@@ -8531,7 +8673,7 @@ func (r ApAPIModifyApServicesConfigRequest) ApServicesConfigOpenApiVO(apServices
 	return r
 }
 
-func (r ApAPIModifyApServicesConfigRequest) Execute() (*OperationResponseApServicesConfigOpenApiVO, *http.Response, error) {
+func (r ApAPIModifyApServicesConfigRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
 	return r.ApiService.ModifyApServicesConfigExecute(r)
 }
 
@@ -8557,13 +8699,13 @@ func (a *ApAPIService) ModifyApServicesConfig(ctx context.Context, omadacId stri
 }
 
 // Execute executes the request
-//  @return OperationResponseApServicesConfigOpenApiVO
-func (a *ApAPIService) ModifyApServicesConfigExecute(r ApAPIModifyApServicesConfigRequest) (*OperationResponseApServicesConfigOpenApiVO, *http.Response, error) {
+//  @return OperationResponseWithoutResult
+func (a *ApAPIService) ModifyApServicesConfigExecute(r ApAPIModifyApServicesConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseApServicesConfigOpenApiVO
+		localVarReturnValue  *OperationResponseWithoutResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApAPIService.ModifyApServicesConfig")

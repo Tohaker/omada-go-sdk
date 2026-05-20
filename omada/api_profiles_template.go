@@ -39,6 +39,23 @@ type ProfilesTemplateAPI interface {
 	AutoCreatePPSKTemplateExecute(r ProfilesTemplateAPIAutoCreatePPSKTemplateRequest) ([]PSK, *http.Response, error)
 
 	/*
+	CopyWifiCallingProfileTemplate Copy wifi calling profile template
+
+	Copy wifi calling profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44900  -  The Wi-Fi calling profile already exists.<br/>-44901  -  The number of ePDGs has exceeded the limit.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param profileId profileId
+	@return ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest
+	*/
+	CopyWifiCallingProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, profileId string) ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest
+
+	// CopyWifiCallingProfileTemplateExecute executes the request
+	//  @return OperationResponse
+	CopyWifiCallingProfileTemplateExecute(r ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	CreateApnProfileTemplate Create a new APN profile template
 
 	Create a new APN profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-33506  -  This Profile name already exists.<br/>-33553  -  The LTE WAN or Cellular WAN port is configured with IPv6 network. Please re-select the APN Profile of IPv6 mode.<br/>-33798  -  The number of APN Profile has reached the limit.
@@ -195,8 +212,8 @@ type ProfilesTemplateAPI interface {
 	CreateTemplateServiceType(ctx context.Context, omadacId string, siteTemplateId string) ProfilesTemplateAPICreateTemplateServiceTypeRequest
 
 	// CreateTemplateServiceTypeExecute executes the request
-	//  @return OperationResponseResponseIdVO
-	CreateTemplateServiceTypeExecute(r ProfilesTemplateAPICreateTemplateServiceTypeRequest) (*OperationResponseResponseIdVO, *http.Response, error)
+	//  @return OperationResponse
+	CreateTemplateServiceTypeExecute(r ProfilesTemplateAPICreateTemplateServiceTypeRequest) (*OperationResponse, *http.Response, error)
 
 	/*
 	CreateTimeRangeProfileTemplate Create time range profile template
@@ -213,6 +230,22 @@ type ProfilesTemplateAPI interface {
 	// CreateTimeRangeProfileTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
 	CreateTimeRangeProfileTemplateExecute(r ProfilesTemplateAPICreateTimeRangeProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	CreateWifiCallingProfileTemplate Create a new wifi calling profile template
+
+	Create a new wifi calling profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44900  -  The Wi-Fi calling profile already exists.<br/>-44901  -  The number of ePDGs has exceeded the limit.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest
+	*/
+	CreateWifiCallingProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string) ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest
+
+	// CreateWifiCallingProfileTemplateExecute executes the request
+	//  @return OperationResponse
+	CreateWifiCallingProfileTemplateExecute(r ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest) (*OperationResponse, *http.Response, error)
 
 	/*
 	DeleteAllPPSKProfilesTemplate Delete All PPSK profile templates
@@ -404,7 +437,7 @@ type ProfilesTemplateAPI interface {
 	/*
 	DeleteTimeRangeProfileTemplate Delete time range profile template
 
-	Delete time range profile template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33701  -  Failed to delete this time range profile because it is applied in wireless networks.<br/>-33710  -  This profile does not exist.<br/>-33722  -  Cannot delete the time range. It is being used in PoE Schedule.<br/>-33754  -  Failed to delete this time range profile because it is applied in ACL.<br/>-33776  -  Failed to delete this time range profile because it is applied in IPS.<br/>-34555  -  Cannot delete the time range. It is being used in Port Schedule.<br/>-35106  -  Failed to delete this time range profile because it is applied in DPI.
+	Delete time range profile template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33701  -  Failed to delete this time range profile because it is applied in wireless networks.<br/>-33710  -  This profile does not exist.<br/>-33722  -  Cannot delete the time range. It is being used in PoE Schedule.<br/>-33754  -  Failed to delete this time range profile because it is applied in ACL.<br/>-33776  -  Failed to delete this time range profile because it is applied in IPS.<br/>-33853  -  Failed to delete this time range profile because it is applied in RRM settings.<br/>-34555  -  Cannot delete the time range. It is being used in Port Schedule.<br/>-35106  -  Failed to delete this time range profile because it is applied in DPI.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -417,6 +450,23 @@ type ProfilesTemplateAPI interface {
 	// DeleteTimeRangeProfileTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
 	DeleteTimeRangeProfileTemplateExecute(r ProfilesTemplateAPIDeleteTimeRangeProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	DeleteWifiCallingProfileTemplate Delete an exist wifi calling profile template
+
+	Delete an exist wifi calling profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44900  -  The Wi-Fi calling profile already exists.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param profileId wifi calling profile ID.
+	@return ProfilesTemplateAPIDeleteWifiCallingProfileTemplateRequest
+	*/
+	DeleteWifiCallingProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, profileId string) ProfilesTemplateAPIDeleteWifiCallingProfileTemplateRequest
+
+	// DeleteWifiCallingProfileTemplateExecute executes the request
+	//  @return OperationResponseWithoutResult
+	DeleteWifiCallingProfileTemplateExecute(r ProfilesTemplateAPIDeleteWifiCallingProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	GetApnProfileListTemplate Get APN profile template list
@@ -627,6 +677,22 @@ type ProfilesTemplateAPI interface {
 	// GetTimeRangeListTemplateExecute executes the request
 	//  @return OperationResponseListTimeRangeProfileOpenApiVO
 	GetTimeRangeListTemplateExecute(r ProfilesTemplateAPIGetTimeRangeListTemplateRequest) (*OperationResponseListTimeRangeProfileOpenApiVO, *http.Response, error)
+
+	/*
+	GetWifiCallingProfilesTemplate Get wifi calling profile template list
+
+	Get wifi calling profile template list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return ProfilesTemplateAPIGetWifiCallingProfilesTemplateRequest
+	*/
+	GetWifiCallingProfilesTemplate(ctx context.Context, omadacId string, siteTemplateId string) ProfilesTemplateAPIGetWifiCallingProfilesTemplateRequest
+
+	// GetWifiCallingProfilesTemplateExecute executes the request
+	//  @return OperationResponseListWifiCallingProfileOpenApiVO
+	GetWifiCallingProfilesTemplateExecute(r ProfilesTemplateAPIGetWifiCallingProfilesTemplateRequest) (*OperationResponseListWifiCallingProfileOpenApiVO, *http.Response, error)
 
 	/*
 	ListMdnsProfileTemplate Get Bonjour Service Template list
@@ -847,6 +913,23 @@ type ProfilesTemplateAPI interface {
 	// ModifyTimeRangeProfileTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifyTimeRangeProfileTemplateExecute(r ProfilesTemplateAPIModifyTimeRangeProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyWifiCallingProfileTemplate Modify a wifi calling profile template
+
+	Modify a wifi calling profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44900  -  The Wi-Fi calling profile already exists.<br/>-44901  -  The number of ePDGs has exceeded the limit.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param profileId Wifi calling profile ID.
+	@return ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest
+	*/
+	ModifyWifiCallingProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, profileId string) ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest
+
+	// ModifyWifiCallingProfileTemplateExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyWifiCallingProfileTemplateExecute(r ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 }
 
 // ProfilesTemplateAPIService ProfilesTemplateAPI service
@@ -933,6 +1016,142 @@ func (a *ProfilesTemplateAPIService) AutoCreatePPSKTemplateExecute(r ProfilesTem
 	}
 	// body params
 	localVarPostBody = r.ppskAutoCreateSetting
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest struct {
+	ctx context.Context
+	ApiService ProfilesTemplateAPI
+	omadacId string
+	siteTemplateId string
+	profileId string
+	copyWifiCallingProfileOpenApiVO *CopyWifiCallingProfileOpenApiVO
+}
+
+func (r ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest) CopyWifiCallingProfileOpenApiVO(copyWifiCallingProfileOpenApiVO CopyWifiCallingProfileOpenApiVO) ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest {
+	r.copyWifiCallingProfileOpenApiVO = &copyWifiCallingProfileOpenApiVO
+	return r
+}
+
+func (r ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.CopyWifiCallingProfileTemplateExecute(r)
+}
+
+/*
+CopyWifiCallingProfileTemplate Copy wifi calling profile template
+
+Copy wifi calling profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44900  -  The Wi-Fi calling profile already exists.<br/>-44901  -  The number of ePDGs has exceeded the limit.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param profileId profileId
+ @return ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest
+*/
+func (a *ProfilesTemplateAPIService) CopyWifiCallingProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, profileId string) ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest {
+	return ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		profileId: profileId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *ProfilesTemplateAPIService) CopyWifiCallingProfileTemplateExecute(r ProfilesTemplateAPICopyWifiCallingProfileTemplateRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesTemplateAPIService.CopyWifiCallingProfileTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/wifi-calling/{profileId}/copy"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"profileId"+"}", url.PathEscape(parameterValueToString(r.profileId, "profileId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.copyWifiCallingProfileOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("copyWifiCallingProfileOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.copyWifiCallingProfileOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2185,7 +2404,7 @@ func (r ProfilesTemplateAPICreateTemplateServiceTypeRequest) GatewayQosServiceOp
 	return r
 }
 
-func (r ProfilesTemplateAPICreateTemplateServiceTypeRequest) Execute() (*OperationResponseResponseIdVO, *http.Response, error) {
+func (r ProfilesTemplateAPICreateTemplateServiceTypeRequest) Execute() (*OperationResponse, *http.Response, error) {
 	return r.ApiService.CreateTemplateServiceTypeExecute(r)
 }
 
@@ -2209,13 +2428,13 @@ func (a *ProfilesTemplateAPIService) CreateTemplateServiceType(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OperationResponseResponseIdVO
-func (a *ProfilesTemplateAPIService) CreateTemplateServiceTypeExecute(r ProfilesTemplateAPICreateTemplateServiceTypeRequest) (*OperationResponseResponseIdVO, *http.Response, error) {
+//  @return OperationResponse
+func (a *ProfilesTemplateAPIService) CreateTemplateServiceTypeExecute(r ProfilesTemplateAPICreateTemplateServiceTypeRequest) (*OperationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseResponseIdVO
+		localVarReturnValue  *OperationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesTemplateAPIService.CreateTemplateServiceType")
@@ -2385,6 +2604,138 @@ func (a *ProfilesTemplateAPIService) CreateTimeRangeProfileTemplateExecute(r Pro
 	}
 	// body params
 	localVarPostBody = r.createTimeRangeProfileOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest struct {
+	ctx context.Context
+	ApiService ProfilesTemplateAPI
+	omadacId string
+	siteTemplateId string
+	createWifiCallingProfileOpenApiVO *CreateWifiCallingProfileOpenApiVO
+}
+
+func (r ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest) CreateWifiCallingProfileOpenApiVO(createWifiCallingProfileOpenApiVO CreateWifiCallingProfileOpenApiVO) ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest {
+	r.createWifiCallingProfileOpenApiVO = &createWifiCallingProfileOpenApiVO
+	return r
+}
+
+func (r ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.CreateWifiCallingProfileTemplateExecute(r)
+}
+
+/*
+CreateWifiCallingProfileTemplate Create a new wifi calling profile template
+
+Create a new wifi calling profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44900  -  The Wi-Fi calling profile already exists.<br/>-44901  -  The number of ePDGs has exceeded the limit.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest
+*/
+func (a *ProfilesTemplateAPIService) CreateWifiCallingProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string) ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest {
+	return ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *ProfilesTemplateAPIService) CreateWifiCallingProfileTemplateExecute(r ProfilesTemplateAPICreateWifiCallingProfileTemplateRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesTemplateAPIService.CreateWifiCallingProfileTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/wifi-calling"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createWifiCallingProfileOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("createWifiCallingProfileOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createWifiCallingProfileOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -3826,7 +4177,7 @@ func (r ProfilesTemplateAPIDeleteTimeRangeProfileTemplateRequest) Execute() (*Op
 /*
 DeleteTimeRangeProfileTemplate Delete time range profile template
 
-Delete time range profile template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33701  -  Failed to delete this time range profile because it is applied in wireless networks.<br/>-33710  -  This profile does not exist.<br/>-33722  -  Cannot delete the time range. It is being used in PoE Schedule.<br/>-33754  -  Failed to delete this time range profile because it is applied in ACL.<br/>-33776  -  Failed to delete this time range profile because it is applied in IPS.<br/>-34555  -  Cannot delete the time range. It is being used in Port Schedule.<br/>-35106  -  Failed to delete this time range profile because it is applied in DPI.
+Delete time range profile template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33701  -  Failed to delete this time range profile because it is applied in wireless networks.<br/>-33710  -  This profile does not exist.<br/>-33722  -  Cannot delete the time range. It is being used in PoE Schedule.<br/>-33754  -  Failed to delete this time range profile because it is applied in ACL.<br/>-33776  -  Failed to delete this time range profile because it is applied in IPS.<br/>-33853  -  Failed to delete this time range profile because it is applied in RRM settings.<br/>-34555  -  Cannot delete the time range. It is being used in Port Schedule.<br/>-35106  -  Failed to delete this time range profile because it is applied in DPI.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3860,6 +4211,131 @@ func (a *ProfilesTemplateAPIService) DeleteTimeRangeProfileTemplateExecute(r Pro
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profile/{profileId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"profileId"+"}", url.PathEscape(parameterValueToString(r.profileId, "profileId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ProfilesTemplateAPIDeleteWifiCallingProfileTemplateRequest struct {
+	ctx context.Context
+	ApiService ProfilesTemplateAPI
+	omadacId string
+	siteTemplateId string
+	profileId string
+}
+
+func (r ProfilesTemplateAPIDeleteWifiCallingProfileTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.DeleteWifiCallingProfileTemplateExecute(r)
+}
+
+/*
+DeleteWifiCallingProfileTemplate Delete an exist wifi calling profile template
+
+Delete an exist wifi calling profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44900  -  The Wi-Fi calling profile already exists.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param profileId wifi calling profile ID.
+ @return ProfilesTemplateAPIDeleteWifiCallingProfileTemplateRequest
+*/
+func (a *ProfilesTemplateAPIService) DeleteWifiCallingProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, profileId string) ProfilesTemplateAPIDeleteWifiCallingProfileTemplateRequest {
+	return ProfilesTemplateAPIDeleteWifiCallingProfileTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		profileId: profileId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *ProfilesTemplateAPIService) DeleteWifiCallingProfileTemplateExecute(r ProfilesTemplateAPIDeleteWifiCallingProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesTemplateAPIService.DeleteWifiCallingProfileTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/wifi-calling/{profileId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"profileId"+"}", url.PathEscape(parameterValueToString(r.profileId, "profileId")), -1)
@@ -5507,6 +5983,127 @@ func (a *ProfilesTemplateAPIService) GetTimeRangeListTemplateExecute(r ProfilesT
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profiles"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ProfilesTemplateAPIGetWifiCallingProfilesTemplateRequest struct {
+	ctx context.Context
+	ApiService ProfilesTemplateAPI
+	omadacId string
+	siteTemplateId string
+}
+
+func (r ProfilesTemplateAPIGetWifiCallingProfilesTemplateRequest) Execute() (*OperationResponseListWifiCallingProfileOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetWifiCallingProfilesTemplateExecute(r)
+}
+
+/*
+GetWifiCallingProfilesTemplate Get wifi calling profile template list
+
+Get wifi calling profile template list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return ProfilesTemplateAPIGetWifiCallingProfilesTemplateRequest
+*/
+func (a *ProfilesTemplateAPIService) GetWifiCallingProfilesTemplate(ctx context.Context, omadacId string, siteTemplateId string) ProfilesTemplateAPIGetWifiCallingProfilesTemplateRequest {
+	return ProfilesTemplateAPIGetWifiCallingProfilesTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseListWifiCallingProfileOpenApiVO
+func (a *ProfilesTemplateAPIService) GetWifiCallingProfilesTemplateExecute(r ProfilesTemplateAPIGetWifiCallingProfilesTemplateRequest) (*OperationResponseListWifiCallingProfileOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseListWifiCallingProfileOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesTemplateAPIService.GetWifiCallingProfilesTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/wifi-calling"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 
@@ -7295,6 +7892,142 @@ func (a *ProfilesTemplateAPIService) ModifyTimeRangeProfileTemplateExecute(r Pro
 	}
 	// body params
 	localVarPostBody = r.updateTimeRangeProfileOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest struct {
+	ctx context.Context
+	ApiService ProfilesTemplateAPI
+	omadacId string
+	siteTemplateId string
+	profileId string
+	createWifiCallingProfileOpenApiVO *CreateWifiCallingProfileOpenApiVO
+}
+
+func (r ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest) CreateWifiCallingProfileOpenApiVO(createWifiCallingProfileOpenApiVO CreateWifiCallingProfileOpenApiVO) ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest {
+	r.createWifiCallingProfileOpenApiVO = &createWifiCallingProfileOpenApiVO
+	return r
+}
+
+func (r ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyWifiCallingProfileTemplateExecute(r)
+}
+
+/*
+ModifyWifiCallingProfileTemplate Modify a wifi calling profile template
+
+Modify a wifi calling profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-44900  -  The Wi-Fi calling profile already exists.<br/>-44901  -  The number of ePDGs has exceeded the limit.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param profileId Wifi calling profile ID.
+ @return ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest
+*/
+func (a *ProfilesTemplateAPIService) ModifyWifiCallingProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, profileId string) ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest {
+	return ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		profileId: profileId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *ProfilesTemplateAPIService) ModifyWifiCallingProfileTemplateExecute(r ProfilesTemplateAPIModifyWifiCallingProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesTemplateAPIService.ModifyWifiCallingProfileTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/wifi-calling/{profileId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"profileId"+"}", url.PathEscape(parameterValueToString(r.profileId, "profileId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createWifiCallingProfileOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("createWifiCallingProfileOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createWifiCallingProfileOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

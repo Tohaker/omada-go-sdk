@@ -73,6 +73,23 @@ type RemoteAccessAPI interface {
 	EditTunnelExecute(r RemoteAccessAPIEditTunnelRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	GetSingleDeviceTunnel Get single device tunnel
+
+	Get single device tunnel<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param localMac Mac of the local target device
+	@return RemoteAccessAPIGetSingleDeviceTunnelRequest
+	*/
+	GetSingleDeviceTunnel(ctx context.Context, omadacId string, siteId string, localMac string) RemoteAccessAPIGetSingleDeviceTunnelRequest
+
+	// GetSingleDeviceTunnelExecute executes the request
+	//  @return OperationResponseNatTraversalTunnelVO
+	GetSingleDeviceTunnelExecute(r RemoteAccessAPIGetSingleDeviceTunnelRequest) (*OperationResponseNatTraversalTunnelVO, *http.Response, error)
+
+	/*
 	GetTunnel Get remote access tunnel
 
 	Get remote access tunnel<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only<br/>Site Tools Manager View Only
@@ -104,6 +121,23 @@ type RemoteAccessAPI interface {
 	// GetTunnelStatusExecute executes the request
 	//  @return OperationResponseNatTraversalSingleTunnelStatusVO
 	GetTunnelStatusExecute(r RemoteAccessAPIGetTunnelStatusRequest) (*OperationResponseNatTraversalSingleTunnelStatusVO, *http.Response, error)
+
+	/*
+	GetTunnelsEwebInfo Get tunnel eweb info
+
+	Get tunnel eweb info<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param tunnelId Remote access tunnel ID
+	@return RemoteAccessAPIGetTunnelsEwebInfoRequest
+	*/
+	GetTunnelsEwebInfo(ctx context.Context, omadacId string, siteId string, tunnelId string) RemoteAccessAPIGetTunnelsEwebInfoRequest
+
+	// GetTunnelsEwebInfoExecute executes the request
+	//  @return OperationResponseNatTraversalEwebInfoVO
+	GetTunnelsEwebInfoExecute(r RemoteAccessAPIGetTunnelsEwebInfoRequest) (*OperationResponseNatTraversalEwebInfoVO, *http.Response, error)
 
 	/*
 	GetTunnelsStatus Get all remote access tunnel's status
@@ -405,11 +439,11 @@ type RemoteAccessAPIEditTunnelRequest struct {
 	omadacId string
 	siteId string
 	tunnelId string
-	natTraversalTunnelOpenApiVO *NatTraversalTunnelOpenApiVO
+	natTraversalTunnelModifyOpenApiVO *NatTraversalTunnelModifyOpenApiVO
 }
 
-func (r RemoteAccessAPIEditTunnelRequest) NatTraversalTunnelOpenApiVO(natTraversalTunnelOpenApiVO NatTraversalTunnelOpenApiVO) RemoteAccessAPIEditTunnelRequest {
-	r.natTraversalTunnelOpenApiVO = &natTraversalTunnelOpenApiVO
+func (r RemoteAccessAPIEditTunnelRequest) NatTraversalTunnelModifyOpenApiVO(natTraversalTunnelModifyOpenApiVO NatTraversalTunnelModifyOpenApiVO) RemoteAccessAPIEditTunnelRequest {
+	r.natTraversalTunnelModifyOpenApiVO = &natTraversalTunnelModifyOpenApiVO
 	return r
 }
 
@@ -461,8 +495,8 @@ func (a *RemoteAccessAPIService) EditTunnelExecute(r RemoteAccessAPIEditTunnelRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.natTraversalTunnelOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("natTraversalTunnelOpenApiVO is required and must be specified")
+	if r.natTraversalTunnelModifyOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("natTraversalTunnelModifyOpenApiVO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -483,7 +517,132 @@ func (a *RemoteAccessAPIService) EditTunnelExecute(r RemoteAccessAPIEditTunnelRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.natTraversalTunnelOpenApiVO
+	localVarPostBody = r.natTraversalTunnelModifyOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type RemoteAccessAPIGetSingleDeviceTunnelRequest struct {
+	ctx context.Context
+	ApiService RemoteAccessAPI
+	omadacId string
+	siteId string
+	localMac string
+}
+
+func (r RemoteAccessAPIGetSingleDeviceTunnelRequest) Execute() (*OperationResponseNatTraversalTunnelVO, *http.Response, error) {
+	return r.ApiService.GetSingleDeviceTunnelExecute(r)
+}
+
+/*
+GetSingleDeviceTunnel Get single device tunnel
+
+Get single device tunnel<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param localMac Mac of the local target device
+ @return RemoteAccessAPIGetSingleDeviceTunnelRequest
+*/
+func (a *RemoteAccessAPIService) GetSingleDeviceTunnel(ctx context.Context, omadacId string, siteId string, localMac string) RemoteAccessAPIGetSingleDeviceTunnelRequest {
+	return RemoteAccessAPIGetSingleDeviceTunnelRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		localMac: localMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseNatTraversalTunnelVO
+func (a *RemoteAccessAPIService) GetSingleDeviceTunnelExecute(r RemoteAccessAPIGetSingleDeviceTunnelRequest) (*OperationResponseNatTraversalTunnelVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseNatTraversalTunnelVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemoteAccessAPIService.GetSingleDeviceTunnel")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/deviceTunnel/{localMac}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"localMac"+"}", url.PathEscape(parameterValueToString(r.localMac, "localMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -727,6 +886,131 @@ func (a *RemoteAccessAPIService) GetTunnelStatusExecute(r RemoteAccessAPIGetTunn
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/{tunnelId}/status"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"tunnelId"+"}", url.PathEscape(parameterValueToString(r.tunnelId, "tunnelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type RemoteAccessAPIGetTunnelsEwebInfoRequest struct {
+	ctx context.Context
+	ApiService RemoteAccessAPI
+	omadacId string
+	siteId string
+	tunnelId string
+}
+
+func (r RemoteAccessAPIGetTunnelsEwebInfoRequest) Execute() (*OperationResponseNatTraversalEwebInfoVO, *http.Response, error) {
+	return r.ApiService.GetTunnelsEwebInfoExecute(r)
+}
+
+/*
+GetTunnelsEwebInfo Get tunnel eweb info
+
+Get tunnel eweb info<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param tunnelId Remote access tunnel ID
+ @return RemoteAccessAPIGetTunnelsEwebInfoRequest
+*/
+func (a *RemoteAccessAPIService) GetTunnelsEwebInfo(ctx context.Context, omadacId string, siteId string, tunnelId string) RemoteAccessAPIGetTunnelsEwebInfoRequest {
+	return RemoteAccessAPIGetTunnelsEwebInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		tunnelId: tunnelId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseNatTraversalEwebInfoVO
+func (a *RemoteAccessAPIService) GetTunnelsEwebInfoExecute(r RemoteAccessAPIGetTunnelsEwebInfoRequest) (*OperationResponseNatTraversalEwebInfoVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseNatTraversalEwebInfoVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemoteAccessAPIService.GetTunnelsEwebInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/{tunnelId}/ewebInfo"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"tunnelId"+"}", url.PathEscape(parameterValueToString(r.tunnelId, "tunnelId")), -1)

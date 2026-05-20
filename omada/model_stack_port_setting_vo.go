@@ -86,8 +86,10 @@ type StackPortSettingVO struct {
 	PortIsolationEnable *bool `json:"portIsolationEnable,omitempty"`
 	// Profile ID
 	ProfileId *string `json:"profileId,omitempty"`
-	// Indicates whether to enable Profile Override
+	// Indicates whether to enable Profile Override before v6.2.10; Indicates the fill mode of port configuration after v6.2.10: true: custom; false: follow profile
 	ProfileOverrideEnable *bool `json:"profileOverrideEnable,omitempty"`
+	// Indicates the fill mode of vlan configuration: true: custom; false: follow profile
+	ProfileVlanOverrideEnable *bool `json:"profileVlanOverrideEnable,omitempty"`
 	// Indicates whether the ES device port has enabled the Qos scheduling queue configuration
 	QosQueueEnable *bool `json:"qosQueueEnable,omitempty"`
 	// ES Qos scheduling queue ID
@@ -1292,6 +1294,38 @@ func (o *StackPortSettingVO) SetProfileOverrideEnable(v bool) {
 	o.ProfileOverrideEnable = &v
 }
 
+// GetProfileVlanOverrideEnable returns the ProfileVlanOverrideEnable field value if set, zero value otherwise.
+func (o *StackPortSettingVO) GetProfileVlanOverrideEnable() bool {
+	if o == nil || IsNil(o.ProfileVlanOverrideEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.ProfileVlanOverrideEnable
+}
+
+// GetProfileVlanOverrideEnableOk returns a tuple with the ProfileVlanOverrideEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StackPortSettingVO) GetProfileVlanOverrideEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.ProfileVlanOverrideEnable) {
+		return nil, false
+	}
+	return o.ProfileVlanOverrideEnable, true
+}
+
+// HasProfileVlanOverrideEnable returns a boolean if a field has been set.
+func (o *StackPortSettingVO) HasProfileVlanOverrideEnable() bool {
+	if o != nil && !IsNil(o.ProfileVlanOverrideEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetProfileVlanOverrideEnable gets a reference to the given bool and assigns it to the ProfileVlanOverrideEnable field.
+func (o *StackPortSettingVO) SetProfileVlanOverrideEnable(v bool) {
+	o.ProfileVlanOverrideEnable = &v
+}
+
 // GetQosQueueEnable returns the QosQueueEnable field value if set, zero value otherwise.
 func (o *StackPortSettingVO) GetQosQueueEnable() bool {
 	if o == nil || IsNil(o.QosQueueEnable) {
@@ -1985,6 +2019,9 @@ func (o StackPortSettingVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ProfileOverrideEnable) {
 		toSerialize["profileOverrideEnable"] = o.ProfileOverrideEnable
+	}
+	if !IsNil(o.ProfileVlanOverrideEnable) {
+		toSerialize["profileVlanOverrideEnable"] = o.ProfileVlanOverrideEnable
 	}
 	if !IsNil(o.QosQueueEnable) {
 		toSerialize["qosQueueEnable"] = o.QosQueueEnable

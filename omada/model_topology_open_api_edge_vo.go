@@ -19,6 +19,8 @@ var _ MappedNullable = &TopologyOpenApiEdgeVO{}
 
 // TopologyOpenApiEdgeVO Stp Loops
 type TopologyOpenApiEdgeVO struct {
+	// Blocked Or Not
+	Blocked *bool `json:"blocked,omitempty"`
 	// Blocked Type
 	BlockedType *int32 `json:"blockedType,omitempty"`
 	// Blocked Vlans
@@ -26,6 +28,10 @@ type TopologyOpenApiEdgeVO struct {
 	// DownLink Mac
 	DownLinkMac *string `json:"downLinkMac,omitempty"`
 	Port *WiredPortV3DTO `json:"port,omitempty"`
+	// Remain Block Num
+	RemainBlockNum *int32 `json:"remainBlockNum,omitempty"`
+	// Remain Blocked PortList
+	RemainBlockedPortList []TopologyOpenApiEdgeVO `json:"remainBlockedPortList,omitempty"`
 	// UpLink Mac
 	UpLinkMac *string `json:"upLinkMac,omitempty"`
 	UpLinkPort *WiredPortV3DTO `json:"upLinkPort,omitempty"`
@@ -46,6 +52,38 @@ func NewTopologyOpenApiEdgeVO() *TopologyOpenApiEdgeVO {
 func NewTopologyOpenApiEdgeVOWithDefaults() *TopologyOpenApiEdgeVO {
 	this := TopologyOpenApiEdgeVO{}
 	return &this
+}
+
+// GetBlocked returns the Blocked field value if set, zero value otherwise.
+func (o *TopologyOpenApiEdgeVO) GetBlocked() bool {
+	if o == nil || IsNil(o.Blocked) {
+		var ret bool
+		return ret
+	}
+	return *o.Blocked
+}
+
+// GetBlockedOk returns a tuple with the Blocked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyOpenApiEdgeVO) GetBlockedOk() (*bool, bool) {
+	if o == nil || IsNil(o.Blocked) {
+		return nil, false
+	}
+	return o.Blocked, true
+}
+
+// HasBlocked returns a boolean if a field has been set.
+func (o *TopologyOpenApiEdgeVO) HasBlocked() bool {
+	if o != nil && !IsNil(o.Blocked) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlocked gets a reference to the given bool and assigns it to the Blocked field.
+func (o *TopologyOpenApiEdgeVO) SetBlocked(v bool) {
+	o.Blocked = &v
 }
 
 // GetBlockedType returns the BlockedType field value if set, zero value otherwise.
@@ -176,6 +214,70 @@ func (o *TopologyOpenApiEdgeVO) SetPort(v WiredPortV3DTO) {
 	o.Port = &v
 }
 
+// GetRemainBlockNum returns the RemainBlockNum field value if set, zero value otherwise.
+func (o *TopologyOpenApiEdgeVO) GetRemainBlockNum() int32 {
+	if o == nil || IsNil(o.RemainBlockNum) {
+		var ret int32
+		return ret
+	}
+	return *o.RemainBlockNum
+}
+
+// GetRemainBlockNumOk returns a tuple with the RemainBlockNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyOpenApiEdgeVO) GetRemainBlockNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.RemainBlockNum) {
+		return nil, false
+	}
+	return o.RemainBlockNum, true
+}
+
+// HasRemainBlockNum returns a boolean if a field has been set.
+func (o *TopologyOpenApiEdgeVO) HasRemainBlockNum() bool {
+	if o != nil && !IsNil(o.RemainBlockNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetRemainBlockNum gets a reference to the given int32 and assigns it to the RemainBlockNum field.
+func (o *TopologyOpenApiEdgeVO) SetRemainBlockNum(v int32) {
+	o.RemainBlockNum = &v
+}
+
+// GetRemainBlockedPortList returns the RemainBlockedPortList field value if set, zero value otherwise.
+func (o *TopologyOpenApiEdgeVO) GetRemainBlockedPortList() []TopologyOpenApiEdgeVO {
+	if o == nil || IsNil(o.RemainBlockedPortList) {
+		var ret []TopologyOpenApiEdgeVO
+		return ret
+	}
+	return o.RemainBlockedPortList
+}
+
+// GetRemainBlockedPortListOk returns a tuple with the RemainBlockedPortList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyOpenApiEdgeVO) GetRemainBlockedPortListOk() ([]TopologyOpenApiEdgeVO, bool) {
+	if o == nil || IsNil(o.RemainBlockedPortList) {
+		return nil, false
+	}
+	return o.RemainBlockedPortList, true
+}
+
+// HasRemainBlockedPortList returns a boolean if a field has been set.
+func (o *TopologyOpenApiEdgeVO) HasRemainBlockedPortList() bool {
+	if o != nil && !IsNil(o.RemainBlockedPortList) {
+		return true
+	}
+
+	return false
+}
+
+// SetRemainBlockedPortList gets a reference to the given []TopologyOpenApiEdgeVO and assigns it to the RemainBlockedPortList field.
+func (o *TopologyOpenApiEdgeVO) SetRemainBlockedPortList(v []TopologyOpenApiEdgeVO) {
+	o.RemainBlockedPortList = v
+}
+
 // GetUpLinkMac returns the UpLinkMac field value if set, zero value otherwise.
 func (o *TopologyOpenApiEdgeVO) GetUpLinkMac() string {
 	if o == nil || IsNil(o.UpLinkMac) {
@@ -250,6 +352,9 @@ func (o TopologyOpenApiEdgeVO) MarshalJSON() ([]byte, error) {
 
 func (o TopologyOpenApiEdgeVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Blocked) {
+		toSerialize["blocked"] = o.Blocked
+	}
 	if !IsNil(o.BlockedType) {
 		toSerialize["blockedType"] = o.BlockedType
 	}
@@ -261,6 +366,12 @@ func (o TopologyOpenApiEdgeVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
+	}
+	if !IsNil(o.RemainBlockNum) {
+		toSerialize["remainBlockNum"] = o.RemainBlockNum
+	}
+	if !IsNil(o.RemainBlockedPortList) {
+		toSerialize["remainBlockedPortList"] = o.RemainBlockedPortList
 	}
 	if !IsNil(o.UpLinkMac) {
 		toSerialize["upLinkMac"] = o.UpLinkMac

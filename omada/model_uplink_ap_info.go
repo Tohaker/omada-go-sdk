@@ -23,6 +23,8 @@ type UplinkAPInfo struct {
 	Channel *int32 `json:"channel,omitempty"`
 	// Lag Id
 	LagId *int32 `json:"lagId,omitempty"`
+	// Multi link info (MLO)
+	MultiLink []APMultiLinkInfo `json:"multiLink,omitempty"`
 	// Client connected port name.
 	Name *string `json:"name,omitempty"`
 	// Client connected port.
@@ -124,6 +126,38 @@ func (o *UplinkAPInfo) HasLagId() bool {
 // SetLagId gets a reference to the given int32 and assigns it to the LagId field.
 func (o *UplinkAPInfo) SetLagId(v int32) {
 	o.LagId = &v
+}
+
+// GetMultiLink returns the MultiLink field value if set, zero value otherwise.
+func (o *UplinkAPInfo) GetMultiLink() []APMultiLinkInfo {
+	if o == nil || IsNil(o.MultiLink) {
+		var ret []APMultiLinkInfo
+		return ret
+	}
+	return o.MultiLink
+}
+
+// GetMultiLinkOk returns a tuple with the MultiLink field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UplinkAPInfo) GetMultiLinkOk() ([]APMultiLinkInfo, bool) {
+	if o == nil || IsNil(o.MultiLink) {
+		return nil, false
+	}
+	return o.MultiLink, true
+}
+
+// HasMultiLink returns a boolean if a field has been set.
+func (o *UplinkAPInfo) HasMultiLink() bool {
+	if o != nil && !IsNil(o.MultiLink) {
+		return true
+	}
+
+	return false
+}
+
+// SetMultiLink gets a reference to the given []APMultiLinkInfo and assigns it to the MultiLink field.
+func (o *UplinkAPInfo) SetMultiLink(v []APMultiLinkInfo) {
+	o.MultiLink = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -461,6 +495,9 @@ func (o UplinkAPInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LagId) {
 		toSerialize["lagId"] = o.LagId
+	}
+	if !IsNil(o.MultiLink) {
+		toSerialize["multiLink"] = o.MultiLink
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

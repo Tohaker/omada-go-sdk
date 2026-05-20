@@ -25,23 +25,23 @@ type WirelessSummaryVO struct {
 	Total *int64 `json:"total,omitempty"`
 	// tx traffic
 	TxTotal *int64 `json:"txTotal,omitempty"`
-	// 2g rx traffic
+	// 2g client rx traffic
 	Wireless2gRx *int64 `json:"wireless2gRx,omitempty"`
 	// 2g traffic
 	Wireless2gTotal *int64 `json:"wireless2gTotal,omitempty"`
-	// 2g rx traffic
+	// 2g client tx traffic
 	Wireless2gTx *int64 `json:"wireless2gTx,omitempty"`
-	// 5g rx traffic
+	// 5g client rx traffic
 	Wireless5gRx *int64 `json:"wireless5gRx,omitempty"`
 	// 5g traffic
 	Wireless5gTotal *int64 `json:"wireless5gTotal,omitempty"`
-	// 5g tx traffic
+	// 5g client tx traffic
 	Wireless5gTx *int64 `json:"wireless5gTx,omitempty"`
-	// 6g rx traffic
+	// 6g client rx traffic
 	Wireless6gRx *int64 `json:"wireless6gRx,omitempty"`
 	// 6g traffic
 	Wireless6gTotal *int64 `json:"wireless6gTotal,omitempty"`
-	// 6g tx traffic
+	// 6g client tx traffic
 	Wireless6gTx *int64 `json:"wireless6gTx,omitempty"`
 }
 

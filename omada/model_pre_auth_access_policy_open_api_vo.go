@@ -21,6 +21,8 @@ var _ MappedNullable = &PreAuthAccessPolicyOpenApiVO{}
 
 // PreAuthAccessPolicyOpenApiVO List of Pre-Authentication Access Policy
 type PreAuthAccessPolicyOpenApiVO struct {
+	// Description of Pre-Authentication Access Policy
+	Description *string `json:"description,omitempty"`
 	// Entry ID of the policy. Except for newly added policies, this parameter should be retained
 	IdInt *int32 `json:"idInt,omitempty"`
 	// IP Address of Pre-Authentication Access
@@ -51,6 +53,38 @@ func NewPreAuthAccessPolicyOpenApiVO(type_ int32) *PreAuthAccessPolicyOpenApiVO 
 func NewPreAuthAccessPolicyOpenApiVOWithDefaults() *PreAuthAccessPolicyOpenApiVO {
 	this := PreAuthAccessPolicyOpenApiVO{}
 	return &this
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *PreAuthAccessPolicyOpenApiVO) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PreAuthAccessPolicyOpenApiVO) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *PreAuthAccessPolicyOpenApiVO) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *PreAuthAccessPolicyOpenApiVO) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetIdInt returns the IdInt field value if set, zero value otherwise.
@@ -215,6 +249,9 @@ func (o PreAuthAccessPolicyOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o PreAuthAccessPolicyOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	if !IsNil(o.IdInt) {
 		toSerialize["idInt"] = o.IdInt
 	}

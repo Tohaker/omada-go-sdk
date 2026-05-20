@@ -21,6 +21,10 @@ var _ MappedNullable = &ChannelLimitConfigOpenApiVO{}
 type ChannelLimitConfigOpenApiVO struct {
 	// Channel limit enable status. It should be a value as follows: 0: default, 1: false, 2: true.
 	ChannelLimitType *int32 `json:"channelLimitType,omitempty"`
+	// default mode in 5g radio. true: outdoor; false: indoor
+	DefaultInstType5g *bool `json:"defaultInstType5g,omitempty"`
+	// default mode in 6g radio. true: outdoor; false: indoor
+	DefaultInstType6g *bool `json:"defaultInstType6g,omitempty"`
 	// Indicates whether the device supports channel limit
 	SupportChannelLimit *bool `json:"supportChannelLimit,omitempty"`
 }
@@ -74,6 +78,70 @@ func (o *ChannelLimitConfigOpenApiVO) SetChannelLimitType(v int32) {
 	o.ChannelLimitType = &v
 }
 
+// GetDefaultInstType5g returns the DefaultInstType5g field value if set, zero value otherwise.
+func (o *ChannelLimitConfigOpenApiVO) GetDefaultInstType5g() bool {
+	if o == nil || IsNil(o.DefaultInstType5g) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultInstType5g
+}
+
+// GetDefaultInstType5gOk returns a tuple with the DefaultInstType5g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelLimitConfigOpenApiVO) GetDefaultInstType5gOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultInstType5g) {
+		return nil, false
+	}
+	return o.DefaultInstType5g, true
+}
+
+// HasDefaultInstType5g returns a boolean if a field has been set.
+func (o *ChannelLimitConfigOpenApiVO) HasDefaultInstType5g() bool {
+	if o != nil && !IsNil(o.DefaultInstType5g) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultInstType5g gets a reference to the given bool and assigns it to the DefaultInstType5g field.
+func (o *ChannelLimitConfigOpenApiVO) SetDefaultInstType5g(v bool) {
+	o.DefaultInstType5g = &v
+}
+
+// GetDefaultInstType6g returns the DefaultInstType6g field value if set, zero value otherwise.
+func (o *ChannelLimitConfigOpenApiVO) GetDefaultInstType6g() bool {
+	if o == nil || IsNil(o.DefaultInstType6g) {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultInstType6g
+}
+
+// GetDefaultInstType6gOk returns a tuple with the DefaultInstType6g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelLimitConfigOpenApiVO) GetDefaultInstType6gOk() (*bool, bool) {
+	if o == nil || IsNil(o.DefaultInstType6g) {
+		return nil, false
+	}
+	return o.DefaultInstType6g, true
+}
+
+// HasDefaultInstType6g returns a boolean if a field has been set.
+func (o *ChannelLimitConfigOpenApiVO) HasDefaultInstType6g() bool {
+	if o != nil && !IsNil(o.DefaultInstType6g) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultInstType6g gets a reference to the given bool and assigns it to the DefaultInstType6g field.
+func (o *ChannelLimitConfigOpenApiVO) SetDefaultInstType6g(v bool) {
+	o.DefaultInstType6g = &v
+}
+
 // GetSupportChannelLimit returns the SupportChannelLimit field value if set, zero value otherwise.
 func (o *ChannelLimitConfigOpenApiVO) GetSupportChannelLimit() bool {
 	if o == nil || IsNil(o.SupportChannelLimit) {
@@ -118,6 +186,12 @@ func (o ChannelLimitConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ChannelLimitType) {
 		toSerialize["channelLimitType"] = o.ChannelLimitType
+	}
+	if !IsNil(o.DefaultInstType5g) {
+		toSerialize["defaultInstType5g"] = o.DefaultInstType5g
+	}
+	if !IsNil(o.DefaultInstType6g) {
+		toSerialize["defaultInstType6g"] = o.DefaultInstType6g
 	}
 	if !IsNil(o.SupportChannelLimit) {
 		toSerialize["supportChannelLimit"] = o.SupportChannelLimit

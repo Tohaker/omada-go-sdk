@@ -23,10 +23,12 @@ var _ MappedNullable = &OswStackPortGroupVO{}
 type OswStackPortGroupVO struct {
 	// The ID of the stack port aggregation group
 	ID int32 `json:"ID"`
+	// Stack port aggregation group link speed config
+	GroupSpeed *int32 `json:"groupSpeed,omitempty"`
 	// Name of the stacking port aggregation group
 	Name *string `json:"name,omitempty"`
 	// Stack port aggregation group member port
-	Ports []OswStandPortVO `json:"ports"`
+	Ports []OswStandPortVO `json:"ports,omitempty"`
 }
 
 type _OswStackPortGroupVO OswStackPortGroupVO
@@ -35,10 +37,9 @@ type _OswStackPortGroupVO OswStackPortGroupVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOswStackPortGroupVO(iD int32, ports []OswStandPortVO) *OswStackPortGroupVO {
+func NewOswStackPortGroupVO(iD int32) *OswStackPortGroupVO {
 	this := OswStackPortGroupVO{}
 	this.ID = iD
-	this.Ports = ports
 	return &this
 }
 
@@ -74,6 +75,38 @@ func (o *OswStackPortGroupVO) SetID(v int32) {
 	o.ID = v
 }
 
+// GetGroupSpeed returns the GroupSpeed field value if set, zero value otherwise.
+func (o *OswStackPortGroupVO) GetGroupSpeed() int32 {
+	if o == nil || IsNil(o.GroupSpeed) {
+		var ret int32
+		return ret
+	}
+	return *o.GroupSpeed
+}
+
+// GetGroupSpeedOk returns a tuple with the GroupSpeed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackPortGroupVO) GetGroupSpeedOk() (*int32, bool) {
+	if o == nil || IsNil(o.GroupSpeed) {
+		return nil, false
+	}
+	return o.GroupSpeed, true
+}
+
+// HasGroupSpeed returns a boolean if a field has been set.
+func (o *OswStackPortGroupVO) HasGroupSpeed() bool {
+	if o != nil && !IsNil(o.GroupSpeed) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroupSpeed gets a reference to the given int32 and assigns it to the GroupSpeed field.
+func (o *OswStackPortGroupVO) SetGroupSpeed(v int32) {
+	o.GroupSpeed = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *OswStackPortGroupVO) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -106,26 +139,34 @@ func (o *OswStackPortGroupVO) SetName(v string) {
 	o.Name = &v
 }
 
-// GetPorts returns the Ports field value
+// GetPorts returns the Ports field value if set, zero value otherwise.
 func (o *OswStackPortGroupVO) GetPorts() []OswStandPortVO {
-	if o == nil {
+	if o == nil || IsNil(o.Ports) {
 		var ret []OswStandPortVO
 		return ret
 	}
-
 	return o.Ports
 }
 
-// GetPortsOk returns a tuple with the Ports field value
+// GetPortsOk returns a tuple with the Ports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OswStackPortGroupVO) GetPortsOk() ([]OswStandPortVO, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Ports) {
 		return nil, false
 	}
 	return o.Ports, true
 }
 
-// SetPorts sets field value
+// HasPorts returns a boolean if a field has been set.
+func (o *OswStackPortGroupVO) HasPorts() bool {
+	if o != nil && !IsNil(o.Ports) {
+		return true
+	}
+
+	return false
+}
+
+// SetPorts gets a reference to the given []OswStandPortVO and assigns it to the Ports field.
 func (o *OswStackPortGroupVO) SetPorts(v []OswStandPortVO) {
 	o.Ports = v
 }
@@ -141,10 +182,15 @@ func (o OswStackPortGroupVO) MarshalJSON() ([]byte, error) {
 func (o OswStackPortGroupVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ID"] = o.ID
+	if !IsNil(o.GroupSpeed) {
+		toSerialize["groupSpeed"] = o.GroupSpeed
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	toSerialize["ports"] = o.Ports
+	if !IsNil(o.Ports) {
+		toSerialize["ports"] = o.Ports
+	}
 	return toSerialize, nil
 }
 
@@ -154,7 +200,6 @@ func (o *OswStackPortGroupVO) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"ID",
-		"ports",
 	}
 
 	allProperties := make(map[string]interface{})

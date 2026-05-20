@@ -290,6 +290,21 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SwitchAPIService GetBatchRpvstInstances", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.SwitchAPI.GetBatchRpvstInstances(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SwitchAPIService GetBatchSelectOswDetailsView", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -589,6 +604,22 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SwitchAPIService GetL3SwitchUsedSdmNum", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+
+		resp, httpRes, err := apiClient.SwitchAPI.GetL3SwitchUsedSdmNum(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SwitchAPIService GetOswDDMInfo", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -708,6 +739,38 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.SwitchAPI.GetPortTags(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchAPIService GetRpvstInstances", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+
+		resp, httpRes, err := apiClient.SwitchAPI.GetRpvstInstances(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchAPIService GetStpInstancesDetail", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+
+		resp, httpRes, err := apiClient.SwitchAPI.GetStpInstancesDetail(context.Background(), omadacId, siteId, switchMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

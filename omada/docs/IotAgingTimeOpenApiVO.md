@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AgingTime** | **int32** | The system automatically removes a device&#39;s registry entry if no data reports are received within a predefined aging period.&lt;br/&gt;When format &#x3D; 0, The parameter aging time should be within the range of 30-86400.&lt;br/&gt;When format &#x3D; 1, The parameter aging time should be within the range of 1-1440.&lt;br/&gt;When format &#x3D; 2, The parameter aging time should be within the range of 1-24.&lt;br/&gt; | 
-**Format** | **int32** | The parameter [format] should be a value as follows: [0:second 1:minute; 2:hour] | 
+**AgingTimeIotAgingTime** | **int32** | The system automatically removes a device&#39;s registry entry if no data reports are received within a predefined aging period.&lt;br/&gt;When format &#x3D; 0, The parameter aging time should be within the range of 30-86400.&lt;br/&gt;When format &#x3D; 1, The parameter aging time should be within the range of 1-1440.&lt;br/&gt;When format &#x3D; 2, The parameter aging time should be within the range of 1-24.&lt;br/&gt; | 
+**FormatIotAgingTime** | **int32** | The parameter [format] should be a value as follows: [0:second 1:minute; 2:hour] | 
 
 ## Methods
 
 ### NewIotAgingTimeOpenApiVO
 
-`func NewIotAgingTimeOpenApiVO(agingTime int32, format int32, ) *IotAgingTimeOpenApiVO`
+`func NewIotAgingTimeOpenApiVO(agingTimeIotAgingTime int32, formatIotAgingTime int32, ) *IotAgingTimeOpenApiVO`
 
 NewIotAgingTimeOpenApiVO instantiates a new IotAgingTimeOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +26,44 @@ NewIotAgingTimeOpenApiVOWithDefaults instantiates a new IotAgingTimeOpenApiVO ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAgingTime
+### GetAgingTimeIotAgingTime
 
-`func (o *IotAgingTimeOpenApiVO) GetAgingTime() int32`
+`func (o *IotAgingTimeOpenApiVO) GetAgingTimeIotAgingTime() int32`
 
-GetAgingTime returns the AgingTime field if non-nil, zero value otherwise.
+GetAgingTimeIotAgingTime returns the AgingTimeIotAgingTime field if non-nil, zero value otherwise.
 
-### GetAgingTimeOk
+### GetAgingTimeIotAgingTimeOk
 
-`func (o *IotAgingTimeOpenApiVO) GetAgingTimeOk() (*int32, bool)`
+`func (o *IotAgingTimeOpenApiVO) GetAgingTimeIotAgingTimeOk() (*int32, bool)`
 
-GetAgingTimeOk returns a tuple with the AgingTime field if it's non-nil, zero value otherwise
+GetAgingTimeIotAgingTimeOk returns a tuple with the AgingTimeIotAgingTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAgingTime
+### SetAgingTimeIotAgingTime
 
-`func (o *IotAgingTimeOpenApiVO) SetAgingTime(v int32)`
+`func (o *IotAgingTimeOpenApiVO) SetAgingTimeIotAgingTime(v int32)`
 
-SetAgingTime sets AgingTime field to given value.
+SetAgingTimeIotAgingTime sets AgingTimeIotAgingTime field to given value.
 
 
-### GetFormat
+### GetFormatIotAgingTime
 
-`func (o *IotAgingTimeOpenApiVO) GetFormat() int32`
+`func (o *IotAgingTimeOpenApiVO) GetFormatIotAgingTime() int32`
 
-GetFormat returns the Format field if non-nil, zero value otherwise.
+GetFormatIotAgingTime returns the FormatIotAgingTime field if non-nil, zero value otherwise.
 
-### GetFormatOk
+### GetFormatIotAgingTimeOk
 
-`func (o *IotAgingTimeOpenApiVO) GetFormatOk() (*int32, bool)`
+`func (o *IotAgingTimeOpenApiVO) GetFormatIotAgingTimeOk() (*int32, bool)`
 
-GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+GetFormatIotAgingTimeOk returns a tuple with the FormatIotAgingTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFormat
+### SetFormatIotAgingTime
 
-`func (o *IotAgingTimeOpenApiVO) SetFormat(v int32)`
+`func (o *IotAgingTimeOpenApiVO) SetFormatIotAgingTime(v int32)`
 
-SetFormat sets Format field to given value.
+SetFormatIotAgingTime sets FormatIotAgingTime field to given value.
 
 
 

@@ -182,6 +182,21 @@ func Test_omada_SwitchTemplateAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SwitchTemplateAPIService GetBatchRpvstInstancesTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.SwitchTemplateAPI.GetBatchRpvstInstancesTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SwitchTemplateAPIService GetBatchSwitchTemplateExistNetworks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -302,6 +317,38 @@ func Test_omada_SwitchTemplateAPIService(t *testing.T) {
 		var siteTemplateId string
 
 		resp, httpRes, err := apiClient.SwitchTemplateAPI.GetPortTagTemplates(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchTemplateAPIService GetRpvstInstancesDetailTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var deviceTemplateId string
+
+		resp, httpRes, err := apiClient.SwitchTemplateAPI.GetRpvstInstancesDetailTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchTemplateAPIService GetRpvstInstancesTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var deviceTemplateId string
+
+		resp, httpRes, err := apiClient.SwitchTemplateAPI.GetRpvstInstancesTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

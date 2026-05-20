@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Enable** | Pointer to **bool** | DST config status; If false, other parameters are not required. | [optional] 
+**Enable** | Pointer to **bool** | DST config status; If false, other parameters are not required. Deprecated, use mode instead. | [optional] 
 **End** | Pointer to [**DstTimeOpenApiDTO**](DstTimeOpenApiDTO.md) |  | [optional] 
 **Mode** | Pointer to **int32** | DST config mode; If disable, other parameters are not required. 0: disable, 1: auto, 2: manually | [optional] 
-**Offset** | Pointer to **int64** | DST offset config(Unit: ms); It should be a value as follows: [1800000, 3600000, 5400000, 7200000]. | [optional] 
+**Offset** | Pointer to **int64** | DST offset config(Unit: ms); It should be a value as follows: [1800000, 3600000, 5400000, 7200000]. When DST mode is 2(manually), offset is required. | [optional] 
 **Start** | Pointer to [**DstTimeOpenApiDTO**](DstTimeOpenApiDTO.md) |  | [optional] 
 
 ## Methods

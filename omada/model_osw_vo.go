@@ -47,6 +47,8 @@ type OswVO struct {
 	CustomId *string `json:"customId,omitempty"`
 	// Customer name displayed in MSP mode
 	CustomName *string `json:"customName,omitempty"`
+	// Stack port aggregation group default link speed capability
+	DefaultGroupSpeedCap []int32 `json:"defaultGroupSpeedCap,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// Device type should be a value as follows:0:advanced,1:pro
 	DeviceSeriesType *int32 `json:"deviceSeriesType,omitempty"`
@@ -125,6 +127,8 @@ type OswVO struct {
 	Model *string `json:"model,omitempty"`
 	// Model version of device,for example:3.0
 	ModelVersion *string `json:"modelVersion,omitempty"`
+	// The range of MSTP instanceId
+	MstpInsNo *int32 `json:"mstpInsNo,omitempty"`
 	// The number of MSTP instances
 	MstpInsNum *int32 `json:"mstpInsNum,omitempty"`
 	// Default uses the MAC address as the name.
@@ -158,6 +162,10 @@ type OswVO struct {
 	PublicIp *string `json:"publicIp,omitempty"`
 	// Data source.Resource should be a value as follows: 0:new created;1:from template;2:override
 	Resource *int32 `json:"resource,omitempty"`
+	// Indicates whether the switch supports rpvst
+	RpvstExtendSupport *bool `json:"rpvstExtendSupport,omitempty"`
+	// The number of RPVST instances
+	RpvstInsNum *int32 `json:"rpvstInsNum,omitempty"`
 	Sdm *OswSdmTemplateVO `json:"sdm,omitempty"`
 	// Model complex shown in the front end.Ap：model+(country)+modelVersion,EAP225(EU) v3.0  Gateway/Switch：model+modelVersion,Osg v3.0
 	ShowModel *string `json:"showModel,omitempty"`
@@ -169,6 +177,8 @@ type OswVO struct {
 	SpecialModel *string `json:"specialModel,omitempty"`
 	StackMsg *StackMsgVO `json:"stackMsg,omitempty"`
 	StackPortCap *map[string][]string `json:"stackPortCap,omitempty"`
+	// Ports capability that support configuration as stack port
+	StackPortConfigCaps []OswStackPortCapVO `json:"stackPortConfigCaps,omitempty"`
 	// Stack ports
 	StackPorts []OswStackPortGroupVO `json:"stackPorts,omitempty"`
 	// Stack support ports
@@ -210,8 +220,12 @@ type OswVO struct {
 	SupportRunningConfig *bool `json:"supportRunningConfig,omitempty"`
 	// Indicates whether the switch supports SDM template
 	SupportSdm *bool `json:"supportSdm,omitempty"`
+	// Indicates whether the member device supports configuring the link speed of the stack port aggregation group
+	SupportStackGroupSpeed *bool `json:"supportStackGroupSpeed,omitempty"`
 	// Indicates whether the switch supports stp
 	SupportStp *bool `json:"supportStp,omitempty"`
+	// Whether the device supports returning TPCL resource information
+	SupportTpclResInfo *bool `json:"supportTpclResInfo,omitempty"`
 	// Indicates whether the switch supports Vrf
 	SupportVrf *bool `json:"supportVrf,omitempty"`
 	// Whether the device can be adopted by the site.
@@ -706,6 +720,38 @@ func (o *OswVO) HasCustomName() bool {
 // SetCustomName gets a reference to the given string and assigns it to the CustomName field.
 func (o *OswVO) SetCustomName(v string) {
 	o.CustomName = &v
+}
+
+// GetDefaultGroupSpeedCap returns the DefaultGroupSpeedCap field value if set, zero value otherwise.
+func (o *OswVO) GetDefaultGroupSpeedCap() []int32 {
+	if o == nil || IsNil(o.DefaultGroupSpeedCap) {
+		var ret []int32
+		return ret
+	}
+	return o.DefaultGroupSpeedCap
+}
+
+// GetDefaultGroupSpeedCapOk returns a tuple with the DefaultGroupSpeedCap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetDefaultGroupSpeedCapOk() ([]int32, bool) {
+	if o == nil || IsNil(o.DefaultGroupSpeedCap) {
+		return nil, false
+	}
+	return o.DefaultGroupSpeedCap, true
+}
+
+// HasDefaultGroupSpeedCap returns a boolean if a field has been set.
+func (o *OswVO) HasDefaultGroupSpeedCap() bool {
+	if o != nil && !IsNil(o.DefaultGroupSpeedCap) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultGroupSpeedCap gets a reference to the given []int32 and assigns it to the DefaultGroupSpeedCap field.
+func (o *OswVO) SetDefaultGroupSpeedCap(v []int32) {
+	o.DefaultGroupSpeedCap = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -2052,6 +2098,38 @@ func (o *OswVO) SetModelVersion(v string) {
 	o.ModelVersion = &v
 }
 
+// GetMstpInsNo returns the MstpInsNo field value if set, zero value otherwise.
+func (o *OswVO) GetMstpInsNo() int32 {
+	if o == nil || IsNil(o.MstpInsNo) {
+		var ret int32
+		return ret
+	}
+	return *o.MstpInsNo
+}
+
+// GetMstpInsNoOk returns a tuple with the MstpInsNo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetMstpInsNoOk() (*int32, bool) {
+	if o == nil || IsNil(o.MstpInsNo) {
+		return nil, false
+	}
+	return o.MstpInsNo, true
+}
+
+// HasMstpInsNo returns a boolean if a field has been set.
+func (o *OswVO) HasMstpInsNo() bool {
+	if o != nil && !IsNil(o.MstpInsNo) {
+		return true
+	}
+
+	return false
+}
+
+// SetMstpInsNo gets a reference to the given int32 and assigns it to the MstpInsNo field.
+func (o *OswVO) SetMstpInsNo(v int32) {
+	o.MstpInsNo = &v
+}
+
 // GetMstpInsNum returns the MstpInsNum field value if set, zero value otherwise.
 func (o *OswVO) GetMstpInsNum() int32 {
 	if o == nil || IsNil(o.MstpInsNum) {
@@ -2596,6 +2674,70 @@ func (o *OswVO) SetResource(v int32) {
 	o.Resource = &v
 }
 
+// GetRpvstExtendSupport returns the RpvstExtendSupport field value if set, zero value otherwise.
+func (o *OswVO) GetRpvstExtendSupport() bool {
+	if o == nil || IsNil(o.RpvstExtendSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.RpvstExtendSupport
+}
+
+// GetRpvstExtendSupportOk returns a tuple with the RpvstExtendSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetRpvstExtendSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.RpvstExtendSupport) {
+		return nil, false
+	}
+	return o.RpvstExtendSupport, true
+}
+
+// HasRpvstExtendSupport returns a boolean if a field has been set.
+func (o *OswVO) HasRpvstExtendSupport() bool {
+	if o != nil && !IsNil(o.RpvstExtendSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetRpvstExtendSupport gets a reference to the given bool and assigns it to the RpvstExtendSupport field.
+func (o *OswVO) SetRpvstExtendSupport(v bool) {
+	o.RpvstExtendSupport = &v
+}
+
+// GetRpvstInsNum returns the RpvstInsNum field value if set, zero value otherwise.
+func (o *OswVO) GetRpvstInsNum() int32 {
+	if o == nil || IsNil(o.RpvstInsNum) {
+		var ret int32
+		return ret
+	}
+	return *o.RpvstInsNum
+}
+
+// GetRpvstInsNumOk returns a tuple with the RpvstInsNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetRpvstInsNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.RpvstInsNum) {
+		return nil, false
+	}
+	return o.RpvstInsNum, true
+}
+
+// HasRpvstInsNum returns a boolean if a field has been set.
+func (o *OswVO) HasRpvstInsNum() bool {
+	if o != nil && !IsNil(o.RpvstInsNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetRpvstInsNum gets a reference to the given int32 and assigns it to the RpvstInsNum field.
+func (o *OswVO) SetRpvstInsNum(v int32) {
+	o.RpvstInsNum = &v
+}
+
 // GetSdm returns the Sdm field value if set, zero value otherwise.
 func (o *OswVO) GetSdm() OswSdmTemplateVO {
 	if o == nil || IsNil(o.Sdm) {
@@ -2818,6 +2960,38 @@ func (o *OswVO) HasStackPortCap() bool {
 // SetStackPortCap gets a reference to the given map[string][]string and assigns it to the StackPortCap field.
 func (o *OswVO) SetStackPortCap(v map[string][]string) {
 	o.StackPortCap = &v
+}
+
+// GetStackPortConfigCaps returns the StackPortConfigCaps field value if set, zero value otherwise.
+func (o *OswVO) GetStackPortConfigCaps() []OswStackPortCapVO {
+	if o == nil || IsNil(o.StackPortConfigCaps) {
+		var ret []OswStackPortCapVO
+		return ret
+	}
+	return o.StackPortConfigCaps
+}
+
+// GetStackPortConfigCapsOk returns a tuple with the StackPortConfigCaps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetStackPortConfigCapsOk() ([]OswStackPortCapVO, bool) {
+	if o == nil || IsNil(o.StackPortConfigCaps) {
+		return nil, false
+	}
+	return o.StackPortConfigCaps, true
+}
+
+// HasStackPortConfigCaps returns a boolean if a field has been set.
+func (o *OswVO) HasStackPortConfigCaps() bool {
+	if o != nil && !IsNil(o.StackPortConfigCaps) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackPortConfigCaps gets a reference to the given []OswStackPortCapVO and assigns it to the StackPortConfigCaps field.
+func (o *OswVO) SetStackPortConfigCaps(v []OswStackPortCapVO) {
+	o.StackPortConfigCaps = v
 }
 
 // GetStackPorts returns the StackPorts field value if set, zero value otherwise.
@@ -3524,6 +3698,38 @@ func (o *OswVO) SetSupportSdm(v bool) {
 	o.SupportSdm = &v
 }
 
+// GetSupportStackGroupSpeed returns the SupportStackGroupSpeed field value if set, zero value otherwise.
+func (o *OswVO) GetSupportStackGroupSpeed() bool {
+	if o == nil || IsNil(o.SupportStackGroupSpeed) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportStackGroupSpeed
+}
+
+// GetSupportStackGroupSpeedOk returns a tuple with the SupportStackGroupSpeed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetSupportStackGroupSpeedOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportStackGroupSpeed) {
+		return nil, false
+	}
+	return o.SupportStackGroupSpeed, true
+}
+
+// HasSupportStackGroupSpeed returns a boolean if a field has been set.
+func (o *OswVO) HasSupportStackGroupSpeed() bool {
+	if o != nil && !IsNil(o.SupportStackGroupSpeed) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportStackGroupSpeed gets a reference to the given bool and assigns it to the SupportStackGroupSpeed field.
+func (o *OswVO) SetSupportStackGroupSpeed(v bool) {
+	o.SupportStackGroupSpeed = &v
+}
+
 // GetSupportStp returns the SupportStp field value if set, zero value otherwise.
 func (o *OswVO) GetSupportStp() bool {
 	if o == nil || IsNil(o.SupportStp) {
@@ -3554,6 +3760,38 @@ func (o *OswVO) HasSupportStp() bool {
 // SetSupportStp gets a reference to the given bool and assigns it to the SupportStp field.
 func (o *OswVO) SetSupportStp(v bool) {
 	o.SupportStp = &v
+}
+
+// GetSupportTpclResInfo returns the SupportTpclResInfo field value if set, zero value otherwise.
+func (o *OswVO) GetSupportTpclResInfo() bool {
+	if o == nil || IsNil(o.SupportTpclResInfo) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportTpclResInfo
+}
+
+// GetSupportTpclResInfoOk returns a tuple with the SupportTpclResInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetSupportTpclResInfoOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportTpclResInfo) {
+		return nil, false
+	}
+	return o.SupportTpclResInfo, true
+}
+
+// HasSupportTpclResInfo returns a boolean if a field has been set.
+func (o *OswVO) HasSupportTpclResInfo() bool {
+	if o != nil && !IsNil(o.SupportTpclResInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportTpclResInfo gets a reference to the given bool and assigns it to the SupportTpclResInfo field.
+func (o *OswVO) SetSupportTpclResInfo(v bool) {
+	o.SupportTpclResInfo = &v
 }
 
 // GetSupportVrf returns the SupportVrf field value if set, zero value otherwise.
@@ -4033,6 +4271,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomName) {
 		toSerialize["customName"] = o.CustomName
 	}
+	if !IsNil(o.DefaultGroupSpeedCap) {
+		toSerialize["defaultGroupSpeedCap"] = o.DefaultGroupSpeedCap
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -4159,6 +4400,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ModelVersion) {
 		toSerialize["modelVersion"] = o.ModelVersion
 	}
+	if !IsNil(o.MstpInsNo) {
+		toSerialize["mstpInsNo"] = o.MstpInsNo
+	}
 	if !IsNil(o.MstpInsNum) {
 		toSerialize["mstpInsNum"] = o.MstpInsNum
 	}
@@ -4210,6 +4454,12 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
 	}
+	if !IsNil(o.RpvstExtendSupport) {
+		toSerialize["rpvstExtendSupport"] = o.RpvstExtendSupport
+	}
+	if !IsNil(o.RpvstInsNum) {
+		toSerialize["rpvstInsNum"] = o.RpvstInsNum
+	}
 	if !IsNil(o.Sdm) {
 		toSerialize["sdm"] = o.Sdm
 	}
@@ -4230,6 +4480,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.StackPortCap) {
 		toSerialize["stackPortCap"] = o.StackPortCap
+	}
+	if !IsNil(o.StackPortConfigCaps) {
+		toSerialize["stackPortConfigCaps"] = o.StackPortConfigCaps
 	}
 	if !IsNil(o.StackPorts) {
 		toSerialize["stackPorts"] = o.StackPorts
@@ -4297,8 +4550,14 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SupportSdm) {
 		toSerialize["supportSdm"] = o.SupportSdm
 	}
+	if !IsNil(o.SupportStackGroupSpeed) {
+		toSerialize["supportStackGroupSpeed"] = o.SupportStackGroupSpeed
+	}
 	if !IsNil(o.SupportStp) {
 		toSerialize["supportStp"] = o.SupportStp
+	}
+	if !IsNil(o.SupportTpclResInfo) {
+		toSerialize["supportTpclResInfo"] = o.SupportTpclResInfo
 	}
 	if !IsNil(o.SupportVrf) {
 		toSerialize["supportVrf"] = o.SupportVrf

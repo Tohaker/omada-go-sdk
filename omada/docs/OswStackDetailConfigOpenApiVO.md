@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **LoopbackDetectEnable** | Pointer to **bool** | LoopbackDetect enable status | [optional] 
 **MaxAge** | Pointer to **int32** | STP maxAge should be should be within the range of 6-40 | [optional] 
 **MaxHops** | Pointer to **int32** | STP maxHops should be should be within the range of 1-40 | [optional] 
-**Mstp** | Pointer to [**OswStpMstpConfig**](OswStpMstpConfig.md) |  | [optional] 
+**Mstp** | Pointer to [**OswStpRpvstVO**](OswStpRpvstVO.md) |  | [optional] 
 **MvlanBridgeVlan** | Pointer to **int32** | Only valid when mvlanNetworkId is bridge vlan | [optional] 
 **MvlanNetworkId** | Pointer to **string** | Management VLAN network ID | [optional] 
 **Name** | Pointer to **string** | Stack Name | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **QosConfig** | Pointer to [**OswQosConfigVO**](OswQosConfigVO.md) |  | [optional] 
 **RememberDevice** | Pointer to **int32** | Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site | [optional] 
 **Snmp** | Pointer to [**OswSnmpVO**](OswSnmpVO.md) |  | [optional] 
-**Stp** | Pointer to **int32** | Spanning Tree Protocol should be a value as follows: 1: STP; 2: RSTP; 3: MSTP; 0: OFF | [optional] 
+**Stp** | Pointer to **int32** | Spanning Tree Protocol should be a value as follows: 1: STP; 2: RSTP; 3: MSTP; 4: RPVST 0: OFF | [optional] 
 **TagIds** | Pointer to **[]string** | Tag ID List | [optional] 
 **TxHoldCount** | Pointer to **int32** | STP txHoldCount should be should be within the range of 1-20 | [optional] 
 
@@ -271,20 +271,20 @@ HasMaxHops returns a boolean if a field has been set.
 
 ### GetMstp
 
-`func (o *OswStackDetailConfigOpenApiVO) GetMstp() OswStpMstpConfig`
+`func (o *OswStackDetailConfigOpenApiVO) GetMstp() OswStpRpvstVO`
 
 GetMstp returns the Mstp field if non-nil, zero value otherwise.
 
 ### GetMstpOk
 
-`func (o *OswStackDetailConfigOpenApiVO) GetMstpOk() (*OswStpMstpConfig, bool)`
+`func (o *OswStackDetailConfigOpenApiVO) GetMstpOk() (*OswStpRpvstVO, bool)`
 
 GetMstpOk returns a tuple with the Mstp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMstp
 
-`func (o *OswStackDetailConfigOpenApiVO) SetMstp(v OswStpMstpConfig)`
+`func (o *OswStackDetailConfigOpenApiVO) SetMstp(v OswStpRpvstVO)`
 
 SetMstp sets Mstp field to given value.
 

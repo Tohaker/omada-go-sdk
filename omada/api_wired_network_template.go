@@ -2902,11 +2902,11 @@ type WiredNetworkTemplateAPICreateOswLanProfileTemplateRequest struct {
 	ApiService WiredNetworkTemplateAPI
 	omadacId string
 	siteTemplateId string
-	lanProfileConfigOpenApiVO *LanProfileConfigOpenApiVO
+	lanProfileSettingOpenApiVO *LanProfileSettingOpenApiVO
 }
 
-func (r WiredNetworkTemplateAPICreateOswLanProfileTemplateRequest) LanProfileConfigOpenApiVO(lanProfileConfigOpenApiVO LanProfileConfigOpenApiVO) WiredNetworkTemplateAPICreateOswLanProfileTemplateRequest {
-	r.lanProfileConfigOpenApiVO = &lanProfileConfigOpenApiVO
+func (r WiredNetworkTemplateAPICreateOswLanProfileTemplateRequest) LanProfileSettingOpenApiVO(lanProfileSettingOpenApiVO LanProfileSettingOpenApiVO) WiredNetworkTemplateAPICreateOswLanProfileTemplateRequest {
+	r.lanProfileSettingOpenApiVO = &lanProfileSettingOpenApiVO
 	return r
 }
 
@@ -2955,8 +2955,8 @@ func (a *WiredNetworkTemplateAPIService) CreateOswLanProfileTemplateExecute(r Wi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.lanProfileConfigOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("lanProfileConfigOpenApiVO is required and must be specified")
+	if r.lanProfileSettingOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("lanProfileSettingOpenApiVO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2977,7 +2977,7 @@ func (a *WiredNetworkTemplateAPIService) CreateOswLanProfileTemplateExecute(r Wi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.lanProfileConfigOpenApiVO
+	localVarPostBody = r.lanProfileSettingOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -8619,11 +8619,11 @@ type WiredNetworkTemplateAPIModifyOswLanProfileTemplateRequest struct {
 	omadacId string
 	siteTemplateId string
 	profileId string
-	lanProfileConfigOpenApiVO *LanProfileConfigOpenApiVO
+	lanProfileSettingOpenApiVO *LanProfileSettingOpenApiVO
 }
 
-func (r WiredNetworkTemplateAPIModifyOswLanProfileTemplateRequest) LanProfileConfigOpenApiVO(lanProfileConfigOpenApiVO LanProfileConfigOpenApiVO) WiredNetworkTemplateAPIModifyOswLanProfileTemplateRequest {
-	r.lanProfileConfigOpenApiVO = &lanProfileConfigOpenApiVO
+func (r WiredNetworkTemplateAPIModifyOswLanProfileTemplateRequest) LanProfileSettingOpenApiVO(lanProfileSettingOpenApiVO LanProfileSettingOpenApiVO) WiredNetworkTemplateAPIModifyOswLanProfileTemplateRequest {
+	r.lanProfileSettingOpenApiVO = &lanProfileSettingOpenApiVO
 	return r
 }
 
@@ -8675,8 +8675,8 @@ func (a *WiredNetworkTemplateAPIService) ModifyOswLanProfileTemplateExecute(r Wi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.lanProfileConfigOpenApiVO == nil {
-		return localVarReturnValue, nil, reportError("lanProfileConfigOpenApiVO is required and must be specified")
+	if r.lanProfileSettingOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("lanProfileSettingOpenApiVO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -8697,7 +8697,7 @@ func (a *WiredNetworkTemplateAPIService) ModifyOswLanProfileTemplateExecute(r Wi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.lanProfileConfigOpenApiVO
+	localVarPostBody = r.lanProfileSettingOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -363,6 +363,22 @@ type ServiceAPI interface {
 	GetMldExecute(r ServiceAPIGetMldRequest) (*OperationResponseMldOpenApiVO, *http.Response, error)
 
 	/*
+	GetSnmpIncompatibleDevices Get the list of site devices that do not support SNMP v3 enhanced configuration
+
+	Get the list of site devices that do not support SNMP v3 enhanced configuration.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ServiceAPIGetSnmpIncompatibleDevicesRequest
+	*/
+	GetSnmpIncompatibleDevices(ctx context.Context, omadacId string, siteId string) ServiceAPIGetSnmpIncompatibleDevicesRequest
+
+	// GetSnmpIncompatibleDevicesExecute executes the request
+	//  @return OperationResponseGridVODeviceVO
+	GetSnmpIncompatibleDevicesExecute(r ServiceAPIGetSnmpIncompatibleDevicesRequest) (*OperationResponseGridVODeviceVO, *http.Response, error)
+
+	/*
 	GetSnmpSetting Get SNMP setting
 
 	Get SNMP setting info of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
@@ -3357,6 +3373,149 @@ func (a *ServiceAPIService) GetMldExecute(r ServiceAPIGetMldRequest) (*Operation
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ServiceAPIGetSnmpIncompatibleDevicesRequest struct {
+	ctx context.Context
+	ApiService ServiceAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+}
+
+// Start page number. Start from 1.
+func (r ServiceAPIGetSnmpIncompatibleDevicesRequest) Page(page int32) ServiceAPIGetSnmpIncompatibleDevicesRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r ServiceAPIGetSnmpIncompatibleDevicesRequest) PageSize(pageSize int32) ServiceAPIGetSnmpIncompatibleDevicesRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ServiceAPIGetSnmpIncompatibleDevicesRequest) Execute() (*OperationResponseGridVODeviceVO, *http.Response, error) {
+	return r.ApiService.GetSnmpIncompatibleDevicesExecute(r)
+}
+
+/*
+GetSnmpIncompatibleDevices Get the list of site devices that do not support SNMP v3 enhanced configuration
+
+Get the list of site devices that do not support SNMP v3 enhanced configuration.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ServiceAPIGetSnmpIncompatibleDevicesRequest
+*/
+func (a *ServiceAPIService) GetSnmpIncompatibleDevices(ctx context.Context, omadacId string, siteId string) ServiceAPIGetSnmpIncompatibleDevicesRequest {
+	return ServiceAPIGetSnmpIncompatibleDevicesRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVODeviceVO
+func (a *ServiceAPIService) GetSnmpIncompatibleDevicesExecute(r ServiceAPIGetSnmpIncompatibleDevicesRequest) (*OperationResponseGridVODeviceVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVODeviceVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.GetSnmpIncompatibleDevices")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp/incompatible-devices"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

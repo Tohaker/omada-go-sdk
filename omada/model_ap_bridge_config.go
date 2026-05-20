@@ -12,8 +12,6 @@ package omada
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ApBridgeConfig type satisfies the MappedNullable interface at compile time
@@ -22,21 +20,20 @@ var _ MappedNullable = &ApBridgeConfig{}
 // ApBridgeConfig struct for ApBridgeConfig
 type ApBridgeConfig struct {
 	// Bridge SSID name. It should contain 1 to 32 UTF-8 characters.
-	BridgeSsidName string `json:"bridgeSsidName"`
+	BridgeSsidName *string `json:"bridgeSsidName,omitempty"`
 	// Bridge SSID password. It should contain 8-63 printable ASCII characters.
-	BridgeSsidPassword string `json:"bridgeSsidPassword"`
+	BridgeSsidPassword *string `json:"bridgeSsidPassword,omitempty"`
+	// Bridge DIP Switch config status. 0: disable, 1: enable.
+	HwSwitch *int32 `json:"hwSwitch,omitempty"`
+	TdmaConfig *ApBridgeTdmaConfigVO `json:"tdmaConfig,omitempty"`
 }
-
-type _ApBridgeConfig ApBridgeConfig
 
 // NewApBridgeConfig instantiates a new ApBridgeConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApBridgeConfig(bridgeSsidName string, bridgeSsidPassword string) *ApBridgeConfig {
+func NewApBridgeConfig() *ApBridgeConfig {
 	this := ApBridgeConfig{}
-	this.BridgeSsidName = bridgeSsidName
-	this.BridgeSsidPassword = bridgeSsidPassword
 	return &this
 }
 
@@ -48,52 +45,132 @@ func NewApBridgeConfigWithDefaults() *ApBridgeConfig {
 	return &this
 }
 
-// GetBridgeSsidName returns the BridgeSsidName field value
+// GetBridgeSsidName returns the BridgeSsidName field value if set, zero value otherwise.
 func (o *ApBridgeConfig) GetBridgeSsidName() string {
-	if o == nil {
+	if o == nil || IsNil(o.BridgeSsidName) {
 		var ret string
 		return ret
 	}
-
-	return o.BridgeSsidName
+	return *o.BridgeSsidName
 }
 
-// GetBridgeSsidNameOk returns a tuple with the BridgeSsidName field value
+// GetBridgeSsidNameOk returns a tuple with the BridgeSsidName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApBridgeConfig) GetBridgeSsidNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.BridgeSsidName) {
 		return nil, false
 	}
-	return &o.BridgeSsidName, true
+	return o.BridgeSsidName, true
 }
 
-// SetBridgeSsidName sets field value
+// HasBridgeSsidName returns a boolean if a field has been set.
+func (o *ApBridgeConfig) HasBridgeSsidName() bool {
+	if o != nil && !IsNil(o.BridgeSsidName) {
+		return true
+	}
+
+	return false
+}
+
+// SetBridgeSsidName gets a reference to the given string and assigns it to the BridgeSsidName field.
 func (o *ApBridgeConfig) SetBridgeSsidName(v string) {
-	o.BridgeSsidName = v
+	o.BridgeSsidName = &v
 }
 
-// GetBridgeSsidPassword returns the BridgeSsidPassword field value
+// GetBridgeSsidPassword returns the BridgeSsidPassword field value if set, zero value otherwise.
 func (o *ApBridgeConfig) GetBridgeSsidPassword() string {
-	if o == nil {
+	if o == nil || IsNil(o.BridgeSsidPassword) {
 		var ret string
 		return ret
 	}
-
-	return o.BridgeSsidPassword
+	return *o.BridgeSsidPassword
 }
 
-// GetBridgeSsidPasswordOk returns a tuple with the BridgeSsidPassword field value
+// GetBridgeSsidPasswordOk returns a tuple with the BridgeSsidPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApBridgeConfig) GetBridgeSsidPasswordOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.BridgeSsidPassword) {
 		return nil, false
 	}
-	return &o.BridgeSsidPassword, true
+	return o.BridgeSsidPassword, true
 }
 
-// SetBridgeSsidPassword sets field value
+// HasBridgeSsidPassword returns a boolean if a field has been set.
+func (o *ApBridgeConfig) HasBridgeSsidPassword() bool {
+	if o != nil && !IsNil(o.BridgeSsidPassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetBridgeSsidPassword gets a reference to the given string and assigns it to the BridgeSsidPassword field.
 func (o *ApBridgeConfig) SetBridgeSsidPassword(v string) {
-	o.BridgeSsidPassword = v
+	o.BridgeSsidPassword = &v
+}
+
+// GetHwSwitch returns the HwSwitch field value if set, zero value otherwise.
+func (o *ApBridgeConfig) GetHwSwitch() int32 {
+	if o == nil || IsNil(o.HwSwitch) {
+		var ret int32
+		return ret
+	}
+	return *o.HwSwitch
+}
+
+// GetHwSwitchOk returns a tuple with the HwSwitch field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApBridgeConfig) GetHwSwitchOk() (*int32, bool) {
+	if o == nil || IsNil(o.HwSwitch) {
+		return nil, false
+	}
+	return o.HwSwitch, true
+}
+
+// HasHwSwitch returns a boolean if a field has been set.
+func (o *ApBridgeConfig) HasHwSwitch() bool {
+	if o != nil && !IsNil(o.HwSwitch) {
+		return true
+	}
+
+	return false
+}
+
+// SetHwSwitch gets a reference to the given int32 and assigns it to the HwSwitch field.
+func (o *ApBridgeConfig) SetHwSwitch(v int32) {
+	o.HwSwitch = &v
+}
+
+// GetTdmaConfig returns the TdmaConfig field value if set, zero value otherwise.
+func (o *ApBridgeConfig) GetTdmaConfig() ApBridgeTdmaConfigVO {
+	if o == nil || IsNil(o.TdmaConfig) {
+		var ret ApBridgeTdmaConfigVO
+		return ret
+	}
+	return *o.TdmaConfig
+}
+
+// GetTdmaConfigOk returns a tuple with the TdmaConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApBridgeConfig) GetTdmaConfigOk() (*ApBridgeTdmaConfigVO, bool) {
+	if o == nil || IsNil(o.TdmaConfig) {
+		return nil, false
+	}
+	return o.TdmaConfig, true
+}
+
+// HasTdmaConfig returns a boolean if a field has been set.
+func (o *ApBridgeConfig) HasTdmaConfig() bool {
+	if o != nil && !IsNil(o.TdmaConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetTdmaConfig gets a reference to the given ApBridgeTdmaConfigVO and assigns it to the TdmaConfig field.
+func (o *ApBridgeConfig) SetTdmaConfig(v ApBridgeTdmaConfigVO) {
+	o.TdmaConfig = &v
 }
 
 func (o ApBridgeConfig) MarshalJSON() ([]byte, error) {
@@ -106,47 +183,19 @@ func (o ApBridgeConfig) MarshalJSON() ([]byte, error) {
 
 func (o ApBridgeConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["bridgeSsidName"] = o.BridgeSsidName
-	toSerialize["bridgeSsidPassword"] = o.BridgeSsidPassword
+	if !IsNil(o.BridgeSsidName) {
+		toSerialize["bridgeSsidName"] = o.BridgeSsidName
+	}
+	if !IsNil(o.BridgeSsidPassword) {
+		toSerialize["bridgeSsidPassword"] = o.BridgeSsidPassword
+	}
+	if !IsNil(o.HwSwitch) {
+		toSerialize["hwSwitch"] = o.HwSwitch
+	}
+	if !IsNil(o.TdmaConfig) {
+		toSerialize["tdmaConfig"] = o.TdmaConfig
+	}
 	return toSerialize, nil
-}
-
-func (o *ApBridgeConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"bridgeSsidName",
-		"bridgeSsidPassword",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varApBridgeConfig := _ApBridgeConfig{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varApBridgeConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ApBridgeConfig(varApBridgeConfig)
-
-	return err
 }
 
 type NullableApBridgeConfig struct {

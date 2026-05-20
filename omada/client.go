@@ -329,6 +329,8 @@ type APIClient struct {
 
 	WebhookSettingAPI WebhookSettingAPI
 
+	WiFiCallingTrafficAPI WiFiCallingTrafficAPI
+
 	WiredNetworkAPI WiredNetworkAPI
 
 	WiredNetworkTemplateAPI WiredNetworkTemplateAPI
@@ -500,6 +502,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.VoucherAPI = (*VoucherAPIService)(&c.common)
 	c.WLANOptimizationAPI = (*WLANOptimizationAPIService)(&c.common)
 	c.WebhookSettingAPI = (*WebhookSettingAPIService)(&c.common)
+	c.WiFiCallingTrafficAPI = (*WiFiCallingTrafficAPIService)(&c.common)
 	c.WiredNetworkAPI = (*WiredNetworkAPIService)(&c.common)
 	c.WiredNetworkTemplateAPI = (*WiredNetworkTemplateAPIService)(&c.common)
 	c.WireguardVPNAPI = (*WireguardVPNAPIService)(&c.common)

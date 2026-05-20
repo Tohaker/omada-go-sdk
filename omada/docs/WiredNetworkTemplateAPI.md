@@ -1131,7 +1131,7 @@ Name | Type | Description  | Notes
 
 ## CreateOswLanProfileTemplate
 
-> ResponseIdVO CreateOswLanProfileTemplate(ctx, omadacId, siteTemplateId).LanProfileConfigOpenApiVO(lanProfileConfigOpenApiVO).Execute()
+> ResponseIdVO CreateOswLanProfileTemplate(ctx, omadacId, siteTemplateId).LanProfileSettingOpenApiVO(lanProfileSettingOpenApiVO).Execute()
 
 Create new switch profile template
 
@@ -1152,11 +1152,11 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	lanProfileConfigOpenApiVO := *openapiclient.NewLanProfileConfigOpenApiVO(int32(123), int32(123), false, false, "Name_example", "NativeNetworkId_example", int32(123), false, false) // LanProfileConfigOpenApiVO | 
+	lanProfileSettingOpenApiVO := *openapiclient.NewLanProfileSettingOpenApiVO(int32(123), int32(123), false, false, "Name_example", int32(123), false, false) // LanProfileSettingOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WiredNetworkTemplateAPI.CreateOswLanProfileTemplate(context.Background(), omadacId, siteTemplateId).LanProfileConfigOpenApiVO(lanProfileConfigOpenApiVO).Execute()
+	resp, r, err := apiClient.WiredNetworkTemplateAPI.CreateOswLanProfileTemplate(context.Background(), omadacId, siteTemplateId).LanProfileSettingOpenApiVO(lanProfileSettingOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkTemplateAPI.CreateOswLanProfileTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1184,7 +1184,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **lanProfileConfigOpenApiVO** | [**LanProfileConfigOpenApiVO**](LanProfileConfigOpenApiVO.md) |  | 
+ **lanProfileSettingOpenApiVO** | [**LanProfileSettingOpenApiVO**](LanProfileSettingOpenApiVO.md) |  | 
 
 ### Return type
 
@@ -4407,7 +4407,7 @@ Name | Type | Description  | Notes
 
 ## ModifyOswLanProfileTemplate
 
-> OperationResponseWithoutResult ModifyOswLanProfileTemplate(ctx, omadacId, siteTemplateId, profileId).LanProfileConfigOpenApiVO(lanProfileConfigOpenApiVO).Execute()
+> OperationResponseWithoutResult ModifyOswLanProfileTemplate(ctx, omadacId, siteTemplateId, profileId).LanProfileSettingOpenApiVO(lanProfileSettingOpenApiVO).Execute()
 
 Modify a switch profile template
 
@@ -4429,11 +4429,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	profileId := "profileId_example" // string | lanProfileId
-	lanProfileConfigOpenApiVO := *openapiclient.NewLanProfileConfigOpenApiVO(int32(123), int32(123), false, false, "Name_example", "NativeNetworkId_example", int32(123), false, false) // LanProfileConfigOpenApiVO | 
+	lanProfileSettingOpenApiVO := *openapiclient.NewLanProfileSettingOpenApiVO(int32(123), int32(123), false, false, "Name_example", int32(123), false, false) // LanProfileSettingOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WiredNetworkTemplateAPI.ModifyOswLanProfileTemplate(context.Background(), omadacId, siteTemplateId, profileId).LanProfileConfigOpenApiVO(lanProfileConfigOpenApiVO).Execute()
+	resp, r, err := apiClient.WiredNetworkTemplateAPI.ModifyOswLanProfileTemplate(context.Background(), omadacId, siteTemplateId, profileId).LanProfileSettingOpenApiVO(lanProfileSettingOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `WiredNetworkTemplateAPI.ModifyOswLanProfileTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4463,7 +4463,7 @@ Name | Type | Description  | Notes
 
 
 
- **lanProfileConfigOpenApiVO** | [**LanProfileConfigOpenApiVO**](LanProfileConfigOpenApiVO.md) |  | 
+ **lanProfileSettingOpenApiVO** | [**LanProfileSettingOpenApiVO**](LanProfileSettingOpenApiVO.md) |  | 
 
 ### Return type
 

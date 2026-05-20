@@ -4,10 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Blocked** | Pointer to **bool** | Blocked Or Not | [optional] 
 **BlockedType** | Pointer to **int32** | Blocked Type | [optional] 
 **BlockedVlans** | Pointer to **string** | Blocked Vlans | [optional] 
 **DownLinkMac** | Pointer to **string** | DownLink Mac | [optional] 
 **Port** | Pointer to [**WiredPortV3DTO**](WiredPortV3DTO.md) |  | [optional] 
+**RemainBlockNum** | Pointer to **int32** | Remain Block Num | [optional] 
+**RemainBlockedPortList** | Pointer to [**[]TopologyOpenApiEdgeVO**](TopologyOpenApiEdgeVO.md) | Remain Blocked PortList | [optional] 
 **UpLinkMac** | Pointer to **string** | UpLink Mac | [optional] 
 **UpLinkPort** | Pointer to [**WiredPortV3DTO**](WiredPortV3DTO.md) |  | [optional] 
 
@@ -29,6 +32,31 @@ will change when the set of required properties is changed
 NewTopologyOpenApiEdgeVOWithDefaults instantiates a new TopologyOpenApiEdgeVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBlocked
+
+`func (o *TopologyOpenApiEdgeVO) GetBlocked() bool`
+
+GetBlocked returns the Blocked field if non-nil, zero value otherwise.
+
+### GetBlockedOk
+
+`func (o *TopologyOpenApiEdgeVO) GetBlockedOk() (*bool, bool)`
+
+GetBlockedOk returns a tuple with the Blocked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlocked
+
+`func (o *TopologyOpenApiEdgeVO) SetBlocked(v bool)`
+
+SetBlocked sets Blocked field to given value.
+
+### HasBlocked
+
+`func (o *TopologyOpenApiEdgeVO) HasBlocked() bool`
+
+HasBlocked returns a boolean if a field has been set.
 
 ### GetBlockedType
 
@@ -129,6 +157,56 @@ SetPort sets Port field to given value.
 `func (o *TopologyOpenApiEdgeVO) HasPort() bool`
 
 HasPort returns a boolean if a field has been set.
+
+### GetRemainBlockNum
+
+`func (o *TopologyOpenApiEdgeVO) GetRemainBlockNum() int32`
+
+GetRemainBlockNum returns the RemainBlockNum field if non-nil, zero value otherwise.
+
+### GetRemainBlockNumOk
+
+`func (o *TopologyOpenApiEdgeVO) GetRemainBlockNumOk() (*int32, bool)`
+
+GetRemainBlockNumOk returns a tuple with the RemainBlockNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemainBlockNum
+
+`func (o *TopologyOpenApiEdgeVO) SetRemainBlockNum(v int32)`
+
+SetRemainBlockNum sets RemainBlockNum field to given value.
+
+### HasRemainBlockNum
+
+`func (o *TopologyOpenApiEdgeVO) HasRemainBlockNum() bool`
+
+HasRemainBlockNum returns a boolean if a field has been set.
+
+### GetRemainBlockedPortList
+
+`func (o *TopologyOpenApiEdgeVO) GetRemainBlockedPortList() []TopologyOpenApiEdgeVO`
+
+GetRemainBlockedPortList returns the RemainBlockedPortList field if non-nil, zero value otherwise.
+
+### GetRemainBlockedPortListOk
+
+`func (o *TopologyOpenApiEdgeVO) GetRemainBlockedPortListOk() (*[]TopologyOpenApiEdgeVO, bool)`
+
+GetRemainBlockedPortListOk returns a tuple with the RemainBlockedPortList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemainBlockedPortList
+
+`func (o *TopologyOpenApiEdgeVO) SetRemainBlockedPortList(v []TopologyOpenApiEdgeVO)`
+
+SetRemainBlockedPortList sets RemainBlockedPortList field to given value.
+
+### HasRemainBlockedPortList
+
+`func (o *TopologyOpenApiEdgeVO) HasRemainBlockedPortList() bool`
+
+HasRemainBlockedPortList returns a boolean if a field has been set.
 
 ### GetUpLinkMac
 

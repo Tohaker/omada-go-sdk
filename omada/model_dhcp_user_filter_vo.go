@@ -32,6 +32,8 @@ type DhcpUserFilterVO struct {
 	ServerMac *string `json:"serverMac,omitempty"`
 	// Dhcp Server StackIds
 	ServerStackId *string `json:"serverStackId,omitempty"`
+	// Sort rule, key: sort field, value: sort direction, value parameter may be one of asc or desc.
+	Sorts *map[string]string `json:"sorts,omitempty"`
 	// Filter Type of Dhcp User: \"device\", \"client\" or \"device, client\"
 	Type *string `json:"type,omitempty"`
 }
@@ -233,6 +235,38 @@ func (o *DhcpUserFilterVO) SetServerStackId(v string) {
 	o.ServerStackId = &v
 }
 
+// GetSorts returns the Sorts field value if set, zero value otherwise.
+func (o *DhcpUserFilterVO) GetSorts() map[string]string {
+	if o == nil || IsNil(o.Sorts) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Sorts
+}
+
+// GetSortsOk returns a tuple with the Sorts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DhcpUserFilterVO) GetSortsOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Sorts) {
+		return nil, false
+	}
+	return o.Sorts, true
+}
+
+// HasSorts returns a boolean if a field has been set.
+func (o *DhcpUserFilterVO) HasSorts() bool {
+	if o != nil && !IsNil(o.Sorts) {
+		return true
+	}
+
+	return false
+}
+
+// SetSorts gets a reference to the given map[string]string and assigns it to the Sorts field.
+func (o *DhcpUserFilterVO) SetSorts(v map[string]string) {
+	o.Sorts = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *DhcpUserFilterVO) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -288,6 +322,9 @@ func (o DhcpUserFilterVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ServerStackId) {
 		toSerialize["serverStackId"] = o.ServerStackId
+	}
+	if !IsNil(o.Sorts) {
+		toSerialize["sorts"] = o.Sorts
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

@@ -31,6 +31,12 @@ type LanProfileSettingOpenApiVO struct {
 	Dot1x int32 `json:"dot1x"`
 	// EEE enable status
 	EeeEnable *bool `json:"eeeEnable,omitempty"`
+	// ES enable status
+	EsEnable *bool `json:"esEnable,omitempty"`
+	// ES enable tagged network ids
+	EsEnableTaggedNetworkIds []string `json:"esEnableTaggedNetworkIds,omitempty"`
+	// Indicates whether ES Tagged is modified
+	EsTaggedModified *bool `json:"esTaggedModified,omitempty"`
 	// IGMP Snooping fast leave enable status
 	FastLeaveEnable *bool `json:"fastLeaveEnable,omitempty"`
 	// FlowControl enable status
@@ -47,6 +53,12 @@ type LanProfileSettingOpenApiVO struct {
 	MldFastLeaveEnable *bool `json:"mldFastLeaveEnable,omitempty"`
 	// Name should contain 1 to 128 characters.
 	Name string `json:"name"`
+	// Native Network Bridge Vlan.
+	NativeBridgeVlan *int32 `json:"nativeBridgeVlan,omitempty"`
+	// Native Network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks.
+	NativeNetworkId *string `json:"nativeNetworkId,omitempty"`
+	// network Tags configuration mode should be a value as follows: 0:allow all, 1:block all, 2:custom
+	NetworkTagsSetting *int32 `json:"networkTagsSetting,omitempty"`
 	// PoE should be a value as follows: 0: on, 1: off, 2: \"do not modify\"
 	Poe int32 `json:"poe"`
 	// Port-isolation enable status
@@ -55,8 +67,28 @@ type LanProfileSettingOpenApiVO struct {
 	SpanningTreeEnable bool `json:"spanningTreeEnable"`
 	SpanningTreeSetting *SpanningTreeSettingVO `json:"spanningTreeSetting,omitempty"`
 	StormCtrl *StormCtrlVO `json:"stormCtrl,omitempty"`
+	// Tag Network Bridge Vlan Map
+	TagBridgeVlanMap *map[string][]int32 `json:"tagBridgeVlanMap,omitempty"`
+	// Tag Network IDs
+	TagNetworkIds []string `json:"tagNetworkIds,omitempty"`
 	// Trust mode
 	TrustMode *int32 `json:"trustMode,omitempty"`
+	// Untag Network Bridge Vlan Map
+	UntagBridgeVlanMap *map[string][]int32 `json:"untagBridgeVlanMap,omitempty"`
+	// Untag Network IDs
+	UntagNetworkIds []string `json:"untagNetworkIds,omitempty"`
+	// Vlan configuration enable status
+	VlanConfigEnable *bool `json:"vlanConfigEnable,omitempty"`
+	// Voice Network Bridge Vlan
+	VoiceBridgeVlan *int32 `json:"voiceBridgeVlan,omitempty"`
+	// Voice DSCP
+	VoiceDscp *int32 `json:"voiceDscp,omitempty"`
+	// Indicates whether voice DSCP is enabled
+	VoiceDscpEnable *bool `json:"voiceDscpEnable,omitempty"`
+	// Indicates whether voice network is enabled
+	VoiceNetworkEnable *bool `json:"voiceNetworkEnable,omitempty"`
+	// Voice Network ID
+	VoiceNetworkId *string `json:"voiceNetworkId,omitempty"`
 }
 
 type _LanProfileSettingOpenApiVO LanProfileSettingOpenApiVO
@@ -260,6 +292,102 @@ func (o *LanProfileSettingOpenApiVO) HasEeeEnable() bool {
 // SetEeeEnable gets a reference to the given bool and assigns it to the EeeEnable field.
 func (o *LanProfileSettingOpenApiVO) SetEeeEnable(v bool) {
 	o.EeeEnable = &v
+}
+
+// GetEsEnable returns the EsEnable field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetEsEnable() bool {
+	if o == nil || IsNil(o.EsEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.EsEnable
+}
+
+// GetEsEnableOk returns a tuple with the EsEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetEsEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.EsEnable) {
+		return nil, false
+	}
+	return o.EsEnable, true
+}
+
+// HasEsEnable returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasEsEnable() bool {
+	if o != nil && !IsNil(o.EsEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetEsEnable gets a reference to the given bool and assigns it to the EsEnable field.
+func (o *LanProfileSettingOpenApiVO) SetEsEnable(v bool) {
+	o.EsEnable = &v
+}
+
+// GetEsEnableTaggedNetworkIds returns the EsEnableTaggedNetworkIds field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetEsEnableTaggedNetworkIds() []string {
+	if o == nil || IsNil(o.EsEnableTaggedNetworkIds) {
+		var ret []string
+		return ret
+	}
+	return o.EsEnableTaggedNetworkIds
+}
+
+// GetEsEnableTaggedNetworkIdsOk returns a tuple with the EsEnableTaggedNetworkIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetEsEnableTaggedNetworkIdsOk() ([]string, bool) {
+	if o == nil || IsNil(o.EsEnableTaggedNetworkIds) {
+		return nil, false
+	}
+	return o.EsEnableTaggedNetworkIds, true
+}
+
+// HasEsEnableTaggedNetworkIds returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasEsEnableTaggedNetworkIds() bool {
+	if o != nil && !IsNil(o.EsEnableTaggedNetworkIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetEsEnableTaggedNetworkIds gets a reference to the given []string and assigns it to the EsEnableTaggedNetworkIds field.
+func (o *LanProfileSettingOpenApiVO) SetEsEnableTaggedNetworkIds(v []string) {
+	o.EsEnableTaggedNetworkIds = v
+}
+
+// GetEsTaggedModified returns the EsTaggedModified field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetEsTaggedModified() bool {
+	if o == nil || IsNil(o.EsTaggedModified) {
+		var ret bool
+		return ret
+	}
+	return *o.EsTaggedModified
+}
+
+// GetEsTaggedModifiedOk returns a tuple with the EsTaggedModified field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetEsTaggedModifiedOk() (*bool, bool) {
+	if o == nil || IsNil(o.EsTaggedModified) {
+		return nil, false
+	}
+	return o.EsTaggedModified, true
+}
+
+// HasEsTaggedModified returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasEsTaggedModified() bool {
+	if o != nil && !IsNil(o.EsTaggedModified) {
+		return true
+	}
+
+	return false
+}
+
+// SetEsTaggedModified gets a reference to the given bool and assigns it to the EsTaggedModified field.
+func (o *LanProfileSettingOpenApiVO) SetEsTaggedModified(v bool) {
+	o.EsTaggedModified = &v
 }
 
 // GetFastLeaveEnable returns the FastLeaveEnable field value if set, zero value otherwise.
@@ -494,6 +622,102 @@ func (o *LanProfileSettingOpenApiVO) SetName(v string) {
 	o.Name = v
 }
 
+// GetNativeBridgeVlan returns the NativeBridgeVlan field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetNativeBridgeVlan() int32 {
+	if o == nil || IsNil(o.NativeBridgeVlan) {
+		var ret int32
+		return ret
+	}
+	return *o.NativeBridgeVlan
+}
+
+// GetNativeBridgeVlanOk returns a tuple with the NativeBridgeVlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetNativeBridgeVlanOk() (*int32, bool) {
+	if o == nil || IsNil(o.NativeBridgeVlan) {
+		return nil, false
+	}
+	return o.NativeBridgeVlan, true
+}
+
+// HasNativeBridgeVlan returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasNativeBridgeVlan() bool {
+	if o != nil && !IsNil(o.NativeBridgeVlan) {
+		return true
+	}
+
+	return false
+}
+
+// SetNativeBridgeVlan gets a reference to the given int32 and assigns it to the NativeBridgeVlan field.
+func (o *LanProfileSettingOpenApiVO) SetNativeBridgeVlan(v int32) {
+	o.NativeBridgeVlan = &v
+}
+
+// GetNativeNetworkId returns the NativeNetworkId field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetNativeNetworkId() string {
+	if o == nil || IsNil(o.NativeNetworkId) {
+		var ret string
+		return ret
+	}
+	return *o.NativeNetworkId
+}
+
+// GetNativeNetworkIdOk returns a tuple with the NativeNetworkId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetNativeNetworkIdOk() (*string, bool) {
+	if o == nil || IsNil(o.NativeNetworkId) {
+		return nil, false
+	}
+	return o.NativeNetworkId, true
+}
+
+// HasNativeNetworkId returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasNativeNetworkId() bool {
+	if o != nil && !IsNil(o.NativeNetworkId) {
+		return true
+	}
+
+	return false
+}
+
+// SetNativeNetworkId gets a reference to the given string and assigns it to the NativeNetworkId field.
+func (o *LanProfileSettingOpenApiVO) SetNativeNetworkId(v string) {
+	o.NativeNetworkId = &v
+}
+
+// GetNetworkTagsSetting returns the NetworkTagsSetting field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetNetworkTagsSetting() int32 {
+	if o == nil || IsNil(o.NetworkTagsSetting) {
+		var ret int32
+		return ret
+	}
+	return *o.NetworkTagsSetting
+}
+
+// GetNetworkTagsSettingOk returns a tuple with the NetworkTagsSetting field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetNetworkTagsSettingOk() (*int32, bool) {
+	if o == nil || IsNil(o.NetworkTagsSetting) {
+		return nil, false
+	}
+	return o.NetworkTagsSetting, true
+}
+
+// HasNetworkTagsSetting returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasNetworkTagsSetting() bool {
+	if o != nil && !IsNil(o.NetworkTagsSetting) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkTagsSetting gets a reference to the given int32 and assigns it to the NetworkTagsSetting field.
+func (o *LanProfileSettingOpenApiVO) SetNetworkTagsSetting(v int32) {
+	o.NetworkTagsSetting = &v
+}
+
 // GetPoe returns the Poe field value
 func (o *LanProfileSettingOpenApiVO) GetPoe() int32 {
 	if o == nil {
@@ -630,6 +854,70 @@ func (o *LanProfileSettingOpenApiVO) SetStormCtrl(v StormCtrlVO) {
 	o.StormCtrl = &v
 }
 
+// GetTagBridgeVlanMap returns the TagBridgeVlanMap field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetTagBridgeVlanMap() map[string][]int32 {
+	if o == nil || IsNil(o.TagBridgeVlanMap) {
+		var ret map[string][]int32
+		return ret
+	}
+	return *o.TagBridgeVlanMap
+}
+
+// GetTagBridgeVlanMapOk returns a tuple with the TagBridgeVlanMap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetTagBridgeVlanMapOk() (*map[string][]int32, bool) {
+	if o == nil || IsNil(o.TagBridgeVlanMap) {
+		return nil, false
+	}
+	return o.TagBridgeVlanMap, true
+}
+
+// HasTagBridgeVlanMap returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasTagBridgeVlanMap() bool {
+	if o != nil && !IsNil(o.TagBridgeVlanMap) {
+		return true
+	}
+
+	return false
+}
+
+// SetTagBridgeVlanMap gets a reference to the given map[string][]int32 and assigns it to the TagBridgeVlanMap field.
+func (o *LanProfileSettingOpenApiVO) SetTagBridgeVlanMap(v map[string][]int32) {
+	o.TagBridgeVlanMap = &v
+}
+
+// GetTagNetworkIds returns the TagNetworkIds field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetTagNetworkIds() []string {
+	if o == nil || IsNil(o.TagNetworkIds) {
+		var ret []string
+		return ret
+	}
+	return o.TagNetworkIds
+}
+
+// GetTagNetworkIdsOk returns a tuple with the TagNetworkIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetTagNetworkIdsOk() ([]string, bool) {
+	if o == nil || IsNil(o.TagNetworkIds) {
+		return nil, false
+	}
+	return o.TagNetworkIds, true
+}
+
+// HasTagNetworkIds returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasTagNetworkIds() bool {
+	if o != nil && !IsNil(o.TagNetworkIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetTagNetworkIds gets a reference to the given []string and assigns it to the TagNetworkIds field.
+func (o *LanProfileSettingOpenApiVO) SetTagNetworkIds(v []string) {
+	o.TagNetworkIds = v
+}
+
 // GetTrustMode returns the TrustMode field value if set, zero value otherwise.
 func (o *LanProfileSettingOpenApiVO) GetTrustMode() int32 {
 	if o == nil || IsNil(o.TrustMode) {
@@ -662,6 +950,262 @@ func (o *LanProfileSettingOpenApiVO) SetTrustMode(v int32) {
 	o.TrustMode = &v
 }
 
+// GetUntagBridgeVlanMap returns the UntagBridgeVlanMap field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetUntagBridgeVlanMap() map[string][]int32 {
+	if o == nil || IsNil(o.UntagBridgeVlanMap) {
+		var ret map[string][]int32
+		return ret
+	}
+	return *o.UntagBridgeVlanMap
+}
+
+// GetUntagBridgeVlanMapOk returns a tuple with the UntagBridgeVlanMap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetUntagBridgeVlanMapOk() (*map[string][]int32, bool) {
+	if o == nil || IsNil(o.UntagBridgeVlanMap) {
+		return nil, false
+	}
+	return o.UntagBridgeVlanMap, true
+}
+
+// HasUntagBridgeVlanMap returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasUntagBridgeVlanMap() bool {
+	if o != nil && !IsNil(o.UntagBridgeVlanMap) {
+		return true
+	}
+
+	return false
+}
+
+// SetUntagBridgeVlanMap gets a reference to the given map[string][]int32 and assigns it to the UntagBridgeVlanMap field.
+func (o *LanProfileSettingOpenApiVO) SetUntagBridgeVlanMap(v map[string][]int32) {
+	o.UntagBridgeVlanMap = &v
+}
+
+// GetUntagNetworkIds returns the UntagNetworkIds field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetUntagNetworkIds() []string {
+	if o == nil || IsNil(o.UntagNetworkIds) {
+		var ret []string
+		return ret
+	}
+	return o.UntagNetworkIds
+}
+
+// GetUntagNetworkIdsOk returns a tuple with the UntagNetworkIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetUntagNetworkIdsOk() ([]string, bool) {
+	if o == nil || IsNil(o.UntagNetworkIds) {
+		return nil, false
+	}
+	return o.UntagNetworkIds, true
+}
+
+// HasUntagNetworkIds returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasUntagNetworkIds() bool {
+	if o != nil && !IsNil(o.UntagNetworkIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetUntagNetworkIds gets a reference to the given []string and assigns it to the UntagNetworkIds field.
+func (o *LanProfileSettingOpenApiVO) SetUntagNetworkIds(v []string) {
+	o.UntagNetworkIds = v
+}
+
+// GetVlanConfigEnable returns the VlanConfigEnable field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetVlanConfigEnable() bool {
+	if o == nil || IsNil(o.VlanConfigEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.VlanConfigEnable
+}
+
+// GetVlanConfigEnableOk returns a tuple with the VlanConfigEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetVlanConfigEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.VlanConfigEnable) {
+		return nil, false
+	}
+	return o.VlanConfigEnable, true
+}
+
+// HasVlanConfigEnable returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasVlanConfigEnable() bool {
+	if o != nil && !IsNil(o.VlanConfigEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanConfigEnable gets a reference to the given bool and assigns it to the VlanConfigEnable field.
+func (o *LanProfileSettingOpenApiVO) SetVlanConfigEnable(v bool) {
+	o.VlanConfigEnable = &v
+}
+
+// GetVoiceBridgeVlan returns the VoiceBridgeVlan field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetVoiceBridgeVlan() int32 {
+	if o == nil || IsNil(o.VoiceBridgeVlan) {
+		var ret int32
+		return ret
+	}
+	return *o.VoiceBridgeVlan
+}
+
+// GetVoiceBridgeVlanOk returns a tuple with the VoiceBridgeVlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetVoiceBridgeVlanOk() (*int32, bool) {
+	if o == nil || IsNil(o.VoiceBridgeVlan) {
+		return nil, false
+	}
+	return o.VoiceBridgeVlan, true
+}
+
+// HasVoiceBridgeVlan returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasVoiceBridgeVlan() bool {
+	if o != nil && !IsNil(o.VoiceBridgeVlan) {
+		return true
+	}
+
+	return false
+}
+
+// SetVoiceBridgeVlan gets a reference to the given int32 and assigns it to the VoiceBridgeVlan field.
+func (o *LanProfileSettingOpenApiVO) SetVoiceBridgeVlan(v int32) {
+	o.VoiceBridgeVlan = &v
+}
+
+// GetVoiceDscp returns the VoiceDscp field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetVoiceDscp() int32 {
+	if o == nil || IsNil(o.VoiceDscp) {
+		var ret int32
+		return ret
+	}
+	return *o.VoiceDscp
+}
+
+// GetVoiceDscpOk returns a tuple with the VoiceDscp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetVoiceDscpOk() (*int32, bool) {
+	if o == nil || IsNil(o.VoiceDscp) {
+		return nil, false
+	}
+	return o.VoiceDscp, true
+}
+
+// HasVoiceDscp returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasVoiceDscp() bool {
+	if o != nil && !IsNil(o.VoiceDscp) {
+		return true
+	}
+
+	return false
+}
+
+// SetVoiceDscp gets a reference to the given int32 and assigns it to the VoiceDscp field.
+func (o *LanProfileSettingOpenApiVO) SetVoiceDscp(v int32) {
+	o.VoiceDscp = &v
+}
+
+// GetVoiceDscpEnable returns the VoiceDscpEnable field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetVoiceDscpEnable() bool {
+	if o == nil || IsNil(o.VoiceDscpEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.VoiceDscpEnable
+}
+
+// GetVoiceDscpEnableOk returns a tuple with the VoiceDscpEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetVoiceDscpEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.VoiceDscpEnable) {
+		return nil, false
+	}
+	return o.VoiceDscpEnable, true
+}
+
+// HasVoiceDscpEnable returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasVoiceDscpEnable() bool {
+	if o != nil && !IsNil(o.VoiceDscpEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetVoiceDscpEnable gets a reference to the given bool and assigns it to the VoiceDscpEnable field.
+func (o *LanProfileSettingOpenApiVO) SetVoiceDscpEnable(v bool) {
+	o.VoiceDscpEnable = &v
+}
+
+// GetVoiceNetworkEnable returns the VoiceNetworkEnable field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetVoiceNetworkEnable() bool {
+	if o == nil || IsNil(o.VoiceNetworkEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.VoiceNetworkEnable
+}
+
+// GetVoiceNetworkEnableOk returns a tuple with the VoiceNetworkEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetVoiceNetworkEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.VoiceNetworkEnable) {
+		return nil, false
+	}
+	return o.VoiceNetworkEnable, true
+}
+
+// HasVoiceNetworkEnable returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasVoiceNetworkEnable() bool {
+	if o != nil && !IsNil(o.VoiceNetworkEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetVoiceNetworkEnable gets a reference to the given bool and assigns it to the VoiceNetworkEnable field.
+func (o *LanProfileSettingOpenApiVO) SetVoiceNetworkEnable(v bool) {
+	o.VoiceNetworkEnable = &v
+}
+
+// GetVoiceNetworkId returns the VoiceNetworkId field value if set, zero value otherwise.
+func (o *LanProfileSettingOpenApiVO) GetVoiceNetworkId() string {
+	if o == nil || IsNil(o.VoiceNetworkId) {
+		var ret string
+		return ret
+	}
+	return *o.VoiceNetworkId
+}
+
+// GetVoiceNetworkIdOk returns a tuple with the VoiceNetworkId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanProfileSettingOpenApiVO) GetVoiceNetworkIdOk() (*string, bool) {
+	if o == nil || IsNil(o.VoiceNetworkId) {
+		return nil, false
+	}
+	return o.VoiceNetworkId, true
+}
+
+// HasVoiceNetworkId returns a boolean if a field has been set.
+func (o *LanProfileSettingOpenApiVO) HasVoiceNetworkId() bool {
+	if o != nil && !IsNil(o.VoiceNetworkId) {
+		return true
+	}
+
+	return false
+}
+
+// SetVoiceNetworkId gets a reference to the given string and assigns it to the VoiceNetworkId field.
+func (o *LanProfileSettingOpenApiVO) SetVoiceNetworkId(v string) {
+	o.VoiceNetworkId = &v
+}
+
 func (o LanProfileSettingOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -686,6 +1230,15 @@ func (o LanProfileSettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EeeEnable) {
 		toSerialize["eeeEnable"] = o.EeeEnable
 	}
+	if !IsNil(o.EsEnable) {
+		toSerialize["esEnable"] = o.EsEnable
+	}
+	if !IsNil(o.EsEnableTaggedNetworkIds) {
+		toSerialize["esEnableTaggedNetworkIds"] = o.EsEnableTaggedNetworkIds
+	}
+	if !IsNil(o.EsTaggedModified) {
+		toSerialize["esTaggedModified"] = o.EsTaggedModified
+	}
 	if !IsNil(o.FastLeaveEnable) {
 		toSerialize["fastLeaveEnable"] = o.FastLeaveEnable
 	}
@@ -704,6 +1257,15 @@ func (o LanProfileSettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["mldFastLeaveEnable"] = o.MldFastLeaveEnable
 	}
 	toSerialize["name"] = o.Name
+	if !IsNil(o.NativeBridgeVlan) {
+		toSerialize["nativeBridgeVlan"] = o.NativeBridgeVlan
+	}
+	if !IsNil(o.NativeNetworkId) {
+		toSerialize["nativeNetworkId"] = o.NativeNetworkId
+	}
+	if !IsNil(o.NetworkTagsSetting) {
+		toSerialize["networkTagsSetting"] = o.NetworkTagsSetting
+	}
 	toSerialize["poe"] = o.Poe
 	toSerialize["portIsolationEnable"] = o.PortIsolationEnable
 	toSerialize["spanningTreeEnable"] = o.SpanningTreeEnable
@@ -713,8 +1275,38 @@ func (o LanProfileSettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.StormCtrl) {
 		toSerialize["stormCtrl"] = o.StormCtrl
 	}
+	if !IsNil(o.TagBridgeVlanMap) {
+		toSerialize["tagBridgeVlanMap"] = o.TagBridgeVlanMap
+	}
+	if !IsNil(o.TagNetworkIds) {
+		toSerialize["tagNetworkIds"] = o.TagNetworkIds
+	}
 	if !IsNil(o.TrustMode) {
 		toSerialize["trustMode"] = o.TrustMode
+	}
+	if !IsNil(o.UntagBridgeVlanMap) {
+		toSerialize["untagBridgeVlanMap"] = o.UntagBridgeVlanMap
+	}
+	if !IsNil(o.UntagNetworkIds) {
+		toSerialize["untagNetworkIds"] = o.UntagNetworkIds
+	}
+	if !IsNil(o.VlanConfigEnable) {
+		toSerialize["vlanConfigEnable"] = o.VlanConfigEnable
+	}
+	if !IsNil(o.VoiceBridgeVlan) {
+		toSerialize["voiceBridgeVlan"] = o.VoiceBridgeVlan
+	}
+	if !IsNil(o.VoiceDscp) {
+		toSerialize["voiceDscp"] = o.VoiceDscp
+	}
+	if !IsNil(o.VoiceDscpEnable) {
+		toSerialize["voiceDscpEnable"] = o.VoiceDscpEnable
+	}
+	if !IsNil(o.VoiceNetworkEnable) {
+		toSerialize["voiceNetworkEnable"] = o.VoiceNetworkEnable
+	}
+	if !IsNil(o.VoiceNetworkId) {
+		toSerialize["voiceNetworkId"] = o.VoiceNetworkId
 	}
 	return toSerialize, nil
 }

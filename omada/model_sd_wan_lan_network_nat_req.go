@@ -12,27 +12,35 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the SdWanLanNetworkNatReq type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SdWanLanNetworkNatReq{}
 
-// SdWanLanNetworkNatReq A list of original lan network
+// SdWanLanNetworkNatReq A list of original custom route
 type SdWanLanNetworkNatReq struct {
 	// The Gateway Subnet of the lan network
-	GatewaySubnet *string `json:"gatewaySubnet,omitempty"`
+	GatewaySubnet string `json:"gatewaySubnet"`
 	// The ID of the lan network
 	Id *string `json:"id,omitempty"`
+	// This value exists in customNetwork. If true, it indicates a conflicting route that requires mapping; routes with false should be avoided by NAT mapping.
+	NeedMap *bool `json:"needMap,omitempty"`
 	// The site ID of the lan network
-	SiteId *string `json:"siteId,omitempty"`
+	SiteId string `json:"siteId"`
 }
+
+type _SdWanLanNetworkNatReq SdWanLanNetworkNatReq
 
 // NewSdWanLanNetworkNatReq instantiates a new SdWanLanNetworkNatReq object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSdWanLanNetworkNatReq() *SdWanLanNetworkNatReq {
+func NewSdWanLanNetworkNatReq(gatewaySubnet string, siteId string) *SdWanLanNetworkNatReq {
 	this := SdWanLanNetworkNatReq{}
+	this.GatewaySubnet = gatewaySubnet
+	this.SiteId = siteId
 	return &this
 }
 
@@ -44,36 +52,28 @@ func NewSdWanLanNetworkNatReqWithDefaults() *SdWanLanNetworkNatReq {
 	return &this
 }
 
-// GetGatewaySubnet returns the GatewaySubnet field value if set, zero value otherwise.
+// GetGatewaySubnet returns the GatewaySubnet field value
 func (o *SdWanLanNetworkNatReq) GetGatewaySubnet() string {
-	if o == nil || IsNil(o.GatewaySubnet) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.GatewaySubnet
+
+	return o.GatewaySubnet
 }
 
-// GetGatewaySubnetOk returns a tuple with the GatewaySubnet field value if set, nil otherwise
+// GetGatewaySubnetOk returns a tuple with the GatewaySubnet field value
 // and a boolean to check if the value has been set.
 func (o *SdWanLanNetworkNatReq) GetGatewaySubnetOk() (*string, bool) {
-	if o == nil || IsNil(o.GatewaySubnet) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GatewaySubnet, true
+	return &o.GatewaySubnet, true
 }
 
-// HasGatewaySubnet returns a boolean if a field has been set.
-func (o *SdWanLanNetworkNatReq) HasGatewaySubnet() bool {
-	if o != nil && !IsNil(o.GatewaySubnet) {
-		return true
-	}
-
-	return false
-}
-
-// SetGatewaySubnet gets a reference to the given string and assigns it to the GatewaySubnet field.
+// SetGatewaySubnet sets field value
 func (o *SdWanLanNetworkNatReq) SetGatewaySubnet(v string) {
-	o.GatewaySubnet = &v
+	o.GatewaySubnet = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -108,36 +108,60 @@ func (o *SdWanLanNetworkNatReq) SetId(v string) {
 	o.Id = &v
 }
 
-// GetSiteId returns the SiteId field value if set, zero value otherwise.
-func (o *SdWanLanNetworkNatReq) GetSiteId() string {
-	if o == nil || IsNil(o.SiteId) {
-		var ret string
+// GetNeedMap returns the NeedMap field value if set, zero value otherwise.
+func (o *SdWanLanNetworkNatReq) GetNeedMap() bool {
+	if o == nil || IsNil(o.NeedMap) {
+		var ret bool
 		return ret
 	}
-	return *o.SiteId
+	return *o.NeedMap
 }
 
-// GetSiteIdOk returns a tuple with the SiteId field value if set, nil otherwise
+// GetNeedMapOk returns a tuple with the NeedMap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SdWanLanNetworkNatReq) GetSiteIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteId) {
+func (o *SdWanLanNetworkNatReq) GetNeedMapOk() (*bool, bool) {
+	if o == nil || IsNil(o.NeedMap) {
 		return nil, false
 	}
-	return o.SiteId, true
+	return o.NeedMap, true
 }
 
-// HasSiteId returns a boolean if a field has been set.
-func (o *SdWanLanNetworkNatReq) HasSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
+// HasNeedMap returns a boolean if a field has been set.
+func (o *SdWanLanNetworkNatReq) HasNeedMap() bool {
+	if o != nil && !IsNil(o.NeedMap) {
 		return true
 	}
 
 	return false
 }
 
-// SetSiteId gets a reference to the given string and assigns it to the SiteId field.
+// SetNeedMap gets a reference to the given bool and assigns it to the NeedMap field.
+func (o *SdWanLanNetworkNatReq) SetNeedMap(v bool) {
+	o.NeedMap = &v
+}
+
+// GetSiteId returns the SiteId field value
+func (o *SdWanLanNetworkNatReq) GetSiteId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SiteId
+}
+
+// GetSiteIdOk returns a tuple with the SiteId field value
+// and a boolean to check if the value has been set.
+func (o *SdWanLanNetworkNatReq) GetSiteIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SiteId, true
+}
+
+// SetSiteId sets field value
 func (o *SdWanLanNetworkNatReq) SetSiteId(v string) {
-	o.SiteId = &v
+	o.SiteId = v
 }
 
 func (o SdWanLanNetworkNatReq) MarshalJSON() ([]byte, error) {
@@ -150,16 +174,53 @@ func (o SdWanLanNetworkNatReq) MarshalJSON() ([]byte, error) {
 
 func (o SdWanLanNetworkNatReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GatewaySubnet) {
-		toSerialize["gatewaySubnet"] = o.GatewaySubnet
-	}
+	toSerialize["gatewaySubnet"] = o.GatewaySubnet
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.SiteId) {
-		toSerialize["siteId"] = o.SiteId
+	if !IsNil(o.NeedMap) {
+		toSerialize["needMap"] = o.NeedMap
 	}
+	toSerialize["siteId"] = o.SiteId
 	return toSerialize, nil
+}
+
+func (o *SdWanLanNetworkNatReq) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"gatewaySubnet",
+		"siteId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSdWanLanNetworkNatReq := _SdWanLanNetworkNatReq{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varSdWanLanNetworkNatReq)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SdWanLanNetworkNatReq(varSdWanLanNetworkNatReq)
+
+	return err
 }
 
 type NullableSdWanLanNetworkNatReq struct {

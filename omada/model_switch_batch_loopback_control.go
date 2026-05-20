@@ -34,7 +34,7 @@ type SwitchBatchLoopbackControl struct {
 	Mstp *OswStpMstpConfigOpenApiVO `json:"mstp,omitempty"`
 	// Parameter [priority] should be an integer from 0 to 61440 and divisible by 4096.
 	Priority *int32 `json:"priority,omitempty"`
-	// STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP 
+	// STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP
 	Stp *int32 `json:"stp,omitempty"`
 	// Parameter [switchMacList] should contain at least one switch MAC
 	SwitchMacList []string `json:"switchMacList"`

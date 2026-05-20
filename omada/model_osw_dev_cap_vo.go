@@ -60,7 +60,7 @@ type OswDevCapVO struct {
 	LoopbackInterfaceSupport *bool `json:"loopbackInterfaceSupport,omitempty"`
 	// Loopback Detect Vlan Based Support
 	LoopbackVlanBasedSupport *bool `json:"loopbackVlanBasedSupport,omitempty"`
-	// Max Lag Member
+	// Max Lacp Member
 	MaxLagMember *int32 `json:"maxLagMember,omitempty"`
 	// Max Lag Num
 	MaxLagNum *int32 `json:"maxLagNum,omitempty"`
@@ -77,6 +77,8 @@ type OswDevCapVO struct {
 	MirrorSupport *bool `json:"mirrorSupport,omitempty"`
 	MlagGroupId *int32 `json:"mlagGroupId,omitempty"`
 	MlagVersion *string `json:"mlagVersion,omitempty"`
+	// Mstp Max InstanceId
+	MstpInsNo *int32 `json:"mstpInsNo,omitempty"`
 	// Mstp Instance Num
 	MstpInsNum *int32 `json:"mstpInsNum,omitempty"`
 	// Need full sync
@@ -98,6 +100,10 @@ type OswDevCapVO struct {
 	QosForVlanSupport *bool `json:"qosForVlanSupport,omitempty"`
 	// QoS Support
 	QosSupport *bool `json:"qosSupport,omitempty"`
+	// RPVST Extend Support
+	RpvstExtendSupport *bool `json:"rpvstExtendSupport,omitempty"`
+	// Max Rpvst Instance Num
+	RpvstInsNum *int32 `json:"rpvstInsNum,omitempty"`
 	// SFP Begin Num
 	SfpBeginNum *int32 `json:"sfpBeginNum,omitempty"`
 	// SFP Num
@@ -143,6 +149,8 @@ type OswDevCapVO struct {
 	// Whether the device supports showing running config
 	SupportRunningConfig *bool `json:"supportRunningConfig,omitempty"`
 	SupportSdm *bool `json:"supportSdm,omitempty"`
+	// Whether the device supports returning TPCL resource information
+	SupportTpclResInfo *bool `json:"supportTpclResInfo,omitempty"`
 	SupportVrf *bool `json:"supportVrf,omitempty"`
 	TerminalSupport *bool `json:"terminalSupport,omitempty"`
 	TracerouteSupport *bool `json:"tracerouteSupport,omitempty"`
@@ -1388,6 +1396,38 @@ func (o *OswDevCapVO) SetMlagVersion(v string) {
 	o.MlagVersion = &v
 }
 
+// GetMstpInsNo returns the MstpInsNo field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetMstpInsNo() int32 {
+	if o == nil || IsNil(o.MstpInsNo) {
+		var ret int32
+		return ret
+	}
+	return *o.MstpInsNo
+}
+
+// GetMstpInsNoOk returns a tuple with the MstpInsNo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetMstpInsNoOk() (*int32, bool) {
+	if o == nil || IsNil(o.MstpInsNo) {
+		return nil, false
+	}
+	return o.MstpInsNo, true
+}
+
+// HasMstpInsNo returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasMstpInsNo() bool {
+	if o != nil && !IsNil(o.MstpInsNo) {
+		return true
+	}
+
+	return false
+}
+
+// SetMstpInsNo gets a reference to the given int32 and assigns it to the MstpInsNo field.
+func (o *OswDevCapVO) SetMstpInsNo(v int32) {
+	o.MstpInsNo = &v
+}
+
 // GetMstpInsNum returns the MstpInsNum field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetMstpInsNum() int32 {
 	if o == nil || IsNil(o.MstpInsNum) {
@@ -1770,6 +1810,70 @@ func (o *OswDevCapVO) HasQosSupport() bool {
 // SetQosSupport gets a reference to the given bool and assigns it to the QosSupport field.
 func (o *OswDevCapVO) SetQosSupport(v bool) {
 	o.QosSupport = &v
+}
+
+// GetRpvstExtendSupport returns the RpvstExtendSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetRpvstExtendSupport() bool {
+	if o == nil || IsNil(o.RpvstExtendSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.RpvstExtendSupport
+}
+
+// GetRpvstExtendSupportOk returns a tuple with the RpvstExtendSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetRpvstExtendSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.RpvstExtendSupport) {
+		return nil, false
+	}
+	return o.RpvstExtendSupport, true
+}
+
+// HasRpvstExtendSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasRpvstExtendSupport() bool {
+	if o != nil && !IsNil(o.RpvstExtendSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetRpvstExtendSupport gets a reference to the given bool and assigns it to the RpvstExtendSupport field.
+func (o *OswDevCapVO) SetRpvstExtendSupport(v bool) {
+	o.RpvstExtendSupport = &v
+}
+
+// GetRpvstInsNum returns the RpvstInsNum field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetRpvstInsNum() int32 {
+	if o == nil || IsNil(o.RpvstInsNum) {
+		var ret int32
+		return ret
+	}
+	return *o.RpvstInsNum
+}
+
+// GetRpvstInsNumOk returns a tuple with the RpvstInsNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetRpvstInsNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.RpvstInsNum) {
+		return nil, false
+	}
+	return o.RpvstInsNum, true
+}
+
+// HasRpvstInsNum returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasRpvstInsNum() bool {
+	if o != nil && !IsNil(o.RpvstInsNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetRpvstInsNum gets a reference to the given int32 and assigns it to the RpvstInsNum field.
+func (o *OswDevCapVO) SetRpvstInsNum(v int32) {
+	o.RpvstInsNum = &v
 }
 
 // GetSfpBeginNum returns the SfpBeginNum field value if set, zero value otherwise.
@@ -2636,6 +2740,38 @@ func (o *OswDevCapVO) SetSupportSdm(v bool) {
 	o.SupportSdm = &v
 }
 
+// GetSupportTpclResInfo returns the SupportTpclResInfo field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetSupportTpclResInfo() bool {
+	if o == nil || IsNil(o.SupportTpclResInfo) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportTpclResInfo
+}
+
+// GetSupportTpclResInfoOk returns a tuple with the SupportTpclResInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetSupportTpclResInfoOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportTpclResInfo) {
+		return nil, false
+	}
+	return o.SupportTpclResInfo, true
+}
+
+// HasSupportTpclResInfo returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasSupportTpclResInfo() bool {
+	if o != nil && !IsNil(o.SupportTpclResInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportTpclResInfo gets a reference to the given bool and assigns it to the SupportTpclResInfo field.
+func (o *OswDevCapVO) SetSupportTpclResInfo(v bool) {
+	o.SupportTpclResInfo = &v
+}
+
 // GetSupportVrf returns the SupportVrf field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetSupportVrf() bool {
 	if o == nil || IsNil(o.SupportVrf) {
@@ -3016,6 +3152,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MlagVersion) {
 		toSerialize["mlagVersion"] = o.MlagVersion
 	}
+	if !IsNil(o.MstpInsNo) {
+		toSerialize["mstpInsNo"] = o.MstpInsNo
+	}
 	if !IsNil(o.MstpInsNum) {
 		toSerialize["mstpInsNum"] = o.MstpInsNum
 	}
@@ -3051,6 +3190,12 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.QosSupport) {
 		toSerialize["qosSupport"] = o.QosSupport
+	}
+	if !IsNil(o.RpvstExtendSupport) {
+		toSerialize["rpvstExtendSupport"] = o.RpvstExtendSupport
+	}
+	if !IsNil(o.RpvstInsNum) {
+		toSerialize["rpvstInsNum"] = o.RpvstInsNum
 	}
 	if !IsNil(o.SfpBeginNum) {
 		toSerialize["sfpBeginNum"] = o.SfpBeginNum
@@ -3132,6 +3277,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportSdm) {
 		toSerialize["supportSdm"] = o.SupportSdm
+	}
+	if !IsNil(o.SupportTpclResInfo) {
+		toSerialize["supportTpclResInfo"] = o.SupportTpclResInfo
 	}
 	if !IsNil(o.SupportVrf) {
 		toSerialize["supportVrf"] = o.SupportVrf

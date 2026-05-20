@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the VirtualWanIpv4DhcpOpenApiVO type satisfies the MappedNullable interface at compile time
@@ -28,17 +30,20 @@ type VirtualWanIpv4DhcpOpenApiVO struct {
 	// Host name. Parameter [hostname] should be up to 63 characters long and can only use numbers, letters, and hyphen.
 	Hostname *string `json:"hostname,omitempty"`
 	// Parameter [mtu] should be a value between 576 and 1500.
-	Mtu *int32 `json:"mtu,omitempty"`
+	Mtu int32 `json:"mtu"`
 	// Subnet mask of virtual WAN.
 	Unicast *string `json:"unicast,omitempty"`
 }
+
+type _VirtualWanIpv4DhcpOpenApiVO VirtualWanIpv4DhcpOpenApiVO
 
 // NewVirtualWanIpv4DhcpOpenApiVO instantiates a new VirtualWanIpv4DhcpOpenApiVO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualWanIpv4DhcpOpenApiVO() *VirtualWanIpv4DhcpOpenApiVO {
+func NewVirtualWanIpv4DhcpOpenApiVO(mtu int32) *VirtualWanIpv4DhcpOpenApiVO {
 	this := VirtualWanIpv4DhcpOpenApiVO{}
+	this.Mtu = mtu
 	return &this
 }
 
@@ -178,36 +183,28 @@ func (o *VirtualWanIpv4DhcpOpenApiVO) SetHostname(v string) {
 	o.Hostname = &v
 }
 
-// GetMtu returns the Mtu field value if set, zero value otherwise.
+// GetMtu returns the Mtu field value
 func (o *VirtualWanIpv4DhcpOpenApiVO) GetMtu() int32 {
-	if o == nil || IsNil(o.Mtu) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Mtu
+
+	return o.Mtu
 }
 
-// GetMtuOk returns a tuple with the Mtu field value if set, nil otherwise
+// GetMtuOk returns a tuple with the Mtu field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4DhcpOpenApiVO) GetMtuOk() (*int32, bool) {
-	if o == nil || IsNil(o.Mtu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Mtu, true
+	return &o.Mtu, true
 }
 
-// HasMtu returns a boolean if a field has been set.
-func (o *VirtualWanIpv4DhcpOpenApiVO) HasMtu() bool {
-	if o != nil && !IsNil(o.Mtu) {
-		return true
-	}
-
-	return false
-}
-
-// SetMtu gets a reference to the given int32 and assigns it to the Mtu field.
+// SetMtu sets field value
 func (o *VirtualWanIpv4DhcpOpenApiVO) SetMtu(v int32) {
-	o.Mtu = &v
+	o.Mtu = v
 }
 
 // GetUnicast returns the Unicast field value if set, zero value otherwise.
@@ -264,13 +261,48 @@ func (o VirtualWanIpv4DhcpOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Hostname) {
 		toSerialize["hostname"] = o.Hostname
 	}
-	if !IsNil(o.Mtu) {
-		toSerialize["mtu"] = o.Mtu
-	}
+	toSerialize["mtu"] = o.Mtu
 	if !IsNil(o.Unicast) {
 		toSerialize["unicast"] = o.Unicast
 	}
 	return toSerialize, nil
+}
+
+func (o *VirtualWanIpv4DhcpOpenApiVO) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"mtu",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varVirtualWanIpv4DhcpOpenApiVO := _VirtualWanIpv4DhcpOpenApiVO{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varVirtualWanIpv4DhcpOpenApiVO)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VirtualWanIpv4DhcpOpenApiVO(varVirtualWanIpv4DhcpOpenApiVO)
+
+	return err
 }
 
 type NullableVirtualWanIpv4DhcpOpenApiVO struct {

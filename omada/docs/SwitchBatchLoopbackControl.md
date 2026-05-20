@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **MaxHops** | Pointer to **int32** | maxHops should be between 1 and 40. | [optional] 
 **Mstp** | Pointer to [**OswStpMstpConfigOpenApiVO**](OswStpMstpConfigOpenApiVO.md) |  | [optional] 
 **Priority** | Pointer to **int32** | Parameter [priority] should be an integer from 0 to 61440 and divisible by 4096. | [optional] 
-**Stp** | Pointer to **int32** | STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP  | [optional] 
+**Stp** | Pointer to **int32** | STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP | [optional] 
 **SwitchMacList** | **[]string** | Parameter [switchMacList] should contain at least one switch MAC | 
 **TxHoldCount** | Pointer to **int32** | txHoldCount should be between 1 and 20. | [optional] 
 

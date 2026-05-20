@@ -32,7 +32,8 @@ type SwitchLoopbackControl struct {
 	Mstp *OswStpMstpConfigOpenApiVO `json:"mstp,omitempty"`
 	// Parameter [priority] should be an integer from 0 to 61440 and divisible by 4096.
 	Priority *int32 `json:"priority,omitempty"`
-	// STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP 
+	Rpvst *OswStpRpvstVO `json:"rpvst,omitempty"`
+	// STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP 4: RPVST 
 	Stp *int32 `json:"stp,omitempty"`
 	// txHoldCount should be between 1 and 20.
 	TxHoldCount *int32 `json:"txHoldCount,omitempty"`
@@ -279,6 +280,38 @@ func (o *SwitchLoopbackControl) SetPriority(v int32) {
 	o.Priority = &v
 }
 
+// GetRpvst returns the Rpvst field value if set, zero value otherwise.
+func (o *SwitchLoopbackControl) GetRpvst() OswStpRpvstVO {
+	if o == nil || IsNil(o.Rpvst) {
+		var ret OswStpRpvstVO
+		return ret
+	}
+	return *o.Rpvst
+}
+
+// GetRpvstOk returns a tuple with the Rpvst field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SwitchLoopbackControl) GetRpvstOk() (*OswStpRpvstVO, bool) {
+	if o == nil || IsNil(o.Rpvst) {
+		return nil, false
+	}
+	return o.Rpvst, true
+}
+
+// HasRpvst returns a boolean if a field has been set.
+func (o *SwitchLoopbackControl) HasRpvst() bool {
+	if o != nil && !IsNil(o.Rpvst) {
+		return true
+	}
+
+	return false
+}
+
+// SetRpvst gets a reference to the given OswStpRpvstVO and assigns it to the Rpvst field.
+func (o *SwitchLoopbackControl) SetRpvst(v OswStpRpvstVO) {
+	o.Rpvst = &v
+}
+
 // GetStp returns the Stp field value if set, zero value otherwise.
 func (o *SwitchLoopbackControl) GetStp() int32 {
 	if o == nil || IsNil(o.Stp) {
@@ -373,6 +406,9 @@ func (o SwitchLoopbackControl) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
+	}
+	if !IsNil(o.Rpvst) {
+		toSerialize["rpvst"] = o.Rpvst
 	}
 	if !IsNil(o.Stp) {
 		toSerialize["stp"] = o.Stp

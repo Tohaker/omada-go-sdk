@@ -22,13 +22,13 @@ var _ MappedNullable = &AutoSelectWanPortReq{}
 // AutoSelectWanPortReq A list of the SD-WAN devices which use auto select.
 type AutoSelectWanPortReq struct {
 	// The MAC of a SD-WAN candidate device.
-	DeviceMac *string `json:"deviceMac,omitempty"`
+	DeviceMac string `json:"deviceMac"`
 	// A list MAC of linked-spokes of the sdWan group.
 	LinkedSpokes []string `json:"linkedSpokes,omitempty"`
 	// The role of SD-WAN member, hub: 0 or spoke: 1.
 	Role int32 `json:"role"`
 	// Site ID.
-	SiteId *string `json:"siteId,omitempty"`
+	SiteId string `json:"siteId"`
 }
 
 type _AutoSelectWanPortReq AutoSelectWanPortReq
@@ -37,9 +37,11 @@ type _AutoSelectWanPortReq AutoSelectWanPortReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAutoSelectWanPortReq(role int32) *AutoSelectWanPortReq {
+func NewAutoSelectWanPortReq(deviceMac string, role int32, siteId string) *AutoSelectWanPortReq {
 	this := AutoSelectWanPortReq{}
+	this.DeviceMac = deviceMac
 	this.Role = role
+	this.SiteId = siteId
 	return &this
 }
 
@@ -51,36 +53,28 @@ func NewAutoSelectWanPortReqWithDefaults() *AutoSelectWanPortReq {
 	return &this
 }
 
-// GetDeviceMac returns the DeviceMac field value if set, zero value otherwise.
+// GetDeviceMac returns the DeviceMac field value
 func (o *AutoSelectWanPortReq) GetDeviceMac() string {
-	if o == nil || IsNil(o.DeviceMac) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DeviceMac
+
+	return o.DeviceMac
 }
 
-// GetDeviceMacOk returns a tuple with the DeviceMac field value if set, nil otherwise
+// GetDeviceMacOk returns a tuple with the DeviceMac field value
 // and a boolean to check if the value has been set.
 func (o *AutoSelectWanPortReq) GetDeviceMacOk() (*string, bool) {
-	if o == nil || IsNil(o.DeviceMac) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DeviceMac, true
+	return &o.DeviceMac, true
 }
 
-// HasDeviceMac returns a boolean if a field has been set.
-func (o *AutoSelectWanPortReq) HasDeviceMac() bool {
-	if o != nil && !IsNil(o.DeviceMac) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeviceMac gets a reference to the given string and assigns it to the DeviceMac field.
+// SetDeviceMac sets field value
 func (o *AutoSelectWanPortReq) SetDeviceMac(v string) {
-	o.DeviceMac = &v
+	o.DeviceMac = v
 }
 
 // GetLinkedSpokes returns the LinkedSpokes field value if set, zero value otherwise.
@@ -139,36 +133,28 @@ func (o *AutoSelectWanPortReq) SetRole(v int32) {
 	o.Role = v
 }
 
-// GetSiteId returns the SiteId field value if set, zero value otherwise.
+// GetSiteId returns the SiteId field value
 func (o *AutoSelectWanPortReq) GetSiteId() string {
-	if o == nil || IsNil(o.SiteId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.SiteId
+
+	return o.SiteId
 }
 
-// GetSiteIdOk returns a tuple with the SiteId field value if set, nil otherwise
+// GetSiteIdOk returns a tuple with the SiteId field value
 // and a boolean to check if the value has been set.
 func (o *AutoSelectWanPortReq) GetSiteIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SiteId, true
+	return &o.SiteId, true
 }
 
-// HasSiteId returns a boolean if a field has been set.
-func (o *AutoSelectWanPortReq) HasSiteId() bool {
-	if o != nil && !IsNil(o.SiteId) {
-		return true
-	}
-
-	return false
-}
-
-// SetSiteId gets a reference to the given string and assigns it to the SiteId field.
+// SetSiteId sets field value
 func (o *AutoSelectWanPortReq) SetSiteId(v string) {
-	o.SiteId = &v
+	o.SiteId = v
 }
 
 func (o AutoSelectWanPortReq) MarshalJSON() ([]byte, error) {
@@ -181,16 +167,12 @@ func (o AutoSelectWanPortReq) MarshalJSON() ([]byte, error) {
 
 func (o AutoSelectWanPortReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DeviceMac) {
-		toSerialize["deviceMac"] = o.DeviceMac
-	}
+	toSerialize["deviceMac"] = o.DeviceMac
 	if !IsNil(o.LinkedSpokes) {
 		toSerialize["linkedSpokes"] = o.LinkedSpokes
 	}
 	toSerialize["role"] = o.Role
-	if !IsNil(o.SiteId) {
-		toSerialize["siteId"] = o.SiteId
-	}
+	toSerialize["siteId"] = o.SiteId
 	return toSerialize, nil
 }
 
@@ -199,7 +181,9 @@ func (o *AutoSelectWanPortReq) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"deviceMac",
 		"role",
+		"siteId",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -37,7 +37,8 @@ Name | Type | Description | Notes
 **PortIsolationEnable** | Pointer to **bool** | Indicates whether port isolation is enabled | [optional] 
 **Ports** | Pointer to **[]int32** | Lag Ports | [optional] 
 **ProfileId** | Pointer to **string** | Profile ID | [optional] 
-**ProfileOverrideEnable** | Pointer to **bool** | Indicates whether to enable Profile Override | [optional] 
+**ProfileOverrideEnable** | Pointer to **bool** | Indicates whether to enable Profile Override before v6.2.10; Indicates the fill mode of port configuration after v6.2.10: true: custom; false: follow profile | [optional] 
+**ProfileVlanOverrideEnable** | Pointer to **bool** | Indicates the fill mode of vlan configuration: true: custom; false: follow profile | [optional] 
 **QosQueueEnable** | Pointer to **bool** | Indicates whether the ES device port has enabled the Qos scheduling queue configuration | [optional] 
 **QueueId** | Pointer to **int32** | ES Qos scheduling queue ID | [optional] 
 **SpanningTreeEnable** | Pointer to **bool** | Indicates whether SpanningTree is enabled | [optional] 
@@ -924,6 +925,31 @@ SetProfileOverrideEnable sets ProfileOverrideEnable field to given value.
 `func (o *StackLagSettingVO) HasProfileOverrideEnable() bool`
 
 HasProfileOverrideEnable returns a boolean if a field has been set.
+
+### GetProfileVlanOverrideEnable
+
+`func (o *StackLagSettingVO) GetProfileVlanOverrideEnable() bool`
+
+GetProfileVlanOverrideEnable returns the ProfileVlanOverrideEnable field if non-nil, zero value otherwise.
+
+### GetProfileVlanOverrideEnableOk
+
+`func (o *StackLagSettingVO) GetProfileVlanOverrideEnableOk() (*bool, bool)`
+
+GetProfileVlanOverrideEnableOk returns a tuple with the ProfileVlanOverrideEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProfileVlanOverrideEnable
+
+`func (o *StackLagSettingVO) SetProfileVlanOverrideEnable(v bool)`
+
+SetProfileVlanOverrideEnable sets ProfileVlanOverrideEnable field to given value.
+
+### HasProfileVlanOverrideEnable
+
+`func (o *StackLagSettingVO) HasProfileVlanOverrideEnable() bool`
+
+HasProfileVlanOverrideEnable returns a boolean if a field has been set.
 
 ### GetQosQueueEnable
 

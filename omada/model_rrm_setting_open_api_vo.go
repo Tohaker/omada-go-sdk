@@ -21,10 +21,16 @@ var _ MappedNullable = &RrmSettingOpenApiVO{}
 
 // RrmSettingOpenApiVO struct for RrmSettingOpenApiVO
 type RrmSettingOpenApiVO struct {
-	// The mode of Auto WLAN Optimization.
+	// The mode of Auto WLAN Optimization, such as: 0: disable, 1: adaptive
 	Mode int32 `json:"mode"`
 	// The anomaly event setting creation resource, such as: 0: new created, 1: from template, 2: override
 	Resource *int32 `json:"resource,omitempty"`
+	// The Time Range Action, such as: 0: out of range, 1: in range
+	TimeRangeAction *int32 `json:"timeRangeAction,omitempty"`
+	// Whether the Time Range is enabled. True: enable, false: disable.
+	TimeRangeEnable bool `json:"timeRangeEnable"`
+	// This field represents Time Range Profile ID. Time Range Profile can be created using Create time range profile interface, and Time Range Profile ID can be obtained from Get time range profile list interface.
+	TimeRangeId *string `json:"timeRangeId,omitempty"`
 }
 
 type _RrmSettingOpenApiVO RrmSettingOpenApiVO
@@ -33,9 +39,10 @@ type _RrmSettingOpenApiVO RrmSettingOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRrmSettingOpenApiVO(mode int32) *RrmSettingOpenApiVO {
+func NewRrmSettingOpenApiVO(mode int32, timeRangeEnable bool) *RrmSettingOpenApiVO {
 	this := RrmSettingOpenApiVO{}
 	this.Mode = mode
+	this.TimeRangeEnable = timeRangeEnable
 	return &this
 }
 
@@ -103,6 +110,94 @@ func (o *RrmSettingOpenApiVO) SetResource(v int32) {
 	o.Resource = &v
 }
 
+// GetTimeRangeAction returns the TimeRangeAction field value if set, zero value otherwise.
+func (o *RrmSettingOpenApiVO) GetTimeRangeAction() int32 {
+	if o == nil || IsNil(o.TimeRangeAction) {
+		var ret int32
+		return ret
+	}
+	return *o.TimeRangeAction
+}
+
+// GetTimeRangeActionOk returns a tuple with the TimeRangeAction field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RrmSettingOpenApiVO) GetTimeRangeActionOk() (*int32, bool) {
+	if o == nil || IsNil(o.TimeRangeAction) {
+		return nil, false
+	}
+	return o.TimeRangeAction, true
+}
+
+// HasTimeRangeAction returns a boolean if a field has been set.
+func (o *RrmSettingOpenApiVO) HasTimeRangeAction() bool {
+	if o != nil && !IsNil(o.TimeRangeAction) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimeRangeAction gets a reference to the given int32 and assigns it to the TimeRangeAction field.
+func (o *RrmSettingOpenApiVO) SetTimeRangeAction(v int32) {
+	o.TimeRangeAction = &v
+}
+
+// GetTimeRangeEnable returns the TimeRangeEnable field value
+func (o *RrmSettingOpenApiVO) GetTimeRangeEnable() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.TimeRangeEnable
+}
+
+// GetTimeRangeEnableOk returns a tuple with the TimeRangeEnable field value
+// and a boolean to check if the value has been set.
+func (o *RrmSettingOpenApiVO) GetTimeRangeEnableOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TimeRangeEnable, true
+}
+
+// SetTimeRangeEnable sets field value
+func (o *RrmSettingOpenApiVO) SetTimeRangeEnable(v bool) {
+	o.TimeRangeEnable = v
+}
+
+// GetTimeRangeId returns the TimeRangeId field value if set, zero value otherwise.
+func (o *RrmSettingOpenApiVO) GetTimeRangeId() string {
+	if o == nil || IsNil(o.TimeRangeId) {
+		var ret string
+		return ret
+	}
+	return *o.TimeRangeId
+}
+
+// GetTimeRangeIdOk returns a tuple with the TimeRangeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RrmSettingOpenApiVO) GetTimeRangeIdOk() (*string, bool) {
+	if o == nil || IsNil(o.TimeRangeId) {
+		return nil, false
+	}
+	return o.TimeRangeId, true
+}
+
+// HasTimeRangeId returns a boolean if a field has been set.
+func (o *RrmSettingOpenApiVO) HasTimeRangeId() bool {
+	if o != nil && !IsNil(o.TimeRangeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimeRangeId gets a reference to the given string and assigns it to the TimeRangeId field.
+func (o *RrmSettingOpenApiVO) SetTimeRangeId(v string) {
+	o.TimeRangeId = &v
+}
+
 func (o RrmSettingOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -117,6 +212,13 @@ func (o RrmSettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
 	}
+	if !IsNil(o.TimeRangeAction) {
+		toSerialize["timeRangeAction"] = o.TimeRangeAction
+	}
+	toSerialize["timeRangeEnable"] = o.TimeRangeEnable
+	if !IsNil(o.TimeRangeId) {
+		toSerialize["timeRangeId"] = o.TimeRangeId
+	}
 	return toSerialize, nil
 }
 
@@ -126,6 +228,7 @@ func (o *RrmSettingOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"mode",
+		"timeRangeEnable",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **GatewaySubnet** | Pointer to **string** | The IP range of the original network before mapping | [optional] 
 **LanNetworkId** | Pointer to **string** | The ID of the original network before mapping | [optional] 
 **MappedNetwork** | Pointer to **string** | mapped network | [optional] 
+**NetworkType** | Pointer to **int32** | Network type, 0/null: LAN network, 1: custom route | [optional] 
 **SiteId** | Pointer to **string** | The ID of the site | [optional] 
 **SiteName** | Pointer to **string** | The name of the site | [optional] 
 
@@ -129,6 +130,31 @@ SetMappedNetwork sets MappedNetwork field to given value.
 `func (o *SdWanNetworkMap) HasMappedNetwork() bool`
 
 HasMappedNetwork returns a boolean if a field has been set.
+
+### GetNetworkType
+
+`func (o *SdWanNetworkMap) GetNetworkType() int32`
+
+GetNetworkType returns the NetworkType field if non-nil, zero value otherwise.
+
+### GetNetworkTypeOk
+
+`func (o *SdWanNetworkMap) GetNetworkTypeOk() (*int32, bool)`
+
+GetNetworkTypeOk returns a tuple with the NetworkType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkType
+
+`func (o *SdWanNetworkMap) SetNetworkType(v int32)`
+
+SetNetworkType sets NetworkType field to given value.
+
+### HasNetworkType
+
+`func (o *SdWanNetworkMap) HasNetworkType() bool`
+
+HasNetworkType returns a boolean if a field has been set.
 
 ### GetSiteId
 

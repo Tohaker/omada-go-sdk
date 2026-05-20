@@ -69,6 +69,22 @@ func Test_omada_RemoteAccessAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RemoteAccessAPIService GetSingleDeviceTunnel", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var localMac string
+
+		resp, httpRes, err := apiClient.RemoteAccessAPI.GetSingleDeviceTunnel(context.Background(), omadacId, siteId, localMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RemoteAccessAPIService GetTunnel", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -93,6 +109,22 @@ func Test_omada_RemoteAccessAPIService(t *testing.T) {
 		var tunnelId string
 
 		resp, httpRes, err := apiClient.RemoteAccessAPI.GetTunnelStatus(context.Background(), omadacId, siteId, tunnelId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RemoteAccessAPIService GetTunnelsEwebInfo", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var tunnelId string
+
+		resp, httpRes, err := apiClient.RemoteAccessAPI.GetTunnelsEwebInfo(context.Background(), omadacId, siteId, tunnelId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

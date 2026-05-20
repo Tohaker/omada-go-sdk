@@ -22,9 +22,9 @@ var _ MappedNullable = &IotAgingTimeOpenApiVO{}
 // IotAgingTimeOpenApiVO struct for IotAgingTimeOpenApiVO
 type IotAgingTimeOpenApiVO struct {
 	// The system automatically removes a device's registry entry if no data reports are received within a predefined aging period.<br/>When format = 0, The parameter aging time should be within the range of 30-86400.<br/>When format = 1, The parameter aging time should be within the range of 1-1440.<br/>When format = 2, The parameter aging time should be within the range of 1-24.<br/>
-	AgingTime int32 `json:"agingTime"`
+	AgingTimeIotAgingTime int32 `json:"agingTime_iotAgingTime"`
 	// The parameter [format] should be a value as follows: [0:second 1:minute; 2:hour]
-	Format int32 `json:"format"`
+	FormatIotAgingTime int32 `json:"format_iotAgingTime"`
 }
 
 type _IotAgingTimeOpenApiVO IotAgingTimeOpenApiVO
@@ -33,10 +33,10 @@ type _IotAgingTimeOpenApiVO IotAgingTimeOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIotAgingTimeOpenApiVO(agingTime int32, format int32) *IotAgingTimeOpenApiVO {
+func NewIotAgingTimeOpenApiVO(agingTimeIotAgingTime int32, formatIotAgingTime int32) *IotAgingTimeOpenApiVO {
 	this := IotAgingTimeOpenApiVO{}
-	this.AgingTime = agingTime
-	this.Format = format
+	this.AgingTimeIotAgingTime = agingTimeIotAgingTime
+	this.FormatIotAgingTime = formatIotAgingTime
 	return &this
 }
 
@@ -48,52 +48,52 @@ func NewIotAgingTimeOpenApiVOWithDefaults() *IotAgingTimeOpenApiVO {
 	return &this
 }
 
-// GetAgingTime returns the AgingTime field value
-func (o *IotAgingTimeOpenApiVO) GetAgingTime() int32 {
+// GetAgingTimeIotAgingTime returns the AgingTimeIotAgingTime field value
+func (o *IotAgingTimeOpenApiVO) GetAgingTimeIotAgingTime() int32 {
 	if o == nil {
 		var ret int32
 		return ret
 	}
 
-	return o.AgingTime
+	return o.AgingTimeIotAgingTime
 }
 
-// GetAgingTimeOk returns a tuple with the AgingTime field value
+// GetAgingTimeIotAgingTimeOk returns a tuple with the AgingTimeIotAgingTime field value
 // and a boolean to check if the value has been set.
-func (o *IotAgingTimeOpenApiVO) GetAgingTimeOk() (*int32, bool) {
+func (o *IotAgingTimeOpenApiVO) GetAgingTimeIotAgingTimeOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.AgingTime, true
+	return &o.AgingTimeIotAgingTime, true
 }
 
-// SetAgingTime sets field value
-func (o *IotAgingTimeOpenApiVO) SetAgingTime(v int32) {
-	o.AgingTime = v
+// SetAgingTimeIotAgingTime sets field value
+func (o *IotAgingTimeOpenApiVO) SetAgingTimeIotAgingTime(v int32) {
+	o.AgingTimeIotAgingTime = v
 }
 
-// GetFormat returns the Format field value
-func (o *IotAgingTimeOpenApiVO) GetFormat() int32 {
+// GetFormatIotAgingTime returns the FormatIotAgingTime field value
+func (o *IotAgingTimeOpenApiVO) GetFormatIotAgingTime() int32 {
 	if o == nil {
 		var ret int32
 		return ret
 	}
 
-	return o.Format
+	return o.FormatIotAgingTime
 }
 
-// GetFormatOk returns a tuple with the Format field value
+// GetFormatIotAgingTimeOk returns a tuple with the FormatIotAgingTime field value
 // and a boolean to check if the value has been set.
-func (o *IotAgingTimeOpenApiVO) GetFormatOk() (*int32, bool) {
+func (o *IotAgingTimeOpenApiVO) GetFormatIotAgingTimeOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Format, true
+	return &o.FormatIotAgingTime, true
 }
 
-// SetFormat sets field value
-func (o *IotAgingTimeOpenApiVO) SetFormat(v int32) {
-	o.Format = v
+// SetFormatIotAgingTime sets field value
+func (o *IotAgingTimeOpenApiVO) SetFormatIotAgingTime(v int32) {
+	o.FormatIotAgingTime = v
 }
 
 func (o IotAgingTimeOpenApiVO) MarshalJSON() ([]byte, error) {
@@ -106,8 +106,8 @@ func (o IotAgingTimeOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o IotAgingTimeOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["agingTime"] = o.AgingTime
-	toSerialize["format"] = o.Format
+	toSerialize["agingTime_iotAgingTime"] = o.AgingTimeIotAgingTime
+	toSerialize["format_iotAgingTime"] = o.FormatIotAgingTime
 	return toSerialize, nil
 }
 
@@ -116,8 +116,8 @@ func (o *IotAgingTimeOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"agingTime",
-		"format",
+		"agingTime_iotAgingTime",
+		"format_iotAgingTime",
 	}
 
 	allProperties := make(map[string]interface{})

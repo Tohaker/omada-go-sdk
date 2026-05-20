@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **VlanEnable** | **bool** | SSID VLAN config status. True: enable, false: disable. | 
 **VlanId** | Pointer to **int32** | SSID VLAN ID. This field is required when Parameter [vlanEnable] is true; It should be within the range of 1–4094. If the field vlanSetting is entered, this field must be null. | [optional] 
 **VlanSetting** | Pointer to [**SsidVlanSettingOpenApiVO**](SsidVlanSettingOpenApiVO.md) |  | [optional] 
+**WifiCallingEnable** | Pointer to **bool** | SSID Wifi Calling config status. True: enable, false: disable. | [optional] 
+**WifiCallingId** | Pointer to **string** | The ID of the Wi-Fi calling profile bound to the SSID. When parameter [wifiCallingEnable] is true, it should not be null. | [optional] 
 
 ## Methods
 
@@ -436,6 +438,56 @@ SetVlanSetting sets VlanSetting field to given value.
 `func (o *CreateSsidOpenApiVO) HasVlanSetting() bool`
 
 HasVlanSetting returns a boolean if a field has been set.
+
+### GetWifiCallingEnable
+
+`func (o *CreateSsidOpenApiVO) GetWifiCallingEnable() bool`
+
+GetWifiCallingEnable returns the WifiCallingEnable field if non-nil, zero value otherwise.
+
+### GetWifiCallingEnableOk
+
+`func (o *CreateSsidOpenApiVO) GetWifiCallingEnableOk() (*bool, bool)`
+
+GetWifiCallingEnableOk returns a tuple with the WifiCallingEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWifiCallingEnable
+
+`func (o *CreateSsidOpenApiVO) SetWifiCallingEnable(v bool)`
+
+SetWifiCallingEnable sets WifiCallingEnable field to given value.
+
+### HasWifiCallingEnable
+
+`func (o *CreateSsidOpenApiVO) HasWifiCallingEnable() bool`
+
+HasWifiCallingEnable returns a boolean if a field has been set.
+
+### GetWifiCallingId
+
+`func (o *CreateSsidOpenApiVO) GetWifiCallingId() string`
+
+GetWifiCallingId returns the WifiCallingId field if non-nil, zero value otherwise.
+
+### GetWifiCallingIdOk
+
+`func (o *CreateSsidOpenApiVO) GetWifiCallingIdOk() (*string, bool)`
+
+GetWifiCallingIdOk returns a tuple with the WifiCallingId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWifiCallingId
+
+`func (o *CreateSsidOpenApiVO) SetWifiCallingId(v string)`
+
+SetWifiCallingId sets WifiCallingId field to given value.
+
+### HasWifiCallingId
+
+`func (o *CreateSsidOpenApiVO) HasWifiCallingId() bool`
+
+HasWifiCallingId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

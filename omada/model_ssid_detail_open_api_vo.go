@@ -54,6 +54,7 @@ type SsidDetailOpenApiVO struct {
 	RateControl *SsidRateControlOpenApiVO `json:"rateControl,omitempty"`
 	// SSID security mode; Security should be a value as follows: 0: None; 2: WPA-Enterprise; 3: WPA-Personal; 4: PPSK without RADIUS; 5: PPSK with RADIUS.
 	Security *int32 `json:"security,omitempty"`
+	SsidDhcpOption *BandSteerOpenApiVO `json:"ssidDhcpOption,omitempty"`
 	// SSID ID
 	SsidId *string `json:"ssidId,omitempty"`
 	SsidRateLimit *RateLimitSettingOpenApiVO `json:"ssidRateLimit,omitempty"`
@@ -62,6 +63,10 @@ type SsidDetailOpenApiVO struct {
 	// SSID VLAN ID. This field is required when Parameter [vlanEnable] is true; It should be within the range of 1–4094.
 	VlanId *int32 `json:"vlanId,omitempty"`
 	VlanSetting *SsidVlanSettingOpenApiVO `json:"vlanSetting,omitempty"`
+	// SSID Wifi Calling config status. True: enable, false: disable.
+	WifiCallingEnable *bool `json:"wifiCallingEnable,omitempty"`
+	// The ID of the Wi-Fi calling profile bound to the SSID. When parameter [wifiCallingEnable] is true, it should not be null.
+	WifiCallingId *string `json:"wifiCallingId,omitempty"`
 	WlanSchedule *SsidWlanScheduleOpenApiVO `json:"wlanSchedule,omitempty"`
 }
 
@@ -786,6 +791,38 @@ func (o *SsidDetailOpenApiVO) SetSecurity(v int32) {
 	o.Security = &v
 }
 
+// GetSsidDhcpOption returns the SsidDhcpOption field value if set, zero value otherwise.
+func (o *SsidDetailOpenApiVO) GetSsidDhcpOption() BandSteerOpenApiVO {
+	if o == nil || IsNil(o.SsidDhcpOption) {
+		var ret BandSteerOpenApiVO
+		return ret
+	}
+	return *o.SsidDhcpOption
+}
+
+// GetSsidDhcpOptionOk returns a tuple with the SsidDhcpOption field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidDetailOpenApiVO) GetSsidDhcpOptionOk() (*BandSteerOpenApiVO, bool) {
+	if o == nil || IsNil(o.SsidDhcpOption) {
+		return nil, false
+	}
+	return o.SsidDhcpOption, true
+}
+
+// HasSsidDhcpOption returns a boolean if a field has been set.
+func (o *SsidDetailOpenApiVO) HasSsidDhcpOption() bool {
+	if o != nil && !IsNil(o.SsidDhcpOption) {
+		return true
+	}
+
+	return false
+}
+
+// SetSsidDhcpOption gets a reference to the given BandSteerOpenApiVO and assigns it to the SsidDhcpOption field.
+func (o *SsidDetailOpenApiVO) SetSsidDhcpOption(v BandSteerOpenApiVO) {
+	o.SsidDhcpOption = &v
+}
+
 // GetSsidId returns the SsidId field value if set, zero value otherwise.
 func (o *SsidDetailOpenApiVO) GetSsidId() string {
 	if o == nil || IsNil(o.SsidId) {
@@ -946,6 +983,70 @@ func (o *SsidDetailOpenApiVO) SetVlanSetting(v SsidVlanSettingOpenApiVO) {
 	o.VlanSetting = &v
 }
 
+// GetWifiCallingEnable returns the WifiCallingEnable field value if set, zero value otherwise.
+func (o *SsidDetailOpenApiVO) GetWifiCallingEnable() bool {
+	if o == nil || IsNil(o.WifiCallingEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.WifiCallingEnable
+}
+
+// GetWifiCallingEnableOk returns a tuple with the WifiCallingEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidDetailOpenApiVO) GetWifiCallingEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.WifiCallingEnable) {
+		return nil, false
+	}
+	return o.WifiCallingEnable, true
+}
+
+// HasWifiCallingEnable returns a boolean if a field has been set.
+func (o *SsidDetailOpenApiVO) HasWifiCallingEnable() bool {
+	if o != nil && !IsNil(o.WifiCallingEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetWifiCallingEnable gets a reference to the given bool and assigns it to the WifiCallingEnable field.
+func (o *SsidDetailOpenApiVO) SetWifiCallingEnable(v bool) {
+	o.WifiCallingEnable = &v
+}
+
+// GetWifiCallingId returns the WifiCallingId field value if set, zero value otherwise.
+func (o *SsidDetailOpenApiVO) GetWifiCallingId() string {
+	if o == nil || IsNil(o.WifiCallingId) {
+		var ret string
+		return ret
+	}
+	return *o.WifiCallingId
+}
+
+// GetWifiCallingIdOk returns a tuple with the WifiCallingId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidDetailOpenApiVO) GetWifiCallingIdOk() (*string, bool) {
+	if o == nil || IsNil(o.WifiCallingId) {
+		return nil, false
+	}
+	return o.WifiCallingId, true
+}
+
+// HasWifiCallingId returns a boolean if a field has been set.
+func (o *SsidDetailOpenApiVO) HasWifiCallingId() bool {
+	if o != nil && !IsNil(o.WifiCallingId) {
+		return true
+	}
+
+	return false
+}
+
+// SetWifiCallingId gets a reference to the given string and assigns it to the WifiCallingId field.
+func (o *SsidDetailOpenApiVO) SetWifiCallingId(v string) {
+	o.WifiCallingId = &v
+}
+
 // GetWlanSchedule returns the WlanSchedule field value if set, zero value otherwise.
 func (o *SsidDetailOpenApiVO) GetWlanSchedule() SsidWlanScheduleOpenApiVO {
 	if o == nil || IsNil(o.WlanSchedule) {
@@ -1054,6 +1155,9 @@ func (o SsidDetailOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Security) {
 		toSerialize["security"] = o.Security
 	}
+	if !IsNil(o.SsidDhcpOption) {
+		toSerialize["ssidDhcpOption"] = o.SsidDhcpOption
+	}
 	if !IsNil(o.SsidId) {
 		toSerialize["ssidId"] = o.SsidId
 	}
@@ -1068,6 +1172,12 @@ func (o SsidDetailOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VlanSetting) {
 		toSerialize["vlanSetting"] = o.VlanSetting
+	}
+	if !IsNil(o.WifiCallingEnable) {
+		toSerialize["wifiCallingEnable"] = o.WifiCallingEnable
+	}
+	if !IsNil(o.WifiCallingId) {
+		toSerialize["wifiCallingId"] = o.WifiCallingId
 	}
 	if !IsNil(o.WlanSchedule) {
 		toSerialize["wlanSchedule"] = o.WlanSchedule

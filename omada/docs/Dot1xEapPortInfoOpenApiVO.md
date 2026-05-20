@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Dot1xEnable** | Pointer to **bool** | 802.1x enable status | [optional] 
 **MabEnable** | Pointer to **bool** | MAB enable status | [optional] 
 **Port** | Pointer to **string** | Port number | [optional] 
+**SupportDot1x** | Pointer to **bool** | Whether this port support configuring dot1x. | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetPort sets Port field to given value.
 `func (o *Dot1xEapPortInfoOpenApiVO) HasPort() bool`
 
 HasPort returns a boolean if a field has been set.
+
+### GetSupportDot1x
+
+`func (o *Dot1xEapPortInfoOpenApiVO) GetSupportDot1x() bool`
+
+GetSupportDot1x returns the SupportDot1x field if non-nil, zero value otherwise.
+
+### GetSupportDot1xOk
+
+`func (o *Dot1xEapPortInfoOpenApiVO) GetSupportDot1xOk() (*bool, bool)`
+
+GetSupportDot1xOk returns a tuple with the SupportDot1x field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportDot1x
+
+`func (o *Dot1xEapPortInfoOpenApiVO) SetSupportDot1x(v bool)`
+
+SetSupportDot1x sets SupportDot1x field to given value.
+
+### HasSupportDot1x
+
+`func (o *Dot1xEapPortInfoOpenApiVO) HasSupportDot1x() bool`
+
+HasSupportDot1x returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
