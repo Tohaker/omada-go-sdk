@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**DeleteOswVrf**](SwitchAPI.md#deleteoswvrf) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs/{vrfId} | Delete vrf
 [**DeletePortTag**](SwitchAPI.md#deleteporttag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Delete an existing switch port label
 [**DeleteSwitchLag**](SwitchAPI.md#deleteswitchlag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lags/{lagId} | Delete switch lag
+[**GetBatchRpvstInstances**](SwitchAPI.md#getbatchrpvstinstances) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/rpvst-instances | Get Batch Rpvst Instances
 [**GetBatchSelectOswDetailsView**](SwitchAPI.md#getbatchselectoswdetailsview) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/select | Get the switches and ports detail in batches
 [**GetBatchSwitchExistNetworks**](SwitchAPI.md#getbatchswitchexistnetworks) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/exist-network | Get the networks intersections existing on multiple switches
 [**GetCableTestFullResults**](SwitchAPI.md#getcabletestfullresults) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/full-results | Get the cable test full results
@@ -40,6 +41,7 @@ Method | HTTP request | Description
 [**GetGridSwitchesPortsOverview**](SwitchAPI.md#getgridswitchesportsoverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/overview | Get the switches ports overview
 [**GetGridSwitchesPortsPoe**](SwitchAPI.md#getgridswitchesportspoe) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/poe-info | Get the switches ports poe information
 [**GetGridVrf**](SwitchAPI.md#getgridvrf) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs | Get the vrfs on the switch
+[**GetL3SwitchUsedSdmNum**](SwitchAPI.md#getl3switchusedsdmnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/l3-sdm-used | Get the used sdm template num on the campus series switches
 [**GetOswDDMInfo**](SwitchAPI.md#getoswddminfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ddm/info | Get osw ddm info.
 [**GetOswDetailInfoListForPortsView**](SwitchAPI.md#getoswdetailinfolistforportsview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/switch-detail | Get the switches detail for ports view
 [**GetOswForGivenLanNetworkIdAndVlan**](SwitchAPI.md#getoswforgivenlannetworkidandvlan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/networks/{networkId}/vlans/{vlan}/switches | Get the paging query for the osws with given network id and vlan
@@ -48,6 +50,8 @@ Method | HTTP request | Description
 [**GetOswsSupportDhcpSnoop**](SwitchAPI.md#getoswssupportdhcpsnoop) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/supportDhcpSnoop | Get the paging query for the osws that support dhcp snoop.
 [**GetPortAndLagNetwork1**](SwitchAPI.md#getportandlagnetwork1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/port-lag-networks/{networkId}/vlan/{vlan} | Get the switch&#39;s ports and LAGs that the network affects
 [**GetPortTags**](SwitchAPI.md#getporttags) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Get switch port label list
+[**GetRpvstInstances**](SwitchAPI.md#getrpvstinstances) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/rpvst-instances | Get Rpvst Instances
+[**GetStpInstancesDetail**](SwitchAPI.md#getstpinstancesdetail) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/stp/instance-detail | Get StpInstanceDetail
 [**GetSwitchExistNetworks**](SwitchAPI.md#getswitchexistnetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/exist-network | Get the networks existing on the switch
 [**GetSwitchInfo**](SwitchAPI.md#getswitchinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac} | Get switch info
 [**GetSwitchUsedSdmNum**](SwitchAPI.md#getswitchusedsdmnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/sdm-used | Get the used sdm template num on the switch
@@ -1372,6 +1376,81 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBatchRpvstInstances
+
+> OperationResponse GetBatchRpvstInstances(ctx, omadacId, siteId).RequestBody(requestBody).Execute()
+
+Get Batch Rpvst Instances
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	requestBody := []string{"Property_example"} // []string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.GetBatchRpvstInstances(context.Background(), omadacId, siteId).RequestBody(requestBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.GetBatchRpvstInstances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBatchRpvstInstances`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.GetBatchRpvstInstances`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBatchRpvstInstancesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **requestBody** | **[]string** |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -2856,6 +2935,82 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetL3SwitchUsedSdmNum
+
+> OperationResponseOswL3SdmApplicationVO GetL3SwitchUsedSdmNum(ctx, omadacId, siteId, switchMac).Execute()
+
+Get the used sdm template num on the campus series switches
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.GetL3SwitchUsedSdmNum(context.Background(), omadacId, siteId, switchMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.GetL3SwitchUsedSdmNum``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetL3SwitchUsedSdmNum`: OperationResponseOswL3SdmApplicationVO
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.GetL3SwitchUsedSdmNum`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetL3SwitchUsedSdmNumRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseOswL3SdmApplicationVO**](OperationResponseOswL3SdmApplicationVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetOswDDMInfo
 
 > OperationResponseWithoutResult GetOswDDMInfo(ctx, omadacId, siteId, switchMac).Execute()
@@ -3465,6 +3620,160 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRpvstInstances
+
+> OperationResponse GetRpvstInstances(ctx, omadacId, siteId, switchMac).Execute()
+
+Get Rpvst Instances
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.GetRpvstInstances(context.Background(), omadacId, siteId, switchMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.GetRpvstInstances``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRpvstInstances`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.GetRpvstInstances`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRpvstInstancesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetStpInstancesDetail
+
+> OperationResponse GetStpInstancesDetail(ctx, omadacId, siteId, switchMac).StpInstanceDetailVO(stpInstanceDetailVO).Execute()
+
+Get StpInstanceDetail
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	stpInstanceDetailVO := *openapiclient.NewStpInstanceDetailVO(int32(123)) // StpInstanceDetailVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.GetStpInstancesDetail(context.Background(), omadacId, siteId, switchMac).StpInstanceDetailVO(stpInstanceDetailVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.GetStpInstancesDetail``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetStpInstancesDetail`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.GetStpInstancesDetail`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetStpInstancesDetailRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **stpInstanceDetailVO** | [**StpInstanceDetailVO**](StpInstanceDetailVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

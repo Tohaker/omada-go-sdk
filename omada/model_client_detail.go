@@ -40,6 +40,8 @@ type ClientDetail struct {
 	// (Wireless)  Actual channel.
 	Channel *int32 `json:"channel,omitempty"`
 	ClientLockToApSetting *ClientLockToApDetailSetting `json:"clientLockToApSetting,omitempty"`
+	// Whether client support NAT traversal
+	ClientSupportNatTraversal *bool `json:"clientSupportNatTraversal,omitempty"`
 	// connect device type should be a value as follows: ap, switch, gateway.
 	ConnectDevType *string `json:"connectDevType,omitempty"`
 	// Connect type should be a value as follows: 0: wireless guest; 1: wireless user; 2: wired user.
@@ -521,6 +523,38 @@ func (o *ClientDetail) HasClientLockToApSetting() bool {
 // SetClientLockToApSetting gets a reference to the given ClientLockToApDetailSetting and assigns it to the ClientLockToApSetting field.
 func (o *ClientDetail) SetClientLockToApSetting(v ClientLockToApDetailSetting) {
 	o.ClientLockToApSetting = &v
+}
+
+// GetClientSupportNatTraversal returns the ClientSupportNatTraversal field value if set, zero value otherwise.
+func (o *ClientDetail) GetClientSupportNatTraversal() bool {
+	if o == nil || IsNil(o.ClientSupportNatTraversal) {
+		var ret bool
+		return ret
+	}
+	return *o.ClientSupportNatTraversal
+}
+
+// GetClientSupportNatTraversalOk returns a tuple with the ClientSupportNatTraversal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientDetail) GetClientSupportNatTraversalOk() (*bool, bool) {
+	if o == nil || IsNil(o.ClientSupportNatTraversal) {
+		return nil, false
+	}
+	return o.ClientSupportNatTraversal, true
+}
+
+// HasClientSupportNatTraversal returns a boolean if a field has been set.
+func (o *ClientDetail) HasClientSupportNatTraversal() bool {
+	if o != nil && !IsNil(o.ClientSupportNatTraversal) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientSupportNatTraversal gets a reference to the given bool and assigns it to the ClientSupportNatTraversal field.
+func (o *ClientDetail) SetClientSupportNatTraversal(v bool) {
+	o.ClientSupportNatTraversal = &v
 }
 
 // GetConnectDevType returns the ConnectDevType field value if set, zero value otherwise.
@@ -2389,6 +2423,9 @@ func (o ClientDetail) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ClientLockToApSetting) {
 		toSerialize["clientLockToApSetting"] = o.ClientLockToApSetting
+	}
+	if !IsNil(o.ClientSupportNatTraversal) {
+		toSerialize["clientSupportNatTraversal"] = o.ClientSupportNatTraversal
 	}
 	if !IsNil(o.ConnectDevType) {
 		toSerialize["connectDevType"] = o.ConnectDevType

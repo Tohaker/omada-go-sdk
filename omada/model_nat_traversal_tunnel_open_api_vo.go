@@ -23,16 +23,28 @@ var _ MappedNullable = &NatTraversalTunnelOpenApiVO{}
 type NatTraversalTunnelOpenApiVO struct {
 	// App type of the remote access tunnel for the local target device. HTTP, HTTPS, SSH, TELNET.
 	AppType string `json:"appType"`
+	// Client's type of the remote access tunnel for the client.
+	ClientDeviceType *string `json:"clientDeviceType,omitempty"`
+	// Client's manager of the remote access tunnel for the client.
+	ClientManager *bool `json:"clientManager,omitempty"`
+	// Client's model of the remote access tunnel for the client.
+	ClientModel *string `json:"clientModel,omitempty"`
+	// Client's name of the remote access tunnel for the client.
+	ClientName *string `json:"clientName,omitempty"`
 	// Valid duration time of the remote access tunnel, 1-24 hours.
 	Duration *int32 `json:"duration,omitempty"`
 	// IP address of the local target device.
 	LocalAddress string `json:"localAddress"`
+	// Mac of the local target device.
+	LocalMac *string `json:"localMac,omitempty"`
 	// Port of the local target device's service.
 	LocalPort int32 `json:"localPort"`
 	// Name of the remote access tunnel.
 	Name string `json:"name"`
 	// If open the remote access tunnel after create.
 	OpenStatus *bool `json:"openStatus,omitempty"`
+	// Entry of the remote access tunnel.1: custom tunnel 2: device tunnel 3:device detail 4:client detail
+	TunnelEntryType *int32 `json:"tunnelEntryType,omitempty"`
 }
 
 type _NatTraversalTunnelOpenApiVO NatTraversalTunnelOpenApiVO
@@ -80,6 +92,134 @@ func (o *NatTraversalTunnelOpenApiVO) GetAppTypeOk() (*string, bool) {
 // SetAppType sets field value
 func (o *NatTraversalTunnelOpenApiVO) SetAppType(v string) {
 	o.AppType = v
+}
+
+// GetClientDeviceType returns the ClientDeviceType field value if set, zero value otherwise.
+func (o *NatTraversalTunnelOpenApiVO) GetClientDeviceType() string {
+	if o == nil || IsNil(o.ClientDeviceType) {
+		var ret string
+		return ret
+	}
+	return *o.ClientDeviceType
+}
+
+// GetClientDeviceTypeOk returns a tuple with the ClientDeviceType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelOpenApiVO) GetClientDeviceTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientDeviceType) {
+		return nil, false
+	}
+	return o.ClientDeviceType, true
+}
+
+// HasClientDeviceType returns a boolean if a field has been set.
+func (o *NatTraversalTunnelOpenApiVO) HasClientDeviceType() bool {
+	if o != nil && !IsNil(o.ClientDeviceType) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientDeviceType gets a reference to the given string and assigns it to the ClientDeviceType field.
+func (o *NatTraversalTunnelOpenApiVO) SetClientDeviceType(v string) {
+	o.ClientDeviceType = &v
+}
+
+// GetClientManager returns the ClientManager field value if set, zero value otherwise.
+func (o *NatTraversalTunnelOpenApiVO) GetClientManager() bool {
+	if o == nil || IsNil(o.ClientManager) {
+		var ret bool
+		return ret
+	}
+	return *o.ClientManager
+}
+
+// GetClientManagerOk returns a tuple with the ClientManager field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelOpenApiVO) GetClientManagerOk() (*bool, bool) {
+	if o == nil || IsNil(o.ClientManager) {
+		return nil, false
+	}
+	return o.ClientManager, true
+}
+
+// HasClientManager returns a boolean if a field has been set.
+func (o *NatTraversalTunnelOpenApiVO) HasClientManager() bool {
+	if o != nil && !IsNil(o.ClientManager) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientManager gets a reference to the given bool and assigns it to the ClientManager field.
+func (o *NatTraversalTunnelOpenApiVO) SetClientManager(v bool) {
+	o.ClientManager = &v
+}
+
+// GetClientModel returns the ClientModel field value if set, zero value otherwise.
+func (o *NatTraversalTunnelOpenApiVO) GetClientModel() string {
+	if o == nil || IsNil(o.ClientModel) {
+		var ret string
+		return ret
+	}
+	return *o.ClientModel
+}
+
+// GetClientModelOk returns a tuple with the ClientModel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelOpenApiVO) GetClientModelOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientModel) {
+		return nil, false
+	}
+	return o.ClientModel, true
+}
+
+// HasClientModel returns a boolean if a field has been set.
+func (o *NatTraversalTunnelOpenApiVO) HasClientModel() bool {
+	if o != nil && !IsNil(o.ClientModel) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientModel gets a reference to the given string and assigns it to the ClientModel field.
+func (o *NatTraversalTunnelOpenApiVO) SetClientModel(v string) {
+	o.ClientModel = &v
+}
+
+// GetClientName returns the ClientName field value if set, zero value otherwise.
+func (o *NatTraversalTunnelOpenApiVO) GetClientName() string {
+	if o == nil || IsNil(o.ClientName) {
+		var ret string
+		return ret
+	}
+	return *o.ClientName
+}
+
+// GetClientNameOk returns a tuple with the ClientName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelOpenApiVO) GetClientNameOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientName) {
+		return nil, false
+	}
+	return o.ClientName, true
+}
+
+// HasClientName returns a boolean if a field has been set.
+func (o *NatTraversalTunnelOpenApiVO) HasClientName() bool {
+	if o != nil && !IsNil(o.ClientName) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientName gets a reference to the given string and assigns it to the ClientName field.
+func (o *NatTraversalTunnelOpenApiVO) SetClientName(v string) {
+	o.ClientName = &v
 }
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
@@ -136,6 +276,38 @@ func (o *NatTraversalTunnelOpenApiVO) GetLocalAddressOk() (*string, bool) {
 // SetLocalAddress sets field value
 func (o *NatTraversalTunnelOpenApiVO) SetLocalAddress(v string) {
 	o.LocalAddress = v
+}
+
+// GetLocalMac returns the LocalMac field value if set, zero value otherwise.
+func (o *NatTraversalTunnelOpenApiVO) GetLocalMac() string {
+	if o == nil || IsNil(o.LocalMac) {
+		var ret string
+		return ret
+	}
+	return *o.LocalMac
+}
+
+// GetLocalMacOk returns a tuple with the LocalMac field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelOpenApiVO) GetLocalMacOk() (*string, bool) {
+	if o == nil || IsNil(o.LocalMac) {
+		return nil, false
+	}
+	return o.LocalMac, true
+}
+
+// HasLocalMac returns a boolean if a field has been set.
+func (o *NatTraversalTunnelOpenApiVO) HasLocalMac() bool {
+	if o != nil && !IsNil(o.LocalMac) {
+		return true
+	}
+
+	return false
+}
+
+// SetLocalMac gets a reference to the given string and assigns it to the LocalMac field.
+func (o *NatTraversalTunnelOpenApiVO) SetLocalMac(v string) {
+	o.LocalMac = &v
 }
 
 // GetLocalPort returns the LocalPort field value
@@ -218,6 +390,38 @@ func (o *NatTraversalTunnelOpenApiVO) SetOpenStatus(v bool) {
 	o.OpenStatus = &v
 }
 
+// GetTunnelEntryType returns the TunnelEntryType field value if set, zero value otherwise.
+func (o *NatTraversalTunnelOpenApiVO) GetTunnelEntryType() int32 {
+	if o == nil || IsNil(o.TunnelEntryType) {
+		var ret int32
+		return ret
+	}
+	return *o.TunnelEntryType
+}
+
+// GetTunnelEntryTypeOk returns a tuple with the TunnelEntryType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelOpenApiVO) GetTunnelEntryTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.TunnelEntryType) {
+		return nil, false
+	}
+	return o.TunnelEntryType, true
+}
+
+// HasTunnelEntryType returns a boolean if a field has been set.
+func (o *NatTraversalTunnelOpenApiVO) HasTunnelEntryType() bool {
+	if o != nil && !IsNil(o.TunnelEntryType) {
+		return true
+	}
+
+	return false
+}
+
+// SetTunnelEntryType gets a reference to the given int32 and assigns it to the TunnelEntryType field.
+func (o *NatTraversalTunnelOpenApiVO) SetTunnelEntryType(v int32) {
+	o.TunnelEntryType = &v
+}
+
 func (o NatTraversalTunnelOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -229,14 +433,32 @@ func (o NatTraversalTunnelOpenApiVO) MarshalJSON() ([]byte, error) {
 func (o NatTraversalTunnelOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["appType"] = o.AppType
+	if !IsNil(o.ClientDeviceType) {
+		toSerialize["clientDeviceType"] = o.ClientDeviceType
+	}
+	if !IsNil(o.ClientManager) {
+		toSerialize["clientManager"] = o.ClientManager
+	}
+	if !IsNil(o.ClientModel) {
+		toSerialize["clientModel"] = o.ClientModel
+	}
+	if !IsNil(o.ClientName) {
+		toSerialize["clientName"] = o.ClientName
+	}
 	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
 	toSerialize["localAddress"] = o.LocalAddress
+	if !IsNil(o.LocalMac) {
+		toSerialize["localMac"] = o.LocalMac
+	}
 	toSerialize["localPort"] = o.LocalPort
 	toSerialize["name"] = o.Name
 	if !IsNil(o.OpenStatus) {
 		toSerialize["openStatus"] = o.OpenStatus
+	}
+	if !IsNil(o.TunnelEntryType) {
+		toSerialize["tunnelEntryType"] = o.TunnelEntryType
 	}
 	return toSerialize, nil
 }

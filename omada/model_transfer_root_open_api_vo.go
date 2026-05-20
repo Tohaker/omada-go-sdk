@@ -21,6 +21,8 @@ var _ MappedNullable = &TransferRootOpenApiVO{}
 
 // TransferRootOpenApiVO struct for TransferRootOpenApiVO
 type TransferRootOpenApiVO struct {
+	// Token for transfer operation
+	Token *string `json:"token,omitempty"`
 	// Target user ID for new owner
 	UserId string `json:"userId"`
 }
@@ -43,6 +45,38 @@ func NewTransferRootOpenApiVO(userId string) *TransferRootOpenApiVO {
 func NewTransferRootOpenApiVOWithDefaults() *TransferRootOpenApiVO {
 	this := TransferRootOpenApiVO{}
 	return &this
+}
+
+// GetToken returns the Token field value if set, zero value otherwise.
+func (o *TransferRootOpenApiVO) GetToken() string {
+	if o == nil || IsNil(o.Token) {
+		var ret string
+		return ret
+	}
+	return *o.Token
+}
+
+// GetTokenOk returns a tuple with the Token field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TransferRootOpenApiVO) GetTokenOk() (*string, bool) {
+	if o == nil || IsNil(o.Token) {
+		return nil, false
+	}
+	return o.Token, true
+}
+
+// HasToken returns a boolean if a field has been set.
+func (o *TransferRootOpenApiVO) HasToken() bool {
+	if o != nil && !IsNil(o.Token) {
+		return true
+	}
+
+	return false
+}
+
+// SetToken gets a reference to the given string and assigns it to the Token field.
+func (o *TransferRootOpenApiVO) SetToken(v string) {
+	o.Token = &v
 }
 
 // GetUserId returns the UserId field value
@@ -79,6 +113,9 @@ func (o TransferRootOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o TransferRootOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Token) {
+		toSerialize["token"] = o.Token
+	}
 	toSerialize["userId"] = o.UserId
 	return toSerialize, nil
 }

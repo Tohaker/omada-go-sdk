@@ -574,6 +574,23 @@ type StackAPI interface {
 	GetOswStackPortListExecute(r StackAPIGetOswStackPortListRequest) (*OperationResponseListOswStackPortVO, *http.Response, error)
 
 	/*
+	GetRpvstInstancesDetail Get Stack StpInstanceDetail
+
+	Get Stack StpInstanceDetail.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param stackId Stack ID
+	@return StackAPIGetRpvstInstancesDetailRequest
+	*/
+	GetRpvstInstancesDetail(ctx context.Context, omadacId string, siteId string, stackId string) StackAPIGetRpvstInstancesDetailRequest
+
+	// GetRpvstInstancesDetailExecute executes the request
+	//  @return OperationResponse
+	GetRpvstInstancesDetailExecute(r StackAPIGetRpvstInstancesDetailRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	GetStackCableTestFullResults Get stack cable test full results
 
 	Get stack cable test full results.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
@@ -710,6 +727,40 @@ type StackAPI interface {
 	// GetStackRememberMeExecute executes the request
 	//  @return OperationResponseDeviceRememberConfig
 	GetStackRememberMeExecute(r StackAPIGetStackRememberMeRequest) (*OperationResponseDeviceRememberConfig, *http.Response, error)
+
+	/*
+	GetStackRpvstInstances Get Stack Rpvst Instances
+
+	Get Stack Rpvst Instances.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param stackId Stack ID
+	@return StackAPIGetStackRpvstInstancesRequest
+	*/
+	GetStackRpvstInstances(ctx context.Context, omadacId string, siteId string, stackId string) StackAPIGetStackRpvstInstancesRequest
+
+	// GetStackRpvstInstancesExecute executes the request
+	//  @return OperationResponse
+	GetStackRpvstInstancesExecute(r StackAPIGetStackRpvstInstancesRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	GetStackUsedSdmNum Get the used sdm template num on the stack
+
+	Get the used template num on the stack.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param stackId Stack ID
+	@return StackAPIGetStackUsedSdmNumRequest
+	*/
+	GetStackUsedSdmNum(ctx context.Context, omadacId string, siteId string, stackId string) StackAPIGetStackUsedSdmNumRequest
+
+	// GetStackUsedSdmNumExecute executes the request
+	//  @return OperationResponseOswStackSdmApplicationVO
+	GetStackUsedSdmNumExecute(r StackAPIGetStackUsedSdmNumRequest) (*OperationResponseOswStackSdmApplicationVO, *http.Response, error)
 
 	/*
 	GetStackableSwitches Get stackable switches
@@ -5320,6 +5371,142 @@ func (a *StackAPIService) GetOswStackPortListExecute(r StackAPIGetOswStackPortLi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type StackAPIGetRpvstInstancesDetailRequest struct {
+	ctx context.Context
+	ApiService StackAPI
+	omadacId string
+	siteId string
+	stackId string
+	stpInstanceDetailVO *StpInstanceDetailVO
+}
+
+func (r StackAPIGetRpvstInstancesDetailRequest) StpInstanceDetailVO(stpInstanceDetailVO StpInstanceDetailVO) StackAPIGetRpvstInstancesDetailRequest {
+	r.stpInstanceDetailVO = &stpInstanceDetailVO
+	return r
+}
+
+func (r StackAPIGetRpvstInstancesDetailRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetRpvstInstancesDetailExecute(r)
+}
+
+/*
+GetRpvstInstancesDetail Get Stack StpInstanceDetail
+
+Get Stack StpInstanceDetail.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param stackId Stack ID
+ @return StackAPIGetRpvstInstancesDetailRequest
+*/
+func (a *StackAPIService) GetRpvstInstancesDetail(ctx context.Context, omadacId string, siteId string, stackId string) StackAPIGetRpvstInstancesDetailRequest {
+	return StackAPIGetRpvstInstancesDetailRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		stackId: stackId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *StackAPIService) GetRpvstInstancesDetailExecute(r StackAPIGetRpvstInstancesDetailRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StackAPIService.GetRpvstInstancesDetail")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/stp/instance-detail"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stackId"+"}", url.PathEscape(parameterValueToString(r.stackId, "stackId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.stpInstanceDetailVO == nil {
+		return localVarReturnValue, nil, reportError("stpInstanceDetailVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.stpInstanceDetailVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type StackAPIGetStackCableTestFullResultsRequest struct {
 	ctx context.Context
 	ApiService StackAPI
@@ -6296,6 +6483,256 @@ func (a *StackAPIService) GetStackRememberMeExecute(r StackAPIGetStackRememberMe
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/remember"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stackId"+"}", url.PathEscape(parameterValueToString(r.stackId, "stackId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type StackAPIGetStackRpvstInstancesRequest struct {
+	ctx context.Context
+	ApiService StackAPI
+	omadacId string
+	siteId string
+	stackId string
+}
+
+func (r StackAPIGetStackRpvstInstancesRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetStackRpvstInstancesExecute(r)
+}
+
+/*
+GetStackRpvstInstances Get Stack Rpvst Instances
+
+Get Stack Rpvst Instances.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param stackId Stack ID
+ @return StackAPIGetStackRpvstInstancesRequest
+*/
+func (a *StackAPIService) GetStackRpvstInstances(ctx context.Context, omadacId string, siteId string, stackId string) StackAPIGetStackRpvstInstancesRequest {
+	return StackAPIGetStackRpvstInstancesRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		stackId: stackId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *StackAPIService) GetStackRpvstInstancesExecute(r StackAPIGetStackRpvstInstancesRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StackAPIService.GetStackRpvstInstances")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/rpvst-instances"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stackId"+"}", url.PathEscape(parameterValueToString(r.stackId, "stackId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type StackAPIGetStackUsedSdmNumRequest struct {
+	ctx context.Context
+	ApiService StackAPI
+	omadacId string
+	siteId string
+	stackId string
+}
+
+func (r StackAPIGetStackUsedSdmNumRequest) Execute() (*OperationResponseOswStackSdmApplicationVO, *http.Response, error) {
+	return r.ApiService.GetStackUsedSdmNumExecute(r)
+}
+
+/*
+GetStackUsedSdmNum Get the used sdm template num on the stack
+
+Get the used template num on the stack.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-40200  -  This switch stack is not existed.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param stackId Stack ID
+ @return StackAPIGetStackUsedSdmNumRequest
+*/
+func (a *StackAPIService) GetStackUsedSdmNum(ctx context.Context, omadacId string, siteId string, stackId string) StackAPIGetStackUsedSdmNumRequest {
+	return StackAPIGetStackUsedSdmNumRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		stackId: stackId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOswStackSdmApplicationVO
+func (a *StackAPIService) GetStackUsedSdmNumExecute(r StackAPIGetStackUsedSdmNumRequest) (*OperationResponseOswStackSdmApplicationVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOswStackSdmApplicationVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StackAPIService.GetStackUsedSdmNum")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/sdm-used"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"stackId"+"}", url.PathEscape(parameterValueToString(r.stackId, "stackId")), -1)

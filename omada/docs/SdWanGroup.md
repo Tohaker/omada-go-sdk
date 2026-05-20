@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | The description of the SD-WAN group | [optional] 
-**EnableNat** | Pointer to **bool** | Whether the group enable SD-WAN virtual network Map | [optional] 
-**IpPoolEnd** | Pointer to **string** | The end of the IP pool of the SD-WAN group， it is recommended to ignore it as it will be generated automatically | [optional] 
+**EnableNat** | **bool** | Whether the group enable SD-WAN virtual network Map | 
+**IpPoolEnd** | Pointer to **string** | The end of the IP pool of the SD-WAN group, it is recommended to ignore it as it will be generated automatically | [optional] 
 **IpPoolStart** | Pointer to **string** | The start of the IP pool of the SD-WAN group, it is recommended to ignore it as it will be generated automatically | [optional] 
-**LinkedSpokes** | Pointer to [**[]SdWanLinkedSpoke**](SdWanLinkedSpoke.md) | A list of linked-spokes of the SD-WAN group | [optional] 
-**MemberList** | Pointer to [**[]SdWanMemberInfo**](SdWanMemberInfo.md) | A list of members of the SD-WAN group | [optional] 
-**Name** | Pointer to **string** | The name of the SD-WAN group | [optional] 
-**NatInfo** | Pointer to [**SdWanNatInfo**](SdWanNatInfo.md) |  | [optional] 
+**LinkedSpokes** | Pointer to [**[]SdWanLinkedSpokeConfig**](SdWanLinkedSpokeConfig.md) | A list of linked-spokes of the SD-WAN group | [optional] 
+**MemberList** | [**[]SdWanMemberConfig**](SdWanMemberConfig.md) | A list of members of the SD-WAN group | 
+**Name** | **string** | The name of the SD-WAN group | 
+**NatInfo** | Pointer to [**SdWanNatInfoConfig**](SdWanNatInfoConfig.md) |  | [optional] 
 
 ## Methods
 
 ### NewSdWanGroup
 
-`func NewSdWanGroup() *SdWanGroup`
+`func NewSdWanGroup(enableNat bool, memberList []SdWanMemberConfig, name string, ) *SdWanGroup`
 
 NewSdWanGroup instantiates a new SdWanGroup object
 This constructor will assign default values to properties that have it defined,
@@ -76,11 +76,6 @@ and a boolean to check if the value has been set.
 
 SetEnableNat sets EnableNat field to given value.
 
-### HasEnableNat
-
-`func (o *SdWanGroup) HasEnableNat() bool`
-
-HasEnableNat returns a boolean if a field has been set.
 
 ### GetIpPoolEnd
 
@@ -134,20 +129,20 @@ HasIpPoolStart returns a boolean if a field has been set.
 
 ### GetLinkedSpokes
 
-`func (o *SdWanGroup) GetLinkedSpokes() []SdWanLinkedSpoke`
+`func (o *SdWanGroup) GetLinkedSpokes() []SdWanLinkedSpokeConfig`
 
 GetLinkedSpokes returns the LinkedSpokes field if non-nil, zero value otherwise.
 
 ### GetLinkedSpokesOk
 
-`func (o *SdWanGroup) GetLinkedSpokesOk() (*[]SdWanLinkedSpoke, bool)`
+`func (o *SdWanGroup) GetLinkedSpokesOk() (*[]SdWanLinkedSpokeConfig, bool)`
 
 GetLinkedSpokesOk returns a tuple with the LinkedSpokes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinkedSpokes
 
-`func (o *SdWanGroup) SetLinkedSpokes(v []SdWanLinkedSpoke)`
+`func (o *SdWanGroup) SetLinkedSpokes(v []SdWanLinkedSpokeConfig)`
 
 SetLinkedSpokes sets LinkedSpokes field to given value.
 
@@ -159,28 +154,23 @@ HasLinkedSpokes returns a boolean if a field has been set.
 
 ### GetMemberList
 
-`func (o *SdWanGroup) GetMemberList() []SdWanMemberInfo`
+`func (o *SdWanGroup) GetMemberList() []SdWanMemberConfig`
 
 GetMemberList returns the MemberList field if non-nil, zero value otherwise.
 
 ### GetMemberListOk
 
-`func (o *SdWanGroup) GetMemberListOk() (*[]SdWanMemberInfo, bool)`
+`func (o *SdWanGroup) GetMemberListOk() (*[]SdWanMemberConfig, bool)`
 
 GetMemberListOk returns a tuple with the MemberList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemberList
 
-`func (o *SdWanGroup) SetMemberList(v []SdWanMemberInfo)`
+`func (o *SdWanGroup) SetMemberList(v []SdWanMemberConfig)`
 
 SetMemberList sets MemberList field to given value.
 
-### HasMemberList
-
-`func (o *SdWanGroup) HasMemberList() bool`
-
-HasMemberList returns a boolean if a field has been set.
 
 ### GetName
 
@@ -201,28 +191,23 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *SdWanGroup) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNatInfo
 
-`func (o *SdWanGroup) GetNatInfo() SdWanNatInfo`
+`func (o *SdWanGroup) GetNatInfo() SdWanNatInfoConfig`
 
 GetNatInfo returns the NatInfo field if non-nil, zero value otherwise.
 
 ### GetNatInfoOk
 
-`func (o *SdWanGroup) GetNatInfoOk() (*SdWanNatInfo, bool)`
+`func (o *SdWanGroup) GetNatInfoOk() (*SdWanNatInfoConfig, bool)`
 
 GetNatInfoOk returns a tuple with the NatInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNatInfo
 
-`func (o *SdWanGroup) SetNatInfo(v SdWanNatInfo)`
+`func (o *SdWanGroup) SetNatInfo(v SdWanNatInfoConfig)`
 
 SetNatInfo sets NatInfo field to given value.
 

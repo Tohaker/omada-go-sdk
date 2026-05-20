@@ -102,8 +102,10 @@ type OswStackMemberLagVO struct {
 	ProfileId *string `json:"profileId,omitempty"`
 	// Lan Profile Name
 	ProfileName *string `json:"profileName,omitempty"`
-	// Indicates whether to enable Profile Override
+	// Indicates whether to enable Profile Override before v6.2.10; Indicates the fill mode of port configuration after v6.2.10: true: custom; false: follow profile
 	ProfileOverrideEnable *bool `json:"profileOverrideEnable,omitempty"`
+	// Indicates the fill mode of vlan configuration: true: custom; false: follow profile
+	ProfileVlanOverrideEnable *bool `json:"profileVlanOverrideEnable,omitempty"`
 	// Indicates whether the ES device port has enabled the Qos scheduling queue configuration
 	QosQueueEnable *bool `json:"qosQueueEnable,omitempty"`
 	// Indicates whether qos support is enabled
@@ -1671,6 +1673,38 @@ func (o *OswStackMemberLagVO) SetProfileOverrideEnable(v bool) {
 	o.ProfileOverrideEnable = &v
 }
 
+// GetProfileVlanOverrideEnable returns the ProfileVlanOverrideEnable field value if set, zero value otherwise.
+func (o *OswStackMemberLagVO) GetProfileVlanOverrideEnable() bool {
+	if o == nil || IsNil(o.ProfileVlanOverrideEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.ProfileVlanOverrideEnable
+}
+
+// GetProfileVlanOverrideEnableOk returns a tuple with the ProfileVlanOverrideEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackMemberLagVO) GetProfileVlanOverrideEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.ProfileVlanOverrideEnable) {
+		return nil, false
+	}
+	return o.ProfileVlanOverrideEnable, true
+}
+
+// HasProfileVlanOverrideEnable returns a boolean if a field has been set.
+func (o *OswStackMemberLagVO) HasProfileVlanOverrideEnable() bool {
+	if o != nil && !IsNil(o.ProfileVlanOverrideEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetProfileVlanOverrideEnable gets a reference to the given bool and assigns it to the ProfileVlanOverrideEnable field.
+func (o *OswStackMemberLagVO) SetProfileVlanOverrideEnable(v bool) {
+	o.ProfileVlanOverrideEnable = &v
+}
+
 // GetQosQueueEnable returns the QosQueueEnable field value if set, zero value otherwise.
 func (o *OswStackMemberLagVO) GetQosQueueEnable() bool {
 	if o == nil || IsNil(o.QosQueueEnable) {
@@ -2557,6 +2591,9 @@ func (o OswStackMemberLagVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ProfileOverrideEnable) {
 		toSerialize["profileOverrideEnable"] = o.ProfileOverrideEnable
+	}
+	if !IsNil(o.ProfileVlanOverrideEnable) {
+		toSerialize["profileVlanOverrideEnable"] = o.ProfileVlanOverrideEnable
 	}
 	if !IsNil(o.QosQueueEnable) {
 		toSerialize["qosQueueEnable"] = o.QosQueueEnable

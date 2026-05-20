@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the VirtualWanMultipleIpVO type satisfies the MappedNullable interface at compile time
@@ -19,16 +21,20 @@ var _ MappedNullable = &VirtualWanMultipleIpVO{}
 
 // VirtualWanMultipleIpVO struct for VirtualWanMultipleIpVO
 type VirtualWanMultipleIpVO struct {
-	IP *string `json:"IP,omitempty"`
-	Enable *bool `json:"enable,omitempty"`
+	IP string `json:"IP"`
+	Enable bool `json:"enable"`
 }
+
+type _VirtualWanMultipleIpVO VirtualWanMultipleIpVO
 
 // NewVirtualWanMultipleIpVO instantiates a new VirtualWanMultipleIpVO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualWanMultipleIpVO() *VirtualWanMultipleIpVO {
+func NewVirtualWanMultipleIpVO(iP string, enable bool) *VirtualWanMultipleIpVO {
 	this := VirtualWanMultipleIpVO{}
+	this.IP = iP
+	this.Enable = enable
 	return &this
 }
 
@@ -40,68 +46,52 @@ func NewVirtualWanMultipleIpVOWithDefaults() *VirtualWanMultipleIpVO {
 	return &this
 }
 
-// GetIP returns the IP field value if set, zero value otherwise.
+// GetIP returns the IP field value
 func (o *VirtualWanMultipleIpVO) GetIP() string {
-	if o == nil || IsNil(o.IP) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.IP
+
+	return o.IP
 }
 
-// GetIPOk returns a tuple with the IP field value if set, nil otherwise
+// GetIPOk returns a tuple with the IP field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanMultipleIpVO) GetIPOk() (*string, bool) {
-	if o == nil || IsNil(o.IP) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IP, true
+	return &o.IP, true
 }
 
-// HasIP returns a boolean if a field has been set.
-func (o *VirtualWanMultipleIpVO) HasIP() bool {
-	if o != nil && !IsNil(o.IP) {
-		return true
-	}
-
-	return false
-}
-
-// SetIP gets a reference to the given string and assigns it to the IP field.
+// SetIP sets field value
 func (o *VirtualWanMultipleIpVO) SetIP(v string) {
-	o.IP = &v
+	o.IP = v
 }
 
-// GetEnable returns the Enable field value if set, zero value otherwise.
+// GetEnable returns the Enable field value
 func (o *VirtualWanMultipleIpVO) GetEnable() bool {
-	if o == nil || IsNil(o.Enable) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.Enable
+
+	return o.Enable
 }
 
-// GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
+// GetEnableOk returns a tuple with the Enable field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanMultipleIpVO) GetEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.Enable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Enable, true
+	return &o.Enable, true
 }
 
-// HasEnable returns a boolean if a field has been set.
-func (o *VirtualWanMultipleIpVO) HasEnable() bool {
-	if o != nil && !IsNil(o.Enable) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnable gets a reference to the given bool and assigns it to the Enable field.
+// SetEnable sets field value
 func (o *VirtualWanMultipleIpVO) SetEnable(v bool) {
-	o.Enable = &v
+	o.Enable = v
 }
 
 func (o VirtualWanMultipleIpVO) MarshalJSON() ([]byte, error) {
@@ -114,13 +104,47 @@ func (o VirtualWanMultipleIpVO) MarshalJSON() ([]byte, error) {
 
 func (o VirtualWanMultipleIpVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IP) {
-		toSerialize["IP"] = o.IP
-	}
-	if !IsNil(o.Enable) {
-		toSerialize["enable"] = o.Enable
-	}
+	toSerialize["IP"] = o.IP
+	toSerialize["enable"] = o.Enable
 	return toSerialize, nil
+}
+
+func (o *VirtualWanMultipleIpVO) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"IP",
+		"enable",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varVirtualWanMultipleIpVO := _VirtualWanMultipleIpVO{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varVirtualWanMultipleIpVO)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VirtualWanMultipleIpVO(varVirtualWanMultipleIpVO)
+
+	return err
 }
 
 type NullableVirtualWanMultipleIpVO struct {

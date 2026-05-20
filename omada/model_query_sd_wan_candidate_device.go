@@ -36,8 +36,8 @@ type QuerySdWanCandidateDevice struct {
 	// Look for a specific piece of data.
 	SearchKey *string `json:"searchKey,omitempty"`
 	Sorts *map[string]string `json:"sorts,omitempty"`
-	// The maximum number of VPN tunnels that can be created.
-	TunnelLimit *int32 `json:"tunnelLimit,omitempty"`
+	// The maximum number of VPN tunnels that can be created. Used to filter devices that meet the minimum supported tunnel count. Only those that support a tunnel count greater than the minimum will be listed.
+	TunnelLimit int32 `json:"tunnelLimit"`
 }
 
 type _QuerySdWanCandidateDevice QuerySdWanCandidateDevice
@@ -46,11 +46,12 @@ type _QuerySdWanCandidateDevice QuerySdWanCandidateDevice
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewQuerySdWanCandidateDevice(page int32, pageSize int32, role int32) *QuerySdWanCandidateDevice {
+func NewQuerySdWanCandidateDevice(page int32, pageSize int32, role int32, tunnelLimit int32) *QuerySdWanCandidateDevice {
 	this := QuerySdWanCandidateDevice{}
 	this.Page = page
 	this.PageSize = pageSize
 	this.Role = role
+	this.TunnelLimit = tunnelLimit
 	return &this
 }
 
@@ -326,36 +327,28 @@ func (o *QuerySdWanCandidateDevice) SetSorts(v map[string]string) {
 	o.Sorts = &v
 }
 
-// GetTunnelLimit returns the TunnelLimit field value if set, zero value otherwise.
+// GetTunnelLimit returns the TunnelLimit field value
 func (o *QuerySdWanCandidateDevice) GetTunnelLimit() int32 {
-	if o == nil || IsNil(o.TunnelLimit) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.TunnelLimit
+
+	return o.TunnelLimit
 }
 
-// GetTunnelLimitOk returns a tuple with the TunnelLimit field value if set, nil otherwise
+// GetTunnelLimitOk returns a tuple with the TunnelLimit field value
 // and a boolean to check if the value has been set.
 func (o *QuerySdWanCandidateDevice) GetTunnelLimitOk() (*int32, bool) {
-	if o == nil || IsNil(o.TunnelLimit) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TunnelLimit, true
+	return &o.TunnelLimit, true
 }
 
-// HasTunnelLimit returns a boolean if a field has been set.
-func (o *QuerySdWanCandidateDevice) HasTunnelLimit() bool {
-	if o != nil && !IsNil(o.TunnelLimit) {
-		return true
-	}
-
-	return false
-}
-
-// SetTunnelLimit gets a reference to the given int32 and assigns it to the TunnelLimit field.
+// SetTunnelLimit sets field value
 func (o *QuerySdWanCandidateDevice) SetTunnelLimit(v int32) {
-	o.TunnelLimit = &v
+	o.TunnelLimit = v
 }
 
 func (o QuerySdWanCandidateDevice) MarshalJSON() ([]byte, error) {
@@ -389,9 +382,7 @@ func (o QuerySdWanCandidateDevice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Sorts) {
 		toSerialize["sorts"] = o.Sorts
 	}
-	if !IsNil(o.TunnelLimit) {
-		toSerialize["tunnelLimit"] = o.TunnelLimit
-	}
+	toSerialize["tunnelLimit"] = o.TunnelLimit
 	return toSerialize, nil
 }
 
@@ -403,6 +394,7 @@ func (o *QuerySdWanCandidateDevice) UnmarshalJSON(data []byte) (err error) {
 		"page",
 		"pageSize",
 		"role",
+		"tunnelLimit",
 	}
 
 	allProperties := make(map[string]interface{})

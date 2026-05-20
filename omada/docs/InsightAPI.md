@@ -6,7 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteALLBatchFullChannelDetectHistory**](InsightAPI.md#deleteallbatchfullchanneldetecthistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect | Delete all interference detection history
 [**DeleteBatchFullChannelDetectHistory**](InsightAPI.md#deletebatchfullchanneldetecthistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId} | Delete the interference detection history
-[**ExportBatchFullChannelDetectResultData**](InsightAPI.md#exportbatchfullchanneldetectresultdata) | **Get** /openapi/v1/{omadacId}/files/sites/{siteId}/full-channel-detect/{historyId} | Export batch interference detection results
+[**ExportBatchFullChannelDetectResultData1**](InsightAPI.md#exportbatchfullchanneldetectresultdata1) | **Get** /openapi/v1/{omadacId}/files/sites/{siteId}/full-channel-detect/{historyId} | Export batch interference detection results
+[**ExportFullChannelDetectResult**](InsightAPI.md#exportfullchanneldetectresult) | **Get** /openapi/v1/{omadacId}/files/sites/{siteId}/aps/{apMac}/full-channel-detect/export | Export interference detection results
 [**ExportRogueApsGlobal**](InsightAPI.md#exportrogueapsglobal) | **Post** /openapi/v1/{omadacId}/files/neighbors | Export global Rogue AP scan results
 [**GetBatchChannelLoadsResult**](InsightAPI.md#getbatchchannelloadsresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/channel-load | Get channel utilization results of batch interference detection
 [**GetBatchFullChannelDetectApList**](InsightAPI.md#getbatchfullchanneldetectaplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/ap-list | Get the AP list of batch interference detection
@@ -193,9 +194,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ExportBatchFullChannelDetectResultData
+## ExportBatchFullChannelDetectResultData1
 
-> OperationResponseWithoutResult ExportBatchFullChannelDetectResultData(ctx, omadacId, siteId, historyId).Format(format).Execute()
+> OperationResponseWithoutResult ExportBatchFullChannelDetectResultData1(ctx, omadacId, siteId, historyId).Format(format).Execute()
 
 Export batch interference detection results
 
@@ -221,13 +222,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InsightAPI.ExportBatchFullChannelDetectResultData(context.Background(), omadacId, siteId, historyId).Format(format).Execute()
+	resp, r, err := apiClient.InsightAPI.ExportBatchFullChannelDetectResultData1(context.Background(), omadacId, siteId, historyId).Format(format).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.ExportBatchFullChannelDetectResultData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.ExportBatchFullChannelDetectResultData1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ExportBatchFullChannelDetectResultData`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.ExportBatchFullChannelDetectResultData`: %v\n", resp)
+	// response from `ExportBatchFullChannelDetectResultData1`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.ExportBatchFullChannelDetectResultData1`: %v\n", resp)
 }
 ```
 
@@ -243,7 +244,85 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExportBatchFullChannelDetectResultDataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiExportBatchFullChannelDetectResultData1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **format** | **int32** | export data format | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ExportFullChannelDetectResult
+
+> OperationResponseWithoutResult ExportFullChannelDetectResult(ctx, omadacId, siteId, apMac).Format(format).Execute()
+
+Export interference detection results
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+	format := int32(56) // int32 | export data format
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InsightAPI.ExportFullChannelDetectResult(context.Background(), omadacId, siteId, apMac).Format(format).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.ExportFullChannelDetectResult``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExportFullChannelDetectResult`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.ExportFullChannelDetectResult`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiExportFullChannelDetectResultRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1223,7 +1302,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	type_ := "type__example" // string | type
+	type_ := "type__example" // string | Device type, the type should be gateway, switch.
 	page := int32(56) // int32 | Start page number. Start from 1.
 	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
 
@@ -1247,7 +1326,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**type_** | **string** | type | 
+**type_** | **string** | Device type, the type should be gateway, switch. | 
 
 ### Other Parameters
 

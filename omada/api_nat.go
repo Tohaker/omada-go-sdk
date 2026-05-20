@@ -117,8 +117,8 @@ type NATAPI interface {
 	GetGridOtoNats(ctx context.Context, omadacId string, siteId string) NATAPIGetGridOtoNatsRequest
 
 	// GetGridOtoNatsExecute executes the request
-	//  @return OperationResponseGridVOOtoNatInfoOpenApiVO
-	GetGridOtoNatsExecute(r NATAPIGetGridOtoNatsRequest) (*OperationResponseGridVOOtoNatInfoOpenApiVO, *http.Response, error)
+	//  @return OperationResponseOtoNatOpenApiGridVO
+	GetGridOtoNatsExecute(r NATAPIGetGridOtoNatsRequest) (*OperationResponseOtoNatOpenApiGridVO, *http.Response, error)
 
 	/*
 	GetPortForwardingList Get port forwarding list
@@ -846,7 +846,7 @@ func (r NATAPIGetGridOtoNatsRequest) PageSize(pageSize int32) NATAPIGetGridOtoNa
 	return r
 }
 
-func (r NATAPIGetGridOtoNatsRequest) Execute() (*OperationResponseGridVOOtoNatInfoOpenApiVO, *http.Response, error) {
+func (r NATAPIGetGridOtoNatsRequest) Execute() (*OperationResponseOtoNatOpenApiGridVO, *http.Response, error) {
 	return r.ApiService.GetGridOtoNatsExecute(r)
 }
 
@@ -870,13 +870,13 @@ func (a *NATAPIService) GetGridOtoNats(ctx context.Context, omadacId string, sit
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVOOtoNatInfoOpenApiVO
-func (a *NATAPIService) GetGridOtoNatsExecute(r NATAPIGetGridOtoNatsRequest) (*OperationResponseGridVOOtoNatInfoOpenApiVO, *http.Response, error) {
+//  @return OperationResponseOtoNatOpenApiGridVO
+func (a *NATAPIService) GetGridOtoNatsExecute(r NATAPIGetGridOtoNatsRequest) (*OperationResponseOtoNatOpenApiGridVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVOOtoNatInfoOpenApiVO
+		localVarReturnValue  *OperationResponseOtoNatOpenApiGridVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NATAPIService.GetGridOtoNats")

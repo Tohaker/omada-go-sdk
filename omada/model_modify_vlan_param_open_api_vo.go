@@ -23,6 +23,8 @@ var _ MappedNullable = &ModifyVlanParamOpenApiVO{}
 type ModifyVlanParamOpenApiVO struct {
 	DeviceConfig SelectPortBindingBriefVO `json:"deviceConfig"`
 	LanNetwork LanNetworkOpenApiV3VO `json:"lanNetwork"`
+	// Whether skip the second step when modify vlan
+	SkipEnable *bool `json:"skipEnable,omitempty"`
 }
 
 type _ModifyVlanParamOpenApiVO ModifyVlanParamOpenApiVO
@@ -94,6 +96,38 @@ func (o *ModifyVlanParamOpenApiVO) SetLanNetwork(v LanNetworkOpenApiV3VO) {
 	o.LanNetwork = v
 }
 
+// GetSkipEnable returns the SkipEnable field value if set, zero value otherwise.
+func (o *ModifyVlanParamOpenApiVO) GetSkipEnable() bool {
+	if o == nil || IsNil(o.SkipEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.SkipEnable
+}
+
+// GetSkipEnableOk returns a tuple with the SkipEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModifyVlanParamOpenApiVO) GetSkipEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.SkipEnable) {
+		return nil, false
+	}
+	return o.SkipEnable, true
+}
+
+// HasSkipEnable returns a boolean if a field has been set.
+func (o *ModifyVlanParamOpenApiVO) HasSkipEnable() bool {
+	if o != nil && !IsNil(o.SkipEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkipEnable gets a reference to the given bool and assigns it to the SkipEnable field.
+func (o *ModifyVlanParamOpenApiVO) SetSkipEnable(v bool) {
+	o.SkipEnable = &v
+}
+
 func (o ModifyVlanParamOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -106,6 +140,9 @@ func (o ModifyVlanParamOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["deviceConfig"] = o.DeviceConfig
 	toSerialize["lanNetwork"] = o.LanNetwork
+	if !IsNil(o.SkipEnable) {
+		toSerialize["skipEnable"] = o.SkipEnable
+	}
 	return toSerialize, nil
 }
 

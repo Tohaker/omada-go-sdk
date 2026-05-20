@@ -35,6 +35,8 @@ type BriefServerDeviceVO struct {
 	Ranges []DhcpRangeOpenApiVO `json:"ranges,omitempty"`
 	// Dhcp Server Stack ID
 	StackId *string `json:"stackId,omitempty"`
+	// Whether the device supports DHCP Reservation
+	SupportDhcpReservation *bool `json:"supportDhcpReservation,omitempty"`
 	// Device Type
 	Type *string `json:"type,omitempty"`
 }
@@ -312,6 +314,38 @@ func (o *BriefServerDeviceVO) SetStackId(v string) {
 	o.StackId = &v
 }
 
+// GetSupportDhcpReservation returns the SupportDhcpReservation field value if set, zero value otherwise.
+func (o *BriefServerDeviceVO) GetSupportDhcpReservation() bool {
+	if o == nil || IsNil(o.SupportDhcpReservation) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportDhcpReservation
+}
+
+// GetSupportDhcpReservationOk returns a tuple with the SupportDhcpReservation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BriefServerDeviceVO) GetSupportDhcpReservationOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportDhcpReservation) {
+		return nil, false
+	}
+	return o.SupportDhcpReservation, true
+}
+
+// HasSupportDhcpReservation returns a boolean if a field has been set.
+func (o *BriefServerDeviceVO) HasSupportDhcpReservation() bool {
+	if o != nil && !IsNil(o.SupportDhcpReservation) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportDhcpReservation gets a reference to the given bool and assigns it to the SupportDhcpReservation field.
+func (o *BriefServerDeviceVO) SetSupportDhcpReservation(v bool) {
+	o.SupportDhcpReservation = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *BriefServerDeviceVO) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -377,6 +411,9 @@ func (o BriefServerDeviceVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.StackId) {
 		toSerialize["stackId"] = o.StackId
+	}
+	if !IsNil(o.SupportDhcpReservation) {
+		toSerialize["supportDhcpReservation"] = o.SupportDhcpReservation
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

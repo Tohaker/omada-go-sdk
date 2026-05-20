@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GroupId** | Pointer to **string** | The SD-WAN group ID. | [optional] 
-**IpPoolEnd** | Pointer to **string** | The end of the IP pool of the sdWan group. | [optional] 
-**IpPoolStart** | Pointer to **string** | The start of the IP pool of the sdWan group. | [optional] 
-**TunnelLimit** | Pointer to **int32** | Maximum number of tunnels that each SD-WAN device. | [optional] 
+**IpPoolEnd** | **string** | The end of the IP pool of the sdWan group. | 
+**IpPoolStart** | **string** | The start of the IP pool of the sdWan group. | 
+**TunnelLimit** | **int32** | Enter the number of tunnels required by this group to determine if the number of IPs in the IP pool is sufficient. | 
 
 ## Methods
 
 ### NewSdWanIpPoolRange
 
-`func NewSdWanIpPoolRange() *SdWanIpPoolRange`
+`func NewSdWanIpPoolRange(ipPoolEnd string, ipPoolStart string, tunnelLimit int32, ) *SdWanIpPoolRange`
 
 NewSdWanIpPoolRange instantiates a new SdWanIpPoolRange object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetIpPoolEnd sets IpPoolEnd field to given value.
 
-### HasIpPoolEnd
-
-`func (o *SdWanIpPoolRange) HasIpPoolEnd() bool`
-
-HasIpPoolEnd returns a boolean if a field has been set.
 
 ### GetIpPoolStart
 
@@ -97,11 +92,6 @@ and a boolean to check if the value has been set.
 
 SetIpPoolStart sets IpPoolStart field to given value.
 
-### HasIpPoolStart
-
-`func (o *SdWanIpPoolRange) HasIpPoolStart() bool`
-
-HasIpPoolStart returns a boolean if a field has been set.
 
 ### GetTunnelLimit
 
@@ -122,11 +112,6 @@ and a boolean to check if the value has been set.
 
 SetTunnelLimit sets TunnelLimit field to given value.
 
-### HasTunnelLimit
-
-`func (o *SdWanIpPoolRange) HasTunnelLimit() bool`
-
-HasTunnelLimit returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

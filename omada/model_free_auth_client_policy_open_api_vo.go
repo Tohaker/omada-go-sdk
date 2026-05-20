@@ -25,6 +25,8 @@ type FreeAuthClientPolicyOpenApiVO struct {
 	ClientIp *string `json:"clientIp,omitempty"`
 	// Free auth client MAC Address, for example: AA-AA-AA-AA-AA-AA
 	ClientMac *string `json:"clientMac,omitempty"`
+	// Description of Pre-Authentication Access Policy
+	Description *string `json:"description,omitempty"`
 	// Entry ID of the policy. Except for newly added policies, this parameter should be retained
 	IdInt *int32 `json:"idInt,omitempty"`
 	// Type of the policy. It should be a value as follows: 3: Free auth client IP, and parameter [clientIp] is needed. 4: Free auth client MAC, and parameter [clientMac] is needed
@@ -115,6 +117,38 @@ func (o *FreeAuthClientPolicyOpenApiVO) SetClientMac(v string) {
 	o.ClientMac = &v
 }
 
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *FreeAuthClientPolicyOpenApiVO) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FreeAuthClientPolicyOpenApiVO) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *FreeAuthClientPolicyOpenApiVO) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *FreeAuthClientPolicyOpenApiVO) SetDescription(v string) {
+	o.Description = &v
+}
+
 // GetIdInt returns the IdInt field value if set, zero value otherwise.
 func (o *FreeAuthClientPolicyOpenApiVO) GetIdInt() int32 {
 	if o == nil || IsNil(o.IdInt) {
@@ -186,6 +220,9 @@ func (o FreeAuthClientPolicyOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ClientMac) {
 		toSerialize["clientMac"] = o.ClientMac
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
 	}
 	if !IsNil(o.IdInt) {
 		toSerialize["idInt"] = o.IdInt

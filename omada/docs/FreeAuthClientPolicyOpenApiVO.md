@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientIp** | Pointer to **string** | Free auth client IP Address | [optional] 
 **ClientMac** | Pointer to **string** | Free auth client MAC Address, for example: AA-AA-AA-AA-AA-AA | [optional] 
+**Description** | Pointer to **string** | Description of Pre-Authentication Access Policy | [optional] 
 **IdInt** | Pointer to **int32** | Entry ID of the policy. Except for newly added policies, this parameter should be retained | [optional] 
 **Type** | **int32** | Type of the policy. It should be a value as follows: 3: Free auth client IP, and parameter [clientIp] is needed. 4: Free auth client MAC, and parameter [clientMac] is needed | 
 
@@ -77,6 +78,31 @@ SetClientMac sets ClientMac field to given value.
 `func (o *FreeAuthClientPolicyOpenApiVO) HasClientMac() bool`
 
 HasClientMac returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *FreeAuthClientPolicyOpenApiVO) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *FreeAuthClientPolicyOpenApiVO) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *FreeAuthClientPolicyOpenApiVO) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *FreeAuthClientPolicyOpenApiVO) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetIdInt
 

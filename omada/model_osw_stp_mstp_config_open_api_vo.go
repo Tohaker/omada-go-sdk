@@ -19,7 +19,7 @@ import (
 // checks if the OswStpMstpConfigOpenApiVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswStpMstpConfigOpenApiVO{}
 
-// OswStpMstpConfigOpenApiVO STP MSTP Config
+// OswStpMstpConfigOpenApiVO STP MSTP Config, must not be null when stp is 3.
 type OswStpMstpConfigOpenApiVO struct {
 	// Instances
 	Instances []OswStpInstanceConfigOpenApiVO `json:"instances"`

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **SelectMacs** | [**BatchSelectMacsVO**](BatchSelectMacsVO.md) |  | 
 **ServerMac** | Pointer to **string** | Dhcp Server Macs | [optional] 
 **ServerStackId** | Pointer to **string** | Dhcp Server StackIds | [optional] 
+**Sorts** | Pointer to **map[string]string** | Sort rule, key: sort field, value: sort direction, value parameter may be one of asc or desc. | [optional] 
 **Type** | Pointer to **string** | Filter Type of Dhcp User: \&quot;device\&quot;, \&quot;client\&quot; or \&quot;device, client\&quot; | [optional] 
 
 ## Methods
@@ -170,6 +171,31 @@ SetServerStackId sets ServerStackId field to given value.
 `func (o *DhcpUserFilterVO) HasServerStackId() bool`
 
 HasServerStackId returns a boolean if a field has been set.
+
+### GetSorts
+
+`func (o *DhcpUserFilterVO) GetSorts() map[string]string`
+
+GetSorts returns the Sorts field if non-nil, zero value otherwise.
+
+### GetSortsOk
+
+`func (o *DhcpUserFilterVO) GetSortsOk() (*map[string]string, bool)`
+
+GetSortsOk returns a tuple with the Sorts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSorts
+
+`func (o *DhcpUserFilterVO) SetSorts(v map[string]string)`
+
+SetSorts sets Sorts field to given value.
+
+### HasSorts
+
+`func (o *DhcpUserFilterVO) HasSorts() bool`
+
+HasSorts returns a boolean if a field has been set.
 
 ### GetType
 

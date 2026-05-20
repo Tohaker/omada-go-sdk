@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Compatible** | Pointer to **int32** | Compatible Type | [optional] 
 **CompoundModel** | Pointer to **string** |  | [optional] 
 **CpuUtil** | Pointer to **int32** | Real-time CPU usage | [optional] 
+**DefaultGroupSpeedCap** | Pointer to **[]int32** | Stack port aggregation group default link speed capability | [optional] 
 **DeviceSeriesType** | Pointer to **int32** | DeviceSeriesType should be a value as follows: 0: advanced; 1: pro | [optional] 
 **DownlinkList** | Pointer to [**[]OswDownlinkVO**](OswDownlinkVO.md) | Downlink Omada device list | [optional] 
 **DueTime** | Pointer to **int64** | Expiration time | [optional] 
@@ -40,9 +41,11 @@ Name | Type | Description | Notes
 **Priority** | **int32** | Priority of the device in the local stacking system | 
 **ShowModel** | Pointer to **string** | ShowModel | [optional] 
 **StackPortCap** | Pointer to **map[string][]string** |  | [optional] 
+**StackPortConfigCaps** | Pointer to [**[]OswStackPortCapVO**](OswStackPortCapVO.md) | Ports capability that support configuration as stack port | [optional] 
 **StackPorts** | [**[]OswStackPortGroupVO**](OswStackPortGroupVO.md) | Stack port list | 
 **Status** | Pointer to **int32** | Device Status | [optional] 
 **StatusCategory** | Pointer to **int32** |  | [optional] 
+**SupportStackGroupSpeed** | Pointer to **bool** | Indicates whether the member device supports configuring the link speed of the stack port aggregation group | [optional] 
 **Type** | Pointer to **string** | Type | [optional] 
 **Unit** | **int32** | Unit number of the local stacking system of the device | 
 **Uplink** | Pointer to [**OswUplinkVO**](OswUplinkVO.md) |  | [optional] 
@@ -192,6 +195,31 @@ SetCpuUtil sets CpuUtil field to given value.
 `func (o *OswStackMemberVO) HasCpuUtil() bool`
 
 HasCpuUtil returns a boolean if a field has been set.
+
+### GetDefaultGroupSpeedCap
+
+`func (o *OswStackMemberVO) GetDefaultGroupSpeedCap() []int32`
+
+GetDefaultGroupSpeedCap returns the DefaultGroupSpeedCap field if non-nil, zero value otherwise.
+
+### GetDefaultGroupSpeedCapOk
+
+`func (o *OswStackMemberVO) GetDefaultGroupSpeedCapOk() (*[]int32, bool)`
+
+GetDefaultGroupSpeedCapOk returns a tuple with the DefaultGroupSpeedCap field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultGroupSpeedCap
+
+`func (o *OswStackMemberVO) SetDefaultGroupSpeedCap(v []int32)`
+
+SetDefaultGroupSpeedCap sets DefaultGroupSpeedCap field to given value.
+
+### HasDefaultGroupSpeedCap
+
+`func (o *OswStackMemberVO) HasDefaultGroupSpeedCap() bool`
+
+HasDefaultGroupSpeedCap returns a boolean if a field has been set.
 
 ### GetDeviceSeriesType
 
@@ -958,6 +986,31 @@ SetStackPortCap sets StackPortCap field to given value.
 
 HasStackPortCap returns a boolean if a field has been set.
 
+### GetStackPortConfigCaps
+
+`func (o *OswStackMemberVO) GetStackPortConfigCaps() []OswStackPortCapVO`
+
+GetStackPortConfigCaps returns the StackPortConfigCaps field if non-nil, zero value otherwise.
+
+### GetStackPortConfigCapsOk
+
+`func (o *OswStackMemberVO) GetStackPortConfigCapsOk() (*[]OswStackPortCapVO, bool)`
+
+GetStackPortConfigCapsOk returns a tuple with the StackPortConfigCaps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackPortConfigCaps
+
+`func (o *OswStackMemberVO) SetStackPortConfigCaps(v []OswStackPortCapVO)`
+
+SetStackPortConfigCaps sets StackPortConfigCaps field to given value.
+
+### HasStackPortConfigCaps
+
+`func (o *OswStackMemberVO) HasStackPortConfigCaps() bool`
+
+HasStackPortConfigCaps returns a boolean if a field has been set.
+
 ### GetStackPorts
 
 `func (o *OswStackMemberVO) GetStackPorts() []OswStackPortGroupVO`
@@ -1027,6 +1080,31 @@ SetStatusCategory sets StatusCategory field to given value.
 `func (o *OswStackMemberVO) HasStatusCategory() bool`
 
 HasStatusCategory returns a boolean if a field has been set.
+
+### GetSupportStackGroupSpeed
+
+`func (o *OswStackMemberVO) GetSupportStackGroupSpeed() bool`
+
+GetSupportStackGroupSpeed returns the SupportStackGroupSpeed field if non-nil, zero value otherwise.
+
+### GetSupportStackGroupSpeedOk
+
+`func (o *OswStackMemberVO) GetSupportStackGroupSpeedOk() (*bool, bool)`
+
+GetSupportStackGroupSpeedOk returns a tuple with the SupportStackGroupSpeed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportStackGroupSpeed
+
+`func (o *OswStackMemberVO) SetSupportStackGroupSpeed(v bool)`
+
+SetSupportStackGroupSpeed sets SupportStackGroupSpeed field to given value.
+
+### HasSupportStackGroupSpeed
+
+`func (o *OswStackMemberVO) HasSupportStackGroupSpeed() bool`
+
+HasSupportStackGroupSpeed returns a boolean if a field has been set.
 
 ### GetType
 

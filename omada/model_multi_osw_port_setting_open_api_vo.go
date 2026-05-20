@@ -31,8 +31,10 @@ type MultiOswPortSettingOpenApiVO struct {
 	NetworkTagsSetting *int32 `json:"networkTagsSetting,omitempty"`
 	// Profile ID
 	ProfileId *string `json:"profileId,omitempty"`
-	// Indicates whether to enable Profile Override
+	// Indicates whether to enable Profile Override before v6.2.10; Indicates the fill mode of port configuration after v6.2.10: true: custom; false: follow profile
 	ProfileOverrideEnable *bool `json:"profileOverrideEnable,omitempty"`
+	// Indicates the fill mode of vlan configuration: true: custom; false: follow profile
+	ProfileVlanOverrideEnable *bool `json:"profileVlanOverrideEnable,omitempty"`
 	// The keywords of the searchIt is effected when [selectAll] is 'true'.
 	SearchKey *string `json:"searchKey,omitempty"`
 	// Indicates whether select all switch ports.false: include selected switch ports and lags in Parameter [switchList], true: all switch ports and lags but exclude selected switch ports and lags in Parameter [switchList].
@@ -268,6 +270,38 @@ func (o *MultiOswPortSettingOpenApiVO) HasProfileOverrideEnable() bool {
 // SetProfileOverrideEnable gets a reference to the given bool and assigns it to the ProfileOverrideEnable field.
 func (o *MultiOswPortSettingOpenApiVO) SetProfileOverrideEnable(v bool) {
 	o.ProfileOverrideEnable = &v
+}
+
+// GetProfileVlanOverrideEnable returns the ProfileVlanOverrideEnable field value if set, zero value otherwise.
+func (o *MultiOswPortSettingOpenApiVO) GetProfileVlanOverrideEnable() bool {
+	if o == nil || IsNil(o.ProfileVlanOverrideEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.ProfileVlanOverrideEnable
+}
+
+// GetProfileVlanOverrideEnableOk returns a tuple with the ProfileVlanOverrideEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiOswPortSettingOpenApiVO) GetProfileVlanOverrideEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.ProfileVlanOverrideEnable) {
+		return nil, false
+	}
+	return o.ProfileVlanOverrideEnable, true
+}
+
+// HasProfileVlanOverrideEnable returns a boolean if a field has been set.
+func (o *MultiOswPortSettingOpenApiVO) HasProfileVlanOverrideEnable() bool {
+	if o != nil && !IsNil(o.ProfileVlanOverrideEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetProfileVlanOverrideEnable gets a reference to the given bool and assigns it to the ProfileVlanOverrideEnable field.
+func (o *MultiOswPortSettingOpenApiVO) SetProfileVlanOverrideEnable(v bool) {
+	o.ProfileVlanOverrideEnable = &v
 }
 
 // GetSearchKey returns the SearchKey field value if set, zero value otherwise.
@@ -633,6 +667,9 @@ func (o MultiOswPortSettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ProfileOverrideEnable) {
 		toSerialize["profileOverrideEnable"] = o.ProfileOverrideEnable
+	}
+	if !IsNil(o.ProfileVlanOverrideEnable) {
+		toSerialize["profileVlanOverrideEnable"] = o.ProfileVlanOverrideEnable
 	}
 	if !IsNil(o.SearchKey) {
 		toSerialize["searchKey"] = o.SearchKey

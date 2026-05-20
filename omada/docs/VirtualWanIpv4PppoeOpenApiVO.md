@@ -8,26 +8,26 @@ Name | Type | Description | Notes
 **Dns2** | Pointer to **string** | Secondary DNS | [optional] 
 **EndTime** | Pointer to **string** | It is required when [linkType] is 2. For example, 12:30. | [optional] 
 **Gateway** | Pointer to **string** | Gateway IP. | [optional] 
-**IpFromIsp** | Pointer to **string** | Get IP address from ISP. | [optional] 
+**IpFromIsp** | **string** | Get IP address from ISP. | 
 **Ipaddr** | Pointer to **string** | IP address. | [optional] 
-**Ipv4Connection2** | Pointer to [**VirtualWanIpv4Connection2OpenApiVO**](VirtualWanIpv4Connection2OpenApiVO.md) |  | [optional] 
-**LinkType** | Pointer to **string** | Connection Mode. Parameter [linkType] should be as follows: auto: Connect Automatically; demand: Connect Manually; time: Time-based. | [optional] 
-**Mru** | Pointer to **int32** | Parameter [mru] should be a value between 576 and 1492 | [optional] 
-**MssClampingType** | Pointer to **int32** |  | [optional] 
+**Ipv4Connection2** | [**VirtualWanIpv4Connection2OpenApiVO**](VirtualWanIpv4Connection2OpenApiVO.md) |  | 
+**LinkType** | **string** | Connection Mode. Parameter [linkType] should be as follows: auto: Connect Automatically; demand: Connect Manually; time: Time-based. | 
+**Mru** | **int32** | Parameter [mru] should be a value between 576 and 1492 | 
+**MssClampingType** | **int32** |  | 
 **MssClampingValue** | Pointer to **int32** |  | [optional] 
-**Mtu** | Pointer to **int32** | Parameter [mtu] should be a value between 576 and 1492 | [optional] 
+**Mtu** | **int32** | Parameter [mtu] should be a value between 576 and 1492 | 
 **Netmask** | Pointer to **string** | Subnet mask. | [optional] 
-**Password** | Pointer to **string** | Password. Parameter [password] should contain 1 to 255 ASCII characters. | [optional] 
-**RedialInterval** | Pointer to **int32** | It is required when [linkType] is auto. Unit: Second | [optional] 
+**Password** | **string** | Password. Parameter [password] should contain 1 to 255 ASCII characters. | 
+**RedialInterval** | **int32** | It is required when [linkType] is auto. Unit: Second | 
 **Service** | Pointer to **string** | Service name. Keep parameter [service] blank unless your ISP requires you to configure it. | [optional] 
 **StartTime** | Pointer to **string** | It is required when [linkType] is 2. For example, 12:30. | [optional] 
-**UserName** | Pointer to **string** | Username. Parameter [userName] should contain 1 to 255 ASCII characters. | [optional] 
+**UserName** | **string** | Username. Parameter [userName] should contain 1 to 255 ASCII characters. | 
 
 ## Methods
 
 ### NewVirtualWanIpv4PppoeOpenApiVO
 
-`func NewVirtualWanIpv4PppoeOpenApiVO() *VirtualWanIpv4PppoeOpenApiVO`
+`func NewVirtualWanIpv4PppoeOpenApiVO(ipFromIsp string, ipv4Connection2 VirtualWanIpv4Connection2OpenApiVO, linkType string, mru int32, mssClampingType int32, mtu int32, password string, redialInterval int32, userName string, ) *VirtualWanIpv4PppoeOpenApiVO`
 
 NewVirtualWanIpv4PppoeOpenApiVO instantiates a new VirtualWanIpv4PppoeOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -161,11 +161,6 @@ and a boolean to check if the value has been set.
 
 SetIpFromIsp sets IpFromIsp field to given value.
 
-### HasIpFromIsp
-
-`func (o *VirtualWanIpv4PppoeOpenApiVO) HasIpFromIsp() bool`
-
-HasIpFromIsp returns a boolean if a field has been set.
 
 ### GetIpaddr
 
@@ -211,11 +206,6 @@ and a boolean to check if the value has been set.
 
 SetIpv4Connection2 sets Ipv4Connection2 field to given value.
 
-### HasIpv4Connection2
-
-`func (o *VirtualWanIpv4PppoeOpenApiVO) HasIpv4Connection2() bool`
-
-HasIpv4Connection2 returns a boolean if a field has been set.
 
 ### GetLinkType
 
@@ -236,11 +226,6 @@ and a boolean to check if the value has been set.
 
 SetLinkType sets LinkType field to given value.
 
-### HasLinkType
-
-`func (o *VirtualWanIpv4PppoeOpenApiVO) HasLinkType() bool`
-
-HasLinkType returns a boolean if a field has been set.
 
 ### GetMru
 
@@ -261,11 +246,6 @@ and a boolean to check if the value has been set.
 
 SetMru sets Mru field to given value.
 
-### HasMru
-
-`func (o *VirtualWanIpv4PppoeOpenApiVO) HasMru() bool`
-
-HasMru returns a boolean if a field has been set.
 
 ### GetMssClampingType
 
@@ -286,11 +266,6 @@ and a boolean to check if the value has been set.
 
 SetMssClampingType sets MssClampingType field to given value.
 
-### HasMssClampingType
-
-`func (o *VirtualWanIpv4PppoeOpenApiVO) HasMssClampingType() bool`
-
-HasMssClampingType returns a boolean if a field has been set.
 
 ### GetMssClampingValue
 
@@ -336,11 +311,6 @@ and a boolean to check if the value has been set.
 
 SetMtu sets Mtu field to given value.
 
-### HasMtu
-
-`func (o *VirtualWanIpv4PppoeOpenApiVO) HasMtu() bool`
-
-HasMtu returns a boolean if a field has been set.
 
 ### GetNetmask
 
@@ -386,11 +356,6 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
-### HasPassword
-
-`func (o *VirtualWanIpv4PppoeOpenApiVO) HasPassword() bool`
-
-HasPassword returns a boolean if a field has been set.
 
 ### GetRedialInterval
 
@@ -411,11 +376,6 @@ and a boolean to check if the value has been set.
 
 SetRedialInterval sets RedialInterval field to given value.
 
-### HasRedialInterval
-
-`func (o *VirtualWanIpv4PppoeOpenApiVO) HasRedialInterval() bool`
-
-HasRedialInterval returns a boolean if a field has been set.
 
 ### GetService
 
@@ -486,11 +446,6 @@ and a boolean to check if the value has been set.
 
 SetUserName sets UserName field to given value.
 
-### HasUserName
-
-`func (o *VirtualWanIpv4PppoeOpenApiVO) HasUserName() bool`
-
-HasUserName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

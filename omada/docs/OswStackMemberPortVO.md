@@ -68,7 +68,8 @@ Name | Type | Description | Notes
 **PortStatus** | Pointer to [**OswPortStatusVO**](OswPortStatusVO.md) |  | [optional] 
 **ProfileId** | Pointer to **string** | Lan Profile ID | [optional] 
 **ProfileName** | Pointer to **string** | Lan Profile Name | [optional] 
-**ProfileOverrideEnable** | Pointer to **bool** | Indicates whether to enable Profile Override | [optional] 
+**ProfileOverrideEnable** | Pointer to **bool** | Indicates whether to enable Profile Override before v6.2.10; Indicates the fill mode of port configuration after v6.2.10: true: custom; false: follow profile | [optional] 
+**ProfileVlanOverrideEnable** | Pointer to **bool** | Indicates the fill mode of vlan configuration: true: custom; false: follow profile | [optional] 
 **QosQueueEnable** | Pointer to **bool** | Indicates whether the ES device port has enabled the Qos scheduling queue configuration | [optional] 
 **QosSupport** | Pointer to **bool** | Indicates whether the device port supports modifying qos configuration | [optional] 
 **QueueId** | Pointer to **int32** | ES Qos scheduling queue ID | [optional] 
@@ -1744,6 +1745,31 @@ SetProfileOverrideEnable sets ProfileOverrideEnable field to given value.
 `func (o *OswStackMemberPortVO) HasProfileOverrideEnable() bool`
 
 HasProfileOverrideEnable returns a boolean if a field has been set.
+
+### GetProfileVlanOverrideEnable
+
+`func (o *OswStackMemberPortVO) GetProfileVlanOverrideEnable() bool`
+
+GetProfileVlanOverrideEnable returns the ProfileVlanOverrideEnable field if non-nil, zero value otherwise.
+
+### GetProfileVlanOverrideEnableOk
+
+`func (o *OswStackMemberPortVO) GetProfileVlanOverrideEnableOk() (*bool, bool)`
+
+GetProfileVlanOverrideEnableOk returns a tuple with the ProfileVlanOverrideEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProfileVlanOverrideEnable
+
+`func (o *OswStackMemberPortVO) SetProfileVlanOverrideEnable(v bool)`
+
+SetProfileVlanOverrideEnable sets ProfileVlanOverrideEnable field to given value.
+
+### HasProfileVlanOverrideEnable
+
+`func (o *OswStackMemberPortVO) HasProfileVlanOverrideEnable() bool`
+
+HasProfileVlanOverrideEnable returns a boolean if a field has been set.
 
 ### GetQosQueueEnable
 

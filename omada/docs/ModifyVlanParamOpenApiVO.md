@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DeviceConfig** | [**SelectPortBindingBriefVO**](SelectPortBindingBriefVO.md) |  | 
 **LanNetwork** | [**LanNetworkOpenApiV3VO**](LanNetworkOpenApiV3VO.md) |  | 
+**SkipEnable** | Pointer to **bool** | Whether skip the second step when modify vlan | [optional] 
 
 ## Methods
 
@@ -65,6 +66,31 @@ and a boolean to check if the value has been set.
 
 SetLanNetwork sets LanNetwork field to given value.
 
+
+### GetSkipEnable
+
+`func (o *ModifyVlanParamOpenApiVO) GetSkipEnable() bool`
+
+GetSkipEnable returns the SkipEnable field if non-nil, zero value otherwise.
+
+### GetSkipEnableOk
+
+`func (o *ModifyVlanParamOpenApiVO) GetSkipEnableOk() (*bool, bool)`
+
+GetSkipEnableOk returns a tuple with the SkipEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkipEnable
+
+`func (o *ModifyVlanParamOpenApiVO) SetSkipEnable(v bool)`
+
+SetSkipEnable sets SkipEnable field to given value.
+
+### HasSkipEnable
+
+`func (o *ModifyVlanParamOpenApiVO) HasSkipEnable() bool`
+
+HasSkipEnable returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

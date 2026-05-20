@@ -27,6 +27,8 @@ type DhcpServersSetting struct {
 	DhcpSvr2 *string `json:"dhcpSvr2,omitempty"`
 	// The switch of DHCP Guarding
 	Enable bool `json:"enable"`
+	// The fill mode of DHCP Guarding, 1：follow Server 2：custom
+	Mode *int32 `json:"mode,omitempty"`
 }
 
 type _DhcpServersSetting DhcpServersSetting
@@ -137,6 +139,38 @@ func (o *DhcpServersSetting) SetEnable(v bool) {
 	o.Enable = v
 }
 
+// GetMode returns the Mode field value if set, zero value otherwise.
+func (o *DhcpServersSetting) GetMode() int32 {
+	if o == nil || IsNil(o.Mode) {
+		var ret int32
+		return ret
+	}
+	return *o.Mode
+}
+
+// GetModeOk returns a tuple with the Mode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DhcpServersSetting) GetModeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Mode) {
+		return nil, false
+	}
+	return o.Mode, true
+}
+
+// HasMode returns a boolean if a field has been set.
+func (o *DhcpServersSetting) HasMode() bool {
+	if o != nil && !IsNil(o.Mode) {
+		return true
+	}
+
+	return false
+}
+
+// SetMode gets a reference to the given int32 and assigns it to the Mode field.
+func (o *DhcpServersSetting) SetMode(v int32) {
+	o.Mode = &v
+}
+
 func (o DhcpServersSetting) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -154,6 +188,9 @@ func (o DhcpServersSetting) ToMap() (map[string]interface{}, error) {
 		toSerialize["dhcpSvr2"] = o.DhcpSvr2
 	}
 	toSerialize["enable"] = o.Enable
+	if !IsNil(o.Mode) {
+		toSerialize["mode"] = o.Mode
+	}
 	return toSerialize, nil
 }
 

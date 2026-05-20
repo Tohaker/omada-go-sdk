@@ -19,13 +19,13 @@ var _ MappedNullable = &WirelessTrafficTrendVO{}
 
 // WirelessTrafficTrendVO struct for WirelessTrafficTrendVO
 type WirelessTrafficTrendVO struct {
-	// rx traffic
+	// client rx traffic
 	RxTraffic *int64 `json:"rxTraffic,omitempty"`
 	// time
 	Time *int64 `json:"time,omitempty"`
 	// total traffic
 	TotalTraffic *int64 `json:"totalTraffic,omitempty"`
-	// tx traffic
+	// client tx traffic
 	TxTraffic *int64 `json:"txTraffic,omitempty"`
 	// number of wired device
 	WiredCount *int32 `json:"wiredCount,omitempty"`

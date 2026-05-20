@@ -48,6 +48,8 @@ Name | Type | Description | Notes
 **InputBoxRadius** | Pointer to **int32** | Input box radius, should be within the range of 0–30. | [optional] 
 **InputTextColor** | Pointer to **string** | Input text color. Hex color code such as: #ffffff | [optional] 
 **InputTextOpacity** | Pointer to **int32** | Input text opacity, should be within the range of 0–100 | [optional] 
+**LanguageSelectorTextColor** | Pointer to **string** | Language Selector text color. Hex color code such as: #ffffff. | [optional] 
+**LanguageSelectorTextOpacity** | Pointer to **int32** | Language Selector text opacity, should be within the range of 0–100. | [optional] 
 **LogoDisplay** | Pointer to **bool** | Whether to display the default logo | [optional] 
 **LogoHorizontalPosition** | Pointer to **int32** | Position of logo horizontal, 0: left; 1: medium; 2: right | [optional] 
 **LogoPicture** | Pointer to [**PortalPictureInfo**](PortalPictureInfo.md) |  | [optional] 
@@ -62,7 +64,7 @@ Name | Type | Description | Notes
 **TermsOfService** | Pointer to **string** | Service Terms Content | [optional] 
 **TermsOfServiceEnable** | Pointer to **bool** | Whether to display terms of service | [optional] 
 **TermsOfServiceFontSize** | Pointer to **int32** | Terms of service text font size, should be within the range of 12–18 | [optional] 
-**TermsOfServiceText** | Pointer to **string** | Terms of service text, should contain 0 to 100 characters | [optional] 
+**TermsOfServiceText** | Pointer to **string** | Terms of service text, should contain 0 to 512 characters | [optional] 
 **TermsOfServiceTextColor** | Pointer to **string** | Terms of service text color. Hex color code such as: #ffffff. | [optional] 
 **TermsOfServiceTextOpacity** | Pointer to **int32** | Terms of service text opacity, should be within the range of 0–100. | [optional] 
 **TermsOfServiceUrlTexts** | Pointer to [**[]TermsOfServiceUrlVO**](TermsOfServiceUrlVO.md) | Terms of service URL texts, match the termsOfServiceText and turn the matching characters into an openable link. Up to 3 entries are allowed for the list | [optional] 
@@ -1190,6 +1192,56 @@ SetInputTextOpacity sets InputTextOpacity field to given value.
 `func (o *PortalCustomizeResOpenApiVO) HasInputTextOpacity() bool`
 
 HasInputTextOpacity returns a boolean if a field has been set.
+
+### GetLanguageSelectorTextColor
+
+`func (o *PortalCustomizeResOpenApiVO) GetLanguageSelectorTextColor() string`
+
+GetLanguageSelectorTextColor returns the LanguageSelectorTextColor field if non-nil, zero value otherwise.
+
+### GetLanguageSelectorTextColorOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetLanguageSelectorTextColorOk() (*string, bool)`
+
+GetLanguageSelectorTextColorOk returns a tuple with the LanguageSelectorTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguageSelectorTextColor
+
+`func (o *PortalCustomizeResOpenApiVO) SetLanguageSelectorTextColor(v string)`
+
+SetLanguageSelectorTextColor sets LanguageSelectorTextColor field to given value.
+
+### HasLanguageSelectorTextColor
+
+`func (o *PortalCustomizeResOpenApiVO) HasLanguageSelectorTextColor() bool`
+
+HasLanguageSelectorTextColor returns a boolean if a field has been set.
+
+### GetLanguageSelectorTextOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) GetLanguageSelectorTextOpacity() int32`
+
+GetLanguageSelectorTextOpacity returns the LanguageSelectorTextOpacity field if non-nil, zero value otherwise.
+
+### GetLanguageSelectorTextOpacityOk
+
+`func (o *PortalCustomizeResOpenApiVO) GetLanguageSelectorTextOpacityOk() (*int32, bool)`
+
+GetLanguageSelectorTextOpacityOk returns a tuple with the LanguageSelectorTextOpacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguageSelectorTextOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) SetLanguageSelectorTextOpacity(v int32)`
+
+SetLanguageSelectorTextOpacity sets LanguageSelectorTextOpacity field to given value.
+
+### HasLanguageSelectorTextOpacity
+
+`func (o *PortalCustomizeResOpenApiVO) HasLanguageSelectorTextOpacity() bool`
+
+HasLanguageSelectorTextOpacity returns a boolean if a field has been set.
 
 ### GetLogoDisplay
 

@@ -40,6 +40,22 @@ type WLANOptimizationAPI interface {
 	ApplyPlanningHistoryExecute(r WLANOptimizationAPIApplyPlanningHistoryRequest) (*OperationResponse, *http.Response, error)
 
 	/*
+	BatchDeletePlanningHistory Batch Delete PlanningHistory
+
+	Batch Delete PlanningHistory<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIBatchDeletePlanningHistoryRequest
+	*/
+	BatchDeletePlanningHistory(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIBatchDeletePlanningHistoryRequest
+
+	// BatchDeletePlanningHistoryExecute executes the request
+	//  @return OperationResponse
+	BatchDeletePlanningHistoryExecute(r WLANOptimizationAPIBatchDeletePlanningHistoryRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	CancelRadioFrequencyPlanning cancel Radio Frequency Planning
 
 	cancel Radio Frequency Planning<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
@@ -54,6 +70,22 @@ type WLANOptimizationAPI interface {
 	// CancelRadioFrequencyPlanningExecute executes the request
 	//  @return OperationResponse
 	CancelRadioFrequencyPlanningExecute(r WLANOptimizationAPICancelRadioFrequencyPlanningRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	DeleteExcludeAps Delete ExcludeAps
+
+	Delete ExcludeAps<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIDeleteExcludeApsRequest
+	*/
+	DeleteExcludeAps(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIDeleteExcludeApsRequest
+
+	// DeleteExcludeApsExecute executes the request
+	//  @return OperationResponse
+	DeleteExcludeApsExecute(r WLANOptimizationAPIDeleteExcludeApsRequest) (*OperationResponse, *http.Response, error)
 
 	/*
 	DeletePlanningHistory delete Planning History
@@ -71,6 +103,38 @@ type WLANOptimizationAPI interface {
 	// DeletePlanningHistoryExecute executes the request
 	//  @return OperationResponse
 	DeletePlanningHistoryExecute(r WLANOptimizationAPIDeletePlanningHistoryRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	ExportRfPlanningHistory Export PlanningHistory
+
+	Export PlanningHistory<br/><br/>The interface requires one of the permissions: <br/>Site Export Data Access<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIExportRfPlanningHistoryRequest
+	*/
+	ExportRfPlanningHistory(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIExportRfPlanningHistoryRequest
+
+	// ExportRfPlanningHistoryExecute executes the request
+	//  @return OperationResponse
+	ExportRfPlanningHistoryExecute(r WLANOptimizationAPIExportRfPlanningHistoryRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	GetExcludeAps get ExcludeAps
+
+	get ExcludeAps<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIGetExcludeApsRequest
+	*/
+	GetExcludeAps(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetExcludeApsRequest
+
+	// GetExcludeApsExecute executes the request
+	//  @return OperationResponse
+	GetExcludeApsExecute(r WLANOptimizationAPIGetExcludeApsRequest) (*OperationResponse, *http.Response, error)
 
 	/*
 	GetExperienceIndex get Experience Index
@@ -105,6 +169,22 @@ type WLANOptimizationAPI interface {
 	GetGirdPlanningHistorysExecute(r WLANOptimizationAPIGetGirdPlanningHistorysRequest) (*GridVORFPlanningHistory, *http.Response, error)
 
 	/*
+	GetLast20PlanningHistorys get Last 20 PlanningHistorys
+
+	get Last 20 PlanningHistorys<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIGetLast20PlanningHistorysRequest
+	*/
+	GetLast20PlanningHistorys(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetLast20PlanningHistorysRequest
+
+	// GetLast20PlanningHistorysExecute executes the request
+	//  @return OperationResponse
+	GetLast20PlanningHistorysExecute(r WLANOptimizationAPIGetLast20PlanningHistorysRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	GetPlanningHistory Get Planning History
 
 	Get Planning History<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
@@ -120,6 +200,22 @@ type WLANOptimizationAPI interface {
 	// GetPlanningHistoryExecute executes the request
 	//  @return OperationResponsePlanningHistoryDetail
 	GetPlanningHistoryExecute(r WLANOptimizationAPIGetPlanningHistoryRequest) (*OperationResponsePlanningHistoryDetail, *http.Response, error)
+
+	/*
+	GetPlanningHistorysByTime Get the planningHistory
+
+	Get the planningHistory by time<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIGetPlanningHistorysByTimeRequest
+	*/
+	GetPlanningHistorysByTime(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetPlanningHistorysByTimeRequest
+
+	// GetPlanningHistorysByTimeExecute executes the request
+	//  @return OperationResponse
+	GetPlanningHistorysByTimeExecute(r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) (*OperationResponse, *http.Response, error)
 
 	/*
 	GetRFPlanningDeployHistory get RF Planning Deploy History
@@ -186,6 +282,22 @@ type WLANOptimizationAPI interface {
 	GetRadioFrequencyPlanningResultExecute(r WLANOptimizationAPIGetRadioFrequencyPlanningResultRequest) (*OperationResponseRFPlanningResult, *http.Response, error)
 
 	/*
+	GetTimeLinePlanningHistorys Get the planningHistory
+
+	Get the planningHistory drawing of the past period of time<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIGetTimeLinePlanningHistorysRequest
+	*/
+	GetTimeLinePlanningHistorys(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetTimeLinePlanningHistorysRequest
+
+	// GetTimeLinePlanningHistorysExecute executes the request
+	//  @return OperationResponse
+	GetTimeLinePlanningHistorysExecute(r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	ModifyExcludeAps modify Exclude Aps
 
 	modify Exclude Aps<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
@@ -232,6 +344,70 @@ type WLANOptimizationAPI interface {
 	// ModifyRFPlanningDeployConfigTemplateExecute executes the request
 	//  @return OperationResponse
 	ModifyRFPlanningDeployConfigTemplateExecute(r WLANOptimizationAPIModifyRFPlanningDeployConfigTemplateRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	ModifyRFPlanningScheduleConfig modify RF Planning Schedule Config
+
+	modify RF Planning Schedule Config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest
+	*/
+	ModifyRFPlanningScheduleConfig(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest
+
+	// ModifyRFPlanningScheduleConfigExecute executes the request
+	//  @return OperationResponse
+	ModifyRFPlanningScheduleConfigExecute(r WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	QueryRFPlanningBoard Get RRM AI time line
+
+	Get RRM AI time line<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIQueryRFPlanningBoardRequest
+	*/
+	QueryRFPlanningBoard(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIQueryRFPlanningBoardRequest
+
+	// QueryRFPlanningBoardExecute executes the request
+	//  @return OperationResponseWlanOptDashBoardOpenApiVO
+	QueryRFPlanningBoardExecute(r WLANOptimizationAPIQueryRFPlanningBoardRequest) (*OperationResponseWlanOptDashBoardOpenApiVO, *http.Response, error)
+
+	/*
+	QueryRFPlanningBoardStatus Get RRM AI dashboard status
+
+	Get RRM AI dashboard status<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIQueryRFPlanningBoardStatusRequest
+	*/
+	QueryRFPlanningBoardStatus(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIQueryRFPlanningBoardStatusRequest
+
+	// QueryRFPlanningBoardStatusExecute executes the request
+	//  @return OperationResponseWlanOptDashBoardOpenApiVO
+	QueryRFPlanningBoardStatusExecute(r WLANOptimizationAPIQueryRFPlanningBoardStatusRequest) (*OperationResponseWlanOptDashBoardOpenApiVO, *http.Response, error)
+
+	/*
+	QueryRFPlanningDashboardHistory Get RRM AI dashboard history time line
+
+	Get RRM AI dashboard history time line<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest
+	*/
+	QueryRFPlanningDashboardHistory(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest
+
+	// QueryRFPlanningDashboardHistoryExecute executes the request
+	//  @return OperationResponseWlanOptDashBoardOpenApiVO
+	QueryRFPlanningDashboardHistoryExecute(r WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest) (*OperationResponseWlanOptDashBoardOpenApiVO, *http.Response, error)
 
 	/*
 	StartOptimization start Optimization
@@ -405,6 +581,138 @@ func (a *WLANOptimizationAPIService) ApplyPlanningHistoryExecute(r WLANOptimizat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WLANOptimizationAPIBatchDeletePlanningHistoryRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+	batchDeletePlanningHistory *BatchDeletePlanningHistory
+}
+
+func (r WLANOptimizationAPIBatchDeletePlanningHistoryRequest) BatchDeletePlanningHistory(batchDeletePlanningHistory BatchDeletePlanningHistory) WLANOptimizationAPIBatchDeletePlanningHistoryRequest {
+	r.batchDeletePlanningHistory = &batchDeletePlanningHistory
+	return r
+}
+
+func (r WLANOptimizationAPIBatchDeletePlanningHistoryRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.BatchDeletePlanningHistoryExecute(r)
+}
+
+/*
+BatchDeletePlanningHistory Batch Delete PlanningHistory
+
+Batch Delete PlanningHistory<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIBatchDeletePlanningHistoryRequest
+*/
+func (a *WLANOptimizationAPIService) BatchDeletePlanningHistory(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIBatchDeletePlanningHistoryRequest {
+	return WLANOptimizationAPIBatchDeletePlanningHistoryRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WLANOptimizationAPIService) BatchDeletePlanningHistoryExecute(r WLANOptimizationAPIBatchDeletePlanningHistoryRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.BatchDeletePlanningHistory")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/planningHistory/batch/delete"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.batchDeletePlanningHistory == nil {
+		return localVarReturnValue, nil, reportError("batchDeletePlanningHistory is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.batchDeletePlanningHistory
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WLANOptimizationAPICancelRadioFrequencyPlanningRequest struct {
 	ctx context.Context
 	ApiService WLANOptimizationAPI
@@ -526,6 +834,138 @@ func (a *WLANOptimizationAPIService) CancelRadioFrequencyPlanningExecute(r WLANO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WLANOptimizationAPIDeleteExcludeApsRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+	excludeApDeleteOpenApiVO *ExcludeApDeleteOpenApiVO
+}
+
+func (r WLANOptimizationAPIDeleteExcludeApsRequest) ExcludeApDeleteOpenApiVO(excludeApDeleteOpenApiVO ExcludeApDeleteOpenApiVO) WLANOptimizationAPIDeleteExcludeApsRequest {
+	r.excludeApDeleteOpenApiVO = &excludeApDeleteOpenApiVO
+	return r
+}
+
+func (r WLANOptimizationAPIDeleteExcludeApsRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.DeleteExcludeApsExecute(r)
+}
+
+/*
+DeleteExcludeAps Delete ExcludeAps
+
+Delete ExcludeAps<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIDeleteExcludeApsRequest
+*/
+func (a *WLANOptimizationAPIService) DeleteExcludeAps(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIDeleteExcludeApsRequest {
+	return WLANOptimizationAPIDeleteExcludeApsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WLANOptimizationAPIService) DeleteExcludeApsExecute(r WLANOptimizationAPIDeleteExcludeApsRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.DeleteExcludeAps")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/excludeAps/delete"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.excludeApDeleteOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("excludeApDeleteOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.excludeApDeleteOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WLANOptimizationAPIDeletePlanningHistoryRequest struct {
 	ctx context.Context
 	ApiService WLANOptimizationAPI
@@ -583,6 +1023,281 @@ func (a *WLANOptimizationAPIService) DeletePlanningHistoryExecute(r WLANOptimiza
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WLANOptimizationAPIExportRfPlanningHistoryRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+	exportRFPlanningHistoryOpenapiVO *ExportRFPlanningHistoryOpenapiVO
+}
+
+func (r WLANOptimizationAPIExportRfPlanningHistoryRequest) ExportRFPlanningHistoryOpenapiVO(exportRFPlanningHistoryOpenapiVO ExportRFPlanningHistoryOpenapiVO) WLANOptimizationAPIExportRfPlanningHistoryRequest {
+	r.exportRFPlanningHistoryOpenapiVO = &exportRFPlanningHistoryOpenapiVO
+	return r
+}
+
+func (r WLANOptimizationAPIExportRfPlanningHistoryRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.ExportRfPlanningHistoryExecute(r)
+}
+
+/*
+ExportRfPlanningHistory Export PlanningHistory
+
+Export PlanningHistory<br/><br/>The interface requires one of the permissions: <br/>Site Export Data Access<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIExportRfPlanningHistoryRequest
+*/
+func (a *WLANOptimizationAPIService) ExportRfPlanningHistory(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIExportRfPlanningHistoryRequest {
+	return WLANOptimizationAPIExportRfPlanningHistoryRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WLANOptimizationAPIService) ExportRfPlanningHistoryExecute(r WLANOptimizationAPIExportRfPlanningHistoryRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.ExportRfPlanningHistory")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/files/sites/{siteId}/rfPlanning/history/export"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.exportRFPlanningHistoryOpenapiVO == nil {
+		return localVarReturnValue, nil, reportError("exportRFPlanningHistoryOpenapiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.exportRFPlanningHistoryOpenapiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WLANOptimizationAPIGetExcludeApsRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	currentPage *int32
+	currentPageSize *int32
+	omadacId string
+	siteId string
+}
+
+// Start page number. Start from 1.
+func (r WLANOptimizationAPIGetExcludeApsRequest) CurrentPage(currentPage int32) WLANOptimizationAPIGetExcludeApsRequest {
+	r.currentPage = &currentPage
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r WLANOptimizationAPIGetExcludeApsRequest) CurrentPageSize(currentPageSize int32) WLANOptimizationAPIGetExcludeApsRequest {
+	r.currentPageSize = &currentPageSize
+	return r
+}
+
+func (r WLANOptimizationAPIGetExcludeApsRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetExcludeApsExecute(r)
+}
+
+/*
+GetExcludeAps get ExcludeAps
+
+get ExcludeAps<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIGetExcludeApsRequest
+*/
+func (a *WLANOptimizationAPIService) GetExcludeAps(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetExcludeApsRequest {
+	return WLANOptimizationAPIGetExcludeApsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WLANOptimizationAPIService) GetExcludeApsExecute(r WLANOptimizationAPIGetExcludeApsRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.GetExcludeAps")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/excludeAps"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.currentPage == nil {
+		return localVarReturnValue, nil, reportError("currentPage is required and must be specified")
+	}
+	if r.currentPageSize == nil {
+		return localVarReturnValue, nil, reportError("currentPageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "currentPage", r.currentPage, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "currentPageSize", r.currentPageSize, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -915,6 +1630,127 @@ func (a *WLANOptimizationAPIService) GetGirdPlanningHistorysExecute(r WLANOptimi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WLANOptimizationAPIGetLast20PlanningHistorysRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+}
+
+func (r WLANOptimizationAPIGetLast20PlanningHistorysRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetLast20PlanningHistorysExecute(r)
+}
+
+/*
+GetLast20PlanningHistorys get Last 20 PlanningHistorys
+
+get Last 20 PlanningHistorys<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIGetLast20PlanningHistorysRequest
+*/
+func (a *WLANOptimizationAPIService) GetLast20PlanningHistorys(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetLast20PlanningHistorysRequest {
+	return WLANOptimizationAPIGetLast20PlanningHistorysRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WLANOptimizationAPIService) GetLast20PlanningHistorysExecute(r WLANOptimizationAPIGetLast20PlanningHistorysRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.GetLast20PlanningHistorys")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/history/last20times"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WLANOptimizationAPIGetPlanningHistoryRequest struct {
 	ctx context.Context
 	ApiService WLANOptimizationAPI
@@ -972,6 +1808,171 @@ func (a *WLANOptimizationAPIService) GetPlanningHistoryExecute(r WLANOptimizatio
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WLANOptimizationAPIGetPlanningHistorysByTimeRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+	currentPage *int32
+	currentPageSize *int32
+	start *int64
+	end *int64
+}
+
+// Start page number. Start from 1.
+func (r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) CurrentPage(currentPage int32) WLANOptimizationAPIGetPlanningHistorysByTimeRequest {
+	r.currentPage = &currentPage
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) CurrentPageSize(currentPageSize int32) WLANOptimizationAPIGetPlanningHistorysByTimeRequest {
+	r.currentPageSize = &currentPageSize
+	return r
+}
+
+// start time
+func (r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) Start(start int64) WLANOptimizationAPIGetPlanningHistorysByTimeRequest {
+	r.start = &start
+	return r
+}
+
+// end time
+func (r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) End(end int64) WLANOptimizationAPIGetPlanningHistorysByTimeRequest {
+	r.end = &end
+	return r
+}
+
+func (r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetPlanningHistorysByTimeExecute(r)
+}
+
+/*
+GetPlanningHistorysByTime Get the planningHistory
+
+Get the planningHistory by time<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIGetPlanningHistorysByTimeRequest
+*/
+func (a *WLANOptimizationAPIService) GetPlanningHistorysByTime(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetPlanningHistorysByTimeRequest {
+	return WLANOptimizationAPIGetPlanningHistorysByTimeRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WLANOptimizationAPIService) GetPlanningHistorysByTimeExecute(r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.GetPlanningHistorysByTime")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/planningHistoryByTime"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.currentPage == nil {
+		return localVarReturnValue, nil, reportError("currentPage is required and must be specified")
+	}
+	if r.currentPageSize == nil {
+		return localVarReturnValue, nil, reportError("currentPageSize is required and must be specified")
+	}
+	if r.start == nil {
+		return localVarReturnValue, nil, reportError("start is required and must be specified")
+	}
+	if r.end == nil {
+		return localVarReturnValue, nil, reportError("end is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "currentPage", r.currentPage, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "currentPageSize", r.currentPageSize, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1524,6 +2525,160 @@ func (a *WLANOptimizationAPIService) GetRadioFrequencyPlanningResultExecute(r WL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WLANOptimizationAPIGetTimeLinePlanningHistorysRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+	start *int64
+	end *int64
+	type_ *int32
+}
+
+// start time
+func (r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) Start(start int64) WLANOptimizationAPIGetTimeLinePlanningHistorysRequest {
+	r.start = &start
+	return r
+}
+
+// end time
+func (r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) End(end int64) WLANOptimizationAPIGetTimeLinePlanningHistorysRequest {
+	r.end = &end
+	return r
+}
+
+// type：0-day,1-week
+func (r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) Type_(type_ int32) WLANOptimizationAPIGetTimeLinePlanningHistorysRequest {
+	r.type_ = &type_
+	return r
+}
+
+func (r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetTimeLinePlanningHistorysExecute(r)
+}
+
+/*
+GetTimeLinePlanningHistorys Get the planningHistory
+
+Get the planningHistory drawing of the past period of time<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIGetTimeLinePlanningHistorysRequest
+*/
+func (a *WLANOptimizationAPIService) GetTimeLinePlanningHistorys(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetTimeLinePlanningHistorysRequest {
+	return WLANOptimizationAPIGetTimeLinePlanningHistorysRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WLANOptimizationAPIService) GetTimeLinePlanningHistorysExecute(r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.GetTimeLinePlanningHistorys")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/history/timeline"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.start == nil {
+		return localVarReturnValue, nil, reportError("start is required and must be specified")
+	}
+	if r.end == nil {
+		return localVarReturnValue, nil, reportError("end is required and must be specified")
+	}
+	if r.type_ == nil {
+		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WLANOptimizationAPIModifyExcludeApsRequest struct {
 	ctx context.Context
 	ApiService WLANOptimizationAPI
@@ -1869,6 +3024,545 @@ func (a *WLANOptimizationAPIService) ModifyRFPlanningDeployConfigTemplateExecute
 	}
 	// body params
 	localVarPostBody = r.rFPlanningDeployConfig
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+	rFPlanningScheduleConfigOpenApiVO *RFPlanningScheduleConfigOpenApiVO
+}
+
+func (r WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest) RFPlanningScheduleConfigOpenApiVO(rFPlanningScheduleConfigOpenApiVO RFPlanningScheduleConfigOpenApiVO) WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest {
+	r.rFPlanningScheduleConfigOpenApiVO = &rFPlanningScheduleConfigOpenApiVO
+	return r
+}
+
+func (r WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.ModifyRFPlanningScheduleConfigExecute(r)
+}
+
+/*
+ModifyRFPlanningScheduleConfig modify RF Planning Schedule Config
+
+modify RF Planning Schedule Config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest
+*/
+func (a *WLANOptimizationAPIService) ModifyRFPlanningScheduleConfig(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest {
+	return WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WLANOptimizationAPIService) ModifyRFPlanningScheduleConfigExecute(r WLANOptimizationAPIModifyRFPlanningScheduleConfigRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.ModifyRFPlanningScheduleConfig")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/schedule/config"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.rFPlanningScheduleConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("rFPlanningScheduleConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.rFPlanningScheduleConfigOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WLANOptimizationAPIQueryRFPlanningBoardRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+	start *int64
+	end *int64
+}
+
+// Start timestamp, in milliseconds, such as 174951360000
+func (r WLANOptimizationAPIQueryRFPlanningBoardRequest) Start(start int64) WLANOptimizationAPIQueryRFPlanningBoardRequest {
+	r.start = &start
+	return r
+}
+
+// End timestamp, in milliseconds, such as 1749600000000
+func (r WLANOptimizationAPIQueryRFPlanningBoardRequest) End(end int64) WLANOptimizationAPIQueryRFPlanningBoardRequest {
+	r.end = &end
+	return r
+}
+
+func (r WLANOptimizationAPIQueryRFPlanningBoardRequest) Execute() (*OperationResponseWlanOptDashBoardOpenApiVO, *http.Response, error) {
+	return r.ApiService.QueryRFPlanningBoardExecute(r)
+}
+
+/*
+QueryRFPlanningBoard Get RRM AI time line
+
+Get RRM AI time line<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIQueryRFPlanningBoardRequest
+*/
+func (a *WLANOptimizationAPIService) QueryRFPlanningBoard(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIQueryRFPlanningBoardRequest {
+	return WLANOptimizationAPIQueryRFPlanningBoardRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWlanOptDashBoardOpenApiVO
+func (a *WLANOptimizationAPIService) QueryRFPlanningBoardExecute(r WLANOptimizationAPIQueryRFPlanningBoardRequest) (*OperationResponseWlanOptDashBoardOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWlanOptDashBoardOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.QueryRFPlanningBoard")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/dashboard"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.start == nil {
+		return localVarReturnValue, nil, reportError("start is required and must be specified")
+	}
+	if r.end == nil {
+		return localVarReturnValue, nil, reportError("end is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WLANOptimizationAPIQueryRFPlanningBoardStatusRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+}
+
+func (r WLANOptimizationAPIQueryRFPlanningBoardStatusRequest) Execute() (*OperationResponseWlanOptDashBoardOpenApiVO, *http.Response, error) {
+	return r.ApiService.QueryRFPlanningBoardStatusExecute(r)
+}
+
+/*
+QueryRFPlanningBoardStatus Get RRM AI dashboard status
+
+Get RRM AI dashboard status<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIQueryRFPlanningBoardStatusRequest
+*/
+func (a *WLANOptimizationAPIService) QueryRFPlanningBoardStatus(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIQueryRFPlanningBoardStatusRequest {
+	return WLANOptimizationAPIQueryRFPlanningBoardStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWlanOptDashBoardOpenApiVO
+func (a *WLANOptimizationAPIService) QueryRFPlanningBoardStatusExecute(r WLANOptimizationAPIQueryRFPlanningBoardStatusRequest) (*OperationResponseWlanOptDashBoardOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWlanOptDashBoardOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.QueryRFPlanningBoardStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/dashboard/status"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest struct {
+	ctx context.Context
+	ApiService WLANOptimizationAPI
+	omadacId string
+	siteId string
+	start *int64
+	end *int64
+}
+
+// Start timestamp, in milliseconds, such as 174951360000
+func (r WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest) Start(start int64) WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest {
+	r.start = &start
+	return r
+}
+
+// End timestamp, in milliseconds, such as 1749600000000
+func (r WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest) End(end int64) WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest {
+	r.end = &end
+	return r
+}
+
+func (r WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest) Execute() (*OperationResponseWlanOptDashBoardOpenApiVO, *http.Response, error) {
+	return r.ApiService.QueryRFPlanningDashboardHistoryExecute(r)
+}
+
+/*
+QueryRFPlanningDashboardHistory Get RRM AI dashboard history time line
+
+Get RRM AI dashboard history time line<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest
+*/
+func (a *WLANOptimizationAPIService) QueryRFPlanningDashboardHistory(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest {
+	return WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWlanOptDashBoardOpenApiVO
+func (a *WLANOptimizationAPIService) QueryRFPlanningDashboardHistoryExecute(r WLANOptimizationAPIQueryRFPlanningDashboardHistoryRequest) (*OperationResponseWlanOptDashBoardOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWlanOptDashBoardOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.QueryRFPlanningDashboardHistory")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/dashboard/history"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.start == nil {
+		return localVarReturnValue, nil, reportError("start is required and must be specified")
+	}
+	if r.end == nil {
+		return localVarReturnValue, nil, reportError("end is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

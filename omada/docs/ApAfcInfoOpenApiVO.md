@@ -4,9 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Available6g** | Pointer to **bool** | 6G radio available status | [optional] 
+**ErrCode** | Pointer to **int32** | The error code of last afc status | [optional] 
+**ErrDetail** | Pointer to **int32** | The error detail | [optional] 
+**ErrMain** | Pointer to **int32** | The error main reason | [optional] 
 **ExpirationTimeSec** | Pointer to **int64** | The expiration timestamp of the current AFC information of the AP | [optional] 
 **LastResponse** | Pointer to **bool** | The status of the last AFC information obtained by the AP | [optional] 
 **LastResponseTimeSec** | Pointer to **int64** | The timestamp of the last AFC information obtained by the AP | [optional] 
+**Processing** | Pointer to **bool** | Whether the afc status is being retrieved | [optional] 
 **Status** | Pointer to **bool** | Ap AFC working status | [optional] 
 
 ## Methods
@@ -27,6 +32,106 @@ will change when the set of required properties is changed
 NewApAfcInfoOpenApiVOWithDefaults instantiates a new ApAfcInfoOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAvailable6g
+
+`func (o *ApAfcInfoOpenApiVO) GetAvailable6g() bool`
+
+GetAvailable6g returns the Available6g field if non-nil, zero value otherwise.
+
+### GetAvailable6gOk
+
+`func (o *ApAfcInfoOpenApiVO) GetAvailable6gOk() (*bool, bool)`
+
+GetAvailable6gOk returns a tuple with the Available6g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAvailable6g
+
+`func (o *ApAfcInfoOpenApiVO) SetAvailable6g(v bool)`
+
+SetAvailable6g sets Available6g field to given value.
+
+### HasAvailable6g
+
+`func (o *ApAfcInfoOpenApiVO) HasAvailable6g() bool`
+
+HasAvailable6g returns a boolean if a field has been set.
+
+### GetErrCode
+
+`func (o *ApAfcInfoOpenApiVO) GetErrCode() int32`
+
+GetErrCode returns the ErrCode field if non-nil, zero value otherwise.
+
+### GetErrCodeOk
+
+`func (o *ApAfcInfoOpenApiVO) GetErrCodeOk() (*int32, bool)`
+
+GetErrCodeOk returns a tuple with the ErrCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrCode
+
+`func (o *ApAfcInfoOpenApiVO) SetErrCode(v int32)`
+
+SetErrCode sets ErrCode field to given value.
+
+### HasErrCode
+
+`func (o *ApAfcInfoOpenApiVO) HasErrCode() bool`
+
+HasErrCode returns a boolean if a field has been set.
+
+### GetErrDetail
+
+`func (o *ApAfcInfoOpenApiVO) GetErrDetail() int32`
+
+GetErrDetail returns the ErrDetail field if non-nil, zero value otherwise.
+
+### GetErrDetailOk
+
+`func (o *ApAfcInfoOpenApiVO) GetErrDetailOk() (*int32, bool)`
+
+GetErrDetailOk returns a tuple with the ErrDetail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrDetail
+
+`func (o *ApAfcInfoOpenApiVO) SetErrDetail(v int32)`
+
+SetErrDetail sets ErrDetail field to given value.
+
+### HasErrDetail
+
+`func (o *ApAfcInfoOpenApiVO) HasErrDetail() bool`
+
+HasErrDetail returns a boolean if a field has been set.
+
+### GetErrMain
+
+`func (o *ApAfcInfoOpenApiVO) GetErrMain() int32`
+
+GetErrMain returns the ErrMain field if non-nil, zero value otherwise.
+
+### GetErrMainOk
+
+`func (o *ApAfcInfoOpenApiVO) GetErrMainOk() (*int32, bool)`
+
+GetErrMainOk returns a tuple with the ErrMain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrMain
+
+`func (o *ApAfcInfoOpenApiVO) SetErrMain(v int32)`
+
+SetErrMain sets ErrMain field to given value.
+
+### HasErrMain
+
+`func (o *ApAfcInfoOpenApiVO) HasErrMain() bool`
+
+HasErrMain returns a boolean if a field has been set.
 
 ### GetExpirationTimeSec
 
@@ -102,6 +207,31 @@ SetLastResponseTimeSec sets LastResponseTimeSec field to given value.
 `func (o *ApAfcInfoOpenApiVO) HasLastResponseTimeSec() bool`
 
 HasLastResponseTimeSec returns a boolean if a field has been set.
+
+### GetProcessing
+
+`func (o *ApAfcInfoOpenApiVO) GetProcessing() bool`
+
+GetProcessing returns the Processing field if non-nil, zero value otherwise.
+
+### GetProcessingOk
+
+`func (o *ApAfcInfoOpenApiVO) GetProcessingOk() (*bool, bool)`
+
+GetProcessingOk returns a tuple with the Processing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProcessing
+
+`func (o *ApAfcInfoOpenApiVO) SetProcessing(v bool)`
+
+SetProcessing sets Processing field to given value.
+
+### HasProcessing
+
+`func (o *ApAfcInfoOpenApiVO) HasProcessing() bool`
+
+HasProcessing returns a boolean if a field has been set.
 
 ### GetStatus
 

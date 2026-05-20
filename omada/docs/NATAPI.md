@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ## GetGridOtoNats
 
-> OperationResponseGridVOOtoNatInfoOpenApiVO GetGridOtoNats(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseOtoNatOpenApiGridVO GetGridOtoNats(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
 
 Get One-to-One NAT list
 
@@ -425,7 +425,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NATAPI.GetGridOtoNats``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGridOtoNats`: OperationResponseGridVOOtoNatInfoOpenApiVO
+	// response from `GetGridOtoNats`: OperationResponseOtoNatOpenApiGridVO
 	fmt.Fprintf(os.Stdout, "Response from `NATAPI.GetGridOtoNats`: %v\n", resp)
 }
 ```
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVOOtoNatInfoOpenApiVO**](OperationResponseGridVOOtoNatInfoOpenApiVO.md)
+[**OperationResponseOtoNatOpenApiGridVO**](OperationResponseOtoNatOpenApiGridVO.md)
 
 ### Authorization
 

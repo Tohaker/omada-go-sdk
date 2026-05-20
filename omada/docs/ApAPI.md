@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**GetApListChannelInfo**](ApAPI.md#getaplistchannelinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/channel-info | Get ap list channel info.
 [**GetApLldpConfig**](ApAPI.md#getaplldpconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lldp | Get AP lldp config
 [**GetApLoadBalanceConfig**](ApAPI.md#getaploadbalanceconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Get AP load balance config
+[**GetApManagementSsidConfig**](ApAPI.md#getapmanagementssidconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/management-wlan | Get AP management ssid config
 [**GetApOfdmaConfig**](ApAPI.md#getapofdmaconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Get AP OFDMA config
 [**GetApP2pInfo**](ApAPI.md#getapp2pinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/p2pInfo | Get P2P bridge group info
 [**GetApPortList**](ApAPI.md#getapportlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ports | Get AP port list
@@ -836,7 +837,7 @@ Name | Type | Description  | Notes
 
 ## GetApBridgeInfo
 
-> OperationResponseApBridgeConfig GetApBridgeInfo(ctx, omadacId, siteId, apMac).Execute()
+> OperationResponseApBridgeInfo GetApBridgeInfo(ctx, omadacId, siteId, apMac).Execute()
 
 Get P2P bridge config
 
@@ -866,7 +867,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.GetApBridgeInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetApBridgeInfo`: OperationResponseApBridgeConfig
+	// response from `GetApBridgeInfo`: OperationResponseApBridgeInfo
 	fmt.Fprintf(os.Stdout, "Response from `ApAPI.GetApBridgeInfo`: %v\n", resp)
 }
 ```
@@ -894,7 +895,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseApBridgeConfig**](OperationResponseApBridgeConfig.md)
+[**OperationResponseApBridgeInfo**](OperationResponseApBridgeInfo.md)
 
 ### Authorization
 
@@ -1198,6 +1199,82 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseApAdvancedLoadBalanceOpenApiVO**](OperationResponseApAdvancedLoadBalanceOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetApManagementSsidConfig
+
+> OperationResponseApManagementSsidConfig GetApManagementSsidConfig(ctx, omadacId, siteId, apMac).Execute()
+
+Get AP management ssid config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApAPI.GetApManagementSsidConfig(context.Background(), omadacId, siteId, apMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.GetApManagementSsidConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApManagementSsidConfig`: OperationResponseApManagementSsidConfig
+	fmt.Fprintf(os.Stdout, "Response from `ApAPI.GetApManagementSsidConfig`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetApManagementSsidConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseApManagementSsidConfig**](OperationResponseApManagementSsidConfig.md)
 
 ### Authorization
 
@@ -1979,7 +2056,7 @@ Name | Type | Description  | Notes
 
 ## GetAvailableChannelOfAp
 
-> OperationResponseApAvailableChannelOpenApiVO GetAvailableChannelOfAp(ctx, omadacId, siteId, apMac).Execute()
+> OperationResponseListApAvailableChannelOpenApiVO GetAvailableChannelOfAp(ctx, omadacId, siteId, apMac).Execute()
 
 Get available channel list of AP
 
@@ -2009,7 +2086,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.GetAvailableChannelOfAp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAvailableChannelOfAp`: OperationResponseApAvailableChannelOpenApiVO
+	// response from `GetAvailableChannelOfAp`: OperationResponseListApAvailableChannelOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `ApAPI.GetAvailableChannelOfAp`: %v\n", resp)
 }
 ```
@@ -2037,7 +2114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseApAvailableChannelOpenApiVO**](OperationResponseApAvailableChannelOpenApiVO.md)
+[**OperationResponseListApAvailableChannelOpenApiVO**](OperationResponseListApAvailableChannelOpenApiVO.md)
 
 ### Authorization
 
@@ -3837,7 +3914,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
-	apBridgeConfig := *openapiclient.NewApBridgeConfig("BridgeSsidName_example", "BridgeSsidPassword_example") // ApBridgeConfig | 
+	apBridgeConfig := *openapiclient.NewApBridgeConfig() // ApBridgeConfig | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4364,7 +4441,7 @@ Name | Type | Description  | Notes
 
 ## ModifyApServicesConfig
 
-> OperationResponseApServicesConfigOpenApiVO ModifyApServicesConfig(ctx, omadacId, siteId, apMac).ApServicesConfigOpenApiVO(apServicesConfigOpenApiVO).Execute()
+> OperationResponseWithoutResult ModifyApServicesConfig(ctx, omadacId, siteId, apMac).ApServicesConfigOpenApiVO(apServicesConfigOpenApiVO).Execute()
 
 Modify AP service config
 
@@ -4395,7 +4472,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.ModifyApServicesConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ModifyApServicesConfig`: OperationResponseApServicesConfigOpenApiVO
+	// response from `ModifyApServicesConfig`: OperationResponseWithoutResult
 	fmt.Fprintf(os.Stdout, "Response from `ApAPI.ModifyApServicesConfig`: %v\n", resp)
 }
 ```
@@ -4424,7 +4501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseApServicesConfigOpenApiVO**](OperationResponseApServicesConfigOpenApiVO.md)
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
 
 ### Authorization
 

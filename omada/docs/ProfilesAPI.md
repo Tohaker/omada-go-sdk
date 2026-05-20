@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddPSKsToPPSKProfile**](ProfilesAPI.md#addpskstoppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId}/add-psk | Add PSKs to PPSK profile
 [**AutoCreatePPSK**](ProfilesAPI.md#autocreateppsk) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/generate-psk | Auto Create PSKs
+[**CopyWifiCallingProfile**](ProfilesAPI.md#copywificallingprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/wifi-calling/{profileId}/copy | Copy wifi calling profile
 [**CreateApnProfile**](ProfilesAPI.md#createapnprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn | Create a new APN profile
 [**CreateApnProfileByMac**](ProfilesAPI.md#createapnprofilebymac) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/profiles/apns | Create a new APN profile by mac
 [**CreateGoogleLdapProfile**](ProfilesAPI.md#creategoogleldapprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google | Create a new google LDAP profile
@@ -20,6 +21,7 @@ Method | HTTP request | Description
 [**CreateRateLimitProfile**](ProfilesAPI.md#createratelimitprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Create rate limit profile
 [**CreateServiceType**](ProfilesAPI.md#createservicetype) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type | Create new Gateway QoS Service
 [**CreateTimeRangeProfile**](ProfilesAPI.md#createtimerangeprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Create time range profile
+[**CreateWifiCallingProfile**](ProfilesAPI.md#createwificallingprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/wifi-calling | Create a new wifi calling profile
 [**DeleteAllPPSKProfiles**](ProfilesAPI.md#deleteallppskprofiles) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profiles | Delete All PPSK profiles
 [**DeleteApnProfile**](ProfilesAPI.md#deleteapnprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn/{profileId} | Delete an exist APN profile
 [**DeleteGoogleLdapProfile**](ProfilesAPI.md#deletegoogleldapprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google/{profileId} | Delete an exist google LDAP profile
@@ -34,6 +36,7 @@ Method | HTTP request | Description
 [**DeleteRateLimitProfile**](ProfilesAPI.md#deleteratelimitprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Delete rate limit profile
 [**DeleteServiceType**](ProfilesAPI.md#deleteservicetype) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Delete an existing Gateway QoS Service
 [**DeleteTimeRangeProfile**](ProfilesAPI.md#deletetimerangeprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Delete time range profile
+[**DeleteWifiCallingProfile**](ProfilesAPI.md#deletewificallingprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/wifi-calling/{profileId} | Delete an exist wifi calling profile
 [**GetApnProfileList**](ProfilesAPI.md#getapnprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/apn | Get APN profile list
 [**GetApnProfilesForIppt**](ProfilesAPI.md#getapnprofilesforippt) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/profiles/apns | Get APN profile list by mac for ippt
 [**GetGoogleLdapProfileList**](ProfilesAPI.md#getgoogleldapprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/ldap/google | Get google LDAP profile list
@@ -49,6 +52,7 @@ Method | HTTP request | Description
 [**GetRateLimitProfileList**](ProfilesAPI.md#getratelimitprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Get rate limit profile list
 [**GetServiceTypeSummary**](ProfilesAPI.md#getservicetypesummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type-summary | Get all Gateway QoS Service&#39;s ID and name info
 [**GetTimeRangeList**](ProfilesAPI.md#gettimerangelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Get time range profile list
+[**GetWifiCallingProfiles**](ProfilesAPI.md#getwificallingprofiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/wifi-calling | Get wifi calling profile list
 [**ListMdnsProfile**](ProfilesAPI.md#listmdnsprofile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service | Get Bonjour Service list
 [**ListRateLimitForHotspot**](ProfilesAPI.md#listratelimitforhotspot) | **Get** /openapi/v1/{omadacId}/hotspot/sites/{siteId}/setting/profiles/rateLimits | get the rate limit list
 [**ListServiceType**](ProfilesAPI.md#listservicetype) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type | Get Gateway QoS Service list
@@ -64,6 +68,7 @@ Method | HTTP request | Description
 [**ModifyRateLimitProfile**](ProfilesAPI.md#modifyratelimitprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Modify rate limit profile
 [**ModifyServiceType**](ProfilesAPI.md#modifyservicetype) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Modify an existing Gateway QoS Service
 [**ModifyTimeRangeProfile**](ProfilesAPI.md#modifytimerangeprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Modify time range profile
+[**ModifyWifiCallingProfile**](ProfilesAPI.md#modifywificallingprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/wifi-calling/{profileId} | Modify a wifi calling profile
 
 
 
@@ -205,6 +210,84 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]PSK**](PSK.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CopyWifiCallingProfile
+
+> OperationResponse CopyWifiCallingProfile(ctx, omadacId, siteId, profileId).CopyWifiCallingProfileOpenApiVO(copyWifiCallingProfileOpenApiVO).Execute()
+
+Copy wifi calling profile
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	profileId := "profileId_example" // string | profileId
+	copyWifiCallingProfileOpenApiVO := *openapiclient.NewCopyWifiCallingProfileOpenApiVO() // CopyWifiCallingProfileOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProfilesAPI.CopyWifiCallingProfile(context.Background(), omadacId, siteId, profileId).CopyWifiCallingProfileOpenApiVO(copyWifiCallingProfileOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.CopyWifiCallingProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CopyWifiCallingProfile`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProfilesAPI.CopyWifiCallingProfile`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**profileId** | **string** | profileId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCopyWifiCallingProfileRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **copyWifiCallingProfileOpenApiVO** | [**CopyWifiCallingProfileOpenApiVO**](CopyWifiCallingProfileOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
 
 ### Authorization
 
@@ -1275,6 +1358,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CreateWifiCallingProfile
+
+> OperationResponse CreateWifiCallingProfile(ctx, omadacId, siteId).CreateWifiCallingProfileOpenApiVO(createWifiCallingProfileOpenApiVO).Execute()
+
+Create a new wifi calling profile
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	createWifiCallingProfileOpenApiVO := *openapiclient.NewCreateWifiCallingProfileOpenApiVO() // CreateWifiCallingProfileOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProfilesAPI.CreateWifiCallingProfile(context.Background(), omadacId, siteId).CreateWifiCallingProfileOpenApiVO(createWifiCallingProfileOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.CreateWifiCallingProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateWifiCallingProfile`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProfilesAPI.CreateWifiCallingProfile`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateWifiCallingProfileRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **createWifiCallingProfileOpenApiVO** | [**CreateWifiCallingProfileOpenApiVO**](CreateWifiCallingProfileOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DeleteAllPPSKProfiles
 
 > OperationResponseWithoutResult DeleteAllPPSKProfiles(ctx, omadacId, siteId).Execute()
@@ -2315,6 +2473,82 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDeleteTimeRangeProfileRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteWifiCallingProfile
+
+> OperationResponseWithoutResult DeleteWifiCallingProfile(ctx, omadacId, siteId, profileId).Execute()
+
+Delete an exist wifi calling profile
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	profileId := "profileId_example" // string | wifi calling profile ID.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProfilesAPI.DeleteWifiCallingProfile(context.Background(), omadacId, siteId, profileId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.DeleteWifiCallingProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteWifiCallingProfile`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `ProfilesAPI.DeleteWifiCallingProfile`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**profileId** | **string** | wifi calling profile ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteWifiCallingProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3440,6 +3674,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseListTimeRangeProfileOpenApiVO**](OperationResponseListTimeRangeProfileOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetWifiCallingProfiles
+
+> OperationResponseListWifiCallingProfileOpenApiVO GetWifiCallingProfiles(ctx, omadacId, siteId).Execute()
+
+Get wifi calling profile list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProfilesAPI.GetWifiCallingProfiles(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.GetWifiCallingProfiles``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetWifiCallingProfiles`: OperationResponseListWifiCallingProfileOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `ProfilesAPI.GetWifiCallingProfiles`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetWifiCallingProfilesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseListWifiCallingProfileOpenApiVO**](OperationResponseListWifiCallingProfileOpenApiVO.md)
 
 ### Authorization
 
@@ -4600,6 +4907,84 @@ Name | Type | Description  | Notes
 
 
  **updateTimeRangeProfileOpenApiVO** | [**UpdateTimeRangeProfileOpenApiVO**](UpdateTimeRangeProfileOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifyWifiCallingProfile
+
+> OperationResponseWithoutResult ModifyWifiCallingProfile(ctx, omadacId, siteId, profileId).CreateWifiCallingProfileOpenApiVO(createWifiCallingProfileOpenApiVO).Execute()
+
+Modify a wifi calling profile
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	profileId := "profileId_example" // string | Wifi calling profile ID.
+	createWifiCallingProfileOpenApiVO := *openapiclient.NewCreateWifiCallingProfileOpenApiVO() // CreateWifiCallingProfileOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProfilesAPI.ModifyWifiCallingProfile(context.Background(), omadacId, siteId, profileId).CreateWifiCallingProfileOpenApiVO(createWifiCallingProfileOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.ModifyWifiCallingProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyWifiCallingProfile`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `ProfilesAPI.ModifyWifiCallingProfile`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**profileId** | **string** | Wifi calling profile ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyWifiCallingProfileRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createWifiCallingProfileOpenApiVO** | [**CreateWifiCallingProfileOpenApiVO**](CreateWifiCallingProfileOpenApiVO.md) |  | 
 
 ### Return type
 

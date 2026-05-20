@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **BpduProtect** | Pointer to **bool** | Indicates whether bpdu protect is enabled | [optional] 
 **EdgePort** | **bool** | Indicates whether edge port is enabled | 
 **ExtPathCost** | **int32** | ExtPathCost should be within the range of 0–2000000 | 
+**InstanceEnable** | Pointer to **bool** | Indicates whether instance is enabled | [optional] 
+**Instances** | Pointer to [**[]InstancesVO**](InstancesVO.md) | Instances | [optional] 
 **IntPathCost** | **int32** | IntPathCost should be within the range of 0–2000000 | 
 **LoopProtect** | Pointer to **bool** | Indicates whether loop protect is enabled | [optional] 
 **Mcheck** | Pointer to **bool** | Indicates whether mcheck is enabled | [optional] 
@@ -150,6 +152,56 @@ and a boolean to check if the value has been set.
 
 SetExtPathCost sets ExtPathCost field to given value.
 
+
+### GetInstanceEnable
+
+`func (o *SpanningTreeSettingVO) GetInstanceEnable() bool`
+
+GetInstanceEnable returns the InstanceEnable field if non-nil, zero value otherwise.
+
+### GetInstanceEnableOk
+
+`func (o *SpanningTreeSettingVO) GetInstanceEnableOk() (*bool, bool)`
+
+GetInstanceEnableOk returns a tuple with the InstanceEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstanceEnable
+
+`func (o *SpanningTreeSettingVO) SetInstanceEnable(v bool)`
+
+SetInstanceEnable sets InstanceEnable field to given value.
+
+### HasInstanceEnable
+
+`func (o *SpanningTreeSettingVO) HasInstanceEnable() bool`
+
+HasInstanceEnable returns a boolean if a field has been set.
+
+### GetInstances
+
+`func (o *SpanningTreeSettingVO) GetInstances() []InstancesVO`
+
+GetInstances returns the Instances field if non-nil, zero value otherwise.
+
+### GetInstancesOk
+
+`func (o *SpanningTreeSettingVO) GetInstancesOk() (*[]InstancesVO, bool)`
+
+GetInstancesOk returns a tuple with the Instances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstances
+
+`func (o *SpanningTreeSettingVO) SetInstances(v []InstancesVO)`
+
+SetInstances sets Instances field to given value.
+
+### HasInstances
+
+`func (o *SpanningTreeSettingVO) HasInstances() bool`
+
+HasInstances returns a boolean if a field has been set.
 
 ### GetIntPathCost
 

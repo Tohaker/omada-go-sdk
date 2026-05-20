@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Device** | Pointer to **[]string** | Device list. | [optional] 
+**DeviceDetail** | Pointer to [**[]ClientFilteringDeviceDetailOpenApiVO**](ClientFilteringDeviceDetailOpenApiVO.md) | Device detail info list. | [optional] 
 **DeviceType** | Pointer to [**[]ClientCategoryOptionsOpenApiVO**](ClientCategoryOptionsOpenApiVO.md) | Type list of clients. | [optional] 
 **Network** | Pointer to **[]string** | Network list. | [optional] 
 **Ssid** | Pointer to **[]string** | Ssid list. | [optional] 
@@ -53,6 +54,31 @@ SetDevice sets Device field to given value.
 `func (o *ClientFilteringOptions) HasDevice() bool`
 
 HasDevice returns a boolean if a field has been set.
+
+### GetDeviceDetail
+
+`func (o *ClientFilteringOptions) GetDeviceDetail() []ClientFilteringDeviceDetailOpenApiVO`
+
+GetDeviceDetail returns the DeviceDetail field if non-nil, zero value otherwise.
+
+### GetDeviceDetailOk
+
+`func (o *ClientFilteringOptions) GetDeviceDetailOk() (*[]ClientFilteringDeviceDetailOpenApiVO, bool)`
+
+GetDeviceDetailOk returns a tuple with the DeviceDetail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeviceDetail
+
+`func (o *ClientFilteringOptions) SetDeviceDetail(v []ClientFilteringDeviceDetailOpenApiVO)`
+
+SetDeviceDetail sets DeviceDetail field to given value.
+
+### HasDeviceDetail
+
+`func (o *ClientFilteringOptions) HasDeviceDetail() bool`
+
+HasDeviceDetail returns a boolean if a field has been set.
 
 ### GetDeviceType
 

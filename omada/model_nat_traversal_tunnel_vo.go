@@ -39,6 +39,8 @@ type NatTraversalTunnelVO struct {
 	CustomTunnel *bool `json:"customTunnel,omitempty"`
 	// Valid duration time of the remote access tunnel, 1-24 hours.
 	Duration *int32 `json:"duration,omitempty"`
+	// Nat traversal tunnel eweb host
+	EwebHost *string `json:"ewebHost,omitempty"`
 	// ID of the remote access tunnel.
 	Id *string `json:"id,omitempty"`
 	// Mac of the jumper device.
@@ -55,6 +57,8 @@ type NatTraversalTunnelVO struct {
 	OpenStatus *bool `json:"openStatus,omitempty"`
 	// Status of the remote access tunnel. 0: Disconnected, 1: Connected, 2: Opening, -1: Heartbeat Missed, -2: Expired.
 	Status *int32 `json:"status,omitempty"`
+	// If the remote access tunnel supports HTTP and HTTPS connections.
+	SupportHttpHttpsTunnel *bool `json:"supportHttpHttpsTunnel,omitempty"`
 	// If the remote access tunnel supports SSH and telnet connections.
 	SupportSshTelnetTunnel *bool `json:"supportSshTelnetTunnel,omitempty"`
 	// If the remote access tunnel supports web auto login.
@@ -375,6 +379,38 @@ func (o *NatTraversalTunnelVO) SetDuration(v int32) {
 	o.Duration = &v
 }
 
+// GetEwebHost returns the EwebHost field value if set, zero value otherwise.
+func (o *NatTraversalTunnelVO) GetEwebHost() string {
+	if o == nil || IsNil(o.EwebHost) {
+		var ret string
+		return ret
+	}
+	return *o.EwebHost
+}
+
+// GetEwebHostOk returns a tuple with the EwebHost field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelVO) GetEwebHostOk() (*string, bool) {
+	if o == nil || IsNil(o.EwebHost) {
+		return nil, false
+	}
+	return o.EwebHost, true
+}
+
+// HasEwebHost returns a boolean if a field has been set.
+func (o *NatTraversalTunnelVO) HasEwebHost() bool {
+	if o != nil && !IsNil(o.EwebHost) {
+		return true
+	}
+
+	return false
+}
+
+// SetEwebHost gets a reference to the given string and assigns it to the EwebHost field.
+func (o *NatTraversalTunnelVO) SetEwebHost(v string) {
+	o.EwebHost = &v
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *NatTraversalTunnelVO) GetId() string {
 	if o == nil || IsNil(o.Id) {
@@ -623,6 +659,38 @@ func (o *NatTraversalTunnelVO) SetStatus(v int32) {
 	o.Status = &v
 }
 
+// GetSupportHttpHttpsTunnel returns the SupportHttpHttpsTunnel field value if set, zero value otherwise.
+func (o *NatTraversalTunnelVO) GetSupportHttpHttpsTunnel() bool {
+	if o == nil || IsNil(o.SupportHttpHttpsTunnel) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportHttpHttpsTunnel
+}
+
+// GetSupportHttpHttpsTunnelOk returns a tuple with the SupportHttpHttpsTunnel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelVO) GetSupportHttpHttpsTunnelOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportHttpHttpsTunnel) {
+		return nil, false
+	}
+	return o.SupportHttpHttpsTunnel, true
+}
+
+// HasSupportHttpHttpsTunnel returns a boolean if a field has been set.
+func (o *NatTraversalTunnelVO) HasSupportHttpHttpsTunnel() bool {
+	if o != nil && !IsNil(o.SupportHttpHttpsTunnel) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportHttpHttpsTunnel gets a reference to the given bool and assigns it to the SupportHttpHttpsTunnel field.
+func (o *NatTraversalTunnelVO) SetSupportHttpHttpsTunnel(v bool) {
+	o.SupportHttpHttpsTunnel = &v
+}
+
 // GetSupportSshTelnetTunnel returns the SupportSshTelnetTunnel field value if set, zero value otherwise.
 func (o *NatTraversalTunnelVO) GetSupportSshTelnetTunnel() bool {
 	if o == nil || IsNil(o.SupportSshTelnetTunnel) {
@@ -820,6 +888,9 @@ func (o NatTraversalTunnelVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
+	if !IsNil(o.EwebHost) {
+		toSerialize["ewebHost"] = o.EwebHost
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -841,6 +912,9 @@ func (o NatTraversalTunnelVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.SupportHttpHttpsTunnel) {
+		toSerialize["supportHttpHttpsTunnel"] = o.SupportHttpHttpsTunnel
 	}
 	if !IsNil(o.SupportSshTelnetTunnel) {
 		toSerialize["supportSshTelnetTunnel"] = o.SupportSshTelnetTunnel

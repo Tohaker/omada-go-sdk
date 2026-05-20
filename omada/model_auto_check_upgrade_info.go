@@ -19,6 +19,7 @@ var _ MappedNullable = &AutoCheckUpgradeInfo{}
 
 // AutoCheckUpgradeInfo struct for AutoCheckUpgradeInfo
 type AutoCheckUpgradeInfo struct {
+	Occurrence *UpgradeBaseScheduleTimeOpenApiVO `json:"Occurrence,omitempty"`
 	// Next execution time
 	AutoCheckTime *string `json:"autoCheckTime,omitempty"`
 	// Channel should be a value as follows: 0: stable; 1: Release Candidate(RC); 2: Beta
@@ -27,7 +28,6 @@ type AutoCheckUpgradeInfo struct {
 	Id *string `json:"id,omitempty"`
 	// List of model type selected by the user
 	ModelTypeInfos []ModelTypeInfoOpenApiVO `json:"modelTypeInfos,omitempty"`
-	Occurrence *UpgradeBaseScheduleTimeOpenApiVO `json:"occurrence,omitempty"`
 	// The siteNames lists selected by the user
 	SiteNames []string `json:"siteNames,omitempty"`
 	// Number of sites selected by the user
@@ -49,6 +49,38 @@ func NewAutoCheckUpgradeInfo() *AutoCheckUpgradeInfo {
 func NewAutoCheckUpgradeInfoWithDefaults() *AutoCheckUpgradeInfo {
 	this := AutoCheckUpgradeInfo{}
 	return &this
+}
+
+// GetOccurrence returns the Occurrence field value if set, zero value otherwise.
+func (o *AutoCheckUpgradeInfo) GetOccurrence() UpgradeBaseScheduleTimeOpenApiVO {
+	if o == nil || IsNil(o.Occurrence) {
+		var ret UpgradeBaseScheduleTimeOpenApiVO
+		return ret
+	}
+	return *o.Occurrence
+}
+
+// GetOccurrenceOk returns a tuple with the Occurrence field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutoCheckUpgradeInfo) GetOccurrenceOk() (*UpgradeBaseScheduleTimeOpenApiVO, bool) {
+	if o == nil || IsNil(o.Occurrence) {
+		return nil, false
+	}
+	return o.Occurrence, true
+}
+
+// HasOccurrence returns a boolean if a field has been set.
+func (o *AutoCheckUpgradeInfo) HasOccurrence() bool {
+	if o != nil && !IsNil(o.Occurrence) {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrence gets a reference to the given UpgradeBaseScheduleTimeOpenApiVO and assigns it to the Occurrence field.
+func (o *AutoCheckUpgradeInfo) SetOccurrence(v UpgradeBaseScheduleTimeOpenApiVO) {
+	o.Occurrence = &v
 }
 
 // GetAutoCheckTime returns the AutoCheckTime field value if set, zero value otherwise.
@@ -179,38 +211,6 @@ func (o *AutoCheckUpgradeInfo) SetModelTypeInfos(v []ModelTypeInfoOpenApiVO) {
 	o.ModelTypeInfos = v
 }
 
-// GetOccurrence returns the Occurrence field value if set, zero value otherwise.
-func (o *AutoCheckUpgradeInfo) GetOccurrence() UpgradeBaseScheduleTimeOpenApiVO {
-	if o == nil || IsNil(o.Occurrence) {
-		var ret UpgradeBaseScheduleTimeOpenApiVO
-		return ret
-	}
-	return *o.Occurrence
-}
-
-// GetOccurrenceOk returns a tuple with the Occurrence field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutoCheckUpgradeInfo) GetOccurrenceOk() (*UpgradeBaseScheduleTimeOpenApiVO, bool) {
-	if o == nil || IsNil(o.Occurrence) {
-		return nil, false
-	}
-	return o.Occurrence, true
-}
-
-// HasOccurrence returns a boolean if a field has been set.
-func (o *AutoCheckUpgradeInfo) HasOccurrence() bool {
-	if o != nil && !IsNil(o.Occurrence) {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrence gets a reference to the given UpgradeBaseScheduleTimeOpenApiVO and assigns it to the Occurrence field.
-func (o *AutoCheckUpgradeInfo) SetOccurrence(v UpgradeBaseScheduleTimeOpenApiVO) {
-	o.Occurrence = &v
-}
-
 // GetSiteNames returns the SiteNames field value if set, zero value otherwise.
 func (o *AutoCheckUpgradeInfo) GetSiteNames() []string {
 	if o == nil || IsNil(o.SiteNames) {
@@ -285,6 +285,9 @@ func (o AutoCheckUpgradeInfo) MarshalJSON() ([]byte, error) {
 
 func (o AutoCheckUpgradeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Occurrence) {
+		toSerialize["Occurrence"] = o.Occurrence
+	}
 	if !IsNil(o.AutoCheckTime) {
 		toSerialize["autoCheckTime"] = o.AutoCheckTime
 	}
@@ -296,9 +299,6 @@ func (o AutoCheckUpgradeInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ModelTypeInfos) {
 		toSerialize["modelTypeInfos"] = o.ModelTypeInfos
-	}
-	if !IsNil(o.Occurrence) {
-		toSerialize["occurrence"] = o.Occurrence
 	}
 	if !IsNil(o.SiteNames) {
 		toSerialize["siteNames"] = o.SiteNames

@@ -41,17 +41,20 @@ type NATTemplateAPI interface {
 	/*
 	AddOtoNatTemplates Create site template's otonat
 
-	Create site template's otonat.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+	Create site template's otonat. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@return NATTemplateAPIAddOtoNatTemplatesRequest
+
+	Deprecated
 	*/
 	AddOtoNatTemplates(ctx context.Context, omadacId string, siteTemplateId string) NATTemplateAPIAddOtoNatTemplatesRequest
 
 	// AddOtoNatTemplatesExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	AddOtoNatTemplatesExecute(r NATTemplateAPIAddOtoNatTemplatesRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
@@ -358,12 +361,14 @@ func (r NATTemplateAPIAddOtoNatTemplatesRequest) Execute() (*OperationResponseWi
 /*
 AddOtoNatTemplates Create site template's otonat
 
-Create site template's otonat.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+Create site template's otonat. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @return NATTemplateAPIAddOtoNatTemplatesRequest
+
+Deprecated
 */
 func (a *NATTemplateAPIService) AddOtoNatTemplates(ctx context.Context, omadacId string, siteTemplateId string) NATTemplateAPIAddOtoNatTemplatesRequest {
 	return NATTemplateAPIAddOtoNatTemplatesRequest{
@@ -376,6 +381,7 @@ func (a *NATTemplateAPIService) AddOtoNatTemplates(ctx context.Context, omadacId
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *NATTemplateAPIService) AddOtoNatTemplatesExecute(r NATTemplateAPIAddOtoNatTemplatesRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost

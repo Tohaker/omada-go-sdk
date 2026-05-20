@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **SupportVpnUserTab** | Pointer to **bool** | Whether user tab configuration is supported of the VPN | [optional] 
 **SupportWgDomain** | Pointer to **bool** | Whether peer supports inputting domain. | [optional] 
 **TotalRows** | Pointer to **int64** | Total rows of all items. | [optional] 
+**WgPeerLimitSize** | Pointer to **int32** | The limit on the number of entries for peer in WireGuard. | [optional] 
 
 ## Methods
 
@@ -829,6 +830,31 @@ SetTotalRows sets TotalRows field to given value.
 `func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) HasTotalRows() bool`
 
 HasTotalRows returns a boolean if a field has been set.
+
+### GetWgPeerLimitSize
+
+`func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) GetWgPeerLimitSize() int32`
+
+GetWgPeerLimitSize returns the WgPeerLimitSize field if non-nil, zero value otherwise.
+
+### GetWgPeerLimitSizeOk
+
+`func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) GetWgPeerLimitSizeOk() (*int32, bool)`
+
+GetWgPeerLimitSizeOk returns a tuple with the WgPeerLimitSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWgPeerLimitSize
+
+`func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) SetWgPeerLimitSize(v int32)`
+
+SetWgPeerLimitSize sets WgPeerLimitSize field to given value.
+
+### HasWgPeerLimitSize
+
+`func (o *VpnSummaryOpenApiGridVOVpnSummaryVO) HasWgPeerLimitSize() bool`
+
+HasWgPeerLimitSize returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -36,7 +36,7 @@ type OswStackDetailConfigOpenApiVO struct {
 	MaxAge *int32 `json:"maxAge,omitempty"`
 	// STP maxHops should be should be within the range of 1-40
 	MaxHops *int32 `json:"maxHops,omitempty"`
-	Mstp *OswStpMstpConfig `json:"mstp,omitempty"`
+	Mstp *OswStpRpvstVO `json:"mstp,omitempty"`
 	// Only valid when mvlanNetworkId is bridge vlan
 	MvlanBridgeVlan *int32 `json:"mvlanBridgeVlan,omitempty"`
 	// Management VLAN network ID
@@ -49,7 +49,7 @@ type OswStackDetailConfigOpenApiVO struct {
 	// Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site
 	RememberDevice *int32 `json:"rememberDevice,omitempty"`
 	Snmp *OswSnmpVO `json:"snmp,omitempty"`
-	// Spanning Tree Protocol should be a value as follows: 1: STP; 2: RSTP; 3: MSTP; 0: OFF
+	// Spanning Tree Protocol should be a value as follows: 1: STP; 2: RSTP; 3: MSTP; 4: RPVST 0: OFF
 	Stp *int32 `json:"stp,omitempty"`
 	// Tag ID List
 	TagIds []string `json:"tagIds,omitempty"`
@@ -363,9 +363,9 @@ func (o *OswStackDetailConfigOpenApiVO) SetMaxHops(v int32) {
 }
 
 // GetMstp returns the Mstp field value if set, zero value otherwise.
-func (o *OswStackDetailConfigOpenApiVO) GetMstp() OswStpMstpConfig {
+func (o *OswStackDetailConfigOpenApiVO) GetMstp() OswStpRpvstVO {
 	if o == nil || IsNil(o.Mstp) {
-		var ret OswStpMstpConfig
+		var ret OswStpRpvstVO
 		return ret
 	}
 	return *o.Mstp
@@ -373,7 +373,7 @@ func (o *OswStackDetailConfigOpenApiVO) GetMstp() OswStpMstpConfig {
 
 // GetMstpOk returns a tuple with the Mstp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OswStackDetailConfigOpenApiVO) GetMstpOk() (*OswStpMstpConfig, bool) {
+func (o *OswStackDetailConfigOpenApiVO) GetMstpOk() (*OswStpRpvstVO, bool) {
 	if o == nil || IsNil(o.Mstp) {
 		return nil, false
 	}
@@ -389,8 +389,8 @@ func (o *OswStackDetailConfigOpenApiVO) HasMstp() bool {
 	return false
 }
 
-// SetMstp gets a reference to the given OswStpMstpConfig and assigns it to the Mstp field.
-func (o *OswStackDetailConfigOpenApiVO) SetMstp(v OswStpMstpConfig) {
+// SetMstp gets a reference to the given OswStpRpvstVO and assigns it to the Mstp field.
+func (o *OswStackDetailConfigOpenApiVO) SetMstp(v OswStpRpvstVO) {
 	o.Mstp = &v
 }
 

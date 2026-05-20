@@ -23,8 +23,8 @@ type ClientStatisticalDataDetailResult struct {
 	AvgDownRate *int64 `json:"avgDownRate,omitempty"`
 	// (Wireless) Average uplink negotiation rate (bit/s).
 	AvgRxR *int64 `json:"avgRxR,omitempty"`
-	// (Wireless) Average signal strength, unit: dBm.
-	AvgSignal *int32 `json:"avgSignal,omitempty"`
+	// (Wireless) Average signal on each channel, the key is radioId(0: 2.4GHz; 1: 5GHz-1; 2:5GHz-2; 3: 6GHz), the value is average signal(unit: dBm).
+	AvgSignal *map[string]int32 `json:"avgSignal,omitempty"`
 	// (Wireless) Average downlink negotiation rate (bit/s).
 	AvgTxR *int64 `json:"avgTxR,omitempty"`
 	// Average uplink rate (Byte/s).
@@ -121,9 +121,9 @@ func (o *ClientStatisticalDataDetailResult) SetAvgRxR(v int64) {
 }
 
 // GetAvgSignal returns the AvgSignal field value if set, zero value otherwise.
-func (o *ClientStatisticalDataDetailResult) GetAvgSignal() int32 {
+func (o *ClientStatisticalDataDetailResult) GetAvgSignal() map[string]int32 {
 	if o == nil || IsNil(o.AvgSignal) {
-		var ret int32
+		var ret map[string]int32
 		return ret
 	}
 	return *o.AvgSignal
@@ -131,7 +131,7 @@ func (o *ClientStatisticalDataDetailResult) GetAvgSignal() int32 {
 
 // GetAvgSignalOk returns a tuple with the AvgSignal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientStatisticalDataDetailResult) GetAvgSignalOk() (*int32, bool) {
+func (o *ClientStatisticalDataDetailResult) GetAvgSignalOk() (*map[string]int32, bool) {
 	if o == nil || IsNil(o.AvgSignal) {
 		return nil, false
 	}
@@ -147,8 +147,8 @@ func (o *ClientStatisticalDataDetailResult) HasAvgSignal() bool {
 	return false
 }
 
-// SetAvgSignal gets a reference to the given int32 and assigns it to the AvgSignal field.
-func (o *ClientStatisticalDataDetailResult) SetAvgSignal(v int32) {
+// SetAvgSignal gets a reference to the given map[string]int32 and assigns it to the AvgSignal field.
+func (o *ClientStatisticalDataDetailResult) SetAvgSignal(v map[string]int32) {
 	o.AvgSignal = &v
 }
 

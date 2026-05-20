@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceMac** | Pointer to **string** | The MAC of a SD-WAN candidate device. | [optional] 
+**DeviceMac** | **string** | The MAC of a SD-WAN candidate device. | 
 **LinkedSpokes** | Pointer to **[]string** | A list MAC of linked-spokes of the sdWan group. | [optional] 
 **Role** | **int32** | The role of SD-WAN member, hub: 0 or spoke: 1. | 
-**SiteId** | Pointer to **string** | Site ID. | [optional] 
+**SiteId** | **string** | Site ID. | 
 
 ## Methods
 
 ### NewAutoSelectWanPortReq
 
-`func NewAutoSelectWanPortReq(role int32, ) *AutoSelectWanPortReq`
+`func NewAutoSelectWanPortReq(deviceMac string, role int32, siteId string, ) *AutoSelectWanPortReq`
 
 NewAutoSelectWanPortReq instantiates a new AutoSelectWanPortReq object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetDeviceMac sets DeviceMac field to given value.
 
-### HasDeviceMac
-
-`func (o *AutoSelectWanPortReq) HasDeviceMac() bool`
-
-HasDeviceMac returns a boolean if a field has been set.
 
 ### GetLinkedSpokes
 
@@ -117,11 +112,6 @@ and a boolean to check if the value has been set.
 
 SetSiteId sets SiteId field to given value.
 
-### HasSiteId
-
-`func (o *AutoSelectWanPortReq) HasSiteId() bool`
-
-HasSiteId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

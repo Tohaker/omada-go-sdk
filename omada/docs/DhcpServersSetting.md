@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **DhcpSvr1** | Pointer to **string** | DHCP Server IP1 | [optional] 
 **DhcpSvr2** | Pointer to **string** | DHCP Server IP2 | [optional] 
 **Enable** | **bool** | The switch of DHCP Guarding | 
+**Mode** | Pointer to **int32** | The fill mode of DHCP Guarding, 1：follow Server 2：custom | [optional] 
 
 ## Methods
 
@@ -96,6 +97,31 @@ and a boolean to check if the value has been set.
 
 SetEnable sets Enable field to given value.
 
+
+### GetMode
+
+`func (o *DhcpServersSetting) GetMode() int32`
+
+GetMode returns the Mode field if non-nil, zero value otherwise.
+
+### GetModeOk
+
+`func (o *DhcpServersSetting) GetModeOk() (*int32, bool)`
+
+GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMode
+
+`func (o *DhcpServersSetting) SetMode(v int32)`
+
+SetMode sets Mode field to given value.
+
+### HasMode
+
+`func (o *DhcpServersSetting) HasMode() bool`
+
+HasMode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

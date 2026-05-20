@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **CpuUtil** | Pointer to **int32** | Cpu utilization | [optional] 
 **CustomId** | Pointer to **string** | Customer ID | [optional] 
 **CustomName** | Pointer to **string** | Customer name displayed in MSP mode | [optional] 
+**DefaultGroupSpeedCap** | Pointer to **[]int32** | Stack port aggregation group default link speed capability | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DeviceSeriesType** | Pointer to **int32** | Device type should be a value as follows:0:advanced,1:pro | [optional] 
 **Download** | Pointer to **int64** | Real-time total downstream traffic (bytes). | [optional] 
@@ -60,6 +61,7 @@ Name | Type | Description | Notes
 **MlagMsg** | Pointer to [**MlagMsgVO**](MlagMsgVO.md) |  | [optional] 
 **Model** | Pointer to **string** | Model, such as EAP225. | [optional] 
 **ModelVersion** | Pointer to **string** | Model version of device,for example:3.0 | [optional] 
+**MstpInsNo** | Pointer to **int32** | The range of MSTP instanceId | [optional] 
 **MstpInsNum** | Pointer to **int32** | The number of MSTP instances | [optional] 
 **Name** | Pointer to **string** | Default uses the MAC address as the name. | [optional] 
 **NeedUpgrade** | Pointer to **bool** | Whether the device needs upgrade | [optional] 
@@ -77,6 +79,8 @@ Name | Type | Description | Notes
 **Profiles** | Pointer to **map[string]string** | profiles | [optional] 
 **PublicIp** | Pointer to **string** | Public ip address | [optional] 
 **Resource** | Pointer to **int32** | Data source.Resource should be a value as follows: 0:new created;1:from template;2:override | [optional] 
+**RpvstExtendSupport** | Pointer to **bool** | Indicates whether the switch supports rpvst | [optional] 
+**RpvstInsNum** | Pointer to **int32** | The number of RPVST instances | [optional] 
 **Sdm** | Pointer to [**OswSdmTemplateVO**](OswSdmTemplateVO.md) |  | [optional] 
 **ShowModel** | Pointer to **string** | Model complex shown in the front end.Ap：model+(country)+modelVersion,EAP225(EU) v3.0  Gateway/Switch：model+modelVersion,Osg v3.0 | [optional] 
 **SiteName** | Pointer to **string** | Site name | [optional] 
@@ -84,6 +88,7 @@ Name | Type | Description | Notes
 **SpecialModel** | Pointer to **string** | Special device model,for example:EAP225-Outdoor-1a20a950b8d950e8 | [optional] 
 **StackMsg** | Pointer to [**StackMsgVO**](StackMsgVO.md) |  | [optional] 
 **StackPortCap** | Pointer to **map[string][]string** |  | [optional] 
+**StackPortConfigCaps** | Pointer to [**[]OswStackPortCapVO**](OswStackPortCapVO.md) | Ports capability that support configuration as stack port | [optional] 
 **StackPorts** | Pointer to [**[]OswStackPortGroupVO**](OswStackPortGroupVO.md) | Stack ports | [optional] 
 **StackSupportPorts** | Pointer to [**[]OswStandPortVO**](OswStandPortVO.md) | Stack support ports | [optional] 
 **Status** | Pointer to **int32** | Status of device,status should be a value as follows: 0:Disconnected;1:Disconnected(Migrating);10:Provisioning;11:Configuring;12:Upgrading;13:Rebooting;14:Connected;15:Connected(Wireless);16:Connected(Migrating);17:Connected(Wireless,Migrating);20:Pending;21:Pending(Wireless);22:Adopting;23:Adopting(Wireless);24:Adopt Failed;25:Adopt Failed(Wireless);26:Managed By Others;27:Managed By Others(Wireless);30:Heartbeat Missed;31:Heartbeat Missed(Wireless);32:Heartbeat Missed(Migrating);33:Heartbeat Missed(Wireless,Migrating);40:Isolated;41:Isolated(Migrating);50:Slice Configuring | [optional] 
@@ -106,7 +111,9 @@ Name | Type | Description | Notes
 **SupportRelayMultiServer** | Pointer to **bool** | Whether the device supports DHCP relay multi Server | [optional] 
 **SupportRunningConfig** | Pointer to **bool** | Whether the device supports show running config. | [optional] 
 **SupportSdm** | Pointer to **bool** | Indicates whether the switch supports SDM template | [optional] 
+**SupportStackGroupSpeed** | Pointer to **bool** | Indicates whether the member device supports configuring the link speed of the stack port aggregation group | [optional] 
 **SupportStp** | Pointer to **bool** | Indicates whether the switch supports stp | [optional] 
+**SupportTpclResInfo** | Pointer to **bool** | Whether the device supports returning TPCL resource information | [optional] 
 **SupportVrf** | Pointer to **bool** | Indicates whether the switch supports Vrf | [optional] 
 **SwitchConsistent** | Pointer to **bool** | Whether the device can be adopted by the site. | [optional] 
 **TagName** | Pointer to **string** | Device tag name | [optional] 
@@ -489,6 +496,31 @@ SetCustomName sets CustomName field to given value.
 `func (o *OswVO) HasCustomName() bool`
 
 HasCustomName returns a boolean if a field has been set.
+
+### GetDefaultGroupSpeedCap
+
+`func (o *OswVO) GetDefaultGroupSpeedCap() []int32`
+
+GetDefaultGroupSpeedCap returns the DefaultGroupSpeedCap field if non-nil, zero value otherwise.
+
+### GetDefaultGroupSpeedCapOk
+
+`func (o *OswVO) GetDefaultGroupSpeedCapOk() (*[]int32, bool)`
+
+GetDefaultGroupSpeedCapOk returns a tuple with the DefaultGroupSpeedCap field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultGroupSpeedCap
+
+`func (o *OswVO) SetDefaultGroupSpeedCap(v []int32)`
+
+SetDefaultGroupSpeedCap sets DefaultGroupSpeedCap field to given value.
+
+### HasDefaultGroupSpeedCap
+
+`func (o *OswVO) HasDefaultGroupSpeedCap() bool`
+
+HasDefaultGroupSpeedCap returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -1540,6 +1572,31 @@ SetModelVersion sets ModelVersion field to given value.
 
 HasModelVersion returns a boolean if a field has been set.
 
+### GetMstpInsNo
+
+`func (o *OswVO) GetMstpInsNo() int32`
+
+GetMstpInsNo returns the MstpInsNo field if non-nil, zero value otherwise.
+
+### GetMstpInsNoOk
+
+`func (o *OswVO) GetMstpInsNoOk() (*int32, bool)`
+
+GetMstpInsNoOk returns a tuple with the MstpInsNo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMstpInsNo
+
+`func (o *OswVO) SetMstpInsNo(v int32)`
+
+SetMstpInsNo sets MstpInsNo field to given value.
+
+### HasMstpInsNo
+
+`func (o *OswVO) HasMstpInsNo() bool`
+
+HasMstpInsNo returns a boolean if a field has been set.
+
 ### GetMstpInsNum
 
 `func (o *OswVO) GetMstpInsNum() int32`
@@ -1965,6 +2022,56 @@ SetResource sets Resource field to given value.
 
 HasResource returns a boolean if a field has been set.
 
+### GetRpvstExtendSupport
+
+`func (o *OswVO) GetRpvstExtendSupport() bool`
+
+GetRpvstExtendSupport returns the RpvstExtendSupport field if non-nil, zero value otherwise.
+
+### GetRpvstExtendSupportOk
+
+`func (o *OswVO) GetRpvstExtendSupportOk() (*bool, bool)`
+
+GetRpvstExtendSupportOk returns a tuple with the RpvstExtendSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRpvstExtendSupport
+
+`func (o *OswVO) SetRpvstExtendSupport(v bool)`
+
+SetRpvstExtendSupport sets RpvstExtendSupport field to given value.
+
+### HasRpvstExtendSupport
+
+`func (o *OswVO) HasRpvstExtendSupport() bool`
+
+HasRpvstExtendSupport returns a boolean if a field has been set.
+
+### GetRpvstInsNum
+
+`func (o *OswVO) GetRpvstInsNum() int32`
+
+GetRpvstInsNum returns the RpvstInsNum field if non-nil, zero value otherwise.
+
+### GetRpvstInsNumOk
+
+`func (o *OswVO) GetRpvstInsNumOk() (*int32, bool)`
+
+GetRpvstInsNumOk returns a tuple with the RpvstInsNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRpvstInsNum
+
+`func (o *OswVO) SetRpvstInsNum(v int32)`
+
+SetRpvstInsNum sets RpvstInsNum field to given value.
+
+### HasRpvstInsNum
+
+`func (o *OswVO) HasRpvstInsNum() bool`
+
+HasRpvstInsNum returns a boolean if a field has been set.
+
 ### GetSdm
 
 `func (o *OswVO) GetSdm() OswSdmTemplateVO`
@@ -2139,6 +2246,31 @@ SetStackPortCap sets StackPortCap field to given value.
 `func (o *OswVO) HasStackPortCap() bool`
 
 HasStackPortCap returns a boolean if a field has been set.
+
+### GetStackPortConfigCaps
+
+`func (o *OswVO) GetStackPortConfigCaps() []OswStackPortCapVO`
+
+GetStackPortConfigCaps returns the StackPortConfigCaps field if non-nil, zero value otherwise.
+
+### GetStackPortConfigCapsOk
+
+`func (o *OswVO) GetStackPortConfigCapsOk() (*[]OswStackPortCapVO, bool)`
+
+GetStackPortConfigCapsOk returns a tuple with the StackPortConfigCaps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackPortConfigCaps
+
+`func (o *OswVO) SetStackPortConfigCaps(v []OswStackPortCapVO)`
+
+SetStackPortConfigCaps sets StackPortConfigCaps field to given value.
+
+### HasStackPortConfigCaps
+
+`func (o *OswVO) HasStackPortConfigCaps() bool`
+
+HasStackPortConfigCaps returns a boolean if a field has been set.
 
 ### GetStackPorts
 
@@ -2690,6 +2822,31 @@ SetSupportSdm sets SupportSdm field to given value.
 
 HasSupportSdm returns a boolean if a field has been set.
 
+### GetSupportStackGroupSpeed
+
+`func (o *OswVO) GetSupportStackGroupSpeed() bool`
+
+GetSupportStackGroupSpeed returns the SupportStackGroupSpeed field if non-nil, zero value otherwise.
+
+### GetSupportStackGroupSpeedOk
+
+`func (o *OswVO) GetSupportStackGroupSpeedOk() (*bool, bool)`
+
+GetSupportStackGroupSpeedOk returns a tuple with the SupportStackGroupSpeed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportStackGroupSpeed
+
+`func (o *OswVO) SetSupportStackGroupSpeed(v bool)`
+
+SetSupportStackGroupSpeed sets SupportStackGroupSpeed field to given value.
+
+### HasSupportStackGroupSpeed
+
+`func (o *OswVO) HasSupportStackGroupSpeed() bool`
+
+HasSupportStackGroupSpeed returns a boolean if a field has been set.
+
 ### GetSupportStp
 
 `func (o *OswVO) GetSupportStp() bool`
@@ -2714,6 +2871,31 @@ SetSupportStp sets SupportStp field to given value.
 `func (o *OswVO) HasSupportStp() bool`
 
 HasSupportStp returns a boolean if a field has been set.
+
+### GetSupportTpclResInfo
+
+`func (o *OswVO) GetSupportTpclResInfo() bool`
+
+GetSupportTpclResInfo returns the SupportTpclResInfo field if non-nil, zero value otherwise.
+
+### GetSupportTpclResInfoOk
+
+`func (o *OswVO) GetSupportTpclResInfoOk() (*bool, bool)`
+
+GetSupportTpclResInfoOk returns a tuple with the SupportTpclResInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportTpclResInfo
+
+`func (o *OswVO) SetSupportTpclResInfo(v bool)`
+
+SetSupportTpclResInfo sets SupportTpclResInfo field to given value.
+
+### HasSupportTpclResInfo
+
+`func (o *OswVO) HasSupportTpclResInfo() bool`
+
+HasSupportTpclResInfo returns a boolean if a field has been set.
 
 ### GetSupportVrf
 

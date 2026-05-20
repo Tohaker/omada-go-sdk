@@ -21,11 +21,11 @@ var _ MappedNullable = &AutoCheckUpgradeCreateInfo{}
 
 // AutoCheckUpgradeCreateInfo struct for AutoCheckUpgradeCreateInfo
 type AutoCheckUpgradeCreateInfo struct {
+	Occurrence *UpgradeBaseScheduleTimeOpenApiVO `json:"Occurrence,omitempty"`
 	// Channel should be a value as follows: 0: stable; 1: Release Candidate(RC); 2: Beta, and it should not be null
 	Channel int32 `json:"channel"`
 	// List of model type selected by the user, and it should not be null
 	ModelTypeInfos []ModelTypeInfoOpenApiVO `json:"modelTypeInfos"`
-	Occurrence UpgradeBaseScheduleTimeOpenApiVO `json:"occurrence"`
 	// List of sites selected by the user, and it should not be null
 	SiteIds []string `json:"siteIds"`
 }
@@ -36,11 +36,10 @@ type _AutoCheckUpgradeCreateInfo AutoCheckUpgradeCreateInfo
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAutoCheckUpgradeCreateInfo(channel int32, modelTypeInfos []ModelTypeInfoOpenApiVO, occurrence UpgradeBaseScheduleTimeOpenApiVO, siteIds []string) *AutoCheckUpgradeCreateInfo {
+func NewAutoCheckUpgradeCreateInfo(channel int32, modelTypeInfos []ModelTypeInfoOpenApiVO, siteIds []string) *AutoCheckUpgradeCreateInfo {
 	this := AutoCheckUpgradeCreateInfo{}
 	this.Channel = channel
 	this.ModelTypeInfos = modelTypeInfos
-	this.Occurrence = occurrence
 	this.SiteIds = siteIds
 	return &this
 }
@@ -51,6 +50,38 @@ func NewAutoCheckUpgradeCreateInfo(channel int32, modelTypeInfos []ModelTypeInfo
 func NewAutoCheckUpgradeCreateInfoWithDefaults() *AutoCheckUpgradeCreateInfo {
 	this := AutoCheckUpgradeCreateInfo{}
 	return &this
+}
+
+// GetOccurrence returns the Occurrence field value if set, zero value otherwise.
+func (o *AutoCheckUpgradeCreateInfo) GetOccurrence() UpgradeBaseScheduleTimeOpenApiVO {
+	if o == nil || IsNil(o.Occurrence) {
+		var ret UpgradeBaseScheduleTimeOpenApiVO
+		return ret
+	}
+	return *o.Occurrence
+}
+
+// GetOccurrenceOk returns a tuple with the Occurrence field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutoCheckUpgradeCreateInfo) GetOccurrenceOk() (*UpgradeBaseScheduleTimeOpenApiVO, bool) {
+	if o == nil || IsNil(o.Occurrence) {
+		return nil, false
+	}
+	return o.Occurrence, true
+}
+
+// HasOccurrence returns a boolean if a field has been set.
+func (o *AutoCheckUpgradeCreateInfo) HasOccurrence() bool {
+	if o != nil && !IsNil(o.Occurrence) {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrence gets a reference to the given UpgradeBaseScheduleTimeOpenApiVO and assigns it to the Occurrence field.
+func (o *AutoCheckUpgradeCreateInfo) SetOccurrence(v UpgradeBaseScheduleTimeOpenApiVO) {
+	o.Occurrence = &v
 }
 
 // GetChannel returns the Channel field value
@@ -101,30 +132,6 @@ func (o *AutoCheckUpgradeCreateInfo) SetModelTypeInfos(v []ModelTypeInfoOpenApiV
 	o.ModelTypeInfos = v
 }
 
-// GetOccurrence returns the Occurrence field value
-func (o *AutoCheckUpgradeCreateInfo) GetOccurrence() UpgradeBaseScheduleTimeOpenApiVO {
-	if o == nil {
-		var ret UpgradeBaseScheduleTimeOpenApiVO
-		return ret
-	}
-
-	return o.Occurrence
-}
-
-// GetOccurrenceOk returns a tuple with the Occurrence field value
-// and a boolean to check if the value has been set.
-func (o *AutoCheckUpgradeCreateInfo) GetOccurrenceOk() (*UpgradeBaseScheduleTimeOpenApiVO, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Occurrence, true
-}
-
-// SetOccurrence sets field value
-func (o *AutoCheckUpgradeCreateInfo) SetOccurrence(v UpgradeBaseScheduleTimeOpenApiVO) {
-	o.Occurrence = v
-}
-
 // GetSiteIds returns the SiteIds field value
 func (o *AutoCheckUpgradeCreateInfo) GetSiteIds() []string {
 	if o == nil {
@@ -159,9 +166,11 @@ func (o AutoCheckUpgradeCreateInfo) MarshalJSON() ([]byte, error) {
 
 func (o AutoCheckUpgradeCreateInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Occurrence) {
+		toSerialize["Occurrence"] = o.Occurrence
+	}
 	toSerialize["channel"] = o.Channel
 	toSerialize["modelTypeInfos"] = o.ModelTypeInfos
-	toSerialize["occurrence"] = o.Occurrence
 	toSerialize["siteIds"] = o.SiteIds
 	return toSerialize, nil
 }
@@ -173,7 +182,6 @@ func (o *AutoCheckUpgradeCreateInfo) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"channel",
 		"modelTypeInfos",
-		"occurrence",
 		"siteIds",
 	}
 

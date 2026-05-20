@@ -21,6 +21,8 @@ var _ MappedNullable = &ClientFilteringOptions{}
 type ClientFilteringOptions struct {
 	// Device list.
 	Device []string `json:"device,omitempty"`
+	// Device detail info list.
+	DeviceDetail []ClientFilteringDeviceDetailOpenApiVO `json:"deviceDetail,omitempty"`
 	// Type list of clients.
 	DeviceType []ClientCategoryOptionsOpenApiVO `json:"deviceType,omitempty"`
 	// Network list.
@@ -78,6 +80,38 @@ func (o *ClientFilteringOptions) HasDevice() bool {
 // SetDevice gets a reference to the given []string and assigns it to the Device field.
 func (o *ClientFilteringOptions) SetDevice(v []string) {
 	o.Device = v
+}
+
+// GetDeviceDetail returns the DeviceDetail field value if set, zero value otherwise.
+func (o *ClientFilteringOptions) GetDeviceDetail() []ClientFilteringDeviceDetailOpenApiVO {
+	if o == nil || IsNil(o.DeviceDetail) {
+		var ret []ClientFilteringDeviceDetailOpenApiVO
+		return ret
+	}
+	return o.DeviceDetail
+}
+
+// GetDeviceDetailOk returns a tuple with the DeviceDetail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientFilteringOptions) GetDeviceDetailOk() ([]ClientFilteringDeviceDetailOpenApiVO, bool) {
+	if o == nil || IsNil(o.DeviceDetail) {
+		return nil, false
+	}
+	return o.DeviceDetail, true
+}
+
+// HasDeviceDetail returns a boolean if a field has been set.
+func (o *ClientFilteringOptions) HasDeviceDetail() bool {
+	if o != nil && !IsNil(o.DeviceDetail) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceDetail gets a reference to the given []ClientFilteringDeviceDetailOpenApiVO and assigns it to the DeviceDetail field.
+func (o *ClientFilteringOptions) SetDeviceDetail(v []ClientFilteringDeviceDetailOpenApiVO) {
+	o.DeviceDetail = v
 }
 
 // GetDeviceType returns the DeviceType field value if set, zero value otherwise.
@@ -220,6 +254,9 @@ func (o ClientFilteringOptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Device) {
 		toSerialize["device"] = o.Device
+	}
+	if !IsNil(o.DeviceDetail) {
+		toSerialize["deviceDetail"] = o.DeviceDetail
 	}
 	if !IsNil(o.DeviceType) {
 		toSerialize["deviceType"] = o.DeviceType

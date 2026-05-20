@@ -30,6 +30,8 @@ type OswStackMemberVO struct {
 	CompoundModel *string `json:"compoundModel,omitempty"`
 	// Real-time CPU usage
 	CpuUtil *int32 `json:"cpuUtil,omitempty"`
+	// Stack port aggregation group default link speed capability
+	DefaultGroupSpeedCap []int32 `json:"defaultGroupSpeedCap,omitempty"`
 	// DeviceSeriesType should be a value as follows: 0: advanced; 1: pro
 	DeviceSeriesType *int32 `json:"deviceSeriesType,omitempty"`
 	// Downlink Omada device list
@@ -91,11 +93,15 @@ type OswStackMemberVO struct {
 	// ShowModel
 	ShowModel *string `json:"showModel,omitempty"`
 	StackPortCap *map[string][]string `json:"stackPortCap,omitempty"`
+	// Ports capability that support configuration as stack port
+	StackPortConfigCaps []OswStackPortCapVO `json:"stackPortConfigCaps,omitempty"`
 	// Stack port list
 	StackPorts []OswStackPortGroupVO `json:"stackPorts"`
 	// Device Status
 	Status *int32 `json:"status,omitempty"`
 	StatusCategory *int32 `json:"statusCategory,omitempty"`
+	// Indicates whether the member device supports configuring the link speed of the stack port aggregation group
+	SupportStackGroupSpeed *bool `json:"supportStackGroupSpeed,omitempty"`
 	// Type
 	Type *string `json:"type,omitempty"`
 	// Unit number of the local stacking system of the device
@@ -288,6 +294,38 @@ func (o *OswStackMemberVO) HasCpuUtil() bool {
 // SetCpuUtil gets a reference to the given int32 and assigns it to the CpuUtil field.
 func (o *OswStackMemberVO) SetCpuUtil(v int32) {
 	o.CpuUtil = &v
+}
+
+// GetDefaultGroupSpeedCap returns the DefaultGroupSpeedCap field value if set, zero value otherwise.
+func (o *OswStackMemberVO) GetDefaultGroupSpeedCap() []int32 {
+	if o == nil || IsNil(o.DefaultGroupSpeedCap) {
+		var ret []int32
+		return ret
+	}
+	return o.DefaultGroupSpeedCap
+}
+
+// GetDefaultGroupSpeedCapOk returns a tuple with the DefaultGroupSpeedCap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackMemberVO) GetDefaultGroupSpeedCapOk() ([]int32, bool) {
+	if o == nil || IsNil(o.DefaultGroupSpeedCap) {
+		return nil, false
+	}
+	return o.DefaultGroupSpeedCap, true
+}
+
+// HasDefaultGroupSpeedCap returns a boolean if a field has been set.
+func (o *OswStackMemberVO) HasDefaultGroupSpeedCap() bool {
+	if o != nil && !IsNil(o.DefaultGroupSpeedCap) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultGroupSpeedCap gets a reference to the given []int32 and assigns it to the DefaultGroupSpeedCap field.
+func (o *OswStackMemberVO) SetDefaultGroupSpeedCap(v []int32) {
+	o.DefaultGroupSpeedCap = v
 }
 
 // GetDeviceSeriesType returns the DeviceSeriesType field value if set, zero value otherwise.
@@ -1266,6 +1304,38 @@ func (o *OswStackMemberVO) SetStackPortCap(v map[string][]string) {
 	o.StackPortCap = &v
 }
 
+// GetStackPortConfigCaps returns the StackPortConfigCaps field value if set, zero value otherwise.
+func (o *OswStackMemberVO) GetStackPortConfigCaps() []OswStackPortCapVO {
+	if o == nil || IsNil(o.StackPortConfigCaps) {
+		var ret []OswStackPortCapVO
+		return ret
+	}
+	return o.StackPortConfigCaps
+}
+
+// GetStackPortConfigCapsOk returns a tuple with the StackPortConfigCaps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackMemberVO) GetStackPortConfigCapsOk() ([]OswStackPortCapVO, bool) {
+	if o == nil || IsNil(o.StackPortConfigCaps) {
+		return nil, false
+	}
+	return o.StackPortConfigCaps, true
+}
+
+// HasStackPortConfigCaps returns a boolean if a field has been set.
+func (o *OswStackMemberVO) HasStackPortConfigCaps() bool {
+	if o != nil && !IsNil(o.StackPortConfigCaps) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackPortConfigCaps gets a reference to the given []OswStackPortCapVO and assigns it to the StackPortConfigCaps field.
+func (o *OswStackMemberVO) SetStackPortConfigCaps(v []OswStackPortCapVO) {
+	o.StackPortConfigCaps = v
+}
+
 // GetStackPorts returns the StackPorts field value
 func (o *OswStackMemberVO) GetStackPorts() []OswStackPortGroupVO {
 	if o == nil {
@@ -1352,6 +1422,38 @@ func (o *OswStackMemberVO) HasStatusCategory() bool {
 // SetStatusCategory gets a reference to the given int32 and assigns it to the StatusCategory field.
 func (o *OswStackMemberVO) SetStatusCategory(v int32) {
 	o.StatusCategory = &v
+}
+
+// GetSupportStackGroupSpeed returns the SupportStackGroupSpeed field value if set, zero value otherwise.
+func (o *OswStackMemberVO) GetSupportStackGroupSpeed() bool {
+	if o == nil || IsNil(o.SupportStackGroupSpeed) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportStackGroupSpeed
+}
+
+// GetSupportStackGroupSpeedOk returns a tuple with the SupportStackGroupSpeed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackMemberVO) GetSupportStackGroupSpeedOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportStackGroupSpeed) {
+		return nil, false
+	}
+	return o.SupportStackGroupSpeed, true
+}
+
+// HasSupportStackGroupSpeed returns a boolean if a field has been set.
+func (o *OswStackMemberVO) HasSupportStackGroupSpeed() bool {
+	if o != nil && !IsNil(o.SupportStackGroupSpeed) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportStackGroupSpeed gets a reference to the given bool and assigns it to the SupportStackGroupSpeed field.
+func (o *OswStackMemberVO) SetSupportStackGroupSpeed(v bool) {
+	o.SupportStackGroupSpeed = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -1531,6 +1633,9 @@ func (o OswStackMemberVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CpuUtil) {
 		toSerialize["cpuUtil"] = o.CpuUtil
 	}
+	if !IsNil(o.DefaultGroupSpeedCap) {
+		toSerialize["defaultGroupSpeedCap"] = o.DefaultGroupSpeedCap
+	}
 	if !IsNil(o.DeviceSeriesType) {
 		toSerialize["deviceSeriesType"] = o.DeviceSeriesType
 	}
@@ -1620,12 +1725,18 @@ func (o OswStackMemberVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.StackPortCap) {
 		toSerialize["stackPortCap"] = o.StackPortCap
 	}
+	if !IsNil(o.StackPortConfigCaps) {
+		toSerialize["stackPortConfigCaps"] = o.StackPortConfigCaps
+	}
 	toSerialize["stackPorts"] = o.StackPorts
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	if !IsNil(o.StatusCategory) {
 		toSerialize["statusCategory"] = o.StatusCategory
+	}
+	if !IsNil(o.SupportStackGroupSpeed) {
+		toSerialize["supportStackGroupSpeed"] = o.SupportStackGroupSpeed
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

@@ -25,6 +25,8 @@ type Dot1xEapPortInfoOpenApiVO struct {
 	MabEnable *bool `json:"mabEnable,omitempty"`
 	// Port number
 	Port *string `json:"port,omitempty"`
+	// Whether this port support configuring dot1x.
+	SupportDot1x *bool `json:"supportDot1x,omitempty"`
 }
 
 // NewDot1xEapPortInfoOpenApiVO instantiates a new Dot1xEapPortInfoOpenApiVO object
@@ -140,6 +142,38 @@ func (o *Dot1xEapPortInfoOpenApiVO) SetPort(v string) {
 	o.Port = &v
 }
 
+// GetSupportDot1x returns the SupportDot1x field value if set, zero value otherwise.
+func (o *Dot1xEapPortInfoOpenApiVO) GetSupportDot1x() bool {
+	if o == nil || IsNil(o.SupportDot1x) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportDot1x
+}
+
+// GetSupportDot1xOk returns a tuple with the SupportDot1x field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Dot1xEapPortInfoOpenApiVO) GetSupportDot1xOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportDot1x) {
+		return nil, false
+	}
+	return o.SupportDot1x, true
+}
+
+// HasSupportDot1x returns a boolean if a field has been set.
+func (o *Dot1xEapPortInfoOpenApiVO) HasSupportDot1x() bool {
+	if o != nil && !IsNil(o.SupportDot1x) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportDot1x gets a reference to the given bool and assigns it to the SupportDot1x field.
+func (o *Dot1xEapPortInfoOpenApiVO) SetSupportDot1x(v bool) {
+	o.SupportDot1x = &v
+}
+
 func (o Dot1xEapPortInfoOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -158,6 +192,9 @@ func (o Dot1xEapPortInfoOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
+	}
+	if !IsNil(o.SupportDot1x) {
+		toSerialize["supportDot1x"] = o.SupportDot1x
 	}
 	return toSerialize, nil
 }

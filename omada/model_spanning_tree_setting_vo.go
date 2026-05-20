@@ -31,6 +31,10 @@ type SpanningTreeSettingVO struct {
 	EdgePort bool `json:"edgePort"`
 	// ExtPathCost should be within the range of 0–2000000
 	ExtPathCost int32 `json:"extPathCost"`
+	// Indicates whether instance is enabled
+	InstanceEnable *bool `json:"instanceEnable,omitempty"`
+	// Instances
+	Instances []InstancesVO `json:"instances,omitempty"`
 	// IntPathCost should be within the range of 0–2000000
 	IntPathCost int32 `json:"intPathCost"`
 	// Indicates whether loop protect is enabled
@@ -213,6 +217,70 @@ func (o *SpanningTreeSettingVO) GetExtPathCostOk() (*int32, bool) {
 // SetExtPathCost sets field value
 func (o *SpanningTreeSettingVO) SetExtPathCost(v int32) {
 	o.ExtPathCost = v
+}
+
+// GetInstanceEnable returns the InstanceEnable field value if set, zero value otherwise.
+func (o *SpanningTreeSettingVO) GetInstanceEnable() bool {
+	if o == nil || IsNil(o.InstanceEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.InstanceEnable
+}
+
+// GetInstanceEnableOk returns a tuple with the InstanceEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpanningTreeSettingVO) GetInstanceEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.InstanceEnable) {
+		return nil, false
+	}
+	return o.InstanceEnable, true
+}
+
+// HasInstanceEnable returns a boolean if a field has been set.
+func (o *SpanningTreeSettingVO) HasInstanceEnable() bool {
+	if o != nil && !IsNil(o.InstanceEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetInstanceEnable gets a reference to the given bool and assigns it to the InstanceEnable field.
+func (o *SpanningTreeSettingVO) SetInstanceEnable(v bool) {
+	o.InstanceEnable = &v
+}
+
+// GetInstances returns the Instances field value if set, zero value otherwise.
+func (o *SpanningTreeSettingVO) GetInstances() []InstancesVO {
+	if o == nil || IsNil(o.Instances) {
+		var ret []InstancesVO
+		return ret
+	}
+	return o.Instances
+}
+
+// GetInstancesOk returns a tuple with the Instances field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpanningTreeSettingVO) GetInstancesOk() ([]InstancesVO, bool) {
+	if o == nil || IsNil(o.Instances) {
+		return nil, false
+	}
+	return o.Instances, true
+}
+
+// HasInstances returns a boolean if a field has been set.
+func (o *SpanningTreeSettingVO) HasInstances() bool {
+	if o != nil && !IsNil(o.Instances) {
+		return true
+	}
+
+	return false
+}
+
+// SetInstances gets a reference to the given []InstancesVO and assigns it to the Instances field.
+func (o *SpanningTreeSettingVO) SetInstances(v []InstancesVO) {
+	o.Instances = v
 }
 
 // GetIntPathCost returns the IntPathCost field value
@@ -436,6 +504,12 @@ func (o SpanningTreeSettingVO) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["edgePort"] = o.EdgePort
 	toSerialize["extPathCost"] = o.ExtPathCost
+	if !IsNil(o.InstanceEnable) {
+		toSerialize["instanceEnable"] = o.InstanceEnable
+	}
+	if !IsNil(o.Instances) {
+		toSerialize["instances"] = o.Instances
+	}
 	toSerialize["intPathCost"] = o.IntPathCost
 	if !IsNil(o.LoopProtect) {
 		toSerialize["loopProtect"] = o.LoopProtect

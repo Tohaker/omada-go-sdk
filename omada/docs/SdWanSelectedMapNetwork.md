@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CustomNetwork** | Pointer to [**[]SdWanLanNetworkNatReq**](SdWanLanNetworkNatReq.md) | A list of original custom route | [optional] 
 **GroupId** | Pointer to **string** | The SD-WAN group ID. | [optional] 
 **LanNetworks** | Pointer to [**[]SdWanLanNetworkNatReq**](SdWanLanNetworkNatReq.md) | A list of original lan network | [optional] 
 **MapNetworkList** | Pointer to **[]string** | A list of map network range | [optional] 
-**MemberList** | Pointer to [**[]SdWanMemberBriefInfo**](SdWanMemberBriefInfo.md) | A list of members of the SD-WAN group | [optional] 
+**MemberList** | Pointer to [**[]SdWanMemberSelected**](SdWanMemberSelected.md) | A list of members of the SD-WAN group | [optional] 
 
 ## Methods
 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewSdWanSelectedMapNetworkWithDefaults instantiates a new SdWanSelectedMapNetwork object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCustomNetwork
+
+`func (o *SdWanSelectedMapNetwork) GetCustomNetwork() []SdWanLanNetworkNatReq`
+
+GetCustomNetwork returns the CustomNetwork field if non-nil, zero value otherwise.
+
+### GetCustomNetworkOk
+
+`func (o *SdWanSelectedMapNetwork) GetCustomNetworkOk() (*[]SdWanLanNetworkNatReq, bool)`
+
+GetCustomNetworkOk returns a tuple with the CustomNetwork field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomNetwork
+
+`func (o *SdWanSelectedMapNetwork) SetCustomNetwork(v []SdWanLanNetworkNatReq)`
+
+SetCustomNetwork sets CustomNetwork field to given value.
+
+### HasCustomNetwork
+
+`func (o *SdWanSelectedMapNetwork) HasCustomNetwork() bool`
+
+HasCustomNetwork returns a boolean if a field has been set.
 
 ### GetGroupId
 
@@ -105,20 +131,20 @@ HasMapNetworkList returns a boolean if a field has been set.
 
 ### GetMemberList
 
-`func (o *SdWanSelectedMapNetwork) GetMemberList() []SdWanMemberBriefInfo`
+`func (o *SdWanSelectedMapNetwork) GetMemberList() []SdWanMemberSelected`
 
 GetMemberList returns the MemberList field if non-nil, zero value otherwise.
 
 ### GetMemberListOk
 
-`func (o *SdWanSelectedMapNetwork) GetMemberListOk() (*[]SdWanMemberBriefInfo, bool)`
+`func (o *SdWanSelectedMapNetwork) GetMemberListOk() (*[]SdWanMemberSelected, bool)`
 
 GetMemberListOk returns a tuple with the MemberList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemberList
 
-`func (o *SdWanSelectedMapNetwork) SetMemberList(v []SdWanMemberBriefInfo)`
+`func (o *SdWanSelectedMapNetwork) SetMemberList(v []SdWanMemberSelected)`
 
 SetMemberList sets MemberList field to given value.
 

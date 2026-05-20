@@ -8,14 +8,14 @@ Name | Type | Description | Notes
 **Dns1** | Pointer to **string** | Primary DNS server. | [optional] 
 **Dns2** | Pointer to **string** | Secondary DNS server. | [optional] 
 **Hostname** | Pointer to **string** | Host name. Parameter [hostname] should be up to 63 characters long and can only use numbers, letters, and hyphen. | [optional] 
-**Mtu** | Pointer to **int32** | Parameter [mtu] should be a value between 576 and 1500. | [optional] 
+**Mtu** | **int32** | Parameter [mtu] should be a value between 576 and 1500. | 
 **Unicast** | Pointer to **string** | Subnet mask of virtual WAN. | [optional] 
 
 ## Methods
 
 ### NewVirtualWanIpv4DhcpOpenApiVO
 
-`func NewVirtualWanIpv4DhcpOpenApiVO() *VirtualWanIpv4DhcpOpenApiVO`
+`func NewVirtualWanIpv4DhcpOpenApiVO(mtu int32, ) *VirtualWanIpv4DhcpOpenApiVO`
 
 NewVirtualWanIpv4DhcpOpenApiVO instantiates a new VirtualWanIpv4DhcpOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -149,11 +149,6 @@ and a boolean to check if the value has been set.
 
 SetMtu sets Mtu field to given value.
 
-### HasMtu
-
-`func (o *VirtualWanIpv4DhcpOpenApiVO) HasMtu() bool`
-
-HasMtu returns a boolean if a field has been set.
 
 ### GetUnicast
 

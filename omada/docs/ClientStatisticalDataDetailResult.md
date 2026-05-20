@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AvgDownRate** | Pointer to **int64** | Average downlink rate (Byte/s). | [optional] 
 **AvgRxR** | Pointer to **int64** | (Wireless) Average uplink negotiation rate (bit/s). | [optional] 
-**AvgSignal** | Pointer to **int32** | (Wireless) Average signal strength, unit: dBm. | [optional] 
+**AvgSignal** | Pointer to **map[string]int32** | (Wireless) Average signal on each channel, the key is radioId(0: 2.4GHz; 1: 5GHz-1; 2:5GHz-2; 3: 6GHz), the value is average signal(unit: dBm). | [optional] 
 **AvgTxR** | Pointer to **int64** | (Wireless) Average downlink negotiation rate (bit/s). | [optional] 
 **AvgUpRate** | Pointer to **int64** | Average uplink rate (Byte/s). | [optional] 
 **Stats** | Pointer to [**[]ClientStatisticalDataDetail**](ClientStatisticalDataDetail.md) | Client Statistical Data Detail list. | [optional] 
@@ -85,20 +85,20 @@ HasAvgRxR returns a boolean if a field has been set.
 
 ### GetAvgSignal
 
-`func (o *ClientStatisticalDataDetailResult) GetAvgSignal() int32`
+`func (o *ClientStatisticalDataDetailResult) GetAvgSignal() map[string]int32`
 
 GetAvgSignal returns the AvgSignal field if non-nil, zero value otherwise.
 
 ### GetAvgSignalOk
 
-`func (o *ClientStatisticalDataDetailResult) GetAvgSignalOk() (*int32, bool)`
+`func (o *ClientStatisticalDataDetailResult) GetAvgSignalOk() (*map[string]int32, bool)`
 
 GetAvgSignalOk returns a tuple with the AvgSignal field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvgSignal
 
-`func (o *ClientStatisticalDataDetailResult) SetAvgSignal(v int32)`
+`func (o *ClientStatisticalDataDetailResult) SetAvgSignal(v map[string]int32)`
 
 SetAvgSignal sets AvgSignal field to given value.
 

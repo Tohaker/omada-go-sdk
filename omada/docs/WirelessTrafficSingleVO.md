@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RxTraffic** | Pointer to **int64** | rx traffic | [optional] 
+**RxTraffic** | Pointer to **int64** | client rx traffic | [optional] 
 **TotalTraffic** | Pointer to **int64** | total traffic | [optional] 
 **TrafficTrend** | Pointer to [**[]WirelessTrafficTrendVO**](WirelessTrafficTrendVO.md) |  | [optional] 
-**TxTraffic** | Pointer to **int64** | tx traffic | [optional] 
+**TxTraffic** | Pointer to **int64** | client tx traffic | [optional] 
 
 ## Methods
 

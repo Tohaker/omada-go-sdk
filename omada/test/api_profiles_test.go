@@ -53,6 +53,22 @@ func Test_omada_ProfilesAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ProfilesAPIService CopyWifiCallingProfile", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var profileId string
+
+		resp, httpRes, err := apiClient.ProfilesAPI.CopyWifiCallingProfile(context.Background(), omadacId, siteId, profileId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ProfilesAPIService CreateApnProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -257,6 +273,21 @@ func Test_omada_ProfilesAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.ProfilesAPI.CreateTimeRangeProfile(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProfilesAPIService CreateWifiCallingProfile", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ProfilesAPI.CreateWifiCallingProfile(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -488,6 +519,22 @@ func Test_omada_ProfilesAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ProfilesAPIService DeleteWifiCallingProfile", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var profileId string
+
+		resp, httpRes, err := apiClient.ProfilesAPI.DeleteWifiCallingProfile(context.Background(), omadacId, siteId, profileId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ProfilesAPIService GetApnProfileList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -709,6 +756,21 @@ func Test_omada_ProfilesAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.ProfilesAPI.GetTimeRangeList(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProfilesAPIService GetWifiCallingProfiles", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ProfilesAPI.GetWifiCallingProfiles(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -947,6 +1009,22 @@ func Test_omada_ProfilesAPIService(t *testing.T) {
 		var profileId string
 
 		resp, httpRes, err := apiClient.ProfilesAPI.ModifyTimeRangeProfile(context.Background(), omadacId, siteId, profileId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ProfilesAPIService ModifyWifiCallingProfile", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var profileId string
+
+		resp, httpRes, err := apiClient.ProfilesAPI.ModifyWifiCallingProfile(context.Background(), omadacId, siteId, profileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

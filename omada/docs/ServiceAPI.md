@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**GetIptv**](ServiceAPI.md#getiptv) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Get IPTV setting
 [**GetMdnsGrid**](ServiceAPI.md#getmdnsgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Get mDNS rule list
 [**GetMld**](ServiceAPI.md#getmld) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mld | Get the MLD settings
+[**GetSnmpIncompatibleDevices**](ServiceAPI.md#getsnmpincompatibledevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp/incompatible-devices | Get the list of site devices that do not support SNMP v3 enhanced configuration
 [**GetSnmpSetting**](ServiceAPI.md#getsnmpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Get SNMP setting
 [**GetSshSetting**](ServiceAPI.md#getsshsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Get SSH setting
 [**GetUpnpSetting**](ServiceAPI.md#getupnpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Get UPnP setting
@@ -1620,6 +1621,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseMldOpenApiVO**](OperationResponseMldOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSnmpIncompatibleDevices
+
+> OperationResponseGridVODeviceVO GetSnmpIncompatibleDevices(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+
+Get the list of site devices that do not support SNMP v3 enhanced configuration
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ServiceAPI.GetSnmpIncompatibleDevices(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.GetSnmpIncompatibleDevices``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSnmpIncompatibleDevices`: OperationResponseGridVODeviceVO
+	fmt.Fprintf(os.Stdout, "Response from `ServiceAPI.GetSnmpIncompatibleDevices`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSnmpIncompatibleDevicesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseGridVODeviceVO**](OperationResponseGridVODeviceVO.md)
 
 ### Authorization
 

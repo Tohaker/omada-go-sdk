@@ -135,7 +135,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	autoCheckUpgradeCreateInfo := *openapiclient.NewAutoCheckUpgradeCreateInfo(int32(123), []openapiclient.ModelTypeInfoOpenApiVO{*openapiclient.NewModelTypeInfoOpenApiVO("CompoundModel_example", "ShowModel_example")}, *openapiclient.NewUpgradeBaseScheduleTimeOpenApiVO(int32(123), int32(123), int32(123)), []string{"SiteIds_example"}) // AutoCheckUpgradeCreateInfo | 
+	autoCheckUpgradeCreateInfo := *openapiclient.NewAutoCheckUpgradeCreateInfo(int32(123), []openapiclient.ModelTypeInfoOpenApiVO{*openapiclient.NewModelTypeInfoOpenApiVO("CompoundModel_example", "ShowModel_example")}, []string{"SiteIds_example"}) // AutoCheckUpgradeCreateInfo | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -724,7 +724,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	autoCheckId := "autoCheckId_example" // string | Auto Check ID
-	autoCheckUpgradeCreateInfo := *openapiclient.NewAutoCheckUpgradeCreateInfo(int32(123), []openapiclient.ModelTypeInfoOpenApiVO{*openapiclient.NewModelTypeInfoOpenApiVO("CompoundModel_example", "ShowModel_example")}, *openapiclient.NewUpgradeBaseScheduleTimeOpenApiVO(int32(123), int32(123), int32(123)), []string{"SiteIds_example"}) // AutoCheckUpgradeCreateInfo | 
+	autoCheckUpgradeCreateInfo := *openapiclient.NewAutoCheckUpgradeCreateInfo(int32(123), []openapiclient.ModelTypeInfoOpenApiVO{*openapiclient.NewModelTypeInfoOpenApiVO("CompoundModel_example", "ShowModel_example")}, []string{"SiteIds_example"}) // AutoCheckUpgradeCreateInfo | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -106,7 +106,7 @@ type SwitchQoSAPI interface {
 	/*
 	GetOswQosMode Get switch QoS mode.
 
-	Get switch QoS mode.<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+	Get switch QoS mode.<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -938,7 +938,7 @@ func (r SwitchQoSAPIGetOswQosModeRequest) Execute() (*OperationResponse, *http.R
 /*
 GetOswQosMode Get switch QoS mode.
 
-Get switch QoS mode.<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+Get switch QoS mode.<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

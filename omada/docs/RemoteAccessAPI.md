@@ -7,8 +7,10 @@ Method | HTTP request | Description
 [**AddTunnel**](RemoteAccessAPI.md#addtunnel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel | Create new remote access tunnel
 [**DeleteTunnel**](RemoteAccessAPI.md#deletetunnel) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/{tunnelId} | Delete remote access tunnel information
 [**EditTunnel**](RemoteAccessAPI.md#edittunnel) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/{tunnelId} | Modify remote access tunnel information
+[**GetSingleDeviceTunnel**](RemoteAccessAPI.md#getsingledevicetunnel) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/deviceTunnel/{localMac} | Get single device tunnel
 [**GetTunnel**](RemoteAccessAPI.md#gettunnel) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel | Get remote access tunnel
 [**GetTunnelStatus**](RemoteAccessAPI.md#gettunnelstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/{tunnelId}/status | Get remote access tunnel&#39;s status
+[**GetTunnelsEwebInfo**](RemoteAccessAPI.md#gettunnelsewebinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/{tunnelId}/ewebInfo | Get tunnel eweb info
 [**GetTunnelsStatus**](RemoteAccessAPI.md#gettunnelsstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/status | Get all remote access tunnel&#39;s status
 [**ModifyTunnel**](RemoteAccessAPI.md#modifytunnel) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/remoteAccess/tunnel/{tunnelId}/status | Enable/Disable remote access tunnel
 
@@ -167,7 +169,7 @@ Name | Type | Description  | Notes
 
 ## EditTunnel
 
-> OperationResponseWithoutResult EditTunnel(ctx, omadacId, siteId, tunnelId).NatTraversalTunnelOpenApiVO(natTraversalTunnelOpenApiVO).Execute()
+> OperationResponseWithoutResult EditTunnel(ctx, omadacId, siteId, tunnelId).NatTraversalTunnelModifyOpenApiVO(natTraversalTunnelModifyOpenApiVO).Execute()
 
 Modify remote access tunnel information
 
@@ -189,11 +191,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	tunnelId := "tunnelId_example" // string | Remote access tunnel ID
-	natTraversalTunnelOpenApiVO := *openapiclient.NewNatTraversalTunnelOpenApiVO("AppType_example", "LocalAddress_example", int32(123), "Name_example") // NatTraversalTunnelOpenApiVO | 
+	natTraversalTunnelModifyOpenApiVO := *openapiclient.NewNatTraversalTunnelModifyOpenApiVO("AppType_example") // NatTraversalTunnelModifyOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.RemoteAccessAPI.EditTunnel(context.Background(), omadacId, siteId, tunnelId).NatTraversalTunnelOpenApiVO(natTraversalTunnelOpenApiVO).Execute()
+	resp, r, err := apiClient.RemoteAccessAPI.EditTunnel(context.Background(), omadacId, siteId, tunnelId).NatTraversalTunnelModifyOpenApiVO(natTraversalTunnelModifyOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RemoteAccessAPI.EditTunnel``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -223,7 +225,7 @@ Name | Type | Description  | Notes
 
 
 
- **natTraversalTunnelOpenApiVO** | [**NatTraversalTunnelOpenApiVO**](NatTraversalTunnelOpenApiVO.md) |  | 
+ **natTraversalTunnelModifyOpenApiVO** | [**NatTraversalTunnelModifyOpenApiVO**](NatTraversalTunnelModifyOpenApiVO.md) |  | 
 
 ### Return type
 
@@ -236,6 +238,82 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSingleDeviceTunnel
+
+> OperationResponseNatTraversalTunnelVO GetSingleDeviceTunnel(ctx, omadacId, siteId, localMac).Execute()
+
+Get single device tunnel
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	localMac := "localMac_example" // string | Mac of the local target device
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RemoteAccessAPI.GetSingleDeviceTunnel(context.Background(), omadacId, siteId, localMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RemoteAccessAPI.GetSingleDeviceTunnel``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSingleDeviceTunnel`: OperationResponseNatTraversalTunnelVO
+	fmt.Fprintf(os.Stdout, "Response from `RemoteAccessAPI.GetSingleDeviceTunnel`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**localMac** | **string** | Mac of the local target device | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSingleDeviceTunnelRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseNatTraversalTunnelVO**](OperationResponseNatTraversalTunnelVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -381,6 +459,82 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseNatTraversalSingleTunnelStatusVO**](OperationResponseNatTraversalSingleTunnelStatusVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTunnelsEwebInfo
+
+> OperationResponseNatTraversalEwebInfoVO GetTunnelsEwebInfo(ctx, omadacId, siteId, tunnelId).Execute()
+
+Get tunnel eweb info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	tunnelId := "tunnelId_example" // string | Remote access tunnel ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.RemoteAccessAPI.GetTunnelsEwebInfo(context.Background(), omadacId, siteId, tunnelId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RemoteAccessAPI.GetTunnelsEwebInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTunnelsEwebInfo`: OperationResponseNatTraversalEwebInfoVO
+	fmt.Fprintf(os.Stdout, "Response from `RemoteAccessAPI.GetTunnelsEwebInfo`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**tunnelId** | **string** | Remote access tunnel ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTunnelsEwebInfoRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseNatTraversalEwebInfoVO**](OperationResponseNatTraversalEwebInfoVO.md)
 
 ### Authorization
 

@@ -53,6 +53,10 @@ type CreateSsidOpenApiVO struct {
 	// SSID VLAN ID. This field is required when Parameter [vlanEnable] is true; It should be within the range of 1–4094. If the field vlanSetting is entered, this field must be null.
 	VlanId *int32 `json:"vlanId,omitempty"`
 	VlanSetting *SsidVlanSettingOpenApiVO `json:"vlanSetting,omitempty"`
+	// SSID Wifi Calling config status. True: enable, false: disable.
+	WifiCallingEnable *bool `json:"wifiCallingEnable,omitempty"`
+	// The ID of the Wi-Fi calling profile bound to the SSID. When parameter [wifiCallingEnable] is true, it should not be null.
+	WifiCallingId *string `json:"wifiCallingId,omitempty"`
 }
 
 type _CreateSsidOpenApiVO CreateSsidOpenApiVO
@@ -573,6 +577,70 @@ func (o *CreateSsidOpenApiVO) SetVlanSetting(v SsidVlanSettingOpenApiVO) {
 	o.VlanSetting = &v
 }
 
+// GetWifiCallingEnable returns the WifiCallingEnable field value if set, zero value otherwise.
+func (o *CreateSsidOpenApiVO) GetWifiCallingEnable() bool {
+	if o == nil || IsNil(o.WifiCallingEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.WifiCallingEnable
+}
+
+// GetWifiCallingEnableOk returns a tuple with the WifiCallingEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateSsidOpenApiVO) GetWifiCallingEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.WifiCallingEnable) {
+		return nil, false
+	}
+	return o.WifiCallingEnable, true
+}
+
+// HasWifiCallingEnable returns a boolean if a field has been set.
+func (o *CreateSsidOpenApiVO) HasWifiCallingEnable() bool {
+	if o != nil && !IsNil(o.WifiCallingEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetWifiCallingEnable gets a reference to the given bool and assigns it to the WifiCallingEnable field.
+func (o *CreateSsidOpenApiVO) SetWifiCallingEnable(v bool) {
+	o.WifiCallingEnable = &v
+}
+
+// GetWifiCallingId returns the WifiCallingId field value if set, zero value otherwise.
+func (o *CreateSsidOpenApiVO) GetWifiCallingId() string {
+	if o == nil || IsNil(o.WifiCallingId) {
+		var ret string
+		return ret
+	}
+	return *o.WifiCallingId
+}
+
+// GetWifiCallingIdOk returns a tuple with the WifiCallingId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateSsidOpenApiVO) GetWifiCallingIdOk() (*string, bool) {
+	if o == nil || IsNil(o.WifiCallingId) {
+		return nil, false
+	}
+	return o.WifiCallingId, true
+}
+
+// HasWifiCallingId returns a boolean if a field has been set.
+func (o *CreateSsidOpenApiVO) HasWifiCallingId() bool {
+	if o != nil && !IsNil(o.WifiCallingId) {
+		return true
+	}
+
+	return false
+}
+
+// SetWifiCallingId gets a reference to the given string and assigns it to the WifiCallingId field.
+func (o *CreateSsidOpenApiVO) SetWifiCallingId(v string) {
+	o.WifiCallingId = &v
+}
+
 func (o CreateSsidOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -614,6 +682,12 @@ func (o CreateSsidOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VlanSetting) {
 		toSerialize["vlanSetting"] = o.VlanSetting
+	}
+	if !IsNil(o.WifiCallingEnable) {
+		toSerialize["wifiCallingEnable"] = o.WifiCallingEnable
+	}
+	if !IsNil(o.WifiCallingId) {
+		toSerialize["wifiCallingId"] = o.WifiCallingId
 	}
 	return toSerialize, nil
 }

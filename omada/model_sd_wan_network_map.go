@@ -17,7 +17,7 @@ import (
 // checks if the SdWanNetworkMap type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &SdWanNetworkMap{}
 
-// SdWanNetworkMap A list of the network map item
+// SdWanNetworkMap A list of the mapped network
 type SdWanNetworkMap struct {
 	// The name of the device
 	DeviceName *string `json:"deviceName,omitempty"`
@@ -27,6 +27,8 @@ type SdWanNetworkMap struct {
 	LanNetworkId *string `json:"lanNetworkId,omitempty"`
 	// mapped network
 	MappedNetwork *string `json:"mappedNetwork,omitempty"`
+	// Network type, 0/null: LAN network, 1: custom route
+	NetworkType *int32 `json:"networkType,omitempty"`
 	// The ID of the site
 	SiteId *string `json:"siteId,omitempty"`
 	// The name of the site
@@ -178,6 +180,38 @@ func (o *SdWanNetworkMap) SetMappedNetwork(v string) {
 	o.MappedNetwork = &v
 }
 
+// GetNetworkType returns the NetworkType field value if set, zero value otherwise.
+func (o *SdWanNetworkMap) GetNetworkType() int32 {
+	if o == nil || IsNil(o.NetworkType) {
+		var ret int32
+		return ret
+	}
+	return *o.NetworkType
+}
+
+// GetNetworkTypeOk returns a tuple with the NetworkType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SdWanNetworkMap) GetNetworkTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.NetworkType) {
+		return nil, false
+	}
+	return o.NetworkType, true
+}
+
+// HasNetworkType returns a boolean if a field has been set.
+func (o *SdWanNetworkMap) HasNetworkType() bool {
+	if o != nil && !IsNil(o.NetworkType) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkType gets a reference to the given int32 and assigns it to the NetworkType field.
+func (o *SdWanNetworkMap) SetNetworkType(v int32) {
+	o.NetworkType = &v
+}
+
 // GetSiteId returns the SiteId field value if set, zero value otherwise.
 func (o *SdWanNetworkMap) GetSiteId() string {
 	if o == nil || IsNil(o.SiteId) {
@@ -263,6 +297,9 @@ func (o SdWanNetworkMap) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MappedNetwork) {
 		toSerialize["mappedNetwork"] = o.MappedNetwork
+	}
+	if !IsNil(o.NetworkType) {
+		toSerialize["networkType"] = o.NetworkType
 	}
 	if !IsNil(o.SiteId) {
 		toSerialize["siteId"] = o.SiteId

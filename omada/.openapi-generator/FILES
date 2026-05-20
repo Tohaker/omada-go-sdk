@@ -140,6 +140,7 @@ api_voucher.go
 api_vpn.go
 api_vrrp.go
 api_webhook_setting.go
+api_wi_fi_calling_traffic.go
 api_wired_network.go
 api_wired_network_template.go
 api_wireguard_vpn.go
@@ -157,6 +158,7 @@ docs/APBridgeParingWindowResult.md
 docs/APInfo.md
 docs/APLANPortList.md
 docs/APMACList.md
+docs/APMultiLinkInfo.md
 docs/APRadioTrafficEntity.md
 docs/AbnormalDetectAPI.md
 docs/Access.md
@@ -225,6 +227,11 @@ docs/ApAnteGainConfig.md
 docs/ApAvailableChannelOpenApiVO.md
 docs/ApBridgeClientApOpenApiVO.md
 docs/ApBridgeConfig.md
+docs/ApBridgeInfo.md
+docs/ApBridgeNotSupportTdmaClientApOpenApiVO.md
+docs/ApBridgeTdmaClientApOpenApiVO.md
+docs/ApBridgeTdmaConfigVO.md
+docs/ApBridgeTdmaSettingOpenApiVO.md
 docs/ApBriefInfo.md
 docs/ApBriefInfoVO.md
 docs/ApBtDetailOpenApiVO.md
@@ -234,6 +241,11 @@ docs/ApChannelInfoOpenApiVO.md
 docs/ApChannelLoadResult.md
 docs/ApChannelStat.md
 docs/ApChannelStats.md
+docs/ApDensityCurrentDetailOpenApiVO.md
+docs/ApDensityInfoOpenApiVO.md
+docs/ApDensityItemOpenApiVO.md
+docs/ApDensityTrendDetailOpenApiVO.md
+docs/ApDetailCciInfoOpenApiOpenApiVO.md
 docs/ApDownLinkStatusVO.md
 docs/ApExist6GOpenApiVO.md
 docs/ApFeatureLimitVO.md
@@ -373,6 +385,7 @@ docs/BandCtrlVO.md
 docs/BandResultOpenApiVO.md
 docs/BandScanResultOpenApiVO.md
 docs/BandScanStart.md
+docs/BandSteerOpenApiVO.md
 docs/BandSteeringMultiBandOpenApiVO.md
 docs/BandSteeringMultiBandVO.md
 docs/BandSteeringOpenApiVO.md
@@ -382,6 +395,7 @@ docs/BandwidthControlAPI.md
 docs/BandwidthControlRule.md
 docs/BandwidthControlTemplateAPI.md
 docs/BandwidthPortSetting.md
+docs/BaseApInfoOpenApiVO.md
 docs/BaseDevicePageQueryRequest.md
 docs/BaseDeviceStatDTO.md
 docs/BaseScheduleTimeOpenApiVO.md
@@ -398,6 +412,7 @@ docs/BatchConfigIotBtIbeaconV2OpenApiVO.md
 docs/BatchConfigIotTransmitPowerOpenApiVO.md
 docs/BatchCopySiteTemplateOpenApiVO.md
 docs/BatchDeleteCommonOpenApiVO.md
+docs/BatchDeletePlanningHistory.md
 docs/BatchEditCustomAclOpenApiVO.md
 docs/BatchEditTabs.md
 docs/BatchFullChannelDetectApListOpenApiVO.md
@@ -452,6 +467,7 @@ docs/BluetoothTemplateAPI.md
 docs/BonjourServiceDetailOpenApiVO.md
 docs/BonjourServiceOpenApiVO.md
 docs/BookOpenApiVO.md
+docs/BridgeClientApConfigVO.md
 docs/BriefDeviceInfoDetailForBatchAdoptOpenApiVO.md
 docs/BriefServerDeviceVO.md
 docs/CLIAPI.md
@@ -470,9 +486,13 @@ docs/CaptureResult.md
 docs/CardGroupVO.md
 docs/CardInfoVO.md
 docs/CardOverviewOpenApiVO.md
+docs/CarrierOpenApiVO.md
 docs/CategoryTraffic.md
 docs/CategoryTrafficDetailVO.md
 docs/CategoryUpDownTrafficDetailOpenApiVO.md
+docs/CciCurrentDetailOpenApiVO.md
+docs/CciTrendDetailOpenApiVO.md
+docs/CciTrendItemOpenApiOpenApiVO.md
 docs/CertProfileDetailOpenApiVO.md
 docs/CertProfileOpenApiVO.md
 docs/CertProfileRequestOpenApiVO.md
@@ -533,6 +553,7 @@ docs/ClientDetailInformationSettingVO.md
 docs/ClientDhcpLeaseTimeOpenApiVO.md
 docs/ClientDistributionVO.md
 docs/ClientExportOpenApiVO.md
+docs/ClientFilteringDeviceDetailOpenApiVO.md
 docs/ClientFilteringOptions.md
 docs/ClientGridVOOpenApiClientInfo.md
 docs/ClientHealthDetailVO.md
@@ -543,6 +564,7 @@ docs/ClientIpSetting.md
 docs/ClientLockToApDetailSetting.md
 docs/ClientLockToApMacListSetting.md
 docs/ClientMACIPSetting.md
+docs/ClientMultiLinkInfo.md
 docs/ClientMultifrequencyInfo.md
 docs/ClientNameSetting.md
 docs/ClientNodeInfo.md
@@ -598,6 +620,7 @@ docs/ControllerUserAppVO.md
 docs/CopySiteResultVO.md
 docs/CopySiteTemplateOpenApiResultVO.md
 docs/CopySiteTemplateOpenApiVO.md
+docs/CopyWifiCallingProfileOpenApiVO.md
 docs/CorrectSimQuota.md
 docs/CpuUsage.md
 docs/CreateAutoCheckResInfo.md
@@ -640,6 +663,7 @@ docs/CreateUserVO.md
 docs/CreateVLANs.md
 docs/CreateVlanParamOpenApiVO.md
 docs/CreateVoucherGroupOpenApiVO.md
+docs/CreateWifiCallingProfileOpenApiVO.md
 docs/CreateWlanGroupOpenApiVO.md
 docs/CreatedResIdOpenApiVO.md
 docs/CriticalModelNum.md
@@ -846,6 +870,7 @@ docs/DstOpenApiVO.md
 docs/DstTimeDTO.md
 docs/DstTimeOpenApiDTO.md
 docs/DynamicIpv6SettingEntity.md
+docs/EPDGOpenApiVO.md
 docs/ESDetailVO.md
 docs/EapACLConfig.md
 docs/EapACLInfo.md
@@ -875,6 +900,7 @@ docs/EthUnit1PortDTO.md
 docs/EventLogGridVOEventLogOpenApiVO.md
 docs/EventLogOpenApiVO.md
 docs/EventLogStatOpenApiVO.md
+docs/ExcludeApDeleteOpenApiVO.md
 docs/ExcludeChannelVO.md
 docs/ExcludedAPsConfig.md
 docs/ExistSiteSettingOpenApiVO.md
@@ -890,6 +916,7 @@ docs/ExportGlobalDeviceListOpenApiVO.md
 docs/ExportLogOpenApiVO.md
 docs/ExportMessage.md
 docs/ExportMspLogOpenApiVO.md
+docs/ExportRFPlanningHistoryOpenapiVO.md
 docs/ExportVoucherOpenApiVO.md
 docs/ExtendOpenApiVO.md
 docs/ExternalRadiusSetting.md
@@ -1083,7 +1110,6 @@ docs/GridVOOswStackVO.md
 docs/GridVOOswVrfOpenApiVO.md
 docs/GridVOOswVrfVO.md
 docs/GridVOOswVrrpOpenApiVO.md
-docs/GridVOOtoNatInfoOpenApiVO.md
 docs/GridVOOuiBasedVlanApQueryOpenApiVO.md
 docs/GridVOOuiBasedVlanSwitchInfoOpenApiVO.md
 docs/GridVOOuiBasedVlanSwitchQueryOpenApiVO.md
@@ -1182,6 +1208,7 @@ docs/ImportedPortalPageResOpenApiVO.md
 docs/InboxMessage.md
 docs/IncomingCallsBlockingVO.md
 docs/InsightAPI.md
+docs/InstancesVO.md
 docs/IntIdListRequest.md
 docs/IntelliRecoverClientAPI.md
 docs/IntelliRecoverDeviceAPI.md
@@ -1401,6 +1428,7 @@ docs/ModifyDstDTO.md
 docs/ModifyHistoryRetentionOpenApiVO.md
 docs/ModifyIPSAllowListEntry.md
 docs/ModifyIpv6State.md
+docs/ModifyLanNetworkBrief.md
 docs/ModifyLocalUserOpenApiVO.md
 docs/ModifyMailServerOpenApiVO.md
 docs/ModifyMspGeneralSettingOpenApiVO.md
@@ -1465,8 +1493,10 @@ docs/MulticastExceptDeviceVO.md
 docs/NATAPI.md
 docs/NATTemplateAPI.md
 docs/NameRebootVO.md
+docs/NatTraversalEwebInfoVO.md
 docs/NatTraversalSingleTunnelStatusVO.md
 docs/NatTraversalTunnelGridVONatTraversalTunnelVO.md
+docs/NatTraversalTunnelModifyOpenApiVO.md
 docs/NatTraversalTunnelOpenApiVO.md
 docs/NatTraversalTunnelOpenVO.md
 docs/NatTraversalTunnelVO.md
@@ -1514,6 +1544,7 @@ docs/OSPFAPI.md
 docs/OUIAndDescription.md
 docs/OUIBasedVLANAPI.md
 docs/OUIBasedVLANTemplateAPI.md
+docs/Occurrence.md
 docs/OltConfigModifyDTO.md
 docs/OltDetailDownlinkVO.md
 docs/OltDetailVO.md
@@ -1587,8 +1618,7 @@ docs/OperationResponseApAdvancedQosOpenApiVO.md
 docs/OperationResponseApAfcInfoOpenApiVO.md
 docs/OperationResponseApAntSwitchConfigOpenApiVO.md
 docs/OperationResponseApAnteGainConfig.md
-docs/OperationResponseApAvailableChannelOpenApiVO.md
-docs/OperationResponseApBridgeConfig.md
+docs/OperationResponseApBridgeInfo.md
 docs/OperationResponseApChannelLoadResult.md
 docs/OperationResponseApChannelStats.md
 docs/OperationResponseApExist6GOpenApiVO.md
@@ -1602,6 +1632,7 @@ docs/OperationResponseApL3AccessConfigOpenApiVO.md
 docs/OperationResponseApLanTraffic.md
 docs/OperationResponseApLldpConfigOpenApiVO.md
 docs/OperationResponseApLocationConfigOpenApiVO.md
+docs/OperationResponseApManagementSsidConfig.md
 docs/OperationResponseApMeshStatisticsOpenApiVO.md
 docs/OperationResponseApOfdmaConfigOpenApiVO.md
 docs/OperationResponseApOverviewInfo.md
@@ -1611,7 +1642,6 @@ docs/OperationResponseApRFScanInfo.md
 docs/OperationResponseApRFScanResult.md
 docs/OperationResponseApRadiosConfig.md
 docs/OperationResponseApRadiosDetail.md
-docs/OperationResponseApServicesConfigOpenApiVO.md
 docs/OperationResponseApSnmpConfigOpenApiVO.md
 docs/OperationResponseApSpeedTestResultsOpenApiVO.md
 docs/OperationResponseApSsidWlansOpenApiV2VO.md
@@ -1850,7 +1880,6 @@ docs/OperationResponseGridVOOswRoutingOpenApiVO.md
 docs/OperationResponseGridVOOswStackVO.md
 docs/OperationResponseGridVOOswVrfOpenApiVO.md
 docs/OperationResponseGridVOOswVrrpOpenApiVO.md
-docs/OperationResponseGridVOOtoNatInfoOpenApiVO.md
 docs/OperationResponseGridVOOuiBasedVlanApQueryOpenApiVO.md
 docs/OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO.md
 docs/OperationResponseGridVOOuiBasedVlanSwitchQueryOpenApiVO.md
@@ -1934,6 +1963,7 @@ docs/OperationResponseListActiveClientBubbleVO.md
 docs/OperationResponseListActiveClientVO.md
 docs/OperationResponseListActiveDevice.md
 docs/OperationResponseListActivityRecordsOfAClientSSingleConnections.md
+docs/OperationResponseListApAvailableChannelOpenApiVO.md
 docs/OperationResponseListApBriefInfo.md
 docs/OperationResponseListApChannelLoadResult.md
 docs/OperationResponseListApUplinkConfigOpenApiVO.md
@@ -2063,6 +2093,7 @@ docs/OperationResponseListVpnUserResponse.md
 docs/OperationResponseListVpnUserServerBriefVO.md
 docs/OperationResponseListWebhookSetting.md
 docs/OperationResponseListWhiteDeviceInfoOpenApiVO.md
+docs/OperationResponseListWifiCallingProfileOpenApiVO.md
 docs/OperationResponseListWlanGroupOpenApiVO.md
 docs/OperationResponseListWlanSimpleOpenApiVO.md
 docs/OperationResponseLocalUserOpenApiVO.md
@@ -2093,8 +2124,10 @@ docs/OperationResponseMspRoleDetailVO.md
 docs/OperationResponseMspUiInterfaceOpenApiVO.md
 docs/OperationResponseMspUserDetailVO.md
 docs/OperationResponseMspUserInterfaceOpenApiVO.md
+docs/OperationResponseNatTraversalEwebInfoVO.md
 docs/OperationResponseNatTraversalSingleTunnelStatusVO.md
 docs/OperationResponseNatTraversalTunnelGridVONatTraversalTunnelVO.md
+docs/OperationResponseNatTraversalTunnelVO.md
 docs/OperationResponseNatTraversalTunnelsStatusVO.md
 docs/OperationResponseNetworkActivityVO.md
 docs/OperationResponseNotificationOpenApiVO.md
@@ -2116,6 +2149,7 @@ docs/OperationResponseOsgPinDetailOpenApiVO.md
 docs/OperationResponseOsgSimCardOpenApiVO.md
 docs/OperationResponseOswCableTestResultWithStatusVO.md
 docs/OperationResponseOswHealthDetailVO.md
+docs/OperationResponseOswL3SdmApplicationVO.md
 docs/OperationResponseOswNetworkGridOswNetworkOpenApi.md
 docs/OperationResponseOswOspfNeighborGridVOOswOspfNeighborVO.md
 docs/OperationResponseOswPoeResultOpenApiVO.md
@@ -2125,9 +2159,11 @@ docs/OperationResponseOswStackCableTestVO.md
 docs/OperationResponseOswStackDetailVO.md
 docs/OperationResponseOswStackMemberLagVO.md
 docs/OperationResponseOswStackNetworkModifyRespOpenApiVO.md
+docs/OperationResponseOswStackSdmApplicationVO.md
 docs/OperationResponseOswStackSwitchVO.md
 docs/OperationResponseOswStatOpenApiVO.md
 docs/OperationResponseOswStaticRoutingGridVOOswStaticRoutingVO.md
+docs/OperationResponseOtoNatOpenApiGridVO.md
 docs/OperationResponseOuiGridVOOuiProfileQueryOpenApiVO.md
 docs/OperationResponseOutboxMessageOpenApiGridVOOutboxMessage.md
 docs/OperationResponsePPSKProfileVO.md
@@ -2182,7 +2218,7 @@ docs/OperationResponseRrmSettingOpenApiVO.md
 docs/OperationResponseRuleResultEntity.md
 docs/OperationResponseSSHSetting.md
 docs/OperationResponseSdWanCurrentSelectedDeviceInfo.md
-docs/OperationResponseSdWanGroup.md
+docs/OperationResponseSdWanGroupDetail.md
 docs/OperationResponseSdWanGroupTunnelStatus.md
 docs/OperationResponseSdWanMappedNetworkResult.md
 docs/OperationResponseSendMailServerOpenApiVO.md
@@ -2318,13 +2354,16 @@ docs/OperationResponseWanMaxSpeedOpenApiVO.md
 docs/OperationResponseWanSettingOpenApiVO.md
 docs/OperationResponseWanUnsupportedFunctionOpenApiVO.md
 docs/OperationResponseWidsConfigOpenApiVO.md
+docs/OperationResponseWifiCallingTrafficGridOpenApiVOWifiCallingTrafficOpenApiVO.md
 docs/OperationResponseWifiSummary.md
 docs/OperationResponseWipsConfigOpenApiVO.md
 docs/OperationResponseWireguardKeyOpenApiVO.md
 docs/OperationResponseWireguardPeerOpenApiGridVOWireguardPeerDetailOpenApiVO.md
 docs/OperationResponseWithoutResult.md
 docs/OperationResponseWlanGroupGridOpenApiVO.md
+docs/OperationResponseWlanGroupOpenApiVO.md
 docs/OperationResponseWlanGroupStatusOpenApiVO.md
+docs/OperationResponseWlanOptDashBoardOpenApiVO.md
 docs/OperatorResponse.md
 docs/OpsBlockedCountryOpenApiVO.md
 docs/OpticalLinkDetailConfigDTO.md
@@ -2418,6 +2457,7 @@ docs/OswIpSettingBriefOpenapiVO.md
 docs/OswIpSettingOpenApiVO.md
 docs/OswIpSettingVO.md
 docs/OswIpv6SettingOpenApiVO.md
+docs/OswL3SdmApplicationVO.md
 docs/OswLagBasicVO.md
 docs/OswLagSettingVO.md
 docs/OswLagStatusVO.md
@@ -2491,13 +2531,16 @@ docs/OswStackMemberLagOpenApiVO.md
 docs/OswStackMemberLagVO.md
 docs/OswStackMemberPortCapAndStatusVO.md
 docs/OswStackMemberPortVO.md
+docs/OswStackMemberSdmVO.md
 docs/OswStackMemberStatVO.md
 docs/OswStackMemberVO.md
 docs/OswStackNetworkModifyRespOpenApiVO.md
+docs/OswStackPortCapVO.md
 docs/OswStackPortGroupVO.md
 docs/OswStackPortListVO.md
 docs/OswStackPortVO.md
 docs/OswStackRebootOpenApiVO.md
+docs/OswStackSdmApplicationVO.md
 docs/OswStackStatQueryOpenApiDTO.md
 docs/OswStackStatQueryVO.md
 docs/OswStackSwitchVO.md
@@ -2518,14 +2561,13 @@ docs/OswStaticRoutingVO.md
 docs/OswStormCtrlOpenApiVO.md
 docs/OswStormCtrlVO.md
 docs/OswStpInstance.md
-docs/OswStpInstanceConfig.md
 docs/OswStpInstanceConfigOpenApiVO.md
-docs/OswStpMstpConfig.md
 docs/OswStpMstpConfigOpenApiVO.md
 docs/OswStpMstpVO.md
 docs/OswStpRegion.md
-docs/OswStpRegionConfig.md
 docs/OswStpRegionConfigOpenApiVO.md
+docs/OswStpRpvstInstanceVO.md
+docs/OswStpRpvstVO.md
 docs/OswUpInfo.md
 docs/OswUplinkVO.md
 docs/OswVO.md
@@ -2537,6 +2579,7 @@ docs/OswVrrpDeviceConfigOpenApiVO.md
 docs/OswVrrpDeviceOpenApiVO.md
 docs/OswVrrpOpenApiVO.md
 docs/OtoNatInfoOpenApiVO.md
+docs/OtoNatOpenApiGridVO.md
 docs/OtoNatOpenApiVO.md
 docs/OuiBasedVlanApOpenApiVO.md
 docs/OuiBasedVlanApQueryOpenApiVO.md
@@ -2693,6 +2736,7 @@ docs/RFPlanningDeployConfig.md
 docs/RFPlanningDeployResult.md
 docs/RFPlanningHistory.md
 docs/RFPlanningResult.md
+docs/RFPlanningScheduleConfigOpenApiVO.md
 docs/RFScanCommand.md
 docs/RFScanRadio.md
 docs/RFScanRadio2g.md
@@ -2797,13 +2841,18 @@ docs/SdWanGroupTunnelStatus.md
 docs/SdWanIpPoolRange.md
 docs/SdWanLanNetworkNatReq.md
 docs/SdWanLinkedSpoke.md
+docs/SdWanLinkedSpokeConfig.md
 docs/SdWanLinksToHub.md
 docs/SdWanMappedNetworkResult.md
-docs/SdWanMemberBriefInfo.md
+docs/SdWanMemberConfig.md
 docs/SdWanMemberInfo.md
+docs/SdWanMemberSelected.md
 docs/SdWanNatInfo.md
+docs/SdWanNatInfoConfig.md
+docs/SdWanNatItemConfig.md
 docs/SdWanNetworkMap.md
 docs/SdWanSelectedMapNetwork.md
+docs/SdmResourceUsage.md
 docs/SelectDeviceForVlanTemplateVO.md
 docs/SelectDeviceForVlanVO.md
 docs/SelectIdsOpenApiVO.md
@@ -3014,6 +3063,7 @@ docs/StatisticsOswVO.md
 docs/Status.md
 docs/StatusContent.md
 docs/StormCtrlVO.md
+docs/StpInstanceDetailVO.md
 docs/StringKeyListRequest.md
 docs/SubSingleHealthInfoDetailVO.md
 docs/SupportCliDeviceVO.md
@@ -3181,10 +3231,12 @@ docs/UpdateMacAuthOpenApiVO.md
 docs/UpdateRateLimitProfileOpenApiVO.md
 docs/UpdateSiteByTemplate.md
 docs/UpdateSiteEntity.md
+docs/UpdateSsidBandSteerOpenApiVO.md
 docs/UpdateSsidBasicConfigForIpptOpenApiVO.md
 docs/UpdateSsidBasicConfigOpenApiVO.md
 docs/UpdateSsidDhcpOptionOpenApiVO.md
 docs/UpdateSsidHotspotV2SettingOpenApiVO.md
+docs/UpdateSsidLoadBalanceOpenApiVO.md
 docs/UpdateSsidMacFilterOpenApiVO.md
 docs/UpdateSsidMultiCastOpenApiVO.md
 docs/UpdateSsidRateControlOpenApiVO.md
@@ -3193,6 +3245,7 @@ docs/UpdateSsidWlanScheduleOpenApiVO.md
 docs/UpdateTabOpenApiVO.md
 docs/UpdateTimeRangeProfileOpenApiVO.md
 docs/UpdateWidsConfigOpenApiVO.md
+docs/UpdateWifiCallingOpenApiVO.md
 docs/UpdateWipsConfigOpenApiVO.md
 docs/UpdateWlanGroupOpenApiVO.md
 docs/UpgradeBaseScheduleTimeOpenApiVO.md
@@ -3391,9 +3444,13 @@ docs/WebhookConfigOpenApiVO.md
 docs/WebhookSetting.md
 docs/WebhookSettingAPI.md
 docs/WhiteDeviceInfoOpenApiVO.md
+docs/WiFiCallingTrafficAPI.md
 docs/WidsConfigOpenApiVO.md
 docs/WidsDataOpenApiVO.md
 docs/WidthRangeVO.md
+docs/WifiCallingProfileOpenApiVO.md
+docs/WifiCallingTrafficGridOpenApiVOWifiCallingTrafficOpenApiVO.md
+docs/WifiCallingTrafficOpenApiVO.md
 docs/WifiClientInfoVO.md
 docs/WifiDeviceAndClientQueryVO.md
 docs/WifiHealthDetailVO.md
@@ -3431,6 +3488,8 @@ docs/WirelessUpLinkInfo.md
 docs/WlanGroupGridOpenApiVO.md
 docs/WlanGroupOpenApiVO.md
 docs/WlanGroupStatusOpenApiVO.md
+docs/WlanOptDashBoardDetailOpenApiVO.md
+docs/WlanOptDashBoardOpenApiVO.md
 docs/WlanSimpleOpenApiVO.md
 model_access.go
 model_access_capacity_info_vo.go
@@ -3496,7 +3555,12 @@ model_ap_ante_gain_config.go
 model_ap_available_channel_open_api_vo.go
 model_ap_bridge_client_ap_open_api_vo.go
 model_ap_bridge_config.go
+model_ap_bridge_info.go
+model_ap_bridge_not_support_tdma_client_ap_open_api_vo.go
 model_ap_bridge_paring_window_result.go
+model_ap_bridge_tdma_client_ap_open_api_vo.go
+model_ap_bridge_tdma_config_vo.go
+model_ap_bridge_tdma_setting_open_api_vo.go
 model_ap_brief_info.go
 model_ap_brief_info_vo.go
 model_ap_bt_detail_open_api_vo.go
@@ -3506,6 +3570,11 @@ model_ap_channel_info_open_api_vo.go
 model_ap_channel_load_result.go
 model_ap_channel_stat.go
 model_ap_channel_stats.go
+model_ap_density_current_detail_open_api_vo.go
+model_ap_density_info_open_api_vo.go
+model_ap_density_item_open_api_vo.go
+model_ap_density_trend_detail_open_api_vo.go
+model_ap_detail_cci_info_open_api_open_api_vo.go
 model_ap_down_link_status_vo.go
 model_ap_exist6_g_open_api_vo.go
 model_ap_feature_limit_vo.go
@@ -3534,6 +3603,7 @@ model_ap_mgt_ssid_psk_setting_open_api_vo.go
 model_ap_mgt_ssid_vlan_custom_setting_open_api_vo.go
 model_ap_mgt_ssid_vlan_setting_open_api_vo.go
 model_ap_move_site_open_api_vo.go
+model_ap_multi_link_info.go
 model_ap_mvlan_setting_open_api_vo.go
 model_ap_ofdma_config_open_api_vo.go
 model_ap_overview_info.go
@@ -3638,6 +3708,7 @@ model_band_ctrl_vo.go
 model_band_result_open_api_vo.go
 model_band_scan_result_open_api_vo.go
 model_band_scan_start.go
+model_band_steer_open_api_vo.go
 model_band_steering_multi_band_open_api_vo.go
 model_band_steering_multi_band_vo.go
 model_band_steering_open_api_vo.go
@@ -3645,6 +3716,7 @@ model_band_steering_vo.go
 model_bandwidth_control.go
 model_bandwidth_control_rule.go
 model_bandwidth_port_setting.go
+model_base_ap_info_open_api_vo.go
 model_base_device_page_query_request.go
 model_base_device_stat_dto.go
 model_base_schedule_time_open_api_vo.go
@@ -3661,6 +3733,7 @@ model_batch_config_iot_bt_ibeacon_v2_open_api_vo.go
 model_batch_config_iot_transmit_power_open_api_vo.go
 model_batch_copy_site_template_open_api_vo.go
 model_batch_delete_common_open_api_vo.go
+model_batch_delete_planning_history.go
 model_batch_edit_custom_acl_open_api_vo.go
 model_batch_edit_tabs.go
 model_batch_full_channel_detect_ap_list_open_api_vo.go
@@ -3712,6 +3785,7 @@ model_blocked_country_open_api_vo.go
 model_bonjour_service_detail_open_api_vo.go
 model_bonjour_service_open_api_vo.go
 model_book_open_api_vo.go
+model_bridge_client_ap_config_vo.go
 model_brief_device_info_detail_for_batch_adopt_open_api_vo.go
 model_brief_server_device_vo.go
 model_call_blocking_profile_entity.go
@@ -3728,9 +3802,13 @@ model_capture_result.go
 model_card_group_vo.go
 model_card_info_vo.go
 model_card_overview_open_api_vo.go
+model_carrier_open_api_vo.go
 model_category_traffic.go
 model_category_traffic_detail_vo.go
 model_category_up_down_traffic_detail_open_api_vo.go
+model_cci_current_detail_open_api_vo.go
+model_cci_trend_detail_open_api_vo.go
+model_cci_trend_item_open_api_open_api_vo.go
 model_cert_profile_detail_open_api_vo.go
 model_cert_profile_open_api_vo.go
 model_cert_profile_request_open_api_vo.go
@@ -3788,6 +3866,7 @@ model_client_detail_information_setting_vo.go
 model_client_dhcp_lease_time_open_api_vo.go
 model_client_distribution_vo.go
 model_client_export_open_api_vo.go
+model_client_filtering_device_detail_open_api_vo.go
 model_client_filtering_options.go
 model_client_grid_vo_open_api_client_info.go
 model_client_health_detail_vo.go
@@ -3797,6 +3876,7 @@ model_client_ip_setting.go
 model_client_lock_to_ap_detail_setting.go
 model_client_lock_to_ap_setting_0.go
 model_client_macip_setting.go
+model_client_multi_link_info.go
 model_client_multifrequency_info.go
 model_client_name_setting.go
 model_client_node_info.go
@@ -3849,6 +3929,7 @@ model_controller_user_app_vo.go
 model_copy_site_result_vo.go
 model_copy_site_template_open_api_result_vo.go
 model_copy_site_template_open_api_vo.go
+model_copy_wifi_calling_profile_open_api_vo.go
 model_correct_sim_quota.go
 model_cpu_usage.go
 model_create_auto_check_res_info.go
@@ -3891,6 +3972,7 @@ model_create_user_vo.go
 model_create_vlan_param_open_api_vo.go
 model_create_vlans.go
 model_create_voucher_group_open_api_vo.go
+model_create_wifi_calling_profile_open_api_vo.go
 model_create_wlan_group_open_api_vo.go
 model_created_res_id_open_api_vo.go
 model_critical_model_num.go
@@ -4108,6 +4190,7 @@ model_edit_upload_firmware_info.go
 model_edit_voucher_group_pattern_open_api_vo.go
 model_enable_full_channel_detect_ap_info_open_api_vo.go
 model_eo_gre_tunnel_setting_open_api_vo.go
+model_epdg_open_api_vo.go
 model_es_detail_vo.go
 model_eth_and_pon_list_dto.go
 model_eth_lag_port_app_dto.go
@@ -4118,6 +4201,7 @@ model_eth_unit1_port_dto.go
 model_event_log_grid_vo_event_log_open_api_vo.go
 model_event_log_open_api_vo.go
 model_event_log_stat_open_api_vo.go
+model_exclude_ap_delete_open_api_vo.go
 model_exclude_channel_vo.go
 model_excluded_aps_config.go
 model_exist_site_setting_open_api_vo.go
@@ -4133,6 +4217,7 @@ model_export_global_device_list_open_api_vo.go
 model_export_log_open_api_vo.go
 model_export_message.go
 model_export_msp_log_open_api_vo.go
+model_export_rf_planning_history_openapi_vo.go
 model_export_voucher_open_api_vo.go
 model_extend_open_api_vo.go
 model_external_radius_setting.go
@@ -4311,7 +4396,6 @@ model_grid_vo_osw_stack_vo.go
 model_grid_vo_osw_vrf_open_api_vo.go
 model_grid_vo_osw_vrf_vo.go
 model_grid_vo_osw_vrrp_open_api_vo.go
-model_grid_vo_oto_nat_info_open_api_vo.go
 model_grid_vo_oui_based_vlan_ap_query_open_api_vo.go
 model_grid_vo_oui_based_vlan_switch_info_open_api_vo.go
 model_grid_vo_oui_based_vlan_switch_query_open_api_vo.go
@@ -4402,6 +4486,7 @@ model_imported_portal_page_open_api_vo.go
 model_imported_portal_page_res_open_api_vo.go
 model_inbox_message.go
 model_incoming_calls_blocking_vo.go
+model_instances_vo.go
 model_int_id_list_request.go
 model_intelli_recover_setting.go
 model_interface_for_batch_isolate_open_api_vo.go
@@ -4609,6 +4694,7 @@ model_modify_dst_dto.go
 model_modify_history_retention_open_api_vo.go
 model_modify_ips_allow_list_entry.go
 model_modify_ipv6_state.go
+model_modify_lan_network_brief.go
 model_modify_local_user_open_api_vo.go
 model_modify_mail_server_open_api_vo.go
 model_modify_msp_general_setting_open_api_vo.go
@@ -4667,8 +4753,10 @@ model_multi_osw_port_setting_open_api_vo.go
 model_multi_site_client_export_open_api_vo.go
 model_multicast_except_device_vo.go
 model_name_reboot_vo.go
+model_nat_traversal_eweb_info_vo.go
 model_nat_traversal_single_tunnel_status_vo.go
 model_nat_traversal_tunnel_grid_vo_nat_traversal_tunnel_vo.go
+model_nat_traversal_tunnel_modify_open_api_vo.go
 model_nat_traversal_tunnel_open_api_vo.go
 model_nat_traversal_tunnel_open_vo.go
 model_nat_traversal_tunnel_vo.go
@@ -4695,6 +4783,7 @@ model_notification_open_api_vo.go
 model_ntp_server.go
 model_number_open_api_vo.go
 model_number_registration_result.go
+model_occurrence.go
 model_olt_config_modify_dto.go
 model_olt_detail_downlink_vo.go
 model_olt_detail_vo.go
@@ -4768,8 +4857,7 @@ model_operation_response_ap_advanced_qos_open_api_vo.go
 model_operation_response_ap_afc_info_open_api_vo.go
 model_operation_response_ap_ant_switch_config_open_api_vo.go
 model_operation_response_ap_ante_gain_config.go
-model_operation_response_ap_available_channel_open_api_vo.go
-model_operation_response_ap_bridge_config.go
+model_operation_response_ap_bridge_info.go
 model_operation_response_ap_bridge_paring_window_result.go
 model_operation_response_ap_channel_load_result.go
 model_operation_response_ap_channel_stats.go
@@ -4784,6 +4872,7 @@ model_operation_response_ap_l3_access_config_open_api_vo.go
 model_operation_response_ap_lan_traffic.go
 model_operation_response_ap_lldp_config_open_api_vo.go
 model_operation_response_ap_location_config_open_api_vo.go
+model_operation_response_ap_management_ssid_config.go
 model_operation_response_ap_mesh_statistics_open_api_vo.go
 model_operation_response_ap_ofdma_config_open_api_vo.go
 model_operation_response_ap_overview_info.go
@@ -4793,7 +4882,6 @@ model_operation_response_ap_radios_config.go
 model_operation_response_ap_radios_detail.go
 model_operation_response_ap_rf_scan_info.go
 model_operation_response_ap_rf_scan_result.go
-model_operation_response_ap_services_config_open_api_vo.go
 model_operation_response_ap_snmp_config_open_api_vo.go
 model_operation_response_ap_speed_test_results_open_api_vo.go
 model_operation_response_ap_ssid_wlans_open_api_v2_vo.go
@@ -5028,7 +5116,6 @@ model_operation_response_grid_vo_osw_routing_open_api_vo.go
 model_operation_response_grid_vo_osw_stack_vo.go
 model_operation_response_grid_vo_osw_vrf_open_api_vo.go
 model_operation_response_grid_vo_osw_vrrp_open_api_vo.go
-model_operation_response_grid_vo_oto_nat_info_open_api_vo.go
 model_operation_response_grid_vo_oui_based_vlan_ap_query_open_api_vo.go
 model_operation_response_grid_vo_oui_based_vlan_switch_info_open_api_vo.go
 model_operation_response_grid_vo_oui_based_vlan_switch_query_open_api_vo.go
@@ -5115,6 +5202,7 @@ model_operation_response_list_active_client_bubble_vo.go
 model_operation_response_list_active_client_vo.go
 model_operation_response_list_active_device.go
 model_operation_response_list_activity_records_of_a_client_s_single_connections.go
+model_operation_response_list_ap_available_channel_open_api_vo.go
 model_operation_response_list_ap_brief_info.go
 model_operation_response_list_ap_channel_load_result.go
 model_operation_response_list_ap_uplink_config_open_api_vo.go
@@ -5245,6 +5333,7 @@ model_operation_response_list_vpn_user_response.go
 model_operation_response_list_vpn_user_server_brief_vo.go
 model_operation_response_list_webhook_setting.go
 model_operation_response_list_white_device_info_open_api_vo.go
+model_operation_response_list_wifi_calling_profile_open_api_vo.go
 model_operation_response_list_wlan_group_open_api_vo.go
 model_operation_response_list_wlan_simple_open_api_vo.go
 model_operation_response_local_user_open_api_vo.go
@@ -5275,8 +5364,10 @@ model_operation_response_msp_role_detail_vo.go
 model_operation_response_msp_ui_interface_open_api_vo.go
 model_operation_response_msp_user_detail_vo.go
 model_operation_response_msp_user_interface_open_api_vo.go
+model_operation_response_nat_traversal_eweb_info_vo.go
 model_operation_response_nat_traversal_single_tunnel_status_vo.go
 model_operation_response_nat_traversal_tunnel_grid_vo_nat_traversal_tunnel_vo.go
+model_operation_response_nat_traversal_tunnel_vo.go
 model_operation_response_nat_traversal_tunnels_status_vo.go
 model_operation_response_network_activity_vo.go
 model_operation_response_notification_open_api_vo.go
@@ -5298,6 +5389,7 @@ model_operation_response_osg_pin_detail_open_api_vo.go
 model_operation_response_osg_sim_card_open_api_vo.go
 model_operation_response_osw_cable_test_result_with_status_vo.go
 model_operation_response_osw_health_detail_vo.go
+model_operation_response_osw_l3_sdm_application_vo.go
 model_operation_response_osw_network_grid_osw_network_open_api.go
 model_operation_response_osw_ospf_neighbor_grid_vo_osw_ospf_neighbor_vo.go
 model_operation_response_osw_poe_result_open_api_vo.go
@@ -5307,9 +5399,11 @@ model_operation_response_osw_stack_cable_test_vo.go
 model_operation_response_osw_stack_detail_vo.go
 model_operation_response_osw_stack_member_lag_vo.go
 model_operation_response_osw_stack_network_modify_resp_open_api_vo.go
+model_operation_response_osw_stack_sdm_application_vo.go
 model_operation_response_osw_stack_switch_vo.go
 model_operation_response_osw_stat_open_api_vo.go
 model_operation_response_osw_static_routing_grid_vo_osw_static_routing_vo.go
+model_operation_response_oto_nat_open_api_grid_vo.go
 model_operation_response_oui_grid_vo_oui_profile_query_open_api_vo.go
 model_operation_response_outbox_message_open_api_grid_vo_outbox_message.go
 model_operation_response_page_response_authentication_config_dto.go
@@ -5363,7 +5457,7 @@ model_operation_response_rolling_upgrade_res.go
 model_operation_response_rrm_setting_open_api_vo.go
 model_operation_response_rule_result_entity.go
 model_operation_response_sd_wan_current_selected_device_info.go
-model_operation_response_sd_wan_group.go
+model_operation_response_sd_wan_group_detail.go
 model_operation_response_sd_wan_group_tunnel_status.go
 model_operation_response_sd_wan_mapped_network_result.go
 model_operation_response_send_mail_server_open_api_vo.go
@@ -5500,13 +5594,16 @@ model_operation_response_wan_max_speed_open_api_vo.go
 model_operation_response_wan_setting_open_api_vo.go
 model_operation_response_wan_unsupported_function_open_api_vo.go
 model_operation_response_wids_config_open_api_vo.go
+model_operation_response_wifi_calling_traffic_grid_open_api_vo_wifi_calling_traffic_open_api_vo.go
 model_operation_response_wifi_summary.go
 model_operation_response_wips_config_open_api_vo.go
 model_operation_response_wireguard_key_open_api_vo.go
 model_operation_response_wireguard_peer_open_api_grid_vo_wireguard_peer_detail_open_api_vo.go
 model_operation_response_without_result.go
 model_operation_response_wlan_group_grid_open_api_vo.go
+model_operation_response_wlan_group_open_api_vo.go
 model_operation_response_wlan_group_status_open_api_vo.go
+model_operation_response_wlan_opt_dash_board_open_api_vo.go
 model_operator_response.go
 model_ops_blocked_country_open_api_vo.go
 model_optical_link_detail_config_dto.go
@@ -5600,6 +5697,7 @@ model_osw_ip_setting_brief_openapi_vo.go
 model_osw_ip_setting_open_api_vo.go
 model_osw_ip_setting_vo.go
 model_osw_ipv6_setting_open_api_vo.go
+model_osw_l3_sdm_application_vo.go
 model_osw_lag_basic_vo.go
 model_osw_lag_setting_vo.go
 model_osw_lag_status_vo.go
@@ -5673,13 +5771,16 @@ model_osw_stack_member_lag_open_api_vo.go
 model_osw_stack_member_lag_vo.go
 model_osw_stack_member_port_cap_and_status_vo.go
 model_osw_stack_member_port_vo.go
+model_osw_stack_member_sdm_vo.go
 model_osw_stack_member_stat_vo.go
 model_osw_stack_member_vo.go
 model_osw_stack_network_modify_resp_open_api_vo.go
+model_osw_stack_port_cap_vo.go
 model_osw_stack_port_group_vo.go
 model_osw_stack_port_list_vo.go
 model_osw_stack_port_vo.go
 model_osw_stack_reboot_open_api_vo.go
+model_osw_stack_sdm_application_vo.go
 model_osw_stack_stat_query_open_api_dto.go
 model_osw_stack_stat_query_vo.go
 model_osw_stack_switch_vo.go
@@ -5700,14 +5801,13 @@ model_osw_static_routing_vo.go
 model_osw_storm_ctrl_open_api_vo.go
 model_osw_storm_ctrl_vo.go
 model_osw_stp_instance.go
-model_osw_stp_instance_config.go
 model_osw_stp_instance_config_open_api_vo.go
-model_osw_stp_mstp_config.go
 model_osw_stp_mstp_config_open_api_vo.go
 model_osw_stp_mstp_vo.go
 model_osw_stp_region.go
-model_osw_stp_region_config.go
 model_osw_stp_region_config_open_api_vo.go
+model_osw_stp_rpvst_instance_vo.go
+model_osw_stp_rpvst_vo.go
 model_osw_up_info.go
 model_osw_uplink_vo.go
 model_osw_vo.go
@@ -5719,6 +5819,7 @@ model_osw_vrrp_device_config_open_api_vo.go
 model_osw_vrrp_device_open_api_vo.go
 model_osw_vrrp_open_api_vo.go
 model_oto_nat_info_open_api_vo.go
+model_oto_nat_open_api_grid_vo.go
 model_oto_nat_open_api_vo.go
 model_oui_and_description.go
 model_oui_based_vlan_ap_open_api_vo.go
@@ -5927,6 +6028,7 @@ model_rf_planning_deploy_config.go
 model_rf_planning_deploy_result.go
 model_rf_planning_history.go
 model_rf_planning_result.go
+model_rf_planning_schedule_config_open_api_vo.go
 model_rf_scan_command.go
 model_rf_scan_radio.go
 model_rf_scan_radio2g.go
@@ -5962,13 +6064,18 @@ model_sd_wan_group_tunnel_status.go
 model_sd_wan_ip_pool_range.go
 model_sd_wan_lan_network_nat_req.go
 model_sd_wan_linked_spoke.go
+model_sd_wan_linked_spoke_config.go
 model_sd_wan_links_to_hub.go
 model_sd_wan_mapped_network_result.go
-model_sd_wan_member_brief_info.go
+model_sd_wan_member_config.go
 model_sd_wan_member_info.go
+model_sd_wan_member_selected.go
 model_sd_wan_nat_info.go
+model_sd_wan_nat_info_config.go
+model_sd_wan_nat_item_config.go
 model_sd_wan_network_map.go
 model_sd_wan_selected_map_network.go
+model_sdm_resource_usage.go
 model_select_device_for_vlan_template_vo.go
 model_select_device_for_vlan_vo.go
 model_select_ids_open_api_vo.go
@@ -6172,6 +6279,7 @@ model_statistics_osw_vo.go
 model_status.go
 model_status_content.go
 model_storm_ctrl_vo.go
+model_stp_instance_detail_vo.go
 model_string_key_list_request.go
 model_sub_single_health_info_detail_vo.go
 model_support_cli_device_vo.go
@@ -6331,10 +6439,12 @@ model_update_mac_auth_open_api_vo.go
 model_update_rate_limit_profile_open_api_vo.go
 model_update_site_by_template.go
 model_update_site_entity.go
+model_update_ssid_band_steer_open_api_vo.go
 model_update_ssid_basic_config_for_ippt_open_api_vo.go
 model_update_ssid_basic_config_open_api_vo.go
 model_update_ssid_dhcp_option_open_api_vo.go
 model_update_ssid_hotspot_v2_setting_open_api_vo.go
+model_update_ssid_load_balance_open_api_vo.go
 model_update_ssid_mac_filter_open_api_vo.go
 model_update_ssid_multi_cast_open_api_vo.go
 model_update_ssid_rate_control_open_api_vo.go
@@ -6343,6 +6453,7 @@ model_update_ssid_wlan_schedule_open_api_vo.go
 model_update_tab_open_api_vo.go
 model_update_time_range_profile_open_api_vo.go
 model_update_wids_config_open_api_vo.go
+model_update_wifi_calling_open_api_vo.go
 model_update_wips_config_open_api_vo.go
 model_update_wlan_group_open_api_vo.go
 model_upgrade_base_schedule_time_open_api_vo.go
@@ -6536,6 +6647,9 @@ model_white_device_info_open_api_vo.go
 model_wids_config_open_api_vo.go
 model_wids_data_open_api_vo.go
 model_width_range_vo.go
+model_wifi_calling_profile_open_api_vo.go
+model_wifi_calling_traffic_grid_open_api_vo_wifi_calling_traffic_open_api_vo.go
+model_wifi_calling_traffic_open_api_vo.go
 model_wifi_client_info_vo.go
 model_wifi_device_and_client_query_vo.go
 model_wifi_health_detail_vo.go
@@ -6566,6 +6680,8 @@ model_wireless_up_link_info.go
 model_wlan_group_grid_open_api_vo.go
 model_wlan_group_open_api_vo.go
 model_wlan_group_status_open_api_vo.go
+model_wlan_opt_dash_board_detail_open_api_vo.go
+model_wlan_opt_dash_board_open_api_vo.go
 model_wlan_simple_open_api_vo.go
 response.go
 test/api_abnormal_detect_test.go
@@ -6707,6 +6823,7 @@ test/api_voucher_test.go
 test/api_vpn_test.go
 test/api_vrrp_test.go
 test/api_webhook_setting_test.go
+test/api_wi_fi_calling_traffic_test.go
 test/api_wired_network_template_test.go
 test/api_wired_network_test.go
 test/api_wireguard_vpn_test.go

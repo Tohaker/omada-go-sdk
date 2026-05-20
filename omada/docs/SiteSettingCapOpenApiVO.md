@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **LdapVpn** | Pointer to **bool** | Whether support VPN configuration with LDAP. | [optional] 
 **LockToAp** | Pointer to **bool** | false: there is a wireless route device that does not support LockToAp.true or null: all devices support LockToAp | [optional] 
 **MacFilter** | Pointer to **bool** | Whether support network security-mac filter configuration. | [optional] 
+**NatTraversal** | Pointer to **bool** | Whether support natTraversal. | [optional] 
 **OltVlan** | Pointer to **bool** | An OLT device exists. | [optional] 
 **OneToOneNat** | Pointer to **bool** | Whether support one-to-one NAT configuration. | [optional] 
 **P2p** | Pointer to **bool** | An P2P device exists. | [optional] 
@@ -671,6 +672,31 @@ SetMacFilter sets MacFilter field to given value.
 `func (o *SiteSettingCapOpenApiVO) HasMacFilter() bool`
 
 HasMacFilter returns a boolean if a field has been set.
+
+### GetNatTraversal
+
+`func (o *SiteSettingCapOpenApiVO) GetNatTraversal() bool`
+
+GetNatTraversal returns the NatTraversal field if non-nil, zero value otherwise.
+
+### GetNatTraversalOk
+
+`func (o *SiteSettingCapOpenApiVO) GetNatTraversalOk() (*bool, bool)`
+
+GetNatTraversalOk returns a tuple with the NatTraversal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNatTraversal
+
+`func (o *SiteSettingCapOpenApiVO) SetNatTraversal(v bool)`
+
+SetNatTraversal sets NatTraversal field to given value.
+
+### HasNatTraversal
+
+`func (o *SiteSettingCapOpenApiVO) HasNatTraversal() bool`
+
+HasNatTraversal returns a boolean if a field has been set.
 
 ### GetOltVlan
 

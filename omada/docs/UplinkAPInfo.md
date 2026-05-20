@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Channel** | Pointer to **int32** | Connected actual channel. | [optional] 
 **LagId** | Pointer to **int32** | Lag Id | [optional] 
+**MultiLink** | Pointer to [**[]APMultiLinkInfo**](APMultiLinkInfo.md) | Multi link info (MLO) | [optional] 
 **Name** | Pointer to **string** | Client connected port name. | [optional] 
 **Port** | Pointer to **int32** | Client connected port. | [optional] 
 **Radio** | Pointer to **int32** | Radio ID, 0: 2.4GHz; 1: 5GHz-1; 2:5GHz-2; 3: 6GHz. | [optional] 
@@ -85,6 +86,31 @@ SetLagId sets LagId field to given value.
 `func (o *UplinkAPInfo) HasLagId() bool`
 
 HasLagId returns a boolean if a field has been set.
+
+### GetMultiLink
+
+`func (o *UplinkAPInfo) GetMultiLink() []APMultiLinkInfo`
+
+GetMultiLink returns the MultiLink field if non-nil, zero value otherwise.
+
+### GetMultiLinkOk
+
+`func (o *UplinkAPInfo) GetMultiLinkOk() (*[]APMultiLinkInfo, bool)`
+
+GetMultiLinkOk returns a tuple with the MultiLink field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultiLink
+
+`func (o *UplinkAPInfo) SetMultiLink(v []APMultiLinkInfo)`
+
+SetMultiLink sets MultiLink field to given value.
+
+### HasMultiLink
+
+`func (o *UplinkAPInfo) HasMultiLink() bool`
+
+HasMultiLink returns a boolean if a field has been set.
 
 ### GetName
 

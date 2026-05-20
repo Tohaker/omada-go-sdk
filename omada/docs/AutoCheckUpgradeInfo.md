@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Occurrence** | Pointer to [**UpgradeBaseScheduleTimeOpenApiVO**](UpgradeBaseScheduleTimeOpenApiVO.md) |  | [optional] 
 **AutoCheckTime** | Pointer to **string** | Next execution time | [optional] 
 **Channel** | Pointer to **int32** | Channel should be a value as follows: 0: stable; 1: Release Candidate(RC); 2: Beta | [optional] 
 **Id** | Pointer to **string** | ID | [optional] 
 **ModelTypeInfos** | Pointer to [**[]ModelTypeInfoOpenApiVO**](ModelTypeInfoOpenApiVO.md) | List of model type selected by the user | [optional] 
-**Occurrence** | Pointer to [**UpgradeBaseScheduleTimeOpenApiVO**](UpgradeBaseScheduleTimeOpenApiVO.md) |  | [optional] 
 **SiteNames** | Pointer to **[]string** | The siteNames lists selected by the user | [optional] 
 **SiteNum** | Pointer to **int32** | Number of sites selected by the user | [optional] 
 
@@ -30,6 +30,31 @@ will change when the set of required properties is changed
 NewAutoCheckUpgradeInfoWithDefaults instantiates a new AutoCheckUpgradeInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetOccurrence
+
+`func (o *AutoCheckUpgradeInfo) GetOccurrence() UpgradeBaseScheduleTimeOpenApiVO`
+
+GetOccurrence returns the Occurrence field if non-nil, zero value otherwise.
+
+### GetOccurrenceOk
+
+`func (o *AutoCheckUpgradeInfo) GetOccurrenceOk() (*UpgradeBaseScheduleTimeOpenApiVO, bool)`
+
+GetOccurrenceOk returns a tuple with the Occurrence field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOccurrence
+
+`func (o *AutoCheckUpgradeInfo) SetOccurrence(v UpgradeBaseScheduleTimeOpenApiVO)`
+
+SetOccurrence sets Occurrence field to given value.
+
+### HasOccurrence
+
+`func (o *AutoCheckUpgradeInfo) HasOccurrence() bool`
+
+HasOccurrence returns a boolean if a field has been set.
 
 ### GetAutoCheckTime
 
@@ -130,31 +155,6 @@ SetModelTypeInfos sets ModelTypeInfos field to given value.
 `func (o *AutoCheckUpgradeInfo) HasModelTypeInfos() bool`
 
 HasModelTypeInfos returns a boolean if a field has been set.
-
-### GetOccurrence
-
-`func (o *AutoCheckUpgradeInfo) GetOccurrence() UpgradeBaseScheduleTimeOpenApiVO`
-
-GetOccurrence returns the Occurrence field if non-nil, zero value otherwise.
-
-### GetOccurrenceOk
-
-`func (o *AutoCheckUpgradeInfo) GetOccurrenceOk() (*UpgradeBaseScheduleTimeOpenApiVO, bool)`
-
-GetOccurrenceOk returns a tuple with the Occurrence field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOccurrence
-
-`func (o *AutoCheckUpgradeInfo) SetOccurrence(v UpgradeBaseScheduleTimeOpenApiVO)`
-
-SetOccurrence sets Occurrence field to given value.
-
-### HasOccurrence
-
-`func (o *AutoCheckUpgradeInfo) HasOccurrence() bool`
-
-HasOccurrence returns a boolean if a field has been set.
 
 ### GetSiteNames
 

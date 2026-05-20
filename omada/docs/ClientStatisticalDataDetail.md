@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Down** | Pointer to **int64** | Downstream traffic (Byte). | [optional] 
 **DownRate** | Pointer to **int64** | Downlink rate (Byte/s). | [optional] 
 **Mac** | Pointer to **string** | Client MAC Address. | [optional] 
+**MultiLinks** | Pointer to [**[]ClientMultiLinkInfo**](ClientMultiLinkInfo.md) | (MLO) Client multi link info. | [optional] 
+**RadioId** | Pointer to **int32** | (Wireless) Radio ID should be a value as follows: 0: 2.4GHz; 1: 5GHz; 2:5GHz-2; 3: 6GHz | [optional] 
 **RxR** | Pointer to **int64** | (Wireless) Uplink negotiation rate (bit/s). | [optional] 
 **Signal** | Pointer to **int32** | (Wireless) Signal strength, unit: dBm. | [optional] 
 **Time** | Pointer to **int64** | The statistical data collected timestamp, unit: second. | [optional] 
@@ -109,6 +111,56 @@ SetMac sets Mac field to given value.
 `func (o *ClientStatisticalDataDetail) HasMac() bool`
 
 HasMac returns a boolean if a field has been set.
+
+### GetMultiLinks
+
+`func (o *ClientStatisticalDataDetail) GetMultiLinks() []ClientMultiLinkInfo`
+
+GetMultiLinks returns the MultiLinks field if non-nil, zero value otherwise.
+
+### GetMultiLinksOk
+
+`func (o *ClientStatisticalDataDetail) GetMultiLinksOk() (*[]ClientMultiLinkInfo, bool)`
+
+GetMultiLinksOk returns a tuple with the MultiLinks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultiLinks
+
+`func (o *ClientStatisticalDataDetail) SetMultiLinks(v []ClientMultiLinkInfo)`
+
+SetMultiLinks sets MultiLinks field to given value.
+
+### HasMultiLinks
+
+`func (o *ClientStatisticalDataDetail) HasMultiLinks() bool`
+
+HasMultiLinks returns a boolean if a field has been set.
+
+### GetRadioId
+
+`func (o *ClientStatisticalDataDetail) GetRadioId() int32`
+
+GetRadioId returns the RadioId field if non-nil, zero value otherwise.
+
+### GetRadioIdOk
+
+`func (o *ClientStatisticalDataDetail) GetRadioIdOk() (*int32, bool)`
+
+GetRadioIdOk returns a tuple with the RadioId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRadioId
+
+`func (o *ClientStatisticalDataDetail) SetRadioId(v int32)`
+
+SetRadioId sets RadioId field to given value.
+
+### HasRadioId
+
+`func (o *ClientStatisticalDataDetail) HasRadioId() bool`
+
+HasRadioId returns a boolean if a field has been set.
 
 ### GetRxR
 

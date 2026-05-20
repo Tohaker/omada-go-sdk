@@ -255,6 +255,22 @@ func Test_omada_ApAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ApAPIService GetApManagementSsidConfig", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apMac string
+
+		resp, httpRes, err := apiClient.ApAPI.GetApManagementSsidConfig(context.Background(), omadacId, siteId, apMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ApAPIService GetApOfdmaConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

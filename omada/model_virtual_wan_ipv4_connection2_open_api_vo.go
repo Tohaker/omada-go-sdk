@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the VirtualWanIpv4Connection2OpenApiVO type satisfies the MappedNullable interface at compile time
@@ -32,17 +34,20 @@ type VirtualWanIpv4Connection2OpenApiVO struct {
 	// Subnet mask.
 	Netmask *string `json:"netmask,omitempty"`
 	// The second virtual WAN IPv4 proto type, use static, dhcp, pppoe.
-	Proto *string `json:"proto,omitempty"`
+	Proto string `json:"proto"`
 	// VPN server IP/domain.
 	Server *string `json:"server,omitempty"`
 }
+
+type _VirtualWanIpv4Connection2OpenApiVO VirtualWanIpv4Connection2OpenApiVO
 
 // NewVirtualWanIpv4Connection2OpenApiVO instantiates a new VirtualWanIpv4Connection2OpenApiVO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualWanIpv4Connection2OpenApiVO() *VirtualWanIpv4Connection2OpenApiVO {
+func NewVirtualWanIpv4Connection2OpenApiVO(proto string) *VirtualWanIpv4Connection2OpenApiVO {
 	this := VirtualWanIpv4Connection2OpenApiVO{}
+	this.Proto = proto
 	return &this
 }
 
@@ -246,36 +251,28 @@ func (o *VirtualWanIpv4Connection2OpenApiVO) SetNetmask(v string) {
 	o.Netmask = &v
 }
 
-// GetProto returns the Proto field value if set, zero value otherwise.
+// GetProto returns the Proto field value
 func (o *VirtualWanIpv4Connection2OpenApiVO) GetProto() string {
-	if o == nil || IsNil(o.Proto) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Proto
+
+	return o.Proto
 }
 
-// GetProtoOk returns a tuple with the Proto field value if set, nil otherwise
+// GetProtoOk returns a tuple with the Proto field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4Connection2OpenApiVO) GetProtoOk() (*string, bool) {
-	if o == nil || IsNil(o.Proto) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Proto, true
+	return &o.Proto, true
 }
 
-// HasProto returns a boolean if a field has been set.
-func (o *VirtualWanIpv4Connection2OpenApiVO) HasProto() bool {
-	if o != nil && !IsNil(o.Proto) {
-		return true
-	}
-
-	return false
-}
-
-// SetProto gets a reference to the given string and assigns it to the Proto field.
+// SetProto sets field value
 func (o *VirtualWanIpv4Connection2OpenApiVO) SetProto(v string) {
-	o.Proto = &v
+	o.Proto = v
 }
 
 // GetServer returns the Server field value if set, zero value otherwise.
@@ -338,13 +335,48 @@ func (o VirtualWanIpv4Connection2OpenApiVO) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Netmask) {
 		toSerialize["netmask"] = o.Netmask
 	}
-	if !IsNil(o.Proto) {
-		toSerialize["proto"] = o.Proto
-	}
+	toSerialize["proto"] = o.Proto
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
 	}
 	return toSerialize, nil
+}
+
+func (o *VirtualWanIpv4Connection2OpenApiVO) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"proto",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varVirtualWanIpv4Connection2OpenApiVO := _VirtualWanIpv4Connection2OpenApiVO{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varVirtualWanIpv4Connection2OpenApiVO)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VirtualWanIpv4Connection2OpenApiVO(varVirtualWanIpv4Connection2OpenApiVO)
+
+	return err
 }
 
 type NullableVirtualWanIpv4Connection2OpenApiVO struct {

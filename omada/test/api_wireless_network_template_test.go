@@ -164,6 +164,23 @@ func Test_omada_WirelessNetworkTemplateAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkTemplateAPIService UpdateSsidBandSteerConfigTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var wlanId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidBandSteerConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkTemplateAPIService UpdateSsidBasicConfigTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -208,6 +225,23 @@ func Test_omada_WirelessNetworkTemplateAPIService(t *testing.T) {
 		var ssidId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidHotspotV2SettingTemplate(context.Background(), omadacId, wlanId, siteTemplateId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkTemplateAPIService UpdateSsidLoadBalanceConfigTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var wlanId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidLoadBalanceConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -276,6 +310,23 @@ func Test_omada_WirelessNetworkTemplateAPIService(t *testing.T) {
 		var ssidId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidRateLimitConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkTemplateAPIService UpdateSsidWifiCallingConfigTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var wlanId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidWifiCallingConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

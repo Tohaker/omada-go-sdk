@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the VirtualWanIpv4PppoeOpenApiVO type satisfies the MappedNullable interface at compile time
@@ -28,38 +30,49 @@ type VirtualWanIpv4PppoeOpenApiVO struct {
 	// Gateway IP.
 	Gateway *string `json:"gateway,omitempty"`
 	// Get IP address from ISP.
-	IpFromIsp *string `json:"ipFromIsp,omitempty"`
+	IpFromIsp string `json:"ipFromIsp"`
 	// IP address.
 	Ipaddr *string `json:"ipaddr,omitempty"`
-	Ipv4Connection2 *VirtualWanIpv4Connection2OpenApiVO `json:"ipv4Connection2,omitempty"`
+	Ipv4Connection2 VirtualWanIpv4Connection2OpenApiVO `json:"ipv4Connection2"`
 	// Connection Mode. Parameter [linkType] should be as follows: auto: Connect Automatically; demand: Connect Manually; time: Time-based.
-	LinkType *string `json:"linkType,omitempty"`
+	LinkType string `json:"linkType"`
 	// Parameter [mru] should be a value between 576 and 1492
-	Mru *int32 `json:"mru,omitempty"`
-	MssClampingType *int32 `json:"mssClampingType,omitempty"`
+	Mru int32 `json:"mru"`
+	MssClampingType int32 `json:"mssClampingType"`
 	MssClampingValue *int32 `json:"mssClampingValue,omitempty"`
 	// Parameter [mtu] should be a value between 576 and 1492
-	Mtu *int32 `json:"mtu,omitempty"`
+	Mtu int32 `json:"mtu"`
 	// Subnet mask.
 	Netmask *string `json:"netmask,omitempty"`
 	// Password. Parameter [password] should contain 1 to 255 ASCII characters.
-	Password *string `json:"password,omitempty"`
+	Password string `json:"password"`
 	// It is required when [linkType] is auto. Unit: Second
-	RedialInterval *int32 `json:"redialInterval,omitempty"`
+	RedialInterval int32 `json:"redialInterval"`
 	// Service name. Keep parameter [service] blank unless your ISP requires you to configure it.
 	Service *string `json:"service,omitempty"`
 	// It is required when [linkType] is 2. For example, 12:30.
 	StartTime *string `json:"startTime,omitempty"`
 	// Username. Parameter [userName] should contain 1 to 255 ASCII characters.
-	UserName *string `json:"userName,omitempty"`
+	UserName string `json:"userName"`
 }
+
+type _VirtualWanIpv4PppoeOpenApiVO VirtualWanIpv4PppoeOpenApiVO
 
 // NewVirtualWanIpv4PppoeOpenApiVO instantiates a new VirtualWanIpv4PppoeOpenApiVO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualWanIpv4PppoeOpenApiVO() *VirtualWanIpv4PppoeOpenApiVO {
+func NewVirtualWanIpv4PppoeOpenApiVO(ipFromIsp string, ipv4Connection2 VirtualWanIpv4Connection2OpenApiVO, linkType string, mru int32, mssClampingType int32, mtu int32, password string, redialInterval int32, userName string) *VirtualWanIpv4PppoeOpenApiVO {
 	this := VirtualWanIpv4PppoeOpenApiVO{}
+	this.IpFromIsp = ipFromIsp
+	this.Ipv4Connection2 = ipv4Connection2
+	this.LinkType = linkType
+	this.Mru = mru
+	this.MssClampingType = mssClampingType
+	this.Mtu = mtu
+	this.Password = password
+	this.RedialInterval = redialInterval
+	this.UserName = userName
 	return &this
 }
 
@@ -199,36 +212,28 @@ func (o *VirtualWanIpv4PppoeOpenApiVO) SetGateway(v string) {
 	o.Gateway = &v
 }
 
-// GetIpFromIsp returns the IpFromIsp field value if set, zero value otherwise.
+// GetIpFromIsp returns the IpFromIsp field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetIpFromIsp() string {
-	if o == nil || IsNil(o.IpFromIsp) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.IpFromIsp
+
+	return o.IpFromIsp
 }
 
-// GetIpFromIspOk returns a tuple with the IpFromIsp field value if set, nil otherwise
+// GetIpFromIspOk returns a tuple with the IpFromIsp field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetIpFromIspOk() (*string, bool) {
-	if o == nil || IsNil(o.IpFromIsp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IpFromIsp, true
+	return &o.IpFromIsp, true
 }
 
-// HasIpFromIsp returns a boolean if a field has been set.
-func (o *VirtualWanIpv4PppoeOpenApiVO) HasIpFromIsp() bool {
-	if o != nil && !IsNil(o.IpFromIsp) {
-		return true
-	}
-
-	return false
-}
-
-// SetIpFromIsp gets a reference to the given string and assigns it to the IpFromIsp field.
+// SetIpFromIsp sets field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) SetIpFromIsp(v string) {
-	o.IpFromIsp = &v
+	o.IpFromIsp = v
 }
 
 // GetIpaddr returns the Ipaddr field value if set, zero value otherwise.
@@ -263,132 +268,100 @@ func (o *VirtualWanIpv4PppoeOpenApiVO) SetIpaddr(v string) {
 	o.Ipaddr = &v
 }
 
-// GetIpv4Connection2 returns the Ipv4Connection2 field value if set, zero value otherwise.
+// GetIpv4Connection2 returns the Ipv4Connection2 field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetIpv4Connection2() VirtualWanIpv4Connection2OpenApiVO {
-	if o == nil || IsNil(o.Ipv4Connection2) {
+	if o == nil {
 		var ret VirtualWanIpv4Connection2OpenApiVO
 		return ret
 	}
-	return *o.Ipv4Connection2
+
+	return o.Ipv4Connection2
 }
 
-// GetIpv4Connection2Ok returns a tuple with the Ipv4Connection2 field value if set, nil otherwise
+// GetIpv4Connection2Ok returns a tuple with the Ipv4Connection2 field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetIpv4Connection2Ok() (*VirtualWanIpv4Connection2OpenApiVO, bool) {
-	if o == nil || IsNil(o.Ipv4Connection2) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Ipv4Connection2, true
+	return &o.Ipv4Connection2, true
 }
 
-// HasIpv4Connection2 returns a boolean if a field has been set.
-func (o *VirtualWanIpv4PppoeOpenApiVO) HasIpv4Connection2() bool {
-	if o != nil && !IsNil(o.Ipv4Connection2) {
-		return true
-	}
-
-	return false
-}
-
-// SetIpv4Connection2 gets a reference to the given VirtualWanIpv4Connection2OpenApiVO and assigns it to the Ipv4Connection2 field.
+// SetIpv4Connection2 sets field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) SetIpv4Connection2(v VirtualWanIpv4Connection2OpenApiVO) {
-	o.Ipv4Connection2 = &v
+	o.Ipv4Connection2 = v
 }
 
-// GetLinkType returns the LinkType field value if set, zero value otherwise.
+// GetLinkType returns the LinkType field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetLinkType() string {
-	if o == nil || IsNil(o.LinkType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.LinkType
+
+	return o.LinkType
 }
 
-// GetLinkTypeOk returns a tuple with the LinkType field value if set, nil otherwise
+// GetLinkTypeOk returns a tuple with the LinkType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetLinkTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.LinkType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LinkType, true
+	return &o.LinkType, true
 }
 
-// HasLinkType returns a boolean if a field has been set.
-func (o *VirtualWanIpv4PppoeOpenApiVO) HasLinkType() bool {
-	if o != nil && !IsNil(o.LinkType) {
-		return true
-	}
-
-	return false
-}
-
-// SetLinkType gets a reference to the given string and assigns it to the LinkType field.
+// SetLinkType sets field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) SetLinkType(v string) {
-	o.LinkType = &v
+	o.LinkType = v
 }
 
-// GetMru returns the Mru field value if set, zero value otherwise.
+// GetMru returns the Mru field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetMru() int32 {
-	if o == nil || IsNil(o.Mru) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Mru
+
+	return o.Mru
 }
 
-// GetMruOk returns a tuple with the Mru field value if set, nil otherwise
+// GetMruOk returns a tuple with the Mru field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetMruOk() (*int32, bool) {
-	if o == nil || IsNil(o.Mru) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Mru, true
+	return &o.Mru, true
 }
 
-// HasMru returns a boolean if a field has been set.
-func (o *VirtualWanIpv4PppoeOpenApiVO) HasMru() bool {
-	if o != nil && !IsNil(o.Mru) {
-		return true
-	}
-
-	return false
-}
-
-// SetMru gets a reference to the given int32 and assigns it to the Mru field.
+// SetMru sets field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) SetMru(v int32) {
-	o.Mru = &v
+	o.Mru = v
 }
 
-// GetMssClampingType returns the MssClampingType field value if set, zero value otherwise.
+// GetMssClampingType returns the MssClampingType field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetMssClampingType() int32 {
-	if o == nil || IsNil(o.MssClampingType) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.MssClampingType
+
+	return o.MssClampingType
 }
 
-// GetMssClampingTypeOk returns a tuple with the MssClampingType field value if set, nil otherwise
+// GetMssClampingTypeOk returns a tuple with the MssClampingType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetMssClampingTypeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MssClampingType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MssClampingType, true
+	return &o.MssClampingType, true
 }
 
-// HasMssClampingType returns a boolean if a field has been set.
-func (o *VirtualWanIpv4PppoeOpenApiVO) HasMssClampingType() bool {
-	if o != nil && !IsNil(o.MssClampingType) {
-		return true
-	}
-
-	return false
-}
-
-// SetMssClampingType gets a reference to the given int32 and assigns it to the MssClampingType field.
+// SetMssClampingType sets field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) SetMssClampingType(v int32) {
-	o.MssClampingType = &v
+	o.MssClampingType = v
 }
 
 // GetMssClampingValue returns the MssClampingValue field value if set, zero value otherwise.
@@ -423,36 +396,28 @@ func (o *VirtualWanIpv4PppoeOpenApiVO) SetMssClampingValue(v int32) {
 	o.MssClampingValue = &v
 }
 
-// GetMtu returns the Mtu field value if set, zero value otherwise.
+// GetMtu returns the Mtu field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetMtu() int32 {
-	if o == nil || IsNil(o.Mtu) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Mtu
+
+	return o.Mtu
 }
 
-// GetMtuOk returns a tuple with the Mtu field value if set, nil otherwise
+// GetMtuOk returns a tuple with the Mtu field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetMtuOk() (*int32, bool) {
-	if o == nil || IsNil(o.Mtu) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Mtu, true
+	return &o.Mtu, true
 }
 
-// HasMtu returns a boolean if a field has been set.
-func (o *VirtualWanIpv4PppoeOpenApiVO) HasMtu() bool {
-	if o != nil && !IsNil(o.Mtu) {
-		return true
-	}
-
-	return false
-}
-
-// SetMtu gets a reference to the given int32 and assigns it to the Mtu field.
+// SetMtu sets field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) SetMtu(v int32) {
-	o.Mtu = &v
+	o.Mtu = v
 }
 
 // GetNetmask returns the Netmask field value if set, zero value otherwise.
@@ -487,68 +452,52 @@ func (o *VirtualWanIpv4PppoeOpenApiVO) SetNetmask(v string) {
 	o.Netmask = &v
 }
 
-// GetPassword returns the Password field value if set, zero value otherwise.
+// GetPassword returns the Password field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetPassword() string {
-	if o == nil || IsNil(o.Password) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Password
+
+	return o.Password
 }
 
-// GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
+// GetPasswordOk returns a tuple with the Password field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.Password) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Password, true
+	return &o.Password, true
 }
 
-// HasPassword returns a boolean if a field has been set.
-func (o *VirtualWanIpv4PppoeOpenApiVO) HasPassword() bool {
-	if o != nil && !IsNil(o.Password) {
-		return true
-	}
-
-	return false
-}
-
-// SetPassword gets a reference to the given string and assigns it to the Password field.
+// SetPassword sets field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) SetPassword(v string) {
-	o.Password = &v
+	o.Password = v
 }
 
-// GetRedialInterval returns the RedialInterval field value if set, zero value otherwise.
+// GetRedialInterval returns the RedialInterval field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetRedialInterval() int32 {
-	if o == nil || IsNil(o.RedialInterval) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.RedialInterval
+
+	return o.RedialInterval
 }
 
-// GetRedialIntervalOk returns a tuple with the RedialInterval field value if set, nil otherwise
+// GetRedialIntervalOk returns a tuple with the RedialInterval field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetRedialIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.RedialInterval) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RedialInterval, true
+	return &o.RedialInterval, true
 }
 
-// HasRedialInterval returns a boolean if a field has been set.
-func (o *VirtualWanIpv4PppoeOpenApiVO) HasRedialInterval() bool {
-	if o != nil && !IsNil(o.RedialInterval) {
-		return true
-	}
-
-	return false
-}
-
-// SetRedialInterval gets a reference to the given int32 and assigns it to the RedialInterval field.
+// SetRedialInterval sets field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) SetRedialInterval(v int32) {
-	o.RedialInterval = &v
+	o.RedialInterval = v
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
@@ -615,36 +564,28 @@ func (o *VirtualWanIpv4PppoeOpenApiVO) SetStartTime(v string) {
 	o.StartTime = &v
 }
 
-// GetUserName returns the UserName field value if set, zero value otherwise.
+// GetUserName returns the UserName field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetUserName() string {
-	if o == nil || IsNil(o.UserName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserName
+
+	return o.UserName
 }
 
-// GetUserNameOk returns a tuple with the UserName field value if set, nil otherwise
+// GetUserNameOk returns a tuple with the UserName field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4PppoeOpenApiVO) GetUserNameOk() (*string, bool) {
-	if o == nil || IsNil(o.UserName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UserName, true
+	return &o.UserName, true
 }
 
-// HasUserName returns a boolean if a field has been set.
-func (o *VirtualWanIpv4PppoeOpenApiVO) HasUserName() bool {
-	if o != nil && !IsNil(o.UserName) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserName gets a reference to the given string and assigns it to the UserName field.
+// SetUserName sets field value
 func (o *VirtualWanIpv4PppoeOpenApiVO) SetUserName(v string) {
-	o.UserName = &v
+	o.UserName = v
 }
 
 func (o VirtualWanIpv4PppoeOpenApiVO) MarshalJSON() ([]byte, error) {
@@ -669,49 +610,76 @@ func (o VirtualWanIpv4PppoeOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Gateway) {
 		toSerialize["gateway"] = o.Gateway
 	}
-	if !IsNil(o.IpFromIsp) {
-		toSerialize["ipFromIsp"] = o.IpFromIsp
-	}
+	toSerialize["ipFromIsp"] = o.IpFromIsp
 	if !IsNil(o.Ipaddr) {
 		toSerialize["ipaddr"] = o.Ipaddr
 	}
-	if !IsNil(o.Ipv4Connection2) {
-		toSerialize["ipv4Connection2"] = o.Ipv4Connection2
-	}
-	if !IsNil(o.LinkType) {
-		toSerialize["linkType"] = o.LinkType
-	}
-	if !IsNil(o.Mru) {
-		toSerialize["mru"] = o.Mru
-	}
-	if !IsNil(o.MssClampingType) {
-		toSerialize["mssClampingType"] = o.MssClampingType
-	}
+	toSerialize["ipv4Connection2"] = o.Ipv4Connection2
+	toSerialize["linkType"] = o.LinkType
+	toSerialize["mru"] = o.Mru
+	toSerialize["mssClampingType"] = o.MssClampingType
 	if !IsNil(o.MssClampingValue) {
 		toSerialize["mssClampingValue"] = o.MssClampingValue
 	}
-	if !IsNil(o.Mtu) {
-		toSerialize["mtu"] = o.Mtu
-	}
+	toSerialize["mtu"] = o.Mtu
 	if !IsNil(o.Netmask) {
 		toSerialize["netmask"] = o.Netmask
 	}
-	if !IsNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !IsNil(o.RedialInterval) {
-		toSerialize["redialInterval"] = o.RedialInterval
-	}
+	toSerialize["password"] = o.Password
+	toSerialize["redialInterval"] = o.RedialInterval
 	if !IsNil(o.Service) {
 		toSerialize["service"] = o.Service
 	}
 	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !IsNil(o.UserName) {
-		toSerialize["userName"] = o.UserName
-	}
+	toSerialize["userName"] = o.UserName
 	return toSerialize, nil
+}
+
+func (o *VirtualWanIpv4PppoeOpenApiVO) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"ipFromIsp",
+		"ipv4Connection2",
+		"linkType",
+		"mru",
+		"mssClampingType",
+		"mtu",
+		"password",
+		"redialInterval",
+		"userName",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varVirtualWanIpv4PppoeOpenApiVO := _VirtualWanIpv4PppoeOpenApiVO{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varVirtualWanIpv4PppoeOpenApiVO)
+
+	if err != nil {
+		return err
+	}
+
+	*o = VirtualWanIpv4PppoeOpenApiVO(varVirtualWanIpv4PppoeOpenApiVO)
+
+	return err
 }
 
 type NullableVirtualWanIpv4PppoeOpenApiVO struct {

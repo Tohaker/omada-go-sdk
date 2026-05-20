@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Description** | Pointer to **string** | Description of Pre-Authentication Access Policy | [optional] 
 **IdInt** | Pointer to **int32** | Entry ID of the policy. Except for newly added policies, this parameter should be retained | [optional] 
 **Ip** | Pointer to **string** | IP Address of Pre-Authentication Access | [optional] 
 **SubnetMask** | Pointer to **int32** | Subnet mask of Pre-Authentication Access. It should be within the range of 1-32 | [optional] 
@@ -28,6 +29,31 @@ will change when the set of required properties is changed
 NewPreAuthAccessPolicyOpenApiVOWithDefaults instantiates a new PreAuthAccessPolicyOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDescription
+
+`func (o *PreAuthAccessPolicyOpenApiVO) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *PreAuthAccessPolicyOpenApiVO) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *PreAuthAccessPolicyOpenApiVO) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *PreAuthAccessPolicyOpenApiVO) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetIdInt
 

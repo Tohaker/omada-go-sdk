@@ -19,12 +19,22 @@ var _ MappedNullable = &ApAfcInfoOpenApiVO{}
 
 // ApAfcInfoOpenApiVO struct for ApAfcInfoOpenApiVO
 type ApAfcInfoOpenApiVO struct {
+	// 6G radio available status
+	Available6g *bool `json:"available6g,omitempty"`
+	// The error code of last afc status
+	ErrCode *int32 `json:"errCode,omitempty"`
+	// The error detail
+	ErrDetail *int32 `json:"errDetail,omitempty"`
+	// The error main reason
+	ErrMain *int32 `json:"errMain,omitempty"`
 	// The expiration timestamp of the current AFC information of the AP
 	ExpirationTimeSec *int64 `json:"expirationTimeSec,omitempty"`
 	// The status of the last AFC information obtained by the AP
 	LastResponse *bool `json:"lastResponse,omitempty"`
 	// The timestamp of the last AFC information obtained by the AP
 	LastResponseTimeSec *int64 `json:"lastResponseTimeSec,omitempty"`
+	// Whether the afc status is being retrieved
+	Processing *bool `json:"processing,omitempty"`
 	// Ap AFC working status
 	Status *bool `json:"status,omitempty"`
 }
@@ -44,6 +54,134 @@ func NewApAfcInfoOpenApiVO() *ApAfcInfoOpenApiVO {
 func NewApAfcInfoOpenApiVOWithDefaults() *ApAfcInfoOpenApiVO {
 	this := ApAfcInfoOpenApiVO{}
 	return &this
+}
+
+// GetAvailable6g returns the Available6g field value if set, zero value otherwise.
+func (o *ApAfcInfoOpenApiVO) GetAvailable6g() bool {
+	if o == nil || IsNil(o.Available6g) {
+		var ret bool
+		return ret
+	}
+	return *o.Available6g
+}
+
+// GetAvailable6gOk returns a tuple with the Available6g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApAfcInfoOpenApiVO) GetAvailable6gOk() (*bool, bool) {
+	if o == nil || IsNil(o.Available6g) {
+		return nil, false
+	}
+	return o.Available6g, true
+}
+
+// HasAvailable6g returns a boolean if a field has been set.
+func (o *ApAfcInfoOpenApiVO) HasAvailable6g() bool {
+	if o != nil && !IsNil(o.Available6g) {
+		return true
+	}
+
+	return false
+}
+
+// SetAvailable6g gets a reference to the given bool and assigns it to the Available6g field.
+func (o *ApAfcInfoOpenApiVO) SetAvailable6g(v bool) {
+	o.Available6g = &v
+}
+
+// GetErrCode returns the ErrCode field value if set, zero value otherwise.
+func (o *ApAfcInfoOpenApiVO) GetErrCode() int32 {
+	if o == nil || IsNil(o.ErrCode) {
+		var ret int32
+		return ret
+	}
+	return *o.ErrCode
+}
+
+// GetErrCodeOk returns a tuple with the ErrCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApAfcInfoOpenApiVO) GetErrCodeOk() (*int32, bool) {
+	if o == nil || IsNil(o.ErrCode) {
+		return nil, false
+	}
+	return o.ErrCode, true
+}
+
+// HasErrCode returns a boolean if a field has been set.
+func (o *ApAfcInfoOpenApiVO) HasErrCode() bool {
+	if o != nil && !IsNil(o.ErrCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetErrCode gets a reference to the given int32 and assigns it to the ErrCode field.
+func (o *ApAfcInfoOpenApiVO) SetErrCode(v int32) {
+	o.ErrCode = &v
+}
+
+// GetErrDetail returns the ErrDetail field value if set, zero value otherwise.
+func (o *ApAfcInfoOpenApiVO) GetErrDetail() int32 {
+	if o == nil || IsNil(o.ErrDetail) {
+		var ret int32
+		return ret
+	}
+	return *o.ErrDetail
+}
+
+// GetErrDetailOk returns a tuple with the ErrDetail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApAfcInfoOpenApiVO) GetErrDetailOk() (*int32, bool) {
+	if o == nil || IsNil(o.ErrDetail) {
+		return nil, false
+	}
+	return o.ErrDetail, true
+}
+
+// HasErrDetail returns a boolean if a field has been set.
+func (o *ApAfcInfoOpenApiVO) HasErrDetail() bool {
+	if o != nil && !IsNil(o.ErrDetail) {
+		return true
+	}
+
+	return false
+}
+
+// SetErrDetail gets a reference to the given int32 and assigns it to the ErrDetail field.
+func (o *ApAfcInfoOpenApiVO) SetErrDetail(v int32) {
+	o.ErrDetail = &v
+}
+
+// GetErrMain returns the ErrMain field value if set, zero value otherwise.
+func (o *ApAfcInfoOpenApiVO) GetErrMain() int32 {
+	if o == nil || IsNil(o.ErrMain) {
+		var ret int32
+		return ret
+	}
+	return *o.ErrMain
+}
+
+// GetErrMainOk returns a tuple with the ErrMain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApAfcInfoOpenApiVO) GetErrMainOk() (*int32, bool) {
+	if o == nil || IsNil(o.ErrMain) {
+		return nil, false
+	}
+	return o.ErrMain, true
+}
+
+// HasErrMain returns a boolean if a field has been set.
+func (o *ApAfcInfoOpenApiVO) HasErrMain() bool {
+	if o != nil && !IsNil(o.ErrMain) {
+		return true
+	}
+
+	return false
+}
+
+// SetErrMain gets a reference to the given int32 and assigns it to the ErrMain field.
+func (o *ApAfcInfoOpenApiVO) SetErrMain(v int32) {
+	o.ErrMain = &v
 }
 
 // GetExpirationTimeSec returns the ExpirationTimeSec field value if set, zero value otherwise.
@@ -142,6 +280,38 @@ func (o *ApAfcInfoOpenApiVO) SetLastResponseTimeSec(v int64) {
 	o.LastResponseTimeSec = &v
 }
 
+// GetProcessing returns the Processing field value if set, zero value otherwise.
+func (o *ApAfcInfoOpenApiVO) GetProcessing() bool {
+	if o == nil || IsNil(o.Processing) {
+		var ret bool
+		return ret
+	}
+	return *o.Processing
+}
+
+// GetProcessingOk returns a tuple with the Processing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApAfcInfoOpenApiVO) GetProcessingOk() (*bool, bool) {
+	if o == nil || IsNil(o.Processing) {
+		return nil, false
+	}
+	return o.Processing, true
+}
+
+// HasProcessing returns a boolean if a field has been set.
+func (o *ApAfcInfoOpenApiVO) HasProcessing() bool {
+	if o != nil && !IsNil(o.Processing) {
+		return true
+	}
+
+	return false
+}
+
+// SetProcessing gets a reference to the given bool and assigns it to the Processing field.
+func (o *ApAfcInfoOpenApiVO) SetProcessing(v bool) {
+	o.Processing = &v
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ApAfcInfoOpenApiVO) GetStatus() bool {
 	if o == nil || IsNil(o.Status) {
@@ -184,6 +354,18 @@ func (o ApAfcInfoOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o ApAfcInfoOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Available6g) {
+		toSerialize["available6g"] = o.Available6g
+	}
+	if !IsNil(o.ErrCode) {
+		toSerialize["errCode"] = o.ErrCode
+	}
+	if !IsNil(o.ErrDetail) {
+		toSerialize["errDetail"] = o.ErrDetail
+	}
+	if !IsNil(o.ErrMain) {
+		toSerialize["errMain"] = o.ErrMain
+	}
 	if !IsNil(o.ExpirationTimeSec) {
 		toSerialize["expirationTimeSec"] = o.ExpirationTimeSec
 	}
@@ -192,6 +374,9 @@ func (o ApAfcInfoOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LastResponseTimeSec) {
 		toSerialize["lastResponseTimeSec"] = o.LastResponseTimeSec
+	}
+	if !IsNil(o.Processing) {
+		toSerialize["processing"] = o.Processing
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

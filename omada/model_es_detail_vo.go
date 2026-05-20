@@ -35,6 +35,7 @@ type ESDetailVO struct {
 	Compatible *int32 `json:"compatible,omitempty"`
 	// Model complex used in the backend.Ap：model+(country)+modelVersion,  EAP225(EU) v3.0 Ap: specialModel+modelVersion, EAP225-Outdoor-1a20a950b8d950e8 v1.0  Gateway/Switch：model+modelVersion, Osg v3.0
 	CompoundModel *string `json:"compoundModel,omitempty"`
+	CpuUtil *int32 `json:"cpuUtil,omitempty"`
 	// Customer ID
 	CustomId *string `json:"customId,omitempty"`
 	// Customer name
@@ -92,6 +93,7 @@ type ESDetailVO struct {
 	// Device mac
 	Mac *string `json:"mac,omitempty"`
 	ManagerMark *int32 `json:"managerMark,omitempty"`
+	MemUtil *int32 `json:"memUtil,omitempty"`
 	// Model of device,for example:EAP225
 	Model *string `json:"model,omitempty"`
 	// Model version of device,for example:3.0
@@ -444,6 +446,38 @@ func (o *ESDetailVO) HasCompoundModel() bool {
 // SetCompoundModel gets a reference to the given string and assigns it to the CompoundModel field.
 func (o *ESDetailVO) SetCompoundModel(v string) {
 	o.CompoundModel = &v
+}
+
+// GetCpuUtil returns the CpuUtil field value if set, zero value otherwise.
+func (o *ESDetailVO) GetCpuUtil() int32 {
+	if o == nil || IsNil(o.CpuUtil) {
+		var ret int32
+		return ret
+	}
+	return *o.CpuUtil
+}
+
+// GetCpuUtilOk returns a tuple with the CpuUtil field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetCpuUtilOk() (*int32, bool) {
+	if o == nil || IsNil(o.CpuUtil) {
+		return nil, false
+	}
+	return o.CpuUtil, true
+}
+
+// HasCpuUtil returns a boolean if a field has been set.
+func (o *ESDetailVO) HasCpuUtil() bool {
+	if o != nil && !IsNil(o.CpuUtil) {
+		return true
+	}
+
+	return false
+}
+
+// SetCpuUtil gets a reference to the given int32 and assigns it to the CpuUtil field.
+func (o *ESDetailVO) SetCpuUtil(v int32) {
+	o.CpuUtil = &v
 }
 
 // GetCustomId returns the CustomId field value if set, zero value otherwise.
@@ -1660,6 +1694,38 @@ func (o *ESDetailVO) HasManagerMark() bool {
 // SetManagerMark gets a reference to the given int32 and assigns it to the ManagerMark field.
 func (o *ESDetailVO) SetManagerMark(v int32) {
 	o.ManagerMark = &v
+}
+
+// GetMemUtil returns the MemUtil field value if set, zero value otherwise.
+func (o *ESDetailVO) GetMemUtil() int32 {
+	if o == nil || IsNil(o.MemUtil) {
+		var ret int32
+		return ret
+	}
+	return *o.MemUtil
+}
+
+// GetMemUtilOk returns a tuple with the MemUtil field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetMemUtilOk() (*int32, bool) {
+	if o == nil || IsNil(o.MemUtil) {
+		return nil, false
+	}
+	return o.MemUtil, true
+}
+
+// HasMemUtil returns a boolean if a field has been set.
+func (o *ESDetailVO) HasMemUtil() bool {
+	if o != nil && !IsNil(o.MemUtil) {
+		return true
+	}
+
+	return false
+}
+
+// SetMemUtil gets a reference to the given int32 and assigns it to the MemUtil field.
+func (o *ESDetailVO) SetMemUtil(v int32) {
+	o.MemUtil = &v
 }
 
 // GetModel returns the Model field value if set, zero value otherwise.
@@ -3395,6 +3461,9 @@ func (o ESDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CompoundModel) {
 		toSerialize["compoundModel"] = o.CompoundModel
 	}
+	if !IsNil(o.CpuUtil) {
+		toSerialize["cpuUtil"] = o.CpuUtil
+	}
 	if !IsNil(o.CustomId) {
 		toSerialize["customId"] = o.CustomId
 	}
@@ -3508,6 +3577,9 @@ func (o ESDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ManagerMark) {
 		toSerialize["managerMark"] = o.ManagerMark
+	}
+	if !IsNil(o.MemUtil) {
+		toSerialize["memUtil"] = o.MemUtil
 	}
 	if !IsNil(o.Model) {
 		toSerialize["model"] = o.Model

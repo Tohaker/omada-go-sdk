@@ -534,6 +534,22 @@ func Test_omada_StackAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test StackAPIService GetRpvstInstancesDetail", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var stackId string
+
+		resp, httpRes, err := apiClient.StackAPI.GetRpvstInstancesDetail(context.Background(), omadacId, siteId, stackId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test StackAPIService GetStackCableTestFullResults", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -657,6 +673,38 @@ func Test_omada_StackAPIService(t *testing.T) {
 		var stackId string
 
 		resp, httpRes, err := apiClient.StackAPI.GetStackRememberMe(context.Background(), omadacId, siteId, stackId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StackAPIService GetStackRpvstInstances", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var stackId string
+
+		resp, httpRes, err := apiClient.StackAPI.GetStackRpvstInstances(context.Background(), omadacId, siteId, stackId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StackAPIService GetStackUsedSdmNum", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var stackId string
+
+		resp, httpRes, err := apiClient.StackAPI.GetStackUsedSdmNum(context.Background(), omadacId, siteId, stackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

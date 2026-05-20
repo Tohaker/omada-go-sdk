@@ -23,6 +23,8 @@ type TopologyClientWirelessLinkInfo struct {
 	Channel *int32 `json:"channel,omitempty"`
 	// RadioId, it should be a value as follows: 0:2G, 1:5G, 2:5G2, 3:6G.
 	RadioId *int32 `json:"radioId,omitempty"`
+	// Signal strength, unit: dBm
+	Rssi *int32 `json:"rssi,omitempty"`
 }
 
 // NewTopologyClientWirelessLinkInfo instantiates a new TopologyClientWirelessLinkInfo object
@@ -106,6 +108,38 @@ func (o *TopologyClientWirelessLinkInfo) SetRadioId(v int32) {
 	o.RadioId = &v
 }
 
+// GetRssi returns the Rssi field value if set, zero value otherwise.
+func (o *TopologyClientWirelessLinkInfo) GetRssi() int32 {
+	if o == nil || IsNil(o.Rssi) {
+		var ret int32
+		return ret
+	}
+	return *o.Rssi
+}
+
+// GetRssiOk returns a tuple with the Rssi field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyClientWirelessLinkInfo) GetRssiOk() (*int32, bool) {
+	if o == nil || IsNil(o.Rssi) {
+		return nil, false
+	}
+	return o.Rssi, true
+}
+
+// HasRssi returns a boolean if a field has been set.
+func (o *TopologyClientWirelessLinkInfo) HasRssi() bool {
+	if o != nil && !IsNil(o.Rssi) {
+		return true
+	}
+
+	return false
+}
+
+// SetRssi gets a reference to the given int32 and assigns it to the Rssi field.
+func (o *TopologyClientWirelessLinkInfo) SetRssi(v int32) {
+	o.Rssi = &v
+}
+
 func (o TopologyClientWirelessLinkInfo) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -121,6 +155,9 @@ func (o TopologyClientWirelessLinkInfo) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.RadioId) {
 		toSerialize["radioId"] = o.RadioId
+	}
+	if !IsNil(o.Rssi) {
+		toSerialize["rssi"] = o.Rssi
 	}
 	return toSerialize, nil
 }

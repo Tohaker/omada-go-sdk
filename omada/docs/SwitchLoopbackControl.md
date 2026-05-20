@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **MaxHops** | Pointer to **int32** | maxHops should be between 1 and 40. | [optional] 
 **Mstp** | Pointer to [**OswStpMstpConfigOpenApiVO**](OswStpMstpConfigOpenApiVO.md) |  | [optional] 
 **Priority** | Pointer to **int32** | Parameter [priority] should be an integer from 0 to 61440 and divisible by 4096. | [optional] 
-**Stp** | Pointer to **int32** | STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP  | [optional] 
+**Rpvst** | Pointer to [**OswStpRpvstVO**](OswStpRpvstVO.md) |  | [optional] 
+**Stp** | Pointer to **int32** | STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP 4: RPVST  | [optional] 
 **TxHoldCount** | Pointer to **int32** | txHoldCount should be between 1 and 20. | [optional] 
 
 ## Methods
@@ -207,6 +208,31 @@ SetPriority sets Priority field to given value.
 `func (o *SwitchLoopbackControl) HasPriority() bool`
 
 HasPriority returns a boolean if a field has been set.
+
+### GetRpvst
+
+`func (o *SwitchLoopbackControl) GetRpvst() OswStpRpvstVO`
+
+GetRpvst returns the Rpvst field if non-nil, zero value otherwise.
+
+### GetRpvstOk
+
+`func (o *SwitchLoopbackControl) GetRpvstOk() (*OswStpRpvstVO, bool)`
+
+GetRpvstOk returns a tuple with the Rpvst field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRpvst
+
+`func (o *SwitchLoopbackControl) SetRpvst(v OswStpRpvstVO)`
+
+SetRpvst sets Rpvst field to given value.
+
+### HasRpvst
+
+`func (o *SwitchLoopbackControl) HasRpvst() bool`
+
+HasRpvst returns a boolean if a field has been set.
 
 ### GetStp
 

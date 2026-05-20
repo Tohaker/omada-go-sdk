@@ -13,13 +13,16 @@ Method | HTTP request | Description
 [**GetSsidDetailTemplate**](WirelessNetworkTemplateAPI.md#getssiddetailtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Get SSID template detail info
 [**GetSsidListTemplate**](WirelessNetworkTemplateAPI.md#getssidlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids | Get SSID template list
 [**GetWlanGroupListTemplate**](WirelessNetworkTemplateAPI.md#getwlangrouplisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Get WLAN group template list
+[**UpdateSsidBandSteerConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidbandsteerconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-band-steer | Update SSID template band steer config
 [**UpdateSsidBasicConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidbasicconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-basic-config | Update SSID template basic config
 [**UpdateSsidDhcpOptionConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessiddhcpoptionconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-dhcp-option | Update SSID template DHCP option 82 config
 [**UpdateSsidHotspotV2SettingTemplate**](WirelessNetworkTemplateAPI.md#updatessidhotspotv2settingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-hotspotv2 | Update SSID template Hotspot2.0 config
+[**UpdateSsidLoadBalanceConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidloadbalanceconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-load-balance | Update SSID template load balance config
 [**UpdateSsidMacFilterConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidmacfilterconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-mac-filter | Update SSID template mac filter config
 [**UpdateSsidMultiCastConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidmulticastconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-multicast-config | Update SSID template Multicast/Broadcast management config
 [**UpdateSsidRateControlConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidratecontrolconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-control | Update SSID template 802.11 rate control config
 [**UpdateSsidRateLimitConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidratelimitconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-limit | Update SSID template rate limit config
+[**UpdateSsidWifiCallingConfigTemplate**](WirelessNetworkTemplateAPI.md#updatessidwificallingconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wifi-calling | Update SSID template wifi calling config
 [**UpdateSsidWlanScheduleTemplate**](WirelessNetworkTemplateAPI.md#updatessidwlanscheduletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wlan-schedule | Update SSID template WLAN schedule config
 [**UpdateWlanGroupTemplate**](WirelessNetworkTemplateAPI.md#updatewlangrouptemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN group template
 
@@ -717,6 +720,87 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## UpdateSsidBandSteerConfigTemplate
+
+> OperationResponseWithoutResult UpdateSsidBandSteerConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidBandSteerOpenApiVO(updateSsidBandSteerOpenApiVO).Execute()
+
+Update SSID template band steer config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	wlanId := "wlanId_example" // string | WLAN ID
+	ssidId := "ssidId_example" // string | SSID ID
+	updateSsidBandSteerOpenApiVO := *openapiclient.NewUpdateSsidBandSteerOpenApiVO(int32(123)) // UpdateSsidBandSteerOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidBandSteerConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidBandSteerOpenApiVO(updateSsidBandSteerOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WirelessNetworkTemplateAPI.UpdateSsidBandSteerConfigTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSsidBandSteerConfigTemplate`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `WirelessNetworkTemplateAPI.UpdateSsidBandSteerConfigTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+**wlanId** | **string** | WLAN ID | 
+**ssidId** | **string** | SSID ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSsidBandSteerConfigTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **updateSsidBandSteerOpenApiVO** | [**UpdateSsidBandSteerOpenApiVO**](UpdateSsidBandSteerOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UpdateSsidBasicConfigTemplate
 
 > OperationResponseWithoutResult UpdateSsidBasicConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidBasicConfigOpenApiVO(updateSsidBasicConfigOpenApiVO).Execute()
@@ -941,6 +1025,87 @@ Name | Type | Description  | Notes
 
 
  **updateSsidHotspotV2SettingOpenApiVO** | [**UpdateSsidHotspotV2SettingOpenApiVO**](UpdateSsidHotspotV2SettingOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSsidLoadBalanceConfigTemplate
+
+> OperationResponseWithoutResult UpdateSsidLoadBalanceConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidLoadBalanceOpenApiVO(updateSsidLoadBalanceOpenApiVO).Execute()
+
+Update SSID template load balance config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	wlanId := "wlanId_example" // string | WLAN ID
+	ssidId := "ssidId_example" // string | SSID ID
+	updateSsidLoadBalanceOpenApiVO := *openapiclient.NewUpdateSsidLoadBalanceOpenApiVO(false) // UpdateSsidLoadBalanceOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidLoadBalanceConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateSsidLoadBalanceOpenApiVO(updateSsidLoadBalanceOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WirelessNetworkTemplateAPI.UpdateSsidLoadBalanceConfigTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSsidLoadBalanceConfigTemplate`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `WirelessNetworkTemplateAPI.UpdateSsidLoadBalanceConfigTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+**wlanId** | **string** | WLAN ID | 
+**ssidId** | **string** | SSID ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSsidLoadBalanceConfigTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **updateSsidLoadBalanceOpenApiVO** | [**UpdateSsidLoadBalanceOpenApiVO**](UpdateSsidLoadBalanceOpenApiVO.md) |  | 
 
 ### Return type
 
@@ -1265,6 +1430,87 @@ Name | Type | Description  | Notes
 
 
  **updateSsidRateLimitOpenApiVO** | [**UpdateSsidRateLimitOpenApiVO**](UpdateSsidRateLimitOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSsidWifiCallingConfigTemplate
+
+> OperationResponseWithoutResult UpdateSsidWifiCallingConfigTemplate(ctx, omadacId, siteTemplateId, wlanId, ssidId).UpdateWifiCallingOpenApiVO(updateWifiCallingOpenApiVO).Execute()
+
+Update SSID template wifi calling config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	wlanId := "wlanId_example" // string | WLAN ID
+	ssidId := "ssidId_example" // string | SSID ID
+	updateWifiCallingOpenApiVO := *openapiclient.NewUpdateWifiCallingOpenApiVO(false) // UpdateWifiCallingOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WirelessNetworkTemplateAPI.UpdateSsidWifiCallingConfigTemplate(context.Background(), omadacId, siteTemplateId, wlanId, ssidId).UpdateWifiCallingOpenApiVO(updateWifiCallingOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WirelessNetworkTemplateAPI.UpdateSsidWifiCallingConfigTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSsidWifiCallingConfigTemplate`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `WirelessNetworkTemplateAPI.UpdateSsidWifiCallingConfigTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+**wlanId** | **string** | WLAN ID | 
+**ssidId** | **string** | SSID ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSsidWifiCallingConfigTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **updateWifiCallingOpenApiVO** | [**UpdateWifiCallingOpenApiVO**](UpdateWifiCallingOpenApiVO.md) |  | 
 
 ### Return type
 

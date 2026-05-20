@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Ipaddr** | Pointer to **string** | IP address. | [optional] 
 **MainProto** | Pointer to **string** | The main virtual WAN IPv4 proto type, use static, dhcp, pppoe. | [optional] 
 **Netmask** | Pointer to **string** | Subnet mask. | [optional] 
-**Proto** | Pointer to **string** | The second virtual WAN IPv4 proto type, use static, dhcp, pppoe. | [optional] 
+**Proto** | **string** | The second virtual WAN IPv4 proto type, use static, dhcp, pppoe. | 
 **Server** | Pointer to **string** | VPN server IP/domain. | [optional] 
 
 ## Methods
 
 ### NewVirtualWanIpv4Connection2OpenApiVO
 
-`func NewVirtualWanIpv4Connection2OpenApiVO() *VirtualWanIpv4Connection2OpenApiVO`
+`func NewVirtualWanIpv4Connection2OpenApiVO(proto string, ) *VirtualWanIpv4Connection2OpenApiVO`
 
 NewVirtualWanIpv4Connection2OpenApiVO instantiates a new VirtualWanIpv4Connection2OpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -201,11 +201,6 @@ and a boolean to check if the value has been set.
 
 SetProto sets Proto field to given value.
 
-### HasProto
-
-`func (o *VirtualWanIpv4Connection2OpenApiVO) HasProto() bool`
-
-HasProto returns a boolean if a field has been set.
 
 ### GetServer
 

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Region** | Pointer to **string** | The region where the site is located. | [optional] 
 **RegionLatitude** | Pointer to **float64** | The region latitude of the site. | [optional] 
 **RegionLongitude** | Pointer to **float64** | The region longitude of the site. | [optional] 
-**Role** | **int32** | The role of sdWan member, hub or spoke. | 
+**Role** | Pointer to **int32** | The role of sdWan member, hub or spoke. | [optional] 
 **SdWanIp** | Pointer to **string** | The sdWan IP of the sdWan member. | [optional] 
 **ShowModel** | Pointer to **string** | The device showmodel of the sdWan member. | [optional] 
 **SiteId** | Pointer to **string** | The ID of the site where the sdWan member is located. | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewSdWanMemberInfo
 
-`func NewSdWanMemberInfo(role int32, ) *SdWanMemberInfo`
+`func NewSdWanMemberInfo() *SdWanMemberInfo`
 
 NewSdWanMemberInfo instantiates a new SdWanMemberInfo object
 This constructor will assign default values to properties that have it defined,
@@ -416,6 +416,11 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
+### HasRole
+
+`func (o *SdWanMemberInfo) HasRole() bool`
+
+HasRole returns a boolean if a field has been set.
 
 ### GetSdWanIp
 

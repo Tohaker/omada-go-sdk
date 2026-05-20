@@ -309,6 +309,22 @@ type SwitchAPI interface {
 	DeleteSwitchLagExecute(r SwitchAPIDeleteSwitchLagRequest) (*OperationResponseString, *http.Response, error)
 
 	/*
+	GetBatchRpvstInstances Get Batch Rpvst Instances
+
+	Get Batch Rpvst Instances.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return SwitchAPIGetBatchRpvstInstancesRequest
+	*/
+	GetBatchRpvstInstances(ctx context.Context, omadacId string, siteId string) SwitchAPIGetBatchRpvstInstancesRequest
+
+	// GetBatchRpvstInstancesExecute executes the request
+	//  @return OperationResponse
+	GetBatchRpvstInstancesExecute(r SwitchAPIGetBatchRpvstInstancesRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	GetBatchSelectOswDetailsView Get the switches and ports detail in batches
 
 	Get the switches and ports detail in batches.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Device Config Page View Only
@@ -627,6 +643,23 @@ type SwitchAPI interface {
 	GetGridVrfExecute(r SwitchAPIGetGridVrfRequest) (*OperationResponseGridVOOswVrfOpenApiVO, *http.Response, error)
 
 	/*
+	GetL3SwitchUsedSdmNum Get the used sdm template num on the campus series switches
+
+	Get the used template num on the campus series switches.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param switchMac Switch MAC address, like AA-BB-CC-DD-EE-FF
+	@return SwitchAPIGetL3SwitchUsedSdmNumRequest
+	*/
+	GetL3SwitchUsedSdmNum(ctx context.Context, omadacId string, siteId string, switchMac string) SwitchAPIGetL3SwitchUsedSdmNumRequest
+
+	// GetL3SwitchUsedSdmNumExecute executes the request
+	//  @return OperationResponseOswL3SdmApplicationVO
+	GetL3SwitchUsedSdmNumExecute(r SwitchAPIGetL3SwitchUsedSdmNumRequest) (*OperationResponseOswL3SdmApplicationVO, *http.Response, error)
+
+	/*
 	GetOswDDMInfo Get osw ddm info.
 
 	Get osw ddm info.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only
@@ -759,6 +792,40 @@ type SwitchAPI interface {
 	// GetPortTagsExecute executes the request
 	//  @return []PortTagOpenApiVO
 	GetPortTagsExecute(r SwitchAPIGetPortTagsRequest) ([]PortTagOpenApiVO, *http.Response, error)
+
+	/*
+	GetRpvstInstances Get Rpvst Instances
+
+	Get Rpvst Instances.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param switchMac Switch MAC address, like AA-BB-CC-DD-EE-FF
+	@return SwitchAPIGetRpvstInstancesRequest
+	*/
+	GetRpvstInstances(ctx context.Context, omadacId string, siteId string, switchMac string) SwitchAPIGetRpvstInstancesRequest
+
+	// GetRpvstInstancesExecute executes the request
+	//  @return OperationResponse
+	GetRpvstInstancesExecute(r SwitchAPIGetRpvstInstancesRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	GetStpInstancesDetail Get StpInstanceDetail
+
+	Get StpInstanceDetail.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param switchMac Switch MAC address, like AA-BB-CC-DD-EE-FF
+	@return SwitchAPIGetStpInstancesDetailRequest
+	*/
+	GetStpInstancesDetail(ctx context.Context, omadacId string, siteId string, switchMac string) SwitchAPIGetStpInstancesDetailRequest
+
+	// GetStpInstancesDetailExecute executes the request
+	//  @return OperationResponse
+	GetStpInstancesDetailExecute(r SwitchAPIGetStpInstancesDetailRequest) (*OperationResponse, *http.Response, error)
 
 	/*
 	GetSwitchExistNetworks Get the networks existing on the switch
@@ -3324,6 +3391,138 @@ func (a *SwitchAPIService) DeleteSwitchLagExecute(r SwitchAPIDeleteSwitchLagRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SwitchAPIGetBatchRpvstInstancesRequest struct {
+	ctx context.Context
+	ApiService SwitchAPI
+	omadacId string
+	siteId string
+	requestBody *[]string
+}
+
+func (r SwitchAPIGetBatchRpvstInstancesRequest) RequestBody(requestBody []string) SwitchAPIGetBatchRpvstInstancesRequest {
+	r.requestBody = &requestBody
+	return r
+}
+
+func (r SwitchAPIGetBatchRpvstInstancesRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetBatchRpvstInstancesExecute(r)
+}
+
+/*
+GetBatchRpvstInstances Get Batch Rpvst Instances
+
+Get Batch Rpvst Instances.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return SwitchAPIGetBatchRpvstInstancesRequest
+*/
+func (a *SwitchAPIService) GetBatchRpvstInstances(ctx context.Context, omadacId string, siteId string) SwitchAPIGetBatchRpvstInstancesRequest {
+	return SwitchAPIGetBatchRpvstInstancesRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *SwitchAPIService) GetBatchRpvstInstancesExecute(r SwitchAPIGetBatchRpvstInstancesRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetBatchRpvstInstances")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switches/rpvst-instances"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.requestBody == nil {
+		return localVarReturnValue, nil, reportError("requestBody is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -5996,6 +6195,131 @@ func (a *SwitchAPIService) GetGridVrfExecute(r SwitchAPIGetGridVrfRequest) (*Ope
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type SwitchAPIGetL3SwitchUsedSdmNumRequest struct {
+	ctx context.Context
+	ApiService SwitchAPI
+	omadacId string
+	siteId string
+	switchMac string
+}
+
+func (r SwitchAPIGetL3SwitchUsedSdmNumRequest) Execute() (*OperationResponseOswL3SdmApplicationVO, *http.Response, error) {
+	return r.ApiService.GetL3SwitchUsedSdmNumExecute(r)
+}
+
+/*
+GetL3SwitchUsedSdmNum Get the used sdm template num on the campus series switches
+
+Get the used template num on the campus series switches.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param switchMac Switch MAC address, like AA-BB-CC-DD-EE-FF
+ @return SwitchAPIGetL3SwitchUsedSdmNumRequest
+*/
+func (a *SwitchAPIService) GetL3SwitchUsedSdmNum(ctx context.Context, omadacId string, siteId string, switchMac string) SwitchAPIGetL3SwitchUsedSdmNumRequest {
+	return SwitchAPIGetL3SwitchUsedSdmNumRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		switchMac: switchMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOswL3SdmApplicationVO
+func (a *SwitchAPIService) GetL3SwitchUsedSdmNumExecute(r SwitchAPIGetL3SwitchUsedSdmNumRequest) (*OperationResponseOswL3SdmApplicationVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOswL3SdmApplicationVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetL3SwitchUsedSdmNum")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/l3-sdm-used"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"switchMac"+"}", url.PathEscape(parameterValueToString(r.switchMac, "switchMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type SwitchAPIGetOswDDMInfoRequest struct {
 	ctx context.Context
 	ApiService SwitchAPI
@@ -7014,6 +7338,267 @@ func (a *SwitchAPIService) GetPortTagsExecute(r SwitchAPIGetPortTagsRequest) ([]
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SwitchAPIGetRpvstInstancesRequest struct {
+	ctx context.Context
+	ApiService SwitchAPI
+	omadacId string
+	siteId string
+	switchMac string
+}
+
+func (r SwitchAPIGetRpvstInstancesRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetRpvstInstancesExecute(r)
+}
+
+/*
+GetRpvstInstances Get Rpvst Instances
+
+Get Rpvst Instances.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param switchMac Switch MAC address, like AA-BB-CC-DD-EE-FF
+ @return SwitchAPIGetRpvstInstancesRequest
+*/
+func (a *SwitchAPIService) GetRpvstInstances(ctx context.Context, omadacId string, siteId string, switchMac string) SwitchAPIGetRpvstInstancesRequest {
+	return SwitchAPIGetRpvstInstancesRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		switchMac: switchMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *SwitchAPIService) GetRpvstInstancesExecute(r SwitchAPIGetRpvstInstancesRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetRpvstInstances")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/rpvst-instances"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"switchMac"+"}", url.PathEscape(parameterValueToString(r.switchMac, "switchMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SwitchAPIGetStpInstancesDetailRequest struct {
+	ctx context.Context
+	ApiService SwitchAPI
+	omadacId string
+	siteId string
+	switchMac string
+	stpInstanceDetailVO *StpInstanceDetailVO
+}
+
+func (r SwitchAPIGetStpInstancesDetailRequest) StpInstanceDetailVO(stpInstanceDetailVO StpInstanceDetailVO) SwitchAPIGetStpInstancesDetailRequest {
+	r.stpInstanceDetailVO = &stpInstanceDetailVO
+	return r
+}
+
+func (r SwitchAPIGetStpInstancesDetailRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.GetStpInstancesDetailExecute(r)
+}
+
+/*
+GetStpInstancesDetail Get StpInstanceDetail
+
+Get StpInstanceDetail.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param switchMac Switch MAC address, like AA-BB-CC-DD-EE-FF
+ @return SwitchAPIGetStpInstancesDetailRequest
+*/
+func (a *SwitchAPIService) GetStpInstancesDetail(ctx context.Context, omadacId string, siteId string, switchMac string) SwitchAPIGetStpInstancesDetailRequest {
+	return SwitchAPIGetStpInstancesDetailRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		switchMac: switchMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *SwitchAPIService) GetStpInstancesDetailExecute(r SwitchAPIGetStpInstancesDetailRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetStpInstancesDetail")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/stp/instance-detail"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"switchMac"+"}", url.PathEscape(parameterValueToString(r.switchMac, "switchMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.stpInstanceDetailVO == nil {
+		return localVarReturnValue, nil, reportError("stpInstanceDetailVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.stpInstanceDetailVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
