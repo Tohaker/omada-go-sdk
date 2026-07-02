@@ -29,6 +29,8 @@ type WifiHealthVO struct {
 	ChannelUtilScore *int32 `json:"channelUtilScore,omitempty"`
 	// RSSI score
 	RssiScore *int32 `json:"rssiScore,omitempty"`
+	// support AP Access capacity score
+	SupportAccessCapacity *bool `json:"supportAccessCapacity,omitempty"`
 }
 
 // NewWifiHealthVO instantiates a new WifiHealthVO object
@@ -208,6 +210,38 @@ func (o *WifiHealthVO) SetRssiScore(v int32) {
 	o.RssiScore = &v
 }
 
+// GetSupportAccessCapacity returns the SupportAccessCapacity field value if set, zero value otherwise.
+func (o *WifiHealthVO) GetSupportAccessCapacity() bool {
+	if o == nil || IsNil(o.SupportAccessCapacity) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportAccessCapacity
+}
+
+// GetSupportAccessCapacityOk returns a tuple with the SupportAccessCapacity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WifiHealthVO) GetSupportAccessCapacityOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportAccessCapacity) {
+		return nil, false
+	}
+	return o.SupportAccessCapacity, true
+}
+
+// HasSupportAccessCapacity returns a boolean if a field has been set.
+func (o *WifiHealthVO) HasSupportAccessCapacity() bool {
+	if o != nil && !IsNil(o.SupportAccessCapacity) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportAccessCapacity gets a reference to the given bool and assigns it to the SupportAccessCapacity field.
+func (o *WifiHealthVO) SetSupportAccessCapacity(v bool) {
+	o.SupportAccessCapacity = &v
+}
+
 func (o WifiHealthVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -232,6 +266,9 @@ func (o WifiHealthVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RssiScore) {
 		toSerialize["rssiScore"] = o.RssiScore
+	}
+	if !IsNil(o.SupportAccessCapacity) {
+		toSerialize["supportAccessCapacity"] = o.SupportAccessCapacity
 	}
 	return toSerialize, nil
 }

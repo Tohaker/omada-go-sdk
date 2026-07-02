@@ -2789,7 +2789,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	sSHSetting := *openapiclient.NewSSHSetting(false, int32(123)) // SSHSetting | 
+	sSHSetting := *openapiclient.NewSSHSetting(false) // SSHSetting | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

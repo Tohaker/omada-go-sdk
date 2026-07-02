@@ -2633,7 +2633,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
-	sSHSetting := *openapiclient.NewSSHSetting(false, int32(123)) // SSHSetting | 
+	sSHSetting := *openapiclient.NewSSHSetting(false) // SSHSetting | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

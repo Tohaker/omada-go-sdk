@@ -136,6 +136,7 @@ type OsgDetailVO struct {
 	PoeRemainPercent *float64 `json:"poeRemainPercent,omitempty"`
 	PoeSettings []OsgPortPoeVO `json:"poeSettings,omitempty"`
 	PortConfigs []OsgPortConfigVO `json:"portConfigs,omitempty"`
+	PortGeneralConfigs []OsgPortGeneralConfigVO `json:"portGeneralConfigs,omitempty"`
 	PortNum *int32 `json:"portNum,omitempty"`
 	PortStats []OsgPortStatVO `json:"portStats,omitempty"`
 	PublicIp *string `json:"publicIp,omitempty"`
@@ -2985,6 +2986,38 @@ func (o *OsgDetailVO) HasPortConfigs() bool {
 // SetPortConfigs gets a reference to the given []OsgPortConfigVO and assigns it to the PortConfigs field.
 func (o *OsgDetailVO) SetPortConfigs(v []OsgPortConfigVO) {
 	o.PortConfigs = v
+}
+
+// GetPortGeneralConfigs returns the PortGeneralConfigs field value if set, zero value otherwise.
+func (o *OsgDetailVO) GetPortGeneralConfigs() []OsgPortGeneralConfigVO {
+	if o == nil || IsNil(o.PortGeneralConfigs) {
+		var ret []OsgPortGeneralConfigVO
+		return ret
+	}
+	return o.PortGeneralConfigs
+}
+
+// GetPortGeneralConfigsOk returns a tuple with the PortGeneralConfigs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgDetailVO) GetPortGeneralConfigsOk() ([]OsgPortGeneralConfigVO, bool) {
+	if o == nil || IsNil(o.PortGeneralConfigs) {
+		return nil, false
+	}
+	return o.PortGeneralConfigs, true
+}
+
+// HasPortGeneralConfigs returns a boolean if a field has been set.
+func (o *OsgDetailVO) HasPortGeneralConfigs() bool {
+	if o != nil && !IsNil(o.PortGeneralConfigs) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortGeneralConfigs gets a reference to the given []OsgPortGeneralConfigVO and assigns it to the PortGeneralConfigs field.
+func (o *OsgDetailVO) SetPortGeneralConfigs(v []OsgPortGeneralConfigVO) {
+	o.PortGeneralConfigs = v
 }
 
 // GetPortNum returns the PortNum field value if set, zero value otherwise.
@@ -6262,6 +6295,9 @@ func (o OsgDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PortConfigs) {
 		toSerialize["portConfigs"] = o.PortConfigs
+	}
+	if !IsNil(o.PortGeneralConfigs) {
+		toSerialize["portGeneralConfigs"] = o.PortGeneralConfigs
 	}
 	if !IsNil(o.PortNum) {
 		toSerialize["portNum"] = o.PortNum

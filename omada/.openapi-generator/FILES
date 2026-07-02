@@ -2398,6 +2398,7 @@ docs/OsgModelOpenApiVO.md
 docs/OsgPinDetailOpenApiVO.md
 docs/OsgPortBandCtrlVO.md
 docs/OsgPortConfigVO.md
+docs/OsgPortGeneralConfigVO.md
 docs/OsgPortInfoOpenApiVO.md
 docs/OsgPortInfoVO.md
 docs/OsgPortPoeOpenApiVO.md
@@ -5638,6 +5639,7 @@ model_osg_model_open_api_vo.go
 model_osg_pin_detail_open_api_vo.go
 model_osg_port_band_ctrl_vo.go
 model_osg_port_config_vo.go
+model_osg_port_general_config_vo.go
 model_osg_port_info_open_api_vo.go
 model_osg_port_info_vo.go
 model_osg_port_poe_open_api_vo.go

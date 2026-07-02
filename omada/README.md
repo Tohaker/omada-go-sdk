@@ -4547,6 +4547,7 @@ Class | Method | HTTP request | Description
  - [OsgPinDetailOpenApiVO](docs/OsgPinDetailOpenApiVO.md)
  - [OsgPortBandCtrlVO](docs/OsgPortBandCtrlVO.md)
  - [OsgPortConfigVO](docs/OsgPortConfigVO.md)
+ - [OsgPortGeneralConfigVO](docs/OsgPortGeneralConfigVO.md)
  - [OsgPortInfoOpenApiVO](docs/OsgPortInfoOpenApiVO.md)
  - [OsgPortInfoVO](docs/OsgPortInfoVO.md)
  - [OsgPortPoeOpenApiVO](docs/OsgPortPoeOpenApiVO.md)
