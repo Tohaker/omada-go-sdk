@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ModelVersion** | Pointer to **string** | The client UplinkDevice modelVersion | [optional] 
 **Name** | Pointer to **string** | The client UplinkDevice name | [optional] 
 **ShowModel** | Pointer to **string** | The client UplinkDevice showModel | [optional] 
+**StandardPort** | Pointer to **string** | The client UplinkDevice standard port | [optional] 
 **Type** | Pointer to **string** | The client UplinkDevice type.Such as: ap, switch, gateway | [optional] 
 **UplinkPort** | Pointer to **string** | The client UplinkDevice port | [optional] 
 **UplinkType** | Pointer to **int32** | The client link type | [optional] 
@@ -182,6 +183,31 @@ SetShowModel sets ShowModel field to given value.
 `func (o *ClientUplinkDevice) HasShowModel() bool`
 
 HasShowModel returns a boolean if a field has been set.
+
+### GetStandardPort
+
+`func (o *ClientUplinkDevice) GetStandardPort() string`
+
+GetStandardPort returns the StandardPort field if non-nil, zero value otherwise.
+
+### GetStandardPortOk
+
+`func (o *ClientUplinkDevice) GetStandardPortOk() (*string, bool)`
+
+GetStandardPortOk returns a tuple with the StandardPort field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStandardPort
+
+`func (o *ClientUplinkDevice) SetStandardPort(v string)`
+
+SetStandardPort sets StandardPort field to given value.
+
+### HasStandardPort
+
+`func (o *ClientUplinkDevice) HasStandardPort() bool`
+
+HasStandardPort returns a boolean if a field has been set.
 
 ### GetType
 

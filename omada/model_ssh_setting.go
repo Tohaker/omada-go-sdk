@@ -26,7 +26,7 @@ type SSHSetting struct {
 	// Whether to enable SSH
 	SshEnable bool `json:"sshEnable"`
 	// SSH server port should be 22 or within the range of 1025-65535.
-	SshServerPort int32 `json:"sshServerPort"`
+	SshServerPort *int32 `json:"sshServerPort,omitempty"`
 }
 
 type _SSHSetting SSHSetting
@@ -35,10 +35,9 @@ type _SSHSetting SSHSetting
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSSHSetting(sshEnable bool, sshServerPort int32) *SSHSetting {
+func NewSSHSetting(sshEnable bool) *SSHSetting {
 	this := SSHSetting{}
 	this.SshEnable = sshEnable
-	this.SshServerPort = sshServerPort
 	return &this
 }
 
@@ -106,28 +105,36 @@ func (o *SSHSetting) SetSshEnable(v bool) {
 	o.SshEnable = v
 }
 
-// GetSshServerPort returns the SshServerPort field value
+// GetSshServerPort returns the SshServerPort field value if set, zero value otherwise.
 func (o *SSHSetting) GetSshServerPort() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.SshServerPort) {
 		var ret int32
 		return ret
 	}
-
-	return o.SshServerPort
+	return *o.SshServerPort
 }
 
-// GetSshServerPortOk returns a tuple with the SshServerPort field value
+// GetSshServerPortOk returns a tuple with the SshServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SSHSetting) GetSshServerPortOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SshServerPort) {
 		return nil, false
 	}
-	return &o.SshServerPort, true
+	return o.SshServerPort, true
 }
 
-// SetSshServerPort sets field value
+// HasSshServerPort returns a boolean if a field has been set.
+func (o *SSHSetting) HasSshServerPort() bool {
+	if o != nil && !IsNil(o.SshServerPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetSshServerPort gets a reference to the given int32 and assigns it to the SshServerPort field.
 func (o *SSHSetting) SetSshServerPort(v int32) {
-	o.SshServerPort = v
+	o.SshServerPort = &v
 }
 
 func (o SSHSetting) MarshalJSON() ([]byte, error) {
@@ -144,7 +151,9 @@ func (o SSHSetting) ToMap() (map[string]interface{}, error) {
 		toSerialize["layer3Access"] = o.Layer3Access
 	}
 	toSerialize["sshEnable"] = o.SshEnable
-	toSerialize["sshServerPort"] = o.SshServerPort
+	if !IsNil(o.SshServerPort) {
+		toSerialize["sshServerPort"] = o.SshServerPort
+	}
 	return toSerialize, nil
 }
 
@@ -154,7 +163,6 @@ func (o *SSHSetting) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"sshEnable",
-		"sshServerPort",
 	}
 
 	allProperties := make(map[string]interface{})

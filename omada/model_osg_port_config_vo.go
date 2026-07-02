@@ -50,6 +50,7 @@ type OsgPortConfigVO struct {
 	SupportMirror *bool `json:"supportMirror,omitempty"`
 	SupportPortControl *bool `json:"supportPortControl,omitempty"`
 	SupportPortIsolation *bool `json:"supportPortIsolation,omitempty"`
+	TagSet []string `json:"tagSet,omitempty"`
 }
 
 type _OsgPortConfigVO OsgPortConfigVO
@@ -992,6 +993,38 @@ func (o *OsgPortConfigVO) SetSupportPortIsolation(v bool) {
 	o.SupportPortIsolation = &v
 }
 
+// GetTagSet returns the TagSet field value if set, zero value otherwise.
+func (o *OsgPortConfigVO) GetTagSet() []string {
+	if o == nil || IsNil(o.TagSet) {
+		var ret []string
+		return ret
+	}
+	return o.TagSet
+}
+
+// GetTagSetOk returns a tuple with the TagSet field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgPortConfigVO) GetTagSetOk() ([]string, bool) {
+	if o == nil || IsNil(o.TagSet) {
+		return nil, false
+	}
+	return o.TagSet, true
+}
+
+// HasTagSet returns a boolean if a field has been set.
+func (o *OsgPortConfigVO) HasTagSet() bool {
+	if o != nil && !IsNil(o.TagSet) {
+		return true
+	}
+
+	return false
+}
+
+// SetTagSet gets a reference to the given []string and assigns it to the TagSet field.
+func (o *OsgPortConfigVO) SetTagSet(v []string) {
+	o.TagSet = v
+}
+
 func (o OsgPortConfigVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -1086,6 +1119,9 @@ func (o OsgPortConfigVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportPortIsolation) {
 		toSerialize["supportPortIsolation"] = o.SupportPortIsolation
+	}
+	if !IsNil(o.TagSet) {
+		toSerialize["tagSet"] = o.TagSet
 	}
 	return toSerialize, nil
 }

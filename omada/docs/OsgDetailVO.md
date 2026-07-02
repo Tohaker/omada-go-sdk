@@ -89,6 +89,7 @@ Name | Type | Description | Notes
 **PoeRemainPercent** | Pointer to **float64** |  | [optional] 
 **PoeSettings** | Pointer to [**[]OsgPortPoeVO**](OsgPortPoeVO.md) |  | [optional] 
 **PortConfigs** | Pointer to [**[]OsgPortConfigVO**](OsgPortConfigVO.md) |  | [optional] 
+**PortGeneralConfigs** | Pointer to [**[]OsgPortGeneralConfigVO**](OsgPortGeneralConfigVO.md) |  | [optional] 
 **PortNum** | Pointer to **int32** |  | [optional] 
 **PortStats** | Pointer to [**[]OsgPortStatVO**](OsgPortStatVO.md) |  | [optional] 
 **PublicIp** | Pointer to **string** |  | [optional] 
@@ -2327,6 +2328,31 @@ SetPortConfigs sets PortConfigs field to given value.
 `func (o *OsgDetailVO) HasPortConfigs() bool`
 
 HasPortConfigs returns a boolean if a field has been set.
+
+### GetPortGeneralConfigs
+
+`func (o *OsgDetailVO) GetPortGeneralConfigs() []OsgPortGeneralConfigVO`
+
+GetPortGeneralConfigs returns the PortGeneralConfigs field if non-nil, zero value otherwise.
+
+### GetPortGeneralConfigsOk
+
+`func (o *OsgDetailVO) GetPortGeneralConfigsOk() (*[]OsgPortGeneralConfigVO, bool)`
+
+GetPortGeneralConfigsOk returns a tuple with the PortGeneralConfigs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPortGeneralConfigs
+
+`func (o *OsgDetailVO) SetPortGeneralConfigs(v []OsgPortGeneralConfigVO)`
+
+SetPortGeneralConfigs sets PortGeneralConfigs field to given value.
+
+### HasPortGeneralConfigs
+
+`func (o *OsgDetailVO) HasPortGeneralConfigs() bool`
+
+HasPortGeneralConfigs returns a boolean if a field has been set.
 
 ### GetPortNum
 

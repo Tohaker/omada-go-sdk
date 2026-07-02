@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **LineStatus** | Pointer to **int32** |  | [optional] 
 **Loss** | Pointer to **float64** | Wan packet loss rate, Unit : % | [optional] 
 **Mac** | Pointer to **string** | Port mac | [optional] 
+**MaxBandwidth** | Pointer to **int64** |  | [optional] 
 **MaxRxRate** | Pointer to **int64** |  | [optional] 
 **MaxTxRate** | Pointer to **int64** |  | [optional] 
 **MirroredPorts** | Pointer to [**[]MirroredPort**](MirroredPort.md) | Mirrored ports | [optional] 
@@ -34,6 +35,7 @@ Name | Type | Description | Notes
 **PoePower** | Pointer to **float64** | Port poe power | [optional] 
 **Port** | Pointer to **int32** | Port serial number | [optional] 
 **PortDesc** | Pointer to **string** | Port description | [optional] 
+**PortUuid** | Pointer to **string** |  | [optional] 
 **Proto** | Pointer to **string** | WAN IPv4 connection type, it supports Static IP, DHCP, PPPoE, L2TP, PPTP, DS-Lite, and MAP-E. | [optional] 
 **RoamingStatus** | Pointer to **int32** |  | [optional] 
 **Rsrp** | Pointer to **int32** |  | [optional] 
@@ -537,6 +539,31 @@ SetMac sets Mac field to given value.
 
 HasMac returns a boolean if a field has been set.
 
+### GetMaxBandwidth
+
+`func (o *OsgPortStatVO) GetMaxBandwidth() int64`
+
+GetMaxBandwidth returns the MaxBandwidth field if non-nil, zero value otherwise.
+
+### GetMaxBandwidthOk
+
+`func (o *OsgPortStatVO) GetMaxBandwidthOk() (*int64, bool)`
+
+GetMaxBandwidthOk returns a tuple with the MaxBandwidth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxBandwidth
+
+`func (o *OsgPortStatVO) SetMaxBandwidth(v int64)`
+
+SetMaxBandwidth sets MaxBandwidth field to given value.
+
+### HasMaxBandwidth
+
+`func (o *OsgPortStatVO) HasMaxBandwidth() bool`
+
+HasMaxBandwidth returns a boolean if a field has been set.
+
 ### GetMaxRxRate
 
 `func (o *OsgPortStatVO) GetMaxRxRate() int64`
@@ -836,6 +863,31 @@ SetPortDesc sets PortDesc field to given value.
 `func (o *OsgPortStatVO) HasPortDesc() bool`
 
 HasPortDesc returns a boolean if a field has been set.
+
+### GetPortUuid
+
+`func (o *OsgPortStatVO) GetPortUuid() string`
+
+GetPortUuid returns the PortUuid field if non-nil, zero value otherwise.
+
+### GetPortUuidOk
+
+`func (o *OsgPortStatVO) GetPortUuidOk() (*string, bool)`
+
+GetPortUuidOk returns a tuple with the PortUuid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPortUuid
+
+`func (o *OsgPortStatVO) SetPortUuid(v string)`
+
+SetPortUuid sets PortUuid field to given value.
+
+### HasPortUuid
+
+`func (o *OsgPortStatVO) HasPortUuid() bool`
+
+HasPortUuid returns a boolean if a field has been set.
 
 ### GetProto
 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ChannelInterUtilScore** | Pointer to **int32** | AP channel interference score | [optional] 
 **ChannelUtilScore** | Pointer to **int32** | AP channel utility score | [optional] 
 **RssiScore** | Pointer to **int32** | RSSI score | [optional] 
+**SupportAccessCapacity** | Pointer to **bool** | support AP Access capacity score | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetRssiScore sets RssiScore field to given value.
 `func (o *WifiHealthVO) HasRssiScore() bool`
 
 HasRssiScore returns a boolean if a field has been set.
+
+### GetSupportAccessCapacity
+
+`func (o *WifiHealthVO) GetSupportAccessCapacity() bool`
+
+GetSupportAccessCapacity returns the SupportAccessCapacity field if non-nil, zero value otherwise.
+
+### GetSupportAccessCapacityOk
+
+`func (o *WifiHealthVO) GetSupportAccessCapacityOk() (*bool, bool)`
+
+GetSupportAccessCapacityOk returns a tuple with the SupportAccessCapacity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportAccessCapacity
+
+`func (o *WifiHealthVO) SetSupportAccessCapacity(v bool)`
+
+SetSupportAccessCapacity sets SupportAccessCapacity field to given value.
+
+### HasSupportAccessCapacity
+
+`func (o *WifiHealthVO) HasSupportAccessCapacity() bool`
+
+HasSupportAccessCapacity returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

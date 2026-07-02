@@ -31,6 +31,8 @@ type ClientUplinkDevice struct {
 	Name *string `json:"name,omitempty"`
 	// The client UplinkDevice showModel
 	ShowModel *string `json:"showModel,omitempty"`
+	// The client UplinkDevice standard port
+	StandardPort *string `json:"standardPort,omitempty"`
 	// The client UplinkDevice type.Such as: ap, switch, gateway
 	Type *string `json:"type,omitempty"`
 	// The client UplinkDevice port
@@ -248,6 +250,38 @@ func (o *ClientUplinkDevice) SetShowModel(v string) {
 	o.ShowModel = &v
 }
 
+// GetStandardPort returns the StandardPort field value if set, zero value otherwise.
+func (o *ClientUplinkDevice) GetStandardPort() string {
+	if o == nil || IsNil(o.StandardPort) {
+		var ret string
+		return ret
+	}
+	return *o.StandardPort
+}
+
+// GetStandardPortOk returns a tuple with the StandardPort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientUplinkDevice) GetStandardPortOk() (*string, bool) {
+	if o == nil || IsNil(o.StandardPort) {
+		return nil, false
+	}
+	return o.StandardPort, true
+}
+
+// HasStandardPort returns a boolean if a field has been set.
+func (o *ClientUplinkDevice) HasStandardPort() bool {
+	if o != nil && !IsNil(o.StandardPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetStandardPort gets a reference to the given string and assigns it to the StandardPort field.
+func (o *ClientUplinkDevice) SetStandardPort(v string) {
+	o.StandardPort = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ClientUplinkDevice) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -371,6 +405,9 @@ func (o ClientUplinkDevice) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ShowModel) {
 		toSerialize["showModel"] = o.ShowModel
+	}
+	if !IsNil(o.StandardPort) {
+		toSerialize["standardPort"] = o.StandardPort
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

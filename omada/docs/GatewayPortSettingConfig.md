@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **PoeMode** | Pointer to **int32** | Enter a value as follows: 0: off; 1: 802.3at/af. | [optional] 
 **Pvid** | Pointer to **int32** | Pvid(only for lan port.) | [optional] 
 **Status** | Pointer to **int32** | Enable port or not, status should be a value as follows: 0: disable; 1: enable.(When the port supports status.) | [optional] 
+**TagSet** | Pointer to **[]string** | Tag ID Set | [optional] 
 
 ## Methods
 
@@ -283,6 +284,31 @@ SetStatus sets Status field to given value.
 `func (o *GatewayPortSettingConfig) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetTagSet
+
+`func (o *GatewayPortSettingConfig) GetTagSet() []string`
+
+GetTagSet returns the TagSet field if non-nil, zero value otherwise.
+
+### GetTagSetOk
+
+`func (o *GatewayPortSettingConfig) GetTagSetOk() (*[]string, bool)`
+
+GetTagSetOk returns a tuple with the TagSet field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTagSet
+
+`func (o *GatewayPortSettingConfig) SetTagSet(v []string)`
+
+SetTagSet sets TagSet field to given value.
+
+### HasTagSet
+
+`func (o *GatewayPortSettingConfig) HasTagSet() bool`
+
+HasTagSet returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

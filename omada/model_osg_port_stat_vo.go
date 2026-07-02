@@ -45,6 +45,7 @@ type OsgPortStatVO struct {
 	Loss *float64 `json:"loss,omitempty"`
 	// Port mac
 	Mac *string `json:"mac,omitempty"`
+	MaxBandwidth *int64 `json:"maxBandwidth,omitempty"`
 	MaxRxRate *int64 `json:"maxRxRate,omitempty"`
 	MaxTxRate *int64 `json:"maxTxRate,omitempty"`
 	// Mirrored ports
@@ -64,6 +65,7 @@ type OsgPortStatVO struct {
 	Port *int32 `json:"port,omitempty"`
 	// Port description
 	PortDesc *string `json:"portDesc,omitempty"`
+	PortUuid *string `json:"portUuid,omitempty"`
 	// WAN IPv4 connection type, it supports Static IP, DHCP, PPPoE, L2TP, PPTP, DS-Lite, and MAP-E.
 	Proto *string `json:"proto,omitempty"`
 	RoamingStatus *int32 `json:"roamingStatus,omitempty"`
@@ -705,6 +707,38 @@ func (o *OsgPortStatVO) SetMac(v string) {
 	o.Mac = &v
 }
 
+// GetMaxBandwidth returns the MaxBandwidth field value if set, zero value otherwise.
+func (o *OsgPortStatVO) GetMaxBandwidth() int64 {
+	if o == nil || IsNil(o.MaxBandwidth) {
+		var ret int64
+		return ret
+	}
+	return *o.MaxBandwidth
+}
+
+// GetMaxBandwidthOk returns a tuple with the MaxBandwidth field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgPortStatVO) GetMaxBandwidthOk() (*int64, bool) {
+	if o == nil || IsNil(o.MaxBandwidth) {
+		return nil, false
+	}
+	return o.MaxBandwidth, true
+}
+
+// HasMaxBandwidth returns a boolean if a field has been set.
+func (o *OsgPortStatVO) HasMaxBandwidth() bool {
+	if o != nil && !IsNil(o.MaxBandwidth) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxBandwidth gets a reference to the given int64 and assigns it to the MaxBandwidth field.
+func (o *OsgPortStatVO) SetMaxBandwidth(v int64) {
+	o.MaxBandwidth = &v
+}
+
 // GetMaxRxRate returns the MaxRxRate field value if set, zero value otherwise.
 func (o *OsgPortStatVO) GetMaxRxRate() int64 {
 	if o == nil || IsNil(o.MaxRxRate) {
@@ -1087,6 +1121,38 @@ func (o *OsgPortStatVO) HasPortDesc() bool {
 // SetPortDesc gets a reference to the given string and assigns it to the PortDesc field.
 func (o *OsgPortStatVO) SetPortDesc(v string) {
 	o.PortDesc = &v
+}
+
+// GetPortUuid returns the PortUuid field value if set, zero value otherwise.
+func (o *OsgPortStatVO) GetPortUuid() string {
+	if o == nil || IsNil(o.PortUuid) {
+		var ret string
+		return ret
+	}
+	return *o.PortUuid
+}
+
+// GetPortUuidOk returns a tuple with the PortUuid field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgPortStatVO) GetPortUuidOk() (*string, bool) {
+	if o == nil || IsNil(o.PortUuid) {
+		return nil, false
+	}
+	return o.PortUuid, true
+}
+
+// HasPortUuid returns a boolean if a field has been set.
+func (o *OsgPortStatVO) HasPortUuid() bool {
+	if o != nil && !IsNil(o.PortUuid) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortUuid gets a reference to the given string and assigns it to the PortUuid field.
+func (o *OsgPortStatVO) SetPortUuid(v string) {
+	o.PortUuid = &v
 }
 
 // GetProto returns the Proto field value if set, zero value otherwise.
@@ -2209,6 +2275,9 @@ func (o OsgPortStatVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac
 	}
+	if !IsNil(o.MaxBandwidth) {
+		toSerialize["maxBandwidth"] = o.MaxBandwidth
+	}
 	if !IsNil(o.MaxRxRate) {
 		toSerialize["maxRxRate"] = o.MaxRxRate
 	}
@@ -2244,6 +2313,9 @@ func (o OsgPortStatVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PortDesc) {
 		toSerialize["portDesc"] = o.PortDesc
+	}
+	if !IsNil(o.PortUuid) {
+		toSerialize["portUuid"] = o.PortUuid
 	}
 	if !IsNil(o.Proto) {
 		toSerialize["proto"] = o.Proto

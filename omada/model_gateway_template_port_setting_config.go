@@ -38,6 +38,8 @@ type GatewayTemplatePortSettingConfig struct {
 	Pvid *int32 `json:"pvid,omitempty"`
 	// Enable port or not, status should be a value as follows: 0: disable; 1: enable.(When the port supports status.)
 	Status *int32 `json:"status,omitempty"`
+	// Tag ID Set
+	TagSet []string `json:"tagSet,omitempty"`
 }
 
 // NewGatewayTemplatePortSettingConfig instantiates a new GatewayTemplatePortSettingConfig object
@@ -377,6 +379,38 @@ func (o *GatewayTemplatePortSettingConfig) SetStatus(v int32) {
 	o.Status = &v
 }
 
+// GetTagSet returns the TagSet field value if set, zero value otherwise.
+func (o *GatewayTemplatePortSettingConfig) GetTagSet() []string {
+	if o == nil || IsNil(o.TagSet) {
+		var ret []string
+		return ret
+	}
+	return o.TagSet
+}
+
+// GetTagSetOk returns a tuple with the TagSet field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GatewayTemplatePortSettingConfig) GetTagSetOk() ([]string, bool) {
+	if o == nil || IsNil(o.TagSet) {
+		return nil, false
+	}
+	return o.TagSet, true
+}
+
+// HasTagSet returns a boolean if a field has been set.
+func (o *GatewayTemplatePortSettingConfig) HasTagSet() bool {
+	if o != nil && !IsNil(o.TagSet) {
+		return true
+	}
+
+	return false
+}
+
+// SetTagSet gets a reference to the given []string and assigns it to the TagSet field.
+func (o *GatewayTemplatePortSettingConfig) SetTagSet(v []string) {
+	o.TagSet = v
+}
+
 func (o GatewayTemplatePortSettingConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -416,6 +450,9 @@ func (o GatewayTemplatePortSettingConfig) ToMap() (map[string]interface{}, error
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.TagSet) {
+		toSerialize["tagSet"] = o.TagSet
 	}
 	return toSerialize, nil
 }

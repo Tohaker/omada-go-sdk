@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Layer3Access** | Pointer to **bool** | Whether to enable layer 3 accessibility | [optional] 
 **SshEnable** | **bool** | Whether to enable SSH | 
-**SshServerPort** | **int32** | SSH server port should be 22 or within the range of 1025-65535. | 
+**SshServerPort** | Pointer to **int32** | SSH server port should be 22 or within the range of 1025-65535. | [optional] 
 
 ## Methods
 
 ### NewSSHSetting
 
-`func NewSSHSetting(sshEnable bool, sshServerPort int32, ) *SSHSetting`
+`func NewSSHSetting(sshEnable bool, ) *SSHSetting`
 
 NewSSHSetting instantiates a new SSHSetting object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetSshServerPort sets SshServerPort field to given value.
 
+### HasSshServerPort
+
+`func (o *SSHSetting) HasSshServerPort() bool`
+
+HasSshServerPort returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
