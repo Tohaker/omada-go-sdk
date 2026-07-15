@@ -108643,18 +108643,18 @@ components:
     AddMonitorClientList:
       example:
         addClientList:
-        - deviceType: 1
+        - deviceType: 5
           showModel: showModel
           modelVersion: modelVersion
           notEligibleReason: notEligibleReason
           ip: ip
-          statusCategory: 2
+          statusCategory: 7
           type: type
           customId: customId
           mac: mac
           eligibleFlag: true
           specialModel: specialModel
-          recoveryCycles: 5
+          recoveryCycles: 2
           monitoringStatus: 5
           clientFlag: true
           name: name
@@ -108663,27 +108663,32 @@ components:
           modelModelVersion: modelModelVersion
           ClientUplinkDevice:
             deviceType: 0
-            uplinkType: 6
+            uplinkType: 1
             showModel: showModel
-            standardPort: standardPort
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 6
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
-        - deviceType: 1
+        - deviceType: 5
           showModel: showModel
           modelVersion: modelVersion
           notEligibleReason: notEligibleReason
           ip: ip
-          statusCategory: 2
+          statusCategory: 7
           type: type
           customId: customId
           mac: mac
           eligibleFlag: true
           specialModel: specialModel
-          recoveryCycles: 5
+          recoveryCycles: 2
           monitoringStatus: 5
           clientFlag: true
           name: name
@@ -108692,15 +108697,20 @@ components:
           modelModelVersion: modelModelVersion
           ClientUplinkDevice:
             deviceType: 0
-            uplinkType: 6
+            uplinkType: 1
             showModel: showModel
-            standardPort: standardPort
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 6
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
       properties:
         addClientList:
           description: The client to be added to the monitor list
@@ -108726,14 +108736,20 @@ components:
           clientType: clientType
           uplinkDevice:
             deviceType: 5
-            uplinkType: 2
+            uplinkType: 7
             showModel: showModel
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 2
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
           monitoringStatus: 6
           clientFlag: true
           name: name
@@ -108755,14 +108771,20 @@ components:
           clientType: clientType
           uplinkDevice:
             deviceType: 5
-            uplinkType: 2
+            uplinkType: 7
             showModel: showModel
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 2
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
           monitoringStatus: 6
           clientFlag: true
           name: name
@@ -129833,20 +129855,28 @@ components:
       description: The client uplinkDevice
       example:
         deviceType: 0
-        uplinkType: 6
+        uplinkType: 1
         showModel: showModel
-        standardPort: standardPort
         modelVersion: modelVersion
+        stackId: stackId
+        stackName: stackName
+        type: type
+        isStack: true
+        mac: mac
+        unit: 6
+        port: port
+        standardPort: standardPort
         name: name
         model: model
         uplinkPort: uplinkPort
-        type: type
-        mac: mac
       properties:
         deviceType:
           description: The client UplinkDevice deviceType
           format: int32
           type: integer
+        isStack:
+          description: Whether The client Uplink StackDevice is Stack or not
+          type: boolean
         mac:
           description: The client UplinkDevice mac
           type: string
@@ -129859,8 +129889,17 @@ components:
         name:
           description: The client UplinkDevice name
           type: string
+        port:
+          description: The client Uplink Device port number
+          type: string
         showModel:
           description: The client UplinkDevice showModel
+          type: string
+        stackId:
+          description: The client Uplink StackDevice StackId
+          type: string
+        stackName:
+          description: The client Uplink StackDevice StackName
           type: string
         standardPort:
           description: The client UplinkDevice standard port
@@ -129868,6 +129907,10 @@ components:
         type:
           description: "The client UplinkDevice type.Such as: ap, switch, gateway"
           type: string
+        unit:
+          description: The client Uplink StackDevice unit
+          format: int32
+          type: integer
         uplinkPort:
           description: The client UplinkDevice port
           type: string
@@ -154791,18 +154834,18 @@ components:
     GridVOMonitorClient:
       example:
         data:
-        - deviceType: 1
+        - deviceType: 5
           showModel: showModel
           modelVersion: modelVersion
           notEligibleReason: notEligibleReason
           ip: ip
-          statusCategory: 2
+          statusCategory: 7
           type: type
           customId: customId
           mac: mac
           eligibleFlag: true
           specialModel: specialModel
-          recoveryCycles: 5
+          recoveryCycles: 2
           monitoringStatus: 5
           clientFlag: true
           name: name
@@ -154811,27 +154854,32 @@ components:
           modelModelVersion: modelModelVersion
           ClientUplinkDevice:
             deviceType: 0
-            uplinkType: 6
+            uplinkType: 1
             showModel: showModel
-            standardPort: standardPort
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 6
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
-        - deviceType: 1
+        - deviceType: 5
           showModel: showModel
           modelVersion: modelVersion
           notEligibleReason: notEligibleReason
           ip: ip
-          statusCategory: 2
+          statusCategory: 7
           type: type
           customId: customId
           mac: mac
           eligibleFlag: true
           specialModel: specialModel
-          recoveryCycles: 5
+          recoveryCycles: 2
           monitoringStatus: 5
           clientFlag: true
           name: name
@@ -154840,15 +154888,20 @@ components:
           modelModelVersion: modelModelVersion
           ClientUplinkDevice:
             deviceType: 0
-            uplinkType: 6
+            uplinkType: 1
             showModel: showModel
-            standardPort: standardPort
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 6
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
         totalRows: 5
         currentPage: 6
         currentSize: 1
@@ -154888,14 +154941,20 @@ components:
           clientType: clientType
           uplinkDevice:
             deviceType: 5
-            uplinkType: 2
+            uplinkType: 7
             showModel: showModel
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 2
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
           monitoringStatus: 6
           clientFlag: true
           name: name
@@ -154917,14 +154976,20 @@ components:
           clientType: clientType
           uplinkDevice:
             deviceType: 5
-            uplinkType: 2
+            uplinkType: 7
             showModel: showModel
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 2
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
           monitoringStatus: 6
           clientFlag: true
           name: name
@@ -194041,18 +194106,18 @@ components:
     MonitorClient:
       description: The client to be verified whether it can be monitored
       example:
-        deviceType: 1
+        deviceType: 5
         showModel: showModel
         modelVersion: modelVersion
         notEligibleReason: notEligibleReason
         ip: ip
-        statusCategory: 2
+        statusCategory: 7
         type: type
         customId: customId
         mac: mac
         eligibleFlag: true
         specialModel: specialModel
-        recoveryCycles: 5
+        recoveryCycles: 2
         monitoringStatus: 5
         clientFlag: true
         name: name
@@ -194061,15 +194126,20 @@ components:
         modelModelVersion: modelModelVersion
         ClientUplinkDevice:
           deviceType: 0
-          uplinkType: 6
+          uplinkType: 1
           showModel: showModel
-          standardPort: standardPort
           modelVersion: modelVersion
+          stackId: stackId
+          stackName: stackName
+          type: type
+          isStack: true
+          mac: mac
+          unit: 6
+          port: port
+          standardPort: standardPort
           name: name
           model: model
           uplinkPort: uplinkPort
-          type: type
-          mac: mac
       properties:
         ClientUplinkDevice:
           $ref: "#/components/schemas/ClientUplinkDevice"
@@ -194152,14 +194222,20 @@ components:
         clientType: clientType
         uplinkDevice:
           deviceType: 5
-          uplinkType: 2
+          uplinkType: 7
           showModel: showModel
           modelVersion: modelVersion
+          stackId: stackId
+          stackName: stackName
+          type: type
+          isStack: true
+          mac: mac
+          unit: 2
+          port: port
+          standardPort: standardPort
           name: name
           model: model
           uplinkPort: uplinkPort
-          type: type
-          mac: mac
         monitoringStatus: 6
         clientFlag: true
         name: name
@@ -213198,18 +213274,18 @@ components:
         msg: msg
         result:
           data:
-          - deviceType: 1
+          - deviceType: 5
             showModel: showModel
             modelVersion: modelVersion
             notEligibleReason: notEligibleReason
             ip: ip
-            statusCategory: 2
+            statusCategory: 7
             type: type
             customId: customId
             mac: mac
             eligibleFlag: true
             specialModel: specialModel
-            recoveryCycles: 5
+            recoveryCycles: 2
             monitoringStatus: 5
             clientFlag: true
             name: name
@@ -213218,27 +213294,32 @@ components:
             modelModelVersion: modelModelVersion
             ClientUplinkDevice:
               deviceType: 0
-              uplinkType: 6
+              uplinkType: 1
               showModel: showModel
-              standardPort: standardPort
               modelVersion: modelVersion
+              stackId: stackId
+              stackName: stackName
+              type: type
+              isStack: true
+              mac: mac
+              unit: 6
+              port: port
+              standardPort: standardPort
               name: name
               model: model
               uplinkPort: uplinkPort
-              type: type
-              mac: mac
-          - deviceType: 1
+          - deviceType: 5
             showModel: showModel
             modelVersion: modelVersion
             notEligibleReason: notEligibleReason
             ip: ip
-            statusCategory: 2
+            statusCategory: 7
             type: type
             customId: customId
             mac: mac
             eligibleFlag: true
             specialModel: specialModel
-            recoveryCycles: 5
+            recoveryCycles: 2
             monitoringStatus: 5
             clientFlag: true
             name: name
@@ -213247,15 +213328,20 @@ components:
             modelModelVersion: modelModelVersion
             ClientUplinkDevice:
               deviceType: 0
-              uplinkType: 6
+              uplinkType: 1
               showModel: showModel
-              standardPort: standardPort
               modelVersion: modelVersion
+              stackId: stackId
+              stackName: stackName
+              type: type
+              isStack: true
+              mac: mac
+              unit: 6
+              port: port
+              standardPort: standardPort
               name: name
               model: model
               uplinkPort: uplinkPort
-              type: type
-              mac: mac
           totalRows: 5
           currentPage: 6
           currentSize: 1
@@ -213289,14 +213375,20 @@ components:
             clientType: clientType
             uplinkDevice:
               deviceType: 5
-              uplinkType: 2
+              uplinkType: 7
               showModel: showModel
               modelVersion: modelVersion
+              stackId: stackId
+              stackName: stackName
+              type: type
+              isStack: true
+              mac: mac
+              unit: 2
+              port: port
+              standardPort: standardPort
               name: name
               model: model
               uplinkPort: uplinkPort
-              type: type
-              mac: mac
             monitoringStatus: 6
             clientFlag: true
             name: name
@@ -213318,14 +213410,20 @@ components:
             clientType: clientType
             uplinkDevice:
               deviceType: 5
-              uplinkType: 2
+              uplinkType: 7
               showModel: showModel
               modelVersion: modelVersion
+              stackId: stackId
+              stackName: stackName
+              type: type
+              isStack: true
+              mac: mac
+              unit: 2
+              port: port
+              standardPort: standardPort
               name: name
               model: model
               uplinkPort: uplinkPort
-              type: type
-              mac: mac
             monitoringStatus: 6
             clientFlag: true
             name: name
@@ -389660,19 +389758,28 @@ components:
       description: The device uplinkDevice
       example:
         deviceType: 5
-        uplinkType: 2
+        uplinkType: 7
         showModel: showModel
         modelVersion: modelVersion
+        stackId: stackId
+        stackName: stackName
+        type: type
+        isStack: true
+        mac: mac
+        unit: 2
+        port: port
+        standardPort: standardPort
         name: name
         model: model
         uplinkPort: uplinkPort
-        type: type
-        mac: mac
       properties:
         deviceType:
           description: The device UplinkDevice deviceType
           format: int32
           type: integer
+        isStack:
+          description: Whether The device Uplink StackDevice is Stack or not
+          type: boolean
         mac:
           description: The device UplinkDevice mac
           type: string
@@ -389685,12 +389792,28 @@ components:
         name:
           description: The device UplinkDevice name
           type: string
+        port:
+          description: The device Uplink Device port number
+          type: string
         showModel:
           description: The device UplinkDevice showModel
+          type: string
+        stackId:
+          description: The device Uplink StackDevice StackId
+          type: string
+        stackName:
+          description: The device Uplink StackDevice StackName
+          type: string
+        standardPort:
+          description: The device Uplink Device standardPort
           type: string
         type:
           description: "The device UplinkDevice type.Such as: ap, switch, gateway"
           type: string
+        unit:
+          description: The device Uplink StackDevice unit
+          format: int32
+          type: integer
         uplinkPort:
           description: The device UplinkDevice port
           type: string
@@ -390886,18 +391009,18 @@ components:
     VerifyClientVO:
       example:
         monitorClient:
-          deviceType: 1
+          deviceType: 5
           showModel: showModel
           modelVersion: modelVersion
           notEligibleReason: notEligibleReason
           ip: ip
-          statusCategory: 2
+          statusCategory: 7
           type: type
           customId: customId
           mac: mac
           eligibleFlag: true
           specialModel: specialModel
-          recoveryCycles: 5
+          recoveryCycles: 2
           monitoringStatus: 5
           clientFlag: true
           name: name
@@ -390906,15 +391029,20 @@ components:
           modelModelVersion: modelModelVersion
           ClientUplinkDevice:
             deviceType: 0
-            uplinkType: 6
+            uplinkType: 1
             showModel: showModel
-            standardPort: standardPort
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 6
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
       properties:
         monitorClient:
           $ref: "#/components/schemas/MonitorClient"
@@ -390937,14 +391065,20 @@ components:
           clientType: clientType
           uplinkDevice:
             deviceType: 5
-            uplinkType: 2
+            uplinkType: 7
             showModel: showModel
             modelVersion: modelVersion
+            stackId: stackId
+            stackName: stackName
+            type: type
+            isStack: true
+            mac: mac
+            unit: 2
+            port: port
+            standardPort: standardPort
             name: name
             model: model
             uplinkPort: uplinkPort
-            type: type
-            mac: mac
           monitoringStatus: 6
           clientFlag: true
           name: name

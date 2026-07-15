@@ -21,6 +21,8 @@ var _ MappedNullable = &UplinkDevice{}
 type UplinkDevice struct {
 	// The device UplinkDevice deviceType
 	DeviceType *int32 `json:"deviceType,omitempty"`
+	// Whether The device Uplink StackDevice is Stack or not
+	IsStack *bool `json:"isStack,omitempty"`
 	// The device UplinkDevice mac
 	Mac *string `json:"mac,omitempty"`
 	// The device UplinkDevice model
@@ -29,10 +31,20 @@ type UplinkDevice struct {
 	ModelVersion *string `json:"modelVersion,omitempty"`
 	// The device UplinkDevice name
 	Name *string `json:"name,omitempty"`
+	// The device Uplink Device port number
+	Port *string `json:"port,omitempty"`
 	// The device UplinkDevice showModel
 	ShowModel *string `json:"showModel,omitempty"`
+	// The device Uplink StackDevice StackId
+	StackId *string `json:"stackId,omitempty"`
+	// The device Uplink StackDevice StackName
+	StackName *string `json:"stackName,omitempty"`
+	// The device Uplink Device standardPort
+	StandardPort *string `json:"standardPort,omitempty"`
 	// The device UplinkDevice type.Such as: ap, switch, gateway
 	Type *string `json:"type,omitempty"`
+	// The device Uplink StackDevice unit
+	Unit *int32 `json:"unit,omitempty"`
 	// The device UplinkDevice port
 	UplinkPort *string `json:"uplinkPort,omitempty"`
 	// The device link type
@@ -86,6 +98,38 @@ func (o *UplinkDevice) HasDeviceType() bool {
 // SetDeviceType gets a reference to the given int32 and assigns it to the DeviceType field.
 func (o *UplinkDevice) SetDeviceType(v int32) {
 	o.DeviceType = &v
+}
+
+// GetIsStack returns the IsStack field value if set, zero value otherwise.
+func (o *UplinkDevice) GetIsStack() bool {
+	if o == nil || IsNil(o.IsStack) {
+		var ret bool
+		return ret
+	}
+	return *o.IsStack
+}
+
+// GetIsStackOk returns a tuple with the IsStack field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UplinkDevice) GetIsStackOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsStack) {
+		return nil, false
+	}
+	return o.IsStack, true
+}
+
+// HasIsStack returns a boolean if a field has been set.
+func (o *UplinkDevice) HasIsStack() bool {
+	if o != nil && !IsNil(o.IsStack) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsStack gets a reference to the given bool and assigns it to the IsStack field.
+func (o *UplinkDevice) SetIsStack(v bool) {
+	o.IsStack = &v
 }
 
 // GetMac returns the Mac field value if set, zero value otherwise.
@@ -216,6 +260,38 @@ func (o *UplinkDevice) SetName(v string) {
 	o.Name = &v
 }
 
+// GetPort returns the Port field value if set, zero value otherwise.
+func (o *UplinkDevice) GetPort() string {
+	if o == nil || IsNil(o.Port) {
+		var ret string
+		return ret
+	}
+	return *o.Port
+}
+
+// GetPortOk returns a tuple with the Port field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UplinkDevice) GetPortOk() (*string, bool) {
+	if o == nil || IsNil(o.Port) {
+		return nil, false
+	}
+	return o.Port, true
+}
+
+// HasPort returns a boolean if a field has been set.
+func (o *UplinkDevice) HasPort() bool {
+	if o != nil && !IsNil(o.Port) {
+		return true
+	}
+
+	return false
+}
+
+// SetPort gets a reference to the given string and assigns it to the Port field.
+func (o *UplinkDevice) SetPort(v string) {
+	o.Port = &v
+}
+
 // GetShowModel returns the ShowModel field value if set, zero value otherwise.
 func (o *UplinkDevice) GetShowModel() string {
 	if o == nil || IsNil(o.ShowModel) {
@@ -248,6 +324,102 @@ func (o *UplinkDevice) SetShowModel(v string) {
 	o.ShowModel = &v
 }
 
+// GetStackId returns the StackId field value if set, zero value otherwise.
+func (o *UplinkDevice) GetStackId() string {
+	if o == nil || IsNil(o.StackId) {
+		var ret string
+		return ret
+	}
+	return *o.StackId
+}
+
+// GetStackIdOk returns a tuple with the StackId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UplinkDevice) GetStackIdOk() (*string, bool) {
+	if o == nil || IsNil(o.StackId) {
+		return nil, false
+	}
+	return o.StackId, true
+}
+
+// HasStackId returns a boolean if a field has been set.
+func (o *UplinkDevice) HasStackId() bool {
+	if o != nil && !IsNil(o.StackId) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackId gets a reference to the given string and assigns it to the StackId field.
+func (o *UplinkDevice) SetStackId(v string) {
+	o.StackId = &v
+}
+
+// GetStackName returns the StackName field value if set, zero value otherwise.
+func (o *UplinkDevice) GetStackName() string {
+	if o == nil || IsNil(o.StackName) {
+		var ret string
+		return ret
+	}
+	return *o.StackName
+}
+
+// GetStackNameOk returns a tuple with the StackName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UplinkDevice) GetStackNameOk() (*string, bool) {
+	if o == nil || IsNil(o.StackName) {
+		return nil, false
+	}
+	return o.StackName, true
+}
+
+// HasStackName returns a boolean if a field has been set.
+func (o *UplinkDevice) HasStackName() bool {
+	if o != nil && !IsNil(o.StackName) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackName gets a reference to the given string and assigns it to the StackName field.
+func (o *UplinkDevice) SetStackName(v string) {
+	o.StackName = &v
+}
+
+// GetStandardPort returns the StandardPort field value if set, zero value otherwise.
+func (o *UplinkDevice) GetStandardPort() string {
+	if o == nil || IsNil(o.StandardPort) {
+		var ret string
+		return ret
+	}
+	return *o.StandardPort
+}
+
+// GetStandardPortOk returns a tuple with the StandardPort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UplinkDevice) GetStandardPortOk() (*string, bool) {
+	if o == nil || IsNil(o.StandardPort) {
+		return nil, false
+	}
+	return o.StandardPort, true
+}
+
+// HasStandardPort returns a boolean if a field has been set.
+func (o *UplinkDevice) HasStandardPort() bool {
+	if o != nil && !IsNil(o.StandardPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetStandardPort gets a reference to the given string and assigns it to the StandardPort field.
+func (o *UplinkDevice) SetStandardPort(v string) {
+	o.StandardPort = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *UplinkDevice) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -278,6 +450,38 @@ func (o *UplinkDevice) HasType() bool {
 // SetType gets a reference to the given string and assigns it to the Type field.
 func (o *UplinkDevice) SetType(v string) {
 	o.Type = &v
+}
+
+// GetUnit returns the Unit field value if set, zero value otherwise.
+func (o *UplinkDevice) GetUnit() int32 {
+	if o == nil || IsNil(o.Unit) {
+		var ret int32
+		return ret
+	}
+	return *o.Unit
+}
+
+// GetUnitOk returns a tuple with the Unit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UplinkDevice) GetUnitOk() (*int32, bool) {
+	if o == nil || IsNil(o.Unit) {
+		return nil, false
+	}
+	return o.Unit, true
+}
+
+// HasUnit returns a boolean if a field has been set.
+func (o *UplinkDevice) HasUnit() bool {
+	if o != nil && !IsNil(o.Unit) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnit gets a reference to the given int32 and assigns it to the Unit field.
+func (o *UplinkDevice) SetUnit(v int32) {
+	o.Unit = &v
 }
 
 // GetUplinkPort returns the UplinkPort field value if set, zero value otherwise.
@@ -357,6 +561,9 @@ func (o UplinkDevice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DeviceType) {
 		toSerialize["deviceType"] = o.DeviceType
 	}
+	if !IsNil(o.IsStack) {
+		toSerialize["isStack"] = o.IsStack
+	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac
 	}
@@ -369,11 +576,26 @@ func (o UplinkDevice) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+	if !IsNil(o.Port) {
+		toSerialize["port"] = o.Port
+	}
 	if !IsNil(o.ShowModel) {
 		toSerialize["showModel"] = o.ShowModel
 	}
+	if !IsNil(o.StackId) {
+		toSerialize["stackId"] = o.StackId
+	}
+	if !IsNil(o.StackName) {
+		toSerialize["stackName"] = o.StackName
+	}
+	if !IsNil(o.StandardPort) {
+		toSerialize["standardPort"] = o.StandardPort
+	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Unit) {
+		toSerialize["unit"] = o.Unit
 	}
 	if !IsNil(o.UplinkPort) {
 		toSerialize["uplinkPort"] = o.UplinkPort

@@ -5,13 +5,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DeviceType** | Pointer to **int32** | The client UplinkDevice deviceType | [optional] 
+**IsStack** | Pointer to **bool** | Whether The client Uplink StackDevice is Stack or not | [optional] 
 **Mac** | Pointer to **string** | The client UplinkDevice mac | [optional] 
 **Model** | Pointer to **string** | The client UplinkDevice model | [optional] 
 **ModelVersion** | Pointer to **string** | The client UplinkDevice modelVersion | [optional] 
 **Name** | Pointer to **string** | The client UplinkDevice name | [optional] 
+**Port** | Pointer to **string** | The client Uplink Device port number | [optional] 
 **ShowModel** | Pointer to **string** | The client UplinkDevice showModel | [optional] 
+**StackId** | Pointer to **string** | The client Uplink StackDevice StackId | [optional] 
+**StackName** | Pointer to **string** | The client Uplink StackDevice StackName | [optional] 
 **StandardPort** | Pointer to **string** | The client UplinkDevice standard port | [optional] 
 **Type** | Pointer to **string** | The client UplinkDevice type.Such as: ap, switch, gateway | [optional] 
+**Unit** | Pointer to **int32** | The client Uplink StackDevice unit | [optional] 
 **UplinkPort** | Pointer to **string** | The client UplinkDevice port | [optional] 
 **UplinkType** | Pointer to **int32** | The client link type | [optional] 
 
@@ -58,6 +63,31 @@ SetDeviceType sets DeviceType field to given value.
 `func (o *ClientUplinkDevice) HasDeviceType() bool`
 
 HasDeviceType returns a boolean if a field has been set.
+
+### GetIsStack
+
+`func (o *ClientUplinkDevice) GetIsStack() bool`
+
+GetIsStack returns the IsStack field if non-nil, zero value otherwise.
+
+### GetIsStackOk
+
+`func (o *ClientUplinkDevice) GetIsStackOk() (*bool, bool)`
+
+GetIsStackOk returns a tuple with the IsStack field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsStack
+
+`func (o *ClientUplinkDevice) SetIsStack(v bool)`
+
+SetIsStack sets IsStack field to given value.
+
+### HasIsStack
+
+`func (o *ClientUplinkDevice) HasIsStack() bool`
+
+HasIsStack returns a boolean if a field has been set.
 
 ### GetMac
 
@@ -159,6 +189,31 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetPort
+
+`func (o *ClientUplinkDevice) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *ClientUplinkDevice) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPort
+
+`func (o *ClientUplinkDevice) SetPort(v string)`
+
+SetPort sets Port field to given value.
+
+### HasPort
+
+`func (o *ClientUplinkDevice) HasPort() bool`
+
+HasPort returns a boolean if a field has been set.
+
 ### GetShowModel
 
 `func (o *ClientUplinkDevice) GetShowModel() string`
@@ -183,6 +238,56 @@ SetShowModel sets ShowModel field to given value.
 `func (o *ClientUplinkDevice) HasShowModel() bool`
 
 HasShowModel returns a boolean if a field has been set.
+
+### GetStackId
+
+`func (o *ClientUplinkDevice) GetStackId() string`
+
+GetStackId returns the StackId field if non-nil, zero value otherwise.
+
+### GetStackIdOk
+
+`func (o *ClientUplinkDevice) GetStackIdOk() (*string, bool)`
+
+GetStackIdOk returns a tuple with the StackId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackId
+
+`func (o *ClientUplinkDevice) SetStackId(v string)`
+
+SetStackId sets StackId field to given value.
+
+### HasStackId
+
+`func (o *ClientUplinkDevice) HasStackId() bool`
+
+HasStackId returns a boolean if a field has been set.
+
+### GetStackName
+
+`func (o *ClientUplinkDevice) GetStackName() string`
+
+GetStackName returns the StackName field if non-nil, zero value otherwise.
+
+### GetStackNameOk
+
+`func (o *ClientUplinkDevice) GetStackNameOk() (*string, bool)`
+
+GetStackNameOk returns a tuple with the StackName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackName
+
+`func (o *ClientUplinkDevice) SetStackName(v string)`
+
+SetStackName sets StackName field to given value.
+
+### HasStackName
+
+`func (o *ClientUplinkDevice) HasStackName() bool`
+
+HasStackName returns a boolean if a field has been set.
 
 ### GetStandardPort
 
@@ -233,6 +338,31 @@ SetType sets Type field to given value.
 `func (o *ClientUplinkDevice) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetUnit
+
+`func (o *ClientUplinkDevice) GetUnit() int32`
+
+GetUnit returns the Unit field if non-nil, zero value otherwise.
+
+### GetUnitOk
+
+`func (o *ClientUplinkDevice) GetUnitOk() (*int32, bool)`
+
+GetUnitOk returns a tuple with the Unit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnit
+
+`func (o *ClientUplinkDevice) SetUnit(v int32)`
+
+SetUnit sets Unit field to given value.
+
+### HasUnit
+
+`func (o *ClientUplinkDevice) HasUnit() bool`
+
+HasUnit returns a boolean if a field has been set.
 
 ### GetUplinkPort
 
