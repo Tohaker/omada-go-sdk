@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.6.0 (2026-07-20)
+### Minor Changes
+- chore: Updating generated SDK to match latest OpenAPI spec ([#29](https://github.com/Tohaker/omada-go-sdk/pull/29) by @github-actions[bot])
+
 ## 0.5.0 (2026-05-24)
 ### Minor Changes
 - chore: Updating generated SDK to match latest OpenAPI spec ([#23](https://github.com/Tohaker/omada-go-sdk/pull/23) by @github-actions[bot])
