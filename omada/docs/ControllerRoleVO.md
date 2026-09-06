@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddAdoptDevice** | Pointer to **int32** | Add and adopt devices permission should be a value as follows: 0:block; 2:access | [optional] 
 **AddDevices** | Pointer to **int32** | Add devices permission should be a value as follows: 0:block; 2:access | [optional] 
 **Adopt** | Pointer to **int32** | Adopt permission should be a value as follows: 0:block; 2:access | [optional] 
+**AiAssi** | Pointer to **int32** | AI assistant permission. 0:block; 1:view only; 2:modify | [optional] 
 **Analyze** | Pointer to **int32** | Tools permission in global view. Only for hardware controller should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
 **Anomaly** | Pointer to **int32** | Anomaly permission in global view should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
 **Clients** | Pointer to **int32** | Clients permission in site view should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
@@ -141,6 +142,31 @@ SetAdopt sets Adopt field to given value.
 `func (o *ControllerRoleVO) HasAdopt() bool`
 
 HasAdopt returns a boolean if a field has been set.
+
+### GetAiAssi
+
+`func (o *ControllerRoleVO) GetAiAssi() int32`
+
+GetAiAssi returns the AiAssi field if non-nil, zero value otherwise.
+
+### GetAiAssiOk
+
+`func (o *ControllerRoleVO) GetAiAssiOk() (*int32, bool)`
+
+GetAiAssiOk returns a tuple with the AiAssi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiAssi
+
+`func (o *ControllerRoleVO) SetAiAssi(v int32)`
+
+SetAiAssi sets AiAssi field to given value.
+
+### HasAiAssi
+
+`func (o *ControllerRoleVO) HasAiAssi() bool`
+
+HasAiAssi returns a boolean if a field has been set.
 
 ### GetAnalyze
 

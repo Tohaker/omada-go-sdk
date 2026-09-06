@@ -21,12 +21,10 @@ var _ MappedNullable = &AlertEmailSettingVO{}
 
 // AlertEmailSettingVO Abnormal Alert Email(This config applies to the Abnormal > Notification view).
 type AlertEmailSettingVO struct {
-	// Enable alert emails
-	AlertEmailEnable bool `json:"alertEmailEnable"`
 	// Send similar alerts within x seconds in one email, Note that when the number of incidents reaches 100, the log will be sent immediately
 	Delay *int32 `json:"delay,omitempty"`
 	// Enable alert emails delay
-	DelayEnable *bool `json:"delayEnable,omitempty"`
+	DelayEnable bool `json:"delayEnable"`
 }
 
 type _AlertEmailSettingVO AlertEmailSettingVO
@@ -35,9 +33,9 @@ type _AlertEmailSettingVO AlertEmailSettingVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAlertEmailSettingVO(alertEmailEnable bool) *AlertEmailSettingVO {
+func NewAlertEmailSettingVO(delayEnable bool) *AlertEmailSettingVO {
 	this := AlertEmailSettingVO{}
-	this.AlertEmailEnable = alertEmailEnable
+	this.DelayEnable = delayEnable
 	return &this
 }
 
@@ -47,30 +45,6 @@ func NewAlertEmailSettingVO(alertEmailEnable bool) *AlertEmailSettingVO {
 func NewAlertEmailSettingVOWithDefaults() *AlertEmailSettingVO {
 	this := AlertEmailSettingVO{}
 	return &this
-}
-
-// GetAlertEmailEnable returns the AlertEmailEnable field value
-func (o *AlertEmailSettingVO) GetAlertEmailEnable() bool {
-	if o == nil {
-		var ret bool
-		return ret
-	}
-
-	return o.AlertEmailEnable
-}
-
-// GetAlertEmailEnableOk returns a tuple with the AlertEmailEnable field value
-// and a boolean to check if the value has been set.
-func (o *AlertEmailSettingVO) GetAlertEmailEnableOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AlertEmailEnable, true
-}
-
-// SetAlertEmailEnable sets field value
-func (o *AlertEmailSettingVO) SetAlertEmailEnable(v bool) {
-	o.AlertEmailEnable = v
 }
 
 // GetDelay returns the Delay field value if set, zero value otherwise.
@@ -105,36 +79,28 @@ func (o *AlertEmailSettingVO) SetDelay(v int32) {
 	o.Delay = &v
 }
 
-// GetDelayEnable returns the DelayEnable field value if set, zero value otherwise.
+// GetDelayEnable returns the DelayEnable field value
 func (o *AlertEmailSettingVO) GetDelayEnable() bool {
-	if o == nil || IsNil(o.DelayEnable) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.DelayEnable
+
+	return o.DelayEnable
 }
 
-// GetDelayEnableOk returns a tuple with the DelayEnable field value if set, nil otherwise
+// GetDelayEnableOk returns a tuple with the DelayEnable field value
 // and a boolean to check if the value has been set.
 func (o *AlertEmailSettingVO) GetDelayEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.DelayEnable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DelayEnable, true
+	return &o.DelayEnable, true
 }
 
-// HasDelayEnable returns a boolean if a field has been set.
-func (o *AlertEmailSettingVO) HasDelayEnable() bool {
-	if o != nil && !IsNil(o.DelayEnable) {
-		return true
-	}
-
-	return false
-}
-
-// SetDelayEnable gets a reference to the given bool and assigns it to the DelayEnable field.
+// SetDelayEnable sets field value
 func (o *AlertEmailSettingVO) SetDelayEnable(v bool) {
-	o.DelayEnable = &v
+	o.DelayEnable = v
 }
 
 func (o AlertEmailSettingVO) MarshalJSON() ([]byte, error) {
@@ -147,13 +113,10 @@ func (o AlertEmailSettingVO) MarshalJSON() ([]byte, error) {
 
 func (o AlertEmailSettingVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["alertEmailEnable"] = o.AlertEmailEnable
 	if !IsNil(o.Delay) {
 		toSerialize["delay"] = o.Delay
 	}
-	if !IsNil(o.DelayEnable) {
-		toSerialize["delayEnable"] = o.DelayEnable
-	}
+	toSerialize["delayEnable"] = o.DelayEnable
 	return toSerialize, nil
 }
 
@@ -162,7 +125,7 @@ func (o *AlertEmailSettingVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"alertEmailEnable",
+		"delayEnable",
 	}
 
 	allProperties := make(map[string]interface{})

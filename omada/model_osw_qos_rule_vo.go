@@ -21,24 +21,37 @@ var _ MappedNullable = &OswQosRuleVO{}
 
 // OswQosRuleVO struct for OswQosRuleVO
 type OswQosRuleVO struct {
+	// Switch port bind type(0: all switch port, 1: custom switch port).
 	BindType *int32 `json:"bindType,omitempty"`
+	// The destination port(0-65535). When the type is \"Custom\" and the protocol is TCP or UDP, it can be issued.
 	DPort *int32 `json:"dPort,omitempty"`
+	// List of switch devices to which QoS rule are bound, only for bindType 1
 	DeviceList []OswQosRuleDeviceVO `json:"deviceList,omitempty"`
+	// The dscp value(0-63). When the type is \"Custom\", it can be issued.
 	Dscp *int32 `json:"dscp,omitempty"`
-	DscpEnable *bool `json:"dscpEnable,omitempty"`
+	// The remarked dscp value(0-63). If it is set to \"Auto\", the actual issued value is 64.
 	DscpRe *int32 `json:"dscpRe,omitempty"`
+	// Whether to enable DSCP remark
 	DscpReEnable *bool `json:"dscpReEnable,omitempty"`
+	// The Qos rule id. This parameter is not required when creating or modifying Qos rule.
 	Id *string `json:"id,omitempty"`
+	// The index of Qos rule. This parameter is not required when creating or modifying Qos rule.
+	Index *int32 `json:"index,omitempty"`
+	// The selected ipVersion list of Qos rule, IPv4:[0], IPv6:[1], IPv4&IPv6:[0,1]
 	IpVersion []int32 `json:"ipVersion"`
+	// It can be issued when the type is either \"Network\" or \"Custom\". For the \"Network\" type, multiple options are available; for the \"Custom\" type, a single option is required.
 	LanNetworkEntries []LanNetworkEntryVO `json:"lanNetworkEntries,omitempty"`
-	MacLagIdsMap *map[string][]int32 `json:"macLagIdsMap,omitempty"`
-	MacPortIdsMap *map[string][]int32 `json:"macPortIdsMap,omitempty"`
-	MacStdPortIdsMap *map[string][]string `json:"macStdPortIdsMap,omitempty"`
+	// The name of Qos rule.
 	Name string `json:"name"`
+	// Network Protocol(Reference to chapter 5.5.1 ACL Protocol Template at Home page). When the type is \"Custom\", it can be issued.
 	Protocol *int32 `json:"protocol,omitempty"`
+	// The queue of Qos rule(0-7).
 	Queue int32 `json:"queue"`
+	// The source port(0-65535). When the type is \"Custom\" and the protocol is TCP or UDP, it can be issued.
 	SPort *int32 `json:"sPort,omitempty"`
+	// The status of Qos rule, true: enable, false:disable
 	Status bool `json:"status"`
+	// The type of Qos rule, 0:Network, 1:Port, 2:Custom
 	Type int32 `json:"type"`
 }
 
@@ -194,38 +207,6 @@ func (o *OswQosRuleVO) SetDscp(v int32) {
 	o.Dscp = &v
 }
 
-// GetDscpEnable returns the DscpEnable field value if set, zero value otherwise.
-func (o *OswQosRuleVO) GetDscpEnable() bool {
-	if o == nil || IsNil(o.DscpEnable) {
-		var ret bool
-		return ret
-	}
-	return *o.DscpEnable
-}
-
-// GetDscpEnableOk returns a tuple with the DscpEnable field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OswQosRuleVO) GetDscpEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.DscpEnable) {
-		return nil, false
-	}
-	return o.DscpEnable, true
-}
-
-// HasDscpEnable returns a boolean if a field has been set.
-func (o *OswQosRuleVO) HasDscpEnable() bool {
-	if o != nil && !IsNil(o.DscpEnable) {
-		return true
-	}
-
-	return false
-}
-
-// SetDscpEnable gets a reference to the given bool and assigns it to the DscpEnable field.
-func (o *OswQosRuleVO) SetDscpEnable(v bool) {
-	o.DscpEnable = &v
-}
-
 // GetDscpRe returns the DscpRe field value if set, zero value otherwise.
 func (o *OswQosRuleVO) GetDscpRe() int32 {
 	if o == nil || IsNil(o.DscpRe) {
@@ -322,6 +303,38 @@ func (o *OswQosRuleVO) SetId(v string) {
 	o.Id = &v
 }
 
+// GetIndex returns the Index field value if set, zero value otherwise.
+func (o *OswQosRuleVO) GetIndex() int32 {
+	if o == nil || IsNil(o.Index) {
+		var ret int32
+		return ret
+	}
+	return *o.Index
+}
+
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswQosRuleVO) GetIndexOk() (*int32, bool) {
+	if o == nil || IsNil(o.Index) {
+		return nil, false
+	}
+	return o.Index, true
+}
+
+// HasIndex returns a boolean if a field has been set.
+func (o *OswQosRuleVO) HasIndex() bool {
+	if o != nil && !IsNil(o.Index) {
+		return true
+	}
+
+	return false
+}
+
+// SetIndex gets a reference to the given int32 and assigns it to the Index field.
+func (o *OswQosRuleVO) SetIndex(v int32) {
+	o.Index = &v
+}
+
 // GetIpVersion returns the IpVersion field value
 func (o *OswQosRuleVO) GetIpVersion() []int32 {
 	if o == nil {
@@ -376,102 +389,6 @@ func (o *OswQosRuleVO) HasLanNetworkEntries() bool {
 // SetLanNetworkEntries gets a reference to the given []LanNetworkEntryVO and assigns it to the LanNetworkEntries field.
 func (o *OswQosRuleVO) SetLanNetworkEntries(v []LanNetworkEntryVO) {
 	o.LanNetworkEntries = v
-}
-
-// GetMacLagIdsMap returns the MacLagIdsMap field value if set, zero value otherwise.
-func (o *OswQosRuleVO) GetMacLagIdsMap() map[string][]int32 {
-	if o == nil || IsNil(o.MacLagIdsMap) {
-		var ret map[string][]int32
-		return ret
-	}
-	return *o.MacLagIdsMap
-}
-
-// GetMacLagIdsMapOk returns a tuple with the MacLagIdsMap field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OswQosRuleVO) GetMacLagIdsMapOk() (*map[string][]int32, bool) {
-	if o == nil || IsNil(o.MacLagIdsMap) {
-		return nil, false
-	}
-	return o.MacLagIdsMap, true
-}
-
-// HasMacLagIdsMap returns a boolean if a field has been set.
-func (o *OswQosRuleVO) HasMacLagIdsMap() bool {
-	if o != nil && !IsNil(o.MacLagIdsMap) {
-		return true
-	}
-
-	return false
-}
-
-// SetMacLagIdsMap gets a reference to the given map[string][]int32 and assigns it to the MacLagIdsMap field.
-func (o *OswQosRuleVO) SetMacLagIdsMap(v map[string][]int32) {
-	o.MacLagIdsMap = &v
-}
-
-// GetMacPortIdsMap returns the MacPortIdsMap field value if set, zero value otherwise.
-func (o *OswQosRuleVO) GetMacPortIdsMap() map[string][]int32 {
-	if o == nil || IsNil(o.MacPortIdsMap) {
-		var ret map[string][]int32
-		return ret
-	}
-	return *o.MacPortIdsMap
-}
-
-// GetMacPortIdsMapOk returns a tuple with the MacPortIdsMap field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OswQosRuleVO) GetMacPortIdsMapOk() (*map[string][]int32, bool) {
-	if o == nil || IsNil(o.MacPortIdsMap) {
-		return nil, false
-	}
-	return o.MacPortIdsMap, true
-}
-
-// HasMacPortIdsMap returns a boolean if a field has been set.
-func (o *OswQosRuleVO) HasMacPortIdsMap() bool {
-	if o != nil && !IsNil(o.MacPortIdsMap) {
-		return true
-	}
-
-	return false
-}
-
-// SetMacPortIdsMap gets a reference to the given map[string][]int32 and assigns it to the MacPortIdsMap field.
-func (o *OswQosRuleVO) SetMacPortIdsMap(v map[string][]int32) {
-	o.MacPortIdsMap = &v
-}
-
-// GetMacStdPortIdsMap returns the MacStdPortIdsMap field value if set, zero value otherwise.
-func (o *OswQosRuleVO) GetMacStdPortIdsMap() map[string][]string {
-	if o == nil || IsNil(o.MacStdPortIdsMap) {
-		var ret map[string][]string
-		return ret
-	}
-	return *o.MacStdPortIdsMap
-}
-
-// GetMacStdPortIdsMapOk returns a tuple with the MacStdPortIdsMap field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OswQosRuleVO) GetMacStdPortIdsMapOk() (*map[string][]string, bool) {
-	if o == nil || IsNil(o.MacStdPortIdsMap) {
-		return nil, false
-	}
-	return o.MacStdPortIdsMap, true
-}
-
-// HasMacStdPortIdsMap returns a boolean if a field has been set.
-func (o *OswQosRuleVO) HasMacStdPortIdsMap() bool {
-	if o != nil && !IsNil(o.MacStdPortIdsMap) {
-		return true
-	}
-
-	return false
-}
-
-// SetMacStdPortIdsMap gets a reference to the given map[string][]string and assigns it to the MacStdPortIdsMap field.
-func (o *OswQosRuleVO) SetMacStdPortIdsMap(v map[string][]string) {
-	o.MacStdPortIdsMap = &v
 }
 
 // GetName returns the Name field value
@@ -656,9 +573,6 @@ func (o OswQosRuleVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Dscp) {
 		toSerialize["dscp"] = o.Dscp
 	}
-	if !IsNil(o.DscpEnable) {
-		toSerialize["dscpEnable"] = o.DscpEnable
-	}
 	if !IsNil(o.DscpRe) {
 		toSerialize["dscpRe"] = o.DscpRe
 	}
@@ -668,18 +582,12 @@ func (o OswQosRuleVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
+	if !IsNil(o.Index) {
+		toSerialize["index"] = o.Index
+	}
 	toSerialize["ipVersion"] = o.IpVersion
 	if !IsNil(o.LanNetworkEntries) {
 		toSerialize["lanNetworkEntries"] = o.LanNetworkEntries
-	}
-	if !IsNil(o.MacLagIdsMap) {
-		toSerialize["macLagIdsMap"] = o.MacLagIdsMap
-	}
-	if !IsNil(o.MacPortIdsMap) {
-		toSerialize["macPortIdsMap"] = o.MacPortIdsMap
-	}
-	if !IsNil(o.MacStdPortIdsMap) {
-		toSerialize["macStdPortIdsMap"] = o.MacStdPortIdsMap
 	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Protocol) {

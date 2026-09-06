@@ -27,6 +27,8 @@ type StaticRoutingInfo struct {
 	ExistVirtualWan *bool `json:"existVirtualWan,omitempty"`
 	// Whether the interface option exists VPN client
 	ExistVpnClient *bool `json:"existVpnClient,omitempty"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// ID
 	Id *string `json:"id,omitempty"`
 	// Interface ID, for example: if interfaceType is network, interfaceId should be LAN network ID. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface.
@@ -155,6 +157,38 @@ func (o *StaticRoutingInfo) HasExistVpnClient() bool {
 // SetExistVpnClient gets a reference to the given bool and assigns it to the ExistVpnClient field.
 func (o *StaticRoutingInfo) SetExistVpnClient(v bool) {
 	o.ExistVpnClient = &v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *StaticRoutingInfo) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StaticRoutingInfo) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *StaticRoutingInfo) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *StaticRoutingInfo) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -397,6 +431,9 @@ func (o StaticRoutingInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ExistVpnClient) {
 		toSerialize["existVpnClient"] = o.ExistVpnClient
+	}
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

@@ -587,7 +587,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	groupId := "groupId_example" // string | groupId
+	groupId := "groupId_example" // string | Voucher group ID
 	editVoucherGroupPatternOpenApiVO := *openapiclient.NewEditVoucherGroupPatternOpenApiVO() // EditVoucherGroupPatternOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**groupId** | **string** | groupId | 
+**groupId** | **string** | Voucher group ID | 
 
 ### Other Parameters
 

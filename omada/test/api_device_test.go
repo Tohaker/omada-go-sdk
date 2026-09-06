@@ -219,6 +219,22 @@ func Test_omada_DeviceAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DeviceAPIService CheckReplaceRecord", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var deviceMac string
+
+		resp, httpRes, err := apiClient.DeviceAPI.CheckReplaceRecord(context.Background(), omadacId, siteId, deviceMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DeviceAPIService CopyDeviceConfiguration", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -227,6 +243,38 @@ func Test_omada_DeviceAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.DeviceAPI.CopyDeviceConfiguration(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DeviceAPIService CreateReplaceRecord", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var deviceMac string
+
+		resp, httpRes, err := apiClient.DeviceAPI.CreateReplaceRecord(context.Background(), omadacId, siteId, deviceMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DeviceAPIService DeleteReplaceRecord", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var deviceMac string
+
+		resp, httpRes, err := apiClient.DeviceAPI.DeleteReplaceRecord(context.Background(), omadacId, siteId, deviceMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -554,6 +602,21 @@ func Test_omada_DeviceAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DeviceAPIService GetDeviceIncidentCounts", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.DeviceAPI.GetDeviceIncidentCounts(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DeviceAPIService GetDeviceList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -625,6 +688,20 @@ func Test_omada_DeviceAPIService(t *testing.T) {
 		var forgetId string
 
 		resp, httpRes, err := apiClient.DeviceAPI.GetForgetProcess(context.Background(), omadacId, siteId, forgetId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DeviceAPIService GetGlobalDeviceIncidentCounts", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+
+		resp, httpRes, err := apiClient.DeviceAPI.GetGlobalDeviceIncidentCounts(context.Background(), omadacId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -744,6 +821,20 @@ func Test_omada_DeviceAPIService(t *testing.T) {
 		var moveSiteId string
 
 		resp, httpRes, err := apiClient.DeviceAPI.GetMoveSiteProcess(context.Background(), omadacId, siteId, moveSiteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DeviceAPIService GetMspAdoptTip", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var mspId string
+
+		resp, httpRes, err := apiClient.DeviceAPI.GetMspAdoptTip(context.Background(), mspId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -925,6 +1016,22 @@ func Test_omada_DeviceAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DeviceAPIService ModifyReplaceRecord", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var deviceMac string
+
+		resp, httpRes, err := apiClient.DeviceAPI.ModifyReplaceRecord(context.Background(), omadacId, siteId, deviceMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DeviceAPIService ModifyTag", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1068,12 +1175,12 @@ func Test_omada_DeviceAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var customerId string
-		var deviceMac string
 		var mspId string
+		var customerId string
 		var siteId string
+		var deviceMac string
 
-		resp, httpRes, err := apiClient.DeviceAPI.RetryAddDeviceByMsp(context.Background(), customerId, deviceMac, mspId, siteId).Execute()
+		resp, httpRes, err := apiClient.DeviceAPI.RetryAddDeviceByMsp(context.Background(), mspId, customerId, siteId, deviceMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

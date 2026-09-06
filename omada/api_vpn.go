@@ -107,7 +107,7 @@ type VPNAPI interface {
 	/*
 	CreateClientToSiteVpnClient Create client-to-site VPN client
 
-	Create client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN client V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+	Create client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN client V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -126,7 +126,7 @@ type VPNAPI interface {
 	/*
 	CreateClientToSiteVpnServer Create client-to-site VPN server
 
-	Create client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+	Create client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -145,7 +145,7 @@ type VPNAPI interface {
 	/*
 	CreateIpsecFailover Create IPsec failover
 
-	Create IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual or Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
+	Create IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual or Modify site-to-site VPN by manual. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -196,7 +196,7 @@ type VPNAPI interface {
 	/*
 	CreateSiteToSiteVpn Create site-to-site VPN
 
-	Create site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by auto or Create site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+	Create site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by auto or Create site-to-site VPN by manual. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -247,7 +247,7 @@ type VPNAPI interface {
 	/*
 	CreateVpnUser Create VPN user
 
-	Create VPN user. This interface has been deprecated. Please use the following interface instead: Create VPN user V2<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Create VPN user. This interface has been deprecated. Please use the following interface instead: Create VPN user V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -266,7 +266,7 @@ type VPNAPI interface {
 	/*
 	CreateVpnUserV2 Create VPN user V2
 
-	Create VPN user. This interface has been deprecated. Please use the following interfaces instead: Create VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
+	Create VPN user. This interface has been deprecated. Please use the following interfaces instead: Create VPN user V3. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -301,7 +301,7 @@ type VPNAPI interface {
 	/*
 	DeleteClientToSiteVpnClient Delete client-to-site VPN client
 
-	Delete client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34682  -  This VPN entry has been used by Static Route, and thus it cannot be deleted.<br/>-34683  -  This VPN entry has been used by Policy Routing, and thus it cannot be deleted.<br/>-34684  -  This VPN entry has been used by Static Route and Policy Routing, and thus it cannot be deleted.<br/>-35706  -  This VPN entry has been used by Gateway ACL, and thus it cannot be deleted.
+	Delete client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34682  -  This VPN entry has been used by Static Route, and thus it cannot be deleted.<br/>-34683  -  This VPN entry has been used by Policy Routing, and thus it cannot be deleted.<br/>-34684  -  This VPN entry has been used by Static Route and Policy Routing, and thus it cannot be deleted.<br/>-35706  -  This VPN entry has been used by Gateway ACL, and thus it cannot be deleted.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -321,7 +321,7 @@ type VPNAPI interface {
 	/*
 	DeleteClientToSiteVpnServer Delete client-to-site VPN server
 
-	Delete client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -341,7 +341,7 @@ type VPNAPI interface {
 	/*
 	DeleteIpsecFailover Delete IPsec failover
 
-	Delete IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -361,7 +361,7 @@ type VPNAPI interface {
 	/*
 	DeleteSiteToSiteVpn Delete site-to-site VPN
 
-	Delete site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -381,7 +381,7 @@ type VPNAPI interface {
 	/*
 	DeleteVpn Delete VPN
 
-	Delete VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Delete VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -469,7 +469,7 @@ type VPNAPI interface {
 	/*
 	GetAllVpnList Get All VPN list
 
-	Get All VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info;Get VPN Client summary list and Get client-to-site VPN client detail info;Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get All VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info;Get VPN Client summary list and Get client-to-site VPN client detail info;Get VPN Site to Site summary list and Get site-to-site VPN detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -505,7 +505,7 @@ type VPNAPI interface {
 	/*
 	GetClientToSiteVpnClientList Get client-to-site VPN client list
 
-	Get client-to-site VPN client list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get client-to-site VPN client list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -524,7 +524,7 @@ type VPNAPI interface {
 	/*
 	GetClientToSiteVpnServerInfo Get client-to-site VPN server info
 
-	Get client-to-site VPN server info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get client-to-site VPN server info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -544,7 +544,7 @@ type VPNAPI interface {
 	/*
 	GetClientToSiteVpnServerList Get client-to-site VPN server list
 
-	Get client-to-site VPN server list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get client-to-site VPN server list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -580,7 +580,7 @@ type VPNAPI interface {
 	/*
 	GetGridIpsecFailover Get IPsec failover list
 
-	Get IPsec failover list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get IPsec failover list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -647,7 +647,7 @@ type VPNAPI interface {
 	/*
 	GetGridVpnUser Get VPN user list
 
-	Get VPN user list. This interface has been deprecated. Please use the following interfaces instead: Get VPN user list V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get VPN user list. This interface has been deprecated. Please use the following interfaces instead: Get VPN user list V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -682,7 +682,7 @@ type VPNAPI interface {
 	/*
 	GetSiteToSiteVpnInfo Get site-to-site VPN info
 
-	Get site-to-site VPN info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get site-to-site VPN info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -702,7 +702,7 @@ type VPNAPI interface {
 	/*
 	GetSiteToSiteVpnList Get site-to-site VPN list
 
-	Get site-to-site VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get site-to-site VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -770,7 +770,7 @@ type VPNAPI interface {
 	/*
 	GetVpnClientToSiteClientInfo Get client-to-site VPN client info
 
-	Get client-to-site VPN client info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get client-to-site VPN client info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -956,7 +956,7 @@ type VPNAPI interface {
 	/*
 	ModifyClientToSiteVpnClient Modify client-to-site VPN client
 
-	Modify client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN client V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
+	Modify client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN client V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -976,7 +976,7 @@ type VPNAPI interface {
 	/*
 	ModifyClientToSiteVpnServer Modify client-to-site VPN server
 
-	Modify client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+	Modify client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN server V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -996,7 +996,7 @@ type VPNAPI interface {
 	/*
 	ModifyIpsecFailover Modify IPsec failover
 
-	Modify IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
+	Modify IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1104,7 +1104,7 @@ type VPNAPI interface {
 	/*
 	ModifyVpnUser Modify VPN user
 
-	Modify VPN user. This interface has been deprecated. Please use the following interface instead: Modify VPN user V3<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Modify VPN user. This interface has been deprecated. Please use the following interface instead: Modify VPN user V3. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1124,7 +1124,7 @@ type VPNAPI interface {
 	/*
 	ModifyVpnUserV2 Modify VPN user V2
 
-	Modify VPN user. This interface has been deprecated. Please use the following interfaces instead: Modify VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
+	Modify VPN user. This interface has been deprecated. Please use the following interfaces instead: Modify VPN user V3. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1161,7 +1161,7 @@ type VPNAPI interface {
 	/*
 	UploadVpnCertificateFile Upload VPN certificate file
 
-	Upload VPN certificate file. This interface has been deprecated. Please use the following interfaces instead: Upload VPN certificate file V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Upload VPN certificate file. This interface has been deprecated. Please use the following interfaces instead: Upload VPN certificate file V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1870,7 +1870,7 @@ func (r VPNAPICreateClientToSiteVpnClientRequest) Execute() (*OperationResponseW
 /*
 CreateClientToSiteVpnClient Create client-to-site VPN client
 
-Create client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN client V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+Create client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN client V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2005,7 +2005,7 @@ func (r VPNAPICreateClientToSiteVpnServerRequest) Execute() (*OperationResponseW
 /*
 CreateClientToSiteVpnServer Create client-to-site VPN server
 
-Create client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+Create client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2140,7 +2140,7 @@ func (r VPNAPICreateIpsecFailoverRequest) Execute() (*OperationResponseWithoutRe
 /*
 CreateIpsecFailover Create IPsec failover
 
-Create IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual or Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
+Create IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by manual or Modify site-to-site VPN by manual. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2539,7 +2539,7 @@ func (r VPNAPICreateSiteToSiteVpnRequest) Execute() (*OperationResponseWithoutRe
 /*
 CreateSiteToSiteVpn Create site-to-site VPN
 
-Create site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by auto or Create site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+Create site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Create site-to-site VPN by auto or Create site-to-site VPN by manual. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2938,7 +2938,7 @@ func (r VPNAPICreateVpnUserRequest) Execute() (*OperationResponseWithoutResult, 
 /*
 CreateVpnUser Create VPN user
 
-Create VPN user. This interface has been deprecated. Please use the following interface instead: Create VPN user V2<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Create VPN user. This interface has been deprecated. Please use the following interface instead: Create VPN user V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3073,7 +3073,7 @@ func (r VPNAPICreateVpnUserV2Request) Execute() (*OperationResponseWithoutResult
 /*
 CreateVpnUserV2 Create VPN user V2
 
-Create VPN user. This interface has been deprecated. Please use the following interfaces instead: Create VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
+Create VPN user. This interface has been deprecated. Please use the following interfaces instead: Create VPN user V3. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3335,7 +3335,7 @@ func (r VPNAPIDeleteClientToSiteVpnClientRequest) Execute() (*OperationResponseW
 /*
 DeleteClientToSiteVpnClient Delete client-to-site VPN client
 
-Delete client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34682  -  This VPN entry has been used by Static Route, and thus it cannot be deleted.<br/>-34683  -  This VPN entry has been used by Policy Routing, and thus it cannot be deleted.<br/>-34684  -  This VPN entry has been used by Static Route and Policy Routing, and thus it cannot be deleted.<br/>-35706  -  This VPN entry has been used by Gateway ACL, and thus it cannot be deleted.
+Delete client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34682  -  This VPN entry has been used by Static Route, and thus it cannot be deleted.<br/>-34683  -  This VPN entry has been used by Policy Routing, and thus it cannot be deleted.<br/>-34684  -  This VPN entry has been used by Static Route and Policy Routing, and thus it cannot be deleted.<br/>-35706  -  This VPN entry has been used by Gateway ACL, and thus it cannot be deleted.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3463,7 +3463,7 @@ func (r VPNAPIDeleteClientToSiteVpnServerRequest) Execute() (*OperationResponseW
 /*
 DeleteClientToSiteVpnServer Delete client-to-site VPN server
 
-Delete client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3591,7 +3591,7 @@ func (r VPNAPIDeleteIpsecFailoverRequest) Execute() (*OperationResponseWithoutRe
 /*
 DeleteIpsecFailover Delete IPsec failover
 
-Delete IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3719,7 +3719,7 @@ func (r VPNAPIDeleteSiteToSiteVpnRequest) Execute() (*OperationResponseWithoutRe
 /*
 DeleteSiteToSiteVpn Delete site-to-site VPN
 
-Delete site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete site-to-site VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3847,7 +3847,7 @@ func (r VPNAPIDeleteVpnRequest) Execute() (*OperationResponseWithoutResult, *htt
 /*
 DeleteVpn Delete VPN
 
-Delete VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Delete VPN. This interface has been deprecated. Please use the following interfaces instead: Delete VPN V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4474,7 +4474,7 @@ func (r VPNAPIGetAllVpnListRequest) Execute() (*OperationResponseVpnOpenApiGridV
 /*
 GetAllVpnList Get All VPN list
 
-Get All VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info;Get VPN Client summary list and Get client-to-site VPN client detail info;Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get All VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info;Get VPN Client summary list and Get client-to-site VPN client detail info;Get VPN Site to Site summary list and Get site-to-site VPN detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4723,7 +4723,7 @@ func (r VPNAPIGetClientToSiteVpnClientListRequest) Execute() (*OperationResponse
 /*
 GetClientToSiteVpnClientList Get client-to-site VPN client list
 
-Get client-to-site VPN client list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get client-to-site VPN client list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4848,7 +4848,7 @@ func (r VPNAPIGetClientToSiteVpnServerInfoRequest) Execute() (*OperationResponse
 /*
 GetClientToSiteVpnServerInfo Get client-to-site VPN server info
 
-Get client-to-site VPN server info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get client-to-site VPN server info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4975,7 +4975,7 @@ func (r VPNAPIGetClientToSiteVpnServerListRequest) Execute() (*OperationResponse
 /*
 GetClientToSiteVpnServerList Get client-to-site VPN server list
 
-Get client-to-site VPN server list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get client-to-site VPN server list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Server summary list and Get client-to-site VPN server detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5238,7 +5238,7 @@ func (r VPNAPIGetGridIpsecFailoverRequest) Execute() (*OperationResponseGridVOIP
 /*
 GetGridIpsecFailover Get IPsec failover list
 
-Get IPsec failover list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get IPsec failover list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5910,7 +5910,7 @@ func (r VPNAPIGetGridVpnUserRequest) Execute() (*OperationResponseVpnUserOpenApi
 /*
 GetGridVpnUser Get VPN user list
 
-Get VPN user list. This interface has been deprecated. Please use the following interfaces instead: Get VPN user list V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get VPN user list. This interface has been deprecated. Please use the following interfaces instead: Get VPN user list V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6239,7 +6239,7 @@ func (r VPNAPIGetSiteToSiteVpnInfoRequest) Execute() (*OperationResponseSiteToSi
 /*
 GetSiteToSiteVpnInfo Get site-to-site VPN info
 
-Get site-to-site VPN info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get site-to-site VPN info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6366,7 +6366,7 @@ func (r VPNAPIGetSiteToSiteVpnListRequest) Execute() (*OperationResponseListSite
 /*
 GetSiteToSiteVpnList Get site-to-site VPN list
 
-Get site-to-site VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get site-to-site VPN list. This interface has been deprecated. Please use the following interfaces instead: Get VPN Site to Site summary list and Get site-to-site VPN detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6858,7 +6858,7 @@ func (r VPNAPIGetVpnClientToSiteClientInfoRequest) Execute() (*OperationResponse
 /*
 GetVpnClientToSiteClientInfo Get client-to-site VPN client info
 
-Get client-to-site VPN client info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get client-to-site VPN client info. This interface has been deprecated. Please use the following interfaces instead: Get VPN Client summary list and Get client-to-site VPN client detail info. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8290,7 +8290,7 @@ func (r VPNAPIModifyClientToSiteVpnClientRequest) Execute() (*OperationResponseW
 /*
 ModifyClientToSiteVpnClient Modify client-to-site VPN client
 
-Modify client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN client V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
+Modify client-to-site VPN client. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN client V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34679  -  This VPN entry has been used by Static Route, and thus the VPN type cannot be changed.<br/>-34680  -  This VPN entry has been used by Policy Routing, and thus the VPN type cannot be changed.<br/>-34681  -  This VPN entry has been used by Static Route and Policy Routing, and thus the VPN type cannot be changed.<br/>-35705  -  This VPN entry has been used by Gateway ACL, and thus the VPN type cannot be changed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8429,7 +8429,7 @@ func (r VPNAPIModifyClientToSiteVpnServerRequest) Execute() (*OperationResponseW
 /*
 ModifyClientToSiteVpnServer Modify client-to-site VPN server
 
-Modify client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
+Modify client-to-site VPN server. This interface has been deprecated. Please use the following interfaces instead: Modify client-to-site VPN server V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8568,7 +8568,7 @@ func (r VPNAPIModifyIpsecFailoverRequest) Execute() (*OperationResponseWithoutRe
 /*
 ModifyIpsecFailover Modify IPsec failover
 
-Modify IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
+Modify IPsec failover. This interface has been deprecated. Please use the following interfaces instead: Modify site-to-site VPN by manual. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-35718  -  The device does not support configuring the VPN IPsec failover.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9390,7 +9390,7 @@ func (r VPNAPIModifyVpnUserRequest) Execute() (*OperationResponseWithoutResult, 
 /*
 ModifyVpnUser Modify VPN user
 
-Modify VPN user. This interface has been deprecated. Please use the following interface instead: Modify VPN user V3<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Modify VPN user. This interface has been deprecated. Please use the following interface instead: Modify VPN user V3. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9529,7 +9529,7 @@ func (r VPNAPIModifyVpnUserV2Request) Execute() (*OperationResponseWithoutResult
 /*
 ModifyVpnUserV2 Modify VPN user V2
 
-Modify VPN user. This interface has been deprecated. Please use the following interfaces instead: Modify VPN user V3.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
+Modify VPN user. This interface has been deprecated. Please use the following interfaces instead: Modify VPN user V3. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34601  -  Invalid IP address.<br/>-34602  -  This VPN policy does not exist.<br/>-34609  -  This VPN user already exists. Please add a VPN user with a different username.<br/>-34654  -  Missing parameters.<br/>-35702  -  VPN user configuration requires VPN server configuration.<br/>-35716  -  The device does not support configuring local IP addresses for VPN users.<br/>-35717  -  This device does not support configuring OpenVPN users.<br/>-35719  -  The device does not support configuring VPN users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9791,6 +9791,7 @@ type VPNAPIUploadVpnCertificateFileRequest struct {
 	file *os.File
 }
 
+// Client VPN certificate file (exported from the VPN server). OpenVPN Client only supports .ovpn files; WireGuard Client only supports .conf files.
 func (r VPNAPIUploadVpnCertificateFileRequest) File(file *os.File) VPNAPIUploadVpnCertificateFileRequest {
 	r.file = file
 	return r
@@ -9803,7 +9804,7 @@ func (r VPNAPIUploadVpnCertificateFileRequest) Execute() (*OperationResponseVpnC
 /*
 UploadVpnCertificateFile Upload VPN certificate file
 
-Upload VPN certificate file. This interface has been deprecated. Please use the following interfaces instead: Upload VPN certificate file V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Upload VPN certificate file. This interface has been deprecated. Please use the following interfaces instead: Upload VPN certificate file V2. This interface had been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9939,6 +9940,7 @@ type VPNAPIUploadVpnCertificateFileV2Request struct {
 	file *os.File
 }
 
+// Client VPN certificate file (exported from the VPN server). OpenVPN Client only supports .ovpn files; WireGuard Client only supports .conf files.
 func (r VPNAPIUploadVpnCertificateFileV2Request) File(file *os.File) VPNAPIUploadVpnCertificateFileV2Request {
 	r.file = file
 	return r

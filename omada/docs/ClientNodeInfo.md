@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ClientType** | Pointer to **string** | Client Type: iphone, ipod, android, pc, printer, tv... | [optional] 
 **DevRxRate** | Pointer to **int64** | Client real-time downloadRate | [optional] 
 **DevTxRate** | Pointer to **int64** | Client real-time uploadRate | [optional] 
+**DownlinkNodes** | Pointer to [**[]DeviceNodeInfo**](DeviceNodeInfo.md) | Downlink nodes, exists when client is other gateway | [optional] 
 **Guest** | Pointer to **bool** | (Wireless) Whether it is Guest (used to display the wireless Guest client icon). | [optional] 
 **HealthScore** | Pointer to **int32** | Health Score, 1~3: poor; 4~7: fair; 0: no data; 8~10 good. | [optional] 
 **Ip** | Pointer to **string** | Client IP. | [optional] 
@@ -138,6 +139,31 @@ SetDevTxRate sets DevTxRate field to given value.
 `func (o *ClientNodeInfo) HasDevTxRate() bool`
 
 HasDevTxRate returns a boolean if a field has been set.
+
+### GetDownlinkNodes
+
+`func (o *ClientNodeInfo) GetDownlinkNodes() []DeviceNodeInfo`
+
+GetDownlinkNodes returns the DownlinkNodes field if non-nil, zero value otherwise.
+
+### GetDownlinkNodesOk
+
+`func (o *ClientNodeInfo) GetDownlinkNodesOk() (*[]DeviceNodeInfo, bool)`
+
+GetDownlinkNodesOk returns a tuple with the DownlinkNodes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownlinkNodes
+
+`func (o *ClientNodeInfo) SetDownlinkNodes(v []DeviceNodeInfo)`
+
+SetDownlinkNodes sets DownlinkNodes field to given value.
+
+### HasDownlinkNodes
+
+`func (o *ClientNodeInfo) HasDownlinkNodes() bool`
+
+HasDownlinkNodes returns a boolean if a field has been set.
 
 ### GetGuest
 

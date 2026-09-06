@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailAlerts** | Pointer to [**NotificationConfigurationOpenApiVO**](NotificationConfigurationOpenApiVO.md) |  | [optional] 
 **AlertEmailSetting** | Pointer to [**AlertEmailSettingVO**](AlertEmailSettingVO.md) |  | [optional] 
+**Email** | Pointer to [**NotificationConfigurationOpenApiVO**](NotificationConfigurationOpenApiVO.md) |  | [optional] 
+**Recipients** | Pointer to [**[]RecipientsVO**](RecipientsVO.md) | Recipients of the incident notifiction | [optional] 
 **Resource** | Pointer to **int32** | The incident notifiction setting creation resource, such as: 0: new created, 1: from template, 2: override. | [optional] 
 
 ## Methods
@@ -26,31 +27,6 @@ will change when the set of required properties is changed
 NewNotificationOpenApiVOWithDefaults instantiates a new NotificationOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetEmailAlerts
-
-`func (o *NotificationOpenApiVO) GetEmailAlerts() NotificationConfigurationOpenApiVO`
-
-GetEmailAlerts returns the EmailAlerts field if non-nil, zero value otherwise.
-
-### GetEmailAlertsOk
-
-`func (o *NotificationOpenApiVO) GetEmailAlertsOk() (*NotificationConfigurationOpenApiVO, bool)`
-
-GetEmailAlertsOk returns a tuple with the EmailAlerts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEmailAlerts
-
-`func (o *NotificationOpenApiVO) SetEmailAlerts(v NotificationConfigurationOpenApiVO)`
-
-SetEmailAlerts sets EmailAlerts field to given value.
-
-### HasEmailAlerts
-
-`func (o *NotificationOpenApiVO) HasEmailAlerts() bool`
-
-HasEmailAlerts returns a boolean if a field has been set.
 
 ### GetAlertEmailSetting
 
@@ -76,6 +52,56 @@ SetAlertEmailSetting sets AlertEmailSetting field to given value.
 `func (o *NotificationOpenApiVO) HasAlertEmailSetting() bool`
 
 HasAlertEmailSetting returns a boolean if a field has been set.
+
+### GetEmail
+
+`func (o *NotificationOpenApiVO) GetEmail() NotificationConfigurationOpenApiVO`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *NotificationOpenApiVO) GetEmailOk() (*NotificationConfigurationOpenApiVO, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *NotificationOpenApiVO) SetEmail(v NotificationConfigurationOpenApiVO)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *NotificationOpenApiVO) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
+
+### GetRecipients
+
+`func (o *NotificationOpenApiVO) GetRecipients() []RecipientsVO`
+
+GetRecipients returns the Recipients field if non-nil, zero value otherwise.
+
+### GetRecipientsOk
+
+`func (o *NotificationOpenApiVO) GetRecipientsOk() (*[]RecipientsVO, bool)`
+
+GetRecipientsOk returns a tuple with the Recipients field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecipients
+
+`func (o *NotificationOpenApiVO) SetRecipients(v []RecipientsVO)`
+
+SetRecipients sets Recipients field to given value.
+
+### HasRecipients
+
+`func (o *NotificationOpenApiVO) HasRecipients() bool`
+
+HasRecipients returns a boolean if a field has been set.
 
 ### GetResource
 

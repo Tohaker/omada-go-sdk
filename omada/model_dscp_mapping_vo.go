@@ -21,6 +21,7 @@ var _ MappedNullable = &DscpMappingVO{}
 
 // DscpMappingVO struct for DscpMappingVO
 type DscpMappingVO struct {
+	// The Queue-DSCP mapping map. The key corresponds to the queue and the value corresponds to the DSCP value list
 	Mapping map[string][]int32 `json:"mapping"`
 }
 

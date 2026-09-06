@@ -26,7 +26,7 @@ type SslVpnServerSetting struct {
 	AuthType *int32 `json:"authType,omitempty"`
 	// Whether LDAP Authentication has been configured in SSL VPN Server.
 	ExistLdap *bool `json:"existLdap,omitempty"`
-	// Whether Radius Authentication has been configured in SSL VPN Server.
+	// Whether RADIUS Authentication has been configured in SSL VPN Server.
 	ExistRadius *bool `json:"existRadius,omitempty"`
 	// Whether to exit when idle
 	ExitAtIdle *bool `json:"exitAtIdle,omitempty"`

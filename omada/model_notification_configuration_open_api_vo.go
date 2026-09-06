@@ -23,9 +23,9 @@ var _ MappedNullable = &NotificationConfigurationOpenApiVO{}
 type NotificationConfigurationOpenApiVO struct {
 	// For the values of event category Key, refer to section 5.7.1.1 of the Open API Access.
 	EventCategory map[string]bool `json:"eventCategory"`
-	// The incident level of event, such as: critical, error, warning, info.
+	// The incident level of event map. Key is event level, such as: critical, error, warning, info. Value is true or false, indicating whether the event level is selected.
 	EventLevel map[string]bool `json:"eventLevel"`
-	// The incident object of event, such as: gateway, switch, ap, wiredClient, wirelessClient.
+	// The incident object of event. Key is event object type, such as: gateway, switch, ap, wiredClient, wirelessClient. Value is true or false, indicating whether the event object type is selected.
 	EventObjectType map[string]bool `json:"eventObjectType"`
 }
 

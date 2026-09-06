@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DadEnable** | Pointer to **bool** | Whether the DAD enable. | [optional] 
-**DadLinkPorts** | Pointer to **[]string** | DAD Link Ports | [optional] 
+**DadEnable** | **bool** | Whether the DAD enable. | 
+**DadLinkPorts** | Pointer to **[]string** | DAD Link Ports(This parameter is required when DAD is enabled.) | [optional] 
 **DadLocalIp** | Pointer to **string** | DAD Local IP | [optional] 
 **DadLocalIpv6** | Pointer to **string** | DAD Local IPv6 | [optional] 
 **DadPeerIp** | Pointer to **string** | DAD Peer IP | [optional] 
 **DadPeerIpv6** | Pointer to **string** | DAD Peer IPv6 | [optional] 
 **Mac** | **string** | Device Mac. | 
-**PeerLinkPorts** | Pointer to **[]string** | Peer Link Ports | [optional] 
-**Priority** | **int32** | Priority of the device in the M-LAG group. | 
+**PeerLinkPorts** | **[]string** | Peer Link Ports(Required parameters) | 
+**Priority** | **int32** | Priority of the device in the M-LAG group, it must be between 1 and 255. | 
 
 ## Methods
 
 ### NewMlagMemberConfigVO
 
-`func NewMlagMemberConfigVO(mac string, priority int32, ) *MlagMemberConfigVO`
+`func NewMlagMemberConfigVO(dadEnable bool, mac string, peerLinkPorts []string, priority int32, ) *MlagMemberConfigVO`
 
 NewMlagMemberConfigVO instantiates a new MlagMemberConfigVO object
 This constructor will assign default values to properties that have it defined,
@@ -52,11 +52,6 @@ and a boolean to check if the value has been set.
 
 SetDadEnable sets DadEnable field to given value.
 
-### HasDadEnable
-
-`func (o *MlagMemberConfigVO) HasDadEnable() bool`
-
-HasDadEnable returns a boolean if a field has been set.
 
 ### GetDadLinkPorts
 
@@ -222,11 +217,6 @@ and a boolean to check if the value has been set.
 
 SetPeerLinkPorts sets PeerLinkPorts field to given value.
 
-### HasPeerLinkPorts
-
-`func (o *MlagMemberConfigVO) HasPeerLinkPorts() bool`
-
-HasPeerLinkPorts returns a boolean if a field has been set.
 
 ### GetPriority
 

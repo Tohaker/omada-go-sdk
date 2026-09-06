@@ -47,9 +47,9 @@ type OswPortStatusVO struct {
 	PortId *string `json:"portId,omitempty"`
 	// Port ID Subtype
 	PortIdSubtype *string `json:"portIdSubtype,omitempty"`
-	// Rx
+	// Rx, in bytes
 	Rx *int64 `json:"rx,omitempty"`
-	// Rx Rate
+	// Rx rate, in bit/s
 	RxRate *int64 `json:"rxRate,omitempty"`
 	// Stk Status
 	StkStatus *int32 `json:"stkStatus,omitempty"`
@@ -59,9 +59,9 @@ type OswPortStatusVO struct {
 	StpDiscarding *bool `json:"stpDiscarding,omitempty"`
 	// LACP port state
 	TrunkState *int32 `json:"trunkState,omitempty"`
-	// Tx
+	// Tx, in bytes
 	Tx *int64 `json:"tx,omitempty"`
-	// Tx Rate
+	// Tx rate, in bit/s
 	TxRate *int64 `json:"txRate,omitempty"`
 }
 

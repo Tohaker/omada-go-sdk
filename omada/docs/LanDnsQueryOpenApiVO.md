@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DnsServers** | Pointer to **[]string** | When the Type is FORWARD, set the Domain Name and Alias Domain Name to be forwarded to a specific DNS Server, up to two DNS Servers can be configured. | [optional] 
 **Domain** | **string** | Enter the domain name. | 
 **Enable** | **bool** | off:false, on: true | 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **Id** | Pointer to **string** | The ID of current Lan Dns entry. | [optional] 
 **IpAddresses** | Pointer to **[]string** | When the Type is IP, it is the IPv4 address of the returned DNS response. | [optional] 
 **Ipv6Addresses** | Pointer to **[]string** | When the Type is IP, it is the IPv6 address of the returned DNS response. | [optional] 
@@ -176,6 +177,31 @@ and a boolean to check if the value has been set.
 
 SetEnable sets Enable field to given value.
 
+
+### GetFeatureDescription
+
+`func (o *LanDnsQueryOpenApiVO) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *LanDnsQueryOpenApiVO) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *LanDnsQueryOpenApiVO) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *LanDnsQueryOpenApiVO) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetId
 

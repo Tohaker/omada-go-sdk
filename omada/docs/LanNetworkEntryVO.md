@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NetworkId** | Pointer to **string** |  | [optional] 
-**VlanId** | Pointer to **int32** |  | [optional] 
+**NetworkId** | Pointer to **string** | The LAN Network ID | [optional] 
+**VlanId** | Pointer to **int32** | The VLAN ID | [optional] 
 
 ## Methods
 

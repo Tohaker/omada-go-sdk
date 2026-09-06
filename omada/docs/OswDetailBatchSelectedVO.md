@@ -14,12 +14,12 @@ Name | Type | Description | Notes
 **CompoundModel** | Pointer to **string** | Model complex used in the backend.Ap：model+(country)+modelVersion,  EAP225(EU) v3.0 Ap: specialModel+modelVersion, EAP225-Outdoor-1a20a950b8d950e8 v1.0  Gateway/Switch：model+modelVersion, Osg v3.0 | [optional] 
 **CustomId** | Pointer to **string** | Customer ID | [optional] 
 **CustomName** | Pointer to **string** | Customer name | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** | Description of the device | [optional] 
 **DevCap** | Pointer to [**OswDevCapVO**](OswDevCapVO.md) |  | [optional] 
 **DeviceMisc** | Pointer to [**OswDeviceMiscVO**](OswDeviceMiscVO.md) |  | [optional] 
 **DeviceSeriesType** | Pointer to **int32** | Device series type.DeviceSeriesType should be a value as follows: 0:advanced;1:pro | [optional] 
 **DeviceTemplateAvailable** | Pointer to **bool** | Whether there is an available device template for the device; it is false if the model is not supported or the site template has not created the corresponding device template. | [optional] 
-**DisableHwReset** | Pointer to **bool** |  | [optional] 
+**DisableHwReset** | Pointer to **bool** | Whether to disable hardware reset | [optional] 
 **DueTime** | Pointer to **int64** | Expire timestamp of license(cloud base exclusive) | [optional] 
 **DueTimeLeft** | Pointer to **int64** | Milliseconds from the current moment to the expiration time(cloud base exclusive) | [optional] 
 **EcspFirstVersion** | Pointer to **int32** | Ecsp first version | [optional] 
@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **InWhitelist** | Pointer to **bool** | Whether the device is in white list | [optional] 
 **InitialUnbindingLimit** | Pointer to **int32** | Initial unbind count for license(cloud base exclusive) | [optional] 
 **Lags** | Pointer to [**[]OswLagVO**](OswLagVO.md) | Lag List | [optional] 
+**LatestVersion** | Pointer to **string** | Latest firmware version | [optional] 
 **LicenseId** | Pointer to **string** | License key on detail page of device(cloud base exclusive) | [optional] 
 **LicenseStatus** | Pointer to **int32** | License status(cloud base exclusive).LicenseStatus should be a value as follows: 0:unActive 1:Unbind 2:Expired 3:active | [optional] 
 **LicenseUnbindingLimit** | Pointer to **int32** | Remaining unbind count for license on detail Page of device(cloud base exclusive) | [optional] 
@@ -45,6 +46,7 @@ Name | Type | Description | Notes
 **Ports** | Pointer to [**[]OswPortVO**](OswPortVO.md) | Port List | [optional] 
 **Remember** | Pointer to **bool** | Whether to remember the device(deprecated) | [optional] 
 **RememberDevice** | Pointer to **int32** | Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site | [optional] 
+**ReplaceDeviceInfo** | Pointer to [**DeviceReplaceSettingVO**](DeviceReplaceSettingVO.md) |  | [optional] 
 **Resource** | Pointer to **int32** | Data source.Resource should be a value as follows: 0:new created;1:from template;2:override | [optional] 
 **ShowModel** | Pointer to **string** | Model complex shown in the front end.Ap：model+(country)+modelVersion,EAP225(EU) v3.0  Gateway/Switch：model+modelVersion,Osg v3.0 | [optional] 
 **SiteName** | Pointer to **string** | Site name of the device | [optional] 
@@ -784,6 +786,31 @@ SetLags sets Lags field to given value.
 
 HasLags returns a boolean if a field has been set.
 
+### GetLatestVersion
+
+`func (o *OswDetailBatchSelectedVO) GetLatestVersion() string`
+
+GetLatestVersion returns the LatestVersion field if non-nil, zero value otherwise.
+
+### GetLatestVersionOk
+
+`func (o *OswDetailBatchSelectedVO) GetLatestVersionOk() (*string, bool)`
+
+GetLatestVersionOk returns a tuple with the LatestVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatestVersion
+
+`func (o *OswDetailBatchSelectedVO) SetLatestVersion(v string)`
+
+SetLatestVersion sets LatestVersion field to given value.
+
+### HasLatestVersion
+
+`func (o *OswDetailBatchSelectedVO) HasLatestVersion() bool`
+
+HasLatestVersion returns a boolean if a field has been set.
+
 ### GetLicenseId
 
 `func (o *OswDetailBatchSelectedVO) GetLicenseId() string`
@@ -1108,6 +1135,31 @@ SetRememberDevice sets RememberDevice field to given value.
 `func (o *OswDetailBatchSelectedVO) HasRememberDevice() bool`
 
 HasRememberDevice returns a boolean if a field has been set.
+
+### GetReplaceDeviceInfo
+
+`func (o *OswDetailBatchSelectedVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO`
+
+GetReplaceDeviceInfo returns the ReplaceDeviceInfo field if non-nil, zero value otherwise.
+
+### GetReplaceDeviceInfoOk
+
+`func (o *OswDetailBatchSelectedVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool)`
+
+GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplaceDeviceInfo
+
+`func (o *OswDetailBatchSelectedVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO)`
+
+SetReplaceDeviceInfo sets ReplaceDeviceInfo field to given value.
+
+### HasReplaceDeviceInfo
+
+`func (o *OswDetailBatchSelectedVO) HasReplaceDeviceInfo() bool`
+
+HasReplaceDeviceInfo returns a boolean if a field has been set.
 
 ### GetResource
 

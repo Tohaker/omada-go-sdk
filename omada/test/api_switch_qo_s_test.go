@@ -250,6 +250,21 @@ func Test_omada_SwitchQoSAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SwitchQoSAPIService ModifyRuleIndex", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.SwitchQoSAPI.ModifyRuleIndex(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SwitchQoSAPIService ModifySchedulerMapping", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

@@ -106,7 +106,7 @@ type MSPUserAndRoleAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
-	@param userID userID
+	@param userID User ID
 	@return MSPUserAndRoleAPIDeleteMspUserRequest
 	*/
 	DeleteMspUser(ctx context.Context, mspId string, userID string) MSPUserAndRoleAPIDeleteMspUserRequest
@@ -256,7 +256,7 @@ type MSPUserAndRoleAPI interface {
 	Get msp role info<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param mspId
+	@param mspId MSP ID
 	@param roleId Role ID
 	@return MSPUserAndRoleAPIGetMspRoleRequest
 	*/
@@ -273,7 +273,7 @@ type MSPUserAndRoleAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
-	@param userID userID
+	@param userID User ID
 	@return MSPUserAndRoleAPIGetUser1Request
 	*/
 	GetUser1(ctx context.Context, mspId string, userID string) MSPUserAndRoleAPIGetUser1Request
@@ -285,7 +285,7 @@ type MSPUserAndRoleAPI interface {
 	/*
 	ModifyCustomerRole Modify an existing customer role
 
-	Modify an existing customer role.<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. Its role permission scope cannot be greater than its manager.
+	Modify an existing customer role.<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. An account with user management permission must have a role permission scope that covers its sub-users.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -316,7 +316,7 @@ type MSPUserAndRoleAPI interface {
 	/*
 	ModifyMspRole Modify an existing msp role
 
-	Modify an existing msp role.<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. Its role permission scope cannot be greater than its manager.
+	Modify an existing msp role.<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. An account with user management permission must have a role permission scope that covers its sub-users.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -336,7 +336,7 @@ type MSPUserAndRoleAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
-	@param userID userID
+	@param userID User ID
 	@return MSPUserAndRoleAPIModifyMspUserRequest
 	*/
 	ModifyMspUser(ctx context.Context, mspId string, userID string) MSPUserAndRoleAPIModifyMspUserRequest
@@ -1014,7 +1014,7 @@ Delete an existing msp user. This interface only supports the authorization code
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
- @param userID userID
+ @param userID User ID
  @return MSPUserAndRoleAPIDeleteMspUserRequest
 */
 func (a *MSPUserAndRoleAPIService) DeleteMspUser(ctx context.Context, mspId string, userID string) MSPUserAndRoleAPIDeleteMspUserRequest {
@@ -2336,7 +2336,7 @@ GetMspRole Get msp role info
 Get msp role info<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mspId
+ @param mspId MSP ID
  @param roleId Role ID
  @return MSPUserAndRoleAPIGetMspRoleRequest
 */
@@ -2458,7 +2458,7 @@ Get msp user info. This interface only supports the authorization code mode, not
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
- @param userID userID
+ @param userID User ID
  @return MSPUserAndRoleAPIGetUser1Request
 */
 func (a *MSPUserAndRoleAPIService) GetUser1(ctx context.Context, mspId string, userID string) MSPUserAndRoleAPIGetUser1Request {
@@ -2581,7 +2581,7 @@ func (r MSPUserAndRoleAPIModifyCustomerRoleRequest) Execute() (*OperationRespons
 /*
 ModifyCustomerRole Modify an existing customer role
 
-Modify an existing customer role.<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. Its role permission scope cannot be greater than its manager.
+Modify an existing customer role.<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. An account with user management permission must have a role permission scope that covers its sub-users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -2841,7 +2841,7 @@ func (r MSPUserAndRoleAPIModifyMspRoleRequest) Execute() (*OperationResponse, *h
 /*
 ModifyMspRole Modify an existing msp role
 
-Modify an existing msp role.<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. Its role permission scope cannot be greater than its manager.
+Modify an existing msp role.<br/><br/>The interface requires one of the permissions: <br/>MSP Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. An account with user management permission must have a role permission scope that covers its sub-users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -2977,7 +2977,7 @@ Modify an existing msp user. This interface only supports the authorization code
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
- @param userID userID
+ @param userID User ID
  @return MSPUserAndRoleAPIModifyMspUserRequest
 */
 func (a *MSPUserAndRoleAPIService) ModifyMspUser(ctx context.Context, mspId string, userID string) MSPUserAndRoleAPIModifyMspUserRequest {

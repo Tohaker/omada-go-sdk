@@ -19,6 +19,8 @@ var _ MappedNullable = &TopologyRootNode{}
 
 // TopologyRootNode Root Node Mac In Topology.
 type TopologyRootNode struct {
+	// Discovery Mode, which can only be one of the following two types: 0:Manual and 1:Auto.
+	DiscoveryMode *int32 `json:"discoveryMode,omitempty"`
 	// Root Node MAC address, like AA-BB-CC-DD-EE-FF.
 	Mac *string `json:"mac,omitempty"`
 	// MultiSwitch Node MAC list.
@@ -44,6 +46,38 @@ func NewTopologyRootNode() *TopologyRootNode {
 func NewTopologyRootNodeWithDefaults() *TopologyRootNode {
 	this := TopologyRootNode{}
 	return &this
+}
+
+// GetDiscoveryMode returns the DiscoveryMode field value if set, zero value otherwise.
+func (o *TopologyRootNode) GetDiscoveryMode() int32 {
+	if o == nil || IsNil(o.DiscoveryMode) {
+		var ret int32
+		return ret
+	}
+	return *o.DiscoveryMode
+}
+
+// GetDiscoveryModeOk returns a tuple with the DiscoveryMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyRootNode) GetDiscoveryModeOk() (*int32, bool) {
+	if o == nil || IsNil(o.DiscoveryMode) {
+		return nil, false
+	}
+	return o.DiscoveryMode, true
+}
+
+// HasDiscoveryMode returns a boolean if a field has been set.
+func (o *TopologyRootNode) HasDiscoveryMode() bool {
+	if o != nil && !IsNil(o.DiscoveryMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetDiscoveryMode gets a reference to the given int32 and assigns it to the DiscoveryMode field.
+func (o *TopologyRootNode) SetDiscoveryMode(v int32) {
+	o.DiscoveryMode = &v
 }
 
 // GetMac returns the Mac field value if set, zero value otherwise.
@@ -184,6 +218,9 @@ func (o TopologyRootNode) MarshalJSON() ([]byte, error) {
 
 func (o TopologyRootNode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DiscoveryMode) {
+		toSerialize["discoveryMode"] = o.DiscoveryMode
+	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac
 	}

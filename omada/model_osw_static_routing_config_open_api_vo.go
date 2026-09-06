@@ -21,6 +21,8 @@ var _ MappedNullable = &OswStaticRoutingConfigOpenApiVO{}
 
 // OswStaticRoutingConfigOpenApiVO struct for OswStaticRoutingConfigOpenApiVO
 type OswStaticRoutingConfigOpenApiVO struct {
+	// The description of static routing. It may contain 0 to 128 characters, including digits (0–9), uppercase and lowercase letters (A–Z, a–z), spaces, and -_@:/.+# .
+	Description *string `json:"description,omitempty"`
 	// IP address/SubNet, up to 16 entries are allowed for the destinations list.
 	Destinations []string `json:"destinations"`
 	// Distance should be within the range of 1–255.
@@ -29,8 +31,12 @@ type OswStaticRoutingConfigOpenApiVO struct {
 	IpVersion int32 `json:"ipVersion"`
 	// NextHopIp
 	NextHopIp string `json:"nextHopIp"`
+	// NextHopVrfId
+	NextHopVrfId *string `json:"nextHopVrfId,omitempty"`
 	// StaticRouting status
 	Status bool `json:"status"`
+	// VrfId
+	VrfId *string `json:"vrfId,omitempty"`
 }
 
 type _OswStaticRoutingConfigOpenApiVO OswStaticRoutingConfigOpenApiVO
@@ -55,6 +61,38 @@ func NewOswStaticRoutingConfigOpenApiVO(destinations []string, distance int32, i
 func NewOswStaticRoutingConfigOpenApiVOWithDefaults() *OswStaticRoutingConfigOpenApiVO {
 	this := OswStaticRoutingConfigOpenApiVO{}
 	return &this
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *OswStaticRoutingConfigOpenApiVO) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStaticRoutingConfigOpenApiVO) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *OswStaticRoutingConfigOpenApiVO) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *OswStaticRoutingConfigOpenApiVO) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetDestinations returns the Destinations field value
@@ -153,6 +191,38 @@ func (o *OswStaticRoutingConfigOpenApiVO) SetNextHopIp(v string) {
 	o.NextHopIp = v
 }
 
+// GetNextHopVrfId returns the NextHopVrfId field value if set, zero value otherwise.
+func (o *OswStaticRoutingConfigOpenApiVO) GetNextHopVrfId() string {
+	if o == nil || IsNil(o.NextHopVrfId) {
+		var ret string
+		return ret
+	}
+	return *o.NextHopVrfId
+}
+
+// GetNextHopVrfIdOk returns a tuple with the NextHopVrfId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStaticRoutingConfigOpenApiVO) GetNextHopVrfIdOk() (*string, bool) {
+	if o == nil || IsNil(o.NextHopVrfId) {
+		return nil, false
+	}
+	return o.NextHopVrfId, true
+}
+
+// HasNextHopVrfId returns a boolean if a field has been set.
+func (o *OswStaticRoutingConfigOpenApiVO) HasNextHopVrfId() bool {
+	if o != nil && !IsNil(o.NextHopVrfId) {
+		return true
+	}
+
+	return false
+}
+
+// SetNextHopVrfId gets a reference to the given string and assigns it to the NextHopVrfId field.
+func (o *OswStaticRoutingConfigOpenApiVO) SetNextHopVrfId(v string) {
+	o.NextHopVrfId = &v
+}
+
 // GetStatus returns the Status field value
 func (o *OswStaticRoutingConfigOpenApiVO) GetStatus() bool {
 	if o == nil {
@@ -177,6 +247,38 @@ func (o *OswStaticRoutingConfigOpenApiVO) SetStatus(v bool) {
 	o.Status = v
 }
 
+// GetVrfId returns the VrfId field value if set, zero value otherwise.
+func (o *OswStaticRoutingConfigOpenApiVO) GetVrfId() string {
+	if o == nil || IsNil(o.VrfId) {
+		var ret string
+		return ret
+	}
+	return *o.VrfId
+}
+
+// GetVrfIdOk returns a tuple with the VrfId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStaticRoutingConfigOpenApiVO) GetVrfIdOk() (*string, bool) {
+	if o == nil || IsNil(o.VrfId) {
+		return nil, false
+	}
+	return o.VrfId, true
+}
+
+// HasVrfId returns a boolean if a field has been set.
+func (o *OswStaticRoutingConfigOpenApiVO) HasVrfId() bool {
+	if o != nil && !IsNil(o.VrfId) {
+		return true
+	}
+
+	return false
+}
+
+// SetVrfId gets a reference to the given string and assigns it to the VrfId field.
+func (o *OswStaticRoutingConfigOpenApiVO) SetVrfId(v string) {
+	o.VrfId = &v
+}
+
 func (o OswStaticRoutingConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -187,11 +289,20 @@ func (o OswStaticRoutingConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o OswStaticRoutingConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	toSerialize["destinations"] = o.Destinations
 	toSerialize["distance"] = o.Distance
 	toSerialize["ipVersion"] = o.IpVersion
 	toSerialize["nextHopIp"] = o.NextHopIp
+	if !IsNil(o.NextHopVrfId) {
+		toSerialize["nextHopVrfId"] = o.NextHopVrfId
+	}
 	toSerialize["status"] = o.Status
+	if !IsNil(o.VrfId) {
+		toSerialize["vrfId"] = o.VrfId
+	}
 	return toSerialize, nil
 }
 

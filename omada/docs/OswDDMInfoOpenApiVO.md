@@ -4,16 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BiasCurrent** | Pointer to **float64** | The biasCurrent of the optical module. | [optional] 
-**DataReady** | Pointer to **int32** | Whether the DDM data is valid. | [optional] 
-**LossOfSignal** | Pointer to **int32** | The Loss Of Signal(LOS) of the optical module. | [optional] 
+**BiasCurrent** | Pointer to **float64** | The biasCurrent(mA) of the optical module. | [optional] 
+**DataReady** | Pointer to **int32** | Whether the DDM data is valid(0:invalid, 1:valid). | [optional] 
+**LossOfSignal** | Pointer to **int32** | Whether the optical module is in the Loss Of Signal state(0:false, 1:true). | [optional] 
 **Port** | Pointer to **int32** | Switch portId. | [optional] 
-**RxPower** | Pointer to **float64** | The received optical power of the optical module. | [optional] 
+**RxPower** | Pointer to **float64** | The received optical power(mW) of the optical module. | [optional] 
+**RxPowerDbm** | Pointer to **float64** | The received optical power(dbm) of the optical module. | [optional] 
 **StandardPort** | Pointer to **string** | Switch stack portId(unit/slot/port). | [optional] 
-**Temperature** | Pointer to **float64** | The temperature of the optical module. | [optional] 
-**TransmitFault** | Pointer to **int32** | The transmission fault of the optical module. | [optional] 
-**TxPower** | Pointer to **float64** | The transmitted optical power of the optical module. | [optional] 
-**Voltage** | Pointer to **float64** | The voltage of the optical module. | [optional] 
+**Temperature** | Pointer to **float64** | The temperature(Celsius) of the optical module. | [optional] 
+**TemperatureFah** | Pointer to **float64** | The temperature(Fahrenheit) of the optical module. | [optional] 
+**TransmitFault** | Pointer to **int32** | Whether the optical module is in the Transmission Fault state(0:false, 1:true). | [optional] 
+**TxPower** | Pointer to **float64** | The transmitted optical power(mW) of the optical module. | [optional] 
+**TxPowerDbm** | Pointer to **float64** | The transmitted optical power(dbm) of the optical module. | [optional] 
+**Voltage** | Pointer to **float64** | The voltage(V) of the optical module. | [optional] 
 
 ## Methods
 
@@ -159,6 +162,31 @@ SetRxPower sets RxPower field to given value.
 
 HasRxPower returns a boolean if a field has been set.
 
+### GetRxPowerDbm
+
+`func (o *OswDDMInfoOpenApiVO) GetRxPowerDbm() float64`
+
+GetRxPowerDbm returns the RxPowerDbm field if non-nil, zero value otherwise.
+
+### GetRxPowerDbmOk
+
+`func (o *OswDDMInfoOpenApiVO) GetRxPowerDbmOk() (*float64, bool)`
+
+GetRxPowerDbmOk returns a tuple with the RxPowerDbm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRxPowerDbm
+
+`func (o *OswDDMInfoOpenApiVO) SetRxPowerDbm(v float64)`
+
+SetRxPowerDbm sets RxPowerDbm field to given value.
+
+### HasRxPowerDbm
+
+`func (o *OswDDMInfoOpenApiVO) HasRxPowerDbm() bool`
+
+HasRxPowerDbm returns a boolean if a field has been set.
+
 ### GetStandardPort
 
 `func (o *OswDDMInfoOpenApiVO) GetStandardPort() string`
@@ -209,6 +237,31 @@ SetTemperature sets Temperature field to given value.
 
 HasTemperature returns a boolean if a field has been set.
 
+### GetTemperatureFah
+
+`func (o *OswDDMInfoOpenApiVO) GetTemperatureFah() float64`
+
+GetTemperatureFah returns the TemperatureFah field if non-nil, zero value otherwise.
+
+### GetTemperatureFahOk
+
+`func (o *OswDDMInfoOpenApiVO) GetTemperatureFahOk() (*float64, bool)`
+
+GetTemperatureFahOk returns a tuple with the TemperatureFah field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTemperatureFah
+
+`func (o *OswDDMInfoOpenApiVO) SetTemperatureFah(v float64)`
+
+SetTemperatureFah sets TemperatureFah field to given value.
+
+### HasTemperatureFah
+
+`func (o *OswDDMInfoOpenApiVO) HasTemperatureFah() bool`
+
+HasTemperatureFah returns a boolean if a field has been set.
+
 ### GetTransmitFault
 
 `func (o *OswDDMInfoOpenApiVO) GetTransmitFault() int32`
@@ -258,6 +311,31 @@ SetTxPower sets TxPower field to given value.
 `func (o *OswDDMInfoOpenApiVO) HasTxPower() bool`
 
 HasTxPower returns a boolean if a field has been set.
+
+### GetTxPowerDbm
+
+`func (o *OswDDMInfoOpenApiVO) GetTxPowerDbm() float64`
+
+GetTxPowerDbm returns the TxPowerDbm field if non-nil, zero value otherwise.
+
+### GetTxPowerDbmOk
+
+`func (o *OswDDMInfoOpenApiVO) GetTxPowerDbmOk() (*float64, bool)`
+
+GetTxPowerDbmOk returns a tuple with the TxPowerDbm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTxPowerDbm
+
+`func (o *OswDDMInfoOpenApiVO) SetTxPowerDbm(v float64)`
+
+SetTxPowerDbm sets TxPowerDbm field to given value.
+
+### HasTxPowerDbm
+
+`func (o *OswDDMInfoOpenApiVO) HasTxPowerDbm() bool`
+
+HasTxPowerDbm returns a boolean if a field has been set.
 
 ### GetVoltage
 

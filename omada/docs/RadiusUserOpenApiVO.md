@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DownLimit** | Pointer to **int64** | Build-in Radius profile user downlink traffic limit, unit: MB | [optional] 
-**DownRateLimit** | Pointer to **int64** | Build-in Radius profile user downlink rate limit, unit: Kbps | [optional] 
-**Password** | Pointer to **string** | Build-in Radius profile user password, when parameter [type] is 1, [password] is the MAC address | [optional] 
+**Description** | Pointer to **string** | Description of radius user, should contain 1 to 256 characters | [optional] 
+**DownLimit** | Pointer to **int64** | Build-in RADIUS profile user downlink traffic limit, unit: MB | [optional] 
+**DownRateLimit** | Pointer to **int64** | Build-in RADIUS profile user downlink rate limit, unit: Kbps | [optional] 
+**Password** | Pointer to **string** | Build-in RADIUS profile user password, when parameter [type] is 1, [password] is the MAC address | [optional] 
 **Timeout** | Pointer to **int32** | Session timeout | [optional] 
-**Type** | Pointer to **int32** | Type of Build-in Radius profile user, 0: user auth; 1: MAC auth | [optional] 
-**UpLimit** | Pointer to **int64** | Build-in Radius profile user uplink traffic limit, unit: MB | [optional] 
-**UpRateLimit** | Pointer to **int64** | Build-in Radius profile user uplink rate limit, unit: Kbps | [optional] 
-**UserId** | Pointer to **string** | Build-in Radius profile user ID | [optional] 
-**Username** | Pointer to **string** | Build-in Radius profile user name, when parameter [type] is 1, [username] is the MAC address | [optional] 
+**Type** | Pointer to **int32** | Type of Build-in RADIUS profile user, 0: user auth; 1: MAC auth | [optional] 
+**UpLimit** | Pointer to **int64** | Build-in RADIUS profile user uplink traffic limit, unit: MB | [optional] 
+**UpRateLimit** | Pointer to **int64** | Build-in RADIUS profile user uplink rate limit, unit: Kbps | [optional] 
+**UserId** | Pointer to **string** | Build-in RADIUS profile user ID | [optional] 
+**Username** | Pointer to **string** | Build-in RADIUS profile user name, when parameter [type] is 1, [username] is the MAC address | [optional] 
 **VlanId** | Pointer to **int32** | VLAN ID, from 1 to 4096 | [optional] 
 
 ## Methods
@@ -33,6 +34,31 @@ will change when the set of required properties is changed
 NewRadiusUserOpenApiVOWithDefaults instantiates a new RadiusUserOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDescription
+
+`func (o *RadiusUserOpenApiVO) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *RadiusUserOpenApiVO) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *RadiusUserOpenApiVO) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *RadiusUserOpenApiVO) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetDownLimit
 

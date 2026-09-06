@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AffectedPorts** | Pointer to [**OswPortAndLagNetworkVO**](OswPortAndLagNetworkVO.md) |  | [optional] 
 **Clients** | Pointer to [**[]OswClientVO**](OswClientVO.md) | Switch downlink clients. | [optional] 
+**SupportLayout** | Pointer to **bool** | Whether the device supports reporting port layout information. | [optional] 
 **SwitchDetail** | Pointer to [**OswDetailVO**](OswDetailVO.md) |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetClients sets Clients field to given value.
 `func (o *VlanNetworkAffectingSwitchDetailVO) HasClients() bool`
 
 HasClients returns a boolean if a field has been set.
+
+### GetSupportLayout
+
+`func (o *VlanNetworkAffectingSwitchDetailVO) GetSupportLayout() bool`
+
+GetSupportLayout returns the SupportLayout field if non-nil, zero value otherwise.
+
+### GetSupportLayoutOk
+
+`func (o *VlanNetworkAffectingSwitchDetailVO) GetSupportLayoutOk() (*bool, bool)`
+
+GetSupportLayoutOk returns a tuple with the SupportLayout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportLayout
+
+`func (o *VlanNetworkAffectingSwitchDetailVO) SetSupportLayout(v bool)`
+
+SetSupportLayout sets SupportLayout field to given value.
+
+### HasSupportLayout
+
+`func (o *VlanNetworkAffectingSwitchDetailVO) HasSupportLayout() bool`
+
+HasSupportLayout returns a boolean if a field has been set.
 
 ### GetSwitchDetail
 

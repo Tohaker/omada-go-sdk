@@ -173,7 +173,7 @@ type ProfilesAPI interface {
 	/*
 	CreateOuiProfile Create OUI profile
 
-	Create OUI profileThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33781  -  This OUI profile already exists.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Create OUI profile<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33781  -  This OUI profile already exists.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -201,9 +201,9 @@ type ProfilesAPI interface {
 	CreatePPSKProfile(ctx context.Context, omadacId string, siteId string) ProfilesAPICreatePPSKProfileRequest
 
 	// CreatePPSKProfileExecute executes the request
-	//  @return OperationResponseWithoutResult
+	//  @return OperationResponseResponseIdVO
 	// Deprecated
-	CreatePPSKProfileExecute(r ProfilesAPICreatePPSKProfileRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	CreatePPSKProfileExecute(r ProfilesAPICreatePPSKProfileRequest) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
 	CreatePPSKProfileV2 Create PPSK profile V2
@@ -218,13 +218,13 @@ type ProfilesAPI interface {
 	CreatePPSKProfileV2(ctx context.Context, omadacId string, siteId string) ProfilesAPICreatePPSKProfileV2Request
 
 	// CreatePPSKProfileV2Execute executes the request
-	//  @return OperationResponseWithoutResult
-	CreatePPSKProfileV2Execute(r ProfilesAPICreatePPSKProfileV2Request) (*OperationResponseWithoutResult, *http.Response, error)
+	//  @return OperationResponseResponseIdVO
+	CreatePPSKProfileV2Execute(r ProfilesAPICreatePPSKProfileV2Request) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
-	CreateRadiusProfile Create a new Radius profile
+	CreateRadiusProfile Create a new RADIUS profile
 
-	Create a new Radius profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34014  -  The number of RADIUS profiles has reached the limit.
+	Create a new RADIUS profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34014  -  The number of RADIUS profiles has reached the limit.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -234,13 +234,13 @@ type ProfilesAPI interface {
 	CreateRadiusProfile(ctx context.Context, omadacId string, siteId string) ProfilesAPICreateRadiusProfileRequest
 
 	// CreateRadiusProfileExecute executes the request
-	//  @return OperationResponseString
-	CreateRadiusProfileExecute(r ProfilesAPICreateRadiusProfileRequest) (*OperationResponseString, *http.Response, error)
+	//  @return OperationResponseResponseIdVO
+	CreateRadiusProfileExecute(r ProfilesAPICreateRadiusProfileRequest) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
-	CreateRadiusUser Create a new Build-in Radius profile user
+	CreateRadiusUser Create a new Build-in RADIUS profile user
 
-	Get Build-in Radius profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The radius user name already exists.<br/>-34025  -  The number of radius users has reached the limit.<br/>-34030  -  The radius user name exists in other sites. Please contact the administrator if necessary.
+	Get Build-in RADIUS profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The RADIUS user name already exists.<br/>-34025  -  The number of RADIUS users has reached the limit.<br/>-34030  -  The RADIUS user name exists in other sites. Please contact the administrator if necessary.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -375,11 +375,11 @@ type ProfilesAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
+	@param groupType Type of group profile, 0:IP Group; 1:IP Port Group; 2：Mac Group; 3:IPv6 Group; 4:IPv6 Port Group; 5:Country Group; 7:Domain Group.
 	@param groupId Group profile id.
-	@param groupType groupType
 	@return ProfilesAPIDeleteGroupProfileRequest
 	*/
-	DeleteGroupProfile(ctx context.Context, omadacId string, siteId string, groupId string, groupType string) ProfilesAPIDeleteGroupProfileRequest
+	DeleteGroupProfile(ctx context.Context, omadacId string, siteId string, groupType string, groupId string) ProfilesAPIDeleteGroupProfileRequest
 
 	// DeleteGroupProfileExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -422,7 +422,7 @@ type ProfilesAPI interface {
 	/*
 	DeleteOuiProfile Delete OUI Profile
 
-	Delete OUI ProfileThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33780  -  OUI Profile has been used in OUI based VLAN.<br/>-34226  -  OUI Profile has been used in Wireless MAC Filter.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Delete OUI Profile<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33780  -  OUI Profile has been used in OUI based VLAN.<br/>-34226  -  OUI Profile has been used in Wireless MAC Filter.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -471,9 +471,9 @@ type ProfilesAPI interface {
 	DeletePSKsToPPSKProfileExecute(r ProfilesAPIDeletePSKsToPPSKProfileRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	DeleteRadiusProfile Delete an exist Radius profile
+	DeleteRadiusProfile Delete an exist RADIUS profile
 
-	Delete an exist Radius profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34009  -  The RADIUS profile cannot be deleted because it is applied in MAC-Based Authentication.<br/>-34010  -  The RADIUS profile cannot be deleted because it is applied in Portal Authentication.<br/>-34012  -  Failed to delete this RADIUS profile because it has been used in 802.1X authentication.<br/>-34013  -  Failed to delete this RADIUS profile because it has been used in SSID.<br/>-34023  -  Failed to delete built-in radius profile.<br/>-43001  -  Failed to delete this radius profile because it is already occupied by SSL VPN.
+	Delete an exist RADIUS profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34009  -  The RADIUS profile cannot be deleted because it is applied in MAC-Based Authentication.<br/>-34010  -  The RADIUS profile cannot be deleted because it is applied in Portal Authentication.<br/>-34012  -  Failed to delete this RADIUS profile because it has been used in 802.1X authentication.<br/>-34013  -  Failed to delete this RADIUS profile because it has been used in SSID.<br/>-34023  -  Failed to delete built-in RADIUS profile.<br/>-43001  -  Failed to delete this RADIUS profile because it is already occupied by SSL VPN.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -488,14 +488,14 @@ type ProfilesAPI interface {
 	DeleteRadiusProfileExecute(r ProfilesAPIDeleteRadiusProfileRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	DeleteRadiusUser Delete an exist Build-in Radius profile user
+	DeleteRadiusUser Delete an exist Build-in RADIUS profile user
 
-	Get Build-in Radius profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+	Get Build-in RADIUS profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param userId Build-in Radius profile user Id
+	@param userId Build-in RADIUS profile user Id
 	@return ProfilesAPIDeleteRadiusUserRequest
 	*/
 	DeleteRadiusUser(ctx context.Context, omadacId string, siteId string, userId string) ProfilesAPIDeleteRadiusUserRequest
@@ -673,7 +673,7 @@ type ProfilesAPI interface {
 	/*
 	GetOuiProfileFullList Get OUI profile summary list
 
-	Get OUI profile summary list.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get OUI profile summary list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -689,7 +689,7 @@ type ProfilesAPI interface {
 	/*
 	GetOuiProfileList Get OUI profile list
 
-	Get OUI profile list.(Pagination)This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get OUI profile list.(Pagination)<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -736,9 +736,9 @@ type ProfilesAPI interface {
 	GetPPSKProfilesExecute(r ProfilesAPIGetPPSKProfilesRequest) (*OperationResponseListPpskProfileBriefInfo, *http.Response, error)
 
 	/*
-	GetRadiusProfileList Get Radius profile list
+	GetRadiusProfileList Get RADIUS profile list
 
-	Get Radius profile list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get RADIUS profile list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -752,9 +752,9 @@ type ProfilesAPI interface {
 	GetRadiusProfileListExecute(r ProfilesAPIGetRadiusProfileListRequest) (*OperationResponseListRadiusProfileOpenApiVO, *http.Response, error)
 
 	/*
-	GetRadiusUserList Get Build-in Radius profile user list
+	GetRadiusUserList Get Build-in RADIUS profile user list
 
-	Get Build-in Radius profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+	Get Build-in RADIUS profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -818,7 +818,7 @@ type ProfilesAPI interface {
 	/*
 	GetWifiCallingProfiles Get wifi calling profile list
 
-	Get wifi calling profile list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+	Get wifi calling profile list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Device Config Page View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -951,7 +951,7 @@ type ProfilesAPI interface {
 	/*
 	ModifyMdnsProfile Modify an existing Bonjour Service
 
-	Modify an existing Bonjour Service.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33756  -  This Bonjour Service name already exists.<br/>-33758  -  This Bonjour Service does not exist.<br/>-33759  -  Build-in Bonjour Service cannot be edited or deleted.
+	Modify an existing Bonjour Service.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33756  -  This Bonjour Service name already exists.<br/>-33758  -  One or more Bonjour Services do not exist.<br/>-33759  -  Build-in Bonjour Service cannot be edited or deleted.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -968,7 +968,7 @@ type ProfilesAPI interface {
 	/*
 	ModifyOuiProfile Modify OUI Profile
 
-	Modify OUI ProfileThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33781  -  This OUI profile already exists.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Modify OUI Profile<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33781  -  This OUI profile already exists.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1000,9 +1000,9 @@ type ProfilesAPI interface {
 	ModifyPPSKProfileExecute(r ProfilesAPIModifyPPSKProfileRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyRadiusProfile Modify an exist Radius profile
+	ModifyRadiusProfile Modify an exist RADIUS profile
 
-	Modify an exist Radius profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34005  -  This RADIUS profile does not exist.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34015  -  The RADIUS profile cannot be modified because it is applied in PPSK with RADIUS.<br/>-34016  -  Unable to set the authentication server URL because the profile is applied in authentications that do not support authentication server URL.<br/>-34018  -  Failed to modify this RADIUS profile because it has been used in 802.1X authentication.<br/>-34022  -  Failed to modify built-in radius profile.<br/>-34027  -  The built-in server is being used, failed to stop built-in radius server.<br/>-43006  -  The RADIUS profile cannot add more than 2 RADIUS servers because it is used by SSL VPN.<br/>-43012  -  The number of Accounting Servers in the radius profile should not be greater than the number of Authentication Servers because the radius profile is used by the SSL VPN server.
+	Modify an exist RADIUS profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34005  -  This RADIUS profile does not exist.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34015  -  The RADIUS profile cannot be modified because it is applied in PPSK with RADIUS.<br/>-34016  -  Unable to set the authentication server URL because the profile is applied in authentications that do not support authentication server URL.<br/>-34018  -  Failed to modify this RADIUS profile because it has been used in 802.1X authentication.<br/>-34022  -  Failed to modify built-in RADIUS profile.<br/>-34027  -  The built-in server is being used, failed to stop built-in RADIUS server.<br/>-43006  -  The RADIUS profile cannot add more than 2 RADIUS servers because it is used by SSL VPN.<br/>-43012  -  The number of Accounting Servers in the RADIUS profile should not be greater than the number of Authentication Servers because the RADIUS profile is used by the SSL VPN server.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1017,14 +1017,14 @@ type ProfilesAPI interface {
 	ModifyRadiusProfileExecute(r ProfilesAPIModifyRadiusProfileRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyRadiusUser Modify an exist Build-in Radius profile user
+	ModifyRadiusUser Modify an exist Build-in RADIUS profile user
 
-	Get Build-in Radius profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The radius user name already exists.<br/>-34026  -  The radius user does not exist.<br/>-34030  -  The radius user name exists in other sites. Please contact the administrator if necessary.
+	Get Build-in RADIUS profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The RADIUS user name already exists.<br/>-34026  -  The RADIUS user does not exist.<br/>-34030  -  The RADIUS user name exists in other sites. Please contact the administrator if necessary.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param userId Build-in Radius profile user Id
+	@param userId Build-in RADIUS profile user Id
 	@return ProfilesAPIModifyRadiusUserRequest
 	*/
 	ModifyRadiusUser(ctx context.Context, omadacId string, siteId string, userId string) ProfilesAPIModifyRadiusUserRequest
@@ -2349,7 +2349,7 @@ func (r ProfilesAPICreateOuiProfileRequest) Execute() (*OperationResponseWithout
 /*
 CreateOuiProfile Create OUI profile
 
-Create OUI profileThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33781  -  This OUI profile already exists.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Create OUI profile<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33781  -  This OUI profile already exists.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2474,7 +2474,7 @@ func (r ProfilesAPICreatePPSKProfileRequest) PpskProfile(ppskProfile PpskProfile
 	return r
 }
 
-func (r ProfilesAPICreatePPSKProfileRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+func (r ProfilesAPICreatePPSKProfileRequest) Execute() (*OperationResponseResponseIdVO, *http.Response, error) {
 	return r.ApiService.CreatePPSKProfileExecute(r)
 }
 
@@ -2500,14 +2500,14 @@ func (a *ProfilesAPIService) CreatePPSKProfile(ctx context.Context, omadacId str
 }
 
 // Execute executes the request
-//  @return OperationResponseWithoutResult
+//  @return OperationResponseResponseIdVO
 // Deprecated
-func (a *ProfilesAPIService) CreatePPSKProfileExecute(r ProfilesAPICreatePPSKProfileRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+func (a *ProfilesAPIService) CreatePPSKProfileExecute(r ProfilesAPICreatePPSKProfileRequest) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
+		localVarReturnValue  *OperationResponseResponseIdVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.CreatePPSKProfile")
@@ -2609,7 +2609,7 @@ func (r ProfilesAPICreatePPSKProfileV2Request) PpskProfileV2(ppskProfileV2 PpskP
 	return r
 }
 
-func (r ProfilesAPICreatePPSKProfileV2Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+func (r ProfilesAPICreatePPSKProfileV2Request) Execute() (*OperationResponseResponseIdVO, *http.Response, error) {
 	return r.ApiService.CreatePPSKProfileV2Execute(r)
 }
 
@@ -2633,13 +2633,13 @@ func (a *ProfilesAPIService) CreatePPSKProfileV2(ctx context.Context, omadacId s
 }
 
 // Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *ProfilesAPIService) CreatePPSKProfileV2Execute(r ProfilesAPICreatePPSKProfileV2Request) (*OperationResponseWithoutResult, *http.Response, error) {
+//  @return OperationResponseResponseIdVO
+func (a *ProfilesAPIService) CreatePPSKProfileV2Execute(r ProfilesAPICreatePPSKProfileV2Request) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
+		localVarReturnValue  *OperationResponseResponseIdVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.CreatePPSKProfileV2")
@@ -2741,14 +2741,14 @@ func (r ProfilesAPICreateRadiusProfileRequest) CreateRadiusProfileOpenApiVO(crea
 	return r
 }
 
-func (r ProfilesAPICreateRadiusProfileRequest) Execute() (*OperationResponseString, *http.Response, error) {
+func (r ProfilesAPICreateRadiusProfileRequest) Execute() (*OperationResponseResponseIdVO, *http.Response, error) {
 	return r.ApiService.CreateRadiusProfileExecute(r)
 }
 
 /*
-CreateRadiusProfile Create a new Radius profile
+CreateRadiusProfile Create a new RADIUS profile
 
-Create a new Radius profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34014  -  The number of RADIUS profiles has reached the limit.
+Create a new RADIUS profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34014  -  The number of RADIUS profiles has reached the limit.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2765,13 +2765,13 @@ func (a *ProfilesAPIService) CreateRadiusProfile(ctx context.Context, omadacId s
 }
 
 // Execute executes the request
-//  @return OperationResponseString
-func (a *ProfilesAPIService) CreateRadiusProfileExecute(r ProfilesAPICreateRadiusProfileRequest) (*OperationResponseString, *http.Response, error) {
+//  @return OperationResponseResponseIdVO
+func (a *ProfilesAPIService) CreateRadiusProfileExecute(r ProfilesAPICreateRadiusProfileRequest) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseString
+		localVarReturnValue  *OperationResponseResponseIdVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.CreateRadiusProfile")
@@ -2878,9 +2878,9 @@ func (r ProfilesAPICreateRadiusUserRequest) Execute() (*OperationResponseResIdOp
 }
 
 /*
-CreateRadiusUser Create a new Build-in Radius profile user
+CreateRadiusUser Create a new Build-in RADIUS profile user
 
-Get Build-in Radius profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The radius user name already exists.<br/>-34025  -  The number of radius users has reached the limit.<br/>-34030  -  The radius user name exists in other sites. Please contact the administrator if necessary.
+Get Build-in RADIUS profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The RADIUS user name already exists.<br/>-34025  -  The number of RADIUS users has reached the limit.<br/>-34030  -  The RADIUS user name exists in other sites. Please contact the administrator if necessary.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3896,8 +3896,8 @@ type ProfilesAPIDeleteGroupProfileRequest struct {
 	ApiService ProfilesAPI
 	omadacId string
 	siteId string
-	groupId string
 	groupType string
+	groupId string
 }
 
 func (r ProfilesAPIDeleteGroupProfileRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
@@ -3912,18 +3912,18 @@ Delete an exist group profile with the given params.<br/><br/>The interface requ
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
+ @param groupType Type of group profile, 0:IP Group; 1:IP Port Group; 2：Mac Group; 3:IPv6 Group; 4:IPv6 Port Group; 5:Country Group; 7:Domain Group.
  @param groupId Group profile id.
- @param groupType groupType
  @return ProfilesAPIDeleteGroupProfileRequest
 */
-func (a *ProfilesAPIService) DeleteGroupProfile(ctx context.Context, omadacId string, siteId string, groupId string, groupType string) ProfilesAPIDeleteGroupProfileRequest {
+func (a *ProfilesAPIService) DeleteGroupProfile(ctx context.Context, omadacId string, siteId string, groupType string, groupId string) ProfilesAPIDeleteGroupProfileRequest {
 	return ProfilesAPIDeleteGroupProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
 		siteId: siteId,
-		groupId: groupId,
 		groupType: groupType,
+		groupId: groupId,
 	}
 }
 
@@ -3945,8 +3945,8 @@ func (a *ProfilesAPIService) DeleteGroupProfileExecute(r ProfilesAPIDeleteGroupP
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/profiles/groups/{groupType}/{groupId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"groupId"+"}", url.PathEscape(parameterValueToString(r.groupId, "groupId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"groupType"+"}", url.PathEscape(parameterValueToString(r.groupType, "groupType")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"groupId"+"}", url.PathEscape(parameterValueToString(r.groupId, "groupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4285,7 +4285,7 @@ func (r ProfilesAPIDeleteOuiProfileRequest) Execute() (*OperationResponseWithout
 /*
 DeleteOuiProfile Delete OUI Profile
 
-Delete OUI ProfileThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33780  -  OUI Profile has been used in OUI based VLAN.<br/>-34226  -  OUI Profile has been used in Wireless MAC Filter.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Delete OUI Profile<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33780  -  OUI Profile has been used in OUI based VLAN.<br/>-34226  -  OUI Profile has been used in Wireless MAC Filter.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4669,9 +4669,9 @@ func (r ProfilesAPIDeleteRadiusProfileRequest) Execute() (*OperationResponseWith
 }
 
 /*
-DeleteRadiusProfile Delete an exist Radius profile
+DeleteRadiusProfile Delete an exist RADIUS profile
 
-Delete an exist Radius profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34009  -  The RADIUS profile cannot be deleted because it is applied in MAC-Based Authentication.<br/>-34010  -  The RADIUS profile cannot be deleted because it is applied in Portal Authentication.<br/>-34012  -  Failed to delete this RADIUS profile because it has been used in 802.1X authentication.<br/>-34013  -  Failed to delete this RADIUS profile because it has been used in SSID.<br/>-34023  -  Failed to delete built-in radius profile.<br/>-43001  -  Failed to delete this radius profile because it is already occupied by SSL VPN.
+Delete an exist RADIUS profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34009  -  The RADIUS profile cannot be deleted because it is applied in MAC-Based Authentication.<br/>-34010  -  The RADIUS profile cannot be deleted because it is applied in Portal Authentication.<br/>-34012  -  Failed to delete this RADIUS profile because it has been used in 802.1X authentication.<br/>-34013  -  Failed to delete this RADIUS profile because it has been used in SSID.<br/>-34023  -  Failed to delete built-in RADIUS profile.<br/>-43001  -  Failed to delete this RADIUS profile because it is already occupied by SSL VPN.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4794,14 +4794,14 @@ func (r ProfilesAPIDeleteRadiusUserRequest) Execute() (*OperationResponseWithout
 }
 
 /*
-DeleteRadiusUser Delete an exist Build-in Radius profile user
+DeleteRadiusUser Delete an exist Build-in RADIUS profile user
 
-Get Build-in Radius profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+Get Build-in RADIUS profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param userId Build-in Radius profile user Id
+ @param userId Build-in RADIUS profile user Id
  @return ProfilesAPIDeleteRadiusUserRequest
 */
 func (a *ProfilesAPIService) DeleteRadiusUser(ctx context.Context, omadacId string, siteId string, userId string) ProfilesAPIDeleteRadiusUserRequest {
@@ -6154,7 +6154,7 @@ func (r ProfilesAPIGetOuiProfileFullListRequest) Execute() (*OperationResponseLi
 /*
 GetOuiProfileFullList Get OUI profile summary list
 
-Get OUI profile summary list.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get OUI profile summary list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6289,7 +6289,7 @@ func (r ProfilesAPIGetOuiProfileListRequest) Execute() (*OperationResponseOuiGri
 /*
 GetOuiProfileList Get OUI profile list
 
-Get OUI profile list.(Pagination)This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get OUI profile list.(Pagination)<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6662,9 +6662,9 @@ func (r ProfilesAPIGetRadiusProfileListRequest) Execute() (*OperationResponseLis
 }
 
 /*
-GetRadiusProfileList Get Radius profile list
+GetRadiusProfileList Get RADIUS profile list
 
-Get Radius profile list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get RADIUS profile list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6804,9 +6804,9 @@ func (r ProfilesAPIGetRadiusUserListRequest) Execute() (*OperationResponseGridVO
 }
 
 /*
-GetRadiusUserList Get Build-in Radius profile user list
+GetRadiusUserList Get Build-in RADIUS profile user list
 
-Get Build-in Radius profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+Get Build-in RADIUS profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -7301,7 +7301,7 @@ func (r ProfilesAPIGetWifiCallingProfilesRequest) Execute() (*OperationResponseL
 /*
 GetWifiCallingProfiles Get wifi calling profile list
 
-Get wifi calling profile list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Device Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+Get wifi calling profile list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Device Config Page View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8383,7 +8383,7 @@ func (r ProfilesAPIModifyMdnsProfileRequest) Execute() (*OperationResponseWithou
 /*
 ModifyMdnsProfile Modify an existing Bonjour Service
 
-Modify an existing Bonjour Service.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33756  -  This Bonjour Service name already exists.<br/>-33758  -  This Bonjour Service does not exist.<br/>-33759  -  Build-in Bonjour Service cannot be edited or deleted.
+Modify an existing Bonjour Service.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33756  -  This Bonjour Service name already exists.<br/>-33758  -  One or more Bonjour Services do not exist.<br/>-33759  -  Build-in Bonjour Service cannot be edited or deleted.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8519,7 +8519,7 @@ func (r ProfilesAPIModifyOuiProfileRequest) Execute() (*OperationResponseWithout
 /*
 ModifyOuiProfile Modify OUI Profile
 
-Modify OUI ProfileThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33781  -  This OUI profile already exists.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Modify OUI Profile<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33781  -  This OUI profile already exists.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33782  -  The number of OUIs has reached the limit.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-33784  -  The OUI profile has duplicate OUIs.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8789,9 +8789,9 @@ func (r ProfilesAPIModifyRadiusProfileRequest) Execute() (*OperationResponseWith
 }
 
 /*
-ModifyRadiusProfile Modify an exist Radius profile
+ModifyRadiusProfile Modify an exist RADIUS profile
 
-Modify an exist Radius profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34005  -  This RADIUS profile does not exist.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34015  -  The RADIUS profile cannot be modified because it is applied in PPSK with RADIUS.<br/>-34016  -  Unable to set the authentication server URL because the profile is applied in authentications that do not support authentication server URL.<br/>-34018  -  Failed to modify this RADIUS profile because it has been used in 802.1X authentication.<br/>-34022  -  Failed to modify built-in radius profile.<br/>-34027  -  The built-in server is being used, failed to stop built-in radius server.<br/>-43006  -  The RADIUS profile cannot add more than 2 RADIUS servers because it is used by SSL VPN.<br/>-43012  -  The number of Accounting Servers in the radius profile should not be greater than the number of Authentication Servers because the radius profile is used by the SSL VPN server.
+Modify an exist RADIUS profile with the given params.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34005  -  This RADIUS profile does not exist.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34015  -  The RADIUS profile cannot be modified because it is applied in PPSK with RADIUS.<br/>-34016  -  Unable to set the authentication server URL because the profile is applied in authentications that do not support authentication server URL.<br/>-34018  -  Failed to modify this RADIUS profile because it has been used in 802.1X authentication.<br/>-34022  -  Failed to modify built-in RADIUS profile.<br/>-34027  -  The built-in server is being used, failed to stop built-in RADIUS server.<br/>-43006  -  The RADIUS profile cannot add more than 2 RADIUS servers because it is used by SSL VPN.<br/>-43012  -  The number of Accounting Servers in the RADIUS profile should not be greater than the number of Authentication Servers because the RADIUS profile is used by the SSL VPN server.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -8925,14 +8925,14 @@ func (r ProfilesAPIModifyRadiusUserRequest) Execute() (*OperationResponseWithout
 }
 
 /*
-ModifyRadiusUser Modify an exist Build-in Radius profile user
+ModifyRadiusUser Modify an exist Build-in RADIUS profile user
 
-Get Build-in Radius profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The radius user name already exists.<br/>-34026  -  The radius user does not exist.<br/>-34030  -  The radius user name exists in other sites. Please contact the administrator if necessary.
+Get Build-in RADIUS profile user list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The RADIUS user name already exists.<br/>-34026  -  The RADIUS user does not exist.<br/>-34030  -  The RADIUS user name exists in other sites. Please contact the administrator if necessary.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param userId Build-in Radius profile user Id
+ @param userId Build-in RADIUS profile user Id
  @return ProfilesAPIModifyRadiusUserRequest
 */
 func (a *ProfilesAPIService) ModifyRadiusUser(ctx context.Context, omadacId string, siteId string, userId string) ProfilesAPIModifyRadiusUserRequest {

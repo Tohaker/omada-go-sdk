@@ -4,25 +4,29 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthenticationType** | **int32** | Authentication Type, it should be a value as follows: 0: None, 1: Simple, 2: MD5. | 
+**AuthenticationType** | Pointer to **int32** | Authentication Type. Not Null when type is 0. It should be a value as follows: 0: None, 1: Simple, 2: MD5. | [optional] 
 **Cost** | **int32** | The link cost. OSPF uses this value in computing shortest paths. It should be within the range of 1–65535. | 
 **DeadInterval** | Pointer to **int32** | The dead interval for the specified interface in seconds. This specifies how long a router will wait to see a neighbor router&#39;s Hello packets before declaring that the router is down. This parameter must be the same for all routers attached to a network. It should be within the range of 1-65535 seconds and the default is 40. | [optional] 
 **DeviceName** | **string** | Device Name | 
-**HelloInterval** | **int32** | The hello interval for the specified interface in seconds. This parameter must be the same for all routers attached to a network. It should be within the range of 1-65535 seconds and the default is 10 seconds. | 
+**HelloInterval** | Pointer to **int32** | The hello interval for the specified interface in seconds. Not Null when type is 0. This parameter must be the same for all routers attached to a network. It should be within the range of 1-65535 seconds and the default is 10 seconds. | [optional] 
+**LoopbackId** | Pointer to **int32** | Loopback ID should be within the range of 1-64. Not Null when type is 1. | [optional] 
+**LoopbackInterfaceId** | Pointer to **string** | Loopback Interface ID. Not Null when type is 1. | [optional] 
 **Mac** | **string** | Device Mac | 
 **Md5Key** | Pointer to **string** | Displays the key used for md5 authentication, its value should be within the range of 1-16. | [optional] 
 **Md5KeyId** | Pointer to **int32** | Displays the key ID used for md5 authentication, its value should be within the range of 1-255. | [optional] 
-**NetworkType** | **int32** | Network Type, it should be a value as follows: 0: Broadcast, 1: Non-Broadcast, 2: Point-to-Multipoint, 3: Point-to-Point. The default network type for Ethernet interfaces is broadcast. | 
+**NetworkType** | Pointer to **int32** | Network Type. Not Null when type is 0. It should be a value as follows: 0: Broadcast, 1: Non-Broadcast, 2: Point-to-Multipoint, 3: Point-to-Point. The default network type for Ethernet interfaces is broadcast. | [optional] 
+**PassiveEnable** | Pointer to **bool** | enable passive interface. | [optional] 
 **SimpleKey** | Pointer to **string** | Displays the key used for simple authentication, its value should be within the range of 1-8. | [optional] 
-**VlanId** | **int32** | Vlan ID should be within the range of 1–4094. | 
-**VlanInterfaceId** | **string** | Vlan Interface ID | 
-**VlanInterfaceName** | **string** | Vlan Interface Name | 
+**Type** | Pointer to **int32** | OSPF Interface type, 0: VLAN interface; 1: Loopback interface. If null, defaults to VLAN interface (0). | [optional] 
+**VlanId** | Pointer to **int32** | Vlan ID should be within the range of 1–4094. Not Null when type is 0. | [optional] 
+**VlanInterfaceId** | Pointer to **string** | Vlan Interface ID. Not Null when type is 0. | [optional] 
+**VlanInterfaceName** | Pointer to **string** | Vlan Interface Name. Not Null when type is 0. | [optional] 
 
 ## Methods
 
 ### NewOspfInterfaceConfigOpenApiVO
 
-`func NewOspfInterfaceConfigOpenApiVO(authenticationType int32, cost int32, deviceName string, helloInterval int32, mac string, networkType int32, vlanId int32, vlanInterfaceId string, vlanInterfaceName string, ) *OspfInterfaceConfigOpenApiVO`
+`func NewOspfInterfaceConfigOpenApiVO(cost int32, deviceName string, mac string, ) *OspfInterfaceConfigOpenApiVO`
 
 NewOspfInterfaceConfigOpenApiVO instantiates a new OspfInterfaceConfigOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -56,6 +60,11 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationType sets AuthenticationType field to given value.
 
+### HasAuthenticationType
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasAuthenticationType() bool`
+
+HasAuthenticationType returns a boolean if a field has been set.
 
 ### GetCost
 
@@ -141,6 +150,61 @@ and a boolean to check if the value has been set.
 
 SetHelloInterval sets HelloInterval field to given value.
 
+### HasHelloInterval
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasHelloInterval() bool`
+
+HasHelloInterval returns a boolean if a field has been set.
+
+### GetLoopbackId
+
+`func (o *OspfInterfaceConfigOpenApiVO) GetLoopbackId() int32`
+
+GetLoopbackId returns the LoopbackId field if non-nil, zero value otherwise.
+
+### GetLoopbackIdOk
+
+`func (o *OspfInterfaceConfigOpenApiVO) GetLoopbackIdOk() (*int32, bool)`
+
+GetLoopbackIdOk returns a tuple with the LoopbackId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoopbackId
+
+`func (o *OspfInterfaceConfigOpenApiVO) SetLoopbackId(v int32)`
+
+SetLoopbackId sets LoopbackId field to given value.
+
+### HasLoopbackId
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasLoopbackId() bool`
+
+HasLoopbackId returns a boolean if a field has been set.
+
+### GetLoopbackInterfaceId
+
+`func (o *OspfInterfaceConfigOpenApiVO) GetLoopbackInterfaceId() string`
+
+GetLoopbackInterfaceId returns the LoopbackInterfaceId field if non-nil, zero value otherwise.
+
+### GetLoopbackInterfaceIdOk
+
+`func (o *OspfInterfaceConfigOpenApiVO) GetLoopbackInterfaceIdOk() (*string, bool)`
+
+GetLoopbackInterfaceIdOk returns a tuple with the LoopbackInterfaceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoopbackInterfaceId
+
+`func (o *OspfInterfaceConfigOpenApiVO) SetLoopbackInterfaceId(v string)`
+
+SetLoopbackInterfaceId sets LoopbackInterfaceId field to given value.
+
+### HasLoopbackInterfaceId
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasLoopbackInterfaceId() bool`
+
+HasLoopbackInterfaceId returns a boolean if a field has been set.
 
 ### GetMac
 
@@ -231,6 +295,36 @@ and a boolean to check if the value has been set.
 
 SetNetworkType sets NetworkType field to given value.
 
+### HasNetworkType
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasNetworkType() bool`
+
+HasNetworkType returns a boolean if a field has been set.
+
+### GetPassiveEnable
+
+`func (o *OspfInterfaceConfigOpenApiVO) GetPassiveEnable() bool`
+
+GetPassiveEnable returns the PassiveEnable field if non-nil, zero value otherwise.
+
+### GetPassiveEnableOk
+
+`func (o *OspfInterfaceConfigOpenApiVO) GetPassiveEnableOk() (*bool, bool)`
+
+GetPassiveEnableOk returns a tuple with the PassiveEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassiveEnable
+
+`func (o *OspfInterfaceConfigOpenApiVO) SetPassiveEnable(v bool)`
+
+SetPassiveEnable sets PassiveEnable field to given value.
+
+### HasPassiveEnable
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasPassiveEnable() bool`
+
+HasPassiveEnable returns a boolean if a field has been set.
 
 ### GetSimpleKey
 
@@ -257,6 +351,31 @@ SetSimpleKey sets SimpleKey field to given value.
 
 HasSimpleKey returns a boolean if a field has been set.
 
+### GetType
+
+`func (o *OspfInterfaceConfigOpenApiVO) GetType() int32`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *OspfInterfaceConfigOpenApiVO) GetTypeOk() (*int32, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *OspfInterfaceConfigOpenApiVO) SetType(v int32)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
 ### GetVlanId
 
 `func (o *OspfInterfaceConfigOpenApiVO) GetVlanId() int32`
@@ -276,6 +395,11 @@ and a boolean to check if the value has been set.
 
 SetVlanId sets VlanId field to given value.
 
+### HasVlanId
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasVlanId() bool`
+
+HasVlanId returns a boolean if a field has been set.
 
 ### GetVlanInterfaceId
 
@@ -296,6 +420,11 @@ and a boolean to check if the value has been set.
 
 SetVlanInterfaceId sets VlanInterfaceId field to given value.
 
+### HasVlanInterfaceId
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasVlanInterfaceId() bool`
+
+HasVlanInterfaceId returns a boolean if a field has been set.
 
 ### GetVlanInterfaceName
 
@@ -316,6 +445,11 @@ and a boolean to check if the value has been set.
 
 SetVlanInterfaceName sets VlanInterfaceName field to given value.
 
+### HasVlanInterfaceName
+
+`func (o *OspfInterfaceConfigOpenApiVO) HasVlanInterfaceName() bool`
+
+HasVlanInterfaceName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

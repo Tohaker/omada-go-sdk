@@ -5,6 +5,7 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ExportAuditLogListForGlobal**](AuditLogAPI.md#exportauditloglistforglobal) | **Post** /openapi/v1/{omadacId}/logs/audit/export | Export audit log list in global view
+[**GetApSsidOverridesAuditLogs**](AuditLogAPI.md#getapssidoverridesauditlogs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/audit-logs/{apMac}/ssid-overrides | Get ap ssidoverride audit log list
 [**GetAuditLogSettingForGlobal**](AuditLogAPI.md#getauditlogsettingforglobal) | **Get** /openapi/v1/{omadacId}/audit-notification | Get global audit log notification
 [**GetAuditLogSettingForMsp1**](AuditLogAPI.md#getauditlogsettingformsp1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/site/audit-notification | Get site audit log notification
 [**GetAuditLogsForGlobal**](AuditLogAPI.md#getauditlogsforglobal) | **Get** /openapi/v1/{omadacId}/audit-logs | Get global audit log list
@@ -79,6 +80,90 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetApSsidOverridesAuditLogs
+
+> OperationResponseGridVOApOverrideAuditLogVO GetApSsidOverridesAuditLogs(ctx, omadacId, siteId, apMac).Page(page).PageSize(pageSize).SortsTime(sortsTime).FiltersTimes(filtersTimes).Execute()
+
+Get ap ssidoverride audit log list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.(value:10,15,20,30,50,100)
+	sortsTime := "sortsTime_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
+	filtersTimes := "filtersTimes_example" // string | Filter query parameters, support field times, example:[{\"timeStart\":1678060800000,\"timeEnd\":1678665599999}](UrlEncode:%5B%7B%22timeStart%22%3A1678060800000%2C%22timeEnd%22%3A1678665599999%7D%5D).If this parameter is not specified (not included or empty array), the interface will query data within the default time period: [{\"timeStart\":  Current timestamp minus milliseconds of 7 days,\"timeEnd\": Current timestamp}]. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AuditLogAPI.GetApSsidOverridesAuditLogs(context.Background(), omadacId, siteId, apMac).Page(page).PageSize(pageSize).SortsTime(sortsTime).FiltersTimes(filtersTimes).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AuditLogAPI.GetApSsidOverridesAuditLogs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApSsidOverridesAuditLogs`: OperationResponseGridVOApOverrideAuditLogVO
+	fmt.Fprintf(os.Stdout, "Response from `AuditLogAPI.GetApSsidOverridesAuditLogs`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetApSsidOverridesAuditLogsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000.(value:10,15,20,30,50,100) | 
+ **sortsTime** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect | 
+ **filtersTimes** | **string** | Filter query parameters, support field times, example:[{\&quot;timeStart\&quot;:1678060800000,\&quot;timeEnd\&quot;:1678665599999}](UrlEncode:%5B%7B%22timeStart%22%3A1678060800000%2C%22timeEnd%22%3A1678665599999%7D%5D).If this parameter is not specified (not included or empty array), the interface will query data within the default time period: [{\&quot;timeStart\&quot;:  Current timestamp minus milliseconds of 7 days,\&quot;timeEnd\&quot;: Current timestamp}]. | 
+
+### Return type
+
+[**OperationResponseGridVOApOverrideAuditLogVO**](OperationResponseGridVOApOverrideAuditLogVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

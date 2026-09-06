@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **LDAPSetting** | Pointer to [**LdapSettingOpenApiVO**](LdapSettingOpenApiVO.md) |  | [optional] 
 **AuthType** | Pointer to **int32** | Authentication type of the SSL VPN server should be a value as follows: 0: local; 1: radius; 2: LDAP. | [optional] 
 **ExistLdap** | Pointer to **bool** | Whether LDAP Authentication has been configured in SSL VPN Server. | [optional] 
-**ExistRadius** | Pointer to **bool** | Whether Radius Authentication has been configured in SSL VPN Server. | [optional] 
+**ExistRadius** | Pointer to **bool** | Whether RADIUS Authentication has been configured in SSL VPN Server. | [optional] 
 **ExitAtIdle** | Pointer to **bool** | Whether to exit when idle | [optional] 
 **ExitTime** | Pointer to **int32** | Exit time should be within the range of 5–3600(s). It is required when parameter [exitAtIdle] is true. | [optional] 
 **Id** | Pointer to **string** | ID of the SSL VPN server. | [optional] 

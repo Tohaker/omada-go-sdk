@@ -25,7 +25,7 @@ type SSOAPI interface {
 	/*
 	CreateExternalUserGroup Create new external user group
 
-	Create new external user group.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML role name already exists.<br/>-30179  -  The SAML roles number has reached the upper limit.
+	Create new external user group.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML User Group name already exists.<br/>-30179  -  The SAML User Group number has reached the upper limit.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -90,7 +90,7 @@ type SSOAPI interface {
 	Get external user group list.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param omadacId
+	@param omadacId Omada ID
 	@return SSOAPIGetExternalUserGroupListRequest
 	*/
 	GetExternalUserGroupList(ctx context.Context, omadacId string) SSOAPIGetExternalUserGroupListRequest
@@ -132,7 +132,7 @@ type SSOAPI interface {
 	/*
 	ModifyExternalUserGroup Modify an existing external user group
 
-	Modify an existing external user group.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML role name already exists.
+	Modify an existing external user group.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML User Group name already exists.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -184,7 +184,7 @@ func (r SSOAPICreateExternalUserGroupRequest) Execute() (*OperationResponseRespo
 /*
 CreateExternalUserGroup Create new external user group
 
-Create new external user group.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML role name already exists.<br/>-30179  -  The SAML roles number has reached the upper limit.
+Create new external user group.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML User Group name already exists.<br/>-30179  -  The SAML User Group number has reached the upper limit.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -707,7 +707,7 @@ GetExternalUserGroupList Get external user group list
 Get external user group list.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param omadacId
+ @param omadacId Omada ID
  @return SSOAPIGetExternalUserGroupListRequest
 */
 func (a *SSOAPIService) GetExternalUserGroupList(ctx context.Context, omadacId string) SSOAPIGetExternalUserGroupListRequest {
@@ -1150,7 +1150,7 @@ func (r SSOAPIModifyExternalUserGroupRequest) Execute() (*OperationResponseWitho
 /*
 ModifyExternalUserGroup Modify an existing external user group
 
-Modify an existing external user group.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML role name already exists.
+Modify an existing external user group.<br/><br/>The interface requires one of the permissions: <br/>Global Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML User Group name already exists.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

@@ -413,7 +413,7 @@ import (
 
 func main() {
 	mspId := "mspId_example" // string | MSP ID
-	userID := "userID_example" // string | userID
+	userID := "userID_example" // string | User ID
 	deleteUserVO := *openapiclient.NewDeleteUserVO() // DeleteUserVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **mspId** | **string** | MSP ID | 
-**userID** | **string** | userID | 
+**userID** | **string** | User ID | 
 
 ### Other Parameters
 
@@ -1145,7 +1145,7 @@ import (
 )
 
 func main() {
-	mspId := "mspId_example" // string | 
+	mspId := "mspId_example" // string | MSP ID
 	roleId := "roleId_example" // string | Role ID
 
 	configuration := openapiclient.NewConfiguration()
@@ -1166,7 +1166,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mspId** | **string** |  | 
+**mspId** | **string** | MSP ID | 
 **roleId** | **string** | Role ID | 
 
 ### Other Parameters
@@ -1219,7 +1219,7 @@ import (
 
 func main() {
 	mspId := "mspId_example" // string | MSP ID
-	userID := "userID_example" // string | userID
+	userID := "userID_example" // string | User ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1240,7 +1240,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **mspId** | **string** | MSP ID | 
-**userID** | **string** | userID | 
+**userID** | **string** | User ID | 
 
 ### Other Parameters
 
@@ -1514,7 +1514,7 @@ import (
 
 func main() {
 	mspId := "mspId_example" // string | MSP ID
-	userID := "userID_example" // string | userID
+	userID := "userID_example" // string | User ID
 	modifyMspUserVO := *openapiclient.NewModifyMspUserVO(false, "CustomerRoleId_example", "Name_example", "RoleId_example") // ModifyMspUserVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -1536,7 +1536,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **mspId** | **string** | MSP ID | 
-**userID** | **string** | userID | 
+**userID** | **string** | User ID | 
 
 ### Other Parameters
 

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **MldFastLeaveEnable** | Pointer to **bool** | Indicates whether mld fast leave is enabled | [optional] 
 **Name** | **string** | Name should contain 1 to 128 characters. | 
 **NativeNetworkId** | **string** | Native network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks. | 
-**Poe** | **int32** | PoE should be a value as follows: 0: on, 1: off, 2: \&quot;do not modify\&quot; | 
+**Poe** | **int32** | PoE should be a value as follows: 0: off, 1: on, 2: \&quot;do not modify\&quot; | 
 **PortIsolationEnable** | **bool** | Port-isolation enable status | 
 **SpanningTreeEnable** | **bool** | SpanningTree enable status | 
 **SpanningTreeSetting** | Pointer to [**SpanningTreeSettingVO**](SpanningTreeSettingVO.md) |  | [optional] 

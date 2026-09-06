@@ -69,6 +69,21 @@ func Test_omada_LocalUserAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test LocalUserAPIService DeleteSelectedLocalUsers", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.LocalUserAPI.DeleteSelectedLocalUsers(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test LocalUserAPIService DownloadLocalUsers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

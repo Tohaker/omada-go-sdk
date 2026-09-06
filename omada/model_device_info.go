@@ -65,6 +65,8 @@ type DeviceInfo struct {
 	Status *int32 `json:"status,omitempty"`
 	// Switch subtype should be a value as follows: smart: Non-Agile Series Switch; es: Agile Series Switch.
 	Subtype *string `json:"subtype,omitempty"`
+	// Whether the device supports AFC.
+	SupportAfc *bool `json:"supportAfc,omitempty"`
 	// Whether the device can be adopted by the site.
 	SwitchConsistent *bool `json:"switchConsistent,omitempty"`
 	// Device tag name
@@ -834,6 +836,38 @@ func (o *DeviceInfo) SetSubtype(v string) {
 	o.Subtype = &v
 }
 
+// GetSupportAfc returns the SupportAfc field value if set, zero value otherwise.
+func (o *DeviceInfo) GetSupportAfc() bool {
+	if o == nil || IsNil(o.SupportAfc) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportAfc
+}
+
+// GetSupportAfcOk returns a tuple with the SupportAfc field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInfo) GetSupportAfcOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportAfc) {
+		return nil, false
+	}
+	return o.SupportAfc, true
+}
+
+// HasSupportAfc returns a boolean if a field has been set.
+func (o *DeviceInfo) HasSupportAfc() bool {
+	if o != nil && !IsNil(o.SupportAfc) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportAfc gets a reference to the given bool and assigns it to the SupportAfc field.
+func (o *DeviceInfo) SetSupportAfc(v bool) {
+	o.SupportAfc = &v
+}
+
 // GetSwitchConsistent returns the SwitchConsistent field value if set, zero value otherwise.
 func (o *DeviceInfo) GetSwitchConsistent() bool {
 	if o == nil || IsNil(o.SwitchConsistent) {
@@ -1136,6 +1170,9 @@ func (o DeviceInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Subtype) {
 		toSerialize["subtype"] = o.Subtype
+	}
+	if !IsNil(o.SupportAfc) {
+		toSerialize["supportAfc"] = o.SupportAfc
 	}
 	if !IsNil(o.SwitchConsistent) {
 		toSerialize["switchConsistent"] = o.SwitchConsistent

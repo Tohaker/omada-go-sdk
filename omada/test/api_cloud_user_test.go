@@ -50,6 +50,34 @@ func Test_omada_CloudUserAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test CloudUserAPIService CloudOwnerUnbindMspOwner", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var mspId string
+
+		resp, httpRes, err := apiClient.CloudUserAPI.CloudOwnerUnbindMspOwner(context.Background(), mspId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CloudUserAPIService CloudOwnerUnbindOwner", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+
+		resp, httpRes, err := apiClient.CloudUserAPI.CloudOwnerUnbindOwner(context.Background(), omadacId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CloudUserAPIService GetCloudAccessStatus", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Alert** | Pointer to **bool** | Whether this user want to receive alert emails | [optional] 
+**Alert** | Pointer to **bool** | Whether this user wants to receive alert, event, and incident emails. Make sure your email is not null. | [optional] 
 **AllCustomer** | **bool** | Whether msp user has all customer permission, including new created customer. | 
 **CustomerRoleId** | **string** | Msp user&#39;s customer role ID when visit customer | 
 **Customers** | Pointer to **[]string** | User customer privilege list | [optional] 

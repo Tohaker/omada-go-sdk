@@ -27,7 +27,7 @@ type SwitchLoopbackControl struct {
 	LoopbackDetectEnable *bool `json:"loopbackDetectEnable,omitempty"`
 	// maxAge should be between 6 and 40.
 	MaxAge *int32 `json:"maxAge,omitempty"`
-	// maxHops should be between 1 and 40.
+	// maxHops should be between 1 and 40. maxHops is only allowed when the STP type is MSTP.
 	MaxHops *int32 `json:"maxHops,omitempty"`
 	Mstp *OswStpMstpConfigOpenApiVO `json:"mstp,omitempty"`
 	// Parameter [priority] should be an integer from 0 to 61440 and divisible by 4096.

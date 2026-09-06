@@ -6,10 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccessCapacityScoreDetail** | Pointer to [**SubSingleHealthInfoDetailVO**](SubSingleHealthInfoDetailVO.md) |  | [optional] 
 **AccessTimeScoreDetail** | Pointer to [**SubSingleHealthInfoDetailVO**](SubSingleHealthInfoDetailVO.md) |  | [optional] 
-**ChannelInterUtilDetail** | Pointer to [**SubSingleHealthInfoDetailVO**](SubSingleHealthInfoDetailVO.md) |  | [optional] 
+**ChannelInterUtilDetail** | Pointer to [**ChannelInterferenceSubHealthInfoVO**](ChannelInterferenceSubHealthInfoVO.md) |  | [optional] 
 **ChannelUtilScoreDetail** | Pointer to [**SubSingleHealthInfoDetailVO**](SubSingleHealthInfoDetailVO.md) |  | [optional] 
 **RssiScoreDetail** | Pointer to [**SubSingleHealthInfoDetailVO**](SubSingleHealthInfoDetailVO.md) |  | [optional] 
 **WifiHealthScore** | Pointer to **int32** | Wifi health score | [optional] 
+**WirelessClientQualityDetail** | Pointer to [**OnBoardingTimeSubHealthDetailVO**](OnBoardingTimeSubHealthDetailVO.md) |  | [optional] 
 
 ## Methods
 
@@ -82,20 +83,20 @@ HasAccessTimeScoreDetail returns a boolean if a field has been set.
 
 ### GetChannelInterUtilDetail
 
-`func (o *WifiHealthDetailVO) GetChannelInterUtilDetail() SubSingleHealthInfoDetailVO`
+`func (o *WifiHealthDetailVO) GetChannelInterUtilDetail() ChannelInterferenceSubHealthInfoVO`
 
 GetChannelInterUtilDetail returns the ChannelInterUtilDetail field if non-nil, zero value otherwise.
 
 ### GetChannelInterUtilDetailOk
 
-`func (o *WifiHealthDetailVO) GetChannelInterUtilDetailOk() (*SubSingleHealthInfoDetailVO, bool)`
+`func (o *WifiHealthDetailVO) GetChannelInterUtilDetailOk() (*ChannelInterferenceSubHealthInfoVO, bool)`
 
 GetChannelInterUtilDetailOk returns a tuple with the ChannelInterUtilDetail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChannelInterUtilDetail
 
-`func (o *WifiHealthDetailVO) SetChannelInterUtilDetail(v SubSingleHealthInfoDetailVO)`
+`func (o *WifiHealthDetailVO) SetChannelInterUtilDetail(v ChannelInterferenceSubHealthInfoVO)`
 
 SetChannelInterUtilDetail sets ChannelInterUtilDetail field to given value.
 
@@ -179,6 +180,31 @@ SetWifiHealthScore sets WifiHealthScore field to given value.
 `func (o *WifiHealthDetailVO) HasWifiHealthScore() bool`
 
 HasWifiHealthScore returns a boolean if a field has been set.
+
+### GetWirelessClientQualityDetail
+
+`func (o *WifiHealthDetailVO) GetWirelessClientQualityDetail() OnBoardingTimeSubHealthDetailVO`
+
+GetWirelessClientQualityDetail returns the WirelessClientQualityDetail field if non-nil, zero value otherwise.
+
+### GetWirelessClientQualityDetailOk
+
+`func (o *WifiHealthDetailVO) GetWirelessClientQualityDetailOk() (*OnBoardingTimeSubHealthDetailVO, bool)`
+
+GetWirelessClientQualityDetailOk returns a tuple with the WirelessClientQualityDetail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWirelessClientQualityDetail
+
+`func (o *WifiHealthDetailVO) SetWirelessClientQualityDetail(v OnBoardingTimeSubHealthDetailVO)`
+
+SetWirelessClientQualityDetail sets WirelessClientQualityDetail field to given value.
+
+### HasWirelessClientQualityDetail
+
+`func (o *WifiHealthDetailVO) HasWirelessClientQualityDetail() bool`
+
+HasWirelessClientQualityDetail returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

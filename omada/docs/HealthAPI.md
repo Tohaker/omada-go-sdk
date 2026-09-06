@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**GetApHealthDetail**](HealthAPI.md#getaphealthdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/eaps/{apMac}/health/detail | Get ap health detail
 [**GetApHealthTimeList**](HealthAPI.md#getaphealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/eaps/{apMac}/health/timeline | Get ap health time line
 [**GetClientHealthDetail**](HealthAPI.md#getclienthealthdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/health/detail | Get client health detail
+[**GetClientHealthDetailV2**](HealthAPI.md#getclienthealthdetailv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/clients/{clientMac}/health/detail | Get client health detail (V2)
 [**GetClientHealthTimeList**](HealthAPI.md#getclienthealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/health/timeline | Get client health time line
 [**GetMspApHealthDetail**](HealthAPI.md#getmspaphealthdetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eaps/{apMac}/health/detail | Get msp ap health detail
 [**GetMspApHealthTimeList**](HealthAPI.md#getmspaphealthtimelist) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eaps/{apMac}/health/timeline | Get msp ap health time line
@@ -252,6 +253,86 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseClientHealthDetailVO**](OperationResponseClientHealthDetailVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetClientHealthDetailV2
+
+> OperationResponseClientHealthDetailV2VO GetClientHealthDetailV2(ctx, omadacId, siteId, clientMac).Start(start).End(end).Execute()
+
+Get client health detail (V2)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	clientMac := "clientMac_example" // string | Client MAC address, like AA-BB-CC-DD-EE-FF
+	start := int64(789) // int64 | Start timestamp, in milliseconds, such as 174951360000
+	end := int64(789) // int64 | End timestamp, in milliseconds, such as 1749600000000
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HealthAPI.GetClientHealthDetailV2(context.Background(), omadacId, siteId, clientMac).Start(start).End(end).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HealthAPI.GetClientHealthDetailV2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetClientHealthDetailV2`: OperationResponseClientHealthDetailV2VO
+	fmt.Fprintf(os.Stdout, "Response from `HealthAPI.GetClientHealthDetailV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**clientMac** | **string** | Client MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetClientHealthDetailV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **start** | **int64** | Start timestamp, in milliseconds, such as 174951360000 | 
+ **end** | **int64** | End timestamp, in milliseconds, such as 1749600000000 | 
+
+### Return type
+
+[**OperationResponseClientHealthDetailV2VO**](OperationResponseClientHealthDetailV2VO.md)
 
 ### Authorization
 

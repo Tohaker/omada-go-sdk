@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateUserVO{}
 
 // CreateUserVO struct for CreateUserVO
 type CreateUserVO struct {
-	// Whether this user want to receive alert emails. Make sure your email is not null
+	// Whether this user wants to receive alert, event, and incident emails. Make sure the email is not null.
 	Alert *bool `json:"alert,omitempty"`
 	// Whether user has all site permission, including new created site.
 	AllSite bool `json:"allSite"`
@@ -29,7 +29,8 @@ type CreateUserVO struct {
 	Email *string `json:"email,omitempty"`
 	// The end time of the user's validity period. time range: end timestamp (Millisecond).
 	EndTime *int64 `json:"endTime,omitempty"`
-	// Incident notification
+	// Incident notification, this field is deprecated, please use alert field instead.
+	// Deprecated
 	IncidentNotification *bool `json:"incidentNotification,omitempty"`
 	// User name should contain 1 to 128 characters and start with letters, numbers, and underscores. When creating cloud user, you should set TP-LINK ID.
 	Name string `json:"name"`
@@ -37,6 +38,8 @@ type CreateUserVO struct {
 	Password *string `json:"password,omitempty"`
 	// This field represents Role ID. Role can be created using 'Create new role' interface, and Role ID can be obtained from 'Get role list' interface.
 	RoleId string `json:"roleId"`
+	// User site privileges
+	SitePrivileges []CreateSitePrivilegeVO `json:"sitePrivileges,omitempty"`
 	// User site privilege list
 	Sites []string `json:"sites,omitempty"`
 	// The start time of the user's validity period. time range: start timestamp (Millisecond).
@@ -191,6 +194,7 @@ func (o *CreateUserVO) SetEndTime(v int64) {
 }
 
 // GetIncidentNotification returns the IncidentNotification field value if set, zero value otherwise.
+// Deprecated
 func (o *CreateUserVO) GetIncidentNotification() bool {
 	if o == nil || IsNil(o.IncidentNotification) {
 		var ret bool
@@ -201,6 +205,7 @@ func (o *CreateUserVO) GetIncidentNotification() bool {
 
 // GetIncidentNotificationOk returns a tuple with the IncidentNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *CreateUserVO) GetIncidentNotificationOk() (*bool, bool) {
 	if o == nil || IsNil(o.IncidentNotification) {
 		return nil, false
@@ -218,6 +223,7 @@ func (o *CreateUserVO) HasIncidentNotification() bool {
 }
 
 // SetIncidentNotification gets a reference to the given bool and assigns it to the IncidentNotification field.
+// Deprecated
 func (o *CreateUserVO) SetIncidentNotification(v bool) {
 	o.IncidentNotification = &v
 }
@@ -300,6 +306,38 @@ func (o *CreateUserVO) GetRoleIdOk() (*string, bool) {
 // SetRoleId sets field value
 func (o *CreateUserVO) SetRoleId(v string) {
 	o.RoleId = v
+}
+
+// GetSitePrivileges returns the SitePrivileges field value if set, zero value otherwise.
+func (o *CreateUserVO) GetSitePrivileges() []CreateSitePrivilegeVO {
+	if o == nil || IsNil(o.SitePrivileges) {
+		var ret []CreateSitePrivilegeVO
+		return ret
+	}
+	return o.SitePrivileges
+}
+
+// GetSitePrivilegesOk returns a tuple with the SitePrivileges field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateUserVO) GetSitePrivilegesOk() ([]CreateSitePrivilegeVO, bool) {
+	if o == nil || IsNil(o.SitePrivileges) {
+		return nil, false
+	}
+	return o.SitePrivileges, true
+}
+
+// HasSitePrivileges returns a boolean if a field has been set.
+func (o *CreateUserVO) HasSitePrivileges() bool {
+	if o != nil && !IsNil(o.SitePrivileges) {
+		return true
+	}
+
+	return false
+}
+
+// SetSitePrivileges gets a reference to the given []CreateSitePrivilegeVO and assigns it to the SitePrivileges field.
+func (o *CreateUserVO) SetSitePrivileges(v []CreateSitePrivilegeVO) {
+	o.SitePrivileges = v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
@@ -450,6 +488,9 @@ func (o CreateUserVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["password"] = o.Password
 	}
 	toSerialize["roleId"] = o.RoleId
+	if !IsNil(o.SitePrivileges) {
+		toSerialize["sitePrivileges"] = o.SitePrivileges
+	}
 	if !IsNil(o.Sites) {
 		toSerialize["sites"] = o.Sites
 	}

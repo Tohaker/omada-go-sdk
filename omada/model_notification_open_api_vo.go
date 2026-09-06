@@ -19,8 +19,10 @@ var _ MappedNullable = &NotificationOpenApiVO{}
 
 // NotificationOpenApiVO struct for NotificationOpenApiVO
 type NotificationOpenApiVO struct {
-	EmailAlerts *NotificationConfigurationOpenApiVO `json:"Email Alerts,omitempty"`
 	AlertEmailSetting *AlertEmailSettingVO `json:"alertEmailSetting,omitempty"`
+	Email *NotificationConfigurationOpenApiVO `json:"email,omitempty"`
+	// Recipients of the incident notifiction
+	Recipients []RecipientsVO `json:"recipients,omitempty"`
 	// The incident notifiction setting creation resource, such as: 0: new created, 1: from template, 2: override.
 	Resource *int32 `json:"resource,omitempty"`
 }
@@ -40,38 +42,6 @@ func NewNotificationOpenApiVO() *NotificationOpenApiVO {
 func NewNotificationOpenApiVOWithDefaults() *NotificationOpenApiVO {
 	this := NotificationOpenApiVO{}
 	return &this
-}
-
-// GetEmailAlerts returns the EmailAlerts field value if set, zero value otherwise.
-func (o *NotificationOpenApiVO) GetEmailAlerts() NotificationConfigurationOpenApiVO {
-	if o == nil || IsNil(o.EmailAlerts) {
-		var ret NotificationConfigurationOpenApiVO
-		return ret
-	}
-	return *o.EmailAlerts
-}
-
-// GetEmailAlertsOk returns a tuple with the EmailAlerts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NotificationOpenApiVO) GetEmailAlertsOk() (*NotificationConfigurationOpenApiVO, bool) {
-	if o == nil || IsNil(o.EmailAlerts) {
-		return nil, false
-	}
-	return o.EmailAlerts, true
-}
-
-// HasEmailAlerts returns a boolean if a field has been set.
-func (o *NotificationOpenApiVO) HasEmailAlerts() bool {
-	if o != nil && !IsNil(o.EmailAlerts) {
-		return true
-	}
-
-	return false
-}
-
-// SetEmailAlerts gets a reference to the given NotificationConfigurationOpenApiVO and assigns it to the EmailAlerts field.
-func (o *NotificationOpenApiVO) SetEmailAlerts(v NotificationConfigurationOpenApiVO) {
-	o.EmailAlerts = &v
 }
 
 // GetAlertEmailSetting returns the AlertEmailSetting field value if set, zero value otherwise.
@@ -104,6 +74,70 @@ func (o *NotificationOpenApiVO) HasAlertEmailSetting() bool {
 // SetAlertEmailSetting gets a reference to the given AlertEmailSettingVO and assigns it to the AlertEmailSetting field.
 func (o *NotificationOpenApiVO) SetAlertEmailSetting(v AlertEmailSettingVO) {
 	o.AlertEmailSetting = &v
+}
+
+// GetEmail returns the Email field value if set, zero value otherwise.
+func (o *NotificationOpenApiVO) GetEmail() NotificationConfigurationOpenApiVO {
+	if o == nil || IsNil(o.Email) {
+		var ret NotificationConfigurationOpenApiVO
+		return ret
+	}
+	return *o.Email
+}
+
+// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationOpenApiVO) GetEmailOk() (*NotificationConfigurationOpenApiVO, bool) {
+	if o == nil || IsNil(o.Email) {
+		return nil, false
+	}
+	return o.Email, true
+}
+
+// HasEmail returns a boolean if a field has been set.
+func (o *NotificationOpenApiVO) HasEmail() bool {
+	if o != nil && !IsNil(o.Email) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmail gets a reference to the given NotificationConfigurationOpenApiVO and assigns it to the Email field.
+func (o *NotificationOpenApiVO) SetEmail(v NotificationConfigurationOpenApiVO) {
+	o.Email = &v
+}
+
+// GetRecipients returns the Recipients field value if set, zero value otherwise.
+func (o *NotificationOpenApiVO) GetRecipients() []RecipientsVO {
+	if o == nil || IsNil(o.Recipients) {
+		var ret []RecipientsVO
+		return ret
+	}
+	return o.Recipients
+}
+
+// GetRecipientsOk returns a tuple with the Recipients field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationOpenApiVO) GetRecipientsOk() ([]RecipientsVO, bool) {
+	if o == nil || IsNil(o.Recipients) {
+		return nil, false
+	}
+	return o.Recipients, true
+}
+
+// HasRecipients returns a boolean if a field has been set.
+func (o *NotificationOpenApiVO) HasRecipients() bool {
+	if o != nil && !IsNil(o.Recipients) {
+		return true
+	}
+
+	return false
+}
+
+// SetRecipients gets a reference to the given []RecipientsVO and assigns it to the Recipients field.
+func (o *NotificationOpenApiVO) SetRecipients(v []RecipientsVO) {
+	o.Recipients = v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
@@ -148,11 +182,14 @@ func (o NotificationOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o NotificationOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EmailAlerts) {
-		toSerialize["Email Alerts"] = o.EmailAlerts
-	}
 	if !IsNil(o.AlertEmailSetting) {
 		toSerialize["alertEmailSetting"] = o.AlertEmailSetting
+	}
+	if !IsNil(o.Email) {
+		toSerialize["email"] = o.Email
+	}
+	if !IsNil(o.Recipients) {
+		toSerialize["recipients"] = o.Recipients
 	}
 	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource

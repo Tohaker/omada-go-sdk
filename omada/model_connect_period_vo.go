@@ -19,11 +19,11 @@ var _ MappedNullable = &ConnectPeriodVO{}
 
 // ConnectPeriodVO The collection of device online intervals.
 type ConnectPeriodVO struct {
-	// Duration of a connect interval
+	// Duration of a connect interval. unit: millisecond.
 	Duration *int64 `json:"duration,omitempty"`
-	// End timestamp of a connect interval.
+	// End timestamp of a connect interval. unit: millisecond.
 	End *int64 `json:"end,omitempty"`
-	// Start timestamp of a connect interval.
+	// Start timestamp of a connect interval. unit: millisecond.
 	Start *int64 `json:"start,omitempty"`
 }
 

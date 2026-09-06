@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DiscoveryMode** | Pointer to **int32** | Discovery Mode, which can only be one of the following two types: 0:Manual and 1:Auto. | [optional] 
 **Mac** | Pointer to **string** | Root Node MAC address, like AA-BB-CC-DD-EE-FF. | [optional] 
 **MacList** | Pointer to **[]string** | MultiSwitch Node MAC list. | [optional] 
 **SpecificType** | Pointer to **int32** | MultiSwitch Node SpecificType, which can only be one of the following two types: 0:Mlag and 1:Vrrp. | [optional] 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewTopologyRootNodeWithDefaults instantiates a new TopologyRootNode object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDiscoveryMode
+
+`func (o *TopologyRootNode) GetDiscoveryMode() int32`
+
+GetDiscoveryMode returns the DiscoveryMode field if non-nil, zero value otherwise.
+
+### GetDiscoveryModeOk
+
+`func (o *TopologyRootNode) GetDiscoveryModeOk() (*int32, bool)`
+
+GetDiscoveryModeOk returns a tuple with the DiscoveryMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscoveryMode
+
+`func (o *TopologyRootNode) SetDiscoveryMode(v int32)`
+
+SetDiscoveryMode sets DiscoveryMode field to given value.
+
+### HasDiscoveryMode
+
+`func (o *TopologyRootNode) HasDiscoveryMode() bool`
+
+HasDiscoveryMode returns a boolean if a field has been set.
 
 ### GetMac
 

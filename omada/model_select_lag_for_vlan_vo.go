@@ -23,6 +23,8 @@ type SelectLagForVlanVO struct {
 	Enable *bool `json:"Enable,omitempty"`
 	// Whether the port needs to be automatically selected.
 	AutoSelect *bool `json:"autoSelect,omitempty"`
+	// Whether the port is connected to the Controller.
+	ControllerLinkedPort *bool `json:"controllerLinkedPort,omitempty"`
 	// The vlan of default network.
 	DefaultVlan *int32 `json:"defaultVlan,omitempty"`
 	// The downlink devices of the port
@@ -141,6 +143,38 @@ func (o *SelectLagForVlanVO) HasAutoSelect() bool {
 // SetAutoSelect gets a reference to the given bool and assigns it to the AutoSelect field.
 func (o *SelectLagForVlanVO) SetAutoSelect(v bool) {
 	o.AutoSelect = &v
+}
+
+// GetControllerLinkedPort returns the ControllerLinkedPort field value if set, zero value otherwise.
+func (o *SelectLagForVlanVO) GetControllerLinkedPort() bool {
+	if o == nil || IsNil(o.ControllerLinkedPort) {
+		var ret bool
+		return ret
+	}
+	return *o.ControllerLinkedPort
+}
+
+// GetControllerLinkedPortOk returns a tuple with the ControllerLinkedPort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SelectLagForVlanVO) GetControllerLinkedPortOk() (*bool, bool) {
+	if o == nil || IsNil(o.ControllerLinkedPort) {
+		return nil, false
+	}
+	return o.ControllerLinkedPort, true
+}
+
+// HasControllerLinkedPort returns a boolean if a field has been set.
+func (o *SelectLagForVlanVO) HasControllerLinkedPort() bool {
+	if o != nil && !IsNil(o.ControllerLinkedPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetControllerLinkedPort gets a reference to the given bool and assigns it to the ControllerLinkedPort field.
+func (o *SelectLagForVlanVO) SetControllerLinkedPort(v bool) {
+	o.ControllerLinkedPort = &v
 }
 
 // GetDefaultVlan returns the DefaultVlan field value if set, zero value otherwise.
@@ -766,6 +800,9 @@ func (o SelectLagForVlanVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AutoSelect) {
 		toSerialize["autoSelect"] = o.AutoSelect
+	}
+	if !IsNil(o.ControllerLinkedPort) {
+		toSerialize["controllerLinkedPort"] = o.ControllerLinkedPort
 	}
 	if !IsNil(o.DefaultVlan) {
 		toSerialize["defaultVlan"] = o.DefaultVlan

@@ -55,7 +55,7 @@ type LanProfileOpenApiVO struct {
 	NativeNetworkId *string `json:"nativeNetworkId,omitempty"`
 	// Indicates whether the VLAN configuration in the Profile is inconsistent with the VLAN configuration that is effective for the bound port.
 	NetworkConflict *bool `json:"networkConflict,omitempty"`
-	// PoE should be a value as follows: 0: on, 1: off, 2: \"do not modify\"
+	// PoE should be a value as follows: 0: off, 1: on, 2: \"do not modify\"
 	Poe int32 `json:"poe"`
 	// Port-isolation enable status
 	PortIsolationEnable bool `json:"portIsolationEnable"`

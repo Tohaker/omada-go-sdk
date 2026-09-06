@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CustomConfig** | Pointer to [**IptvCustomOpenApiVO**](IptvCustomOpenApiVO.md) |  | [optional] 
 **DslConfig** | Pointer to [**IptvDslOpenApiVO**](IptvDslOpenApiVO.md) |  | [optional] 
 **Enable** | **bool** | Whether to enable iptv feature. Options: &#39;true&#39; or &#39;false&#39;. | 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **Mode** | **int32** | Mode should be a value as follows: 0:Bridge, 1:Custom | 
 **PortConfig** | [**[]IptvPortOpenApiVO**](IptvPortOpenApiVO.md) | Config the port mode of the LAN ports to determine which port is used to support Internet service, IPTV service, or IP Phone service. | 
 **WanPortId** | **string** | WAN port ID can be obtained from &#39;Get internet basic info&#39; interface. | 
@@ -99,6 +100,31 @@ and a boolean to check if the value has been set.
 
 SetEnable sets Enable field to given value.
 
+
+### GetFeatureDescription
+
+`func (o *IptvOpenApiVO) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *IptvOpenApiVO) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *IptvOpenApiVO) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *IptvOpenApiVO) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetMode
 

@@ -23,8 +23,14 @@ var _ MappedNullable = &FileServerGlobalBackupVO{}
 type FileServerGlobalBackupVO struct {
 	// Saving directory path for backup file. Parameter [filePath] should be 1 - 128 ASCII characters.
 	FilePath string `json:"filePath"`
+	// Whether need retain auth record.
+	RetainAuthRecord *bool `json:"retainAuthRecord,omitempty"`
+	// Whether need retain firmware log.
+	RetainFirmwareLog *bool `json:"retainFirmwareLog,omitempty"`
 	// Whether need retain user info.
 	RetainUser *bool `json:"retainUser,omitempty"`
+	// Backup data retention, values are as follows: 0 :no limit others:7，30，60，90，180，365.
+	Retention *int32 `json:"retention,omitempty"`
 	ServerConfig FileServerOpenApiVO `json:"serverConfig"`
 }
 
@@ -73,6 +79,70 @@ func (o *FileServerGlobalBackupVO) SetFilePath(v string) {
 	o.FilePath = v
 }
 
+// GetRetainAuthRecord returns the RetainAuthRecord field value if set, zero value otherwise.
+func (o *FileServerGlobalBackupVO) GetRetainAuthRecord() bool {
+	if o == nil || IsNil(o.RetainAuthRecord) {
+		var ret bool
+		return ret
+	}
+	return *o.RetainAuthRecord
+}
+
+// GetRetainAuthRecordOk returns a tuple with the RetainAuthRecord field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileServerGlobalBackupVO) GetRetainAuthRecordOk() (*bool, bool) {
+	if o == nil || IsNil(o.RetainAuthRecord) {
+		return nil, false
+	}
+	return o.RetainAuthRecord, true
+}
+
+// HasRetainAuthRecord returns a boolean if a field has been set.
+func (o *FileServerGlobalBackupVO) HasRetainAuthRecord() bool {
+	if o != nil && !IsNil(o.RetainAuthRecord) {
+		return true
+	}
+
+	return false
+}
+
+// SetRetainAuthRecord gets a reference to the given bool and assigns it to the RetainAuthRecord field.
+func (o *FileServerGlobalBackupVO) SetRetainAuthRecord(v bool) {
+	o.RetainAuthRecord = &v
+}
+
+// GetRetainFirmwareLog returns the RetainFirmwareLog field value if set, zero value otherwise.
+func (o *FileServerGlobalBackupVO) GetRetainFirmwareLog() bool {
+	if o == nil || IsNil(o.RetainFirmwareLog) {
+		var ret bool
+		return ret
+	}
+	return *o.RetainFirmwareLog
+}
+
+// GetRetainFirmwareLogOk returns a tuple with the RetainFirmwareLog field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileServerGlobalBackupVO) GetRetainFirmwareLogOk() (*bool, bool) {
+	if o == nil || IsNil(o.RetainFirmwareLog) {
+		return nil, false
+	}
+	return o.RetainFirmwareLog, true
+}
+
+// HasRetainFirmwareLog returns a boolean if a field has been set.
+func (o *FileServerGlobalBackupVO) HasRetainFirmwareLog() bool {
+	if o != nil && !IsNil(o.RetainFirmwareLog) {
+		return true
+	}
+
+	return false
+}
+
+// SetRetainFirmwareLog gets a reference to the given bool and assigns it to the RetainFirmwareLog field.
+func (o *FileServerGlobalBackupVO) SetRetainFirmwareLog(v bool) {
+	o.RetainFirmwareLog = &v
+}
+
 // GetRetainUser returns the RetainUser field value if set, zero value otherwise.
 func (o *FileServerGlobalBackupVO) GetRetainUser() bool {
 	if o == nil || IsNil(o.RetainUser) {
@@ -103,6 +173,38 @@ func (o *FileServerGlobalBackupVO) HasRetainUser() bool {
 // SetRetainUser gets a reference to the given bool and assigns it to the RetainUser field.
 func (o *FileServerGlobalBackupVO) SetRetainUser(v bool) {
 	o.RetainUser = &v
+}
+
+// GetRetention returns the Retention field value if set, zero value otherwise.
+func (o *FileServerGlobalBackupVO) GetRetention() int32 {
+	if o == nil || IsNil(o.Retention) {
+		var ret int32
+		return ret
+	}
+	return *o.Retention
+}
+
+// GetRetentionOk returns a tuple with the Retention field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileServerGlobalBackupVO) GetRetentionOk() (*int32, bool) {
+	if o == nil || IsNil(o.Retention) {
+		return nil, false
+	}
+	return o.Retention, true
+}
+
+// HasRetention returns a boolean if a field has been set.
+func (o *FileServerGlobalBackupVO) HasRetention() bool {
+	if o != nil && !IsNil(o.Retention) {
+		return true
+	}
+
+	return false
+}
+
+// SetRetention gets a reference to the given int32 and assigns it to the Retention field.
+func (o *FileServerGlobalBackupVO) SetRetention(v int32) {
+	o.Retention = &v
 }
 
 // GetServerConfig returns the ServerConfig field value
@@ -140,8 +242,17 @@ func (o FileServerGlobalBackupVO) MarshalJSON() ([]byte, error) {
 func (o FileServerGlobalBackupVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["filePath"] = o.FilePath
+	if !IsNil(o.RetainAuthRecord) {
+		toSerialize["retainAuthRecord"] = o.RetainAuthRecord
+	}
+	if !IsNil(o.RetainFirmwareLog) {
+		toSerialize["retainFirmwareLog"] = o.RetainFirmwareLog
+	}
 	if !IsNil(o.RetainUser) {
 		toSerialize["retainUser"] = o.RetainUser
+	}
+	if !IsNil(o.Retention) {
+		toSerialize["retention"] = o.Retention
 	}
 	toSerialize["serverConfig"] = o.ServerConfig
 	return toSerialize, nil

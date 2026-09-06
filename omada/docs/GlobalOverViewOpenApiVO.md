@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **SiteNum** | Pointer to **int32** | total number of site | [optional] 
 **TotalApNum** | Pointer to **int32** | total number of ap | [optional] 
 **TotalClientNum** | Pointer to **int32** | total number of client | [optional] 
+**TotalConnectedNum** | Pointer to **int32** | total number of connected devices | [optional] 
 **TotalGatewayNum** | Pointer to **int32** | total number of gateways | [optional] 
 **TotalOltNum** | Pointer to **int32** | total number of olt | [optional] 
 **TotalSwitchNum** | Pointer to **int32** | total number of switch | [optional] 
@@ -522,6 +523,31 @@ SetTotalClientNum sets TotalClientNum field to given value.
 `func (o *GlobalOverViewOpenApiVO) HasTotalClientNum() bool`
 
 HasTotalClientNum returns a boolean if a field has been set.
+
+### GetTotalConnectedNum
+
+`func (o *GlobalOverViewOpenApiVO) GetTotalConnectedNum() int32`
+
+GetTotalConnectedNum returns the TotalConnectedNum field if non-nil, zero value otherwise.
+
+### GetTotalConnectedNumOk
+
+`func (o *GlobalOverViewOpenApiVO) GetTotalConnectedNumOk() (*int32, bool)`
+
+GetTotalConnectedNumOk returns a tuple with the TotalConnectedNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalConnectedNum
+
+`func (o *GlobalOverViewOpenApiVO) SetTotalConnectedNum(v int32)`
+
+SetTotalConnectedNum sets TotalConnectedNum field to given value.
+
+### HasTotalConnectedNum
+
+`func (o *GlobalOverViewOpenApiVO) HasTotalConnectedNum() bool`
+
+HasTotalConnectedNum returns a boolean if a field has been set.
 
 ### GetTotalGatewayNum
 

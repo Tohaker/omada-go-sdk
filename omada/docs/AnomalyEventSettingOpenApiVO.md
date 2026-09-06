@@ -5,9 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnomalyCode** | Pointer to **string** | For the values of Anomaly event code, refer to section 5.7.2.1 of the Open API Access | [optional] 
-**Category** | Pointer to **int32** | Anomaly event category, it should be a value as follows: 0:Networking, 1:Mesh, 2:Access, 3:Roaming, 4:Network Service, 5:Software/Configuration, 6:Hardware, 7:Security, 8:Throughput, 9:Coverage | [optional] 
+**Category** | Pointer to **int32** | Anomaly event category, it should be a value as follows:11:Access, 12:Authentication, 13:Roaming, 14:Wireless Network, 15:Wired Network, 16:Link, 17:WAN and Services, 18:Device Status, 19:Security, example: 11 Or 12,13,14 | [optional] 
 **Enable** | Pointer to **bool** | Whether to detect anomaly events | [optional] 
 **Level** | Pointer to **int32** | Anomaly event level, it should be a value as follows: 0:Critical, 1:Error, 2:Warning, 3: Info | [optional] 
+**ObjectType** | Pointer to **string** | Device type | [optional] 
 **Params** | Pointer to **map[string]int32** | For the values of Anomaly event params, refer to section 5.7.2.1 of the Open API Access | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetLevel sets Level field to given value.
 `func (o *AnomalyEventSettingOpenApiVO) HasLevel() bool`
 
 HasLevel returns a boolean if a field has been set.
+
+### GetObjectType
+
+`func (o *AnomalyEventSettingOpenApiVO) GetObjectType() string`
+
+GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
+
+### GetObjectTypeOk
+
+`func (o *AnomalyEventSettingOpenApiVO) GetObjectTypeOk() (*string, bool)`
+
+GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectType
+
+`func (o *AnomalyEventSettingOpenApiVO) SetObjectType(v string)`
+
+SetObjectType sets ObjectType field to given value.
+
+### HasObjectType
+
+`func (o *AnomalyEventSettingOpenApiVO) HasObjectType() bool`
+
+HasObjectType returns a boolean if a field has been set.
 
 ### GetParams
 

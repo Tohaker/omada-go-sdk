@@ -19,11 +19,11 @@ var _ MappedNullable = &ApTrunkSettingOpenApiVO{}
 
 // ApTrunkSettingOpenApiVO struct for ApTrunkSettingOpenApiVO
 type ApTrunkSettingOpenApiVO struct {
-	// Whether the device enable trunk setting.
+	// Whether the device enables trunk setting (LAG).
 	Enable *bool `json:"enable,omitempty"`
-	// Trunk setting mode. Mode should be a value as follows: 0：SRC MAC + DST MAC; 1：DST MAC; 2：SRC MAC.
+	// Trunk setting (LAG) mode. Mode should be a value as follows: 0：SRC MAC + DST MAC; 1：DST MAC; 2：SRC MAC.
 	Mode *int32 `json:"mode,omitempty"`
-	// Whether the device supports trunk setting.
+	// Whether the device supports trunk setting (LAG).
 	SupportTrunkSetting *bool `json:"supportTrunkSetting,omitempty"`
 }
 

@@ -21,14 +21,10 @@ var _ MappedNullable = &BatchStackPortSettingVO{}
 
 // BatchStackPortSettingVO struct for BatchStackPortSettingVO
 type BatchStackPortSettingVO struct {
-	// Indicates whether arp detect is enabled
-	ArpDetectEnable *bool `json:"arpDetectEnable,omitempty"`
 	BandCtrl *OswBandCtrlVO `json:"bandCtrl,omitempty"`
 	// BandWidthCtrlType should be a value as follows: 0: Off; 1: Rate Limit; 2: Storming Control
 	BandWidthCtrlType *int32 `json:"bandWidthCtrlType,omitempty"`
 	DhcpL2RelaySettings *OswPortDhcpL2RelayVO `json:"dhcpL2RelaySettings,omitempty"`
-	// Indicates whether dhcp snoop is enabled
-	DhcpSnoopEnable *bool `json:"dhcpSnoopEnable,omitempty"`
 	// Indicates whether to disable
 	Disable *bool `json:"disable,omitempty"`
 	// Dot1p Priority
@@ -51,8 +47,8 @@ type BatchStackPortSettingVO struct {
 	IgmpFastLeaveEnable *bool `json:"igmpFastLeaveEnable,omitempty"`
 	// Indicates whether IGMP Snooping is enabled
 	IgmpSnoopingEnable *bool `json:"igmpSnoopingEnable,omitempty"`
-	// Impbs
-	Impbs []ImpbVO `json:"impbs,omitempty"`
+	// When the operation changes from aggregating to switching, this parameter should be set to true, and the \"lagSetting\" parameter needs to include the lagId.
+	LagDelete *bool `json:"lagDelete,omitempty"`
 	LagSetting *OswLagBasicVO `json:"lagSetting,omitempty"`
 	// Link Speed should be a value as follows: 0: auto; 1: 10M; 2: 100M; 3: 1000M; 4: 2.5G; 5: 10G
 	LinkSpeed *int32 `json:"linkSpeed,omitempty"`
@@ -86,7 +82,7 @@ type BatchStackPortSettingVO struct {
 	PortAlertEnable *bool `json:"portAlertEnable,omitempty"`
 	// Indicates whether port isolation is enabled
 	PortIsolationEnable *bool `json:"portIsolationEnable,omitempty"`
-	// Profile ID
+	// Profile ID is required (not null) when modifying a single port.
 	ProfileId *string `json:"profileId,omitempty"`
 	// Indicates whether to enable Profile Override before v6.2.10; Indicates the fill mode of port configuration after v6.2.10: true: custom; false: follow profile
 	ProfileOverrideEnable *bool `json:"profileOverrideEnable,omitempty"`
@@ -96,6 +92,8 @@ type BatchStackPortSettingVO struct {
 	QosQueueEnable *bool `json:"qosQueueEnable,omitempty"`
 	// ES Qos scheduling queue ID
 	QueueId *int32 `json:"queueId,omitempty"`
+	// The id of oui based vlan rule removded.
+	RemovedOuiBasedRuleIds []string `json:"removedOuiBasedRuleIds,omitempty"`
 	// Indicates whether SpanningTree is enabled
 	SpanningTreeEnable *bool `json:"spanningTreeEnable,omitempty"`
 	SpanningTreeSetting *SpanningTreeSettingVO `json:"spanningTreeSetting,omitempty"`
@@ -146,38 +144,6 @@ func NewBatchStackPortSettingVO(unitList []OswStackUnitVO) *BatchStackPortSettin
 func NewBatchStackPortSettingVOWithDefaults() *BatchStackPortSettingVO {
 	this := BatchStackPortSettingVO{}
 	return &this
-}
-
-// GetArpDetectEnable returns the ArpDetectEnable field value if set, zero value otherwise.
-func (o *BatchStackPortSettingVO) GetArpDetectEnable() bool {
-	if o == nil || IsNil(o.ArpDetectEnable) {
-		var ret bool
-		return ret
-	}
-	return *o.ArpDetectEnable
-}
-
-// GetArpDetectEnableOk returns a tuple with the ArpDetectEnable field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BatchStackPortSettingVO) GetArpDetectEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.ArpDetectEnable) {
-		return nil, false
-	}
-	return o.ArpDetectEnable, true
-}
-
-// HasArpDetectEnable returns a boolean if a field has been set.
-func (o *BatchStackPortSettingVO) HasArpDetectEnable() bool {
-	if o != nil && !IsNil(o.ArpDetectEnable) {
-		return true
-	}
-
-	return false
-}
-
-// SetArpDetectEnable gets a reference to the given bool and assigns it to the ArpDetectEnable field.
-func (o *BatchStackPortSettingVO) SetArpDetectEnable(v bool) {
-	o.ArpDetectEnable = &v
 }
 
 // GetBandCtrl returns the BandCtrl field value if set, zero value otherwise.
@@ -274,38 +240,6 @@ func (o *BatchStackPortSettingVO) HasDhcpL2RelaySettings() bool {
 // SetDhcpL2RelaySettings gets a reference to the given OswPortDhcpL2RelayVO and assigns it to the DhcpL2RelaySettings field.
 func (o *BatchStackPortSettingVO) SetDhcpL2RelaySettings(v OswPortDhcpL2RelayVO) {
 	o.DhcpL2RelaySettings = &v
-}
-
-// GetDhcpSnoopEnable returns the DhcpSnoopEnable field value if set, zero value otherwise.
-func (o *BatchStackPortSettingVO) GetDhcpSnoopEnable() bool {
-	if o == nil || IsNil(o.DhcpSnoopEnable) {
-		var ret bool
-		return ret
-	}
-	return *o.DhcpSnoopEnable
-}
-
-// GetDhcpSnoopEnableOk returns a tuple with the DhcpSnoopEnable field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BatchStackPortSettingVO) GetDhcpSnoopEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.DhcpSnoopEnable) {
-		return nil, false
-	}
-	return o.DhcpSnoopEnable, true
-}
-
-// HasDhcpSnoopEnable returns a boolean if a field has been set.
-func (o *BatchStackPortSettingVO) HasDhcpSnoopEnable() bool {
-	if o != nil && !IsNil(o.DhcpSnoopEnable) {
-		return true
-	}
-
-	return false
-}
-
-// SetDhcpSnoopEnable gets a reference to the given bool and assigns it to the DhcpSnoopEnable field.
-func (o *BatchStackPortSettingVO) SetDhcpSnoopEnable(v bool) {
-	o.DhcpSnoopEnable = &v
 }
 
 // GetDisable returns the Disable field value if set, zero value otherwise.
@@ -660,36 +594,36 @@ func (o *BatchStackPortSettingVO) SetIgmpSnoopingEnable(v bool) {
 	o.IgmpSnoopingEnable = &v
 }
 
-// GetImpbs returns the Impbs field value if set, zero value otherwise.
-func (o *BatchStackPortSettingVO) GetImpbs() []ImpbVO {
-	if o == nil || IsNil(o.Impbs) {
-		var ret []ImpbVO
+// GetLagDelete returns the LagDelete field value if set, zero value otherwise.
+func (o *BatchStackPortSettingVO) GetLagDelete() bool {
+	if o == nil || IsNil(o.LagDelete) {
+		var ret bool
 		return ret
 	}
-	return o.Impbs
+	return *o.LagDelete
 }
 
-// GetImpbsOk returns a tuple with the Impbs field value if set, nil otherwise
+// GetLagDeleteOk returns a tuple with the LagDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BatchStackPortSettingVO) GetImpbsOk() ([]ImpbVO, bool) {
-	if o == nil || IsNil(o.Impbs) {
+func (o *BatchStackPortSettingVO) GetLagDeleteOk() (*bool, bool) {
+	if o == nil || IsNil(o.LagDelete) {
 		return nil, false
 	}
-	return o.Impbs, true
+	return o.LagDelete, true
 }
 
-// HasImpbs returns a boolean if a field has been set.
-func (o *BatchStackPortSettingVO) HasImpbs() bool {
-	if o != nil && !IsNil(o.Impbs) {
+// HasLagDelete returns a boolean if a field has been set.
+func (o *BatchStackPortSettingVO) HasLagDelete() bool {
+	if o != nil && !IsNil(o.LagDelete) {
 		return true
 	}
 
 	return false
 }
 
-// SetImpbs gets a reference to the given []ImpbVO and assigns it to the Impbs field.
-func (o *BatchStackPortSettingVO) SetImpbs(v []ImpbVO) {
-	o.Impbs = v
+// SetLagDelete gets a reference to the given bool and assigns it to the LagDelete field.
+func (o *BatchStackPortSettingVO) SetLagDelete(v bool) {
+	o.LagDelete = &v
 }
 
 // GetLagSetting returns the LagSetting field value if set, zero value otherwise.
@@ -1396,6 +1330,38 @@ func (o *BatchStackPortSettingVO) SetQueueId(v int32) {
 	o.QueueId = &v
 }
 
+// GetRemovedOuiBasedRuleIds returns the RemovedOuiBasedRuleIds field value if set, zero value otherwise.
+func (o *BatchStackPortSettingVO) GetRemovedOuiBasedRuleIds() []string {
+	if o == nil || IsNil(o.RemovedOuiBasedRuleIds) {
+		var ret []string
+		return ret
+	}
+	return o.RemovedOuiBasedRuleIds
+}
+
+// GetRemovedOuiBasedRuleIdsOk returns a tuple with the RemovedOuiBasedRuleIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BatchStackPortSettingVO) GetRemovedOuiBasedRuleIdsOk() ([]string, bool) {
+	if o == nil || IsNil(o.RemovedOuiBasedRuleIds) {
+		return nil, false
+	}
+	return o.RemovedOuiBasedRuleIds, true
+}
+
+// HasRemovedOuiBasedRuleIds returns a boolean if a field has been set.
+func (o *BatchStackPortSettingVO) HasRemovedOuiBasedRuleIds() bool {
+	if o != nil && !IsNil(o.RemovedOuiBasedRuleIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetRemovedOuiBasedRuleIds gets a reference to the given []string and assigns it to the RemovedOuiBasedRuleIds field.
+func (o *BatchStackPortSettingVO) SetRemovedOuiBasedRuleIds(v []string) {
+	o.RemovedOuiBasedRuleIds = v
+}
+
 // GetSpanningTreeEnable returns the SpanningTreeEnable field value if set, zero value otherwise.
 func (o *BatchStackPortSettingVO) GetSpanningTreeEnable() bool {
 	if o == nil || IsNil(o.SpanningTreeEnable) {
@@ -1942,9 +1908,6 @@ func (o BatchStackPortSettingVO) MarshalJSON() ([]byte, error) {
 
 func (o BatchStackPortSettingVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ArpDetectEnable) {
-		toSerialize["arpDetectEnable"] = o.ArpDetectEnable
-	}
 	if !IsNil(o.BandCtrl) {
 		toSerialize["bandCtrl"] = o.BandCtrl
 	}
@@ -1953,9 +1916,6 @@ func (o BatchStackPortSettingVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.DhcpL2RelaySettings) {
 		toSerialize["dhcpL2RelaySettings"] = o.DhcpL2RelaySettings
-	}
-	if !IsNil(o.DhcpSnoopEnable) {
-		toSerialize["dhcpSnoopEnable"] = o.DhcpSnoopEnable
 	}
 	if !IsNil(o.Disable) {
 		toSerialize["disable"] = o.Disable
@@ -1990,8 +1950,8 @@ func (o BatchStackPortSettingVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IgmpSnoopingEnable) {
 		toSerialize["igmpSnoopingEnable"] = o.IgmpSnoopingEnable
 	}
-	if !IsNil(o.Impbs) {
-		toSerialize["impbs"] = o.Impbs
+	if !IsNil(o.LagDelete) {
+		toSerialize["lagDelete"] = o.LagDelete
 	}
 	if !IsNil(o.LagSetting) {
 		toSerialize["lagSetting"] = o.LagSetting
@@ -2058,6 +2018,9 @@ func (o BatchStackPortSettingVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.QueueId) {
 		toSerialize["queueId"] = o.QueueId
+	}
+	if !IsNil(o.RemovedOuiBasedRuleIds) {
+		toSerialize["removedOuiBasedRuleIds"] = o.RemovedOuiBasedRuleIds
 	}
 	if !IsNil(o.SpanningTreeEnable) {
 		toSerialize["spanningTreeEnable"] = o.SpanningTreeEnable

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Alert** | Pointer to **bool** | Whether this user want to receive alert emails | [optional] 
+**Alert** | Pointer to **bool** | Whether this user wants to receive alert, event, and incident emails. Make sure your email is not null. | [optional] 
 **AllSite** | Pointer to **bool** | Whether user has all site permission, including new created site | [optional] 
 **Email** | Pointer to **string** | User email | [optional] 
 **EndTime** | Pointer to **int64** | The end time of the user&#39;s validity period. time range: end timestamp (Millisecond). | [optional] 
 **Favorites** | Pointer to **[]string** | User favorite site list | [optional] 
 **Id** | Pointer to **string** | User ID | [optional] 
-**IncidentNotification** | Pointer to **bool** | Incident notification | [optional] 
+**IncidentNotification** | Pointer to **bool** | Incident notification, this field is deprecated, please use alert field instead. | [optional] 
 **Name** | Pointer to **string** | User name | [optional] 
 **OmadacId** | Pointer to **string** | Omada ID | [optional] 
 **ParentUserId** | Pointer to **string** | User&#39;s parent user id | [optional] 

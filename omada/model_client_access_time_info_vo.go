@@ -21,10 +21,22 @@ var _ MappedNullable = &ClientAccessTimeInfoVO{}
 type ClientAccessTimeInfoVO struct {
 	// Association time
 	AssociationTime *int32 `json:"associationTime,omitempty"`
+	// Authorization time
+	AuthTime *int32 `json:"authTime,omitempty"`
+	// Client model for icon display
+	ClientModel *string `json:"clientModel,omitempty"`
 	// Client name
 	ClientName *string `json:"clientName,omitempty"`
+	// Client type for icon display (e.g. Mobile, Laptop, IPC)
+	ClientType *string `json:"clientType,omitempty"`
 	// Client-connected device type
 	DeviceType *string `json:"deviceType,omitempty"`
+	// DHCP time
+	DhcpTime *int32 `json:"dhcpTime,omitempty"`
+	// DNS time
+	DnsTime *int32 `json:"dnsTime,omitempty"`
+	// Incident counts
+	Incidents *int32 `json:"incidents,omitempty"`
 	// ip
 	Ip *string `json:"ip,omitempty"`
 	// Mac address
@@ -82,6 +94,70 @@ func (o *ClientAccessTimeInfoVO) SetAssociationTime(v int32) {
 	o.AssociationTime = &v
 }
 
+// GetAuthTime returns the AuthTime field value if set, zero value otherwise.
+func (o *ClientAccessTimeInfoVO) GetAuthTime() int32 {
+	if o == nil || IsNil(o.AuthTime) {
+		var ret int32
+		return ret
+	}
+	return *o.AuthTime
+}
+
+// GetAuthTimeOk returns a tuple with the AuthTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientAccessTimeInfoVO) GetAuthTimeOk() (*int32, bool) {
+	if o == nil || IsNil(o.AuthTime) {
+		return nil, false
+	}
+	return o.AuthTime, true
+}
+
+// HasAuthTime returns a boolean if a field has been set.
+func (o *ClientAccessTimeInfoVO) HasAuthTime() bool {
+	if o != nil && !IsNil(o.AuthTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthTime gets a reference to the given int32 and assigns it to the AuthTime field.
+func (o *ClientAccessTimeInfoVO) SetAuthTime(v int32) {
+	o.AuthTime = &v
+}
+
+// GetClientModel returns the ClientModel field value if set, zero value otherwise.
+func (o *ClientAccessTimeInfoVO) GetClientModel() string {
+	if o == nil || IsNil(o.ClientModel) {
+		var ret string
+		return ret
+	}
+	return *o.ClientModel
+}
+
+// GetClientModelOk returns a tuple with the ClientModel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientAccessTimeInfoVO) GetClientModelOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientModel) {
+		return nil, false
+	}
+	return o.ClientModel, true
+}
+
+// HasClientModel returns a boolean if a field has been set.
+func (o *ClientAccessTimeInfoVO) HasClientModel() bool {
+	if o != nil && !IsNil(o.ClientModel) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientModel gets a reference to the given string and assigns it to the ClientModel field.
+func (o *ClientAccessTimeInfoVO) SetClientModel(v string) {
+	o.ClientModel = &v
+}
+
 // GetClientName returns the ClientName field value if set, zero value otherwise.
 func (o *ClientAccessTimeInfoVO) GetClientName() string {
 	if o == nil || IsNil(o.ClientName) {
@@ -114,6 +190,38 @@ func (o *ClientAccessTimeInfoVO) SetClientName(v string) {
 	o.ClientName = &v
 }
 
+// GetClientType returns the ClientType field value if set, zero value otherwise.
+func (o *ClientAccessTimeInfoVO) GetClientType() string {
+	if o == nil || IsNil(o.ClientType) {
+		var ret string
+		return ret
+	}
+	return *o.ClientType
+}
+
+// GetClientTypeOk returns a tuple with the ClientType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientAccessTimeInfoVO) GetClientTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientType) {
+		return nil, false
+	}
+	return o.ClientType, true
+}
+
+// HasClientType returns a boolean if a field has been set.
+func (o *ClientAccessTimeInfoVO) HasClientType() bool {
+	if o != nil && !IsNil(o.ClientType) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientType gets a reference to the given string and assigns it to the ClientType field.
+func (o *ClientAccessTimeInfoVO) SetClientType(v string) {
+	o.ClientType = &v
+}
+
 // GetDeviceType returns the DeviceType field value if set, zero value otherwise.
 func (o *ClientAccessTimeInfoVO) GetDeviceType() string {
 	if o == nil || IsNil(o.DeviceType) {
@@ -144,6 +252,102 @@ func (o *ClientAccessTimeInfoVO) HasDeviceType() bool {
 // SetDeviceType gets a reference to the given string and assigns it to the DeviceType field.
 func (o *ClientAccessTimeInfoVO) SetDeviceType(v string) {
 	o.DeviceType = &v
+}
+
+// GetDhcpTime returns the DhcpTime field value if set, zero value otherwise.
+func (o *ClientAccessTimeInfoVO) GetDhcpTime() int32 {
+	if o == nil || IsNil(o.DhcpTime) {
+		var ret int32
+		return ret
+	}
+	return *o.DhcpTime
+}
+
+// GetDhcpTimeOk returns a tuple with the DhcpTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientAccessTimeInfoVO) GetDhcpTimeOk() (*int32, bool) {
+	if o == nil || IsNil(o.DhcpTime) {
+		return nil, false
+	}
+	return o.DhcpTime, true
+}
+
+// HasDhcpTime returns a boolean if a field has been set.
+func (o *ClientAccessTimeInfoVO) HasDhcpTime() bool {
+	if o != nil && !IsNil(o.DhcpTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetDhcpTime gets a reference to the given int32 and assigns it to the DhcpTime field.
+func (o *ClientAccessTimeInfoVO) SetDhcpTime(v int32) {
+	o.DhcpTime = &v
+}
+
+// GetDnsTime returns the DnsTime field value if set, zero value otherwise.
+func (o *ClientAccessTimeInfoVO) GetDnsTime() int32 {
+	if o == nil || IsNil(o.DnsTime) {
+		var ret int32
+		return ret
+	}
+	return *o.DnsTime
+}
+
+// GetDnsTimeOk returns a tuple with the DnsTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientAccessTimeInfoVO) GetDnsTimeOk() (*int32, bool) {
+	if o == nil || IsNil(o.DnsTime) {
+		return nil, false
+	}
+	return o.DnsTime, true
+}
+
+// HasDnsTime returns a boolean if a field has been set.
+func (o *ClientAccessTimeInfoVO) HasDnsTime() bool {
+	if o != nil && !IsNil(o.DnsTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetDnsTime gets a reference to the given int32 and assigns it to the DnsTime field.
+func (o *ClientAccessTimeInfoVO) SetDnsTime(v int32) {
+	o.DnsTime = &v
+}
+
+// GetIncidents returns the Incidents field value if set, zero value otherwise.
+func (o *ClientAccessTimeInfoVO) GetIncidents() int32 {
+	if o == nil || IsNil(o.Incidents) {
+		var ret int32
+		return ret
+	}
+	return *o.Incidents
+}
+
+// GetIncidentsOk returns a tuple with the Incidents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientAccessTimeInfoVO) GetIncidentsOk() (*int32, bool) {
+	if o == nil || IsNil(o.Incidents) {
+		return nil, false
+	}
+	return o.Incidents, true
+}
+
+// HasIncidents returns a boolean if a field has been set.
+func (o *ClientAccessTimeInfoVO) HasIncidents() bool {
+	if o != nil && !IsNil(o.Incidents) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidents gets a reference to the given int32 and assigns it to the Incidents field.
+func (o *ClientAccessTimeInfoVO) SetIncidents(v int32) {
+	o.Incidents = &v
 }
 
 // GetIp returns the Ip field value if set, zero value otherwise.
@@ -255,11 +459,29 @@ func (o ClientAccessTimeInfoVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AssociationTime) {
 		toSerialize["associationTime"] = o.AssociationTime
 	}
+	if !IsNil(o.AuthTime) {
+		toSerialize["authTime"] = o.AuthTime
+	}
+	if !IsNil(o.ClientModel) {
+		toSerialize["clientModel"] = o.ClientModel
+	}
 	if !IsNil(o.ClientName) {
 		toSerialize["clientName"] = o.ClientName
 	}
+	if !IsNil(o.ClientType) {
+		toSerialize["clientType"] = o.ClientType
+	}
 	if !IsNil(o.DeviceType) {
 		toSerialize["deviceType"] = o.DeviceType
+	}
+	if !IsNil(o.DhcpTime) {
+		toSerialize["dhcpTime"] = o.DhcpTime
+	}
+	if !IsNil(o.DnsTime) {
+		toSerialize["dnsTime"] = o.DnsTime
+	}
+	if !IsNil(o.Incidents) {
+		toSerialize["incidents"] = o.Incidents
 	}
 	if !IsNil(o.Ip) {
 		toSerialize["ip"] = o.Ip

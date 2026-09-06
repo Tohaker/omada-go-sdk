@@ -31,7 +31,7 @@ type SsidPskSettingOpenApiVO struct {
 	RekeyPskInterval *int32 `json:"rekeyPskInterval,omitempty"`
 	// WPA-Personal SSID password. This is necessary when the value of security is 3(WPA-Personal);It should contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.
 	SecurityKey *string `json:"securityKey,omitempty"`
-	// WPA-Personal version. This is necessary when the value of security is 3(WPA-Personal); It should be a value as follows: 1: WPA-PSK; 2: WPA2-PSK; 3: WPA/WPA2-PSK; 4: WPA3-SAE.
+	// WPA-Personal version. This is necessary when the value of security is 3(WPA-Personal); It should be a value as follows: 1: WPA-PSK; 2: WPA2-PSK; 3: WPA/WPA2-PSK; 4: WPA2-PSK/WPA3-SAE (or WPA3-SAE for 6 GHz-only SSIDs). The value must be 4 for 6 GHz-enabled SSIDs.
 	VersionPsk int32 `json:"versionPsk"`
 }
 

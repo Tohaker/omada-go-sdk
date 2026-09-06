@@ -20,15 +20,28 @@ var _ MappedNullable = &OswStackDataVOOswDataVO{}
 // OswStackDataVOOswDataVO stackOswData
 type OswStackDataVOOswDataVO struct {
 	AbnormalReason *int32 `json:"abnormalReason,omitempty"`
+	// The lag ids that has some vlan not included in port vlan.
+	CustomLagIds []int32 `json:"customLagIds,omitempty"`
+	// The standard ports that has some vlan not included in port vlan.
+	CustomStandardPorts []string `json:"customStandardPorts,omitempty"`
 	DevCap *OswDevCapVO `json:"devCap,omitempty"`
 	Lags []OswLagStatusVO `json:"lags,omitempty"`
 	MasterMac *string `json:"masterMac,omitempty"`
 	Member []OswDataVO `json:"member,omitempty"`
+	// Model of device,for example:EAP225
+	Model *string `json:"model,omitempty"`
+	// Model version of device,for example:3.0
+	ModelVersion *string `json:"modelVersion,omitempty"`
+	// Model complex shown in the front end.Ap：model+(country)+modelVersion,EAP225(EU) v3.0  Gateway/Switch：model+modelVersion,Osg v3.0
+	ShowModel *string `json:"showModel,omitempty"`
 	StackId *string `json:"stackId,omitempty"`
 	StackName *string `json:"stackName,omitempty"`
 	StackStatus *int32 `json:"stackStatus,omitempty"`
+	SupportAutoAddVlan *bool `json:"supportAutoAddVlan,omitempty"`
 	SupportCustomDhcpOption *bool `json:"supportCustomDhcpOption,omitempty"`
 	SupportDhcpRange *bool `json:"supportDhcpRange,omitempty"`
+	// Whether the device supports reporting port layout information.
+	SupportLayout *bool `json:"supportLayout,omitempty"`
 	SupportVrf *bool `json:"supportVrf,omitempty"`
 	// The unSelectedable ports of the device.
 	UnSelectedablePorts []PortVO `json:"unSelectedablePorts,omitempty"`
@@ -81,6 +94,70 @@ func (o *OswStackDataVOOswDataVO) HasAbnormalReason() bool {
 // SetAbnormalReason gets a reference to the given int32 and assigns it to the AbnormalReason field.
 func (o *OswStackDataVOOswDataVO) SetAbnormalReason(v int32) {
 	o.AbnormalReason = &v
+}
+
+// GetCustomLagIds returns the CustomLagIds field value if set, zero value otherwise.
+func (o *OswStackDataVOOswDataVO) GetCustomLagIds() []int32 {
+	if o == nil || IsNil(o.CustomLagIds) {
+		var ret []int32
+		return ret
+	}
+	return o.CustomLagIds
+}
+
+// GetCustomLagIdsOk returns a tuple with the CustomLagIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDataVOOswDataVO) GetCustomLagIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.CustomLagIds) {
+		return nil, false
+	}
+	return o.CustomLagIds, true
+}
+
+// HasCustomLagIds returns a boolean if a field has been set.
+func (o *OswStackDataVOOswDataVO) HasCustomLagIds() bool {
+	if o != nil && !IsNil(o.CustomLagIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomLagIds gets a reference to the given []int32 and assigns it to the CustomLagIds field.
+func (o *OswStackDataVOOswDataVO) SetCustomLagIds(v []int32) {
+	o.CustomLagIds = v
+}
+
+// GetCustomStandardPorts returns the CustomStandardPorts field value if set, zero value otherwise.
+func (o *OswStackDataVOOswDataVO) GetCustomStandardPorts() []string {
+	if o == nil || IsNil(o.CustomStandardPorts) {
+		var ret []string
+		return ret
+	}
+	return o.CustomStandardPorts
+}
+
+// GetCustomStandardPortsOk returns a tuple with the CustomStandardPorts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDataVOOswDataVO) GetCustomStandardPortsOk() ([]string, bool) {
+	if o == nil || IsNil(o.CustomStandardPorts) {
+		return nil, false
+	}
+	return o.CustomStandardPorts, true
+}
+
+// HasCustomStandardPorts returns a boolean if a field has been set.
+func (o *OswStackDataVOOswDataVO) HasCustomStandardPorts() bool {
+	if o != nil && !IsNil(o.CustomStandardPorts) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomStandardPorts gets a reference to the given []string and assigns it to the CustomStandardPorts field.
+func (o *OswStackDataVOOswDataVO) SetCustomStandardPorts(v []string) {
+	o.CustomStandardPorts = v
 }
 
 // GetDevCap returns the DevCap field value if set, zero value otherwise.
@@ -211,6 +288,102 @@ func (o *OswStackDataVOOswDataVO) SetMember(v []OswDataVO) {
 	o.Member = v
 }
 
+// GetModel returns the Model field value if set, zero value otherwise.
+func (o *OswStackDataVOOswDataVO) GetModel() string {
+	if o == nil || IsNil(o.Model) {
+		var ret string
+		return ret
+	}
+	return *o.Model
+}
+
+// GetModelOk returns a tuple with the Model field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDataVOOswDataVO) GetModelOk() (*string, bool) {
+	if o == nil || IsNil(o.Model) {
+		return nil, false
+	}
+	return o.Model, true
+}
+
+// HasModel returns a boolean if a field has been set.
+func (o *OswStackDataVOOswDataVO) HasModel() bool {
+	if o != nil && !IsNil(o.Model) {
+		return true
+	}
+
+	return false
+}
+
+// SetModel gets a reference to the given string and assigns it to the Model field.
+func (o *OswStackDataVOOswDataVO) SetModel(v string) {
+	o.Model = &v
+}
+
+// GetModelVersion returns the ModelVersion field value if set, zero value otherwise.
+func (o *OswStackDataVOOswDataVO) GetModelVersion() string {
+	if o == nil || IsNil(o.ModelVersion) {
+		var ret string
+		return ret
+	}
+	return *o.ModelVersion
+}
+
+// GetModelVersionOk returns a tuple with the ModelVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDataVOOswDataVO) GetModelVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.ModelVersion) {
+		return nil, false
+	}
+	return o.ModelVersion, true
+}
+
+// HasModelVersion returns a boolean if a field has been set.
+func (o *OswStackDataVOOswDataVO) HasModelVersion() bool {
+	if o != nil && !IsNil(o.ModelVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetModelVersion gets a reference to the given string and assigns it to the ModelVersion field.
+func (o *OswStackDataVOOswDataVO) SetModelVersion(v string) {
+	o.ModelVersion = &v
+}
+
+// GetShowModel returns the ShowModel field value if set, zero value otherwise.
+func (o *OswStackDataVOOswDataVO) GetShowModel() string {
+	if o == nil || IsNil(o.ShowModel) {
+		var ret string
+		return ret
+	}
+	return *o.ShowModel
+}
+
+// GetShowModelOk returns a tuple with the ShowModel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDataVOOswDataVO) GetShowModelOk() (*string, bool) {
+	if o == nil || IsNil(o.ShowModel) {
+		return nil, false
+	}
+	return o.ShowModel, true
+}
+
+// HasShowModel returns a boolean if a field has been set.
+func (o *OswStackDataVOOswDataVO) HasShowModel() bool {
+	if o != nil && !IsNil(o.ShowModel) {
+		return true
+	}
+
+	return false
+}
+
+// SetShowModel gets a reference to the given string and assigns it to the ShowModel field.
+func (o *OswStackDataVOOswDataVO) SetShowModel(v string) {
+	o.ShowModel = &v
+}
+
 // GetStackId returns the StackId field value if set, zero value otherwise.
 func (o *OswStackDataVOOswDataVO) GetStackId() string {
 	if o == nil || IsNil(o.StackId) {
@@ -307,6 +480,38 @@ func (o *OswStackDataVOOswDataVO) SetStackStatus(v int32) {
 	o.StackStatus = &v
 }
 
+// GetSupportAutoAddVlan returns the SupportAutoAddVlan field value if set, zero value otherwise.
+func (o *OswStackDataVOOswDataVO) GetSupportAutoAddVlan() bool {
+	if o == nil || IsNil(o.SupportAutoAddVlan) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportAutoAddVlan
+}
+
+// GetSupportAutoAddVlanOk returns a tuple with the SupportAutoAddVlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDataVOOswDataVO) GetSupportAutoAddVlanOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportAutoAddVlan) {
+		return nil, false
+	}
+	return o.SupportAutoAddVlan, true
+}
+
+// HasSupportAutoAddVlan returns a boolean if a field has been set.
+func (o *OswStackDataVOOswDataVO) HasSupportAutoAddVlan() bool {
+	if o != nil && !IsNil(o.SupportAutoAddVlan) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportAutoAddVlan gets a reference to the given bool and assigns it to the SupportAutoAddVlan field.
+func (o *OswStackDataVOOswDataVO) SetSupportAutoAddVlan(v bool) {
+	o.SupportAutoAddVlan = &v
+}
+
 // GetSupportCustomDhcpOption returns the SupportCustomDhcpOption field value if set, zero value otherwise.
 func (o *OswStackDataVOOswDataVO) GetSupportCustomDhcpOption() bool {
 	if o == nil || IsNil(o.SupportCustomDhcpOption) {
@@ -369,6 +574,38 @@ func (o *OswStackDataVOOswDataVO) HasSupportDhcpRange() bool {
 // SetSupportDhcpRange gets a reference to the given bool and assigns it to the SupportDhcpRange field.
 func (o *OswStackDataVOOswDataVO) SetSupportDhcpRange(v bool) {
 	o.SupportDhcpRange = &v
+}
+
+// GetSupportLayout returns the SupportLayout field value if set, zero value otherwise.
+func (o *OswStackDataVOOswDataVO) GetSupportLayout() bool {
+	if o == nil || IsNil(o.SupportLayout) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportLayout
+}
+
+// GetSupportLayoutOk returns a tuple with the SupportLayout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDataVOOswDataVO) GetSupportLayoutOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportLayout) {
+		return nil, false
+	}
+	return o.SupportLayout, true
+}
+
+// HasSupportLayout returns a boolean if a field has been set.
+func (o *OswStackDataVOOswDataVO) HasSupportLayout() bool {
+	if o != nil && !IsNil(o.SupportLayout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportLayout gets a reference to the given bool and assigns it to the SupportLayout field.
+func (o *OswStackDataVOOswDataVO) SetSupportLayout(v bool) {
+	o.SupportLayout = &v
 }
 
 // GetSupportVrf returns the SupportVrf field value if set, zero value otherwise.
@@ -448,6 +685,12 @@ func (o OswStackDataVOOswDataVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AbnormalReason) {
 		toSerialize["abnormalReason"] = o.AbnormalReason
 	}
+	if !IsNil(o.CustomLagIds) {
+		toSerialize["customLagIds"] = o.CustomLagIds
+	}
+	if !IsNil(o.CustomStandardPorts) {
+		toSerialize["customStandardPorts"] = o.CustomStandardPorts
+	}
 	if !IsNil(o.DevCap) {
 		toSerialize["devCap"] = o.DevCap
 	}
@@ -460,6 +703,15 @@ func (o OswStackDataVOOswDataVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Member) {
 		toSerialize["member"] = o.Member
 	}
+	if !IsNil(o.Model) {
+		toSerialize["model"] = o.Model
+	}
+	if !IsNil(o.ModelVersion) {
+		toSerialize["modelVersion"] = o.ModelVersion
+	}
+	if !IsNil(o.ShowModel) {
+		toSerialize["showModel"] = o.ShowModel
+	}
 	if !IsNil(o.StackId) {
 		toSerialize["stackId"] = o.StackId
 	}
@@ -469,11 +721,17 @@ func (o OswStackDataVOOswDataVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.StackStatus) {
 		toSerialize["stackStatus"] = o.StackStatus
 	}
+	if !IsNil(o.SupportAutoAddVlan) {
+		toSerialize["supportAutoAddVlan"] = o.SupportAutoAddVlan
+	}
 	if !IsNil(o.SupportCustomDhcpOption) {
 		toSerialize["supportCustomDhcpOption"] = o.SupportCustomDhcpOption
 	}
 	if !IsNil(o.SupportDhcpRange) {
 		toSerialize["supportDhcpRange"] = o.SupportDhcpRange
+	}
+	if !IsNil(o.SupportLayout) {
+		toSerialize["supportLayout"] = o.SupportLayout
 	}
 	if !IsNil(o.SupportVrf) {
 		toSerialize["supportVrf"] = o.SupportVrf

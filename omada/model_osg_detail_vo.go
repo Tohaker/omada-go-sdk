@@ -47,6 +47,7 @@ type OsgDetailVO struct {
 	CustomId *string `json:"customId,omitempty"`
 	// Customer name
 	CustomName *string `json:"customName,omitempty"`
+	// Description of the device
 	Description *string `json:"description,omitempty"`
 	DevCap *OsgCapVO `json:"devCap,omitempty"`
 	DeviceMisc *WirelessRouterMiscVO `json:"deviceMisc,omitempty"`
@@ -54,6 +55,7 @@ type OsgDetailVO struct {
 	DeviceSeriesType *int32 `json:"deviceSeriesType,omitempty"`
 	// Whether there is an available device template for the device; it is false if the model is not supported or the site template has not created the corresponding device template.
 	DeviceTemplateAvailable *bool `json:"deviceTemplateAvailable,omitempty"`
+	// Whether to disable hardware reset
 	DisableHwReset *bool `json:"disableHwReset,omitempty"`
 	DownlinkList []OsgDownLinkVO `json:"downlinkList,omitempty"`
 	Download *int64 `json:"download,omitempty"`
@@ -92,6 +94,8 @@ type OsgDetailVO struct {
 	JumboSize *int32 `json:"jumboSize,omitempty"`
 	LanClientStats []OsgLanStatVO `json:"lanClientStats,omitempty"`
 	LastSeen *int64 `json:"lastSeen,omitempty"`
+	// Latest firmware version
+	LatestVersion *string `json:"latestVersion,omitempty"`
 	LbSetting2g *ApLoadBalanceVO `json:"lbSetting2g,omitempty"`
 	LbSetting5g *ApLoadBalanceVO `json:"lbSetting5g,omitempty"`
 	LbSetting5g2 *ApLoadBalanceVO `json:"lbSetting5g2,omitempty"`
@@ -158,6 +162,7 @@ type OsgDetailVO struct {
 	Remember *bool `json:"remember,omitempty"`
 	// Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site
 	RememberDevice *int32 `json:"rememberDevice,omitempty"`
+	ReplaceDeviceInfo *DeviceReplaceSettingVO `json:"replaceDeviceInfo,omitempty"`
 	// Data source.Resource should be a value as follows: 0:new created;1:from template;2:override
 	Resource *int32 `json:"resource,omitempty"`
 	Rps []OsgRpsStatusVO `json:"rps,omitempty"`
@@ -1866,6 +1871,38 @@ func (o *OsgDetailVO) HasLastSeen() bool {
 // SetLastSeen gets a reference to the given int64 and assigns it to the LastSeen field.
 func (o *OsgDetailVO) SetLastSeen(v int64) {
 	o.LastSeen = &v
+}
+
+// GetLatestVersion returns the LatestVersion field value if set, zero value otherwise.
+func (o *OsgDetailVO) GetLatestVersion() string {
+	if o == nil || IsNil(o.LatestVersion) {
+		var ret string
+		return ret
+	}
+	return *o.LatestVersion
+}
+
+// GetLatestVersionOk returns a tuple with the LatestVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgDetailVO) GetLatestVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.LatestVersion) {
+		return nil, false
+	}
+	return o.LatestVersion, true
+}
+
+// HasLatestVersion returns a boolean if a field has been set.
+func (o *OsgDetailVO) HasLatestVersion() bool {
+	if o != nil && !IsNil(o.LatestVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetLatestVersion gets a reference to the given string and assigns it to the LatestVersion field.
+func (o *OsgDetailVO) SetLatestVersion(v string) {
+	o.LatestVersion = &v
 }
 
 // GetLbSetting2g returns the LbSetting2g field value if set, zero value otherwise.
@@ -3597,6 +3634,38 @@ func (o *OsgDetailVO) HasRememberDevice() bool {
 // SetRememberDevice gets a reference to the given int32 and assigns it to the RememberDevice field.
 func (o *OsgDetailVO) SetRememberDevice(v int32) {
 	o.RememberDevice = &v
+}
+
+// GetReplaceDeviceInfo returns the ReplaceDeviceInfo field value if set, zero value otherwise.
+func (o *OsgDetailVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO {
+	if o == nil || IsNil(o.ReplaceDeviceInfo) {
+		var ret DeviceReplaceSettingVO
+		return ret
+	}
+	return *o.ReplaceDeviceInfo
+}
+
+// GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgDetailVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool) {
+	if o == nil || IsNil(o.ReplaceDeviceInfo) {
+		return nil, false
+	}
+	return o.ReplaceDeviceInfo, true
+}
+
+// HasReplaceDeviceInfo returns a boolean if a field has been set.
+func (o *OsgDetailVO) HasReplaceDeviceInfo() bool {
+	if o != nil && !IsNil(o.ReplaceDeviceInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetReplaceDeviceInfo gets a reference to the given DeviceReplaceSettingVO and assigns it to the ReplaceDeviceInfo field.
+func (o *OsgDetailVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO) {
+	o.ReplaceDeviceInfo = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
@@ -6191,6 +6260,9 @@ func (o OsgDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LastSeen) {
 		toSerialize["lastSeen"] = o.LastSeen
 	}
+	if !IsNil(o.LatestVersion) {
+		toSerialize["latestVersion"] = o.LatestVersion
+	}
 	if !IsNil(o.LbSetting2g) {
 		toSerialize["lbSetting2g"] = o.LbSetting2g
 	}
@@ -6352,6 +6424,9 @@ func (o OsgDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RememberDevice) {
 		toSerialize["rememberDevice"] = o.RememberDevice
+	}
+	if !IsNil(o.ReplaceDeviceInfo) {
+		toSerialize["replaceDeviceInfo"] = o.ReplaceDeviceInfo
 	}
 	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource

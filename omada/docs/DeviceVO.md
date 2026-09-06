@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Impbs** | Pointer to [**[]ImpbVO**](ImpbVO.md) | The impbs selected. | [optional] 
 **Mac** | Pointer to **string** | The mac of the general device. | [optional] 
 **Ports** | Pointer to [**[]PortVO**](PortVO.md) | The ports selected. | [optional] 
 **StackId** | Pointer to **string** | The stack of the stack device. | [optional] 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewDeviceVOWithDefaults instantiates a new DeviceVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetImpbs
+
+`func (o *DeviceVO) GetImpbs() []ImpbVO`
+
+GetImpbs returns the Impbs field if non-nil, zero value otherwise.
+
+### GetImpbsOk
+
+`func (o *DeviceVO) GetImpbsOk() (*[]ImpbVO, bool)`
+
+GetImpbsOk returns a tuple with the Impbs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImpbs
+
+`func (o *DeviceVO) SetImpbs(v []ImpbVO)`
+
+SetImpbs sets Impbs field to given value.
+
+### HasImpbs
+
+`func (o *DeviceVO) HasImpbs() bool`
+
+HasImpbs returns a boolean if a field has been set.
 
 ### GetMac
 

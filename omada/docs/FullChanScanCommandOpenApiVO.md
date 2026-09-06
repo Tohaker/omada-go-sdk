@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EnableChannelUtil** | Pointer to **bool** | Whether to enable channel load detect. | [optional] 
+**EnableInterference** | Pointer to **bool** | Whether to detect interference when full channel scan. | [optional] 
 **EnableWifiInterference** | Pointer to **bool** | Whether to enable wifi interference detect. | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetEnableChannelUtil sets EnableChannelUtil field to given value.
 `func (o *FullChanScanCommandOpenApiVO) HasEnableChannelUtil() bool`
 
 HasEnableChannelUtil returns a boolean if a field has been set.
+
+### GetEnableInterference
+
+`func (o *FullChanScanCommandOpenApiVO) GetEnableInterference() bool`
+
+GetEnableInterference returns the EnableInterference field if non-nil, zero value otherwise.
+
+### GetEnableInterferenceOk
+
+`func (o *FullChanScanCommandOpenApiVO) GetEnableInterferenceOk() (*bool, bool)`
+
+GetEnableInterferenceOk returns a tuple with the EnableInterference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableInterference
+
+`func (o *FullChanScanCommandOpenApiVO) SetEnableInterference(v bool)`
+
+SetEnableInterference sets EnableInterference field to given value.
+
+### HasEnableInterference
+
+`func (o *FullChanScanCommandOpenApiVO) HasEnableInterference() bool`
+
+HasEnableInterference returns a boolean if a field has been set.
 
 ### GetEnableWifiInterference
 

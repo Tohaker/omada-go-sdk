@@ -23,7 +23,7 @@ var _ MappedNullable = &ApMgtSsidEnterpriseSettingOpenApiVO{}
 type ApMgtSsidEnterpriseSettingOpenApiVO struct {
 	// WPA-Enterprise encryption. This is necessary when the value of security is 2(WPA-Enterprise); It should be a value as follows: 1: Auto; 3: AES.
 	EncryptionEnt int32 `json:"encryptionEnt"`
-	// This field represents RADIUS Profile ID. RADIUS Profile(RADIUS Profile Template) can be created using Create a new Radius profile(Create a new Radius profile template) interface, and RADIUS Profile ID(RADIUS Profile Template ID) can be obtained from Get Radius profile list(Get Radius profile template list) interface.
+	// This field represents RADIUS Profile ID. RADIUS Profile(RADIUS Profile Template) can be created using Create a new RADIUS profile(Create a new RADIUS profile template) interface, and RADIUS Profile ID(RADIUS Profile Template ID) can be obtained from Get RADIUS profile list(Get RADIUS profile template list) interface.
 	RadiusProfileId string `json:"radiusProfileId"`
 	// WPA-Enterprise version. This is necessary when the value of security is 2(WPA-Enterprise); It should be a value as follows: 1: WPA-Enterprise; 2: WPA2-Enterprise; 3: WPA/WPA2-Enterprise.
 	VersionEnt int32 `json:"versionEnt"`

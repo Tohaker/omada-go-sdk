@@ -146,7 +146,7 @@ type VoucherAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param groupId groupId
+	@param groupId Voucher group ID
 	@return VoucherAPIEditVoucherGroupPatternRequest
 	*/
 	EditVoucherGroupPattern(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIEditVoucherGroupPatternRequest
@@ -1432,7 +1432,7 @@ Edit vouvhcer group pattern.<br/><br/>The interface requires one of the permissi
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param groupId groupId
+ @param groupId Voucher group ID
  @return VoucherAPIEditVoucherGroupPatternRequest
 */
 func (a *VoucherAPIService) EditVoucherGroupPattern(ctx context.Context, omadacId string, siteId string, groupId string) VoucherAPIEditVoucherGroupPatternRequest {

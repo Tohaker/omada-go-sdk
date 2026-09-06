@@ -23,7 +23,7 @@ var _ MappedNullable = &VpnBaseAuthSettingOpenApiVO{}
 type VpnBaseAuthSettingOpenApiVO struct {
 	// Only for SSL VPN. Default user group ID for the user on the LDAP/Radius server. User group can be created using 'Create SSL VPN user group' interface, and user group ID can be obtained from 'Get user group list for SSL VPN server' interface.
 	DefaultGroup string `json:"defaultGroup"`
-	// Profile ID. LDAP profile can be created using 'Create a new LDAP profile' interface, and LDAP profile ID can be obtained from 'Get LDAP profile list' interface. Radius profile can be created using 'Create a new Radius profile' interface, and Radius profile ID can be obtained from 'Get Radius profile list' interface.
+	// Profile ID. LDAP profile can be created using 'Create a new LDAP profile' interface, and LDAP profile ID can be obtained from 'Get LDAP profile list' interface. Radius profile can be created using 'Create a new RADIUS profile' interface, and RADIUS profile ID can be obtained from 'Get RADIUS profile list' interface.
 	ProfileId string `json:"profileId"`
 }
 

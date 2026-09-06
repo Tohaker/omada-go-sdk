@@ -113,7 +113,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | siteTemplateId
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	configIotServerOpenApiVO := *openapiclient.NewConfigIotServerOpenApiVO("AccessToken_example", int32(123), false, "ClientId_example", []int32{int32(123)}, false, "Name_example", false, int32(123), int32(123), "ServerUrl_example") // ConfigIotServerOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | siteTemplateId | 
+**siteTemplateId** | **string** | Site Template ID | 
 
 ### Other Parameters
 

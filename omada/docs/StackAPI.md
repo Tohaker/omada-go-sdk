@@ -8,9 +8,11 @@ Method | HTTP request | Description
 [**BatchModifyOswStackPorts**](StackAPI.md#batchmodifyoswstackports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/ports/config | Batch modify stack port
 [**BatchModifySwitchStackPortSetting**](StackAPI.md#batchmodifyswitchstackportsetting) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/multi-ports/config | Batch modify stack port V2
 [**CancelStackCableTest**](StackAPI.md#cancelstackcabletest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/stacks/{stackId}/cancel | Cancel stack cable test
+[**CreateLoopbackInterface1**](StackAPI.md#createloopbackinterface1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/loopback-interface | Create Stack Loopback Interface
 [**CreateOswStack**](StackAPI.md#createoswstack) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks | Create Switch Stack
 [**CreateStackStaticRouting**](StackAPI.md#createstackstaticrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/staticRoutings | Create stack staticRouting
 [**CreateStackVrf**](StackAPI.md#createstackvrf) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/vrfs | Create new stack vrf
+[**DeleteLoopbackInterface1**](StackAPI.md#deleteloopbackinterface1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/loopback-interface/{loopbackInterfaceId} | Delete Stack Loopback Interface
 [**DeleteOswStack**](StackAPI.md#deleteoswstack) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId} | Delete Switch Stack
 [**DeleteOswStackLag**](StackAPI.md#deleteoswstacklag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Delete stack lag
 [**DeleteStackStaticRouting**](StackAPI.md#deletestackstaticrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/staticRoutings/{staticRoutingId} | Delete stack staticRouting
@@ -48,11 +50,15 @@ Method | HTTP request | Description
 [**GetStackRpvstInstances**](StackAPI.md#getstackrpvstinstances) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/rpvst-instances | Get Stack Rpvst Instances
 [**GetStackUsedSdmNum**](StackAPI.md#getstackusedsdmnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/sdm-used | Get the used sdm template num on the stack
 [**GetStackableSwitches**](StackAPI.md#getstackableswitches) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stacks/switches | Get stackable switches
+[**ListStackBriefInterfaces**](StackAPI.md#liststackbriefinterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/interfaces/brief | List Stack Brief Interfaces
+[**ListStackInterfaces**](StackAPI.md#liststackinterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/interfaces | List Stack Interfaces
 [**LocateOswStack**](StackAPI.md#locateoswstack) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/stacks/{stackId}/locate | Locate switch stack
+[**ModfiyLoopbackInterface1**](StackAPI.md#modfiyloopbackinterface1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/loopback-interface/{loopbackInterfaceId} | Modify Stack Loopback Interface
 [**ModifyOswStack**](StackAPI.md#modifyoswstack) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId} | Modify Switch Stack
 [**ModifyOswStackDetail**](StackAPI.md#modifyoswstackdetail) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/config | Modify stack detail
 [**ModifyOswStackLag**](StackAPI.md#modifyoswstacklag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Modify stack lag
 [**ModifyOswStackPort**](StackAPI.md#modifyoswstackport) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/ports/{port} | Modify stack port
+[**ModifyPmtudStatus2**](StackAPI.md#modifypmtudstatus2) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/interfaces/pmtud | Modify Stack Path MTU Discovery
 [**ModifyStackLoopbackControl**](StackAPI.md#modifystackloopbackcontrol) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/config/loopback | Modify stack loopback control
 [**ModifyStackNetwork**](StackAPI.md#modifystacknetwork) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/networks/{networkId} | Modify stack vlan interface
 [**ModifyStackRememberMe**](StackAPI.md#modifystackrememberme) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/remember | Modify stack remember Config
@@ -375,6 +381,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CreateLoopbackInterface1
+
+> OperationResponseOswLoopbackInterfaceResultOpenApiVO CreateLoopbackInterface1(ctx, omadacId, siteId, stackId).OswLoopbackInterfaceVO(oswLoopbackInterfaceVO).Execute()
+
+Create Stack Loopback Interface
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+	oswLoopbackInterfaceVO := *openapiclient.NewOswLoopbackInterfaceVO("Ip_example", int32(123), "Name_example", int32(123)) // OswLoopbackInterfaceVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StackAPI.CreateLoopbackInterface1(context.Background(), omadacId, siteId, stackId).OswLoopbackInterfaceVO(oswLoopbackInterfaceVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.CreateLoopbackInterface1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateLoopbackInterface1`: OperationResponseOswLoopbackInterfaceResultOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `StackAPI.CreateLoopbackInterface1`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateLoopbackInterface1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **oswLoopbackInterfaceVO** | [**OswLoopbackInterfaceVO**](OswLoopbackInterfaceVO.md) |  | 
+
+### Return type
+
+[**OperationResponseOswLoopbackInterfaceResultOpenApiVO**](OperationResponseOswLoopbackInterfaceResultOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CreateOswStack
 
 > OperationResponseWithoutResult CreateOswStack(ctx, omadacId, siteId).OswStackConfigOpenApiVO(oswStackConfigOpenApiVO).Execute()
@@ -530,7 +614,7 @@ Name | Type | Description  | Notes
 
 ## CreateStackVrf
 
-> OperationResponseWithoutResult CreateStackVrf(ctx, omadacId, siteId, stackId).OswVrfVO(oswVrfVO).Execute()
+> OperationResponseResponseIdVO CreateStackVrf(ctx, omadacId, siteId, stackId).OswVrfVO(oswVrfVO).Execute()
 
 Create new stack vrf
 
@@ -561,7 +645,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.CreateStackVrf``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateStackVrf`: OperationResponseWithoutResult
+	// response from `CreateStackVrf`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `StackAPI.CreateStackVrf`: %v\n", resp)
 }
 ```
@@ -590,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -599,6 +683,85 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteLoopbackInterface1
+
+> OperationResponse DeleteLoopbackInterface1(ctx, omadacId, siteId, stackId, loopbackInterfaceId).Execute()
+
+Delete Stack Loopback Interface
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+	loopbackInterfaceId := "loopbackInterfaceId_example" // string | Loopback Interface ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StackAPI.DeleteLoopbackInterface1(context.Background(), omadacId, siteId, stackId, loopbackInterfaceId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.DeleteLoopbackInterface1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteLoopbackInterface1`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `StackAPI.DeleteLoopbackInterface1`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+**loopbackInterfaceId** | **string** | Loopback Interface ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteLoopbackInterface1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -2941,7 +3104,7 @@ Name | Type | Description  | Notes
 
 ## GetStackGridVrf
 
-> GridVOOswVrfVO GetStackGridVrf(ctx, omadacId, siteId, stackId).Page(page).PageSize(pageSize).Execute()
+> GridVOOswVrfOpenApiVO GetStackGridVrf(ctx, omadacId, siteId, stackId).Page(page).PageSize(pageSize).Execute()
 
 Get stack vrf page
 
@@ -2973,7 +3136,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.GetStackGridVrf``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetStackGridVrf`: GridVOOswVrfVO
+	// response from `GetStackGridVrf`: GridVOOswVrfOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `StackAPI.GetStackGridVrf`: %v\n", resp)
 }
 ```
@@ -3003,7 +3166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GridVOOswVrfVO**](GridVOOswVrfVO.md)
+[**GridVOOswVrfOpenApiVO**](GridVOOswVrfOpenApiVO.md)
 
 ### Authorization
 
@@ -3484,6 +3647,162 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ListStackBriefInterfaces
+
+> OperationResponseListOswInterfaceBriefVO ListStackBriefInterfaces(ctx, omadacId, siteId, stackId).Execute()
+
+List Stack Brief Interfaces
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StackAPI.ListStackBriefInterfaces(context.Background(), omadacId, siteId, stackId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.ListStackBriefInterfaces``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListStackBriefInterfaces`: OperationResponseListOswInterfaceBriefVO
+	fmt.Fprintf(os.Stdout, "Response from `StackAPI.ListStackBriefInterfaces`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListStackBriefInterfacesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseListOswInterfaceBriefVO**](OperationResponseListOswInterfaceBriefVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListStackInterfaces
+
+> OperationResponseOswInterfaceGridOswInterfaceOpenApi ListStackInterfaces(ctx, omadacId, siteId, stackId).Page(page).PageSize(pageSize).Execute()
+
+List Stack Interfaces
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StackAPI.ListStackInterfaces(context.Background(), omadacId, siteId, stackId).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.ListStackInterfaces``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListStackInterfaces`: OperationResponseOswInterfaceGridOswInterfaceOpenApi
+	fmt.Fprintf(os.Stdout, "Response from `StackAPI.ListStackInterfaces`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListStackInterfacesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseOswInterfaceGridOswInterfaceOpenApi**](OperationResponseOswInterfaceGridOswInterfaceOpenApi.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## LocateOswStack
 
 > OperationResponseLocateResultVO LocateOswStack(ctx, omadacId, siteId, stackId).OswStackLocateOpenApiVO(oswStackLocateOpenApiVO).Execute()
@@ -3547,6 +3866,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseLocateResultVO**](OperationResponseLocateResultVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModfiyLoopbackInterface1
+
+> OperationResponse ModfiyLoopbackInterface1(ctx, omadacId, siteId, stackId, loopbackInterfaceId).OswLoopbackInterfaceVO(oswLoopbackInterfaceVO).Execute()
+
+Modify Stack Loopback Interface
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+	loopbackInterfaceId := "loopbackInterfaceId_example" // string | Loopback Interface ID
+	oswLoopbackInterfaceVO := *openapiclient.NewOswLoopbackInterfaceVO("Ip_example", int32(123), "Name_example", int32(123)) // OswLoopbackInterfaceVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StackAPI.ModfiyLoopbackInterface1(context.Background(), omadacId, siteId, stackId, loopbackInterfaceId).OswLoopbackInterfaceVO(oswLoopbackInterfaceVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.ModfiyLoopbackInterface1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModfiyLoopbackInterface1`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `StackAPI.ModfiyLoopbackInterface1`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+**loopbackInterfaceId** | **string** | Loopback Interface ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModfiyLoopbackInterface1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **oswLoopbackInterfaceVO** | [**OswLoopbackInterfaceVO**](OswLoopbackInterfaceVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
 
 ### Authorization
 
@@ -3865,6 +4265,84 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifyPmtudStatus2
+
+> OperationResponse ModifyPmtudStatus2(ctx, omadacId, siteId, stackId).OswPmtudVO(oswPmtudVO).Execute()
+
+Modify Stack Path MTU Discovery
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+	oswPmtudVO := *openapiclient.NewOswPmtudVO() // OswPmtudVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StackAPI.ModifyPmtudStatus2(context.Background(), omadacId, siteId, stackId).OswPmtudVO(oswPmtudVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StackAPI.ModifyPmtudStatus2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyPmtudStatus2`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `StackAPI.ModifyPmtudStatus2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyPmtudStatus2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **oswPmtudVO** | [**OswPmtudVO**](OswPmtudVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
 
 ### Authorization
 

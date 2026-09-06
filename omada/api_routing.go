@@ -39,20 +39,20 @@ type RoutingAPI interface {
 	CreatePolicyRoutingExecute(r RoutingAPICreatePolicyRoutingRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	CreateStaticRouting Create new static routing
+	CreateStaticRouting1 Create new static routing
 
 	Create new static routing.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-33503  -  This network does not exist.<br/>-34203  -  The number of Static Route entries has reached the limit.<br/>-34256  -  The interface or next hop is duplicate and there are duplicate items in the destination.<br/>-34257  -  The Gateway does not support select VPN Client in Static Routing<br/>-34258  -  The Gateway does not support select Virtual WAN in Static Routing<br/>-34602  -  This VPN policy does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@return RoutingAPICreateStaticRoutingRequest
+	@return RoutingAPICreateStaticRouting1Request
 	*/
-	CreateStaticRouting(ctx context.Context, omadacId string, siteId string) RoutingAPICreateStaticRoutingRequest
+	CreateStaticRouting1(ctx context.Context, omadacId string, siteId string) RoutingAPICreateStaticRouting1Request
 
-	// CreateStaticRoutingExecute executes the request
+	// CreateStaticRouting1Execute executes the request
 	//  @return OperationResponseWithoutResult
-	CreateStaticRoutingExecute(r RoutingAPICreateStaticRoutingRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	CreateStaticRouting1Execute(r RoutingAPICreateStaticRouting1Request) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	DeletePolicyRouting Delete policy routing
@@ -62,7 +62,7 @@ type RoutingAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param policyRoutingId policyRoutingId
+	@param policyRoutingId Policy routing ID
 	@return RoutingAPIDeletePolicyRoutingRequest
 	*/
 	DeletePolicyRouting(ctx context.Context, omadacId string, siteId string, policyRoutingId string) RoutingAPIDeletePolicyRoutingRequest
@@ -72,21 +72,21 @@ type RoutingAPI interface {
 	DeletePolicyRoutingExecute(r RoutingAPIDeletePolicyRoutingRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	DeleteStaticRouting Delete static routing
+	DeleteStaticRouting1 Delete static routing
 
 	Delete static routing.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param staticRoutingId staticRoutingId
-	@return RoutingAPIDeleteStaticRoutingRequest
+	@param staticRoutingId Static routing ID
+	@return RoutingAPIDeleteStaticRouting1Request
 	*/
-	DeleteStaticRouting(ctx context.Context, omadacId string, siteId string, staticRoutingId string) RoutingAPIDeleteStaticRoutingRequest
+	DeleteStaticRouting1(ctx context.Context, omadacId string, siteId string, staticRoutingId string) RoutingAPIDeleteStaticRouting1Request
 
-	// DeleteStaticRoutingExecute executes the request
+	// DeleteStaticRouting1Execute executes the request
 	//  @return OperationResponseWithoutResult
-	DeleteStaticRoutingExecute(r RoutingAPIDeleteStaticRoutingRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	DeleteStaticRouting1Execute(r RoutingAPIDeleteStaticRouting1Request) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	GetGridPolicyRouting Get policy routing list
@@ -105,20 +105,20 @@ type RoutingAPI interface {
 	GetGridPolicyRoutingExecute(r RoutingAPIGetGridPolicyRoutingRequest) (*OperationResponsePolicyRoutingOpenApiGridVOPolicyRoutingInfo, *http.Response, error)
 
 	/*
-	GetGridStaticRouting Get static routing list
+	GetGridStaticRouting1 Get static routing list
 
 	Get static routing list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@return RoutingAPIGetGridStaticRoutingRequest
+	@return RoutingAPIGetGridStaticRouting1Request
 	*/
-	GetGridStaticRouting(ctx context.Context, omadacId string, siteId string) RoutingAPIGetGridStaticRoutingRequest
+	GetGridStaticRouting1(ctx context.Context, omadacId string, siteId string) RoutingAPIGetGridStaticRouting1Request
 
-	// GetGridStaticRoutingExecute executes the request
+	// GetGridStaticRouting1Execute executes the request
 	//  @return OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo
-	GetGridStaticRoutingExecute(r RoutingAPIGetGridStaticRoutingRequest) (*OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo, *http.Response, error)
+	GetGridStaticRouting1Execute(r RoutingAPIGetGridStaticRouting1Request) (*OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo, *http.Response, error)
 
 	/*
 	GetStaticRoutingInterfaceList Get static routing interface list
@@ -144,7 +144,7 @@ type RoutingAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param policyRoutingId policyRoutingId
+	@param policyRoutingId Policy routing ID
 	@return RoutingAPIModifyPolicyRoutingRequest
 	*/
 	ModifyPolicyRouting(ctx context.Context, omadacId string, siteId string, policyRoutingId string) RoutingAPIModifyPolicyRoutingRequest
@@ -170,21 +170,21 @@ type RoutingAPI interface {
 	ModifyPolicyRoutingIndexExecute(r RoutingAPIModifyPolicyRoutingIndexRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyStaticRouting Modify static routing
+	ModifyStaticRouting1 Modify static routing
 
 	Modify static routing.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-33503  -  This network does not exist.<br/>-34256  -  The interface or next hop is duplicate and there are duplicate items in the destination.<br/>-34257  -  The Gateway does not support select VPN Client in Static Routing<br/>-34258  -  The Gateway does not support select Virtual WAN in Static Routing<br/>-34602  -  This VPN policy does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param staticRoutingId staticRoutingId
-	@return RoutingAPIModifyStaticRoutingRequest
+	@param staticRoutingId Static routing ID
+	@return RoutingAPIModifyStaticRouting1Request
 	*/
-	ModifyStaticRouting(ctx context.Context, omadacId string, siteId string, staticRoutingId string) RoutingAPIModifyStaticRoutingRequest
+	ModifyStaticRouting1(ctx context.Context, omadacId string, siteId string, staticRoutingId string) RoutingAPIModifyStaticRouting1Request
 
-	// ModifyStaticRoutingExecute executes the request
+	// ModifyStaticRouting1Execute executes the request
 	//  @return OperationResponseWithoutResult
-	ModifyStaticRoutingExecute(r RoutingAPIModifyStaticRoutingRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	ModifyStaticRouting1Execute(r RoutingAPIModifyStaticRouting1Request) (*OperationResponseWithoutResult, *http.Response, error)
 }
 
 // RoutingAPIService RoutingAPI service
@@ -322,7 +322,7 @@ func (a *RoutingAPIService) CreatePolicyRoutingExecute(r RoutingAPICreatePolicyR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RoutingAPICreateStaticRoutingRequest struct {
+type RoutingAPICreateStaticRouting1Request struct {
 	ctx context.Context
 	ApiService RoutingAPI
 	omadacId string
@@ -330,27 +330,27 @@ type RoutingAPICreateStaticRoutingRequest struct {
 	staticRoutingConfig *StaticRoutingConfig
 }
 
-func (r RoutingAPICreateStaticRoutingRequest) StaticRoutingConfig(staticRoutingConfig StaticRoutingConfig) RoutingAPICreateStaticRoutingRequest {
+func (r RoutingAPICreateStaticRouting1Request) StaticRoutingConfig(staticRoutingConfig StaticRoutingConfig) RoutingAPICreateStaticRouting1Request {
 	r.staticRoutingConfig = &staticRoutingConfig
 	return r
 }
 
-func (r RoutingAPICreateStaticRoutingRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.CreateStaticRoutingExecute(r)
+func (r RoutingAPICreateStaticRouting1Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CreateStaticRouting1Execute(r)
 }
 
 /*
-CreateStaticRouting Create new static routing
+CreateStaticRouting1 Create new static routing
 
 Create new static routing.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-33503  -  This network does not exist.<br/>-34203  -  The number of Static Route entries has reached the limit.<br/>-34256  -  The interface or next hop is duplicate and there are duplicate items in the destination.<br/>-34257  -  The Gateway does not support select VPN Client in Static Routing<br/>-34258  -  The Gateway does not support select Virtual WAN in Static Routing<br/>-34602  -  This VPN policy does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @return RoutingAPICreateStaticRoutingRequest
+ @return RoutingAPICreateStaticRouting1Request
 */
-func (a *RoutingAPIService) CreateStaticRouting(ctx context.Context, omadacId string, siteId string) RoutingAPICreateStaticRoutingRequest {
-	return RoutingAPICreateStaticRoutingRequest{
+func (a *RoutingAPIService) CreateStaticRouting1(ctx context.Context, omadacId string, siteId string) RoutingAPICreateStaticRouting1Request {
+	return RoutingAPICreateStaticRouting1Request{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
@@ -360,7 +360,7 @@ func (a *RoutingAPIService) CreateStaticRouting(ctx context.Context, omadacId st
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
-func (a *RoutingAPIService) CreateStaticRoutingExecute(r RoutingAPICreateStaticRoutingRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+func (a *RoutingAPIService) CreateStaticRouting1Execute(r RoutingAPICreateStaticRouting1Request) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -368,7 +368,7 @@ func (a *RoutingAPIService) CreateStaticRoutingExecute(r RoutingAPICreateStaticR
 		localVarReturnValue  *OperationResponseWithoutResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoutingAPIService.CreateStaticRouting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoutingAPIService.CreateStaticRouting1")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -474,7 +474,7 @@ Delete policy routing.<br/><br/>The interface requires one of the permissions: <
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param policyRoutingId policyRoutingId
+ @param policyRoutingId Policy routing ID
  @return RoutingAPIDeletePolicyRoutingRequest
 */
 func (a *RoutingAPIService) DeletePolicyRouting(ctx context.Context, omadacId string, siteId string, policyRoutingId string) RoutingAPIDeletePolicyRoutingRequest {
@@ -579,7 +579,7 @@ func (a *RoutingAPIService) DeletePolicyRoutingExecute(r RoutingAPIDeletePolicyR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RoutingAPIDeleteStaticRoutingRequest struct {
+type RoutingAPIDeleteStaticRouting1Request struct {
 	ctx context.Context
 	ApiService RoutingAPI
 	omadacId string
@@ -587,23 +587,23 @@ type RoutingAPIDeleteStaticRoutingRequest struct {
 	staticRoutingId string
 }
 
-func (r RoutingAPIDeleteStaticRoutingRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.DeleteStaticRoutingExecute(r)
+func (r RoutingAPIDeleteStaticRouting1Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.DeleteStaticRouting1Execute(r)
 }
 
 /*
-DeleteStaticRouting Delete static routing
+DeleteStaticRouting1 Delete static routing
 
 Delete static routing.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param staticRoutingId staticRoutingId
- @return RoutingAPIDeleteStaticRoutingRequest
+ @param staticRoutingId Static routing ID
+ @return RoutingAPIDeleteStaticRouting1Request
 */
-func (a *RoutingAPIService) DeleteStaticRouting(ctx context.Context, omadacId string, siteId string, staticRoutingId string) RoutingAPIDeleteStaticRoutingRequest {
-	return RoutingAPIDeleteStaticRoutingRequest{
+func (a *RoutingAPIService) DeleteStaticRouting1(ctx context.Context, omadacId string, siteId string, staticRoutingId string) RoutingAPIDeleteStaticRouting1Request {
+	return RoutingAPIDeleteStaticRouting1Request{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
@@ -614,7 +614,7 @@ func (a *RoutingAPIService) DeleteStaticRouting(ctx context.Context, omadacId st
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
-func (a *RoutingAPIService) DeleteStaticRoutingExecute(r RoutingAPIDeleteStaticRoutingRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+func (a *RoutingAPIService) DeleteStaticRouting1Execute(r RoutingAPIDeleteStaticRouting1Request) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -622,7 +622,7 @@ func (a *RoutingAPIService) DeleteStaticRoutingExecute(r RoutingAPIDeleteStaticR
 		localVarReturnValue  *OperationResponseWithoutResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoutingAPIService.DeleteStaticRouting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoutingAPIService.DeleteStaticRouting1")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -847,7 +847,7 @@ func (a *RoutingAPIService) GetGridPolicyRoutingExecute(r RoutingAPIGetGridPolic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RoutingAPIGetGridStaticRoutingRequest struct {
+type RoutingAPIGetGridStaticRouting1Request struct {
 	ctx context.Context
 	ApiService RoutingAPI
 	page *int32
@@ -857,33 +857,33 @@ type RoutingAPIGetGridStaticRoutingRequest struct {
 }
 
 // Start page number. Start from 1.
-func (r RoutingAPIGetGridStaticRoutingRequest) Page(page int32) RoutingAPIGetGridStaticRoutingRequest {
+func (r RoutingAPIGetGridStaticRouting1Request) Page(page int32) RoutingAPIGetGridStaticRouting1Request {
 	r.page = &page
 	return r
 }
 
 // Number of entries per page. It should be within the range of 1–1000.
-func (r RoutingAPIGetGridStaticRoutingRequest) PageSize(pageSize int32) RoutingAPIGetGridStaticRoutingRequest {
+func (r RoutingAPIGetGridStaticRouting1Request) PageSize(pageSize int32) RoutingAPIGetGridStaticRouting1Request {
 	r.pageSize = &pageSize
 	return r
 }
 
-func (r RoutingAPIGetGridStaticRoutingRequest) Execute() (*OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo, *http.Response, error) {
-	return r.ApiService.GetGridStaticRoutingExecute(r)
+func (r RoutingAPIGetGridStaticRouting1Request) Execute() (*OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo, *http.Response, error) {
+	return r.ApiService.GetGridStaticRouting1Execute(r)
 }
 
 /*
-GetGridStaticRouting Get static routing list
+GetGridStaticRouting1 Get static routing list
 
 Get static routing list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @return RoutingAPIGetGridStaticRoutingRequest
+ @return RoutingAPIGetGridStaticRouting1Request
 */
-func (a *RoutingAPIService) GetGridStaticRouting(ctx context.Context, omadacId string, siteId string) RoutingAPIGetGridStaticRoutingRequest {
-	return RoutingAPIGetGridStaticRoutingRequest{
+func (a *RoutingAPIService) GetGridStaticRouting1(ctx context.Context, omadacId string, siteId string) RoutingAPIGetGridStaticRouting1Request {
+	return RoutingAPIGetGridStaticRouting1Request{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
@@ -893,7 +893,7 @@ func (a *RoutingAPIService) GetGridStaticRouting(ctx context.Context, omadacId s
 
 // Execute executes the request
 //  @return OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo
-func (a *RoutingAPIService) GetGridStaticRoutingExecute(r RoutingAPIGetGridStaticRoutingRequest) (*OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo, *http.Response, error) {
+func (a *RoutingAPIService) GetGridStaticRouting1Execute(r RoutingAPIGetGridStaticRouting1Request) (*OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -901,7 +901,7 @@ func (a *RoutingAPIService) GetGridStaticRoutingExecute(r RoutingAPIGetGridStati
 		localVarReturnValue  *OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoutingAPIService.GetGridStaticRouting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoutingAPIService.GetGridStaticRouting1")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1137,7 +1137,7 @@ Modify policy routing.<br/><br/>The interface requires one of the permissions: <
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param policyRoutingId policyRoutingId
+ @param policyRoutingId Policy routing ID
  @return RoutingAPIModifyPolicyRoutingRequest
 */
 func (a *RoutingAPIService) ModifyPolicyRouting(ctx context.Context, omadacId string, siteId string, policyRoutingId string) RoutingAPIModifyPolicyRoutingRequest {
@@ -1379,7 +1379,7 @@ func (a *RoutingAPIService) ModifyPolicyRoutingIndexExecute(r RoutingAPIModifyPo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RoutingAPIModifyStaticRoutingRequest struct {
+type RoutingAPIModifyStaticRouting1Request struct {
 	ctx context.Context
 	ApiService RoutingAPI
 	omadacId string
@@ -1388,28 +1388,28 @@ type RoutingAPIModifyStaticRoutingRequest struct {
 	staticRoutingConfig *StaticRoutingConfig
 }
 
-func (r RoutingAPIModifyStaticRoutingRequest) StaticRoutingConfig(staticRoutingConfig StaticRoutingConfig) RoutingAPIModifyStaticRoutingRequest {
+func (r RoutingAPIModifyStaticRouting1Request) StaticRoutingConfig(staticRoutingConfig StaticRoutingConfig) RoutingAPIModifyStaticRouting1Request {
 	r.staticRoutingConfig = &staticRoutingConfig
 	return r
 }
 
-func (r RoutingAPIModifyStaticRoutingRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
-	return r.ApiService.ModifyStaticRoutingExecute(r)
+func (r RoutingAPIModifyStaticRouting1Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyStaticRouting1Execute(r)
 }
 
 /*
-ModifyStaticRouting Modify static routing
+ModifyStaticRouting1 Modify static routing
 
 Modify static routing.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33006  -  This name already exists in this site.<br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-33503  -  This network does not exist.<br/>-34256  -  The interface or next hop is duplicate and there are duplicate items in the destination.<br/>-34257  -  The Gateway does not support select VPN Client in Static Routing<br/>-34258  -  The Gateway does not support select Virtual WAN in Static Routing<br/>-34602  -  This VPN policy does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param staticRoutingId staticRoutingId
- @return RoutingAPIModifyStaticRoutingRequest
+ @param staticRoutingId Static routing ID
+ @return RoutingAPIModifyStaticRouting1Request
 */
-func (a *RoutingAPIService) ModifyStaticRouting(ctx context.Context, omadacId string, siteId string, staticRoutingId string) RoutingAPIModifyStaticRoutingRequest {
-	return RoutingAPIModifyStaticRoutingRequest{
+func (a *RoutingAPIService) ModifyStaticRouting1(ctx context.Context, omadacId string, siteId string, staticRoutingId string) RoutingAPIModifyStaticRouting1Request {
+	return RoutingAPIModifyStaticRouting1Request{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
@@ -1420,7 +1420,7 @@ func (a *RoutingAPIService) ModifyStaticRouting(ctx context.Context, omadacId st
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
-func (a *RoutingAPIService) ModifyStaticRoutingExecute(r RoutingAPIModifyStaticRoutingRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+func (a *RoutingAPIService) ModifyStaticRouting1Execute(r RoutingAPIModifyStaticRouting1Request) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1428,7 +1428,7 @@ func (a *RoutingAPIService) ModifyStaticRoutingExecute(r RoutingAPIModifyStaticR
 		localVarReturnValue  *OperationResponseWithoutResult
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoutingAPIService.ModifyStaticRouting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoutingAPIService.ModifyStaticRouting1")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

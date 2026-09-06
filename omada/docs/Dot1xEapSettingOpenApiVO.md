@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Dot1xPorts** | Pointer to **[]string** | EAP 802.1x enabled ports | [optional] 
-**Mac** | **string** | MAC address of the EAP | 
+**Dot1xPorts** | Pointer to **[]string** | EAP 802.1x enabled ports. Parameter [dot1xPorts] should be a list of port names | [optional] 
+**Mac** | **string** | MAC address of the EAP. Parameter [mac] should not be null when [eaps] is not null. | 
 
 ## Methods
 

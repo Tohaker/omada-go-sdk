@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Network ID | 
-**Status** | Pointer to **bool** | Enable status of the network vlan. | [optional] 
+**Status** | Pointer to **bool** | Enable status of the network vlan. Note: this field only takes effect when toggling switch status on the Interface list page and is ignored by other switch network edit APIs. | [optional] 
 **Vlan** | **int32** | VLAN ID. | 
 
 ## Methods

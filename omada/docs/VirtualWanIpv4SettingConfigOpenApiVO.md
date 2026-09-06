@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **Ipv4Pppoa** | Pointer to [**VirtualWanIpv4PppoaOpenApiVO**](VirtualWanIpv4PppoaOpenApiVO.md) |  | [optional] 
 **Ipv4Pppoe** | Pointer to [**VirtualWanIpv4PppoeOpenApiVO**](VirtualWanIpv4PppoeOpenApiVO.md) |  | [optional] 
 **Ipv4Static** | Pointer to [**VirtualWanIpv4StaticOpenApiVO**](VirtualWanIpv4StaticOpenApiVO.md) |  | [optional] 
-**Proto** | **string** | Virtual WAN IPv4 proto type, use static, dhcp, pppoe. | 
+**Proto** | **string** | Virtual WAN IPv4 protocol type: static, dhcp, pppoe for all connections; pppoa and ipoa options are only available for ADSL modulation connections. The configuration for the selected protocol type is required and must not be empty (e.g., ipv4Static for static). | 
 **QosTag** | Pointer to **int32** | Qos Tag. Parameter [qosTag] should between 0 and 7. | [optional] 
-**QosTagEnable** | Pointer to **bool** | Whether to enable 802.1Q Tag. | [optional] 
+**QosTagEnable** | **bool** | Whether to enable 802.1Q Tag. | 
 **VlanId** | **int32** | Vlan ID. Parameter [vlanId] should between 1 and 4094. | 
 **VlanPriority** | Pointer to **int32** | Vlan Priority. It takes effect when [vlanId] is not 0, and it should be within the range of 0–7. | [optional] 
 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualWanIpv4SettingConfigOpenApiVO
 
-`func NewVirtualWanIpv4SettingConfigOpenApiVO(proto string, vlanId int32, ) *VirtualWanIpv4SettingConfigOpenApiVO`
+`func NewVirtualWanIpv4SettingConfigOpenApiVO(proto string, qosTagEnable bool, vlanId int32, ) *VirtualWanIpv4SettingConfigOpenApiVO`
 
 NewVirtualWanIpv4SettingConfigOpenApiVO instantiates a new VirtualWanIpv4SettingConfigOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -223,11 +223,6 @@ and a boolean to check if the value has been set.
 
 SetQosTagEnable sets QosTagEnable field to given value.
 
-### HasQosTagEnable
-
-`func (o *VirtualWanIpv4SettingConfigOpenApiVO) HasQosTagEnable() bool`
-
-HasQosTagEnable returns a boolean if a field has been set.
 
 ### GetVlanId
 

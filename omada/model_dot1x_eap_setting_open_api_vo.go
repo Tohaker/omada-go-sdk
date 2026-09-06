@@ -21,9 +21,9 @@ var _ MappedNullable = &Dot1xEapSettingOpenApiVO{}
 
 // Dot1xEapSettingOpenApiVO Enabled eap ports
 type Dot1xEapSettingOpenApiVO struct {
-	// EAP 802.1x enabled ports
+	// EAP 802.1x enabled ports. Parameter [dot1xPorts] should be a list of port names
 	Dot1xPorts []string `json:"dot1xPorts,omitempty"`
-	// MAC address of the EAP
+	// MAC address of the EAP. Parameter [mac] should not be null when [eaps] is not null.
 	Mac string `json:"mac"`
 }
 

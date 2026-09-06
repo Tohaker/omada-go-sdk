@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **DeviceMac** | **string** | Device MAC. E.g. AA-BB-CC-DD-11-22 . When \&quot;oldFirmwareDevice\&quot; is true, deivce should configure in only one OUI Based VLAN rule. | 
 **LagList** | Pointer to **[]int32** | Device lag list. | [optional] 
 **PortList** | Pointer to **[]int32** | Device port list. | [optional] 
+**StackId** | Pointer to **string** | The stack id of the stack device. | [optional] 
+**StackPortList** | Pointer to **[]string** | The stack port list. | [optional] 
 
 ## Methods
 
@@ -96,6 +98,56 @@ SetPortList sets PortList field to given value.
 `func (o *DeviceOuiModeOpenApiVO) HasPortList() bool`
 
 HasPortList returns a boolean if a field has been set.
+
+### GetStackId
+
+`func (o *DeviceOuiModeOpenApiVO) GetStackId() string`
+
+GetStackId returns the StackId field if non-nil, zero value otherwise.
+
+### GetStackIdOk
+
+`func (o *DeviceOuiModeOpenApiVO) GetStackIdOk() (*string, bool)`
+
+GetStackIdOk returns a tuple with the StackId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackId
+
+`func (o *DeviceOuiModeOpenApiVO) SetStackId(v string)`
+
+SetStackId sets StackId field to given value.
+
+### HasStackId
+
+`func (o *DeviceOuiModeOpenApiVO) HasStackId() bool`
+
+HasStackId returns a boolean if a field has been set.
+
+### GetStackPortList
+
+`func (o *DeviceOuiModeOpenApiVO) GetStackPortList() []string`
+
+GetStackPortList returns the StackPortList field if non-nil, zero value otherwise.
+
+### GetStackPortListOk
+
+`func (o *DeviceOuiModeOpenApiVO) GetStackPortListOk() (*[]string, bool)`
+
+GetStackPortListOk returns a tuple with the StackPortList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackPortList
+
+`func (o *DeviceOuiModeOpenApiVO) SetStackPortList(v []string)`
+
+SetStackPortList sets StackPortList field to given value.
+
+### HasStackPortList
+
+`func (o *DeviceOuiModeOpenApiVO) HasStackPortList() bool`
+
+HasStackPortList returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -39,6 +39,12 @@ type NatTraversalTunnelVO struct {
 	CustomTunnel *bool `json:"customTunnel,omitempty"`
 	// Valid duration time of the remote access tunnel, 1-24 hours.
 	Duration *int32 `json:"duration,omitempty"`
+	// If the HTTP Login is enabled in global settings.
+	EnableHttp *bool `json:"enableHttp,omitempty"`
+	// If the HTTPs Login is enabled in global settings.
+	EnableHttps *bool `json:"enableHttps,omitempty"`
+	// If the SSH Login is enabled in site settings.
+	EnableSsh *bool `json:"enableSsh,omitempty"`
 	// Nat traversal tunnel eweb host
 	EwebHost *string `json:"ewebHost,omitempty"`
 	// ID of the remote access tunnel.
@@ -377,6 +383,102 @@ func (o *NatTraversalTunnelVO) HasDuration() bool {
 // SetDuration gets a reference to the given int32 and assigns it to the Duration field.
 func (o *NatTraversalTunnelVO) SetDuration(v int32) {
 	o.Duration = &v
+}
+
+// GetEnableHttp returns the EnableHttp field value if set, zero value otherwise.
+func (o *NatTraversalTunnelVO) GetEnableHttp() bool {
+	if o == nil || IsNil(o.EnableHttp) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableHttp
+}
+
+// GetEnableHttpOk returns a tuple with the EnableHttp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelVO) GetEnableHttpOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableHttp) {
+		return nil, false
+	}
+	return o.EnableHttp, true
+}
+
+// HasEnableHttp returns a boolean if a field has been set.
+func (o *NatTraversalTunnelVO) HasEnableHttp() bool {
+	if o != nil && !IsNil(o.EnableHttp) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableHttp gets a reference to the given bool and assigns it to the EnableHttp field.
+func (o *NatTraversalTunnelVO) SetEnableHttp(v bool) {
+	o.EnableHttp = &v
+}
+
+// GetEnableHttps returns the EnableHttps field value if set, zero value otherwise.
+func (o *NatTraversalTunnelVO) GetEnableHttps() bool {
+	if o == nil || IsNil(o.EnableHttps) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableHttps
+}
+
+// GetEnableHttpsOk returns a tuple with the EnableHttps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelVO) GetEnableHttpsOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableHttps) {
+		return nil, false
+	}
+	return o.EnableHttps, true
+}
+
+// HasEnableHttps returns a boolean if a field has been set.
+func (o *NatTraversalTunnelVO) HasEnableHttps() bool {
+	if o != nil && !IsNil(o.EnableHttps) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableHttps gets a reference to the given bool and assigns it to the EnableHttps field.
+func (o *NatTraversalTunnelVO) SetEnableHttps(v bool) {
+	o.EnableHttps = &v
+}
+
+// GetEnableSsh returns the EnableSsh field value if set, zero value otherwise.
+func (o *NatTraversalTunnelVO) GetEnableSsh() bool {
+	if o == nil || IsNil(o.EnableSsh) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableSsh
+}
+
+// GetEnableSshOk returns a tuple with the EnableSsh field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelVO) GetEnableSshOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableSsh) {
+		return nil, false
+	}
+	return o.EnableSsh, true
+}
+
+// HasEnableSsh returns a boolean if a field has been set.
+func (o *NatTraversalTunnelVO) HasEnableSsh() bool {
+	if o != nil && !IsNil(o.EnableSsh) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableSsh gets a reference to the given bool and assigns it to the EnableSsh field.
+func (o *NatTraversalTunnelVO) SetEnableSsh(v bool) {
+	o.EnableSsh = &v
 }
 
 // GetEwebHost returns the EwebHost field value if set, zero value otherwise.
@@ -887,6 +989,15 @@ func (o NatTraversalTunnelVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
+	}
+	if !IsNil(o.EnableHttp) {
+		toSerialize["enableHttp"] = o.EnableHttp
+	}
+	if !IsNil(o.EnableHttps) {
+		toSerialize["enableHttps"] = o.EnableHttps
+	}
+	if !IsNil(o.EnableSsh) {
+		toSerialize["enableSsh"] = o.EnableSsh
 	}
 	if !IsNil(o.EwebHost) {
 		toSerialize["ewebHost"] = o.EwebHost

@@ -21,7 +21,7 @@ var _ MappedNullable = &RadiusServerBriefInfo{}
 
 // RadiusServerBriefInfo struct for RadiusServerBriefInfo
 type RadiusServerBriefInfo struct {
-	// Is this Radius server a built-in server
+	// Is this RADIUS server a built-in server
 	BuiltInServer *bool `json:"builtInServer,omitempty"`
 	// radius server id.
 	Id string `json:"id"`

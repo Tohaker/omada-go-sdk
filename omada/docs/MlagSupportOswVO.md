@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AdoptedSwitches** | Pointer to [**[]MlagAdoptOswVO**](MlagAdoptOswVO.md) |  | [optional] 
+**AdoptedSwitches** | Pointer to [**[]MlagAdoptOswVO**](MlagAdoptOswVO.md) | The switches contained in the M-LAG. | [optional] 
 
 ## Methods
 

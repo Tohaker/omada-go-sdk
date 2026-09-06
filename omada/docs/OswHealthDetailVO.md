@@ -5,9 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cpu** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
-**ErrorFrame** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
+**ErrorFrame** | Pointer to [**FloatSubHealthInfoDetailVO**](FloatSubHealthInfoDetailVO.md) |  | [optional] 
+**Incident** | Pointer to [**IncidentSubHealthInfoDetailVO**](IncidentSubHealthInfoDetailVO.md) |  | [optional] 
+**LinkError** | Pointer to [**LinkErrorHealthInfoDetailVO**](LinkErrorHealthInfoDetailVO.md) |  | [optional] 
 **Memory** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
-**PacketLoss** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
+**PacketLoss** | Pointer to [**FloatSubHealthInfoDetailVO**](FloatSubHealthInfoDetailVO.md) |  | [optional] 
 **Score** | Pointer to **int32** | Device health score. | [optional] 
 **Temperature** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
 
@@ -57,20 +59,20 @@ HasCpu returns a boolean if a field has been set.
 
 ### GetErrorFrame
 
-`func (o *OswHealthDetailVO) GetErrorFrame() CommonSubHealthInfoDetailVO`
+`func (o *OswHealthDetailVO) GetErrorFrame() FloatSubHealthInfoDetailVO`
 
 GetErrorFrame returns the ErrorFrame field if non-nil, zero value otherwise.
 
 ### GetErrorFrameOk
 
-`func (o *OswHealthDetailVO) GetErrorFrameOk() (*CommonSubHealthInfoDetailVO, bool)`
+`func (o *OswHealthDetailVO) GetErrorFrameOk() (*FloatSubHealthInfoDetailVO, bool)`
 
 GetErrorFrameOk returns a tuple with the ErrorFrame field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrorFrame
 
-`func (o *OswHealthDetailVO) SetErrorFrame(v CommonSubHealthInfoDetailVO)`
+`func (o *OswHealthDetailVO) SetErrorFrame(v FloatSubHealthInfoDetailVO)`
 
 SetErrorFrame sets ErrorFrame field to given value.
 
@@ -79,6 +81,56 @@ SetErrorFrame sets ErrorFrame field to given value.
 `func (o *OswHealthDetailVO) HasErrorFrame() bool`
 
 HasErrorFrame returns a boolean if a field has been set.
+
+### GetIncident
+
+`func (o *OswHealthDetailVO) GetIncident() IncidentSubHealthInfoDetailVO`
+
+GetIncident returns the Incident field if non-nil, zero value otherwise.
+
+### GetIncidentOk
+
+`func (o *OswHealthDetailVO) GetIncidentOk() (*IncidentSubHealthInfoDetailVO, bool)`
+
+GetIncidentOk returns a tuple with the Incident field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncident
+
+`func (o *OswHealthDetailVO) SetIncident(v IncidentSubHealthInfoDetailVO)`
+
+SetIncident sets Incident field to given value.
+
+### HasIncident
+
+`func (o *OswHealthDetailVO) HasIncident() bool`
+
+HasIncident returns a boolean if a field has been set.
+
+### GetLinkError
+
+`func (o *OswHealthDetailVO) GetLinkError() LinkErrorHealthInfoDetailVO`
+
+GetLinkError returns the LinkError field if non-nil, zero value otherwise.
+
+### GetLinkErrorOk
+
+`func (o *OswHealthDetailVO) GetLinkErrorOk() (*LinkErrorHealthInfoDetailVO, bool)`
+
+GetLinkErrorOk returns a tuple with the LinkError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinkError
+
+`func (o *OswHealthDetailVO) SetLinkError(v LinkErrorHealthInfoDetailVO)`
+
+SetLinkError sets LinkError field to given value.
+
+### HasLinkError
+
+`func (o *OswHealthDetailVO) HasLinkError() bool`
+
+HasLinkError returns a boolean if a field has been set.
 
 ### GetMemory
 
@@ -107,20 +159,20 @@ HasMemory returns a boolean if a field has been set.
 
 ### GetPacketLoss
 
-`func (o *OswHealthDetailVO) GetPacketLoss() CommonSubHealthInfoDetailVO`
+`func (o *OswHealthDetailVO) GetPacketLoss() FloatSubHealthInfoDetailVO`
 
 GetPacketLoss returns the PacketLoss field if non-nil, zero value otherwise.
 
 ### GetPacketLossOk
 
-`func (o *OswHealthDetailVO) GetPacketLossOk() (*CommonSubHealthInfoDetailVO, bool)`
+`func (o *OswHealthDetailVO) GetPacketLossOk() (*FloatSubHealthInfoDetailVO, bool)`
 
 GetPacketLossOk returns a tuple with the PacketLoss field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPacketLoss
 
-`func (o *OswHealthDetailVO) SetPacketLoss(v CommonSubHealthInfoDetailVO)`
+`func (o *OswHealthDetailVO) SetPacketLoss(v FloatSubHealthInfoDetailVO)`
 
 SetPacketLoss sets PacketLoss field to given value.
 

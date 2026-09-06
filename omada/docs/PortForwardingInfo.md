@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ExistVirtualWan** | Pointer to **bool** | true: exist virtual WAN config | [optional] 
 **ExistWanIp** | Pointer to **bool** | true: exist WAN IP config | [optional] 
 **ExternalPort** | Pointer to **string** | External port corresponds with source port in web. ExternalPort should be within the range of 1–65535. | [optional] 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **ForwardIp** | **string** | Forward IP corresponds with destination IP in web. Forward IP | 
 **ForwardPort** | Pointer to **string** | Forward port corresponds with destination port in web. ForwardPort should be 1 or 1-10, within the range of 1–65535. | [optional] 
 **From** | **int32** | From corresponds with source IP in web. From should be a value as follows: 0: where; 1: limited address | 
@@ -134,6 +135,31 @@ SetExternalPort sets ExternalPort field to given value.
 `func (o *PortForwardingInfo) HasExternalPort() bool`
 
 HasExternalPort returns a boolean if a field has been set.
+
+### GetFeatureDescription
+
+`func (o *PortForwardingInfo) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *PortForwardingInfo) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *PortForwardingInfo) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *PortForwardingInfo) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetForwardIp
 

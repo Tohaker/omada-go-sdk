@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **AbnormalReason** | Pointer to **int32** | When status is 1, show abnormal reason. | [optional] 
 **Active** | Pointer to **bool** | whether to active the device(cloud base exclusive) | [optional] 
 **AddedInAdvanced** | Pointer to **bool** | Whether the device is added in advanced. | [optional] 
+**Block** | Pointer to **string** | Block information | [optional] 
+**BlockNum** | Pointer to **int32** | Block Num | [optional] 
 **BoundDeviceTemplate** | Pointer to **bool** | Whether the device is bound to device template | [optional] 
 **BoundSiteTemplate** | Pointer to **bool** | Whether the site where the device is located is bound to a site template | [optional] 
 **Category** | Pointer to **string** | Category of license | [optional] 
@@ -16,12 +18,12 @@ Name | Type | Description | Notes
 **CpuUtil** | Pointer to **int32** | Real-time CPU usage | [optional] 
 **CustomId** | Pointer to **string** | Customer ID | [optional] 
 **CustomName** | Pointer to **string** | Customer name | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** | Description of the device | [optional] 
 **DevCap** | Pointer to [**OswDevCapVO**](OswDevCapVO.md) |  | [optional] 
 **DeviceMisc** | Pointer to [**OswDeviceMiscVO**](OswDeviceMiscVO.md) |  | [optional] 
 **DeviceSeriesType** | Pointer to **int32** | Device series type.DeviceSeriesType should be a value as follows: 0:advanced;1:pro | [optional] 
 **DeviceTemplateAvailable** | Pointer to **bool** | Whether there is an available device template for the device; it is false if the model is not supported or the site template has not created the corresponding device template. | [optional] 
-**DisableHwReset** | Pointer to **bool** |  | [optional] 
+**DisableHwReset** | Pointer to **bool** | Whether to disable hardware reset | [optional] 
 **DownlinkList** | Pointer to [**[]OswDownlinkVO**](OswDownlinkVO.md) | Downlink Omada device list | [optional] 
 **Download** | Pointer to **int64** | Total Download (Byte) | [optional] 
 **DueTime** | Pointer to **int64** | Expire timestamp of license(cloud base exclusive) | [optional] 
@@ -44,9 +46,12 @@ Name | Type | Description | Notes
 **IpSetting** | Pointer to [**IpSettingVO**](IpSettingVO.md) |  | [optional] 
 **Ipv6List** | Pointer to **[]string** | IPV6 List | [optional] 
 **Jumbo** | Pointer to **int32** | Jumbo should be within the range of 1518-9216. | [optional] 
+**JumboFollowSite** | Pointer to **bool** | When enabled, the jumbo frame setting follows the site-level configuration; otherwise, a custom setting is used. | [optional] 
 **LagHashAlg** | Pointer to **int32** | It should be a value as follows: 0: SRC MAC; 1: DST MAC; 2: SRC MAC + DST MAC; 3: SRC IP; 4: DST IP; 5: SRC IP + DST IP | [optional] 
+**LagHashAlgFollowSite** | Pointer to **bool** | When enabled, the lag hash alg setting follows the site-level configuration; otherwise, a custom setting is used. | [optional] 
 **Lags** | Pointer to [**[]OswLagVO**](OswLagVO.md) | Lag List | [optional] 
 **LastSeen** | Pointer to **int64** | Last Seen | [optional] 
+**LatestVersion** | Pointer to **string** | Latest firmware version | [optional] 
 **LedSetting** | Pointer to **int32** | LedSetting should be a value as follows: 0: Off; 1: On; 2:follow site | [optional] 
 **LicenseId** | Pointer to **string** | License key on detail page of device(cloud base exclusive) | [optional] 
 **LicenseStatus** | Pointer to **int32** | License status(cloud base exclusive).LicenseStatus should be a value as follows: 0:unActive 1:Unbind 2:Expired 3:active | [optional] 
@@ -70,12 +75,14 @@ Name | Type | Description | Notes
 **ModelVersion** | Pointer to **string** | Model version of device,for example:3.0 | [optional] 
 **MoveSiteId** | Pointer to **string** | Record that the device is in a moveSite operation; if it is null, then it is not in the moveSite operation. | [optional] 
 **Mstp** | Pointer to [**OswStpMstpVO**](OswStpMstpVO.md) |  | [optional] 
+**MtuList** | Pointer to [**[]OswMtuCountVO**](OswMtuCountVO.md) | MTU List | [optional] 
 **Multicast** | Pointer to [**OswLanMulticastVO**](OswLanMulticastVO.md) |  | [optional] 
 **MvlanBridgeVlan** | Pointer to **int32** | Only valid when mvlanNetworkId is bridge vlan | [optional] 
 **MvlanNetworkId** | Pointer to **string** | Management VLAN network ID | [optional] 
 **Name** | Pointer to **string** | Device name,default value is the mac address of device | [optional] 
 **NeedUpgrade** | Pointer to **bool** | Need Upgrade | [optional] 
 **OmadacId** | Pointer to **string** | OmadacId of the device | [optional] 
+**PmtudEnable** | Pointer to **bool** | Path MTU Discovery enable. | [optional] 
 **PoeRemain** | Pointer to **float64** | PoE Residual Power (W) | [optional] 
 **PoeRemainPercent** | Pointer to **float64** | PoE Residual Power Percentage | [optional] 
 **PoeTotalPower** | Pointer to **float64** | PoE Total Power (W) | [optional] 
@@ -85,6 +92,7 @@ Name | Type | Description | Notes
 **QosConfig** | Pointer to [**OswQosConfigVO**](OswQosConfigVO.md) |  | [optional] 
 **Remember** | Pointer to **bool** | Whether to remember the device(deprecated) | [optional] 
 **RememberDevice** | Pointer to **int32** | Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site | [optional] 
+**ReplaceDeviceInfo** | Pointer to [**DeviceReplaceSettingVO**](DeviceReplaceSettingVO.md) |  | [optional] 
 **Resource** | Pointer to **int32** | Data source.Resource should be a value as follows: 0:new created;1:from template;2:override | [optional] 
 **RxRate** | Pointer to **int64** | Rx Rate | [optional] 
 **Sdm** | Pointer to [**OswSdmTemplateVO**](OswSdmTemplateVO.md) |  | [optional] 
@@ -106,6 +114,7 @@ Name | Type | Description | Notes
 **Stp** | Pointer to **int32** | Spanning Tree Protocol should be a value as follows: 1: STP; 2: RSTP; 3: MSTP; 0: OFF | [optional] 
 **StpLinkList** | Pointer to [**[]OswDownlinkVO**](OswDownlinkVO.md) | STP Blocked Link Omada device list | [optional] 
 **SupportAnomaly** | Pointer to **bool** | Whether the device firmware support intelligent anomaly detection | [optional] 
+**SupportAutoAddOuiBasedVlan** | Pointer to **bool** | Whether support auto add oui based vlan. | [optional] 
 **SupportHealth** | Pointer to **bool** | Support health | [optional] 
 **SupportIpv6Acl** | Pointer to **bool** | Support Ipv6 Acl | [optional] 
 **SupportLocatePort** | Pointer to **bool** | Whether the device supports locating port | [optional] 
@@ -247,6 +256,56 @@ SetAddedInAdvanced sets AddedInAdvanced field to given value.
 `func (o *OswStackDetailVO) HasAddedInAdvanced() bool`
 
 HasAddedInAdvanced returns a boolean if a field has been set.
+
+### GetBlock
+
+`func (o *OswStackDetailVO) GetBlock() string`
+
+GetBlock returns the Block field if non-nil, zero value otherwise.
+
+### GetBlockOk
+
+`func (o *OswStackDetailVO) GetBlockOk() (*string, bool)`
+
+GetBlockOk returns a tuple with the Block field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlock
+
+`func (o *OswStackDetailVO) SetBlock(v string)`
+
+SetBlock sets Block field to given value.
+
+### HasBlock
+
+`func (o *OswStackDetailVO) HasBlock() bool`
+
+HasBlock returns a boolean if a field has been set.
+
+### GetBlockNum
+
+`func (o *OswStackDetailVO) GetBlockNum() int32`
+
+GetBlockNum returns the BlockNum field if non-nil, zero value otherwise.
+
+### GetBlockNumOk
+
+`func (o *OswStackDetailVO) GetBlockNumOk() (*int32, bool)`
+
+GetBlockNumOk returns a tuple with the BlockNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlockNum
+
+`func (o *OswStackDetailVO) SetBlockNum(v int32)`
+
+SetBlockNum sets BlockNum field to given value.
+
+### HasBlockNum
+
+`func (o *OswStackDetailVO) HasBlockNum() bool`
+
+HasBlockNum returns a boolean if a field has been set.
 
 ### GetBoundDeviceTemplate
 
@@ -1148,6 +1207,31 @@ SetJumbo sets Jumbo field to given value.
 
 HasJumbo returns a boolean if a field has been set.
 
+### GetJumboFollowSite
+
+`func (o *OswStackDetailVO) GetJumboFollowSite() bool`
+
+GetJumboFollowSite returns the JumboFollowSite field if non-nil, zero value otherwise.
+
+### GetJumboFollowSiteOk
+
+`func (o *OswStackDetailVO) GetJumboFollowSiteOk() (*bool, bool)`
+
+GetJumboFollowSiteOk returns a tuple with the JumboFollowSite field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJumboFollowSite
+
+`func (o *OswStackDetailVO) SetJumboFollowSite(v bool)`
+
+SetJumboFollowSite sets JumboFollowSite field to given value.
+
+### HasJumboFollowSite
+
+`func (o *OswStackDetailVO) HasJumboFollowSite() bool`
+
+HasJumboFollowSite returns a boolean if a field has been set.
+
 ### GetLagHashAlg
 
 `func (o *OswStackDetailVO) GetLagHashAlg() int32`
@@ -1172,6 +1256,31 @@ SetLagHashAlg sets LagHashAlg field to given value.
 `func (o *OswStackDetailVO) HasLagHashAlg() bool`
 
 HasLagHashAlg returns a boolean if a field has been set.
+
+### GetLagHashAlgFollowSite
+
+`func (o *OswStackDetailVO) GetLagHashAlgFollowSite() bool`
+
+GetLagHashAlgFollowSite returns the LagHashAlgFollowSite field if non-nil, zero value otherwise.
+
+### GetLagHashAlgFollowSiteOk
+
+`func (o *OswStackDetailVO) GetLagHashAlgFollowSiteOk() (*bool, bool)`
+
+GetLagHashAlgFollowSiteOk returns a tuple with the LagHashAlgFollowSite field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLagHashAlgFollowSite
+
+`func (o *OswStackDetailVO) SetLagHashAlgFollowSite(v bool)`
+
+SetLagHashAlgFollowSite sets LagHashAlgFollowSite field to given value.
+
+### HasLagHashAlgFollowSite
+
+`func (o *OswStackDetailVO) HasLagHashAlgFollowSite() bool`
+
+HasLagHashAlgFollowSite returns a boolean if a field has been set.
 
 ### GetLags
 
@@ -1222,6 +1331,31 @@ SetLastSeen sets LastSeen field to given value.
 `func (o *OswStackDetailVO) HasLastSeen() bool`
 
 HasLastSeen returns a boolean if a field has been set.
+
+### GetLatestVersion
+
+`func (o *OswStackDetailVO) GetLatestVersion() string`
+
+GetLatestVersion returns the LatestVersion field if non-nil, zero value otherwise.
+
+### GetLatestVersionOk
+
+`func (o *OswStackDetailVO) GetLatestVersionOk() (*string, bool)`
+
+GetLatestVersionOk returns a tuple with the LatestVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatestVersion
+
+`func (o *OswStackDetailVO) SetLatestVersion(v string)`
+
+SetLatestVersion sets LatestVersion field to given value.
+
+### HasLatestVersion
+
+`func (o *OswStackDetailVO) HasLatestVersion() bool`
+
+HasLatestVersion returns a boolean if a field has been set.
 
 ### GetLedSetting
 
@@ -1798,6 +1932,31 @@ SetMstp sets Mstp field to given value.
 
 HasMstp returns a boolean if a field has been set.
 
+### GetMtuList
+
+`func (o *OswStackDetailVO) GetMtuList() []OswMtuCountVO`
+
+GetMtuList returns the MtuList field if non-nil, zero value otherwise.
+
+### GetMtuListOk
+
+`func (o *OswStackDetailVO) GetMtuListOk() (*[]OswMtuCountVO, bool)`
+
+GetMtuListOk returns a tuple with the MtuList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMtuList
+
+`func (o *OswStackDetailVO) SetMtuList(v []OswMtuCountVO)`
+
+SetMtuList sets MtuList field to given value.
+
+### HasMtuList
+
+`func (o *OswStackDetailVO) HasMtuList() bool`
+
+HasMtuList returns a boolean if a field has been set.
+
 ### GetMulticast
 
 `func (o *OswStackDetailVO) GetMulticast() OswLanMulticastVO`
@@ -1947,6 +2106,31 @@ SetOmadacId sets OmadacId field to given value.
 `func (o *OswStackDetailVO) HasOmadacId() bool`
 
 HasOmadacId returns a boolean if a field has been set.
+
+### GetPmtudEnable
+
+`func (o *OswStackDetailVO) GetPmtudEnable() bool`
+
+GetPmtudEnable returns the PmtudEnable field if non-nil, zero value otherwise.
+
+### GetPmtudEnableOk
+
+`func (o *OswStackDetailVO) GetPmtudEnableOk() (*bool, bool)`
+
+GetPmtudEnableOk returns a tuple with the PmtudEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPmtudEnable
+
+`func (o *OswStackDetailVO) SetPmtudEnable(v bool)`
+
+SetPmtudEnable sets PmtudEnable field to given value.
+
+### HasPmtudEnable
+
+`func (o *OswStackDetailVO) HasPmtudEnable() bool`
+
+HasPmtudEnable returns a boolean if a field has been set.
 
 ### GetPoeRemain
 
@@ -2172,6 +2356,31 @@ SetRememberDevice sets RememberDevice field to given value.
 `func (o *OswStackDetailVO) HasRememberDevice() bool`
 
 HasRememberDevice returns a boolean if a field has been set.
+
+### GetReplaceDeviceInfo
+
+`func (o *OswStackDetailVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO`
+
+GetReplaceDeviceInfo returns the ReplaceDeviceInfo field if non-nil, zero value otherwise.
+
+### GetReplaceDeviceInfoOk
+
+`func (o *OswStackDetailVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool)`
+
+GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplaceDeviceInfo
+
+`func (o *OswStackDetailVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO)`
+
+SetReplaceDeviceInfo sets ReplaceDeviceInfo field to given value.
+
+### HasReplaceDeviceInfo
+
+`func (o *OswStackDetailVO) HasReplaceDeviceInfo() bool`
+
+HasReplaceDeviceInfo returns a boolean if a field has been set.
 
 ### GetResource
 
@@ -2697,6 +2906,31 @@ SetSupportAnomaly sets SupportAnomaly field to given value.
 `func (o *OswStackDetailVO) HasSupportAnomaly() bool`
 
 HasSupportAnomaly returns a boolean if a field has been set.
+
+### GetSupportAutoAddOuiBasedVlan
+
+`func (o *OswStackDetailVO) GetSupportAutoAddOuiBasedVlan() bool`
+
+GetSupportAutoAddOuiBasedVlan returns the SupportAutoAddOuiBasedVlan field if non-nil, zero value otherwise.
+
+### GetSupportAutoAddOuiBasedVlanOk
+
+`func (o *OswStackDetailVO) GetSupportAutoAddOuiBasedVlanOk() (*bool, bool)`
+
+GetSupportAutoAddOuiBasedVlanOk returns a tuple with the SupportAutoAddOuiBasedVlan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportAutoAddOuiBasedVlan
+
+`func (o *OswStackDetailVO) SetSupportAutoAddOuiBasedVlan(v bool)`
+
+SetSupportAutoAddOuiBasedVlan sets SupportAutoAddOuiBasedVlan field to given value.
+
+### HasSupportAutoAddOuiBasedVlan
+
+`func (o *OswStackDetailVO) HasSupportAutoAddOuiBasedVlan() bool`
+
+HasSupportAutoAddOuiBasedVlan returns a boolean if a field has been set.
 
 ### GetSupportHealth
 

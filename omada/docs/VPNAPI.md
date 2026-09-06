@@ -4985,7 +4985,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	file := os.NewFile(1234, "some_file") // *os.File | 
+	file := os.NewFile(1234, "some_file") // *os.File | Client VPN certificate file (exported from the VPN server). OpenVPN Client only supports .ovpn files; WireGuard Client only supports .conf files.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5017,7 +5017,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **file** | ***os.File** |  | 
+ **file** | ***os.File** | Client VPN certificate file (exported from the VPN server). OpenVPN Client only supports .ovpn files; WireGuard Client only supports .conf files. | 
 
 ### Return type
 
@@ -5060,7 +5060,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	file := os.NewFile(1234, "some_file") // *os.File | 
+	file := os.NewFile(1234, "some_file") // *os.File | Client VPN certificate file (exported from the VPN server). OpenVPN Client only supports .ovpn files; WireGuard Client only supports .conf files.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5092,7 +5092,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **file** | ***os.File** |  | 
+ **file** | ***os.File** | Client VPN certificate file (exported from the VPN server). OpenVPN Client only supports .ovpn files; WireGuard Client only supports .conf files. | 
 
 ### Return type
 

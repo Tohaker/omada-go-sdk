@@ -22,10 +22,11 @@ type ApHealthDetailVO struct {
 	ChannelInterf *ChannelSubHealthInfoDetailVO `json:"channelInterf,omitempty"`
 	ChannelUtil *ChannelSubHealthInfoDetailVO `json:"channelUtil,omitempty"`
 	Cpu *CommonSubHealthInfoDetailVO `json:"cpu,omitempty"`
+	Incident *IncidentSubHealthInfoDetailVO `json:"incident,omitempty"`
 	Memory *CommonSubHealthInfoDetailVO `json:"memory,omitempty"`
 	// Device health score.
 	Score *int32 `json:"score,omitempty"`
-	SupportedChannelInterf *ChannelSubHealthInfoDetailVO `json:"supportedChannelInterf,omitempty"`
+	SupportedChannelInterf *ChannelInterferenceSubHealthDetailVO `json:"supportedChannelInterf,omitempty"`
 	SupportedChannelUtil *ChannelSubHealthInfoDetailVO `json:"supportedChannelUtil,omitempty"`
 	Transmission *TransmissionSubHealthInfoDetailVO `json:"transmission,omitempty"`
 }
@@ -143,6 +144,38 @@ func (o *ApHealthDetailVO) SetCpu(v CommonSubHealthInfoDetailVO) {
 	o.Cpu = &v
 }
 
+// GetIncident returns the Incident field value if set, zero value otherwise.
+func (o *ApHealthDetailVO) GetIncident() IncidentSubHealthInfoDetailVO {
+	if o == nil || IsNil(o.Incident) {
+		var ret IncidentSubHealthInfoDetailVO
+		return ret
+	}
+	return *o.Incident
+}
+
+// GetIncidentOk returns a tuple with the Incident field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApHealthDetailVO) GetIncidentOk() (*IncidentSubHealthInfoDetailVO, bool) {
+	if o == nil || IsNil(o.Incident) {
+		return nil, false
+	}
+	return o.Incident, true
+}
+
+// HasIncident returns a boolean if a field has been set.
+func (o *ApHealthDetailVO) HasIncident() bool {
+	if o != nil && !IsNil(o.Incident) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncident gets a reference to the given IncidentSubHealthInfoDetailVO and assigns it to the Incident field.
+func (o *ApHealthDetailVO) SetIncident(v IncidentSubHealthInfoDetailVO) {
+	o.Incident = &v
+}
+
 // GetMemory returns the Memory field value if set, zero value otherwise.
 func (o *ApHealthDetailVO) GetMemory() CommonSubHealthInfoDetailVO {
 	if o == nil || IsNil(o.Memory) {
@@ -208,9 +241,9 @@ func (o *ApHealthDetailVO) SetScore(v int32) {
 }
 
 // GetSupportedChannelInterf returns the SupportedChannelInterf field value if set, zero value otherwise.
-func (o *ApHealthDetailVO) GetSupportedChannelInterf() ChannelSubHealthInfoDetailVO {
+func (o *ApHealthDetailVO) GetSupportedChannelInterf() ChannelInterferenceSubHealthDetailVO {
 	if o == nil || IsNil(o.SupportedChannelInterf) {
-		var ret ChannelSubHealthInfoDetailVO
+		var ret ChannelInterferenceSubHealthDetailVO
 		return ret
 	}
 	return *o.SupportedChannelInterf
@@ -218,7 +251,7 @@ func (o *ApHealthDetailVO) GetSupportedChannelInterf() ChannelSubHealthInfoDetai
 
 // GetSupportedChannelInterfOk returns a tuple with the SupportedChannelInterf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApHealthDetailVO) GetSupportedChannelInterfOk() (*ChannelSubHealthInfoDetailVO, bool) {
+func (o *ApHealthDetailVO) GetSupportedChannelInterfOk() (*ChannelInterferenceSubHealthDetailVO, bool) {
 	if o == nil || IsNil(o.SupportedChannelInterf) {
 		return nil, false
 	}
@@ -234,8 +267,8 @@ func (o *ApHealthDetailVO) HasSupportedChannelInterf() bool {
 	return false
 }
 
-// SetSupportedChannelInterf gets a reference to the given ChannelSubHealthInfoDetailVO and assigns it to the SupportedChannelInterf field.
-func (o *ApHealthDetailVO) SetSupportedChannelInterf(v ChannelSubHealthInfoDetailVO) {
+// SetSupportedChannelInterf gets a reference to the given ChannelInterferenceSubHealthDetailVO and assigns it to the SupportedChannelInterf field.
+func (o *ApHealthDetailVO) SetSupportedChannelInterf(v ChannelInterferenceSubHealthDetailVO) {
 	o.SupportedChannelInterf = &v
 }
 
@@ -321,6 +354,9 @@ func (o ApHealthDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Cpu) {
 		toSerialize["cpu"] = o.Cpu
+	}
+	if !IsNil(o.Incident) {
+		toSerialize["incident"] = o.Incident
 	}
 	if !IsNil(o.Memory) {
 		toSerialize["memory"] = o.Memory

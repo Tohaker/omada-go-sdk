@@ -39,6 +39,22 @@ type TopologyAPI interface {
 	GetAvailableNetworksExecute(r TopologyAPIGetAvailableNetworksRequest) (*OperationResponseTopologyAvailableNetworkAndSSID, *http.Response, error)
 
 	/*
+	GetAvailableVlans Get available vlans
+
+	Get available wired network with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Map Manager View Only<br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return TopologyAPIGetAvailableVlansRequest
+	*/
+	GetAvailableVlans(ctx context.Context, omadacId string, siteId string) TopologyAPIGetAvailableVlansRequest
+
+	// GetAvailableVlansExecute executes the request
+	//  @return OperationResponseTopologyAvailableNetworkAndSSID
+	GetAvailableVlansExecute(r TopologyAPIGetAvailableVlansRequest) (*OperationResponseTopologyAvailableNetworkAndSSID, *http.Response, error)
+
+	/*
 	GetDeviceLinkTopology Get Device Link Topology
 
 	Get link topology of the device with the given omadacId, siteId and deviceMac.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
@@ -124,6 +140,22 @@ type TopologyAPI interface {
 	// GetFilterDevicesOfVlanExecute executes the request
 	//  @return OperationResponseTopologyFilterDevicesVO
 	GetFilterDevicesOfVlanExecute(r TopologyAPIGetFilterDevicesOfVlanRequest) (*OperationResponseTopologyFilterDevicesVO, *http.Response, error)
+
+	/*
+	GetGridAvailableSsids Get available ssids
+
+	Get available wireless network with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Map Manager View Only<br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return TopologyAPIGetGridAvailableSsidsRequest
+	*/
+	GetGridAvailableSsids(ctx context.Context, omadacId string, siteId string) TopologyAPIGetGridAvailableSsidsRequest
+
+	// GetGridAvailableSsidsExecute executes the request
+	//  @return OperationResponseTopologyAvailableNetworkAndSSID
+	GetGridAvailableSsidsExecute(r TopologyAPIGetGridAvailableSsidsRequest) (*OperationResponseTopologyAvailableNetworkAndSSID, *http.Response, error)
 
 	/*
 	GetGridDeviceClient Search Device or Client in Topology
@@ -371,6 +403,127 @@ func (a *TopologyAPIService) GetAvailableNetworksExecute(r TopologyAPIGetAvailab
 	}
 
 	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/topology/available-network"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type TopologyAPIGetAvailableVlansRequest struct {
+	ctx context.Context
+	ApiService TopologyAPI
+	omadacId string
+	siteId string
+}
+
+func (r TopologyAPIGetAvailableVlansRequest) Execute() (*OperationResponseTopologyAvailableNetworkAndSSID, *http.Response, error) {
+	return r.ApiService.GetAvailableVlansExecute(r)
+}
+
+/*
+GetAvailableVlans Get available vlans
+
+Get available wired network with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Map Manager View Only<br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return TopologyAPIGetAvailableVlansRequest
+*/
+func (a *TopologyAPIService) GetAvailableVlans(ctx context.Context, omadacId string, siteId string) TopologyAPIGetAvailableVlansRequest {
+	return TopologyAPIGetAvailableVlansRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseTopologyAvailableNetworkAndSSID
+func (a *TopologyAPIService) GetAvailableVlansExecute(r TopologyAPIGetAvailableVlansRequest) (*OperationResponseTopologyAvailableNetworkAndSSID, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseTopologyAvailableNetworkAndSSID
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopologyAPIService.GetAvailableVlans")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/topology/available-vlans"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 
@@ -1011,6 +1164,160 @@ func (a *TopologyAPIService) GetFilterDevicesOfVlanExecute(r TopologyAPIGetFilte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type TopologyAPIGetGridAvailableSsidsRequest struct {
+	ctx context.Context
+	ApiService TopologyAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+	searchKey *string
+}
+
+// Start page number. Start from 1.
+func (r TopologyAPIGetGridAvailableSsidsRequest) Page(page int32) TopologyAPIGetGridAvailableSsidsRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r TopologyAPIGetGridAvailableSsidsRequest) PageSize(pageSize int32) TopologyAPIGetGridAvailableSsidsRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Fuzzy query parameters, support field 
+func (r TopologyAPIGetGridAvailableSsidsRequest) SearchKey(searchKey string) TopologyAPIGetGridAvailableSsidsRequest {
+	r.searchKey = &searchKey
+	return r
+}
+
+func (r TopologyAPIGetGridAvailableSsidsRequest) Execute() (*OperationResponseTopologyAvailableNetworkAndSSID, *http.Response, error) {
+	return r.ApiService.GetGridAvailableSsidsExecute(r)
+}
+
+/*
+GetGridAvailableSsids Get available ssids
+
+Get available wireless network with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Site Map Manager View Only<br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return TopologyAPIGetGridAvailableSsidsRequest
+*/
+func (a *TopologyAPIService) GetGridAvailableSsids(ctx context.Context, omadacId string, siteId string) TopologyAPIGetGridAvailableSsidsRequest {
+	return TopologyAPIGetGridAvailableSsidsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseTopologyAvailableNetworkAndSSID
+func (a *TopologyAPIService) GetGridAvailableSsidsExecute(r TopologyAPIGetGridAvailableSsidsRequest) (*OperationResponseTopologyAvailableNetworkAndSSID, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseTopologyAvailableNetworkAndSSID
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopologyAPIService.GetGridAvailableSsids")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/topology/available-ssids"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+	if r.searchKey == nil {
+		return localVarReturnValue, nil, reportError("searchKey is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

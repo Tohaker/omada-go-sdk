@@ -35,12 +35,16 @@ type OswStackMemberPortVO struct {
 	AllMirroringPorts []int32 `json:"allMirroringPorts,omitempty"`
 	// All mirroring ports of the current Stack
 	AllMirroringStPorts []OswStandPortVO `json:"allMirroringStPorts,omitempty"`
+	// All ports configured with M-LAG DAD on the Switch
 	AllMlagDadPorts []int32 `json:"allMlagDadPorts,omitempty"`
+	// All ports configured with M-LAG PeerLink on the Switch
 	AllMlagPeerLinkPorts []int32 `json:"allMlagPeerLinkPorts,omitempty"`
 	BandCtrl *OswBandCtrlVO `json:"bandCtrl,omitempty"`
 	// BandWidth Control should be a value as follows: 0: Off; 1: Rate Limit; 2: Storming Control
 	BandWidthCtrlType *int32 `json:"bandWidthCtrlType,omitempty"`
+	// Indicates whether the port is configured with M-LAG DAD Link
 	ConfigMlagDad *bool `json:"configMlagDad,omitempty"`
+	// Indicates whether the port is configured with M-LAG Peer Link
 	ConfigMlagPeerLink *bool `json:"configMlagPeerLink,omitempty"`
 	// Indicates whether the current port is configured as a stack port (joined a stack aggregation group)
 	ConfigStack *bool `json:"configStack,omitempty"`
@@ -61,20 +65,28 @@ type OswStackMemberPortVO struct {
 	EsQosSupport *bool `json:"esQosSupport,omitempty"`
 	// Indicates whether extendMode is enabled
 	ExtendModeEnable *bool `json:"extendModeEnable,omitempty"`
+	// Indicates whether extend mode is supported
 	ExtendModeSupport *bool `json:"extendModeSupport,omitempty"`
 	// Indicates whether igmpSnooping fastLeave is enabled
 	FastLeaveEnable *bool `json:"fastLeaveEnable,omitempty"`
+	// All LinkSpeed&FECMode combinations supported by the port
 	FecCap []OswFecCapVO `json:"fecCap,omitempty"`
+	// Indicates whether the same FEC mode is applied to the link peer
 	FecLinkPeerApplyEnable *bool `json:"fecLinkPeerApplyEnable,omitempty"`
+	// FEC Mode, sourced from FecModeEnum. 0 - Reserved; 1 - FEC-OFF (Off); 2 - FEC-RS528; 3 - FEC-RS544; 4 - FEC-AUTO; 5 - FEC-BASER
 	FecMode *int32 `json:"fecMode,omitempty"`
+	// Indicates whether the port supports FEC configuration
 	FecSupport *bool `json:"fecSupport,omitempty"`
 	// Indicates whether flow control is enabled
 	FlowControlEnable *bool `json:"flowControlEnable,omitempty"`
 	// ID
 	Id *string `json:"id,omitempty"`
+	// Indicates whether IGMP fast leave is enabled
 	IgmpFastLeaveEnable *bool `json:"igmpFastLeaveEnable,omitempty"`
 	// Indicates whether IGMP Snooping is enabled
 	IgmpSnoopingEnable *bool `json:"igmpSnoopingEnable,omitempty"`
+	// Whether the port is copper when the port is combo.
+	IsCopper *bool `json:"isCopper,omitempty"`
 	LagSetting *OswLagVO `json:"lagSetting,omitempty"`
 	LagStatus *OswLagStatusVO `json:"lagStatus,omitempty"`
 	// Link Speed should be a value as follows: 0: auto; 1: 10M; 2: 100M; 3: 1000M; 4: 10G
@@ -96,6 +108,7 @@ type OswStackMemberPortVO struct {
 	// Monitored Port
 	MirroredPorts []MirroredPort `json:"mirroredPorts,omitempty"`
 	MlagPeerAllPortsConfigInfo *OswMlagPeerAllPortsConfigInfoVO `json:"mlagPeerAllPortsConfigInfo,omitempty"`
+	// Indicates whether MLD fast leave is enabled
 	MldFastLeaveEnable *bool `json:"mldFastLeaveEnable,omitempty"`
 	// Port Name
 	Name *string `json:"name,omitempty"`
@@ -111,6 +124,7 @@ type OswStackMemberPortVO struct {
 	NetworkTagsSetting *int32 `json:"networkTagsSetting,omitempty"`
 	// Operation should be a value as follows: SWITCHING; MIRRORING; AGGREGATING
 	Operation *string `json:"operation,omitempty"`
+	OuiBasedVlanNetworks *OswPortOuiBasedVlanVO `json:"ouiBasedVlanNetworks,omitempty"`
 	// PoE switch should be a value as follows: 0: Off; 1: 802.3at/af
 	Poe *int32 `json:"poe,omitempty"`
 	// PoeDisplayType should be a value as follows: -1: Not Support POE; 0: Support POE; 1: POE(4W); 2: POE(7W); 3: POE(15.4W); 4: POE+(30W); 5: POE++(45W); 6: POE++(60W); 7: POE++(75W); 8: POE++(90W); 9: POE++(100W).
@@ -145,6 +159,7 @@ type OswStackMemberPortVO struct {
 	// Indicates whether SpanningTree is enabled
 	SpanningTreeEnable *bool `json:"spanningTreeEnable,omitempty"`
 	SpanningTreeSetting *SpanningTreeSettingVO `json:"spanningTreeSetting,omitempty"`
+	// Port Speed should be a value as follows: 1: 10Mbps; 2: 100Mbps; 3: 1000Mbps; 4: 10Gbps
 	Speed *int32 `json:"speed,omitempty"`
 	// Stack ID
 	StackId *string `json:"stackId,omitempty"`
@@ -181,6 +196,8 @@ type OswStackMemberPortVO struct {
 	UntagBridgeVlanMap *map[string][]int32 `json:"untagBridgeVlanMap,omitempty"`
 	// Untag Network IDs
 	UntagNetworkIds []string `json:"untagNetworkIds,omitempty"`
+	// List of functions that use this port
+	UsedFunctions []string `json:"usedFunctions,omitempty"`
 	// Voice Network Bridge Vlan
 	VoiceBridgeVlan *int32 `json:"voiceBridgeVlan,omitempty"`
 	// Voice DSCP
@@ -1298,6 +1315,38 @@ func (o *OswStackMemberPortVO) SetIgmpSnoopingEnable(v bool) {
 	o.IgmpSnoopingEnable = &v
 }
 
+// GetIsCopper returns the IsCopper field value if set, zero value otherwise.
+func (o *OswStackMemberPortVO) GetIsCopper() bool {
+	if o == nil || IsNil(o.IsCopper) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCopper
+}
+
+// GetIsCopperOk returns a tuple with the IsCopper field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackMemberPortVO) GetIsCopperOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsCopper) {
+		return nil, false
+	}
+	return o.IsCopper, true
+}
+
+// HasIsCopper returns a boolean if a field has been set.
+func (o *OswStackMemberPortVO) HasIsCopper() bool {
+	if o != nil && !IsNil(o.IsCopper) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCopper gets a reference to the given bool and assigns it to the IsCopper field.
+func (o *OswStackMemberPortVO) SetIsCopper(v bool) {
+	o.IsCopper = &v
+}
+
 // GetLagSetting returns the LagSetting field value if set, zero value otherwise.
 func (o *OswStackMemberPortVO) GetLagSetting() OswLagVO {
 	if o == nil || IsNil(o.LagSetting) {
@@ -1936,6 +1985,38 @@ func (o *OswStackMemberPortVO) HasOperation() bool {
 // SetOperation gets a reference to the given string and assigns it to the Operation field.
 func (o *OswStackMemberPortVO) SetOperation(v string) {
 	o.Operation = &v
+}
+
+// GetOuiBasedVlanNetworks returns the OuiBasedVlanNetworks field value if set, zero value otherwise.
+func (o *OswStackMemberPortVO) GetOuiBasedVlanNetworks() OswPortOuiBasedVlanVO {
+	if o == nil || IsNil(o.OuiBasedVlanNetworks) {
+		var ret OswPortOuiBasedVlanVO
+		return ret
+	}
+	return *o.OuiBasedVlanNetworks
+}
+
+// GetOuiBasedVlanNetworksOk returns a tuple with the OuiBasedVlanNetworks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackMemberPortVO) GetOuiBasedVlanNetworksOk() (*OswPortOuiBasedVlanVO, bool) {
+	if o == nil || IsNil(o.OuiBasedVlanNetworks) {
+		return nil, false
+	}
+	return o.OuiBasedVlanNetworks, true
+}
+
+// HasOuiBasedVlanNetworks returns a boolean if a field has been set.
+func (o *OswStackMemberPortVO) HasOuiBasedVlanNetworks() bool {
+	if o != nil && !IsNil(o.OuiBasedVlanNetworks) {
+		return true
+	}
+
+	return false
+}
+
+// SetOuiBasedVlanNetworks gets a reference to the given OswPortOuiBasedVlanVO and assigns it to the OuiBasedVlanNetworks field.
+func (o *OswStackMemberPortVO) SetOuiBasedVlanNetworks(v OswPortOuiBasedVlanVO) {
+	o.OuiBasedVlanNetworks = &v
 }
 
 // GetPoe returns the Poe field value if set, zero value otherwise.
@@ -3154,6 +3235,38 @@ func (o *OswStackMemberPortVO) SetUntagNetworkIds(v []string) {
 	o.UntagNetworkIds = v
 }
 
+// GetUsedFunctions returns the UsedFunctions field value if set, zero value otherwise.
+func (o *OswStackMemberPortVO) GetUsedFunctions() []string {
+	if o == nil || IsNil(o.UsedFunctions) {
+		var ret []string
+		return ret
+	}
+	return o.UsedFunctions
+}
+
+// GetUsedFunctionsOk returns a tuple with the UsedFunctions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackMemberPortVO) GetUsedFunctionsOk() ([]string, bool) {
+	if o == nil || IsNil(o.UsedFunctions) {
+		return nil, false
+	}
+	return o.UsedFunctions, true
+}
+
+// HasUsedFunctions returns a boolean if a field has been set.
+func (o *OswStackMemberPortVO) HasUsedFunctions() bool {
+	if o != nil && !IsNil(o.UsedFunctions) {
+		return true
+	}
+
+	return false
+}
+
+// SetUsedFunctions gets a reference to the given []string and assigns it to the UsedFunctions field.
+func (o *OswStackMemberPortVO) SetUsedFunctions(v []string) {
+	o.UsedFunctions = v
+}
+
 // GetVoiceBridgeVlan returns the VoiceBridgeVlan field value if set, zero value otherwise.
 func (o *OswStackMemberPortVO) GetVoiceBridgeVlan() int32 {
 	if o == nil || IsNil(o.VoiceBridgeVlan) {
@@ -3426,6 +3539,9 @@ func (o OswStackMemberPortVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IgmpSnoopingEnable) {
 		toSerialize["igmpSnoopingEnable"] = o.IgmpSnoopingEnable
 	}
+	if !IsNil(o.IsCopper) {
+		toSerialize["isCopper"] = o.IsCopper
+	}
 	if !IsNil(o.LagSetting) {
 		toSerialize["lagSetting"] = o.LagSetting
 	}
@@ -3485,6 +3601,9 @@ func (o OswStackMemberPortVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Operation) {
 		toSerialize["operation"] = o.Operation
+	}
+	if !IsNil(o.OuiBasedVlanNetworks) {
+		toSerialize["ouiBasedVlanNetworks"] = o.OuiBasedVlanNetworks
 	}
 	if !IsNil(o.Poe) {
 		toSerialize["poe"] = o.Poe
@@ -3599,6 +3718,9 @@ func (o OswStackMemberPortVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.UntagNetworkIds) {
 		toSerialize["untagNetworkIds"] = o.UntagNetworkIds
+	}
+	if !IsNil(o.UsedFunctions) {
+		toSerialize["usedFunctions"] = o.UsedFunctions
 	}
 	if !IsNil(o.VoiceBridgeVlan) {
 		toSerialize["voiceBridgeVlan"] = o.VoiceBridgeVlan

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddAdoptDevice** | Pointer to **int32** | add and adopt devices in global/customer view, it should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
 **AddDevices** | Pointer to **int32** | add devices in global/customer view, it should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
 **Adopt** | Pointer to **int32** | adopt, it should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
+**AiAssi** | Pointer to **int32** | AI Assistant, it should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
 **Analyze** | Pointer to **int32** | analyze, it should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
 **Anomaly** | Pointer to **int32** | anomaly, it should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
 **Clients** | Pointer to **int32** | clients, it should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
@@ -159,6 +160,31 @@ SetAdopt sets Adopt field to given value.
 `func (o *RoleVO) HasAdopt() bool`
 
 HasAdopt returns a boolean if a field has been set.
+
+### GetAiAssi
+
+`func (o *RoleVO) GetAiAssi() int32`
+
+GetAiAssi returns the AiAssi field if non-nil, zero value otherwise.
+
+### GetAiAssiOk
+
+`func (o *RoleVO) GetAiAssiOk() (*int32, bool)`
+
+GetAiAssiOk returns a tuple with the AiAssi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiAssi
+
+`func (o *RoleVO) SetAiAssi(v int32)`
+
+SetAiAssi sets AiAssi field to given value.
+
+### HasAiAssi
+
+`func (o *RoleVO) HasAiAssi() bool`
+
+HasAiAssi returns a boolean if a field has been set.
 
 ### GetAnalyze
 

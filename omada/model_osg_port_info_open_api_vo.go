@@ -21,6 +21,8 @@ var _ MappedNullable = &OsgPortInfoOpenApiVO{}
 type OsgPortInfoOpenApiVO struct {
 	// preconfigured gateway model
 	PreOsgModel *int32 `json:"preOsgModel,omitempty"`
+	// preconfigured gateway model name
+	PreOsgModelName *string `json:"preOsgModelName,omitempty"`
 	// real gateway model
 	RealOsgModel *string `json:"realOsgModel,omitempty"`
 	// target gateway models when gateway change
@@ -77,6 +79,38 @@ func (o *OsgPortInfoOpenApiVO) HasPreOsgModel() bool {
 // SetPreOsgModel gets a reference to the given int32 and assigns it to the PreOsgModel field.
 func (o *OsgPortInfoOpenApiVO) SetPreOsgModel(v int32) {
 	o.PreOsgModel = &v
+}
+
+// GetPreOsgModelName returns the PreOsgModelName field value if set, zero value otherwise.
+func (o *OsgPortInfoOpenApiVO) GetPreOsgModelName() string {
+	if o == nil || IsNil(o.PreOsgModelName) {
+		var ret string
+		return ret
+	}
+	return *o.PreOsgModelName
+}
+
+// GetPreOsgModelNameOk returns a tuple with the PreOsgModelName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgPortInfoOpenApiVO) GetPreOsgModelNameOk() (*string, bool) {
+	if o == nil || IsNil(o.PreOsgModelName) {
+		return nil, false
+	}
+	return o.PreOsgModelName, true
+}
+
+// HasPreOsgModelName returns a boolean if a field has been set.
+func (o *OsgPortInfoOpenApiVO) HasPreOsgModelName() bool {
+	if o != nil && !IsNil(o.PreOsgModelName) {
+		return true
+	}
+
+	return false
+}
+
+// SetPreOsgModelName gets a reference to the given string and assigns it to the PreOsgModelName field.
+func (o *OsgPortInfoOpenApiVO) SetPreOsgModelName(v string) {
+	o.PreOsgModelName = &v
 }
 
 // GetRealOsgModel returns the RealOsgModel field value if set, zero value otherwise.
@@ -219,6 +253,9 @@ func (o OsgPortInfoOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.PreOsgModel) {
 		toSerialize["preOsgModel"] = o.PreOsgModel
+	}
+	if !IsNil(o.PreOsgModelName) {
+		toSerialize["preOsgModelName"] = o.PreOsgModelName
 	}
 	if !IsNil(o.RealOsgModel) {
 		toSerialize["realOsgModel"] = o.RealOsgModel

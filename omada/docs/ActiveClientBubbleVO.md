@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Download** | Pointer to **int64** |  | [optional] 
 **DownloadPercent** | Pointer to **int32** |  | [optional] 
 **HealthScore** | Pointer to **int32** |  | [optional] 
+**Incidents** | Pointer to **int32** |  | [optional] 
 **Mac** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **RadioId** | Pointer to **int32** |  | [optional] 
@@ -192,6 +193,31 @@ SetHealthScore sets HealthScore field to given value.
 `func (o *ActiveClientBubbleVO) HasHealthScore() bool`
 
 HasHealthScore returns a boolean if a field has been set.
+
+### GetIncidents
+
+`func (o *ActiveClientBubbleVO) GetIncidents() int32`
+
+GetIncidents returns the Incidents field if non-nil, zero value otherwise.
+
+### GetIncidentsOk
+
+`func (o *ActiveClientBubbleVO) GetIncidentsOk() (*int32, bool)`
+
+GetIncidentsOk returns a tuple with the Incidents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncidents
+
+`func (o *ActiveClientBubbleVO) SetIncidents(v int32)`
+
+SetIncidents sets Incidents field to given value.
+
+### HasIncidents
+
+`func (o *ActiveClientBubbleVO) HasIncidents() bool`
+
+HasIncidents returns a boolean if a field has been set.
 
 ### GetMac
 

@@ -19,24 +19,32 @@ var _ MappedNullable = &SsidDetailOpenApiVO{}
 
 // SsidDetailOpenApiVO struct for SsidDetailOpenApiVO
 type SsidDetailOpenApiVO struct {
+	// List of AP Group IDs associated with this SSID
+	ApGroupIds []string `json:"apGroupIds,omitempty"`
 	// Whether to enable auto wan access. True: enable, false: disable.
 	AutoWanAccess *bool `json:"autoWanAccess,omitempty"`
 	// SSID band. The lowest bit indicates whether 2.4G is included; the second lowest bit indicates whether 5G is included; the third lowest bit indicates whether 6G is included; 1 means included while 0 means not included. For example, 7(111) means that 2G/5G/6G are enabled; 1(001) means that 2G is enabled. (When 5G is included，it means 5G/5G1/5G2 are enabled.)
 	Band *int32 `json:"band,omitempty"`
 	// SSID broadcast config status. True: enable, false: disable.
 	Broadcast *bool `json:"broadcast,omitempty"`
+	// description = select all devices or not. 0 means select all devices, 1 means not select all devices.
+	ChooseDevices *int32 `json:"chooseDevices,omitempty"`
 	ClientRateLimit *RateLimitSettingOpenApiVO `json:"clientRateLimit,omitempty"`
 	// SSID device type, identify which devices this SSID will take effect. The lowest bit indicates whether [EAP] is included, the second low bit indicates whether [Gateway] is included, 1 means included while 0 means not included; For example, 3(11) means that EAP/Gateway is enabled, 1(01) means that EAP is enabled.
 	DeviceType *int32 `json:"deviceType,omitempty"`
 	DhcpOption82 *SsidDhcpOptionOpenApiVO `json:"dhcpOption82,omitempty"`
 	// SSID 802.11r config status. True: enable, false: disable.
 	Enable11r *bool `json:"enable11r,omitempty"`
+	// SSID Enhanced IoT Connectivity config status. True: enable, false: disable. This configuration can be enabled only when the 5GHz and 6GHz bands are disabled, the parameters [versionEnt] and [versionPsk] are not set to 4, and the following configurations are disabled: [hotspotV2Enable], [bandSteer], [arpCastEnable], [loadBalance], [enable11r], [gikRekeyPskEnable], [pmfMode], [mloEnable].
+	EnhancedIotConnectivity *bool `json:"enhancedIotConnectivity,omitempty"`
 	EntSetting *SsidEnterpriseSettingOpenApiVO `json:"entSetting,omitempty"`
 	// SSID guest network config status. True: enable, false: disable.
 	GuestNetEnable *bool `json:"guestNetEnable,omitempty"`
 	// If this field is true, the SSID password will be hidden.
 	HidePwd *bool `json:"hidePwd,omitempty"`
 	HotspotV2Setting *HotspotV2SettingOpenApiVO `json:"hotspotV2Setting,omitempty"`
+	// SSID ID
+	Id *string `json:"id,omitempty"`
 	MacFilter *SsidMacFilterOpenApiVO `json:"macFilter,omitempty"`
 	// SSID MLO config status. True: enable, false: disable.
 	MloEnable *bool `json:"mloEnable,omitempty"`
@@ -55,7 +63,10 @@ type SsidDetailOpenApiVO struct {
 	// SSID security mode; Security should be a value as follows: 0: None; 2: WPA-Enterprise; 3: WPA-Personal; 4: PPSK without RADIUS; 5: PPSK with RADIUS.
 	Security *int32 `json:"security,omitempty"`
 	SsidDhcpOption *BandSteerOpenApiVO `json:"ssidDhcpOption,omitempty"`
-	// SSID ID
+	// SSID enable status. True: enable, false: disable.
+	SsidEnable *bool `json:"ssidEnable,omitempty"`
+	// SSID ID, kept for backward compatibility and equivalent to id. This field will be removed in a future release; use id instead.
+	// Deprecated
 	SsidId *string `json:"ssidId,omitempty"`
 	SsidRateLimit *RateLimitSettingOpenApiVO `json:"ssidRateLimit,omitempty"`
 	// SSID VLAN config status. True: enable, false: disable.
@@ -85,6 +96,38 @@ func NewSsidDetailOpenApiVO() *SsidDetailOpenApiVO {
 func NewSsidDetailOpenApiVOWithDefaults() *SsidDetailOpenApiVO {
 	this := SsidDetailOpenApiVO{}
 	return &this
+}
+
+// GetApGroupIds returns the ApGroupIds field value if set, zero value otherwise.
+func (o *SsidDetailOpenApiVO) GetApGroupIds() []string {
+	if o == nil || IsNil(o.ApGroupIds) {
+		var ret []string
+		return ret
+	}
+	return o.ApGroupIds
+}
+
+// GetApGroupIdsOk returns a tuple with the ApGroupIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidDetailOpenApiVO) GetApGroupIdsOk() ([]string, bool) {
+	if o == nil || IsNil(o.ApGroupIds) {
+		return nil, false
+	}
+	return o.ApGroupIds, true
+}
+
+// HasApGroupIds returns a boolean if a field has been set.
+func (o *SsidDetailOpenApiVO) HasApGroupIds() bool {
+	if o != nil && !IsNil(o.ApGroupIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetApGroupIds gets a reference to the given []string and assigns it to the ApGroupIds field.
+func (o *SsidDetailOpenApiVO) SetApGroupIds(v []string) {
+	o.ApGroupIds = v
 }
 
 // GetAutoWanAccess returns the AutoWanAccess field value if set, zero value otherwise.
@@ -181,6 +224,38 @@ func (o *SsidDetailOpenApiVO) HasBroadcast() bool {
 // SetBroadcast gets a reference to the given bool and assigns it to the Broadcast field.
 func (o *SsidDetailOpenApiVO) SetBroadcast(v bool) {
 	o.Broadcast = &v
+}
+
+// GetChooseDevices returns the ChooseDevices field value if set, zero value otherwise.
+func (o *SsidDetailOpenApiVO) GetChooseDevices() int32 {
+	if o == nil || IsNil(o.ChooseDevices) {
+		var ret int32
+		return ret
+	}
+	return *o.ChooseDevices
+}
+
+// GetChooseDevicesOk returns a tuple with the ChooseDevices field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidDetailOpenApiVO) GetChooseDevicesOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChooseDevices) {
+		return nil, false
+	}
+	return o.ChooseDevices, true
+}
+
+// HasChooseDevices returns a boolean if a field has been set.
+func (o *SsidDetailOpenApiVO) HasChooseDevices() bool {
+	if o != nil && !IsNil(o.ChooseDevices) {
+		return true
+	}
+
+	return false
+}
+
+// SetChooseDevices gets a reference to the given int32 and assigns it to the ChooseDevices field.
+func (o *SsidDetailOpenApiVO) SetChooseDevices(v int32) {
+	o.ChooseDevices = &v
 }
 
 // GetClientRateLimit returns the ClientRateLimit field value if set, zero value otherwise.
@@ -311,6 +386,38 @@ func (o *SsidDetailOpenApiVO) SetEnable11r(v bool) {
 	o.Enable11r = &v
 }
 
+// GetEnhancedIotConnectivity returns the EnhancedIotConnectivity field value if set, zero value otherwise.
+func (o *SsidDetailOpenApiVO) GetEnhancedIotConnectivity() bool {
+	if o == nil || IsNil(o.EnhancedIotConnectivity) {
+		var ret bool
+		return ret
+	}
+	return *o.EnhancedIotConnectivity
+}
+
+// GetEnhancedIotConnectivityOk returns a tuple with the EnhancedIotConnectivity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidDetailOpenApiVO) GetEnhancedIotConnectivityOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnhancedIotConnectivity) {
+		return nil, false
+	}
+	return o.EnhancedIotConnectivity, true
+}
+
+// HasEnhancedIotConnectivity returns a boolean if a field has been set.
+func (o *SsidDetailOpenApiVO) HasEnhancedIotConnectivity() bool {
+	if o != nil && !IsNil(o.EnhancedIotConnectivity) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnhancedIotConnectivity gets a reference to the given bool and assigns it to the EnhancedIotConnectivity field.
+func (o *SsidDetailOpenApiVO) SetEnhancedIotConnectivity(v bool) {
+	o.EnhancedIotConnectivity = &v
+}
+
 // GetEntSetting returns the EntSetting field value if set, zero value otherwise.
 func (o *SsidDetailOpenApiVO) GetEntSetting() SsidEnterpriseSettingOpenApiVO {
 	if o == nil || IsNil(o.EntSetting) {
@@ -437,6 +544,38 @@ func (o *SsidDetailOpenApiVO) HasHotspotV2Setting() bool {
 // SetHotspotV2Setting gets a reference to the given HotspotV2SettingOpenApiVO and assigns it to the HotspotV2Setting field.
 func (o *SsidDetailOpenApiVO) SetHotspotV2Setting(v HotspotV2SettingOpenApiVO) {
 	o.HotspotV2Setting = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *SsidDetailOpenApiVO) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidDetailOpenApiVO) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *SsidDetailOpenApiVO) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *SsidDetailOpenApiVO) SetId(v string) {
+	o.Id = &v
 }
 
 // GetMacFilter returns the MacFilter field value if set, zero value otherwise.
@@ -823,7 +962,40 @@ func (o *SsidDetailOpenApiVO) SetSsidDhcpOption(v BandSteerOpenApiVO) {
 	o.SsidDhcpOption = &v
 }
 
+// GetSsidEnable returns the SsidEnable field value if set, zero value otherwise.
+func (o *SsidDetailOpenApiVO) GetSsidEnable() bool {
+	if o == nil || IsNil(o.SsidEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.SsidEnable
+}
+
+// GetSsidEnableOk returns a tuple with the SsidEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidDetailOpenApiVO) GetSsidEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.SsidEnable) {
+		return nil, false
+	}
+	return o.SsidEnable, true
+}
+
+// HasSsidEnable returns a boolean if a field has been set.
+func (o *SsidDetailOpenApiVO) HasSsidEnable() bool {
+	if o != nil && !IsNil(o.SsidEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetSsidEnable gets a reference to the given bool and assigns it to the SsidEnable field.
+func (o *SsidDetailOpenApiVO) SetSsidEnable(v bool) {
+	o.SsidEnable = &v
+}
+
 // GetSsidId returns the SsidId field value if set, zero value otherwise.
+// Deprecated
 func (o *SsidDetailOpenApiVO) GetSsidId() string {
 	if o == nil || IsNil(o.SsidId) {
 		var ret string
@@ -834,6 +1006,7 @@ func (o *SsidDetailOpenApiVO) GetSsidId() string {
 
 // GetSsidIdOk returns a tuple with the SsidId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *SsidDetailOpenApiVO) GetSsidIdOk() (*string, bool) {
 	if o == nil || IsNil(o.SsidId) {
 		return nil, false
@@ -851,6 +1024,7 @@ func (o *SsidDetailOpenApiVO) HasSsidId() bool {
 }
 
 // SetSsidId gets a reference to the given string and assigns it to the SsidId field.
+// Deprecated
 func (o *SsidDetailOpenApiVO) SetSsidId(v string) {
 	o.SsidId = &v
 }
@@ -1089,6 +1263,9 @@ func (o SsidDetailOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o SsidDetailOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ApGroupIds) {
+		toSerialize["apGroupIds"] = o.ApGroupIds
+	}
 	if !IsNil(o.AutoWanAccess) {
 		toSerialize["autoWanAccess"] = o.AutoWanAccess
 	}
@@ -1097,6 +1274,9 @@ func (o SsidDetailOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Broadcast) {
 		toSerialize["broadcast"] = o.Broadcast
+	}
+	if !IsNil(o.ChooseDevices) {
+		toSerialize["chooseDevices"] = o.ChooseDevices
 	}
 	if !IsNil(o.ClientRateLimit) {
 		toSerialize["clientRateLimit"] = o.ClientRateLimit
@@ -1110,6 +1290,9 @@ func (o SsidDetailOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Enable11r) {
 		toSerialize["enable11r"] = o.Enable11r
 	}
+	if !IsNil(o.EnhancedIotConnectivity) {
+		toSerialize["enhancedIotConnectivity"] = o.EnhancedIotConnectivity
+	}
 	if !IsNil(o.EntSetting) {
 		toSerialize["entSetting"] = o.EntSetting
 	}
@@ -1121,6 +1304,9 @@ func (o SsidDetailOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HotspotV2Setting) {
 		toSerialize["hotspotV2Setting"] = o.HotspotV2Setting
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.MacFilter) {
 		toSerialize["macFilter"] = o.MacFilter
@@ -1157,6 +1343,9 @@ func (o SsidDetailOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SsidDhcpOption) {
 		toSerialize["ssidDhcpOption"] = o.SsidDhcpOption
+	}
+	if !IsNil(o.SsidEnable) {
+		toSerialize["ssidEnable"] = o.SsidEnable
 	}
 	if !IsNil(o.SsidId) {
 		toSerialize["ssidId"] = o.SsidId

@@ -110,7 +110,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	mailId := "mailId_example" // string | mailId
+	mailId := "mailId_example" // string | Mail ID
 	mailServerOpenApiModifyVO := *openapiclient.NewMailServerOpenApiModifyVO(false, "Receiver_example", "Sender_example", false) // MailServerOpenApiModifyVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site Template ID | 
-**mailId** | **string** | mailId | 
+**mailId** | **string** | Mail ID | 
 
 ### Other Parameters
 
@@ -187,7 +187,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | siteTemplateId
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	smaPolicySetting := *openapiclient.NewSmaPolicySetting(int32(123)) // SmaPolicySetting | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | siteTemplateId | 
+**siteTemplateId** | **string** | Site Template ID | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | siteTemplateId
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	smsRouterCommand := *openapiclient.NewSmsRouterCommand(false, false, false) // SmsRouterCommand | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | siteTemplateId | 
+**siteTemplateId** | **string** | Site Template ID | 
 
 ### Other Parameters
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ## QuerySimCardQuotaSettingTemplate
 
-> OperationResponseSimQuotaSetting QuerySimCardQuotaSettingTemplate(ctx, omadacId, simCard, siteTemplateId).Execute()
+> OperationResponseSimQuotaSetting QuerySimCardQuotaSettingTemplate(ctx, omadacId, siteTemplateId, simCard).Execute()
 
 Get one of Dual-SIM card's SIM data setting template
 
@@ -337,12 +337,12 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	simCard := "simCard_example" // string | SIM card. 1: SIM1; 2: SIM2.
-	siteTemplateId := "siteTemplateId_example" // string | siteTemplateId
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SIMTemplateAPI.QuerySimCardQuotaSettingTemplate(context.Background(), omadacId, simCard, siteTemplateId).Execute()
+	resp, r, err := apiClient.SIMTemplateAPI.QuerySimCardQuotaSettingTemplate(context.Background(), omadacId, siteTemplateId, simCard).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SIMTemplateAPI.QuerySimCardQuotaSettingTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -359,8 +359,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
 **simCard** | **string** | SIM card. 1: SIM1; 2: SIM2. | 
-**siteTemplateId** | **string** | siteTemplateId | 
 
 ### Other Parameters
 
@@ -413,7 +413,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | siteTemplateId
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -434,7 +434,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | siteTemplateId | 
+**siteTemplateId** | **string** | Site Template ID | 
 
 ### Other Parameters
 
@@ -486,7 +486,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | siteTemplateId
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | siteTemplateId | 
+**siteTemplateId** | **string** | Site Template ID | 
 
 ### Other Parameters
 

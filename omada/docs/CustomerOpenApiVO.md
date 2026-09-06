@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerName** | Pointer to **string** | Customer name should contain 1 to 31 characters. | [optional] 
+**CustomerName** | Pointer to **string** | Customer name should contain 1 to 32 characters. | [optional] 
 **Description** | Pointer to **string** | Customer description should contain 1 to 128 characters. | [optional] 
 
 ## Methods

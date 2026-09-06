@@ -21,11 +21,12 @@ var _ MappedNullable = &WifiHealthDetailVO{}
 type WifiHealthDetailVO struct {
 	AccessCapacityScoreDetail *SubSingleHealthInfoDetailVO `json:"accessCapacityScoreDetail,omitempty"`
 	AccessTimeScoreDetail *SubSingleHealthInfoDetailVO `json:"accessTimeScoreDetail,omitempty"`
-	ChannelInterUtilDetail *SubSingleHealthInfoDetailVO `json:"channelInterUtilDetail,omitempty"`
+	ChannelInterUtilDetail *ChannelInterferenceSubHealthInfoVO `json:"channelInterUtilDetail,omitempty"`
 	ChannelUtilScoreDetail *SubSingleHealthInfoDetailVO `json:"channelUtilScoreDetail,omitempty"`
 	RssiScoreDetail *SubSingleHealthInfoDetailVO `json:"rssiScoreDetail,omitempty"`
 	// Wifi health score
 	WifiHealthScore *int32 `json:"wifiHealthScore,omitempty"`
+	WirelessClientQualityDetail *OnBoardingTimeSubHealthDetailVO `json:"wirelessClientQualityDetail,omitempty"`
 }
 
 // NewWifiHealthDetailVO instantiates a new WifiHealthDetailVO object
@@ -110,9 +111,9 @@ func (o *WifiHealthDetailVO) SetAccessTimeScoreDetail(v SubSingleHealthInfoDetai
 }
 
 // GetChannelInterUtilDetail returns the ChannelInterUtilDetail field value if set, zero value otherwise.
-func (o *WifiHealthDetailVO) GetChannelInterUtilDetail() SubSingleHealthInfoDetailVO {
+func (o *WifiHealthDetailVO) GetChannelInterUtilDetail() ChannelInterferenceSubHealthInfoVO {
 	if o == nil || IsNil(o.ChannelInterUtilDetail) {
-		var ret SubSingleHealthInfoDetailVO
+		var ret ChannelInterferenceSubHealthInfoVO
 		return ret
 	}
 	return *o.ChannelInterUtilDetail
@@ -120,7 +121,7 @@ func (o *WifiHealthDetailVO) GetChannelInterUtilDetail() SubSingleHealthInfoDeta
 
 // GetChannelInterUtilDetailOk returns a tuple with the ChannelInterUtilDetail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WifiHealthDetailVO) GetChannelInterUtilDetailOk() (*SubSingleHealthInfoDetailVO, bool) {
+func (o *WifiHealthDetailVO) GetChannelInterUtilDetailOk() (*ChannelInterferenceSubHealthInfoVO, bool) {
 	if o == nil || IsNil(o.ChannelInterUtilDetail) {
 		return nil, false
 	}
@@ -136,8 +137,8 @@ func (o *WifiHealthDetailVO) HasChannelInterUtilDetail() bool {
 	return false
 }
 
-// SetChannelInterUtilDetail gets a reference to the given SubSingleHealthInfoDetailVO and assigns it to the ChannelInterUtilDetail field.
-func (o *WifiHealthDetailVO) SetChannelInterUtilDetail(v SubSingleHealthInfoDetailVO) {
+// SetChannelInterUtilDetail gets a reference to the given ChannelInterferenceSubHealthInfoVO and assigns it to the ChannelInterUtilDetail field.
+func (o *WifiHealthDetailVO) SetChannelInterUtilDetail(v ChannelInterferenceSubHealthInfoVO) {
 	o.ChannelInterUtilDetail = &v
 }
 
@@ -237,6 +238,38 @@ func (o *WifiHealthDetailVO) SetWifiHealthScore(v int32) {
 	o.WifiHealthScore = &v
 }
 
+// GetWirelessClientQualityDetail returns the WirelessClientQualityDetail field value if set, zero value otherwise.
+func (o *WifiHealthDetailVO) GetWirelessClientQualityDetail() OnBoardingTimeSubHealthDetailVO {
+	if o == nil || IsNil(o.WirelessClientQualityDetail) {
+		var ret OnBoardingTimeSubHealthDetailVO
+		return ret
+	}
+	return *o.WirelessClientQualityDetail
+}
+
+// GetWirelessClientQualityDetailOk returns a tuple with the WirelessClientQualityDetail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WifiHealthDetailVO) GetWirelessClientQualityDetailOk() (*OnBoardingTimeSubHealthDetailVO, bool) {
+	if o == nil || IsNil(o.WirelessClientQualityDetail) {
+		return nil, false
+	}
+	return o.WirelessClientQualityDetail, true
+}
+
+// HasWirelessClientQualityDetail returns a boolean if a field has been set.
+func (o *WifiHealthDetailVO) HasWirelessClientQualityDetail() bool {
+	if o != nil && !IsNil(o.WirelessClientQualityDetail) {
+		return true
+	}
+
+	return false
+}
+
+// SetWirelessClientQualityDetail gets a reference to the given OnBoardingTimeSubHealthDetailVO and assigns it to the WirelessClientQualityDetail field.
+func (o *WifiHealthDetailVO) SetWirelessClientQualityDetail(v OnBoardingTimeSubHealthDetailVO) {
+	o.WirelessClientQualityDetail = &v
+}
+
 func (o WifiHealthDetailVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -264,6 +297,9 @@ func (o WifiHealthDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.WifiHealthScore) {
 		toSerialize["wifiHealthScore"] = o.WifiHealthScore
+	}
+	if !IsNil(o.WirelessClientQualityDetail) {
+		toSerialize["wirelessClientQualityDetail"] = o.WirelessClientQualityDetail
 	}
 	return toSerialize, nil
 }

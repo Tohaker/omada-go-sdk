@@ -17,7 +17,7 @@ import (
 // checks if the ESDetailVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ESDetailVO{}
 
-// ESDetailVO Agile Series Switch Detail
+// ESDetailVO struct for ESDetailVO
 type ESDetailVO struct {
 	// Site of the device
 	Site *string `json:"Site,omitempty"`
@@ -25,6 +25,10 @@ type ESDetailVO struct {
 	Active *bool `json:"active,omitempty"`
 	// Whether the device is added in advanced.
 	AddedInAdvanced *bool `json:"addedInAdvanced,omitempty"`
+	// Block information
+	Block *string `json:"block,omitempty"`
+	// Block Num
+	BlockNum *int32 `json:"blockNum,omitempty"`
 	// Whether the device is bound to device template
 	BoundDeviceTemplate *bool `json:"boundDeviceTemplate,omitempty"`
 	// Whether the site where the device is located is bound to a site template
@@ -40,6 +44,7 @@ type ESDetailVO struct {
 	CustomId *string `json:"customId,omitempty"`
 	// Customer name
 	CustomName *string `json:"customName,omitempty"`
+	// Description of the device
 	Description *string `json:"description,omitempty"`
 	DevCap *OswDevCapVO `json:"devCap,omitempty"`
 	DeviceMisc *OswDeviceMiscVO `json:"deviceMisc,omitempty"`
@@ -47,6 +52,7 @@ type ESDetailVO struct {
 	DeviceSeriesType *int32 `json:"deviceSeriesType,omitempty"`
 	// Whether there is an available device template for the device; it is false if the model is not supported or the site template has not created the corresponding device template.
 	DeviceTemplateAvailable *bool `json:"deviceTemplateAvailable,omitempty"`
+	// Whether to disable hardware reset
 	DisableHwReset *bool `json:"disableHwReset,omitempty"`
 	DownlinkList []OswDownlinkVO `json:"downlinkList,omitempty"`
 	Download *int64 `json:"download,omitempty"`
@@ -67,6 +73,7 @@ type ESDetailVO struct {
 	FirmwareVersion *string `json:"firmwareVersion,omitempty"`
 	// Forget ID of device
 	ForgetId *string `json:"forgetId,omitempty"`
+	ForwardDelay *int32 `json:"forwardDelay,omitempty"`
 	// Version of hardware,for example 1.0
 	HwVersion *string `json:"hwVersion,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -79,6 +86,8 @@ type ESDetailVO struct {
 	JumboEnable *bool `json:"jumboEnable,omitempty"`
 	Lags []OswLagVO `json:"lags,omitempty"`
 	LastSeen *int64 `json:"lastSeen,omitempty"`
+	// Latest firmware version
+	LatestVersion *string `json:"latestVersion,omitempty"`
 	LedSetting *int32 `json:"ledSetting,omitempty"`
 	// License key on detail page of device(cloud base exclusive)
 	LicenseId *string `json:"licenseId,omitempty"`
@@ -93,6 +102,7 @@ type ESDetailVO struct {
 	// Device mac
 	Mac *string `json:"mac,omitempty"`
 	ManagerMark *int32 `json:"managerMark,omitempty"`
+	MaxAge *int32 `json:"maxAge,omitempty"`
 	MemUtil *int32 `json:"memUtil,omitempty"`
 	// Model of device,for example:EAP225
 	Model *string `json:"model,omitempty"`
@@ -122,6 +132,7 @@ type ESDetailVO struct {
 	Remember *bool `json:"remember,omitempty"`
 	// Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site
 	RememberDevice *int32 `json:"rememberDevice,omitempty"`
+	ReplaceDeviceInfo *DeviceReplaceSettingVO `json:"replaceDeviceInfo,omitempty"`
 	// Data source.Resource should be a value as follows: 0:new created;1:from template;2:override
 	Resource *int32 `json:"resource,omitempty"`
 	// Rx Rate
@@ -145,6 +156,8 @@ type ESDetailVO struct {
 	Stp *int32 `json:"stp,omitempty"`
 	// Whether the device firmware support intelligent anomaly detection
 	SupportAnomaly *bool `json:"supportAnomaly,omitempty"`
+	// Whether support auto add oui based vlan.
+	SupportAutoAddOuiBasedVlan *bool `json:"supportAutoAddOuiBasedVlan,omitempty"`
 	SupportCableTest *bool `json:"supportCableTest,omitempty"`
 	SupportGetOspfNeighborTable *bool `json:"supportGetOspfNeighborTable,omitempty"`
 	// Support health
@@ -162,6 +175,7 @@ type ESDetailVO struct {
 	TemplateSettings []int32 `json:"templateSettings,omitempty"`
 	// TerminalPrefix represents the device name within the terminal function, designed to prevent terminal command recognition errors when device name contains illegal characters such as '#'.
 	TerminalPrefix *string `json:"terminalPrefix,omitempty"`
+	TxHoldCount *int32 `json:"txHoldCount,omitempty"`
 	// Tx Rate
 	TxRate *int64 `json:"txRate,omitempty"`
 	// Device type:ap、gateway、switch、olt
@@ -286,6 +300,70 @@ func (o *ESDetailVO) HasAddedInAdvanced() bool {
 // SetAddedInAdvanced gets a reference to the given bool and assigns it to the AddedInAdvanced field.
 func (o *ESDetailVO) SetAddedInAdvanced(v bool) {
 	o.AddedInAdvanced = &v
+}
+
+// GetBlock returns the Block field value if set, zero value otherwise.
+func (o *ESDetailVO) GetBlock() string {
+	if o == nil || IsNil(o.Block) {
+		var ret string
+		return ret
+	}
+	return *o.Block
+}
+
+// GetBlockOk returns a tuple with the Block field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetBlockOk() (*string, bool) {
+	if o == nil || IsNil(o.Block) {
+		return nil, false
+	}
+	return o.Block, true
+}
+
+// HasBlock returns a boolean if a field has been set.
+func (o *ESDetailVO) HasBlock() bool {
+	if o != nil && !IsNil(o.Block) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlock gets a reference to the given string and assigns it to the Block field.
+func (o *ESDetailVO) SetBlock(v string) {
+	o.Block = &v
+}
+
+// GetBlockNum returns the BlockNum field value if set, zero value otherwise.
+func (o *ESDetailVO) GetBlockNum() int32 {
+	if o == nil || IsNil(o.BlockNum) {
+		var ret int32
+		return ret
+	}
+	return *o.BlockNum
+}
+
+// GetBlockNumOk returns a tuple with the BlockNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetBlockNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.BlockNum) {
+		return nil, false
+	}
+	return o.BlockNum, true
+}
+
+// HasBlockNum returns a boolean if a field has been set.
+func (o *ESDetailVO) HasBlockNum() bool {
+	if o != nil && !IsNil(o.BlockNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlockNum gets a reference to the given int32 and assigns it to the BlockNum field.
+func (o *ESDetailVO) SetBlockNum(v int32) {
+	o.BlockNum = &v
 }
 
 // GetBoundDeviceTemplate returns the BoundDeviceTemplate field value if set, zero value otherwise.
@@ -1088,6 +1166,38 @@ func (o *ESDetailVO) SetForgetId(v string) {
 	o.ForgetId = &v
 }
 
+// GetForwardDelay returns the ForwardDelay field value if set, zero value otherwise.
+func (o *ESDetailVO) GetForwardDelay() int32 {
+	if o == nil || IsNil(o.ForwardDelay) {
+		var ret int32
+		return ret
+	}
+	return *o.ForwardDelay
+}
+
+// GetForwardDelayOk returns a tuple with the ForwardDelay field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetForwardDelayOk() (*int32, bool) {
+	if o == nil || IsNil(o.ForwardDelay) {
+		return nil, false
+	}
+	return o.ForwardDelay, true
+}
+
+// HasForwardDelay returns a boolean if a field has been set.
+func (o *ESDetailVO) HasForwardDelay() bool {
+	if o != nil && !IsNil(o.ForwardDelay) {
+		return true
+	}
+
+	return false
+}
+
+// SetForwardDelay gets a reference to the given int32 and assigns it to the ForwardDelay field.
+func (o *ESDetailVO) SetForwardDelay(v int32) {
+	o.ForwardDelay = &v
+}
+
 // GetHwVersion returns the HwVersion field value if set, zero value otherwise.
 func (o *ESDetailVO) GetHwVersion() string {
 	if o == nil || IsNil(o.HwVersion) {
@@ -1374,6 +1484,38 @@ func (o *ESDetailVO) HasLastSeen() bool {
 // SetLastSeen gets a reference to the given int64 and assigns it to the LastSeen field.
 func (o *ESDetailVO) SetLastSeen(v int64) {
 	o.LastSeen = &v
+}
+
+// GetLatestVersion returns the LatestVersion field value if set, zero value otherwise.
+func (o *ESDetailVO) GetLatestVersion() string {
+	if o == nil || IsNil(o.LatestVersion) {
+		var ret string
+		return ret
+	}
+	return *o.LatestVersion
+}
+
+// GetLatestVersionOk returns a tuple with the LatestVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetLatestVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.LatestVersion) {
+		return nil, false
+	}
+	return o.LatestVersion, true
+}
+
+// HasLatestVersion returns a boolean if a field has been set.
+func (o *ESDetailVO) HasLatestVersion() bool {
+	if o != nil && !IsNil(o.LatestVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetLatestVersion gets a reference to the given string and assigns it to the LatestVersion field.
+func (o *ESDetailVO) SetLatestVersion(v string) {
+	o.LatestVersion = &v
 }
 
 // GetLedSetting returns the LedSetting field value if set, zero value otherwise.
@@ -1694,6 +1836,38 @@ func (o *ESDetailVO) HasManagerMark() bool {
 // SetManagerMark gets a reference to the given int32 and assigns it to the ManagerMark field.
 func (o *ESDetailVO) SetManagerMark(v int32) {
 	o.ManagerMark = &v
+}
+
+// GetMaxAge returns the MaxAge field value if set, zero value otherwise.
+func (o *ESDetailVO) GetMaxAge() int32 {
+	if o == nil || IsNil(o.MaxAge) {
+		var ret int32
+		return ret
+	}
+	return *o.MaxAge
+}
+
+// GetMaxAgeOk returns a tuple with the MaxAge field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetMaxAgeOk() (*int32, bool) {
+	if o == nil || IsNil(o.MaxAge) {
+		return nil, false
+	}
+	return o.MaxAge, true
+}
+
+// HasMaxAge returns a boolean if a field has been set.
+func (o *ESDetailVO) HasMaxAge() bool {
+	if o != nil && !IsNil(o.MaxAge) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxAge gets a reference to the given int32 and assigns it to the MaxAge field.
+func (o *ESDetailVO) SetMaxAge(v int32) {
+	o.MaxAge = &v
 }
 
 // GetMemUtil returns the MemUtil field value if set, zero value otherwise.
@@ -2371,6 +2545,38 @@ func (o *ESDetailVO) SetRememberDevice(v int32) {
 	o.RememberDevice = &v
 }
 
+// GetReplaceDeviceInfo returns the ReplaceDeviceInfo field value if set, zero value otherwise.
+func (o *ESDetailVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO {
+	if o == nil || IsNil(o.ReplaceDeviceInfo) {
+		var ret DeviceReplaceSettingVO
+		return ret
+	}
+	return *o.ReplaceDeviceInfo
+}
+
+// GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool) {
+	if o == nil || IsNil(o.ReplaceDeviceInfo) {
+		return nil, false
+	}
+	return o.ReplaceDeviceInfo, true
+}
+
+// HasReplaceDeviceInfo returns a boolean if a field has been set.
+func (o *ESDetailVO) HasReplaceDeviceInfo() bool {
+	if o != nil && !IsNil(o.ReplaceDeviceInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetReplaceDeviceInfo gets a reference to the given DeviceReplaceSettingVO and assigns it to the ReplaceDeviceInfo field.
+func (o *ESDetailVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO) {
+	o.ReplaceDeviceInfo = &v
+}
+
 // GetResource returns the Resource field value if set, zero value otherwise.
 func (o *ESDetailVO) GetResource() int32 {
 	if o == nil || IsNil(o.Resource) {
@@ -2787,6 +2993,38 @@ func (o *ESDetailVO) SetSupportAnomaly(v bool) {
 	o.SupportAnomaly = &v
 }
 
+// GetSupportAutoAddOuiBasedVlan returns the SupportAutoAddOuiBasedVlan field value if set, zero value otherwise.
+func (o *ESDetailVO) GetSupportAutoAddOuiBasedVlan() bool {
+	if o == nil || IsNil(o.SupportAutoAddOuiBasedVlan) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportAutoAddOuiBasedVlan
+}
+
+// GetSupportAutoAddOuiBasedVlanOk returns a tuple with the SupportAutoAddOuiBasedVlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetSupportAutoAddOuiBasedVlanOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportAutoAddOuiBasedVlan) {
+		return nil, false
+	}
+	return o.SupportAutoAddOuiBasedVlan, true
+}
+
+// HasSupportAutoAddOuiBasedVlan returns a boolean if a field has been set.
+func (o *ESDetailVO) HasSupportAutoAddOuiBasedVlan() bool {
+	if o != nil && !IsNil(o.SupportAutoAddOuiBasedVlan) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportAutoAddOuiBasedVlan gets a reference to the given bool and assigns it to the SupportAutoAddOuiBasedVlan field.
+func (o *ESDetailVO) SetSupportAutoAddOuiBasedVlan(v bool) {
+	o.SupportAutoAddOuiBasedVlan = &v
+}
+
 // GetSupportCableTest returns the SupportCableTest field value if set, zero value otherwise.
 func (o *ESDetailVO) GetSupportCableTest() bool {
 	if o == nil || IsNil(o.SupportCableTest) {
@@ -3171,6 +3409,38 @@ func (o *ESDetailVO) SetTerminalPrefix(v string) {
 	o.TerminalPrefix = &v
 }
 
+// GetTxHoldCount returns the TxHoldCount field value if set, zero value otherwise.
+func (o *ESDetailVO) GetTxHoldCount() int32 {
+	if o == nil || IsNil(o.TxHoldCount) {
+		var ret int32
+		return ret
+	}
+	return *o.TxHoldCount
+}
+
+// GetTxHoldCountOk returns a tuple with the TxHoldCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ESDetailVO) GetTxHoldCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.TxHoldCount) {
+		return nil, false
+	}
+	return o.TxHoldCount, true
+}
+
+// HasTxHoldCount returns a boolean if a field has been set.
+func (o *ESDetailVO) HasTxHoldCount() bool {
+	if o != nil && !IsNil(o.TxHoldCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTxHoldCount gets a reference to the given int32 and assigns it to the TxHoldCount field.
+func (o *ESDetailVO) SetTxHoldCount(v int32) {
+	o.TxHoldCount = &v
+}
+
 // GetTxRate returns the TxRate field value if set, zero value otherwise.
 func (o *ESDetailVO) GetTxRate() int64 {
 	if o == nil || IsNil(o.TxRate) {
@@ -3446,6 +3716,12 @@ func (o ESDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AddedInAdvanced) {
 		toSerialize["addedInAdvanced"] = o.AddedInAdvanced
 	}
+	if !IsNil(o.Block) {
+		toSerialize["block"] = o.Block
+	}
+	if !IsNil(o.BlockNum) {
+		toSerialize["blockNum"] = o.BlockNum
+	}
 	if !IsNil(o.BoundDeviceTemplate) {
 		toSerialize["boundDeviceTemplate"] = o.BoundDeviceTemplate
 	}
@@ -3521,6 +3797,9 @@ func (o ESDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ForgetId) {
 		toSerialize["forgetId"] = o.ForgetId
 	}
+	if !IsNil(o.ForwardDelay) {
+		toSerialize["forwardDelay"] = o.ForwardDelay
+	}
 	if !IsNil(o.HwVersion) {
 		toSerialize["hwVersion"] = o.HwVersion
 	}
@@ -3547,6 +3826,9 @@ func (o ESDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LastSeen) {
 		toSerialize["lastSeen"] = o.LastSeen
+	}
+	if !IsNil(o.LatestVersion) {
+		toSerialize["latestVersion"] = o.LatestVersion
 	}
 	if !IsNil(o.LedSetting) {
 		toSerialize["ledSetting"] = o.LedSetting
@@ -3577,6 +3859,9 @@ func (o ESDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ManagerMark) {
 		toSerialize["managerMark"] = o.ManagerMark
+	}
+	if !IsNil(o.MaxAge) {
+		toSerialize["maxAge"] = o.MaxAge
 	}
 	if !IsNil(o.MemUtil) {
 		toSerialize["memUtil"] = o.MemUtil
@@ -3641,6 +3926,9 @@ func (o ESDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RememberDevice) {
 		toSerialize["rememberDevice"] = o.RememberDevice
 	}
+	if !IsNil(o.ReplaceDeviceInfo) {
+		toSerialize["replaceDeviceInfo"] = o.ReplaceDeviceInfo
+	}
 	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
 	}
@@ -3680,6 +3968,9 @@ func (o ESDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SupportAnomaly) {
 		toSerialize["supportAnomaly"] = o.SupportAnomaly
 	}
+	if !IsNil(o.SupportAutoAddOuiBasedVlan) {
+		toSerialize["supportAutoAddOuiBasedVlan"] = o.SupportAutoAddOuiBasedVlan
+	}
 	if !IsNil(o.SupportCableTest) {
 		toSerialize["supportCableTest"] = o.SupportCableTest
 	}
@@ -3715,6 +4006,9 @@ func (o ESDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TerminalPrefix) {
 		toSerialize["terminalPrefix"] = o.TerminalPrefix
+	}
+	if !IsNil(o.TxHoldCount) {
+		toSerialize["txHoldCount"] = o.TxHoldCount
 	}
 	if !IsNil(o.TxRate) {
 		toSerialize["txRate"] = o.TxRate

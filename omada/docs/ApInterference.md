@@ -4,12 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NearestAp** | Pointer to **string** | The AP name of the strongest signal | [optional] 
-**InterUtil** | Pointer to **int32** | AP interference percentage | [optional] 
-**Mac** | Pointer to **string** | AP MAC | [optional] 
-**Model** | Pointer to **string** | Device model | [optional] 
-**ModelVersion** | Pointer to **string** | Device model version | [optional] 
-**Name** | Pointer to **string** | AP name | [optional] 
+**Interferences2g** | Pointer to [**[]ApInterference**](ApInterference.md) | List of 2G interferences. | [optional] 
+**Interferences5g** | Pointer to [**[]ApInterference**](ApInterference.md) | List of 5G interferences. | [optional] 
+**Interferences6g** | Pointer to [**[]ApInterference**](ApInterference.md) | List of 6G interferences. | [optional] 
 
 ## Methods
 
@@ -30,155 +27,80 @@ NewApInterferenceWithDefaults instantiates a new ApInterference object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetNearestAp
+### GetInterferences2g
 
-`func (o *ApInterference) GetNearestAp() string`
+`func (o *ApInterference) GetInterferences2g() []ApInterference`
 
-GetNearestAp returns the NearestAp field if non-nil, zero value otherwise.
+GetInterferences2g returns the Interferences2g field if non-nil, zero value otherwise.
 
-### GetNearestApOk
+### GetInterferences2gOk
 
-`func (o *ApInterference) GetNearestApOk() (*string, bool)`
+`func (o *ApInterference) GetInterferences2gOk() (*[]ApInterference, bool)`
 
-GetNearestApOk returns a tuple with the NearestAp field if it's non-nil, zero value otherwise
+GetInterferences2gOk returns a tuple with the Interferences2g field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetNearestAp
+### SetInterferences2g
 
-`func (o *ApInterference) SetNearestAp(v string)`
+`func (o *ApInterference) SetInterferences2g(v []ApInterference)`
 
-SetNearestAp sets NearestAp field to given value.
+SetInterferences2g sets Interferences2g field to given value.
 
-### HasNearestAp
+### HasInterferences2g
 
-`func (o *ApInterference) HasNearestAp() bool`
+`func (o *ApInterference) HasInterferences2g() bool`
 
-HasNearestAp returns a boolean if a field has been set.
+HasInterferences2g returns a boolean if a field has been set.
 
-### GetInterUtil
+### GetInterferences5g
 
-`func (o *ApInterference) GetInterUtil() int32`
+`func (o *ApInterference) GetInterferences5g() []ApInterference`
 
-GetInterUtil returns the InterUtil field if non-nil, zero value otherwise.
+GetInterferences5g returns the Interferences5g field if non-nil, zero value otherwise.
 
-### GetInterUtilOk
+### GetInterferences5gOk
 
-`func (o *ApInterference) GetInterUtilOk() (*int32, bool)`
+`func (o *ApInterference) GetInterferences5gOk() (*[]ApInterference, bool)`
 
-GetInterUtilOk returns a tuple with the InterUtil field if it's non-nil, zero value otherwise
+GetInterferences5gOk returns a tuple with the Interferences5g field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInterUtil
+### SetInterferences5g
 
-`func (o *ApInterference) SetInterUtil(v int32)`
+`func (o *ApInterference) SetInterferences5g(v []ApInterference)`
 
-SetInterUtil sets InterUtil field to given value.
+SetInterferences5g sets Interferences5g field to given value.
 
-### HasInterUtil
+### HasInterferences5g
 
-`func (o *ApInterference) HasInterUtil() bool`
+`func (o *ApInterference) HasInterferences5g() bool`
 
-HasInterUtil returns a boolean if a field has been set.
+HasInterferences5g returns a boolean if a field has been set.
 
-### GetMac
+### GetInterferences6g
 
-`func (o *ApInterference) GetMac() string`
+`func (o *ApInterference) GetInterferences6g() []ApInterference`
 
-GetMac returns the Mac field if non-nil, zero value otherwise.
+GetInterferences6g returns the Interferences6g field if non-nil, zero value otherwise.
 
-### GetMacOk
+### GetInterferences6gOk
 
-`func (o *ApInterference) GetMacOk() (*string, bool)`
+`func (o *ApInterference) GetInterferences6gOk() (*[]ApInterference, bool)`
 
-GetMacOk returns a tuple with the Mac field if it's non-nil, zero value otherwise
+GetInterferences6gOk returns a tuple with the Interferences6g field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMac
+### SetInterferences6g
 
-`func (o *ApInterference) SetMac(v string)`
+`func (o *ApInterference) SetInterferences6g(v []ApInterference)`
 
-SetMac sets Mac field to given value.
+SetInterferences6g sets Interferences6g field to given value.
 
-### HasMac
+### HasInterferences6g
 
-`func (o *ApInterference) HasMac() bool`
+`func (o *ApInterference) HasInterferences6g() bool`
 
-HasMac returns a boolean if a field has been set.
-
-### GetModel
-
-`func (o *ApInterference) GetModel() string`
-
-GetModel returns the Model field if non-nil, zero value otherwise.
-
-### GetModelOk
-
-`func (o *ApInterference) GetModelOk() (*string, bool)`
-
-GetModelOk returns a tuple with the Model field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModel
-
-`func (o *ApInterference) SetModel(v string)`
-
-SetModel sets Model field to given value.
-
-### HasModel
-
-`func (o *ApInterference) HasModel() bool`
-
-HasModel returns a boolean if a field has been set.
-
-### GetModelVersion
-
-`func (o *ApInterference) GetModelVersion() string`
-
-GetModelVersion returns the ModelVersion field if non-nil, zero value otherwise.
-
-### GetModelVersionOk
-
-`func (o *ApInterference) GetModelVersionOk() (*string, bool)`
-
-GetModelVersionOk returns a tuple with the ModelVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModelVersion
-
-`func (o *ApInterference) SetModelVersion(v string)`
-
-SetModelVersion sets ModelVersion field to given value.
-
-### HasModelVersion
-
-`func (o *ApInterference) HasModelVersion() bool`
-
-HasModelVersion returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *ApInterference) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ApInterference) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ApInterference) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *ApInterference) HasName() bool`
-
-HasName returns a boolean if a field has been set.
+HasInterferences6g returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

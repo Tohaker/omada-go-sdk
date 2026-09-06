@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**ClearLocalUserDynamicMac**](LocalUserAPI.md#clearlocaluserdynamicmac) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id}/clear-dynamic-mac | Clear dynamic mac
 [**CreateLocalUser**](LocalUserAPI.md#createlocaluser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers | Create a new local user
 [**DeleteLocalUser**](LocalUserAPI.md#deletelocaluser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Delete an existing localuser
+[**DeleteSelectedLocalUsers**](LocalUserAPI.md#deleteselectedlocalusers) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/batch/delete | Batch delete local users
 [**DownloadLocalUsers**](LocalUserAPI.md#downloadlocalusers) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/files/hotspot/local-users | Download local user file (excel or csv) by localhost
 [**GetLocalUser**](LocalUserAPI.md#getlocaluser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Get a local user for given localuserId
 [**GetLocalUsers**](LocalUserAPI.md#getlocalusers) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers | Get local user list
@@ -38,7 +39,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	id := "id_example" // string | id
+	id := "id_example" // string | Local user ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -60,7 +61,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**id** | **string** | id | 
+**id** | **string** | Local user ID | 
 
 ### Other Parameters
 
@@ -235,6 +236,81 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteSelectedLocalUsers
+
+> OperationResponseWithoutResult DeleteSelectedLocalUsers(ctx, omadacId, siteId).SelectLocalUsersOpenApiVO(selectLocalUsersOpenApiVO).Execute()
+
+Batch delete local users
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	selectLocalUsersOpenApiVO := *openapiclient.NewSelectLocalUsersOpenApiVO(int32(123)) // SelectLocalUsersOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LocalUserAPI.DeleteSelectedLocalUsers(context.Background(), omadacId, siteId).SelectLocalUsersOpenApiVO(selectLocalUsersOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LocalUserAPI.DeleteSelectedLocalUsers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteSelectedLocalUsers`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `LocalUserAPI.DeleteSelectedLocalUsers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteSelectedLocalUsersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **selectLocalUsersOpenApiVO** | [**SelectLocalUsersOpenApiVO**](SelectLocalUsersOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -501,7 +577,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	id := "id_example" // string | id
+	id := "id_example" // string | Local user ID
 	modifyLocalUserOpenApiVO := *openapiclient.NewModifyLocalUserOpenApiVO(int32(123), false, int64(123), int32(123), "Password_example", []string{"Portals_example"}, *openapiclient.NewRateLimitOpenApiVO(int32(123)), false) // ModifyLocalUserOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -524,7 +600,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**id** | **string** | id | 
+**id** | **string** | Local user ID | 
 
 ### Other Parameters
 

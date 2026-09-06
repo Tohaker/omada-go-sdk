@@ -67,7 +67,7 @@ type LanProfileInfoOpenApiVO struct {
 	NativeNetworkId *string `json:"nativeNetworkId,omitempty"`
 	// network Tags configuration mode should be a value as follows: 0:allow all, 1:block all, 2:custom
 	NetworkTagsSetting int32 `json:"networkTagsSetting"`
-	// PoE should be a value as follows: 0: on, 1: off, 2: \"do not modify\"
+	// PoE should be a value as follows: 0: off, 1: on, 2: \"do not modify\"
 	Poe int32 `json:"poe"`
 	// Port-isolation enable status
 	PortIsolationEnable bool `json:"portIsolationEnable"`

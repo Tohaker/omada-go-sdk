@@ -28,12 +28,12 @@ type GatewayTemplateAPI interface {
 	Get gateway template info<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39507  -  Gateway mirroring port reaches max limit.<br/>-39706  -  Please choose at least one port or LAG to be mirrored.<br/>-39718  -  Mirrored ports contain invalid port.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
 	@return GatewayTemplateAPIGetGatewayInfoRequest
 	*/
-	GetGatewayInfo(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIGetGatewayInfoRequest
+	GetGatewayInfo(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIGetGatewayInfoRequest
 
 	// GetGatewayInfoExecute executes the request
 	//  @return OperationResponseGatewayTemplateInfo
@@ -45,12 +45,12 @@ type GatewayTemplateAPI interface {
 	Get gateway template port info<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
 	@return GatewayTemplateAPIGetPortsTemplateRequest
 	*/
-	GetPortsTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIGetPortsTemplateRequest
+	GetPortsTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIGetPortsTemplateRequest
 
 	// GetPortsTemplateExecute executes the request
 	//  @return OperationResponseListOsgPortInfoOpenApiVO
@@ -79,12 +79,12 @@ type GatewayTemplateAPI interface {
 	Modify gateway template advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
 	@return GatewayTemplateAPIModifyConfigAdvancedTemplateRequest
 	*/
-	ModifyConfigAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigAdvancedTemplateRequest
+	ModifyConfigAdvancedTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigAdvancedTemplateRequest
 
 	// ModifyConfigAdvancedTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -96,12 +96,12 @@ type GatewayTemplateAPI interface {
 	Modify gateway template common advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
 	@return GatewayTemplateAPIModifyConfigCommonAdvancedTemplateRequest
 	*/
-	ModifyConfigCommonAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigCommonAdvancedTemplateRequest
+	ModifyConfigCommonAdvancedTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigCommonAdvancedTemplateRequest
 
 	// ModifyConfigCommonAdvancedTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -113,12 +113,12 @@ type GatewayTemplateAPI interface {
 	Modify gateway template general config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
 	@return GatewayTemplateAPIModifyConfigGeneralTemplateRequest
 	*/
-	ModifyConfigGeneralTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigGeneralTemplateRequest
+	ModifyConfigGeneralTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigGeneralTemplateRequest
 
 	// ModifyConfigGeneralTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -130,12 +130,12 @@ type GatewayTemplateAPI interface {
 	Modify gateway template radios config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
 	@return GatewayTemplateAPIModifyConfigRadiosTemplateRequest
 	*/
-	ModifyConfigRadiosTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigRadiosTemplateRequest
+	ModifyConfigRadiosTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigRadiosTemplateRequest
 
 	// ModifyConfigRadiosTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -147,12 +147,12 @@ type GatewayTemplateAPI interface {
 	Modify gateway template services config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
 	@return GatewayTemplateAPIModifyConfigServicesTemplateRequest
 	*/
-	ModifyConfigServicesTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigServicesTemplateRequest
+	ModifyConfigServicesTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigServicesTemplateRequest
 
 	// ModifyConfigServicesTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -164,12 +164,12 @@ type GatewayTemplateAPI interface {
 	Modify gateway template wireless advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
 	@return GatewayTemplateAPIModifyConfigWirelessAdvancedTemplateRequest
 	*/
-	ModifyConfigWirelessAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigWirelessAdvancedTemplateRequest
+	ModifyConfigWirelessAdvancedTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigWirelessAdvancedTemplateRequest
 
 	// ModifyConfigWirelessAdvancedTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -181,12 +181,12 @@ type GatewayTemplateAPI interface {
 	Modify gateway template wlans config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33221  -  The SSID to be edited does not exist.<br/>-33222  -  The SSID should contain 1-32 characters.<br/>-33223  -  The security key can only contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-39306  -  This WLAN group does not exist.<br/>-39307  -  Failed to add this AP to the WLAN group because this AP is not in the site of the WLAN group.<br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param omadacId omadacId
 	@return GatewayTemplateAPIModifyConfigWlansTemplateRequest
 	*/
-	ModifyConfigWlansTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigWlansTemplateRequest
+	ModifyConfigWlansTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigWlansTemplateRequest
 
 	// ModifyConfigWlansTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -198,13 +198,13 @@ type GatewayTemplateAPI interface {
 	Modify gateway template port config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39507  -  Gateway mirroring port reaches max limit.<br/>-39706  -  Please choose at least one port or LAG to be mirrored.<br/>-39718  -  Mirrored ports contain invalid port.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
 	@param port Gateway port number
-	@param omadacId omadacId
 	@return GatewayTemplateAPIModifyPortConfigRequest
 	*/
-	ModifyPortConfig(ctx context.Context, siteTemplateId string, deviceTemplateId string, port string, omadacId string) GatewayTemplateAPIModifyPortConfigRequest
+	ModifyPortConfig(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, port string) GatewayTemplateAPIModifyPortConfigRequest
 
 	// ModifyPortConfigExecute executes the request
 	//  @return OperationResponseGatewayTemplatePortSettingConfig
@@ -253,9 +253,9 @@ type GatewayTemplateAPIService service
 type GatewayTemplateAPIGetGatewayInfoRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
-	omadacId string
 }
 
 func (r GatewayTemplateAPIGetGatewayInfoRequest) Execute() (*OperationResponseGatewayTemplateInfo, *http.Response, error) {
@@ -268,18 +268,18 @@ GetGatewayInfo Get gateway template info
 Get gateway template info<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39507  -  Gateway mirroring port reaches max limit.<br/>-39706  -  Please choose at least one port or LAG to be mirrored.<br/>-39718  -  Mirrored ports contain invalid port.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param omadacId omadacId
  @return GatewayTemplateAPIGetGatewayInfoRequest
 */
-func (a *GatewayTemplateAPIService) GetGatewayInfo(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIGetGatewayInfoRequest {
+func (a *GatewayTemplateAPIService) GetGatewayInfo(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIGetGatewayInfoRequest {
 	return GatewayTemplateAPIGetGatewayInfoRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
 	}
 }
 
@@ -299,9 +299,9 @@ func (a *GatewayTemplateAPIService) GetGatewayInfoExecute(r GatewayTemplateAPIGe
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -378,9 +378,9 @@ func (a *GatewayTemplateAPIService) GetGatewayInfoExecute(r GatewayTemplateAPIGe
 type GatewayTemplateAPIGetPortsTemplateRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
-	omadacId string
 }
 
 func (r GatewayTemplateAPIGetPortsTemplateRequest) Execute() (*OperationResponseListOsgPortInfoOpenApiVO, *http.Response, error) {
@@ -393,18 +393,18 @@ GetPortsTemplate Get gateway template port info
 Get gateway template port info<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param omadacId omadacId
  @return GatewayTemplateAPIGetPortsTemplateRequest
 */
-func (a *GatewayTemplateAPIService) GetPortsTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIGetPortsTemplateRequest {
+func (a *GatewayTemplateAPIService) GetPortsTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIGetPortsTemplateRequest {
 	return GatewayTemplateAPIGetPortsTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
 	}
 }
 
@@ -424,9 +424,9 @@ func (a *GatewayTemplateAPIService) GetPortsTemplateExecute(r GatewayTemplateAPI
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/config"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -628,9 +628,9 @@ func (a *GatewayTemplateAPIService) GetSsidDetailTemplate1Execute(r GatewayTempl
 type GatewayTemplateAPIModifyConfigAdvancedTemplateRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
-	omadacId string
 	osgConfigAdvancedOpenApiVO *OsgConfigAdvancedOpenApiVO
 }
 
@@ -649,18 +649,18 @@ ModifyConfigAdvancedTemplate Modify gateway template advanced config
 Modify gateway template advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param omadacId omadacId
  @return GatewayTemplateAPIModifyConfigAdvancedTemplateRequest
 */
-func (a *GatewayTemplateAPIService) ModifyConfigAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigAdvancedTemplateRequest {
+func (a *GatewayTemplateAPIService) ModifyConfigAdvancedTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigAdvancedTemplateRequest {
 	return GatewayTemplateAPIModifyConfigAdvancedTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
 	}
 }
 
@@ -680,9 +680,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigAdvancedTemplateExecute(r Gatewa
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -764,9 +764,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigAdvancedTemplateExecute(r Gatewa
 type GatewayTemplateAPIModifyConfigCommonAdvancedTemplateRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
-	omadacId string
 	osgConfigCommonAdvancedOpenApiVO *OsgConfigCommonAdvancedOpenApiVO
 }
 
@@ -785,18 +785,18 @@ ModifyConfigCommonAdvancedTemplate Modify gateway template common advanced confi
 Modify gateway template common advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param omadacId omadacId
  @return GatewayTemplateAPIModifyConfigCommonAdvancedTemplateRequest
 */
-func (a *GatewayTemplateAPIService) ModifyConfigCommonAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigCommonAdvancedTemplateRequest {
+func (a *GatewayTemplateAPIService) ModifyConfigCommonAdvancedTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigCommonAdvancedTemplateRequest {
 	return GatewayTemplateAPIModifyConfigCommonAdvancedTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
 	}
 }
 
@@ -816,9 +816,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigCommonAdvancedTemplateExecute(r 
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/common"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -900,9 +900,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigCommonAdvancedTemplateExecute(r 
 type GatewayTemplateAPIModifyConfigGeneralTemplateRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
-	omadacId string
 	osgGeneralConfigOpenApiV2VO *OsgGeneralConfigOpenApiV2VO
 }
 
@@ -921,18 +921,18 @@ ModifyConfigGeneralTemplate Modify gateway template general config
 Modify gateway template general config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param omadacId omadacId
  @return GatewayTemplateAPIModifyConfigGeneralTemplateRequest
 */
-func (a *GatewayTemplateAPIService) ModifyConfigGeneralTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigGeneralTemplateRequest {
+func (a *GatewayTemplateAPIService) ModifyConfigGeneralTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigGeneralTemplateRequest {
 	return GatewayTemplateAPIModifyConfigGeneralTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
 	}
 }
 
@@ -952,9 +952,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigGeneralTemplateExecute(r Gateway
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/general"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1036,9 +1036,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigGeneralTemplateExecute(r Gateway
 type GatewayTemplateAPIModifyConfigRadiosTemplateRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
-	omadacId string
 	osgConfigRadiosopenApiVO *OsgConfigRadiosopenApiVO
 }
 
@@ -1057,18 +1057,18 @@ ModifyConfigRadiosTemplate Modify gateway template radios config
 Modify gateway template radios config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param omadacId omadacId
  @return GatewayTemplateAPIModifyConfigRadiosTemplateRequest
 */
-func (a *GatewayTemplateAPIService) ModifyConfigRadiosTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigRadiosTemplateRequest {
+func (a *GatewayTemplateAPIService) ModifyConfigRadiosTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigRadiosTemplateRequest {
 	return GatewayTemplateAPIModifyConfigRadiosTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
 	}
 }
 
@@ -1088,9 +1088,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigRadiosTemplateExecute(r GatewayT
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/radios"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1172,9 +1172,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigRadiosTemplateExecute(r GatewayT
 type GatewayTemplateAPIModifyConfigServicesTemplateRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
-	omadacId string
 	osgConfigServicesOpenApiVO *OsgConfigServicesOpenApiVO
 }
 
@@ -1193,18 +1193,18 @@ ModifyConfigServicesTemplate Modify gateway template services config
 Modify gateway template services config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param omadacId omadacId
  @return GatewayTemplateAPIModifyConfigServicesTemplateRequest
 */
-func (a *GatewayTemplateAPIService) ModifyConfigServicesTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigServicesTemplateRequest {
+func (a *GatewayTemplateAPIService) ModifyConfigServicesTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigServicesTemplateRequest {
 	return GatewayTemplateAPIModifyConfigServicesTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
 	}
 }
 
@@ -1224,9 +1224,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigServicesTemplateExecute(r Gatewa
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/services"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1308,9 +1308,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigServicesTemplateExecute(r Gatewa
 type GatewayTemplateAPIModifyConfigWirelessAdvancedTemplateRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
-	omadacId string
 	osgConfigWirelessAdvancedOpenApiVO *OsgConfigWirelessAdvancedOpenApiVO
 }
 
@@ -1329,18 +1329,18 @@ ModifyConfigWirelessAdvancedTemplate Modify gateway template wireless advanced c
 Modify gateway template wireless advanced config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param omadacId omadacId
  @return GatewayTemplateAPIModifyConfigWirelessAdvancedTemplateRequest
 */
-func (a *GatewayTemplateAPIService) ModifyConfigWirelessAdvancedTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigWirelessAdvancedTemplateRequest {
+func (a *GatewayTemplateAPIService) ModifyConfigWirelessAdvancedTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigWirelessAdvancedTemplateRequest {
 	return GatewayTemplateAPIModifyConfigWirelessAdvancedTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
 	}
 }
 
@@ -1360,9 +1360,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigWirelessAdvancedTemplateExecute(
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/advanced/wireless"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1444,9 +1444,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigWirelessAdvancedTemplateExecute(
 type GatewayTemplateAPIModifyConfigWlansTemplateRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
-	omadacId string
 	osgConfigWlansOpenApiVO *OsgConfigWlansOpenApiVO
 }
 
@@ -1465,18 +1465,18 @@ ModifyConfigWlansTemplate Modify gateway template wlans config
 Modify gateway template wlans config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33221  -  The SSID to be edited does not exist.<br/>-33222  -  The SSID should contain 1-32 characters.<br/>-33223  -  The security key can only contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-39306  -  This WLAN group does not exist.<br/>-39307  -  Failed to add this AP to the WLAN group because this AP is not in the site of the WLAN group.<br/>-39501  -  This gateway does not exist.<br/>-44434  -  The device template does not contain this configuration option and can not be modified.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param omadacId omadacId
  @return GatewayTemplateAPIModifyConfigWlansTemplateRequest
 */
-func (a *GatewayTemplateAPIService) ModifyConfigWlansTemplate(ctx context.Context, siteTemplateId string, deviceTemplateId string, omadacId string) GatewayTemplateAPIModifyConfigWlansTemplateRequest {
+func (a *GatewayTemplateAPIService) ModifyConfigWlansTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) GatewayTemplateAPIModifyConfigWlansTemplateRequest {
 	return GatewayTemplateAPIModifyConfigWlansTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
-		omadacId: omadacId,
 	}
 }
 
@@ -1496,9 +1496,9 @@ func (a *GatewayTemplateAPIService) ModifyConfigWlansTemplateExecute(r GatewayTe
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/config/wlans"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1580,10 +1580,10 @@ func (a *GatewayTemplateAPIService) ModifyConfigWlansTemplateExecute(r GatewayTe
 type GatewayTemplateAPIModifyPortConfigRequest struct {
 	ctx context.Context
 	ApiService GatewayTemplateAPI
+	omadacId string
 	siteTemplateId string
 	deviceTemplateId string
 	port string
-	omadacId string
 	gatewayTemplatePortSettingConfig *GatewayTemplatePortSettingConfig
 }
 
@@ -1602,20 +1602,20 @@ ModifyPortConfig Modify gateway template port config
 Modify gateway template port config<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39507  -  Gateway mirroring port reaches max limit.<br/>-39706  -  Please choose at least one port or LAG to be mirrored.<br/>-39718  -  Mirrored ports contain invalid port.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
  @param port Gateway port number
- @param omadacId omadacId
  @return GatewayTemplateAPIModifyPortConfigRequest
 */
-func (a *GatewayTemplateAPIService) ModifyPortConfig(ctx context.Context, siteTemplateId string, deviceTemplateId string, port string, omadacId string) GatewayTemplateAPIModifyPortConfigRequest {
+func (a *GatewayTemplateAPIService) ModifyPortConfig(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, port string) GatewayTemplateAPIModifyPortConfigRequest {
 	return GatewayTemplateAPIModifyPortConfigRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
 		deviceTemplateId: deviceTemplateId,
 		port: port,
-		omadacId: omadacId,
 	}
 }
 
@@ -1635,10 +1635,10 @@ func (a *GatewayTemplateAPIService) ModifyPortConfigExecute(r GatewayTemplateAPI
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/gatewaytemplates/{deviceTemplateId}/ports/{port}/config"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"port"+"}", url.PathEscape(parameterValueToString(r.port, "port")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

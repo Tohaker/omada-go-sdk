@@ -17,9 +17,11 @@ import (
 // checks if the OswFecCapVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswFecCapVO{}
 
-// OswFecCapVO struct for OswFecCapVO
+// OswFecCapVO All LinkSpeed&FECMode combinations supported by the port
 type OswFecCapVO struct {
+	// FEC mode, 0 - reserved, 1 - FEC-OFF, 2 - FEC-RS528, 3 - FEC-RS544, 4 - FEC-AUTO, 5 - FEC-BASER
 	FecMode *int32 `json:"fecMode,omitempty"`
+	// speed of the link
 	LinkSpeed *int32 `json:"linkSpeed,omitempty"`
 }
 

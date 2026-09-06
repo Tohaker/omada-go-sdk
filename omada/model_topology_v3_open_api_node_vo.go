@@ -114,6 +114,10 @@ type TopologyV3OpenApiNodeVO struct {
 	Role *int32 `json:"role,omitempty"`
 	// Device Show Model
 	ShowModel *string `json:"showModel,omitempty"`
+	// Special device model,for example:EAP225-Outdoor-1a20a950b8d950e8
+	SpecialModel *string `json:"specialModel,omitempty"`
+	// SpecificOtherType for other device
+	SpecificOtherType *string `json:"specificOtherType,omitempty"`
 	// SpecificType for multiSwitchNode, 0 means mlag node and 1 means vrrp node
 	SpecificType *int32 `json:"specificType,omitempty"`
 	// Whether The Switch Device Is Stack Group Or Not
@@ -1740,6 +1744,70 @@ func (o *TopologyV3OpenApiNodeVO) SetShowModel(v string) {
 	o.ShowModel = &v
 }
 
+// GetSpecialModel returns the SpecialModel field value if set, zero value otherwise.
+func (o *TopologyV3OpenApiNodeVO) GetSpecialModel() string {
+	if o == nil || IsNil(o.SpecialModel) {
+		var ret string
+		return ret
+	}
+	return *o.SpecialModel
+}
+
+// GetSpecialModelOk returns a tuple with the SpecialModel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyV3OpenApiNodeVO) GetSpecialModelOk() (*string, bool) {
+	if o == nil || IsNil(o.SpecialModel) {
+		return nil, false
+	}
+	return o.SpecialModel, true
+}
+
+// HasSpecialModel returns a boolean if a field has been set.
+func (o *TopologyV3OpenApiNodeVO) HasSpecialModel() bool {
+	if o != nil && !IsNil(o.SpecialModel) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpecialModel gets a reference to the given string and assigns it to the SpecialModel field.
+func (o *TopologyV3OpenApiNodeVO) SetSpecialModel(v string) {
+	o.SpecialModel = &v
+}
+
+// GetSpecificOtherType returns the SpecificOtherType field value if set, zero value otherwise.
+func (o *TopologyV3OpenApiNodeVO) GetSpecificOtherType() string {
+	if o == nil || IsNil(o.SpecificOtherType) {
+		var ret string
+		return ret
+	}
+	return *o.SpecificOtherType
+}
+
+// GetSpecificOtherTypeOk returns a tuple with the SpecificOtherType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyV3OpenApiNodeVO) GetSpecificOtherTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.SpecificOtherType) {
+		return nil, false
+	}
+	return o.SpecificOtherType, true
+}
+
+// HasSpecificOtherType returns a boolean if a field has been set.
+func (o *TopologyV3OpenApiNodeVO) HasSpecificOtherType() bool {
+	if o != nil && !IsNil(o.SpecificOtherType) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpecificOtherType gets a reference to the given string and assigns it to the SpecificOtherType field.
+func (o *TopologyV3OpenApiNodeVO) SetSpecificOtherType(v string) {
+	o.SpecificOtherType = &v
+}
+
 // GetSpecificType returns the SpecificType field value if set, zero value otherwise.
 func (o *TopologyV3OpenApiNodeVO) GetSpecificType() int32 {
 	if o == nil || IsNil(o.SpecificType) {
@@ -2568,6 +2636,12 @@ func (o TopologyV3OpenApiNodeVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ShowModel) {
 		toSerialize["showModel"] = o.ShowModel
+	}
+	if !IsNil(o.SpecialModel) {
+		toSerialize["specialModel"] = o.SpecialModel
+	}
+	if !IsNil(o.SpecificOtherType) {
+		toSerialize["specificOtherType"] = o.SpecificOtherType
 	}
 	if !IsNil(o.SpecificType) {
 		toSerialize["specificType"] = o.SpecificType

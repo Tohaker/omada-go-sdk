@@ -1340,7 +1340,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	virtualWanConfigOpenApiVO := *openapiclient.NewVirtualWanConfigOpenApiVO("Name_example", "PhysicalWanId_example", *openapiclient.NewVirtualWanIpv4SettingConfigOpenApiVO("Proto_example", int32(123))) // VirtualWanConfigOpenApiVO | 
+	virtualWanConfigOpenApiVO := *openapiclient.NewVirtualWanConfigOpenApiVO("Name_example", "PhysicalWanId_example", *openapiclient.NewVirtualWanIpv4SettingConfigOpenApiVO("Proto_example", false, int32(123))) // VirtualWanConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5441,7 +5441,7 @@ func main() {
 	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	profileId := "profileId_example" // string | 
+	profileId := "profileId_example" // string | Switch profile ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5463,7 +5463,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**profileId** | **string** |  | 
+**profileId** | **string** | Switch profile ID | 
 
 ### Other Parameters
 
@@ -6980,7 +6980,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	virtualWanId := "virtualWanId_example" // string | Virtual WAN ID
-	virtualWanConfigOpenApiVO := *openapiclient.NewVirtualWanConfigOpenApiVO("Name_example", "PhysicalWanId_example", *openapiclient.NewVirtualWanIpv4SettingConfigOpenApiVO("Proto_example", int32(123))) // VirtualWanConfigOpenApiVO | 
+	virtualWanConfigOpenApiVO := *openapiclient.NewVirtualWanConfigOpenApiVO("Name_example", "PhysicalWanId_example", *openapiclient.NewVirtualWanIpv4SettingConfigOpenApiVO("Proto_example", false, int32(123))) // VirtualWanConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

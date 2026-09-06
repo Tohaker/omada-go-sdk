@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Action** | **int32** | Action should be a value as follows: 0: drop; 1: shutdown | 
 **Broadcast** | Pointer to **int32** | Broadcast | [optional] 
 **BroadcastEnable** | **bool** | Indicates whether broadcast is enabled | 
+**LimitRange** | Pointer to [**OswStormCtrlLimitRangeVO**](OswStormCtrlLimitRangeVO.md) |  | [optional] 
 **Multicast** | Pointer to **int32** | Multicast | [optional] 
 **MulticastEnable** | **bool** | Indicates whether multicast is enabled | 
 **RateMode** | Pointer to **int32** | RateMode should be a value as follows: 0: ratio; 1: kbps | [optional] 
@@ -97,6 +98,31 @@ and a boolean to check if the value has been set.
 
 SetBroadcastEnable sets BroadcastEnable field to given value.
 
+
+### GetLimitRange
+
+`func (o *OswStormCtrlVO) GetLimitRange() OswStormCtrlLimitRangeVO`
+
+GetLimitRange returns the LimitRange field if non-nil, zero value otherwise.
+
+### GetLimitRangeOk
+
+`func (o *OswStormCtrlVO) GetLimitRangeOk() (*OswStormCtrlLimitRangeVO, bool)`
+
+GetLimitRangeOk returns a tuple with the LimitRange field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLimitRange
+
+`func (o *OswStormCtrlVO) SetLimitRange(v OswStormCtrlLimitRangeVO)`
+
+SetLimitRange sets LimitRange field to given value.
+
+### HasLimitRange
+
+`func (o *OswStormCtrlVO) HasLimitRange() bool`
+
+HasLimitRange returns a boolean if a field has been set.
 
 ### GetMulticast
 

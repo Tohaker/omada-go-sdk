@@ -8,10 +8,12 @@ Name | Type | Description | Notes
 **AutoSelect** | Pointer to **bool** | Whether the port needs to be automatically selected. | [optional] 
 **ConfigMlagDad** | Pointer to **bool** | Whether the port is configured as a mlag dad port. | [optional] 
 **ConfigMlagPeerLink** | Pointer to **bool** | Whether the port is configured as a mlag peer-link port. | [optional] 
+**ControllerLinkedPort** | Pointer to **bool** | Whether the port is connected to the Controller. | [optional] 
 **DefaultVlan** | Pointer to **int32** | The vlan of default network. | [optional] 
 **DownlinkDevices** | Pointer to [**[]DeviceBriefVO**](DeviceBriefVO.md) | The downlink devices of the port | [optional] 
 **EditEnable** | Pointer to **bool** | Whether the port is selectable. | [optional] 
 **Id** | Pointer to **int32** | port number, for example: 1 | [optional] 
+**IsCopper** | Pointer to **bool** | Whether the port is copper when the port is combo. | [optional] 
 **LagId** | Pointer to **int32** | Lag ID. It indicates the lag id of the port when the port is in a lag. | [optional] 
 **Mode** | Pointer to **int32** | Mode, 0:WAN,1:LAN; | [optional] 
 **Name** | Pointer to **string** | Name. | [optional] 
@@ -148,6 +150,31 @@ SetConfigMlagPeerLink sets ConfigMlagPeerLink field to given value.
 
 HasConfigMlagPeerLink returns a boolean if a field has been set.
 
+### GetControllerLinkedPort
+
+`func (o *SelectPortForVlanVO) GetControllerLinkedPort() bool`
+
+GetControllerLinkedPort returns the ControllerLinkedPort field if non-nil, zero value otherwise.
+
+### GetControllerLinkedPortOk
+
+`func (o *SelectPortForVlanVO) GetControllerLinkedPortOk() (*bool, bool)`
+
+GetControllerLinkedPortOk returns a tuple with the ControllerLinkedPort field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetControllerLinkedPort
+
+`func (o *SelectPortForVlanVO) SetControllerLinkedPort(v bool)`
+
+SetControllerLinkedPort sets ControllerLinkedPort field to given value.
+
+### HasControllerLinkedPort
+
+`func (o *SelectPortForVlanVO) HasControllerLinkedPort() bool`
+
+HasControllerLinkedPort returns a boolean if a field has been set.
+
 ### GetDefaultVlan
 
 `func (o *SelectPortForVlanVO) GetDefaultVlan() int32`
@@ -247,6 +274,31 @@ SetId sets Id field to given value.
 `func (o *SelectPortForVlanVO) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIsCopper
+
+`func (o *SelectPortForVlanVO) GetIsCopper() bool`
+
+GetIsCopper returns the IsCopper field if non-nil, zero value otherwise.
+
+### GetIsCopperOk
+
+`func (o *SelectPortForVlanVO) GetIsCopperOk() (*bool, bool)`
+
+GetIsCopperOk returns a tuple with the IsCopper field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCopper
+
+`func (o *SelectPortForVlanVO) SetIsCopper(v bool)`
+
+SetIsCopper sets IsCopper field to given value.
+
+### HasIsCopper
+
+`func (o *SelectPortForVlanVO) HasIsCopper() bool`
+
+HasIsCopper returns a boolean if a field has been set.
 
 ### GetLagId
 

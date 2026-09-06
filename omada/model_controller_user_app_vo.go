@@ -25,6 +25,7 @@ type ControllerUserAppVO struct {
 	Email *string `json:"email,omitempty"`
 	EndTime *int64 `json:"endTime,omitempty"`
 	Id *string `json:"id,omitempty"`
+	// Deprecated
 	IncidentNotification *bool `json:"incidentNotification,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OmadacId *string `json:"omadacId,omitempty"`
@@ -191,6 +192,7 @@ func (o *ControllerUserAppVO) SetId(v string) {
 }
 
 // GetIncidentNotification returns the IncidentNotification field value if set, zero value otherwise.
+// Deprecated
 func (o *ControllerUserAppVO) GetIncidentNotification() bool {
 	if o == nil || IsNil(o.IncidentNotification) {
 		var ret bool
@@ -201,6 +203,7 @@ func (o *ControllerUserAppVO) GetIncidentNotification() bool {
 
 // GetIncidentNotificationOk returns a tuple with the IncidentNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *ControllerUserAppVO) GetIncidentNotificationOk() (*bool, bool) {
 	if o == nil || IsNil(o.IncidentNotification) {
 		return nil, false
@@ -218,6 +221,7 @@ func (o *ControllerUserAppVO) HasIncidentNotification() bool {
 }
 
 // SetIncidentNotification gets a reference to the given bool and assigns it to the IncidentNotification field.
+// Deprecated
 func (o *ControllerUserAppVO) SetIncidentNotification(v bool) {
 	o.IncidentNotification = &v
 }

@@ -17,10 +17,12 @@ import (
 // checks if the CommonSubHealthInfoDetailVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CommonSubHealthInfoDetailVO{}
 
-// CommonSubHealthInfoDetailVO Error frame health info and score
+// CommonSubHealthInfoDetailVO Link error score health info and score (wired clients only)
 type CommonSubHealthInfoDetailVO struct {
 	// Average value of common dimension, such as cpu、memory
 	AverageNum *int32 `json:"averageNum,omitempty"`
+	// Incident information for this health dimension, null if no incidents
+	Incidents []AnomalyBriefCountVO `json:"incidents,omitempty"`
 	// List of common dimension value , such as cpu、memory
 	PastNums []TimeValueItemVO `json:"pastNums,omitempty"`
 	// Sub dimension health score
@@ -76,6 +78,38 @@ func (o *CommonSubHealthInfoDetailVO) HasAverageNum() bool {
 // SetAverageNum gets a reference to the given int32 and assigns it to the AverageNum field.
 func (o *CommonSubHealthInfoDetailVO) SetAverageNum(v int32) {
 	o.AverageNum = &v
+}
+
+// GetIncidents returns the Incidents field value if set, zero value otherwise.
+func (o *CommonSubHealthInfoDetailVO) GetIncidents() []AnomalyBriefCountVO {
+	if o == nil || IsNil(o.Incidents) {
+		var ret []AnomalyBriefCountVO
+		return ret
+	}
+	return o.Incidents
+}
+
+// GetIncidentsOk returns a tuple with the Incidents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CommonSubHealthInfoDetailVO) GetIncidentsOk() ([]AnomalyBriefCountVO, bool) {
+	if o == nil || IsNil(o.Incidents) {
+		return nil, false
+	}
+	return o.Incidents, true
+}
+
+// HasIncidents returns a boolean if a field has been set.
+func (o *CommonSubHealthInfoDetailVO) HasIncidents() bool {
+	if o != nil && !IsNil(o.Incidents) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidents gets a reference to the given []AnomalyBriefCountVO and assigns it to the Incidents field.
+func (o *CommonSubHealthInfoDetailVO) SetIncidents(v []AnomalyBriefCountVO) {
+	o.Incidents = v
 }
 
 // GetPastNums returns the PastNums field value if set, zero value otherwise.
@@ -186,6 +220,9 @@ func (o CommonSubHealthInfoDetailVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AverageNum) {
 		toSerialize["averageNum"] = o.AverageNum
+	}
+	if !IsNil(o.Incidents) {
+		toSerialize["incidents"] = o.Incidents
 	}
 	if !IsNil(o.PastNums) {
 		toSerialize["pastNums"] = o.PastNums

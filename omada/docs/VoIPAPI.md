@@ -1592,7 +1592,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	voiceId := "voiceId_example" // string | voiceId
+	voiceId := "voiceId_example" // string | Voice ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1614,7 +1614,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**voiceId** | **string** | voiceId | 
+**voiceId** | **string** | Voice ID | 
 
 ### Other Parameters
 

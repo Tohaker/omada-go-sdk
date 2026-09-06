@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ## GetSwitchList
 
-> OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO GetSwitchList(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Name(name).Execute()
+> OperationResponseGridVOOuiBasedVlanDeviceInfoVO GetSwitchList(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Name(name).Execute()
 
 Get switch list of supporting oui based vlan
 
@@ -506,7 +506,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OUIBasedVLANAPI.GetSwitchList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSwitchList`: OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO
+	// response from `GetSwitchList`: OperationResponseGridVOOuiBasedVlanDeviceInfoVO
 	fmt.Fprintf(os.Stdout, "Response from `OUIBasedVLANAPI.GetSwitchList`: %v\n", resp)
 }
 ```
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO**](OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO.md)
+[**OperationResponseGridVOOuiBasedVlanDeviceInfoVO**](OperationResponseGridVOOuiBasedVlanDeviceInfoVO.md)
 
 ### Authorization
 

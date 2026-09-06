@@ -24,7 +24,7 @@ type SiteStatisticInfo struct {
 	GatewayHealth *int32 `json:"gatewayHealth,omitempty"`
 	GatewayStatus *int32 `json:"gatewayStatus,omitempty"`
 	Id *string `json:"id,omitempty"`
-	IssueEvent *AnomalyStatVO `json:"issueEvent,omitempty"`
+	IssueEvent *SiteSettingAnomalyStatVO `json:"issueEvent,omitempty"`
 	Lan *bool `json:"lan,omitempty"`
 	LanDeviceConnectedNum *int64 `json:"lanDeviceConnectedNum,omitempty"`
 	LanDeviceDisconnectedNum *int64 `json:"lanDeviceDisconnectedNum,omitempty"`
@@ -229,9 +229,9 @@ func (o *SiteStatisticInfo) SetId(v string) {
 }
 
 // GetIssueEvent returns the IssueEvent field value if set, zero value otherwise.
-func (o *SiteStatisticInfo) GetIssueEvent() AnomalyStatVO {
+func (o *SiteStatisticInfo) GetIssueEvent() SiteSettingAnomalyStatVO {
 	if o == nil || IsNil(o.IssueEvent) {
-		var ret AnomalyStatVO
+		var ret SiteSettingAnomalyStatVO
 		return ret
 	}
 	return *o.IssueEvent
@@ -239,7 +239,7 @@ func (o *SiteStatisticInfo) GetIssueEvent() AnomalyStatVO {
 
 // GetIssueEventOk returns a tuple with the IssueEvent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SiteStatisticInfo) GetIssueEventOk() (*AnomalyStatVO, bool) {
+func (o *SiteStatisticInfo) GetIssueEventOk() (*SiteSettingAnomalyStatVO, bool) {
 	if o == nil || IsNil(o.IssueEvent) {
 		return nil, false
 	}
@@ -255,8 +255,8 @@ func (o *SiteStatisticInfo) HasIssueEvent() bool {
 	return false
 }
 
-// SetIssueEvent gets a reference to the given AnomalyStatVO and assigns it to the IssueEvent field.
-func (o *SiteStatisticInfo) SetIssueEvent(v AnomalyStatVO) {
+// SetIssueEvent gets a reference to the given SiteSettingAnomalyStatVO and assigns it to the IssueEvent field.
+func (o *SiteStatisticInfo) SetIssueEvent(v SiteSettingAnomalyStatVO) {
 	o.IssueEvent = &v
 }
 
