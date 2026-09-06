@@ -16,8 +16,8 @@ Method | HTTP request | Description
 [**CreateOuiProfile**](ProfilesAPI.md#createouiprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles | Create OUI profile
 [**CreatePPSKProfile**](ProfilesAPI.md#createppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile | Create PPSK profile
 [**CreatePPSKProfileV2**](ProfilesAPI.md#createppskprofilev2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/ppsk-profile | Create PPSK profile V2
-[**CreateRadiusProfile**](ProfilesAPI.md#createradiusprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Create a new Radius profile
-[**CreateRadiusUser**](ProfilesAPI.md#createradiususer) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Create a new Build-in Radius profile user
+[**CreateRadiusProfile**](ProfilesAPI.md#createradiusprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Create a new RADIUS profile
+[**CreateRadiusUser**](ProfilesAPI.md#createradiususer) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Create a new Build-in RADIUS profile user
 [**CreateRateLimitProfile**](ProfilesAPI.md#createratelimitprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Create rate limit profile
 [**CreateServiceType**](ProfilesAPI.md#createservicetype) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type | Create new Gateway QoS Service
 [**CreateTimeRangeProfile**](ProfilesAPI.md#createtimerangeprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Create time range profile
@@ -31,8 +31,8 @@ Method | HTTP request | Description
 [**DeleteOuiProfile**](ProfilesAPI.md#deleteouiprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/{ouiId} | Delete OUI Profile
 [**DeletePPSKProfile**](ProfilesAPI.md#deleteppskprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Delete PPSK profile
 [**DeletePSKsToPPSKProfile**](ProfilesAPI.md#deletepskstoppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId}/delete-psk | Delete PSKs to PPSK profile
-[**DeleteRadiusProfile**](ProfilesAPI.md#deleteradiusprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Delete an exist Radius profile
-[**DeleteRadiusUser**](ProfilesAPI.md#deleteradiususer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Delete an exist Build-in Radius profile user
+[**DeleteRadiusProfile**](ProfilesAPI.md#deleteradiusprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Delete an exist RADIUS profile
+[**DeleteRadiusUser**](ProfilesAPI.md#deleteradiususer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Delete an exist Build-in RADIUS profile user
 [**DeleteRateLimitProfile**](ProfilesAPI.md#deleteratelimitprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Delete rate limit profile
 [**DeleteServiceType**](ProfilesAPI.md#deleteservicetype) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Delete an existing Gateway QoS Service
 [**DeleteTimeRangeProfile**](ProfilesAPI.md#deletetimerangeprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Delete time range profile
@@ -47,8 +47,8 @@ Method | HTTP request | Description
 [**GetOuiProfileList**](ProfilesAPI.md#getouiprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles | Get OUI profile list
 [**GetPPSKProfileDetail**](ProfilesAPI.md#getppskprofiledetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Get PPSK profile detail
 [**GetPPSKProfiles**](ProfilesAPI.md#getppskprofiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profiles | Get PPSK profiles list
-[**GetRadiusProfileList**](ProfilesAPI.md#getradiusprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Get Radius profile list
-[**GetRadiusUserList**](ProfilesAPI.md#getradiususerlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Get Build-in Radius profile user list
+[**GetRadiusProfileList**](ProfilesAPI.md#getradiusprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Get RADIUS profile list
+[**GetRadiusUserList**](ProfilesAPI.md#getradiususerlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Get Build-in RADIUS profile user list
 [**GetRateLimitProfileList**](ProfilesAPI.md#getratelimitprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Get rate limit profile list
 [**GetServiceTypeSummary**](ProfilesAPI.md#getservicetypesummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type-summary | Get all Gateway QoS Service&#39;s ID and name info
 [**GetTimeRangeList**](ProfilesAPI.md#gettimerangelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Get time range profile list
@@ -63,8 +63,8 @@ Method | HTTP request | Description
 [**ModifyMdnsProfile**](ProfilesAPI.md#modifymdnsprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service/{id} | Modify an existing Bonjour Service
 [**ModifyOuiProfile**](ProfilesAPI.md#modifyouiprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/{ouiId} | Modify OUI Profile
 [**ModifyPPSKProfile**](ProfilesAPI.md#modifyppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Modify PPSK profile
-[**ModifyRadiusProfile**](ProfilesAPI.md#modifyradiusprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Modify an exist Radius profile
-[**ModifyRadiusUser**](ProfilesAPI.md#modifyradiususer) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Modify an exist Build-in Radius profile user
+[**ModifyRadiusProfile**](ProfilesAPI.md#modifyradiusprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Modify an exist RADIUS profile
+[**ModifyRadiusUser**](ProfilesAPI.md#modifyradiususer) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Modify an exist Build-in RADIUS profile user
 [**ModifyRateLimitProfile**](ProfilesAPI.md#modifyratelimitprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Modify rate limit profile
 [**ModifyServiceType**](ProfilesAPI.md#modifyservicetype) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Modify an existing Gateway QoS Service
 [**ModifyTimeRangeProfile**](ProfilesAPI.md#modifytimerangeprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Modify time range profile
@@ -835,7 +835,7 @@ Name | Type | Description  | Notes
 
 ## CreatePPSKProfile
 
-> OperationResponseWithoutResult CreatePPSKProfile(ctx, omadacId, siteId).PpskProfile(ppskProfile).Execute()
+> OperationResponseResponseIdVO CreatePPSKProfile(ctx, omadacId, siteId).PpskProfile(ppskProfile).Execute()
 
 Create PPSK profile
 
@@ -865,7 +865,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.CreatePPSKProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreatePPSKProfile`: OperationResponseWithoutResult
+	// response from `CreatePPSKProfile`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `ProfilesAPI.CreatePPSKProfile`: %v\n", resp)
 }
 ```
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -910,7 +910,7 @@ Name | Type | Description  | Notes
 
 ## CreatePPSKProfileV2
 
-> OperationResponseWithoutResult CreatePPSKProfileV2(ctx, omadacId, siteId).PpskProfileV2(ppskProfileV2).Execute()
+> OperationResponseResponseIdVO CreatePPSKProfileV2(ctx, omadacId, siteId).PpskProfileV2(ppskProfileV2).Execute()
 
 Create PPSK profile V2
 
@@ -940,7 +940,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.CreatePPSKProfileV2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreatePPSKProfileV2`: OperationResponseWithoutResult
+	// response from `CreatePPSKProfileV2`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `ProfilesAPI.CreatePPSKProfileV2`: %v\n", resp)
 }
 ```
@@ -967,7 +967,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -985,9 +985,9 @@ Name | Type | Description  | Notes
 
 ## CreateRadiusProfile
 
-> OperationResponseString CreateRadiusProfile(ctx, omadacId, siteId).CreateRadiusProfileOpenApiVO(createRadiusProfileOpenApiVO).Execute()
+> OperationResponseResponseIdVO CreateRadiusProfile(ctx, omadacId, siteId).CreateRadiusProfileOpenApiVO(createRadiusProfileOpenApiVO).Execute()
 
-Create a new Radius profile
+Create a new RADIUS profile
 
 
 
@@ -1015,7 +1015,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.CreateRadiusProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateRadiusProfile`: OperationResponseString
+	// response from `CreateRadiusProfile`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `ProfilesAPI.CreateRadiusProfile`: %v\n", resp)
 }
 ```
@@ -1042,7 +1042,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseString**](OperationResponseString.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -1062,7 +1062,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseResIdOpenApiVO CreateRadiusUser(ctx, omadacId, siteId).CreateRadiusUserOpenApiVO(createRadiusUserOpenApiVO).Execute()
 
-Create a new Build-in Radius profile user
+Create a new Build-in RADIUS profile user
 
 
 
@@ -1660,7 +1660,7 @@ Name | Type | Description  | Notes
 
 ## DeleteGroupProfile
 
-> OperationResponseWithoutResult DeleteGroupProfile(ctx, omadacId, siteId, groupId, groupType).Execute()
+> OperationResponseWithoutResult DeleteGroupProfile(ctx, omadacId, siteId, groupType, groupId).Execute()
 
 Delete an exist group profile
 
@@ -1681,12 +1681,12 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
+	groupType := "groupType_example" // string | Type of group profile, 0:IP Group; 1:IP Port Group; 2：Mac Group; 3:IPv6 Group; 4:IPv6 Port Group; 5:Country Group; 7:Domain Group.
 	groupId := "groupId_example" // string | Group profile id.
-	groupType := "groupType_example" // string | groupType
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProfilesAPI.DeleteGroupProfile(context.Background(), omadacId, siteId, groupId, groupType).Execute()
+	resp, r, err := apiClient.ProfilesAPI.DeleteGroupProfile(context.Background(), omadacId, siteId, groupType, groupId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesAPI.DeleteGroupProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1704,8 +1704,8 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
+**groupType** | **string** | Type of group profile, 0:IP Group; 1:IP Port Group; 2：Mac Group; 3:IPv6 Group; 4:IPv6 Port Group; 5:Country Group; 7:Domain Group. | 
 **groupId** | **string** | Group profile id. | 
-**groupType** | **string** | groupType | 
 
 ### Other Parameters
 
@@ -2123,7 +2123,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult DeleteRadiusProfile(ctx, omadacId, siteId, radiusProfileId).Execute()
 
-Delete an exist Radius profile
+Delete an exist RADIUS profile
 
 
 
@@ -2199,7 +2199,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult DeleteRadiusUser(ctx, omadacId, siteId, userId).Execute()
 
-Delete an exist Build-in Radius profile user
+Delete an exist Build-in RADIUS profile user
 
 
 
@@ -2218,7 +2218,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	userId := "userId_example" // string | Build-in Radius profile user Id
+	userId := "userId_example" // string | Build-in RADIUS profile user Id
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2240,7 +2240,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**userId** | **string** | Build-in Radius profile user Id | 
+**userId** | **string** | Build-in RADIUS profile user Id | 
 
 ### Other Parameters
 
@@ -3322,7 +3322,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseListRadiusProfileOpenApiVO GetRadiusProfileList(ctx, omadacId, siteId).Execute()
 
-Get Radius profile list
+Get RADIUS profile list
 
 
 
@@ -3395,7 +3395,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseGridVORadiusUserOpenApiVO GetRadiusUserList(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SortsUsername(sortsUsername).Execute()
 
-Get Build-in Radius profile user list
+Get Build-in RADIUS profile user list
 
 
 
@@ -4540,7 +4540,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyRadiusProfile(ctx, omadacId, siteId, radiusProfileId).CreateRadiusProfileOpenApiVO(createRadiusProfileOpenApiVO).Execute()
 
-Modify an exist Radius profile
+Modify an exist RADIUS profile
 
 
 
@@ -4618,7 +4618,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyRadiusUser(ctx, omadacId, siteId, userId).CreateRadiusUserOpenApiVO(createRadiusUserOpenApiVO).Execute()
 
-Modify an exist Build-in Radius profile user
+Modify an exist Build-in RADIUS profile user
 
 
 
@@ -4637,7 +4637,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	userId := "userId_example" // string | Build-in Radius profile user Id
+	userId := "userId_example" // string | Build-in RADIUS profile user Id
 	createRadiusUserOpenApiVO := *openapiclient.NewCreateRadiusUserOpenApiVO(int32(123)) // CreateRadiusUserOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -4660,7 +4660,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**userId** | **string** | Build-in Radius profile user Id | 
+**userId** | **string** | Build-in RADIUS profile user Id | 
 
 ### Other Parameters
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateMspUserVO{}
 
 // CreateMspUserVO struct for CreateMspUserVO
 type CreateMspUserVO struct {
-	// Whether this user want to receive alert emails
+	// Whether this user wants to receive alert, event, and incident emails. Make sure your email is not null.
 	Alert *bool `json:"alert,omitempty"`
 	// Whether msp user has all customer permission, including new created customer.
 	AllCustomer bool `json:"allCustomer"`

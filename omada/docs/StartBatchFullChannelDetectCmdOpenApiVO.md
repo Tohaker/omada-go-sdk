@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EnableChannelUtil** | Pointer to **bool** | Whether to enable channel load detect. | [optional] 
+**EnableInterference** | Pointer to **bool** | Whether to enable non-interference detect. | [optional] 
 **EnableWifiInterference** | Pointer to **bool** | Whether to enable wifi interference detect. | [optional] 
 **MacList** | Pointer to **[]string** | Select the Aps to full channel detect;. | [optional] 
 **SelectType** | **string** | Select type of macs. include: include selected aps, exclude: all but exclude selected aps, all: include all aps(Parameter [macList] need input &#39;[]&#39;). | 
@@ -52,6 +53,31 @@ SetEnableChannelUtil sets EnableChannelUtil field to given value.
 `func (o *StartBatchFullChannelDetectCmdOpenApiVO) HasEnableChannelUtil() bool`
 
 HasEnableChannelUtil returns a boolean if a field has been set.
+
+### GetEnableInterference
+
+`func (o *StartBatchFullChannelDetectCmdOpenApiVO) GetEnableInterference() bool`
+
+GetEnableInterference returns the EnableInterference field if non-nil, zero value otherwise.
+
+### GetEnableInterferenceOk
+
+`func (o *StartBatchFullChannelDetectCmdOpenApiVO) GetEnableInterferenceOk() (*bool, bool)`
+
+GetEnableInterferenceOk returns a tuple with the EnableInterference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableInterference
+
+`func (o *StartBatchFullChannelDetectCmdOpenApiVO) SetEnableInterference(v bool)`
+
+SetEnableInterference sets EnableInterference field to given value.
+
+### HasEnableInterference
+
+`func (o *StartBatchFullChannelDetectCmdOpenApiVO) HasEnableInterference() bool`
+
+HasEnableInterference returns a boolean if a field has been set.
 
 ### GetEnableWifiInterference
 

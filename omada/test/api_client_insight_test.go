@@ -306,6 +306,21 @@ func Test_omada_ClientInsightAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ClientInsightAPIService GetRealTimeClientCards", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ClientInsightAPI.GetRealTimeClientCards(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ClientInsightAPIService GetStackClientStat", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

@@ -25,9 +25,10 @@ type Dot1xEapOpenApiVO struct {
 	Eaps []Dot1xEapSettingOpenApiVO `json:"eaps,omitempty"`
 	// EAP 802.1x function enable status
 	Enable bool `json:"enable"`
+	GuestVlanSetting *Dot1xGuestVlanSettingOpenApiVO `json:"guestVlanSetting,omitempty"`
 	// Format of the MAC address. MacFormat should be a value as follows: 0: aabbccddeeff, 1: aa-bb-cc-dd-ee-ff, 2: aa:bb:cc:dd:ee:ff, 3: AABBCCDDEEFF, 4: AA-BB-CC-DD-EE-FF, 5: AA:BB:CC:DD:EE:FF
 	MacFormat *int32 `json:"macFormat,omitempty"`
-	// This field represents radius profile ID. Radius profile can be created using 'Create a new Radius profile' ('Create a new Radius profile template') interface, and radius profile ID can be obtained from 'Get Radius profile list' ('Get Radius profile template list') interface
+	// This field represents radius profile ID. Radius profile can be created using 'Create a new RADIUS profile' ('Create a new RADIUS profile template') interface, and radius profile ID can be obtained from 'Get RADIUS profile list' ('Get RADIUS profile template list') interface
 	RadiusProfileId *string `json:"radiusProfileId,omitempty"`
 }
 
@@ -105,6 +106,38 @@ func (o *Dot1xEapOpenApiVO) GetEnableOk() (*bool, bool) {
 // SetEnable sets field value
 func (o *Dot1xEapOpenApiVO) SetEnable(v bool) {
 	o.Enable = v
+}
+
+// GetGuestVlanSetting returns the GuestVlanSetting field value if set, zero value otherwise.
+func (o *Dot1xEapOpenApiVO) GetGuestVlanSetting() Dot1xGuestVlanSettingOpenApiVO {
+	if o == nil || IsNil(o.GuestVlanSetting) {
+		var ret Dot1xGuestVlanSettingOpenApiVO
+		return ret
+	}
+	return *o.GuestVlanSetting
+}
+
+// GetGuestVlanSettingOk returns a tuple with the GuestVlanSetting field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Dot1xEapOpenApiVO) GetGuestVlanSettingOk() (*Dot1xGuestVlanSettingOpenApiVO, bool) {
+	if o == nil || IsNil(o.GuestVlanSetting) {
+		return nil, false
+	}
+	return o.GuestVlanSetting, true
+}
+
+// HasGuestVlanSetting returns a boolean if a field has been set.
+func (o *Dot1xEapOpenApiVO) HasGuestVlanSetting() bool {
+	if o != nil && !IsNil(o.GuestVlanSetting) {
+		return true
+	}
+
+	return false
+}
+
+// SetGuestVlanSetting gets a reference to the given Dot1xGuestVlanSettingOpenApiVO and assigns it to the GuestVlanSetting field.
+func (o *Dot1xEapOpenApiVO) SetGuestVlanSetting(v Dot1xGuestVlanSettingOpenApiVO) {
+	o.GuestVlanSetting = &v
 }
 
 // GetMacFormat returns the MacFormat field value if set, zero value otherwise.
@@ -185,6 +218,9 @@ func (o Dot1xEapOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["eaps"] = o.Eaps
 	}
 	toSerialize["enable"] = o.Enable
+	if !IsNil(o.GuestVlanSetting) {
+		toSerialize["guestVlanSetting"] = o.GuestVlanSetting
+	}
 	if !IsNil(o.MacFormat) {
 		toSerialize["macFormat"] = o.MacFormat
 	}

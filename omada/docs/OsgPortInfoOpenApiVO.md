@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PreOsgModel** | Pointer to **int32** | preconfigured gateway model | [optional] 
+**PreOsgModelName** | Pointer to **string** | preconfigured gateway model name | [optional] 
 **RealOsgModel** | Pointer to **string** | real gateway model | [optional] 
 **TargetModels** | Pointer to **[]int32** | target gateway models when gateway change | [optional] 
 **WanLanPortSettings** | Pointer to [**[]WanLanPortSettingOpenApiVO**](WanLanPortSettingOpenApiVO.md) |  | [optional] 
@@ -53,6 +54,31 @@ SetPreOsgModel sets PreOsgModel field to given value.
 `func (o *OsgPortInfoOpenApiVO) HasPreOsgModel() bool`
 
 HasPreOsgModel returns a boolean if a field has been set.
+
+### GetPreOsgModelName
+
+`func (o *OsgPortInfoOpenApiVO) GetPreOsgModelName() string`
+
+GetPreOsgModelName returns the PreOsgModelName field if non-nil, zero value otherwise.
+
+### GetPreOsgModelNameOk
+
+`func (o *OsgPortInfoOpenApiVO) GetPreOsgModelNameOk() (*string, bool)`
+
+GetPreOsgModelNameOk returns a tuple with the PreOsgModelName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreOsgModelName
+
+`func (o *OsgPortInfoOpenApiVO) SetPreOsgModelName(v string)`
+
+SetPreOsgModelName sets PreOsgModelName field to given value.
+
+### HasPreOsgModelName
+
+`func (o *OsgPortInfoOpenApiVO) HasPreOsgModelName() bool`
+
+HasPreOsgModelName returns a boolean if a field has been set.
 
 ### GetRealOsgModel
 

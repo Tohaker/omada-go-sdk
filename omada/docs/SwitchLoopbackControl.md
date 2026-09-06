@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **HelloTime** | Pointer to **int32** | helloTime should be between 1 and 10. | [optional] 
 **LoopbackDetectEnable** | Pointer to **bool** | LoopbackDetectEnable | [optional] 
 **MaxAge** | Pointer to **int32** | maxAge should be between 6 and 40. | [optional] 
-**MaxHops** | Pointer to **int32** | maxHops should be between 1 and 40. | [optional] 
+**MaxHops** | Pointer to **int32** | maxHops should be between 1 and 40. maxHops is only allowed when the STP type is MSTP. | [optional] 
 **Mstp** | Pointer to [**OswStpMstpConfigOpenApiVO**](OswStpMstpConfigOpenApiVO.md) |  | [optional] 
 **Priority** | Pointer to **int32** | Parameter [priority] should be an integer from 0 to 61440 and divisible by 4096. | [optional] 
 **Rpvst** | Pointer to [**OswStpRpvstVO**](OswStpRpvstVO.md) |  | [optional] 

@@ -37,14 +37,14 @@ func Test_omada_RoutingAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingAPIService CreateStaticRouting", func(t *testing.T) {
+	t.Run("Test RoutingAPIService CreateStaticRouting1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var omadacId string
 		var siteId string
 
-		resp, httpRes, err := apiClient.RoutingAPI.CreateStaticRouting(context.Background(), omadacId, siteId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.CreateStaticRouting1(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -68,7 +68,7 @@ func Test_omada_RoutingAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingAPIService DeleteStaticRouting", func(t *testing.T) {
+	t.Run("Test RoutingAPIService DeleteStaticRouting1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -76,7 +76,7 @@ func Test_omada_RoutingAPIService(t *testing.T) {
 		var siteId string
 		var staticRoutingId string
 
-		resp, httpRes, err := apiClient.RoutingAPI.DeleteStaticRouting(context.Background(), omadacId, siteId, staticRoutingId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.DeleteStaticRouting1(context.Background(), omadacId, siteId, staticRoutingId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -99,14 +99,14 @@ func Test_omada_RoutingAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingAPIService GetGridStaticRouting", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetGridStaticRouting1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var omadacId string
 		var siteId string
 
-		resp, httpRes, err := apiClient.RoutingAPI.GetGridStaticRouting(context.Background(), omadacId, siteId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetGridStaticRouting1(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -160,7 +160,7 @@ func Test_omada_RoutingAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingAPIService ModifyStaticRouting", func(t *testing.T) {
+	t.Run("Test RoutingAPIService ModifyStaticRouting1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -168,7 +168,7 @@ func Test_omada_RoutingAPIService(t *testing.T) {
 		var siteId string
 		var staticRoutingId string
 
-		resp, httpRes, err := apiClient.RoutingAPI.ModifyStaticRouting(context.Background(), omadacId, siteId, staticRoutingId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.ModifyStaticRouting1(context.Background(), omadacId, siteId, staticRoutingId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

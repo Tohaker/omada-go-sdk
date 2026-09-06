@@ -24,11 +24,17 @@ type CardInfoVO struct {
 	ApStatus []OnlineOfflineVO `json:"apStatus,omitempty"`
 	AppCategories *AppCategoryTrafficsVO `json:"appCategories,omitempty"`
 	ClientConnectionTrend *ClientConnectionTrend `json:"clientConnectionTrend,omitempty"`
-	ClientHealthTrend []DeviceHealthVO `json:"clientHealthTrend,omitempty"`
+	ClientHealthTrend []ClientHealthTrendVO `json:"clientHealthTrend,omitempty"`
 	ClientTraffic *ClientTrafficInfo `json:"clientTraffic,omitempty"`
 	// Clients association activities with time.
 	ClientsAssociationActivities []ClientAssociationActivities `json:"clientsAssociationActivities,omitempty"`
+	// Clients data rate distribution trend
+	ClientsDataRate []DataRateDistributionVO `json:"clientsDataRate,omitempty"`
 	ClientsOverview *ClientStatisticsOverview `json:"clientsOverview,omitempty"`
+	// Clients RSSI distribution trend
+	ClientsRssi []RssiDistributionVO `json:"clientsRssi,omitempty"`
+	// Clients SNR distribution trend
+	ClientsSnr []SnrDistributionVO `json:"clientsSnr,omitempty"`
 	ClientsWithOnboardingTimes *ClientsWithOnBoardingTimes `json:"clientsWithOnboardingTimes,omitempty"`
 	DeviceHealthTrend []DeviceHealthVO `json:"deviceHealthTrend,omitempty"`
 	DeviceStatus []OnlineOfflineVO `json:"deviceStatus,omitempty"`
@@ -42,6 +48,7 @@ type CardInfoVO struct {
 	SwitchAlertReboot *SwitchAlertRebootVO `json:"switchAlertReboot,omitempty"`
 	SwitchHealthTrend []DeviceHealthVO `json:"switchHealthTrend,omitempty"`
 	SwitchStatus []OnlineOfflineVO `json:"switchStatus,omitempty"`
+	TopApByConnFailure *TopApByConnFailureVO `json:"topApByConnFailure,omitempty"`
 	TopApByCpuAndMemory *ApUtilizationVO `json:"topApByCpuAndMemory,omitempty"`
 	TopApByInterference *TopApByInterferenceVO `json:"topApByInterference,omitempty"`
 	TopApByRtAndDrop *TopApByRtDropVO `json:"topApByRtAndDrop,omitempty"`
@@ -49,6 +56,7 @@ type CardInfoVO struct {
 	TopApplicationByTraffic []TopApplicationByTrafficVO `json:"topApplicationByTraffic,omitempty"`
 	TopClient *TopTrafficAndUptimeClients `json:"topClient,omitempty"`
 	TopSsidByTraffic []TopSsidTrafficVO `json:"topSsidByTraffic,omitempty"`
+	TopSwitchByPacket *TopSwitchByPacketVO `json:"topSwitchByPacket,omitempty"`
 	TopSwitchByTrafficAndPoePower *TopSwitchVO `json:"topSwitchByTrafficAndPoePower,omitempty"`
 	TopSwitchCpuMemory *SwitchUtilizationVO `json:"topSwitchCpuMemory,omitempty"`
 	TrafficDistribution *TrafficDistributionVO `json:"trafficDistribution,omitempty"`
@@ -237,9 +245,9 @@ func (o *CardInfoVO) SetClientConnectionTrend(v ClientConnectionTrend) {
 }
 
 // GetClientHealthTrend returns the ClientHealthTrend field value if set, zero value otherwise.
-func (o *CardInfoVO) GetClientHealthTrend() []DeviceHealthVO {
+func (o *CardInfoVO) GetClientHealthTrend() []ClientHealthTrendVO {
 	if o == nil || IsNil(o.ClientHealthTrend) {
-		var ret []DeviceHealthVO
+		var ret []ClientHealthTrendVO
 		return ret
 	}
 	return o.ClientHealthTrend
@@ -247,7 +255,7 @@ func (o *CardInfoVO) GetClientHealthTrend() []DeviceHealthVO {
 
 // GetClientHealthTrendOk returns a tuple with the ClientHealthTrend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CardInfoVO) GetClientHealthTrendOk() ([]DeviceHealthVO, bool) {
+func (o *CardInfoVO) GetClientHealthTrendOk() ([]ClientHealthTrendVO, bool) {
 	if o == nil || IsNil(o.ClientHealthTrend) {
 		return nil, false
 	}
@@ -263,8 +271,8 @@ func (o *CardInfoVO) HasClientHealthTrend() bool {
 	return false
 }
 
-// SetClientHealthTrend gets a reference to the given []DeviceHealthVO and assigns it to the ClientHealthTrend field.
-func (o *CardInfoVO) SetClientHealthTrend(v []DeviceHealthVO) {
+// SetClientHealthTrend gets a reference to the given []ClientHealthTrendVO and assigns it to the ClientHealthTrend field.
+func (o *CardInfoVO) SetClientHealthTrend(v []ClientHealthTrendVO) {
 	o.ClientHealthTrend = v
 }
 
@@ -332,6 +340,38 @@ func (o *CardInfoVO) SetClientsAssociationActivities(v []ClientAssociationActivi
 	o.ClientsAssociationActivities = v
 }
 
+// GetClientsDataRate returns the ClientsDataRate field value if set, zero value otherwise.
+func (o *CardInfoVO) GetClientsDataRate() []DataRateDistributionVO {
+	if o == nil || IsNil(o.ClientsDataRate) {
+		var ret []DataRateDistributionVO
+		return ret
+	}
+	return o.ClientsDataRate
+}
+
+// GetClientsDataRateOk returns a tuple with the ClientsDataRate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CardInfoVO) GetClientsDataRateOk() ([]DataRateDistributionVO, bool) {
+	if o == nil || IsNil(o.ClientsDataRate) {
+		return nil, false
+	}
+	return o.ClientsDataRate, true
+}
+
+// HasClientsDataRate returns a boolean if a field has been set.
+func (o *CardInfoVO) HasClientsDataRate() bool {
+	if o != nil && !IsNil(o.ClientsDataRate) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientsDataRate gets a reference to the given []DataRateDistributionVO and assigns it to the ClientsDataRate field.
+func (o *CardInfoVO) SetClientsDataRate(v []DataRateDistributionVO) {
+	o.ClientsDataRate = v
+}
+
 // GetClientsOverview returns the ClientsOverview field value if set, zero value otherwise.
 func (o *CardInfoVO) GetClientsOverview() ClientStatisticsOverview {
 	if o == nil || IsNil(o.ClientsOverview) {
@@ -362,6 +402,70 @@ func (o *CardInfoVO) HasClientsOverview() bool {
 // SetClientsOverview gets a reference to the given ClientStatisticsOverview and assigns it to the ClientsOverview field.
 func (o *CardInfoVO) SetClientsOverview(v ClientStatisticsOverview) {
 	o.ClientsOverview = &v
+}
+
+// GetClientsRssi returns the ClientsRssi field value if set, zero value otherwise.
+func (o *CardInfoVO) GetClientsRssi() []RssiDistributionVO {
+	if o == nil || IsNil(o.ClientsRssi) {
+		var ret []RssiDistributionVO
+		return ret
+	}
+	return o.ClientsRssi
+}
+
+// GetClientsRssiOk returns a tuple with the ClientsRssi field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CardInfoVO) GetClientsRssiOk() ([]RssiDistributionVO, bool) {
+	if o == nil || IsNil(o.ClientsRssi) {
+		return nil, false
+	}
+	return o.ClientsRssi, true
+}
+
+// HasClientsRssi returns a boolean if a field has been set.
+func (o *CardInfoVO) HasClientsRssi() bool {
+	if o != nil && !IsNil(o.ClientsRssi) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientsRssi gets a reference to the given []RssiDistributionVO and assigns it to the ClientsRssi field.
+func (o *CardInfoVO) SetClientsRssi(v []RssiDistributionVO) {
+	o.ClientsRssi = v
+}
+
+// GetClientsSnr returns the ClientsSnr field value if set, zero value otherwise.
+func (o *CardInfoVO) GetClientsSnr() []SnrDistributionVO {
+	if o == nil || IsNil(o.ClientsSnr) {
+		var ret []SnrDistributionVO
+		return ret
+	}
+	return o.ClientsSnr
+}
+
+// GetClientsSnrOk returns a tuple with the ClientsSnr field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CardInfoVO) GetClientsSnrOk() ([]SnrDistributionVO, bool) {
+	if o == nil || IsNil(o.ClientsSnr) {
+		return nil, false
+	}
+	return o.ClientsSnr, true
+}
+
+// HasClientsSnr returns a boolean if a field has been set.
+func (o *CardInfoVO) HasClientsSnr() bool {
+	if o != nil && !IsNil(o.ClientsSnr) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientsSnr gets a reference to the given []SnrDistributionVO and assigns it to the ClientsSnr field.
+func (o *CardInfoVO) SetClientsSnr(v []SnrDistributionVO) {
+	o.ClientsSnr = v
 }
 
 // GetClientsWithOnboardingTimes returns the ClientsWithOnboardingTimes field value if set, zero value otherwise.
@@ -748,6 +852,38 @@ func (o *CardInfoVO) SetSwitchStatus(v []OnlineOfflineVO) {
 	o.SwitchStatus = v
 }
 
+// GetTopApByConnFailure returns the TopApByConnFailure field value if set, zero value otherwise.
+func (o *CardInfoVO) GetTopApByConnFailure() TopApByConnFailureVO {
+	if o == nil || IsNil(o.TopApByConnFailure) {
+		var ret TopApByConnFailureVO
+		return ret
+	}
+	return *o.TopApByConnFailure
+}
+
+// GetTopApByConnFailureOk returns a tuple with the TopApByConnFailure field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CardInfoVO) GetTopApByConnFailureOk() (*TopApByConnFailureVO, bool) {
+	if o == nil || IsNil(o.TopApByConnFailure) {
+		return nil, false
+	}
+	return o.TopApByConnFailure, true
+}
+
+// HasTopApByConnFailure returns a boolean if a field has been set.
+func (o *CardInfoVO) HasTopApByConnFailure() bool {
+	if o != nil && !IsNil(o.TopApByConnFailure) {
+		return true
+	}
+
+	return false
+}
+
+// SetTopApByConnFailure gets a reference to the given TopApByConnFailureVO and assigns it to the TopApByConnFailure field.
+func (o *CardInfoVO) SetTopApByConnFailure(v TopApByConnFailureVO) {
+	o.TopApByConnFailure = &v
+}
+
 // GetTopApByCpuAndMemory returns the TopApByCpuAndMemory field value if set, zero value otherwise.
 func (o *CardInfoVO) GetTopApByCpuAndMemory() ApUtilizationVO {
 	if o == nil || IsNil(o.TopApByCpuAndMemory) {
@@ -970,6 +1106,38 @@ func (o *CardInfoVO) HasTopSsidByTraffic() bool {
 // SetTopSsidByTraffic gets a reference to the given []TopSsidTrafficVO and assigns it to the TopSsidByTraffic field.
 func (o *CardInfoVO) SetTopSsidByTraffic(v []TopSsidTrafficVO) {
 	o.TopSsidByTraffic = v
+}
+
+// GetTopSwitchByPacket returns the TopSwitchByPacket field value if set, zero value otherwise.
+func (o *CardInfoVO) GetTopSwitchByPacket() TopSwitchByPacketVO {
+	if o == nil || IsNil(o.TopSwitchByPacket) {
+		var ret TopSwitchByPacketVO
+		return ret
+	}
+	return *o.TopSwitchByPacket
+}
+
+// GetTopSwitchByPacketOk returns a tuple with the TopSwitchByPacket field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CardInfoVO) GetTopSwitchByPacketOk() (*TopSwitchByPacketVO, bool) {
+	if o == nil || IsNil(o.TopSwitchByPacket) {
+		return nil, false
+	}
+	return o.TopSwitchByPacket, true
+}
+
+// HasTopSwitchByPacket returns a boolean if a field has been set.
+func (o *CardInfoVO) HasTopSwitchByPacket() bool {
+	if o != nil && !IsNil(o.TopSwitchByPacket) {
+		return true
+	}
+
+	return false
+}
+
+// SetTopSwitchByPacket gets a reference to the given TopSwitchByPacketVO and assigns it to the TopSwitchByPacket field.
+func (o *CardInfoVO) SetTopSwitchByPacket(v TopSwitchByPacketVO) {
+	o.TopSwitchByPacket = &v
 }
 
 // GetTopSwitchByTrafficAndPoePower returns the TopSwitchByTrafficAndPoePower field value if set, zero value otherwise.
@@ -1262,8 +1430,17 @@ func (o CardInfoVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ClientsAssociationActivities) {
 		toSerialize["clientsAssociationActivities"] = o.ClientsAssociationActivities
 	}
+	if !IsNil(o.ClientsDataRate) {
+		toSerialize["clientsDataRate"] = o.ClientsDataRate
+	}
 	if !IsNil(o.ClientsOverview) {
 		toSerialize["clientsOverview"] = o.ClientsOverview
+	}
+	if !IsNil(o.ClientsRssi) {
+		toSerialize["clientsRssi"] = o.ClientsRssi
+	}
+	if !IsNil(o.ClientsSnr) {
+		toSerialize["clientsSnr"] = o.ClientsSnr
 	}
 	if !IsNil(o.ClientsWithOnboardingTimes) {
 		toSerialize["clientsWithOnboardingTimes"] = o.ClientsWithOnboardingTimes
@@ -1301,6 +1478,9 @@ func (o CardInfoVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SwitchStatus) {
 		toSerialize["switchStatus"] = o.SwitchStatus
 	}
+	if !IsNil(o.TopApByConnFailure) {
+		toSerialize["topApByConnFailure"] = o.TopApByConnFailure
+	}
 	if !IsNil(o.TopApByCpuAndMemory) {
 		toSerialize["topApByCpuAndMemory"] = o.TopApByCpuAndMemory
 	}
@@ -1321,6 +1501,9 @@ func (o CardInfoVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TopSsidByTraffic) {
 		toSerialize["topSsidByTraffic"] = o.TopSsidByTraffic
+	}
+	if !IsNil(o.TopSwitchByPacket) {
+		toSerialize["topSwitchByPacket"] = o.TopSwitchByPacket
 	}
 	if !IsNil(o.TopSwitchByTrafficAndPoePower) {
 		toSerialize["topSwitchByTrafficAndPoePower"] = o.TopSwitchByTrafficAndPoePower

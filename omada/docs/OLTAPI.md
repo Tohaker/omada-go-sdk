@@ -1348,7 +1348,7 @@ Name | Type | Description  | Notes
 
 ## ModifyOltConfigForMsp
 
-> OperationResponseOltDetailVO ModifyOltConfigForMsp(ctx, siteId, mspId, customerId, deviceMac).OltConfigModifyDTO(oltConfigModifyDTO).Execute()
+> OperationResponseOltDetailVO ModifyOltConfigForMsp(ctx, mspId, customerId, siteId, deviceMac).OltConfigModifyDTO(oltConfigModifyDTO).Execute()
 
 Modify olt config(MSP mode)
 
@@ -1367,15 +1367,15 @@ import (
 )
 
 func main() {
-	siteId := "siteId_example" // string | Site ID
 	mspId := "mspId_example" // string | mspId
 	customerId := "customerId_example" // string | customerId
-	deviceMac := "deviceMac_example" // string | deviceMac
+	siteId := "siteId_example" // string | Site ID
+	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
 	oltConfigModifyDTO := *openapiclient.NewOltConfigModifyDTO() // OltConfigModifyDTO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OLTAPI.ModifyOltConfigForMsp(context.Background(), siteId, mspId, customerId, deviceMac).OltConfigModifyDTO(oltConfigModifyDTO).Execute()
+	resp, r, err := apiClient.OLTAPI.ModifyOltConfigForMsp(context.Background(), mspId, customerId, siteId, deviceMac).OltConfigModifyDTO(oltConfigModifyDTO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OLTAPI.ModifyOltConfigForMsp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1391,10 +1391,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**siteId** | **string** | Site ID | 
 **mspId** | **string** | mspId | 
 **customerId** | **string** | customerId | 
-**deviceMac** | **string** | deviceMac | 
+**siteId** | **string** | Site ID | 
+**deviceMac** | **string** | Device MAC address, like AA-BB-CC-DD-EE-FF | 
 
 ### Other Parameters
 

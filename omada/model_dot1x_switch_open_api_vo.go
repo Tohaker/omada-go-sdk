@@ -35,7 +35,7 @@ type Dot1xSwitchOpenApiVO struct {
 	MacFormat int32 `json:"macFormat"`
 	// Nas ID,NasId should contain 1~31 characters, except the question mark (?) and double quote (\").
 	NasId *string `json:"nasId,omitempty"`
-	// This field represents radius profile ID. Radius profile can be created using 'Create a new Radius profile' ('Create a new Radius profile template') interface, and radius profile ID can be obtained from 'Get Radius profile list' ('Get Radius profile template list') interface
+	// This field represents radius profile ID. Radius profile can be created using 'Create a new RADIUS profile' ('Create a new RADIUS profile template') interface, and radius profile ID can be obtained from 'Get RADIUS profile list' ('Get RADIUS profile template list') interface
 	RadiusProfileId string `json:"radiusProfileId"`
 	// Enabled switch ports, optional when update switch 802.1x setting
 	Switches []Dot1xSwitchSettingOpenApiVO `json:"switches,omitempty"`

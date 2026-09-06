@@ -22,6 +22,8 @@ var _ MappedNullable = &IgmpOpenApiVO{}
 // IgmpOpenApiVO IGMP's configuration.
 type IgmpOpenApiVO struct {
 	Enable bool `json:"enable"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// Version should be one of the following values: 2:v2; 3:v3.
 	Version int32 `json:"version"`
 	// Virtual WAN ID, can be obtained from 'Query virtual WAN list' interface. At least one of the WAN Port IDs or Virtual WAN Port IDs should not be null.
@@ -73,6 +75,38 @@ func (o *IgmpOpenApiVO) GetEnableOk() (*bool, bool) {
 // SetEnable sets field value
 func (o *IgmpOpenApiVO) SetEnable(v bool) {
 	o.Enable = v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *IgmpOpenApiVO) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IgmpOpenApiVO) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *IgmpOpenApiVO) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *IgmpOpenApiVO) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetVersion returns the Version field value
@@ -174,6 +208,9 @@ func (o IgmpOpenApiVO) MarshalJSON() ([]byte, error) {
 func (o IgmpOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["enable"] = o.Enable
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
+	}
 	toSerialize["version"] = o.Version
 	if !IsNil(o.VirtualWanId) {
 		toSerialize["virtualWanId"] = o.VirtualWanId

@@ -37,6 +37,21 @@ func Test_omada_TopologyAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test TopologyAPIService GetAvailableVlans", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.TopologyAPI.GetAvailableVlans(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test TopologyAPIService GetDeviceLinkTopology", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -112,6 +127,21 @@ func Test_omada_TopologyAPIService(t *testing.T) {
 		var vlan string
 
 		resp, httpRes, err := apiClient.TopologyAPI.GetFilterDevicesOfVlan(context.Background(), omadacId, siteId, networkId, vlan).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TopologyAPIService GetGridAvailableSsids", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.TopologyAPI.GetGridAvailableSsids(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

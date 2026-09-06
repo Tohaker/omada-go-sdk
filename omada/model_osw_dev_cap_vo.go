@@ -19,35 +19,53 @@ var _ MappedNullable = &OswDevCapVO{}
 
 // OswDevCapVO Capability of device
 type OswDevCapVO struct {
+	// Arp Table Support
 	ArpTableSupport *bool `json:"arpTableSupport,omitempty"`
 	// Cable Test Support
 	CableTestSupport *bool `json:"cableTestSupport,omitempty"`
 	// CLI Support
 	CliSupport *bool `json:"cliSupport,omitempty"`
+	// Custom DHCP Option Support
 	CustomDhcpOptionSupport *bool `json:"customDhcpOptionSupport,omitempty"`
+	// DDM Support
 	DdmSupport *bool `json:"ddmSupport,omitempty"`
 	// Dhcp L2 Relay Support
 	DhcpL2RelaySupport *bool `json:"dhcpL2RelaySupport,omitempty"`
+	// DHCP Manual Bind Num
+	DhcpManualBindNum *int32 `json:"dhcpManualBindNum,omitempty"`
+	// Whether the device supports DHCP server address pool
 	DhcpRangeSupport *bool `json:"dhcpRangeSupport,omitempty"`
+	// DHCP Relay Interface Num
 	DhcpRelayIfNum *int32 `json:"dhcpRelayIfNum,omitempty"`
+	// Whether the device supports DHCP reservation
 	DhcpReservationSupport *bool `json:"dhcpReservationSupport,omitempty"`
+	// DHCP Server Pool Num
 	DhcpServerPoolNum *int32 `json:"dhcpServerPoolNum,omitempty"`
+	// DNS Loop Up Support
 	DnsLoopUpSupport *bool `json:"dnsLoopUpSupport,omitempty"`
+	// Domain Ping Support
 	DomainPingSupport *bool `json:"domainPingSupport,omitempty"`
+	// Domain Trace Route Support
 	DomainTraceRouteSupport *bool `json:"domainTraceRouteSupport,omitempty"`
 	// eee Support
 	EeeSupport *bool `json:"eeeSupport,omitempty"`
 	// Agile Series Switch QoS Support
 	EsQosSupport *bool `json:"esQosSupport,omitempty"`
+	// ES STP Extend Support
+	EsStpExtendSupport *bool `json:"esStpExtendSupport,omitempty"`
 	// FEC Support
 	FecSupport *bool `json:"fecSupport,omitempty"`
 	// FlowControl Support
 	FlowControlSupport *bool `json:"flowControlSupport,omitempty"`
+	// Gpon Support
 	GponSupport *bool `json:"gponSupport,omitempty"`
 	// Igmp FastLeve Support
 	IgmpFastLeaveSupport *bool `json:"igmpFastLeaveSupport,omitempty"`
+	// IPC Detect Support
 	IpcDetectSupport *bool `json:"ipcDetectSupport,omitempty"`
+	// IPv4 Static Route Num
 	Ipv4StaticRouteNum *int32 `json:"ipv4StaticRouteNum,omitempty"`
+	// IPv6 Static Route Num
 	Ipv6StaticRouteNum *int32 `json:"ipv6StaticRouteNum,omitempty"`
 	// Jumbo Odd Support
 	JumboOddSupport *bool `json:"jumboOddSupport,omitempty"`
@@ -56,6 +74,8 @@ type OswDevCapVO struct {
 	LagCap *LagCapVO `json:"lagCap,omitempty"`
 	// Locate port Support
 	LocatePortSupport *bool `json:"locatePortSupport,omitempty"`
+	// Loopback Interface Create Support
+	LoopbackInterfaceCreateSupport *bool `json:"loopbackInterfaceCreateSupport,omitempty"`
 	// Loopback Interface Support
 	LoopbackInterfaceSupport *bool `json:"loopbackInterfaceSupport,omitempty"`
 	// Loopback Detect Vlan Based Support
@@ -74,24 +94,44 @@ type OswDevCapVO struct {
 	MaxStackGroupNumber *int32 `json:"maxStackGroupNumber,omitempty"`
 	// Max Stack Unit Number
 	MaxStackUnitNumber *int32 `json:"maxStackUnitNumber,omitempty"`
+	// Mirror Support
 	MirrorSupport *bool `json:"mirrorSupport,omitempty"`
+	// MLAG Group ID
 	MlagGroupId *int32 `json:"mlagGroupId,omitempty"`
+	// MLAG Version
 	MlagVersion *string `json:"mlagVersion,omitempty"`
+	// MSTP Get Active Support
+	MstpGetActiveSupport *bool `json:"mstpGetActiveSupport,omitempty"`
 	// Mstp Max InstanceId
 	MstpInsNo *int32 `json:"mstpInsNo,omitempty"`
 	// Mstp Instance Num
 	MstpInsNum *int32 `json:"mstpInsNum,omitempty"`
+	// MSTP Port Support
+	MstpPortSupport *bool `json:"mstpPortSupport,omitempty"`
+	// MTU In VLAN Support
+	MtuInVlanSupport *bool `json:"mtuInVlanSupport,omitempty"`
 	// Need full sync
 	NeedFullSync *bool `json:"needFullSync,omitempty"`
+	// Network Check Support
 	NetworkCheckSupport *bool `json:"networkCheckSupport,omitempty"`
+	// OSPF Process Auto-Cost Reference Bandwidth Support
+	OspfAutoCostRefSupport *bool `json:"ospfAutoCostRefSupport,omitempty"`
 	// OSPF Dead Interval Support 
 	OspfDeadIntervalSupport *bool `json:"ospfDeadIntervalSupport,omitempty"`
+	// OSPF Interface Passive Support
+	OspfPassiveSupport *bool `json:"ospfPassiveSupport,omitempty"`
 	// OSPF Support
 	OspfSupport *bool `json:"ospfSupport,omitempty"`
 	// Oui Based Vlan Support
+	OuiBasedVlanESSupport *bool `json:"ouiBasedVlanESSupport,omitempty"`
+	// Oui Based Vlan Support
 	OuiBasedVlanSupport *bool `json:"ouiBasedVlanSupport,omitempty"`
+	// Packet Capture Support
 	PacketCaptureSupport *bool `json:"packetCaptureSupport,omitempty"`
+	// Ping Support
 	PingSupport *bool `json:"pingSupport,omitempty"`
+	// Path MTU Discovery Support
+	PmtudSupport *bool `json:"pmtudSupport,omitempty"`
 	// Poe Port Num
 	PoePortNum *int32 `json:"poePortNum,omitempty"`
 	// Poe Support
@@ -108,8 +148,11 @@ type OswDevCapVO struct {
 	SfpBeginNum *int32 `json:"sfpBeginNum,omitempty"`
 	// SFP Num
 	SfpNum *int32 `json:"sfpNum,omitempty"`
+	// SNMP Support
+	SnmpSupport *bool `json:"snmpSupport,omitempty"`
 	// Stack Port Capability
 	StackPortCap *map[string][]string `json:"stackPortCap,omitempty"`
+	// Static Route Num
 	StaticRouteNum *int32 `json:"staticRouteNum,omitempty"`
 	// Stack Version
 	StkVer *string `json:"stkVer,omitempty"`
@@ -119,6 +162,8 @@ type OswDevCapVO struct {
 	StormRateModeSupport *bool `json:"stormRateModeSupport,omitempty"`
 	// STP Extend Support
 	StpExtendSupport *bool `json:"stpExtendSupport,omitempty"`
+	// STP Support
+	StpSupport *bool `json:"stpSupport,omitempty"`
 	// Whether support arp detect
 	SupportArpDetect *bool `json:"supportArpDetect,omitempty"`
 	// Support Poe Bt
@@ -129,18 +174,27 @@ type OswDevCapVO struct {
 	SupportConfigSync *bool `json:"supportConfigSync,omitempty"`
 	// Whether support dhcp snoop
 	SupportDhcpSnoop *bool `json:"supportDhcpSnoop,omitempty"`
+	// Whether the device supports ES health check
 	SupportEsHealth *bool `json:"supportEsHealth,omitempty"`
 	// Whether Agile Series Switch support multicast
 	SupportEsMulticast *bool `json:"supportEsMulticast,omitempty"`
 	// Support Fan
 	SupportFan *bool `json:"supportFan,omitempty"`
+	// Whether the device supports getting DHCP client table via get message
 	SupportGetDhcpClientTable *bool `json:"supportGetDhcpClientTable,omitempty"`
+	// Whether the device supports getting DHCP server info via get message
 	SupportGetDhcpServerInfo *bool `json:"supportGetDhcpServerInfo,omitempty"`
+	// Whether the device supports getting OSPF neighbor table via get message
 	SupportGetOspfNeighborTable *bool `json:"supportGetOspfNeighborTable,omitempty"`
+	// Whether the device supports getting VLAN interface info via get message
 	SupportGetVlanIfInfo *bool `json:"supportGetVlanIfInfo,omitempty"`
 	// Whether support impb
 	SupportImpb *bool `json:"supportImpb,omitempty"`
+	// Whether the device supports reporting port layout information.
+	SupportLayout *bool `json:"supportLayout,omitempty"`
+	// Whether the device supports MAD
 	SupportMad *bool `json:"supportMad,omitempty"`
+	// Whether the device supports MLAG
 	SupportMlag *bool `json:"supportMlag,omitempty"`
 	// Whether support multicast
 	SupportMulticast *bool `json:"supportMulticast,omitempty"`
@@ -148,16 +202,25 @@ type OswDevCapVO struct {
 	SupportRelayMultiServer *bool `json:"supportRelayMultiServer,omitempty"`
 	// Whether the device supports showing running config
 	SupportRunningConfig *bool `json:"supportRunningConfig,omitempty"`
+	// Whether the device supports SDM
 	SupportSdm *bool `json:"supportSdm,omitempty"`
 	// Whether the device supports returning TPCL resource information
 	SupportTpclResInfo *bool `json:"supportTpclResInfo,omitempty"`
+	// Whether the device supports VRF
 	SupportVrf *bool `json:"supportVrf,omitempty"`
+	// Terminal Support
 	TerminalSupport *bool `json:"terminalSupport,omitempty"`
+	// Traceroute Support
 	TracerouteSupport *bool `json:"tracerouteSupport,omitempty"`
+	// Uplink Support
 	UplinkSupport *bool `json:"uplinkSupport,omitempty"`
 	// Vlan Interface Num
 	VlanIfNum *int32 `json:"vlanIfNum,omitempty"`
+	// Voice DSCP Support
 	VoiceDscpSupport *bool `json:"voiceDscpSupport,omitempty"`
+	// Voice Network Support
+	VoiceNetworkSupport *bool `json:"voiceNetworkSupport,omitempty"`
+	// VRF Num
 	VrfNum *int32 `json:"vrfNum,omitempty"`
 	// Vrrp Support
 	VrrpSupport *bool `json:"vrrpSupport,omitempty"`
@@ -370,6 +433,38 @@ func (o *OswDevCapVO) HasDhcpL2RelaySupport() bool {
 // SetDhcpL2RelaySupport gets a reference to the given bool and assigns it to the DhcpL2RelaySupport field.
 func (o *OswDevCapVO) SetDhcpL2RelaySupport(v bool) {
 	o.DhcpL2RelaySupport = &v
+}
+
+// GetDhcpManualBindNum returns the DhcpManualBindNum field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetDhcpManualBindNum() int32 {
+	if o == nil || IsNil(o.DhcpManualBindNum) {
+		var ret int32
+		return ret
+	}
+	return *o.DhcpManualBindNum
+}
+
+// GetDhcpManualBindNumOk returns a tuple with the DhcpManualBindNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetDhcpManualBindNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.DhcpManualBindNum) {
+		return nil, false
+	}
+	return o.DhcpManualBindNum, true
+}
+
+// HasDhcpManualBindNum returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasDhcpManualBindNum() bool {
+	if o != nil && !IsNil(o.DhcpManualBindNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetDhcpManualBindNum gets a reference to the given int32 and assigns it to the DhcpManualBindNum field.
+func (o *OswDevCapVO) SetDhcpManualBindNum(v int32) {
+	o.DhcpManualBindNum = &v
 }
 
 // GetDhcpRangeSupport returns the DhcpRangeSupport field value if set, zero value otherwise.
@@ -658,6 +753,38 @@ func (o *OswDevCapVO) HasEsQosSupport() bool {
 // SetEsQosSupport gets a reference to the given bool and assigns it to the EsQosSupport field.
 func (o *OswDevCapVO) SetEsQosSupport(v bool) {
 	o.EsQosSupport = &v
+}
+
+// GetEsStpExtendSupport returns the EsStpExtendSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetEsStpExtendSupport() bool {
+	if o == nil || IsNil(o.EsStpExtendSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.EsStpExtendSupport
+}
+
+// GetEsStpExtendSupportOk returns a tuple with the EsStpExtendSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetEsStpExtendSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.EsStpExtendSupport) {
+		return nil, false
+	}
+	return o.EsStpExtendSupport, true
+}
+
+// HasEsStpExtendSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasEsStpExtendSupport() bool {
+	if o != nil && !IsNil(o.EsStpExtendSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetEsStpExtendSupport gets a reference to the given bool and assigns it to the EsStpExtendSupport field.
+func (o *OswDevCapVO) SetEsStpExtendSupport(v bool) {
+	o.EsStpExtendSupport = &v
 }
 
 // GetFecSupport returns the FecSupport field value if set, zero value otherwise.
@@ -1010,6 +1137,38 @@ func (o *OswDevCapVO) HasLocatePortSupport() bool {
 // SetLocatePortSupport gets a reference to the given bool and assigns it to the LocatePortSupport field.
 func (o *OswDevCapVO) SetLocatePortSupport(v bool) {
 	o.LocatePortSupport = &v
+}
+
+// GetLoopbackInterfaceCreateSupport returns the LoopbackInterfaceCreateSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetLoopbackInterfaceCreateSupport() bool {
+	if o == nil || IsNil(o.LoopbackInterfaceCreateSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.LoopbackInterfaceCreateSupport
+}
+
+// GetLoopbackInterfaceCreateSupportOk returns a tuple with the LoopbackInterfaceCreateSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetLoopbackInterfaceCreateSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.LoopbackInterfaceCreateSupport) {
+		return nil, false
+	}
+	return o.LoopbackInterfaceCreateSupport, true
+}
+
+// HasLoopbackInterfaceCreateSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasLoopbackInterfaceCreateSupport() bool {
+	if o != nil && !IsNil(o.LoopbackInterfaceCreateSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetLoopbackInterfaceCreateSupport gets a reference to the given bool and assigns it to the LoopbackInterfaceCreateSupport field.
+func (o *OswDevCapVO) SetLoopbackInterfaceCreateSupport(v bool) {
+	o.LoopbackInterfaceCreateSupport = &v
 }
 
 // GetLoopbackInterfaceSupport returns the LoopbackInterfaceSupport field value if set, zero value otherwise.
@@ -1396,6 +1555,38 @@ func (o *OswDevCapVO) SetMlagVersion(v string) {
 	o.MlagVersion = &v
 }
 
+// GetMstpGetActiveSupport returns the MstpGetActiveSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetMstpGetActiveSupport() bool {
+	if o == nil || IsNil(o.MstpGetActiveSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.MstpGetActiveSupport
+}
+
+// GetMstpGetActiveSupportOk returns a tuple with the MstpGetActiveSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetMstpGetActiveSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.MstpGetActiveSupport) {
+		return nil, false
+	}
+	return o.MstpGetActiveSupport, true
+}
+
+// HasMstpGetActiveSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasMstpGetActiveSupport() bool {
+	if o != nil && !IsNil(o.MstpGetActiveSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetMstpGetActiveSupport gets a reference to the given bool and assigns it to the MstpGetActiveSupport field.
+func (o *OswDevCapVO) SetMstpGetActiveSupport(v bool) {
+	o.MstpGetActiveSupport = &v
+}
+
 // GetMstpInsNo returns the MstpInsNo field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetMstpInsNo() int32 {
 	if o == nil || IsNil(o.MstpInsNo) {
@@ -1458,6 +1649,70 @@ func (o *OswDevCapVO) HasMstpInsNum() bool {
 // SetMstpInsNum gets a reference to the given int32 and assigns it to the MstpInsNum field.
 func (o *OswDevCapVO) SetMstpInsNum(v int32) {
 	o.MstpInsNum = &v
+}
+
+// GetMstpPortSupport returns the MstpPortSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetMstpPortSupport() bool {
+	if o == nil || IsNil(o.MstpPortSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.MstpPortSupport
+}
+
+// GetMstpPortSupportOk returns a tuple with the MstpPortSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetMstpPortSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.MstpPortSupport) {
+		return nil, false
+	}
+	return o.MstpPortSupport, true
+}
+
+// HasMstpPortSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasMstpPortSupport() bool {
+	if o != nil && !IsNil(o.MstpPortSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetMstpPortSupport gets a reference to the given bool and assigns it to the MstpPortSupport field.
+func (o *OswDevCapVO) SetMstpPortSupport(v bool) {
+	o.MstpPortSupport = &v
+}
+
+// GetMtuInVlanSupport returns the MtuInVlanSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetMtuInVlanSupport() bool {
+	if o == nil || IsNil(o.MtuInVlanSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.MtuInVlanSupport
+}
+
+// GetMtuInVlanSupportOk returns a tuple with the MtuInVlanSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetMtuInVlanSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.MtuInVlanSupport) {
+		return nil, false
+	}
+	return o.MtuInVlanSupport, true
+}
+
+// HasMtuInVlanSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasMtuInVlanSupport() bool {
+	if o != nil && !IsNil(o.MtuInVlanSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetMtuInVlanSupport gets a reference to the given bool and assigns it to the MtuInVlanSupport field.
+func (o *OswDevCapVO) SetMtuInVlanSupport(v bool) {
+	o.MtuInVlanSupport = &v
 }
 
 // GetNeedFullSync returns the NeedFullSync field value if set, zero value otherwise.
@@ -1524,6 +1779,38 @@ func (o *OswDevCapVO) SetNetworkCheckSupport(v bool) {
 	o.NetworkCheckSupport = &v
 }
 
+// GetOspfAutoCostRefSupport returns the OspfAutoCostRefSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetOspfAutoCostRefSupport() bool {
+	if o == nil || IsNil(o.OspfAutoCostRefSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.OspfAutoCostRefSupport
+}
+
+// GetOspfAutoCostRefSupportOk returns a tuple with the OspfAutoCostRefSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetOspfAutoCostRefSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.OspfAutoCostRefSupport) {
+		return nil, false
+	}
+	return o.OspfAutoCostRefSupport, true
+}
+
+// HasOspfAutoCostRefSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasOspfAutoCostRefSupport() bool {
+	if o != nil && !IsNil(o.OspfAutoCostRefSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetOspfAutoCostRefSupport gets a reference to the given bool and assigns it to the OspfAutoCostRefSupport field.
+func (o *OswDevCapVO) SetOspfAutoCostRefSupport(v bool) {
+	o.OspfAutoCostRefSupport = &v
+}
+
 // GetOspfDeadIntervalSupport returns the OspfDeadIntervalSupport field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetOspfDeadIntervalSupport() bool {
 	if o == nil || IsNil(o.OspfDeadIntervalSupport) {
@@ -1556,6 +1843,38 @@ func (o *OswDevCapVO) SetOspfDeadIntervalSupport(v bool) {
 	o.OspfDeadIntervalSupport = &v
 }
 
+// GetOspfPassiveSupport returns the OspfPassiveSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetOspfPassiveSupport() bool {
+	if o == nil || IsNil(o.OspfPassiveSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.OspfPassiveSupport
+}
+
+// GetOspfPassiveSupportOk returns a tuple with the OspfPassiveSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetOspfPassiveSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.OspfPassiveSupport) {
+		return nil, false
+	}
+	return o.OspfPassiveSupport, true
+}
+
+// HasOspfPassiveSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasOspfPassiveSupport() bool {
+	if o != nil && !IsNil(o.OspfPassiveSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetOspfPassiveSupport gets a reference to the given bool and assigns it to the OspfPassiveSupport field.
+func (o *OswDevCapVO) SetOspfPassiveSupport(v bool) {
+	o.OspfPassiveSupport = &v
+}
+
 // GetOspfSupport returns the OspfSupport field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetOspfSupport() bool {
 	if o == nil || IsNil(o.OspfSupport) {
@@ -1586,6 +1905,38 @@ func (o *OswDevCapVO) HasOspfSupport() bool {
 // SetOspfSupport gets a reference to the given bool and assigns it to the OspfSupport field.
 func (o *OswDevCapVO) SetOspfSupport(v bool) {
 	o.OspfSupport = &v
+}
+
+// GetOuiBasedVlanESSupport returns the OuiBasedVlanESSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetOuiBasedVlanESSupport() bool {
+	if o == nil || IsNil(o.OuiBasedVlanESSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.OuiBasedVlanESSupport
+}
+
+// GetOuiBasedVlanESSupportOk returns a tuple with the OuiBasedVlanESSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetOuiBasedVlanESSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.OuiBasedVlanESSupport) {
+		return nil, false
+	}
+	return o.OuiBasedVlanESSupport, true
+}
+
+// HasOuiBasedVlanESSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasOuiBasedVlanESSupport() bool {
+	if o != nil && !IsNil(o.OuiBasedVlanESSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetOuiBasedVlanESSupport gets a reference to the given bool and assigns it to the OuiBasedVlanESSupport field.
+func (o *OswDevCapVO) SetOuiBasedVlanESSupport(v bool) {
+	o.OuiBasedVlanESSupport = &v
 }
 
 // GetOuiBasedVlanSupport returns the OuiBasedVlanSupport field value if set, zero value otherwise.
@@ -1682,6 +2033,38 @@ func (o *OswDevCapVO) HasPingSupport() bool {
 // SetPingSupport gets a reference to the given bool and assigns it to the PingSupport field.
 func (o *OswDevCapVO) SetPingSupport(v bool) {
 	o.PingSupport = &v
+}
+
+// GetPmtudSupport returns the PmtudSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetPmtudSupport() bool {
+	if o == nil || IsNil(o.PmtudSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.PmtudSupport
+}
+
+// GetPmtudSupportOk returns a tuple with the PmtudSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetPmtudSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.PmtudSupport) {
+		return nil, false
+	}
+	return o.PmtudSupport, true
+}
+
+// HasPmtudSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasPmtudSupport() bool {
+	if o != nil && !IsNil(o.PmtudSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetPmtudSupport gets a reference to the given bool and assigns it to the PmtudSupport field.
+func (o *OswDevCapVO) SetPmtudSupport(v bool) {
+	o.PmtudSupport = &v
 }
 
 // GetPoePortNum returns the PoePortNum field value if set, zero value otherwise.
@@ -1940,6 +2323,38 @@ func (o *OswDevCapVO) SetSfpNum(v int32) {
 	o.SfpNum = &v
 }
 
+// GetSnmpSupport returns the SnmpSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetSnmpSupport() bool {
+	if o == nil || IsNil(o.SnmpSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.SnmpSupport
+}
+
+// GetSnmpSupportOk returns a tuple with the SnmpSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetSnmpSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.SnmpSupport) {
+		return nil, false
+	}
+	return o.SnmpSupport, true
+}
+
+// HasSnmpSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasSnmpSupport() bool {
+	if o != nil && !IsNil(o.SnmpSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetSnmpSupport gets a reference to the given bool and assigns it to the SnmpSupport field.
+func (o *OswDevCapVO) SetSnmpSupport(v bool) {
+	o.SnmpSupport = &v
+}
+
 // GetStackPortCap returns the StackPortCap field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetStackPortCap() map[string][]string {
 	if o == nil || IsNil(o.StackPortCap) {
@@ -2130,6 +2545,38 @@ func (o *OswDevCapVO) HasStpExtendSupport() bool {
 // SetStpExtendSupport gets a reference to the given bool and assigns it to the StpExtendSupport field.
 func (o *OswDevCapVO) SetStpExtendSupport(v bool) {
 	o.StpExtendSupport = &v
+}
+
+// GetStpSupport returns the StpSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetStpSupport() bool {
+	if o == nil || IsNil(o.StpSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.StpSupport
+}
+
+// GetStpSupportOk returns a tuple with the StpSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetStpSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.StpSupport) {
+		return nil, false
+	}
+	return o.StpSupport, true
+}
+
+// HasStpSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasStpSupport() bool {
+	if o != nil && !IsNil(o.StpSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetStpSupport gets a reference to the given bool and assigns it to the StpSupport field.
+func (o *OswDevCapVO) SetStpSupport(v bool) {
+	o.StpSupport = &v
 }
 
 // GetSupportArpDetect returns the SupportArpDetect field value if set, zero value otherwise.
@@ -2548,6 +2995,38 @@ func (o *OswDevCapVO) SetSupportImpb(v bool) {
 	o.SupportImpb = &v
 }
 
+// GetSupportLayout returns the SupportLayout field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetSupportLayout() bool {
+	if o == nil || IsNil(o.SupportLayout) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportLayout
+}
+
+// GetSupportLayoutOk returns a tuple with the SupportLayout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetSupportLayoutOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportLayout) {
+		return nil, false
+	}
+	return o.SupportLayout, true
+}
+
+// HasSupportLayout returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasSupportLayout() bool {
+	if o != nil && !IsNil(o.SupportLayout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportLayout gets a reference to the given bool and assigns it to the SupportLayout field.
+func (o *OswDevCapVO) SetSupportLayout(v bool) {
+	o.SupportLayout = &v
+}
+
 // GetSupportMad returns the SupportMad field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetSupportMad() bool {
 	if o == nil || IsNil(o.SupportMad) {
@@ -2964,6 +3443,38 @@ func (o *OswDevCapVO) SetVoiceDscpSupport(v bool) {
 	o.VoiceDscpSupport = &v
 }
 
+// GetVoiceNetworkSupport returns the VoiceNetworkSupport field value if set, zero value otherwise.
+func (o *OswDevCapVO) GetVoiceNetworkSupport() bool {
+	if o == nil || IsNil(o.VoiceNetworkSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.VoiceNetworkSupport
+}
+
+// GetVoiceNetworkSupportOk returns a tuple with the VoiceNetworkSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDevCapVO) GetVoiceNetworkSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.VoiceNetworkSupport) {
+		return nil, false
+	}
+	return o.VoiceNetworkSupport, true
+}
+
+// HasVoiceNetworkSupport returns a boolean if a field has been set.
+func (o *OswDevCapVO) HasVoiceNetworkSupport() bool {
+	if o != nil && !IsNil(o.VoiceNetworkSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetVoiceNetworkSupport gets a reference to the given bool and assigns it to the VoiceNetworkSupport field.
+func (o *OswDevCapVO) SetVoiceNetworkSupport(v bool) {
+	o.VoiceNetworkSupport = &v
+}
+
 // GetVrfNum returns the VrfNum field value if set, zero value otherwise.
 func (o *OswDevCapVO) GetVrfNum() int32 {
 	if o == nil || IsNil(o.VrfNum) {
@@ -3056,6 +3567,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DhcpL2RelaySupport) {
 		toSerialize["dhcpL2RelaySupport"] = o.DhcpL2RelaySupport
 	}
+	if !IsNil(o.DhcpManualBindNum) {
+		toSerialize["dhcpManualBindNum"] = o.DhcpManualBindNum
+	}
 	if !IsNil(o.DhcpRangeSupport) {
 		toSerialize["dhcpRangeSupport"] = o.DhcpRangeSupport
 	}
@@ -3082,6 +3596,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EsQosSupport) {
 		toSerialize["esQosSupport"] = o.EsQosSupport
+	}
+	if !IsNil(o.EsStpExtendSupport) {
+		toSerialize["esStpExtendSupport"] = o.EsStpExtendSupport
 	}
 	if !IsNil(o.FecSupport) {
 		toSerialize["fecSupport"] = o.FecSupport
@@ -3115,6 +3632,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LocatePortSupport) {
 		toSerialize["locatePortSupport"] = o.LocatePortSupport
+	}
+	if !IsNil(o.LoopbackInterfaceCreateSupport) {
+		toSerialize["loopbackInterfaceCreateSupport"] = o.LoopbackInterfaceCreateSupport
 	}
 	if !IsNil(o.LoopbackInterfaceSupport) {
 		toSerialize["loopbackInterfaceSupport"] = o.LoopbackInterfaceSupport
@@ -3152,11 +3672,20 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MlagVersion) {
 		toSerialize["mlagVersion"] = o.MlagVersion
 	}
+	if !IsNil(o.MstpGetActiveSupport) {
+		toSerialize["mstpGetActiveSupport"] = o.MstpGetActiveSupport
+	}
 	if !IsNil(o.MstpInsNo) {
 		toSerialize["mstpInsNo"] = o.MstpInsNo
 	}
 	if !IsNil(o.MstpInsNum) {
 		toSerialize["mstpInsNum"] = o.MstpInsNum
+	}
+	if !IsNil(o.MstpPortSupport) {
+		toSerialize["mstpPortSupport"] = o.MstpPortSupport
+	}
+	if !IsNil(o.MtuInVlanSupport) {
+		toSerialize["mtuInVlanSupport"] = o.MtuInVlanSupport
 	}
 	if !IsNil(o.NeedFullSync) {
 		toSerialize["needFullSync"] = o.NeedFullSync
@@ -3164,11 +3693,20 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NetworkCheckSupport) {
 		toSerialize["networkCheckSupport"] = o.NetworkCheckSupport
 	}
+	if !IsNil(o.OspfAutoCostRefSupport) {
+		toSerialize["ospfAutoCostRefSupport"] = o.OspfAutoCostRefSupport
+	}
 	if !IsNil(o.OspfDeadIntervalSupport) {
 		toSerialize["ospfDeadIntervalSupport"] = o.OspfDeadIntervalSupport
 	}
+	if !IsNil(o.OspfPassiveSupport) {
+		toSerialize["ospfPassiveSupport"] = o.OspfPassiveSupport
+	}
 	if !IsNil(o.OspfSupport) {
 		toSerialize["ospfSupport"] = o.OspfSupport
+	}
+	if !IsNil(o.OuiBasedVlanESSupport) {
+		toSerialize["ouiBasedVlanESSupport"] = o.OuiBasedVlanESSupport
 	}
 	if !IsNil(o.OuiBasedVlanSupport) {
 		toSerialize["ouiBasedVlanSupport"] = o.OuiBasedVlanSupport
@@ -3178,6 +3716,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PingSupport) {
 		toSerialize["pingSupport"] = o.PingSupport
+	}
+	if !IsNil(o.PmtudSupport) {
+		toSerialize["pmtudSupport"] = o.PmtudSupport
 	}
 	if !IsNil(o.PoePortNum) {
 		toSerialize["poePortNum"] = o.PoePortNum
@@ -3203,6 +3744,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SfpNum) {
 		toSerialize["sfpNum"] = o.SfpNum
 	}
+	if !IsNil(o.SnmpSupport) {
+		toSerialize["snmpSupport"] = o.SnmpSupport
+	}
 	if !IsNil(o.StackPortCap) {
 		toSerialize["stackPortCap"] = o.StackPortCap
 	}
@@ -3220,6 +3764,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.StpExtendSupport) {
 		toSerialize["stpExtendSupport"] = o.StpExtendSupport
+	}
+	if !IsNil(o.StpSupport) {
+		toSerialize["stpSupport"] = o.StpSupport
 	}
 	if !IsNil(o.SupportArpDetect) {
 		toSerialize["supportArpDetect"] = o.SupportArpDetect
@@ -3260,6 +3807,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SupportImpb) {
 		toSerialize["supportImpb"] = o.SupportImpb
 	}
+	if !IsNil(o.SupportLayout) {
+		toSerialize["supportLayout"] = o.SupportLayout
+	}
 	if !IsNil(o.SupportMad) {
 		toSerialize["supportMad"] = o.SupportMad
 	}
@@ -3298,6 +3848,9 @@ func (o OswDevCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VoiceDscpSupport) {
 		toSerialize["voiceDscpSupport"] = o.VoiceDscpSupport
+	}
+	if !IsNil(o.VoiceNetworkSupport) {
+		toSerialize["voiceNetworkSupport"] = o.VoiceNetworkSupport
 	}
 	if !IsNil(o.VrfNum) {
 		toSerialize["vrfNum"] = o.VrfNum

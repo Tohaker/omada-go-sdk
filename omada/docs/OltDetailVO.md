@@ -16,11 +16,11 @@ Name | Type | Description | Notes
 **CpuUtil** | Pointer to **int32** | Cpu utilization | [optional] 
 **CustomId** | Pointer to **string** | Customer ID | [optional] 
 **CustomName** | Pointer to **string** | Customer name | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** | Description of the device | [optional] 
 **DevCap** | Pointer to [**OltDevCapVO**](OltDevCapVO.md) |  | [optional] 
 **DeviceSeriesType** | Pointer to **int32** | Device series type.DeviceSeriesType should be a value as follows: 0:advanced;1:pro | [optional] 
 **DeviceTemplateAvailable** | Pointer to **bool** | Whether there is an available device template for the device; it is false if the model is not supported or the site template has not created the corresponding device template. | [optional] 
-**DisableHwReset** | Pointer to **bool** |  | [optional] 
+**DisableHwReset** | Pointer to **bool** | Whether to disable hardware reset | [optional] 
 **Down** | Pointer to **int64** | Total real-time down-link traffic(byte) | [optional] 
 **DownlinkList** | Pointer to [**[]OltDetailDownlinkVO**](OltDetailDownlinkVO.md) | Down-link list | [optional] 
 **DueTime** | Pointer to **int64** | Expire timestamp of license(cloud base exclusive) | [optional] 
@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **Ip** | Pointer to **string** | Ip address | [optional] 
 **Ipv6List** | Pointer to **[]string** | Ipv6 address List | [optional] 
 **LastSeen** | Pointer to **int64** | Last online timestamp (ms) | [optional] 
+**LatestVersion** | Pointer to **string** | Latest firmware version | [optional] 
 **LicenseId** | Pointer to **string** | License key on detail page of device(cloud base exclusive) | [optional] 
 **LicenseStatus** | Pointer to **int32** | License status(cloud base exclusive).LicenseStatus should be a value as follows: 0:unActive 1:Unbind 2:Expired 3:active | [optional] 
 **LicenseUnbindingLimit** | Pointer to **int32** | Remaining unbind count for license on detail Page of device(cloud base exclusive) | [optional] 
@@ -52,6 +53,7 @@ Name | Type | Description | Notes
 **PublicIp** | Pointer to **string** | Public ip address | [optional] 
 **Remember** | Pointer to **bool** | Whether to remember the device(deprecated) | [optional] 
 **RememberDevice** | Pointer to **int32** | Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site | [optional] 
+**ReplaceDeviceInfo** | Pointer to [**DeviceReplaceSettingVO**](DeviceReplaceSettingVO.md) |  | [optional] 
 **Resource** | Pointer to **int32** | Data source.Resource should be a value as follows: 0:new created;1:from template;2:override | [optional] 
 **ShowModel** | Pointer to **string** | Model complex shown in the front end.Ap：model+(country)+modelVersion,EAP225(EU) v3.0  Gateway/Switch：model+modelVersion,Osg v3.0 | [optional] 
 **SiteName** | Pointer to **string** | Site name of the device | [optional] 
@@ -918,6 +920,31 @@ SetLastSeen sets LastSeen field to given value.
 
 HasLastSeen returns a boolean if a field has been set.
 
+### GetLatestVersion
+
+`func (o *OltDetailVO) GetLatestVersion() string`
+
+GetLatestVersion returns the LatestVersion field if non-nil, zero value otherwise.
+
+### GetLatestVersionOk
+
+`func (o *OltDetailVO) GetLatestVersionOk() (*string, bool)`
+
+GetLatestVersionOk returns a tuple with the LatestVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatestVersion
+
+`func (o *OltDetailVO) SetLatestVersion(v string)`
+
+SetLatestVersion sets LatestVersion field to given value.
+
+### HasLatestVersion
+
+`func (o *OltDetailVO) HasLatestVersion() bool`
+
+HasLatestVersion returns a boolean if a field has been set.
+
 ### GetLicenseId
 
 `func (o *OltDetailVO) GetLicenseId() string`
@@ -1292,6 +1319,31 @@ SetRememberDevice sets RememberDevice field to given value.
 `func (o *OltDetailVO) HasRememberDevice() bool`
 
 HasRememberDevice returns a boolean if a field has been set.
+
+### GetReplaceDeviceInfo
+
+`func (o *OltDetailVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO`
+
+GetReplaceDeviceInfo returns the ReplaceDeviceInfo field if non-nil, zero value otherwise.
+
+### GetReplaceDeviceInfoOk
+
+`func (o *OltDetailVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool)`
+
+GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplaceDeviceInfo
+
+`func (o *OltDetailVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO)`
+
+SetReplaceDeviceInfo sets ReplaceDeviceInfo field to given value.
+
+### HasReplaceDeviceInfo
+
+`func (o *OltDetailVO) HasReplaceDeviceInfo() bool`
+
+HasReplaceDeviceInfo returns a boolean if a field has been set.
 
 ### GetResource
 

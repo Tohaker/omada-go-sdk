@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **DeviceMac** | Pointer to **string** | DHCP Server Device mac. Only valid when deviceType is 1 or 2. When deviceType is 1, deviceMac can be empty when there is no gateway in the site. | [optional] 
 **DeviceType** | **int32** | DHCP Server Device type. It should be a value as follows: 0:External Device 1:gateway 2:switch 3:none | 
 **DhcpGuard** | Pointer to [**DhcpServersSetting**](DhcpServersSetting.md) |  | [optional] 
+**DhcpIp** | Pointer to [**DhcpIpVO**](DhcpIpVO.md) |  | [optional] 
 **DhcpL2RelayEnable** | Pointer to **bool** | The switch of DHCP L2 relay | [optional] 
 **DhcpRelay** | Pointer to [**OswDhcpRelayOpenApiVO**](OswDhcpRelayOpenApiVO.md) |  | [optional] 
 **DhcpServer** | Pointer to [**OswDhcpServerOpenApiVO**](OswDhcpServerOpenApiVO.md) |  | [optional] 
@@ -269,6 +270,31 @@ SetDhcpGuard sets DhcpGuard field to given value.
 `func (o *LanNetworkQueryOpenApiV3VO) HasDhcpGuard() bool`
 
 HasDhcpGuard returns a boolean if a field has been set.
+
+### GetDhcpIp
+
+`func (o *LanNetworkQueryOpenApiV3VO) GetDhcpIp() DhcpIpVO`
+
+GetDhcpIp returns the DhcpIp field if non-nil, zero value otherwise.
+
+### GetDhcpIpOk
+
+`func (o *LanNetworkQueryOpenApiV3VO) GetDhcpIpOk() (*DhcpIpVO, bool)`
+
+GetDhcpIpOk returns a tuple with the DhcpIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDhcpIp
+
+`func (o *LanNetworkQueryOpenApiV3VO) SetDhcpIp(v DhcpIpVO)`
+
+SetDhcpIp sets DhcpIp field to given value.
+
+### HasDhcpIp
+
+`func (o *LanNetworkQueryOpenApiV3VO) HasDhcpIp() bool`
+
+HasDhcpIp returns a boolean if a field has been set.
 
 ### GetDhcpL2RelayEnable
 

@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**GetChannelLimitSetting**](SiteConfigurationAPI.md#getchannellimitsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/channel-limit | Get site channel limit setting
 [**GetDisasterModeStatus**](SiteConfigurationAPI.md#getdisastermodestatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/disaster | Get the status of disaster modes in Japan
 [**GetExistSiteSettingByOpenApi**](SiteConfigurationAPI.md#getexistsitesettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/exist | Query site setting exist or not
+[**GetJumboSetting**](SiteConfigurationAPI.md#getjumbosetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/jumbo | Get site jumbo setting
+[**GetLagHashAlgSetting**](SiteConfigurationAPI.md#getlaghashalgsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lag-hash-alg | Get site lag hash algorithm setting
 [**GetLldpSetting**](SiteConfigurationAPI.md#getlldpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lldp | Get site lldp setting
 [**GetMeshSetting**](SiteConfigurationAPI.md#getmeshsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mesh | Get site mesh setting
 [**GetMulticastRateLimitByOpenApi**](SiteConfigurationAPI.md#getmulticastratelimitbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multicast-rate-limit | Get site multicast rate limit setting
@@ -32,6 +34,8 @@ Method | HTTP request | Description
 [**UpdatePortalLogoutDomainSetting**](SiteConfigurationAPI.md#updateportallogoutdomainsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/portal-logout | Modify portal logout domain setting
 [**UpdateRemoteLoggingSetting**](SiteConfigurationAPI.md#updateremoteloggingsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/remote-logging | Modify site remote logging setting
 [**UpdateRoamingSetting**](SiteConfigurationAPI.md#updateroamingsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/roaming | Modify site roaming setting
+[**UpdateSiteJumboSetting**](SiteConfigurationAPI.md#updatesitejumbosetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/jumbo | Modify site jumbo setting
+[**UpdateSiteLagHashAlgSetting**](SiteConfigurationAPI.md#updatesitelaghashalgsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/lag-hash-alg | Modify site lag hash algorithm setting
 [**UpdateSiteLedSetting**](SiteConfigurationAPI.md#updatesiteledsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/led | Modify site led setting
 
 
@@ -386,6 +390,152 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseExistSiteSettingOpenApiVO**](OperationResponseExistSiteSettingOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetJumboSetting
+
+> OperationResponseSiteJumboOpenApiVO GetJumboSetting(ctx, omadacId, siteId).Execute()
+
+Get site jumbo setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | site_id
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteConfigurationAPI.GetJumboSetting(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteConfigurationAPI.GetJumboSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetJumboSetting`: OperationResponseSiteJumboOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `SiteConfigurationAPI.GetJumboSetting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | site_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetJumboSettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseSiteJumboOpenApiVO**](OperationResponseSiteJumboOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetLagHashAlgSetting
+
+> OperationResponseSiteLagHashAlgOpenApiVO GetLagHashAlgSetting(ctx, omadacId, siteId).Execute()
+
+Get site lag hash algorithm setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | site_id
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteConfigurationAPI.GetLagHashAlgSetting(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteConfigurationAPI.GetLagHashAlgSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetLagHashAlgSetting`: OperationResponseSiteLagHashAlgOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `SiteConfigurationAPI.GetLagHashAlgSetting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | site_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetLagHashAlgSettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseSiteLagHashAlgOpenApiVO**](OperationResponseSiteLagHashAlgOpenApiVO.md)
 
 ### Authorization
 
@@ -2083,6 +2233,156 @@ Name | Type | Description  | Notes
 
 
  **siteRoamingSetting** | [**SiteRoamingSetting**](SiteRoamingSetting.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSiteJumboSetting
+
+> OperationResponseWithoutResult UpdateSiteJumboSetting(ctx, omadacId, siteId).SiteJumboOpenApiVO(siteJumboOpenApiVO).Execute()
+
+Modify site jumbo setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | site_id
+	siteJumboOpenApiVO := *openapiclient.NewSiteJumboOpenApiVO() // SiteJumboOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteConfigurationAPI.UpdateSiteJumboSetting(context.Background(), omadacId, siteId).SiteJumboOpenApiVO(siteJumboOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteConfigurationAPI.UpdateSiteJumboSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSiteJumboSetting`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SiteConfigurationAPI.UpdateSiteJumboSetting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | site_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSiteJumboSettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **siteJumboOpenApiVO** | [**SiteJumboOpenApiVO**](SiteJumboOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSiteLagHashAlgSetting
+
+> OperationResponseWithoutResult UpdateSiteLagHashAlgSetting(ctx, omadacId, siteId).SiteLagHashAlgOpenApiVO(siteLagHashAlgOpenApiVO).Execute()
+
+Modify site lag hash algorithm setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | site_id
+	siteLagHashAlgOpenApiVO := *openapiclient.NewSiteLagHashAlgOpenApiVO(int32(123)) // SiteLagHashAlgOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteConfigurationAPI.UpdateSiteLagHashAlgSetting(context.Background(), omadacId, siteId).SiteLagHashAlgOpenApiVO(siteLagHashAlgOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteConfigurationAPI.UpdateSiteLagHashAlgSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSiteLagHashAlgSetting`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SiteConfigurationAPI.UpdateSiteLagHashAlgSetting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | site_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSiteLagHashAlgSettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **siteLagHashAlgOpenApiVO** | [**SiteLagHashAlgOpenApiVO**](SiteLagHashAlgOpenApiVO.md) |  | 
 
 ### Return type
 

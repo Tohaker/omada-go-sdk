@@ -25,7 +25,7 @@ type OswIpv6SettingOpenApiVO struct {
 	DnsMode *int32 `json:"dnsMode,omitempty"`
 	// IPv6 Address for static mode, like 2001:4860:4860::8888
 	Ipv6Addr *string `json:"ipv6Addr,omitempty"`
-	// Ipv6Setting parameter [mode] should be dynamic: 1 or static: 0
+	// Ipv6Setting parameter [mode] should be \"dynamic\" or \"static\"
 	Mode string `json:"mode"`
 	// Prefix Length for static mode, which should be within the range of 1–128
 	PrefixLen *int32 `json:"prefixLen,omitempty"`

@@ -188,7 +188,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site ID
-	ouiBasedVlanId := "ouiBasedVlanId_example" // string | 
+	ouiBasedVlanId := "ouiBasedVlanId_example" // string | The id of oui profile.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site ID | 
-**ouiBasedVlanId** | **string** |  | 
+**ouiBasedVlanId** | **string** | The id of oui profile. | 
 
 ### Other Parameters
 
@@ -264,7 +264,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site ID
-	ouiBasedVlanId := "ouiBasedVlanId_example" // string | 
+	ouiBasedVlanId := "ouiBasedVlanId_example" // string | Oui Based Vlan ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site ID | 
-**ouiBasedVlanId** | **string** |  | 
+**ouiBasedVlanId** | **string** | Oui Based Vlan ID | 
 
 ### Other Parameters
 
@@ -494,7 +494,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site ID
-	ouiBasedVlanId := "ouiBasedVlanId_example" // string | 
+	ouiBasedVlanId := "ouiBasedVlanId_example" // string | The id of oui profile.
 	ouiBasedVlanApOpenApiVO := *openapiclient.NewOuiBasedVlanApOpenApiVO(false, "Name_example", []openapiclient.VlanOuiModeOpenApiVO{*openapiclient.NewVlanOuiModeOpenApiVO("OuiProfileId_example", int32(123), int32(123))}, []string{"SsidIdList_example"}) // OuiBasedVlanApOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site ID | 
-**ouiBasedVlanId** | **string** |  | 
+**ouiBasedVlanId** | **string** | The id of oui profile. | 
 
 ### Other Parameters
 
@@ -572,7 +572,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site ID
-	ouiBasedVlanId := "ouiBasedVlanId_example" // string | 
+	ouiBasedVlanId := "ouiBasedVlanId_example" // string | Oui Based Vlan ID
 	ouiBasedVlanTemplateOpenApiVO := *openapiclient.NewOuiBasedVlanTemplateOpenApiVO(false, int32(123), "Name_example", []openapiclient.VlanOuiModeOpenApiVO{*openapiclient.NewVlanOuiModeOpenApiVO("OuiProfileId_example", int32(123), int32(123))}) // OuiBasedVlanTemplateOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site ID | 
-**ouiBasedVlanId** | **string** |  | 
+**ouiBasedVlanId** | **string** | Oui Based Vlan ID | 
 
 ### Other Parameters
 

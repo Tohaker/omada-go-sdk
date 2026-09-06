@@ -49,7 +49,7 @@ type LanProfileConfigOpenApiVO struct {
 	Name string `json:"name"`
 	// Native network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks.
 	NativeNetworkId string `json:"nativeNetworkId"`
-	// PoE should be a value as follows: 0: on, 1: off, 2: \"do not modify\"
+	// PoE should be a value as follows: 0: off, 1: on, 2: \"do not modify\"
 	Poe int32 `json:"poe"`
 	// Port-isolation enable status
 	PortIsolationEnable bool `json:"portIsolationEnable"`

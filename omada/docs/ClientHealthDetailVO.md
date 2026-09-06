@@ -5,9 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssociationTime** | Pointer to [**CommonSubHealthInfoDetailVOInteger**](CommonSubHealthInfoDetailVOInteger.md) |  | [optional] 
+**ConnectScore** | Pointer to [**CommonSubHealthInfoDetailVOInteger**](CommonSubHealthInfoDetailVOInteger.md) |  | [optional] 
+**Incident** | Pointer to [**IncidentSubHealthInfoDetailVO**](IncidentSubHealthInfoDetailVO.md) |  | [optional] 
+**LinkErrorScore** | Pointer to [**CommonSubHealthInfoDetailVOInteger**](CommonSubHealthInfoDetailVOInteger.md) |  | [optional] 
 **Rate** | Pointer to [**CommonSubHealthInfoDetailVOLong**](CommonSubHealthInfoDetailVOLong.md) |  | [optional] 
 **Rssi** | Pointer to [**CommonSubHealthInfoDetailVOInteger**](CommonSubHealthInfoDetailVOInteger.md) |  | [optional] 
 **Score** | Pointer to **int32** |  | [optional] 
+**Snr** | Pointer to [**CommonSubHealthInfoDetailVOInteger**](CommonSubHealthInfoDetailVOInteger.md) |  | [optional] 
 
 ## Methods
 
@@ -52,6 +56,81 @@ SetAssociationTime sets AssociationTime field to given value.
 `func (o *ClientHealthDetailVO) HasAssociationTime() bool`
 
 HasAssociationTime returns a boolean if a field has been set.
+
+### GetConnectScore
+
+`func (o *ClientHealthDetailVO) GetConnectScore() CommonSubHealthInfoDetailVOInteger`
+
+GetConnectScore returns the ConnectScore field if non-nil, zero value otherwise.
+
+### GetConnectScoreOk
+
+`func (o *ClientHealthDetailVO) GetConnectScoreOk() (*CommonSubHealthInfoDetailVOInteger, bool)`
+
+GetConnectScoreOk returns a tuple with the ConnectScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectScore
+
+`func (o *ClientHealthDetailVO) SetConnectScore(v CommonSubHealthInfoDetailVOInteger)`
+
+SetConnectScore sets ConnectScore field to given value.
+
+### HasConnectScore
+
+`func (o *ClientHealthDetailVO) HasConnectScore() bool`
+
+HasConnectScore returns a boolean if a field has been set.
+
+### GetIncident
+
+`func (o *ClientHealthDetailVO) GetIncident() IncidentSubHealthInfoDetailVO`
+
+GetIncident returns the Incident field if non-nil, zero value otherwise.
+
+### GetIncidentOk
+
+`func (o *ClientHealthDetailVO) GetIncidentOk() (*IncidentSubHealthInfoDetailVO, bool)`
+
+GetIncidentOk returns a tuple with the Incident field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncident
+
+`func (o *ClientHealthDetailVO) SetIncident(v IncidentSubHealthInfoDetailVO)`
+
+SetIncident sets Incident field to given value.
+
+### HasIncident
+
+`func (o *ClientHealthDetailVO) HasIncident() bool`
+
+HasIncident returns a boolean if a field has been set.
+
+### GetLinkErrorScore
+
+`func (o *ClientHealthDetailVO) GetLinkErrorScore() CommonSubHealthInfoDetailVOInteger`
+
+GetLinkErrorScore returns the LinkErrorScore field if non-nil, zero value otherwise.
+
+### GetLinkErrorScoreOk
+
+`func (o *ClientHealthDetailVO) GetLinkErrorScoreOk() (*CommonSubHealthInfoDetailVOInteger, bool)`
+
+GetLinkErrorScoreOk returns a tuple with the LinkErrorScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinkErrorScore
+
+`func (o *ClientHealthDetailVO) SetLinkErrorScore(v CommonSubHealthInfoDetailVOInteger)`
+
+SetLinkErrorScore sets LinkErrorScore field to given value.
+
+### HasLinkErrorScore
+
+`func (o *ClientHealthDetailVO) HasLinkErrorScore() bool`
+
+HasLinkErrorScore returns a boolean if a field has been set.
 
 ### GetRate
 
@@ -127,6 +206,31 @@ SetScore sets Score field to given value.
 `func (o *ClientHealthDetailVO) HasScore() bool`
 
 HasScore returns a boolean if a field has been set.
+
+### GetSnr
+
+`func (o *ClientHealthDetailVO) GetSnr() CommonSubHealthInfoDetailVOInteger`
+
+GetSnr returns the Snr field if non-nil, zero value otherwise.
+
+### GetSnrOk
+
+`func (o *ClientHealthDetailVO) GetSnrOk() (*CommonSubHealthInfoDetailVOInteger, bool)`
+
+GetSnrOk returns a tuple with the Snr field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSnr
+
+`func (o *ClientHealthDetailVO) SetSnr(v CommonSubHealthInfoDetailVOInteger)`
+
+SetSnr sets Snr field to given value.
+
+### HasSnr
+
+`func (o *ClientHealthDetailVO) HasSnr() bool`
+
+HasSnr returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

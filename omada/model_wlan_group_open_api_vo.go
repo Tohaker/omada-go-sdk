@@ -25,13 +25,16 @@ type WlanGroupOpenApiVO struct {
 	Clone *bool `json:"clone,omitempty"`
 	// cloneWlanId
 	CloneWlanId *string `json:"cloneWlanId,omitempty"`
+	// WLAN group ID
+	Id *string `json:"id,omitempty"`
 	// WLAN group name should contain 1 to 128 characters.
 	Name *string `json:"name,omitempty"`
 	// Whether it is the default WLAN group
 	Primary *bool `json:"primary,omitempty"`
 	// resource. 0 is new created, 1 is from template, 2 is override template.
 	Resource *int32 `json:"resource,omitempty"`
-	// WLAN group ID
+	// WLAN group ID, kept for backward compatibility and equivalent to id. This field will be removed in a future release; use id instead.
+	// Deprecated
 	WlanId *string `json:"wlanId,omitempty"`
 }
 
@@ -148,6 +151,38 @@ func (o *WlanGroupOpenApiVO) SetCloneWlanId(v string) {
 	o.CloneWlanId = &v
 }
 
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *WlanGroupOpenApiVO) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WlanGroupOpenApiVO) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *WlanGroupOpenApiVO) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *WlanGroupOpenApiVO) SetId(v string) {
+	o.Id = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *WlanGroupOpenApiVO) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -245,6 +280,7 @@ func (o *WlanGroupOpenApiVO) SetResource(v int32) {
 }
 
 // GetWlanId returns the WlanId field value if set, zero value otherwise.
+// Deprecated
 func (o *WlanGroupOpenApiVO) GetWlanId() string {
 	if o == nil || IsNil(o.WlanId) {
 		var ret string
@@ -255,6 +291,7 @@ func (o *WlanGroupOpenApiVO) GetWlanId() string {
 
 // GetWlanIdOk returns a tuple with the WlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *WlanGroupOpenApiVO) GetWlanIdOk() (*string, bool) {
 	if o == nil || IsNil(o.WlanId) {
 		return nil, false
@@ -272,6 +309,7 @@ func (o *WlanGroupOpenApiVO) HasWlanId() bool {
 }
 
 // SetWlanId gets a reference to the given string and assigns it to the WlanId field.
+// Deprecated
 func (o *WlanGroupOpenApiVO) SetWlanId(v string) {
 	o.WlanId = &v
 }
@@ -294,6 +332,9 @@ func (o WlanGroupOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CloneWlanId) {
 		toSerialize["cloneWlanId"] = o.CloneWlanId
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

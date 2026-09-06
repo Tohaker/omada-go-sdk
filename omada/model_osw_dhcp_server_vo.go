@@ -19,16 +19,18 @@ import (
 // checks if the OswDhcpServerVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswDhcpServerVO{}
 
-// OswDhcpServerVO Network DHCP server settings. Only valid when deviceType is 2 and mode is 1.
+// OswDhcpServerVO Network DHCP server settings.
 type OswDhcpServerVO struct {
+	// Value of dhcp pool mask is from 1 to 31.
+	DhcpPoolMask *int32 `json:"dhcpPoolMask,omitempty"`
 	// Gateway IP, like 192.168.0.1
 	Gateway *string `json:"gateway,omitempty"`
 	// DHCP Server IP, like 192.168.0.1.
-	Ip string `json:"ip"`
+	Ip *string `json:"ip,omitempty"`
 	// Lease time should be within the range of 2–2880
 	Leasetime int32 `json:"leasetime"`
-	// Parameter [netmask] should not within the range of 1-30
-	Netmask string `json:"netmask"`
+	// Parameter [netmask] should be within the range of 1-31
+	Netmask *string `json:"netmask,omitempty"`
 	// option138 ip, like 192.168.0.1
 	Option138 *string `json:"option138,omitempty"`
 	// Custom DHCP options.
@@ -49,11 +51,9 @@ type _OswDhcpServerVO OswDhcpServerVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOswDhcpServerVO(ip string, leasetime int32, netmask string, priDns string) *OswDhcpServerVO {
+func NewOswDhcpServerVO(leasetime int32, priDns string) *OswDhcpServerVO {
 	this := OswDhcpServerVO{}
-	this.Ip = ip
 	this.Leasetime = leasetime
-	this.Netmask = netmask
 	this.PriDns = priDns
 	return &this
 }
@@ -64,6 +64,38 @@ func NewOswDhcpServerVO(ip string, leasetime int32, netmask string, priDns strin
 func NewOswDhcpServerVOWithDefaults() *OswDhcpServerVO {
 	this := OswDhcpServerVO{}
 	return &this
+}
+
+// GetDhcpPoolMask returns the DhcpPoolMask field value if set, zero value otherwise.
+func (o *OswDhcpServerVO) GetDhcpPoolMask() int32 {
+	if o == nil || IsNil(o.DhcpPoolMask) {
+		var ret int32
+		return ret
+	}
+	return *o.DhcpPoolMask
+}
+
+// GetDhcpPoolMaskOk returns a tuple with the DhcpPoolMask field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDhcpServerVO) GetDhcpPoolMaskOk() (*int32, bool) {
+	if o == nil || IsNil(o.DhcpPoolMask) {
+		return nil, false
+	}
+	return o.DhcpPoolMask, true
+}
+
+// HasDhcpPoolMask returns a boolean if a field has been set.
+func (o *OswDhcpServerVO) HasDhcpPoolMask() bool {
+	if o != nil && !IsNil(o.DhcpPoolMask) {
+		return true
+	}
+
+	return false
+}
+
+// SetDhcpPoolMask gets a reference to the given int32 and assigns it to the DhcpPoolMask field.
+func (o *OswDhcpServerVO) SetDhcpPoolMask(v int32) {
+	o.DhcpPoolMask = &v
 }
 
 // GetGateway returns the Gateway field value if set, zero value otherwise.
@@ -98,28 +130,36 @@ func (o *OswDhcpServerVO) SetGateway(v string) {
 	o.Gateway = &v
 }
 
-// GetIp returns the Ip field value
+// GetIp returns the Ip field value if set, zero value otherwise.
 func (o *OswDhcpServerVO) GetIp() string {
-	if o == nil {
+	if o == nil || IsNil(o.Ip) {
 		var ret string
 		return ret
 	}
-
-	return o.Ip
+	return *o.Ip
 }
 
-// GetIpOk returns a tuple with the Ip field value
+// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OswDhcpServerVO) GetIpOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Ip) {
 		return nil, false
 	}
-	return &o.Ip, true
+	return o.Ip, true
 }
 
-// SetIp sets field value
+// HasIp returns a boolean if a field has been set.
+func (o *OswDhcpServerVO) HasIp() bool {
+	if o != nil && !IsNil(o.Ip) {
+		return true
+	}
+
+	return false
+}
+
+// SetIp gets a reference to the given string and assigns it to the Ip field.
 func (o *OswDhcpServerVO) SetIp(v string) {
-	o.Ip = v
+	o.Ip = &v
 }
 
 // GetLeasetime returns the Leasetime field value
@@ -146,28 +186,36 @@ func (o *OswDhcpServerVO) SetLeasetime(v int32) {
 	o.Leasetime = v
 }
 
-// GetNetmask returns the Netmask field value
+// GetNetmask returns the Netmask field value if set, zero value otherwise.
 func (o *OswDhcpServerVO) GetNetmask() string {
-	if o == nil {
+	if o == nil || IsNil(o.Netmask) {
 		var ret string
 		return ret
 	}
-
-	return o.Netmask
+	return *o.Netmask
 }
 
-// GetNetmaskOk returns a tuple with the Netmask field value
+// GetNetmaskOk returns a tuple with the Netmask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OswDhcpServerVO) GetNetmaskOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Netmask) {
 		return nil, false
 	}
-	return &o.Netmask, true
+	return o.Netmask, true
 }
 
-// SetNetmask sets field value
+// HasNetmask returns a boolean if a field has been set.
+func (o *OswDhcpServerVO) HasNetmask() bool {
+	if o != nil && !IsNil(o.Netmask) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetmask gets a reference to the given string and assigns it to the Netmask field.
 func (o *OswDhcpServerVO) SetNetmask(v string) {
-	o.Netmask = v
+	o.Netmask = &v
 }
 
 // GetOption138 returns the Option138 field value if set, zero value otherwise.
@@ -364,12 +412,19 @@ func (o OswDhcpServerVO) MarshalJSON() ([]byte, error) {
 
 func (o OswDhcpServerVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DhcpPoolMask) {
+		toSerialize["dhcpPoolMask"] = o.DhcpPoolMask
+	}
 	if !IsNil(o.Gateway) {
 		toSerialize["gateway"] = o.Gateway
 	}
-	toSerialize["ip"] = o.Ip
+	if !IsNil(o.Ip) {
+		toSerialize["ip"] = o.Ip
+	}
 	toSerialize["leasetime"] = o.Leasetime
-	toSerialize["netmask"] = o.Netmask
+	if !IsNil(o.Netmask) {
+		toSerialize["netmask"] = o.Netmask
+	}
 	if !IsNil(o.Option138) {
 		toSerialize["option138"] = o.Option138
 	}
@@ -394,9 +449,7 @@ func (o *OswDhcpServerVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"ip",
 		"leasetime",
-		"netmask",
 		"priDns",
 	}
 

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 [**GetRadioFrequencyPlanningConfig**](WLANOptimizationAPI.md#getradiofrequencyplanningconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning | get Radio Frequency Planning Config
 [**GetRadioFrequencyPlanningConfigTemplate**](WLANOptimizationAPI.md#getradiofrequencyplanningconfigtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rfPlanning/config | get Radio Frequency Planning Config Template
 [**GetRadioFrequencyPlanningResult**](WLANOptimizationAPI.md#getradiofrequencyplanningresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/result | get Radio Frequency Planning Result
-[**GetTimeLinePlanningHistorys**](WLANOptimizationAPI.md#gettimelineplanninghistorys) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/history/timeline | Get the planningHistory
+[**GetTimeLinePlanningHistorys**](WLANOptimizationAPI.md#gettimelineplanninghistorys) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/history/timeline | Get the planningHistory Time Line
 [**ModifyExcludeAps**](WLANOptimizationAPI.md#modifyexcludeaps) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/excludeAps | modify Exclude Aps
 [**ModifyRFPlanningDeployConfig**](WLANOptimizationAPI.md#modifyrfplanningdeployconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/config | modify RF Planning Deploy Config
 [**ModifyRFPlanningDeployConfigTemplate**](WLANOptimizationAPI.md#modifyrfplanningdeployconfigtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rfPlanning/config | modify RF Planning Deploy Config Template
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 
 ## GetExcludeAps
 
-> OperationResponse GetExcludeAps(ctx, omadacId, siteId).CurrentPage(currentPage).CurrentPageSize(currentPageSize).Execute()
+> OperationResponseListExcludeApVO GetExcludeAps(ctx, omadacId, siteId).CurrentPage(currentPage).CurrentPageSize(currentPageSize).Execute()
 
 get ExcludeAps
 
@@ -518,7 +518,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WLANOptimizationAPI.GetExcludeAps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetExcludeAps`: OperationResponse
+	// response from `GetExcludeAps`: OperationResponseListExcludeApVO
 	fmt.Fprintf(os.Stdout, "Response from `WLANOptimizationAPI.GetExcludeAps`: %v\n", resp)
 }
 ```
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseListExcludeApVO**](OperationResponseListExcludeApVO.md)
 
 ### Authorization
 
@@ -863,7 +863,7 @@ Name | Type | Description  | Notes
 
 ## GetPlanningHistorysByTime
 
-> OperationResponse GetPlanningHistorysByTime(ctx, omadacId, siteId).CurrentPage(currentPage).CurrentPageSize(currentPageSize).Start(start).End(end).Execute()
+> OperationResponseGridVORFPlanningHistory GetPlanningHistorysByTime(ctx, omadacId, siteId).CurrentPage(currentPage).CurrentPageSize(currentPageSize).Start(start).End(end).Execute()
 
 Get the planningHistory
 
@@ -896,7 +896,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WLANOptimizationAPI.GetPlanningHistorysByTime``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPlanningHistorysByTime`: OperationResponse
+	// response from `GetPlanningHistorysByTime`: OperationResponseGridVORFPlanningHistory
 	fmt.Fprintf(os.Stdout, "Response from `WLANOptimizationAPI.GetPlanningHistorysByTime`: %v\n", resp)
 }
 ```
@@ -926,7 +926,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseGridVORFPlanningHistory**](OperationResponseGridVORFPlanningHistory.md)
 
 ### Authorization
 
@@ -1236,9 +1236,9 @@ Name | Type | Description  | Notes
 
 ## GetTimeLinePlanningHistorys
 
-> OperationResponse GetTimeLinePlanningHistorys(ctx, omadacId, siteId).Start(start).End(end).Type_(type_).Execute()
+> OperationResponsePlanningHistoryListVO GetTimeLinePlanningHistorys(ctx, omadacId, siteId).Start(start).End(end).Type_(type_).Execute()
 
-Get the planningHistory
+Get the planningHistory Time Line
 
 
 
@@ -1268,7 +1268,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WLANOptimizationAPI.GetTimeLinePlanningHistorys``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTimeLinePlanningHistorys`: OperationResponse
+	// response from `GetTimeLinePlanningHistorys`: OperationResponsePlanningHistoryListVO
 	fmt.Fprintf(os.Stdout, "Response from `WLANOptimizationAPI.GetTimeLinePlanningHistorys`: %v\n", resp)
 }
 ```
@@ -1297,7 +1297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponsePlanningHistoryListVO**](OperationResponsePlanningHistoryListVO.md)
 
 ### Authorization
 

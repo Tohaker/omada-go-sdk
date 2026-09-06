@@ -19,25 +19,31 @@ var _ MappedNullable = &OswDDMInfoOpenApiVO{}
 
 // OswDDMInfoOpenApiVO struct for OswDDMInfoOpenApiVO
 type OswDDMInfoOpenApiVO struct {
-	// The biasCurrent of the optical module.
+	// The biasCurrent(mA) of the optical module.
 	BiasCurrent *float64 `json:"biasCurrent,omitempty"`
-	// Whether the DDM data is valid.
+	// Whether the DDM data is valid(0:invalid, 1:valid).
 	DataReady *int32 `json:"dataReady,omitempty"`
-	// The Loss Of Signal(LOS) of the optical module.
+	// Whether the optical module is in the Loss Of Signal state(0:false, 1:true).
 	LossOfSignal *int32 `json:"lossOfSignal,omitempty"`
 	// Switch portId.
 	Port *int32 `json:"port,omitempty"`
-	// The received optical power of the optical module.
+	// The received optical power(mW) of the optical module.
 	RxPower *float64 `json:"rxPower,omitempty"`
+	// The received optical power(dbm) of the optical module.
+	RxPowerDbm *float64 `json:"rxPowerDbm,omitempty"`
 	// Switch stack portId(unit/slot/port).
 	StandardPort *string `json:"standardPort,omitempty"`
-	// The temperature of the optical module.
+	// The temperature(Celsius) of the optical module.
 	Temperature *float64 `json:"temperature,omitempty"`
-	// The transmission fault of the optical module.
+	// The temperature(Fahrenheit) of the optical module.
+	TemperatureFah *float64 `json:"temperatureFah,omitempty"`
+	// Whether the optical module is in the Transmission Fault state(0:false, 1:true).
 	TransmitFault *int32 `json:"transmitFault,omitempty"`
-	// The transmitted optical power of the optical module.
+	// The transmitted optical power(mW) of the optical module.
 	TxPower *float64 `json:"txPower,omitempty"`
-	// The voltage of the optical module.
+	// The transmitted optical power(dbm) of the optical module.
+	TxPowerDbm *float64 `json:"txPowerDbm,omitempty"`
+	// The voltage(V) of the optical module.
 	Voltage *float64 `json:"voltage,omitempty"`
 }
 
@@ -218,6 +224,38 @@ func (o *OswDDMInfoOpenApiVO) SetRxPower(v float64) {
 	o.RxPower = &v
 }
 
+// GetRxPowerDbm returns the RxPowerDbm field value if set, zero value otherwise.
+func (o *OswDDMInfoOpenApiVO) GetRxPowerDbm() float64 {
+	if o == nil || IsNil(o.RxPowerDbm) {
+		var ret float64
+		return ret
+	}
+	return *o.RxPowerDbm
+}
+
+// GetRxPowerDbmOk returns a tuple with the RxPowerDbm field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDDMInfoOpenApiVO) GetRxPowerDbmOk() (*float64, bool) {
+	if o == nil || IsNil(o.RxPowerDbm) {
+		return nil, false
+	}
+	return o.RxPowerDbm, true
+}
+
+// HasRxPowerDbm returns a boolean if a field has been set.
+func (o *OswDDMInfoOpenApiVO) HasRxPowerDbm() bool {
+	if o != nil && !IsNil(o.RxPowerDbm) {
+		return true
+	}
+
+	return false
+}
+
+// SetRxPowerDbm gets a reference to the given float64 and assigns it to the RxPowerDbm field.
+func (o *OswDDMInfoOpenApiVO) SetRxPowerDbm(v float64) {
+	o.RxPowerDbm = &v
+}
+
 // GetStandardPort returns the StandardPort field value if set, zero value otherwise.
 func (o *OswDDMInfoOpenApiVO) GetStandardPort() string {
 	if o == nil || IsNil(o.StandardPort) {
@@ -280,6 +318,38 @@ func (o *OswDDMInfoOpenApiVO) HasTemperature() bool {
 // SetTemperature gets a reference to the given float64 and assigns it to the Temperature field.
 func (o *OswDDMInfoOpenApiVO) SetTemperature(v float64) {
 	o.Temperature = &v
+}
+
+// GetTemperatureFah returns the TemperatureFah field value if set, zero value otherwise.
+func (o *OswDDMInfoOpenApiVO) GetTemperatureFah() float64 {
+	if o == nil || IsNil(o.TemperatureFah) {
+		var ret float64
+		return ret
+	}
+	return *o.TemperatureFah
+}
+
+// GetTemperatureFahOk returns a tuple with the TemperatureFah field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDDMInfoOpenApiVO) GetTemperatureFahOk() (*float64, bool) {
+	if o == nil || IsNil(o.TemperatureFah) {
+		return nil, false
+	}
+	return o.TemperatureFah, true
+}
+
+// HasTemperatureFah returns a boolean if a field has been set.
+func (o *OswDDMInfoOpenApiVO) HasTemperatureFah() bool {
+	if o != nil && !IsNil(o.TemperatureFah) {
+		return true
+	}
+
+	return false
+}
+
+// SetTemperatureFah gets a reference to the given float64 and assigns it to the TemperatureFah field.
+func (o *OswDDMInfoOpenApiVO) SetTemperatureFah(v float64) {
+	o.TemperatureFah = &v
 }
 
 // GetTransmitFault returns the TransmitFault field value if set, zero value otherwise.
@@ -346,6 +416,38 @@ func (o *OswDDMInfoOpenApiVO) SetTxPower(v float64) {
 	o.TxPower = &v
 }
 
+// GetTxPowerDbm returns the TxPowerDbm field value if set, zero value otherwise.
+func (o *OswDDMInfoOpenApiVO) GetTxPowerDbm() float64 {
+	if o == nil || IsNil(o.TxPowerDbm) {
+		var ret float64
+		return ret
+	}
+	return *o.TxPowerDbm
+}
+
+// GetTxPowerDbmOk returns a tuple with the TxPowerDbm field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswDDMInfoOpenApiVO) GetTxPowerDbmOk() (*float64, bool) {
+	if o == nil || IsNil(o.TxPowerDbm) {
+		return nil, false
+	}
+	return o.TxPowerDbm, true
+}
+
+// HasTxPowerDbm returns a boolean if a field has been set.
+func (o *OswDDMInfoOpenApiVO) HasTxPowerDbm() bool {
+	if o != nil && !IsNil(o.TxPowerDbm) {
+		return true
+	}
+
+	return false
+}
+
+// SetTxPowerDbm gets a reference to the given float64 and assigns it to the TxPowerDbm field.
+func (o *OswDDMInfoOpenApiVO) SetTxPowerDbm(v float64) {
+	o.TxPowerDbm = &v
+}
+
 // GetVoltage returns the Voltage field value if set, zero value otherwise.
 func (o *OswDDMInfoOpenApiVO) GetVoltage() float64 {
 	if o == nil || IsNil(o.Voltage) {
@@ -403,17 +505,26 @@ func (o OswDDMInfoOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RxPower) {
 		toSerialize["rxPower"] = o.RxPower
 	}
+	if !IsNil(o.RxPowerDbm) {
+		toSerialize["rxPowerDbm"] = o.RxPowerDbm
+	}
 	if !IsNil(o.StandardPort) {
 		toSerialize["standardPort"] = o.StandardPort
 	}
 	if !IsNil(o.Temperature) {
 		toSerialize["temperature"] = o.Temperature
 	}
+	if !IsNil(o.TemperatureFah) {
+		toSerialize["temperatureFah"] = o.TemperatureFah
+	}
 	if !IsNil(o.TransmitFault) {
 		toSerialize["transmitFault"] = o.TransmitFault
 	}
 	if !IsNil(o.TxPower) {
 		toSerialize["txPower"] = o.TxPower
+	}
+	if !IsNil(o.TxPowerDbm) {
+		toSerialize["txPowerDbm"] = o.TxPowerDbm
 	}
 	if !IsNil(o.Voltage) {
 		toSerialize["voltage"] = o.Voltage

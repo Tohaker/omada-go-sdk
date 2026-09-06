@@ -4,25 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BindType** | Pointer to **int32** |  | [optional] 
-**DPort** | Pointer to **int32** |  | [optional] 
-**DeviceList** | Pointer to [**[]OswQosRuleDeviceVO**](OswQosRuleDeviceVO.md) |  | [optional] 
-**Dscp** | Pointer to **int32** |  | [optional] 
-**DscpEnable** | Pointer to **bool** |  | [optional] 
-**DscpRe** | Pointer to **int32** |  | [optional] 
-**DscpReEnable** | Pointer to **bool** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**IpVersion** | **[]int32** |  | 
-**LanNetworkEntries** | Pointer to [**[]LanNetworkEntryVO**](LanNetworkEntryVO.md) |  | [optional] 
-**MacLagIdsMap** | Pointer to **map[string][]int32** |  | [optional] 
-**MacPortIdsMap** | Pointer to **map[string][]int32** |  | [optional] 
-**MacStdPortIdsMap** | Pointer to **map[string][]string** |  | [optional] 
-**Name** | **string** |  | 
-**Protocol** | Pointer to **int32** |  | [optional] 
-**Queue** | **int32** |  | 
-**SPort** | Pointer to **int32** |  | [optional] 
-**Status** | **bool** |  | 
-**Type** | **int32** |  | 
+**BindType** | Pointer to **int32** | Switch port bind type(0: all switch port, 1: custom switch port). | [optional] 
+**DPort** | Pointer to **int32** | The destination port(0-65535). When the type is \&quot;Custom\&quot; and the protocol is TCP or UDP, it can be issued. | [optional] 
+**DeviceList** | Pointer to [**[]OswQosRuleDeviceVO**](OswQosRuleDeviceVO.md) | List of switch devices to which QoS rule are bound, only for bindType 1 | [optional] 
+**Dscp** | Pointer to **int32** | The dscp value(0-63). When the type is \&quot;Custom\&quot;, it can be issued. | [optional] 
+**DscpRe** | Pointer to **int32** | The remarked dscp value(0-63). If it is set to \&quot;Auto\&quot;, the actual issued value is 64. | [optional] 
+**DscpReEnable** | Pointer to **bool** | Whether to enable DSCP remark | [optional] 
+**Id** | Pointer to **string** | The Qos rule id. This parameter is not required when creating or modifying Qos rule. | [optional] 
+**Index** | Pointer to **int32** | The index of Qos rule. This parameter is not required when creating or modifying Qos rule. | [optional] 
+**IpVersion** | **[]int32** | The selected ipVersion list of Qos rule, IPv4:[0], IPv6:[1], IPv4&amp;IPv6:[0,1] | 
+**LanNetworkEntries** | Pointer to [**[]LanNetworkEntryVO**](LanNetworkEntryVO.md) | It can be issued when the type is either \&quot;Network\&quot; or \&quot;Custom\&quot;. For the \&quot;Network\&quot; type, multiple options are available; for the \&quot;Custom\&quot; type, a single option is required. | [optional] 
+**Name** | **string** | The name of Qos rule. | 
+**Protocol** | Pointer to **int32** | Network Protocol(Reference to chapter 5.5.1 ACL Protocol Template at Home page). When the type is \&quot;Custom\&quot;, it can be issued. | [optional] 
+**Queue** | **int32** | The queue of Qos rule(0-7). | 
+**SPort** | Pointer to **int32** | The source port(0-65535). When the type is \&quot;Custom\&quot; and the protocol is TCP or UDP, it can be issued. | [optional] 
+**Status** | **bool** | The status of Qos rule, true: enable, false:disable | 
+**Type** | **int32** | The type of Qos rule, 0:Network, 1:Port, 2:Custom | 
 
 ## Methods
 
@@ -143,31 +140,6 @@ SetDscp sets Dscp field to given value.
 
 HasDscp returns a boolean if a field has been set.
 
-### GetDscpEnable
-
-`func (o *OswQosRuleVO) GetDscpEnable() bool`
-
-GetDscpEnable returns the DscpEnable field if non-nil, zero value otherwise.
-
-### GetDscpEnableOk
-
-`func (o *OswQosRuleVO) GetDscpEnableOk() (*bool, bool)`
-
-GetDscpEnableOk returns a tuple with the DscpEnable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDscpEnable
-
-`func (o *OswQosRuleVO) SetDscpEnable(v bool)`
-
-SetDscpEnable sets DscpEnable field to given value.
-
-### HasDscpEnable
-
-`func (o *OswQosRuleVO) HasDscpEnable() bool`
-
-HasDscpEnable returns a boolean if a field has been set.
-
 ### GetDscpRe
 
 `func (o *OswQosRuleVO) GetDscpRe() int32`
@@ -243,6 +215,31 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### GetIndex
+
+`func (o *OswQosRuleVO) GetIndex() int32`
+
+GetIndex returns the Index field if non-nil, zero value otherwise.
+
+### GetIndexOk
+
+`func (o *OswQosRuleVO) GetIndexOk() (*int32, bool)`
+
+GetIndexOk returns a tuple with the Index field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndex
+
+`func (o *OswQosRuleVO) SetIndex(v int32)`
+
+SetIndex sets Index field to given value.
+
+### HasIndex
+
+`func (o *OswQosRuleVO) HasIndex() bool`
+
+HasIndex returns a boolean if a field has been set.
+
 ### GetIpVersion
 
 `func (o *OswQosRuleVO) GetIpVersion() []int32`
@@ -287,81 +284,6 @@ SetLanNetworkEntries sets LanNetworkEntries field to given value.
 `func (o *OswQosRuleVO) HasLanNetworkEntries() bool`
 
 HasLanNetworkEntries returns a boolean if a field has been set.
-
-### GetMacLagIdsMap
-
-`func (o *OswQosRuleVO) GetMacLagIdsMap() map[string][]int32`
-
-GetMacLagIdsMap returns the MacLagIdsMap field if non-nil, zero value otherwise.
-
-### GetMacLagIdsMapOk
-
-`func (o *OswQosRuleVO) GetMacLagIdsMapOk() (*map[string][]int32, bool)`
-
-GetMacLagIdsMapOk returns a tuple with the MacLagIdsMap field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMacLagIdsMap
-
-`func (o *OswQosRuleVO) SetMacLagIdsMap(v map[string][]int32)`
-
-SetMacLagIdsMap sets MacLagIdsMap field to given value.
-
-### HasMacLagIdsMap
-
-`func (o *OswQosRuleVO) HasMacLagIdsMap() bool`
-
-HasMacLagIdsMap returns a boolean if a field has been set.
-
-### GetMacPortIdsMap
-
-`func (o *OswQosRuleVO) GetMacPortIdsMap() map[string][]int32`
-
-GetMacPortIdsMap returns the MacPortIdsMap field if non-nil, zero value otherwise.
-
-### GetMacPortIdsMapOk
-
-`func (o *OswQosRuleVO) GetMacPortIdsMapOk() (*map[string][]int32, bool)`
-
-GetMacPortIdsMapOk returns a tuple with the MacPortIdsMap field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMacPortIdsMap
-
-`func (o *OswQosRuleVO) SetMacPortIdsMap(v map[string][]int32)`
-
-SetMacPortIdsMap sets MacPortIdsMap field to given value.
-
-### HasMacPortIdsMap
-
-`func (o *OswQosRuleVO) HasMacPortIdsMap() bool`
-
-HasMacPortIdsMap returns a boolean if a field has been set.
-
-### GetMacStdPortIdsMap
-
-`func (o *OswQosRuleVO) GetMacStdPortIdsMap() map[string][]string`
-
-GetMacStdPortIdsMap returns the MacStdPortIdsMap field if non-nil, zero value otherwise.
-
-### GetMacStdPortIdsMapOk
-
-`func (o *OswQosRuleVO) GetMacStdPortIdsMapOk() (*map[string][]string, bool)`
-
-GetMacStdPortIdsMapOk returns a tuple with the MacStdPortIdsMap field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMacStdPortIdsMap
-
-`func (o *OswQosRuleVO) SetMacStdPortIdsMap(v map[string][]string)`
-
-SetMacStdPortIdsMap sets MacStdPortIdsMap field to given value.
-
-### HasMacStdPortIdsMap
-
-`func (o *OswQosRuleVO) HasMacStdPortIdsMap() bool`
-
-HasMacStdPortIdsMap returns a boolean if a field has been set.
 
 ### GetName
 

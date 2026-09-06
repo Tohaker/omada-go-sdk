@@ -22,7 +22,7 @@ var _ MappedNullable = &PortalSetting{}
 // PortalSetting Portal Setting.
 type PortalSetting struct {
 	AuthTimeout AuthTimeoutSetting `json:"authTimeout"`
-	// Auth Type, should be a value as follows: <br/>0：No Authentication; 1：Simple Password;<br/>2: External Radius Server; 4：External Portal Server;<br/>11：Hotspot; 15: Ldap; 16: Social Login
+	// Auth Type, should be a value as follows: <br/>0：No Authentication; 1：Simple Password;<br/>2: External RADIUS Server; 4：External Portal Server;<br/>11：Hotspot; 15: Ldap; 16: Social Login
 	AuthType int32 `json:"authType"`
 	// Portal Enable
 	Enable bool `json:"enable"`

@@ -31,6 +31,8 @@ type WifiHealthVO struct {
 	RssiScore *int32 `json:"rssiScore,omitempty"`
 	// support AP Access capacity score
 	SupportAccessCapacity *bool `json:"supportAccessCapacity,omitempty"`
+	// Wireless client quality score (onboarding time)
+	WirelessClientQualityScore *int32 `json:"wirelessClientQualityScore,omitempty"`
 }
 
 // NewWifiHealthVO instantiates a new WifiHealthVO object
@@ -242,6 +244,38 @@ func (o *WifiHealthVO) SetSupportAccessCapacity(v bool) {
 	o.SupportAccessCapacity = &v
 }
 
+// GetWirelessClientQualityScore returns the WirelessClientQualityScore field value if set, zero value otherwise.
+func (o *WifiHealthVO) GetWirelessClientQualityScore() int32 {
+	if o == nil || IsNil(o.WirelessClientQualityScore) {
+		var ret int32
+		return ret
+	}
+	return *o.WirelessClientQualityScore
+}
+
+// GetWirelessClientQualityScoreOk returns a tuple with the WirelessClientQualityScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WifiHealthVO) GetWirelessClientQualityScoreOk() (*int32, bool) {
+	if o == nil || IsNil(o.WirelessClientQualityScore) {
+		return nil, false
+	}
+	return o.WirelessClientQualityScore, true
+}
+
+// HasWirelessClientQualityScore returns a boolean if a field has been set.
+func (o *WifiHealthVO) HasWirelessClientQualityScore() bool {
+	if o != nil && !IsNil(o.WirelessClientQualityScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetWirelessClientQualityScore gets a reference to the given int32 and assigns it to the WirelessClientQualityScore field.
+func (o *WifiHealthVO) SetWirelessClientQualityScore(v int32) {
+	o.WirelessClientQualityScore = &v
+}
+
 func (o WifiHealthVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -269,6 +303,9 @@ func (o WifiHealthVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportAccessCapacity) {
 		toSerialize["supportAccessCapacity"] = o.SupportAccessCapacity
+	}
+	if !IsNil(o.WirelessClientQualityScore) {
+		toSerialize["wirelessClientQualityScore"] = o.WirelessClientQualityScore
 	}
 	return toSerialize, nil
 }

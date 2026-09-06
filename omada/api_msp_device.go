@@ -28,13 +28,13 @@ type MSPDeviceAPI interface {
 	Start adopt device in msp view.This interface does not return the actual adoptive result, you need to use the interface:Get device adopt result to obtain the adoptive result<br/><br/>The interface requires one of the permissions: <br/>MSP Adopt Device Manager Access<br/>MSP Add Device Manager Access
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mspId MSP ID
 	@param customerId Omada ID
 	@param siteId Site ID
 	@param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
-	@param mspId mspId
 	@return MSPDeviceAPIAdoptOneForMspRequest
 	*/
-	AdoptOneForMsp(ctx context.Context, customerId string, siteId string, deviceMac string, mspId string) MSPDeviceAPIAdoptOneForMspRequest
+	AdoptOneForMsp(ctx context.Context, mspId string, customerId string, siteId string, deviceMac string) MSPDeviceAPIAdoptOneForMspRequest
 
 	// AdoptOneForMspExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -58,6 +58,21 @@ type MSPDeviceAPI interface {
 	BatchAdoptForMspExecute(r MSPDeviceAPIBatchAdoptForMspRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	GetMspDeviceIncidentCounts Get MSP device incident counts
+
+	Get incident counts for customerId and device MAC pairs accessible in MSP view.<br/><br/>The interface requires one of the permissions: <br/>MSP Device Manager View Only<br/>Incidents Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mspId MSP ID
+	@return MSPDeviceAPIGetMspDeviceIncidentCountsRequest
+	*/
+	GetMspDeviceIncidentCounts(ctx context.Context, mspId string) MSPDeviceAPIGetMspDeviceIncidentCountsRequest
+
+	// GetMspDeviceIncidentCountsExecute executes the request
+	//  @return OperationResponseDeviceIncidentCountResultOpenApiVO
+	GetMspDeviceIncidentCountsExecute(r MSPDeviceAPIGetMspDeviceIncidentCountsRequest) (*OperationResponseDeviceIncidentCountResultOpenApiVO, *http.Response, error)
+
+	/*
 	GetMspKnownDeviceList Get MSP known device list
 
 	Get MSP known device list<br/><br/>The interface requires one of the permissions: <br/>MSP Device Manager View Only
@@ -71,6 +86,24 @@ type MSPDeviceAPI interface {
 	// GetMspKnownDeviceListExecute executes the request
 	//  @return OperationResponseGridVOMspKnownDeviceOpenApiVO
 	GetMspKnownDeviceListExecute(r MSPDeviceAPIGetMspKnownDeviceListRequest) (*OperationResponseGridVOMspKnownDeviceOpenApiVO, *http.Response, error)
+
+	/*
+	GetMspObjectHealthIncident MSP - Get device/client health incidents
+
+	MSP view: Get incident list for device/client health detail page. customerId is omadacId.<br/><br/>The interface requires one of the permissions: <br/>Incidents Page View Only<br/>MSP Device Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mspId MSP ID
+	@param customerId Customer ID (same as omadacId)
+	@param siteId Site ID
+	@param mac mac
+	@return MSPDeviceAPIGetMspObjectHealthIncidentRequest
+	*/
+	GetMspObjectHealthIncident(ctx context.Context, mspId string, customerId string, siteId string, mac string) MSPDeviceAPIGetMspObjectHealthIncidentRequest
+
+	// GetMspObjectHealthIncidentExecute executes the request
+	//  @return OperationResponseListAnomalyBriefCountVO
+	GetMspObjectHealthIncidentExecute(r MSPDeviceAPIGetMspObjectHealthIncidentRequest) (*OperationResponseListAnomalyBriefCountVO, *http.Response, error)
 
 	/*
 	GetMspUnknownDeviceList Get MSP unknown device list
@@ -109,10 +142,10 @@ type MSPDeviceAPIService service
 type MSPDeviceAPIAdoptOneForMspRequest struct {
 	ctx context.Context
 	ApiService MSPDeviceAPI
+	mspId string
 	customerId string
 	siteId string
 	deviceMac string
-	mspId string
 	adoptDeviceRequest *AdoptDeviceRequest
 }
 
@@ -131,20 +164,20 @@ AdoptOneForMsp Start adopt device For Msp
 Start adopt device in msp view.This interface does not return the actual adoptive result, you need to use the interface:Get device adopt result to obtain the adoptive result<br/><br/>The interface requires one of the permissions: <br/>MSP Adopt Device Manager Access<br/>MSP Add Device Manager Access
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param mspId MSP ID
  @param customerId Omada ID
  @param siteId Site ID
  @param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
- @param mspId mspId
  @return MSPDeviceAPIAdoptOneForMspRequest
 */
-func (a *MSPDeviceAPIService) AdoptOneForMsp(ctx context.Context, customerId string, siteId string, deviceMac string, mspId string) MSPDeviceAPIAdoptOneForMspRequest {
+func (a *MSPDeviceAPIService) AdoptOneForMsp(ctx context.Context, mspId string, customerId string, siteId string, deviceMac string) MSPDeviceAPIAdoptOneForMspRequest {
 	return MSPDeviceAPIAdoptOneForMspRequest{
 		ApiService: a,
 		ctx: ctx,
+		mspId: mspId,
 		customerId: customerId,
 		siteId: siteId,
 		deviceMac: deviceMac,
-		mspId: mspId,
 	}
 }
 
@@ -164,10 +197,10 @@ func (a *MSPDeviceAPIService) AdoptOneForMspExecute(r MSPDeviceAPIAdoptOneForMsp
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/start-adopt"
+	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceMac"+"}", url.PathEscape(parameterValueToString(r.deviceMac, "deviceMac")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -382,6 +415,134 @@ func (a *MSPDeviceAPIService) BatchAdoptForMspExecute(r MSPDeviceAPIBatchAdoptFo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type MSPDeviceAPIGetMspDeviceIncidentCountsRequest struct {
+	ctx context.Context
+	ApiService MSPDeviceAPI
+	mspId string
+	mspDeviceIncidentCountRequestOpenApiVO *MspDeviceIncidentCountRequestOpenApiVO
+}
+
+func (r MSPDeviceAPIGetMspDeviceIncidentCountsRequest) MspDeviceIncidentCountRequestOpenApiVO(mspDeviceIncidentCountRequestOpenApiVO MspDeviceIncidentCountRequestOpenApiVO) MSPDeviceAPIGetMspDeviceIncidentCountsRequest {
+	r.mspDeviceIncidentCountRequestOpenApiVO = &mspDeviceIncidentCountRequestOpenApiVO
+	return r
+}
+
+func (r MSPDeviceAPIGetMspDeviceIncidentCountsRequest) Execute() (*OperationResponseDeviceIncidentCountResultOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetMspDeviceIncidentCountsExecute(r)
+}
+
+/*
+GetMspDeviceIncidentCounts Get MSP device incident counts
+
+Get incident counts for customerId and device MAC pairs accessible in MSP view.<br/><br/>The interface requires one of the permissions: <br/>MSP Device Manager View Only<br/>Incidents Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param mspId MSP ID
+ @return MSPDeviceAPIGetMspDeviceIncidentCountsRequest
+*/
+func (a *MSPDeviceAPIService) GetMspDeviceIncidentCounts(ctx context.Context, mspId string) MSPDeviceAPIGetMspDeviceIncidentCountsRequest {
+	return MSPDeviceAPIGetMspDeviceIncidentCountsRequest{
+		ApiService: a,
+		ctx: ctx,
+		mspId: mspId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseDeviceIncidentCountResultOpenApiVO
+func (a *MSPDeviceAPIService) GetMspDeviceIncidentCountsExecute(r MSPDeviceAPIGetMspDeviceIncidentCountsRequest) (*OperationResponseDeviceIncidentCountResultOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseDeviceIncidentCountResultOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MSPDeviceAPIService.GetMspDeviceIncidentCounts")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/devices/incidents"
+	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.mspDeviceIncidentCountRequestOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("mspDeviceIncidentCountRequestOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.mspDeviceIncidentCountRequestOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type MSPDeviceAPIGetMspKnownDeviceListRequest struct {
 	ctx context.Context
 	ApiService MSPDeviceAPI
@@ -513,6 +674,157 @@ func (a *MSPDeviceAPIService) GetMspKnownDeviceListExecute(r MSPDeviceAPIGetMspK
 	if r.filtersDeviceSeriesType != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.deviceSeriesType", r.filtersDeviceSeriesType, "form", "")
 	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type MSPDeviceAPIGetMspObjectHealthIncidentRequest struct {
+	ctx context.Context
+	ApiService MSPDeviceAPI
+	mspId string
+	customerId string
+	siteId string
+	filtersStartTime *int64
+	filtersEndTime *int64
+	mac string
+}
+
+// Start time in milliseconds
+func (r MSPDeviceAPIGetMspObjectHealthIncidentRequest) FiltersStartTime(filtersStartTime int64) MSPDeviceAPIGetMspObjectHealthIncidentRequest {
+	r.filtersStartTime = &filtersStartTime
+	return r
+}
+
+// End time in milliseconds
+func (r MSPDeviceAPIGetMspObjectHealthIncidentRequest) FiltersEndTime(filtersEndTime int64) MSPDeviceAPIGetMspObjectHealthIncidentRequest {
+	r.filtersEndTime = &filtersEndTime
+	return r
+}
+
+func (r MSPDeviceAPIGetMspObjectHealthIncidentRequest) Execute() (*OperationResponseListAnomalyBriefCountVO, *http.Response, error) {
+	return r.ApiService.GetMspObjectHealthIncidentExecute(r)
+}
+
+/*
+GetMspObjectHealthIncident MSP - Get device/client health incidents
+
+MSP view: Get incident list for device/client health detail page. customerId is omadacId.<br/><br/>The interface requires one of the permissions: <br/>Incidents Page View Only<br/>MSP Device Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param mspId MSP ID
+ @param customerId Customer ID (same as omadacId)
+ @param siteId Site ID
+ @param mac mac
+ @return MSPDeviceAPIGetMspObjectHealthIncidentRequest
+*/
+func (a *MSPDeviceAPIService) GetMspObjectHealthIncident(ctx context.Context, mspId string, customerId string, siteId string, mac string) MSPDeviceAPIGetMspObjectHealthIncidentRequest {
+	return MSPDeviceAPIGetMspObjectHealthIncidentRequest{
+		ApiService: a,
+		ctx: ctx,
+		mspId: mspId,
+		customerId: customerId,
+		siteId: siteId,
+		mac: mac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseListAnomalyBriefCountVO
+func (a *MSPDeviceAPIService) GetMspObjectHealthIncidentExecute(r MSPDeviceAPIGetMspObjectHealthIncidentRequest) (*OperationResponseListAnomalyBriefCountVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseListAnomalyBriefCountVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MSPDeviceAPIService.GetMspObjectHealthIncident")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/health/incident/{mac}"
+	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"mac"+"}", url.PathEscape(parameterValueToString(r.mac, "mac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.filtersStartTime == nil {
+		return localVarReturnValue, nil, reportError("filtersStartTime is required and must be specified")
+	}
+	if r.filtersEndTime == nil {
+		return localVarReturnValue, nil, reportError("filtersEndTime is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.startTime", r.filtersStartTime, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "filters.endTime", r.filtersEndTime, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

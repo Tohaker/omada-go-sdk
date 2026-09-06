@@ -25,7 +25,7 @@ type VlanOuiModeOpenApiVO struct {
 	OuiProfileId string `json:"ouiProfileId"`
 	// Selected priority, valid range is 0 to 7.
 	Priority int32 `json:"priority"`
-	// Selected vlan, valid range is 1 to 4090.
+	// Selected vlan, valid range is 1 to 4094.
 	VlanId int32 `json:"vlanId"`
 }
 

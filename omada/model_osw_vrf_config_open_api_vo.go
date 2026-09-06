@@ -21,12 +21,12 @@ var _ MappedNullable = &OswVrfConfigOpenApiVO{}
 
 // OswVrfConfigOpenApiVO struct for OswVrfConfigOpenApiVO
 type OswVrfConfigOpenApiVO struct {
-	// Indicates whether ipv4 is enabled
-	Ipv4Enable bool `json:"ipv4Enable"`
-	// Indicates whether ipv6 is enabled
+	// Whether to enable ipv4. Ipv4Enable should be true. This parameter is required when creating a VRF and is not needed when modifying a VRF.
+	Ipv4Enable *bool `json:"ipv4Enable,omitempty"`
+	// Whether to enable ipv6
 	Ipv6Enable bool `json:"ipv6Enable"`
-	// VRF Name
-	Vrf string `json:"vrf"`
+	// VRF name: 1 to 15 characters consisting of numbers (0 to 9), uppercase and lowercase letters (A to Z, a to z), and symbols -_@.+; cannot be '.' or '..' only. This parameter is required when creating a VRF and is not needed when modifying a VRF.
+	Vrf *string `json:"vrf,omitempty"`
 }
 
 type _OswVrfConfigOpenApiVO OswVrfConfigOpenApiVO
@@ -35,11 +35,9 @@ type _OswVrfConfigOpenApiVO OswVrfConfigOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOswVrfConfigOpenApiVO(ipv4Enable bool, ipv6Enable bool, vrf string) *OswVrfConfigOpenApiVO {
+func NewOswVrfConfigOpenApiVO(ipv6Enable bool) *OswVrfConfigOpenApiVO {
 	this := OswVrfConfigOpenApiVO{}
-	this.Ipv4Enable = ipv4Enable
 	this.Ipv6Enable = ipv6Enable
-	this.Vrf = vrf
 	return &this
 }
 
@@ -51,28 +49,36 @@ func NewOswVrfConfigOpenApiVOWithDefaults() *OswVrfConfigOpenApiVO {
 	return &this
 }
 
-// GetIpv4Enable returns the Ipv4Enable field value
+// GetIpv4Enable returns the Ipv4Enable field value if set, zero value otherwise.
 func (o *OswVrfConfigOpenApiVO) GetIpv4Enable() bool {
-	if o == nil {
+	if o == nil || IsNil(o.Ipv4Enable) {
 		var ret bool
 		return ret
 	}
-
-	return o.Ipv4Enable
+	return *o.Ipv4Enable
 }
 
-// GetIpv4EnableOk returns a tuple with the Ipv4Enable field value
+// GetIpv4EnableOk returns a tuple with the Ipv4Enable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OswVrfConfigOpenApiVO) GetIpv4EnableOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Ipv4Enable) {
 		return nil, false
 	}
-	return &o.Ipv4Enable, true
+	return o.Ipv4Enable, true
 }
 
-// SetIpv4Enable sets field value
+// HasIpv4Enable returns a boolean if a field has been set.
+func (o *OswVrfConfigOpenApiVO) HasIpv4Enable() bool {
+	if o != nil && !IsNil(o.Ipv4Enable) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpv4Enable gets a reference to the given bool and assigns it to the Ipv4Enable field.
 func (o *OswVrfConfigOpenApiVO) SetIpv4Enable(v bool) {
-	o.Ipv4Enable = v
+	o.Ipv4Enable = &v
 }
 
 // GetIpv6Enable returns the Ipv6Enable field value
@@ -99,28 +105,36 @@ func (o *OswVrfConfigOpenApiVO) SetIpv6Enable(v bool) {
 	o.Ipv6Enable = v
 }
 
-// GetVrf returns the Vrf field value
+// GetVrf returns the Vrf field value if set, zero value otherwise.
 func (o *OswVrfConfigOpenApiVO) GetVrf() string {
-	if o == nil {
+	if o == nil || IsNil(o.Vrf) {
 		var ret string
 		return ret
 	}
-
-	return o.Vrf
+	return *o.Vrf
 }
 
-// GetVrfOk returns a tuple with the Vrf field value
+// GetVrfOk returns a tuple with the Vrf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OswVrfConfigOpenApiVO) GetVrfOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Vrf) {
 		return nil, false
 	}
-	return &o.Vrf, true
+	return o.Vrf, true
 }
 
-// SetVrf sets field value
+// HasVrf returns a boolean if a field has been set.
+func (o *OswVrfConfigOpenApiVO) HasVrf() bool {
+	if o != nil && !IsNil(o.Vrf) {
+		return true
+	}
+
+	return false
+}
+
+// SetVrf gets a reference to the given string and assigns it to the Vrf field.
 func (o *OswVrfConfigOpenApiVO) SetVrf(v string) {
-	o.Vrf = v
+	o.Vrf = &v
 }
 
 func (o OswVrfConfigOpenApiVO) MarshalJSON() ([]byte, error) {
@@ -133,9 +147,13 @@ func (o OswVrfConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o OswVrfConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["ipv4Enable"] = o.Ipv4Enable
+	if !IsNil(o.Ipv4Enable) {
+		toSerialize["ipv4Enable"] = o.Ipv4Enable
+	}
 	toSerialize["ipv6Enable"] = o.Ipv6Enable
-	toSerialize["vrf"] = o.Vrf
+	if !IsNil(o.Vrf) {
+		toSerialize["vrf"] = o.Vrf
+	}
 	return toSerialize, nil
 }
 
@@ -144,9 +162,7 @@ func (o *OswVrfConfigOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"ipv4Enable",
 		"ipv6Enable",
-		"vrf",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthTimeout** | [**AuthTimeoutSetting**](AuthTimeoutSetting.md) |  | 
-**AuthType** | **int32** | Auth Type, should be a value as follows: &lt;br/&gt;0：No Authentication; 1：Simple Password;&lt;br/&gt;2: External Radius Server; 4：External Portal Server;&lt;br/&gt;11：Hotspot; 15: Ldap; 16: Social Login | 
+**AuthType** | **int32** | Auth Type, should be a value as follows: &lt;br/&gt;0：No Authentication; 1：Simple Password;&lt;br/&gt;2: External RADIUS Server; 4：External Portal Server;&lt;br/&gt;11：Hotspot; 15: Ldap; 16: Social Login | 
 **Enable** | **bool** | Portal Enable | 
 **ExternalPortal** | Pointer to [**ExternalServerPortalSetting**](ExternalServerPortalSetting.md) |  | [optional] 
 **ExternalRadius** | Pointer to [**ExternalRadiusSetting**](ExternalRadiusSetting.md) |  | [optional] 

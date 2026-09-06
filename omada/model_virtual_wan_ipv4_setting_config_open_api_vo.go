@@ -26,12 +26,12 @@ type VirtualWanIpv4SettingConfigOpenApiVO struct {
 	Ipv4Pppoa *VirtualWanIpv4PppoaOpenApiVO `json:"ipv4Pppoa,omitempty"`
 	Ipv4Pppoe *VirtualWanIpv4PppoeOpenApiVO `json:"ipv4Pppoe,omitempty"`
 	Ipv4Static *VirtualWanIpv4StaticOpenApiVO `json:"ipv4Static,omitempty"`
-	// Virtual WAN IPv4 proto type, use static, dhcp, pppoe.
+	// Virtual WAN IPv4 protocol type: static, dhcp, pppoe for all connections; pppoa and ipoa options are only available for ADSL modulation connections. The configuration for the selected protocol type is required and must not be empty (e.g., ipv4Static for static).
 	Proto string `json:"proto"`
 	// Qos Tag. Parameter [qosTag] should between 0 and 7.
 	QosTag *int32 `json:"qosTag,omitempty"`
 	// Whether to enable 802.1Q Tag.
-	QosTagEnable *bool `json:"qosTagEnable,omitempty"`
+	QosTagEnable bool `json:"qosTagEnable"`
 	// Vlan ID. Parameter [vlanId] should between 1 and 4094.
 	VlanId int32 `json:"vlanId"`
 	// Vlan Priority. It takes effect when [vlanId] is not 0, and it should be within the range of 0–7.
@@ -44,9 +44,10 @@ type _VirtualWanIpv4SettingConfigOpenApiVO VirtualWanIpv4SettingConfigOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualWanIpv4SettingConfigOpenApiVO(proto string, vlanId int32) *VirtualWanIpv4SettingConfigOpenApiVO {
+func NewVirtualWanIpv4SettingConfigOpenApiVO(proto string, qosTagEnable bool, vlanId int32) *VirtualWanIpv4SettingConfigOpenApiVO {
 	this := VirtualWanIpv4SettingConfigOpenApiVO{}
 	this.Proto = proto
+	this.QosTagEnable = qosTagEnable
 	this.VlanId = vlanId
 	return &this
 }
@@ -275,36 +276,28 @@ func (o *VirtualWanIpv4SettingConfigOpenApiVO) SetQosTag(v int32) {
 	o.QosTag = &v
 }
 
-// GetQosTagEnable returns the QosTagEnable field value if set, zero value otherwise.
+// GetQosTagEnable returns the QosTagEnable field value
 func (o *VirtualWanIpv4SettingConfigOpenApiVO) GetQosTagEnable() bool {
-	if o == nil || IsNil(o.QosTagEnable) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.QosTagEnable
+
+	return o.QosTagEnable
 }
 
-// GetQosTagEnableOk returns a tuple with the QosTagEnable field value if set, nil otherwise
+// GetQosTagEnableOk returns a tuple with the QosTagEnable field value
 // and a boolean to check if the value has been set.
 func (o *VirtualWanIpv4SettingConfigOpenApiVO) GetQosTagEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.QosTagEnable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.QosTagEnable, true
+	return &o.QosTagEnable, true
 }
 
-// HasQosTagEnable returns a boolean if a field has been set.
-func (o *VirtualWanIpv4SettingConfigOpenApiVO) HasQosTagEnable() bool {
-	if o != nil && !IsNil(o.QosTagEnable) {
-		return true
-	}
-
-	return false
-}
-
-// SetQosTagEnable gets a reference to the given bool and assigns it to the QosTagEnable field.
+// SetQosTagEnable sets field value
 func (o *VirtualWanIpv4SettingConfigOpenApiVO) SetQosTagEnable(v bool) {
-	o.QosTagEnable = &v
+	o.QosTagEnable = v
 }
 
 // GetVlanId returns the VlanId field value
@@ -392,9 +385,7 @@ func (o VirtualWanIpv4SettingConfigOpenApiVO) ToMap() (map[string]interface{}, e
 	if !IsNil(o.QosTag) {
 		toSerialize["qosTag"] = o.QosTag
 	}
-	if !IsNil(o.QosTagEnable) {
-		toSerialize["qosTagEnable"] = o.QosTagEnable
-	}
+	toSerialize["qosTagEnable"] = o.QosTagEnable
 	toSerialize["vlanId"] = o.VlanId
 	if !IsNil(o.VlanPriority) {
 		toSerialize["vlanPriority"] = o.VlanPriority
@@ -408,6 +399,7 @@ func (o *VirtualWanIpv4SettingConfigOpenApiVO) UnmarshalJSON(data []byte) (err e
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"proto",
+		"qosTagEnable",
 		"vlanId",
 	}
 

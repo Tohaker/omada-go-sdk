@@ -29,6 +29,8 @@ type PortForwardingInfo struct {
 	ExistWanIp *bool `json:"existWanIp,omitempty"`
 	// External port corresponds with source port in web. ExternalPort should be within the range of 1–65535.
 	ExternalPort *string `json:"externalPort,omitempty"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// Forward IP corresponds with destination IP in web. Forward IP
 	ForwardIp string `json:"forwardIp"`
 	// Forward port corresponds with destination port in web. ForwardPort should be 1 or 1-10, within the range of 1–65535.
@@ -198,6 +200,38 @@ func (o *PortForwardingInfo) HasExternalPort() bool {
 // SetExternalPort gets a reference to the given string and assigns it to the ExternalPort field.
 func (o *PortForwardingInfo) SetExternalPort(v string) {
 	o.ExternalPort = &v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *PortForwardingInfo) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PortForwardingInfo) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *PortForwardingInfo) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *PortForwardingInfo) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetForwardIp returns the ForwardIp field value
@@ -563,6 +597,9 @@ func (o PortForwardingInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ExternalPort) {
 		toSerialize["externalPort"] = o.ExternalPort
+	}
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
 	}
 	toSerialize["forwardIp"] = o.ForwardIp
 	if !IsNil(o.ForwardPort) {

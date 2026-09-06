@@ -20,9 +20,11 @@ var _ MappedNullable = &OswHealthDetailVO{}
 // OswHealthDetailVO struct for OswHealthDetailVO
 type OswHealthDetailVO struct {
 	Cpu *CommonSubHealthInfoDetailVO `json:"cpu,omitempty"`
-	ErrorFrame *CommonSubHealthInfoDetailVO `json:"errorFrame,omitempty"`
+	ErrorFrame *FloatSubHealthInfoDetailVO `json:"errorFrame,omitempty"`
+	Incident *IncidentSubHealthInfoDetailVO `json:"incident,omitempty"`
+	LinkError *LinkErrorHealthInfoDetailVO `json:"linkError,omitempty"`
 	Memory *CommonSubHealthInfoDetailVO `json:"memory,omitempty"`
-	PacketLoss *CommonSubHealthInfoDetailVO `json:"packetLoss,omitempty"`
+	PacketLoss *FloatSubHealthInfoDetailVO `json:"packetLoss,omitempty"`
 	// Device health score.
 	Score *int32 `json:"score,omitempty"`
 	Temperature *CommonSubHealthInfoDetailVO `json:"temperature,omitempty"`
@@ -78,9 +80,9 @@ func (o *OswHealthDetailVO) SetCpu(v CommonSubHealthInfoDetailVO) {
 }
 
 // GetErrorFrame returns the ErrorFrame field value if set, zero value otherwise.
-func (o *OswHealthDetailVO) GetErrorFrame() CommonSubHealthInfoDetailVO {
+func (o *OswHealthDetailVO) GetErrorFrame() FloatSubHealthInfoDetailVO {
 	if o == nil || IsNil(o.ErrorFrame) {
-		var ret CommonSubHealthInfoDetailVO
+		var ret FloatSubHealthInfoDetailVO
 		return ret
 	}
 	return *o.ErrorFrame
@@ -88,7 +90,7 @@ func (o *OswHealthDetailVO) GetErrorFrame() CommonSubHealthInfoDetailVO {
 
 // GetErrorFrameOk returns a tuple with the ErrorFrame field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OswHealthDetailVO) GetErrorFrameOk() (*CommonSubHealthInfoDetailVO, bool) {
+func (o *OswHealthDetailVO) GetErrorFrameOk() (*FloatSubHealthInfoDetailVO, bool) {
 	if o == nil || IsNil(o.ErrorFrame) {
 		return nil, false
 	}
@@ -104,9 +106,73 @@ func (o *OswHealthDetailVO) HasErrorFrame() bool {
 	return false
 }
 
-// SetErrorFrame gets a reference to the given CommonSubHealthInfoDetailVO and assigns it to the ErrorFrame field.
-func (o *OswHealthDetailVO) SetErrorFrame(v CommonSubHealthInfoDetailVO) {
+// SetErrorFrame gets a reference to the given FloatSubHealthInfoDetailVO and assigns it to the ErrorFrame field.
+func (o *OswHealthDetailVO) SetErrorFrame(v FloatSubHealthInfoDetailVO) {
 	o.ErrorFrame = &v
+}
+
+// GetIncident returns the Incident field value if set, zero value otherwise.
+func (o *OswHealthDetailVO) GetIncident() IncidentSubHealthInfoDetailVO {
+	if o == nil || IsNil(o.Incident) {
+		var ret IncidentSubHealthInfoDetailVO
+		return ret
+	}
+	return *o.Incident
+}
+
+// GetIncidentOk returns a tuple with the Incident field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswHealthDetailVO) GetIncidentOk() (*IncidentSubHealthInfoDetailVO, bool) {
+	if o == nil || IsNil(o.Incident) {
+		return nil, false
+	}
+	return o.Incident, true
+}
+
+// HasIncident returns a boolean if a field has been set.
+func (o *OswHealthDetailVO) HasIncident() bool {
+	if o != nil && !IsNil(o.Incident) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncident gets a reference to the given IncidentSubHealthInfoDetailVO and assigns it to the Incident field.
+func (o *OswHealthDetailVO) SetIncident(v IncidentSubHealthInfoDetailVO) {
+	o.Incident = &v
+}
+
+// GetLinkError returns the LinkError field value if set, zero value otherwise.
+func (o *OswHealthDetailVO) GetLinkError() LinkErrorHealthInfoDetailVO {
+	if o == nil || IsNil(o.LinkError) {
+		var ret LinkErrorHealthInfoDetailVO
+		return ret
+	}
+	return *o.LinkError
+}
+
+// GetLinkErrorOk returns a tuple with the LinkError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswHealthDetailVO) GetLinkErrorOk() (*LinkErrorHealthInfoDetailVO, bool) {
+	if o == nil || IsNil(o.LinkError) {
+		return nil, false
+	}
+	return o.LinkError, true
+}
+
+// HasLinkError returns a boolean if a field has been set.
+func (o *OswHealthDetailVO) HasLinkError() bool {
+	if o != nil && !IsNil(o.LinkError) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinkError gets a reference to the given LinkErrorHealthInfoDetailVO and assigns it to the LinkError field.
+func (o *OswHealthDetailVO) SetLinkError(v LinkErrorHealthInfoDetailVO) {
+	o.LinkError = &v
 }
 
 // GetMemory returns the Memory field value if set, zero value otherwise.
@@ -142,9 +208,9 @@ func (o *OswHealthDetailVO) SetMemory(v CommonSubHealthInfoDetailVO) {
 }
 
 // GetPacketLoss returns the PacketLoss field value if set, zero value otherwise.
-func (o *OswHealthDetailVO) GetPacketLoss() CommonSubHealthInfoDetailVO {
+func (o *OswHealthDetailVO) GetPacketLoss() FloatSubHealthInfoDetailVO {
 	if o == nil || IsNil(o.PacketLoss) {
-		var ret CommonSubHealthInfoDetailVO
+		var ret FloatSubHealthInfoDetailVO
 		return ret
 	}
 	return *o.PacketLoss
@@ -152,7 +218,7 @@ func (o *OswHealthDetailVO) GetPacketLoss() CommonSubHealthInfoDetailVO {
 
 // GetPacketLossOk returns a tuple with the PacketLoss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OswHealthDetailVO) GetPacketLossOk() (*CommonSubHealthInfoDetailVO, bool) {
+func (o *OswHealthDetailVO) GetPacketLossOk() (*FloatSubHealthInfoDetailVO, bool) {
 	if o == nil || IsNil(o.PacketLoss) {
 		return nil, false
 	}
@@ -168,8 +234,8 @@ func (o *OswHealthDetailVO) HasPacketLoss() bool {
 	return false
 }
 
-// SetPacketLoss gets a reference to the given CommonSubHealthInfoDetailVO and assigns it to the PacketLoss field.
-func (o *OswHealthDetailVO) SetPacketLoss(v CommonSubHealthInfoDetailVO) {
+// SetPacketLoss gets a reference to the given FloatSubHealthInfoDetailVO and assigns it to the PacketLoss field.
+func (o *OswHealthDetailVO) SetPacketLoss(v FloatSubHealthInfoDetailVO) {
 	o.PacketLoss = &v
 }
 
@@ -252,6 +318,12 @@ func (o OswHealthDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ErrorFrame) {
 		toSerialize["errorFrame"] = o.ErrorFrame
+	}
+	if !IsNil(o.Incident) {
+		toSerialize["incident"] = o.Incident
+	}
+	if !IsNil(o.LinkError) {
+		toSerialize["linkError"] = o.LinkError
 	}
 	if !IsNil(o.Memory) {
 		toSerialize["memory"] = o.Memory

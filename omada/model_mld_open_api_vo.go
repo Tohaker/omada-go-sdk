@@ -22,6 +22,8 @@ var _ MappedNullable = &MldOpenApiVO{}
 // MldOpenApiVO struct for MldOpenApiVO
 type MldOpenApiVO struct {
 	Enable bool `json:"enable"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// Version should be one of the following values: 1: v1; 2: v2.
 	Version int32 `json:"version"`
 	// WAN port ID can be obtained from 'Get internet basic info' interface. At least one of the WAN Port IDs should not be null. Only IPv6-enabled WAN ports can be selected as MLD Interface. MLD does not support the 6to4 Tunnel and Pass-Through(Bridge) IPv6 dial-up modes.
@@ -71,6 +73,38 @@ func (o *MldOpenApiVO) GetEnableOk() (*bool, bool) {
 // SetEnable sets field value
 func (o *MldOpenApiVO) SetEnable(v bool) {
 	o.Enable = v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *MldOpenApiVO) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MldOpenApiVO) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *MldOpenApiVO) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *MldOpenApiVO) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetVersion returns the Version field value
@@ -140,6 +174,9 @@ func (o MldOpenApiVO) MarshalJSON() ([]byte, error) {
 func (o MldOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["enable"] = o.Enable
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
+	}
 	toSerialize["version"] = o.Version
 	if !IsNil(o.WanPortId) {
 		toSerialize["wanPortId"] = o.WanPortId

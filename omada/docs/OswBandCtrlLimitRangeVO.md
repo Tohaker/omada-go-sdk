@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxEgressRate** | Pointer to **int32** |  | [optional] 
-**MaxIngressRate** | Pointer to **int32** |  | [optional] 
-**MinEgressRate** | Pointer to **int32** |  | [optional] 
-**MinIngressRate** | Pointer to **int32** |  | [optional] 
-**Unit** | Pointer to **int32** |  | [optional] 
+**MaxEgressRate** | Pointer to **int32** | max egress rate | [optional] 
+**MaxIngressRate** | Pointer to **int32** | max ingress rate | [optional] 
+**MinEgressRate** | Pointer to **int32** | min egress rate | [optional] 
+**MinIngressRate** | Pointer to **int32** | min ingress rate | [optional] 
+**Unit** | Pointer to **int32** | unit: 1: kbps, 2: mbps | [optional] 
 
 ## Methods
 

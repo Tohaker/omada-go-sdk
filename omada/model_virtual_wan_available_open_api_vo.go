@@ -25,6 +25,8 @@ type VirtualWanAvailableOpenApiVO struct {
 	MaxBandwidth *int64 `json:"maxBandwidth,omitempty"`
 	// Virtual WAN name.
 	Name *string `json:"name,omitempty"`
+	// Port Online Detection.
+	OnlineDetection *int32 `json:"onlineDetection,omitempty"`
 	// Physical WAN ID.
 	PhysicalWanId *string `json:"physicalWanId,omitempty"`
 	// Physical WAN port type, 0: WAN; 1:WAN/LAN; 2:LAN; 3:SFP WAN; 4:USB LTE WAN; 5: LTE WAN; 6:DSL WAN;
@@ -33,6 +35,8 @@ type VirtualWanAvailableOpenApiVO struct {
 	VirtualEntryId *int32 `json:"virtualEntryId,omitempty"`
 	// Virtual WAN ID.
 	VirtualWanId *string `json:"virtualWanId,omitempty"`
+	// Virtual WAN weight.
+	Weight *int32 `json:"weight,omitempty"`
 }
 
 // NewVirtualWanAvailableOpenApiVO instantiates a new VirtualWanAvailableOpenApiVO object
@@ -146,6 +150,38 @@ func (o *VirtualWanAvailableOpenApiVO) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *VirtualWanAvailableOpenApiVO) SetName(v string) {
 	o.Name = &v
+}
+
+// GetOnlineDetection returns the OnlineDetection field value if set, zero value otherwise.
+func (o *VirtualWanAvailableOpenApiVO) GetOnlineDetection() int32 {
+	if o == nil || IsNil(o.OnlineDetection) {
+		var ret int32
+		return ret
+	}
+	return *o.OnlineDetection
+}
+
+// GetOnlineDetectionOk returns a tuple with the OnlineDetection field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VirtualWanAvailableOpenApiVO) GetOnlineDetectionOk() (*int32, bool) {
+	if o == nil || IsNil(o.OnlineDetection) {
+		return nil, false
+	}
+	return o.OnlineDetection, true
+}
+
+// HasOnlineDetection returns a boolean if a field has been set.
+func (o *VirtualWanAvailableOpenApiVO) HasOnlineDetection() bool {
+	if o != nil && !IsNil(o.OnlineDetection) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnlineDetection gets a reference to the given int32 and assigns it to the OnlineDetection field.
+func (o *VirtualWanAvailableOpenApiVO) SetOnlineDetection(v int32) {
+	o.OnlineDetection = &v
 }
 
 // GetPhysicalWanId returns the PhysicalWanId field value if set, zero value otherwise.
@@ -276,6 +312,38 @@ func (o *VirtualWanAvailableOpenApiVO) SetVirtualWanId(v string) {
 	o.VirtualWanId = &v
 }
 
+// GetWeight returns the Weight field value if set, zero value otherwise.
+func (o *VirtualWanAvailableOpenApiVO) GetWeight() int32 {
+	if o == nil || IsNil(o.Weight) {
+		var ret int32
+		return ret
+	}
+	return *o.Weight
+}
+
+// GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VirtualWanAvailableOpenApiVO) GetWeightOk() (*int32, bool) {
+	if o == nil || IsNil(o.Weight) {
+		return nil, false
+	}
+	return o.Weight, true
+}
+
+// HasWeight returns a boolean if a field has been set.
+func (o *VirtualWanAvailableOpenApiVO) HasWeight() bool {
+	if o != nil && !IsNil(o.Weight) {
+		return true
+	}
+
+	return false
+}
+
+// SetWeight gets a reference to the given int32 and assigns it to the Weight field.
+func (o *VirtualWanAvailableOpenApiVO) SetWeight(v int32) {
+	o.Weight = &v
+}
+
 func (o VirtualWanAvailableOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -295,6 +363,9 @@ func (o VirtualWanAvailableOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+	if !IsNil(o.OnlineDetection) {
+		toSerialize["onlineDetection"] = o.OnlineDetection
+	}
 	if !IsNil(o.PhysicalWanId) {
 		toSerialize["physicalWanId"] = o.PhysicalWanId
 	}
@@ -306,6 +377,9 @@ func (o VirtualWanAvailableOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VirtualWanId) {
 		toSerialize["virtualWanId"] = o.VirtualWanId
+	}
+	if !IsNil(o.Weight) {
+		toSerialize["weight"] = o.Weight
 	}
 	return toSerialize, nil
 }

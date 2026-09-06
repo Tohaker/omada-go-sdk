@@ -19,16 +19,21 @@ var _ MappedNullable = &SwitchGeneralConfig{}
 
 // SwitchGeneralConfig After the device is added to the stack group, the interface can only modify the device name.
 type SwitchGeneralConfig struct {
-	// It should be within the range of 1518–9216 Bytes.
+	// Required only when jumboFollowSite = false. Range: 1518–9216.
 	Jumbo *int32 `json:"jumbo,omitempty"`
-	// It should be a value as follows: 0: SRC MAC; 1: DST MAC; 2: SRC MAC + DST MAC; 3: SRC IP; 4: DST IP; 5: SRC IP + DST IP
+	// Whether jumbo setting follows site setting.
+	JumboFollowSite *bool `json:"jumboFollowSite,omitempty"`
+	// Required only when lagHashAlgFollowSite = false. It should be a value as follows: 0: SRC MAC; 1: DST MAC; 2: SRC MAC + DST MAC; 3: SRC IP; 4: DST IP; 5: SRC IP + DST IP
 	LagHashAlg *int32 `json:"lagHashAlg,omitempty"`
+	// Whether lag hash algorithm setting follows site setting.
+	LagHashAlgFollowSite *bool `json:"lagHashAlgFollowSite,omitempty"`
 	// Led setting should be a value as follows: 0:off; 1:on; 2:Use Site Settings
 	LedSetting *int32 `json:"ledSetting,omitempty"`
 	Location *DeviceLocationDetailVO `json:"location,omitempty"`
 	// Device name should contain 1 to 128 characters.
 	Name *string `json:"name,omitempty"`
 	Sdm *OswSdmTemplateVO `json:"sdm,omitempty"`
+	Snmp *OswSnmpOpenApiVO `json:"snmp,omitempty"`
 	// Tag IDs
 	TagIds []string `json:"tagIds,omitempty"`
 }
@@ -82,6 +87,38 @@ func (o *SwitchGeneralConfig) SetJumbo(v int32) {
 	o.Jumbo = &v
 }
 
+// GetJumboFollowSite returns the JumboFollowSite field value if set, zero value otherwise.
+func (o *SwitchGeneralConfig) GetJumboFollowSite() bool {
+	if o == nil || IsNil(o.JumboFollowSite) {
+		var ret bool
+		return ret
+	}
+	return *o.JumboFollowSite
+}
+
+// GetJumboFollowSiteOk returns a tuple with the JumboFollowSite field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SwitchGeneralConfig) GetJumboFollowSiteOk() (*bool, bool) {
+	if o == nil || IsNil(o.JumboFollowSite) {
+		return nil, false
+	}
+	return o.JumboFollowSite, true
+}
+
+// HasJumboFollowSite returns a boolean if a field has been set.
+func (o *SwitchGeneralConfig) HasJumboFollowSite() bool {
+	if o != nil && !IsNil(o.JumboFollowSite) {
+		return true
+	}
+
+	return false
+}
+
+// SetJumboFollowSite gets a reference to the given bool and assigns it to the JumboFollowSite field.
+func (o *SwitchGeneralConfig) SetJumboFollowSite(v bool) {
+	o.JumboFollowSite = &v
+}
+
 // GetLagHashAlg returns the LagHashAlg field value if set, zero value otherwise.
 func (o *SwitchGeneralConfig) GetLagHashAlg() int32 {
 	if o == nil || IsNil(o.LagHashAlg) {
@@ -112,6 +149,38 @@ func (o *SwitchGeneralConfig) HasLagHashAlg() bool {
 // SetLagHashAlg gets a reference to the given int32 and assigns it to the LagHashAlg field.
 func (o *SwitchGeneralConfig) SetLagHashAlg(v int32) {
 	o.LagHashAlg = &v
+}
+
+// GetLagHashAlgFollowSite returns the LagHashAlgFollowSite field value if set, zero value otherwise.
+func (o *SwitchGeneralConfig) GetLagHashAlgFollowSite() bool {
+	if o == nil || IsNil(o.LagHashAlgFollowSite) {
+		var ret bool
+		return ret
+	}
+	return *o.LagHashAlgFollowSite
+}
+
+// GetLagHashAlgFollowSiteOk returns a tuple with the LagHashAlgFollowSite field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SwitchGeneralConfig) GetLagHashAlgFollowSiteOk() (*bool, bool) {
+	if o == nil || IsNil(o.LagHashAlgFollowSite) {
+		return nil, false
+	}
+	return o.LagHashAlgFollowSite, true
+}
+
+// HasLagHashAlgFollowSite returns a boolean if a field has been set.
+func (o *SwitchGeneralConfig) HasLagHashAlgFollowSite() bool {
+	if o != nil && !IsNil(o.LagHashAlgFollowSite) {
+		return true
+	}
+
+	return false
+}
+
+// SetLagHashAlgFollowSite gets a reference to the given bool and assigns it to the LagHashAlgFollowSite field.
+func (o *SwitchGeneralConfig) SetLagHashAlgFollowSite(v bool) {
+	o.LagHashAlgFollowSite = &v
 }
 
 // GetLedSetting returns the LedSetting field value if set, zero value otherwise.
@@ -242,6 +311,38 @@ func (o *SwitchGeneralConfig) SetSdm(v OswSdmTemplateVO) {
 	o.Sdm = &v
 }
 
+// GetSnmp returns the Snmp field value if set, zero value otherwise.
+func (o *SwitchGeneralConfig) GetSnmp() OswSnmpOpenApiVO {
+	if o == nil || IsNil(o.Snmp) {
+		var ret OswSnmpOpenApiVO
+		return ret
+	}
+	return *o.Snmp
+}
+
+// GetSnmpOk returns a tuple with the Snmp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SwitchGeneralConfig) GetSnmpOk() (*OswSnmpOpenApiVO, bool) {
+	if o == nil || IsNil(o.Snmp) {
+		return nil, false
+	}
+	return o.Snmp, true
+}
+
+// HasSnmp returns a boolean if a field has been set.
+func (o *SwitchGeneralConfig) HasSnmp() bool {
+	if o != nil && !IsNil(o.Snmp) {
+		return true
+	}
+
+	return false
+}
+
+// SetSnmp gets a reference to the given OswSnmpOpenApiVO and assigns it to the Snmp field.
+func (o *SwitchGeneralConfig) SetSnmp(v OswSnmpOpenApiVO) {
+	o.Snmp = &v
+}
+
 // GetTagIds returns the TagIds field value if set, zero value otherwise.
 func (o *SwitchGeneralConfig) GetTagIds() []string {
 	if o == nil || IsNil(o.TagIds) {
@@ -287,8 +388,14 @@ func (o SwitchGeneralConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Jumbo) {
 		toSerialize["jumbo"] = o.Jumbo
 	}
+	if !IsNil(o.JumboFollowSite) {
+		toSerialize["jumboFollowSite"] = o.JumboFollowSite
+	}
 	if !IsNil(o.LagHashAlg) {
 		toSerialize["lagHashAlg"] = o.LagHashAlg
+	}
+	if !IsNil(o.LagHashAlgFollowSite) {
+		toSerialize["lagHashAlgFollowSite"] = o.LagHashAlgFollowSite
 	}
 	if !IsNil(o.LedSetting) {
 		toSerialize["ledSetting"] = o.LedSetting
@@ -301,6 +408,9 @@ func (o SwitchGeneralConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Sdm) {
 		toSerialize["sdm"] = o.Sdm
+	}
+	if !IsNil(o.Snmp) {
+		toSerialize["snmp"] = o.Snmp
 	}
 	if !IsNil(o.TagIds) {
 		toSerialize["tagIds"] = o.TagIds

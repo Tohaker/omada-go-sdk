@@ -22,8 +22,8 @@ var _ MappedNullable = &MlagMemberConfigVO{}
 // MlagMemberConfigVO M-LAG group members configuration
 type MlagMemberConfigVO struct {
 	// Whether the DAD enable.
-	DadEnable *bool `json:"dadEnable,omitempty"`
-	// DAD Link Ports
+	DadEnable bool `json:"dadEnable"`
+	// DAD Link Ports(This parameter is required when DAD is enabled.)
 	DadLinkPorts []string `json:"dadLinkPorts,omitempty"`
 	// DAD Local IP
 	DadLocalIp *string `json:"dadLocalIp,omitempty"`
@@ -35,9 +35,9 @@ type MlagMemberConfigVO struct {
 	DadPeerIpv6 *string `json:"dadPeerIpv6,omitempty"`
 	// Device Mac.
 	Mac string `json:"mac"`
-	// Peer Link Ports
-	PeerLinkPorts []string `json:"peerLinkPorts,omitempty"`
-	// Priority of the device in the M-LAG group.
+	// Peer Link Ports(Required parameters)
+	PeerLinkPorts []string `json:"peerLinkPorts"`
+	// Priority of the device in the M-LAG group, it must be between 1 and 255.
 	Priority int32 `json:"priority"`
 }
 
@@ -47,9 +47,11 @@ type _MlagMemberConfigVO MlagMemberConfigVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMlagMemberConfigVO(mac string, priority int32) *MlagMemberConfigVO {
+func NewMlagMemberConfigVO(dadEnable bool, mac string, peerLinkPorts []string, priority int32) *MlagMemberConfigVO {
 	this := MlagMemberConfigVO{}
+	this.DadEnable = dadEnable
 	this.Mac = mac
+	this.PeerLinkPorts = peerLinkPorts
 	this.Priority = priority
 	return &this
 }
@@ -62,36 +64,28 @@ func NewMlagMemberConfigVOWithDefaults() *MlagMemberConfigVO {
 	return &this
 }
 
-// GetDadEnable returns the DadEnable field value if set, zero value otherwise.
+// GetDadEnable returns the DadEnable field value
 func (o *MlagMemberConfigVO) GetDadEnable() bool {
-	if o == nil || IsNil(o.DadEnable) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.DadEnable
+
+	return o.DadEnable
 }
 
-// GetDadEnableOk returns a tuple with the DadEnable field value if set, nil otherwise
+// GetDadEnableOk returns a tuple with the DadEnable field value
 // and a boolean to check if the value has been set.
 func (o *MlagMemberConfigVO) GetDadEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.DadEnable) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DadEnable, true
+	return &o.DadEnable, true
 }
 
-// HasDadEnable returns a boolean if a field has been set.
-func (o *MlagMemberConfigVO) HasDadEnable() bool {
-	if o != nil && !IsNil(o.DadEnable) {
-		return true
-	}
-
-	return false
-}
-
-// SetDadEnable gets a reference to the given bool and assigns it to the DadEnable field.
+// SetDadEnable sets field value
 func (o *MlagMemberConfigVO) SetDadEnable(v bool) {
-	o.DadEnable = &v
+	o.DadEnable = v
 }
 
 // GetDadLinkPorts returns the DadLinkPorts field value if set, zero value otherwise.
@@ -278,34 +272,26 @@ func (o *MlagMemberConfigVO) SetMac(v string) {
 	o.Mac = v
 }
 
-// GetPeerLinkPorts returns the PeerLinkPorts field value if set, zero value otherwise.
+// GetPeerLinkPorts returns the PeerLinkPorts field value
 func (o *MlagMemberConfigVO) GetPeerLinkPorts() []string {
-	if o == nil || IsNil(o.PeerLinkPorts) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
+
 	return o.PeerLinkPorts
 }
 
-// GetPeerLinkPortsOk returns a tuple with the PeerLinkPorts field value if set, nil otherwise
+// GetPeerLinkPortsOk returns a tuple with the PeerLinkPorts field value
 // and a boolean to check if the value has been set.
 func (o *MlagMemberConfigVO) GetPeerLinkPortsOk() ([]string, bool) {
-	if o == nil || IsNil(o.PeerLinkPorts) {
+	if o == nil {
 		return nil, false
 	}
 	return o.PeerLinkPorts, true
 }
 
-// HasPeerLinkPorts returns a boolean if a field has been set.
-func (o *MlagMemberConfigVO) HasPeerLinkPorts() bool {
-	if o != nil && !IsNil(o.PeerLinkPorts) {
-		return true
-	}
-
-	return false
-}
-
-// SetPeerLinkPorts gets a reference to the given []string and assigns it to the PeerLinkPorts field.
+// SetPeerLinkPorts sets field value
 func (o *MlagMemberConfigVO) SetPeerLinkPorts(v []string) {
 	o.PeerLinkPorts = v
 }
@@ -344,9 +330,7 @@ func (o MlagMemberConfigVO) MarshalJSON() ([]byte, error) {
 
 func (o MlagMemberConfigVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DadEnable) {
-		toSerialize["dadEnable"] = o.DadEnable
-	}
+	toSerialize["dadEnable"] = o.DadEnable
 	if !IsNil(o.DadLinkPorts) {
 		toSerialize["dadLinkPorts"] = o.DadLinkPorts
 	}
@@ -363,9 +347,7 @@ func (o MlagMemberConfigVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["dadPeerIpv6"] = o.DadPeerIpv6
 	}
 	toSerialize["mac"] = o.Mac
-	if !IsNil(o.PeerLinkPorts) {
-		toSerialize["peerLinkPorts"] = o.PeerLinkPorts
-	}
+	toSerialize["peerLinkPorts"] = o.PeerLinkPorts
 	toSerialize["priority"] = o.Priority
 	return toSerialize, nil
 }
@@ -375,7 +357,9 @@ func (o *MlagMemberConfigVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"dadEnable",
 		"mac",
+		"peerLinkPorts",
 		"priority",
 	}
 

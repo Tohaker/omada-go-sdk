@@ -21,6 +21,7 @@ var _ MappedNullable = &DhcpSettings{}
 type DhcpSettings struct {
 	// The dhcpNextServer should be valid IP address, which is used in optional set next DHCP server.
 	DhcpNextServer *string `json:"dhcpNextServer,omitempty"`
+	DhcpPoolMask *int32 `json:"dhcpPoolMask,omitempty"`
 	// Setup DHCP server: \"auto\" or \"manual\"
 	Dhcpns *string `json:"dhcpns,omitempty"`
 	// When value is true, DHCP server is enabled
@@ -100,6 +101,38 @@ func (o *DhcpSettings) HasDhcpNextServer() bool {
 // SetDhcpNextServer gets a reference to the given string and assigns it to the DhcpNextServer field.
 func (o *DhcpSettings) SetDhcpNextServer(v string) {
 	o.DhcpNextServer = &v
+}
+
+// GetDhcpPoolMask returns the DhcpPoolMask field value if set, zero value otherwise.
+func (o *DhcpSettings) GetDhcpPoolMask() int32 {
+	if o == nil || IsNil(o.DhcpPoolMask) {
+		var ret int32
+		return ret
+	}
+	return *o.DhcpPoolMask
+}
+
+// GetDhcpPoolMaskOk returns a tuple with the DhcpPoolMask field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DhcpSettings) GetDhcpPoolMaskOk() (*int32, bool) {
+	if o == nil || IsNil(o.DhcpPoolMask) {
+		return nil, false
+	}
+	return o.DhcpPoolMask, true
+}
+
+// HasDhcpPoolMask returns a boolean if a field has been set.
+func (o *DhcpSettings) HasDhcpPoolMask() bool {
+	if o != nil && !IsNil(o.DhcpPoolMask) {
+		return true
+	}
+
+	return false
+}
+
+// SetDhcpPoolMask gets a reference to the given int32 and assigns it to the DhcpPoolMask field.
+func (o *DhcpSettings) SetDhcpPoolMask(v int32) {
+	o.DhcpPoolMask = &v
 }
 
 // GetDhcpns returns the Dhcpns field value if set, zero value otherwise.
@@ -594,6 +627,9 @@ func (o DhcpSettings) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.DhcpNextServer) {
 		toSerialize["dhcpNextServer"] = o.DhcpNextServer
+	}
+	if !IsNil(o.DhcpPoolMask) {
+		toSerialize["dhcpPoolMask"] = o.DhcpPoolMask
 	}
 	if !IsNil(o.Dhcpns) {
 		toSerialize["dhcpns"] = o.Dhcpns

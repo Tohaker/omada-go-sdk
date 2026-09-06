@@ -23,13 +23,19 @@ type SsidOpenApiVO struct {
 	Band *int32 `json:"band,omitempty"`
 	// SSID broadcast config status. True: enable, false: disable.
 	Broadcast *bool `json:"broadcast,omitempty"`
+	ChooseDevices *int32 `json:"chooseDevices,omitempty"`
+	// SSID Enable status.
+	Description *bool `json:"description,omitempty"`
 	// SSID guest network config status. True: enable, false: disable.
 	GuestNetEnable *bool `json:"guestNetEnable,omitempty"`
+	// SSID ID
+	Id *string `json:"id,omitempty"`
 	// SSID name. It should contain 1 to 32 UTF-8 characters.
 	Name *string `json:"name,omitempty"`
 	// SSID security mode; Security should be a value as follows: 0: None; 2: WPA-Enterprise; 3: WPA-Personal; 4: PPSK without RADIUS; 5: PPSK with RADIUS.
 	Security *int32 `json:"security,omitempty"`
-	// SSID ID
+	// SSID ID, kept for backward compatibility and equivalent to id. This field will be removed in a future release; use id instead.
+	// Deprecated
 	SsidId *string `json:"ssidId,omitempty"`
 	// SSID VLAN config status. True: enable, false: disable.
 	VlanEnable *bool `json:"vlanEnable,omitempty"`
@@ -120,6 +126,70 @@ func (o *SsidOpenApiVO) SetBroadcast(v bool) {
 	o.Broadcast = &v
 }
 
+// GetChooseDevices returns the ChooseDevices field value if set, zero value otherwise.
+func (o *SsidOpenApiVO) GetChooseDevices() int32 {
+	if o == nil || IsNil(o.ChooseDevices) {
+		var ret int32
+		return ret
+	}
+	return *o.ChooseDevices
+}
+
+// GetChooseDevicesOk returns a tuple with the ChooseDevices field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidOpenApiVO) GetChooseDevicesOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChooseDevices) {
+		return nil, false
+	}
+	return o.ChooseDevices, true
+}
+
+// HasChooseDevices returns a boolean if a field has been set.
+func (o *SsidOpenApiVO) HasChooseDevices() bool {
+	if o != nil && !IsNil(o.ChooseDevices) {
+		return true
+	}
+
+	return false
+}
+
+// SetChooseDevices gets a reference to the given int32 and assigns it to the ChooseDevices field.
+func (o *SsidOpenApiVO) SetChooseDevices(v int32) {
+	o.ChooseDevices = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *SsidOpenApiVO) GetDescription() bool {
+	if o == nil || IsNil(o.Description) {
+		var ret bool
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidOpenApiVO) GetDescriptionOk() (*bool, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *SsidOpenApiVO) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given bool and assigns it to the Description field.
+func (o *SsidOpenApiVO) SetDescription(v bool) {
+	o.Description = &v
+}
+
 // GetGuestNetEnable returns the GuestNetEnable field value if set, zero value otherwise.
 func (o *SsidOpenApiVO) GetGuestNetEnable() bool {
 	if o == nil || IsNil(o.GuestNetEnable) {
@@ -150,6 +220,38 @@ func (o *SsidOpenApiVO) HasGuestNetEnable() bool {
 // SetGuestNetEnable gets a reference to the given bool and assigns it to the GuestNetEnable field.
 func (o *SsidOpenApiVO) SetGuestNetEnable(v bool) {
 	o.GuestNetEnable = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *SsidOpenApiVO) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidOpenApiVO) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *SsidOpenApiVO) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *SsidOpenApiVO) SetId(v string) {
+	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -217,6 +319,7 @@ func (o *SsidOpenApiVO) SetSecurity(v int32) {
 }
 
 // GetSsidId returns the SsidId field value if set, zero value otherwise.
+// Deprecated
 func (o *SsidOpenApiVO) GetSsidId() string {
 	if o == nil || IsNil(o.SsidId) {
 		var ret string
@@ -227,6 +330,7 @@ func (o *SsidOpenApiVO) GetSsidId() string {
 
 // GetSsidIdOk returns a tuple with the SsidId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *SsidOpenApiVO) GetSsidIdOk() (*string, bool) {
 	if o == nil || IsNil(o.SsidId) {
 		return nil, false
@@ -244,6 +348,7 @@ func (o *SsidOpenApiVO) HasSsidId() bool {
 }
 
 // SetSsidId gets a reference to the given string and assigns it to the SsidId field.
+// Deprecated
 func (o *SsidOpenApiVO) SetSsidId(v string) {
 	o.SsidId = &v
 }
@@ -360,8 +465,17 @@ func (o SsidOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Broadcast) {
 		toSerialize["broadcast"] = o.Broadcast
 	}
+	if !IsNil(o.ChooseDevices) {
+		toSerialize["chooseDevices"] = o.ChooseDevices
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	if !IsNil(o.GuestNetEnable) {
 		toSerialize["guestNetEnable"] = o.GuestNetEnable
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

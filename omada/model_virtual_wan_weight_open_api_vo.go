@@ -23,6 +23,8 @@ var _ MappedNullable = &VirtualWanWeightOpenApiVO{}
 type VirtualWanWeightOpenApiVO struct {
 	// virtual wan name
 	Name *string `json:"name,omitempty"`
+	// physical wan id
+	PhysicalWanId *string `json:"physicalWanId,omitempty"`
 	// virtual wan id
 	VirtualWanId string `json:"virtualWanId"`
 	// virtual wan weight
@@ -79,6 +81,38 @@ func (o *VirtualWanWeightOpenApiVO) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *VirtualWanWeightOpenApiVO) SetName(v string) {
 	o.Name = &v
+}
+
+// GetPhysicalWanId returns the PhysicalWanId field value if set, zero value otherwise.
+func (o *VirtualWanWeightOpenApiVO) GetPhysicalWanId() string {
+	if o == nil || IsNil(o.PhysicalWanId) {
+		var ret string
+		return ret
+	}
+	return *o.PhysicalWanId
+}
+
+// GetPhysicalWanIdOk returns a tuple with the PhysicalWanId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VirtualWanWeightOpenApiVO) GetPhysicalWanIdOk() (*string, bool) {
+	if o == nil || IsNil(o.PhysicalWanId) {
+		return nil, false
+	}
+	return o.PhysicalWanId, true
+}
+
+// HasPhysicalWanId returns a boolean if a field has been set.
+func (o *VirtualWanWeightOpenApiVO) HasPhysicalWanId() bool {
+	if o != nil && !IsNil(o.PhysicalWanId) {
+		return true
+	}
+
+	return false
+}
+
+// SetPhysicalWanId gets a reference to the given string and assigns it to the PhysicalWanId field.
+func (o *VirtualWanWeightOpenApiVO) SetPhysicalWanId(v string) {
+	o.PhysicalWanId = &v
 }
 
 // GetVirtualWanId returns the VirtualWanId field value
@@ -149,6 +183,9 @@ func (o VirtualWanWeightOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.PhysicalWanId) {
+		toSerialize["physicalWanId"] = o.PhysicalWanId
 	}
 	toSerialize["virtualWanId"] = o.VirtualWanId
 	if !IsNil(o.Weight) {

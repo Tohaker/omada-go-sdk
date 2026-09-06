@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Virtual WAN name should contain 1 to 128 characters. Only letters, digits and underscores are allowed. | 
-**PhysicalWanId** | **string** | Physical WAN ID. Physical WAN ID can be obtained from &#39;Get internet basic info&#39; interface. Only DSL WAN supports configuring virtual WAN.  | 
+**PhysicalWanId** | **string** | Physical WAN ID. Physical WAN ID can be obtained from &#39;Get internet basic info&#39; interface. Physical WAN ID. Physical WAN ID can be obtained from &#39;Get internet basic info&#39; interface. Only DSL WAN, Ethernet WAN, and SFP WAN support virtual WAN configuration. | 
 **VirtualWanDsl** | Pointer to [**VirtualWanDslOpenApiVO**](VirtualWanDslOpenApiVO.md) |  | [optional] 
 **VirtualWanIpv4Setting** | [**VirtualWanIpv4SettingConfigOpenApiVO**](VirtualWanIpv4SettingConfigOpenApiVO.md) |  | 
 **WanPortMacSetting** | Pointer to [**VirtualWanMacSettingOpenApiVO**](VirtualWanMacSettingOpenApiVO.md) |  | [optional] 

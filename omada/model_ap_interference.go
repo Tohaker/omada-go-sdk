@@ -17,20 +17,14 @@ import (
 // checks if the ApInterference type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ApInterference{}
 
-// ApInterference 6GHz device interference intensity information
+// ApInterference struct for ApInterference
 type ApInterference struct {
-	// The AP name of the strongest signal
-	NearestAp *string `json:"NearestAp,omitempty"`
-	// AP interference percentage
-	InterUtil *int32 `json:"interUtil,omitempty"`
-	// AP MAC
-	Mac *string `json:"mac,omitempty"`
-	// Device model
-	Model *string `json:"model,omitempty"`
-	// Device model version
-	ModelVersion *string `json:"modelVersion,omitempty"`
-	// AP name
-	Name *string `json:"name,omitempty"`
+	// List of 2G interferences.
+	Interferences2g []ApInterference `json:"interferences2g,omitempty"`
+	// List of 5G interferences.
+	Interferences5g []ApInterference `json:"interferences5g,omitempty"`
+	// List of 6G interferences.
+	Interferences6g []ApInterference `json:"interferences6g,omitempty"`
 }
 
 // NewApInterference instantiates a new ApInterference object
@@ -50,196 +44,100 @@ func NewApInterferenceWithDefaults() *ApInterference {
 	return &this
 }
 
-// GetNearestAp returns the NearestAp field value if set, zero value otherwise.
-func (o *ApInterference) GetNearestAp() string {
-	if o == nil || IsNil(o.NearestAp) {
-		var ret string
+// GetInterferences2g returns the Interferences2g field value if set, zero value otherwise.
+func (o *ApInterference) GetInterferences2g() []ApInterference {
+	if o == nil || IsNil(o.Interferences2g) {
+		var ret []ApInterference
 		return ret
 	}
-	return *o.NearestAp
+	return o.Interferences2g
 }
 
-// GetNearestApOk returns a tuple with the NearestAp field value if set, nil otherwise
+// GetInterferences2gOk returns a tuple with the Interferences2g field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApInterference) GetNearestApOk() (*string, bool) {
-	if o == nil || IsNil(o.NearestAp) {
+func (o *ApInterference) GetInterferences2gOk() ([]ApInterference, bool) {
+	if o == nil || IsNil(o.Interferences2g) {
 		return nil, false
 	}
-	return o.NearestAp, true
+	return o.Interferences2g, true
 }
 
-// HasNearestAp returns a boolean if a field has been set.
-func (o *ApInterference) HasNearestAp() bool {
-	if o != nil && !IsNil(o.NearestAp) {
+// HasInterferences2g returns a boolean if a field has been set.
+func (o *ApInterference) HasInterferences2g() bool {
+	if o != nil && !IsNil(o.Interferences2g) {
 		return true
 	}
 
 	return false
 }
 
-// SetNearestAp gets a reference to the given string and assigns it to the NearestAp field.
-func (o *ApInterference) SetNearestAp(v string) {
-	o.NearestAp = &v
+// SetInterferences2g gets a reference to the given []ApInterference and assigns it to the Interferences2g field.
+func (o *ApInterference) SetInterferences2g(v []ApInterference) {
+	o.Interferences2g = v
 }
 
-// GetInterUtil returns the InterUtil field value if set, zero value otherwise.
-func (o *ApInterference) GetInterUtil() int32 {
-	if o == nil || IsNil(o.InterUtil) {
-		var ret int32
+// GetInterferences5g returns the Interferences5g field value if set, zero value otherwise.
+func (o *ApInterference) GetInterferences5g() []ApInterference {
+	if o == nil || IsNil(o.Interferences5g) {
+		var ret []ApInterference
 		return ret
 	}
-	return *o.InterUtil
+	return o.Interferences5g
 }
 
-// GetInterUtilOk returns a tuple with the InterUtil field value if set, nil otherwise
+// GetInterferences5gOk returns a tuple with the Interferences5g field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApInterference) GetInterUtilOk() (*int32, bool) {
-	if o == nil || IsNil(o.InterUtil) {
+func (o *ApInterference) GetInterferences5gOk() ([]ApInterference, bool) {
+	if o == nil || IsNil(o.Interferences5g) {
 		return nil, false
 	}
-	return o.InterUtil, true
+	return o.Interferences5g, true
 }
 
-// HasInterUtil returns a boolean if a field has been set.
-func (o *ApInterference) HasInterUtil() bool {
-	if o != nil && !IsNil(o.InterUtil) {
+// HasInterferences5g returns a boolean if a field has been set.
+func (o *ApInterference) HasInterferences5g() bool {
+	if o != nil && !IsNil(o.Interferences5g) {
 		return true
 	}
 
 	return false
 }
 
-// SetInterUtil gets a reference to the given int32 and assigns it to the InterUtil field.
-func (o *ApInterference) SetInterUtil(v int32) {
-	o.InterUtil = &v
+// SetInterferences5g gets a reference to the given []ApInterference and assigns it to the Interferences5g field.
+func (o *ApInterference) SetInterferences5g(v []ApInterference) {
+	o.Interferences5g = v
 }
 
-// GetMac returns the Mac field value if set, zero value otherwise.
-func (o *ApInterference) GetMac() string {
-	if o == nil || IsNil(o.Mac) {
-		var ret string
+// GetInterferences6g returns the Interferences6g field value if set, zero value otherwise.
+func (o *ApInterference) GetInterferences6g() []ApInterference {
+	if o == nil || IsNil(o.Interferences6g) {
+		var ret []ApInterference
 		return ret
 	}
-	return *o.Mac
+	return o.Interferences6g
 }
 
-// GetMacOk returns a tuple with the Mac field value if set, nil otherwise
+// GetInterferences6gOk returns a tuple with the Interferences6g field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApInterference) GetMacOk() (*string, bool) {
-	if o == nil || IsNil(o.Mac) {
+func (o *ApInterference) GetInterferences6gOk() ([]ApInterference, bool) {
+	if o == nil || IsNil(o.Interferences6g) {
 		return nil, false
 	}
-	return o.Mac, true
+	return o.Interferences6g, true
 }
 
-// HasMac returns a boolean if a field has been set.
-func (o *ApInterference) HasMac() bool {
-	if o != nil && !IsNil(o.Mac) {
+// HasInterferences6g returns a boolean if a field has been set.
+func (o *ApInterference) HasInterferences6g() bool {
+	if o != nil && !IsNil(o.Interferences6g) {
 		return true
 	}
 
 	return false
 }
 
-// SetMac gets a reference to the given string and assigns it to the Mac field.
-func (o *ApInterference) SetMac(v string) {
-	o.Mac = &v
-}
-
-// GetModel returns the Model field value if set, zero value otherwise.
-func (o *ApInterference) GetModel() string {
-	if o == nil || IsNil(o.Model) {
-		var ret string
-		return ret
-	}
-	return *o.Model
-}
-
-// GetModelOk returns a tuple with the Model field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApInterference) GetModelOk() (*string, bool) {
-	if o == nil || IsNil(o.Model) {
-		return nil, false
-	}
-	return o.Model, true
-}
-
-// HasModel returns a boolean if a field has been set.
-func (o *ApInterference) HasModel() bool {
-	if o != nil && !IsNil(o.Model) {
-		return true
-	}
-
-	return false
-}
-
-// SetModel gets a reference to the given string and assigns it to the Model field.
-func (o *ApInterference) SetModel(v string) {
-	o.Model = &v
-}
-
-// GetModelVersion returns the ModelVersion field value if set, zero value otherwise.
-func (o *ApInterference) GetModelVersion() string {
-	if o == nil || IsNil(o.ModelVersion) {
-		var ret string
-		return ret
-	}
-	return *o.ModelVersion
-}
-
-// GetModelVersionOk returns a tuple with the ModelVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApInterference) GetModelVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.ModelVersion) {
-		return nil, false
-	}
-	return o.ModelVersion, true
-}
-
-// HasModelVersion returns a boolean if a field has been set.
-func (o *ApInterference) HasModelVersion() bool {
-	if o != nil && !IsNil(o.ModelVersion) {
-		return true
-	}
-
-	return false
-}
-
-// SetModelVersion gets a reference to the given string and assigns it to the ModelVersion field.
-func (o *ApInterference) SetModelVersion(v string) {
-	o.ModelVersion = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ApInterference) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApInterference) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *ApInterference) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ApInterference) SetName(v string) {
-	o.Name = &v
+// SetInterferences6g gets a reference to the given []ApInterference and assigns it to the Interferences6g field.
+func (o *ApInterference) SetInterferences6g(v []ApInterference) {
+	o.Interferences6g = v
 }
 
 func (o ApInterference) MarshalJSON() ([]byte, error) {
@@ -252,23 +150,14 @@ func (o ApInterference) MarshalJSON() ([]byte, error) {
 
 func (o ApInterference) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NearestAp) {
-		toSerialize["NearestAp"] = o.NearestAp
+	if !IsNil(o.Interferences2g) {
+		toSerialize["interferences2g"] = o.Interferences2g
 	}
-	if !IsNil(o.InterUtil) {
-		toSerialize["interUtil"] = o.InterUtil
+	if !IsNil(o.Interferences5g) {
+		toSerialize["interferences5g"] = o.Interferences5g
 	}
-	if !IsNil(o.Mac) {
-		toSerialize["mac"] = o.Mac
-	}
-	if !IsNil(o.Model) {
-		toSerialize["model"] = o.Model
-	}
-	if !IsNil(o.ModelVersion) {
-		toSerialize["modelVersion"] = o.ModelVersion
-	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if !IsNil(o.Interferences6g) {
+		toSerialize["interferences6g"] = o.Interferences6g
 	}
 	return toSerialize, nil
 }

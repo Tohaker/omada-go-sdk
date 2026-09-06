@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Site** | Pointer to **string** | Site of the device | [optional] 
 **Active** | Pointer to **bool** | whether to active the device(cloud base exclusive) | [optional] 
 **AddedInAdvanced** | Pointer to **bool** | Whether the device is added in advanced. | [optional] 
+**Block** | Pointer to **string** | Block information | [optional] 
+**BlockNum** | Pointer to **int32** | Block Num | [optional] 
 **BoundDeviceTemplate** | Pointer to **bool** | Whether the device is bound to device template | [optional] 
 **BoundSiteTemplate** | Pointer to **bool** | Whether the site where the device is located is bound to a site template | [optional] 
 **Category** | Pointer to **string** | Category of license | [optional] 
@@ -15,12 +17,12 @@ Name | Type | Description | Notes
 **CpuUtil** | Pointer to **int32** |  | [optional] 
 **CustomId** | Pointer to **string** | Customer ID | [optional] 
 **CustomName** | Pointer to **string** | Customer name | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** | Description of the device | [optional] 
 **DevCap** | Pointer to [**OswDevCapVO**](OswDevCapVO.md) |  | [optional] 
 **DeviceMisc** | Pointer to [**OswDeviceMiscVO**](OswDeviceMiscVO.md) |  | [optional] 
 **DeviceSeriesType** | Pointer to **int32** | Device series type.DeviceSeriesType should be a value as follows: 0:advanced;1:pro | [optional] 
 **DeviceTemplateAvailable** | Pointer to **bool** | Whether there is an available device template for the device; it is false if the model is not supported or the site template has not created the corresponding device template. | [optional] 
-**DisableHwReset** | Pointer to **bool** |  | [optional] 
+**DisableHwReset** | Pointer to **bool** | Whether to disable hardware reset | [optional] 
 **DownlinkList** | Pointer to [**[]OswDownlinkVO**](OswDownlinkVO.md) |  | [optional] 
 **Download** | Pointer to **int64** |  | [optional] 
 **DueTime** | Pointer to **int64** | Expire timestamp of license(cloud base exclusive) | [optional] 
@@ -32,6 +34,7 @@ Name | Type | Description | Notes
 **FanStatus** | Pointer to **int32** |  | [optional] 
 **FirmwareVersion** | Pointer to **string** | Version of firmware,for example:2.5.0 Build 20190118 Rel. 64821 | [optional] 
 **ForgetId** | Pointer to **string** | Forget ID of device | [optional] 
+**ForwardDelay** | Pointer to **int32** |  | [optional] 
 **HwVersion** | Pointer to **string** | Version of hardware,for example 1.0 | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **InWhitelist** | Pointer to **bool** | Whether the device is in white list | [optional] 
@@ -41,6 +44,7 @@ Name | Type | Description | Notes
 **JumboEnable** | Pointer to **bool** |  | [optional] 
 **Lags** | Pointer to [**[]OswLagVO**](OswLagVO.md) |  | [optional] 
 **LastSeen** | Pointer to **int64** |  | [optional] 
+**LatestVersion** | Pointer to **string** | Latest firmware version | [optional] 
 **LedSetting** | Pointer to **int32** |  | [optional] 
 **LicenseId** | Pointer to **string** | License key on detail page of device(cloud base exclusive) | [optional] 
 **LicenseStatus** | Pointer to **int32** | License status(cloud base exclusive).LicenseStatus should be a value as follows: 0:unActive 1:Unbind 2:Expired 3:active | [optional] 
@@ -51,6 +55,7 @@ Name | Type | Description | Notes
 **LoopbackNum** | Pointer to **int32** |  | [optional] 
 **Mac** | Pointer to **string** | Device mac | [optional] 
 **ManagerMark** | Pointer to **int32** |  | [optional] 
+**MaxAge** | Pointer to **int32** |  | [optional] 
 **MemUtil** | Pointer to **int32** |  | [optional] 
 **Model** | Pointer to **string** | Model of device,for example:EAP225 | [optional] 
 **ModelVersion** | Pointer to **string** | Model version of device,for example:3.0 | [optional] 
@@ -72,6 +77,7 @@ Name | Type | Description | Notes
 **PublicIp** | Pointer to **string** |  | [optional] 
 **Remember** | Pointer to **bool** | Whether to remember the device(deprecated) | [optional] 
 **RememberDevice** | Pointer to **int32** | Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site | [optional] 
+**ReplaceDeviceInfo** | Pointer to [**DeviceReplaceSettingVO**](DeviceReplaceSettingVO.md) |  | [optional] 
 **Resource** | Pointer to **int32** | Data source.Resource should be a value as follows: 0:new created;1:from template;2:override | [optional] 
 **RxRate** | Pointer to **int64** | Rx Rate | [optional] 
 **ShowModel** | Pointer to **string** | Model complex shown in the front end.Ap：model+(country)+modelVersion,EAP225(EU) v3.0  Gateway/Switch：model+modelVersion,Osg v3.0 | [optional] 
@@ -85,6 +91,7 @@ Name | Type | Description | Notes
 **StatusCategory** | Pointer to **int32** | Category of device status,statusCategory should be a value as follows: 0:Disconnected;1:Connected;2:Pending;3:Heartbeat Missed;4:Isolated | [optional] 
 **Stp** | Pointer to **int32** |  | [optional] 
 **SupportAnomaly** | Pointer to **bool** | Whether the device firmware support intelligent anomaly detection | [optional] 
+**SupportAutoAddOuiBasedVlan** | Pointer to **bool** | Whether support auto add oui based vlan. | [optional] 
 **SupportCableTest** | Pointer to **bool** |  | [optional] 
 **SupportGetOspfNeighborTable** | Pointer to **bool** |  | [optional] 
 **SupportHealth** | Pointer to **bool** | Support health | [optional] 
@@ -97,6 +104,7 @@ Name | Type | Description | Notes
 **TemplateName** | Pointer to **string** | Name of the template bound to the device | [optional] 
 **TemplateSettings** | Pointer to **[]int32** |  | [optional] 
 **TerminalPrefix** | Pointer to **string** | TerminalPrefix represents the device name within the terminal function, designed to prevent terminal command recognition errors when device name contains illegal characters such as &#39;#&#39;. | [optional] 
+**TxHoldCount** | Pointer to **int32** |  | [optional] 
 **TxRate** | Pointer to **int64** | Tx Rate | [optional] 
 **Type** | Pointer to **string** | Device type:ap、gateway、switch、olt | [optional] 
 **UnknownMulticastRule** | Pointer to **int32** |  | [optional] 
@@ -199,6 +207,56 @@ SetAddedInAdvanced sets AddedInAdvanced field to given value.
 `func (o *ESDetailVO) HasAddedInAdvanced() bool`
 
 HasAddedInAdvanced returns a boolean if a field has been set.
+
+### GetBlock
+
+`func (o *ESDetailVO) GetBlock() string`
+
+GetBlock returns the Block field if non-nil, zero value otherwise.
+
+### GetBlockOk
+
+`func (o *ESDetailVO) GetBlockOk() (*string, bool)`
+
+GetBlockOk returns a tuple with the Block field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlock
+
+`func (o *ESDetailVO) SetBlock(v string)`
+
+SetBlock sets Block field to given value.
+
+### HasBlock
+
+`func (o *ESDetailVO) HasBlock() bool`
+
+HasBlock returns a boolean if a field has been set.
+
+### GetBlockNum
+
+`func (o *ESDetailVO) GetBlockNum() int32`
+
+GetBlockNum returns the BlockNum field if non-nil, zero value otherwise.
+
+### GetBlockNumOk
+
+`func (o *ESDetailVO) GetBlockNumOk() (*int32, bool)`
+
+GetBlockNumOk returns a tuple with the BlockNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlockNum
+
+`func (o *ESDetailVO) SetBlockNum(v int32)`
+
+SetBlockNum sets BlockNum field to given value.
+
+### HasBlockNum
+
+`func (o *ESDetailVO) HasBlockNum() bool`
+
+HasBlockNum returns a boolean if a field has been set.
 
 ### GetBoundDeviceTemplate
 
@@ -825,6 +883,31 @@ SetForgetId sets ForgetId field to given value.
 
 HasForgetId returns a boolean if a field has been set.
 
+### GetForwardDelay
+
+`func (o *ESDetailVO) GetForwardDelay() int32`
+
+GetForwardDelay returns the ForwardDelay field if non-nil, zero value otherwise.
+
+### GetForwardDelayOk
+
+`func (o *ESDetailVO) GetForwardDelayOk() (*int32, bool)`
+
+GetForwardDelayOk returns a tuple with the ForwardDelay field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForwardDelay
+
+`func (o *ESDetailVO) SetForwardDelay(v int32)`
+
+SetForwardDelay sets ForwardDelay field to given value.
+
+### HasForwardDelay
+
+`func (o *ESDetailVO) HasForwardDelay() bool`
+
+HasForwardDelay returns a boolean if a field has been set.
+
 ### GetHwVersion
 
 `func (o *ESDetailVO) GetHwVersion() string`
@@ -1049,6 +1132,31 @@ SetLastSeen sets LastSeen field to given value.
 `func (o *ESDetailVO) HasLastSeen() bool`
 
 HasLastSeen returns a boolean if a field has been set.
+
+### GetLatestVersion
+
+`func (o *ESDetailVO) GetLatestVersion() string`
+
+GetLatestVersion returns the LatestVersion field if non-nil, zero value otherwise.
+
+### GetLatestVersionOk
+
+`func (o *ESDetailVO) GetLatestVersionOk() (*string, bool)`
+
+GetLatestVersionOk returns a tuple with the LatestVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatestVersion
+
+`func (o *ESDetailVO) SetLatestVersion(v string)`
+
+SetLatestVersion sets LatestVersion field to given value.
+
+### HasLatestVersion
+
+`func (o *ESDetailVO) HasLatestVersion() bool`
+
+HasLatestVersion returns a boolean if a field has been set.
 
 ### GetLedSetting
 
@@ -1299,6 +1407,31 @@ SetManagerMark sets ManagerMark field to given value.
 `func (o *ESDetailVO) HasManagerMark() bool`
 
 HasManagerMark returns a boolean if a field has been set.
+
+### GetMaxAge
+
+`func (o *ESDetailVO) GetMaxAge() int32`
+
+GetMaxAge returns the MaxAge field if non-nil, zero value otherwise.
+
+### GetMaxAgeOk
+
+`func (o *ESDetailVO) GetMaxAgeOk() (*int32, bool)`
+
+GetMaxAgeOk returns a tuple with the MaxAge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxAge
+
+`func (o *ESDetailVO) SetMaxAge(v int32)`
+
+SetMaxAge sets MaxAge field to given value.
+
+### HasMaxAge
+
+`func (o *ESDetailVO) HasMaxAge() bool`
+
+HasMaxAge returns a boolean if a field has been set.
 
 ### GetMemUtil
 
@@ -1825,6 +1958,31 @@ SetRememberDevice sets RememberDevice field to given value.
 
 HasRememberDevice returns a boolean if a field has been set.
 
+### GetReplaceDeviceInfo
+
+`func (o *ESDetailVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO`
+
+GetReplaceDeviceInfo returns the ReplaceDeviceInfo field if non-nil, zero value otherwise.
+
+### GetReplaceDeviceInfoOk
+
+`func (o *ESDetailVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool)`
+
+GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplaceDeviceInfo
+
+`func (o *ESDetailVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO)`
+
+SetReplaceDeviceInfo sets ReplaceDeviceInfo field to given value.
+
+### HasReplaceDeviceInfo
+
+`func (o *ESDetailVO) HasReplaceDeviceInfo() bool`
+
+HasReplaceDeviceInfo returns a boolean if a field has been set.
+
 ### GetResource
 
 `func (o *ESDetailVO) GetResource() int32`
@@ -2150,6 +2308,31 @@ SetSupportAnomaly sets SupportAnomaly field to given value.
 
 HasSupportAnomaly returns a boolean if a field has been set.
 
+### GetSupportAutoAddOuiBasedVlan
+
+`func (o *ESDetailVO) GetSupportAutoAddOuiBasedVlan() bool`
+
+GetSupportAutoAddOuiBasedVlan returns the SupportAutoAddOuiBasedVlan field if non-nil, zero value otherwise.
+
+### GetSupportAutoAddOuiBasedVlanOk
+
+`func (o *ESDetailVO) GetSupportAutoAddOuiBasedVlanOk() (*bool, bool)`
+
+GetSupportAutoAddOuiBasedVlanOk returns a tuple with the SupportAutoAddOuiBasedVlan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportAutoAddOuiBasedVlan
+
+`func (o *ESDetailVO) SetSupportAutoAddOuiBasedVlan(v bool)`
+
+SetSupportAutoAddOuiBasedVlan sets SupportAutoAddOuiBasedVlan field to given value.
+
+### HasSupportAutoAddOuiBasedVlan
+
+`func (o *ESDetailVO) HasSupportAutoAddOuiBasedVlan() bool`
+
+HasSupportAutoAddOuiBasedVlan returns a boolean if a field has been set.
+
 ### GetSupportCableTest
 
 `func (o *ESDetailVO) GetSupportCableTest() bool`
@@ -2449,6 +2632,31 @@ SetTerminalPrefix sets TerminalPrefix field to given value.
 `func (o *ESDetailVO) HasTerminalPrefix() bool`
 
 HasTerminalPrefix returns a boolean if a field has been set.
+
+### GetTxHoldCount
+
+`func (o *ESDetailVO) GetTxHoldCount() int32`
+
+GetTxHoldCount returns the TxHoldCount field if non-nil, zero value otherwise.
+
+### GetTxHoldCountOk
+
+`func (o *ESDetailVO) GetTxHoldCountOk() (*int32, bool)`
+
+GetTxHoldCountOk returns a tuple with the TxHoldCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTxHoldCount
+
+`func (o *ESDetailVO) SetTxHoldCount(v int32)`
+
+SetTxHoldCount sets TxHoldCount field to given value.
+
+### HasTxHoldCount
+
+`func (o *ESDetailVO) HasTxHoldCount() bool`
+
+HasTxHoldCount returns a boolean if a field has been set.
 
 ### GetTxRate
 

@@ -225,6 +225,22 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SwitchAPIService CreateLoopbackInterface", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+
+		resp, httpRes, err := apiClient.SwitchAPI.CreateLoopbackInterface(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SwitchAPIService CreateOswVrf", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -234,6 +250,39 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 		var switchMac string
 
 		resp, httpRes, err := apiClient.SwitchAPI.CreateOswVrf(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchAPIService CreateStaticRouting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+
+		resp, httpRes, err := apiClient.SwitchAPI.CreateStaticRouting(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchAPIService DeleteLoopbackInterface", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+		var loopbackInterfaceId string
+
+		resp, httpRes, err := apiClient.SwitchAPI.DeleteLoopbackInterface(context.Background(), omadacId, siteId, switchMac, loopbackInterfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -266,6 +315,23 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.SwitchAPI.DeletePortTag(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchAPIService DeleteStaticRouting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+		var staticRoutingId string
+
+		resp, httpRes, err := apiClient.SwitchAPI.DeleteStaticRouting(context.Background(), omadacId, siteId, switchMac, staticRoutingId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -536,6 +602,22 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 		var switchMac string
 
 		resp, httpRes, err := apiClient.SwitchAPI.GetGridPortAndLagNetworksDetail(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchAPIService GetGridStaticRouting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+
+		resp, httpRes, err := apiClient.SwitchAPI.GetGridStaticRouting(context.Background(), omadacId, siteId, switchMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -826,6 +908,38 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SwitchAPIService ListSwitchBriefInterfaces", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+
+		resp, httpRes, err := apiClient.SwitchAPI.ListSwitchBriefInterfaces(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchAPIService ListSwitchInterfaces", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+
+		resp, httpRes, err := apiClient.SwitchAPI.ListSwitchInterfaces(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SwitchAPIService ListSwitchNetworks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -835,6 +949,23 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 		var switchMac string
 
 		resp, httpRes, err := apiClient.SwitchAPI.ListSwitchNetworks(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchAPIService ModfiyLoopbackInterface", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+		var loopbackInterfaceId string
+
+		resp, httpRes, err := apiClient.SwitchAPI.ModfiyLoopbackInterface(context.Background(), omadacId, siteId, switchMac, loopbackInterfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -923,6 +1054,22 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SwitchAPIService ModifyPmtudStatus1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+
+		resp, httpRes, err := apiClient.SwitchAPI.ModifyPmtudStatus1(context.Background(), omadacId, siteId, switchMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SwitchAPIService ModifyPortTag", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -931,6 +1078,23 @@ func Test_omada_SwitchAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.SwitchAPI.ModifyPortTag(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchAPIService ModifyStaticRouting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var switchMac string
+		var staticRoutingId string
+
+		resp, httpRes, err := apiClient.SwitchAPI.ModifyStaticRouting(context.Background(), omadacId, siteId, switchMac, staticRoutingId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

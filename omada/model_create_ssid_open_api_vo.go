@@ -21,14 +21,21 @@ var _ MappedNullable = &CreateSsidOpenApiVO{}
 
 // CreateSsidOpenApiVO struct for CreateSsidOpenApiVO
 type CreateSsidOpenApiVO struct {
+	CondBroadcastCtrl *CondBroadcastCtrlVO `json:"CondBroadcastCtrl,omitempty"`
+	// AP Group ID list that the SSID is associated with. Supports binding to multiple AP groups.
+	ApGroupIds []string `json:"apGroupIds,omitempty"`
 	// SSID band. The lowest bit indicates whether 2.4G is included; the second lowest bit indicates whether 5G is included; the third lowest bit indicates whether 6G is included; 1 means included while 0 means not included. For example, 7(111) means that 2G/5G/6G are enabled; 1(001) means that 2G is enabled. (When 5G is included，it means 5G/5G1/5G2 are enabled.)
 	Band int32 `json:"band"`
 	// SSID broadcast config status. True: enable, false: disable.
 	Broadcast bool `json:"broadcast"`
+	// description = select all devices or not. 0 means select all devices, 1 means not select all devices.
+	ChooseDevices *int32 `json:"chooseDevices,omitempty"`
 	// SSID device type, identify which devices this SSID will take effect; The lowest bit indicates whether [EAP] is included, the second low bit indicates whether [Gateway] is included, 1 means included while 0 means not included; For example, 3(11) means that EAP/Gateway is enabled, 1(01) means that EAP is enabled.
 	DeviceType int32 `json:"deviceType"`
 	// SSID 802.11r config status. True: enable, false: disable.
 	Enable11r bool `json:"enable11r"`
+	// SSID Enhanced IoT Connectivity config status. True: enable, false: disable. This configuration can be enabled only when the 5GHz and 6GHz bands are disabled, the parameters [versionEnt] and [versionPsk] are not set to 4, and the following configurations are disabled: [hotspotV2Enable], [bandSteer], [arpCastEnable], [loadBalance], [enable11r], [gikRekeyPskEnable], [pmfMode], [mloEnable].
+	EnhancedIotConnectivity *bool `json:"enhancedIotConnectivity,omitempty"`
 	EntSetting *SsidEnterpriseSettingOpenApiVO `json:"entSetting,omitempty"`
 	// SSID EoGre Tunnel config status. True: enable, false: disable. This configuration can be enabled only when the [VPN - EoGre Tunnel] global config is enabled;(This configuration applies to the Pro Site of the Omada Pro Controller only).
 	GreEnable *bool `json:"greEnable,omitempty"`
@@ -48,6 +55,8 @@ type CreateSsidOpenApiVO struct {
 	PskSetting *SsidPskSettingOpenApiVO `json:"pskSetting,omitempty"`
 	// SSID security mode; Security should be a value as follows: 0: None; 2: WPA-Enterprise; 3: WPA-Personal; 4: PPSK without RADIUS; 5: PPSK with RADIUS.
 	Security int32 `json:"security"`
+	// SSID enable status. True: enable, false: disable.
+	SsidEnable *bool `json:"ssidEnable,omitempty"`
 	// SSID VLAN config status. True: enable, false: disable.
 	VlanEnable bool `json:"vlanEnable"`
 	// SSID VLAN ID. This field is required when Parameter [vlanEnable] is true; It should be within the range of 1–4094. If the field vlanSetting is entered, this field must be null.
@@ -87,6 +96,70 @@ func NewCreateSsidOpenApiVO(band int32, broadcast bool, deviceType int32, enable
 func NewCreateSsidOpenApiVOWithDefaults() *CreateSsidOpenApiVO {
 	this := CreateSsidOpenApiVO{}
 	return &this
+}
+
+// GetCondBroadcastCtrl returns the CondBroadcastCtrl field value if set, zero value otherwise.
+func (o *CreateSsidOpenApiVO) GetCondBroadcastCtrl() CondBroadcastCtrlVO {
+	if o == nil || IsNil(o.CondBroadcastCtrl) {
+		var ret CondBroadcastCtrlVO
+		return ret
+	}
+	return *o.CondBroadcastCtrl
+}
+
+// GetCondBroadcastCtrlOk returns a tuple with the CondBroadcastCtrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateSsidOpenApiVO) GetCondBroadcastCtrlOk() (*CondBroadcastCtrlVO, bool) {
+	if o == nil || IsNil(o.CondBroadcastCtrl) {
+		return nil, false
+	}
+	return o.CondBroadcastCtrl, true
+}
+
+// HasCondBroadcastCtrl returns a boolean if a field has been set.
+func (o *CreateSsidOpenApiVO) HasCondBroadcastCtrl() bool {
+	if o != nil && !IsNil(o.CondBroadcastCtrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetCondBroadcastCtrl gets a reference to the given CondBroadcastCtrlVO and assigns it to the CondBroadcastCtrl field.
+func (o *CreateSsidOpenApiVO) SetCondBroadcastCtrl(v CondBroadcastCtrlVO) {
+	o.CondBroadcastCtrl = &v
+}
+
+// GetApGroupIds returns the ApGroupIds field value if set, zero value otherwise.
+func (o *CreateSsidOpenApiVO) GetApGroupIds() []string {
+	if o == nil || IsNil(o.ApGroupIds) {
+		var ret []string
+		return ret
+	}
+	return o.ApGroupIds
+}
+
+// GetApGroupIdsOk returns a tuple with the ApGroupIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateSsidOpenApiVO) GetApGroupIdsOk() ([]string, bool) {
+	if o == nil || IsNil(o.ApGroupIds) {
+		return nil, false
+	}
+	return o.ApGroupIds, true
+}
+
+// HasApGroupIds returns a boolean if a field has been set.
+func (o *CreateSsidOpenApiVO) HasApGroupIds() bool {
+	if o != nil && !IsNil(o.ApGroupIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetApGroupIds gets a reference to the given []string and assigns it to the ApGroupIds field.
+func (o *CreateSsidOpenApiVO) SetApGroupIds(v []string) {
+	o.ApGroupIds = v
 }
 
 // GetBand returns the Band field value
@@ -137,6 +210,38 @@ func (o *CreateSsidOpenApiVO) SetBroadcast(v bool) {
 	o.Broadcast = v
 }
 
+// GetChooseDevices returns the ChooseDevices field value if set, zero value otherwise.
+func (o *CreateSsidOpenApiVO) GetChooseDevices() int32 {
+	if o == nil || IsNil(o.ChooseDevices) {
+		var ret int32
+		return ret
+	}
+	return *o.ChooseDevices
+}
+
+// GetChooseDevicesOk returns a tuple with the ChooseDevices field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateSsidOpenApiVO) GetChooseDevicesOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChooseDevices) {
+		return nil, false
+	}
+	return o.ChooseDevices, true
+}
+
+// HasChooseDevices returns a boolean if a field has been set.
+func (o *CreateSsidOpenApiVO) HasChooseDevices() bool {
+	if o != nil && !IsNil(o.ChooseDevices) {
+		return true
+	}
+
+	return false
+}
+
+// SetChooseDevices gets a reference to the given int32 and assigns it to the ChooseDevices field.
+func (o *CreateSsidOpenApiVO) SetChooseDevices(v int32) {
+	o.ChooseDevices = &v
+}
+
 // GetDeviceType returns the DeviceType field value
 func (o *CreateSsidOpenApiVO) GetDeviceType() int32 {
 	if o == nil {
@@ -183,6 +288,38 @@ func (o *CreateSsidOpenApiVO) GetEnable11rOk() (*bool, bool) {
 // SetEnable11r sets field value
 func (o *CreateSsidOpenApiVO) SetEnable11r(v bool) {
 	o.Enable11r = v
+}
+
+// GetEnhancedIotConnectivity returns the EnhancedIotConnectivity field value if set, zero value otherwise.
+func (o *CreateSsidOpenApiVO) GetEnhancedIotConnectivity() bool {
+	if o == nil || IsNil(o.EnhancedIotConnectivity) {
+		var ret bool
+		return ret
+	}
+	return *o.EnhancedIotConnectivity
+}
+
+// GetEnhancedIotConnectivityOk returns a tuple with the EnhancedIotConnectivity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateSsidOpenApiVO) GetEnhancedIotConnectivityOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnhancedIotConnectivity) {
+		return nil, false
+	}
+	return o.EnhancedIotConnectivity, true
+}
+
+// HasEnhancedIotConnectivity returns a boolean if a field has been set.
+func (o *CreateSsidOpenApiVO) HasEnhancedIotConnectivity() bool {
+	if o != nil && !IsNil(o.EnhancedIotConnectivity) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnhancedIotConnectivity gets a reference to the given bool and assigns it to the EnhancedIotConnectivity field.
+func (o *CreateSsidOpenApiVO) SetEnhancedIotConnectivity(v bool) {
+	o.EnhancedIotConnectivity = &v
 }
 
 // GetEntSetting returns the EntSetting field value if set, zero value otherwise.
@@ -489,6 +626,38 @@ func (o *CreateSsidOpenApiVO) SetSecurity(v int32) {
 	o.Security = v
 }
 
+// GetSsidEnable returns the SsidEnable field value if set, zero value otherwise.
+func (o *CreateSsidOpenApiVO) GetSsidEnable() bool {
+	if o == nil || IsNil(o.SsidEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.SsidEnable
+}
+
+// GetSsidEnableOk returns a tuple with the SsidEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateSsidOpenApiVO) GetSsidEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.SsidEnable) {
+		return nil, false
+	}
+	return o.SsidEnable, true
+}
+
+// HasSsidEnable returns a boolean if a field has been set.
+func (o *CreateSsidOpenApiVO) HasSsidEnable() bool {
+	if o != nil && !IsNil(o.SsidEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetSsidEnable gets a reference to the given bool and assigns it to the SsidEnable field.
+func (o *CreateSsidOpenApiVO) SetSsidEnable(v bool) {
+	o.SsidEnable = &v
+}
+
 // GetVlanEnable returns the VlanEnable field value
 func (o *CreateSsidOpenApiVO) GetVlanEnable() bool {
 	if o == nil {
@@ -651,10 +820,22 @@ func (o CreateSsidOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o CreateSsidOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CondBroadcastCtrl) {
+		toSerialize["CondBroadcastCtrl"] = o.CondBroadcastCtrl
+	}
+	if !IsNil(o.ApGroupIds) {
+		toSerialize["apGroupIds"] = o.ApGroupIds
+	}
 	toSerialize["band"] = o.Band
 	toSerialize["broadcast"] = o.Broadcast
+	if !IsNil(o.ChooseDevices) {
+		toSerialize["chooseDevices"] = o.ChooseDevices
+	}
 	toSerialize["deviceType"] = o.DeviceType
 	toSerialize["enable11r"] = o.Enable11r
+	if !IsNil(o.EnhancedIotConnectivity) {
+		toSerialize["enhancedIotConnectivity"] = o.EnhancedIotConnectivity
+	}
 	if !IsNil(o.EntSetting) {
 		toSerialize["entSetting"] = o.EntSetting
 	}
@@ -676,6 +857,9 @@ func (o CreateSsidOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["pskSetting"] = o.PskSetting
 	}
 	toSerialize["security"] = o.Security
+	if !IsNil(o.SsidEnable) {
+		toSerialize["ssidEnable"] = o.SsidEnable
+	}
 	toSerialize["vlanEnable"] = o.VlanEnable
 	if !IsNil(o.VlanId) {
 		toSerialize["vlanId"] = o.VlanId

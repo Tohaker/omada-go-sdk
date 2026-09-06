@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BuiltInServer** | Pointer to **bool** | Is this Radius server a built-in server | [optional] 
+**BuiltInServer** | Pointer to **bool** | Is this RADIUS server a built-in server | [optional] 
 **Id** | **string** | radius server id. | 
 **Name** | **string** | radius server name. | 
 **OverNumLimit** | Pointer to **bool** | Is the number of authentication/accounting Servers greater than 2. | [optional] 

@@ -4,178 +4,32 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetBandSteeringTemplateSetting**](SiteTemplateConfigurationAPI.md#getbandsteeringtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/band-steering | Get site template band steering setting
-[**GetBeaconControlTemplateSetting**](SiteTemplateConfigurationAPI.md#getbeaconcontroltemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/beacon-control | Get site template beacon control setting
 [**GetChannelLimitTemplateSetting**](SiteTemplateConfigurationAPI.md#getchannellimittemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/channel-limit | Get site template channel limit setting
-[**GetExistSiteTemplateSettingByOpenApi**](SiteTemplateConfigurationAPI.md#getexistsitetemplatesettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/exist | Query site template setting exist or not
 [**GetLldpTemplateSetting**](SiteTemplateConfigurationAPI.md#getlldptemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lldp | Get site template lldp setting
 [**GetMeshTemplateSetting**](SiteTemplateConfigurationAPI.md#getmeshtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Get site template mesh setting
 [**GetMulticastRateLimitTemplateByOpenApi**](SiteTemplateConfigurationAPI.md#getmulticastratelimittemplatebyopenapi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multicast-rate-limit | Get site template multicast rate limit setting
 [**GetRemoteLoggingTemplateSetting**](SiteTemplateConfigurationAPI.md#getremoteloggingtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remote-logging | Get site template remote logging setting
 [**GetRoamingTemplateSetting**](SiteTemplateConfigurationAPI.md#getroamingtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/roaming | Get site template roaming setting
+[**GetSiteTemplateJumboSetting**](SiteTemplateConfigurationAPI.md#getsitetemplatejumbosetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/jumbo | Get site template jumbo setting
+[**GetSiteTemplateLagHashAlgSetting**](SiteTemplateConfigurationAPI.md#getsitetemplatelaghashalgsetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lag-hash-alg | Get site template lag hash alg setting
 [**GetSiteTemplateLedSetting**](SiteTemplateConfigurationAPI.md#getsitetemplateledsetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/led | Get site template led setting
-[**GetSiteTemplateSettingCap**](SiteTemplateConfigurationAPI.md#getsitetemplatesettingcap) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/capacity | Get siteTemplate capabilities.
-[**GetSiteTemplateSpecification**](SiteTemplateConfigurationAPI.md#getsitetemplatespecification) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/specification | Get siteTemplate functional specifications
-[**ModifySiteConfigurationTemplate**](SiteTemplateConfigurationAPI.md#modifysiteconfigurationtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/configuration | Modify Site template configuration settings
+[**GetSiteTemplateRememberSettingByOpenApi**](SiteTemplateConfigurationAPI.md#getsitetemplateremembersettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remember-device | Query site template setting exist or not
 [**ModifySiteServiceTemplate**](SiteTemplateConfigurationAPI.md#modifysiteservicetemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/service | Modify Site template service settings
 [**ModifySiteTemplateGeneralConfig**](SiteTemplateConfigurationAPI.md#modifysitetemplategeneralconfig) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/general/config | Modify the general configuration settings of the Site template
+[**ModifySiteTemplateRememberSettingByOpenApi**](SiteTemplateConfigurationAPI.md#modifysitetemplateremembersettingbyopenapi) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remember-device | Modify site template remember device setting
 [**ModifySiteTemplateSetting**](SiteTemplateConfigurationAPI.md#modifysitetemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting | Modify Site template settings
 [**UpdateBandSteeringTemplateSetting**](SiteTemplateConfigurationAPI.md#updatebandsteeringtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/band-steering | Modify site template band steering setting
 [**UpdateBeaconControlTemplateSetting**](SiteTemplateConfigurationAPI.md#updatebeaconcontroltemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/beacon-control | Modify site template beacon control setting
 [**UpdateChannelLimitTemplateSetting**](SiteTemplateConfigurationAPI.md#updatechannellimittemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/channel-limit | Modify site template channel limit setting
 [**UpdateLldpTemplateSetting**](SiteTemplateConfigurationAPI.md#updatelldptemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lldp | Modify site template lldp setting
 [**UpdateMcastRateLimitSettingTemplateByOpenApi**](SiteTemplateConfigurationAPI.md#updatemcastratelimitsettingtemplatebyopenapi) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multicast-rate-limit | Modify site template multicast rate limit setting
-[**UpdateMeshTemplateSetting**](SiteTemplateConfigurationAPI.md#updatemeshtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Modify site template mesh setting
+[**UpdateMeshTemplateSetting**](SiteTemplateConfigurationAPI.md#updatemeshtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Modify site template mesh setmesh setting
 [**UpdateRemoteLoggingTemplateSetting**](SiteTemplateConfigurationAPI.md#updateremoteloggingtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remote-logging | Modify site template remote logging setting
 [**UpdateRoamingTemplateSetting**](SiteTemplateConfigurationAPI.md#updateroamingtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/roaming | Modify site template roaming setting
+[**UpdateSiteTemplateJumboSetting**](SiteTemplateConfigurationAPI.md#updatesitetemplatejumbosetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/jumbo | Modify site template jumbo setting
+[**UpdateSiteTemplateLagHashAlgSetting**](SiteTemplateConfigurationAPI.md#updatesitetemplatelaghashalgsetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lag-hash-alg | Modify site template lag hash alg setting
 [**UpdateSiteTemplateLedSetting**](SiteTemplateConfigurationAPI.md#updatesitetemplateledsetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/led | Modify site template led setting
 
-
-
-## GetBandSteeringTemplateSetting
-
-> OperationResponseSiteBandSteeringSetting GetBandSteeringTemplateSetting(ctx, omadacId, siteTemplateId).Execute()
-
-Get site template band steering setting
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SiteTemplateConfigurationAPI.GetBandSteeringTemplateSetting(context.Background(), omadacId, siteTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.GetBandSteeringTemplateSetting``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetBandSteeringTemplateSetting`: OperationResponseSiteBandSteeringSetting
-	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.GetBandSteeringTemplateSetting`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | Site Template ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetBandSteeringTemplateSettingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OperationResponseSiteBandSteeringSetting**](OperationResponseSiteBandSteeringSetting.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetBeaconControlTemplateSetting
-
-> OperationResponseSiteBeaconControlSetting GetBeaconControlTemplateSetting(ctx, omadacId, siteTemplateId).Execute()
-
-Get site template beacon control setting
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SiteTemplateConfigurationAPI.GetBeaconControlTemplateSetting(context.Background(), omadacId, siteTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.GetBeaconControlTemplateSetting``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetBeaconControlTemplateSetting`: OperationResponseSiteBeaconControlSetting
-	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.GetBeaconControlTemplateSetting`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | Site Template ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetBeaconControlTemplateSettingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OperationResponseSiteBeaconControlSetting**](OperationResponseSiteBeaconControlSetting.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
 
 
 ## GetChannelLimitTemplateSetting
@@ -236,79 +90,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseSiteChannelLimitSetting**](OperationResponseSiteChannelLimitSetting.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetExistSiteTemplateSettingByOpenApi
-
-> OperationResponseExistSiteSettingOpenApiVO GetExistSiteTemplateSettingByOpenApi(ctx, omadacId, siteTemplateId).Execute()
-
-Query site template setting exist or not
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SiteTemplateConfigurationAPI.GetExistSiteTemplateSettingByOpenApi(context.Background(), omadacId, siteTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.GetExistSiteTemplateSettingByOpenApi``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetExistSiteTemplateSettingByOpenApi`: OperationResponseExistSiteSettingOpenApiVO
-	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.GetExistSiteTemplateSettingByOpenApi`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | Site Template ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetExistSiteTemplateSettingByOpenApiRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OperationResponseExistSiteSettingOpenApiVO**](OperationResponseExistSiteSettingOpenApiVO.md)
 
 ### Authorization
 
@@ -689,6 +470,152 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetSiteTemplateJumboSetting
+
+> OperationResponseSiteJumboOpenApiVO GetSiteTemplateJumboSetting(ctx, omadacId, siteTemplateId).Execute()
+
+Get site template jumbo setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateJumboSetting(context.Background(), omadacId, siteTemplateId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.GetSiteTemplateJumboSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSiteTemplateJumboSetting`: OperationResponseSiteJumboOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.GetSiteTemplateJumboSetting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSiteTemplateJumboSettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseSiteJumboOpenApiVO**](OperationResponseSiteJumboOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSiteTemplateLagHashAlgSetting
+
+> OperationResponseSiteLagHashAlgOpenApiVO GetSiteTemplateLagHashAlgSetting(ctx, omadacId, siteTemplateId).Execute()
+
+Get site template lag hash alg setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateLagHashAlgSetting(context.Background(), omadacId, siteTemplateId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.GetSiteTemplateLagHashAlgSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSiteTemplateLagHashAlgSetting`: OperationResponseSiteLagHashAlgOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.GetSiteTemplateLagHashAlgSetting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSiteTemplateLagHashAlgSettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseSiteLagHashAlgOpenApiVO**](OperationResponseSiteLagHashAlgOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetSiteTemplateLedSetting
 
 > OperationResponseSiteLedSetting GetSiteTemplateLedSetting(ctx, omadacId, siteTemplateId).Execute()
@@ -762,11 +689,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetSiteTemplateSettingCap
+## GetSiteTemplateRememberSettingByOpenApi
 
-> OperationResponseSiteSettingCapOpenApiVO GetSiteTemplateSettingCap(ctx, omadacId, siteTemplateId).Execute()
+> OperationResponseSiteRememberDeviceSetting GetSiteTemplateRememberSettingByOpenApi(ctx, omadacId, siteTemplateId).Execute()
 
-Get siteTemplate capabilities.
+Query site template setting exist or not
 
 
 
@@ -788,13 +715,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateSettingCap(context.Background(), omadacId, siteTemplateId).Execute()
+	resp, r, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateRememberSettingByOpenApi(context.Background(), omadacId, siteTemplateId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.GetSiteTemplateSettingCap``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.GetSiteTemplateRememberSettingByOpenApi``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSiteTemplateSettingCap`: OperationResponseSiteSettingCapOpenApiVO
-	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.GetSiteTemplateSettingCap`: %v\n", resp)
+	// response from `GetSiteTemplateRememberSettingByOpenApi`: OperationResponseSiteRememberDeviceSetting
+	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.GetSiteTemplateRememberSettingByOpenApi`: %v\n", resp)
 }
 ```
 
@@ -809,7 +736,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSiteTemplateSettingCapRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSiteTemplateRememberSettingByOpenApiRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -819,7 +746,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseSiteSettingCapOpenApiVO**](OperationResponseSiteSettingCapOpenApiVO.md)
+[**OperationResponseSiteRememberDeviceSetting**](OperationResponseSiteRememberDeviceSetting.md)
 
 ### Authorization
 
@@ -828,154 +755,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetSiteTemplateSpecification
-
-> OperationResponseSpecificationOpenApiVO GetSiteTemplateSpecification(ctx, omadacId, siteTemplateId).Execute()
-
-Get siteTemplate functional specifications
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateSpecification(context.Background(), omadacId, siteTemplateId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.GetSiteTemplateSpecification``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetSiteTemplateSpecification`: OperationResponseSpecificationOpenApiVO
-	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.GetSiteTemplateSpecification`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | Site Template ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetSiteTemplateSpecificationRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OperationResponseSpecificationOpenApiVO**](OperationResponseSpecificationOpenApiVO.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ModifySiteConfigurationTemplate
-
-> OperationResponseWithoutResult ModifySiteConfigurationTemplate(ctx, omadacId, siteTemplateId).SiteTemplateOpenApiVO(siteTemplateOpenApiVO).Execute()
-
-Modify Site template configuration settings
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
-)
-
-func main() {
-	omadacId := "omadacId_example" // string | Omada ID
-	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	siteTemplateOpenApiVO := *openapiclient.NewSiteTemplateOpenApiVO() // SiteTemplateOpenApiVO | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SiteTemplateConfigurationAPI.ModifySiteConfigurationTemplate(context.Background(), omadacId, siteTemplateId).SiteTemplateOpenApiVO(siteTemplateOpenApiVO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.ModifySiteConfigurationTemplate``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ModifySiteConfigurationTemplate`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.ModifySiteConfigurationTemplate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** | Omada ID | 
-**siteTemplateId** | **string** | Site Template ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiModifySiteConfigurationTemplateRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **siteTemplateOpenApiVO** | [**SiteTemplateOpenApiVO**](SiteTemplateOpenApiVO.md) |  | 
-
-### Return type
-
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
-
-### Authorization
-
-[AccessToken](../README.md#accesstoken)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1114,6 +893,81 @@ Name | Type | Description  | Notes
 
 
  **siteServiceGeneralConfigOpenApiVO** | [**SiteServiceGeneralConfigOpenApiVO**](SiteServiceGeneralConfigOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifySiteTemplateRememberSettingByOpenApi
+
+> OperationResponseWithoutResult ModifySiteTemplateRememberSettingByOpenApi(ctx, omadacId, siteTemplateId).SiteRememberDeviceSetting(siteRememberDeviceSetting).Execute()
+
+Modify site template remember device setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	siteRememberDeviceSetting := *openapiclient.NewSiteRememberDeviceSetting() // SiteRememberDeviceSetting | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteTemplateConfigurationAPI.ModifySiteTemplateRememberSettingByOpenApi(context.Background(), omadacId, siteTemplateId).SiteRememberDeviceSetting(siteRememberDeviceSetting).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.ModifySiteTemplateRememberSettingByOpenApi``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifySiteTemplateRememberSettingByOpenApi`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.ModifySiteTemplateRememberSettingByOpenApi`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifySiteTemplateRememberSettingByOpenApiRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **siteRememberDeviceSetting** | [**SiteRememberDeviceSetting**](SiteRememberDeviceSetting.md) |  | 
 
 ### Return type
 
@@ -1587,7 +1441,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult UpdateMeshTemplateSetting(ctx, omadacId, siteTemplateId).SiteMeshSetting(siteMeshSetting).Execute()
 
-Modify site template mesh setting
+Modify site template mesh setmesh setting
 
 
 
@@ -1789,6 +1643,156 @@ Name | Type | Description  | Notes
 
 
  **siteRoamingSetting** | [**SiteRoamingSetting**](SiteRoamingSetting.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSiteTemplateJumboSetting
+
+> OperationResponseWithoutResult UpdateSiteTemplateJumboSetting(ctx, omadacId, siteTemplateId).SiteJumboOpenApiVO(siteJumboOpenApiVO).Execute()
+
+Modify site template jumbo setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	siteJumboOpenApiVO := *openapiclient.NewSiteJumboOpenApiVO() // SiteJumboOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteTemplateConfigurationAPI.UpdateSiteTemplateJumboSetting(context.Background(), omadacId, siteTemplateId).SiteJumboOpenApiVO(siteJumboOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.UpdateSiteTemplateJumboSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSiteTemplateJumboSetting`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.UpdateSiteTemplateJumboSetting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSiteTemplateJumboSettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **siteJumboOpenApiVO** | [**SiteJumboOpenApiVO**](SiteJumboOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSiteTemplateLagHashAlgSetting
+
+> OperationResponseWithoutResult UpdateSiteTemplateLagHashAlgSetting(ctx, omadacId, siteTemplateId).SiteLagHashAlgOpenApiVO(siteLagHashAlgOpenApiVO).Execute()
+
+Modify site template lag hash alg setting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	siteLagHashAlgOpenApiVO := *openapiclient.NewSiteLagHashAlgOpenApiVO(int32(123)) // SiteLagHashAlgOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteTemplateConfigurationAPI.UpdateSiteTemplateLagHashAlgSetting(context.Background(), omadacId, siteTemplateId).SiteLagHashAlgOpenApiVO(siteLagHashAlgOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteTemplateConfigurationAPI.UpdateSiteTemplateLagHashAlgSetting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateSiteTemplateLagHashAlgSetting`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SiteTemplateConfigurationAPI.UpdateSiteTemplateLagHashAlgSetting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSiteTemplateLagHashAlgSettingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **siteLagHashAlgOpenApiVO** | [**SiteLagHashAlgOpenApiVO**](SiteLagHashAlgOpenApiVO.md) |  | 
 
 ### Return type
 

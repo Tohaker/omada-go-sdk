@@ -1403,7 +1403,7 @@ import (
 
 func main() {
 	mspId := "mspId_example" // string | MSP ID
-	keyName := "keyName_example" // string | 
+	keyName := "keyName_example" // string | SSL Key Name
 	uploadSSLKeyRequest := *openapiclient.NewUploadSSLKeyRequest("TODO") // UploadSSLKeyRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1434,7 +1434,7 @@ Other parameters are passed through a pointer to a apiUploadSSLKeyRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **keyName** | **string** |  | 
+ **keyName** | **string** | SSL Key Name | 
  **uploadSSLKeyRequest** | [**UploadSSLKeyRequest**](UploadSSLKeyRequest.md) |  | 
 
 ### Return type

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **InterfaceId** | Pointer to **string** | Interface ID, for example: if interfaceType is network, interfaceId should be LAN network ID. LAN Network can be created using &#39;Create LAN network&#39; interface, and LAN Network ID can be obtained from &#39;Get LAN network list&#39; interface. | [optional] 
 **InterfaceName** | Pointer to **string** | Interface name. | [optional] 
 **InterfaceType** | Pointer to **int32** | Parameter [interfaceType] should be a value as follows: 0: Wired, 1: Wireless. | [optional] 
+**IsCopper** | Pointer to **bool** | Whether the port is copper when the port is combo. | [optional] 
 **LinkStatus** | Pointer to **int32** | Link status should be a value as follows: 0:LINK_DOWN;1:LINK_UP | [optional] 
 
 ## Methods
@@ -154,6 +155,31 @@ SetInterfaceType sets InterfaceType field to given value.
 `func (o *InterfaceInfo) HasInterfaceType() bool`
 
 HasInterfaceType returns a boolean if a field has been set.
+
+### GetIsCopper
+
+`func (o *InterfaceInfo) GetIsCopper() bool`
+
+GetIsCopper returns the IsCopper field if non-nil, zero value otherwise.
+
+### GetIsCopperOk
+
+`func (o *InterfaceInfo) GetIsCopperOk() (*bool, bool)`
+
+GetIsCopperOk returns a tuple with the IsCopper field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCopper
+
+`func (o *InterfaceInfo) SetIsCopper(v bool)`
+
+SetIsCopper sets IsCopper field to given value.
+
+### HasIsCopper
+
+`func (o *InterfaceInfo) HasIsCopper() bool`
+
+HasIsCopper returns a boolean if a field has been set.
 
 ### GetLinkStatus
 

@@ -19,19 +19,19 @@ import (
 // checks if the OswIpSettingVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswIpSettingVO{}
 
-// OswIpSettingVO Network IP setting. Only valid when deviceType is 2.
+// OswIpSettingVO Network IP setting.
 type OswIpSettingVO struct {
-	// The switch to confirm conflict
+	// Enable IP-MAC Conflict Detection or not.
 	ConfirmConflict *bool `json:"confirmConflict,omitempty"`
-	// DHCP IP
+	// The IP for Address reservation when useFixedAddr is enabled.
 	DhcpIp *string `json:"dhcpIp,omitempty"`
-	// The switch of fallback
+	// The switch of fallback ip for mode 1.
 	Fallback *bool `json:"fallback,omitempty"`
-	// Fallback Gateway
+	// Fallback gateway for dhcp mode when fallback is enabled.
 	FallbackGate *string `json:"fallbackGate,omitempty"`
-	// Fallback IP
+	// Fallback ip for dhcp mode when fallback is enabled.
 	FallbackIp *string `json:"fallbackIp,omitempty"`
-	// Fallback Mask
+	// Fallback mask for dhcp mode when fallback is enabled.
 	FallbackMask *string `json:"fallbackMask,omitempty"`
 	// Gateway, like 192.168.0.1
 	Gateway *string `json:"gateway,omitempty"`
@@ -39,7 +39,7 @@ type OswIpSettingVO struct {
 	Ip *string `json:"ip,omitempty"`
 	// IP Setting mode. Static:0, DHCP:1
 	Mode int32 `json:"mode"`
-	// netId
+	// The LAN Network for Address reservation when useFixedAddr is enabled. Obtain the id from \"Get LAN network list\"
 	NetId *string `json:"netId,omitempty"`
 	// IP Mask, like 255.255.255.0
 	Netmask *string `json:"netmask,omitempty"`
@@ -49,14 +49,14 @@ type OswIpSettingVO struct {
 	PreDns *string `json:"preDns,omitempty"`
 	// second DNS Server
 	SecDns *string `json:"secDns,omitempty"`
-	// Server MAC
+	// The Mac of DHCP Server for Address reservation when useFixedAddr is enabled.
 	ServerMac *string `json:"serverMac,omitempty"`
-	// serverStackId
+	// The Stack ID of DHCP Server for Address reservation when useFixedAddr is enabled.
 	ServerStackId *string `json:"serverStackId,omitempty"`
-	// Server Type
+	// The Type of DHCP Server for Address reservation when useFixedAddr is enabled.
 	ServerType *string `json:"serverType,omitempty"`
 	// The switch of Fixed Address
-	UserFixedAddr *bool `json:"userFixedAddr,omitempty"`
+	UseFixedAddr *bool `json:"useFixedAddr,omitempty"`
 }
 
 type _OswIpSettingVO OswIpSettingVO
@@ -615,36 +615,36 @@ func (o *OswIpSettingVO) SetServerType(v string) {
 	o.ServerType = &v
 }
 
-// GetUserFixedAddr returns the UserFixedAddr field value if set, zero value otherwise.
-func (o *OswIpSettingVO) GetUserFixedAddr() bool {
-	if o == nil || IsNil(o.UserFixedAddr) {
+// GetUseFixedAddr returns the UseFixedAddr field value if set, zero value otherwise.
+func (o *OswIpSettingVO) GetUseFixedAddr() bool {
+	if o == nil || IsNil(o.UseFixedAddr) {
 		var ret bool
 		return ret
 	}
-	return *o.UserFixedAddr
+	return *o.UseFixedAddr
 }
 
-// GetUserFixedAddrOk returns a tuple with the UserFixedAddr field value if set, nil otherwise
+// GetUseFixedAddrOk returns a tuple with the UseFixedAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OswIpSettingVO) GetUserFixedAddrOk() (*bool, bool) {
-	if o == nil || IsNil(o.UserFixedAddr) {
+func (o *OswIpSettingVO) GetUseFixedAddrOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseFixedAddr) {
 		return nil, false
 	}
-	return o.UserFixedAddr, true
+	return o.UseFixedAddr, true
 }
 
-// HasUserFixedAddr returns a boolean if a field has been set.
-func (o *OswIpSettingVO) HasUserFixedAddr() bool {
-	if o != nil && !IsNil(o.UserFixedAddr) {
+// HasUseFixedAddr returns a boolean if a field has been set.
+func (o *OswIpSettingVO) HasUseFixedAddr() bool {
+	if o != nil && !IsNil(o.UseFixedAddr) {
 		return true
 	}
 
 	return false
 }
 
-// SetUserFixedAddr gets a reference to the given bool and assigns it to the UserFixedAddr field.
-func (o *OswIpSettingVO) SetUserFixedAddr(v bool) {
-	o.UserFixedAddr = &v
+// SetUseFixedAddr gets a reference to the given bool and assigns it to the UseFixedAddr field.
+func (o *OswIpSettingVO) SetUseFixedAddr(v bool) {
+	o.UseFixedAddr = &v
 }
 
 func (o OswIpSettingVO) MarshalJSON() ([]byte, error) {
@@ -706,8 +706,8 @@ func (o OswIpSettingVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServerType) {
 		toSerialize["serverType"] = o.ServerType
 	}
-	if !IsNil(o.UserFixedAddr) {
-		toSerialize["userFixedAddr"] = o.UserFixedAddr
+	if !IsNil(o.UseFixedAddr) {
+		toSerialize["useFixedAddr"] = o.UseFixedAddr
 	}
 	return toSerialize, nil
 }

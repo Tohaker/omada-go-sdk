@@ -35,6 +35,10 @@ type OspfInterfaceOpenApiVO struct {
 	Id *string `json:"id,omitempty"`
 	// Indicates whether the device is a stack member device.
 	IsStack *bool `json:"isStack,omitempty"`
+	// Loopback ID should be within the range of 1-64. Not Null when type is 1.
+	LoopbackId *int32 `json:"loopbackId,omitempty"`
+	// Loopback Interface ID. Not Null when type is 1.
+	LoopbackInterfaceId *string `json:"loopbackInterfaceId,omitempty"`
 	// Device Mac
 	Mac string `json:"mac"`
 	// Displays the key used for md5 authentication, its value should be within the range of 1-16.
@@ -43,10 +47,14 @@ type OspfInterfaceOpenApiVO struct {
 	Md5KeyId *int32 `json:"md5KeyId,omitempty"`
 	// Network Type, it should be a value as follows: 0: Broadcast, 1: Non-Broadcast, 2: Point-to-Multipoint, 3: Point-to-Point. The default network type for Ethernet interfaces is broadcast.
 	NetworkType int32 `json:"networkType"`
+	// enable passive interface.
+	PassiveEnable *bool `json:"passiveEnable,omitempty"`
 	// Displays the key used for simple authentication, its value should be within the range of 1-8.
 	SimpleKey *string `json:"simpleKey,omitempty"`
 	// Stack ID, used for backend verification, there is no need to transmit values, and it has value when the mac is master.
 	StackId *string `json:"stackId,omitempty"`
+	// OSPF Interface type, 0: VLAN interface; 1: Loopback interface. If null, defaults to VLAN interface (0).
+	Type *int32 `json:"type,omitempty"`
 	// Vlan ID should be within the range of 1–4094.
 	VlanId int32 `json:"vlanId"`
 	// Vlan Interface ID
@@ -275,6 +283,70 @@ func (o *OspfInterfaceOpenApiVO) SetIsStack(v bool) {
 	o.IsStack = &v
 }
 
+// GetLoopbackId returns the LoopbackId field value if set, zero value otherwise.
+func (o *OspfInterfaceOpenApiVO) GetLoopbackId() int32 {
+	if o == nil || IsNil(o.LoopbackId) {
+		var ret int32
+		return ret
+	}
+	return *o.LoopbackId
+}
+
+// GetLoopbackIdOk returns a tuple with the LoopbackId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfInterfaceOpenApiVO) GetLoopbackIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.LoopbackId) {
+		return nil, false
+	}
+	return o.LoopbackId, true
+}
+
+// HasLoopbackId returns a boolean if a field has been set.
+func (o *OspfInterfaceOpenApiVO) HasLoopbackId() bool {
+	if o != nil && !IsNil(o.LoopbackId) {
+		return true
+	}
+
+	return false
+}
+
+// SetLoopbackId gets a reference to the given int32 and assigns it to the LoopbackId field.
+func (o *OspfInterfaceOpenApiVO) SetLoopbackId(v int32) {
+	o.LoopbackId = &v
+}
+
+// GetLoopbackInterfaceId returns the LoopbackInterfaceId field value if set, zero value otherwise.
+func (o *OspfInterfaceOpenApiVO) GetLoopbackInterfaceId() string {
+	if o == nil || IsNil(o.LoopbackInterfaceId) {
+		var ret string
+		return ret
+	}
+	return *o.LoopbackInterfaceId
+}
+
+// GetLoopbackInterfaceIdOk returns a tuple with the LoopbackInterfaceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfInterfaceOpenApiVO) GetLoopbackInterfaceIdOk() (*string, bool) {
+	if o == nil || IsNil(o.LoopbackInterfaceId) {
+		return nil, false
+	}
+	return o.LoopbackInterfaceId, true
+}
+
+// HasLoopbackInterfaceId returns a boolean if a field has been set.
+func (o *OspfInterfaceOpenApiVO) HasLoopbackInterfaceId() bool {
+	if o != nil && !IsNil(o.LoopbackInterfaceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetLoopbackInterfaceId gets a reference to the given string and assigns it to the LoopbackInterfaceId field.
+func (o *OspfInterfaceOpenApiVO) SetLoopbackInterfaceId(v string) {
+	o.LoopbackInterfaceId = &v
+}
+
 // GetMac returns the Mac field value
 func (o *OspfInterfaceOpenApiVO) GetMac() string {
 	if o == nil {
@@ -387,6 +459,38 @@ func (o *OspfInterfaceOpenApiVO) SetNetworkType(v int32) {
 	o.NetworkType = v
 }
 
+// GetPassiveEnable returns the PassiveEnable field value if set, zero value otherwise.
+func (o *OspfInterfaceOpenApiVO) GetPassiveEnable() bool {
+	if o == nil || IsNil(o.PassiveEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.PassiveEnable
+}
+
+// GetPassiveEnableOk returns a tuple with the PassiveEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfInterfaceOpenApiVO) GetPassiveEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.PassiveEnable) {
+		return nil, false
+	}
+	return o.PassiveEnable, true
+}
+
+// HasPassiveEnable returns a boolean if a field has been set.
+func (o *OspfInterfaceOpenApiVO) HasPassiveEnable() bool {
+	if o != nil && !IsNil(o.PassiveEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetPassiveEnable gets a reference to the given bool and assigns it to the PassiveEnable field.
+func (o *OspfInterfaceOpenApiVO) SetPassiveEnable(v bool) {
+	o.PassiveEnable = &v
+}
+
 // GetSimpleKey returns the SimpleKey field value if set, zero value otherwise.
 func (o *OspfInterfaceOpenApiVO) GetSimpleKey() string {
 	if o == nil || IsNil(o.SimpleKey) {
@@ -449,6 +553,38 @@ func (o *OspfInterfaceOpenApiVO) HasStackId() bool {
 // SetStackId gets a reference to the given string and assigns it to the StackId field.
 func (o *OspfInterfaceOpenApiVO) SetStackId(v string) {
 	o.StackId = &v
+}
+
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *OspfInterfaceOpenApiVO) GetType() int32 {
+	if o == nil || IsNil(o.Type) {
+		var ret int32
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfInterfaceOpenApiVO) GetTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *OspfInterfaceOpenApiVO) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given int32 and assigns it to the Type field.
+func (o *OspfInterfaceOpenApiVO) SetType(v int32) {
+	o.Type = &v
 }
 
 // GetVlanId returns the VlanId field value
@@ -546,6 +682,12 @@ func (o OspfInterfaceOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IsStack) {
 		toSerialize["isStack"] = o.IsStack
 	}
+	if !IsNil(o.LoopbackId) {
+		toSerialize["loopbackId"] = o.LoopbackId
+	}
+	if !IsNil(o.LoopbackInterfaceId) {
+		toSerialize["loopbackInterfaceId"] = o.LoopbackInterfaceId
+	}
 	toSerialize["mac"] = o.Mac
 	if !IsNil(o.Md5Key) {
 		toSerialize["md5Key"] = o.Md5Key
@@ -554,11 +696,17 @@ func (o OspfInterfaceOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["md5KeyId"] = o.Md5KeyId
 	}
 	toSerialize["networkType"] = o.NetworkType
+	if !IsNil(o.PassiveEnable) {
+		toSerialize["passiveEnable"] = o.PassiveEnable
+	}
 	if !IsNil(o.SimpleKey) {
 		toSerialize["simpleKey"] = o.SimpleKey
 	}
 	if !IsNil(o.StackId) {
 		toSerialize["stackId"] = o.StackId
+	}
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
 	}
 	toSerialize["vlanId"] = o.VlanId
 	toSerialize["vlanInterfaceId"] = o.VlanInterfaceId

@@ -19,6 +19,7 @@ var _ MappedNullable = &ResponseIdVO{}
 
 // ResponseIdVO struct for ResponseIdVO
 type ResponseIdVO struct {
+	// The unique identifier of the response.
 	Id *string `json:"id,omitempty"`
 }
 

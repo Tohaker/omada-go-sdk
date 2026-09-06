@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Port** | Pointer to **int32** |  | [optional] 
 **Speed** | Pointer to **int32** |  | [optional] 
+**StackId** | Pointer to **string** |  | [optional] 
+**StackName** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Wireless** | Pointer to **bool** |  | [optional] 
 
@@ -259,6 +261,56 @@ SetSpeed sets Speed field to given value.
 `func (o *OsgDownLinkVO) HasSpeed() bool`
 
 HasSpeed returns a boolean if a field has been set.
+
+### GetStackId
+
+`func (o *OsgDownLinkVO) GetStackId() string`
+
+GetStackId returns the StackId field if non-nil, zero value otherwise.
+
+### GetStackIdOk
+
+`func (o *OsgDownLinkVO) GetStackIdOk() (*string, bool)`
+
+GetStackIdOk returns a tuple with the StackId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackId
+
+`func (o *OsgDownLinkVO) SetStackId(v string)`
+
+SetStackId sets StackId field to given value.
+
+### HasStackId
+
+`func (o *OsgDownLinkVO) HasStackId() bool`
+
+HasStackId returns a boolean if a field has been set.
+
+### GetStackName
+
+`func (o *OsgDownLinkVO) GetStackName() string`
+
+GetStackName returns the StackName field if non-nil, zero value otherwise.
+
+### GetStackNameOk
+
+`func (o *OsgDownLinkVO) GetStackNameOk() (*string, bool)`
+
+GetStackNameOk returns a tuple with the StackName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStackName
+
+`func (o *OsgDownLinkVO) SetStackName(v string)`
+
+SetStackName sets StackName field to given value.
+
+### HasStackName
+
+`func (o *OsgDownLinkVO) HasStackName() bool`
+
+HasStackName returns a boolean if a field has been set.
 
 ### GetType
 

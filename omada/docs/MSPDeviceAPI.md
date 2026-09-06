@@ -6,7 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AdoptOneForMsp**](MSPDeviceAPI.md#adoptoneformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/start-adopt | Start adopt device For Msp
 [**BatchAdoptForMsp**](MSPDeviceAPI.md#batchadoptformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/devices/batch-adopt | batch adopt device in msp view
+[**GetMspDeviceIncidentCounts**](MSPDeviceAPI.md#getmspdeviceincidentcounts) | **Post** /openapi/v1/msp/{mspId}/devices/incidents | Get MSP device incident counts
 [**GetMspKnownDeviceList**](MSPDeviceAPI.md#getmspknowndevicelist) | **Get** /openapi/v1/msp/{mspId}/devices/known-devices | Get MSP known device list
+[**GetMspObjectHealthIncident**](MSPDeviceAPI.md#getmspobjecthealthincident) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/health/incident/{mac} | MSP - Get device/client health incidents
 [**GetMspUnknownDeviceList**](MSPDeviceAPI.md#getmspunknowndevicelist) | **Get** /openapi/v1/msp/{mspId}/devices/unknown-devices | Get MSP unknown device list
 [**GetTags3**](MSPDeviceAPI.md#gettags3) | **Get** /openapi/v1/msp/{mspId}/devices/tag | Get tag list
 
@@ -14,7 +16,7 @@ Method | HTTP request | Description
 
 ## AdoptOneForMsp
 
-> OperationResponseWithoutResult AdoptOneForMsp(ctx, customerId, siteId, deviceMac, mspId).AdoptDeviceRequest(adoptDeviceRequest).Execute()
+> OperationResponseWithoutResult AdoptOneForMsp(ctx, mspId, customerId, siteId, deviceMac).AdoptDeviceRequest(adoptDeviceRequest).Execute()
 
 Start adopt device For Msp
 
@@ -33,15 +35,15 @@ import (
 )
 
 func main() {
+	mspId := "mspId_example" // string | MSP ID
 	customerId := "customerId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	mspId := "mspId_example" // string | mspId
 	adoptDeviceRequest := *openapiclient.NewAdoptDeviceRequest() // AdoptDeviceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MSPDeviceAPI.AdoptOneForMsp(context.Background(), customerId, siteId, deviceMac, mspId).AdoptDeviceRequest(adoptDeviceRequest).Execute()
+	resp, r, err := apiClient.MSPDeviceAPI.AdoptOneForMsp(context.Background(), mspId, customerId, siteId, deviceMac).AdoptDeviceRequest(adoptDeviceRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MSPDeviceAPI.AdoptOneForMsp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -57,10 +59,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mspId** | **string** | MSP ID | 
 **customerId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
 **deviceMac** | **string** | Device MAC address, like AA-BB-CC-DD-EE-FF | 
-**mspId** | **string** | mspId | 
 
 ### Other Parameters
 
@@ -171,6 +173,78 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetMspDeviceIncidentCounts
+
+> OperationResponseDeviceIncidentCountResultOpenApiVO GetMspDeviceIncidentCounts(ctx, mspId).MspDeviceIncidentCountRequestOpenApiVO(mspDeviceIncidentCountRequestOpenApiVO).Execute()
+
+Get MSP device incident counts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	mspId := "mspId_example" // string | MSP ID
+	mspDeviceIncidentCountRequestOpenApiVO := *openapiclient.NewMspDeviceIncidentCountRequestOpenApiVO([]openapiclient.MspDeviceIncidentCountItemOpenApiVO{*openapiclient.NewMspDeviceIncidentCountItemOpenApiVO("CustomerId_example", "Mac_example")}) // MspDeviceIncidentCountRequestOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MSPDeviceAPI.GetMspDeviceIncidentCounts(context.Background(), mspId).MspDeviceIncidentCountRequestOpenApiVO(mspDeviceIncidentCountRequestOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MSPDeviceAPI.GetMspDeviceIncidentCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMspDeviceIncidentCounts`: OperationResponseDeviceIncidentCountResultOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `MSPDeviceAPI.GetMspDeviceIncidentCounts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mspId** | **string** | MSP ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMspDeviceIncidentCountsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **mspDeviceIncidentCountRequestOpenApiVO** | [**MspDeviceIncidentCountRequestOpenApiVO**](MspDeviceIncidentCountRequestOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseDeviceIncidentCountResultOpenApiVO**](OperationResponseDeviceIncidentCountResultOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetMspKnownDeviceList
 
 > OperationResponseGridVOMspKnownDeviceOpenApiVO GetMspKnownDeviceList(ctx, mspId).Page(page).PageSize(pageSize).SearchMacs(searchMacs).SearchNames(searchNames).SearchModels(searchModels).SearchSns(searchSns).FiltersTag(filtersTag).FiltersDeviceSeriesType(filtersDeviceSeriesType).Execute()
@@ -242,6 +316,89 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseGridVOMspKnownDeviceOpenApiVO**](OperationResponseGridVOMspKnownDeviceOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMspObjectHealthIncident
+
+> OperationResponseListAnomalyBriefCountVO GetMspObjectHealthIncident(ctx, mspId, customerId, siteId, mac).FiltersStartTime(filtersStartTime).FiltersEndTime(filtersEndTime).Execute()
+
+MSP - Get device/client health incidents
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	mspId := "mspId_example" // string | MSP ID
+	customerId := "customerId_example" // string | Customer ID (same as omadacId)
+	siteId := "siteId_example" // string | Site ID
+	filtersStartTime := int64(789) // int64 | Start time in milliseconds
+	filtersEndTime := int64(789) // int64 | End time in milliseconds
+	mac := "mac_example" // string | mac
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MSPDeviceAPI.GetMspObjectHealthIncident(context.Background(), mspId, customerId, siteId, mac).FiltersStartTime(filtersStartTime).FiltersEndTime(filtersEndTime).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MSPDeviceAPI.GetMspObjectHealthIncident``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMspObjectHealthIncident`: OperationResponseListAnomalyBriefCountVO
+	fmt.Fprintf(os.Stdout, "Response from `MSPDeviceAPI.GetMspObjectHealthIncident`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mspId** | **string** | MSP ID | 
+**customerId** | **string** | Customer ID (same as omadacId) | 
+**siteId** | **string** | Site ID | 
+**mac** | **string** | mac | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMspObjectHealthIncidentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **filtersStartTime** | **int64** | Start time in milliseconds | 
+ **filtersEndTime** | **int64** | End time in milliseconds | 
+
+
+### Return type
+
+[**OperationResponseListAnomalyBriefCountVO**](OperationResponseListAnomalyBriefCountVO.md)
 
 ### Authorization
 

@@ -45,7 +45,7 @@ type BluetoothTemplateAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param siteTemplateId siteTemplateId
+	@param siteTemplateId Site Template ID
 	@return BluetoothTemplateAPICreateIotServerTemplateRequest
 	*/
 	CreateIotServerTemplate(ctx context.Context, omadacId string, siteTemplateId string) BluetoothTemplateAPICreateIotServerTemplateRequest
@@ -328,7 +328,7 @@ Create IoT Transport Stream setting in site Template.<br/><br/>The interface req
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param siteTemplateId siteTemplateId
+ @param siteTemplateId Site Template ID
  @return BluetoothTemplateAPICreateIotServerTemplateRequest
 */
 func (a *BluetoothTemplateAPIService) CreateIotServerTemplate(ctx context.Context, omadacId string, siteTemplateId string) BluetoothTemplateAPICreateIotServerTemplateRequest {

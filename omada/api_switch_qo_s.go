@@ -35,8 +35,8 @@ type SwitchQoSAPI interface {
 	CreateQosRule(ctx context.Context, omadacId string, siteId string) SwitchQoSAPICreateQosRuleRequest
 
 	// CreateQosRuleExecute executes the request
-	//  @return OperationResponse
-	CreateQosRuleExecute(r SwitchQoSAPICreateQosRuleRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseOswQosRuleResultVO
+	CreateQosRuleExecute(r SwitchQoSAPICreateQosRuleRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error)
 
 	/*
 	DeleteQosRule Delete switch QoS rule.
@@ -52,8 +52,8 @@ type SwitchQoSAPI interface {
 	DeleteQosRule(ctx context.Context, omadacId string, siteId string, qosRuleId string) SwitchQoSAPIDeleteQosRuleRequest
 
 	// DeleteQosRuleExecute executes the request
-	//  @return OperationResponse
-	DeleteQosRuleExecute(r SwitchQoSAPIDeleteQosRuleRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseOswQosRuleResultVO
+	DeleteQosRuleExecute(r SwitchQoSAPIDeleteQosRuleRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error)
 
 	/*
 	GetAllSelectableDevices Get switch QoS all selectable device's mac.
@@ -68,8 +68,8 @@ type SwitchQoSAPI interface {
 	GetAllSelectableDevices(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIGetAllSelectableDevicesRequest
 
 	// GetAllSelectableDevicesExecute executes the request
-	//  @return OperationResponse
-	GetAllSelectableDevicesExecute(r SwitchQoSAPIGetAllSelectableDevicesRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseOswMacListVO
+	GetAllSelectableDevicesExecute(r SwitchQoSAPIGetAllSelectableDevicesRequest) (*OperationResponseOswMacListVO, *http.Response, error)
 
 	/*
 	GetDscpMapping Get switch QoS dscp mapping.
@@ -84,8 +84,8 @@ type SwitchQoSAPI interface {
 	GetDscpMapping(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIGetDscpMappingRequest
 
 	// GetDscpMappingExecute executes the request
-	//  @return OperationResponse
-	GetDscpMappingExecute(r SwitchQoSAPIGetDscpMappingRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseDscpMappingVO
+	GetDscpMappingExecute(r SwitchQoSAPIGetDscpMappingRequest) (*OperationResponseDscpMappingVO, *http.Response, error)
 
 	/*
 	GetDscpMappingTemplate Get switch QoS dscp mapping in site template.
@@ -100,8 +100,8 @@ type SwitchQoSAPI interface {
 	GetDscpMappingTemplate(ctx context.Context, omadacId string, siteTemplateId string) SwitchQoSAPIGetDscpMappingTemplateRequest
 
 	// GetDscpMappingTemplateExecute executes the request
-	//  @return OperationResponse
-	GetDscpMappingTemplateExecute(r SwitchQoSAPIGetDscpMappingTemplateRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseDscpMappingVO
+	GetDscpMappingTemplateExecute(r SwitchQoSAPIGetDscpMappingTemplateRequest) (*OperationResponseDscpMappingVO, *http.Response, error)
 
 	/*
 	GetOswQosMode Get switch QoS mode.
@@ -116,8 +116,8 @@ type SwitchQoSAPI interface {
 	GetOswQosMode(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIGetOswQosModeRequest
 
 	// GetOswQosModeExecute executes the request
-	//  @return OperationResponse
-	GetOswQosModeExecute(r SwitchQoSAPIGetOswQosModeRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseOswQosModeVO
+	GetOswQosModeExecute(r SwitchQoSAPIGetOswQosModeRequest) (*OperationResponseOswQosModeVO, *http.Response, error)
 
 	/*
 	GetQosRules Get switch QoS rules.
@@ -132,8 +132,8 @@ type SwitchQoSAPI interface {
 	GetQosRules(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIGetQosRulesRequest
 
 	// GetQosRulesExecute executes the request
-	//  @return OperationResponse
-	GetQosRulesExecute(r SwitchQoSAPIGetQosRulesRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseGridVOOswQosRuleVO
+	GetQosRulesExecute(r SwitchQoSAPIGetQosRulesRequest) (*OperationResponseGridVOOswQosRuleVO, *http.Response, error)
 
 	/*
 	GetSchedulerMapping Get switch QoS queue scheduling.
@@ -148,8 +148,8 @@ type SwitchQoSAPI interface {
 	GetSchedulerMapping(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIGetSchedulerMappingRequest
 
 	// GetSchedulerMappingExecute executes the request
-	//  @return OperationResponse
-	GetSchedulerMappingExecute(r SwitchQoSAPIGetSchedulerMappingRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseQueueSchedulerMappingVO
+	GetSchedulerMappingExecute(r SwitchQoSAPIGetSchedulerMappingRequest) (*OperationResponseQueueSchedulerMappingVO, *http.Response, error)
 
 	/*
 	GetSelectableDevices Get switch QoS selectable devices.
@@ -164,8 +164,8 @@ type SwitchQoSAPI interface {
 	GetSelectableDevices(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIGetSelectableDevicesRequest
 
 	// GetSelectableDevicesExecute executes the request
-	//  @return OperationResponse
-	GetSelectableDevicesExecute(r SwitchQoSAPIGetSelectableDevicesRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseGridVOOswDetailVO
+	GetSelectableDevicesExecute(r SwitchQoSAPIGetSelectableDevicesRequest) (*OperationResponseGridVOOswDetailVO, *http.Response, error)
 
 	/*
 	GetSelectedDeviceBriefInfo Get switch QoS selected device brief info.
@@ -180,8 +180,8 @@ type SwitchQoSAPI interface {
 	GetSelectedDeviceBriefInfo(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIGetSelectedDeviceBriefInfoRequest
 
 	// GetSelectedDeviceBriefInfoExecute executes the request
-	//  @return OperationResponse
-	GetSelectedDeviceBriefInfoExecute(r SwitchQoSAPIGetSelectedDeviceBriefInfoRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseListSelectedOswBriefVO
+	GetSelectedDeviceBriefInfoExecute(r SwitchQoSAPIGetSelectedDeviceBriefInfoRequest) (*OperationResponseListSelectedOswBriefVO, *http.Response, error)
 
 	/*
 	GetUpgradableDevices Get switch QoS upgradable devices.
@@ -196,8 +196,8 @@ type SwitchQoSAPI interface {
 	GetUpgradableDevices(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIGetUpgradableDevicesRequest
 
 	// GetUpgradableDevicesExecute executes the request
-	//  @return OperationResponse
-	GetUpgradableDevicesExecute(r SwitchQoSAPIGetUpgradableDevicesRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseListSelectedOswBriefVO
+	GetUpgradableDevicesExecute(r SwitchQoSAPIGetUpgradableDevicesRequest) (*OperationResponseListSelectedOswBriefVO, *http.Response, error)
 
 	/*
 	ModifyDscpMapping Modify switch QoS dscp mapping.
@@ -245,8 +245,8 @@ type SwitchQoSAPI interface {
 	ModifyQosRule(ctx context.Context, omadacId string, siteId string, qosRuleId string) SwitchQoSAPIModifyQosRuleRequest
 
 	// ModifyQosRuleExecute executes the request
-	//  @return OperationResponse
-	ModifyQosRuleExecute(r SwitchQoSAPIModifyQosRuleRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseOswQosRuleResultVO
+	ModifyQosRuleExecute(r SwitchQoSAPIModifyQosRuleRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error)
 
 	/*
 	ModifyQosRuleStatus Modify switch QoS rule's status.
@@ -262,8 +262,24 @@ type SwitchQoSAPI interface {
 	ModifyQosRuleStatus(ctx context.Context, omadacId string, siteId string, qosRuleId string) SwitchQoSAPIModifyQosRuleStatusRequest
 
 	// ModifyQosRuleStatusExecute executes the request
-	//  @return OperationResponse
-	ModifyQosRuleStatusExecute(r SwitchQoSAPIModifyQosRuleStatusRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseOswQosRuleResultVO
+	ModifyQosRuleStatusExecute(r SwitchQoSAPIModifyQosRuleStatusRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error)
+
+	/*
+	ModifyRuleIndex Drag and sort the QoS rules.
+
+	Drag and sort the QoS rules.<br/><br/>The interface requires one of the permissions: <br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-40005  -  The switch QoS rule does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return SwitchQoSAPIModifyRuleIndexRequest
+	*/
+	ModifyRuleIndex(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIModifyRuleIndexRequest
+
+	// ModifyRuleIndexExecute executes the request
+	//  @return OperationResponseOswQosRuleResultVO
+	ModifyRuleIndexExecute(r SwitchQoSAPIModifyRuleIndexRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error)
 
 	/*
 	ModifySchedulerMapping Modify switch QoS queue scheduling.
@@ -298,7 +314,7 @@ func (r SwitchQoSAPICreateQosRuleRequest) OswQosRuleVO(oswQosRuleVO OswQosRuleVO
 	return r
 }
 
-func (r SwitchQoSAPICreateQosRuleRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPICreateQosRuleRequest) Execute() (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
 	return r.ApiService.CreateQosRuleExecute(r)
 }
 
@@ -322,13 +338,13 @@ func (a *SwitchQoSAPIService) CreateQosRule(ctx context.Context, omadacId string
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) CreateQosRuleExecute(r SwitchQoSAPICreateQosRuleRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseOswQosRuleResultVO
+func (a *SwitchQoSAPIService) CreateQosRuleExecute(r SwitchQoSAPICreateQosRuleRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseOswQosRuleResultVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.CreateQosRule")
@@ -425,7 +441,7 @@ type SwitchQoSAPIDeleteQosRuleRequest struct {
 	qosRuleId string
 }
 
-func (r SwitchQoSAPIDeleteQosRuleRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIDeleteQosRuleRequest) Execute() (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
 	return r.ApiService.DeleteQosRuleExecute(r)
 }
 
@@ -451,13 +467,13 @@ func (a *SwitchQoSAPIService) DeleteQosRule(ctx context.Context, omadacId string
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) DeleteQosRuleExecute(r SwitchQoSAPIDeleteQosRuleRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseOswQosRuleResultVO
+func (a *SwitchQoSAPIService) DeleteQosRuleExecute(r SwitchQoSAPIDeleteQosRuleRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseOswQosRuleResultVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.DeleteQosRule")
@@ -551,17 +567,19 @@ type SwitchQoSAPIGetAllSelectableDevicesRequest struct {
 	networkId *string
 }
 
+// The type of Qos rule, 0:Network, 1:Port, 2:Custom
 func (r SwitchQoSAPIGetAllSelectableDevicesRequest) RuleType(ruleType int32) SwitchQoSAPIGetAllSelectableDevicesRequest {
 	r.ruleType = &ruleType
 	return r
 }
 
+// Network ID
 func (r SwitchQoSAPIGetAllSelectableDevicesRequest) NetworkId(networkId string) SwitchQoSAPIGetAllSelectableDevicesRequest {
 	r.networkId = &networkId
 	return r
 }
 
-func (r SwitchQoSAPIGetAllSelectableDevicesRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIGetAllSelectableDevicesRequest) Execute() (*OperationResponseOswMacListVO, *http.Response, error) {
 	return r.ApiService.GetAllSelectableDevicesExecute(r)
 }
 
@@ -585,13 +603,13 @@ func (a *SwitchQoSAPIService) GetAllSelectableDevices(ctx context.Context, omada
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) GetAllSelectableDevicesExecute(r SwitchQoSAPIGetAllSelectableDevicesRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseOswMacListVO
+func (a *SwitchQoSAPIService) GetAllSelectableDevicesExecute(r SwitchQoSAPIGetAllSelectableDevicesRequest) (*OperationResponseOswMacListVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseOswMacListVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.GetAllSelectableDevices")
@@ -689,7 +707,7 @@ type SwitchQoSAPIGetDscpMappingRequest struct {
 	siteId string
 }
 
-func (r SwitchQoSAPIGetDscpMappingRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIGetDscpMappingRequest) Execute() (*OperationResponseDscpMappingVO, *http.Response, error) {
 	return r.ApiService.GetDscpMappingExecute(r)
 }
 
@@ -713,13 +731,13 @@ func (a *SwitchQoSAPIService) GetDscpMapping(ctx context.Context, omadacId strin
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) GetDscpMappingExecute(r SwitchQoSAPIGetDscpMappingRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseDscpMappingVO
+func (a *SwitchQoSAPIService) GetDscpMappingExecute(r SwitchQoSAPIGetDscpMappingRequest) (*OperationResponseDscpMappingVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseDscpMappingVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.GetDscpMapping")
@@ -810,7 +828,7 @@ type SwitchQoSAPIGetDscpMappingTemplateRequest struct {
 	siteTemplateId string
 }
 
-func (r SwitchQoSAPIGetDscpMappingTemplateRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIGetDscpMappingTemplateRequest) Execute() (*OperationResponseDscpMappingVO, *http.Response, error) {
 	return r.ApiService.GetDscpMappingTemplateExecute(r)
 }
 
@@ -834,13 +852,13 @@ func (a *SwitchQoSAPIService) GetDscpMappingTemplate(ctx context.Context, omadac
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) GetDscpMappingTemplateExecute(r SwitchQoSAPIGetDscpMappingTemplateRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseDscpMappingVO
+func (a *SwitchQoSAPIService) GetDscpMappingTemplateExecute(r SwitchQoSAPIGetDscpMappingTemplateRequest) (*OperationResponseDscpMappingVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseDscpMappingVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.GetDscpMappingTemplate")
@@ -931,7 +949,7 @@ type SwitchQoSAPIGetOswQosModeRequest struct {
 	siteId string
 }
 
-func (r SwitchQoSAPIGetOswQosModeRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIGetOswQosModeRequest) Execute() (*OperationResponseOswQosModeVO, *http.Response, error) {
 	return r.ApiService.GetOswQosModeExecute(r)
 }
 
@@ -955,13 +973,13 @@ func (a *SwitchQoSAPIService) GetOswQosMode(ctx context.Context, omadacId string
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) GetOswQosModeExecute(r SwitchQoSAPIGetOswQosModeRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseOswQosModeVO
+func (a *SwitchQoSAPIService) GetOswQosModeExecute(r SwitchQoSAPIGetOswQosModeRequest) (*OperationResponseOswQosModeVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseOswQosModeVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.GetOswQosMode")
@@ -1073,7 +1091,7 @@ func (r SwitchQoSAPIGetQosRulesRequest) SearchKey(searchKey string) SwitchQoSAPI
 	return r
 }
 
-func (r SwitchQoSAPIGetQosRulesRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIGetQosRulesRequest) Execute() (*OperationResponseGridVOOswQosRuleVO, *http.Response, error) {
 	return r.ApiService.GetQosRulesExecute(r)
 }
 
@@ -1097,13 +1115,13 @@ func (a *SwitchQoSAPIService) GetQosRules(ctx context.Context, omadacId string, 
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) GetQosRulesExecute(r SwitchQoSAPIGetQosRulesRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseGridVOOswQosRuleVO
+func (a *SwitchQoSAPIService) GetQosRulesExecute(r SwitchQoSAPIGetQosRulesRequest) (*OperationResponseGridVOOswQosRuleVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseGridVOOswQosRuleVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.GetQosRules")
@@ -1205,7 +1223,7 @@ type SwitchQoSAPIGetSchedulerMappingRequest struct {
 	siteId string
 }
 
-func (r SwitchQoSAPIGetSchedulerMappingRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIGetSchedulerMappingRequest) Execute() (*OperationResponseQueueSchedulerMappingVO, *http.Response, error) {
 	return r.ApiService.GetSchedulerMappingExecute(r)
 }
 
@@ -1229,13 +1247,13 @@ func (a *SwitchQoSAPIService) GetSchedulerMapping(ctx context.Context, omadacId 
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) GetSchedulerMappingExecute(r SwitchQoSAPIGetSchedulerMappingRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseQueueSchedulerMappingVO
+func (a *SwitchQoSAPIService) GetSchedulerMappingExecute(r SwitchQoSAPIGetSchedulerMappingRequest) (*OperationResponseQueueSchedulerMappingVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseQueueSchedulerMappingVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.GetSchedulerMapping")
@@ -1328,17 +1346,19 @@ type SwitchQoSAPIGetSelectableDevicesRequest struct {
 	networkId *string
 }
 
+// The type of Qos rule, 0:Network, 1:Port, 2:Custom
 func (r SwitchQoSAPIGetSelectableDevicesRequest) RuleType(ruleType int32) SwitchQoSAPIGetSelectableDevicesRequest {
 	r.ruleType = &ruleType
 	return r
 }
 
+// Network ID
 func (r SwitchQoSAPIGetSelectableDevicesRequest) NetworkId(networkId string) SwitchQoSAPIGetSelectableDevicesRequest {
 	r.networkId = &networkId
 	return r
 }
 
-func (r SwitchQoSAPIGetSelectableDevicesRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIGetSelectableDevicesRequest) Execute() (*OperationResponseGridVOOswDetailVO, *http.Response, error) {
 	return r.ApiService.GetSelectableDevicesExecute(r)
 }
 
@@ -1362,13 +1382,13 @@ func (a *SwitchQoSAPIService) GetSelectableDevices(ctx context.Context, omadacId
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) GetSelectableDevicesExecute(r SwitchQoSAPIGetSelectableDevicesRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseGridVOOswDetailVO
+func (a *SwitchQoSAPIService) GetSelectableDevicesExecute(r SwitchQoSAPIGetSelectableDevicesRequest) (*OperationResponseGridVOOswDetailVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseGridVOOswDetailVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.GetSelectableDevices")
@@ -1472,7 +1492,7 @@ func (r SwitchQoSAPIGetSelectedDeviceBriefInfoRequest) OswMacListVO(oswMacListVO
 	return r
 }
 
-func (r SwitchQoSAPIGetSelectedDeviceBriefInfoRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIGetSelectedDeviceBriefInfoRequest) Execute() (*OperationResponseListSelectedOswBriefVO, *http.Response, error) {
 	return r.ApiService.GetSelectedDeviceBriefInfoExecute(r)
 }
 
@@ -1496,13 +1516,13 @@ func (a *SwitchQoSAPIService) GetSelectedDeviceBriefInfo(ctx context.Context, om
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) GetSelectedDeviceBriefInfoExecute(r SwitchQoSAPIGetSelectedDeviceBriefInfoRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseListSelectedOswBriefVO
+func (a *SwitchQoSAPIService) GetSelectedDeviceBriefInfoExecute(r SwitchQoSAPIGetSelectedDeviceBriefInfoRequest) (*OperationResponseListSelectedOswBriefVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseListSelectedOswBriefVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.GetSelectedDeviceBriefInfo")
@@ -1598,7 +1618,7 @@ type SwitchQoSAPIGetUpgradableDevicesRequest struct {
 	siteId string
 }
 
-func (r SwitchQoSAPIGetUpgradableDevicesRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIGetUpgradableDevicesRequest) Execute() (*OperationResponseListSelectedOswBriefVO, *http.Response, error) {
 	return r.ApiService.GetUpgradableDevicesExecute(r)
 }
 
@@ -1622,13 +1642,13 @@ func (a *SwitchQoSAPIService) GetUpgradableDevices(ctx context.Context, omadacId
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) GetUpgradableDevicesExecute(r SwitchQoSAPIGetUpgradableDevicesRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseListSelectedOswBriefVO
+func (a *SwitchQoSAPIService) GetUpgradableDevicesExecute(r SwitchQoSAPIGetUpgradableDevicesRequest) (*OperationResponseListSelectedOswBriefVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseListSelectedOswBriefVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.GetUpgradableDevices")
@@ -1990,7 +2010,7 @@ func (r SwitchQoSAPIModifyQosRuleRequest) OswQosRuleVO(oswQosRuleVO OswQosRuleVO
 	return r
 }
 
-func (r SwitchQoSAPIModifyQosRuleRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIModifyQosRuleRequest) Execute() (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
 	return r.ApiService.ModifyQosRuleExecute(r)
 }
 
@@ -2016,13 +2036,13 @@ func (a *SwitchQoSAPIService) ModifyQosRule(ctx context.Context, omadacId string
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) ModifyQosRuleExecute(r SwitchQoSAPIModifyQosRuleRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseOswQosRuleResultVO
+func (a *SwitchQoSAPIService) ModifyQosRuleExecute(r SwitchQoSAPIModifyQosRuleRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseOswQosRuleResultVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.ModifyQosRule")
@@ -2126,7 +2146,7 @@ func (r SwitchQoSAPIModifyQosRuleStatusRequest) OswQosRuleStatusVO(oswQosRuleSta
 	return r
 }
 
-func (r SwitchQoSAPIModifyQosRuleStatusRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r SwitchQoSAPIModifyQosRuleStatusRequest) Execute() (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
 	return r.ApiService.ModifyQosRuleStatusExecute(r)
 }
 
@@ -2152,13 +2172,13 @@ func (a *SwitchQoSAPIService) ModifyQosRuleStatus(ctx context.Context, omadacId 
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *SwitchQoSAPIService) ModifyQosRuleStatusExecute(r SwitchQoSAPIModifyQosRuleStatusRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseOswQosRuleResultVO
+func (a *SwitchQoSAPIService) ModifyQosRuleStatusExecute(r SwitchQoSAPIModifyQosRuleStatusRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseOswQosRuleResultVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.ModifyQosRuleStatus")
@@ -2197,6 +2217,138 @@ func (a *SwitchQoSAPIService) ModifyQosRuleStatusExecute(r SwitchQoSAPIModifyQos
 	}
 	// body params
 	localVarPostBody = r.oswQosRuleStatusVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SwitchQoSAPIModifyRuleIndexRequest struct {
+	ctx context.Context
+	ApiService SwitchQoSAPI
+	omadacId string
+	siteId string
+	dragSortIndexVO *DragSortIndexVO
+}
+
+func (r SwitchQoSAPIModifyRuleIndexRequest) DragSortIndexVO(dragSortIndexVO DragSortIndexVO) SwitchQoSAPIModifyRuleIndexRequest {
+	r.dragSortIndexVO = &dragSortIndexVO
+	return r
+}
+
+func (r SwitchQoSAPIModifyRuleIndexRequest) Execute() (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
+	return r.ApiService.ModifyRuleIndexExecute(r)
+}
+
+/*
+ModifyRuleIndex Drag and sort the QoS rules.
+
+Drag and sort the QoS rules.<br/><br/>The interface requires one of the permissions: <br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33004  -  Operation failed because other operations (site copying, restoring, template synchronizing, etc.) are being performed on this site. Please wait and try again later.<br/>-40005  -  The switch QoS rule does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return SwitchQoSAPIModifyRuleIndexRequest
+*/
+func (a *SwitchQoSAPIService) ModifyRuleIndex(ctx context.Context, omadacId string, siteId string) SwitchQoSAPIModifyRuleIndexRequest {
+	return SwitchQoSAPIModifyRuleIndexRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOswQosRuleResultVO
+func (a *SwitchQoSAPIService) ModifyRuleIndexExecute(r SwitchQoSAPIModifyRuleIndexRequest) (*OperationResponseOswQosRuleResultVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOswQosRuleResultVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchQoSAPIService.ModifyRuleIndex")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switch-qos/modify-index"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.dragSortIndexVO == nil {
+		return localVarReturnValue, nil, reportError("dragSortIndexVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.dragSortIndexVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

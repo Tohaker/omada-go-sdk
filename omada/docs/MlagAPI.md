@@ -113,7 +113,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	mlagId := "mlagId_example" // string | M-LAG group ID
+	mlagId := "mlagId_example" // string | M-LAG ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**mlagId** | **string** | M-LAG group ID | 
+**mlagId** | **string** | M-LAG ID | 
 
 ### Other Parameters
 
@@ -266,7 +266,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	mlagId := "mlagId_example" // string | M-LAG group ID
+	mlagId := "mlagId_example" // string | M-LAG ID
 	type_ := "type__example" // string | The level of configuration consistency check should be a value as follows: 0:Critical & Significant 1: Critical; 2: Significant
 
 	configuration := openapiclient.NewConfiguration()
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**mlagId** | **string** | M-LAG group ID | 
+**mlagId** | **string** | M-LAG ID | 
 **type_** | **string** | The level of configuration consistency check should be a value as follows: 0:Critical &amp; Significant 1: Critical; 2: Significant | 
 
 ### Other Parameters
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ## LocateMlag
 
-> OperationResponseWithoutResult LocateMlag(ctx, omadacId, siteId, mlagId).MlagLocateOpenApiVO(mlagLocateOpenApiVO).Execute()
+> OperationResponseLocateResultVO LocateMlag(ctx, omadacId, siteId, mlagId).MlagLocateOpenApiVO(mlagLocateOpenApiVO).Execute()
 
 Locate M-LAG group
 
@@ -418,7 +418,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	mlagId := "mlagId_example" // string | M-LAG group ID
+	mlagId := "mlagId_example" // string | M-LAG ID
 	mlagLocateOpenApiVO := *openapiclient.NewMlagLocateOpenApiVO(false, false) // MlagLocateOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -428,7 +428,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MlagAPI.LocateMlag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LocateMlag`: OperationResponseWithoutResult
+	// response from `LocateMlag`: OperationResponseLocateResultVO
 	fmt.Fprintf(os.Stdout, "Response from `MlagAPI.LocateMlag`: %v\n", resp)
 }
 ```
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**mlagId** | **string** | M-LAG group ID | 
+**mlagId** | **string** | M-LAG ID | 
 
 ### Other Parameters
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseLocateResultVO**](OperationResponseLocateResultVO.md)
 
 ### Authorization
 
@@ -496,7 +496,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	mlagId := "mlagId_example" // string | M-LAG group ID
+	mlagId := "mlagId_example" // string | M-LAG ID
 	mlagConfigOpenApiVO := *openapiclient.NewMlagConfigOpenApiVO("Name_example") // MlagConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**mlagId** | **string** | M-LAG group ID | 
+**mlagId** | **string** | M-LAG ID | 
 
 ### Other Parameters
 
@@ -574,7 +574,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	mlagId := "mlagId_example" // string | M-LAG group ID
+	mlagId := "mlagId_example" // string | M-LAG ID
 	mlagRebootOpenApiVO := *openapiclient.NewMlagRebootOpenApiVO(false) // MlagRebootOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**mlagId** | **string** | M-LAG group ID | 
+**mlagId** | **string** | M-LAG ID | 
 
 ### Other Parameters
 

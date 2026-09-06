@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DhcpNextServer** | Pointer to **string** | The dhcpNextServer should be valid IP address, which is used in optional set next DHCP server. | [optional] 
+**DhcpPoolMask** | Pointer to **int32** |  | [optional] 
 **Dhcpns** | Pointer to **string** | Setup DHCP server: \&quot;auto\&quot; or \&quot;manual\&quot; | [optional] 
 **Enable** | Pointer to **bool** | When value is true, DHCP server is enabled | [optional] 
 **Gateway** | Pointer to **string** | Manual Setup of DHCP Gateway IP | [optional] 
@@ -59,6 +60,31 @@ SetDhcpNextServer sets DhcpNextServer field to given value.
 `func (o *DhcpSettingsTemplateOpenApiVO) HasDhcpNextServer() bool`
 
 HasDhcpNextServer returns a boolean if a field has been set.
+
+### GetDhcpPoolMask
+
+`func (o *DhcpSettingsTemplateOpenApiVO) GetDhcpPoolMask() int32`
+
+GetDhcpPoolMask returns the DhcpPoolMask field if non-nil, zero value otherwise.
+
+### GetDhcpPoolMaskOk
+
+`func (o *DhcpSettingsTemplateOpenApiVO) GetDhcpPoolMaskOk() (*int32, bool)`
+
+GetDhcpPoolMaskOk returns a tuple with the DhcpPoolMask field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDhcpPoolMask
+
+`func (o *DhcpSettingsTemplateOpenApiVO) SetDhcpPoolMask(v int32)`
+
+SetDhcpPoolMask sets DhcpPoolMask field to given value.
+
+### HasDhcpPoolMask
+
+`func (o *DhcpSettingsTemplateOpenApiVO) HasDhcpPoolMask() bool`
+
+HasDhcpPoolMask returns a boolean if a field has been set.
 
 ### GetDhcpns
 

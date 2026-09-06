@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Description** | Pointer to **string** | The description of static routing. It may contain 0 to 128 characters, including digits (0–9), uppercase and lowercase letters (A–Z, a–z), spaces, and -_@:/.+# . | [optional] 
 **Destinations** | **[]string** | IP address/SubNet, up to 16 entries are allowed for the destinations list. | 
 **Distance** | **int32** | Distance should be within the range of 1–255. | 
 **EntryId** | Pointer to **int32** | The entry ID of StaticRouting | [optional] 
@@ -37,6 +38,31 @@ will change when the set of required properties is changed
 NewOswStaticRoutingVOWithDefaults instantiates a new OswStaticRoutingVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDescription
+
+`func (o *OswStaticRoutingVO) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *OswStaticRoutingVO) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *OswStaticRoutingVO) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *OswStaticRoutingVO) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetDestinations
 

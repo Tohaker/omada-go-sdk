@@ -41,7 +41,7 @@ type SSLVPNAPI interface {
 	/*
 	BatchDeleteSslVpnUserGroup Batch delete SSL VPN user group
 
-	Batch delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for radius authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
+	Batch delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for RADIUS authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -158,7 +158,7 @@ type SSLVPNAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param lockTunnelId lockTunnelId
+	@param lockTunnelId Locked tunnel ID
 	@return SSLVPNAPIDeleteLockedSslVpnTunnelRequest
 	*/
 	DeleteLockedSslVpnTunnel(ctx context.Context, omadacId string, siteId string, lockTunnelId string) SSLVPNAPIDeleteLockedSslVpnTunnelRequest
@@ -238,7 +238,7 @@ type SSLVPNAPI interface {
 	/*
 	DeleteSslVpnUserGroup Delete SSL VPN user group
 
-	Delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for radius authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
+	Delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for RADIUS authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -561,7 +561,7 @@ type SSLVPNAPI interface {
 	/*
 	ModifySslVpnServerSetting Modify SSL VPN server setting
 
-	Get SSL VPN server setting. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2 or Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34032  -  Built-in radius server not started.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43010  -  The IP addresses in SSL VPN IP pool cannot overlap with other VPN IP pools on the same site.<br/>-43011  -  The service port cannot be the same as that of the OpenVPN server.<br/>-43017  -  The device does not support configuring radius type.<br/>-43018  -  The device does not support configuring LDAP type.
+	Get SSL VPN server setting. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2 or Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34032  -  Built-in RADIUS server not started.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43010  -  The IP addresses in SSL VPN IP pool cannot overlap with other VPN IP pools on the same site.<br/>-43011  -  The service port cannot be the same as that of the OpenVPN server.<br/>-43017  -  The device does not support configuring RADIUS type.<br/>-43018  -  The device does not support configuring LDAP type.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -767,7 +767,7 @@ func (r SSLVPNAPIBatchDeleteSslVpnUserGroupRequest) Execute() (*OperationRespons
 /*
 BatchDeleteSslVpnUserGroup Batch delete SSL VPN user group
 
-Batch delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for radius authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
+Batch delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for RADIUS authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1691,7 +1691,7 @@ Delete SSL VPN locked tunnel.<br/><br/>The interface requires one of the permiss
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param lockTunnelId lockTunnelId
+ @param lockTunnelId Locked tunnel ID
  @return SSLVPNAPIDeleteLockedSslVpnTunnelRequest
 */
 func (a *SSLVPNAPIService) DeleteLockedSslVpnTunnel(ctx context.Context, omadacId string, siteId string, lockTunnelId string) SSLVPNAPIDeleteLockedSslVpnTunnelRequest {
@@ -2311,7 +2311,7 @@ func (r SSLVPNAPIDeleteSslVpnUserGroupRequest) Execute() (*OperationResponseWith
 /*
 DeleteSslVpnUserGroup Delete SSL VPN user group
 
-Delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for radius authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
+Delete SSL VPN user group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-43015  -  Failed to delete this group because it is used for RADIUS authentication in SSL VPN server.<br/>-43016  -  Failed to delete this group because it is used for LDAP authentication in SSL VPN server.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4966,7 +4966,7 @@ func (r SSLVPNAPIModifySslVpnServerSettingRequest) Execute() (*OperationResponse
 /*
 ModifySslVpnServerSetting Modify SSL VPN server setting
 
-Get SSL VPN server setting. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2 or Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34032  -  Built-in radius server not started.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43010  -  The IP addresses in SSL VPN IP pool cannot overlap with other VPN IP pools on the same site.<br/>-43011  -  The service port cannot be the same as that of the OpenVPN server.<br/>-43017  -  The device does not support configuring radius type.<br/>-43018  -  The device does not support configuring LDAP type.
+Get SSL VPN server setting. This interface has been deprecated. Please use the following interfaces instead: Create client-to-site VPN server V2 or Modify client-to-site VPN server V2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33474  -  This feature is not supported for the DS-Lite or Map-E WAN connection types.<br/>-34032  -  Built-in RADIUS server not started.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43008  -  The current gateway model or firmware version does not support SSL VPN configuration.<br/>-43010  -  The IP addresses in SSL VPN IP pool cannot overlap with other VPN IP pools on the same site.<br/>-43011  -  The service port cannot be the same as that of the OpenVPN server.<br/>-43017  -  The device does not support configuring RADIUS type.<br/>-43018  -  The device does not support configuring LDAP type.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

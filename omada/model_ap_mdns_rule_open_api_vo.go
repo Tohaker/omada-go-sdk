@@ -19,11 +19,11 @@ import (
 // checks if the ApMdnsRuleOpenApiVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ApMdnsRuleOpenApiVO{}
 
-// ApMdnsRuleOpenApiVO MDNS rule AP config, valid when parameter [type] is 0
+// ApMdnsRuleOpenApiVO MDNS rule by VLAN ID config, valid when parameter [type] is 0
 type ApMdnsRuleOpenApiVO struct {
-	// Client Network VLAN. ClientVlan should be within the range of 1 to 4094. Enter one or multiple VLANs. For example: 1,2-100
+	// Client Network VLAN. ClientVlan should be within the range of 1 to 4094. Enter one or multiple VLANs. For example: 1,2-100. This configuration is used for MDNS Rules where the band VLAN type is \"By VLAN ID\".
 	ClientVlan string `json:"clientVlan"`
-	// Services Network VLAN. ServiceVlan should be within the range of 1 to 4094. Enter only one VLAN
+	// Services Network VLAN. ServiceVlan should be within the range of 1 to 4094. Enter only one VLAN. This configuration is used for MDNS Rules where the band VLAN type is \"By VLAN ID\".
 	ServiceVlan string `json:"serviceVlan"`
 }
 

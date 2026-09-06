@@ -17,13 +17,19 @@ import (
 // checks if the MlagMsgVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MlagMsgVO{}
 
-// MlagMsgVO struct for MlagMsgVO
+// MlagMsgVO M-LAG Message
 type MlagMsgVO struct {
+	// Set of DAD Link Ports
 	DadLinkPort []int32 `json:"dadLinkPort,omitempty"`
+	// M-LAG ID
 	MlagId *string `json:"mlagId,omitempty"`
+	// M-LAG Group Name
 	MlagName *string `json:"mlagName,omitempty"`
+	// Set of Peer Link Ports
 	PeerLinkPort []int32 `json:"peerLinkPort,omitempty"`
+	// M-LAG Priority
 	Priority *int32 `json:"priority,omitempty"`
+	// M-LAG Role, 0: Unknown, 1: Primary, 2: Secondary
 	Role *int32 `json:"role,omitempty"`
 }
 

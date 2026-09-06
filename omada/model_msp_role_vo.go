@@ -19,6 +19,8 @@ var _ MappedNullable = &MspRoleVO{}
 
 // MspRoleVO Role privilege.
 type MspRoleVO struct {
+	// AI Assistant, it should be a value as follows: 0:block; 1:view only; 2:modify
+	AiAssi *int32 `json:"aiAssi,omitempty"`
 	// Msp add and adopt devices. It should be a value as follows: 0:block; 2:access
 	MspAddAdoptDevice *int32 `json:"mspAddAdoptDevice,omitempty"`
 	// Msp add devices. It should be a value as follows: 0:block; 2:access
@@ -74,6 +76,38 @@ func NewMspRoleVO() *MspRoleVO {
 func NewMspRoleVOWithDefaults() *MspRoleVO {
 	this := MspRoleVO{}
 	return &this
+}
+
+// GetAiAssi returns the AiAssi field value if set, zero value otherwise.
+func (o *MspRoleVO) GetAiAssi() int32 {
+	if o == nil || IsNil(o.AiAssi) {
+		var ret int32
+		return ret
+	}
+	return *o.AiAssi
+}
+
+// GetAiAssiOk returns a tuple with the AiAssi field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MspRoleVO) GetAiAssiOk() (*int32, bool) {
+	if o == nil || IsNil(o.AiAssi) {
+		return nil, false
+	}
+	return o.AiAssi, true
+}
+
+// HasAiAssi returns a boolean if a field has been set.
+func (o *MspRoleVO) HasAiAssi() bool {
+	if o != nil && !IsNil(o.AiAssi) {
+		return true
+	}
+
+	return false
+}
+
+// SetAiAssi gets a reference to the given int32 and assigns it to the AiAssi field.
+func (o *MspRoleVO) SetAiAssi(v int32) {
+	o.AiAssi = &v
 }
 
 // GetMspAddAdoptDevice returns the MspAddAdoptDevice field value if set, zero value otherwise.
@@ -668,6 +702,9 @@ func (o MspRoleVO) MarshalJSON() ([]byte, error) {
 
 func (o MspRoleVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AiAssi) {
+		toSerialize["aiAssi"] = o.AiAssi
+	}
 	if !IsNil(o.MspAddAdoptDevice) {
 		toSerialize["mspAddAdoptDevice"] = o.MspAddAdoptDevice
 	}

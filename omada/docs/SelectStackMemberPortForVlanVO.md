@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Enable** | Pointer to **bool** | Whether the port is affected. | [optional] 
 **AutoSelect** | Pointer to **bool** | Whether the port needs to be automatically selected. | [optional] 
 **ConfigStack** | Pointer to **bool** | Whether the port is configured as a stack port. | [optional] 
+**ControllerLinkedPort** | Pointer to **bool** | Whether the port is connected to the Controller. | [optional] 
 **DefaultVlan** | Pointer to **int32** | The vlan of default network. | [optional] 
 **DownlinkDevices** | Pointer to [**[]DeviceBriefVO**](DeviceBriefVO.md) | The downlink devices of the port | [optional] 
 **EditEnable** | Pointer to **bool** | Whether the port is selectable. | [optional] 
@@ -121,6 +122,31 @@ SetConfigStack sets ConfigStack field to given value.
 `func (o *SelectStackMemberPortForVlanVO) HasConfigStack() bool`
 
 HasConfigStack returns a boolean if a field has been set.
+
+### GetControllerLinkedPort
+
+`func (o *SelectStackMemberPortForVlanVO) GetControllerLinkedPort() bool`
+
+GetControllerLinkedPort returns the ControllerLinkedPort field if non-nil, zero value otherwise.
+
+### GetControllerLinkedPortOk
+
+`func (o *SelectStackMemberPortForVlanVO) GetControllerLinkedPortOk() (*bool, bool)`
+
+GetControllerLinkedPortOk returns a tuple with the ControllerLinkedPort field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetControllerLinkedPort
+
+`func (o *SelectStackMemberPortForVlanVO) SetControllerLinkedPort(v bool)`
+
+SetControllerLinkedPort sets ControllerLinkedPort field to given value.
+
+### HasControllerLinkedPort
+
+`func (o *SelectStackMemberPortForVlanVO) HasControllerLinkedPort() bool`
+
+HasControllerLinkedPort returns a boolean if a field has been set.
 
 ### GetDefaultVlan
 

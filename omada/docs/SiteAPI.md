@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**GetSiteUrlByOpenApi**](SiteAPI.md#getsiteurlbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url | Get site url
 [**GetTags1**](SiteAPI.md#gettags1) | **Get** /openapi/v1/{omadacId}/sites/tags | Get site tag list
 [**GetUnplacedSitePositions**](SiteAPI.md#getunplacedsitepositions) | **Get** /openapi/v1/{omadacId}/unplaced-site-position | Obtain the geographic location information of unplaced Sites
+[**ModifySiteWirelessFeaturePingPangEnable**](SiteAPI.md#modifysitewirelessfeaturepingpangenable) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/roaming/pingpang/enable | enable the site setting of ping pang suppression
 [**ModifyTag1**](SiteAPI.md#modifytag1) | **Patch** /openapi/v1/{omadacId}/sites/tags | Modify an existing site tag
 [**UpdateSiteDeviceAccountSetting**](SiteAPI.md#updatesitedeviceaccountsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/device-account | Update site device account setting
 [**UpdateSiteEntity**](SiteAPI.md#updatesiteentity) | **Put** /openapi/v1/{omadacId}/sites/{siteId} | Modify an existing site
@@ -1694,6 +1695,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseUnplacedSitesUnplacedSite**](OperationResponseUnplacedSitesUnplacedSite.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifySiteWirelessFeaturePingPangEnable
+
+> OperationResponseWithoutResult ModifySiteWirelessFeaturePingPangEnable(ctx, omadacId, siteId).Execute()
+
+enable the site setting of ping pang suppression
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | siteId
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SiteAPI.ModifySiteWirelessFeaturePingPangEnable(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SiteAPI.ModifySiteWirelessFeaturePingPangEnable``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifySiteWirelessFeaturePingPangEnable`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SiteAPI.ModifySiteWirelessFeaturePingPangEnable`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | siteId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifySiteWirelessFeaturePingPangEnableRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
 
 ### Authorization
 

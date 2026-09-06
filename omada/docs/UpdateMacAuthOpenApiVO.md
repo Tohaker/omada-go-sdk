@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **MabEnable** | Pointer to **bool** | MAB enable status | [optional] 
 **MacFormat** | Pointer to **int32** | Format of the MAC address. MacFormat should be a value as follows: 0: aabbccddeeff, 1: aa-bb-cc-dd-ee-ff, 2: aa:bb:cc:dd:ee:ff, 3: AABBCCDDEEFF, 4: AA-BB-CC-DD-EE-FF, 5: AA:BB:CC:DD:EE:FF | [optional] 
 **NasId** | Pointer to **string** | NAS ID issued to AP. NasId should contain 1 to 64 characters | [optional] 
-**RadiusProfileId** | Pointer to **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new Radius profile&#39; (&#39;Create a new Radius profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get Radius profile list&#39; (&#39;Get Radius profile template list&#39;) interface | [optional] 
+**RadiusProfileId** | Pointer to **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new RADIUS profile&#39; (&#39;Create a new RADIUS profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get RADIUS profile list&#39; (&#39;Get RADIUS profile template list&#39;) interface | [optional] 
 **Ssids** | **[]string** | SSID ID list with MAC-Based authentication configured. SSID can be created using &#39;Create new SSID&#39; (&#39;Create new SSID template&#39;) interface, and SSID ID can be obtained from &#39;Get SSID list&#39; (&#39;Get SSID template list&#39;) interface | 
 
 ## Methods

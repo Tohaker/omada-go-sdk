@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllAggregatingPorts** | Pointer to **[]int32** |  | [optional] 
-**AllMirroredPorts** | Pointer to **[]int32** |  | [optional] 
-**AllMirroringPorts** | Pointer to **[]int32** |  | [optional] 
-**AllMlagDadPorts** | Pointer to **[]int32** |  | [optional] 
-**AllMlagPeerLinkPorts** | Pointer to **[]int32** |  | [optional] 
+**AllAggregatingPorts** | Pointer to **[]int32** | all aggregating ports of M-LAG Peer Switch | [optional] 
+**AllMirroredPorts** | Pointer to **[]int32** | all mirrored ports of M-LAG Peer Switch | [optional] 
+**AllMirroringPorts** | Pointer to **[]int32** | all mirroring ports of M-LAG Peer Switch | [optional] 
+**AllMlagDadPorts** | Pointer to **[]int32** | all M-LAG DAD ports of M-LAG Peer Switch | [optional] 
+**AllMlagPeerLinkPorts** | Pointer to **[]int32** | all M-LAG PeerLink ports of M-LAG Peer Switch | [optional] 
 
 ## Methods
 

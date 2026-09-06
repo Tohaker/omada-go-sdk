@@ -388,6 +388,22 @@ func Test_omada_SwitchTemplateAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SwitchTemplateAPIService ListSwitchInterfacesTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var deviceTemplateId string
+
+		resp, httpRes, err := apiClient.SwitchTemplateAPI.ListSwitchInterfacesTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SwitchTemplateAPIService ModifyOswVrfTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -398,6 +414,22 @@ func Test_omada_SwitchTemplateAPIService(t *testing.T) {
 		var vrfId string
 
 		resp, httpRes, err := apiClient.SwitchTemplateAPI.ModifyOswVrfTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId, vrfId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SwitchTemplateAPIService ModifyPmtudStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var deviceTemplateId string
+
+		resp, httpRes, err := apiClient.SwitchTemplateAPI.ModifyPmtudStatus(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

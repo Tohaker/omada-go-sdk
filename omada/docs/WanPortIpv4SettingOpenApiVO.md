@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Ipv4Pptp** | Pointer to [**Ipv4PptpOpenApiVO**](Ipv4PptpOpenApiVO.md) |  | [optional] 
 **Ipv4Static** | Pointer to [**Ipv4StaticOpenApiVO**](Ipv4StaticOpenApiVO.md) |  | [optional] 
 **ProtoType** | **int32** | IPv4 connection type should be one of the following values: 0:static; 1:DHCP; 2:PPPoE; 3:L2TP; 4:PPTP; 5:DS-Lite; 6:MAP-E. | 
-**QosTagEnable** | Pointer to **bool** | 802.1Q Tag. It takes effect when [vlanId] is not 0. | [optional] 
+**QosTagEnable** | **bool** | 802.1Q Tag. It takes effect when [vlanId] is not 0. | 
 **VlanId** | **int32** | VLAN ID should be within the range of 0–4094, 0 means disable. | 
 **VlanPriority** | Pointer to **int32** | Vlan Priority. It takes effect when [vlanId] is not 0, and it should be within the range of 0–7. | [optional] 
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewWanPortIpv4SettingOpenApiVO
 
-`func NewWanPortIpv4SettingOpenApiVO(protoType int32, vlanId int32, ) *WanPortIpv4SettingOpenApiVO`
+`func NewWanPortIpv4SettingOpenApiVO(protoType int32, qosTagEnable bool, vlanId int32, ) *WanPortIpv4SettingOpenApiVO`
 
 NewWanPortIpv4SettingOpenApiVO instantiates a new WanPortIpv4SettingOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -301,11 +301,6 @@ and a boolean to check if the value has been set.
 
 SetQosTagEnable sets QosTagEnable field to given value.
 
-### HasQosTagEnable
-
-`func (o *WanPortIpv4SettingOpenApiVO) HasQosTagEnable() bool`
-
-HasQosTagEnable returns a boolean if a field has been set.
 
 ### GetVlanId
 

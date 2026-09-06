@@ -21,7 +21,7 @@ var _ MappedNullable = &ModifyUserVO{}
 
 // ModifyUserVO struct for ModifyUserVO
 type ModifyUserVO struct {
-	// Alert email
+	// Whether this user wants to receive alert, event, and incident emails. Make sure your email is not null.
 	Alert *bool `json:"alert,omitempty"`
 	// Whether user has all site permission, including new created site.
 	AllSite bool `json:"allSite"`
@@ -31,7 +31,8 @@ type ModifyUserVO struct {
 	EndTime *int64 `json:"endTime,omitempty"`
 	// Force modify
 	ForceModify *bool `json:"forceModify,omitempty"`
-	// Incident notification
+	// Incident notification, this field is deprecated, please use alert field instead.
+	// Deprecated
 	IncidentNotification *bool `json:"incidentNotification,omitempty"`
 	// User name should contain 1 to 128 characters and start with letters, numbers, and underscores. When creating cloud user, you should set TP-LINK ID.
 	Name string `json:"name"`
@@ -39,6 +40,8 @@ type ModifyUserVO struct {
 	Password *string `json:"password,omitempty"`
 	// This field represents Role ID. Role can be created using 'Create new role' interface, and Role ID can be obtained from 'Get role list' interface.
 	RoleId string `json:"roleId"`
+	// User site privileges
+	SitePrivileges []CreateSitePrivilegeVO `json:"sitePrivileges,omitempty"`
 	// User site privilege list
 	Sites []string `json:"sites,omitempty"`
 	// The start time of the user's validity period. time range: start timestamp (Millisecond).
@@ -222,6 +225,7 @@ func (o *ModifyUserVO) SetForceModify(v bool) {
 }
 
 // GetIncidentNotification returns the IncidentNotification field value if set, zero value otherwise.
+// Deprecated
 func (o *ModifyUserVO) GetIncidentNotification() bool {
 	if o == nil || IsNil(o.IncidentNotification) {
 		var ret bool
@@ -232,6 +236,7 @@ func (o *ModifyUserVO) GetIncidentNotification() bool {
 
 // GetIncidentNotificationOk returns a tuple with the IncidentNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *ModifyUserVO) GetIncidentNotificationOk() (*bool, bool) {
 	if o == nil || IsNil(o.IncidentNotification) {
 		return nil, false
@@ -249,6 +254,7 @@ func (o *ModifyUserVO) HasIncidentNotification() bool {
 }
 
 // SetIncidentNotification gets a reference to the given bool and assigns it to the IncidentNotification field.
+// Deprecated
 func (o *ModifyUserVO) SetIncidentNotification(v bool) {
 	o.IncidentNotification = &v
 }
@@ -331,6 +337,38 @@ func (o *ModifyUserVO) GetRoleIdOk() (*string, bool) {
 // SetRoleId sets field value
 func (o *ModifyUserVO) SetRoleId(v string) {
 	o.RoleId = v
+}
+
+// GetSitePrivileges returns the SitePrivileges field value if set, zero value otherwise.
+func (o *ModifyUserVO) GetSitePrivileges() []CreateSitePrivilegeVO {
+	if o == nil || IsNil(o.SitePrivileges) {
+		var ret []CreateSitePrivilegeVO
+		return ret
+	}
+	return o.SitePrivileges
+}
+
+// GetSitePrivilegesOk returns a tuple with the SitePrivileges field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModifyUserVO) GetSitePrivilegesOk() ([]CreateSitePrivilegeVO, bool) {
+	if o == nil || IsNil(o.SitePrivileges) {
+		return nil, false
+	}
+	return o.SitePrivileges, true
+}
+
+// HasSitePrivileges returns a boolean if a field has been set.
+func (o *ModifyUserVO) HasSitePrivileges() bool {
+	if o != nil && !IsNil(o.SitePrivileges) {
+		return true
+	}
+
+	return false
+}
+
+// SetSitePrivileges gets a reference to the given []CreateSitePrivilegeVO and assigns it to the SitePrivileges field.
+func (o *ModifyUserVO) SetSitePrivileges(v []CreateSitePrivilegeVO) {
+	o.SitePrivileges = v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
@@ -460,6 +498,9 @@ func (o ModifyUserVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["password"] = o.Password
 	}
 	toSerialize["roleId"] = o.RoleId
+	if !IsNil(o.SitePrivileges) {
+		toSerialize["sitePrivileges"] = o.SitePrivileges
+	}
 	if !IsNil(o.Sites) {
 		toSerialize["sites"] = o.Sites
 	}

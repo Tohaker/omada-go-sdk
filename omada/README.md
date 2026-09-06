@@ -113,19 +113,12 @@ Class | Method | HTTP request | Description
 *ACLTemplateAPI* | [**ModifyOsgAclTemplate**](docs/ACLTemplateAPI.md#modifyosgacltemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-acls/{aclId} | Modify a gateway template ACL
 *ACLTemplateAPI* | [**ModifyOsgCustomAclIndexTemplate**](docs/ACLTemplateAPI.md#modifyosgcustomaclindextemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls/modifyIndex | Modify gateway custom ACL template index
 *ACLTemplateAPI* | [**UpdateOsgCustomAclsTemplate**](docs/ACLTemplateAPI.md#updateosgcustomaclstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls | Update osg custom ACL templates
-*AbnormalDetectAPI* | [**GetAnomalyEventSettingForSite**](docs/AbnormalDetectAPI.md#getanomalyeventsettingforsite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/setting | Get site anomaly event setting
-*AbnormalDetectAPI* | [**GetAnomalyEventSettingForSiteTemlate**](docs/AbnormalDetectAPI.md#getanomalyeventsettingforsitetemlate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/setting | Get site template anomaly event setting
-*AbnormalDetectAPI* | [**GetNotificationTemplate**](docs/AbnormalDetectAPI.md#getnotificationtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/notification | Get abnormal notification template info
-*AbnormalDetectAPI* | [**GetNotificationTemplate1**](docs/AbnormalDetectAPI.md#getnotificationtemplate1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/notification | Get abnormal notification info
-*AbnormalDetectAPI* | [**ModifyAnomalyEventSettingForSite**](docs/AbnormalDetectAPI.md#modifyanomalyeventsettingforsite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/setting/modify | Modify site anomaly event setting
-*AbnormalDetectAPI* | [**ModifyAnomalyEventSettingForSiteTemplate**](docs/AbnormalDetectAPI.md#modifyanomalyeventsettingforsitetemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/setting/modify | Modify site template anomaly event setting
-*AbnormalDetectAPI* | [**ModifyNotification**](docs/AbnormalDetectAPI.md#modifynotification) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/notification | Set abnormal notification info
-*AbnormalDetectAPI* | [**ModifyNotificationTemplate**](docs/AbnormalDetectAPI.md#modifynotificationtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/notification | Set abnormal notification template info
 *AccessControlAPI* | [**GetAccessControl**](docs/AccessControlAPI.md#getaccesscontrol) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Get access control setting
 *AccessControlAPI* | [**ModifyAccessControl**](docs/AccessControlAPI.md#modifyaccesscontrol) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Modify access control setting
 *AccessControlTemplateAPI* | [**GetAccessControlTemplate**](docs/AccessControlTemplateAPI.md#getaccesscontroltemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/access-control | Get access control setting template
 *AccessControlTemplateAPI* | [**ModifyAccessControlTemplate**](docs/AccessControlTemplateAPI.md#modifyaccesscontroltemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/access-control | Modify access control setting template
 *ApAPI* | [**BatchModifyAntSwitchConfig**](docs/ApAPI.md#batchmodifyantswitchconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/ant-switch | Batch modify AP antSwitch setting
+*ApAPI* | [**BatchModifyApLagConfig**](docs/ApAPI.md#batchmodifyaplagconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/lag | Batch modify AP lag config
 *ApAPI* | [**BatchModifyApVlanConfig**](docs/ApAPI.md#batchmodifyapvlanconfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/vlan | Batch modify AP vlan config
 *ApAPI* | [**BatchModifyMultiApPorts**](docs/ApAPI.md#batchmodifymultiapports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/config | Batch modify multiple APs port config
 *ApAPI* | [**BatchModifyPowerSavingConfig**](docs/ApAPI.md#batchmodifypowersavingconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/power-saving | Batch Modify ap power saving config
@@ -137,6 +130,7 @@ Class | Method | HTTP request | Description
 *ApAPI* | [**GetAntennaGainConfig**](docs/ApAPI.md#getantennagainconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Get AP antenna gain config
 *ApAPI* | [**GetApBridgeInfo**](docs/ApAPI.md#getapbridgeinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Get P2P bridge config
 *ApAPI* | [**GetApL3AccessConfig**](docs/ApAPI.md#getapl3accessconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/l3access | Get AP l3Access config
+*ApAPI* | [**GetApLagConfig**](docs/ApAPI.md#getaplagconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lag | Get AP lag config
 *ApAPI* | [**GetApListChannelInfo**](docs/ApAPI.md#getaplistchannelinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/channel-info | Get ap list channel info.
 *ApAPI* | [**GetApLldpConfig**](docs/ApAPI.md#getaplldpconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lldp | Get AP lldp config
 *ApAPI* | [**GetApLoadBalanceConfig**](docs/ApAPI.md#getaploadbalanceconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Get AP load balance config
@@ -177,6 +171,7 @@ Class | Method | HTTP request | Description
 *ApAPI* | [**ModifyAntennaGainConfig**](docs/ApAPI.md#modifyantennagainconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Modify AP antenna gain config
 *ApAPI* | [**ModifyApBridgeInfo**](docs/ApAPI.md#modifyapbridgeinfo) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Modify P2P bridge config
 *ApAPI* | [**ModifyApChannelConfig**](docs/ApAPI.md#modifyapchannelconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-config | Modify AP channel config
+*ApAPI* | [**ModifyApLagConfig**](docs/ApAPI.md#modifyaplagconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lag | Modify AP lag config
 *ApAPI* | [**ModifyApLoadBalanceConfig**](docs/ApAPI.md#modifyaploadbalanceconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Modify AP load balance config
 *ApAPI* | [**ModifyApManagementSsidConfig**](docs/ApAPI.md#modifyapmanagementssidconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/management-wlan | Modify AP management ssid config
 *ApAPI* | [**ModifyApOfdmaConfig**](docs/ApAPI.md#modifyapofdmaconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Modify AP OFDMA config
@@ -262,6 +257,7 @@ Class | Method | HTTP request | Description
 *AttackDefenseTemplateAPI* | [**ModifyAttackDefenseSettingTemplate**](docs/AttackDefenseTemplateAPI.md#modifyattackdefensesettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/attack-defense | Modify attack and defense template setting
 *AttackDefenseTemplateAPI* | [**ResetAttackDefenseSettingTemplate**](docs/AttackDefenseTemplateAPI.md#resetattackdefensesettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/attack-defense/reset | Reset attack and defense template setting
 *AuditLogAPI* | [**ExportAuditLogListForGlobal**](docs/AuditLogAPI.md#exportauditloglistforglobal) | **Post** /openapi/v1/{omadacId}/logs/audit/export | Export audit log list in global view
+*AuditLogAPI* | [**GetApSsidOverridesAuditLogs**](docs/AuditLogAPI.md#getapssidoverridesauditlogs) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/audit-logs/{apMac}/ssid-overrides | Get ap ssidoverride audit log list
 *AuditLogAPI* | [**GetAuditLogSettingForGlobal**](docs/AuditLogAPI.md#getauditlogsettingforglobal) | **Get** /openapi/v1/{omadacId}/audit-notification | Get global audit log notification
 *AuditLogAPI* | [**GetAuditLogSettingForMsp1**](docs/AuditLogAPI.md#getauditlogsettingformsp1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/site/audit-notification | Get site audit log notification
 *AuditLogAPI* | [**GetAuditLogsForGlobal**](docs/AuditLogAPI.md#getauditlogsforglobal) | **Get** /openapi/v1/{omadacId}/audit-logs | Get global audit log list
@@ -326,6 +322,8 @@ Class | Method | HTTP request | Description
 *BackupAndRestoreAPI* | [**RestoreSelfServer**](docs/BackupAndRestoreAPI.md#restoreselfserver) | **Post** /openapi/v1/{omadacId}/maintenance/restore/self-server | Restore controller config from cloud server
 *BackupAndRestoreAPI* | [**RestoreSitesFileServer**](docs/BackupAndRestoreAPI.md#restoresitesfileserver) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-restore/file-server | Restore multi sites config from file server
 *BackupAndRestoreAPI* | [**RestoreSitesSelfServer**](docs/BackupAndRestoreAPI.md#restoresitesselfserver) | **Post** /openapi/v1/{omadacId}/sites/maintenance/multi-restore/self-server | Restore multi sites config from self server
+*BackupScheduleAPI* | [**GetBackupScheduleTask**](docs/BackupScheduleAPI.md#getbackupscheduletask) | **Get** /openapi/v1/{omadacId}/backupschedule/task | Get backup schedule task
+*BackupScheduleAPI* | [**ModifyBackupScheduleTask**](docs/BackupScheduleAPI.md#modifybackupscheduletask) | **Post** /openapi/v1/{omadacId}/backupschedule/task | Modify backup schedule task
 *BandwidthControlAPI* | [**CreateBandwidthCtrlRule**](docs/BandwidthControlAPI.md#createbandwidthctrlrule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules | Create bandwidth control rule
 *BandwidthControlAPI* | [**DeleteBandwidthCtrlRule**](docs/BandwidthControlAPI.md#deletebandwidthctrlrule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control/rules/{ruleId} | Delete bandwidth control rule
 *BandwidthControlAPI* | [**GetBandwidthCtrl**](docs/BandwidthControlAPI.md#getbandwidthctrl) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/bandwidth-control | Get bandwidth control
@@ -393,7 +391,8 @@ Class | Method | HTTP request | Description
 *CLITemplateAPI* | [**ModifyCliConfigTemplate**](docs/CLITemplateAPI.md#modifycliconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/cli/config/cli-type/{cliType}/config-id/{configId} | Modify the CLI template configuration content
 *CertProfilesAPI* | [**CreateCertProfile1**](docs/CertProfilesAPI.md#createcertprofile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles | Create a new certificate profile
 *CertProfilesAPI* | [**DeleteCertProfile1**](docs/CertProfilesAPI.md#deletecertprofile1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Delete an exist certificate profile
-*CertProfilesAPI* | [**DeleteCertProfileFile1**](docs/CertProfilesAPI.md#deletecertprofilefile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/delete-file/{fileId} | Delete an exist certificate profile file
+*CertProfilesAPI* | [**DeleteCertProfileFile1**](docs/CertProfilesAPI.md#deletecertprofilefile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/delete-file | Delete an exist certificate profile file
+*CertProfilesAPI* | [**DeleteCertProfileFile2**](docs/CertProfilesAPI.md#deletecertprofilefile2) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/delete-file/{fileId} | Delete an exist certificate profile file by id in url
 *CertProfilesAPI* | [**GetAllCertProfile**](docs/CertProfilesAPI.md#getallcertprofile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/all-cert-profiles | Get certificate profile list
 *CertProfilesAPI* | [**GetCertProfileDetail1**](docs/CertProfilesAPI.md#getcertprofiledetail1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Get a certificate profile detail
 *CertProfilesAPI* | [**GetGridCertProfile1**](docs/CertProfilesAPI.md#getgridcertprofile1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles | Get grid certificate profile list
@@ -424,12 +423,14 @@ Class | Method | HTTP request | Description
 *ClientAPI* | [**GetClientDetailStatHourly**](docs/ClientAPI.md#getclientdetailstathourly) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client-stat-detail/{clientMac}/hourly | Get client statistical data details at a hourly interval.
 *ClientAPI* | [**GetClientFilteringOptions**](docs/ClientAPI.md#getclientfilteringoptions) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/search-fields-options | Get client list filtering options
 *ClientAPI* | [**GetClientHistoryDataEnable**](docs/ClientAPI.md#getclienthistorydataenable) | **Get** /openapi/v1/{omadacId}/controller/client/history-enable | Get History data retention config.
+*ClientAPI* | [**GetClientIncidentCounts**](docs/ClientAPI.md#getclientincidentcounts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/incidents | Get site client incident counts
 *ClientAPI* | [**GetClientJourney**](docs/ClientAPI.md#getclientjourney) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-connection | Get client connection histories
 *ClientAPI* | [**GetClientTimeline**](docs/ClientAPI.md#getclienttimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-timeline | Get client timeline events
 *ClientAPI* | [**GetClientTopology**](docs/ClientAPI.md#getclienttopology) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-link-topology | Get client link topology
 *ClientAPI* | [**GetGridActiveClients**](docs/ClientAPI.md#getgridactiveclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients | Get client list
 *ClientAPI* | [**GetGridAllClients**](docs/ClientAPI.md#getgridallclients) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/clients | Get all client list
 *ClientAPI* | [**GetGridClientHistory**](docs/ClientAPI.md#getgridclienthistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-history |  Get Client history.
+*ClientAPI* | [**GetGridSsidClients**](docs/ClientAPI.md#getgridssidclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clientList/{ssidId} | Get clients list of ssid.
 *ClientAPI* | [**GetVigiDetailStat5Min**](docs/ClientAPI.md#getvigidetailstat5min) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/5Min | Get VIGI device statistical data details at a 5-minute interval.
 *ClientAPI* | [**GetVigiDetailStatDaily**](docs/ClientAPI.md#getvigidetailstatdaily) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/daily | Get VIGI device statistical data details at a daily interval.
 *ClientAPI* | [**GetVigiDetailStatHourly**](docs/ClientAPI.md#getvigidetailstathourly) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/hourly | Get VIGI device statistical data details at a hourly interval.
@@ -465,9 +466,12 @@ Class | Method | HTTP request | Description
 *ClientInsightAPI* | [**GetMostActiveClients**](docs/ClientInsightAPI.md#getmostactiveclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/active-clients | Get most active client.
 *ClientInsightAPI* | [**GetMspDashboardOverall**](docs/ClientInsightAPI.md#getmspdashboardoverall) | **Get** /openapi/v1/msp/{mspId}/dashboard/client/overview-diagram | Get the msp overview diagram of client.
 *ClientInsightAPI* | [**GetPastClientNum**](docs/ClientInsightAPI.md#getpastclientnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/past-client-num | Get past client number.
+*ClientInsightAPI* | [**GetRealTimeClientCards**](docs/ClientInsightAPI.md#getrealtimeclientcards) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client/realtime/cards | Get real-time client cards.
 *ClientInsightAPI* | [**GetStackClientStat**](docs/ClientInsightAPI.md#getstackclientstat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/stacks/{stackId}/client-stat | Get stack client stat.
 *CloudUserAPI* | [**BindMspOwner**](docs/CloudUserAPI.md#bindmspowner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/bind | Bind the MSP owner account
 *CloudUserAPI* | [**BindOwner**](docs/CloudUserAPI.md#bindowner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/bind | Bind the owner account
+*CloudUserAPI* | [**CloudOwnerUnbindMspOwner**](docs/CloudUserAPI.md#cloudownerunbindmspowner) | **Post** /openapi/v1/msp/{mspId}/unbind/cloudowner | Unbind the MSP owner account for cloud owner
+*CloudUserAPI* | [**CloudOwnerUnbindOwner**](docs/CloudUserAPI.md#cloudownerunbindowner) | **Post** /openapi/v1/{omadacId}/unbind/cloudowner | Unbind the owner account for cloud owner
 *CloudUserAPI* | [**GetCloudAccessStatus**](docs/CloudUserAPI.md#getcloudaccessstatus) | **Get** /openapi/v1/{omadacId}/cloud/status | Get cloud access status
 *CloudUserAPI* | [**GetCloudUserInfo**](docs/CloudUserAPI.md#getclouduserinfo) | **Get** /openapi/v1/{omadacId}/cloud/user | Get cloud user information
 *CloudUserAPI* | [**GetMspCloudAccessStatus**](docs/CloudUserAPI.md#getmspcloudaccessstatus) | **Get** /openapi/v1/msp/{mspId}/cloud/status | Get MSP cloud access status
@@ -507,6 +511,37 @@ Class | Method | HTTP request | Description
 *CustomerAPI* | [**GetCustomerList**](docs/CustomerAPI.md#getcustomerlist) | **Get** /openapi/v1/msp/{mspId}/customers | Get customer list
 *CustomerAPI* | [**GetCustomersInGlobalHaveSiteTemplateModify**](docs/CustomerAPI.md#getcustomersinglobalhavesitetemplatemodify) | **Get** /openapi/v1/{omadacId}/copy/site/template/batch/customers | Obtain the customer ID with permission to modify site templates
 *CustomerAPI* | [**ModifyCustomer**](docs/CustomerAPI.md#modifycustomer) | **Patch** /openapi/v1/msp/{mspId}/customers/{customerId} | Modify an existing customer
+*DHCPReservationAPI* | [**BatchExportDhcpReservationListToFile**](docs/DHCPReservationAPI.md#batchexportdhcpreservationlisttofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/batch-export | Batch Export DHCP reservation list to file
+*DHCPReservationAPI* | [**CreateDhcpReservation**](docs/DHCPReservationAPI.md#createdhcpreservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp | Create a new DHCP reservation
+*DHCPReservationAPI* | [**DeleteDhcpReservation**](docs/DHCPReservationAPI.md#deletedhcpreservation) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac} | Delete an exist DHCP reservation
+*DHCPReservationAPI* | [**DownloadDhcpImportResult**](docs/DHCPReservationAPI.md#downloaddhcpimportresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/import-result | Download DHCP import result
+*DHCPReservationAPI* | [**ExportDhcpReservation**](docs/DHCPReservationAPI.md#exportdhcpreservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac}/export | Export DHCP reservation to IP_MAC Binding
+*DHCPReservationAPI* | [**ExportDhcpReservationListToFile**](docs/DHCPReservationAPI.md#exportdhcpreservationlisttofile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/export | Export DHCP reservation list to file
+*DHCPReservationAPI* | [**GetDhcpReservationGrid**](docs/DHCPReservationAPI.md#getdhcpreservationgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp | Get DHCP reservation list
+*DHCPReservationAPI* | [**GetGridAllDhcpUserList**](docs/DHCPReservationAPI.md#getgridalldhcpuserlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list | Get the dhcp user list of all servers
+*DHCPReservationAPI* | [**ImportDhcpReservationListFromFile**](docs/DHCPReservationAPI.md#importdhcpreservationlistfromfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/import | Import DHCP reservation list from file
+*DHCPReservationAPI* | [**ModifyDhcpReservation**](docs/DHCPReservationAPI.md#modifydhcpreservation) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac} | Modify an exist DHCP reservation
+*DHCPReservationAPI* | [**ReservationFromDhcpUserList**](docs/DHCPReservationAPI.md#reservationfromdhcpuserlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list/reservation | Reservation From Dhcp User List
+*DNSAPI* | [**ClearDnsCacheList**](docs/DNSAPI.md#cleardnscachelist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/dns-cache-data/clear | Clear DNS cache list
+*DNSAPI* | [**CreateDdns**](docs/DNSAPI.md#createddns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns | Create a new Dynamic DNS entry
+*DNSAPI* | [**DeleteDdns**](docs/DNSAPI.md#deleteddns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns/{ddnsId} | Delete an exist Dynamic DNS entry
+*DNSAPI* | [**GetDdnsGrid**](docs/DNSAPI.md#getddnsgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns | Get Dynamic DNS list
+*DNSAPI* | [**GetDnsCacheList**](docs/DNSAPI.md#getdnscachelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/dns-cache-data | Get DNS cache list
+*DNSAPI* | [**GetDnsCacheSetting**](docs/DNSAPI.md#getdnscachesetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Get DNS cache
+*DNSAPI* | [**GetDnsProxy**](docs/DNSAPI.md#getdnsproxy) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Get DNS proxy setting
+*DNSAPI* | [**ModifyDdns**](docs/DNSAPI.md#modifyddns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns/{ddnsId} | Modify an exist Dynamic DNS entry
+*DNSAPI* | [**ModifyDnsCacheSetting**](docs/DNSAPI.md#modifydnscachesetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Modify DNS cache setting
+*DNSAPI* | [**ModifyDnsProxy**](docs/DNSAPI.md#modifydnsproxy) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Modify DNS proxy setting
+*DNSTemplateAPI* | [**CreateDdnsTemplate**](docs/DNSTemplateAPI.md#createddnstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns | Create a new Dynamic DNS template entry
+*DNSTemplateAPI* | [**DeleteDdnsTemplate**](docs/DNSTemplateAPI.md#deleteddnstemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/{ddnsId} | Delete an exist Dynamic DNS template entry
+*DNSTemplateAPI* | [**GetDdnsGridTemplate**](docs/DNSTemplateAPI.md#getddnsgridtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns | Get Dynamic DNS template list
+*DNSTemplateAPI* | [**GetDnsCacheSettingTemplate**](docs/DNSTemplateAPI.md#getdnscachesettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/dns-cache | Get DNS cache setting template
+*DNSTemplateAPI* | [**GetDnsProxyTemplate**](docs/DNSTemplateAPI.md#getdnsproxytemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-proxy | Get DNS proxy template setting
+*DNSTemplateAPI* | [**GetGlobalDdnsUpdateUrlTemplate**](docs/DNSTemplateAPI.md#getglobalddnsupdateurltemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/update-url | Get DDNS update url
+*DNSTemplateAPI* | [**ModifyDdnsTemplate**](docs/DNSTemplateAPI.md#modifyddnstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/{ddnsId} | Modify an exist Dynamic DNS template entry
+*DNSTemplateAPI* | [**ModifyDnsCacheSettingTemplate**](docs/DNSTemplateAPI.md#modifydnscachesettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-cache | Modify DNS cache setting
+*DNSTemplateAPI* | [**ModifyDnsProxyTemplate**](docs/DNSTemplateAPI.md#modifydnsproxytemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-proxy | Modify DNS proxy template setting
+*DNSTemplateAPI* | [**RefreshDnsCacheListTemplate**](docs/DNSTemplateAPI.md#refreshdnscachelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-cache-data/refresh | Refresh dns cache list
 *DashboardAPI* | [**BatchConfigTab**](docs/DashboardAPI.md#batchconfigtab) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/multi-tabs/config | Batch set tab config
 *DashboardAPI* | [**ConfigBandwidthForWanPorts**](docs/DashboardAPI.md#configbandwidthforwanports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wan/bandwidth | Set site dashboard wan bandwidth
 *DashboardAPI* | [**CreateTab**](docs/DashboardAPI.md#createtab) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/tabs | Create new tab
@@ -553,7 +588,10 @@ Class | Method | HTTP request | Description
 *DeviceAPI* | [**BatchAdopt**](docs/DeviceAPI.md#batchadopt) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/batch-adopt | batch adopt device
 *DeviceAPI* | [**CancelRollingUpgrade**](docs/DeviceAPI.md#cancelrollingupgrade) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/rolling-upgrade-tasks/{taskId} | End the rolling upgrade task
 *DeviceAPI* | [**CheckMacType**](docs/DeviceAPI.md#checkmactype) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/check-mac-type | Check the device type by mac.
+*DeviceAPI* | [**CheckReplaceRecord**](docs/DeviceAPI.md#checkreplacerecord) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device/check | Check replace record
 *DeviceAPI* | [**CopyDeviceConfiguration**](docs/DeviceAPI.md#copydeviceconfiguration) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/copy | Copy configuration
+*DeviceAPI* | [**CreateReplaceRecord**](docs/DeviceAPI.md#createreplacerecord) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device | Create replace record
+*DeviceAPI* | [**DeleteReplaceRecord**](docs/DeviceAPI.md#deletereplacerecord) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device | Delete replace record
 *DeviceAPI* | [**DeleteTag**](docs/DeviceAPI.md#deletetag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Delete an existing tag
 *DeviceAPI* | [**DownloadDeviceInfo**](docs/DeviceAPI.md#downloaddeviceinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/{deviceMac}/downloadDeviceInfo/{type} | Download device information.
 *DeviceAPI* | [**ExistUnSupportRadSecDevice**](docs/DeviceAPI.md#existunsupportradsecdevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/un-support-radsec | Check for unsupported RadSec devices.
@@ -575,11 +613,13 @@ Class | Method | HTTP request | Description
 *DeviceAPI* | [**GetAutoSelectDevices**](docs/DeviceAPI.md#getautoselectdevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/quick-action/network-wizard/auto-select-devices | Get auto select devices in quick-config page.
 *DeviceAPI* | [**GetCheckFirmwareTaskResult**](docs/DeviceAPI.md#getcheckfirmwaretaskresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/all-devices/check-latest-firmware-tasks/{taskId} | Get the result of the given check latest firmware task
 *DeviceAPI* | [**GetDeviceAdoptResult**](docs/DeviceAPI.md#getdeviceadoptresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/adopt-result | Get device adopt result
+*DeviceAPI* | [**GetDeviceIncidentCounts**](docs/DeviceAPI.md#getdeviceincidentcounts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/incidents | Get site device incident counts
 *DeviceAPI* | [**GetDeviceList**](docs/DeviceAPI.md#getdevicelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices | Get site device list
 *DeviceAPI* | [**GetDeviceRememberMe**](docs/DeviceAPI.md#getdevicerememberme) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/remember | Get device remember Config
 *DeviceAPI* | [**GetDeviceWhiteList**](docs/DeviceAPI.md#getdevicewhitelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/device-white-list | Get the whitelist list of devices.
 *DeviceAPI* | [**GetFirmwareInfo**](docs/DeviceAPI.md#getfirmwareinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/latest-firmware-info | Get the latest firmware info of the device
 *DeviceAPI* | [**GetForgetProcess**](docs/DeviceAPI.md#getforgetprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/forget/{forgetId}/status | Get batch forget process
+*DeviceAPI* | [**GetGlobalDeviceIncidentCounts**](docs/DeviceAPI.md#getglobaldeviceincidentcounts) | **Post** /openapi/v1/{omadacId}/devices/incidents | Get global device incident counts
 *DeviceAPI* | [**GetGlobalKnownDeviceList**](docs/DeviceAPI.md#getglobalknowndevicelist) | **Get** /openapi/v1/{omadacId}/devices/known-devices | Get global known device list
 *DeviceAPI* | [**GetGlobalUnknownDeviceList**](docs/DeviceAPI.md#getglobalunknowndevicelist) | **Get** /openapi/v1/{omadacId}/devices/unknown-devices | Get global unknown device list
 *DeviceAPI* | [**GetGridAdoptedBridgeDevicesBySite**](docs/DeviceAPI.md#getgridadoptedbridgedevicesbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/bridge-devices/adopted | Get Bridge group grouped devices
@@ -588,6 +628,7 @@ Class | Method | HTTP request | Description
 *DeviceAPI* | [**GetGridPendingDevicesBySite**](docs/DeviceAPI.md#getgridpendingdevicesbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/devices/pending | Get adoptable device list of target site
 *DeviceAPI* | [**GetManuallyUpgradeRes**](docs/DeviceAPI.md#getmanuallyupgraderes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/manually-upgrade-tasks/{taskId} | Get the result of the given manually upgrade task
 *DeviceAPI* | [**GetMoveSiteProcess**](docs/DeviceAPI.md#getmovesiteprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/move/{moveSiteId}/status | Get batch move site process
+*DeviceAPI* | [**GetMspAdoptTip**](docs/DeviceAPI.md#getmspadopttip) | **Get** /openapi/v1/msp/{mspId}/adopt-tip | MSP get adopt tip
 *DeviceAPI* | [**GetOnlineTimeline**](docs/DeviceAPI.md#getonlinetimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/timeline | Get device online timeline
 *DeviceAPI* | [**GetOnlineUpgradeRes**](docs/DeviceAPI.md#getonlineupgraderes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/online-upgrade-result | Get online upgrade result
 *DeviceAPI* | [**GetRollingUpgradeRes**](docs/DeviceAPI.md#getrollingupgraderes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/rolling-upgrade-tasks/{taskId} | Get the result of the given rolling upgrade task
@@ -599,6 +640,7 @@ Class | Method | HTTP request | Description
 *DeviceAPI* | [**LocatePorts**](docs/DeviceAPI.md#locateports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/locate/switch-ports | Locate multiple ports of multiple switches
 *DeviceAPI* | [**ManuallyUpgrade**](docs/DeviceAPI.md#manuallyupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/start-manually-upgrade | Start manually upgrade
 *DeviceAPI* | [**ModifyDeviceRememberMe**](docs/DeviceAPI.md#modifydevicerememberme) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/remember | Modify device remember Config
+*DeviceAPI* | [**ModifyReplaceRecord**](docs/DeviceAPI.md#modifyreplacerecord) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device | Modify replace record
 *DeviceAPI* | [**ModifyTag**](docs/DeviceAPI.md#modifytag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Modify an existing tag
 *DeviceAPI* | [**MoveSite**](docs/DeviceAPI.md#movesite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/site-move | Move site
 *DeviceAPI* | [**MoveSiteForAps**](docs/DeviceAPI.md#movesiteforaps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/site-move | Move aps to another site
@@ -704,7 +746,7 @@ Class | Method | HTTP request | Description
 *GatewayAPI* | [**IspUpgrade**](docs/GatewayAPI.md#ispupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/{gatewayMac}/isp-upgrade | Upgrade isp
 *GatewayAPI* | [**ModifyConfigAdvanced**](docs/GatewayAPI.md#modifyconfigadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced | Modify gateway advanced config
 *GatewayAPI* | [**ModifyConfigCommonAdvanced**](docs/GatewayAPI.md#modifyconfigcommonadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/common | Modify gateway advanced common config
-*GatewayAPI* | [**ModifyConfigGeneral**](docs/GatewayAPI.md#modifyconfiggeneral) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify gateway general config
+*GatewayAPI* | [**ModifyConfigGeneral**](docs/GatewayAPI.md#modifyconfiggeneral) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify gateway general config v2
 *GatewayAPI* | [**ModifyConfigRadios**](docs/GatewayAPI.md#modifyconfigradios) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/radios | Modify gateway radios config
 *GatewayAPI* | [**ModifyConfigServices**](docs/GatewayAPI.md#modifyconfigservices) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/services | Modify gateway config service
 *GatewayAPI* | [**ModifyConfigWirelessAdvanced**](docs/GatewayAPI.md#modifyconfigwirelessadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/wireless | Modify gateway advanced wireless config
@@ -775,6 +817,7 @@ Class | Method | HTTP request | Description
 *HealthAPI* | [**GetApHealthDetail**](docs/HealthAPI.md#getaphealthdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/eaps/{apMac}/health/detail | Get ap health detail
 *HealthAPI* | [**GetApHealthTimeList**](docs/HealthAPI.md#getaphealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/eaps/{apMac}/health/timeline | Get ap health time line
 *HealthAPI* | [**GetClientHealthDetail**](docs/HealthAPI.md#getclienthealthdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/health/detail | Get client health detail
+*HealthAPI* | [**GetClientHealthDetailV2**](docs/HealthAPI.md#getclienthealthdetailv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/clients/{clientMac}/health/detail | Get client health detail (V2)
 *HealthAPI* | [**GetClientHealthTimeList**](docs/HealthAPI.md#getclienthealthtimelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/health/timeline | Get client health time line
 *HealthAPI* | [**GetMspApHealthDetail**](docs/HealthAPI.md#getmspaphealthdetail) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eaps/{apMac}/health/detail | Get msp ap health detail
 *HealthAPI* | [**GetMspApHealthTimeList**](docs/HealthAPI.md#getmspaphealthtimelist) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/eaps/{apMac}/health/timeline | Get msp ap health time line
@@ -834,6 +877,41 @@ Class | Method | HTTP request | Description
 *IPMACBindingTemplateAPI* | [**GetIpMacBindingGeneralSettingTemplate**](docs/IPMACBindingTemplateAPI.md#getipmacbindinggeneralsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-bind | Get IP-MAC binding template general setting
 *IPMACBindingTemplateAPI* | [**ModifyIpMacBindingGeneralSettingTemplate**](docs/IPMACBindingTemplateAPI.md#modifyipmacbindinggeneralsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-bind | Modify IP-MAC binding template general setting
 *IPMACBindingTemplateAPI* | [**ModifyIpMacBindingTemplate**](docs/IPMACBindingTemplateAPI.md#modifyipmacbindingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ip-mac-binds/{bindId} | Modify IP-MAC binding template
+*IPTVAPI* | [**GetIgmp**](docs/IPTVAPI.md#getigmp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Get the IGMP settings
+*IPTVAPI* | [**GetIptv**](docs/IPTVAPI.md#getiptv) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Get IPTV setting
+*IPTVAPI* | [**GetMld**](docs/IPTVAPI.md#getmld) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mld | Get the MLD settings
+*IPTVAPI* | [**ModifyIgmp**](docs/IPTVAPI.md#modifyigmp) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Modify the IGMP settings
+*IPTVAPI* | [**ModifyIptv**](docs/IPTVAPI.md#modifyiptv) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Modify IPTV setting
+*IPTVAPI* | [**ModifyMld**](docs/IPTVAPI.md#modifymld) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mld | Modify the MLD settings
+*IPTVTemplateAPI* | [**GetIptvTemplate**](docs/IPTVTemplateAPI.md#getiptvtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/iptv | Get IPTV template setting
+*IPTVTemplateAPI* | [**GetIptvTemplateServerSetting**](docs/IPTVTemplateAPI.md#getiptvtemplateserversetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv | Get IPTV setting template
+*IPTVTemplateAPI* | [**ModifyIptvTemplate**](docs/IPTVTemplateAPI.md#modifyiptvtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/iptv | Modify IPTV template setting
+*IPTVTemplateAPI* | [**ModifyIptvTemplateServerSetting**](docs/IPTVTemplateAPI.md#modifyiptvtemplateserversetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv | Modify IPTV setting template
+*IncidentTemplateAPI* | [**GetAnomalyEventSettingForSiteTemlate**](docs/IncidentTemplateAPI.md#getanomalyeventsettingforsitetemlate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/setting | Get site template anomaly event setting
+*IncidentTemplateAPI* | [**GetNotificationTemplate**](docs/IncidentTemplateAPI.md#getnotificationtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/notification | Get abnormal notification template info
+*IncidentTemplateAPI* | [**ModifyAnomalyEventSettingForSiteTemplate**](docs/IncidentTemplateAPI.md#modifyanomalyeventsettingforsitetemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/setting/modify | Modify site template anomaly event setting
+*IncidentTemplateAPI* | [**ModifyNotificationTemplate**](docs/IncidentTemplateAPI.md#modifynotificationtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/anomaly/notification | Set abnormal notification template info
+*IncidentsAPI* | [**DeleteAggregateIncident**](docs/IncidentsAPI.md#deleteaggregateincident) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/incidents | Delete aggregate incident
+*IncidentsAPI* | [**DeleteIncidents**](docs/IncidentsAPI.md#deleteincidents) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/incident | Delete incidents
+*IncidentsAPI* | [**GetAnomalyEventSettingForSite**](docs/IncidentsAPI.md#getanomalyeventsettingforsite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/setting | Get site incident event setting
+*IncidentsAPI* | [**GetCategoryEventCount**](docs/IncidentsAPI.md#getcategoryeventcount) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/category | Get incident category event count
+*IncidentsAPI* | [**GetGridDeviceIncidentList**](docs/IncidentsAPI.md#getgriddeviceincidentlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/incident/{mac} | Get grid device incident List
+*IncidentsAPI* | [**GetGridIncidentList**](docs/IncidentsAPI.md#getgridincidentlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/incidents | Get grid incident List
+*IncidentsAPI* | [**GetGridStackIncidentList**](docs/IncidentsAPI.md#getgridstackincidentlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/incident/stack/{stackId} | Get grid stack incident list
+*IncidentsAPI* | [**GetIncidentDetail**](docs/IncidentsAPI.md#getincidentdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/incident/{incidentId} | Get incident detail
+*IncidentsAPI* | [**GetIncidentDistribution**](docs/IncidentsAPI.md#getincidentdistribution) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/overview/incident-distribution | Get incident overview distribution
+*IncidentsAPI* | [**GetIncidentsRanking**](docs/IncidentsAPI.md#getincidentsranking) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/incidents/ranking-cards | Get incidents ranking cards
+*IncidentsAPI* | [**GetInfluencingClients**](docs/IncidentsAPI.md#getinfluencingclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/{mac}/influencing-clients | Get Influencing Clients by an incident
+*IncidentsAPI* | [**GetInfluencingDevices**](docs/IncidentsAPI.md#getinfluencingdevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/{mac}/influencing-devices | Get Influencing Devices by an incident
+*IncidentsAPI* | [**GetNotificationTemplate1**](docs/IncidentsAPI.md#getnotificationtemplate1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/notification | Get incident notification info
+*IncidentsAPI* | [**GetObjectHealthIncident**](docs/IncidentsAPI.md#getobjecthealthincident) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/health/incident/{mac} | Get device/client health incidents
+*IncidentsAPI* | [**GetOverviewStatistics**](docs/IncidentsAPI.md#getoverviewstatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/overview/statistics | Get incident overview statistics
+*IncidentsAPI* | [**GetRankingCards**](docs/IncidentsAPI.md#getrankingcards) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/overview/ranking-cards | Get incident overview ranking cards
+*IncidentsAPI* | [**GetUnresolvedIncidentCount**](docs/IncidentsAPI.md#getunresolvedincidentcount) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/unresolved-incidents | Get unresolved incident count
+*IncidentsAPI* | [**ModifyAggregateIncidentStatus**](docs/IncidentsAPI.md#modifyaggregateincidentstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/incidents/status | Modify aggregate incident status
+*IncidentsAPI* | [**ModifyAnomalyEventSettingForSite**](docs/IncidentsAPI.md#modifyanomalyeventsettingforsite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/setting/modify | Modify site incident event setting
+*IncidentsAPI* | [**ModifyIncidentStatus**](docs/IncidentsAPI.md#modifyincidentstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/incident/status | Modify incident status
+*IncidentsAPI* | [**ModifyNotification**](docs/IncidentsAPI.md#modifynotification) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/anomaly/notification | Set incident notification info
 *InsightAPI* | [**DeleteALLBatchFullChannelDetectHistory**](docs/InsightAPI.md#deleteallbatchfullchanneldetecthistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect | Delete all interference detection history
 *InsightAPI* | [**DeleteBatchFullChannelDetectHistory**](docs/InsightAPI.md#deletebatchfullchanneldetecthistory) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId} | Delete the interference detection history
 *InsightAPI* | [**ExportBatchFullChannelDetectResultData1**](docs/InsightAPI.md#exportbatchfullchanneldetectresultdata1) | **Get** /openapi/v1/{omadacId}/files/sites/{siteId}/full-channel-detect/{historyId} | Export batch interference detection results
@@ -842,6 +920,7 @@ Class | Method | HTTP request | Description
 *InsightAPI* | [**GetBatchChannelLoadsResult**](docs/InsightAPI.md#getbatchchannelloadsresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/channel-load | Get channel utilization results of batch interference detection
 *InsightAPI* | [**GetBatchFullChannelDetectApList**](docs/InsightAPI.md#getbatchfullchanneldetectaplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/ap-list | Get the AP list of batch interference detection
 *InsightAPI* | [**GetBatchFullChannelDetectStatus**](docs/InsightAPI.md#getbatchfullchanneldetectstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/status | Get the interference detection status
+*InsightAPI* | [**GetBatchInterferencesResult**](docs/InsightAPI.md#getbatchinterferencesresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/grid/interference | Get Batch Interferences Result
 *InsightAPI* | [**GetBatchWifiInterferencesResult**](docs/InsightAPI.md#getbatchwifiinterferencesresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/grid/wifi-interference | Get WiFi interference results of batch interference detection
 *InsightAPI* | [**GetChannelLoadResult**](docs/InsightAPI.md#getchannelloadresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/channel-load | Get channel utilization results of interference detection
 *InsightAPI* | [**GetDisableFullChannelDetectApMacList**](docs/InsightAPI.md#getdisablefullchanneldetectapmaclist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/batch/info | Get the MAC list of APs that cannot perform interference detection
@@ -862,6 +941,7 @@ Class | Method | HTTP request | Description
 *InsightAPI* | [**GetGridWidsData**](docs/InsightAPI.md#getgridwidsdata) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids | Query the Wireless IDS entry list
 *InsightAPI* | [**GetGridWifiInterfResult**](docs/InsightAPI.md#getgridwifiinterfresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/wlan-interference |  Get WiFi interference results of interference detection
 *InsightAPI* | [**GetGridWipsBlackList**](docs/InsightAPI.md#getgridwipsblacklist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids/blacklist | Get the dynamic blacklist entry data of Wireless IDS
+*InsightAPI* | [**GetInterfResult**](docs/InsightAPI.md#getinterfresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/grid/interference | Get Interference result
 *InsightAPI* | [**GetPortForwardStatus**](docs/InsightAPI.md#getportforwardstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/port-forwarding/{type} | Get Port Forwarding Status
 *InsightAPI* | [**GetSpectralScanHistoryResult**](docs/InsightAPI.md#getspectralscanhistoryresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/spectral-scan/aps/{apMac}/spectral-scan-result/history | Get history results of environment scanning
 *InsightAPI* | [**GetSpectralScanResult**](docs/InsightAPI.md#getspectralscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/spectral-scan/aps/{apMac}/spectral-scan-result | Get current results of environment scanning
@@ -904,6 +984,7 @@ Class | Method | HTTP request | Description
 *LocalUserAPI* | [**ClearLocalUserDynamicMac**](docs/LocalUserAPI.md#clearlocaluserdynamicmac) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id}/clear-dynamic-mac | Clear dynamic mac
 *LocalUserAPI* | [**CreateLocalUser**](docs/LocalUserAPI.md#createlocaluser) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers | Create a new local user
 *LocalUserAPI* | [**DeleteLocalUser**](docs/LocalUserAPI.md#deletelocaluser) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Delete an existing localuser
+*LocalUserAPI* | [**DeleteSelectedLocalUsers**](docs/LocalUserAPI.md#deleteselectedlocalusers) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/batch/delete | Batch delete local users
 *LocalUserAPI* | [**DownloadLocalUsers**](docs/LocalUserAPI.md#downloadlocalusers) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/files/hotspot/local-users | Download local user file (excel or csv) by localhost
 *LocalUserAPI* | [**GetLocalUser**](docs/LocalUserAPI.md#getlocaluser) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers/{id} | Get a local user for given localuserId
 *LocalUserAPI* | [**GetLocalUsers**](docs/LocalUserAPI.md#getlocalusers) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/hotspot/localusers | Get local user list
@@ -948,10 +1029,20 @@ Class | Method | HTTP request | Description
 *MACFilteringTemplateAPI* | [**GetMacFilteringGeneralSettingTemplate**](docs/MACFilteringTemplateAPI.md#getmacfilteringgeneralsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filter | Get MAC filtering template general setting
 *MACFilteringTemplateAPI* | [**ModifyMacFilteringGeneralSettingTemplate**](docs/MACFilteringTemplateAPI.md#modifymacfilteringgeneralsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filter | Modify MAC filtering template general setting
 *MACFilteringTemplateAPI* | [**ModifyMacFilteringTemplate**](docs/MACFilteringTemplateAPI.md#modifymacfilteringtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mac-filters/{filterId} | Modify MAC filtering template
+*MDNSAPI* | [**CreateMdns**](docs/MDNSAPI.md#createmdns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Create a new mDNS rule
+*MDNSAPI* | [**DeleteMdns**](docs/MDNSAPI.md#deletemdns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns/{mdnsId} | Delete an exist mDNS rule
+*MDNSAPI* | [**GetMdnsGrid**](docs/MDNSAPI.md#getmdnsgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Get mDNS rule list
+*MDNSAPI* | [**ModifyMdns**](docs/MDNSAPI.md#modifymdns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns/{mdnsId} | Modify an exist mDNS rule
+*MDNSTemplateAPI* | [**CreateMdnsTemplate**](docs/MDNSTemplateAPI.md#createmdnstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns | Create a new mDNS template rule
+*MDNSTemplateAPI* | [**DeleteMdnsTemplate**](docs/MDNSTemplateAPI.md#deletemdnstemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns/{mdnsId} | Delete an exist mDNS template rule
+*MDNSTemplateAPI* | [**GetMdnsGridTemplate**](docs/MDNSTemplateAPI.md#getmdnsgridtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns | Get mDNS template rule list
+*MDNSTemplateAPI* | [**ModifyMdnsTemplate**](docs/MDNSTemplateAPI.md#modifymdnstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns/{mdnsId} | Modify an exist mDNS template rule
 *MSPBatchOpenAPIAPI* | [**MspBatchController**](docs/MSPBatchOpenAPIAPI.md#mspbatchcontroller) | **Post** /openapi/v1/msp/{mspId}/batch | Batch Processing MSP OpenAPIs
 *MSPDeviceAPI* | [**AdoptOneForMsp**](docs/MSPDeviceAPI.md#adoptoneformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/start-adopt | Start adopt device For Msp
 *MSPDeviceAPI* | [**BatchAdoptForMsp**](docs/MSPDeviceAPI.md#batchadoptformsp) | **Post** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/cmd/devices/batch-adopt | batch adopt device in msp view
+*MSPDeviceAPI* | [**GetMspDeviceIncidentCounts**](docs/MSPDeviceAPI.md#getmspdeviceincidentcounts) | **Post** /openapi/v1/msp/{mspId}/devices/incidents | Get MSP device incident counts
 *MSPDeviceAPI* | [**GetMspKnownDeviceList**](docs/MSPDeviceAPI.md#getmspknowndevicelist) | **Get** /openapi/v1/msp/{mspId}/devices/known-devices | Get MSP known device list
+*MSPDeviceAPI* | [**GetMspObjectHealthIncident**](docs/MSPDeviceAPI.md#getmspobjecthealthincident) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/health/incident/{mac} | MSP - Get device/client health incidents
 *MSPDeviceAPI* | [**GetMspUnknownDeviceList**](docs/MSPDeviceAPI.md#getmspunknowndevicelist) | **Get** /openapi/v1/msp/{mspId}/devices/unknown-devices | Get MSP unknown device list
 *MSPDeviceAPI* | [**GetTags3**](docs/MSPDeviceAPI.md#gettags3) | **Get** /openapi/v1/msp/{mspId}/devices/tag | Get tag list
 *MSPHistoryDataRetentionAPI* | [**GetMspDataRetention**](docs/MSPHistoryDataRetentionAPI.md#getmspdataretention) | **Get** /openapi/v1/msp/{mspId}/retention | Get MSP history data retention configuration
@@ -1019,6 +1110,7 @@ Class | Method | HTTP request | Description
 *MspLogAPI* | [**ModifyLogSettingMspV2**](docs/MspLogAPI.md#modifylogsettingmspv2) | **Patch** /openapi/v1/msp/{mspId}/log-notification-setting | Modify MSP log notification v2
 *MspLogAPI* | [**ResetLogSettingMsp**](docs/MspLogAPI.md#resetlogsettingmsp) | **Post** /openapi/v1/msp/{mspId}/reset/log-notification | Reset MSP log notification
 *MspLogAPI* | [**ResolveAlertForMsp**](docs/MspLogAPI.md#resolvealertformsp) | **Post** /openapi/v1/msp/{mspId}/logs/alerts/resolve | Resolve MSP alert log
+*MspOswPortLayoutAPI* | [**GetMspOswPortLayoutVO**](docs/MspOswPortLayoutAPI.md#getmsposwportlayoutvo) | **Get** /openapi/v1/msp/{mspId}/port/layout | Get all msp osw port layout.
 *MspSettingAPI* | [**DeleteCertificate**](docs/MspSettingAPI.md#deletecertificate) | **Delete** /openapi/v1/msp/{mspId}/system/setting/certificate/{cerId} | Delete an existing msp certificate
 *MspSettingAPI* | [**DeleteSSLKey**](docs/MspSettingAPI.md#deletesslkey) | **Delete** /openapi/v1/msp/{mspId}/system/setting/ssl-key/{keyId} | Delete an existing msp SSL key
 *MspSettingAPI* | [**DisableMspControllerUpgradeNotification**](docs/MspSettingAPI.md#disablemspcontrollerupgradenotification) | **Post** /openapi/v1/msp/{mspId}/notification/disable | Turn off the software update push switch in MSP mode
@@ -1206,7 +1298,8 @@ Class | Method | HTTP request | Description
 *OSPFAPI* | [**GetGridOspfInterface**](docs/OSPFAPI.md#getgridospfinterface) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface | Get Ospf Interface list
 *OSPFAPI* | [**GetGridOspfProcess**](docs/OSPFAPI.md#getgridospfprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process | Get Ospf Process list
 *OSPFAPI* | [**GetOspfDevice**](docs/OSPFAPI.md#getospfdevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/device | Get Ospf Device list
-*OSPFAPI* | [**GetOswVlanIf**](docs/OSPFAPI.md#getoswvlanif) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vlan-interface/switches/{switchMac} | Get Switch Vlan Interface list
+*OSPFAPI* | [**GetOswVlanIf**](docs/OSPFAPI.md#getoswvlanif) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vlan-interface/switches/{switchMac} | Get Switch Vlan Interface list for OSPF
+*OSPFAPI* | [**GetStackVlanIf**](docs/OSPFAPI.md#getstackvlanif) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vlan-interface/stack/{stackId} | Get Stack Vlan Interface list for OSPF
 *OSPFAPI* | [**ModifyOspfInterface**](docs/OSPFAPI.md#modifyospfinterface) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface/{ospfInterfaceId} | Modify Ospf Interface
 *OSPFAPI* | [**ModifyOspfProcess**](docs/OSPFAPI.md#modifyospfprocess) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process/{ospfProcessId} | Modify Ospf Process
 *OUIBasedVLANAPI* | [**CreateApOuiBasedVlan**](docs/OUIBasedVLANAPI.md#createapouibasedvlan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ap-oui-rules | Create Ap oui based vlan
@@ -1226,6 +1319,7 @@ Class | Method | HTTP request | Description
 *OUIBasedVLANTemplateAPI* | [**GetGridSwitchOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#getgridswitchouibasedvlantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules | Get Switch oui based vlan template list
 *OUIBasedVLANTemplateAPI* | [**ModifyApOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#modifyapouibasedvlantemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules/{ouiBasedVlanId} | Modify Ap oui based vlan template
 *OUIBasedVLANTemplateAPI* | [**ModifySwitchOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#modifyswitchouibasedvlantemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/{ouiBasedVlanId} | Modify Switch oui based vlan template
+*OswPortLayoutAPI* | [**GetOswPortLayoutVO**](docs/OswPortLayoutAPI.md#getoswportlayoutvo) | **Get** /openapi/v1/{omadacId}/port/layout | Get all osw port layout.
 *ProfilesAPI* | [**AddPSKsToPPSKProfile**](docs/ProfilesAPI.md#addpskstoppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId}/add-psk | Add PSKs to PPSK profile
 *ProfilesAPI* | [**AutoCreatePPSK**](docs/ProfilesAPI.md#autocreateppsk) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/generate-psk | Auto Create PSKs
 *ProfilesAPI* | [**CopyWifiCallingProfile**](docs/ProfilesAPI.md#copywificallingprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/wifi-calling/{profileId}/copy | Copy wifi calling profile
@@ -1238,8 +1332,8 @@ Class | Method | HTTP request | Description
 *ProfilesAPI* | [**CreateOuiProfile**](docs/ProfilesAPI.md#createouiprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles | Create OUI profile
 *ProfilesAPI* | [**CreatePPSKProfile**](docs/ProfilesAPI.md#createppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile | Create PPSK profile
 *ProfilesAPI* | [**CreatePPSKProfileV2**](docs/ProfilesAPI.md#createppskprofilev2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/ppsk-profile | Create PPSK profile V2
-*ProfilesAPI* | [**CreateRadiusProfile**](docs/ProfilesAPI.md#createradiusprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Create a new Radius profile
-*ProfilesAPI* | [**CreateRadiusUser**](docs/ProfilesAPI.md#createradiususer) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Create a new Build-in Radius profile user
+*ProfilesAPI* | [**CreateRadiusProfile**](docs/ProfilesAPI.md#createradiusprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Create a new RADIUS profile
+*ProfilesAPI* | [**CreateRadiusUser**](docs/ProfilesAPI.md#createradiususer) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Create a new Build-in RADIUS profile user
 *ProfilesAPI* | [**CreateRateLimitProfile**](docs/ProfilesAPI.md#createratelimitprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Create rate limit profile
 *ProfilesAPI* | [**CreateServiceType**](docs/ProfilesAPI.md#createservicetype) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type | Create new Gateway QoS Service
 *ProfilesAPI* | [**CreateTimeRangeProfile**](docs/ProfilesAPI.md#createtimerangeprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Create time range profile
@@ -1253,8 +1347,8 @@ Class | Method | HTTP request | Description
 *ProfilesAPI* | [**DeleteOuiProfile**](docs/ProfilesAPI.md#deleteouiprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/{ouiId} | Delete OUI Profile
 *ProfilesAPI* | [**DeletePPSKProfile**](docs/ProfilesAPI.md#deleteppskprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Delete PPSK profile
 *ProfilesAPI* | [**DeletePSKsToPPSKProfile**](docs/ProfilesAPI.md#deletepskstoppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId}/delete-psk | Delete PSKs to PPSK profile
-*ProfilesAPI* | [**DeleteRadiusProfile**](docs/ProfilesAPI.md#deleteradiusprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Delete an exist Radius profile
-*ProfilesAPI* | [**DeleteRadiusUser**](docs/ProfilesAPI.md#deleteradiususer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Delete an exist Build-in Radius profile user
+*ProfilesAPI* | [**DeleteRadiusProfile**](docs/ProfilesAPI.md#deleteradiusprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Delete an exist RADIUS profile
+*ProfilesAPI* | [**DeleteRadiusUser**](docs/ProfilesAPI.md#deleteradiususer) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Delete an exist Build-in RADIUS profile user
 *ProfilesAPI* | [**DeleteRateLimitProfile**](docs/ProfilesAPI.md#deleteratelimitprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Delete rate limit profile
 *ProfilesAPI* | [**DeleteServiceType**](docs/ProfilesAPI.md#deleteservicetype) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Delete an existing Gateway QoS Service
 *ProfilesAPI* | [**DeleteTimeRangeProfile**](docs/ProfilesAPI.md#deletetimerangeprofile) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Delete time range profile
@@ -1269,8 +1363,8 @@ Class | Method | HTTP request | Description
 *ProfilesAPI* | [**GetOuiProfileList**](docs/ProfilesAPI.md#getouiprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles | Get OUI profile list
 *ProfilesAPI* | [**GetPPSKProfileDetail**](docs/ProfilesAPI.md#getppskprofiledetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Get PPSK profile detail
 *ProfilesAPI* | [**GetPPSKProfiles**](docs/ProfilesAPI.md#getppskprofiles) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profiles | Get PPSK profiles list
-*ProfilesAPI* | [**GetRadiusProfileList**](docs/ProfilesAPI.md#getradiusprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Get Radius profile list
-*ProfilesAPI* | [**GetRadiusUserList**](docs/ProfilesAPI.md#getradiususerlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Get Build-in Radius profile user list
+*ProfilesAPI* | [**GetRadiusProfileList**](docs/ProfilesAPI.md#getradiusprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius | Get RADIUS profile list
+*ProfilesAPI* | [**GetRadiusUserList**](docs/ProfilesAPI.md#getradiususerlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users | Get Build-in RADIUS profile user list
 *ProfilesAPI* | [**GetRateLimitProfileList**](docs/ProfilesAPI.md#getratelimitprofilelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profiles | Get rate limit profile list
 *ProfilesAPI* | [**GetServiceTypeSummary**](docs/ProfilesAPI.md#getservicetypesummary) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type-summary | Get all Gateway QoS Service&#39;s ID and name info
 *ProfilesAPI* | [**GetTimeRangeList**](docs/ProfilesAPI.md#gettimerangelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profiles | Get time range profile list
@@ -1285,8 +1379,8 @@ Class | Method | HTTP request | Description
 *ProfilesAPI* | [**ModifyMdnsProfile**](docs/ProfilesAPI.md#modifymdnsprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/bonjour-service/{id} | Modify an existing Bonjour Service
 *ProfilesAPI* | [**ModifyOuiProfile**](docs/ProfilesAPI.md#modifyouiprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/oui-profiles/{ouiId} | Modify OUI Profile
 *ProfilesAPI* | [**ModifyPPSKProfile**](docs/ProfilesAPI.md#modifyppskprofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ppsk-profile/{profileId} | Modify PPSK profile
-*ProfilesAPI* | [**ModifyRadiusProfile**](docs/ProfilesAPI.md#modifyradiusprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Modify an exist Radius profile
-*ProfilesAPI* | [**ModifyRadiusUser**](docs/ProfilesAPI.md#modifyradiususer) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Modify an exist Build-in Radius profile user
+*ProfilesAPI* | [**ModifyRadiusProfile**](docs/ProfilesAPI.md#modifyradiusprofile) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius/{radiusProfileId} | Modify an exist RADIUS profile
+*ProfilesAPI* | [**ModifyRadiusUser**](docs/ProfilesAPI.md#modifyradiususer) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/profiles/radius-server/users/{userId} | Modify an exist Build-in RADIUS profile user
 *ProfilesAPI* | [**ModifyRateLimitProfile**](docs/ProfilesAPI.md#modifyratelimitprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rate-limit-profile/{profileId} | Modify rate limit profile
 *ProfilesAPI* | [**ModifyServiceType**](docs/ProfilesAPI.md#modifyservicetype) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/profiles/service-type/{id} | Modify an existing Gateway QoS Service
 *ProfilesAPI* | [**ModifyTimeRangeProfile**](docs/ProfilesAPI.md#modifytimerangeprofile) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/time-range-profile/{profileId} | Modify time range profile
@@ -1299,8 +1393,8 @@ Class | Method | HTTP request | Description
 *ProfilesTemplateAPI* | [**CreateMdnsProfileTemplate**](docs/ProfilesTemplateAPI.md#createmdnsprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service | Create new Bonjour Service Template
 *ProfilesTemplateAPI* | [**CreateOuiProfileTemplate**](docs/ProfilesTemplateAPI.md#createouiprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles | Create OUI profile template
 *ProfilesTemplateAPI* | [**CreatePPSKProfileTemplate**](docs/ProfilesTemplateAPI.md#createppskprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile | Create PPSK profile template
-*ProfilesTemplateAPI* | [**CreateRadiusProfileTemplate**](docs/ProfilesTemplateAPI.md#createradiusprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Create a new Radius profile template
-*ProfilesTemplateAPI* | [**CreateRadiusUserTemplate**](docs/ProfilesTemplateAPI.md#createradiususertemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Create a new Build-in Radius profile user template
+*ProfilesTemplateAPI* | [**CreateRadiusProfileTemplate**](docs/ProfilesTemplateAPI.md#createradiusprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Create a new RADIUS profile template
+*ProfilesTemplateAPI* | [**CreateRadiusUserTemplate**](docs/ProfilesTemplateAPI.md#createradiususertemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Create a new Build-in RADIUS profile user template
 *ProfilesTemplateAPI* | [**CreateRateLimitProfileTemplate**](docs/ProfilesTemplateAPI.md#createratelimitprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profiles | Create rate limit profile template
 *ProfilesTemplateAPI* | [**CreateTemplateServiceType**](docs/ProfilesTemplateAPI.md#createtemplateservicetype) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type | Create siteTemplate&#39;s new Gateway QoS Service
 *ProfilesTemplateAPI* | [**CreateTimeRangeProfileTemplate**](docs/ProfilesTemplateAPI.md#createtimerangeprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profiles | Create time range profile template
@@ -1312,8 +1406,8 @@ Class | Method | HTTP request | Description
 *ProfilesTemplateAPI* | [**DeleteMdnsProfileTemplate**](docs/ProfilesTemplateAPI.md#deletemdnsprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service/{id} | Delete an existing Bonjour Service Template
 *ProfilesTemplateAPI* | [**DeleteOuiProfileTemplate**](docs/ProfilesTemplateAPI.md#deleteouiprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/{ouiId} | Delete OUI Profile template
 *ProfilesTemplateAPI* | [**DeletePPSKProfileTemplate**](docs/ProfilesTemplateAPI.md#deleteppskprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Delete PPSK profile template
-*ProfilesTemplateAPI* | [**DeleteRadiusProfileTemplate**](docs/ProfilesTemplateAPI.md#deleteradiusprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Delete an exist Radius profile template
-*ProfilesTemplateAPI* | [**DeleteRadiusUserTemplate**](docs/ProfilesTemplateAPI.md#deleteradiususertemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Delete an exist Build-in Radius profile user template
+*ProfilesTemplateAPI* | [**DeleteRadiusProfileTemplate**](docs/ProfilesTemplateAPI.md#deleteradiusprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Delete an exist RADIUS profile template
+*ProfilesTemplateAPI* | [**DeleteRadiusUserTemplate**](docs/ProfilesTemplateAPI.md#deleteradiususertemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Delete an exist Build-in RADIUS profile user template
 *ProfilesTemplateAPI* | [**DeleteRateLimitProfileTemplate**](docs/ProfilesTemplateAPI.md#deleteratelimitprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profile/{profileId} | Delete rate limit profile template
 *ProfilesTemplateAPI* | [**DeleteTemplateServiceType**](docs/ProfilesTemplateAPI.md#deletetemplateservicetype) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type/{id} | Delete an existing Gateway QoS Service in siteTemplate
 *ProfilesTemplateAPI* | [**DeleteTimeRangeProfileTemplate**](docs/ProfilesTemplateAPI.md#deletetimerangeprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profile/{profileId} | Delete time range profile template
@@ -1326,8 +1420,8 @@ Class | Method | HTTP request | Description
 *ProfilesTemplateAPI* | [**GetOuiProfileListTemplate**](docs/ProfilesTemplateAPI.md#getouiprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles | Get OUI profile template list
 *ProfilesTemplateAPI* | [**GetPPSKProfileDetailTemplate**](docs/ProfilesTemplateAPI.md#getppskprofiledetailtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Get PPSK profile template detail
 *ProfilesTemplateAPI* | [**GetPPSKProfilesTemplate**](docs/ProfilesTemplateAPI.md#getppskprofilestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profiles | Get PPSK profile templates list
-*ProfilesTemplateAPI* | [**GetRadiusProfileListTemplate**](docs/ProfilesTemplateAPI.md#getradiusprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Get Radius profile template list
-*ProfilesTemplateAPI* | [**GetRadiusUserListTemplate**](docs/ProfilesTemplateAPI.md#getradiususerlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Get Build-in Radius profile user template list
+*ProfilesTemplateAPI* | [**GetRadiusProfileListTemplate**](docs/ProfilesTemplateAPI.md#getradiusprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Get RADIUS profile template list
+*ProfilesTemplateAPI* | [**GetRadiusUserListTemplate**](docs/ProfilesTemplateAPI.md#getradiususerlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Get Build-in RADIUS profile user template list
 *ProfilesTemplateAPI* | [**GetRateLimitProfileListTemplate**](docs/ProfilesTemplateAPI.md#getratelimitprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profiles | Get rate limit profile template list
 *ProfilesTemplateAPI* | [**GetTemplateServiceTypeSummary**](docs/ProfilesTemplateAPI.md#gettemplateservicetypesummary) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type-summary | Get all Gateway QoS Service&#39;s ID and name info in siteTemplate
 *ProfilesTemplateAPI* | [**GetTimeRangeListTemplate**](docs/ProfilesTemplateAPI.md#gettimerangelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profiles | Get time range profile template list
@@ -1340,8 +1434,8 @@ Class | Method | HTTP request | Description
 *ProfilesTemplateAPI* | [**ModifyMdnsProfileTemplate**](docs/ProfilesTemplateAPI.md#modifymdnsprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service/{id} | Modify an existing Bonjour Service Template
 *ProfilesTemplateAPI* | [**ModifyOuiProfileTemplate**](docs/ProfilesTemplateAPI.md#modifyouiprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/{ouiId} | Modify OUI Profile template
 *ProfilesTemplateAPI* | [**ModifyPPSKProfileTemplate**](docs/ProfilesTemplateAPI.md#modifyppskprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Modify PPSK profile template
-*ProfilesTemplateAPI* | [**ModifyRadiusProfileTemplate**](docs/ProfilesTemplateAPI.md#modifyradiusprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Modify an exist Radius profile template
-*ProfilesTemplateAPI* | [**ModifyRadiusUserTemplate**](docs/ProfilesTemplateAPI.md#modifyradiususertemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Modify an exist Build-in Radius profile user template
+*ProfilesTemplateAPI* | [**ModifyRadiusProfileTemplate**](docs/ProfilesTemplateAPI.md#modifyradiusprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Modify an exist RADIUS profile template
+*ProfilesTemplateAPI* | [**ModifyRadiusUserTemplate**](docs/ProfilesTemplateAPI.md#modifyradiususertemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Modify an exist Build-in RADIUS profile user template
 *ProfilesTemplateAPI* | [**ModifyRateLimitProfileTemplate**](docs/ProfilesTemplateAPI.md#modifyratelimitprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profile/{profileId} | Modify rate limit profile template
 *ProfilesTemplateAPI* | [**ModifyTemplateServiceType**](docs/ProfilesTemplateAPI.md#modifytemplateservicetype) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type/{id} | Modify an existing Gateway QoS Service in siteTemplate
 *ProfilesTemplateAPI* | [**ModifyTimeRangeProfileTemplate**](docs/ProfilesTemplateAPI.md#modifytimerangeprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profile/{profileId} | Modify time range profile template
@@ -1369,15 +1463,15 @@ Class | Method | HTTP request | Description
 *ReportV2API* | [**RecordTabNetworkReport**](docs/ReportV2API.md#recordtabnetworkreport) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/report/reorder | Reorder the tab 
 *ReportV2API* | [**UpdateTabNetworkReport**](docs/ReportV2API.md#updatetabnetworkreport) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/report/tab | Update tab
 *RoutingAPI* | [**CreatePolicyRouting**](docs/RoutingAPI.md#createpolicyrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings | Create new policy routing
-*RoutingAPI* | [**CreateStaticRouting**](docs/RoutingAPI.md#createstaticrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Create new static routing
+*RoutingAPI* | [**CreateStaticRouting1**](docs/RoutingAPI.md#createstaticrouting1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Create new static routing
 *RoutingAPI* | [**DeletePolicyRouting**](docs/RoutingAPI.md#deletepolicyrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/{policyRoutingId} | Delete policy routing
-*RoutingAPI* | [**DeleteStaticRouting**](docs/RoutingAPI.md#deletestaticrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Delete static routing
+*RoutingAPI* | [**DeleteStaticRouting1**](docs/RoutingAPI.md#deletestaticrouting1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Delete static routing
 *RoutingAPI* | [**GetGridPolicyRouting**](docs/RoutingAPI.md#getgridpolicyrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings | Get policy routing list
-*RoutingAPI* | [**GetGridStaticRouting**](docs/RoutingAPI.md#getgridstaticrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Get static routing list
+*RoutingAPI* | [**GetGridStaticRouting1**](docs/RoutingAPI.md#getgridstaticrouting1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Get static routing list
 *RoutingAPI* | [**GetStaticRoutingInterfaceList**](docs/RoutingAPI.md#getstaticroutinginterfacelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/interfaces | Get static routing interface list
 *RoutingAPI* | [**ModifyPolicyRouting**](docs/RoutingAPI.md#modifypolicyrouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/{policyRoutingId} | Modify policy routing
 *RoutingAPI* | [**ModifyPolicyRoutingIndex**](docs/RoutingAPI.md#modifypolicyroutingindex) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/modifyIndex | Modify policy routing Index
-*RoutingAPI* | [**ModifyStaticRouting**](docs/RoutingAPI.md#modifystaticrouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Modify static routing
+*RoutingAPI* | [**ModifyStaticRouting1**](docs/RoutingAPI.md#modifystaticrouting1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Modify static routing
 *RoutingTemplateAPI* | [**CreateTemplatePolicyRouting**](docs/RoutingTemplateAPI.md#createtemplatepolicyrouting) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings | Create site template&#39;s policy routing
 *RoutingTemplateAPI* | [**CreateTemplateStaticRouting**](docs/RoutingTemplateAPI.md#createtemplatestaticrouting) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/static-routings | Create site template&#39;s static routing
 *RoutingTemplateAPI* | [**DeleteTemplatePolicyRouting**](docs/RoutingTemplateAPI.md#deletetemplatepolicyrouting) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/routing/policy-routings/{policyRoutingId} | Delete site template&#39;s policy routing
@@ -1453,6 +1547,15 @@ Class | Method | HTTP request | Description
 *SIMTemplateAPI* | [**QuerySimCardQuotaSettingTemplate**](docs/SIMTemplateAPI.md#querysimcardquotasettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/quota/{simCard} | Get one of Dual-SIM card&#39;s SIM data setting template
 *SIMTemplateAPI* | [**QuerySmsPolicySettingTemplate**](docs/SIMTemplateAPI.md#querysmspolicysettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/policy | Query SMS policy setting template
 *SIMTemplateAPI* | [**QuerySmsRouterCommandTemplate**](docs/SIMTemplateAPI.md#querysmsroutercommandtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/sms/router-command | Query SMS router command template
+*SNMPAPI* | [**GetSnmpIncompatibleDevices**](docs/SNMPAPI.md#getsnmpincompatibledevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp/incompatible-devices | Get the list of site devices that do not support SNMP v3 enhanced configuration
+*SNMPAPI* | [**GetSnmpSetting**](docs/SNMPAPI.md#getsnmpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Get SNMP setting
+*SNMPAPI* | [**ModifySnmpSetting**](docs/SNMPAPI.md#modifysnmpsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Modify SNMP setting
+*SNMPTemplateAPI* | [**GetSnmpSettingTemplate**](docs/SNMPTemplateAPI.md#getsnmpsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/snmp | Get SNMP template setting
+*SNMPTemplateAPI* | [**ModifySnmpSettingTemplate**](docs/SNMPTemplateAPI.md#modifysnmpsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/snmp | Modify SNMP template setting
+*SSHAPI* | [**GetSshSetting**](docs/SSHAPI.md#getsshsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Get SSH setting
+*SSHAPI* | [**UpdateSshSetting**](docs/SSHAPI.md#updatesshsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Modify SSH setting
+*SSHTemplateAPI* | [**GetSshSettingTemplate**](docs/SSHTemplateAPI.md#getsshsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ssh | Get SSH template setting
+*SSHTemplateAPI* | [**UpdateSshSettingTemplate**](docs/SSHTemplateAPI.md#updatesshsettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ssh | Modify SSH template setting
 *SSLVPNAPI* | [**BatchDeleteLockedSslVpnTunnel**](docs/SSLVPNAPI.md#batchdeletelockedsslvpntunnel) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels | Batch delete SSL VPN locked tunnel
 *SSLVPNAPI* | [**BatchDeleteSslVpnUserGroup**](docs/SSLVPNAPI.md#batchdeletesslvpnusergroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/user-groups | Batch delete SSL VPN user group
 *SSLVPNAPI* | [**CreateLockedSslVpnTunnuel**](docs/SSLVPNAPI.md#createlockedsslvpntunnuel) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vpn/ssl-vpn-server/locked-tunnels | Create locked SSL VPN tunnel
@@ -1509,87 +1612,22 @@ Class | Method | HTTP request | Description
 *ScheduleAPI* | [**GetPoeScheduleList**](docs/ScheduleAPI.md#getpoeschedulelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules | Get PoE schedule list
 *ScheduleAPI* | [**GetPortScheduleList**](docs/ScheduleAPI.md#getportschedulelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules | Get port schedule list
 *ScheduleAPI* | [**GetPortSchedulePorts**](docs/ScheduleAPI.md#getportscheduleports) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/port-status-ports | Get device ports list supporting port schedule
-*ScheduleAPI* | [**GetRebootScheduleList2**](docs/ScheduleAPI.md#getrebootschedulelist2) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules | Get reboot schedule list
+*ScheduleAPI* | [**GetRebootScheduleList1**](docs/ScheduleAPI.md#getrebootschedulelist1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules | Get reboot schedule list
 *ScheduleAPI* | [**GetUpgradeScheduleList**](docs/ScheduleAPI.md#getupgradeschedulelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules | Get upgrade schedule list
 *ScheduleAPI* | [**ModifyPoeSchedule**](docs/ScheduleAPI.md#modifypoeschedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules/{poeScheduleId} | Modify PoE Schedule
 *ScheduleAPI* | [**ModifyPortSchedule**](docs/ScheduleAPI.md#modifyportschedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules/{portScheduleId} | Modify Port Schedule
 *ScheduleAPI* | [**ModifyRebootSchedule1**](docs/ScheduleAPI.md#modifyrebootschedule1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules/{id} | Modify reboot schedule
 *ScheduleAPI* | [**ModifyUpgradeSchedule**](docs/ScheduleAPI.md#modifyupgradeschedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules/{id} | Modify upgrade schedule
+*ScheduleTemplateAPI* | [**AddPortScheduleTemplate**](docs/ScheduleTemplateAPI.md#addportscheduletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules | Create a new Port Schedule Template
 *ScheduleTemplateAPI* | [**CreateRebootSchedule**](docs/ScheduleTemplateAPI.md#createrebootschedule) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules | Create new reboot schedule template
 *ScheduleTemplateAPI* | [**DeleteRebootSchedule**](docs/ScheduleTemplateAPI.md#deleterebootschedule) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules/{id} | Delete reboot schedule template
-*ScheduleTemplateAPI* | [**GetRebootScheduleList1**](docs/ScheduleTemplateAPI.md#getrebootschedulelist1) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules | Get reboot schedule template list
+*ScheduleTemplateAPI* | [**GetPortScheduleListTemplate**](docs/ScheduleTemplateAPI.md#getportschedulelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules | Get port Schedule list
+*ScheduleTemplateAPI* | [**GetRebootScheduleList**](docs/ScheduleTemplateAPI.md#getrebootschedulelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules | Get reboot schedule template list
+*ScheduleTemplateAPI* | [**ModifyPortScheduleTemplate**](docs/ScheduleTemplateAPI.md#modifyportscheduletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId} | Modify a Port Schedule Template
 *ScheduleTemplateAPI* | [**ModifyRebootSchedule**](docs/ScheduleTemplateAPI.md#modifyrebootschedule) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/reboot-schedules/{id} | Modify reboot schedule template
-*ServiceAPI* | [**BatchExportDhcpReservationListToFile**](docs/ServiceAPI.md#batchexportdhcpreservationlisttofile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/batch-export | Batch Export DHCP reservation list to file
-*ServiceAPI* | [**ClearDnsCacheList**](docs/ServiceAPI.md#cleardnscachelist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/dns-cache-data/clear | Clear DNS cache list
-*ServiceAPI* | [**CreateDdns**](docs/ServiceAPI.md#createddns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns | Create a new Dynamic DNS entry
-*ServiceAPI* | [**CreateDhcpReservation**](docs/ServiceAPI.md#createdhcpreservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp | Create a new DHCP reservation
-*ServiceAPI* | [**CreateMdns**](docs/ServiceAPI.md#createmdns) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Create a new mDNS rule
-*ServiceAPI* | [**DeleteDdns**](docs/ServiceAPI.md#deleteddns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns/{ddnsId} | Delete an exist Dynamic DNS entry
-*ServiceAPI* | [**DeleteDhcpReservation**](docs/ServiceAPI.md#deletedhcpreservation) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac} | Delete an exist DHCP reservation
-*ServiceAPI* | [**DeleteMdns**](docs/ServiceAPI.md#deletemdns) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns/{mdnsId} | Delete an exist mDNS rule
-*ServiceAPI* | [**DownloadDhcpImportResult**](docs/ServiceAPI.md#downloaddhcpimportresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/import-result | Download DHCP import result
-*ServiceAPI* | [**ExportDhcpReservation**](docs/ServiceAPI.md#exportdhcpreservation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac}/export | Export DHCP reservation to IP_MAC Binding
-*ServiceAPI* | [**ExportDhcpReservationListToFile**](docs/ServiceAPI.md#exportdhcpreservationlisttofile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/export | Export DHCP reservation list to file
-*ServiceAPI* | [**GetDdnsGrid**](docs/ServiceAPI.md#getddnsgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns | Get Dynamic DNS list
-*ServiceAPI* | [**GetDhcpReservationGrid**](docs/ServiceAPI.md#getdhcpreservationgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp | Get DHCP reservation list
-*ServiceAPI* | [**GetDnsCacheList**](docs/ServiceAPI.md#getdnscachelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/dns-cache-data | Get DNS cache list
-*ServiceAPI* | [**GetDnsCacheSetting**](docs/ServiceAPI.md#getdnscachesetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Get DNS cache
-*ServiceAPI* | [**GetDnsProxy**](docs/ServiceAPI.md#getdnsproxy) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Get DNS proxy setting
-*ServiceAPI* | [**GetGridAllDhcpUserList**](docs/ServiceAPI.md#getgridalldhcpuserlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list | Get the dhcp user list of all servers
-*ServiceAPI* | [**GetIgmp**](docs/ServiceAPI.md#getigmp) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Get the IGMP settings
-*ServiceAPI* | [**GetIptv**](docs/ServiceAPI.md#getiptv) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Get IPTV setting
-*ServiceAPI* | [**GetMdnsGrid**](docs/ServiceAPI.md#getmdnsgrid) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns | Get mDNS rule list
-*ServiceAPI* | [**GetMld**](docs/ServiceAPI.md#getmld) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mld | Get the MLD settings
-*ServiceAPI* | [**GetSnmpIncompatibleDevices**](docs/ServiceAPI.md#getsnmpincompatibledevices) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp/incompatible-devices | Get the list of site devices that do not support SNMP v3 enhanced configuration
-*ServiceAPI* | [**GetSnmpSetting**](docs/ServiceAPI.md#getsnmpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Get SNMP setting
-*ServiceAPI* | [**GetSshSetting**](docs/ServiceAPI.md#getsshsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Get SSH setting
-*ServiceAPI* | [**GetUpnpSetting**](docs/ServiceAPI.md#getupnpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Get UPnP setting
-*ServiceAPI* | [**ImportDhcpReservationListFromFile**](docs/ServiceAPI.md#importdhcpreservationlistfromfile) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/files/dhcp/import | Import DHCP reservation list from file
-*ServiceAPI* | [**ModifyDdns**](docs/ServiceAPI.md#modifyddns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/ddns/{ddnsId} | Modify an exist Dynamic DNS entry
-*ServiceAPI* | [**ModifyDhcpReservation**](docs/ServiceAPI.md#modifydhcpreservation) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/{mac} | Modify an exist DHCP reservation
-*ServiceAPI* | [**ModifyDnsCacheSetting**](docs/ServiceAPI.md#modifydnscachesetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-cache | Modify DNS cache setting
-*ServiceAPI* | [**ModifyDnsProxy**](docs/ServiceAPI.md#modifydnsproxy) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dns-proxy | Modify DNS proxy setting
-*ServiceAPI* | [**ModifyIgmp**](docs/ServiceAPI.md#modifyigmp) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/igmp | Modify the IGMP settings
-*ServiceAPI* | [**ModifyIptv**](docs/ServiceAPI.md#modifyiptv) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/iptv | Modify IPTV setting
-*ServiceAPI* | [**ModifyMdns**](docs/ServiceAPI.md#modifymdns) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mdns/{mdnsId} | Modify an exist mDNS rule
-*ServiceAPI* | [**ModifyMld**](docs/ServiceAPI.md#modifymld) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/mld | Modify the MLD settings
-*ServiceAPI* | [**ModifySnmpSetting**](docs/ServiceAPI.md#modifysnmpsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/snmp | Modify SNMP setting
-*ServiceAPI* | [**ReservationFromDhcpUserList**](docs/ServiceAPI.md#reservationfromdhcpuserlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/service/dhcp/user-list/reservation | Reservation From Dhcp User List
-*ServiceAPI* | [**UpdateSshSetting**](docs/ServiceAPI.md#updatesshsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ssh | Modify SSH setting
-*ServiceAPI* | [**UpdateUpnpSetting**](docs/ServiceAPI.md#updateupnpsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Modify UPnP setting
-*ServiceTemplateAPI* | [**AddPortScheduleTemplate**](docs/ServiceTemplateAPI.md#addportscheduletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules | Create a new Port Schedule Template
-*ServiceTemplateAPI* | [**CreateDdnsTemplate**](docs/ServiceTemplateAPI.md#createddnstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns | Create a new Dynamic DNS template entry
-*ServiceTemplateAPI* | [**CreateMdnsTemplate**](docs/ServiceTemplateAPI.md#createmdnstemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns | Create a new mDNS template rule
-*ServiceTemplateAPI* | [**DeleteDdnsTemplate**](docs/ServiceTemplateAPI.md#deleteddnstemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/{ddnsId} | Delete an exist Dynamic DNS template entry
-*ServiceTemplateAPI* | [**DeleteMdnsTemplate**](docs/ServiceTemplateAPI.md#deletemdnstemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns/{mdnsId} | Delete an exist mDNS template rule
-*ServiceTemplateAPI* | [**GetDdnsGridTemplate**](docs/ServiceTemplateAPI.md#getddnsgridtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns | Get Dynamic DNS template list
-*ServiceTemplateAPI* | [**GetDnsCacheSettingTemplate**](docs/ServiceTemplateAPI.md#getdnscachesettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/dns-cache | Get DNS cache setting template
-*ServiceTemplateAPI* | [**GetDnsProxyTemplate**](docs/ServiceTemplateAPI.md#getdnsproxytemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-proxy | Get DNS proxy template setting
-*ServiceTemplateAPI* | [**GetGlobalDdnsUpdateUrlTemplate**](docs/ServiceTemplateAPI.md#getglobalddnsupdateurltemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/update-url | Get DDNS update url
+*ScheduleTemplateAPI* | [**RemovePortScheduleTemplate**](docs/ScheduleTemplateAPI.md#removeportscheduletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId} | Delete Port Schedule Template
 *ServiceTemplateAPI* | [**GetIgmpTemplate**](docs/ServiceTemplateAPI.md#getigmptemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/igmp | Get IGMP template setting
-*ServiceTemplateAPI* | [**GetIptvTemplate**](docs/ServiceTemplateAPI.md#getiptvtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/iptv | Get IPTV template setting
-*ServiceTemplateAPI* | [**GetIptvTemplateServerSetting**](docs/ServiceTemplateAPI.md#getiptvtemplateserversetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv | Get IPTV setting template
-*ServiceTemplateAPI* | [**GetMdnsGridTemplate**](docs/ServiceTemplateAPI.md#getmdnsgridtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns | Get mDNS template rule list
-*ServiceTemplateAPI* | [**GetPortScheduleListTemplate**](docs/ServiceTemplateAPI.md#getportschedulelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules | Get port Schedule list
-*ServiceTemplateAPI* | [**GetRebootScheduleList**](docs/ServiceTemplateAPI.md#getrebootschedulelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/rebootSchedules | Get reboot schedule templates
-*ServiceTemplateAPI* | [**GetSnmpSettingTemplate**](docs/ServiceTemplateAPI.md#getsnmpsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/snmp | Get SNMP template setting
-*ServiceTemplateAPI* | [**GetSshSettingTemplate**](docs/ServiceTemplateAPI.md#getsshsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ssh | Get SSH template setting
-*ServiceTemplateAPI* | [**GetUpnpSettingTemplate**](docs/ServiceTemplateAPI.md#getupnpsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/upnp | Get UPnP template setting
-*ServiceTemplateAPI* | [**ModifyDdnsTemplate**](docs/ServiceTemplateAPI.md#modifyddnstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/ddns/{ddnsId} | Modify an exist Dynamic DNS template entry
-*ServiceTemplateAPI* | [**ModifyDnsCacheSettingTemplate**](docs/ServiceTemplateAPI.md#modifydnscachesettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-cache | Modify DNS cache setting
-*ServiceTemplateAPI* | [**ModifyDnsProxyTemplate**](docs/ServiceTemplateAPI.md#modifydnsproxytemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-proxy | Modify DNS proxy template setting
 *ServiceTemplateAPI* | [**ModifyIgmpTemplate**](docs/ServiceTemplateAPI.md#modifyigmptemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/igmp | Modify IGMP template setting
-*ServiceTemplateAPI* | [**ModifyIptvTemplate**](docs/ServiceTemplateAPI.md#modifyiptvtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv/iptv | Modify IPTV template setting
-*ServiceTemplateAPI* | [**ModifyIptvTemplateServerSetting**](docs/ServiceTemplateAPI.md#modifyiptvtemplateserversetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/iptv | Modify IPTV setting template
-*ServiceTemplateAPI* | [**ModifyMdnsTemplate**](docs/ServiceTemplateAPI.md#modifymdnstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/mdns/{mdnsId} | Modify an exist mDNS template rule
-*ServiceTemplateAPI* | [**ModifyPortScheduleTemplate**](docs/ServiceTemplateAPI.md#modifyportscheduletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId} | Modify a Port Schedule Template
-*ServiceTemplateAPI* | [**ModifyRebootScheduleTemplate**](docs/ServiceTemplateAPI.md#modifyrebootscheduletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/rebootSchedules/{rebootScheduleId} | Modify reboot schedule template
-*ServiceTemplateAPI* | [**ModifySnmpSettingTemplate**](docs/ServiceTemplateAPI.md#modifysnmpsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/snmp | Modify SNMP template setting
-*ServiceTemplateAPI* | [**RefreshDnsCacheListTemplate**](docs/ServiceTemplateAPI.md#refreshdnscachelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/dns-cache-data/refresh | Refresh dns cache list
-*ServiceTemplateAPI* | [**RemovePortScheduleTemplate**](docs/ServiceTemplateAPI.md#removeportscheduletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId} | Delete Port Schedule Template
-*ServiceTemplateAPI* | [**RemoveRebootScheduleTemplate**](docs/ServiceTemplateAPI.md#removerebootscheduletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/rebootSchedules/{rebootScheduleId} | Remove reboot schedule template
-*ServiceTemplateAPI* | [**UpdateSshSettingTemplate**](docs/ServiceTemplateAPI.md#updatesshsettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ssh | Modify SSH template setting
-*ServiceTemplateAPI* | [**UpdateUpnpSettingTemplate**](docs/ServiceTemplateAPI.md#updateupnpsettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/upnp | Modify UPnP template setting
 *SessionLimitAPI* | [**CreateSessionLimitRule**](docs/SessionLimitAPI.md#createsessionlimitrule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules | Create session limit rule
 *SessionLimitAPI* | [**DeleteSessionLimitRule**](docs/SessionLimitAPI.md#deletesessionlimitrule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules/{ruleId} | Delete session limit rule
 *SessionLimitAPI* | [**GetGridSessionLimitRule**](docs/SessionLimitAPI.md#getgridsessionlimitrule) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/session-limit/rules | Get session limit rule list
@@ -1627,6 +1665,7 @@ Class | Method | HTTP request | Description
 *SiteAPI* | [**GetSiteUrlByOpenApi**](docs/SiteAPI.md#getsiteurlbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url | Get site url
 *SiteAPI* | [**GetTags1**](docs/SiteAPI.md#gettags1) | **Get** /openapi/v1/{omadacId}/sites/tags | Get site tag list
 *SiteAPI* | [**GetUnplacedSitePositions**](docs/SiteAPI.md#getunplacedsitepositions) | **Get** /openapi/v1/{omadacId}/unplaced-site-position | Obtain the geographic location information of unplaced Sites
+*SiteAPI* | [**ModifySiteWirelessFeaturePingPangEnable**](docs/SiteAPI.md#modifysitewirelessfeaturepingpangenable) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/roaming/pingpang/enable | enable the site setting of ping pang suppression
 *SiteAPI* | [**ModifyTag1**](docs/SiteAPI.md#modifytag1) | **Patch** /openapi/v1/{omadacId}/sites/tags | Modify an existing site tag
 *SiteAPI* | [**UpdateSiteDeviceAccountSetting**](docs/SiteAPI.md#updatesitedeviceaccountsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/device-account | Update site device account setting
 *SiteAPI* | [**UpdateSiteEntity**](docs/SiteAPI.md#updatesiteentity) | **Put** /openapi/v1/{omadacId}/sites/{siteId} | Modify an existing site
@@ -1635,6 +1674,8 @@ Class | Method | HTTP request | Description
 *SiteConfigurationAPI* | [**GetChannelLimitSetting**](docs/SiteConfigurationAPI.md#getchannellimitsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/channel-limit | Get site channel limit setting
 *SiteConfigurationAPI* | [**GetDisasterModeStatus**](docs/SiteConfigurationAPI.md#getdisastermodestatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/disaster | Get the status of disaster modes in Japan
 *SiteConfigurationAPI* | [**GetExistSiteSettingByOpenApi**](docs/SiteConfigurationAPI.md#getexistsitesettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/exist | Query site setting exist or not
+*SiteConfigurationAPI* | [**GetJumboSetting**](docs/SiteConfigurationAPI.md#getjumbosetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/jumbo | Get site jumbo setting
+*SiteConfigurationAPI* | [**GetLagHashAlgSetting**](docs/SiteConfigurationAPI.md#getlaghashalgsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lag-hash-alg | Get site lag hash algorithm setting
 *SiteConfigurationAPI* | [**GetLldpSetting**](docs/SiteConfigurationAPI.md#getlldpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/lldp | Get site lldp setting
 *SiteConfigurationAPI* | [**GetMeshSetting**](docs/SiteConfigurationAPI.md#getmeshsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/mesh | Get site mesh setting
 *SiteConfigurationAPI* | [**GetMulticastRateLimitByOpenApi**](docs/SiteConfigurationAPI.md#getmulticastratelimitbyopenapi) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multicast-rate-limit | Get site multicast rate limit setting
@@ -1658,6 +1699,8 @@ Class | Method | HTTP request | Description
 *SiteConfigurationAPI* | [**UpdatePortalLogoutDomainSetting**](docs/SiteConfigurationAPI.md#updateportallogoutdomainsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/portal-logout | Modify portal logout domain setting
 *SiteConfigurationAPI* | [**UpdateRemoteLoggingSetting**](docs/SiteConfigurationAPI.md#updateremoteloggingsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/remote-logging | Modify site remote logging setting
 *SiteConfigurationAPI* | [**UpdateRoamingSetting**](docs/SiteConfigurationAPI.md#updateroamingsetting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/roaming | Modify site roaming setting
+*SiteConfigurationAPI* | [**UpdateSiteJumboSetting**](docs/SiteConfigurationAPI.md#updatesitejumbosetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/jumbo | Modify site jumbo setting
+*SiteConfigurationAPI* | [**UpdateSiteLagHashAlgSetting**](docs/SiteConfigurationAPI.md#updatesitelaghashalgsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/lag-hash-alg | Modify site lag hash algorithm setting
 *SiteConfigurationAPI* | [**UpdateSiteLedSetting**](docs/SiteConfigurationAPI.md#updatesiteledsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/led | Modify site led setting
 *SiteTemplateAPI* | [**BatchSyncSiteWithTemplate**](docs/SiteTemplateAPI.md#batchsyncsitewithtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multi-sites/sync | Batch sync site settings with the site template
 *SiteTemplateAPI* | [**BindSiteTemplate**](docs/SiteTemplateAPI.md#bindsitetemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/bind-site | Bind site with a site template
@@ -1672,6 +1715,7 @@ Class | Method | HTTP request | Description
 *SiteTemplateAPI* | [**DeviceTemplateSyncConfigBatch**](docs/SiteTemplateAPI.md#devicetemplatesyncconfigbatch) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/batch-sync-config | Device template batch sync config to devices
 *SiteTemplateAPI* | [**DeviceTemplateUnbindDeviceBatch**](docs/SiteTemplateAPI.md#devicetemplateunbinddevicebatch) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/batch-unbinddevice | Device template batch unbind devices
 *SiteTemplateAPI* | [**GetBoundSites**](docs/SiteTemplateAPI.md#getboundsites) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/binding-sites | Get sites info which bound to the site template
+*SiteTemplateAPI* | [**GetExistSiteTemplateSettingByOpenApi**](docs/SiteTemplateAPI.md#getexistsitetemplatesettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/exist | Query site template setting exist or not
 *SiteTemplateAPI* | [**GetGridDeviceTemplate**](docs/SiteTemplateAPI.md#getgriddevicetemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates | Get deviceTemplate info list
 *SiteTemplateAPI* | [**GetGridDeviceTemplateAvailableDevices**](docs/SiteTemplateAPI.md#getgriddevicetemplateavailabledevices) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/available-bind-devices | Get deviceTemplate&#39;s available devices
 *SiteTemplateAPI* | [**GetGridDeviceTemplateBoundDevices**](docs/SiteTemplateAPI.md#getgriddevicetemplatebounddevices) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId}/bound-devices | Get deviceTemplate&#39;s bound devices
@@ -1685,44 +1729,48 @@ Class | Method | HTTP request | Description
 *SiteTemplateAPI* | [**GetSiteTemplateList**](docs/SiteTemplateAPI.md#getsitetemplatelist) | **Get** /openapi/v1/{omadacId}/sitetemplates | Get site template list
 *SiteTemplateAPI* | [**GetSiteTemplateModules**](docs/SiteTemplateAPI.md#getsitetemplatemodules) | **Get** /openapi/v1/{omadacId}/sitetemplates/modules | Get function modules which can be selected when creating site template
 *SiteTemplateAPI* | [**GetSiteTemplateService**](docs/SiteTemplateAPI.md#getsitetemplateservice) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service | get site template service
+*SiteTemplateAPI* | [**GetSiteTemplateSettingCap**](docs/SiteTemplateAPI.md#getsitetemplatesettingcap) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/capacity | Get siteTemplate capabilities.
+*SiteTemplateAPI* | [**GetSiteTemplateSpecification**](docs/SiteTemplateAPI.md#getsitetemplatespecification) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/specification | Get siteTemplate functional specifications
 *SiteTemplateAPI* | [**GetSiteTemplateWirelessFeature**](docs/SiteTemplateAPI.md#getsitetemplatewirelessfeature) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/wireless/feature | get site template WirelessFeature
 *SiteTemplateAPI* | [**GetSitesOverrides**](docs/SiteTemplateAPI.md#getsitesoverrides) | **Get** /openapi/v1/{omadacId}/site-overrides | get site overrides
 *SiteTemplateAPI* | [**GetValidDeviceModel**](docs/SiteTemplateAPI.md#getvaliddevicemodel) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/available-devicemodels | get valid device template
 *SiteTemplateAPI* | [**ModifyDeviceTemplate**](docs/SiteTemplateAPI.md#modifydevicetemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/devicetemplates/{deviceTemplateId} | modify device template
 *SiteTemplateAPI* | [**UnbindSite**](docs/SiteTemplateAPI.md#unbindsite) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/batch-unbind | Batch unbind sites from a site template
 *SiteTemplateAPI* | [**UpdateSiteTemplateEntity**](docs/SiteTemplateAPI.md#updatesitetemplateentity) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId} | Modify an existing site template
-*SiteTemplateConfigurationAPI* | [**GetBandSteeringTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#getbandsteeringtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/band-steering | Get site template band steering setting
-*SiteTemplateConfigurationAPI* | [**GetBeaconControlTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#getbeaconcontroltemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/beacon-control | Get site template beacon control setting
 *SiteTemplateConfigurationAPI* | [**GetChannelLimitTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#getchannellimittemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/channel-limit | Get site template channel limit setting
-*SiteTemplateConfigurationAPI* | [**GetExistSiteTemplateSettingByOpenApi**](docs/SiteTemplateConfigurationAPI.md#getexistsitetemplatesettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/exist | Query site template setting exist or not
 *SiteTemplateConfigurationAPI* | [**GetLldpTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#getlldptemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lldp | Get site template lldp setting
 *SiteTemplateConfigurationAPI* | [**GetMeshTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#getmeshtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Get site template mesh setting
 *SiteTemplateConfigurationAPI* | [**GetMulticastRateLimitTemplateByOpenApi**](docs/SiteTemplateConfigurationAPI.md#getmulticastratelimittemplatebyopenapi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multicast-rate-limit | Get site template multicast rate limit setting
 *SiteTemplateConfigurationAPI* | [**GetRemoteLoggingTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#getremoteloggingtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remote-logging | Get site template remote logging setting
 *SiteTemplateConfigurationAPI* | [**GetRoamingTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#getroamingtemplatesetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/roaming | Get site template roaming setting
+*SiteTemplateConfigurationAPI* | [**GetSiteTemplateJumboSetting**](docs/SiteTemplateConfigurationAPI.md#getsitetemplatejumbosetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/jumbo | Get site template jumbo setting
+*SiteTemplateConfigurationAPI* | [**GetSiteTemplateLagHashAlgSetting**](docs/SiteTemplateConfigurationAPI.md#getsitetemplatelaghashalgsetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lag-hash-alg | Get site template lag hash alg setting
 *SiteTemplateConfigurationAPI* | [**GetSiteTemplateLedSetting**](docs/SiteTemplateConfigurationAPI.md#getsitetemplateledsetting) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/led | Get site template led setting
-*SiteTemplateConfigurationAPI* | [**GetSiteTemplateSettingCap**](docs/SiteTemplateConfigurationAPI.md#getsitetemplatesettingcap) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/capacity | Get siteTemplate capabilities.
-*SiteTemplateConfigurationAPI* | [**GetSiteTemplateSpecification**](docs/SiteTemplateConfigurationAPI.md#getsitetemplatespecification) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/specification | Get siteTemplate functional specifications
-*SiteTemplateConfigurationAPI* | [**ModifySiteConfigurationTemplate**](docs/SiteTemplateConfigurationAPI.md#modifysiteconfigurationtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/configuration | Modify Site template configuration settings
+*SiteTemplateConfigurationAPI* | [**GetSiteTemplateRememberSettingByOpenApi**](docs/SiteTemplateConfigurationAPI.md#getsitetemplateremembersettingbyopenapi) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remember-device | Query site template setting exist or not
 *SiteTemplateConfigurationAPI* | [**ModifySiteServiceTemplate**](docs/SiteTemplateConfigurationAPI.md#modifysiteservicetemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/service | Modify Site template service settings
 *SiteTemplateConfigurationAPI* | [**ModifySiteTemplateGeneralConfig**](docs/SiteTemplateConfigurationAPI.md#modifysitetemplategeneralconfig) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/general/config | Modify the general configuration settings of the Site template
+*SiteTemplateConfigurationAPI* | [**ModifySiteTemplateRememberSettingByOpenApi**](docs/SiteTemplateConfigurationAPI.md#modifysitetemplateremembersettingbyopenapi) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remember-device | Modify site template remember device setting
 *SiteTemplateConfigurationAPI* | [**ModifySiteTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#modifysitetemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting | Modify Site template settings
 *SiteTemplateConfigurationAPI* | [**UpdateBandSteeringTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#updatebandsteeringtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/band-steering | Modify site template band steering setting
 *SiteTemplateConfigurationAPI* | [**UpdateBeaconControlTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#updatebeaconcontroltemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/beacon-control | Modify site template beacon control setting
 *SiteTemplateConfigurationAPI* | [**UpdateChannelLimitTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#updatechannellimittemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/channel-limit | Modify site template channel limit setting
 *SiteTemplateConfigurationAPI* | [**UpdateLldpTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#updatelldptemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lldp | Modify site template lldp setting
 *SiteTemplateConfigurationAPI* | [**UpdateMcastRateLimitSettingTemplateByOpenApi**](docs/SiteTemplateConfigurationAPI.md#updatemcastratelimitsettingtemplatebyopenapi) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/multicast-rate-limit | Modify site template multicast rate limit setting
-*SiteTemplateConfigurationAPI* | [**UpdateMeshTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#updatemeshtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Modify site template mesh setting
+*SiteTemplateConfigurationAPI* | [**UpdateMeshTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#updatemeshtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/mesh | Modify site template mesh setmesh setting
 *SiteTemplateConfigurationAPI* | [**UpdateRemoteLoggingTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#updateremoteloggingtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/remote-logging | Modify site template remote logging setting
 *SiteTemplateConfigurationAPI* | [**UpdateRoamingTemplateSetting**](docs/SiteTemplateConfigurationAPI.md#updateroamingtemplatesetting) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/roaming | Modify site template roaming setting
+*SiteTemplateConfigurationAPI* | [**UpdateSiteTemplateJumboSetting**](docs/SiteTemplateConfigurationAPI.md#updatesitetemplatejumbosetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/jumbo | Modify site template jumbo setting
+*SiteTemplateConfigurationAPI* | [**UpdateSiteTemplateLagHashAlgSetting**](docs/SiteTemplateConfigurationAPI.md#updatesitetemplatelaghashalgsetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lag-hash-alg | Modify site template lag hash alg setting
 *SiteTemplateConfigurationAPI* | [**UpdateSiteTemplateLedSetting**](docs/SiteTemplateConfigurationAPI.md#updatesitetemplateledsetting) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/led | Modify site template led setting
 *StackAPI* | [**BatchApplyStackNetworks**](docs/StackAPI.md#batchapplystacknetworks) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/networks | Batch modify stack vlan interface status
 *StackAPI* | [**BatchModifyOswStackPorts**](docs/StackAPI.md#batchmodifyoswstackports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/ports/config | Batch modify stack port
 *StackAPI* | [**BatchModifySwitchStackPortSetting**](docs/StackAPI.md#batchmodifyswitchstackportsetting) | **Patch** /openapi/v2/{omadacId}/sites/{siteId}/stacks/{stackId}/multi-ports/config | Batch modify stack port V2
 *StackAPI* | [**CancelStackCableTest**](docs/StackAPI.md#cancelstackcabletest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/stacks/{stackId}/cancel | Cancel stack cable test
+*StackAPI* | [**CreateLoopbackInterface1**](docs/StackAPI.md#createloopbackinterface1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/loopback-interface | Create Stack Loopback Interface
 *StackAPI* | [**CreateOswStack**](docs/StackAPI.md#createoswstack) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks | Create Switch Stack
 *StackAPI* | [**CreateStackStaticRouting**](docs/StackAPI.md#createstackstaticrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/staticRoutings | Create stack staticRouting
 *StackAPI* | [**CreateStackVrf**](docs/StackAPI.md#createstackvrf) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/vrfs | Create new stack vrf
+*StackAPI* | [**DeleteLoopbackInterface1**](docs/StackAPI.md#deleteloopbackinterface1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/loopback-interface/{loopbackInterfaceId} | Delete Stack Loopback Interface
 *StackAPI* | [**DeleteOswStack**](docs/StackAPI.md#deleteoswstack) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId} | Delete Switch Stack
 *StackAPI* | [**DeleteOswStackLag**](docs/StackAPI.md#deleteoswstacklag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Delete stack lag
 *StackAPI* | [**DeleteStackStaticRouting**](docs/StackAPI.md#deletestackstaticrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/staticRoutings/{staticRoutingId} | Delete stack staticRouting
@@ -1760,11 +1808,15 @@ Class | Method | HTTP request | Description
 *StackAPI* | [**GetStackRpvstInstances**](docs/StackAPI.md#getstackrpvstinstances) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/rpvst-instances | Get Stack Rpvst Instances
 *StackAPI* | [**GetStackUsedSdmNum**](docs/StackAPI.md#getstackusedsdmnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/sdm-used | Get the used sdm template num on the stack
 *StackAPI* | [**GetStackableSwitches**](docs/StackAPI.md#getstackableswitches) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stacks/switches | Get stackable switches
+*StackAPI* | [**ListStackBriefInterfaces**](docs/StackAPI.md#liststackbriefinterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/interfaces/brief | List Stack Brief Interfaces
+*StackAPI* | [**ListStackInterfaces**](docs/StackAPI.md#liststackinterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/interfaces | List Stack Interfaces
 *StackAPI* | [**LocateOswStack**](docs/StackAPI.md#locateoswstack) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/stacks/{stackId}/locate | Locate switch stack
+*StackAPI* | [**ModfiyLoopbackInterface1**](docs/StackAPI.md#modfiyloopbackinterface1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/loopback-interface/{loopbackInterfaceId} | Modify Stack Loopback Interface
 *StackAPI* | [**ModifyOswStack**](docs/StackAPI.md#modifyoswstack) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId} | Modify Switch Stack
 *StackAPI* | [**ModifyOswStackDetail**](docs/StackAPI.md#modifyoswstackdetail) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/config | Modify stack detail
 *StackAPI* | [**ModifyOswStackLag**](docs/StackAPI.md#modifyoswstacklag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/lags/{lagId} | Modify stack lag
 *StackAPI* | [**ModifyOswStackPort**](docs/StackAPI.md#modifyoswstackport) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/ports/{port} | Modify stack port
+*StackAPI* | [**ModifyPmtudStatus2**](docs/StackAPI.md#modifypmtudstatus2) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stack/{stackId}/interfaces/pmtud | Modify Stack Path MTU Discovery
 *StackAPI* | [**ModifyStackLoopbackControl**](docs/StackAPI.md#modifystackloopbackcontrol) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/config/loopback | Modify stack loopback control
 *StackAPI* | [**ModifyStackNetwork**](docs/StackAPI.md#modifystacknetwork) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/networks/{networkId} | Modify stack vlan interface
 *StackAPI* | [**ModifyStackRememberMe**](docs/StackAPI.md#modifystackrememberme) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stacks/{stackId}/remember | Modify stack remember Config
@@ -1796,9 +1848,13 @@ Class | Method | HTTP request | Description
 *SwitchAPI* | [**BatchSetProfileOverrideForGivenPorts1**](docs/SwitchAPI.md#batchsetprofileoverrideforgivenports1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/profile-override | Batch set profile-override for given ports
 *SwitchAPI* | [**CancelCableTest**](docs/SwitchAPI.md#cancelcabletest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/cancel | Cancel cable test
 *SwitchAPI* | [**ClearOswPortCounters**](docs/SwitchAPI.md#clearoswportcounters) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/multi-ports/clear-counters | Clear the switches ports counters
+*SwitchAPI* | [**CreateLoopbackInterface**](docs/SwitchAPI.md#createloopbackinterface) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/loopback-interface | Create Loopback Interface
 *SwitchAPI* | [**CreateOswVrf**](docs/SwitchAPI.md#createoswvrf) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs | Create new vrf
+*SwitchAPI* | [**CreateStaticRouting**](docs/SwitchAPI.md#createstaticrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/staticRoutings | Create switch staticRouting
+*SwitchAPI* | [**DeleteLoopbackInterface**](docs/SwitchAPI.md#deleteloopbackinterface) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/loopback-interface/{loopbackInterfaceId} | Delete Loopback Interface
 *SwitchAPI* | [**DeleteOswVrf**](docs/SwitchAPI.md#deleteoswvrf) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs/{vrfId} | Delete vrf
 *SwitchAPI* | [**DeletePortTag**](docs/SwitchAPI.md#deleteporttag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Delete an existing switch port label
+*SwitchAPI* | [**DeleteStaticRouting**](docs/SwitchAPI.md#deletestaticrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/staticRoutings/{staticRoutingId} | Delete switch staticRouting
 *SwitchAPI* | [**DeleteSwitchLag**](docs/SwitchAPI.md#deleteswitchlag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lags/{lagId} | Delete switch lag
 *SwitchAPI* | [**GetBatchRpvstInstances**](docs/SwitchAPI.md#getbatchrpvstinstances) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/rpvst-instances | Get Batch Rpvst Instances
 *SwitchAPI* | [**GetBatchSelectOswDetailsView**](docs/SwitchAPI.md#getbatchselectoswdetailsview) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/select | Get the switches and ports detail in batches
@@ -1816,6 +1872,7 @@ Class | Method | HTTP request | Description
 *SwitchAPI* | [**GetGridOspfNeighborTable**](docs/SwitchAPI.md#getgridospfneighbortable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ospf-neighbors | Get switch ospf neighbor table
 *SwitchAPI* | [**GetGridPortAndLagNetworks1**](docs/SwitchAPI.md#getgridportandlagnetworks1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/port-lag-networks | Get the networks used on switch&#39;s ports and LAGs
 *SwitchAPI* | [**GetGridPortAndLagNetworksDetail**](docs/SwitchAPI.md#getgridportandlagnetworksdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks-detail | Get the networks detail (including the vlan related ports and lags info) used on switch&#39;s ports and LAGs
+*SwitchAPI* | [**GetGridStaticRouting**](docs/SwitchAPI.md#getgridstaticrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/staticRoutings | Get grid switch staticRouting
 *SwitchAPI* | [**GetGridSwitchesPortsCounters**](docs/SwitchAPI.md#getgridswitchesportscounters) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/counters | Get the switches ports counters information
 *SwitchAPI* | [**GetGridSwitchesPortsOverview**](docs/SwitchAPI.md#getgridswitchesportsoverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/overview | Get the switches ports overview
 *SwitchAPI* | [**GetGridSwitchesPortsPoe**](docs/SwitchAPI.md#getgridswitchesportspoe) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/poe-info | Get the switches ports poe information
@@ -1834,13 +1891,18 @@ Class | Method | HTTP request | Description
 *SwitchAPI* | [**GetSwitchExistNetworks**](docs/SwitchAPI.md#getswitchexistnetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/exist-network | Get the networks existing on the switch
 *SwitchAPI* | [**GetSwitchInfo**](docs/SwitchAPI.md#getswitchinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac} | Get switch info
 *SwitchAPI* | [**GetSwitchUsedSdmNum**](docs/SwitchAPI.md#getswitchusedsdmnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/sdm-used | Get the used sdm template num on the switch
+*SwitchAPI* | [**ListSwitchBriefInterfaces**](docs/SwitchAPI.md#listswitchbriefinterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/interfaces/brief | List Switch Brief Interfaces
+*SwitchAPI* | [**ListSwitchInterfaces**](docs/SwitchAPI.md#listswitchinterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/interfaces | List Switch Interfaces
 *SwitchAPI* | [**ListSwitchNetworks**](docs/SwitchAPI.md#listswitchnetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks | Query switch vlan interface infos.
+*SwitchAPI* | [**ModfiyLoopbackInterface**](docs/SwitchAPI.md#modfiyloopbackinterface) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/loopback-interface/{loopbackInterfaceId} | Modify Loopback Interface
 *SwitchAPI* | [**ModifyESGeneralConfig**](docs/SwitchAPI.md#modifyesgeneralconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/general-config | Modify switch general config (Agile Series)
 *SwitchAPI* | [**ModifyESLoopbackControl**](docs/SwitchAPI.md#modifyesloopbackcontrol) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/config/loopback | Modify switch loopback control (Agile Series)
 *SwitchAPI* | [**ModifyGeneralConfig**](docs/SwitchAPI.md#modifygeneralconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/general-config | Modify switch general config
 *SwitchAPI* | [**ModifyLoopbackControl**](docs/SwitchAPI.md#modifyloopbackcontrol) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/config/loopback | Modify switch loopback control
 *SwitchAPI* | [**ModifyOswVrf**](docs/SwitchAPI.md#modifyoswvrf) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs/{vrfId} | Modify vrf
+*SwitchAPI* | [**ModifyPmtudStatus1**](docs/SwitchAPI.md#modifypmtudstatus1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/interfaces/pmtud | Modify Path MTU Discovery
 *SwitchAPI* | [**ModifyPortTag**](docs/SwitchAPI.md#modifyporttag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Modify an existing switch port label
+*SwitchAPI* | [**ModifyStaticRouting**](docs/SwitchAPI.md#modifystaticrouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/staticRoutings/{staticRoutingId} | Modify switch staticRouting
 *SwitchAPI* | [**ModifySwitchLag**](docs/SwitchAPI.md#modifyswitchlag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lags/{lagId} | Modify switch lag
 *SwitchAPI* | [**ModifySwitchNetwork**](docs/SwitchAPI.md#modifyswitchnetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks/{networkId} | Modify switch network config.
 *SwitchAPI* | [**ModifySwitchPort**](docs/SwitchAPI.md#modifyswitchport) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port} | Modify switch port
@@ -1866,6 +1928,7 @@ Class | Method | HTTP request | Description
 *SwitchQoSAPI* | [**ModifyOswQosMode**](docs/SwitchQoSAPI.md#modifyoswqosmode) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-mode | Modify switch QoS mode.
 *SwitchQoSAPI* | [**ModifyQosRule**](docs/SwitchQoSAPI.md#modifyqosrule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/{qosRuleId} | Modify switch QoS rule.
 *SwitchQoSAPI* | [**ModifyQosRuleStatus**](docs/SwitchQoSAPI.md#modifyqosrulestatus) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/status/{qosRuleId} | Modify switch QoS rule&#39;s status.
+*SwitchQoSAPI* | [**ModifyRuleIndex**](docs/SwitchQoSAPI.md#modifyruleindex) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/modify-index | Drag and sort the QoS rules.
 *SwitchQoSAPI* | [**ModifySchedulerMapping**](docs/SwitchQoSAPI.md#modifyschedulermapping) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/scheduler-mapping | Modify switch QoS queue scheduling.
 *SwitchTemplateAPI* | [**AddPortTagTemplate**](docs/SwitchTemplateAPI.md#addporttagtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Create new template port label
 *SwitchTemplateAPI* | [**BatchModifySwitchPortTemplate**](docs/SwitchTemplateAPI.md#batchmodifyswitchporttemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/multi-ports/config | Batch modify switch template port
@@ -1890,7 +1953,9 @@ Class | Method | HTTP request | Description
 *SwitchTemplateAPI* | [**GetRpvstInstancesTemplate**](docs/SwitchTemplateAPI.md#getrpvstinstancestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/rpvst-instances | Get Rpvst Instances Template
 *SwitchTemplateAPI* | [**GetSwitchTemplateExistNetworks**](docs/SwitchTemplateAPI.md#getswitchtemplateexistnetworks) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/exist-network | Get the networks existing on the switch template
 *SwitchTemplateAPI* | [**GetSwitchTemplateInfo**](docs/SwitchTemplateAPI.md#getswitchtemplateinfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId} | Get switch template info
+*SwitchTemplateAPI* | [**ListSwitchInterfacesTemplate**](docs/SwitchTemplateAPI.md#listswitchinterfacestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/interfaces | List Switch Interfaces Template
 *SwitchTemplateAPI* | [**ModifyOswVrfTemplate**](docs/SwitchTemplateAPI.md#modifyoswvrftemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs/{vrfId} | Modify vrf template
+*SwitchTemplateAPI* | [**ModifyPmtudStatus**](docs/SwitchTemplateAPI.md#modifypmtudstatus) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/interfaces/pmtud | Modify Path MTU Discovery Template
 *SwitchTemplateAPI* | [**ModifyPortTagTemplate**](docs/SwitchTemplateAPI.md#modifyporttagtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Modify an existing template port label
 *SwitchTemplateAPI* | [**ModifySwitchLagTemplate**](docs/SwitchTemplateAPI.md#modifyswitchlagtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/lags/{lagId} | Modify switch template lag
 *SwitchTemplateAPI* | [**ModifySwitchPortTemplate**](docs/SwitchTemplateAPI.md#modifyswitchporttemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port} | Modify switch template port
@@ -1906,11 +1971,13 @@ Class | Method | HTTP request | Description
 *ThreatManagementAPI* | [**GetThreatList**](docs/ThreatManagementAPI.md#getthreatlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ips/grid/threat-management | Get grid threat list
 *ThreatManagementAPI* | [**OperateThreats**](docs/ThreatManagementAPI.md#operatethreats) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ips/threat/multi-ops | Block/Isolate Device/Signature Suppression/Allow ips threat
 *TopologyAPI* | [**GetAvailableNetworks**](docs/TopologyAPI.md#getavailablenetworks) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/available-network | Get available network
+*TopologyAPI* | [**GetAvailableVlans**](docs/TopologyAPI.md#getavailablevlans) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/available-vlans | Get available vlans
 *TopologyAPI* | [**GetDeviceLinkTopology**](docs/TopologyAPI.md#getdevicelinktopology) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/devices/{deviceMac}/device-link-topology | Get Device Link Topology
 *TopologyAPI* | [**GetDevicesOfSsid**](docs/TopologyAPI.md#getdevicesofssid) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/ssids/{ssidId}/devices | Search Devices of Ssid in Topology
 *TopologyAPI* | [**GetDevicesOfVlan**](docs/TopologyAPI.md#getdevicesofvlan) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/{networkId}/vlan/{vlan}/devices | Search Devices of Vlan in Topology
 *TopologyAPI* | [**GetFilterDevicesOfSsid**](docs/TopologyAPI.md#getfilterdevicesofssid) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology/ssids/{ssidId}/devices | Filter Devices of Ssid in Topology
 *TopologyAPI* | [**GetFilterDevicesOfVlan**](docs/TopologyAPI.md#getfilterdevicesofvlan) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology/{networkId}/vlan/{vlan}/devices | Filter Devices of Vlan in Topology
+*TopologyAPI* | [**GetGridAvailableSsids**](docs/TopologyAPI.md#getgridavailablessids) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/available-ssids | Get available ssids
 *TopologyAPI* | [**GetGridDeviceClient**](docs/TopologyAPI.md#getgriddeviceclient) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/search-device-client | Search Device or Client in Topology
 *TopologyAPI* | [**GetIsolatedAndPreConfigDevices**](docs/TopologyAPI.md#getisolatedandpreconfigdevices) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/isolated-and-pre-config | Get isolated and preconfigured devices
 *TopologyAPI* | [**GetMspDeviceLinkTopology**](docs/TopologyAPI.md#getmspdevicelinktopology) | **Get** /openapi/v2/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/device-link-topology | Get Msp Device Link Topology
@@ -1923,6 +1990,10 @@ Class | Method | HTTP request | Description
 *TopologyAPI* | [**GetV3Topology**](docs/TopologyAPI.md#getv3topology) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology | Get site topology, version 3
 *TopologyAPI* | [**RefreshTopology**](docs/TopologyAPI.md#refreshtopology) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/topology | Refresh site topology
 *TopologyAPI* | [**SetTopologyNode**](docs/TopologyAPI.md#settopologynode) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/topology/nodes | Set site topology top node
+*UPnPAPI* | [**GetUpnpSetting**](docs/UPnPAPI.md#getupnpsetting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Get UPnP setting
+*UPnPAPI* | [**UpdateUpnpSetting**](docs/UPnPAPI.md#updateupnpsetting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/upnp | Modify UPnP setting
+*UPnPTemplateAPI* | [**GetUpnpSettingTemplate**](docs/UPnPTemplateAPI.md#getupnpsettingtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/upnp | Get UPnP template setting
+*UPnPTemplateAPI* | [**UpdateUpnpSettingTemplate**](docs/UPnPTemplateAPI.md#updateupnpsettingtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/upnp | Modify UPnP template setting
 *URLFilteringAPI* | [**CreateUrlFilteringRule**](docs/URLFilteringAPI.md#createurlfilteringrule) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/url-filters | Create URL filtering rule
 *URLFilteringAPI* | [**DeleteUrlFilteringRule**](docs/URLFilteringAPI.md#deleteurlfilteringrule) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/{ruleId} | Delete URL filtering rule
 *URLFilteringAPI* | [**GetCategory**](docs/URLFilteringAPI.md#getcategory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/url-filters/category | Get Category
@@ -2152,7 +2223,7 @@ Class | Method | HTTP request | Description
 *WLANOptimizationAPI* | [**GetRadioFrequencyPlanningConfig**](docs/WLANOptimizationAPI.md#getradiofrequencyplanningconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning | get Radio Frequency Planning Config
 *WLANOptimizationAPI* | [**GetRadioFrequencyPlanningConfigTemplate**](docs/WLANOptimizationAPI.md#getradiofrequencyplanningconfigtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rfPlanning/config | get Radio Frequency Planning Config Template
 *WLANOptimizationAPI* | [**GetRadioFrequencyPlanningResult**](docs/WLANOptimizationAPI.md#getradiofrequencyplanningresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/result | get Radio Frequency Planning Result
-*WLANOptimizationAPI* | [**GetTimeLinePlanningHistorys**](docs/WLANOptimizationAPI.md#gettimelineplanninghistorys) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/history/timeline | Get the planningHistory
+*WLANOptimizationAPI* | [**GetTimeLinePlanningHistorys**](docs/WLANOptimizationAPI.md#gettimelineplanninghistorys) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/history/timeline | Get the planningHistory Time Line
 *WLANOptimizationAPI* | [**ModifyExcludeAps**](docs/WLANOptimizationAPI.md#modifyexcludeaps) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/excludeAps | modify Exclude Aps
 *WLANOptimizationAPI* | [**ModifyRFPlanningDeployConfig**](docs/WLANOptimizationAPI.md#modifyrfplanningdeployconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/rfPlanning/config | modify RF Planning Deploy Config
 *WLANOptimizationAPI* | [**ModifyRFPlanningDeployConfigTemplate**](docs/WLANOptimizationAPI.md#modifyrfplanningdeployconfigtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rfPlanning/config | modify RF Planning Deploy Config Template
@@ -2328,6 +2399,7 @@ Class | Method | HTTP request | Description
 *WiredNetworkTemplateAPI* | [**ModifyLanNetworkTemplate**](docs/WiredNetworkTemplateAPI.md#modifylannetworktemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-networks/{networkId} | Modify LAN network template
 *WiredNetworkTemplateAPI* | [**ModifyLanProfileTemplate**](docs/WiredNetworkTemplateAPI.md#modifylanprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Modify a LAN profile template
 *WiredNetworkTemplateAPI* | [**ModifyOswLanProfileTemplate**](docs/WiredNetworkTemplateAPI.md#modifyoswlanprofiletemplate) | **Patch** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/lan-profiles/{profileId} | Modify a switch profile template
+*WiredNetworkTemplateAPI* | [**ModifySinglePortSettingTemplate**](docs/WiredNetworkTemplateAPI.md#modifysingleportsettingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wan/networks/port-setting | Modify Wan Port Settings Template
 *WiredNetworkTemplateAPI* | [**ModifySpeedTestV2SettingTemplate**](docs/WiredNetworkTemplateAPI.md#modifyspeedtestv2settingtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/speedTest | Modify SpeedTest Setting Template
 *WiredNetworkTemplateAPI* | [**ModifyVirtualWanStatusTemplate**](docs/WiredNetworkTemplateAPI.md#modifyvirtualwanstatustemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId}/status | Modify virtual WAN status template
 *WiredNetworkTemplateAPI* | [**ModifyVirtualWanTemplate**](docs/WiredNetworkTemplateAPI.md#modifyvirtualwantemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/virtual-wans/{virtualWanId} | Modify virtual WAN template
@@ -2350,51 +2422,99 @@ Class | Method | HTTP request | Description
 *WirelessIDSIPSTemplateAPI* | [**GetWipsConfigTemplate**](docs/WirelessIDSIPSTemplateAPI.md#getwipsconfigtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ips | Get wireless IPS config template
 *WirelessIDSIPSTemplateAPI* | [**ModifyWidsConfigTemplate**](docs/WirelessIDSIPSTemplateAPI.md#modifywidsconfigtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ids | Modify wireless IDS config template
 *WirelessIDSIPSTemplateAPI* | [**ModifyWipsConfigTemplate**](docs/WirelessIDSIPSTemplateAPI.md#modifywipsconfigtemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/network-security/wireless-ips | Modify wireless IPS config template
+*WirelessNetworkAPI* | [**CountApGroups**](docs/WirelessNetworkAPI.md#countapgroups) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/count-ap-groups | Check if the number of AP Groups is out of limit
 *WirelessNetworkAPI* | [**CountWlans**](docs/WirelessNetworkAPI.md#countwlans) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/cmd/countWlans | Check if the number of WLAN groups is out of limit
+*WirelessNetworkAPI* | [**CreateApGroup**](docs/WirelessNetworkAPI.md#createapgroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/ap-groups | Create new AP Group
 *WirelessNetworkAPI* | [**CreateSsid**](docs/WirelessNetworkAPI.md#createssid) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids | Create new SSID
-*WirelessNetworkAPI* | [**CreateWlanGroup**](docs/WirelessNetworkAPI.md#createwlangroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans | Create new WLAN group
+*WirelessNetworkAPI* | [**CreateSsidV2**](docs/WirelessNetworkAPI.md#createssidv2) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/wireless-network/ssids | Create new SSID v2
+*WirelessNetworkAPI* | [**CreateWlanGroup**](docs/WirelessNetworkAPI.md#createwlangroup) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans | Create new WLAN Group
+*WirelessNetworkAPI* | [**DeleteApGroup**](docs/WirelessNetworkAPI.md#deleteapgroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ap-groups/{apGroupId} | Delete an existing AP Group
 *WirelessNetworkAPI* | [**DeleteSsid**](docs/WirelessNetworkAPI.md#deletessid) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Delete an existing SSID
-*WirelessNetworkAPI* | [**DeleteWlanGroup**](docs/WirelessNetworkAPI.md#deletewlangroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Delete an existing WLAN group
-*WirelessNetworkAPI* | [**GetGridWlanGroup**](docs/WirelessNetworkAPI.md#getgridwlangroup) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/wireless-network/wlans | Get WLAN group list paging query
+*WirelessNetworkAPI* | [**DeleteSsidBySite**](docs/WirelessNetworkAPI.md#deletessidbysite) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId} | Delete an existing SSID
+*WirelessNetworkAPI* | [**DeleteWlanGroup**](docs/WirelessNetworkAPI.md#deletewlangroup) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Delete an existing WLAN Group
+*WirelessNetworkAPI* | [**GetAllApGroupListBySite**](docs/WirelessNetworkAPI.md#getallapgrouplistbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ap-groups/aps | Get All AP grouping by ap group
+*WirelessNetworkAPI* | [**GetApGroupInfo**](docs/WirelessNetworkAPI.md#getapgroupinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ap-groups/{apGroupId}/info | Get an existing AP Group info
+*WirelessNetworkAPI* | [**GetApGroupList**](docs/WirelessNetworkAPI.md#getapgrouplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ap-groups | Get AP Group list
+*WirelessNetworkAPI* | [**GetGridWlanGroup**](docs/WirelessNetworkAPI.md#getgridwlangroup) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/wireless-network/wlans | Get WLAN Group list paging query
 *WirelessNetworkAPI* | [**GetSiteApExist6G**](docs/WirelessNetworkAPI.md#getsiteapexist6g) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/multi-band-6g/exist | Get the site exists 6G ap
 *WirelessNetworkAPI* | [**GetSsidDetail**](docs/WirelessNetworkAPI.md#getssiddetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Get SSID detail info
+*WirelessNetworkAPI* | [**GetSsidDetailV2**](docs/WirelessNetworkAPI.md#getssiddetailv2) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId} | Get SSID detail info
 *WirelessNetworkAPI* | [**GetSsidList**](docs/WirelessNetworkAPI.md#getssidlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids | Get SSID list
+*WirelessNetworkAPI* | [**GetSsidListV2**](docs/WirelessNetworkAPI.md#getssidlistv2) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/wireless-network/ssids | Get SSID list by site
 *WirelessNetworkAPI* | [**GetSsidsBySite**](docs/WirelessNetworkAPI.md#getssidsbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids | Get all ssids of the site
-*WirelessNetworkAPI* | [**GetWlanGroup**](docs/WirelessNetworkAPI.md#getwlangroup) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Get WLAN group by wlan id
-*WirelessNetworkAPI* | [**GetWlanGroupList**](docs/WirelessNetworkAPI.md#getwlangrouplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans | Get WLAN group list
+*WirelessNetworkAPI* | [**GetWlanGroup**](docs/WirelessNetworkAPI.md#getwlangroup) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Get WLAN Group by wlan id
+*WirelessNetworkAPI* | [**GetWlanGroupList**](docs/WirelessNetworkAPI.md#getwlangrouplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans | Get WLAN Group list
+*WirelessNetworkAPI* | [**QuerySsidBindApGroups**](docs/WirelessNetworkAPI.md#queryssidbindapgroups) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/ap-groups | Query AP Groups bound to the SSID
+*WirelessNetworkAPI* | [**QuerySsidDuplicateNameBySite1**](docs/WirelessNetworkAPI.md#queryssidduplicatenamebysite1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/duplicate-name | Query SSIDs with the same name
+*WirelessNetworkAPI* | [**UpdateApGroup**](docs/WirelessNetworkAPI.md#updateapgroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/ap-groups/{apGroupId} | Modify an existing AP Group
 *WirelessNetworkAPI* | [**UpdateSsidBandSteerConfig**](docs/WirelessNetworkAPI.md#updatessidbandsteerconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-band-steer | Update SSID band steer config
+*WirelessNetworkAPI* | [**UpdateSsidBandSteerConfigBySite**](docs/WirelessNetworkAPI.md#updatessidbandsteerconfigbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/band-steer | Update SSID band steer config by site
 *WirelessNetworkAPI* | [**UpdateSsidBasicConfig**](docs/WirelessNetworkAPI.md#updatessidbasicconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-basic-config | Update SSID basic config
+*WirelessNetworkAPI* | [**UpdateSsidBasicConfigBySite**](docs/WirelessNetworkAPI.md#updatessidbasicconfigbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/basic-config | Update SSID basic config by site
+*WirelessNetworkAPI* | [**UpdateSsidBindApGroups**](docs/WirelessNetworkAPI.md#updatessidbindapgroups) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/ap-groups | Update SSID binding ap groups
 *WirelessNetworkAPI* | [**UpdateSsidDhcpOptionConfig**](docs/WirelessNetworkAPI.md#updatessiddhcpoptionconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-dhcp-option | Update SSID DHCP option 82 config
+*WirelessNetworkAPI* | [**UpdateSsidDhcpOptionConfigBySite**](docs/WirelessNetworkAPI.md#updatessiddhcpoptionconfigbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/dhcp-option | Update SSID DHCP option 82 config by site
+*WirelessNetworkAPI* | [**UpdateSsidEnableStatusBySite1**](docs/WirelessNetworkAPI.md#updatessidenablestatusbysite1) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/enable | Update SSID Enable Status by site
 *WirelessNetworkAPI* | [**UpdateSsidHotspotV2Setting**](docs/WirelessNetworkAPI.md#updatessidhotspotv2setting) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-hotspotv2 | Update SSID Hotspot2.0 config
+*WirelessNetworkAPI* | [**UpdateSsidHotspotV2SettingBySite**](docs/WirelessNetworkAPI.md#updatessidhotspotv2settingbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/hotspotv2 | Update SSID Hotspot2.0 config by site
 *WirelessNetworkAPI* | [**UpdateSsidLoadBalanceConfig**](docs/WirelessNetworkAPI.md#updatessidloadbalanceconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-load-balance | Update SSID load balance config
+*WirelessNetworkAPI* | [**UpdateSsidLoadBalanceConfigBySite**](docs/WirelessNetworkAPI.md#updatessidloadbalanceconfigbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/load-balance | Update SSID load balance config by site
 *WirelessNetworkAPI* | [**UpdateSsidMacFilterConfig**](docs/WirelessNetworkAPI.md#updatessidmacfilterconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-mac-filter | Update SSID mac filter config
+*WirelessNetworkAPI* | [**UpdateSsidMacFilterConfigBySite**](docs/WirelessNetworkAPI.md#updatessidmacfilterconfigbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/mac-filter | Update SSID mac filter config by site
 *WirelessNetworkAPI* | [**UpdateSsidMultiCastConfig**](docs/WirelessNetworkAPI.md#updatessidmulticastconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-multicast-config | Update SSID Multicast/Broadcast management config
+*WirelessNetworkAPI* | [**UpdateSsidMultiCastConfigBySite**](docs/WirelessNetworkAPI.md#updatessidmulticastconfigbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/multicast-config | Update SSID Multicast/Broadcast management config by site
 *WirelessNetworkAPI* | [**UpdateSsidRateControlConfig**](docs/WirelessNetworkAPI.md#updatessidratecontrolconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-control | Update SSID 802.11 rate control config
+*WirelessNetworkAPI* | [**UpdateSsidRateControlConfigBySite**](docs/WirelessNetworkAPI.md#updatessidratecontrolconfigbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/rate-control | Update SSID 802.11 rate control config by site
 *WirelessNetworkAPI* | [**UpdateSsidRateLimitConfig**](docs/WirelessNetworkAPI.md#updatessidratelimitconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-limit | Update SSID rate limit config
+*WirelessNetworkAPI* | [**UpdateSsidRateLimitConfigBySite**](docs/WirelessNetworkAPI.md#updatessidratelimitconfigbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/rate-limit | Update SSID rate limit config by site
 *WirelessNetworkAPI* | [**UpdateSsidWifiCallingConfig**](docs/WirelessNetworkAPI.md#updatessidwificallingconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wifi-calling | Update SSID wifi calling config
+*WirelessNetworkAPI* | [**UpdateSsidWifiCallingConfigBySite**](docs/WirelessNetworkAPI.md#updatessidwificallingconfigbysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/wifi-calling | Update SSID wifi calling config by site
 *WirelessNetworkAPI* | [**UpdateSsidWlanSchedule**](docs/WirelessNetworkAPI.md#updatessidwlanschedule) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wlan-schedule | Update SSID WLAN schedule config
-*WirelessNetworkAPI* | [**UpdateWlanGroup**](docs/WirelessNetworkAPI.md#updatewlangroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN group
-*WirelessNetworkTemplateAPI* | [**CountWlansTemplate**](docs/WirelessNetworkTemplateAPI.md#countwlanstemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/cmd/countWlans | Check if the number of WLAN groups is out of limit
+*WirelessNetworkAPI* | [**UpdateSsidWlanScheduleBySite**](docs/WirelessNetworkAPI.md#updatessidwlanschedulebysite) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/wlan-schedule | Update SSID WLAN schedule config by site
+*WirelessNetworkAPI* | [**UpdateWlanGroup**](docs/WirelessNetworkAPI.md#updatewlangroup) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN Group
+*WirelessNetworkTemplateAPI* | [**CountApGroupsTemplate**](docs/WirelessNetworkTemplateAPI.md#countapgroupstemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/count-ap-groups | Check if the number of AP Groups template is out of limit
+*WirelessNetworkTemplateAPI* | [**CountWlansTemplate**](docs/WirelessNetworkTemplateAPI.md#countwlanstemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/cmd/countWlans | Check if the number of WLAN Groups is out of limit
+*WirelessNetworkTemplateAPI* | [**CreateApGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#createapgrouptemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-groups | Create new AP Group template
 *WirelessNetworkTemplateAPI* | [**CreateSsidTemplate**](docs/WirelessNetworkTemplateAPI.md#createssidtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids | Create new SSID template
-*WirelessNetworkTemplateAPI* | [**CreateWlanGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#createwlangrouptemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Create new WLAN group template
+*WirelessNetworkTemplateAPI* | [**CreateSsidTemplateV2**](docs/WirelessNetworkTemplateAPI.md#createssidtemplatev2) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids | Create new SSID template v2
+*WirelessNetworkTemplateAPI* | [**CreateWlanGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#createwlangrouptemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Create new WLAN Group template
+*WirelessNetworkTemplateAPI* | [**DeleteApGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#deleteapgrouptemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-groups/{apGroupId} | Delete an existing AP Group template
 *WirelessNetworkTemplateAPI* | [**DeleteSsidTemplate**](docs/WirelessNetworkTemplateAPI.md#deletessidtemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Delete an existing SSID template
-*WirelessNetworkTemplateAPI* | [**DeleteWlanGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#deletewlangrouptemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId} | Delete an existing WLAN group template
-*WirelessNetworkTemplateAPI* | [**GetGridWlanGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#getgridwlangrouptemplate) | **Get** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Get WLAN group template list paging query
+*WirelessNetworkTemplateAPI* | [**DeleteSsidTemplateV2**](docs/WirelessNetworkTemplateAPI.md#deletessidtemplatev2) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId} | Delete an existing SSID template
+*WirelessNetworkTemplateAPI* | [**DeleteWlanGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#deletewlangrouptemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId} | Delete an existing WLAN Group template
+*WirelessNetworkTemplateAPI* | [**GetApGroupTemplateList**](docs/WirelessNetworkTemplateAPI.md#getapgrouptemplatelist) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-groups | Get AP Group template list
+*WirelessNetworkTemplateAPI* | [**GetGridWlanGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#getgridwlangrouptemplate) | **Get** /openapi/v2/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Get WLAN Group template list paging query
 *WirelessNetworkTemplateAPI* | [**GetSsidDetailTemplate**](docs/WirelessNetworkTemplateAPI.md#getssiddetailtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId} | Get SSID template detail info
+*WirelessNetworkTemplateAPI* | [**GetSsidDetailTemplateV2**](docs/WirelessNetworkTemplateAPI.md#getssiddetailtemplatev2) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId} | Get SSID template detail info
 *WirelessNetworkTemplateAPI* | [**GetSsidListTemplate**](docs/WirelessNetworkTemplateAPI.md#getssidlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids | Get SSID template list
-*WirelessNetworkTemplateAPI* | [**GetWlanGroupListTemplate**](docs/WirelessNetworkTemplateAPI.md#getwlangrouplisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Get WLAN group template list
+*WirelessNetworkTemplateAPI* | [**GetSsidListTemplateV2**](docs/WirelessNetworkTemplateAPI.md#getssidlisttemplatev2) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids | Get SSID template list v2
+*WirelessNetworkTemplateAPI* | [**GetWlanGroupListTemplate**](docs/WirelessNetworkTemplateAPI.md#getwlangrouplisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans | Get WLAN Group template list
+*WirelessNetworkTemplateAPI* | [**QuerySsidDuplicateNameBySite**](docs/WirelessNetworkTemplateAPI.md#queryssidduplicatenamebysite) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/duplicate-name | Query Template SSIDs with the same name
+*WirelessNetworkTemplateAPI* | [**UpdateApGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#updateapgrouptemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-groups/{apGroupId} | Modify an existing AP Group template
 *WirelessNetworkTemplateAPI* | [**UpdateSsidBandSteerConfigTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidbandsteerconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-band-steer | Update SSID template band steer config
 *WirelessNetworkTemplateAPI* | [**UpdateSsidBasicConfigTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidbasicconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-basic-config | Update SSID template basic config
 *WirelessNetworkTemplateAPI* | [**UpdateSsidDhcpOptionConfigTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessiddhcpoptionconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-dhcp-option | Update SSID template DHCP option 82 config
+*WirelessNetworkTemplateAPI* | [**UpdateSsidEnableStatusBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidenablestatusbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/enable | Update SSID Template Enable Status
 *WirelessNetworkTemplateAPI* | [**UpdateSsidHotspotV2SettingTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidhotspotv2settingtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-hotspotv2 | Update SSID template Hotspot2.0 config
 *WirelessNetworkTemplateAPI* | [**UpdateSsidLoadBalanceConfigTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidloadbalanceconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-load-balance | Update SSID template load balance config
 *WirelessNetworkTemplateAPI* | [**UpdateSsidMacFilterConfigTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidmacfilterconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-mac-filter | Update SSID template mac filter config
 *WirelessNetworkTemplateAPI* | [**UpdateSsidMultiCastConfigTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidmulticastconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-multicast-config | Update SSID template Multicast/Broadcast management config
 *WirelessNetworkTemplateAPI* | [**UpdateSsidRateControlConfigTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidratecontrolconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-control | Update SSID template 802.11 rate control config
 *WirelessNetworkTemplateAPI* | [**UpdateSsidRateLimitConfigTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidratelimitconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-rate-limit | Update SSID template rate limit config
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateBandSteerConfigBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplatebandsteerconfigbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/band-steer | Update SSID Template band steer config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateBasicConfigBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplatebasicconfigbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/basic-config | Update SSID Template basic config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateDhcpOptionConfigBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplatedhcpoptionconfigbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/dhcp-option | Update SSID Template DHCP option 82 config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateHotspotV2SettingBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplatehotspotv2settingbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/hotspotv2 | Update SSID Template Hotspot2.0 config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateLoadBalanceConfigBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplateloadbalanceconfigbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/load-balance | Update SSID Template load balance config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateMacFilterConfigBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplatemacfilterconfigbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/mac-filter | Update SSID Template mac filter config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateMultiCastConfigBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplatemulticastconfigbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/multicast-config | Update SSID Template Multicast/Broadcast management config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateRateControlConfigBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplateratecontrolconfigbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/rate-control | Update SSID Template 802.11 rate control config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateRateLimitConfigBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplateratelimitconfigbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/rate-limit | Update SSID Template rate limit config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateWifiCallingConfigBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplatewificallingconfigbysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/wifi-calling | Update SSID Template wifi calling config by site
+*WirelessNetworkTemplateAPI* | [**UpdateSsidTemplateWlanScheduleBySite**](docs/WirelessNetworkTemplateAPI.md#updatessidtemplatewlanschedulebysite) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/ssids/{ssidId}/wlan-schedule | Update SSID Template WLAN schedule config by site
 *WirelessNetworkTemplateAPI* | [**UpdateSsidWifiCallingConfigTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidwificallingconfigtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wifi-calling | Update SSID template wifi calling config
 *WirelessNetworkTemplateAPI* | [**UpdateSsidWlanScheduleTemplate**](docs/WirelessNetworkTemplateAPI.md#updatessidwlanscheduletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId}/ssids/{ssidId}/update-wlan-schedule | Update SSID template WLAN schedule config
-*WirelessNetworkTemplateAPI* | [**UpdateWlanGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#updatewlangrouptemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN group template
+*WirelessNetworkTemplateAPI* | [**UpdateWlanGroupTemplate**](docs/WirelessNetworkTemplateAPI.md#updatewlangrouptemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wireless-network/wlans/{wlanId} | Modify an existing WLAN Group template
 
 
 ## Documentation For Models
@@ -2417,12 +2537,14 @@ Class | Method | HTTP request | Description
  - [ActiveDeviceRespVO](docs/ActiveDeviceRespVO.md)
  - [ActiveDeviceSnOpenApiVO](docs/ActiveDeviceSnOpenApiVO.md)
  - [ActiveDeviceSnRespVO](docs/ActiveDeviceSnRespVO.md)
+ - [ActiveIncidentCountVO](docs/ActiveIncidentCountVO.md)
  - [ActiveOswHealthOpenApiVO](docs/ActiveOswHealthOpenApiVO.md)
  - [ActivePairMultiSiteOpenApiDTO](docs/ActivePairMultiSiteOpenApiDTO.md)
  - [ActivePairOpenApiDTO](docs/ActivePairOpenApiDTO.md)
  - [ActivePairSnOpenApiDTO](docs/ActivePairSnOpenApiDTO.md)
  - [ActivityBaseVO](docs/ActivityBaseVO.md)
  - [ActivityRecordsOfAClientSSingleConnections](docs/ActivityRecordsOfAClientSSingleConnections.md)
+ - [AddApGroupResultVO](docs/AddApGroupResultVO.md)
  - [AddCallForwardingRuleResp](docs/AddCallForwardingRuleResp.md)
  - [AddDeviceByDevicekeyOpenApiVO](docs/AddDeviceByDevicekeyOpenApiVO.md)
  - [AddDeviceBySnOpenApiVO](docs/AddDeviceBySnOpenApiVO.md)
@@ -2455,10 +2577,21 @@ Class | Method | HTTP request | Description
  - [AlertVO](docs/AlertVO.md)
  - [AllTargetSites](docs/AllTargetSites.md)
  - [AllTimeVoucherSummaryOpenApiVO](docs/AllTimeVoucherSummaryOpenApiVO.md)
+ - [AnomalyAdviceVO](docs/AnomalyAdviceVO.md)
+ - [AnomalyAggregateVO](docs/AnomalyAggregateVO.md)
+ - [AnomalyBriefCountVO](docs/AnomalyBriefCountVO.md)
+ - [AnomalyBriefQueryVO](docs/AnomalyBriefQueryVO.md)
+ - [AnomalyCategoryEventCountVO](docs/AnomalyCategoryEventCountVO.md)
+ - [AnomalyCauseVO](docs/AnomalyCauseVO.md)
  - [AnomalyEventSettingEditOpenApiVO](docs/AnomalyEventSettingEditOpenApiVO.md)
  - [AnomalyEventSettingOpenApiVO](docs/AnomalyEventSettingOpenApiVO.md)
+ - [AnomalyGridVOAnomalyAggregateVO](docs/AnomalyGridVOAnomalyAggregateVO.md)
+ - [AnomalyListSettingVO](docs/AnomalyListSettingVO.md)
  - [AnomalySettingGridVOAnomalyEventSettingOpenApiVO](docs/AnomalySettingGridVOAnomalyEventSettingOpenApiVO.md)
- - [AnomalyStatVO](docs/AnomalyStatVO.md)
+ - [AnomalySettingStatOpenApiVO](docs/AnomalySettingStatOpenApiVO.md)
+ - [AnomalyStateVO](docs/AnomalyStateVO.md)
+ - [AnomalyTimerSettingVO](docs/AnomalyTimerSettingVO.md)
+ - [AnomalyVO](docs/AnomalyVO.md)
  - [AntSettingVO](docs/AntSettingVO.md)
  - [AntSwitchRadioConfig](docs/AntSwitchRadioConfig.md)
  - [ApAdvancedLoadBalanceOpenApiVO](docs/ApAdvancedLoadBalanceOpenApiVO.md)
@@ -2467,6 +2600,7 @@ Class | Method | HTTP request | Description
  - [ApAntSwitchConfigOpenApiVO](docs/ApAntSwitchConfigOpenApiVO.md)
  - [ApAnteGainConfig](docs/ApAnteGainConfig.md)
  - [ApAvailableChannelOpenApiVO](docs/ApAvailableChannelOpenApiVO.md)
+ - [ApBatchConfigResultVO](docs/ApBatchConfigResultVO.md)
  - [ApBridgeClientApOpenApiVO](docs/ApBridgeClientApOpenApiVO.md)
  - [ApBridgeConfig](docs/ApBridgeConfig.md)
  - [ApBridgeInfo](docs/ApBridgeInfo.md)
@@ -2483,6 +2617,11 @@ Class | Method | HTTP request | Description
  - [ApChannelLoadResult](docs/ApChannelLoadResult.md)
  - [ApChannelStat](docs/ApChannelStat.md)
  - [ApChannelStats](docs/ApChannelStats.md)
+ - [ApConfigResultBaseSettingVO](docs/ApConfigResultBaseSettingVO.md)
+ - [ApConfigResultPortSettingVO](docs/ApConfigResultPortSettingVO.md)
+ - [ApConfigResultRadioSettingVO](docs/ApConfigResultRadioSettingVO.md)
+ - [ApConfigResultSettingsVO](docs/ApConfigResultSettingsVO.md)
+ - [ApConfigResultVO](docs/ApConfigResultVO.md)
  - [ApDensityCurrentDetailOpenApiVO](docs/ApDensityCurrentDetailOpenApiVO.md)
  - [ApDensityInfoOpenApiVO](docs/ApDensityInfoOpenApiVO.md)
  - [ApDensityItemOpenApiVO](docs/ApDensityItemOpenApiVO.md)
@@ -2493,6 +2632,11 @@ Class | Method | HTTP request | Description
  - [ApFeatureLimitVO](docs/ApFeatureLimitVO.md)
  - [ApFullChannelScanStatus](docs/ApFullChannelScanStatus.md)
  - [ApGeneralConfig](docs/ApGeneralConfig.md)
+ - [ApGroupDetailOpenApiVO](docs/ApGroupDetailOpenApiVO.md)
+ - [ApGroupDetailVO](docs/ApGroupDetailVO.md)
+ - [ApGroupGridVOApGroupOpenApiVO](docs/ApGroupGridVOApGroupOpenApiVO.md)
+ - [ApGroupOpenApiVO](docs/ApGroupOpenApiVO.md)
+ - [ApGroupStatusOpenApiVO](docs/ApGroupStatusOpenApiVO.md)
  - [ApHealthDetailVO](docs/ApHealthDetailVO.md)
  - [ApIPSetting](docs/ApIPSetting.md)
  - [ApIPv6Setting](docs/ApIPv6Setting.md)
@@ -2517,10 +2661,12 @@ Class | Method | HTTP request | Description
  - [ApMoveSiteOpenApiVO](docs/ApMoveSiteOpenApiVO.md)
  - [ApMvlanSettingOpenApiVO](docs/ApMvlanSettingOpenApiVO.md)
  - [ApOfdmaConfigOpenApiVO](docs/ApOfdmaConfigOpenApiVO.md)
+ - [ApOverrideAuditLogVO](docs/ApOverrideAuditLogVO.md)
  - [ApOverviewInfo](docs/ApOverviewInfo.md)
  - [ApP2pInfo](docs/ApP2pInfo.md)
  - [ApPlanningHistoryDetailVO](docs/ApPlanningHistoryDetailVO.md)
  - [ApPlanningRadioVO](docs/ApPlanningRadioVO.md)
+ - [ApPortConfigResultSettingsVO](docs/ApPortConfigResultSettingsVO.md)
  - [ApPortStatusVO](docs/ApPortStatusVO.md)
  - [ApPowerSavingConfigOpenApiVO](docs/ApPowerSavingConfigOpenApiVO.md)
  - [ApQosOpenApiVO](docs/ApQosOpenApiVO.md)
@@ -2529,6 +2675,7 @@ Class | Method | HTTP request | Description
  - [ApRFScanResult](docs/ApRFScanResult.md)
  - [ApRadioAnteGainConfigOpenApiVO](docs/ApRadioAnteGainConfigOpenApiVO.md)
  - [ApRadioChannel](docs/ApRadioChannel.md)
+ - [ApRadioConfigResultSettingsVO](docs/ApRadioConfigResultSettingsVO.md)
  - [ApRadioSetting](docs/ApRadioSetting.md)
  - [ApRadioSettingopenApiVO](docs/ApRadioSettingopenApiVO.md)
  - [ApRadiosConfig](docs/ApRadiosConfig.md)
@@ -2593,6 +2740,7 @@ Class | Method | HTTP request | Description
  - [AuthenticationConfigInfoDTO](docs/AuthenticationConfigInfoDTO.md)
  - [AuthenticationParamOpenApiVO](docs/AuthenticationParamOpenApiVO.md)
  - [AutoAuthenticationConfigDTO](docs/AutoAuthenticationConfigDTO.md)
+ - [AutoBackupOpenApiVO](docs/AutoBackupOpenApiVO.md)
  - [AutoCheckUpgradeCreateInfo](docs/AutoCheckUpgradeCreateInfo.md)
  - [AutoCheckUpgradeInfo](docs/AutoCheckUpgradeInfo.md)
  - [AutoConfigOpenApiVO](docs/AutoConfigOpenApiVO.md)
@@ -2628,6 +2776,7 @@ Class | Method | HTTP request | Description
  - [BaseDevicePageQueryRequest](docs/BaseDevicePageQueryRequest.md)
  - [BaseDeviceStatDTO](docs/BaseDeviceStatDTO.md)
  - [BaseScheduleTimeOpenApiVO](docs/BaseScheduleTimeOpenApiVO.md)
+ - [BaseScheduleTimeVO](docs/BaseScheduleTimeVO.md)
  - [BasicDetailConfigDTO](docs/BasicDetailConfigDTO.md)
  - [BatchAdoptDeviceRequest](docs/BatchAdoptDeviceRequest.md)
  - [BatchApplyOswNetworkOpenApi](docs/BatchApplyOswNetworkOpenApi.md)
@@ -2677,6 +2826,7 @@ Class | Method | HTTP request | Description
  - [BatchTagRespOpenApiVO](docs/BatchTagRespOpenApiVO.md)
  - [BatchUnbindSites](docs/BatchUnbindSites.md)
  - [BatchUpdateApAntSwitchOpenApiVO](docs/BatchUpdateApAntSwitchOpenApiVO.md)
+ - [BatchUpdateApLagOpenApiVO](docs/BatchUpdateApLagOpenApiVO.md)
  - [BatchUpdateApPowerSavingConfigOpenApiVO](docs/BatchUpdateApPowerSavingConfigOpenApiVO.md)
  - [BatchUpdateApVlanOpenApiVO](docs/BatchUpdateApVlanOpenApiVO.md)
  - [BatchUpdateMultiApPortsOpenApiVO](docs/BatchUpdateMultiApPortsOpenApiVO.md)
@@ -2696,6 +2846,7 @@ Class | Method | HTTP request | Description
  - [BridgeClientApConfigVO](docs/BridgeClientApConfigVO.md)
  - [BriefDeviceInfoDetailForBatchAdoptOpenApiVO](docs/BriefDeviceInfoDetailForBatchAdoptOpenApiVO.md)
  - [BriefServerDeviceVO](docs/BriefServerDeviceVO.md)
+ - [BucketBoundaryVO](docs/BucketBoundaryVO.md)
  - [CallBlockingProfileEntity](docs/CallBlockingProfileEntity.md)
  - [CallForwardingRule](docs/CallForwardingRule.md)
  - [CallForwardingRulesGrid](docs/CallForwardingRulesGrid.md)
@@ -2714,10 +2865,12 @@ Class | Method | HTTP request | Description
  - [CategoryTraffic](docs/CategoryTraffic.md)
  - [CategoryTrafficDetailVO](docs/CategoryTrafficDetailVO.md)
  - [CategoryUpDownTrafficDetailOpenApiVO](docs/CategoryUpDownTrafficDetailOpenApiVO.md)
+ - [CauseVO](docs/CauseVO.md)
  - [CciCurrentDetailOpenApiVO](docs/CciCurrentDetailOpenApiVO.md)
  - [CciTrendDetailOpenApiVO](docs/CciTrendDetailOpenApiVO.md)
  - [CciTrendItemOpenApiOpenApiVO](docs/CciTrendItemOpenApiOpenApiVO.md)
  - [CertProfileDetailOpenApiVO](docs/CertProfileDetailOpenApiVO.md)
+ - [CertProfileFileIdVO](docs/CertProfileFileIdVO.md)
  - [CertProfileOpenApiVO](docs/CertProfileOpenApiVO.md)
  - [CertProfileRequestOpenApiVO](docs/CertProfileRequestOpenApiVO.md)
  - [ChangeInternetStateOpenApiVO](docs/ChangeInternetStateOpenApiVO.md)
@@ -2726,6 +2879,8 @@ Class | Method | HTTP request | Description
  - [ChannelDetailVO](docs/ChannelDetailVO.md)
  - [ChannelInfo](docs/ChannelInfo.md)
  - [ChannelInterInfoVO](docs/ChannelInterInfoVO.md)
+ - [ChannelInterferenceSubHealthDetailVO](docs/ChannelInterferenceSubHealthDetailVO.md)
+ - [ChannelInterferenceSubHealthInfoVO](docs/ChannelInterferenceSubHealthInfoVO.md)
  - [ChannelItemVO](docs/ChannelItemVO.md)
  - [ChannelLimitConfigOpenApiVO](docs/ChannelLimitConfigOpenApiVO.md)
  - [ChannelLimitSettingVO](docs/ChannelLimitSettingVO.md)
@@ -2736,6 +2891,7 @@ Class | Method | HTTP request | Description
  - [CheckIpMacBindingExportToDhcpReservationOpenApiVO](docs/CheckIpMacBindingExportToDhcpReservationOpenApiVO.md)
  - [CheckMacTypeOpenApiVO](docs/CheckMacTypeOpenApiVO.md)
  - [CheckMappedNetwork](docs/CheckMappedNetwork.md)
+ - [CheckReplaceVO](docs/CheckReplaceVO.md)
  - [CheckWanLanStatusOpenApiVO](docs/CheckWanLanStatusOpenApiVO.md)
  - [CheckWanLanStatusVO](docs/CheckWanLanStatusVO.md)
  - [ChildApOpenApiVO](docs/ChildApOpenApiVO.md)
@@ -2759,6 +2915,11 @@ Class | Method | HTTP request | Description
  - [ClientAssociationTimeDistributionVO](docs/ClientAssociationTimeDistributionVO.md)
  - [ClientBatchIPSetting](docs/ClientBatchIPSetting.md)
  - [ClientBatchSetting](docs/ClientBatchSetting.md)
+ - [ClientCardBucketVO](docs/ClientCardBucketVO.md)
+ - [ClientCardDataVO](docs/ClientCardDataVO.md)
+ - [ClientCardsParamOpenApiVO](docs/ClientCardsParamOpenApiVO.md)
+ - [ClientCardsQueryOpenApiVO](docs/ClientCardsQueryOpenApiVO.md)
+ - [ClientCardsResultOpenApiVO](docs/ClientCardsResultOpenApiVO.md)
  - [ClientCategoryOptionsOpenApiVO](docs/ClientCategoryOptionsOpenApiVO.md)
  - [ClientConnectionEvents](docs/ClientConnectionEvents.md)
  - [ClientConnectionHistories](docs/ClientConnectionHistories.md)
@@ -2768,6 +2929,7 @@ Class | Method | HTTP request | Description
  - [ClientCorrectionOptionListVO](docs/ClientCorrectionOptionListVO.md)
  - [ClientCorrectionOptionVO](docs/ClientCorrectionOptionVO.md)
  - [ClientCountStatisticsWithTime](docs/ClientCountStatisticsWithTime.md)
+ - [ClientDataRateSubHealthDetailVO](docs/ClientDataRateSubHealthDetailVO.md)
  - [ClientDeleteFilter](docs/ClientDeleteFilter.md)
  - [ClientDetail](docs/ClientDetail.md)
  - [ClientDetailInformationSettingVO](docs/ClientDetailInformationSettingVO.md)
@@ -2777,9 +2939,15 @@ Class | Method | HTTP request | Description
  - [ClientFilteringDeviceDetailOpenApiVO](docs/ClientFilteringDeviceDetailOpenApiVO.md)
  - [ClientFilteringOptions](docs/ClientFilteringOptions.md)
  - [ClientGridVOOpenApiClientInfo](docs/ClientGridVOOpenApiClientInfo.md)
+ - [ClientGridVOSsidClientVO](docs/ClientGridVOSsidClientVO.md)
+ - [ClientHealthCategoryVO](docs/ClientHealthCategoryVO.md)
+ - [ClientHealthDetailV2VO](docs/ClientHealthDetailV2VO.md)
  - [ClientHealthDetailVO](docs/ClientHealthDetailVO.md)
+ - [ClientHealthTrendVO](docs/ClientHealthTrendVO.md)
  - [ClientHistoryInfo](docs/ClientHistoryInfo.md)
  - [ClientHistoryVO](docs/ClientHistoryVO.md)
+ - [ClientIncidentCountRequestOpenApiVO](docs/ClientIncidentCountRequestOpenApiVO.md)
+ - [ClientIncidentCountResultOpenApiVO](docs/ClientIncidentCountResultOpenApiVO.md)
  - [ClientIpSetting](docs/ClientIpSetting.md)
  - [ClientLockToApDetailSetting](docs/ClientLockToApDetailSetting.md)
  - [ClientLockToApMacListSetting](docs/ClientLockToApMacListSetting.md)
@@ -2788,6 +2956,7 @@ Class | Method | HTTP request | Description
  - [ClientMultifrequencyInfo](docs/ClientMultifrequencyInfo.md)
  - [ClientNameSetting](docs/ClientNameSetting.md)
  - [ClientNodeInfo](docs/ClientNodeInfo.md)
+ - [ClientObjectDTO](docs/ClientObjectDTO.md)
  - [ClientQueryDataOpenApiVO](docs/ClientQueryDataOpenApiVO.md)
  - [ClientQueryFiltersOpenApiVO](docs/ClientQueryFiltersOpenApiVO.md)
  - [ClientRateLimitSetting](docs/ClientRateLimitSetting.md)
@@ -2824,11 +2993,14 @@ Class | Method | HTTP request | Description
  - [CommonSubHealthInfoDetailVO](docs/CommonSubHealthInfoDetailVO.md)
  - [CommonSubHealthInfoDetailVOInteger](docs/CommonSubHealthInfoDetailVOInteger.md)
  - [CommonSubHealthInfoDetailVOLong](docs/CommonSubHealthInfoDetailVOLong.md)
+ - [CondBroadcastCtrlVO](docs/CondBroadcastCtrlVO.md)
  - [ConfigIotBtIbeaconOpenApiVO](docs/ConfigIotBtIbeaconOpenApiVO.md)
  - [ConfigIotBtIbeaconV2OpenApiVO](docs/ConfigIotBtIbeaconV2OpenApiVO.md)
  - [ConfigIotServerOpenApiVO](docs/ConfigIotServerOpenApiVO.md)
  - [ConfirmBindedDevicesEntity](docs/ConfirmBindedDevicesEntity.md)
+ - [ConnFailureApVO](docs/ConnFailureApVO.md)
  - [ConnectPeriodVO](docs/ConnectPeriodVO.md)
+ - [ConnectScoreSubHealthInfoDetailVO](docs/ConnectScoreSubHealthInfoDetailVO.md)
  - [ContentPortInfo](docs/ContentPortInfo.md)
  - [ControllerRoleDetailVO](docs/ControllerRoleDetailVO.md)
  - [ControllerRoleVO](docs/ControllerRoleVO.md)
@@ -2840,6 +3012,7 @@ Class | Method | HTTP request | Description
  - [CopyWifiCallingProfileOpenApiVO](docs/CopyWifiCallingProfileOpenApiVO.md)
  - [CorrectSimQuota](docs/CorrectSimQuota.md)
  - [CpuUsage](docs/CpuUsage.md)
+ - [CreateApGroupOpenApiVO](docs/CreateApGroupOpenApiVO.md)
  - [CreateAutoCheckResInfo](docs/CreateAutoCheckResInfo.md)
  - [CreateCallBlockingProfileEntity](docs/CreateCallBlockingProfileEntity.md)
  - [CreateCustomerOmadacVO](docs/CreateCustomerOmadacVO.md)
@@ -2858,9 +3031,6 @@ Class | Method | HTTP request | Description
  - [CreateMspUserVO](docs/CreateMspUserVO.md)
  - [CreateNewSiteResponse](docs/CreateNewSiteResponse.md)
  - [CreateNewSiteResponseAllOfResult](docs/CreateNewSiteResponseAllOfResult.md)
- - [CreateOspfInterfaceRequest](docs/CreateOspfInterfaceRequest.md)
- - [CreateOspfProcessRequest](docs/CreateOspfProcessRequest.md)
- - [CreateOswVrrpRequest](docs/CreateOswVrrpRequest.md)
  - [CreatePortTagOpenApiVO](docs/CreatePortTagOpenApiVO.md)
  - [CreateProviderProfileEntity](docs/CreateProviderProfileEntity.md)
  - [CreateRadiusProfileOpenApiVO](docs/CreateRadiusProfileOpenApiVO.md)
@@ -2869,9 +3039,11 @@ Class | Method | HTTP request | Description
  - [CreateRoleResultVO](docs/CreateRoleResultVO.md)
  - [CreateSiteByTemplate](docs/CreateSiteByTemplate.md)
  - [CreateSiteEntity](docs/CreateSiteEntity.md)
+ - [CreateSitePrivilegeVO](docs/CreateSitePrivilegeVO.md)
  - [CreateSiteTagOpenApiVO](docs/CreateSiteTagOpenApiVO.md)
  - [CreateSiteTemplateEntity](docs/CreateSiteTemplateEntity.md)
  - [CreateSsidOpenApiVO](docs/CreateSsidOpenApiVO.md)
+ - [CreateSsidResultVO](docs/CreateSsidResultVO.md)
  - [CreateTabOpenApiVO](docs/CreateTabOpenApiVO.md)
  - [CreateTimeRangeProfileOpenApiVO](docs/CreateTimeRangeProfileOpenApiVO.md)
  - [CreateUpgradePlanResinfo](docs/CreateUpgradePlanResinfo.md)
@@ -2913,9 +3085,11 @@ Class | Method | HTTP request | Description
  - [DashboardDistributionVO](docs/DashboardDistributionVO.md)
  - [DashboardIspLoadDetailVO](docs/DashboardIspLoadDetailVO.md)
  - [DashboardVpnStats](docs/DashboardVpnStats.md)
+ - [DataRateDistributionVO](docs/DataRateDistributionVO.md)
  - [DdnsIntervalOpenApiVO](docs/DdnsIntervalOpenApiVO.md)
  - [DdnsOpenApiGridVODdnsOpenApiVO](docs/DdnsOpenApiGridVODdnsOpenApiVO.md)
  - [DdnsOpenApiVO](docs/DdnsOpenApiVO.md)
+ - [DeleteAnomalyListSettingVO](docs/DeleteAnomalyListSettingVO.md)
  - [DeleteCallBlockingProfileEntity](docs/DeleteCallBlockingProfileEntity.md)
  - [DeleteCallForwardingRules](docs/DeleteCallForwardingRules.md)
  - [DeleteCertOpenApiVO](docs/DeleteCertOpenApiVO.md)
@@ -2963,6 +3137,8 @@ Class | Method | HTTP request | Description
  - [DeviceGatewayModelOpenApiVO](docs/DeviceGatewayModelOpenApiVO.md)
  - [DeviceGlobalSearchSummary](docs/DeviceGlobalSearchSummary.md)
  - [DeviceHealthVO](docs/DeviceHealthVO.md)
+ - [DeviceIncidentCountRequestOpenApiVO](docs/DeviceIncidentCountRequestOpenApiVO.md)
+ - [DeviceIncidentCountResultOpenApiVO](docs/DeviceIncidentCountResultOpenApiVO.md)
  - [DeviceInfo](docs/DeviceInfo.md)
  - [DeviceInterfaces](docs/DeviceInterfaces.md)
  - [DeviceListAddByDevicekeyOpenApiVO](docs/DeviceListAddByDevicekeyOpenApiVO.md)
@@ -2973,6 +3149,7 @@ Class | Method | HTTP request | Description
  - [DeviceLocationDetailVO](docs/DeviceLocationDetailVO.md)
  - [DeviceMoveSiteOpenApiVO](docs/DeviceMoveSiteOpenApiVO.md)
  - [DeviceNodeInfo](docs/DeviceNodeInfo.md)
+ - [DeviceObjectDTO](docs/DeviceObjectDTO.md)
  - [DeviceOpenApiVO](docs/DeviceOpenApiVO.md)
  - [DeviceOuiModeOpenApiVO](docs/DeviceOuiModeOpenApiVO.md)
  - [DeviceOuiModeQueryOpenApiVO](docs/DeviceOuiModeQueryOpenApiVO.md)
@@ -2981,6 +3158,7 @@ Class | Method | HTTP request | Description
  - [DevicePorts](docs/DevicePorts.md)
  - [DeviceRebootAppDTO](docs/DeviceRebootAppDTO.md)
  - [DeviceRememberConfig](docs/DeviceRememberConfig.md)
+ - [DeviceReplaceSettingVO](docs/DeviceReplaceSettingVO.md)
  - [DeviceResponseBodyDBAProfileDTO](docs/DeviceResponseBodyDBAProfileDTO.md)
  - [DeviceResponseBodyDBAProfileDeleteResultDTO](docs/DeviceResponseBodyDBAProfileDeleteResultDTO.md)
  - [DeviceResponseBodyGemPortDeleteResultDTO](docs/DeviceResponseBodyGemPortDeleteResultDTO.md)
@@ -3008,6 +3186,7 @@ Class | Method | HTTP request | Description
  - [DeviceUplinkOpenApiVO](docs/DeviceUplinkOpenApiVO.md)
  - [DeviceVO](docs/DeviceVO.md)
  - [DhcpIpSettingEntity](docs/DhcpIpSettingEntity.md)
+ - [DhcpIpVO](docs/DhcpIpVO.md)
  - [DhcpL2RelayVO](docs/DhcpL2RelayVO.md)
  - [DhcpRangeOpenApiVO](docs/DhcpRangeOpenApiVO.md)
  - [DhcpReservationErrorVO](docs/DhcpReservationErrorVO.md)
@@ -3059,6 +3238,7 @@ Class | Method | HTTP request | Description
  - [Dot1xEapOpenApiVO](docs/Dot1xEapOpenApiVO.md)
  - [Dot1xEapPortInfoOpenApiVO](docs/Dot1xEapPortInfoOpenApiVO.md)
  - [Dot1xEapSettingOpenApiVO](docs/Dot1xEapSettingOpenApiVO.md)
+ - [Dot1xGuestVlanSettingOpenApiVO](docs/Dot1xGuestVlanSettingOpenApiVO.md)
  - [Dot1xPortInfoOpenApiVO](docs/Dot1xPortInfoOpenApiVO.md)
  - [Dot1xSwitchInfoOpenApiVO](docs/Dot1xSwitchInfoOpenApiVO.md)
  - [Dot1xSwitchOpenApiVO](docs/Dot1xSwitchOpenApiVO.md)
@@ -3070,6 +3250,7 @@ Class | Method | HTTP request | Description
  - [DpiSettings](docs/DpiSettings.md)
  - [DragSortIndexOpenapiVO](docs/DragSortIndexOpenapiVO.md)
  - [DragSortIndexTemplateOpenapiVO](docs/DragSortIndexTemplateOpenapiVO.md)
+ - [DragSortIndexVO](docs/DragSortIndexVO.md)
  - [Drop](docs/Drop.md)
  - [DropEap](docs/DropEap.md)
  - [DscpMappingVO](docs/DscpMappingVO.md)
@@ -3079,6 +3260,7 @@ Class | Method | HTTP request | Description
  - [DstOpenApiVO](docs/DstOpenApiVO.md)
  - [DstTimeDTO](docs/DstTimeDTO.md)
  - [DstTimeOpenApiDTO](docs/DstTimeOpenApiDTO.md)
+ - [DuplicateSsidOpenApiVO](docs/DuplicateSsidOpenApiVO.md)
  - [DynamicIpv6SettingEntity](docs/DynamicIpv6SettingEntity.md)
  - [EPDGOpenApiVO](docs/EPDGOpenApiVO.md)
  - [ESDetailVO](docs/ESDetailVO.md)
@@ -3110,6 +3292,7 @@ Class | Method | HTTP request | Description
  - [EventLogOpenApiVO](docs/EventLogOpenApiVO.md)
  - [EventLogStatOpenApiVO](docs/EventLogStatOpenApiVO.md)
  - [ExcludeApDeleteOpenApiVO](docs/ExcludeApDeleteOpenApiVO.md)
+ - [ExcludeApVO](docs/ExcludeApVO.md)
  - [ExcludeChannelVO](docs/ExcludeChannelVO.md)
  - [ExcludedAPsConfig](docs/ExcludedAPsConfig.md)
  - [ExistSiteSettingOpenApiVO](docs/ExistSiteSettingOpenApiVO.md)
@@ -3148,6 +3331,7 @@ Class | Method | HTTP request | Description
  - [FilterEntity](docs/FilterEntity.md)
  - [FirewallSetting](docs/FirewallSetting.md)
  - [FirmwareInfo](docs/FirmwareInfo.md)
+ - [FloatSubHealthInfoDetailVO](docs/FloatSubHealthInfoDetailVO.md)
  - [FormAuthCardAnswerOpenApiVO](docs/FormAuthCardAnswerOpenApiVO.md)
  - [FormAuthCardOpenApiVO](docs/FormAuthCardOpenApiVO.md)
  - [FormAuthOpenApiVO](docs/FormAuthOpenApiVO.md)
@@ -3218,8 +3402,8 @@ Class | Method | HTTP request | Description
  - [GlobalSearchResultOpenApiVO](docs/GlobalSearchResultOpenApiVO.md)
  - [GlobalUnknownDeviceOpenApiVO](docs/GlobalUnknownDeviceOpenApiVO.md)
  - [GoogleOAuthSettingOpenApiVO](docs/GoogleOAuthSettingOpenApiVO.md)
- - [GridVOAnomalyEventSettingOpenApiVO](docs/GridVOAnomalyEventSettingOpenApiVO.md)
  - [GridVOApBtDetailOpenApiVO](docs/GridVOApBtDetailOpenApiVO.md)
+ - [GridVOApOverrideAuditLogVO](docs/GridVOApOverrideAuditLogVO.md)
  - [GridVOApVlansVO](docs/GridVOApVlansVO.md)
  - [GridVOApWifiInterferenceResult](docs/GridVOApWifiInterferenceResult.md)
  - [GridVOApplicationEntity](docs/GridVOApplicationEntity.md)
@@ -3263,6 +3447,8 @@ Class | Method | HTTP request | Description
  - [GridVOIPsecFailoverInformation](docs/GridVOIPsecFailoverInformation.md)
  - [GridVOIdpMetadataDetailOpenApiVO](docs/GridVOIdpMetadataDetailOpenApiVO.md)
  - [GridVOInboxMessage](docs/GridVOInboxMessage.md)
+ - [GridVOInfluencingClientVO](docs/GridVOInfluencingClientVO.md)
+ - [GridVOInfluencingDeviceVO](docs/GridVOInfluencingDeviceVO.md)
  - [GridVOIotBtIbeaconOpenApiVO](docs/GridVOIotBtIbeaconOpenApiVO.md)
  - [GridVOIotDeviceRadioInfoOpenApiVO](docs/GridVOIotDeviceRadioInfoOpenApiVO.md)
  - [GridVOIotServerOpenApiVO](docs/GridVOIotServerOpenApiVO.md)
@@ -3296,6 +3482,7 @@ Class | Method | HTTP request | Description
  - [GridVOOspfInterfaceOpenApiVO](docs/GridVOOspfInterfaceOpenApiVO.md)
  - [GridVOOspfProcessOpenApiVO](docs/GridVOOspfProcessOpenApiVO.md)
  - [GridVOOswDataVO](docs/GridVOOswDataVO.md)
+ - [GridVOOswDetailVO](docs/GridVOOswDetailVO.md)
  - [GridVOOswLldpNeighborVO](docs/GridVOOswLldpNeighborVO.md)
  - [GridVOOswMlagVO](docs/GridVOOswMlagVO.md)
  - [GridVOOswNetworkBriefInfoOpenApiVO](docs/GridVOOswNetworkBriefInfoOpenApiVO.md)
@@ -3304,13 +3491,13 @@ Class | Method | HTTP request | Description
  - [GridVOOswPortsSettingOverviewVO](docs/GridVOOswPortsSettingOverviewVO.md)
  - [GridVOOswPortsSettingPoeVO](docs/GridVOOswPortsSettingPoeVO.md)
  - [GridVOOswProfileOpenApiVO](docs/GridVOOswProfileOpenApiVO.md)
+ - [GridVOOswQosRuleVO](docs/GridVOOswQosRuleVO.md)
  - [GridVOOswRoutingOpenApiVO](docs/GridVOOswRoutingOpenApiVO.md)
  - [GridVOOswStackVO](docs/GridVOOswStackVO.md)
  - [GridVOOswVrfOpenApiVO](docs/GridVOOswVrfOpenApiVO.md)
- - [GridVOOswVrfVO](docs/GridVOOswVrfVO.md)
  - [GridVOOswVrrpOpenApiVO](docs/GridVOOswVrrpOpenApiVO.md)
  - [GridVOOuiBasedVlanApQueryOpenApiVO](docs/GridVOOuiBasedVlanApQueryOpenApiVO.md)
- - [GridVOOuiBasedVlanSwitchInfoOpenApiVO](docs/GridVOOuiBasedVlanSwitchInfoOpenApiVO.md)
+ - [GridVOOuiBasedVlanDeviceInfoVO](docs/GridVOOuiBasedVlanDeviceInfoVO.md)
  - [GridVOOuiBasedVlanSwitchQueryOpenApiVO](docs/GridVOOuiBasedVlanSwitchQueryOpenApiVO.md)
  - [GridVOOuiBasedVlanTemplateSwitchQueryOpenApiVO](docs/GridVOOuiBasedVlanTemplateSwitchQueryOpenApiVO.md)
  - [GridVOPlanUpgradeInfo](docs/GridVOPlanUpgradeInfo.md)
@@ -3334,6 +3521,7 @@ Class | Method | HTTP request | Description
  - [GridVOSiteSummaryInfo](docs/GridVOSiteSummaryInfo.md)
  - [GridVOSiteTemplateSummaryVO](docs/GridVOSiteTemplateSummaryVO.md)
  - [GridVOSpeedTestV2ResultItemOpenApiVO](docs/GridVOSpeedTestV2ResultItemOpenApiVO.md)
+ - [GridVOSsidDeviceOpenApiVO](docs/GridVOSsidDeviceOpenApiVO.md)
  - [GridVOSsidOpenApiVO](docs/GridVOSsidOpenApiVO.md)
  - [GridVOSslVpnResourceEntity](docs/GridVOSslVpnResourceEntity.md)
  - [GridVOSslVpnResourceGroup](docs/GridVOSslVpnResourceGroup.md)
@@ -3361,6 +3549,7 @@ Class | Method | HTTP request | Description
  - [GridVOWireguardDetailOpenApiVO](docs/GridVOWireguardDetailOpenApiVO.md)
  - [GridVOWlanGroupOpenApiVO](docs/GridVOWlanGroupOpenApiVO.md)
  - [GroupOpenApiVO](docs/GroupOpenApiVO.md)
+ - [HealthDistributionVO](docs/HealthDistributionVO.md)
  - [HealthStatOpenApiVO](docs/HealthStatOpenApiVO.md)
  - [HealthStatVO](docs/HealthStatVO.md)
  - [HealthStatisticsScoreVO](docs/HealthStatisticsScoreVO.md)
@@ -3398,7 +3587,21 @@ Class | Method | HTTP request | Description
  - [ImportedPortalPageOpenApiVO](docs/ImportedPortalPageOpenApiVO.md)
  - [ImportedPortalPageResOpenApiVO](docs/ImportedPortalPageResOpenApiVO.md)
  - [InboxMessage](docs/InboxMessage.md)
+ - [Incident](docs/Incident.md)
+ - [IncidentCountOpenApiVO](docs/IncidentCountOpenApiVO.md)
+ - [IncidentDistributionOpenApiVO](docs/IncidentDistributionOpenApiVO.md)
+ - [IncidentRankingBandItemVO](docs/IncidentRankingBandItemVO.md)
+ - [IncidentRankingClientItemVO](docs/IncidentRankingClientItemVO.md)
+ - [IncidentRankingDeviceItemVO](docs/IncidentRankingDeviceItemVO.md)
+ - [IncidentRankingQueryVO](docs/IncidentRankingQueryVO.md)
+ - [IncidentRankingResultVO](docs/IncidentRankingResultVO.md)
+ - [IncidentRankingSsidItemVO](docs/IncidentRankingSsidItemVO.md)
+ - [IncidentSubHealthInfoDetailVO](docs/IncidentSubHealthInfoDetailVO.md)
+ - [IncidentVO](docs/IncidentVO.md)
  - [IncomingCallsBlockingVO](docs/IncomingCallsBlockingVO.md)
+ - [InfluencingClientVO](docs/InfluencingClientVO.md)
+ - [InfluencingDeviceVO](docs/InfluencingDeviceVO.md)
+ - [InsightAnomalyStatVO](docs/InsightAnomalyStatVO.md)
  - [InstancesVO](docs/InstancesVO.md)
  - [IntIdListRequest](docs/IntIdListRequest.md)
  - [IntelliRecoverSetting](docs/IntelliRecoverSetting.md)
@@ -3463,6 +3666,7 @@ Class | Method | HTTP request | Description
  - [KnownClientVO](docs/KnownClientVO.md)
  - [LagCapVO](docs/LagCapVO.md)
  - [LagInfoOpenApiVO](docs/LagInfoOpenApiVO.md)
+ - [LagInfoVO](docs/LagInfoVO.md)
  - [LanDnsGridVOLanDnsOpenApiVO](docs/LanDnsGridVOLanDnsOpenApiVO.md)
  - [LanDnsGridVOLanDnsQueryOpenApiVO](docs/LanDnsGridVOLanDnsQueryOpenApiVO.md)
  - [LanDnsOpenApiVO](docs/LanDnsOpenApiVO.md)
@@ -3521,7 +3725,9 @@ Class | Method | HTTP request | Description
  - [LineProfileModifyDTO](docs/LineProfileModifyDTO.md)
  - [LineProfilePageQueryDTO](docs/LineProfilePageQueryDTO.md)
  - [LineProfileVO](docs/LineProfileVO.md)
+ - [LinkErrorHealthInfoDetailVO](docs/LinkErrorHealthInfoDetailVO.md)
  - [ListTabs](docs/ListTabs.md)
+ - [LocalOwnerConfirmVO](docs/LocalOwnerConfirmVO.md)
  - [LocalUserOpenApiVO](docs/LocalUserOpenApiVO.md)
  - [LocateDeviceRequest](docs/LocateDeviceRequest.md)
  - [LocateOswPortsOpenApiVO](docs/LocateOswPortsOpenApiVO.md)
@@ -3543,6 +3749,7 @@ Class | Method | HTTP request | Description
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)
  - [LoginResult](docs/LoginResult.md)
+ - [LongTimeValueItemVO](docs/LongTimeValueItemVO.md)
  - [LongestUptimeClientInfo](docs/LongestUptimeClientInfo.md)
  - [LteWanPortSettingConfigOpenApiV2VO](docs/LteWanPortSettingConfigOpenApiV2VO.md)
  - [LteWanPortSettingConfigOpenApiVO](docs/LteWanPortSettingConfigOpenApiVO.md)
@@ -3609,8 +3816,6 @@ Class | Method | HTTP request | Description
  - [ModifyMspRemoteLoggingSettingOpenApiVO](docs/ModifyMspRemoteLoggingSettingOpenApiVO.md)
  - [ModifyMspRoleVO](docs/ModifyMspRoleVO.md)
  - [ModifyMspUserVO](docs/ModifyMspUserVO.md)
- - [ModifyOspfInterfaceRequest](docs/ModifyOspfInterfaceRequest.md)
- - [ModifyOspfProcessRequest](docs/ModifyOspfProcessRequest.md)
  - [ModifyOswVrfOpenApiVO](docs/ModifyOswVrfOpenApiVO.md)
  - [ModifyProviderProfileEntity](docs/ModifyProviderProfileEntity.md)
  - [ModifyProviderSettingOpenApiVO](docs/ModifyProviderSettingOpenApiVO.md)
@@ -3635,6 +3840,8 @@ Class | Method | HTTP request | Description
  - [MspClientDetailInfoSettingVO](docs/MspClientDetailInfoSettingVO.md)
  - [MspClientOverallVO](docs/MspClientOverallVO.md)
  - [MspDeviceClientNumOpenApiVO](docs/MspDeviceClientNumOpenApiVO.md)
+ - [MspDeviceIncidentCountItemOpenApiVO](docs/MspDeviceIncidentCountItemOpenApiVO.md)
+ - [MspDeviceIncidentCountRequestOpenApiVO](docs/MspDeviceIncidentCountRequestOpenApiVO.md)
  - [MspDeviceItem](docs/MspDeviceItem.md)
  - [MspDevicesQueryOpenApiVO](docs/MspDevicesQueryOpenApiVO.md)
  - [MspExternalUserDetailOpenApiVO](docs/MspExternalUserDetailOpenApiVO.md)
@@ -3705,6 +3912,7 @@ Class | Method | HTTP request | Description
  - [OltUplinkVO](docs/OltUplinkVO.md)
  - [OmadacClientSettingOpenApiVO](docs/OmadacClientSettingOpenApiVO.md)
  - [OmadacInfoOpenApiVO](docs/OmadacInfoOpenApiVO.md)
+ - [OnBoardingTimeSubHealthDetailVO](docs/OnBoardingTimeSubHealthDetailVO.md)
  - [OnlineOfflineVO](docs/OnlineOfflineVO.md)
  - [OnlineUpgradeRes](docs/OnlineUpgradeRes.md)
  - [OntEthPortDTO](docs/OntEthPortDTO.md)
@@ -3739,6 +3947,7 @@ Class | Method | HTTP request | Description
  - [OpenApiClientInfo](docs/OpenApiClientInfo.md)
  - [OpenApiClientIpSetting](docs/OpenApiClientIpSetting.md)
  - [OpenApiDispatchLogDetailVO](docs/OpenApiDispatchLogDetailVO.md)
+ - [OpenApiQueryDataV2VO](docs/OpenApiQueryDataV2VO.md)
  - [OpenApiQueryDataVO](docs/OpenApiQueryDataVO.md)
  - [OpenApiQuerySpeedTestDateListVO](docs/OpenApiQuerySpeedTestDateListVO.md)
  - [OpenApiSpeedTestSelectPortsVO](docs/OpenApiSpeedTestSelectPortsVO.md)
@@ -3753,6 +3962,7 @@ Class | Method | HTTP request | Description
  - [OperateMessage](docs/OperateMessage.md)
  - [OperationResponse](docs/OperationResponse.md)
  - [OperationResponseAPBridgeParingWindowResult](docs/OperationResponseAPBridgeParingWindowResult.md)
+ - [OperationResponseAddApGroupResultVO](docs/OperationResponseAddApGroupResultVO.md)
  - [OperationResponseAddCallForwardingRuleResp](docs/OperationResponseAddCallForwardingRuleResp.md)
  - [OperationResponseAdoptResult](docs/OperationResponseAdoptResult.md)
  - [OperationResponseAdoptTipOpenApiVO](docs/OperationResponseAdoptTipOpenApiVO.md)
@@ -3761,21 +3971,29 @@ Class | Method | HTTP request | Description
  - [OperationResponseAlertLogGridVOAlertLogOpenApiVO](docs/OperationResponseAlertLogGridVOAlertLogOpenApiVO.md)
  - [OperationResponseAllTargetSites](docs/OperationResponseAllTargetSites.md)
  - [OperationResponseAllTimeVoucherSummaryOpenApiVO](docs/OperationResponseAllTimeVoucherSummaryOpenApiVO.md)
+ - [OperationResponseAnomalyGridVOAnomalyAggregateVO](docs/OperationResponseAnomalyGridVOAnomalyAggregateVO.md)
  - [OperationResponseAnomalySettingGridVOAnomalyEventSettingOpenApiVO](docs/OperationResponseAnomalySettingGridVOAnomalyEventSettingOpenApiVO.md)
+ - [OperationResponseAnomalyVO](docs/OperationResponseAnomalyVO.md)
  - [OperationResponseApAdvancedLoadBalanceOpenApiVO](docs/OperationResponseApAdvancedLoadBalanceOpenApiVO.md)
  - [OperationResponseApAdvancedQosOpenApiVO](docs/OperationResponseApAdvancedQosOpenApiVO.md)
  - [OperationResponseApAfcInfoOpenApiVO](docs/OperationResponseApAfcInfoOpenApiVO.md)
  - [OperationResponseApAntSwitchConfigOpenApiVO](docs/OperationResponseApAntSwitchConfigOpenApiVO.md)
  - [OperationResponseApAnteGainConfig](docs/OperationResponseApAnteGainConfig.md)
+ - [OperationResponseApBatchConfigResultVO](docs/OperationResponseApBatchConfigResultVO.md)
  - [OperationResponseApBridgeInfo](docs/OperationResponseApBridgeInfo.md)
  - [OperationResponseApChannelLoadResult](docs/OperationResponseApChannelLoadResult.md)
  - [OperationResponseApChannelStats](docs/OperationResponseApChannelStats.md)
  - [OperationResponseApExist6GOpenApiVO](docs/OperationResponseApExist6GOpenApiVO.md)
  - [OperationResponseApFullChannelScanStatus](docs/OperationResponseApFullChannelScanStatus.md)
  - [OperationResponseApGeneralConfig](docs/OperationResponseApGeneralConfig.md)
+ - [OperationResponseApGroupDetailOpenApiVO](docs/OperationResponseApGroupDetailOpenApiVO.md)
+ - [OperationResponseApGroupGridVOApGroupOpenApiVO](docs/OperationResponseApGroupGridVOApGroupOpenApiVO.md)
+ - [OperationResponseApGroupOpenApiVO](docs/OperationResponseApGroupOpenApiVO.md)
+ - [OperationResponseApGroupStatusOpenApiVO](docs/OperationResponseApGroupStatusOpenApiVO.md)
  - [OperationResponseApHealthDetailVO](docs/OperationResponseApHealthDetailVO.md)
  - [OperationResponseApIPSetting](docs/OperationResponseApIPSetting.md)
  - [OperationResponseApIPv6Setting](docs/OperationResponseApIPv6Setting.md)
+ - [OperationResponseApInterference](docs/OperationResponseApInterference.md)
  - [OperationResponseApInterferences](docs/OperationResponseApInterferences.md)
  - [OperationResponseApL3AccessConfigOpenApiVO](docs/OperationResponseApL3AccessConfigOpenApiVO.md)
  - [OperationResponseApLanTraffic](docs/OperationResponseApLanTraffic.md)
@@ -3806,6 +4024,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseAttackDefenseSettingForQuery](docs/OperationResponseAttackDefenseSettingForQuery.md)
  - [OperationResponseAuditLogNotificationSettingOpenApiVO](docs/OperationResponseAuditLogNotificationSettingOpenApiVO.md)
  - [OperationResponseAutoAuthenticationConfigDTO](docs/OperationResponseAutoAuthenticationConfigDTO.md)
+ - [OperationResponseAutoBackupOpenApiVO](docs/OperationResponseAutoBackupOpenApiVO.md)
  - [OperationResponseAutoEffectDevicesForVlanVO](docs/OperationResponseAutoEffectDevicesForVlanVO.md)
  - [OperationResponseAutoSelectDevicesForVlanVO](docs/OperationResponseAutoSelectDevicesForVlanVO.md)
  - [OperationResponseAutofindConfigDTO](docs/OperationResponseAutofindConfigDTO.md)
@@ -3836,13 +4055,17 @@ Class | Method | HTTP request | Description
  - [OperationResponseCliConfigTemplateOpenApiVO](docs/OperationResponseCliConfigTemplateOpenApiVO.md)
  - [OperationResponseClientActiveTimeout](docs/OperationResponseClientActiveTimeout.md)
  - [OperationResponseClientAssociationTimeDistributionVO](docs/OperationResponseClientAssociationTimeDistributionVO.md)
+ - [OperationResponseClientCardsResultOpenApiVO](docs/OperationResponseClientCardsResultOpenApiVO.md)
  - [OperationResponseClientConnectionHistories](docs/OperationResponseClientConnectionHistories.md)
  - [OperationResponseClientCorrectionOptionListVO](docs/OperationResponseClientCorrectionOptionListVO.md)
  - [OperationResponseClientDetail](docs/OperationResponseClientDetail.md)
  - [OperationResponseClientDetailInformationSettingVO](docs/OperationResponseClientDetailInformationSettingVO.md)
  - [OperationResponseClientFilteringOptions](docs/OperationResponseClientFilteringOptions.md)
  - [OperationResponseClientGridVOOpenApiClientInfo](docs/OperationResponseClientGridVOOpenApiClientInfo.md)
+ - [OperationResponseClientGridVOSsidClientVO](docs/OperationResponseClientGridVOSsidClientVO.md)
+ - [OperationResponseClientHealthDetailV2VO](docs/OperationResponseClientHealthDetailV2VO.md)
  - [OperationResponseClientHealthDetailVO](docs/OperationResponseClientHealthDetailVO.md)
+ - [OperationResponseClientIncidentCountResultOpenApiVO](docs/OperationResponseClientIncidentCountResultOpenApiVO.md)
  - [OperationResponseClientRecognitionEnableOpenApiVO](docs/OperationResponseClientRecognitionEnableOpenApiVO.md)
  - [OperationResponseClientRssiChannelDistributionVO](docs/OperationResponseClientRssiChannelDistributionVO.md)
  - [OperationResponseClientScoreTimelineListVO](docs/OperationResponseClientScoreTimelineListVO.md)
@@ -3861,6 +4084,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseCreateCustomerOmadacVO](docs/OperationResponseCreateCustomerOmadacVO.md)
  - [OperationResponseCreateFailedDeviceUpgradePlan](docs/OperationResponseCreateFailedDeviceUpgradePlan.md)
  - [OperationResponseCreateRoleResultVO](docs/OperationResponseCreateRoleResultVO.md)
+ - [OperationResponseCreateSsidResultVO](docs/OperationResponseCreateSsidResultVO.md)
  - [OperationResponseCreateUpgradePlanResinfo](docs/OperationResponseCreateUpgradePlanResinfo.md)
  - [OperationResponseCreateUserResultVO](docs/OperationResponseCreateUserResultVO.md)
  - [OperationResponseCreatedResIdOpenApiVO](docs/OperationResponseCreatedResIdOpenApiVO.md)
@@ -3878,6 +4102,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseDeviceAddProcessRespVO](docs/OperationResponseDeviceAddProcessRespVO.md)
  - [OperationResponseDeviceAddRespOpenApiVO](docs/OperationResponseDeviceAddRespOpenApiVO.md)
  - [OperationResponseDeviceFirmwareInfo](docs/OperationResponseDeviceFirmwareInfo.md)
+ - [OperationResponseDeviceIncidentCountResultOpenApiVO](docs/OperationResponseDeviceIncidentCountResultOpenApiVO.md)
  - [OperationResponseDeviceInterfaces](docs/OperationResponseDeviceInterfaces.md)
  - [OperationResponseDeviceRebootAppDTO](docs/OperationResponseDeviceRebootAppDTO.md)
  - [OperationResponseDeviceRememberConfig](docs/OperationResponseDeviceRememberConfig.md)
@@ -3910,7 +4135,10 @@ Class | Method | HTTP request | Description
  - [OperationResponseDot1xBasicInfoEapOpenApiVO](docs/OperationResponseDot1xBasicInfoEapOpenApiVO.md)
  - [OperationResponseDot1xSwitchResOpenApiVO](docs/OperationResponseDot1xSwitchResOpenApiVO.md)
  - [OperationResponseDpiSettings](docs/OperationResponseDpiSettings.md)
+ - [OperationResponseDscpMappingVO](docs/OperationResponseDscpMappingVO.md)
  - [OperationResponseDstOpenApiVO](docs/OperationResponseDstOpenApiVO.md)
+ - [OperationResponseDuplicateSsidOpenApiVO](docs/OperationResponseDuplicateSsidOpenApiVO.md)
+ - [OperationResponseESDetailVO](docs/OperationResponseESDetailVO.md)
  - [OperationResponseEapRssiChannelDistributionVO](docs/OperationResponseEapRssiChannelDistributionVO.md)
  - [OperationResponseEasyManageOverviewInfo](docs/OperationResponseEasyManageOverviewInfo.md)
  - [OperationResponseEasyManagedSwitchGeneralConfigDetail](docs/OperationResponseEasyManagedSwitchGeneralConfigDetail.md)
@@ -3947,7 +4175,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseGlobalOverViewOpenApiVO](docs/OperationResponseGlobalOverViewOpenApiVO.md)
  - [OperationResponseGlobalPortalDomainOpenApiVO](docs/OperationResponseGlobalPortalDomainOpenApiVO.md)
  - [OperationResponseGlobalSearchResultOpenApiVO](docs/OperationResponseGlobalSearchResultOpenApiVO.md)
- - [OperationResponseGridVOAnomalyEventSettingOpenApiVO](docs/OperationResponseGridVOAnomalyEventSettingOpenApiVO.md)
+ - [OperationResponseGridVOApOverrideAuditLogVO](docs/OperationResponseGridVOApOverrideAuditLogVO.md)
  - [OperationResponseGridVOApVlansVO](docs/OperationResponseGridVOApVlansVO.md)
  - [OperationResponseGridVOApWifiInterferenceResult](docs/OperationResponseGridVOApWifiInterferenceResult.md)
  - [OperationResponseGridVOApplicationEntity](docs/OperationResponseGridVOApplicationEntity.md)
@@ -3991,6 +4219,8 @@ Class | Method | HTTP request | Description
  - [OperationResponseGridVOIPsecFailoverInformation](docs/OperationResponseGridVOIPsecFailoverInformation.md)
  - [OperationResponseGridVOIdpMetadataDetailOpenApiVO](docs/OperationResponseGridVOIdpMetadataDetailOpenApiVO.md)
  - [OperationResponseGridVOInboxMessage](docs/OperationResponseGridVOInboxMessage.md)
+ - [OperationResponseGridVOInfluencingClientVO](docs/OperationResponseGridVOInfluencingClientVO.md)
+ - [OperationResponseGridVOInfluencingDeviceVO](docs/OperationResponseGridVOInfluencingDeviceVO.md)
  - [OperationResponseGridVOIpsBlockListEntry](docs/OperationResponseGridVOIpsBlockListEntry.md)
  - [OperationResponseGridVOIpsSignatureInfo](docs/OperationResponseGridVOIpsSignatureInfo.md)
  - [OperationResponseGridVOIpsThreatOpenApiVO](docs/OperationResponseGridVOIpsThreatOpenApiVO.md)
@@ -4020,17 +4250,19 @@ Class | Method | HTTP request | Description
  - [OperationResponseGridVOOspfInterfaceOpenApiVO](docs/OperationResponseGridVOOspfInterfaceOpenApiVO.md)
  - [OperationResponseGridVOOspfProcessOpenApiVO](docs/OperationResponseGridVOOspfProcessOpenApiVO.md)
  - [OperationResponseGridVOOswDataVO](docs/OperationResponseGridVOOswDataVO.md)
+ - [OperationResponseGridVOOswDetailVO](docs/OperationResponseGridVOOswDetailVO.md)
  - [OperationResponseGridVOOswLldpNeighborVO](docs/OperationResponseGridVOOswLldpNeighborVO.md)
  - [OperationResponseGridVOOswMlagVO](docs/OperationResponseGridVOOswMlagVO.md)
  - [OperationResponseGridVOOswPortsSettingCountersVO](docs/OperationResponseGridVOOswPortsSettingCountersVO.md)
  - [OperationResponseGridVOOswPortsSettingOverviewVO](docs/OperationResponseGridVOOswPortsSettingOverviewVO.md)
  - [OperationResponseGridVOOswPortsSettingPoeVO](docs/OperationResponseGridVOOswPortsSettingPoeVO.md)
+ - [OperationResponseGridVOOswQosRuleVO](docs/OperationResponseGridVOOswQosRuleVO.md)
  - [OperationResponseGridVOOswRoutingOpenApiVO](docs/OperationResponseGridVOOswRoutingOpenApiVO.md)
  - [OperationResponseGridVOOswStackVO](docs/OperationResponseGridVOOswStackVO.md)
  - [OperationResponseGridVOOswVrfOpenApiVO](docs/OperationResponseGridVOOswVrfOpenApiVO.md)
  - [OperationResponseGridVOOswVrrpOpenApiVO](docs/OperationResponseGridVOOswVrrpOpenApiVO.md)
  - [OperationResponseGridVOOuiBasedVlanApQueryOpenApiVO](docs/OperationResponseGridVOOuiBasedVlanApQueryOpenApiVO.md)
- - [OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO](docs/OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO.md)
+ - [OperationResponseGridVOOuiBasedVlanDeviceInfoVO](docs/OperationResponseGridVOOuiBasedVlanDeviceInfoVO.md)
  - [OperationResponseGridVOOuiBasedVlanSwitchQueryOpenApiVO](docs/OperationResponseGridVOOuiBasedVlanSwitchQueryOpenApiVO.md)
  - [OperationResponseGridVOOuiBasedVlanTemplateSwitchQueryOpenApiVO](docs/OperationResponseGridVOOuiBasedVlanTemplateSwitchQueryOpenApiVO.md)
  - [OperationResponseGridVOPlanUpgradeInfo](docs/OperationResponseGridVOPlanUpgradeInfo.md)
@@ -4040,6 +4272,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseGridVOPortScheduleQueryOpenApiVO](docs/OperationResponseGridVOPortScheduleQueryOpenApiVO.md)
  - [OperationResponseGridVOProviderProfileEntity](docs/OperationResponseGridVOProviderProfileEntity.md)
  - [OperationResponseGridVOQosBwcDetailOpenApiVO](docs/OperationResponseGridVOQosBwcDetailOpenApiVO.md)
+ - [OperationResponseGridVORFPlanningHistory](docs/OperationResponseGridVORFPlanningHistory.md)
  - [OperationResponseGridVORadiusUserOpenApiVO](docs/OperationResponseGridVORadiusUserOpenApiVO.md)
  - [OperationResponseGridVORestrictionResultEntity](docs/OperationResponseGridVORestrictionResultEntity.md)
  - [OperationResponseGridVORogueAPScanResultEntry](docs/OperationResponseGridVORogueAPScanResultEntry.md)
@@ -4053,6 +4286,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseGridVOSiteSummaryInfo](docs/OperationResponseGridVOSiteSummaryInfo.md)
  - [OperationResponseGridVOSiteTemplateSummaryVO](docs/OperationResponseGridVOSiteTemplateSummaryVO.md)
  - [OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO](docs/OperationResponseGridVOSpeedTestV2ResultItemOpenApiVO.md)
+ - [OperationResponseGridVOSsidDeviceOpenApiVO](docs/OperationResponseGridVOSsidDeviceOpenApiVO.md)
  - [OperationResponseGridVOSsidOpenApiVO](docs/OperationResponseGridVOSsidOpenApiVO.md)
  - [OperationResponseGridVOSslVpnResourceEntity](docs/OperationResponseGridVOSslVpnResourceEntity.md)
  - [OperationResponseGridVOSslVpnResourceGroup](docs/OperationResponseGridVOSslVpnResourceGroup.md)
@@ -4085,6 +4319,8 @@ Class | Method | HTTP request | Description
  - [OperationResponseIgmpTemplateOpenApiVO](docs/OperationResponseIgmpTemplateOpenApiVO.md)
  - [OperationResponseImportCliVarOpenApiVO](docs/OperationResponseImportCliVarOpenApiVO.md)
  - [OperationResponseImportedPortalPageResOpenApiVO](docs/OperationResponseImportedPortalPageResOpenApiVO.md)
+ - [OperationResponseIncidentDistributionOpenApiVO](docs/OperationResponseIncidentDistributionOpenApiVO.md)
+ - [OperationResponseIncidentRankingResultVO](docs/OperationResponseIncidentRankingResultVO.md)
  - [OperationResponseIntelliRecoverSetting](docs/OperationResponseIntelliRecoverSetting.md)
  - [OperationResponseInternetBaseInfoOpenApiVO](docs/OperationResponseInternetBaseInfoOpenApiVO.md)
  - [OperationResponseInternetBaseInfoTemplateOpenApiVO](docs/OperationResponseInternetBaseInfoTemplateOpenApiVO.md)
@@ -4112,9 +4348,12 @@ Class | Method | HTTP request | Description
  - [OperationResponseListActiveClientVO](docs/OperationResponseListActiveClientVO.md)
  - [OperationResponseListActiveDevice](docs/OperationResponseListActiveDevice.md)
  - [OperationResponseListActivityRecordsOfAClientSSingleConnections](docs/OperationResponseListActivityRecordsOfAClientSSingleConnections.md)
+ - [OperationResponseListAnomalyBriefCountVO](docs/OperationResponseListAnomalyBriefCountVO.md)
+ - [OperationResponseListAnomalyCategoryEventCountVO](docs/OperationResponseListAnomalyCategoryEventCountVO.md)
  - [OperationResponseListApAvailableChannelOpenApiVO](docs/OperationResponseListApAvailableChannelOpenApiVO.md)
  - [OperationResponseListApBriefInfo](docs/OperationResponseListApBriefInfo.md)
  - [OperationResponseListApChannelLoadResult](docs/OperationResponseListApChannelLoadResult.md)
+ - [OperationResponseListApInterference](docs/OperationResponseListApInterference.md)
  - [OperationResponseListApUplinkConfigOpenApiVO](docs/OperationResponseListApUplinkConfigOpenApiVO.md)
  - [OperationResponseListApnProfile](docs/OperationResponseListApnProfile.md)
  - [OperationResponseListApplicationStatTraffic](docs/OperationResponseListApplicationStatTraffic.md)
@@ -4149,6 +4388,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseListEnableFullChannelDetectApInfoOpenApiVO](docs/OperationResponseListEnableFullChannelDetectApInfoOpenApiVO.md)
  - [OperationResponseListEthLagPortAppDTO](docs/OperationResponseListEthLagPortAppDTO.md)
  - [OperationResponseListEthUnit1PortAppDTO](docs/OperationResponseListEthUnit1PortAppDTO.md)
+ - [OperationResponseListExcludeApVO](docs/OperationResponseListExcludeApVO.md)
  - [OperationResponseListFamilyEntity](docs/OperationResponseListFamilyEntity.md)
  - [OperationResponseListFormAuthOpenApiVO](docs/OperationResponseListFormAuthOpenApiVO.md)
  - [OperationResponseListGatewayWanStatusEntity](docs/OperationResponseListGatewayWanStatusEntity.md)
@@ -4181,6 +4421,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseListOswDDMInfoOpenApiVO](docs/OperationResponseListOswDDMInfoOpenApiVO.md)
  - [OperationResponseListOswDetailBatchSelectedVO](docs/OperationResponseListOswDetailBatchSelectedVO.md)
  - [OperationResponseListOswDetailForPortsViewVO](docs/OperationResponseListOswDetailForPortsViewVO.md)
+ - [OperationResponseListOswInterfaceBriefVO](docs/OperationResponseListOswInterfaceBriefVO.md)
  - [OperationResponseListOswStackDetailStatVO](docs/OperationResponseListOswStackDetailStatVO.md)
  - [OperationResponseListOswStackMemberLagVO](docs/OperationResponseListOswStackMemberLagVO.md)
  - [OperationResponseListOswStackMemberStatVO](docs/OperationResponseListOswStackMemberStatVO.md)
@@ -4209,6 +4450,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseListSelectDeviceForVlanTemplateVO](docs/OperationResponseListSelectDeviceForVlanTemplateVO.md)
  - [OperationResponseListSelectDeviceForVlanVO](docs/OperationResponseListSelectDeviceForVlanVO.md)
  - [OperationResponseListSelectStackForVlanVO](docs/OperationResponseListSelectStackForVlanVO.md)
+ - [OperationResponseListSelectedOswBriefVO](docs/OperationResponseListSelectedOswBriefVO.md)
  - [OperationResponseListServicePortProfileDTO](docs/OperationResponseListServicePortProfileDTO.md)
  - [OperationResponseListServicePortProfileListDetailDTO](docs/OperationResponseListServicePortProfileListDetailDTO.md)
  - [OperationResponseListServicePortVO](docs/OperationResponseListServicePortVO.md)
@@ -4297,11 +4539,17 @@ Class | Method | HTTP request | Description
  - [OperationResponseOsgPinDetailOpenApiVO](docs/OperationResponseOsgPinDetailOpenApiVO.md)
  - [OperationResponseOsgSimCardOpenApiVO](docs/OperationResponseOsgSimCardOpenApiVO.md)
  - [OperationResponseOswCableTestResultWithStatusVO](docs/OperationResponseOswCableTestResultWithStatusVO.md)
+ - [OperationResponseOswDetailVO](docs/OperationResponseOswDetailVO.md)
  - [OperationResponseOswHealthDetailVO](docs/OperationResponseOswHealthDetailVO.md)
+ - [OperationResponseOswInterfaceGridOswInterfaceOpenApi](docs/OperationResponseOswInterfaceGridOswInterfaceOpenApi.md)
  - [OperationResponseOswL3SdmApplicationVO](docs/OperationResponseOswL3SdmApplicationVO.md)
+ - [OperationResponseOswLoopbackInterfaceResultOpenApiVO](docs/OperationResponseOswLoopbackInterfaceResultOpenApiVO.md)
+ - [OperationResponseOswMacListVO](docs/OperationResponseOswMacListVO.md)
  - [OperationResponseOswNetworkGridOswNetworkOpenApi](docs/OperationResponseOswNetworkGridOswNetworkOpenApi.md)
  - [OperationResponseOswOspfNeighborGridVOOswOspfNeighborVO](docs/OperationResponseOswOspfNeighborGridVOOswOspfNeighborVO.md)
  - [OperationResponseOswPoeResultOpenApiVO](docs/OperationResponseOswPoeResultOpenApiVO.md)
+ - [OperationResponseOswQosModeVO](docs/OperationResponseOswQosModeVO.md)
+ - [OperationResponseOswQosRuleResultVO](docs/OperationResponseOswQosRuleResultVO.md)
  - [OperationResponseOswRankingCardsOpenApiVO](docs/OperationResponseOswRankingCardsOpenApiVO.md)
  - [OperationResponseOswSdmApplicationVO](docs/OperationResponseOswSdmApplicationVO.md)
  - [OperationResponseOswStackCableTestVO](docs/OperationResponseOswStackCableTestVO.md)
@@ -4315,6 +4563,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseOtoNatOpenApiGridVO](docs/OperationResponseOtoNatOpenApiGridVO.md)
  - [OperationResponseOuiGridVOOuiProfileQueryOpenApiVO](docs/OperationResponseOuiGridVOOuiProfileQueryOpenApiVO.md)
  - [OperationResponseOutboxMessageOpenApiGridVOOutboxMessage](docs/OperationResponseOutboxMessageOpenApiGridVOOutboxMessage.md)
+ - [OperationResponseOverviewStatisticsOpenApiVO](docs/OperationResponseOverviewStatisticsOpenApiVO.md)
  - [OperationResponsePPSKProfileVO](docs/OperationResponsePPSKProfileVO.md)
  - [OperationResponsePageResponseAuthenticationConfigDTO](docs/OperationResponsePageResponseAuthenticationConfigDTO.md)
  - [OperationResponsePageResponseAutoServicePortVO](docs/OperationResponsePageResponseAutoServicePortVO.md)
@@ -4336,6 +4585,7 @@ Class | Method | HTTP request | Description
  - [OperationResponsePageResponseTrafficProfileVO](docs/OperationResponsePageResponseTrafficProfileVO.md)
  - [OperationResponsePlanUpgradeModelInfo](docs/OperationResponsePlanUpgradeModelInfo.md)
  - [OperationResponsePlanningHistoryDetail](docs/OperationResponsePlanningHistoryDetail.md)
+ - [OperationResponsePlanningHistoryListVO](docs/OperationResponsePlanningHistoryListVO.md)
  - [OperationResponsePolicyRoutingOpenApiGridVOPolicyRoutingInfo](docs/OperationResponsePolicyRoutingOpenApiGridVOPolicyRoutingInfo.md)
  - [OperationResponsePonAutoAuthenticationConfigDTO](docs/OperationResponsePonAutoAuthenticationConfigDTO.md)
  - [OperationResponsePortForwardingGridVOPortForwardingInfo](docs/OperationResponsePortForwardingGridVOPortForwardingInfo.md)
@@ -4348,9 +4598,11 @@ Class | Method | HTTP request | Description
  - [OperationResponsePortalPictureInfo](docs/OperationResponsePortalPictureInfo.md)
  - [OperationResponsePrivacyPolicy](docs/OperationResponsePrivacyPolicy.md)
  - [OperationResponseQueryDeviceListOpenApiVO](docs/OperationResponseQueryDeviceListOpenApiVO.md)
+ - [OperationResponseQueueSchedulerMappingVO](docs/OperationResponseQueueSchedulerMappingVO.md)
  - [OperationResponseRFPlanningResult](docs/OperationResponseRFPlanningResult.md)
  - [OperationResponseRemoteBindingOpenApiVO](docs/OperationResponseRemoteBindingOpenApiVO.md)
  - [OperationResponseRemoteLog](docs/OperationResponseRemoteLog.md)
+ - [OperationResponseReplaceConfigRespVO](docs/OperationResponseReplaceConfigRespVO.md)
  - [OperationResponseResIdOpenApiVO](docs/OperationResponseResIdOpenApiVO.md)
  - [OperationResponseResponseDataVOBonjourServiceDetailOpenApiVO](docs/OperationResponseResponseDataVOBonjourServiceDetailOpenApiVO.md)
  - [OperationResponseResponseDataVOGatewayQosServiceSummaryOpenApiVO](docs/OperationResponseResponseDataVOGatewayQosServiceSummaryOpenApiVO.md)
@@ -4380,6 +4632,8 @@ Class | Method | HTTP request | Description
  - [OperationResponseSiteBeaconControlSetting](docs/OperationResponseSiteBeaconControlSetting.md)
  - [OperationResponseSiteChannelLimitSetting](docs/OperationResponseSiteChannelLimitSetting.md)
  - [OperationResponseSiteEntity](docs/OperationResponseSiteEntity.md)
+ - [OperationResponseSiteJumboOpenApiVO](docs/OperationResponseSiteJumboOpenApiVO.md)
+ - [OperationResponseSiteLagHashAlgOpenApiVO](docs/OperationResponseSiteLagHashAlgOpenApiVO.md)
  - [OperationResponseSiteLedSetting](docs/OperationResponseSiteLedSetting.md)
  - [OperationResponseSiteLldpSetting](docs/OperationResponseSiteLldpSetting.md)
  - [OperationResponseSiteMeshSetting](docs/OperationResponseSiteMeshSetting.md)
@@ -4603,10 +4857,14 @@ Class | Method | HTTP request | Description
  - [OswDownlinkVO](docs/OswDownlinkVO.md)
  - [OswFecCapVO](docs/OswFecCapVO.md)
  - [OswHealthDetailVO](docs/OswHealthDetailVO.md)
+ - [OswInterfaceBriefVO](docs/OswInterfaceBriefVO.md)
+ - [OswInterfaceGridOswInterfaceOpenApi](docs/OswInterfaceGridOswInterfaceOpenApi.md)
+ - [OswInterfaceOpenApi](docs/OswInterfaceOpenApi.md)
  - [OswIpSettingBriefOpenapiVO](docs/OswIpSettingBriefOpenapiVO.md)
  - [OswIpSettingOpenApiVO](docs/OswIpSettingOpenApiVO.md)
  - [OswIpSettingVO](docs/OswIpSettingVO.md)
  - [OswIpv6SettingOpenApiVO](docs/OswIpv6SettingOpenApiVO.md)
+ - [OswIpv6SettingVO](docs/OswIpv6SettingVO.md)
  - [OswL3SdmApplicationVO](docs/OswL3SdmApplicationVO.md)
  - [OswLagBasicVO](docs/OswLagBasicVO.md)
  - [OswLagSettingVO](docs/OswLagSettingVO.md)
@@ -4615,6 +4873,8 @@ Class | Method | HTTP request | Description
  - [OswLanMulticastVO](docs/OswLanMulticastVO.md)
  - [OswLinkCapVO](docs/OswLinkCapVO.md)
  - [OswLldpNeighborVO](docs/OswLldpNeighborVO.md)
+ - [OswLoopbackInterfaceResultOpenApiVO](docs/OswLoopbackInterfaceResultOpenApiVO.md)
+ - [OswLoopbackInterfaceVO](docs/OswLoopbackInterfaceVO.md)
  - [OswMacListVO](docs/OswMacListVO.md)
  - [OswMlagCccVO](docs/OswMlagCccVO.md)
  - [OswMlagDataVODeviceInfo](docs/OswMlagDataVODeviceInfo.md)
@@ -4625,21 +4885,25 @@ Class | Method | HTTP request | Description
  - [OswMlagPeerSettingVO](docs/OswMlagPeerSettingVO.md)
  - [OswMlagPortVO](docs/OswMlagPortVO.md)
  - [OswMlagVO](docs/OswMlagVO.md)
+ - [OswMtuCountVO](docs/OswMtuCountVO.md)
  - [OswNetworkBaseOpenApi](docs/OswNetworkBaseOpenApi.md)
  - [OswNetworkBriefInfoOpenApiVO](docs/OswNetworkBriefInfoOpenApiVO.md)
  - [OswNetworkDetailInfoOpenApiVO](docs/OswNetworkDetailInfoOpenApiVO.md)
  - [OswNetworkGridOswNetworkOpenApi](docs/OswNetworkGridOswNetworkOpenApi.md)
  - [OswNetworkOpenApi](docs/OswNetworkOpenApi.md)
+ - [OswNetworkVO](docs/OswNetworkVO.md)
  - [OswNormalPortListVO](docs/OswNormalPortListVO.md)
  - [OswOspfNeighborGridVOOswOspfNeighborVO](docs/OswOspfNeighborGridVOOswOspfNeighborVO.md)
  - [OswOspfNeighborVO](docs/OswOspfNeighborVO.md)
  - [OswPeerPortVO](docs/OswPeerPortVO.md)
+ - [OswPmtudVO](docs/OswPmtudVO.md)
  - [OswPoeRecoverOpenApiVO](docs/OswPoeRecoverOpenApiVO.md)
  - [OswPoeResultOpenApiVO](docs/OswPoeResultOpenApiVO.md)
  - [OswPortAlertStatusVO](docs/OswPortAlertStatusVO.md)
  - [OswPortAndLagNetworkVO](docs/OswPortAndLagNetworkVO.md)
  - [OswPortDhcpL2RelayVO](docs/OswPortDhcpL2RelayVO.md)
  - [OswPortLagListVO](docs/OswPortLagListVO.md)
+ - [OswPortOuiBasedVlanVO](docs/OswPortOuiBasedVlanVO.md)
  - [OswPortSettingOpenApiVO](docs/OswPortSettingOpenApiVO.md)
  - [OswPortSettingVO](docs/OswPortSettingVO.md)
  - [OswPortSpeedCapVO](docs/OswPortSpeedCapVO.md)
@@ -4655,6 +4919,7 @@ Class | Method | HTTP request | Description
  - [OswQosConfigVO](docs/OswQosConfigVO.md)
  - [OswQosModeVO](docs/OswQosModeVO.md)
  - [OswQosRuleDeviceVO](docs/OswQosRuleDeviceVO.md)
+ - [OswQosRuleResultVO](docs/OswQosRuleResultVO.md)
  - [OswQosRuleStatusVO](docs/OswQosRuleStatusVO.md)
  - [OswQosRuleVO](docs/OswQosRuleVO.md)
  - [OswRankingCardsOpenApiVO](docs/OswRankingCardsOpenApiVO.md)
@@ -4662,9 +4927,11 @@ Class | Method | HTTP request | Description
  - [OswSdmApplicationVO](docs/OswSdmApplicationVO.md)
  - [OswSdmBriefVO](docs/OswSdmBriefVO.md)
  - [OswSdmTemplateVO](docs/OswSdmTemplateVO.md)
+ - [OswSnmpOpenApiVO](docs/OswSnmpOpenApiVO.md)
  - [OswSnmpVO](docs/OswSnmpVO.md)
  - [OswStackCableTestVO](docs/OswStackCableTestVO.md)
  - [OswStackConfigOpenApiVO](docs/OswStackConfigOpenApiVO.md)
+ - [OswStackDataVO](docs/OswStackDataVO.md)
  - [OswStackDataVODeviceInfo](docs/OswStackDataVODeviceInfo.md)
  - [OswStackDataVOOswDataVO](docs/OswStackDataVOOswDataVO.md)
  - [OswStackDetailConfigOpenApiVO](docs/OswStackDetailConfigOpenApiVO.md)
@@ -4708,6 +4975,7 @@ Class | Method | HTTP request | Description
  - [OswStaticRoutingConfigOpenApiVO](docs/OswStaticRoutingConfigOpenApiVO.md)
  - [OswStaticRoutingGridVOOswStaticRoutingVO](docs/OswStaticRoutingGridVOOswStaticRoutingVO.md)
  - [OswStaticRoutingVO](docs/OswStaticRoutingVO.md)
+ - [OswStormCtrlLimitRangeVO](docs/OswStormCtrlLimitRangeVO.md)
  - [OswStormCtrlOpenApiVO](docs/OswStormCtrlOpenApiVO.md)
  - [OswStormCtrlVO](docs/OswStormCtrlVO.md)
  - [OswStpInstance](docs/OswStpInstance.md)
@@ -4733,7 +5001,8 @@ Class | Method | HTTP request | Description
  - [OtoNatOpenApiVO](docs/OtoNatOpenApiVO.md)
  - [OuiBasedVlanApOpenApiVO](docs/OuiBasedVlanApOpenApiVO.md)
  - [OuiBasedVlanApQueryOpenApiVO](docs/OuiBasedVlanApQueryOpenApiVO.md)
- - [OuiBasedVlanSwitchInfoOpenApiVO](docs/OuiBasedVlanSwitchInfoOpenApiVO.md)
+ - [OuiBasedVlanDeviceInfoVO](docs/OuiBasedVlanDeviceInfoVO.md)
+ - [OuiBasedVlanNetworkVO](docs/OuiBasedVlanNetworkVO.md)
  - [OuiBasedVlanSwitchOpenApiVO](docs/OuiBasedVlanSwitchOpenApiVO.md)
  - [OuiBasedVlanSwitchQueryOpenApiVO](docs/OuiBasedVlanSwitchQueryOpenApiVO.md)
  - [OuiBasedVlanTemplateOpenApiVO](docs/OuiBasedVlanTemplateOpenApiVO.md)
@@ -4746,6 +5015,7 @@ Class | Method | HTTP request | Description
  - [OutboxMessageOpenApiGridVOOutboxMessage](docs/OutboxMessageOpenApiGridVOOutboxMessage.md)
  - [OutgoingCallsBlockingVO](docs/OutgoingCallsBlockingVO.md)
  - [OverViewSummaryVO](docs/OverViewSummaryVO.md)
+ - [OverviewStatisticsOpenApiVO](docs/OverviewStatisticsOpenApiVO.md)
  - [P2pInfoOpenApiVO](docs/P2pInfoOpenApiVO.md)
  - [PPSKExpirationVO](docs/PPSKExpirationVO.md)
  - [PPSKProfileVO](docs/PPSKProfileVO.md)
@@ -4771,6 +5041,8 @@ Class | Method | HTTP request | Description
  - [PageResponseStatisticInfoDTO](docs/PageResponseStatisticInfoDTO.md)
  - [PageResponseTcontVO](docs/PageResponseTcontVO.md)
  - [PageResponseTrafficProfileVO](docs/PageResponseTrafficProfileVO.md)
+ - [PartnerLinkDTO](docs/PartnerLinkDTO.md)
+ - [PartnerLinkVO](docs/PartnerLinkVO.md)
  - [PlacedSite](docs/PlacedSite.md)
  - [PlanFirmwareUpgradeCreateInfo](docs/PlanFirmwareUpgradeCreateInfo.md)
  - [PlanUpgradeCreateInfo](docs/PlanUpgradeCreateInfo.md)
@@ -4781,6 +5053,7 @@ Class | Method | HTTP request | Description
  - [PlanUpgradeSelectedModel](docs/PlanUpgradeSelectedModel.md)
  - [PlanningAdvancedSettingVO](docs/PlanningAdvancedSettingVO.md)
  - [PlanningHistoryDetail](docs/PlanningHistoryDetail.md)
+ - [PlanningHistoryListVO](docs/PlanningHistoryListVO.md)
  - [PlmnIdOpenApiVO](docs/PlmnIdOpenApiVO.md)
  - [PoeDeviceDetail](docs/PoeDeviceDetail.md)
  - [PoePowerTrendVO](docs/PoePowerTrendVO.md)
@@ -4861,6 +5134,7 @@ Class | Method | HTTP request | Description
  - [QosBwcEditOpenApiVO](docs/QosBwcEditOpenApiVO.md)
  - [QosBwcOpenApiVO](docs/QosBwcOpenApiVO.md)
  - [QosBwcWanInfoOpenApiVO](docs/QosBwcWanInfoOpenApiVO.md)
+ - [QosRuleDeviceInfo](docs/QosRuleDeviceInfo.md)
  - [QueryBatchFullChannelDetectStatusVO](docs/QueryBatchFullChannelDetectStatusVO.md)
  - [QueryCountryThreatListOpenApiVO](docs/QueryCountryThreatListOpenApiVO.md)
  - [QueryDeviceListOpenApiVO](docs/QueryDeviceListOpenApiVO.md)
@@ -4913,12 +5187,14 @@ Class | Method | HTTP request | Description
  - [RebootScheduleTemplateOpenApiVO](docs/RebootScheduleTemplateOpenApiVO.md)
  - [RebootScheduleTemplateQueryOpenApiVO](docs/RebootScheduleTemplateQueryOpenApiVO.md)
  - [RebootScheduleTimeOpenApiVO](docs/RebootScheduleTimeOpenApiVO.md)
+ - [RecipientsVO](docs/RecipientsVO.md)
  - [RememberDeviceSetting](docs/RememberDeviceSetting.md)
  - [RemoteBindingOpenApiVO](docs/RemoteBindingOpenApiVO.md)
  - [RemoteLog](docs/RemoteLog.md)
  - [RemoteLogSettingOpenApiVO](docs/RemoteLogSettingOpenApiVO.md)
  - [RemoteLogSettingVO](docs/RemoteLogSettingVO.md)
  - [RemoveBlackListOpenApiVO](docs/RemoveBlackListOpenApiVO.md)
+ - [ReplaceConfigRespVO](docs/ReplaceConfigRespVO.md)
  - [ReportCardQueryVO](docs/ReportCardQueryVO.md)
  - [ReportExportV2](docs/ReportExportV2.md)
  - [ReportSuppressionConfigVO](docs/ReportSuppressionConfigVO.md)
@@ -4958,6 +5234,7 @@ Class | Method | HTTP request | Description
  - [RouterPortVO](docs/RouterPortVO.md)
  - [RrmIncompatibleApOpenApiVO](docs/RrmIncompatibleApOpenApiVO.md)
  - [RrmSettingOpenApiVO](docs/RrmSettingOpenApiVO.md)
+ - [RssiDistributionVO](docs/RssiDistributionVO.md)
  - [RssiInfoVO](docs/RssiInfoVO.md)
  - [RuleEntity](docs/RuleEntity.md)
  - [RuleResultEntity](docs/RuleResultEntity.md)
@@ -4992,6 +5269,7 @@ Class | Method | HTTP request | Description
  - [SelectDeviceForVlanVO](docs/SelectDeviceForVlanVO.md)
  - [SelectIdsOpenApiVO](docs/SelectIdsOpenApiVO.md)
  - [SelectLagForVlanVO](docs/SelectLagForVlanVO.md)
+ - [SelectLocalUsersOpenApiVO](docs/SelectLocalUsersOpenApiVO.md)
  - [SelectMacsVO](docs/SelectMacsVO.md)
  - [SelectMacsWithVlanVO](docs/SelectMacsWithVlanVO.md)
  - [SelectPortBindingBriefVO](docs/SelectPortBindingBriefVO.md)
@@ -5003,6 +5281,7 @@ Class | Method | HTTP request | Description
  - [SelectStackMemberPortForVlanVO](docs/SelectStackMemberPortForVlanVO.md)
  - [SelectStacksWithVlanVO](docs/SelectStacksWithVlanVO.md)
  - [SelectVoucherGroupOpenApiVO](docs/SelectVoucherGroupOpenApiVO.md)
+ - [SelectedOswBriefVO](docs/SelectedOswBriefVO.md)
  - [SelfGlobalBackupVO](docs/SelfGlobalBackupVO.md)
  - [SelfGlobalRestoreVO](docs/SelfGlobalRestoreVO.md)
  - [SelfSiteRestoreVO](docs/SelfSiteRestoreVO.md)
@@ -5057,6 +5336,8 @@ Class | Method | HTTP request | Description
  - [SiteEntity](docs/SiteEntity.md)
  - [SiteImportOpenApiVO](docs/SiteImportOpenApiVO.md)
  - [SiteInfoOpenApiVO](docs/SiteInfoOpenApiVO.md)
+ - [SiteJumboOpenApiVO](docs/SiteJumboOpenApiVO.md)
+ - [SiteLagHashAlgOpenApiVO](docs/SiteLagHashAlgOpenApiVO.md)
  - [SiteLedSetting](docs/SiteLedSetting.md)
  - [SiteListOpenApiVO](docs/SiteListOpenApiVO.md)
  - [SiteLldpSetting](docs/SiteLldpSetting.md)
@@ -5072,6 +5353,7 @@ Class | Method | HTTP request | Description
  - [SiteScoreTimelineVO](docs/SiteScoreTimelineVO.md)
  - [SiteServiceGeneralConfigOpenApiVO](docs/SiteServiceGeneralConfigOpenApiVO.md)
  - [SiteServiceOpenApiVO](docs/SiteServiceOpenApiVO.md)
+ - [SiteSettingAnomalyStatVO](docs/SiteSettingAnomalyStatVO.md)
  - [SiteSettingCapOpenApiVO](docs/SiteSettingCapOpenApiVO.md)
  - [SiteSettingCapVO](docs/SiteSettingCapVO.md)
  - [SiteSettingDst](docs/SiteSettingDst.md)
@@ -5104,6 +5386,7 @@ Class | Method | HTTP request | Description
  - [SnAddResultVO](docs/SnAddResultVO.md)
  - [SnmpSettingOpenApiVO](docs/SnmpSettingOpenApiVO.md)
  - [SnoopConfigVO](docs/SnoopConfigVO.md)
+ - [SnrDistributionVO](docs/SnrDistributionVO.md)
  - [SocialLoginSettingOpenApiVO](docs/SocialLoginSettingOpenApiVO.md)
  - [SoftwareDetailConfigDTO](docs/SoftwareDetailConfigDTO.md)
  - [SpanningTreeSettingVO](docs/SpanningTreeSettingVO.md)
@@ -5115,7 +5398,9 @@ Class | Method | HTTP request | Description
  - [SpeedTestV2ResultVO](docs/SpeedTestV2ResultVO.md)
  - [SpeedTestV2SettingVO](docs/SpeedTestV2SettingVO.md)
  - [SshSettingVO](docs/SshSettingVO.md)
+ - [SsidClientVO](docs/SsidClientVO.md)
  - [SsidDetailOpenApiVO](docs/SsidDetailOpenApiVO.md)
+ - [SsidDeviceOpenApiVO](docs/SsidDeviceOpenApiVO.md)
  - [SsidDhcpOptionOpenApiVO](docs/SsidDhcpOptionOpenApiVO.md)
  - [SsidDistribution](docs/SsidDistribution.md)
  - [SsidEnterpriseSettingOpenApiVO](docs/SsidEnterpriseSettingOpenApiVO.md)
@@ -5208,6 +5493,8 @@ Class | Method | HTTP request | Description
  - [SwitchLoopbackControl](docs/SwitchLoopbackControl.md)
  - [SwitchMultiPortName](docs/SwitchMultiPortName.md)
  - [SwitchOverviewInfo](docs/SwitchOverviewInfo.md)
+ - [SwitchPacketErrorVO](docs/SwitchPacketErrorVO.md)
+ - [SwitchPacketLossVO](docs/SwitchPacketLossVO.md)
  - [SwitchPortName](docs/SwitchPortName.md)
  - [SwitchPortPoe](docs/SwitchPortPoe.md)
  - [SwitchPortStatus](docs/SwitchPortStatus.md)
@@ -5245,6 +5532,7 @@ Class | Method | HTTP request | Description
  - [ThreatMapCategoryOpenApiVO](docs/ThreatMapCategoryOpenApiVO.md)
  - [ThreatMapOpenApiVO](docs/ThreatMapOpenApiVO.md)
  - [ThreatSeverityOpenApiVO](docs/ThreatSeverityOpenApiVO.md)
+ - [TimeFloatValueItemVO](docs/TimeFloatValueItemVO.md)
  - [TimeIntervalQueryOpenApiVO](docs/TimeIntervalQueryOpenApiVO.md)
  - [TimeQueryOpenApiVO](docs/TimeQueryOpenApiVO.md)
  - [TimeRangeProfileOpenApiVO](docs/TimeRangeProfileOpenApiVO.md)
@@ -5258,6 +5546,7 @@ Class | Method | HTTP request | Description
  - [TokenResponse](docs/TokenResponse.md)
  - [TokenResult](docs/TokenResult.md)
  - [Top5ThreatNumOpenApiVO](docs/Top5ThreatNumOpenApiVO.md)
+ - [TopApByConnFailureVO](docs/TopApByConnFailureVO.md)
  - [TopApByInterferenceVO](docs/TopApByInterferenceVO.md)
  - [TopApByRtDropVO](docs/TopApByRtDropVO.md)
  - [TopApByTrafficAndClientVO](docs/TopApByTrafficAndClientVO.md)
@@ -5268,6 +5557,7 @@ Class | Method | HTTP request | Description
  - [TopOswErrorPacketOpenApiVO](docs/TopOswErrorPacketOpenApiVO.md)
  - [TopOswPacketLossOpenApiVO](docs/TopOswPacketLossOpenApiVO.md)
  - [TopSsidTrafficVO](docs/TopSsidTrafficVO.md)
+ - [TopSwitchByPacketVO](docs/TopSwitchByPacketVO.md)
  - [TopSwitchVO](docs/TopSwitchVO.md)
  - [TopTrafficAndUptimeClients](docs/TopTrafficAndUptimeClients.md)
  - [TopTrafficClientInfo](docs/TopTrafficClientInfo.md)
@@ -5337,6 +5627,7 @@ Class | Method | HTTP request | Description
  - [UpdateApAntSwitchConfig](docs/UpdateApAntSwitchConfig.md)
  - [UpdateApAnteGainConfig](docs/UpdateApAnteGainConfig.md)
  - [UpdateApChannelConfigOpenApiVO](docs/UpdateApChannelConfigOpenApiVO.md)
+ - [UpdateApGroupOpenApiVO](docs/UpdateApGroupOpenApiVO.md)
  - [UpdateApOfdmaConfigOpenApiVO](docs/UpdateApOfdmaConfigOpenApiVO.md)
  - [UpdateApPowerSavingConfigOpenApiVO](docs/UpdateApPowerSavingConfigOpenApiVO.md)
  - [UpdateApRadioAnteGainConfigOpenApiVO](docs/UpdateApRadioAnteGainConfigOpenApiVO.md)
@@ -5351,7 +5642,9 @@ Class | Method | HTTP request | Description
  - [UpdateSsidBandSteerOpenApiVO](docs/UpdateSsidBandSteerOpenApiVO.md)
  - [UpdateSsidBasicConfigForIpptOpenApiVO](docs/UpdateSsidBasicConfigForIpptOpenApiVO.md)
  - [UpdateSsidBasicConfigOpenApiVO](docs/UpdateSsidBasicConfigOpenApiVO.md)
+ - [UpdateSsidBindApGroupOpenApiVO](docs/UpdateSsidBindApGroupOpenApiVO.md)
  - [UpdateSsidDhcpOptionOpenApiVO](docs/UpdateSsidDhcpOptionOpenApiVO.md)
+ - [UpdateSsidEnableStatusOpenApiVO](docs/UpdateSsidEnableStatusOpenApiVO.md)
  - [UpdateSsidHotspotV2SettingOpenApiVO](docs/UpdateSsidHotspotV2SettingOpenApiVO.md)
  - [UpdateSsidLoadBalanceOpenApiVO](docs/UpdateSsidLoadBalanceOpenApiVO.md)
  - [UpdateSsidMacFilterOpenApiVO](docs/UpdateSsidMacFilterOpenApiVO.md)
@@ -5403,7 +5696,6 @@ Class | Method | HTTP request | Description
  - [UsedLicenseDetailOpenApiVO](docs/UsedLicenseDetailOpenApiVO.md)
  - [UserBriefVO](docs/UserBriefVO.md)
  - [UserDetailVO](docs/UserDetailVO.md)
- - [UserInfoBriefDTO](docs/UserInfoBriefDTO.md)
  - [VPN](docs/VPN.md)
  - [ValidDeviceModelOpenApiVO](docs/ValidDeviceModelOpenApiVO.md)
  - [VenueInfoOpenApiVO](docs/VenueInfoOpenApiVO.md)
@@ -5548,6 +5840,7 @@ Class | Method | HTTP request | Description
  - [WanScoreVO](docs/WanScoreVO.md)
  - [WanSettingConfigOpenApiVO](docs/WanSettingConfigOpenApiVO.md)
  - [WanSettingOpenApiVO](docs/WanSettingOpenApiVO.md)
+ - [WanSubHealthInfoDetailVO](docs/WanSubHealthInfoDetailVO.md)
  - [WanUnsupportedFunctionOpenApiVO](docs/WanUnsupportedFunctionOpenApiVO.md)
  - [WebhookConfigEditOpenApiVO](docs/WebhookConfigEditOpenApiVO.md)
  - [WebhookConfigOpenApiVO](docs/WebhookConfigOpenApiVO.md)

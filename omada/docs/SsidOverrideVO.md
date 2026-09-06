@@ -6,12 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BandInfo** | Pointer to **int32** |  | [optional] 
 **Enable** | **bool** |  | 
-**GlobalSsid** | **string** |  | 
+**GlobalSsid** | Pointer to **string** |  | [optional] 
 **HidePwd** | Pointer to **bool** |  | [optional] 
 **Index** | **int32** |  | 
 **Psk** | Pointer to **string** |  | [optional] 
 **Security** | Pointer to **int32** |  | [optional] 
 **Ssid** | Pointer to **string** |  | [optional] 
+**SsidConfigurable** | Pointer to **bool** |  | [optional] 
 **SsidEnable** | Pointer to **bool** |  | [optional] 
 **SupportBands** | Pointer to **[]int32** |  | [optional] 
 **VlanEnable** | Pointer to **bool** |  | [optional] 
@@ -22,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewSsidOverrideVO
 
-`func NewSsidOverrideVO(enable bool, globalSsid string, index int32, ) *SsidOverrideVO`
+`func NewSsidOverrideVO(enable bool, index int32, ) *SsidOverrideVO`
 
 NewSsidOverrideVO instantiates a new SsidOverrideVO object
 This constructor will assign default values to properties that have it defined,
@@ -101,6 +102,11 @@ and a boolean to check if the value has been set.
 
 SetGlobalSsid sets GlobalSsid field to given value.
 
+### HasGlobalSsid
+
+`func (o *SsidOverrideVO) HasGlobalSsid() bool`
+
+HasGlobalSsid returns a boolean if a field has been set.
 
 ### GetHidePwd
 
@@ -221,6 +227,31 @@ SetSsid sets Ssid field to given value.
 `func (o *SsidOverrideVO) HasSsid() bool`
 
 HasSsid returns a boolean if a field has been set.
+
+### GetSsidConfigurable
+
+`func (o *SsidOverrideVO) GetSsidConfigurable() bool`
+
+GetSsidConfigurable returns the SsidConfigurable field if non-nil, zero value otherwise.
+
+### GetSsidConfigurableOk
+
+`func (o *SsidOverrideVO) GetSsidConfigurableOk() (*bool, bool)`
+
+GetSsidConfigurableOk returns a tuple with the SsidConfigurable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSsidConfigurable
+
+`func (o *SsidOverrideVO) SetSsidConfigurable(v bool)`
+
+SetSsidConfigurable sets SsidConfigurable field to given value.
+
+### HasSsidConfigurable
+
+`func (o *SsidOverrideVO) HasSsidConfigurable() bool`
+
+HasSsidConfigurable returns a boolean if a field has been set.
 
 ### GetSsidEnable
 

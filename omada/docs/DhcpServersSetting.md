@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DhcpSvr1** | Pointer to **string** | DHCP Server IP1 | [optional] 
-**DhcpSvr2** | Pointer to **string** | DHCP Server IP2 | [optional] 
-**Enable** | **bool** | The switch of DHCP Guarding | 
+**DhcpSvr1** | Pointer to **string** | Primary DHCP Guarding IP | [optional] 
+**DhcpSvr2** | Pointer to **string** | Secondary DHCP Guarding IP | [optional] 
+**Enable** | **bool** | The switch of DHCP Guarding. When the switch is off, any configuration of DHCP Guarding will not be saved. | 
 **Mode** | Pointer to **int32** | The fill mode of DHCP Guarding, 1：follow Server 2：custom | [optional] 
 
 ## Methods

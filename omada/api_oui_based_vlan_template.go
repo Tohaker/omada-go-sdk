@@ -62,7 +62,7 @@ type OUIBasedVLANTemplateAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site ID
-	@param ouiBasedVlanId
+	@param ouiBasedVlanId The id of oui profile.
 	@return OUIBasedVLANTemplateAPIDeleteApOuiBasedVlanTemplateRequest
 	*/
 	DeleteApOuiBasedVlanTemplate(ctx context.Context, omadacId string, siteTemplateId string, ouiBasedVlanId string) OUIBasedVLANTemplateAPIDeleteApOuiBasedVlanTemplateRequest
@@ -79,7 +79,7 @@ type OUIBasedVLANTemplateAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site ID
-	@param ouiBasedVlanId
+	@param ouiBasedVlanId Oui Based Vlan ID
 	@return OUIBasedVLANTemplateAPIDeleteSwitchOuiBasedVlanTemplateRequest
 	*/
 	DeleteSwitchOuiBasedVlanTemplate(ctx context.Context, omadacId string, siteTemplateId string, ouiBasedVlanId string) OUIBasedVLANTemplateAPIDeleteSwitchOuiBasedVlanTemplateRequest
@@ -128,7 +128,7 @@ type OUIBasedVLANTemplateAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site ID
-	@param ouiBasedVlanId
+	@param ouiBasedVlanId The id of oui profile.
 	@return OUIBasedVLANTemplateAPIModifyApOuiBasedVlanTemplateRequest
 	*/
 	ModifyApOuiBasedVlanTemplate(ctx context.Context, omadacId string, siteTemplateId string, ouiBasedVlanId string) OUIBasedVLANTemplateAPIModifyApOuiBasedVlanTemplateRequest
@@ -145,7 +145,7 @@ type OUIBasedVLANTemplateAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site ID
-	@param ouiBasedVlanId
+	@param ouiBasedVlanId Oui Based Vlan ID
 	@return OUIBasedVLANTemplateAPIModifySwitchOuiBasedVlanTemplateRequest
 	*/
 	ModifySwitchOuiBasedVlanTemplate(ctx context.Context, omadacId string, siteTemplateId string, ouiBasedVlanId string) OUIBasedVLANTemplateAPIModifySwitchOuiBasedVlanTemplateRequest
@@ -442,7 +442,7 @@ Delete Ap oui based vlan template.<br/><br/>The interface requires one of the pe
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site ID
- @param ouiBasedVlanId
+ @param ouiBasedVlanId The id of oui profile.
  @return OUIBasedVLANTemplateAPIDeleteApOuiBasedVlanTemplateRequest
 */
 func (a *OUIBasedVLANTemplateAPIService) DeleteApOuiBasedVlanTemplate(ctx context.Context, omadacId string, siteTemplateId string, ouiBasedVlanId string) OUIBasedVLANTemplateAPIDeleteApOuiBasedVlanTemplateRequest {
@@ -567,7 +567,7 @@ Delete Switch oui based vlan template.<br/><br/>The interface requires one of th
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site ID
- @param ouiBasedVlanId
+ @param ouiBasedVlanId Oui Based Vlan ID
  @return OUIBasedVLANTemplateAPIDeleteSwitchOuiBasedVlanTemplateRequest
 */
 func (a *OUIBasedVLANTemplateAPIService) DeleteSwitchOuiBasedVlanTemplate(ctx context.Context, omadacId string, siteTemplateId string, ouiBasedVlanId string) OUIBasedVLANTemplateAPIDeleteSwitchOuiBasedVlanTemplateRequest {
@@ -984,7 +984,7 @@ Modify Ap oui based vlan template.<br/><br/>The interface requires one of the pe
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site ID
- @param ouiBasedVlanId
+ @param ouiBasedVlanId The id of oui profile.
  @return OUIBasedVLANTemplateAPIModifyApOuiBasedVlanTemplateRequest
 */
 func (a *OUIBasedVLANTemplateAPIService) ModifyApOuiBasedVlanTemplate(ctx context.Context, omadacId string, siteTemplateId string, ouiBasedVlanId string) OUIBasedVLANTemplateAPIModifyApOuiBasedVlanTemplateRequest {
@@ -1120,7 +1120,7 @@ Modify Switch oui based vlan template.<br/><br/>The interface requires one of th
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site ID
- @param ouiBasedVlanId
+ @param ouiBasedVlanId Oui Based Vlan ID
  @return OUIBasedVLANTemplateAPIModifySwitchOuiBasedVlanTemplateRequest
 */
 func (a *OUIBasedVLANTemplateAPIService) ModifySwitchOuiBasedVlanTemplate(ctx context.Context, omadacId string, siteTemplateId string, ouiBasedVlanId string) OUIBasedVLANTemplateAPIModifySwitchOuiBasedVlanTemplateRequest {

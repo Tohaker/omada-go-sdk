@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthMode** | Pointer to **int32** | Authentication Mode should be a value as follows: 1: MD5; 2: SHA. When Security Level is AuthNoPriv or AuthPriv, this field is required | [optional] 
 **CommunityString** | Pointer to **string** | Community string, valid when parameter [snmpV1V2CEnable] is true. The communityString should contain at least 10 characters, using a combination of numbers, letters or special characters.  The communityString should not contain consecutive identical characters. | [optional] 
+**Contact** | Pointer to **string** | Contact | [optional] 
+**Location** | Pointer to **string** | Location | [optional] 
 **Password** | Pointer to **string** | The password should contain at least 10 characters, using a combination of numbers, letters or special characters.  The password should not contain consecutive identical characters.  Username and Password should not be the same. | [optional] 
 **PrivacyMode** | Pointer to **int32** | Privacy Mode should be a value as follows: 1: DES; 2: AES. When Security Level is AuthPriv, this field is required | [optional] 
 **PrivacyPassword** | Pointer to **string** | The privacy password should contain at least 10 characters, using a combination of numbers, letters or special characters.  The privacy password should not contain consecutive identical characters.  Username and privacy password should not be the same. | [optional] 
@@ -82,6 +84,56 @@ SetCommunityString sets CommunityString field to given value.
 `func (o *SnmpSettingOpenApiVO) HasCommunityString() bool`
 
 HasCommunityString returns a boolean if a field has been set.
+
+### GetContact
+
+`func (o *SnmpSettingOpenApiVO) GetContact() string`
+
+GetContact returns the Contact field if non-nil, zero value otherwise.
+
+### GetContactOk
+
+`func (o *SnmpSettingOpenApiVO) GetContactOk() (*string, bool)`
+
+GetContactOk returns a tuple with the Contact field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContact
+
+`func (o *SnmpSettingOpenApiVO) SetContact(v string)`
+
+SetContact sets Contact field to given value.
+
+### HasContact
+
+`func (o *SnmpSettingOpenApiVO) HasContact() bool`
+
+HasContact returns a boolean if a field has been set.
+
+### GetLocation
+
+`func (o *SnmpSettingOpenApiVO) GetLocation() string`
+
+GetLocation returns the Location field if non-nil, zero value otherwise.
+
+### GetLocationOk
+
+`func (o *SnmpSettingOpenApiVO) GetLocationOk() (*string, bool)`
+
+GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocation
+
+`func (o *SnmpSettingOpenApiVO) SetLocation(v string)`
+
+SetLocation sets Location field to given value.
+
+### HasLocation
+
+`func (o *SnmpSettingOpenApiVO) HasLocation() bool`
+
+HasLocation returns a boolean if a field has been set.
 
 ### GetPassword
 

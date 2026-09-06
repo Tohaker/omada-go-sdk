@@ -25,7 +25,7 @@ type WirelessIDSIPSAPI interface {
 	/*
 	GetWidsConfig Get wireless IDS config
 
-	Get wireless IDS config. This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get wireless IDS config. <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -41,7 +41,7 @@ type WirelessIDSIPSAPI interface {
 	/*
 	GetWipsConfig Get wireless IPS config
 
-	Get wireless IPS config. This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get wireless IPS config. <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -57,7 +57,7 @@ type WirelessIDSIPSAPI interface {
 	/*
 	ModifyWidsConfig Modify wireless IDS config
 
-	Modify wireless IDS config. This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Modify wireless IDS config. <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -73,7 +73,7 @@ type WirelessIDSIPSAPI interface {
 	/*
 	ModifyWipsConfig Modify wireless IPS config
 
-	Modify wireless IPS config. This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Modify wireless IPS config. <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -104,7 +104,7 @@ func (r WirelessIDSIPSAPIGetWidsConfigRequest) Execute() (*OperationResponseWids
 /*
 GetWidsConfig Get wireless IDS config
 
-Get wireless IDS config. This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get wireless IDS config. <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -225,7 +225,7 @@ func (r WirelessIDSIPSAPIGetWipsConfigRequest) Execute() (*OperationResponseWips
 /*
 GetWipsConfig Get wireless IPS config
 
-Get wireless IPS config. This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get wireless IPS config. <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -352,7 +352,7 @@ func (r WirelessIDSIPSAPIModifyWidsConfigRequest) Execute() (*OperationResponseW
 /*
 ModifyWidsConfig Modify wireless IDS config
 
-Modify wireless IDS config. This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Modify wireless IDS config. <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -484,7 +484,7 @@ func (r WirelessIDSIPSAPIModifyWipsConfigRequest) Execute() (*OperationResponseW
 /*
 ModifyWipsConfig Modify wireless IPS config
 
-Modify wireless IPS config. This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Modify wireless IPS config. <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

@@ -72,6 +72,8 @@ type OpenApiClientInfo struct {
 	HostName *string `json:"hostName,omitempty"`
 	// Client ID.
 	Id *string `json:"id,omitempty"`
+	// Number of anomaly incidents in the last 10 minutes.
+	IncidentNum *int32 `json:"incidentNum,omitempty"`
 	// IP Address.
 	Ip *string `json:"ip,omitempty"`
 	IpSetting *ClientIpSetting `json:"ipSetting,omitempty"`
@@ -1045,6 +1047,38 @@ func (o *OpenApiClientInfo) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *OpenApiClientInfo) SetId(v string) {
 	o.Id = &v
+}
+
+// GetIncidentNum returns the IncidentNum field value if set, zero value otherwise.
+func (o *OpenApiClientInfo) GetIncidentNum() int32 {
+	if o == nil || IsNil(o.IncidentNum) {
+		var ret int32
+		return ret
+	}
+	return *o.IncidentNum
+}
+
+// GetIncidentNumOk returns a tuple with the IncidentNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpenApiClientInfo) GetIncidentNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.IncidentNum) {
+		return nil, false
+	}
+	return o.IncidentNum, true
+}
+
+// HasIncidentNum returns a boolean if a field has been set.
+func (o *OpenApiClientInfo) HasIncidentNum() bool {
+	if o != nil && !IsNil(o.IncidentNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidentNum gets a reference to the given int32 and assigns it to the IncidentNum field.
+func (o *OpenApiClientInfo) SetIncidentNum(v int32) {
+	o.IncidentNum = &v
 }
 
 // GetIp returns the Ip field value if set, zero value otherwise.
@@ -2641,6 +2675,9 @@ func (o OpenApiClientInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.IncidentNum) {
+		toSerialize["incidentNum"] = o.IncidentNum
 	}
 	if !IsNil(o.Ip) {
 		toSerialize["ip"] = o.Ip

@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AreaList** | [**[]OspfProcessAreaOpenApiVO**](OspfProcessAreaOpenApiVO.md) |  Up to 16 entries are allowed for the areaList. | 
+**AreaList** | Pointer to [**[]OspfProcessAreaOpenApiVO**](OspfProcessAreaOpenApiVO.md) |  Up to 16 entries are allowed for the areaList. | [optional] 
+**AutoCost** | Pointer to **int32** | Auto-Cost Reference Bandwidth. | [optional] 
+**AutoCostEnable** | Pointer to **bool** | enable Auto-Cost Reference Bandwidth. | [optional] 
 **ConnectedEnable** | **bool** | Direct connection routing protocol switch | 
 **ConnectedMetric** | Pointer to **int32** | Set the metric value to be used as the metric of redistributed routes. It should be within the range of 1-16777214 and the default is equal to Default Metric configured on Basic page. | [optional] 
 **ConnectedMetricType** | Pointer to **int32** | Set the OSPF metric type of redistributed routes. It should be a value as follows: 1: External Type 1, 2: External Type 2. The default is External Type 2. | [optional] 
@@ -16,12 +18,13 @@ Name | Type | Description | Notes
 **StaticEnable** | **bool** | Static routing protocol switch | 
 **StaticMetric** | Pointer to **int32** | Set the metric value to be used as the metric of redistributed routes. It should be within the range of 1-16777214 and the default is equal to Default Metric configured on Basic page. | [optional] 
 **StaticMetricType** | Pointer to **int32** | Set the OSPF metric type of redistributed routes. It should be a value as follows: 1: External Type 1, 2: External Type 2. The default is External Type 2. | [optional] 
+**VrfId** | Pointer to **string** | VRF ID. | [optional] 
 
 ## Methods
 
 ### NewOspfProcessConfigOpenApiVO
 
-`func NewOspfProcessConfigOpenApiVO(areaList []OspfProcessAreaOpenApiVO, connectedEnable bool, deviceName string, mac string, processId int32, routerMode int32, staticEnable bool, ) *OspfProcessConfigOpenApiVO`
+`func NewOspfProcessConfigOpenApiVO(connectedEnable bool, deviceName string, mac string, processId int32, routerMode int32, staticEnable bool, ) *OspfProcessConfigOpenApiVO`
 
 NewOspfProcessConfigOpenApiVO instantiates a new OspfProcessConfigOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -55,6 +58,61 @@ and a boolean to check if the value has been set.
 
 SetAreaList sets AreaList field to given value.
 
+### HasAreaList
+
+`func (o *OspfProcessConfigOpenApiVO) HasAreaList() bool`
+
+HasAreaList returns a boolean if a field has been set.
+
+### GetAutoCost
+
+`func (o *OspfProcessConfigOpenApiVO) GetAutoCost() int32`
+
+GetAutoCost returns the AutoCost field if non-nil, zero value otherwise.
+
+### GetAutoCostOk
+
+`func (o *OspfProcessConfigOpenApiVO) GetAutoCostOk() (*int32, bool)`
+
+GetAutoCostOk returns a tuple with the AutoCost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoCost
+
+`func (o *OspfProcessConfigOpenApiVO) SetAutoCost(v int32)`
+
+SetAutoCost sets AutoCost field to given value.
+
+### HasAutoCost
+
+`func (o *OspfProcessConfigOpenApiVO) HasAutoCost() bool`
+
+HasAutoCost returns a boolean if a field has been set.
+
+### GetAutoCostEnable
+
+`func (o *OspfProcessConfigOpenApiVO) GetAutoCostEnable() bool`
+
+GetAutoCostEnable returns the AutoCostEnable field if non-nil, zero value otherwise.
+
+### GetAutoCostEnableOk
+
+`func (o *OspfProcessConfigOpenApiVO) GetAutoCostEnableOk() (*bool, bool)`
+
+GetAutoCostEnableOk returns a tuple with the AutoCostEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoCostEnable
+
+`func (o *OspfProcessConfigOpenApiVO) SetAutoCostEnable(v bool)`
+
+SetAutoCostEnable sets AutoCostEnable field to given value.
+
+### HasAutoCostEnable
+
+`func (o *OspfProcessConfigOpenApiVO) HasAutoCostEnable() bool`
+
+HasAutoCostEnable returns a boolean if a field has been set.
 
 ### GetConnectedEnable
 
@@ -300,6 +358,31 @@ SetStaticMetricType sets StaticMetricType field to given value.
 `func (o *OspfProcessConfigOpenApiVO) HasStaticMetricType() bool`
 
 HasStaticMetricType returns a boolean if a field has been set.
+
+### GetVrfId
+
+`func (o *OspfProcessConfigOpenApiVO) GetVrfId() string`
+
+GetVrfId returns the VrfId field if non-nil, zero value otherwise.
+
+### GetVrfIdOk
+
+`func (o *OspfProcessConfigOpenApiVO) GetVrfIdOk() (*string, bool)`
+
+GetVrfIdOk returns a tuple with the VrfId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVrfId
+
+`func (o *OspfProcessConfigOpenApiVO) SetVrfId(v string)`
+
+SetVrfId sets VrfId field to given value.
+
+### HasVrfId
+
+`func (o *OspfProcessConfigOpenApiVO) HasVrfId() bool`
+
+HasVrfId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

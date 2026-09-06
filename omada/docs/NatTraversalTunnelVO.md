@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **ClosureTime** | Pointer to **int64** | Closure time of the remote access tunnel. | [optional] 
 **CustomTunnel** | Pointer to **bool** | If the remote access tunnel is a custom tunnel. | [optional] 
 **Duration** | Pointer to **int32** | Valid duration time of the remote access tunnel, 1-24 hours. | [optional] 
+**EnableHttp** | Pointer to **bool** | If the HTTP Login is enabled in global settings. | [optional] 
+**EnableHttps** | Pointer to **bool** | If the HTTPs Login is enabled in global settings. | [optional] 
+**EnableSsh** | Pointer to **bool** | If the SSH Login is enabled in site settings. | [optional] 
 **EwebHost** | Pointer to **string** | Nat traversal tunnel eweb host | [optional] 
 **Id** | Pointer to **string** | ID of the remote access tunnel. | [optional] 
 **JumpMac** | Pointer to **string** | Mac of the jumper device. | [optional] 
@@ -272,6 +275,81 @@ SetDuration sets Duration field to given value.
 `func (o *NatTraversalTunnelVO) HasDuration() bool`
 
 HasDuration returns a boolean if a field has been set.
+
+### GetEnableHttp
+
+`func (o *NatTraversalTunnelVO) GetEnableHttp() bool`
+
+GetEnableHttp returns the EnableHttp field if non-nil, zero value otherwise.
+
+### GetEnableHttpOk
+
+`func (o *NatTraversalTunnelVO) GetEnableHttpOk() (*bool, bool)`
+
+GetEnableHttpOk returns a tuple with the EnableHttp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableHttp
+
+`func (o *NatTraversalTunnelVO) SetEnableHttp(v bool)`
+
+SetEnableHttp sets EnableHttp field to given value.
+
+### HasEnableHttp
+
+`func (o *NatTraversalTunnelVO) HasEnableHttp() bool`
+
+HasEnableHttp returns a boolean if a field has been set.
+
+### GetEnableHttps
+
+`func (o *NatTraversalTunnelVO) GetEnableHttps() bool`
+
+GetEnableHttps returns the EnableHttps field if non-nil, zero value otherwise.
+
+### GetEnableHttpsOk
+
+`func (o *NatTraversalTunnelVO) GetEnableHttpsOk() (*bool, bool)`
+
+GetEnableHttpsOk returns a tuple with the EnableHttps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableHttps
+
+`func (o *NatTraversalTunnelVO) SetEnableHttps(v bool)`
+
+SetEnableHttps sets EnableHttps field to given value.
+
+### HasEnableHttps
+
+`func (o *NatTraversalTunnelVO) HasEnableHttps() bool`
+
+HasEnableHttps returns a boolean if a field has been set.
+
+### GetEnableSsh
+
+`func (o *NatTraversalTunnelVO) GetEnableSsh() bool`
+
+GetEnableSsh returns the EnableSsh field if non-nil, zero value otherwise.
+
+### GetEnableSshOk
+
+`func (o *NatTraversalTunnelVO) GetEnableSshOk() (*bool, bool)`
+
+GetEnableSshOk returns a tuple with the EnableSsh field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableSsh
+
+`func (o *NatTraversalTunnelVO) SetEnableSsh(v bool)`
+
+SetEnableSsh sets EnableSsh field to given value.
+
+### HasEnableSsh
+
+`func (o *NatTraversalTunnelVO) HasEnableSsh() bool`
+
+HasEnableSsh returns a boolean if a field has been set.
 
 ### GetEwebHost
 

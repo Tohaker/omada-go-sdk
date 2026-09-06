@@ -6,8 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApplyToAllPortals** | Pointer to **bool** | Is the localuser effective for all portals, including all newly created portals | [optional] 
 **BindingType** | **int32** | MAC binding type should be a value as follows: 0: no binding; 1: static binding; 2: dynamic binding. | 
-**DailyLimit** | Pointer to [**DailyAuthTimeOpenApiVO**](DailyAuthTimeOpenApiVO.md) |  | [optional] 
-**DailyLimitEnable** | Pointer to **bool** | Whether to enable localuser daily time limit | [optional] 
 **Enable** | **bool** | Whether to enable. | 
 **ExpirationTime** | **int64** | Expiration timestamp. Unit:ms. | 
 **Logout** | Pointer to **bool** | local user logout. enable local user logout | [optional] 
@@ -85,56 +83,6 @@ and a boolean to check if the value has been set.
 
 SetBindingType sets BindingType field to given value.
 
-
-### GetDailyLimit
-
-`func (o *ModifyLocalUserOpenApiVO) GetDailyLimit() DailyAuthTimeOpenApiVO`
-
-GetDailyLimit returns the DailyLimit field if non-nil, zero value otherwise.
-
-### GetDailyLimitOk
-
-`func (o *ModifyLocalUserOpenApiVO) GetDailyLimitOk() (*DailyAuthTimeOpenApiVO, bool)`
-
-GetDailyLimitOk returns a tuple with the DailyLimit field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDailyLimit
-
-`func (o *ModifyLocalUserOpenApiVO) SetDailyLimit(v DailyAuthTimeOpenApiVO)`
-
-SetDailyLimit sets DailyLimit field to given value.
-
-### HasDailyLimit
-
-`func (o *ModifyLocalUserOpenApiVO) HasDailyLimit() bool`
-
-HasDailyLimit returns a boolean if a field has been set.
-
-### GetDailyLimitEnable
-
-`func (o *ModifyLocalUserOpenApiVO) GetDailyLimitEnable() bool`
-
-GetDailyLimitEnable returns the DailyLimitEnable field if non-nil, zero value otherwise.
-
-### GetDailyLimitEnableOk
-
-`func (o *ModifyLocalUserOpenApiVO) GetDailyLimitEnableOk() (*bool, bool)`
-
-GetDailyLimitEnableOk returns a tuple with the DailyLimitEnable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDailyLimitEnable
-
-`func (o *ModifyLocalUserOpenApiVO) SetDailyLimitEnable(v bool)`
-
-SetDailyLimitEnable sets DailyLimitEnable field to given value.
-
-### HasDailyLimitEnable
-
-`func (o *ModifyLocalUserOpenApiVO) HasDailyLimitEnable() bool`
-
-HasDailyLimitEnable returns a boolean if a field has been set.
 
 ### GetEnable
 

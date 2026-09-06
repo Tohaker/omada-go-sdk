@@ -6,12 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChannelUtil** | Pointer to [**ChannelSubHealthInfoDetailVO**](ChannelSubHealthInfoDetailVO.md) |  | [optional] 
 **Cpu** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
+**Incident** | Pointer to [**IncidentSubHealthInfoDetailVO**](IncidentSubHealthInfoDetailVO.md) |  | [optional] 
+**LinkError** | Pointer to [**LinkErrorHealthInfoDetailVO**](LinkErrorHealthInfoDetailVO.md) |  | [optional] 
 **Memory** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
 **Score** | Pointer to **int32** | Device health score. | [optional] 
 **SupportedChannelUtil** | Pointer to [**ChannelSubHealthInfoDetailVO**](ChannelSubHealthInfoDetailVO.md) |  | [optional] 
 **Temperature** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
 **Transmission** | Pointer to [**TransmissionSubHealthInfoDetailVO**](TransmissionSubHealthInfoDetailVO.md) |  | [optional] 
 **WanLatency** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
+**WanStatus** | Pointer to [**WanSubHealthInfoDetailVO**](WanSubHealthInfoDetailVO.md) |  | [optional] 
 
 ## Methods
 
@@ -81,6 +84,56 @@ SetCpu sets Cpu field to given value.
 `func (o *OsgHealthDetailVO) HasCpu() bool`
 
 HasCpu returns a boolean if a field has been set.
+
+### GetIncident
+
+`func (o *OsgHealthDetailVO) GetIncident() IncidentSubHealthInfoDetailVO`
+
+GetIncident returns the Incident field if non-nil, zero value otherwise.
+
+### GetIncidentOk
+
+`func (o *OsgHealthDetailVO) GetIncidentOk() (*IncidentSubHealthInfoDetailVO, bool)`
+
+GetIncidentOk returns a tuple with the Incident field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncident
+
+`func (o *OsgHealthDetailVO) SetIncident(v IncidentSubHealthInfoDetailVO)`
+
+SetIncident sets Incident field to given value.
+
+### HasIncident
+
+`func (o *OsgHealthDetailVO) HasIncident() bool`
+
+HasIncident returns a boolean if a field has been set.
+
+### GetLinkError
+
+`func (o *OsgHealthDetailVO) GetLinkError() LinkErrorHealthInfoDetailVO`
+
+GetLinkError returns the LinkError field if non-nil, zero value otherwise.
+
+### GetLinkErrorOk
+
+`func (o *OsgHealthDetailVO) GetLinkErrorOk() (*LinkErrorHealthInfoDetailVO, bool)`
+
+GetLinkErrorOk returns a tuple with the LinkError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinkError
+
+`func (o *OsgHealthDetailVO) SetLinkError(v LinkErrorHealthInfoDetailVO)`
+
+SetLinkError sets LinkError field to given value.
+
+### HasLinkError
+
+`func (o *OsgHealthDetailVO) HasLinkError() bool`
+
+HasLinkError returns a boolean if a field has been set.
 
 ### GetMemory
 
@@ -231,6 +284,31 @@ SetWanLatency sets WanLatency field to given value.
 `func (o *OsgHealthDetailVO) HasWanLatency() bool`
 
 HasWanLatency returns a boolean if a field has been set.
+
+### GetWanStatus
+
+`func (o *OsgHealthDetailVO) GetWanStatus() WanSubHealthInfoDetailVO`
+
+GetWanStatus returns the WanStatus field if non-nil, zero value otherwise.
+
+### GetWanStatusOk
+
+`func (o *OsgHealthDetailVO) GetWanStatusOk() (*WanSubHealthInfoDetailVO, bool)`
+
+GetWanStatusOk returns a tuple with the WanStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWanStatus
+
+`func (o *OsgHealthDetailVO) SetWanStatus(v WanSubHealthInfoDetailVO)`
+
+SetWanStatus sets WanStatus field to given value.
+
+### HasWanStatus
+
+`func (o *OsgHealthDetailVO) HasWanStatus() bool`
+
+HasWanStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

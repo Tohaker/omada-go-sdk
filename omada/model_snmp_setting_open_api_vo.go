@@ -25,6 +25,10 @@ type SnmpSettingOpenApiVO struct {
 	AuthMode *int32 `json:"authMode,omitempty"`
 	// Community string, valid when parameter [snmpV1V2CEnable] is true. The communityString should contain at least 10 characters, using a combination of numbers, letters or special characters.  The communityString should not contain consecutive identical characters.
 	CommunityString *string `json:"communityString,omitempty"`
+	// Contact
+	Contact *string `json:"contact,omitempty"`
+	// Location
+	Location *string `json:"location,omitempty"`
 	// The password should contain at least 10 characters, using a combination of numbers, letters or special characters.  The password should not contain consecutive identical characters.  Username and Password should not be the same.
 	Password *string `json:"password,omitempty"`
 	// Privacy Mode should be a value as follows: 1: DES; 2: AES. When Security Level is AuthPriv, this field is required
@@ -124,6 +128,70 @@ func (o *SnmpSettingOpenApiVO) HasCommunityString() bool {
 // SetCommunityString gets a reference to the given string and assigns it to the CommunityString field.
 func (o *SnmpSettingOpenApiVO) SetCommunityString(v string) {
 	o.CommunityString = &v
+}
+
+// GetContact returns the Contact field value if set, zero value otherwise.
+func (o *SnmpSettingOpenApiVO) GetContact() string {
+	if o == nil || IsNil(o.Contact) {
+		var ret string
+		return ret
+	}
+	return *o.Contact
+}
+
+// GetContactOk returns a tuple with the Contact field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnmpSettingOpenApiVO) GetContactOk() (*string, bool) {
+	if o == nil || IsNil(o.Contact) {
+		return nil, false
+	}
+	return o.Contact, true
+}
+
+// HasContact returns a boolean if a field has been set.
+func (o *SnmpSettingOpenApiVO) HasContact() bool {
+	if o != nil && !IsNil(o.Contact) {
+		return true
+	}
+
+	return false
+}
+
+// SetContact gets a reference to the given string and assigns it to the Contact field.
+func (o *SnmpSettingOpenApiVO) SetContact(v string) {
+	o.Contact = &v
+}
+
+// GetLocation returns the Location field value if set, zero value otherwise.
+func (o *SnmpSettingOpenApiVO) GetLocation() string {
+	if o == nil || IsNil(o.Location) {
+		var ret string
+		return ret
+	}
+	return *o.Location
+}
+
+// GetLocationOk returns a tuple with the Location field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnmpSettingOpenApiVO) GetLocationOk() (*string, bool) {
+	if o == nil || IsNil(o.Location) {
+		return nil, false
+	}
+	return o.Location, true
+}
+
+// HasLocation returns a boolean if a field has been set.
+func (o *SnmpSettingOpenApiVO) HasLocation() bool {
+	if o != nil && !IsNil(o.Location) {
+		return true
+	}
+
+	return false
+}
+
+// SetLocation gets a reference to the given string and assigns it to the Location field.
+func (o *SnmpSettingOpenApiVO) SetLocation(v string) {
+	o.Location = &v
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise.
@@ -349,6 +417,12 @@ func (o SnmpSettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CommunityString) {
 		toSerialize["communityString"] = o.CommunityString
+	}
+	if !IsNil(o.Contact) {
+		toSerialize["contact"] = o.Contact
+	}
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
 	}
 	if !IsNil(o.Password) {
 		toSerialize["password"] = o.Password

@@ -21,9 +21,9 @@ var _ MappedNullable = &RadiusUserInfoOpenApiVO{}
 
 // RadiusUserInfoOpenApiVO User name and password, required when parameter [type] is 0.
 type RadiusUserInfoOpenApiVO struct {
-	// Build-in Radius profile user password. Password should contain 1 to 64 characters
+	// Build-in RADIUS profile user password. Password should contain 1 to 64 characters
 	Password string `json:"password"`
-	// Build-in Radius profile user name. Username should contain 1 to 64 characters
+	// Build-in RADIUS profile user name. Username should contain 1 to 64 characters
 	Username string `json:"username"`
 }
 

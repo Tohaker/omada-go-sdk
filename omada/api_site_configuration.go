@@ -106,6 +106,38 @@ type SiteConfigurationAPI interface {
 	GetExistSiteSettingByOpenApiExecute(r SiteConfigurationAPIGetExistSiteSettingByOpenApiRequest) (*OperationResponseExistSiteSettingOpenApiVO, *http.Response, error)
 
 	/*
+	GetJumboSetting Get site jumbo setting
+
+	Get site jumbo setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId site_id
+	@return SiteConfigurationAPIGetJumboSettingRequest
+	*/
+	GetJumboSetting(ctx context.Context, omadacId string, siteId string) SiteConfigurationAPIGetJumboSettingRequest
+
+	// GetJumboSettingExecute executes the request
+	//  @return OperationResponseSiteJumboOpenApiVO
+	GetJumboSettingExecute(r SiteConfigurationAPIGetJumboSettingRequest) (*OperationResponseSiteJumboOpenApiVO, *http.Response, error)
+
+	/*
+	GetLagHashAlgSetting Get site lag hash algorithm setting
+
+	Get site lag hash algorithm setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId site_id
+	@return SiteConfigurationAPIGetLagHashAlgSettingRequest
+	*/
+	GetLagHashAlgSetting(ctx context.Context, omadacId string, siteId string) SiteConfigurationAPIGetLagHashAlgSettingRequest
+
+	// GetLagHashAlgSettingExecute executes the request
+	//  @return OperationResponseSiteLagHashAlgOpenApiVO
+	GetLagHashAlgSettingExecute(r SiteConfigurationAPIGetLagHashAlgSettingRequest) (*OperationResponseSiteLagHashAlgOpenApiVO, *http.Response, error)
+
+	/*
 	GetLldpSetting Get site lldp setting
 
 	Get site lldp setting<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Site Map Manager View Only<br/>Site Hotspot Manager View Only<br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
@@ -220,7 +252,7 @@ type SiteConfigurationAPI interface {
 	/*
 	GetSiteLedSetting Get site led setting
 
-	Get site led setting<br/><br/>The interface requires one of the permissions: <br/>Global Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+	Get site led setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -475,6 +507,38 @@ type SiteConfigurationAPI interface {
 	// UpdateRoamingSettingExecute executes the request
 	//  @return OperationResponseWithoutResult
 	UpdateRoamingSettingExecute(r SiteConfigurationAPIUpdateRoamingSettingRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSiteJumboSetting Modify site jumbo setting
+
+	Modify site jumbo setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId site_id
+	@return SiteConfigurationAPIUpdateSiteJumboSettingRequest
+	*/
+	UpdateSiteJumboSetting(ctx context.Context, omadacId string, siteId string) SiteConfigurationAPIUpdateSiteJumboSettingRequest
+
+	// UpdateSiteJumboSettingExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSiteJumboSettingExecute(r SiteConfigurationAPIUpdateSiteJumboSettingRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSiteLagHashAlgSetting Modify site lag hash algorithm setting
+
+	Modify site lag hash algorithm setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId site_id
+	@return SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest
+	*/
+	UpdateSiteLagHashAlgSetting(ctx context.Context, omadacId string, siteId string) SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest
+
+	// UpdateSiteLagHashAlgSettingExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSiteLagHashAlgSettingExecute(r SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSiteLedSetting Modify site led setting
@@ -1029,6 +1093,248 @@ func (a *SiteConfigurationAPIService) GetExistSiteSettingByOpenApiExecute(r Site
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/exist"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SiteConfigurationAPIGetJumboSettingRequest struct {
+	ctx context.Context
+	ApiService SiteConfigurationAPI
+	omadacId string
+	siteId string
+}
+
+func (r SiteConfigurationAPIGetJumboSettingRequest) Execute() (*OperationResponseSiteJumboOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetJumboSettingExecute(r)
+}
+
+/*
+GetJumboSetting Get site jumbo setting
+
+Get site jumbo setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId site_id
+ @return SiteConfigurationAPIGetJumboSettingRequest
+*/
+func (a *SiteConfigurationAPIService) GetJumboSetting(ctx context.Context, omadacId string, siteId string) SiteConfigurationAPIGetJumboSettingRequest {
+	return SiteConfigurationAPIGetJumboSettingRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSiteJumboOpenApiVO
+func (a *SiteConfigurationAPIService) GetJumboSettingExecute(r SiteConfigurationAPIGetJumboSettingRequest) (*OperationResponseSiteJumboOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSiteJumboOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteConfigurationAPIService.GetJumboSetting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/jumbo"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SiteConfigurationAPIGetLagHashAlgSettingRequest struct {
+	ctx context.Context
+	ApiService SiteConfigurationAPI
+	omadacId string
+	siteId string
+}
+
+func (r SiteConfigurationAPIGetLagHashAlgSettingRequest) Execute() (*OperationResponseSiteLagHashAlgOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetLagHashAlgSettingExecute(r)
+}
+
+/*
+GetLagHashAlgSetting Get site lag hash algorithm setting
+
+Get site lag hash algorithm setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId site_id
+ @return SiteConfigurationAPIGetLagHashAlgSettingRequest
+*/
+func (a *SiteConfigurationAPIService) GetLagHashAlgSetting(ctx context.Context, omadacId string, siteId string) SiteConfigurationAPIGetLagHashAlgSettingRequest {
+	return SiteConfigurationAPIGetLagHashAlgSettingRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSiteLagHashAlgOpenApiVO
+func (a *SiteConfigurationAPIService) GetLagHashAlgSettingExecute(r SiteConfigurationAPIGetLagHashAlgSettingRequest) (*OperationResponseSiteLagHashAlgOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSiteLagHashAlgOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteConfigurationAPIService.GetLagHashAlgSetting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/lag-hash-alg"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 
@@ -1965,7 +2271,7 @@ func (r SiteConfigurationAPIGetSiteLedSettingRequest) Execute() (*OperationRespo
 /*
 GetSiteLedSetting Get site led setting
 
-Get site led setting<br/><br/>The interface requires one of the permissions: <br/>Global Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+Get site led setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3960,6 +4266,270 @@ func (a *SiteConfigurationAPIService) UpdateRoamingSettingExecute(r SiteConfigur
 	}
 	// body params
 	localVarPostBody = r.siteRoamingSetting
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SiteConfigurationAPIUpdateSiteJumboSettingRequest struct {
+	ctx context.Context
+	ApiService SiteConfigurationAPI
+	omadacId string
+	siteId string
+	siteJumboOpenApiVO *SiteJumboOpenApiVO
+}
+
+func (r SiteConfigurationAPIUpdateSiteJumboSettingRequest) SiteJumboOpenApiVO(siteJumboOpenApiVO SiteJumboOpenApiVO) SiteConfigurationAPIUpdateSiteJumboSettingRequest {
+	r.siteJumboOpenApiVO = &siteJumboOpenApiVO
+	return r
+}
+
+func (r SiteConfigurationAPIUpdateSiteJumboSettingRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSiteJumboSettingExecute(r)
+}
+
+/*
+UpdateSiteJumboSetting Modify site jumbo setting
+
+Modify site jumbo setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId site_id
+ @return SiteConfigurationAPIUpdateSiteJumboSettingRequest
+*/
+func (a *SiteConfigurationAPIService) UpdateSiteJumboSetting(ctx context.Context, omadacId string, siteId string) SiteConfigurationAPIUpdateSiteJumboSettingRequest {
+	return SiteConfigurationAPIUpdateSiteJumboSettingRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *SiteConfigurationAPIService) UpdateSiteJumboSettingExecute(r SiteConfigurationAPIUpdateSiteJumboSettingRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteConfigurationAPIService.UpdateSiteJumboSetting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/jumbo"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.siteJumboOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("siteJumboOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.siteJumboOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest struct {
+	ctx context.Context
+	ApiService SiteConfigurationAPI
+	omadacId string
+	siteId string
+	siteLagHashAlgOpenApiVO *SiteLagHashAlgOpenApiVO
+}
+
+func (r SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest) SiteLagHashAlgOpenApiVO(siteLagHashAlgOpenApiVO SiteLagHashAlgOpenApiVO) SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest {
+	r.siteLagHashAlgOpenApiVO = &siteLagHashAlgOpenApiVO
+	return r
+}
+
+func (r SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSiteLagHashAlgSettingExecute(r)
+}
+
+/*
+UpdateSiteLagHashAlgSetting Modify site lag hash algorithm setting
+
+Modify site lag hash algorithm setting<br/><br/>The interface requires one of the permissions: <br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId site_id
+ @return SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest
+*/
+func (a *SiteConfigurationAPIService) UpdateSiteLagHashAlgSetting(ctx context.Context, omadacId string, siteId string) SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest {
+	return SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *SiteConfigurationAPIService) UpdateSiteLagHashAlgSettingExecute(r SiteConfigurationAPIUpdateSiteLagHashAlgSettingRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteConfigurationAPIService.UpdateSiteLagHashAlgSetting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/lag-hash-alg"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.siteLagHashAlgOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("siteLagHashAlgOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.siteLagHashAlgOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

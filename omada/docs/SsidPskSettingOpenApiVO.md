@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **IntervalPskType** | Pointer to **int32** | WPA-Personal SSID group key update period interval unit config. It should be a value as follows: 0: Seconds; 1: Minutes; 2: Hours. | [optional] 
 **RekeyPskInterval** | Pointer to **int32** | WPA-Personal SSID group key update period interval config. When the value of Parameter [intervalPskType] is 0 (Seconds), it should be within the range of 30-86400; when the value of Parameter [intervalPskType] is 1 (Minutes), it should be within the range of 1-1440; when the value of Parameter [intervalPskType] is 2 (Hours), it should be within the range of 1-24. | [optional] 
 **SecurityKey** | Pointer to **string** | WPA-Personal SSID password. This is necessary when the value of security is 3(WPA-Personal);It should contain 8-63 printable ASCII characters or 8-63 hexadecimal digits. | [optional] 
-**VersionPsk** | **int32** | WPA-Personal version. This is necessary when the value of security is 3(WPA-Personal); It should be a value as follows: 1: WPA-PSK; 2: WPA2-PSK; 3: WPA/WPA2-PSK; 4: WPA3-SAE. | 
+**VersionPsk** | **int32** | WPA-Personal version. This is necessary when the value of security is 3(WPA-Personal); It should be a value as follows: 1: WPA-PSK; 2: WPA2-PSK; 3: WPA/WPA2-PSK; 4: WPA2-PSK/WPA3-SAE (or WPA3-SAE for 6 GHz-only SSIDs). The value must be 4 for 6 GHz-enabled SSIDs. | 
 
 ## Methods
 

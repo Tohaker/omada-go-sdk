@@ -5,11 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApMacList** | **[]string** | AP mac list | 
-**BandEnable** | Pointer to **bool** | Power Saving trigger by band config status. True: enable, false: disable. | [optional] 
+**BandEnable** | Pointer to **bool** | Parameter [bandEnable] can be TRUE only when [mode] &#x3D; 1. Power Saving trigger by band config status. True: enable, false: disable. | [optional] 
 **Bands** | Pointer to **[]int32** | Select bands list config of trigger by band;It should be a value as follows: 0: 2.4GHz; 1: 5GHz; 2: 5G2Hz; 3: 6GHz;This field is required when Parameter [bandEnable] is true;Please note that the band filled in must be supported by the device, otherwise the modified configuration will not take effect properly | [optional] 
 **EndTimeH** | Pointer to **int32** | End time of trigger by time(unit: hour); It should be within the range of 0–23; This field is required when Parameter [timeEnable] is true. | [optional] 
 **EndTimeM** | Pointer to **int32** | End time of trigger by time(unit: minute); It should be within the range of 0–59; This field is required when Parameter [timeEnable] is true. | [optional] 
 **IdleDuration** | Pointer to **int32** | Idle duration config of trigger by band(unit: minute); It should be within the range of 60–1440; This field is required when Parameter [bandEnable] is true. | [optional] 
+**Mode** | Pointer to **int32** | Parameter [mode] is Power Saving Mode of device and should not be null. 0: OFF, 1: Standard( based on the user‑specified time and/or band settings ), 2: Smart, 3: Deep Power‑Saving | [optional] 
 **StartTimeH** | Pointer to **int32** | Start time of trigger by time(unit: hour); It should be within the range of 0–23; This field is required when Parameter [timeEnable] is true. | [optional] 
 **StartTimeM** | Pointer to **int32** | Start time of trigger by time(unit: minute); It should be within the range of 0–59; This field is required when Parameter [timeEnable] is true. | [optional] 
 **TimeEnable** | Pointer to **bool** | Power Saving trigger by time config status. True: enable, false: disable. | [optional] 
@@ -177,6 +178,31 @@ SetIdleDuration sets IdleDuration field to given value.
 `func (o *BatchUpdateApPowerSavingConfigOpenApiVO) HasIdleDuration() bool`
 
 HasIdleDuration returns a boolean if a field has been set.
+
+### GetMode
+
+`func (o *BatchUpdateApPowerSavingConfigOpenApiVO) GetMode() int32`
+
+GetMode returns the Mode field if non-nil, zero value otherwise.
+
+### GetModeOk
+
+`func (o *BatchUpdateApPowerSavingConfigOpenApiVO) GetModeOk() (*int32, bool)`
+
+GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMode
+
+`func (o *BatchUpdateApPowerSavingConfigOpenApiVO) SetMode(v int32)`
+
+SetMode sets Mode field to given value.
+
+### HasMode
+
+`func (o *BatchUpdateApPowerSavingConfigOpenApiVO) HasMode() bool`
+
+HasMode returns a boolean if a field has been set.
 
 ### GetStartTimeH
 

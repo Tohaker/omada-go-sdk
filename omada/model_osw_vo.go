@@ -29,6 +29,10 @@ type OswVO struct {
 	Address *string `json:"address,omitempty"`
 	// Adopt fail reason should be a value as follows: -1:adopt timeout;-2:user/password error
 	AdoptFailType *int32 `json:"adoptFailType,omitempty"`
+	// Block information
+	Block *string `json:"block,omitempty"`
+	// Block Num
+	BlockNum *int32 `json:"blockNum,omitempty"`
 	// Category of license.When activating in bulk for the pro site, the front end can only select the same type for bulk activation.
 	Category *string `json:"category,omitempty"`
 	// Number of clients.
@@ -83,6 +87,8 @@ type OswVO struct {
 	HwVersion *string `json:"hwVersion,omitempty"`
 	// Whether the device is in white list
 	InWhitelist *bool `json:"inWhitelist,omitempty"`
+	// incident number
+	Incidents *int32 `json:"incidents,omitempty"`
 	// Ip address,such as 192.168.0.105
 	Ip *string `json:"ip,omitempty"`
 	// Whether it is LTE Backup
@@ -90,6 +96,7 @@ type OswVO struct {
 	IpptPreconfig *bool `json:"ipptPreconfig,omitempty"`
 	// Ipv6 address List
 	Ipv6List []string `json:"ipv6List,omitempty"`
+	LagCap *LagCapVO `json:"lagCap,omitempty"`
 	// Last active time.
 	LastSeen *int64 `json:"lastSeen,omitempty"`
 	// Latest firmware version
@@ -127,10 +134,14 @@ type OswVO struct {
 	Model *string `json:"model,omitempty"`
 	// Model version of device,for example:3.0
 	ModelVersion *string `json:"modelVersion,omitempty"`
+	// Indicates whether the switch supports MSTP Get Active
+	MstpGetActiveSupport *bool `json:"mstpGetActiveSupport,omitempty"`
 	// The range of MSTP instanceId
 	MstpInsNo *int32 `json:"mstpInsNo,omitempty"`
 	// The number of MSTP instances
 	MstpInsNum *int32 `json:"mstpInsNum,omitempty"`
+	// Indicates whether the switch supports MSTP Port
+	MstpPortSupport *bool `json:"mstpPortSupport,omitempty"`
 	// Default uses the MAC address as the name.
 	Name *string `json:"name,omitempty"`
 	// Whether the device needs upgrade
@@ -160,6 +171,7 @@ type OswVO struct {
 	Profiles *map[string]string `json:"profiles,omitempty"`
 	// Public ip address
 	PublicIp *string `json:"publicIp,omitempty"`
+	ReplaceDeviceInfo *DeviceReplaceSettingVO `json:"replaceDeviceInfo,omitempty"`
 	// Data source.Resource should be a value as follows: 0:new created;1:from template;2:override
 	Resource *int32 `json:"resource,omitempty"`
 	// Indicates whether the switch supports rpvst
@@ -211,6 +223,8 @@ type OswVO struct {
 	SupportExtendStp *bool `json:"supportExtendStp,omitempty"`
 	SupportGetOspfNeighborTable *bool `json:"supportGetOspfNeighborTable,omitempty"`
 	SupportIppt *bool `json:"supportIppt,omitempty"`
+	// Indicates whether the switch supports Jumbo
+	SupportJumbo *bool `json:"supportJumbo,omitempty"`
 	SupportMacDelay *bool `json:"supportMacDelay,omitempty"`
 	// Indicates whether the switch supports power alert
 	SupportPowerAlert *bool `json:"supportPowerAlert,omitempty"`
@@ -220,6 +234,8 @@ type OswVO struct {
 	SupportRunningConfig *bool `json:"supportRunningConfig,omitempty"`
 	// Indicates whether the switch supports SDM template
 	SupportSdm *bool `json:"supportSdm,omitempty"`
+	// Indicates whether the switch supports SNMP
+	SupportSnmp *bool `json:"supportSnmp,omitempty"`
 	// Indicates whether the member device supports configuring the link speed of the stack port aggregation group
 	SupportStackGroupSpeed *bool `json:"supportStackGroupSpeed,omitempty"`
 	// Indicates whether the switch supports stp
@@ -432,6 +448,70 @@ func (o *OswVO) HasAdoptFailType() bool {
 // SetAdoptFailType gets a reference to the given int32 and assigns it to the AdoptFailType field.
 func (o *OswVO) SetAdoptFailType(v int32) {
 	o.AdoptFailType = &v
+}
+
+// GetBlock returns the Block field value if set, zero value otherwise.
+func (o *OswVO) GetBlock() string {
+	if o == nil || IsNil(o.Block) {
+		var ret string
+		return ret
+	}
+	return *o.Block
+}
+
+// GetBlockOk returns a tuple with the Block field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetBlockOk() (*string, bool) {
+	if o == nil || IsNil(o.Block) {
+		return nil, false
+	}
+	return o.Block, true
+}
+
+// HasBlock returns a boolean if a field has been set.
+func (o *OswVO) HasBlock() bool {
+	if o != nil && !IsNil(o.Block) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlock gets a reference to the given string and assigns it to the Block field.
+func (o *OswVO) SetBlock(v string) {
+	o.Block = &v
+}
+
+// GetBlockNum returns the BlockNum field value if set, zero value otherwise.
+func (o *OswVO) GetBlockNum() int32 {
+	if o == nil || IsNil(o.BlockNum) {
+		var ret int32
+		return ret
+	}
+	return *o.BlockNum
+}
+
+// GetBlockNumOk returns a tuple with the BlockNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetBlockNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.BlockNum) {
+		return nil, false
+	}
+	return o.BlockNum, true
+}
+
+// HasBlockNum returns a boolean if a field has been set.
+func (o *OswVO) HasBlockNum() bool {
+	if o != nil && !IsNil(o.BlockNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlockNum gets a reference to the given int32 and assigns it to the BlockNum field.
+func (o *OswVO) SetBlockNum(v int32) {
+	o.BlockNum = &v
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -1330,6 +1410,38 @@ func (o *OswVO) SetInWhitelist(v bool) {
 	o.InWhitelist = &v
 }
 
+// GetIncidents returns the Incidents field value if set, zero value otherwise.
+func (o *OswVO) GetIncidents() int32 {
+	if o == nil || IsNil(o.Incidents) {
+		var ret int32
+		return ret
+	}
+	return *o.Incidents
+}
+
+// GetIncidentsOk returns a tuple with the Incidents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetIncidentsOk() (*int32, bool) {
+	if o == nil || IsNil(o.Incidents) {
+		return nil, false
+	}
+	return o.Incidents, true
+}
+
+// HasIncidents returns a boolean if a field has been set.
+func (o *OswVO) HasIncidents() bool {
+	if o != nil && !IsNil(o.Incidents) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidents gets a reference to the given int32 and assigns it to the Incidents field.
+func (o *OswVO) SetIncidents(v int32) {
+	o.Incidents = &v
+}
+
 // GetIp returns the Ip field value if set, zero value otherwise.
 func (o *OswVO) GetIp() string {
 	if o == nil || IsNil(o.Ip) {
@@ -1456,6 +1568,38 @@ func (o *OswVO) HasIpv6List() bool {
 // SetIpv6List gets a reference to the given []string and assigns it to the Ipv6List field.
 func (o *OswVO) SetIpv6List(v []string) {
 	o.Ipv6List = v
+}
+
+// GetLagCap returns the LagCap field value if set, zero value otherwise.
+func (o *OswVO) GetLagCap() LagCapVO {
+	if o == nil || IsNil(o.LagCap) {
+		var ret LagCapVO
+		return ret
+	}
+	return *o.LagCap
+}
+
+// GetLagCapOk returns a tuple with the LagCap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetLagCapOk() (*LagCapVO, bool) {
+	if o == nil || IsNil(o.LagCap) {
+		return nil, false
+	}
+	return o.LagCap, true
+}
+
+// HasLagCap returns a boolean if a field has been set.
+func (o *OswVO) HasLagCap() bool {
+	if o != nil && !IsNil(o.LagCap) {
+		return true
+	}
+
+	return false
+}
+
+// SetLagCap gets a reference to the given LagCapVO and assigns it to the LagCap field.
+func (o *OswVO) SetLagCap(v LagCapVO) {
+	o.LagCap = &v
 }
 
 // GetLastSeen returns the LastSeen field value if set, zero value otherwise.
@@ -2098,6 +2242,38 @@ func (o *OswVO) SetModelVersion(v string) {
 	o.ModelVersion = &v
 }
 
+// GetMstpGetActiveSupport returns the MstpGetActiveSupport field value if set, zero value otherwise.
+func (o *OswVO) GetMstpGetActiveSupport() bool {
+	if o == nil || IsNil(o.MstpGetActiveSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.MstpGetActiveSupport
+}
+
+// GetMstpGetActiveSupportOk returns a tuple with the MstpGetActiveSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetMstpGetActiveSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.MstpGetActiveSupport) {
+		return nil, false
+	}
+	return o.MstpGetActiveSupport, true
+}
+
+// HasMstpGetActiveSupport returns a boolean if a field has been set.
+func (o *OswVO) HasMstpGetActiveSupport() bool {
+	if o != nil && !IsNil(o.MstpGetActiveSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetMstpGetActiveSupport gets a reference to the given bool and assigns it to the MstpGetActiveSupport field.
+func (o *OswVO) SetMstpGetActiveSupport(v bool) {
+	o.MstpGetActiveSupport = &v
+}
+
 // GetMstpInsNo returns the MstpInsNo field value if set, zero value otherwise.
 func (o *OswVO) GetMstpInsNo() int32 {
 	if o == nil || IsNil(o.MstpInsNo) {
@@ -2160,6 +2336,38 @@ func (o *OswVO) HasMstpInsNum() bool {
 // SetMstpInsNum gets a reference to the given int32 and assigns it to the MstpInsNum field.
 func (o *OswVO) SetMstpInsNum(v int32) {
 	o.MstpInsNum = &v
+}
+
+// GetMstpPortSupport returns the MstpPortSupport field value if set, zero value otherwise.
+func (o *OswVO) GetMstpPortSupport() bool {
+	if o == nil || IsNil(o.MstpPortSupport) {
+		var ret bool
+		return ret
+	}
+	return *o.MstpPortSupport
+}
+
+// GetMstpPortSupportOk returns a tuple with the MstpPortSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetMstpPortSupportOk() (*bool, bool) {
+	if o == nil || IsNil(o.MstpPortSupport) {
+		return nil, false
+	}
+	return o.MstpPortSupport, true
+}
+
+// HasMstpPortSupport returns a boolean if a field has been set.
+func (o *OswVO) HasMstpPortSupport() bool {
+	if o != nil && !IsNil(o.MstpPortSupport) {
+		return true
+	}
+
+	return false
+}
+
+// SetMstpPortSupport gets a reference to the given bool and assigns it to the MstpPortSupport field.
+func (o *OswVO) SetMstpPortSupport(v bool) {
+	o.MstpPortSupport = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -2640,6 +2848,38 @@ func (o *OswVO) HasPublicIp() bool {
 // SetPublicIp gets a reference to the given string and assigns it to the PublicIp field.
 func (o *OswVO) SetPublicIp(v string) {
 	o.PublicIp = &v
+}
+
+// GetReplaceDeviceInfo returns the ReplaceDeviceInfo field value if set, zero value otherwise.
+func (o *OswVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO {
+	if o == nil || IsNil(o.ReplaceDeviceInfo) {
+		var ret DeviceReplaceSettingVO
+		return ret
+	}
+	return *o.ReplaceDeviceInfo
+}
+
+// GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool) {
+	if o == nil || IsNil(o.ReplaceDeviceInfo) {
+		return nil, false
+	}
+	return o.ReplaceDeviceInfo, true
+}
+
+// HasReplaceDeviceInfo returns a boolean if a field has been set.
+func (o *OswVO) HasReplaceDeviceInfo() bool {
+	if o != nil && !IsNil(o.ReplaceDeviceInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetReplaceDeviceInfo gets a reference to the given DeviceReplaceSettingVO and assigns it to the ReplaceDeviceInfo field.
+func (o *OswVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO) {
+	o.ReplaceDeviceInfo = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
@@ -3538,6 +3778,38 @@ func (o *OswVO) SetSupportIppt(v bool) {
 	o.SupportIppt = &v
 }
 
+// GetSupportJumbo returns the SupportJumbo field value if set, zero value otherwise.
+func (o *OswVO) GetSupportJumbo() bool {
+	if o == nil || IsNil(o.SupportJumbo) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportJumbo
+}
+
+// GetSupportJumboOk returns a tuple with the SupportJumbo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetSupportJumboOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportJumbo) {
+		return nil, false
+	}
+	return o.SupportJumbo, true
+}
+
+// HasSupportJumbo returns a boolean if a field has been set.
+func (o *OswVO) HasSupportJumbo() bool {
+	if o != nil && !IsNil(o.SupportJumbo) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportJumbo gets a reference to the given bool and assigns it to the SupportJumbo field.
+func (o *OswVO) SetSupportJumbo(v bool) {
+	o.SupportJumbo = &v
+}
+
 // GetSupportMacDelay returns the SupportMacDelay field value if set, zero value otherwise.
 func (o *OswVO) GetSupportMacDelay() bool {
 	if o == nil || IsNil(o.SupportMacDelay) {
@@ -3696,6 +3968,38 @@ func (o *OswVO) HasSupportSdm() bool {
 // SetSupportSdm gets a reference to the given bool and assigns it to the SupportSdm field.
 func (o *OswVO) SetSupportSdm(v bool) {
 	o.SupportSdm = &v
+}
+
+// GetSupportSnmp returns the SupportSnmp field value if set, zero value otherwise.
+func (o *OswVO) GetSupportSnmp() bool {
+	if o == nil || IsNil(o.SupportSnmp) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportSnmp
+}
+
+// GetSupportSnmpOk returns a tuple with the SupportSnmp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswVO) GetSupportSnmpOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportSnmp) {
+		return nil, false
+	}
+	return o.SupportSnmp, true
+}
+
+// HasSupportSnmp returns a boolean if a field has been set.
+func (o *OswVO) HasSupportSnmp() bool {
+	if o != nil && !IsNil(o.SupportSnmp) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportSnmp gets a reference to the given bool and assigns it to the SupportSnmp field.
+func (o *OswVO) SetSupportSnmp(v bool) {
+	o.SupportSnmp = &v
 }
 
 // GetSupportStackGroupSpeed returns the SupportStackGroupSpeed field value if set, zero value otherwise.
@@ -4244,6 +4548,12 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AdoptFailType) {
 		toSerialize["adoptFailType"] = o.AdoptFailType
 	}
+	if !IsNil(o.Block) {
+		toSerialize["block"] = o.Block
+	}
+	if !IsNil(o.BlockNum) {
+		toSerialize["blockNum"] = o.BlockNum
+	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
@@ -4328,6 +4638,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InWhitelist) {
 		toSerialize["inWhitelist"] = o.InWhitelist
 	}
+	if !IsNil(o.Incidents) {
+		toSerialize["incidents"] = o.Incidents
+	}
 	if !IsNil(o.Ip) {
 		toSerialize["ip"] = o.Ip
 	}
@@ -4339,6 +4652,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Ipv6List) {
 		toSerialize["ipv6List"] = o.Ipv6List
+	}
+	if !IsNil(o.LagCap) {
+		toSerialize["lagCap"] = o.LagCap
 	}
 	if !IsNil(o.LastSeen) {
 		toSerialize["lastSeen"] = o.LastSeen
@@ -4400,11 +4716,17 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ModelVersion) {
 		toSerialize["modelVersion"] = o.ModelVersion
 	}
+	if !IsNil(o.MstpGetActiveSupport) {
+		toSerialize["mstpGetActiveSupport"] = o.MstpGetActiveSupport
+	}
 	if !IsNil(o.MstpInsNo) {
 		toSerialize["mstpInsNo"] = o.MstpInsNo
 	}
 	if !IsNil(o.MstpInsNum) {
 		toSerialize["mstpInsNum"] = o.MstpInsNum
+	}
+	if !IsNil(o.MstpPortSupport) {
+		toSerialize["mstpPortSupport"] = o.MstpPortSupport
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -4450,6 +4772,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PublicIp) {
 		toSerialize["publicIp"] = o.PublicIp
+	}
+	if !IsNil(o.ReplaceDeviceInfo) {
+		toSerialize["replaceDeviceInfo"] = o.ReplaceDeviceInfo
 	}
 	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
@@ -4535,6 +4860,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SupportIppt) {
 		toSerialize["supportIppt"] = o.SupportIppt
 	}
+	if !IsNil(o.SupportJumbo) {
+		toSerialize["supportJumbo"] = o.SupportJumbo
+	}
 	if !IsNil(o.SupportMacDelay) {
 		toSerialize["supportMacDelay"] = o.SupportMacDelay
 	}
@@ -4549,6 +4877,9 @@ func (o OswVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportSdm) {
 		toSerialize["supportSdm"] = o.SupportSdm
+	}
+	if !IsNil(o.SupportSnmp) {
+		toSerialize["supportSnmp"] = o.SupportSnmp
 	}
 	if !IsNil(o.SupportStackGroupSpeed) {
 		toSerialize["supportStackGroupSpeed"] = o.SupportStackGroupSpeed

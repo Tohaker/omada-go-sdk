@@ -7,10 +7,11 @@ Name | Type | Description | Notes
 **Site** | Pointer to **string** | site Id | [optional] 
 **Clone** | Pointer to **bool** | Whether it is cloned | [optional] 
 **CloneWlanId** | Pointer to **string** | cloneWlanId | [optional] 
+**Id** | Pointer to **string** | WLAN group ID | [optional] 
 **Name** | Pointer to **string** | WLAN group name should contain 1 to 128 characters. | [optional] 
 **Primary** | Pointer to **bool** | Whether it is the default WLAN group | [optional] 
 **Resource** | Pointer to **int32** | resource. 0 is new created, 1 is from template, 2 is override template. | [optional] 
-**WlanId** | Pointer to **string** | WLAN group ID | [optional] 
+**WlanId** | Pointer to **string** | WLAN group ID, kept for backward compatibility and equivalent to id. This field will be removed in a future release; use id instead. | [optional] 
 
 ## Methods
 
@@ -105,6 +106,31 @@ SetCloneWlanId sets CloneWlanId field to given value.
 `func (o *WlanGroupOpenApiVO) HasCloneWlanId() bool`
 
 HasCloneWlanId returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *WlanGroupOpenApiVO) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *WlanGroupOpenApiVO) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *WlanGroupOpenApiVO) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *WlanGroupOpenApiVO) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 

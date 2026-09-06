@@ -354,7 +354,7 @@ type VoIPAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param voiceId voiceId
+	@param voiceId Voice ID
 	@return VoIPAPIDownloadVoiceMailRequest
 	*/
 	DownloadVoiceMail(ctx context.Context, omadacId string, siteId string, voiceId string) VoIPAPIDownloadVoiceMailRequest
@@ -3578,7 +3578,7 @@ Get voice mail<br/><br/>The interface requires one of the permissions: <br/>Site
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param voiceId voiceId
+ @param voiceId Voice ID
  @return VoIPAPIDownloadVoiceMailRequest
 */
 func (a *VoIPAPIService) DownloadVoiceMail(ctx context.Context, omadacId string, siteId string, voiceId string) VoIPAPIDownloadVoiceMailRequest {

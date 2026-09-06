@@ -218,7 +218,7 @@ type ACLAPI interface {
 	/*
 	GetOsgCustomAclList Get osg custom ACL
 
-	Get osg custom ACL.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get osg custom ACL.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -250,7 +250,7 @@ type ACLAPI interface {
 	/*
 	ModifyAclConfigTypeSetting Modify gateway ACL config mode
 
-	Modify gateway ACL config modeThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Modify gateway ACL config mode<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -349,7 +349,7 @@ type ACLAPI interface {
 	/*
 	UpdateOsgCustomAcls Update osg custom ACLs
 
-	Update osg custom ACLs.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Update osg custom ACLs.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -1949,7 +1949,7 @@ func (r ACLAPIGetOsgCustomAclListRequest) Execute() (*OperationResponseGridVOGat
 /*
 GetOsgCustomAclList Get osg custom ACL
 
-Get osg custom ACL.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get osg custom ACL.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2227,7 +2227,7 @@ func (r ACLAPIModifyAclConfigTypeSettingRequest) Execute() (*OperationResponseWi
 /*
 ModifyAclConfigTypeSetting Modify gateway ACL config mode
 
-Modify gateway ACL config modeThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Modify gateway ACL config mode<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3031,7 +3031,7 @@ func (r ACLAPIUpdateOsgCustomAclsRequest) Execute() (*OperationResponseWithoutRe
 /*
 UpdateOsgCustomAcls Update osg custom ACLs
 
-Update osg custom ACLs.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Update osg custom ACLs.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

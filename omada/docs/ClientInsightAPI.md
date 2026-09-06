@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**GetMostActiveClients**](ClientInsightAPI.md#getmostactiveclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/active-clients | Get most active client.
 [**GetMspDashboardOverall**](ClientInsightAPI.md#getmspdashboardoverall) | **Get** /openapi/v1/msp/{mspId}/dashboard/client/overview-diagram | Get the msp overview diagram of client.
 [**GetPastClientNum**](ClientInsightAPI.md#getpastclientnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/dashboard/past-client-num | Get past client number.
+[**GetRealTimeClientCards**](ClientInsightAPI.md#getrealtimeclientcards) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client/realtime/cards | Get real-time client cards.
 [**GetStackClientStat**](ClientInsightAPI.md#getstackclientstat) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/stat/stacks/{stackId}/client-stat | Get stack client stat.
 
 
@@ -1454,6 +1455,81 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRealTimeClientCards
+
+> OperationResponseClientCardsResultOpenApiVO GetRealTimeClientCards(ctx, omadacId, siteId).ClientCardsQueryOpenApiVO(clientCardsQueryOpenApiVO).Execute()
+
+Get real-time client cards.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	clientCardsQueryOpenApiVO := *openapiclient.NewClientCardsQueryOpenApiVO() // ClientCardsQueryOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClientInsightAPI.GetRealTimeClientCards(context.Background(), omadacId, siteId).ClientCardsQueryOpenApiVO(clientCardsQueryOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClientInsightAPI.GetRealTimeClientCards``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRealTimeClientCards`: OperationResponseClientCardsResultOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `ClientInsightAPI.GetRealTimeClientCards`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRealTimeClientCardsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **clientCardsQueryOpenApiVO** | [**ClientCardsQueryOpenApiVO**](ClientCardsQueryOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseClientCardsResultOpenApiVO**](OperationResponseClientCardsResultOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

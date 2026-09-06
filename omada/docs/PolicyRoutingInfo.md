@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ExistMulti** | Pointer to **bool** | Whether the interface option exists multi | [optional] 
 **ExistVirtualWan** | Pointer to **bool** | Whether the interface option exists virtual WAN | [optional] 
 **ExistVpnClient** | Pointer to **bool** | Whether the interface option exists VPN client | [optional] 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **Id** | Pointer to **string** | ID | [optional] 
 **Index** | Pointer to **int32** | Index | [optional] 
 **InterfaceId** | Pointer to **string** | Interface ID | [optional] 
@@ -254,6 +255,31 @@ SetExistVpnClient sets ExistVpnClient field to given value.
 `func (o *PolicyRoutingInfo) HasExistVpnClient() bool`
 
 HasExistVpnClient returns a boolean if a field has been set.
+
+### GetFeatureDescription
+
+`func (o *PolicyRoutingInfo) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *PolicyRoutingInfo) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *PolicyRoutingInfo) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *PolicyRoutingInfo) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetId
 

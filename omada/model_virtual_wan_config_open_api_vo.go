@@ -23,7 +23,7 @@ var _ MappedNullable = &VirtualWanConfigOpenApiVO{}
 type VirtualWanConfigOpenApiVO struct {
 	// Virtual WAN name should contain 1 to 128 characters. Only letters, digits and underscores are allowed.
 	Name string `json:"name"`
-	// Physical WAN ID. Physical WAN ID can be obtained from 'Get internet basic info' interface. Only DSL WAN supports configuring virtual WAN. 
+	// Physical WAN ID. Physical WAN ID can be obtained from 'Get internet basic info' interface. Physical WAN ID. Physical WAN ID can be obtained from 'Get internet basic info' interface. Only DSL WAN, Ethernet WAN, and SFP WAN support virtual WAN configuration.
 	PhysicalWanId string `json:"physicalWanId"`
 	VirtualWanDsl *VirtualWanDslOpenApiVO `json:"virtualWanDsl,omitempty"`
 	VirtualWanIpv4Setting VirtualWanIpv4SettingConfigOpenApiVO `json:"virtualWanIpv4Setting"`

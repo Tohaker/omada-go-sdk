@@ -21,6 +21,7 @@ var _ MappedNullable = &SiteSubHealthScoreVO{}
 type SiteSubHealthScoreVO struct {
 	ClientHealthScoreDetail *HealthStatisticsScoreVO `json:"clientHealthScoreDetail,omitempty"`
 	DeviceHealthScoreDetail *SiteDeviceSubHealthScoreVO `json:"deviceHealthScoreDetail,omitempty"`
+	IncidentDetail *AnomalyStateVO `json:"incidentDetail,omitempty"`
 	WanScoreDetail *WanHealthListVO `json:"wanScoreDetail,omitempty"`
 }
 
@@ -105,6 +106,38 @@ func (o *SiteSubHealthScoreVO) SetDeviceHealthScoreDetail(v SiteDeviceSubHealthS
 	o.DeviceHealthScoreDetail = &v
 }
 
+// GetIncidentDetail returns the IncidentDetail field value if set, zero value otherwise.
+func (o *SiteSubHealthScoreVO) GetIncidentDetail() AnomalyStateVO {
+	if o == nil || IsNil(o.IncidentDetail) {
+		var ret AnomalyStateVO
+		return ret
+	}
+	return *o.IncidentDetail
+}
+
+// GetIncidentDetailOk returns a tuple with the IncidentDetail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSubHealthScoreVO) GetIncidentDetailOk() (*AnomalyStateVO, bool) {
+	if o == nil || IsNil(o.IncidentDetail) {
+		return nil, false
+	}
+	return o.IncidentDetail, true
+}
+
+// HasIncidentDetail returns a boolean if a field has been set.
+func (o *SiteSubHealthScoreVO) HasIncidentDetail() bool {
+	if o != nil && !IsNil(o.IncidentDetail) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidentDetail gets a reference to the given AnomalyStateVO and assigns it to the IncidentDetail field.
+func (o *SiteSubHealthScoreVO) SetIncidentDetail(v AnomalyStateVO) {
+	o.IncidentDetail = &v
+}
+
 // GetWanScoreDetail returns the WanScoreDetail field value if set, zero value otherwise.
 func (o *SiteSubHealthScoreVO) GetWanScoreDetail() WanHealthListVO {
 	if o == nil || IsNil(o.WanScoreDetail) {
@@ -152,6 +185,9 @@ func (o SiteSubHealthScoreVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.DeviceHealthScoreDetail) {
 		toSerialize["deviceHealthScoreDetail"] = o.DeviceHealthScoreDetail
+	}
+	if !IsNil(o.IncidentDetail) {
+		toSerialize["incidentDetail"] = o.IncidentDetail
 	}
 	if !IsNil(o.WanScoreDetail) {
 		toSerialize["wanScoreDetail"] = o.WanScoreDetail

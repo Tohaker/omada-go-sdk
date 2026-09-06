@@ -19,7 +19,7 @@ var _ MappedNullable = &WidsConfigOpenApiVO{}
 
 // WidsConfigOpenApiVO struct for WidsConfigOpenApiVO
 type WidsConfigOpenApiVO struct {
-	// Wireless IDS detection type, the value is returned only when level is custom(2); It should be a value as follows: 0: Signature_disassociation_broadcast; 1: Signature_deauth_broadcast; 2: Detect_apspoofing; 3: Detect_adhoc_using_valid_ssid; 4: Detect_malformed_large_duration; 5: Detect_overflow_eapol_key; 6: Detect_ap_impersonation; 7: Detect_ht_greenfield; 8: Detect_incomplete_ie; 9: Detect_malformed_htie; 10: Detect_malformed_frame_auth; 11: Detect_malformed_assoc_req; 12: Detect_valid_ssid_misuse; 13: Detect_adhoc_network; 14: Detect_client_flood; 15: Detect_hotspotter_attack; 16: Detect_power_save_dos_flood_attack; 17: Detect_violence_break.
+	// Wireless IDS detection type, the value is returned only when level is custom(2); It should be a value as follows: 0: Signature_disassociation_broadcast; 1: Signature_deauth_broadcast; 2: Detect_apspoofing; 3: Detect_adhoc_using_valid_ssid; 4: Detect_malformed_large_duration; 5: Detect_overflow_eapol_key; 6: Detect_ap_impersonation; 7: Detect_ht_greenfield; 8: Detect_incomplete_ie; 9: Detect_malformed_htie; 10: Detect_malformed_frame_auth; 11: Detect_malformed_assoc_req; 12: Detect_valid_ssid_misuse; 13: Detect_adhoc_network; 14: Detect_client_flood; 16: Detect_power_save_dos_flood_attack; 17: Detect_violence_break.
 	Detection []int32 `json:"detection,omitempty"`
 	// Wireless IDS detection level; It should be a value as follows: 0:High; 1:Low; 2:Custom.
 	Level *int32 `json:"level,omitempty"`

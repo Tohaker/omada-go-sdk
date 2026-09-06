@@ -35,6 +35,8 @@ type ApWirelessUplink struct {
 	ModelVersion *string `json:"modelVersion,omitempty"`
 	// Uplink AP name
 	Name *string `json:"name,omitempty"`
+	// Mlo link Info
+	PartnerLinks []PartnerLinkVO `json:"partnerLinks,omitempty"`
 	// Uplink AP rssi
 	Rssi *int32 `json:"rssi,omitempty"`
 	// Uplink AP rxRate
@@ -332,6 +334,38 @@ func (o *ApWirelessUplink) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ApWirelessUplink) SetName(v string) {
 	o.Name = &v
+}
+
+// GetPartnerLinks returns the PartnerLinks field value if set, zero value otherwise.
+func (o *ApWirelessUplink) GetPartnerLinks() []PartnerLinkVO {
+	if o == nil || IsNil(o.PartnerLinks) {
+		var ret []PartnerLinkVO
+		return ret
+	}
+	return o.PartnerLinks
+}
+
+// GetPartnerLinksOk returns a tuple with the PartnerLinks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApWirelessUplink) GetPartnerLinksOk() ([]PartnerLinkVO, bool) {
+	if o == nil || IsNil(o.PartnerLinks) {
+		return nil, false
+	}
+	return o.PartnerLinks, true
+}
+
+// HasPartnerLinks returns a boolean if a field has been set.
+func (o *ApWirelessUplink) HasPartnerLinks() bool {
+	if o != nil && !IsNil(o.PartnerLinks) {
+		return true
+	}
+
+	return false
+}
+
+// SetPartnerLinks gets a reference to the given []PartnerLinkVO and assigns it to the PartnerLinks field.
+func (o *ApWirelessUplink) SetPartnerLinks(v []PartnerLinkVO) {
+	o.PartnerLinks = v
 }
 
 // GetRssi returns the Rssi field value if set, zero value otherwise.
@@ -751,6 +785,9 @@ func (o ApWirelessUplink) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.PartnerLinks) {
+		toSerialize["partnerLinks"] = o.PartnerLinks
 	}
 	if !IsNil(o.Rssi) {
 		toSerialize["rssi"] = o.Rssi

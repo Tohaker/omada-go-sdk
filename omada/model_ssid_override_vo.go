@@ -24,12 +24,13 @@ type SsidOverrideVO struct {
 	// Deprecated
 	BandInfo *int32 `json:"bandInfo,omitempty"`
 	Enable bool `json:"enable"`
-	GlobalSsid string `json:"globalSsid"`
+	GlobalSsid *string `json:"globalSsid,omitempty"`
 	HidePwd *bool `json:"hidePwd,omitempty"`
 	Index int32 `json:"index"`
 	Psk *string `json:"psk,omitempty"`
 	Security *int32 `json:"security,omitempty"`
 	Ssid *string `json:"ssid,omitempty"`
+	SsidConfigurable *bool `json:"ssidConfigurable,omitempty"`
 	SsidEnable *bool `json:"ssidEnable,omitempty"`
 	SupportBands []int32 `json:"supportBands,omitempty"`
 	VlanEnable *bool `json:"vlanEnable,omitempty"`
@@ -43,10 +44,9 @@ type _SsidOverrideVO SsidOverrideVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSsidOverrideVO(enable bool, globalSsid string, index int32) *SsidOverrideVO {
+func NewSsidOverrideVO(enable bool, index int32) *SsidOverrideVO {
 	this := SsidOverrideVO{}
 	this.Enable = enable
-	this.GlobalSsid = globalSsid
 	this.Index = index
 	return &this
 }
@@ -118,28 +118,36 @@ func (o *SsidOverrideVO) SetEnable(v bool) {
 	o.Enable = v
 }
 
-// GetGlobalSsid returns the GlobalSsid field value
+// GetGlobalSsid returns the GlobalSsid field value if set, zero value otherwise.
 func (o *SsidOverrideVO) GetGlobalSsid() string {
-	if o == nil {
+	if o == nil || IsNil(o.GlobalSsid) {
 		var ret string
 		return ret
 	}
-
-	return o.GlobalSsid
+	return *o.GlobalSsid
 }
 
-// GetGlobalSsidOk returns a tuple with the GlobalSsid field value
+// GetGlobalSsidOk returns a tuple with the GlobalSsid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SsidOverrideVO) GetGlobalSsidOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.GlobalSsid) {
 		return nil, false
 	}
-	return &o.GlobalSsid, true
+	return o.GlobalSsid, true
 }
 
-// SetGlobalSsid sets field value
+// HasGlobalSsid returns a boolean if a field has been set.
+func (o *SsidOverrideVO) HasGlobalSsid() bool {
+	if o != nil && !IsNil(o.GlobalSsid) {
+		return true
+	}
+
+	return false
+}
+
+// SetGlobalSsid gets a reference to the given string and assigns it to the GlobalSsid field.
 func (o *SsidOverrideVO) SetGlobalSsid(v string) {
-	o.GlobalSsid = v
+	o.GlobalSsid = &v
 }
 
 // GetHidePwd returns the HidePwd field value if set, zero value otherwise.
@@ -292,6 +300,38 @@ func (o *SsidOverrideVO) HasSsid() bool {
 // SetSsid gets a reference to the given string and assigns it to the Ssid field.
 func (o *SsidOverrideVO) SetSsid(v string) {
 	o.Ssid = &v
+}
+
+// GetSsidConfigurable returns the SsidConfigurable field value if set, zero value otherwise.
+func (o *SsidOverrideVO) GetSsidConfigurable() bool {
+	if o == nil || IsNil(o.SsidConfigurable) {
+		var ret bool
+		return ret
+	}
+	return *o.SsidConfigurable
+}
+
+// GetSsidConfigurableOk returns a tuple with the SsidConfigurable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidOverrideVO) GetSsidConfigurableOk() (*bool, bool) {
+	if o == nil || IsNil(o.SsidConfigurable) {
+		return nil, false
+	}
+	return o.SsidConfigurable, true
+}
+
+// HasSsidConfigurable returns a boolean if a field has been set.
+func (o *SsidOverrideVO) HasSsidConfigurable() bool {
+	if o != nil && !IsNil(o.SsidConfigurable) {
+		return true
+	}
+
+	return false
+}
+
+// SetSsidConfigurable gets a reference to the given bool and assigns it to the SsidConfigurable field.
+func (o *SsidOverrideVO) SetSsidConfigurable(v bool) {
+	o.SsidConfigurable = &v
 }
 
 // GetSsidEnable returns the SsidEnable field value if set, zero value otherwise.
@@ -468,7 +508,9 @@ func (o SsidOverrideVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["bandInfo"] = o.BandInfo
 	}
 	toSerialize["enable"] = o.Enable
-	toSerialize["globalSsid"] = o.GlobalSsid
+	if !IsNil(o.GlobalSsid) {
+		toSerialize["globalSsid"] = o.GlobalSsid
+	}
 	if !IsNil(o.HidePwd) {
 		toSerialize["hidePwd"] = o.HidePwd
 	}
@@ -481,6 +523,9 @@ func (o SsidOverrideVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Ssid) {
 		toSerialize["ssid"] = o.Ssid
+	}
+	if !IsNil(o.SsidConfigurable) {
+		toSerialize["ssidConfigurable"] = o.SsidConfigurable
 	}
 	if !IsNil(o.SsidEnable) {
 		toSerialize["ssidEnable"] = o.SsidEnable
@@ -506,7 +551,6 @@ func (o *SsidOverrideVO) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"enable",
-		"globalSsid",
 		"index",
 	}
 

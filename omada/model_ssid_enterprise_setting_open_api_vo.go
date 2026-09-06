@@ -31,7 +31,7 @@ type SsidEnterpriseSettingOpenApiVO struct {
 	NasId *string `json:"nasId,omitempty"`
 	// Indicates the status of nasid under enterprise-level encryption. It should be a value as follows: 0: default (TP LINK: MAC Address), 1: follow device name, 2: custom.
 	NasIdMode *int32 `json:"nasIdMode,omitempty"`
-	// This field represents RADIUS Profile ID. RADIUS Profile(RADIUS Profile Template) can be created using Create a new Radius profile(Create a new Radius profile template) interface, and RADIUS Profile ID(RADIUS Profile Template ID) can be obtained from Get Radius profile list(Get Radius profile template list) interface.
+	// This field represents RADIUS Profile ID. RADIUS Profile(RADIUS Profile Template) can be created using Create a new RADIUS profile(Create a new RADIUS profile template) interface, and RADIUS Profile ID(RADIUS Profile Template ID) can be obtained from Get RADIUS profile list(Get RADIUS profile template list) interface.
 	RadiusProfileId string `json:"radiusProfileId"`
 	// WPA-Enterprise SSID group key update period interval config. When the value of Parameter [intervalEntType] is 0(Seconds), it should be within the range of 30-86400; when the value of Parameter [intervalEntType] is 1(Minutes), it should be within the range of 1-1440; when the value of Parameter [intervalEntType] is 2(Hours), it should be within the range of 1-24.
 	RekeyEntInterval *int32 `json:"rekeyEntInterval,omitempty"`

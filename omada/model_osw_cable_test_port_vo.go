@@ -23,6 +23,8 @@ type OswCableTestPortVO struct {
 	DownlinkDevices []DeviceBriefVO `json:"downlinkDevices,omitempty"`
 	// It indicates whether the port can run cable test.
 	EditEnable *bool `json:"editEnable,omitempty"`
+	// Whether the port is copper when the port is combo.
+	IsCopper *bool `json:"isCopper,omitempty"`
 	// It indicates whether the port is disabled.
 	IsDisabled *bool `json:"isDisabled,omitempty"`
 	// It indicates whether the port is stack port
@@ -119,6 +121,38 @@ func (o *OswCableTestPortVO) HasEditEnable() bool {
 // SetEditEnable gets a reference to the given bool and assigns it to the EditEnable field.
 func (o *OswCableTestPortVO) SetEditEnable(v bool) {
 	o.EditEnable = &v
+}
+
+// GetIsCopper returns the IsCopper field value if set, zero value otherwise.
+func (o *OswCableTestPortVO) GetIsCopper() bool {
+	if o == nil || IsNil(o.IsCopper) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCopper
+}
+
+// GetIsCopperOk returns a tuple with the IsCopper field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswCableTestPortVO) GetIsCopperOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsCopper) {
+		return nil, false
+	}
+	return o.IsCopper, true
+}
+
+// HasIsCopper returns a boolean if a field has been set.
+func (o *OswCableTestPortVO) HasIsCopper() bool {
+	if o != nil && !IsNil(o.IsCopper) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCopper gets a reference to the given bool and assigns it to the IsCopper field.
+func (o *OswCableTestPortVO) SetIsCopper(v bool) {
+	o.IsCopper = &v
 }
 
 // GetIsDisabled returns the IsDisabled field value if set, zero value otherwise.
@@ -392,6 +426,9 @@ func (o OswCableTestPortVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EditEnable) {
 		toSerialize["editEnable"] = o.EditEnable
+	}
+	if !IsNil(o.IsCopper) {
+		toSerialize["isCopper"] = o.IsCopper
 	}
 	if !IsNil(o.IsDisabled) {
 		toSerialize["isDisabled"] = o.IsDisabled

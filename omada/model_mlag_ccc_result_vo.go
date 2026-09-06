@@ -19,12 +19,15 @@ var _ MappedNullable = &MlagCccResultVO{}
 
 // MlagCccResultVO M-LAG group members configuration check result
 type MlagCccResultVO struct {
+	// The result of the M-LAG consistency check.
 	CccRslt *string `json:"cccRslt,omitempty"`
 	// M-LAG group member configuration name
 	CfgName *string `json:"cfgName,omitempty"`
+	// The local configuration values for M-LAG consistency check.
 	LocalVal *string `json:"localVal,omitempty"`
 	// M-LAG group member configuration path. It should be a value as follows:-1 : Settings -> CLI Configuration0 : Device configuration page -> config -> General -> Hash Algorithm1 : Device configuration page -> ports -> Profile Overrides -> Operation(Aggregating)2 : Device configuration page -> config -> Services -> Loopback Control -> Loopback Detection3 : Device configuration page -> ports -> Profile Overrides -> Loopback Control4 : Device configuration page -> config -> Services -> Loopback Control -> Spanning Tree5 : Device configuration page -> config -> Services -> Loopback Control -> CIST Priority6 : Device configuration page -> config -> Services -> Loopback Control -> MSTP Instance config7 : Device configuration page -> ports -> Profile Overrides -> Spanning Tree Config8 : Device configuration page -> ports -> Profile Overrides -> Loopback Control9 : Device configuration page -> config -> VLAN Interface10 : Settings -> Transmission -> VRRP -> Optional Settings11 : Settings -> Transmission -> VRRP12 : Settings -> Wired&Wireless Networks -> LAN -> Networks -> DHCP L2 Relay13 : Device configuration page -> ports -> LAG -> Profile14 : Settings -> Wired&Wireless Networks -> LAN -> Networks -> IGMP Snooping15 : Settings -> Wired&Wireless Networks -> LAN -> Networks -> MLD Snooping
 	PathType *int32 `json:"pathType,omitempty"`
+	// The opposite-end configuration values for M-LAG consistency check.
 	PeerVal *string `json:"peerVal,omitempty"`
 	// M-LAG group member configuration type. It should be a value as follows:1 : Critical2 : Significant
 	Type *int32 `json:"type,omitempty"`

@@ -133,8 +133,8 @@ type WLANOptimizationAPI interface {
 	GetExcludeAps(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetExcludeApsRequest
 
 	// GetExcludeApsExecute executes the request
-	//  @return OperationResponse
-	GetExcludeApsExecute(r WLANOptimizationAPIGetExcludeApsRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseListExcludeApVO
+	GetExcludeApsExecute(r WLANOptimizationAPIGetExcludeApsRequest) (*OperationResponseListExcludeApVO, *http.Response, error)
 
 	/*
 	GetExperienceIndex get Experience Index
@@ -214,8 +214,8 @@ type WLANOptimizationAPI interface {
 	GetPlanningHistorysByTime(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetPlanningHistorysByTimeRequest
 
 	// GetPlanningHistorysByTimeExecute executes the request
-	//  @return OperationResponse
-	GetPlanningHistorysByTimeExecute(r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponseGridVORFPlanningHistory
+	GetPlanningHistorysByTimeExecute(r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) (*OperationResponseGridVORFPlanningHistory, *http.Response, error)
 
 	/*
 	GetRFPlanningDeployHistory get RF Planning Deploy History
@@ -282,7 +282,7 @@ type WLANOptimizationAPI interface {
 	GetRadioFrequencyPlanningResultExecute(r WLANOptimizationAPIGetRadioFrequencyPlanningResultRequest) (*OperationResponseRFPlanningResult, *http.Response, error)
 
 	/*
-	GetTimeLinePlanningHistorys Get the planningHistory
+	GetTimeLinePlanningHistorys Get the planningHistory Time Line
 
 	Get the planningHistory drawing of the past period of time<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
@@ -294,8 +294,8 @@ type WLANOptimizationAPI interface {
 	GetTimeLinePlanningHistorys(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetTimeLinePlanningHistorysRequest
 
 	// GetTimeLinePlanningHistorysExecute executes the request
-	//  @return OperationResponse
-	GetTimeLinePlanningHistorysExecute(r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) (*OperationResponse, *http.Response, error)
+	//  @return OperationResponsePlanningHistoryListVO
+	GetTimeLinePlanningHistorysExecute(r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) (*OperationResponsePlanningHistoryListVO, *http.Response, error)
 
 	/*
 	ModifyExcludeAps modify Exclude Aps
@@ -1244,7 +1244,7 @@ func (r WLANOptimizationAPIGetExcludeApsRequest) CurrentPageSize(currentPageSize
 	return r
 }
 
-func (r WLANOptimizationAPIGetExcludeApsRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r WLANOptimizationAPIGetExcludeApsRequest) Execute() (*OperationResponseListExcludeApVO, *http.Response, error) {
 	return r.ApiService.GetExcludeApsExecute(r)
 }
 
@@ -1268,13 +1268,13 @@ func (a *WLANOptimizationAPIService) GetExcludeAps(ctx context.Context, omadacId
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *WLANOptimizationAPIService) GetExcludeApsExecute(r WLANOptimizationAPIGetExcludeApsRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseListExcludeApVO
+func (a *WLANOptimizationAPIService) GetExcludeApsExecute(r WLANOptimizationAPIGetExcludeApsRequest) (*OperationResponseListExcludeApVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseListExcludeApVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.GetExcludeAps")
@@ -1911,7 +1911,7 @@ func (r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) End(end int64) WLAN
 	return r
 }
 
-func (r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) Execute() (*OperationResponseGridVORFPlanningHistory, *http.Response, error) {
 	return r.ApiService.GetPlanningHistorysByTimeExecute(r)
 }
 
@@ -1935,13 +1935,13 @@ func (a *WLANOptimizationAPIService) GetPlanningHistorysByTime(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *WLANOptimizationAPIService) GetPlanningHistorysByTimeExecute(r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponseGridVORFPlanningHistory
+func (a *WLANOptimizationAPIService) GetPlanningHistorysByTimeExecute(r WLANOptimizationAPIGetPlanningHistorysByTimeRequest) (*OperationResponseGridVORFPlanningHistory, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponseGridVORFPlanningHistory
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.GetPlanningHistorysByTime")
@@ -2553,12 +2553,12 @@ func (r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) Type_(type_ int32
 	return r
 }
 
-func (r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) Execute() (*OperationResponse, *http.Response, error) {
+func (r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) Execute() (*OperationResponsePlanningHistoryListVO, *http.Response, error) {
 	return r.ApiService.GetTimeLinePlanningHistorysExecute(r)
 }
 
 /*
-GetTimeLinePlanningHistorys Get the planningHistory
+GetTimeLinePlanningHistorys Get the planningHistory Time Line
 
 Get the planningHistory drawing of the past period of time<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
@@ -2577,13 +2577,13 @@ func (a *WLANOptimizationAPIService) GetTimeLinePlanningHistorys(ctx context.Con
 }
 
 // Execute executes the request
-//  @return OperationResponse
-func (a *WLANOptimizationAPIService) GetTimeLinePlanningHistorysExecute(r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) (*OperationResponse, *http.Response, error) {
+//  @return OperationResponsePlanningHistoryListVO
+func (a *WLANOptimizationAPIService) GetTimeLinePlanningHistorysExecute(r WLANOptimizationAPIGetTimeLinePlanningHistorysRequest) (*OperationResponsePlanningHistoryListVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponse
+		localVarReturnValue  *OperationResponsePlanningHistoryListVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.GetTimeLinePlanningHistorys")

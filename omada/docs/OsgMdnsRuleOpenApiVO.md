@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientNetworks** | **[]string** | LAN Network ID list of selected client networks. LAN Network can be created using &#39;Create LAN network&#39; interface, and LAN Network ID can be obtained from &#39;Get LAN network list&#39; interface | 
-**ServiceNetworks** | **[]string** | LAN Network ID list of selected service networks. LAN Network can be created using &#39;Create LAN network&#39; interface, and LAN Network ID can be obtained from &#39;Get LAN network list&#39; interface | 
+**ClientNetworks** | **[]string** | LAN Network ID list of selected client networks.  This configuration is used for MDNS Rules where the band VLAN type is \&quot;By Network\&quot;. LAN Network can be created using &#39;Create LAN network&#39; interface, and LAN Network ID can be obtained from &#39;Get LAN network list&#39; interface | 
+**ServiceNetworks** | **[]string** | LAN Network ID list of selected service networks. This configuration is used for MDNS Rules where the band VLAN type is \&quot;By Network\&quot;. LAN Network can be created using &#39;Create LAN network&#39; interface, and LAN Network ID can be obtained from &#39;Get LAN network list&#39; interface | 
 
 ## Methods
 

@@ -266,7 +266,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	userID := "userID_example" // string | userID
+	userID := "userID_example" // string | User ID
 	deleteUserVO := *openapiclient.NewDeleteUserVO() // DeleteUserVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**userID** | **string** | userID | 
+**userID** | **string** | User ID | 
 
 ### Other Parameters
 
@@ -550,7 +550,7 @@ import (
 )
 
 func main() {
-	omadacId := "omadacId_example" // string | 
+	omadacId := "omadacId_example" // string | Omada ID
 	page := int32(56) // int32 | Start page number. Start from 1.
 	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
 	sortsName := "sortsName_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
@@ -576,7 +576,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** |  | 
+**omadacId** | **string** | Omada ID | 
 
 ### Other Parameters
 
@@ -772,7 +772,7 @@ import (
 )
 
 func main() {
-	omadacId := "omadacId_example" // string | 
+	omadacId := "omadacId_example" // string | Omada ID
 	page := int32(56) // int32 | Start page number. Start from 1.
 	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
 	sortsName := "sortsName_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
@@ -798,7 +798,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**omadacId** | **string** |  | 
+**omadacId** | **string** | Omada ID | 
 
 ### Other Parameters
 
@@ -928,7 +928,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	userID := "userID_example" // string | userID
+	userID := "userID_example" // string | User ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -949,7 +949,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**userID** | **string** | userID | 
+**userID** | **string** | User ID | 
 
 ### Other Parameters
 
@@ -1148,7 +1148,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	userID := "userID_example" // string | userID
+	userID := "userID_example" // string | User ID
 	modifyUserVO := *openapiclient.NewModifyUserVO(false, "Name_example", "RoleId_example") // ModifyUserVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -1170,7 +1170,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**userID** | **string** | userID | 
+**userID** | **string** | User ID | 
 
 ### Other Parameters
 

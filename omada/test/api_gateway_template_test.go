@@ -26,11 +26,11 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.GetGatewayInfo(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.GetGatewayInfo(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -42,11 +42,11 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.GetPortsTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.GetPortsTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -74,11 +74,11 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigAdvancedTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigAdvancedTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -90,11 +90,11 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigCommonAdvancedTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigCommonAdvancedTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,11 +106,11 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigGeneralTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigGeneralTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -122,11 +122,11 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigRadiosTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigRadiosTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -138,11 +138,11 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigServicesTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigServicesTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -154,11 +154,11 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigWirelessAdvancedTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigWirelessAdvancedTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -170,11 +170,11 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigWlansTemplate(context.Background(), siteTemplateId, deviceTemplateId, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyConfigWlansTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -186,12 +186,12 @@ func Test_omada_GatewayTemplateAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteTemplateId string
 		var deviceTemplateId string
 		var port string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyPortConfig(context.Background(), siteTemplateId, deviceTemplateId, port, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayTemplateAPI.ModifyPortConfig(context.Background(), omadacId, siteTemplateId, deviceTemplateId, port).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

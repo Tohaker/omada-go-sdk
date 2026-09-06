@@ -25,6 +25,7 @@ type SupportCliDeviceVO struct {
 	DeviceSeriesType *int32 `json:"deviceSeriesType,omitempty"`
 	// Ip address
 	Ip *string `json:"ip,omitempty"`
+	IpLong *int64 `json:"ipLong,omitempty"`
 	// Device mac
 	Mac *string `json:"mac,omitempty"`
 	// Master mac. If the device is not a member of stack, masterMac should be null
@@ -158,6 +159,38 @@ func (o *SupportCliDeviceVO) HasIp() bool {
 // SetIp gets a reference to the given string and assigns it to the Ip field.
 func (o *SupportCliDeviceVO) SetIp(v string) {
 	o.Ip = &v
+}
+
+// GetIpLong returns the IpLong field value if set, zero value otherwise.
+func (o *SupportCliDeviceVO) GetIpLong() int64 {
+	if o == nil || IsNil(o.IpLong) {
+		var ret int64
+		return ret
+	}
+	return *o.IpLong
+}
+
+// GetIpLongOk returns a tuple with the IpLong field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SupportCliDeviceVO) GetIpLongOk() (*int64, bool) {
+	if o == nil || IsNil(o.IpLong) {
+		return nil, false
+	}
+	return o.IpLong, true
+}
+
+// HasIpLong returns a boolean if a field has been set.
+func (o *SupportCliDeviceVO) HasIpLong() bool {
+	if o != nil && !IsNil(o.IpLong) {
+		return true
+	}
+
+	return false
+}
+
+// SetIpLong gets a reference to the given int64 and assigns it to the IpLong field.
+func (o *SupportCliDeviceVO) SetIpLong(v int64) {
+	o.IpLong = &v
 }
 
 // GetMac returns the Mac field value if set, zero value otherwise.
@@ -498,6 +531,9 @@ func (o SupportCliDeviceVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Ip) {
 		toSerialize["ip"] = o.Ip
+	}
+	if !IsNil(o.IpLong) {
+		toSerialize["ipLong"] = o.IpLong
 	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac

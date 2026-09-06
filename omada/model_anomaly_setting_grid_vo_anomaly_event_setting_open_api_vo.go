@@ -26,6 +26,7 @@ type AnomalySettingGridVOAnomalyEventSettingOpenApiVO struct {
 	Data []AnomalyEventSettingOpenApiVO `json:"data,omitempty"`
 	// The anomaly event setting creation resource, such as: 0: new created, 1: from template, 2: override
 	Resource *int32 `json:"resource,omitempty"`
+	Statistic *AnomalySettingStatOpenApiVO `json:"statistic,omitempty"`
 	// Total rows of all items.
 	TotalRows *int64 `json:"totalRows,omitempty"`
 }
@@ -175,6 +176,38 @@ func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) SetResource(v int32) 
 	o.Resource = &v
 }
 
+// GetStatistic returns the Statistic field value if set, zero value otherwise.
+func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) GetStatistic() AnomalySettingStatOpenApiVO {
+	if o == nil || IsNil(o.Statistic) {
+		var ret AnomalySettingStatOpenApiVO
+		return ret
+	}
+	return *o.Statistic
+}
+
+// GetStatisticOk returns a tuple with the Statistic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) GetStatisticOk() (*AnomalySettingStatOpenApiVO, bool) {
+	if o == nil || IsNil(o.Statistic) {
+		return nil, false
+	}
+	return o.Statistic, true
+}
+
+// HasStatistic returns a boolean if a field has been set.
+func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) HasStatistic() bool {
+	if o != nil && !IsNil(o.Statistic) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatistic gets a reference to the given AnomalySettingStatOpenApiVO and assigns it to the Statistic field.
+func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) SetStatistic(v AnomalySettingStatOpenApiVO) {
+	o.Statistic = &v
+}
+
 // GetTotalRows returns the TotalRows field value if set, zero value otherwise.
 func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) GetTotalRows() int64 {
 	if o == nil || IsNil(o.TotalRows) {
@@ -228,6 +261,9 @@ func (o AnomalySettingGridVOAnomalyEventSettingOpenApiVO) ToMap() (map[string]in
 	}
 	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
+	}
+	if !IsNil(o.Statistic) {
+		toSerialize["statistic"] = o.Statistic
 	}
 	if !IsNil(o.TotalRows) {
 		toSerialize["totalRows"] = o.TotalRows

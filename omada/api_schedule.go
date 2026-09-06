@@ -219,20 +219,20 @@ type ScheduleAPI interface {
 	GetPortSchedulePortsExecute(r ScheduleAPIGetPortSchedulePortsRequest) (*OperationResponseListPortDeviceDetail, *http.Response, error)
 
 	/*
-	GetRebootScheduleList2 Get reboot schedule list
+	GetRebootScheduleList1 Get reboot schedule list
 
 	Get reboot schedule list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@return ScheduleAPIGetRebootScheduleList2Request
+	@return ScheduleAPIGetRebootScheduleList1Request
 	*/
-	GetRebootScheduleList2(ctx context.Context, omadacId string, siteId string) ScheduleAPIGetRebootScheduleList2Request
+	GetRebootScheduleList1(ctx context.Context, omadacId string, siteId string) ScheduleAPIGetRebootScheduleList1Request
 
-	// GetRebootScheduleList2Execute executes the request
+	// GetRebootScheduleList1Execute executes the request
 	//  @return OperationResponseListRebootScheduleQueryOpenApiVO
-	GetRebootScheduleList2Execute(r ScheduleAPIGetRebootScheduleList2Request) (*OperationResponseListRebootScheduleQueryOpenApiVO, *http.Response, error)
+	GetRebootScheduleList1Execute(r ScheduleAPIGetRebootScheduleList1Request) (*OperationResponseListRebootScheduleQueryOpenApiVO, *http.Response, error)
 
 	/*
 	GetUpgradeScheduleList Get upgrade schedule list
@@ -1878,29 +1878,29 @@ func (a *ScheduleAPIService) GetPortSchedulePortsExecute(r ScheduleAPIGetPortSch
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ScheduleAPIGetRebootScheduleList2Request struct {
+type ScheduleAPIGetRebootScheduleList1Request struct {
 	ctx context.Context
 	ApiService ScheduleAPI
 	omadacId string
 	siteId string
 }
 
-func (r ScheduleAPIGetRebootScheduleList2Request) Execute() (*OperationResponseListRebootScheduleQueryOpenApiVO, *http.Response, error) {
-	return r.ApiService.GetRebootScheduleList2Execute(r)
+func (r ScheduleAPIGetRebootScheduleList1Request) Execute() (*OperationResponseListRebootScheduleQueryOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetRebootScheduleList1Execute(r)
 }
 
 /*
-GetRebootScheduleList2 Get reboot schedule list
+GetRebootScheduleList1 Get reboot schedule list
 
 Get reboot schedule list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @return ScheduleAPIGetRebootScheduleList2Request
+ @return ScheduleAPIGetRebootScheduleList1Request
 */
-func (a *ScheduleAPIService) GetRebootScheduleList2(ctx context.Context, omadacId string, siteId string) ScheduleAPIGetRebootScheduleList2Request {
-	return ScheduleAPIGetRebootScheduleList2Request{
+func (a *ScheduleAPIService) GetRebootScheduleList1(ctx context.Context, omadacId string, siteId string) ScheduleAPIGetRebootScheduleList1Request {
+	return ScheduleAPIGetRebootScheduleList1Request{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
@@ -1910,7 +1910,7 @@ func (a *ScheduleAPIService) GetRebootScheduleList2(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseListRebootScheduleQueryOpenApiVO
-func (a *ScheduleAPIService) GetRebootScheduleList2Execute(r ScheduleAPIGetRebootScheduleList2Request) (*OperationResponseListRebootScheduleQueryOpenApiVO, *http.Response, error) {
+func (a *ScheduleAPIService) GetRebootScheduleList1Execute(r ScheduleAPIGetRebootScheduleList1Request) (*OperationResponseListRebootScheduleQueryOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1918,7 +1918,7 @@ func (a *ScheduleAPIService) GetRebootScheduleList2Execute(r ScheduleAPIGetReboo
 		localVarReturnValue  *OperationResponseListRebootScheduleQueryOpenApiVO
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduleAPIService.GetRebootScheduleList2")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduleAPIService.GetRebootScheduleList1")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

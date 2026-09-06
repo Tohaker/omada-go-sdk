@@ -70,6 +70,22 @@ func Test_omada_HealthAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test HealthAPIService GetClientHealthDetailV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var clientMac string
+
+		resp, httpRes, err := apiClient.HealthAPI.GetClientHealthDetailV2(context.Background(), omadacId, siteId, clientMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test HealthAPIService GetClientHealthTimeList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

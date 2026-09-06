@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**GetBatchChannelLoadsResult**](InsightAPI.md#getbatchchannelloadsresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/channel-load | Get channel utilization results of batch interference detection
 [**GetBatchFullChannelDetectApList**](InsightAPI.md#getbatchfullchanneldetectaplist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/ap-list | Get the AP list of batch interference detection
 [**GetBatchFullChannelDetectStatus**](InsightAPI.md#getbatchfullchanneldetectstatus) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/status | Get the interference detection status
+[**GetBatchInterferencesResult**](InsightAPI.md#getbatchinterferencesresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/grid/interference | Get Batch Interferences Result
 [**GetBatchWifiInterferencesResult**](InsightAPI.md#getbatchwifiinterferencesresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/grid/wifi-interference | Get WiFi interference results of batch interference detection
 [**GetChannelLoadResult**](InsightAPI.md#getchannelloadresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/channel-load | Get channel utilization results of interference detection
 [**GetDisableFullChannelDetectApMacList**](InsightAPI.md#getdisablefullchanneldetectapmaclist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/batch/info | Get the MAC list of APs that cannot perform interference detection
@@ -32,6 +33,7 @@ Method | HTTP request | Description
 [**GetGridWidsData**](InsightAPI.md#getgridwidsdata) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids | Query the Wireless IDS entry list
 [**GetGridWifiInterfResult**](InsightAPI.md#getgridwifiinterfresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/wlan-interference |  Get WiFi interference results of interference detection
 [**GetGridWipsBlackList**](InsightAPI.md#getgridwipsblacklist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/wids/blacklist | Get the dynamic blacklist entry data of Wireless IDS
+[**GetInterfResult**](InsightAPI.md#getinterfresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/grid/interference | Get Interference result
 [**GetPortForwardStatus**](InsightAPI.md#getportforwardstatus) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/insight/port-forwarding/{type} | Get Port Forwarding Status
 [**GetSpectralScanHistoryResult**](InsightAPI.md#getspectralscanhistoryresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/spectral-scan/aps/{apMac}/spectral-scan-result/history | Get history results of environment scanning
 [**GetSpectralScanResult**](InsightAPI.md#getspectralscanresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/spectral-scan/aps/{apMac}/spectral-scan-result | Get current results of environment scanning
@@ -644,6 +646,86 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBatchInterferencesResult
+
+> OperationResponseListApInterference GetBatchInterferencesResult(ctx, omadacId, siteId, historyId).Page(page).PageSize(pageSize).Execute()
+
+Get Batch Interferences Result
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	historyId := "historyId_example" // string | Customer ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InsightAPI.GetBatchInterferencesResult(context.Background(), omadacId, siteId, historyId).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.GetBatchInterferencesResult``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBatchInterferencesResult`: OperationResponseListApInterference
+	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.GetBatchInterferencesResult`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**historyId** | **string** | Customer ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBatchInterferencesResultRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseListApInterference**](OperationResponseListApInterference.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -2229,6 +2311,86 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseGridVOWipsBlackListOpenApiVO**](OperationResponseGridVOWipsBlackListOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetInterfResult
+
+> OperationResponseApInterference GetInterfResult(ctx, omadacId, siteId, apMac).Page(page).PageSize(pageSize).Execute()
+
+Get Interference result
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InsightAPI.GetInterfResult(context.Background(), omadacId, siteId, apMac).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InsightAPI.GetInterfResult``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetInterfResult`: OperationResponseApInterference
+	fmt.Fprintf(os.Stdout, "Response from `InsightAPI.GetInterfResult`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetInterfResultRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseApInterference**](OperationResponseApInterference.md)
 
 ### Authorization
 

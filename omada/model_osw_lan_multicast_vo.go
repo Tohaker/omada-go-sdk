@@ -19,7 +19,9 @@ var _ MappedNullable = &OswLanMulticastVO{}
 
 // OswLanMulticastVO struct for OswLanMulticastVO
 type OswLanMulticastVO struct {
+	// Whether fast leave is enabled
 	FastLeaveEnable *bool `json:"fastLeaveEnable,omitempty"`
+	// Whether report suppression is enabled
 	ReportSuppressionEnable *bool `json:"reportSuppressionEnable,omitempty"`
 }
 

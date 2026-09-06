@@ -17,13 +17,19 @@ import (
 // checks if the OswMlagPeerInfoVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswMlagPeerInfoVO{}
 
-// OswMlagPeerInfoVO struct for OswMlagPeerInfoVO
+// OswMlagPeerInfoVO M-LAG Peer device info
 type OswMlagPeerInfoVO struct {
+	// M-LAG Peer device mac
 	Mac *string `json:"mac,omitempty"`
+	// Maximum number of ports in a LAG group
 	MaxLagMember *int32 `json:"maxLagMember,omitempty"`
+	// Maximum number of LAG groups
 	MaxLagNum *int32 `json:"maxLagNum,omitempty"`
+	// M-LAG Peer device name
 	Name *string `json:"name,omitempty"`
+	// Number of ports in the M-LAG group
 	PortNum *int32 `json:"portNum,omitempty"`
+	// List of used lag IDs
 	UsedLagIds []int32 `json:"usedLagIds,omitempty"`
 }
 

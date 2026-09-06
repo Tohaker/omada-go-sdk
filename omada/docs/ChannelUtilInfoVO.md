@@ -5,6 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChannelUtil** | Pointer to **int32** | Channel utilization rate | [optional] 
+**ChannelUtil2g** | Pointer to **int32** | Channel 2g utilization rate | [optional] 
+**ChannelUtil5g** | Pointer to **int32** | Channel 5g utilization rate | [optional] 
+**ChannelUtil6g** | Pointer to **int32** | Channel 6g utilization rate | [optional] 
 **DeviceName** | Pointer to **string** | Device name | [optional] 
 **DeviceType** | Pointer to **string** | Device type | [optional] 
 **Ip** | Pointer to **string** | ip | [optional] 
@@ -55,6 +58,81 @@ SetChannelUtil sets ChannelUtil field to given value.
 `func (o *ChannelUtilInfoVO) HasChannelUtil() bool`
 
 HasChannelUtil returns a boolean if a field has been set.
+
+### GetChannelUtil2g
+
+`func (o *ChannelUtilInfoVO) GetChannelUtil2g() int32`
+
+GetChannelUtil2g returns the ChannelUtil2g field if non-nil, zero value otherwise.
+
+### GetChannelUtil2gOk
+
+`func (o *ChannelUtilInfoVO) GetChannelUtil2gOk() (*int32, bool)`
+
+GetChannelUtil2gOk returns a tuple with the ChannelUtil2g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannelUtil2g
+
+`func (o *ChannelUtilInfoVO) SetChannelUtil2g(v int32)`
+
+SetChannelUtil2g sets ChannelUtil2g field to given value.
+
+### HasChannelUtil2g
+
+`func (o *ChannelUtilInfoVO) HasChannelUtil2g() bool`
+
+HasChannelUtil2g returns a boolean if a field has been set.
+
+### GetChannelUtil5g
+
+`func (o *ChannelUtilInfoVO) GetChannelUtil5g() int32`
+
+GetChannelUtil5g returns the ChannelUtil5g field if non-nil, zero value otherwise.
+
+### GetChannelUtil5gOk
+
+`func (o *ChannelUtilInfoVO) GetChannelUtil5gOk() (*int32, bool)`
+
+GetChannelUtil5gOk returns a tuple with the ChannelUtil5g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannelUtil5g
+
+`func (o *ChannelUtilInfoVO) SetChannelUtil5g(v int32)`
+
+SetChannelUtil5g sets ChannelUtil5g field to given value.
+
+### HasChannelUtil5g
+
+`func (o *ChannelUtilInfoVO) HasChannelUtil5g() bool`
+
+HasChannelUtil5g returns a boolean if a field has been set.
+
+### GetChannelUtil6g
+
+`func (o *ChannelUtilInfoVO) GetChannelUtil6g() int32`
+
+GetChannelUtil6g returns the ChannelUtil6g field if non-nil, zero value otherwise.
+
+### GetChannelUtil6gOk
+
+`func (o *ChannelUtilInfoVO) GetChannelUtil6gOk() (*int32, bool)`
+
+GetChannelUtil6gOk returns a tuple with the ChannelUtil6g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannelUtil6g
+
+`func (o *ChannelUtilInfoVO) SetChannelUtil6g(v int32)`
+
+SetChannelUtil6g sets ChannelUtil6g field to given value.
+
+### HasChannelUtil6g
+
+`func (o *ChannelUtilInfoVO) HasChannelUtil6g() bool`
+
+HasChannelUtil6g returns a boolean if a field has been set.
 
 ### GetDeviceName
 

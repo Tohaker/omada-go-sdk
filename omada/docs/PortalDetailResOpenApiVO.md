@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthTimeout** | Pointer to [**AuthTimeOpenApiVO**](AuthTimeOpenApiVO.md) |  | [optional] 
-**AuthType** | Pointer to **int32** | Auth Type, should be a value as follows: &lt;br/&gt;0：No Authentication; 1：Simple Password;&lt;br/&gt;2: External Radius Server; 4：External Portal Server;&lt;br/&gt;11：Hotspot; 15: Ldap; 16: Social Login. | [optional] 
+**AuthType** | Pointer to **int32** | Auth Type, should be a value as follows: &lt;br/&gt;0：No Authentication; 1：Simple Password;&lt;br/&gt;2: External RADIUS Server; 4：External Portal Server;&lt;br/&gt;11：Hotspot; 15: Ldap; 16: Social Login. | [optional] 
 **Enable** | Pointer to **bool** | Portal enable status | [optional] 
 **ExternalPortal** | Pointer to [**ExternalServerPortalSetting**](ExternalServerPortalSetting.md) |  | [optional] 
 **ExternalRadius** | Pointer to [**ExternalRadiusSettingResOpenApiVO**](ExternalRadiusSettingResOpenApiVO.md) |  | [optional] 

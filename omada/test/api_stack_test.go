@@ -86,6 +86,22 @@ func Test_omada_StackAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test StackAPIService CreateLoopbackInterface1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var stackId string
+
+		resp, httpRes, err := apiClient.StackAPI.CreateLoopbackInterface1(context.Background(), omadacId, siteId, stackId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test StackAPIService CreateOswStack", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -126,6 +142,23 @@ func Test_omada_StackAPIService(t *testing.T) {
 		var stackId string
 
 		resp, httpRes, err := apiClient.StackAPI.CreateStackVrf(context.Background(), omadacId, siteId, stackId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StackAPIService DeleteLoopbackInterface1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var stackId string
+		var loopbackInterfaceId string
+
+		resp, httpRes, err := apiClient.StackAPI.DeleteLoopbackInterface1(context.Background(), omadacId, siteId, stackId, loopbackInterfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -727,6 +760,38 @@ func Test_omada_StackAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test StackAPIService ListStackBriefInterfaces", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var stackId string
+
+		resp, httpRes, err := apiClient.StackAPI.ListStackBriefInterfaces(context.Background(), omadacId, siteId, stackId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StackAPIService ListStackInterfaces", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var stackId string
+
+		resp, httpRes, err := apiClient.StackAPI.ListStackInterfaces(context.Background(), omadacId, siteId, stackId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test StackAPIService LocateOswStack", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -736,6 +801,23 @@ func Test_omada_StackAPIService(t *testing.T) {
 		var stackId string
 
 		resp, httpRes, err := apiClient.StackAPI.LocateOswStack(context.Background(), omadacId, siteId, stackId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StackAPIService ModfiyLoopbackInterface1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var stackId string
+		var loopbackInterfaceId string
+
+		resp, httpRes, err := apiClient.StackAPI.ModfiyLoopbackInterface1(context.Background(), omadacId, siteId, stackId, loopbackInterfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -802,6 +884,22 @@ func Test_omada_StackAPIService(t *testing.T) {
 		var port string
 
 		resp, httpRes, err := apiClient.StackAPI.ModifyOswStackPort(context.Background(), omadacId, siteId, stackId, port).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StackAPIService ModifyPmtudStatus2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var stackId string
+
+		resp, httpRes, err := apiClient.StackAPI.ModifyPmtudStatus2(context.Background(), omadacId, siteId, stackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

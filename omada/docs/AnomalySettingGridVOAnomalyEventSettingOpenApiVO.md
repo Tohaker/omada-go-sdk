@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CurrentSize** | Pointer to **int32** | Number of entries per page. | [optional] 
 **Data** | Pointer to [**[]AnomalyEventSettingOpenApiVO**](AnomalyEventSettingOpenApiVO.md) |  | [optional] 
 **Resource** | Pointer to **int32** | The anomaly event setting creation resource, such as: 0: new created, 1: from template, 2: override | [optional] 
+**Statistic** | Pointer to [**AnomalySettingStatOpenApiVO**](AnomalySettingStatOpenApiVO.md) |  | [optional] 
 **TotalRows** | Pointer to **int64** | Total rows of all items. | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetResource sets Resource field to given value.
 `func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) HasResource() bool`
 
 HasResource returns a boolean if a field has been set.
+
+### GetStatistic
+
+`func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) GetStatistic() AnomalySettingStatOpenApiVO`
+
+GetStatistic returns the Statistic field if non-nil, zero value otherwise.
+
+### GetStatisticOk
+
+`func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) GetStatisticOk() (*AnomalySettingStatOpenApiVO, bool)`
+
+GetStatisticOk returns a tuple with the Statistic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatistic
+
+`func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) SetStatistic(v AnomalySettingStatOpenApiVO)`
+
+SetStatistic sets Statistic field to given value.
+
+### HasStatistic
+
+`func (o *AnomalySettingGridVOAnomalyEventSettingOpenApiVO) HasStatistic() bool`
+
+HasStatistic returns a boolean if a field has been set.
 
 ### GetTotalRows
 

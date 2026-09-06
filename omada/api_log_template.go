@@ -25,7 +25,7 @@ type LogTemplateAPI interface {
 	/*
 	GetLogSettingForSiteTemplate Get site template log notification
 
-	Get site template log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+	Get site template log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -41,7 +41,7 @@ type LogTemplateAPI interface {
 	/*
 	ModifyLogSettingSiteTemplate Modify site template log notification
 
-	Modify site template log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+	Modify site template log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -57,7 +57,7 @@ type LogTemplateAPI interface {
 	/*
 	ResetLogSettingSiteTemplate Reset site template log notification
 
-	Reset site template log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+	Reset site template log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -88,7 +88,7 @@ func (r LogTemplateAPIGetLogSettingForSiteTemplateRequest) Execute() (*Operation
 /*
 GetLogSettingForSiteTemplate Get site template log notification
 
-Get site template log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+Get site template log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -215,7 +215,7 @@ func (r LogTemplateAPIModifyLogSettingSiteTemplateRequest) Execute() (*Operation
 /*
 ModifyLogSettingSiteTemplate Modify site template log notification
 
-Modify site template log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+Modify site template log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -341,7 +341,7 @@ func (r LogTemplateAPIResetLogSettingSiteTemplateRequest) Execute() (*OperationR
 /*
 ResetLogSettingSiteTemplate Reset site template log notification
 
-Reset site template log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+Reset site template log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

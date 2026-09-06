@@ -17,9 +17,13 @@ Method | HTTP request | Description
 [**BatchSetProfileOverrideForGivenPorts1**](SwitchAPI.md#batchsetprofileoverrideforgivenports1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/multi-ports/profile-override | Batch set profile-override for given ports
 [**CancelCableTest**](SwitchAPI.md#cancelcabletest) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cable-test/switches/{switchMac}/cancel | Cancel cable test
 [**ClearOswPortCounters**](SwitchAPI.md#clearoswportcounters) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/multi-ports/clear-counters | Clear the switches ports counters
+[**CreateLoopbackInterface**](SwitchAPI.md#createloopbackinterface) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/loopback-interface | Create Loopback Interface
 [**CreateOswVrf**](SwitchAPI.md#createoswvrf) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs | Create new vrf
+[**CreateStaticRouting**](SwitchAPI.md#createstaticrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/staticRoutings | Create switch staticRouting
+[**DeleteLoopbackInterface**](SwitchAPI.md#deleteloopbackinterface) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/loopback-interface/{loopbackInterfaceId} | Delete Loopback Interface
 [**DeleteOswVrf**](SwitchAPI.md#deleteoswvrf) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs/{vrfId} | Delete vrf
 [**DeletePortTag**](SwitchAPI.md#deleteporttag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Delete an existing switch port label
+[**DeleteStaticRouting**](SwitchAPI.md#deletestaticrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/staticRoutings/{staticRoutingId} | Delete switch staticRouting
 [**DeleteSwitchLag**](SwitchAPI.md#deleteswitchlag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lags/{lagId} | Delete switch lag
 [**GetBatchRpvstInstances**](SwitchAPI.md#getbatchrpvstinstances) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/rpvst-instances | Get Batch Rpvst Instances
 [**GetBatchSelectOswDetailsView**](SwitchAPI.md#getbatchselectoswdetailsview) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/select | Get the switches and ports detail in batches
@@ -37,6 +41,7 @@ Method | HTTP request | Description
 [**GetGridOspfNeighborTable**](SwitchAPI.md#getgridospfneighbortable) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ospf-neighbors | Get switch ospf neighbor table
 [**GetGridPortAndLagNetworks1**](SwitchAPI.md#getgridportandlagnetworks1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/port-lag-networks | Get the networks used on switch&#39;s ports and LAGs
 [**GetGridPortAndLagNetworksDetail**](SwitchAPI.md#getgridportandlagnetworksdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks-detail | Get the networks detail (including the vlan related ports and lags info) used on switch&#39;s ports and LAGs
+[**GetGridStaticRouting**](SwitchAPI.md#getgridstaticrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/staticRoutings | Get grid switch staticRouting
 [**GetGridSwitchesPortsCounters**](SwitchAPI.md#getgridswitchesportscounters) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/counters | Get the switches ports counters information
 [**GetGridSwitchesPortsOverview**](SwitchAPI.md#getgridswitchesportsoverview) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/overview | Get the switches ports overview
 [**GetGridSwitchesPortsPoe**](SwitchAPI.md#getgridswitchesportspoe) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/ports/poe-info | Get the switches ports poe information
@@ -55,13 +60,18 @@ Method | HTTP request | Description
 [**GetSwitchExistNetworks**](SwitchAPI.md#getswitchexistnetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/exist-network | Get the networks existing on the switch
 [**GetSwitchInfo**](SwitchAPI.md#getswitchinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac} | Get switch info
 [**GetSwitchUsedSdmNum**](SwitchAPI.md#getswitchusedsdmnum) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/sdm-used | Get the used sdm template num on the switch
+[**ListSwitchBriefInterfaces**](SwitchAPI.md#listswitchbriefinterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/interfaces/brief | List Switch Brief Interfaces
+[**ListSwitchInterfaces**](SwitchAPI.md#listswitchinterfaces) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/interfaces | List Switch Interfaces
 [**ListSwitchNetworks**](SwitchAPI.md#listswitchnetworks) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks | Query switch vlan interface infos.
+[**ModfiyLoopbackInterface**](SwitchAPI.md#modfiyloopbackinterface) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/loopback-interface/{loopbackInterfaceId} | Modify Loopback Interface
 [**ModifyESGeneralConfig**](SwitchAPI.md#modifyesgeneralconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/general-config | Modify switch general config (Agile Series)
 [**ModifyESLoopbackControl**](SwitchAPI.md#modifyesloopbackcontrol) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/es/{switchMac}/config/loopback | Modify switch loopback control (Agile Series)
 [**ModifyGeneralConfig**](SwitchAPI.md#modifygeneralconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/general-config | Modify switch general config
 [**ModifyLoopbackControl**](SwitchAPI.md#modifyloopbackcontrol) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/config/loopback | Modify switch loopback control
 [**ModifyOswVrf**](SwitchAPI.md#modifyoswvrf) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/vrfs/{vrfId} | Modify vrf
+[**ModifyPmtudStatus1**](SwitchAPI.md#modifypmtudstatus1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/interfaces/pmtud | Modify Path MTU Discovery
 [**ModifyPortTag**](SwitchAPI.md#modifyporttag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/port-tag | Modify an existing switch port label
+[**ModifyStaticRouting**](SwitchAPI.md#modifystaticrouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/staticRoutings/{staticRoutingId} | Modify switch staticRouting
 [**ModifySwitchLag**](SwitchAPI.md#modifyswitchlag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/lags/{lagId} | Modify switch lag
 [**ModifySwitchNetwork**](SwitchAPI.md#modifyswitchnetwork) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/networks/{networkId} | Modify switch network config.
 [**ModifySwitchPort**](SwitchAPI.md#modifyswitchport) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/switches/{switchMac}/ports/{port} | Modify switch port
@@ -1072,9 +1082,87 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CreateLoopbackInterface
+
+> OperationResponseOswLoopbackInterfaceResultOpenApiVO CreateLoopbackInterface(ctx, omadacId, siteId, switchMac).OswLoopbackInterfaceVO(oswLoopbackInterfaceVO).Execute()
+
+Create Loopback Interface
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	oswLoopbackInterfaceVO := *openapiclient.NewOswLoopbackInterfaceVO("Ip_example", int32(123), "Name_example", int32(123)) // OswLoopbackInterfaceVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.CreateLoopbackInterface(context.Background(), omadacId, siteId, switchMac).OswLoopbackInterfaceVO(oswLoopbackInterfaceVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.CreateLoopbackInterface``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateLoopbackInterface`: OperationResponseOswLoopbackInterfaceResultOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.CreateLoopbackInterface`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateLoopbackInterfaceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **oswLoopbackInterfaceVO** | [**OswLoopbackInterfaceVO**](OswLoopbackInterfaceVO.md) |  | 
+
+### Return type
+
+[**OperationResponseOswLoopbackInterfaceResultOpenApiVO**](OperationResponseOswLoopbackInterfaceResultOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CreateOswVrf
 
-> OperationResponseWithoutResult CreateOswVrf(ctx, omadacId, siteId, switchMac).OswVrfConfigOpenApiVO(oswVrfConfigOpenApiVO).Execute()
+> OperationResponseResponseIdVO CreateOswVrf(ctx, omadacId, siteId, switchMac).OswVrfConfigOpenApiVO(oswVrfConfigOpenApiVO).Execute()
 
 Create new vrf
 
@@ -1096,7 +1184,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
-	oswVrfConfigOpenApiVO := *openapiclient.NewOswVrfConfigOpenApiVO(false, false, "Vrf_example") // OswVrfConfigOpenApiVO | 
+	oswVrfConfigOpenApiVO := *openapiclient.NewOswVrfConfigOpenApiVO(false) // OswVrfConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1105,7 +1193,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.CreateOswVrf``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateOswVrf`: OperationResponseWithoutResult
+	// response from `CreateOswVrf`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.CreateOswVrf`: %v\n", resp)
 }
 ```
@@ -1134,6 +1222,84 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateStaticRouting
+
+> OperationResponseWithoutResult CreateStaticRouting(ctx, omadacId, siteId, switchMac).OswStaticRoutingConfigOpenApiVO(oswStaticRoutingConfigOpenApiVO).Execute()
+
+Create switch staticRouting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	oswStaticRoutingConfigOpenApiVO := *openapiclient.NewOswStaticRoutingConfigOpenApiVO([]string{"Destinations_example"}, int32(123), int32(123), "NextHopIp_example", false) // OswStaticRoutingConfigOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.CreateStaticRouting(context.Background(), omadacId, siteId, switchMac).OswStaticRoutingConfigOpenApiVO(oswStaticRoutingConfigOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.CreateStaticRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateStaticRouting`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.CreateStaticRouting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateStaticRoutingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **oswStaticRoutingConfigOpenApiVO** | [**OswStaticRoutingConfigOpenApiVO**](OswStaticRoutingConfigOpenApiVO.md) |  | 
+
+### Return type
+
 [**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
 
 ### Authorization
@@ -1143,6 +1309,85 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteLoopbackInterface
+
+> OperationResponse DeleteLoopbackInterface(ctx, omadacId, siteId, switchMac, loopbackInterfaceId).Execute()
+
+Delete Loopback Interface
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	loopbackInterfaceId := "loopbackInterfaceId_example" // string | Loopback Interface ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.DeleteLoopbackInterface(context.Background(), omadacId, siteId, switchMac, loopbackInterfaceId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.DeleteLoopbackInterface``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteLoopbackInterface`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.DeleteLoopbackInterface`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+**loopbackInterfaceId** | **string** | Loopback Interface ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteLoopbackInterfaceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1304,6 +1549,85 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteStaticRouting
+
+> OperationResponseWithoutResult DeleteStaticRouting(ctx, omadacId, siteId, switchMac, staticRoutingId).Execute()
+
+Delete switch staticRouting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	staticRoutingId := "staticRoutingId_example" // string | Static routing ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.DeleteStaticRouting(context.Background(), omadacId, siteId, switchMac, staticRoutingId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.DeleteStaticRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteStaticRouting`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.DeleteStaticRouting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+**staticRoutingId** | **string** | Static routing ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteStaticRoutingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DeleteSwitchLag
 
 > OperationResponseString DeleteSwitchLag(ctx, omadacId, siteId, switchMac, lagId).Execute()
@@ -1328,7 +1652,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
-	lagId := "lagId_example" // string | lagId
+	lagId := "lagId_example" // string | Lag ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1351,7 +1675,7 @@ Name | Type | Description  | Notes
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
 **switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
-**lagId** | **string** | lagId | 
+**lagId** | **string** | Lag ID | 
 
 ### Other Parameters
 
@@ -2628,6 +2952,86 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetGridStaticRouting
+
+> OperationResponseOswStaticRoutingGridVOOswStaticRoutingVO GetGridStaticRouting(ctx, omadacId, siteId, switchMac).Page(page).PageSize(pageSize).Execute()
+
+Get grid switch staticRouting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.GetGridStaticRouting(context.Background(), omadacId, siteId, switchMac).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.GetGridStaticRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridStaticRouting`: OperationResponseOswStaticRoutingGridVOOswStaticRoutingVO
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.GetGridStaticRouting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridStaticRoutingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseOswStaticRoutingGridVOOswStaticRoutingVO**](OperationResponseOswStaticRoutingGridVOOswStaticRoutingVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetGridSwitchesPortsCounters
 
 > OperationResponseGridVOOswPortsSettingCountersVO GetGridSwitchesPortsCounters(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
@@ -2861,7 +3265,7 @@ Name | Type | Description  | Notes
 
 ## GetGridVrf
 
-> OperationResponseGridVOOswVrfOpenApiVO GetGridVrf(ctx, omadacId, siteId, switchMac).Execute()
+> OperationResponseGridVOOswVrfOpenApiVO GetGridVrf(ctx, omadacId, siteId, switchMac).Page(page).PageSize(pageSize).Execute()
 
 Get the vrfs on the switch
 
@@ -2883,10 +3287,12 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SwitchAPI.GetGridVrf(context.Background(), omadacId, siteId, switchMac).Execute()
+	resp, r, err := apiClient.SwitchAPI.GetGridVrf(context.Background(), omadacId, siteId, switchMac).Page(page).PageSize(pageSize).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.GetGridVrf``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2916,6 +3322,8 @@ Name | Type | Description  | Notes
 
 
 
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
 
 ### Return type
 
@@ -3013,7 +3421,7 @@ Name | Type | Description  | Notes
 
 ## GetOswDDMInfo
 
-> OperationResponseWithoutResult GetOswDDMInfo(ctx, omadacId, siteId, switchMac).Execute()
+> OperationResponseListOswDDMInfoOpenApiVO GetOswDDMInfo(ctx, omadacId, siteId, switchMac).Execute()
 
 Get osw ddm info.
 
@@ -3043,7 +3451,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.GetOswDDMInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetOswDDMInfo`: OperationResponseWithoutResult
+	// response from `GetOswDDMInfo`: OperationResponseListOswDDMInfoOpenApiVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.GetOswDDMInfo`: %v\n", resp)
 }
 ```
@@ -3071,7 +3479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseListOswDDMInfoOpenApiVO**](OperationResponseListOswDDMInfoOpenApiVO.md)
 
 ### Authorization
 
@@ -4009,6 +4417,162 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ListSwitchBriefInterfaces
+
+> OperationResponseListOswInterfaceBriefVO ListSwitchBriefInterfaces(ctx, omadacId, siteId, switchMac).Execute()
+
+List Switch Brief Interfaces
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.ListSwitchBriefInterfaces(context.Background(), omadacId, siteId, switchMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.ListSwitchBriefInterfaces``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSwitchBriefInterfaces`: OperationResponseListOswInterfaceBriefVO
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.ListSwitchBriefInterfaces`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSwitchBriefInterfacesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseListOswInterfaceBriefVO**](OperationResponseListOswInterfaceBriefVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSwitchInterfaces
+
+> OperationResponseOswInterfaceGridOswInterfaceOpenApi ListSwitchInterfaces(ctx, omadacId, siteId, switchMac).Page(page).PageSize(pageSize).Execute()
+
+List Switch Interfaces
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.ListSwitchInterfaces(context.Background(), omadacId, siteId, switchMac).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.ListSwitchInterfaces``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSwitchInterfaces`: OperationResponseOswInterfaceGridOswInterfaceOpenApi
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.ListSwitchInterfaces`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSwitchInterfacesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseOswInterfaceGridOswInterfaceOpenApi**](OperationResponseOswInterfaceGridOswInterfaceOpenApi.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ListSwitchNetworks
 
 > OperationResponseOswNetworkGridOswNetworkOpenApi ListSwitchNetworks(ctx, omadacId, siteId, switchMac).Page(page).PageSize(pageSize).Execute()
@@ -4089,9 +4653,90 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ModfiyLoopbackInterface
+
+> OperationResponse ModfiyLoopbackInterface(ctx, omadacId, siteId, switchMac, loopbackInterfaceId).OswLoopbackInterfaceVO(oswLoopbackInterfaceVO).Execute()
+
+Modify Loopback Interface
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	loopbackInterfaceId := "loopbackInterfaceId_example" // string | Loopback Interface ID
+	oswLoopbackInterfaceVO := *openapiclient.NewOswLoopbackInterfaceVO("Ip_example", int32(123), "Name_example", int32(123)) // OswLoopbackInterfaceVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.ModfiyLoopbackInterface(context.Background(), omadacId, siteId, switchMac, loopbackInterfaceId).OswLoopbackInterfaceVO(oswLoopbackInterfaceVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.ModfiyLoopbackInterface``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModfiyLoopbackInterface`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.ModfiyLoopbackInterface`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+**loopbackInterfaceId** | **string** | Loopback Interface ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModfiyLoopbackInterfaceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **oswLoopbackInterfaceVO** | [**OswLoopbackInterfaceVO**](OswLoopbackInterfaceVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ModifyESGeneralConfig
 
-> OperationResponseWithoutResult ModifyESGeneralConfig(ctx, omadacId, siteId, switchMac).EasyManagedSwitchGeneralConfig(easyManagedSwitchGeneralConfig).Execute()
+> OperationResponseESDetailVO ModifyESGeneralConfig(ctx, omadacId, siteId, switchMac).EasyManagedSwitchGeneralConfig(easyManagedSwitchGeneralConfig).Execute()
 
 Modify switch general config (Agile Series)
 
@@ -4122,7 +4767,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.ModifyESGeneralConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ModifyESGeneralConfig`: OperationResponseWithoutResult
+	// response from `ModifyESGeneralConfig`: OperationResponseESDetailVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.ModifyESGeneralConfig`: %v\n", resp)
 }
 ```
@@ -4151,7 +4796,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseESDetailVO**](OperationResponseESDetailVO.md)
 
 ### Authorization
 
@@ -4247,7 +4892,7 @@ Name | Type | Description  | Notes
 
 ## ModifyGeneralConfig
 
-> OperationResponseWithoutResult ModifyGeneralConfig(ctx, omadacId, siteId, switchMac).SwitchGeneralConfig(switchGeneralConfig).Execute()
+> OperationResponseOswDetailVO ModifyGeneralConfig(ctx, omadacId, siteId, switchMac).SwitchGeneralConfig(switchGeneralConfig).Execute()
 
 Modify switch general config
 
@@ -4278,7 +4923,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.ModifyGeneralConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ModifyGeneralConfig`: OperationResponseWithoutResult
+	// response from `ModifyGeneralConfig`: OperationResponseOswDetailVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.ModifyGeneralConfig`: %v\n", resp)
 }
 ```
@@ -4307,7 +4952,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseOswDetailVO**](OperationResponseOswDetailVO.md)
 
 ### Authorization
 
@@ -4426,7 +5071,7 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
 	vrfId := "vrfId_example" // string | VRF ID
-	oswVrfConfigOpenApiVO := *openapiclient.NewOswVrfConfigOpenApiVO(false, false, "Vrf_example") // OswVrfConfigOpenApiVO | 
+	oswVrfConfigOpenApiVO := *openapiclient.NewOswVrfConfigOpenApiVO(false) // OswVrfConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4467,6 +5112,84 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifyPmtudStatus1
+
+> OperationResponse ModifyPmtudStatus1(ctx, omadacId, siteId, switchMac).OswPmtudVO(oswPmtudVO).Execute()
+
+Modify Path MTU Discovery
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	oswPmtudVO := *openapiclient.NewOswPmtudVO() // OswPmtudVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.ModifyPmtudStatus1(context.Background(), omadacId, siteId, switchMac).OswPmtudVO(oswPmtudVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.ModifyPmtudStatus1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyPmtudStatus1`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.ModifyPmtudStatus1`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyPmtudStatus1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **oswPmtudVO** | [**OswPmtudVO**](OswPmtudVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
 
 ### Authorization
 
@@ -4557,6 +5280,87 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ModifyStaticRouting
+
+> OperationResponseWithoutResult ModifyStaticRouting(ctx, omadacId, siteId, switchMac, staticRoutingId).OswStaticRoutingConfigOpenApiVO(oswStaticRoutingConfigOpenApiVO).Execute()
+
+Modify switch staticRouting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
+	staticRoutingId := "staticRoutingId_example" // string | Static routing ID
+	oswStaticRoutingConfigOpenApiVO := *openapiclient.NewOswStaticRoutingConfigOpenApiVO([]string{"Destinations_example"}, int32(123), int32(123), "NextHopIp_example", false) // OswStaticRoutingConfigOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchAPI.ModifyStaticRouting(context.Background(), omadacId, siteId, switchMac, staticRoutingId).OswStaticRoutingConfigOpenApiVO(oswStaticRoutingConfigOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.ModifyStaticRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyStaticRouting`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.ModifyStaticRouting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
+**staticRoutingId** | **string** | Static routing ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyStaticRoutingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **oswStaticRoutingConfigOpenApiVO** | [**OswStaticRoutingConfigOpenApiVO**](OswStaticRoutingConfigOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ModifySwitchLag
 
 > OperationResponseString ModifySwitchLag(ctx, omadacId, siteId, switchMac, lagId).OswLagSettingVO(oswLagSettingVO).Execute()
@@ -4581,7 +5385,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
-	lagId := "lagId_example" // string | lagId
+	lagId := "lagId_example" // string | Lag ID
 	oswLagSettingVO := *openapiclient.NewOswLagSettingVO() // OswLagSettingVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -4605,7 +5409,7 @@ Name | Type | Description  | Notes
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
 **switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
-**lagId** | **string** | lagId | 
+**lagId** | **string** | Lag ID | 
 
 ### Other Parameters
 
@@ -4640,7 +5444,7 @@ Name | Type | Description  | Notes
 
 ## ModifySwitchNetwork
 
-> OperationResponseWithoutResult ModifySwitchNetwork(ctx, omadacId, siteId, switchMac, networkId).OswNetworkOpenApi(oswNetworkOpenApi).Execute()
+> OperationResponseResponseIdVO ModifySwitchNetwork(ctx, omadacId, siteId, switchMac, networkId).OswNetworkOpenApi(oswNetworkOpenApi).Execute()
 
 Modify switch network config.
 
@@ -4672,7 +5476,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchAPI.ModifySwitchNetwork``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ModifySwitchNetwork`: OperationResponseWithoutResult
+	// response from `ModifySwitchNetwork`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchAPI.ModifySwitchNetwork`: %v\n", resp)
 }
 ```
@@ -4703,7 +5507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -4983,7 +5787,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
-	port := "port_example" // string | port
+	port := "port_example" // string | Port
 	switchPortPoe := *openapiclient.NewSwitchPortPoe(int32(123)) // SwitchPortPoe | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -5007,7 +5811,7 @@ Name | Type | Description  | Notes
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
 **switchMac** | **string** | Switch MAC address, like AA-BB-CC-DD-EE-FF | 
-**port** | **string** | port | 
+**port** | **string** | Port | 
 
 ### Other Parameters
 

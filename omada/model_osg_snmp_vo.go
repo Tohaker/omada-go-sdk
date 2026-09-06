@@ -21,6 +21,7 @@ var _ MappedNullable = &OsgSnmpVO{}
 type OsgSnmpVO struct {
 	Contact *string `json:"contact,omitempty"`
 	Location *string `json:"location,omitempty"`
+	Type *int32 `json:"type,omitempty"`
 }
 
 // NewOsgSnmpVO instantiates a new OsgSnmpVO object
@@ -104,6 +105,38 @@ func (o *OsgSnmpVO) SetLocation(v string) {
 	o.Location = &v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *OsgSnmpVO) GetType() int32 {
+	if o == nil || IsNil(o.Type) {
+		var ret int32
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgSnmpVO) GetTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *OsgSnmpVO) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given int32 and assigns it to the Type field.
+func (o *OsgSnmpVO) SetType(v int32) {
+	o.Type = &v
+}
+
 func (o OsgSnmpVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -119,6 +152,9 @@ func (o OsgSnmpVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Location) {
 		toSerialize["location"] = o.Location
+	}
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
 	}
 	return toSerialize, nil
 }

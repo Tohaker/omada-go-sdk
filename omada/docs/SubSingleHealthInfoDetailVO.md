@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Incidents** | Pointer to [**[]AnomalyBriefCountVO**](AnomalyBriefCountVO.md) | Incident information for this health dimension, null if no incidents | [optional] 
 **Scores** | Pointer to [**[]TimeScoreItemVO**](TimeScoreItemVO.md) |  | [optional] 
 **SummaryScore** | Pointer to **int32** | Sub dimension health score | [optional] 
 **Support** | Pointer to **bool** | Sub dimension support | [optional] 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewSubSingleHealthInfoDetailVOWithDefaults instantiates a new SubSingleHealthInfoDetailVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetIncidents
+
+`func (o *SubSingleHealthInfoDetailVO) GetIncidents() []AnomalyBriefCountVO`
+
+GetIncidents returns the Incidents field if non-nil, zero value otherwise.
+
+### GetIncidentsOk
+
+`func (o *SubSingleHealthInfoDetailVO) GetIncidentsOk() (*[]AnomalyBriefCountVO, bool)`
+
+GetIncidentsOk returns a tuple with the Incidents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncidents
+
+`func (o *SubSingleHealthInfoDetailVO) SetIncidents(v []AnomalyBriefCountVO)`
+
+SetIncidents sets Incidents field to given value.
+
+### HasIncidents
+
+`func (o *SubSingleHealthInfoDetailVO) HasIncidents() bool`
+
+HasIncidents returns a boolean if a field has been set.
 
 ### GetScores
 

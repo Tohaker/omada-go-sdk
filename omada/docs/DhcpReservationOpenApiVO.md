@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Description of DHCP reservation | [optional] 
 **ExistOptions** | Pointer to **[]int32** | Options configured in the current DHCP Reservation entry. | [optional] 
 **ExportToIpMacBinding** | Pointer to **bool** | Indicates whether DHCP reservation can be exported to the IP-MAC Binding list | [optional] 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **Id** | Pointer to **string** | DHCP reservation ID | [optional] 
 **Ip** | Pointer to **string** | Reserved IP address | [optional] 
 **Mac** | Pointer to **string** | Device MAC address | [optional] 
@@ -169,6 +170,31 @@ SetExportToIpMacBinding sets ExportToIpMacBinding field to given value.
 `func (o *DhcpReservationOpenApiVO) HasExportToIpMacBinding() bool`
 
 HasExportToIpMacBinding returns a boolean if a field has been set.
+
+### GetFeatureDescription
+
+`func (o *DhcpReservationOpenApiVO) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *DhcpReservationOpenApiVO) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *DhcpReservationOpenApiVO) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *DhcpReservationOpenApiVO) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetId
 

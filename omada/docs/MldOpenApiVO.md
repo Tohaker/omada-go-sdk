@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enable** | **bool** |  | 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **Version** | **int32** | Version should be one of the following values: 1: v1; 2: v2. | 
 **WanPortId** | Pointer to **string** | WAN port ID can be obtained from &#39;Get internet basic info&#39; interface. At least one of the WAN Port IDs should not be null. Only IPv6-enabled WAN ports can be selected as MLD Interface. MLD does not support the 6to4 Tunnel and Pass-Through(Bridge) IPv6 dial-up modes. | [optional] 
 
@@ -46,6 +47,31 @@ and a boolean to check if the value has been set.
 
 SetEnable sets Enable field to given value.
 
+
+### GetFeatureDescription
+
+`func (o *MldOpenApiVO) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *MldOpenApiVO) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *MldOpenApiVO) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *MldOpenApiVO) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetVersion
 

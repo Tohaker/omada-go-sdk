@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExistIpAddress** | Pointer to **bool** | Whether Source Type of Current Session Limit rule is IP Address. | [optional] 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **Id** | Pointer to **string** | ID of the session limit rule. | [optional] 
 **Index** | Pointer to **int32** | Index of the session limit rule. When the [sourceType] is 0 or 1, the index is counted in order, when the sourceType is 2, the index is always -1 | [optional] 
 **Ip** | Pointer to **string** | IP of the session limit rule. | [optional] 
@@ -57,6 +58,31 @@ SetExistIpAddress sets ExistIpAddress field to given value.
 `func (o *QuerySessionLimitRuleOpenApiVO) HasExistIpAddress() bool`
 
 HasExistIpAddress returns a boolean if a field has been set.
+
+### GetFeatureDescription
+
+`func (o *QuerySessionLimitRuleOpenApiVO) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *QuerySessionLimitRuleOpenApiVO) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *QuerySessionLimitRuleOpenApiVO) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *QuerySessionLimitRuleOpenApiVO) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetId
 

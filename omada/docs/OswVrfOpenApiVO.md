@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | VRF ID | [optional] 
-**Ipv4Enable** | **bool** | Indicates whether ipv4 is enabled | 
-**Ipv6Enable** | **bool** | Indicates whether ipv6 is enabled | 
+**Ipv4Enable** | **bool** | Whether to enable ipv4. Ipv4Enable should be true | 
+**Ipv6Enable** | **bool** | Whether to enable ipv6 | 
 **IsDefault** | Pointer to **bool** | Indicates whether vrf is default vrf | [optional] 
-**Resource** | Pointer to **int32** | Resource | [optional] 
-**Vrf** | **string** | VRF Name | 
+**Resource** | Pointer to **int32** | resource is a value as follows: 0: new created; 1: from template; 2: override | [optional] 
+**Vrf** | **string** | VRF name, it should be 1 to 15 characters consisting of numbers (0 to 9), uppercase and lowercase letters (A to Z, a to z), and symbols -_@.+ but cannot be . or .. only. | 
 
 ## Methods
 

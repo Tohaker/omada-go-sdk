@@ -57,6 +57,8 @@ type GlobalOverViewOpenApiVO struct {
 	TotalApNum *int32 `json:"totalApNum,omitempty"`
 	// total number of client
 	TotalClientNum *int32 `json:"totalClientNum,omitempty"`
+	// total number of connected devices
+	TotalConnectedNum *int32 `json:"totalConnectedNum,omitempty"`
 	// total number of gateways
 	TotalGatewayNum *int32 `json:"totalGatewayNum,omitempty"`
 	// total number of olt
@@ -694,6 +696,38 @@ func (o *GlobalOverViewOpenApiVO) SetTotalClientNum(v int32) {
 	o.TotalClientNum = &v
 }
 
+// GetTotalConnectedNum returns the TotalConnectedNum field value if set, zero value otherwise.
+func (o *GlobalOverViewOpenApiVO) GetTotalConnectedNum() int32 {
+	if o == nil || IsNil(o.TotalConnectedNum) {
+		var ret int32
+		return ret
+	}
+	return *o.TotalConnectedNum
+}
+
+// GetTotalConnectedNumOk returns a tuple with the TotalConnectedNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalOverViewOpenApiVO) GetTotalConnectedNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.TotalConnectedNum) {
+		return nil, false
+	}
+	return o.TotalConnectedNum, true
+}
+
+// HasTotalConnectedNum returns a boolean if a field has been set.
+func (o *GlobalOverViewOpenApiVO) HasTotalConnectedNum() bool {
+	if o != nil && !IsNil(o.TotalConnectedNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalConnectedNum gets a reference to the given int32 and assigns it to the TotalConnectedNum field.
+func (o *GlobalOverViewOpenApiVO) SetTotalConnectedNum(v int32) {
+	o.TotalConnectedNum = &v
+}
+
 // GetTotalGatewayNum returns the TotalGatewayNum field value if set, zero value otherwise.
 func (o *GlobalOverViewOpenApiVO) GetTotalGatewayNum() int32 {
 	if o == nil || IsNil(o.TotalGatewayNum) {
@@ -920,6 +954,9 @@ func (o GlobalOverViewOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TotalClientNum) {
 		toSerialize["totalClientNum"] = o.TotalClientNum
+	}
+	if !IsNil(o.TotalConnectedNum) {
+		toSerialize["totalConnectedNum"] = o.TotalConnectedNum
 	}
 	if !IsNil(o.TotalGatewayNum) {
 		toSerialize["totalGatewayNum"] = o.TotalGatewayNum

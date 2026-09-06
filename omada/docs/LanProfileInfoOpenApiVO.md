@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **NativeBridgeVlan** | Pointer to **int32** | Native Network Bridge Vlan. | [optional] 
 **NativeNetworkId** | Pointer to **string** | Native Network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks. | [optional] 
 **NetworkTagsSetting** | **int32** | network Tags configuration mode should be a value as follows: 0:allow all, 1:block all, 2:custom | 
-**Poe** | **int32** | PoE should be a value as follows: 0: on, 1: off, 2: \&quot;do not modify\&quot; | 
+**Poe** | **int32** | PoE should be a value as follows: 0: off, 1: on, 2: \&quot;do not modify\&quot; | 
 **PortIsolationEnable** | **bool** | Port-isolation enable status | 
 **ProhibitModify** | Pointer to **bool** | Marks profiles that cannot be modified | [optional] 
 **Resource** | Pointer to **int32** | resource | [optional] 
