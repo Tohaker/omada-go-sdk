@@ -21,7 +21,9 @@ var _ MappedNullable = &OswDhcpServerRangeVO{}
 
 // OswDhcpServerRangeVO The list of DHCP Range
 type OswDhcpServerRangeVO struct {
+	// DHCP Range End IP
 	EndIp string `json:"endIp"`
+	// DHCP Range Start IP
 	StartIp string `json:"startIp"`
 }
 

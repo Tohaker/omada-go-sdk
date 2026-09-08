@@ -9,12 +9,15 @@ Name | Type | Description | Notes
 **DataReady** | Pointer to **bool** | Whether the port optical module is in an available state. | [optional] 
 **LossOfSignal** | Pointer to **bool** | Whether the local optical module signal is distorted. | [optional] 
 **Port** | Pointer to **string** | OLT optical ports, including Ethernet optical ports and PON ports. | [optional] 
-**RxPower** | Pointer to **string** | Port optical module received power. | [optional] 
+**RxPowerDbm** | Pointer to **string** | Port optical module received power(dbm). | [optional] 
+**RxPowerMW** | Pointer to **float64** | Port optical module received power(mW). | [optional] 
 **RxPowerFlag** | Pointer to **int32** | Port optical module received power alert information. | [optional] 
 **Temperature** | Pointer to **string** | Temperature of the port optical module. | [optional] 
+**TemperatureFahrenheit** | Pointer to **float64** | Temperature(Fahrenheit) of the port optical module. | [optional] 
 **TemperatureFlag** | Pointer to **int32** | Port optical module temperature alert information. | [optional] 
 **TransmitFault** | Pointer to **int32** | Weather the signal from the remote optical module is distorted | [optional] 
-**TxPower** | Pointer to **string** | Port optical module transmission power. | [optional] 
+**TxPowerDbm** | Pointer to **string** | Port optical module transmission power(dbm). | [optional] 
+**TxPowerMW** | Pointer to **float64** | Port optical module transmission power(mW). | [optional] 
 **TxPowerFlag** | Pointer to **int32** | Port optical module transmission power alert information. | [optional] 
 **Voltage** | Pointer to **string** | Port optical module voltage. | [optional] 
 **VoltageFlag** | Pointer to **int32** | Port optical module voltage alert information. | [optional] 
@@ -163,30 +166,55 @@ SetPort sets Port field to given value.
 
 HasPort returns a boolean if a field has been set.
 
-### GetRxPower
+### GetRxPowerDbm
 
-`func (o *DDMStatusResultVO) GetRxPower() string`
+`func (o *DDMStatusResultVO) GetRxPowerDbm() string`
 
-GetRxPower returns the RxPower field if non-nil, zero value otherwise.
+GetRxPowerDbm returns the RxPowerDbm field if non-nil, zero value otherwise.
 
-### GetRxPowerOk
+### GetRxPowerDbmOk
 
-`func (o *DDMStatusResultVO) GetRxPowerOk() (*string, bool)`
+`func (o *DDMStatusResultVO) GetRxPowerDbmOk() (*string, bool)`
 
-GetRxPowerOk returns a tuple with the RxPower field if it's non-nil, zero value otherwise
+GetRxPowerDbmOk returns a tuple with the RxPowerDbm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRxPower
+### SetRxPowerDbm
 
-`func (o *DDMStatusResultVO) SetRxPower(v string)`
+`func (o *DDMStatusResultVO) SetRxPowerDbm(v string)`
 
-SetRxPower sets RxPower field to given value.
+SetRxPowerDbm sets RxPowerDbm field to given value.
 
-### HasRxPower
+### HasRxPowerDbm
 
-`func (o *DDMStatusResultVO) HasRxPower() bool`
+`func (o *DDMStatusResultVO) HasRxPowerDbm() bool`
 
-HasRxPower returns a boolean if a field has been set.
+HasRxPowerDbm returns a boolean if a field has been set.
+
+### GetRxPowerMW
+
+`func (o *DDMStatusResultVO) GetRxPowerMW() float64`
+
+GetRxPowerMW returns the RxPowerMW field if non-nil, zero value otherwise.
+
+### GetRxPowerMWOk
+
+`func (o *DDMStatusResultVO) GetRxPowerMWOk() (*float64, bool)`
+
+GetRxPowerMWOk returns a tuple with the RxPowerMW field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRxPowerMW
+
+`func (o *DDMStatusResultVO) SetRxPowerMW(v float64)`
+
+SetRxPowerMW sets RxPowerMW field to given value.
+
+### HasRxPowerMW
+
+`func (o *DDMStatusResultVO) HasRxPowerMW() bool`
+
+HasRxPowerMW returns a boolean if a field has been set.
 
 ### GetRxPowerFlag
 
@@ -238,6 +266,31 @@ SetTemperature sets Temperature field to given value.
 
 HasTemperature returns a boolean if a field has been set.
 
+### GetTemperatureFahrenheit
+
+`func (o *DDMStatusResultVO) GetTemperatureFahrenheit() float64`
+
+GetTemperatureFahrenheit returns the TemperatureFahrenheit field if non-nil, zero value otherwise.
+
+### GetTemperatureFahrenheitOk
+
+`func (o *DDMStatusResultVO) GetTemperatureFahrenheitOk() (*float64, bool)`
+
+GetTemperatureFahrenheitOk returns a tuple with the TemperatureFahrenheit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTemperatureFahrenheit
+
+`func (o *DDMStatusResultVO) SetTemperatureFahrenheit(v float64)`
+
+SetTemperatureFahrenheit sets TemperatureFahrenheit field to given value.
+
+### HasTemperatureFahrenheit
+
+`func (o *DDMStatusResultVO) HasTemperatureFahrenheit() bool`
+
+HasTemperatureFahrenheit returns a boolean if a field has been set.
+
 ### GetTemperatureFlag
 
 `func (o *DDMStatusResultVO) GetTemperatureFlag() int32`
@@ -288,30 +341,55 @@ SetTransmitFault sets TransmitFault field to given value.
 
 HasTransmitFault returns a boolean if a field has been set.
 
-### GetTxPower
+### GetTxPowerDbm
 
-`func (o *DDMStatusResultVO) GetTxPower() string`
+`func (o *DDMStatusResultVO) GetTxPowerDbm() string`
 
-GetTxPower returns the TxPower field if non-nil, zero value otherwise.
+GetTxPowerDbm returns the TxPowerDbm field if non-nil, zero value otherwise.
 
-### GetTxPowerOk
+### GetTxPowerDbmOk
 
-`func (o *DDMStatusResultVO) GetTxPowerOk() (*string, bool)`
+`func (o *DDMStatusResultVO) GetTxPowerDbmOk() (*string, bool)`
 
-GetTxPowerOk returns a tuple with the TxPower field if it's non-nil, zero value otherwise
+GetTxPowerDbmOk returns a tuple with the TxPowerDbm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTxPower
+### SetTxPowerDbm
 
-`func (o *DDMStatusResultVO) SetTxPower(v string)`
+`func (o *DDMStatusResultVO) SetTxPowerDbm(v string)`
 
-SetTxPower sets TxPower field to given value.
+SetTxPowerDbm sets TxPowerDbm field to given value.
 
-### HasTxPower
+### HasTxPowerDbm
 
-`func (o *DDMStatusResultVO) HasTxPower() bool`
+`func (o *DDMStatusResultVO) HasTxPowerDbm() bool`
 
-HasTxPower returns a boolean if a field has been set.
+HasTxPowerDbm returns a boolean if a field has been set.
+
+### GetTxPowerMW
+
+`func (o *DDMStatusResultVO) GetTxPowerMW() float64`
+
+GetTxPowerMW returns the TxPowerMW field if non-nil, zero value otherwise.
+
+### GetTxPowerMWOk
+
+`func (o *DDMStatusResultVO) GetTxPowerMWOk() (*float64, bool)`
+
+GetTxPowerMWOk returns a tuple with the TxPowerMW field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTxPowerMW
+
+`func (o *DDMStatusResultVO) SetTxPowerMW(v float64)`
+
+SetTxPowerMW sets TxPowerMW field to given value.
+
+### HasTxPowerMW
+
+`func (o *DDMStatusResultVO) HasTxPowerMW() bool`
+
+HasTxPowerMW returns a boolean if a field has been set.
 
 ### GetTxPowerFlag
 

@@ -28,6 +28,8 @@ type OsgDownLinkVO struct {
 	Name *string `json:"name,omitempty"`
 	Port *int32 `json:"port,omitempty"`
 	Speed *int32 `json:"speed,omitempty"`
+	StackId *string `json:"stackId,omitempty"`
+	StackName *string `json:"stackName,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Wireless *bool `json:"wireless,omitempty"`
 }
@@ -337,6 +339,70 @@ func (o *OsgDownLinkVO) SetSpeed(v int32) {
 	o.Speed = &v
 }
 
+// GetStackId returns the StackId field value if set, zero value otherwise.
+func (o *OsgDownLinkVO) GetStackId() string {
+	if o == nil || IsNil(o.StackId) {
+		var ret string
+		return ret
+	}
+	return *o.StackId
+}
+
+// GetStackIdOk returns a tuple with the StackId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgDownLinkVO) GetStackIdOk() (*string, bool) {
+	if o == nil || IsNil(o.StackId) {
+		return nil, false
+	}
+	return o.StackId, true
+}
+
+// HasStackId returns a boolean if a field has been set.
+func (o *OsgDownLinkVO) HasStackId() bool {
+	if o != nil && !IsNil(o.StackId) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackId gets a reference to the given string and assigns it to the StackId field.
+func (o *OsgDownLinkVO) SetStackId(v string) {
+	o.StackId = &v
+}
+
+// GetStackName returns the StackName field value if set, zero value otherwise.
+func (o *OsgDownLinkVO) GetStackName() string {
+	if o == nil || IsNil(o.StackName) {
+		var ret string
+		return ret
+	}
+	return *o.StackName
+}
+
+// GetStackNameOk returns a tuple with the StackName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgDownLinkVO) GetStackNameOk() (*string, bool) {
+	if o == nil || IsNil(o.StackName) {
+		return nil, false
+	}
+	return o.StackName, true
+}
+
+// HasStackName returns a boolean if a field has been set.
+func (o *OsgDownLinkVO) HasStackName() bool {
+	if o != nil && !IsNil(o.StackName) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackName gets a reference to the given string and assigns it to the StackName field.
+func (o *OsgDownLinkVO) SetStackName(v string) {
+	o.StackName = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *OsgDownLinkVO) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -437,6 +503,12 @@ func (o OsgDownLinkVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Speed) {
 		toSerialize["speed"] = o.Speed
+	}
+	if !IsNil(o.StackId) {
+		toSerialize["stackId"] = o.StackId
+	}
+	if !IsNil(o.StackName) {
+		toSerialize["stackName"] = o.StackName
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

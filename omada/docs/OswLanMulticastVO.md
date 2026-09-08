@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FastLeaveEnable** | Pointer to **bool** |  | [optional] 
-**ReportSuppressionEnable** | Pointer to **bool** |  | [optional] 
+**FastLeaveEnable** | Pointer to **bool** | Whether fast leave is enabled | [optional] 
+**ReportSuppressionEnable** | Pointer to **bool** | Whether report suppression is enabled | [optional] 
 
 ## Methods
 

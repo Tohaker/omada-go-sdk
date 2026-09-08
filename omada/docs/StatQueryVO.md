@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Attrs** | **[]string** | Attributes to be queried. Attributes not included in attrs will return a value of 0.Item of attrs should be a value as follows: mem, cpu, tx, rx, txRate, rxRate, txPkts, rxPkts, txBroadPkts, rxBroadPkts, txMultiPkts, rxMultiPkts, dropPkts, txErrPkts, rxErrPkts | 
+**Attrs** | **[]string** | Attributes to be queried. Attributes not included in attrs will return a value of 0 or be omitted. The supported attrs and response fields depend on the device type and statistic granularity. For details, refer to section 5.9.1 Device Statistics of the Open API Access Guide. | 
 **End** | **int64** | end time, number of seconds from UTC0 1970/01/01 | 
 **OltPorts** | Pointer to **[]string** | Statistics of the selected ports of olt would be queried. | [optional] 
 **Ports** | Pointer to **[]int32** | The ports in the lag. Each item is Integer, for example: [1, 2]. | [optional] 

@@ -12,9 +12,12 @@ Name | Type | Description | Notes
 **MemoryUtil** | Pointer to **int32** | Device memory util(like 50 means 50% memory util) | [optional] 
 **Model** | Pointer to **string** | Device model | [optional] 
 **Name** | Pointer to **string** | Device name | [optional] 
+**Status** | Pointer to **int32** | Status of device,status should be a value as follows: 0:Disconnected; 1:Disconnected(Migrating); 10:Provisioning; 11:Configuring; 12:Upgrading; 13:Rebooting; 14:Connected; 15:Connected(Wireless); 16:Connected(Migrating); 17:Connected(Wireless,Migrating); 20:Pending; 21:Pending(Wireless); 22:Adopting; 23:Adopting(Wireless); 24:Adopt Failed; 25:Adopt Failed(Wireless); 26:Managed By Others; 27:Managed By Others(Wireless); 30:Heartbeat Missed; 31:Heartbeat Missed(Wireless); 32:Heartbeat Missed(Migrating); 33:Heartbeat Missed(Wireless,Migrating); 40:Isolated; 41:Isolated(Migrating); 50:Slice Configuring | [optional] 
+**StatusCategory** | Pointer to **int32** | Category of device status, statusCategory should be a value as follows: 0:Disconnected; 1:Connected; 2:Pending; 3:Heartbeat Missed; 4:Isolated | [optional] 
 **Type** | Pointer to **string** | Device type | [optional] 
 **UptimeLong** | Pointer to **int64** | Device uptime(unit:second) | [optional] 
 **WirelessUplinkInfo** | Pointer to [**ApWirelessUplink**](ApWirelessUplink.md) |  | [optional] 
+**WirelessLinked** | Pointer to **bool** | Whether AP is wireless linked | [optional] 
 **WlanGroupId** | Pointer to **string** | WLAN group ID | [optional] 
 
 ## Methods
@@ -236,6 +239,56 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetStatus
+
+`func (o *ApOverviewInfo) GetStatus() int32`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *ApOverviewInfo) GetStatusOk() (*int32, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *ApOverviewInfo) SetStatus(v int32)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *ApOverviewInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+### GetStatusCategory
+
+`func (o *ApOverviewInfo) GetStatusCategory() int32`
+
+GetStatusCategory returns the StatusCategory field if non-nil, zero value otherwise.
+
+### GetStatusCategoryOk
+
+`func (o *ApOverviewInfo) GetStatusCategoryOk() (*int32, bool)`
+
+GetStatusCategoryOk returns a tuple with the StatusCategory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatusCategory
+
+`func (o *ApOverviewInfo) SetStatusCategory(v int32)`
+
+SetStatusCategory sets StatusCategory field to given value.
+
+### HasStatusCategory
+
+`func (o *ApOverviewInfo) HasStatusCategory() bool`
+
+HasStatusCategory returns a boolean if a field has been set.
+
 ### GetType
 
 `func (o *ApOverviewInfo) GetType() string`
@@ -310,6 +363,31 @@ SetWirelessUplinkInfo sets WirelessUplinkInfo field to given value.
 `func (o *ApOverviewInfo) HasWirelessUplinkInfo() bool`
 
 HasWirelessUplinkInfo returns a boolean if a field has been set.
+
+### GetWirelessLinked
+
+`func (o *ApOverviewInfo) GetWirelessLinked() bool`
+
+GetWirelessLinked returns the WirelessLinked field if non-nil, zero value otherwise.
+
+### GetWirelessLinkedOk
+
+`func (o *ApOverviewInfo) GetWirelessLinkedOk() (*bool, bool)`
+
+GetWirelessLinkedOk returns a tuple with the WirelessLinked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWirelessLinked
+
+`func (o *ApOverviewInfo) SetWirelessLinked(v bool)`
+
+SetWirelessLinked sets WirelessLinked field to given value.
+
+### HasWirelessLinked
+
+`func (o *ApOverviewInfo) HasWirelessLinked() bool`
+
+HasWirelessLinked returns a boolean if a field has been set.
 
 ### GetWlanGroupId
 

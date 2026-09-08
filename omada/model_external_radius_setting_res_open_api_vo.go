@@ -17,7 +17,7 @@ import (
 // checks if the ExternalRadiusSettingResOpenApiVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ExternalRadiusSettingResOpenApiVO{}
 
-// ExternalRadiusSettingResOpenApiVO External Radius Portal setting, required when [authType] is 2.
+// ExternalRadiusSettingResOpenApiVO External RADIUS Portal setting, required when [authType] is 2.
 type ExternalRadiusSettingResOpenApiVO struct {
 	// RADIUS auth mode, should be a value as follows: 1: PAP; 2: CHAP
 	AuthMode *int32 `json:"authMode,omitempty"`
@@ -31,7 +31,7 @@ type ExternalRadiusSettingResOpenApiVO struct {
 	NasId *string `json:"nasId,omitempty"`
 	// Portal customization, should be a value as follows: 1: Local Web Portal; 2: External Web Portal.
 	PortalCustom *int32 `json:"portalCustom,omitempty"`
-	// This field represents radius profile ID. Radius profile can be created using 'Create a new Radius profile' ('Create a new Radius profile template') interface, and radius profile ID can be obtained from 'Get Radius profile list' ('Get Radius profile template list') interface
+	// This field represents radius profile ID. Radius profile can be created using 'Create a new RADIUS profile' ('Create a new RADIUS profile template') interface, and radius profile ID can be obtained from 'Get RADIUS profile list' ('Get RADIUS profile template list') interface
 	RadiusProfileId *string `json:"radiusProfileId,omitempty"`
 	// Port for listening to disconnect messages, should be within the range of 1–65535.Only for Omada Local Controller
 	ReceiverPort *int32 `json:"receiverPort,omitempty"`

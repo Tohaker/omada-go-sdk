@@ -27,6 +27,7 @@ type OswStormCtrlVO struct {
 	Broadcast *int32 `json:"broadcast,omitempty"`
 	// Indicates whether broadcast is enabled
 	BroadcastEnable bool `json:"broadcastEnable"`
+	LimitRange *OswStormCtrlLimitRangeVO `json:"limitRange,omitempty"`
 	// Multicast
 	Multicast *int32 `json:"multicast,omitempty"`
 	// Indicates whether multicast is enabled
@@ -142,6 +143,38 @@ func (o *OswStormCtrlVO) GetBroadcastEnableOk() (*bool, bool) {
 // SetBroadcastEnable sets field value
 func (o *OswStormCtrlVO) SetBroadcastEnable(v bool) {
 	o.BroadcastEnable = v
+}
+
+// GetLimitRange returns the LimitRange field value if set, zero value otherwise.
+func (o *OswStormCtrlVO) GetLimitRange() OswStormCtrlLimitRangeVO {
+	if o == nil || IsNil(o.LimitRange) {
+		var ret OswStormCtrlLimitRangeVO
+		return ret
+	}
+	return *o.LimitRange
+}
+
+// GetLimitRangeOk returns a tuple with the LimitRange field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStormCtrlVO) GetLimitRangeOk() (*OswStormCtrlLimitRangeVO, bool) {
+	if o == nil || IsNil(o.LimitRange) {
+		return nil, false
+	}
+	return o.LimitRange, true
+}
+
+// HasLimitRange returns a boolean if a field has been set.
+func (o *OswStormCtrlVO) HasLimitRange() bool {
+	if o != nil && !IsNil(o.LimitRange) {
+		return true
+	}
+
+	return false
+}
+
+// SetLimitRange gets a reference to the given OswStormCtrlLimitRangeVO and assigns it to the LimitRange field.
+func (o *OswStormCtrlVO) SetLimitRange(v OswStormCtrlLimitRangeVO) {
+	o.LimitRange = &v
 }
 
 // GetMulticast returns the Multicast field value if set, zero value otherwise.
@@ -335,6 +368,9 @@ func (o OswStormCtrlVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["broadcast"] = o.Broadcast
 	}
 	toSerialize["broadcastEnable"] = o.BroadcastEnable
+	if !IsNil(o.LimitRange) {
+		toSerialize["limitRange"] = o.LimitRange
+	}
 	if !IsNil(o.Multicast) {
 		toSerialize["multicast"] = o.Multicast
 	}

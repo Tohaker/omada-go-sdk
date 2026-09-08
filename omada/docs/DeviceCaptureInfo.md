@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Model** | Pointer to **string** | Model of device,for example:EAP225. | [optional] 
 **ModelVersion** | Pointer to **string** | Model version of device,for example:3.0 | [optional] 
 **Name** | Pointer to **string** | Device name. | [optional] 
+**ScanStatus** | Pointer to **int32** | Scan Status of device,status should be a value as follows:  0:Not Scanned, 1:Spectrum Scanning, 2:RFScanning, 3:packet capturing, 4:RFPlanning, 5:Interference Detecting; | [optional] 
 **ShowModel** | Pointer to **string** | Model complex shown in the front end.Ap：model+(country)+modelVersion,EAP225(EU) v3.0  Gateway/Switch：model+modelVersion,Osg v3.0 | [optional] 
 **Stack** | Pointer to **bool** | Parameter [stack] indicates whether the device supports stacking. | [optional] 
 **StackId** | Pointer to **string** | Stack ID. | [optional] 
@@ -478,6 +479,31 @@ SetName sets Name field to given value.
 `func (o *DeviceCaptureInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetScanStatus
+
+`func (o *DeviceCaptureInfo) GetScanStatus() int32`
+
+GetScanStatus returns the ScanStatus field if non-nil, zero value otherwise.
+
+### GetScanStatusOk
+
+`func (o *DeviceCaptureInfo) GetScanStatusOk() (*int32, bool)`
+
+GetScanStatusOk returns a tuple with the ScanStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScanStatus
+
+`func (o *DeviceCaptureInfo) SetScanStatus(v int32)`
+
+SetScanStatus sets ScanStatus field to given value.
+
+### HasScanStatus
+
+`func (o *DeviceCaptureInfo) HasScanStatus() bool`
+
+HasScanStatus returns a boolean if a field has been set.
 
 ### GetShowModel
 

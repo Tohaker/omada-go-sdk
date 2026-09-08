@@ -21,8 +21,6 @@ var _ MappedNullable = &MlagConfigOpenApiVO{}
 
 // MlagConfigOpenApiVO struct for MlagConfigOpenApiVO
 type MlagConfigOpenApiVO struct {
-	// MLAG group id should be between 1 and 31 characters. Only letters, numbers, and the following symbols are allowed: - . / : @ _ + #
-	GroupId *string `json:"groupId,omitempty"`
 	// M-LAG group members configuration
 	MembersConfig []MlagMemberConfigVO `json:"membersConfig,omitempty"`
 	// MLAG group name should be between 1 and 31 characters. Only letters, numbers, and the following symbols are allowed: - . / : @ _ + #
@@ -47,38 +45,6 @@ func NewMlagConfigOpenApiVO(name string) *MlagConfigOpenApiVO {
 func NewMlagConfigOpenApiVOWithDefaults() *MlagConfigOpenApiVO {
 	this := MlagConfigOpenApiVO{}
 	return &this
-}
-
-// GetGroupId returns the GroupId field value if set, zero value otherwise.
-func (o *MlagConfigOpenApiVO) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
-		var ret string
-		return ret
-	}
-	return *o.GroupId
-}
-
-// GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MlagConfigOpenApiVO) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
-		return nil, false
-	}
-	return o.GroupId, true
-}
-
-// HasGroupId returns a boolean if a field has been set.
-func (o *MlagConfigOpenApiVO) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroupId gets a reference to the given string and assigns it to the GroupId field.
-func (o *MlagConfigOpenApiVO) SetGroupId(v string) {
-	o.GroupId = &v
 }
 
 // GetMembersConfig returns the MembersConfig field value if set, zero value otherwise.
@@ -147,9 +113,6 @@ func (o MlagConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o MlagConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GroupId) {
-		toSerialize["groupId"] = o.GroupId
-	}
 	if !IsNil(o.MembersConfig) {
 		toSerialize["membersConfig"] = o.MembersConfig
 	}

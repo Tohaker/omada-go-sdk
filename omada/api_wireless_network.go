@@ -23,58 +23,133 @@ import (
 type WirelessNetworkAPI interface {
 
 	/*
+	CountApGroups Check if the number of AP Groups is out of limit
+
+	Check if the number of AP Groups is out of limit. The value of "ApGroupNum" indicates number of AP group and the value of "exceeded" indicates whether the number of AP Groups exceeds the limit. 
+The limit is the total number that a Controller can create, not the limit of a single Site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WirelessNetworkAPICountApGroupsRequest
+	*/
+	CountApGroups(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICountApGroupsRequest
+
+	// CountApGroupsExecute executes the request
+	//  @return OperationResponseApGroupStatusOpenApiVO
+	CountApGroupsExecute(r WirelessNetworkAPICountApGroupsRequest) (*OperationResponseApGroupStatusOpenApiVO, *http.Response, error)
+
+	/*
 	CountWlans Check if the number of WLAN groups is out of limit
 
-	Check if the number of WLAN groups is out of limit. The value of "wlanGroupNum" indicates number of wlan group and the value of "exceeded" indicates whether the number of WLANs exceeds the limit <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Check if the number of WLAN groups is out of limit. The value of "wlanGroupNum" indicates number of wlan group and the value of "exceeded" indicates whether the number of WLANs exceeds the limit. Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Check if the number of AP Groups is out of limit.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId siteId
 	@return WirelessNetworkAPICountWlansRequest
+
+	Deprecated
 	*/
 	CountWlans(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICountWlansRequest
 
 	// CountWlansExecute executes the request
 	//  @return OperationResponseWlanGroupStatusOpenApiVO
+	// Deprecated
 	CountWlansExecute(r WirelessNetworkAPICountWlansRequest) (*OperationResponseWlanGroupStatusOpenApiVO, *http.Response, error)
+
+	/*
+	CreateApGroup Create new AP Group
+
+	Create new AP Group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.<br/>-33201  -  The number of WLAN groups has reached the limit.<br/>-33202  -  This WLAN group is not in the same site.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WirelessNetworkAPICreateApGroupRequest
+	*/
+	CreateApGroup(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICreateApGroupRequest
+
+	// CreateApGroupExecute executes the request
+	//  @return OperationResponseAddApGroupResultVO
+	CreateApGroupExecute(r WirelessNetworkAPICreateApGroupRequest) (*OperationResponseAddApGroupResultVO, *http.Response, error)
 
 	/*
 	CreateSsid Create new SSID
 
-	Create new SSID<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33788  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID is not enabled in OUI Based VLAN.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
+	Create new SSID, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Create new SSID v2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33788  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID is not enabled in OUI Based VLAN.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param wlanId WLAN ID
 	@return WirelessNetworkAPICreateSsidRequest
+
+	Deprecated
 	*/
 	CreateSsid(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPICreateSsidRequest
 
 	// CreateSsidExecute executes the request
 	//  @return OperationResponse
+	// Deprecated
 	CreateSsidExecute(r WirelessNetworkAPICreateSsidRequest) (*OperationResponse, *http.Response, error)
 
 	/*
-	CreateWlanGroup Create new WLAN group
+	CreateSsidV2 Create new SSID v2
 
-	Create new WLAN group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.<br/>-33201  -  The number of WLAN groups has reached the limit.<br/>-33202  -  This WLAN group is not in the same site.
+	Create new SSID v2<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33788  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID is not enabled in OUI Based VLAN.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WirelessNetworkAPICreateSsidV2Request
+	*/
+	CreateSsidV2(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICreateSsidV2Request
+
+	// CreateSsidV2Execute executes the request
+	//  @return OperationResponseCreateSsidResultVO
+	CreateSsidV2Execute(r WirelessNetworkAPICreateSsidV2Request) (*OperationResponseCreateSsidResultVO, *http.Response, error)
+
+	/*
+	CreateWlanGroup Create new WLAN Group
+
+	Create new WLAN Group, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Create new AP Group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.<br/>-33201  -  The number of WLAN groups has reached the limit.<br/>-33202  -  This WLAN group is not in the same site.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WirelessNetworkAPICreateWlanGroupRequest
+
+	Deprecated
 	*/
 	CreateWlanGroup(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICreateWlanGroupRequest
 
 	// CreateWlanGroupExecute executes the request
 	//  @return OperationResponse
+	// Deprecated
 	CreateWlanGroupExecute(r WirelessNetworkAPICreateWlanGroupRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	DeleteApGroup Delete an existing AP Group
+
+	Delete an existing AP Group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33203  -  The default WLAN group cannot be deleted.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apGroupId AP GROUP ID
+	@return WirelessNetworkAPIDeleteApGroupRequest
+	*/
+	DeleteApGroup(ctx context.Context, omadacId string, siteId string, apGroupId string) WirelessNetworkAPIDeleteApGroupRequest
+
+	// DeleteApGroupExecute executes the request
+	//  @return OperationResponseWithoutResult
+	DeleteApGroupExecute(r WirelessNetworkAPIDeleteApGroupRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	DeleteSsid Delete an existing SSID
 
-	Delete an existing SSID<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Delete an existing SSID, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Delete an existing SSID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -82,44 +157,119 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIDeleteSsidRequest
+
+	Deprecated
 	*/
 	DeleteSsid(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIDeleteSsidRequest
 
 	// DeleteSsidExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteSsidExecute(r WirelessNetworkAPIDeleteSsidRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	DeleteWlanGroup Delete an existing WLAN group
+	DeleteSsidBySite Delete an existing SSID
 
-	Delete an existing WLAN group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33203  -  The default WLAN group cannot be deleted.
+	Delete an existing SSID<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIDeleteSsidBySiteRequest
+	*/
+	DeleteSsidBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIDeleteSsidBySiteRequest
+
+	// DeleteSsidBySiteExecute executes the request
+	//  @return OperationResponse
+	DeleteSsidBySiteExecute(r WirelessNetworkAPIDeleteSsidBySiteRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	DeleteWlanGroup Delete an existing WLAN Group
+
+	Delete an existing WLAN Group, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Delete an existing AP Group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33203  -  The default WLAN group cannot be deleted.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param wlanId WLAN ID
 	@return WirelessNetworkAPIDeleteWlanGroupRequest
+
+	Deprecated
 	*/
 	DeleteWlanGroup(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPIDeleteWlanGroupRequest
 
 	// DeleteWlanGroupExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	DeleteWlanGroupExecute(r WirelessNetworkAPIDeleteWlanGroupRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	GetGridWlanGroup Get WLAN group list paging query
+	GetAllApGroupListBySite Get All AP grouping by ap group
 
-	Get WLAN group list paging query<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Get All AP grouping by ap group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WirelessNetworkAPIGetAllApGroupListBySiteRequest
+	*/
+	GetAllApGroupListBySite(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetAllApGroupListBySiteRequest
+
+	// GetAllApGroupListBySiteExecute executes the request
+	//  @return OperationResponseGridVOSsidDeviceOpenApiVO
+	GetAllApGroupListBySiteExecute(r WirelessNetworkAPIGetAllApGroupListBySiteRequest) (*OperationResponseGridVOSsidDeviceOpenApiVO, *http.Response, error)
+
+	/*
+	GetApGroupInfo Get an existing AP Group info
+
+	Get an existing AP Group info<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apGroupId AP GROUP ID
+	@return WirelessNetworkAPIGetApGroupInfoRequest
+	*/
+	GetApGroupInfo(ctx context.Context, omadacId string, siteId string, apGroupId string) WirelessNetworkAPIGetApGroupInfoRequest
+
+	// GetApGroupInfoExecute executes the request
+	//  @return OperationResponseApGroupOpenApiVO
+	GetApGroupInfoExecute(r WirelessNetworkAPIGetApGroupInfoRequest) (*OperationResponseApGroupOpenApiVO, *http.Response, error)
+
+	/*
+	GetApGroupList Get AP Group list
+
+	Get AP Group list<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WirelessNetworkAPIGetApGroupListRequest
+	*/
+	GetApGroupList(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetApGroupListRequest
+
+	// GetApGroupListExecute executes the request
+	//  @return OperationResponseApGroupGridVOApGroupOpenApiVO
+	GetApGroupListExecute(r WirelessNetworkAPIGetApGroupListRequest) (*OperationResponseApGroupGridVOApGroupOpenApiVO, *http.Response, error)
+
+	/*
+	GetGridWlanGroup Get WLAN Group list paging query
+
+	Get WLAN Group list paging query, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Get AP Group list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WirelessNetworkAPIGetGridWlanGroupRequest
+
+	Deprecated
 	*/
 	GetGridWlanGroup(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetGridWlanGroupRequest
 
 	// GetGridWlanGroupExecute executes the request
 	//  @return OperationResponseWlanGroupGridOpenApiVO
+	// Deprecated
 	GetGridWlanGroupExecute(r WirelessNetworkAPIGetGridWlanGroupRequest) (*OperationResponseWlanGroupGridOpenApiVO, *http.Response, error)
 
 	/*
@@ -141,7 +291,7 @@ type WirelessNetworkAPI interface {
 	/*
 	GetSsidDetail Get SSID detail info
 
-	Get SSID detail info<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Get SSID detail info, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Get SSID detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -149,29 +299,68 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIGetSsidDetailRequest
+
+	Deprecated
 	*/
 	GetSsidDetail(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIGetSsidDetailRequest
 
 	// GetSsidDetailExecute executes the request
 	//  @return OperationResponseSsidDetailOpenApiVO
+	// Deprecated
 	GetSsidDetailExecute(r WirelessNetworkAPIGetSsidDetailRequest) (*OperationResponseSsidDetailOpenApiVO, *http.Response, error)
+
+	/*
+	GetSsidDetailV2 Get SSID detail info
+
+	Get SSID detail info<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIGetSsidDetailV2Request
+	*/
+	GetSsidDetailV2(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIGetSsidDetailV2Request
+
+	// GetSsidDetailV2Execute executes the request
+	//  @return OperationResponseSsidDetailOpenApiVO
+	GetSsidDetailV2Execute(r WirelessNetworkAPIGetSsidDetailV2Request) (*OperationResponseSsidDetailOpenApiVO, *http.Response, error)
 
 	/*
 	GetSsidList Get SSID list
 
-	Get SSID list of Wlan group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+	Get SSID list of Wlan group, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Get SSID list by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param wlanId WLAN ID
 	@return WirelessNetworkAPIGetSsidListRequest
+
+	Deprecated
 	*/
 	GetSsidList(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPIGetSsidListRequest
 
 	// GetSsidListExecute executes the request
 	//  @return OperationResponseGridVOSsidOpenApiVO
+	// Deprecated
 	GetSsidListExecute(r WirelessNetworkAPIGetSsidListRequest) (*OperationResponseGridVOSsidOpenApiVO, *http.Response, error)
+
+	/*
+	GetSsidListV2 Get SSID list by site
+
+	Get SSID list by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WirelessNetworkAPIGetSsidListV2Request
+	*/
+	GetSsidListV2(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetSsidListV2Request
+
+	// GetSsidListV2Execute executes the request
+	//  @return OperationResponseGridVOSsidOpenApiVO
+	GetSsidListV2Execute(r WirelessNetworkAPIGetSsidListV2Request) (*OperationResponseGridVOSsidOpenApiVO, *http.Response, error)
 
 	/*
 	GetSsidsBySite Get all ssids of the site
@@ -190,42 +379,98 @@ type WirelessNetworkAPI interface {
 	GetSsidsBySiteExecute(r WirelessNetworkAPIGetSsidsBySiteRequest) (*OperationResponseListWlanSimpleOpenApiVO, *http.Response, error)
 
 	/*
-	GetWlanGroup Get WLAN group by wlan id
+	GetWlanGroup Get WLAN Group by wlan id
 
-	Get WLAN group by wlan id<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Get WLAN Group by wlan id, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Get an existing AP Group info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param wlanId WLAN ID
 	@return WirelessNetworkAPIGetWlanGroupRequest
+
+	Deprecated
 	*/
 	GetWlanGroup(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPIGetWlanGroupRequest
 
 	// GetWlanGroupExecute executes the request
 	//  @return OperationResponseWlanGroupOpenApiVO
+	// Deprecated
 	GetWlanGroupExecute(r WirelessNetworkAPIGetWlanGroupRequest) (*OperationResponseWlanGroupOpenApiVO, *http.Response, error)
 
 	/*
-	GetWlanGroupList Get WLAN group list
+	GetWlanGroupList Get WLAN Group list
 
-	Get WLAN group list<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Get WLAN Group list, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Get AP Group list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return WirelessNetworkAPIGetWlanGroupListRequest
+
+	Deprecated
 	*/
 	GetWlanGroupList(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetWlanGroupListRequest
 
 	// GetWlanGroupListExecute executes the request
 	//  @return OperationResponseListWlanGroupOpenApiVO
+	// Deprecated
 	GetWlanGroupListExecute(r WirelessNetworkAPIGetWlanGroupListRequest) (*OperationResponseListWlanGroupOpenApiVO, *http.Response, error)
+
+	/*
+	QuerySsidBindApGroups Query AP Groups bound to the SSID
+
+	Query AP Groups bound to the SSID<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIQuerySsidBindApGroupsRequest
+	*/
+	QuerySsidBindApGroups(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIQuerySsidBindApGroupsRequest
+
+	// QuerySsidBindApGroupsExecute executes the request
+	//  @return OperationResponseApGroupDetailOpenApiVO
+	QuerySsidBindApGroupsExecute(r WirelessNetworkAPIQuerySsidBindApGroupsRequest) (*OperationResponseApGroupDetailOpenApiVO, *http.Response, error)
+
+	/*
+	QuerySsidDuplicateNameBySite1 Query SSIDs with the same name
+
+	Query SSIDs with the same name<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return WirelessNetworkAPIQuerySsidDuplicateNameBySite1Request
+	*/
+	QuerySsidDuplicateNameBySite1(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIQuerySsidDuplicateNameBySite1Request
+
+	// QuerySsidDuplicateNameBySite1Execute executes the request
+	//  @return OperationResponseDuplicateSsidOpenApiVO
+	QuerySsidDuplicateNameBySite1Execute(r WirelessNetworkAPIQuerySsidDuplicateNameBySite1Request) (*OperationResponseDuplicateSsidOpenApiVO, *http.Response, error)
+
+	/*
+	UpdateApGroup Modify an existing AP Group
+
+	Modify an existing AP Group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apGroupId AP GROUP ID
+	@return WirelessNetworkAPIUpdateApGroupRequest
+	*/
+	UpdateApGroup(ctx context.Context, omadacId string, siteId string, apGroupId string) WirelessNetworkAPIUpdateApGroupRequest
+
+	// UpdateApGroupExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateApGroupExecute(r WirelessNetworkAPIUpdateApGroupRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidBandSteerConfig Update SSID band steer config
 
-	Update SSID band steer config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Update SSID band steer config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID band steer config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -233,17 +478,37 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidBandSteerConfigRequest
+
+	Deprecated
 	*/
 	UpdateSsidBandSteerConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidBandSteerConfigRequest
 
 	// UpdateSsidBandSteerConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidBandSteerConfigExecute(r WirelessNetworkAPIUpdateSsidBandSteerConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidBandSteerConfigBySite Update SSID band steer config by site
+
+	Update SSID band steer config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest
+	*/
+	UpdateSsidBandSteerConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest
+
+	// UpdateSsidBandSteerConfigBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidBandSteerConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidBasicConfig Update SSID basic config
 
-	Update SSID basic config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33235  -  PPSK without RADIUS do not support WPA Mode with WPA3-SAE.<br/>-33238  -  The number of SSIDs on %band% has reached the limit. At most 8 SSIDs can be created on each band.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
+	Update SSID basic config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID basic config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33235  -  PPSK without RADIUS do not support WPA Mode with WPA3-SAE.<br/>-33238  -  The number of SSIDs on %band% has reached the limit. At most 8 SSIDs can be created on each band.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -251,17 +516,54 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidBasicConfigRequest
+
+	Deprecated
 	*/
 	UpdateSsidBasicConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidBasicConfigRequest
 
 	// UpdateSsidBasicConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidBasicConfigExecute(r WirelessNetworkAPIUpdateSsidBasicConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidBasicConfigBySite Update SSID basic config by site
+
+	Update SSID basic config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33235  -  PPSK without RADIUS do not support WPA Mode with WPA3-SAE.<br/>-33238  -  The number of SSIDs on %band% has reached the limit. At most 8 SSIDs can be created on each band.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest
+	*/
+	UpdateSsidBasicConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest
+
+	// UpdateSsidBasicConfigBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidBasicConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidBindApGroups Update SSID binding ap groups
+
+	Update SSID binding ap groups<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidBindApGroupsRequest
+	*/
+	UpdateSsidBindApGroups(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidBindApGroupsRequest
+
+	// UpdateSsidBindApGroupsExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidBindApGroupsExecute(r WirelessNetworkAPIUpdateSsidBindApGroupsRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidDhcpOptionConfig Update SSID DHCP option 82 config
 
-	Update SSID DHCP option 82 config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Update SSID DHCP option 82 config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID DHCP option 82 config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -269,35 +571,92 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidDhcpOptionConfigRequest
+
+	Deprecated
 	*/
 	UpdateSsidDhcpOptionConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidDhcpOptionConfigRequest
 
 	// UpdateSsidDhcpOptionConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidDhcpOptionConfigExecute(r WirelessNetworkAPIUpdateSsidDhcpOptionConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	UpdateSsidDhcpOptionConfigBySite Update SSID DHCP option 82 config by site
+
+	Update SSID DHCP option 82 config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest
+	*/
+	UpdateSsidDhcpOptionConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest
+
+	// UpdateSsidDhcpOptionConfigBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidDhcpOptionConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidEnableStatusBySite1 Update SSID Enable Status by site
+
+	Update SSID Enable Status by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request
+	*/
+	UpdateSsidEnableStatusBySite1(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request
+
+	// UpdateSsidEnableStatusBySite1Execute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidEnableStatusBySite1Execute(r WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	UpdateSsidHotspotV2Setting Update SSID Hotspot2.0 config
+
+	Update SSID Hotspot2.0 config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID Hotspot2.0 config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33263  -  The current combination of Security and WPA Mode does not support Hotspot2.0.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param wlanId WLAN ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest
+
+	Deprecated
+	*/
+	UpdateSsidHotspotV2Setting(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest
+
+	// UpdateSsidHotspotV2SettingExecute executes the request
+	//  @return OperationResponseWithoutResult
+	// Deprecated
+	UpdateSsidHotspotV2SettingExecute(r WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidHotspotV2SettingBySite Update SSID Hotspot2.0 config by site
 
 	Update SSID Hotspot2.0 config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33263  -  The current combination of Security and WPA Mode does not support Hotspot2.0.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param wlanId WLAN ID
 	@param ssidId ssidId
-	@return WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest
+	@return WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest
 	*/
-	UpdateSsidHotspotV2Setting(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest
+	UpdateSsidHotspotV2SettingBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest
 
-	// UpdateSsidHotspotV2SettingExecute executes the request
+	// UpdateSsidHotspotV2SettingBySiteExecute executes the request
 	//  @return OperationResponseWithoutResult
-	UpdateSsidHotspotV2SettingExecute(r WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	UpdateSsidHotspotV2SettingBySiteExecute(r WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidLoadBalanceConfig Update SSID load balance config
 
-	Update SSID load balance config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Update SSID load balance config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID load balance config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -305,17 +664,37 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidLoadBalanceConfigRequest
+
+	Deprecated
 	*/
 	UpdateSsidLoadBalanceConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidLoadBalanceConfigRequest
 
 	// UpdateSsidLoadBalanceConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidLoadBalanceConfigExecute(r WirelessNetworkAPIUpdateSsidLoadBalanceConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidLoadBalanceConfigBySite Update SSID load balance config by site
+
+	Update SSID load balance config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest
+	*/
+	UpdateSsidLoadBalanceConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest
+
+	// UpdateSsidLoadBalanceConfigBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidLoadBalanceConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidMacFilterConfig Update SSID mac filter config
 
-	Update SSID MAC filter config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Update SSID MAC filter config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID mac filter config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -323,17 +702,37 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidMacFilterConfigRequest
+
+	Deprecated
 	*/
 	UpdateSsidMacFilterConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidMacFilterConfigRequest
 
 	// UpdateSsidMacFilterConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidMacFilterConfigExecute(r WirelessNetworkAPIUpdateSsidMacFilterConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidMacFilterConfigBySite Update SSID mac filter config by site
+
+	Update SSID MAC filter config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest
+	*/
+	UpdateSsidMacFilterConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest
+
+	// UpdateSsidMacFilterConfigBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidMacFilterConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidMultiCastConfig Update SSID Multicast/Broadcast management config
 
-	Update SSID Multicast/Broadcast management config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Update SSID Multicast/Broadcast management config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID Multicast/Broadcast management config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -341,17 +740,37 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidMultiCastConfigRequest
+
+	Deprecated
 	*/
 	UpdateSsidMultiCastConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidMultiCastConfigRequest
 
 	// UpdateSsidMultiCastConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidMultiCastConfigExecute(r WirelessNetworkAPIUpdateSsidMultiCastConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidMultiCastConfigBySite Update SSID Multicast/Broadcast management config by site
+
+	Update SSID Multicast/Broadcast management config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest
+	*/
+	UpdateSsidMultiCastConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest
+
+	// UpdateSsidMultiCastConfigBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidMultiCastConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidRateControlConfig Update SSID 802.11 rate control config
 
-	Update SSID 802.11 rate control config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Update SSID 802.11 rate control config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID 802.11 rate control config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -359,17 +778,37 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidRateControlConfigRequest
+
+	Deprecated
 	*/
 	UpdateSsidRateControlConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidRateControlConfigRequest
 
 	// UpdateSsidRateControlConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidRateControlConfigExecute(r WirelessNetworkAPIUpdateSsidRateControlConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidRateControlConfigBySite Update SSID 802.11 rate control config by site
+
+	Update SSID 802.11 rate control config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest
+	*/
+	UpdateSsidRateControlConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest
+
+	// UpdateSsidRateControlConfigBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidRateControlConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidRateLimitConfig Update SSID rate limit config
 
-	Update SSID rate limit config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Update SSID rate limit config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID rate limit config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -377,17 +816,37 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidRateLimitConfigRequest
+
+	Deprecated
 	*/
 	UpdateSsidRateLimitConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidRateLimitConfigRequest
 
 	// UpdateSsidRateLimitConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidRateLimitConfigExecute(r WirelessNetworkAPIUpdateSsidRateLimitConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidRateLimitConfigBySite Update SSID rate limit config by site
+
+	Update SSID rate limit config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest
+	*/
+	UpdateSsidRateLimitConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest
+
+	// UpdateSsidRateLimitConfigBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidRateLimitConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidWifiCallingConfig Update SSID wifi calling config
 
-	Update SSID Wi-Fi Calling config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Update SSID Wi-Fi Calling config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID wifi calling config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -395,17 +854,37 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidWifiCallingConfigRequest
+
+	Deprecated
 	*/
 	UpdateSsidWifiCallingConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidWifiCallingConfigRequest
 
 	// UpdateSsidWifiCallingConfigExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidWifiCallingConfigExecute(r WirelessNetworkAPIUpdateSsidWifiCallingConfigRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateSsidWifiCallingConfigBySite Update SSID wifi calling config by site
+
+	Update SSID Wi-Fi Calling config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest
+	*/
+	UpdateSsidWifiCallingConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest
+
+	// UpdateSsidWifiCallingConfigBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidWifiCallingConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	UpdateSsidWlanSchedule Update SSID WLAN schedule config
 
-	Update SSID WLAN schedule config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+	Update SSID WLAN schedule config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID WLAN schedule config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -413,33 +892,178 @@ type WirelessNetworkAPI interface {
 	@param wlanId WLAN ID
 	@param ssidId SSID ID
 	@return WirelessNetworkAPIUpdateSsidWlanScheduleRequest
+
+	Deprecated
 	*/
 	UpdateSsidWlanSchedule(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidWlanScheduleRequest
 
 	// UpdateSsidWlanScheduleExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateSsidWlanScheduleExecute(r WirelessNetworkAPIUpdateSsidWlanScheduleRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	UpdateWlanGroup Modify an existing WLAN group
+	UpdateSsidWlanScheduleBySite Update SSID WLAN schedule config by site
 
-	Modify an existing WLAN group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.
+	Update SSID WLAN schedule config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId SSID ID
+	@return WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest
+	*/
+	UpdateSsidWlanScheduleBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest
+
+	// UpdateSsidWlanScheduleBySiteExecute executes the request
+	//  @return OperationResponseWithoutResult
+	UpdateSsidWlanScheduleBySiteExecute(r WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	UpdateWlanGroup Modify an existing WLAN Group
+
+	Modify an existing WLAN Group, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Modify an existing AP Group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param wlanId WLAN ID
 	@return WirelessNetworkAPIUpdateWlanGroupRequest
+
+	Deprecated
 	*/
 	UpdateWlanGroup(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPIUpdateWlanGroupRequest
 
 	// UpdateWlanGroupExecute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	UpdateWlanGroupExecute(r WirelessNetworkAPIUpdateWlanGroupRequest) (*OperationResponseWithoutResult, *http.Response, error)
 }
 
 // WirelessNetworkAPIService WirelessNetworkAPI service
 type WirelessNetworkAPIService service
+
+type WirelessNetworkAPICountApGroupsRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+}
+
+func (r WirelessNetworkAPICountApGroupsRequest) Execute() (*OperationResponseApGroupStatusOpenApiVO, *http.Response, error) {
+	return r.ApiService.CountApGroupsExecute(r)
+}
+
+/*
+CountApGroups Check if the number of AP Groups is out of limit
+
+Check if the number of AP Groups is out of limit. The value of "ApGroupNum" indicates number of AP group and the value of "exceeded" indicates whether the number of AP Groups exceeds the limit. 
+The limit is the total number that a Controller can create, not the limit of a single Site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WirelessNetworkAPICountApGroupsRequest
+*/
+func (a *WirelessNetworkAPIService) CountApGroups(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICountApGroupsRequest {
+	return WirelessNetworkAPICountApGroupsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseApGroupStatusOpenApiVO
+func (a *WirelessNetworkAPIService) CountApGroupsExecute(r WirelessNetworkAPICountApGroupsRequest) (*OperationResponseApGroupStatusOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseApGroupStatusOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.CountApGroups")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/count-ap-groups"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type WirelessNetworkAPICountWlansRequest struct {
 	ctx context.Context
@@ -455,12 +1079,14 @@ func (r WirelessNetworkAPICountWlansRequest) Execute() (*OperationResponseWlanGr
 /*
 CountWlans Check if the number of WLAN groups is out of limit
 
-Check if the number of WLAN groups is out of limit. The value of "wlanGroupNum" indicates number of wlan group and the value of "exceeded" indicates whether the number of WLANs exceeds the limit <br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Check if the number of WLAN groups is out of limit. The value of "wlanGroupNum" indicates number of wlan group and the value of "exceeded" indicates whether the number of WLANs exceeds the limit. Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Check if the number of AP Groups is out of limit.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId siteId
  @return WirelessNetworkAPICountWlansRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) CountWlans(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICountWlansRequest {
 	return WirelessNetworkAPICountWlansRequest{
@@ -473,6 +1099,7 @@ func (a *WirelessNetworkAPIService) CountWlans(ctx context.Context, omadacId str
 
 // Execute executes the request
 //  @return OperationResponseWlanGroupStatusOpenApiVO
+// Deprecated
 func (a *WirelessNetworkAPIService) CountWlansExecute(r WirelessNetworkAPICountWlansRequest) (*OperationResponseWlanGroupStatusOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -562,6 +1189,138 @@ func (a *WirelessNetworkAPIService) CountWlansExecute(r WirelessNetworkAPICountW
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WirelessNetworkAPICreateApGroupRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	createApGroupOpenApiVO *CreateApGroupOpenApiVO
+}
+
+func (r WirelessNetworkAPICreateApGroupRequest) CreateApGroupOpenApiVO(createApGroupOpenApiVO CreateApGroupOpenApiVO) WirelessNetworkAPICreateApGroupRequest {
+	r.createApGroupOpenApiVO = &createApGroupOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPICreateApGroupRequest) Execute() (*OperationResponseAddApGroupResultVO, *http.Response, error) {
+	return r.ApiService.CreateApGroupExecute(r)
+}
+
+/*
+CreateApGroup Create new AP Group
+
+Create new AP Group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.<br/>-33201  -  The number of WLAN groups has reached the limit.<br/>-33202  -  This WLAN group is not in the same site.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WirelessNetworkAPICreateApGroupRequest
+*/
+func (a *WirelessNetworkAPIService) CreateApGroup(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICreateApGroupRequest {
+	return WirelessNetworkAPICreateApGroupRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseAddApGroupResultVO
+func (a *WirelessNetworkAPIService) CreateApGroupExecute(r WirelessNetworkAPICreateApGroupRequest) (*OperationResponseAddApGroupResultVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseAddApGroupResultVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.CreateApGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/ap-groups"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createApGroupOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("createApGroupOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createApGroupOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WirelessNetworkAPICreateSsidRequest struct {
 	ctx context.Context
 	ApiService WirelessNetworkAPI
@@ -583,13 +1342,15 @@ func (r WirelessNetworkAPICreateSsidRequest) Execute() (*OperationResponse, *htt
 /*
 CreateSsid Create new SSID
 
-Create new SSID<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33788  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID is not enabled in OUI Based VLAN.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
+Create new SSID, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Create new SSID v2.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33788  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID is not enabled in OUI Based VLAN.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param wlanId WLAN ID
  @return WirelessNetworkAPICreateSsidRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) CreateSsid(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPICreateSsidRequest {
 	return WirelessNetworkAPICreateSsidRequest{
@@ -603,6 +1364,7 @@ func (a *WirelessNetworkAPIService) CreateSsid(ctx context.Context, omadacId str
 
 // Execute executes the request
 //  @return OperationResponse
+// Deprecated
 func (a *WirelessNetworkAPIService) CreateSsidExecute(r WirelessNetworkAPICreateSsidRequest) (*OperationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -620,6 +1382,138 @@ func (a *WirelessNetworkAPIService) CreateSsidExecute(r WirelessNetworkAPICreate
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createSsidOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("createSsidOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createSsidOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPICreateSsidV2Request struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	createSsidOpenApiVO *CreateSsidOpenApiVO
+}
+
+func (r WirelessNetworkAPICreateSsidV2Request) CreateSsidOpenApiVO(createSsidOpenApiVO CreateSsidOpenApiVO) WirelessNetworkAPICreateSsidV2Request {
+	r.createSsidOpenApiVO = &createSsidOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPICreateSsidV2Request) Execute() (*OperationResponseCreateSsidResultVO, *http.Response, error) {
+	return r.ApiService.CreateSsidV2Execute(r)
+}
+
+/*
+CreateSsidV2 Create new SSID v2
+
+Create new SSID v2<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33788  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID is not enabled in OUI Based VLAN.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WirelessNetworkAPICreateSsidV2Request
+*/
+func (a *WirelessNetworkAPIService) CreateSsidV2(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICreateSsidV2Request {
+	return WirelessNetworkAPICreateSsidV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseCreateSsidResultVO
+func (a *WirelessNetworkAPIService) CreateSsidV2Execute(r WirelessNetworkAPICreateSsidV2Request) (*OperationResponseCreateSsidResultVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseCreateSsidResultVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.CreateSsidV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/wireless-network/ssids"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -716,14 +1610,16 @@ func (r WirelessNetworkAPICreateWlanGroupRequest) Execute() (*OperationResponse,
 }
 
 /*
-CreateWlanGroup Create new WLAN group
+CreateWlanGroup Create new WLAN Group
 
-Create new WLAN group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.<br/>-33201  -  The number of WLAN groups has reached the limit.<br/>-33202  -  This WLAN group is not in the same site.
+Create new WLAN Group, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Create new AP Group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.<br/>-33201  -  The number of WLAN groups has reached the limit.<br/>-33202  -  This WLAN group is not in the same site.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return WirelessNetworkAPICreateWlanGroupRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) CreateWlanGroup(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPICreateWlanGroupRequest {
 	return WirelessNetworkAPICreateWlanGroupRequest{
@@ -736,6 +1632,7 @@ func (a *WirelessNetworkAPIService) CreateWlanGroup(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponse
+// Deprecated
 func (a *WirelessNetworkAPIService) CreateWlanGroupExecute(r WirelessNetworkAPICreateWlanGroupRequest) (*OperationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -830,6 +1727,131 @@ func (a *WirelessNetworkAPIService) CreateWlanGroupExecute(r WirelessNetworkAPIC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WirelessNetworkAPIDeleteApGroupRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	apGroupId string
+}
+
+func (r WirelessNetworkAPIDeleteApGroupRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.DeleteApGroupExecute(r)
+}
+
+/*
+DeleteApGroup Delete an existing AP Group
+
+Delete an existing AP Group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33203  -  The default WLAN group cannot be deleted.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apGroupId AP GROUP ID
+ @return WirelessNetworkAPIDeleteApGroupRequest
+*/
+func (a *WirelessNetworkAPIService) DeleteApGroup(ctx context.Context, omadacId string, siteId string, apGroupId string) WirelessNetworkAPIDeleteApGroupRequest {
+	return WirelessNetworkAPIDeleteApGroupRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apGroupId: apGroupId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) DeleteApGroupExecute(r WirelessNetworkAPIDeleteApGroupRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.DeleteApGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/ap-groups/{apGroupId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apGroupId"+"}", url.PathEscape(parameterValueToString(r.apGroupId, "apGroupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WirelessNetworkAPIDeleteSsidRequest struct {
 	ctx context.Context
 	ApiService WirelessNetworkAPI
@@ -846,7 +1868,7 @@ func (r WirelessNetworkAPIDeleteSsidRequest) Execute() (*OperationResponseWithou
 /*
 DeleteSsid Delete an existing SSID
 
-Delete an existing SSID<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Delete an existing SSID, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Delete an existing SSID.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -854,6 +1876,8 @@ Delete an existing SSID<br/><br/>The interface requires one of the permissions: 
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIDeleteSsidRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) DeleteSsid(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIDeleteSsidRequest {
 	return WirelessNetworkAPIDeleteSsidRequest{
@@ -868,6 +1892,7 @@ func (a *WirelessNetworkAPIService) DeleteSsid(ctx context.Context, omadacId str
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) DeleteSsidExecute(r WirelessNetworkAPIDeleteSsidRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -959,6 +1984,131 @@ func (a *WirelessNetworkAPIService) DeleteSsidExecute(r WirelessNetworkAPIDelete
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WirelessNetworkAPIDeleteSsidBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+}
+
+func (r WirelessNetworkAPIDeleteSsidBySiteRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.DeleteSsidBySiteExecute(r)
+}
+
+/*
+DeleteSsidBySite Delete an existing SSID
+
+Delete an existing SSID<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIDeleteSsidBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) DeleteSsidBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIDeleteSsidBySiteRequest {
+	return WirelessNetworkAPIDeleteSsidBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *WirelessNetworkAPIService) DeleteSsidBySiteExecute(r WirelessNetworkAPIDeleteSsidBySiteRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.DeleteSsidBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WirelessNetworkAPIDeleteWlanGroupRequest struct {
 	ctx context.Context
 	ApiService WirelessNetworkAPI
@@ -972,15 +2122,17 @@ func (r WirelessNetworkAPIDeleteWlanGroupRequest) Execute() (*OperationResponseW
 }
 
 /*
-DeleteWlanGroup Delete an existing WLAN group
+DeleteWlanGroup Delete an existing WLAN Group
 
-Delete an existing WLAN group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33203  -  The default WLAN group cannot be deleted.
+Delete an existing WLAN Group, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Delete an existing AP Group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33203  -  The default WLAN group cannot be deleted.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param wlanId WLAN ID
  @return WirelessNetworkAPIDeleteWlanGroupRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) DeleteWlanGroup(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPIDeleteWlanGroupRequest {
 	return WirelessNetworkAPIDeleteWlanGroupRequest{
@@ -994,6 +2146,7 @@ func (a *WirelessNetworkAPIService) DeleteWlanGroup(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) DeleteWlanGroupExecute(r WirelessNetworkAPIDeleteWlanGroupRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -1016,6 +2169,427 @@ func (a *WirelessNetworkAPIService) DeleteWlanGroupExecute(r WirelessNetworkAPID
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIGetAllApGroupListBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+}
+
+// Start page number. Start from 1.
+func (r WirelessNetworkAPIGetAllApGroupListBySiteRequest) Page(page int32) WirelessNetworkAPIGetAllApGroupListBySiteRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r WirelessNetworkAPIGetAllApGroupListBySiteRequest) PageSize(pageSize int32) WirelessNetworkAPIGetAllApGroupListBySiteRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r WirelessNetworkAPIGetAllApGroupListBySiteRequest) Execute() (*OperationResponseGridVOSsidDeviceOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetAllApGroupListBySiteExecute(r)
+}
+
+/*
+GetAllApGroupListBySite Get All AP grouping by ap group
+
+Get All AP grouping by ap group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WirelessNetworkAPIGetAllApGroupListBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) GetAllApGroupListBySite(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetAllApGroupListBySiteRequest {
+	return WirelessNetworkAPIGetAllApGroupListBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOSsidDeviceOpenApiVO
+func (a *WirelessNetworkAPIService) GetAllApGroupListBySiteExecute(r WirelessNetworkAPIGetAllApGroupListBySiteRequest) (*OperationResponseGridVOSsidDeviceOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOSsidDeviceOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.GetAllApGroupListBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/ap-groups/aps"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIGetApGroupInfoRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	apGroupId string
+}
+
+func (r WirelessNetworkAPIGetApGroupInfoRequest) Execute() (*OperationResponseApGroupOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetApGroupInfoExecute(r)
+}
+
+/*
+GetApGroupInfo Get an existing AP Group info
+
+Get an existing AP Group info<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apGroupId AP GROUP ID
+ @return WirelessNetworkAPIGetApGroupInfoRequest
+*/
+func (a *WirelessNetworkAPIService) GetApGroupInfo(ctx context.Context, omadacId string, siteId string, apGroupId string) WirelessNetworkAPIGetApGroupInfoRequest {
+	return WirelessNetworkAPIGetApGroupInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apGroupId: apGroupId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseApGroupOpenApiVO
+func (a *WirelessNetworkAPIService) GetApGroupInfoExecute(r WirelessNetworkAPIGetApGroupInfoRequest) (*OperationResponseApGroupOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseApGroupOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.GetApGroupInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/ap-groups/{apGroupId}/info"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apGroupId"+"}", url.PathEscape(parameterValueToString(r.apGroupId, "apGroupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIGetApGroupListRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+	searchKey *string
+}
+
+// Start page number. Start from 1.
+func (r WirelessNetworkAPIGetApGroupListRequest) Page(page int32) WirelessNetworkAPIGetApGroupListRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r WirelessNetworkAPIGetApGroupListRequest) PageSize(pageSize int32) WirelessNetworkAPIGetApGroupListRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Fuzzy query parameters, support field name
+func (r WirelessNetworkAPIGetApGroupListRequest) SearchKey(searchKey string) WirelessNetworkAPIGetApGroupListRequest {
+	r.searchKey = &searchKey
+	return r
+}
+
+func (r WirelessNetworkAPIGetApGroupListRequest) Execute() (*OperationResponseApGroupGridVOApGroupOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetApGroupListExecute(r)
+}
+
+/*
+GetApGroupList Get AP Group list
+
+Get AP Group list<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WirelessNetworkAPIGetApGroupListRequest
+*/
+func (a *WirelessNetworkAPIService) GetApGroupList(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetApGroupListRequest {
+	return WirelessNetworkAPIGetApGroupListRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseApGroupGridVOApGroupOpenApiVO
+func (a *WirelessNetworkAPIService) GetApGroupListExecute(r WirelessNetworkAPIGetApGroupListRequest) (*OperationResponseApGroupGridVOApGroupOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseApGroupGridVOApGroupOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.GetApGroupList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/ap-groups"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1117,14 +2691,16 @@ func (r WirelessNetworkAPIGetGridWlanGroupRequest) Execute() (*OperationResponse
 }
 
 /*
-GetGridWlanGroup Get WLAN group list paging query
+GetGridWlanGroup Get WLAN Group list paging query
 
-Get WLAN group list paging query<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Get WLAN Group list paging query, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Get AP Group list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return WirelessNetworkAPIGetGridWlanGroupRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) GetGridWlanGroup(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetGridWlanGroupRequest {
 	return WirelessNetworkAPIGetGridWlanGroupRequest{
@@ -1137,6 +2713,7 @@ func (a *WirelessNetworkAPIService) GetGridWlanGroup(ctx context.Context, omadac
 
 // Execute executes the request
 //  @return OperationResponseWlanGroupGridOpenApiVO
+// Deprecated
 func (a *WirelessNetworkAPIService) GetGridWlanGroupExecute(r WirelessNetworkAPIGetGridWlanGroupRequest) (*OperationResponseWlanGroupGridOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -1374,7 +2951,7 @@ func (r WirelessNetworkAPIGetSsidDetailRequest) Execute() (*OperationResponseSsi
 /*
 GetSsidDetail Get SSID detail info
 
-Get SSID detail info<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Get SSID detail info, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Get SSID detail info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1382,6 +2959,8 @@ Get SSID detail info<br/><br/>The interface requires one of the permissions: <br
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIGetSsidDetailRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) GetSsidDetail(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIGetSsidDetailRequest {
 	return WirelessNetworkAPIGetSsidDetailRequest{
@@ -1396,6 +2975,7 @@ func (a *WirelessNetworkAPIService) GetSsidDetail(ctx context.Context, omadacId 
 
 // Execute executes the request
 //  @return OperationResponseSsidDetailOpenApiVO
+// Deprecated
 func (a *WirelessNetworkAPIService) GetSsidDetailExecute(r WirelessNetworkAPIGetSsidDetailRequest) (*OperationResponseSsidDetailOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -1413,6 +2993,131 @@ func (a *WirelessNetworkAPIService) GetSsidDetailExecute(r WirelessNetworkAPIGet
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIGetSsidDetailV2Request struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+}
+
+func (r WirelessNetworkAPIGetSsidDetailV2Request) Execute() (*OperationResponseSsidDetailOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetSsidDetailV2Execute(r)
+}
+
+/*
+GetSsidDetailV2 Get SSID detail info
+
+Get SSID detail info<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIGetSsidDetailV2Request
+*/
+func (a *WirelessNetworkAPIService) GetSsidDetailV2(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIGetSsidDetailV2Request {
+	return WirelessNetworkAPIGetSsidDetailV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSsidDetailOpenApiVO
+func (a *WirelessNetworkAPIService) GetSsidDetailV2Execute(r WirelessNetworkAPIGetSsidDetailV2Request) (*OperationResponseSsidDetailOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSsidDetailOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.GetSsidDetailV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1516,13 +3221,15 @@ func (r WirelessNetworkAPIGetSsidListRequest) Execute() (*OperationResponseGridV
 /*
 GetSsidList Get SSID list
 
-Get SSID list of Wlan group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+Get SSID list of Wlan group, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Get SSID list by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param wlanId WLAN ID
  @return WirelessNetworkAPIGetSsidListRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) GetSsidList(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPIGetSsidListRequest {
 	return WirelessNetworkAPIGetSsidListRequest{
@@ -1536,6 +3243,7 @@ func (a *WirelessNetworkAPIService) GetSsidList(ctx context.Context, omadacId st
 
 // Execute executes the request
 //  @return OperationResponseGridVOSsidOpenApiVO
+// Deprecated
 func (a *WirelessNetworkAPIService) GetSsidListExecute(r WirelessNetworkAPIGetSsidListRequest) (*OperationResponseGridVOSsidOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -1553,6 +3261,149 @@ func (a *WirelessNetworkAPIService) GetSsidListExecute(r WirelessNetworkAPIGetSs
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIGetSsidListV2Request struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	page *int32
+	pageSize *int32
+}
+
+// Start page number. Start from 1.
+func (r WirelessNetworkAPIGetSsidListV2Request) Page(page int32) WirelessNetworkAPIGetSsidListV2Request {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r WirelessNetworkAPIGetSsidListV2Request) PageSize(pageSize int32) WirelessNetworkAPIGetSsidListV2Request {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r WirelessNetworkAPIGetSsidListV2Request) Execute() (*OperationResponseGridVOSsidOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetSsidListV2Execute(r)
+}
+
+/*
+GetSsidListV2 Get SSID list by site
+
+Get SSID list by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WirelessNetworkAPIGetSsidListV2Request
+*/
+func (a *WirelessNetworkAPIService) GetSsidListV2(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetSsidListV2Request {
+	return WirelessNetworkAPIGetSsidListV2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOSsidOpenApiVO
+func (a *WirelessNetworkAPIService) GetSsidListV2Execute(r WirelessNetworkAPIGetSsidListV2Request) (*OperationResponseGridVOSsidOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOSsidOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.GetSsidListV2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v2/{omadacId}/sites/{siteId}/wireless-network/ssids"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1779,15 +3630,17 @@ func (r WirelessNetworkAPIGetWlanGroupRequest) Execute() (*OperationResponseWlan
 }
 
 /*
-GetWlanGroup Get WLAN group by wlan id
+GetWlanGroup Get WLAN Group by wlan id
 
-Get WLAN group by wlan id<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Get WLAN Group by wlan id, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Get an existing AP Group info.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param wlanId WLAN ID
  @return WirelessNetworkAPIGetWlanGroupRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) GetWlanGroup(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPIGetWlanGroupRequest {
 	return WirelessNetworkAPIGetWlanGroupRequest{
@@ -1801,6 +3654,7 @@ func (a *WirelessNetworkAPIService) GetWlanGroup(ctx context.Context, omadacId s
 
 // Execute executes the request
 //  @return OperationResponseWlanGroupOpenApiVO
+// Deprecated
 func (a *WirelessNetworkAPIService) GetWlanGroupExecute(r WirelessNetworkAPIGetWlanGroupRequest) (*OperationResponseWlanGroupOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -1903,14 +3757,16 @@ func (r WirelessNetworkAPIGetWlanGroupListRequest) Execute() (*OperationResponse
 }
 
 /*
-GetWlanGroupList Get WLAN group list
+GetWlanGroupList Get WLAN Group list
 
-Get WLAN group list<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Get WLAN Group list, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Get AP Group list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return WirelessNetworkAPIGetWlanGroupListRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) GetWlanGroupList(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIGetWlanGroupListRequest {
 	return WirelessNetworkAPIGetWlanGroupListRequest{
@@ -1923,6 +3779,7 @@ func (a *WirelessNetworkAPIService) GetWlanGroupList(ctx context.Context, omadac
 
 // Execute executes the request
 //  @return OperationResponseListWlanGroupOpenApiVO
+// Deprecated
 func (a *WirelessNetworkAPIService) GetWlanGroupListExecute(r WirelessNetworkAPIGetWlanGroupListRequest) (*OperationResponseListWlanGroupOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -2012,6 +3869,388 @@ func (a *WirelessNetworkAPIService) GetWlanGroupListExecute(r WirelessNetworkAPI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WirelessNetworkAPIQuerySsidBindApGroupsRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+}
+
+func (r WirelessNetworkAPIQuerySsidBindApGroupsRequest) Execute() (*OperationResponseApGroupDetailOpenApiVO, *http.Response, error) {
+	return r.ApiService.QuerySsidBindApGroupsExecute(r)
+}
+
+/*
+QuerySsidBindApGroups Query AP Groups bound to the SSID
+
+Query AP Groups bound to the SSID<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIQuerySsidBindApGroupsRequest
+*/
+func (a *WirelessNetworkAPIService) QuerySsidBindApGroups(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIQuerySsidBindApGroupsRequest {
+	return WirelessNetworkAPIQuerySsidBindApGroupsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseApGroupDetailOpenApiVO
+func (a *WirelessNetworkAPIService) QuerySsidBindApGroupsExecute(r WirelessNetworkAPIQuerySsidBindApGroupsRequest) (*OperationResponseApGroupDetailOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseApGroupDetailOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.QuerySsidBindApGroups")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/ap-groups"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIQuerySsidDuplicateNameBySite1Request struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+}
+
+func (r WirelessNetworkAPIQuerySsidDuplicateNameBySite1Request) Execute() (*OperationResponseDuplicateSsidOpenApiVO, *http.Response, error) {
+	return r.ApiService.QuerySsidDuplicateNameBySite1Execute(r)
+}
+
+/*
+QuerySsidDuplicateNameBySite1 Query SSIDs with the same name
+
+Query SSIDs with the same name<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return WirelessNetworkAPIQuerySsidDuplicateNameBySite1Request
+*/
+func (a *WirelessNetworkAPIService) QuerySsidDuplicateNameBySite1(ctx context.Context, omadacId string, siteId string) WirelessNetworkAPIQuerySsidDuplicateNameBySite1Request {
+	return WirelessNetworkAPIQuerySsidDuplicateNameBySite1Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseDuplicateSsidOpenApiVO
+func (a *WirelessNetworkAPIService) QuerySsidDuplicateNameBySite1Execute(r WirelessNetworkAPIQuerySsidDuplicateNameBySite1Request) (*OperationResponseDuplicateSsidOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseDuplicateSsidOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.QuerySsidDuplicateNameBySite1")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/duplicate-name"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateApGroupRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	apGroupId string
+	updateApGroupOpenApiVO *UpdateApGroupOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateApGroupRequest) UpdateApGroupOpenApiVO(updateApGroupOpenApiVO UpdateApGroupOpenApiVO) WirelessNetworkAPIUpdateApGroupRequest {
+	r.updateApGroupOpenApiVO = &updateApGroupOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateApGroupRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateApGroupExecute(r)
+}
+
+/*
+UpdateApGroup Modify an existing AP Group
+
+Modify an existing AP Group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apGroupId AP GROUP ID
+ @return WirelessNetworkAPIUpdateApGroupRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateApGroup(ctx context.Context, omadacId string, siteId string, apGroupId string) WirelessNetworkAPIUpdateApGroupRequest {
+	return WirelessNetworkAPIUpdateApGroupRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apGroupId: apGroupId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateApGroupExecute(r WirelessNetworkAPIUpdateApGroupRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateApGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/ap-groups/{apGroupId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apGroupId"+"}", url.PathEscape(parameterValueToString(r.apGroupId, "apGroupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateApGroupOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateApGroupOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateApGroupOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WirelessNetworkAPIUpdateSsidBandSteerConfigRequest struct {
 	ctx context.Context
 	ApiService WirelessNetworkAPI
@@ -2034,7 +4273,7 @@ func (r WirelessNetworkAPIUpdateSsidBandSteerConfigRequest) Execute() (*Operatio
 /*
 UpdateSsidBandSteerConfig Update SSID band steer config
 
-Update SSID band steer config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Update SSID band steer config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID band steer config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2042,6 +4281,8 @@ Update SSID band steer config<br/><br/>The interface requires one of the permiss
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidBandSteerConfigRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidBandSteerConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidBandSteerConfigRequest {
 	return WirelessNetworkAPIUpdateSsidBandSteerConfigRequest{
@@ -2056,6 +4297,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidBandSteerConfig(ctx context.Contex
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidBandSteerConfigExecute(r WirelessNetworkAPIUpdateSsidBandSteerConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -2073,6 +4315,142 @@ func (a *WirelessNetworkAPIService) UpdateSsidBandSteerConfigExecute(r WirelessN
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidBandSteerOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidBandSteerOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidBandSteerOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidBandSteerOpenApiVO *UpdateSsidBandSteerOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest) UpdateSsidBandSteerOpenApiVO(updateSsidBandSteerOpenApiVO UpdateSsidBandSteerOpenApiVO) WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest {
+	r.updateSsidBandSteerOpenApiVO = &updateSsidBandSteerOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidBandSteerConfigBySiteExecute(r)
+}
+
+/*
+UpdateSsidBandSteerConfigBySite Update SSID band steer config by site
+
+Update SSID band steer config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidBandSteerConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidBandSteerConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidBandSteerConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidBandSteerConfigBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/band-steer"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2174,7 +4552,7 @@ func (r WirelessNetworkAPIUpdateSsidBasicConfigRequest) Execute() (*OperationRes
 /*
 UpdateSsidBasicConfig Update SSID basic config
 
-Update SSID basic config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33235  -  PPSK without RADIUS do not support WPA Mode with WPA3-SAE.<br/>-33238  -  The number of SSIDs on %band% has reached the limit. At most 8 SSIDs can be created on each band.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
+Update SSID basic config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID basic config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33235  -  PPSK without RADIUS do not support WPA Mode with WPA3-SAE.<br/>-33238  -  The number of SSIDs on %band% has reached the limit. At most 8 SSIDs can be created on each band.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2182,6 +4560,8 @@ Update SSID basic config<br/><br/>The interface requires one of the permissions:
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidBasicConfigRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidBasicConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidBasicConfigRequest {
 	return WirelessNetworkAPIUpdateSsidBasicConfigRequest{
@@ -2196,6 +4576,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidBasicConfig(ctx context.Context, o
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidBasicConfigExecute(r WirelessNetworkAPIUpdateSsidBasicConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -2292,6 +4673,278 @@ func (a *WirelessNetworkAPIService) UpdateSsidBasicConfigExecute(r WirelessNetwo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidBasicConfigOpenApiVO *UpdateSsidBasicConfigOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest) UpdateSsidBasicConfigOpenApiVO(updateSsidBasicConfigOpenApiVO UpdateSsidBasicConfigOpenApiVO) WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest {
+	r.updateSsidBasicConfigOpenApiVO = &updateSsidBasicConfigOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidBasicConfigBySiteExecute(r)
+}
+
+/*
+UpdateSsidBasicConfigBySite Update SSID basic config by site
+
+Update SSID basic config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33217  -  Invalid SSID security mode.<br/>-33219  -  This SSID already exists.<br/>-33220  -  Enter a different SSID to override the current SSID.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33235  -  PPSK without RADIUS do not support WPA Mode with WPA3-SAE.<br/>-33238  -  The number of SSIDs on %band% has reached the limit. At most 8 SSIDs can be created on each band.<br/>-33240  -  The SSID name should be between 1 and 32 bytes.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-34017  -  Only the EKMS authentication method in PPSK with RADIUS supports domain name.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidBasicConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidBasicConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidBasicConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidBasicConfigBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/basic-config"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidBasicConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidBasicConfigOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidBasicConfigOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidBindApGroupsRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidBindApGroupOpenApiVO *UpdateSsidBindApGroupOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidBindApGroupsRequest) UpdateSsidBindApGroupOpenApiVO(updateSsidBindApGroupOpenApiVO UpdateSsidBindApGroupOpenApiVO) WirelessNetworkAPIUpdateSsidBindApGroupsRequest {
+	r.updateSsidBindApGroupOpenApiVO = &updateSsidBindApGroupOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidBindApGroupsRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidBindApGroupsExecute(r)
+}
+
+/*
+UpdateSsidBindApGroups Update SSID binding ap groups
+
+Update SSID binding ap groups<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidBindApGroupsRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidBindApGroups(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidBindApGroupsRequest {
+	return WirelessNetworkAPIUpdateSsidBindApGroupsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidBindApGroupsExecute(r WirelessNetworkAPIUpdateSsidBindApGroupsRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidBindApGroups")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/ap-groups"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidBindApGroupOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidBindApGroupOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidBindApGroupOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WirelessNetworkAPIUpdateSsidDhcpOptionConfigRequest struct {
 	ctx context.Context
 	ApiService WirelessNetworkAPI
@@ -2314,7 +4967,7 @@ func (r WirelessNetworkAPIUpdateSsidDhcpOptionConfigRequest) Execute() (*Operati
 /*
 UpdateSsidDhcpOptionConfig Update SSID DHCP option 82 config
 
-Update SSID DHCP option 82 config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Update SSID DHCP option 82 config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID DHCP option 82 config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2322,6 +4975,8 @@ Update SSID DHCP option 82 config<br/><br/>The interface requires one of the per
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidDhcpOptionConfigRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidDhcpOptionConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidDhcpOptionConfigRequest {
 	return WirelessNetworkAPIUpdateSsidDhcpOptionConfigRequest{
@@ -2336,6 +4991,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidDhcpOptionConfig(ctx context.Conte
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidDhcpOptionConfigExecute(r WirelessNetworkAPIUpdateSsidDhcpOptionConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -2432,6 +5088,278 @@ func (a *WirelessNetworkAPIService) UpdateSsidDhcpOptionConfigExecute(r Wireless
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidDhcpOptionOpenApiVO *UpdateSsidDhcpOptionOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest) UpdateSsidDhcpOptionOpenApiVO(updateSsidDhcpOptionOpenApiVO UpdateSsidDhcpOptionOpenApiVO) WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest {
+	r.updateSsidDhcpOptionOpenApiVO = &updateSsidDhcpOptionOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidDhcpOptionConfigBySiteExecute(r)
+}
+
+/*
+UpdateSsidDhcpOptionConfigBySite Update SSID DHCP option 82 config by site
+
+Update SSID DHCP option 82 config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidDhcpOptionConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidDhcpOptionConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidDhcpOptionConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidDhcpOptionConfigBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/dhcp-option"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidDhcpOptionOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidDhcpOptionOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidDhcpOptionOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidEnableStatusOpenApiVO *UpdateSsidEnableStatusOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request) UpdateSsidEnableStatusOpenApiVO(updateSsidEnableStatusOpenApiVO UpdateSsidEnableStatusOpenApiVO) WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request {
+	r.updateSsidEnableStatusOpenApiVO = &updateSsidEnableStatusOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidEnableStatusBySite1Execute(r)
+}
+
+/*
+UpdateSsidEnableStatusBySite1 Update SSID Enable Status by site
+
+Update SSID Enable Status by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidEnableStatusBySite1(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request {
+	return WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidEnableStatusBySite1Execute(r WirelessNetworkAPIUpdateSsidEnableStatusBySite1Request) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidEnableStatusBySite1")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/enable"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidEnableStatusOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidEnableStatusOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidEnableStatusOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest struct {
 	ctx context.Context
 	ApiService WirelessNetworkAPI
@@ -2454,14 +5382,16 @@ func (r WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest) Execute() (*Operati
 /*
 UpdateSsidHotspotV2Setting Update SSID Hotspot2.0 config
 
-Update SSID Hotspot2.0 config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33263  -  The current combination of Security and WPA Mode does not support Hotspot2.0.
+Update SSID Hotspot2.0 config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID Hotspot2.0 config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33263  -  The current combination of Security and WPA Mode does not support Hotspot2.0.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param wlanId WLAN ID
- @param ssidId ssidId
+ @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidHotspotV2Setting(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest {
 	return WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest{
@@ -2476,6 +5406,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidHotspotV2Setting(ctx context.Conte
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidHotspotV2SettingExecute(r WirelessNetworkAPIUpdateSsidHotspotV2SettingRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -2493,6 +5424,142 @@ func (a *WirelessNetworkAPIService) UpdateSsidHotspotV2SettingExecute(r Wireless
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidHotspotV2SettingOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidHotspotV2SettingOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidHotspotV2SettingOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidHotspotV2SettingOpenApiVO *UpdateSsidHotspotV2SettingOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest) UpdateSsidHotspotV2SettingOpenApiVO(updateSsidHotspotV2SettingOpenApiVO UpdateSsidHotspotV2SettingOpenApiVO) WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest {
+	r.updateSsidHotspotV2SettingOpenApiVO = &updateSsidHotspotV2SettingOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidHotspotV2SettingBySiteExecute(r)
+}
+
+/*
+UpdateSsidHotspotV2SettingBySite Update SSID Hotspot2.0 config by site
+
+Update SSID Hotspot2.0 config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33263  -  The current combination of Security and WPA Mode does not support Hotspot2.0.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId ssidId
+ @return WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidHotspotV2SettingBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidHotspotV2SettingBySiteExecute(r WirelessNetworkAPIUpdateSsidHotspotV2SettingBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidHotspotV2SettingBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/hotspotv2"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2594,7 +5661,7 @@ func (r WirelessNetworkAPIUpdateSsidLoadBalanceConfigRequest) Execute() (*Operat
 /*
 UpdateSsidLoadBalanceConfig Update SSID load balance config
 
-Update SSID load balance config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Update SSID load balance config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID load balance config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2602,6 +5669,8 @@ Update SSID load balance config<br/><br/>The interface requires one of the permi
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidLoadBalanceConfigRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidLoadBalanceConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidLoadBalanceConfigRequest {
 	return WirelessNetworkAPIUpdateSsidLoadBalanceConfigRequest{
@@ -2616,6 +5685,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidLoadBalanceConfig(ctx context.Cont
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidLoadBalanceConfigExecute(r WirelessNetworkAPIUpdateSsidLoadBalanceConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -2633,6 +5703,142 @@ func (a *WirelessNetworkAPIService) UpdateSsidLoadBalanceConfigExecute(r Wireles
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidLoadBalanceOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidLoadBalanceOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidLoadBalanceOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidLoadBalanceOpenApiVO *UpdateSsidLoadBalanceOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest) UpdateSsidLoadBalanceOpenApiVO(updateSsidLoadBalanceOpenApiVO UpdateSsidLoadBalanceOpenApiVO) WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest {
+	r.updateSsidLoadBalanceOpenApiVO = &updateSsidLoadBalanceOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidLoadBalanceConfigBySiteExecute(r)
+}
+
+/*
+UpdateSsidLoadBalanceConfigBySite Update SSID load balance config by site
+
+Update SSID load balance config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidLoadBalanceConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidLoadBalanceConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidLoadBalanceConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidLoadBalanceConfigBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/load-balance"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2734,7 +5940,7 @@ func (r WirelessNetworkAPIUpdateSsidMacFilterConfigRequest) Execute() (*Operatio
 /*
 UpdateSsidMacFilterConfig Update SSID mac filter config
 
-Update SSID MAC filter config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Update SSID MAC filter config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID mac filter config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2742,6 +5948,8 @@ Update SSID MAC filter config<br/><br/>The interface requires one of the permiss
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidMacFilterConfigRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidMacFilterConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidMacFilterConfigRequest {
 	return WirelessNetworkAPIUpdateSsidMacFilterConfigRequest{
@@ -2756,6 +5964,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidMacFilterConfig(ctx context.Contex
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidMacFilterConfigExecute(r WirelessNetworkAPIUpdateSsidMacFilterConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -2773,6 +5982,142 @@ func (a *WirelessNetworkAPIService) UpdateSsidMacFilterConfigExecute(r WirelessN
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidMacFilterOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidMacFilterOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidMacFilterOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidMacFilterOpenApiVO *UpdateSsidMacFilterOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest) UpdateSsidMacFilterOpenApiVO(updateSsidMacFilterOpenApiVO UpdateSsidMacFilterOpenApiVO) WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest {
+	r.updateSsidMacFilterOpenApiVO = &updateSsidMacFilterOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidMacFilterConfigBySiteExecute(r)
+}
+
+/*
+UpdateSsidMacFilterConfigBySite Update SSID mac filter config by site
+
+Update SSID MAC filter config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidMacFilterConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidMacFilterConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidMacFilterConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidMacFilterConfigBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/mac-filter"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2874,7 +6219,7 @@ func (r WirelessNetworkAPIUpdateSsidMultiCastConfigRequest) Execute() (*Operatio
 /*
 UpdateSsidMultiCastConfig Update SSID Multicast/Broadcast management config
 
-Update SSID Multicast/Broadcast management config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Update SSID Multicast/Broadcast management config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID Multicast/Broadcast management config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2882,6 +6227,8 @@ Update SSID Multicast/Broadcast management config<br/><br/>The interface require
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidMultiCastConfigRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidMultiCastConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidMultiCastConfigRequest {
 	return WirelessNetworkAPIUpdateSsidMultiCastConfigRequest{
@@ -2896,6 +6243,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidMultiCastConfig(ctx context.Contex
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidMultiCastConfigExecute(r WirelessNetworkAPIUpdateSsidMultiCastConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -2913,6 +6261,142 @@ func (a *WirelessNetworkAPIService) UpdateSsidMultiCastConfigExecute(r WirelessN
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidMultiCastOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidMultiCastOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidMultiCastOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidMultiCastOpenApiVO *UpdateSsidMultiCastOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest) UpdateSsidMultiCastOpenApiVO(updateSsidMultiCastOpenApiVO UpdateSsidMultiCastOpenApiVO) WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest {
+	r.updateSsidMultiCastOpenApiVO = &updateSsidMultiCastOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidMultiCastConfigBySiteExecute(r)
+}
+
+/*
+UpdateSsidMultiCastConfigBySite Update SSID Multicast/Broadcast management config by site
+
+Update SSID Multicast/Broadcast management config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidMultiCastConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidMultiCastConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidMultiCastConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidMultiCastConfigBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/multicast-config"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3014,7 +6498,7 @@ func (r WirelessNetworkAPIUpdateSsidRateControlConfigRequest) Execute() (*Operat
 /*
 UpdateSsidRateControlConfig Update SSID 802.11 rate control config
 
-Update SSID 802.11 rate control config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Update SSID 802.11 rate control config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID 802.11 rate control config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3022,6 +6506,8 @@ Update SSID 802.11 rate control config<br/><br/>The interface requires one of th
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidRateControlConfigRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidRateControlConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidRateControlConfigRequest {
 	return WirelessNetworkAPIUpdateSsidRateControlConfigRequest{
@@ -3036,6 +6522,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidRateControlConfig(ctx context.Cont
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidRateControlConfigExecute(r WirelessNetworkAPIUpdateSsidRateControlConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -3053,6 +6540,142 @@ func (a *WirelessNetworkAPIService) UpdateSsidRateControlConfigExecute(r Wireles
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidRateControlOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidRateControlOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidRateControlOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidRateControlOpenApiVO *UpdateSsidRateControlOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest) UpdateSsidRateControlOpenApiVO(updateSsidRateControlOpenApiVO UpdateSsidRateControlOpenApiVO) WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest {
+	r.updateSsidRateControlOpenApiVO = &updateSsidRateControlOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidRateControlConfigBySiteExecute(r)
+}
+
+/*
+UpdateSsidRateControlConfigBySite Update SSID 802.11 rate control config by site
+
+Update SSID 802.11 rate control config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidRateControlConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidRateControlConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidRateControlConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidRateControlConfigBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/rate-control"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3154,7 +6777,7 @@ func (r WirelessNetworkAPIUpdateSsidRateLimitConfigRequest) Execute() (*Operatio
 /*
 UpdateSsidRateLimitConfig Update SSID rate limit config
 
-Update SSID rate limit config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Update SSID rate limit config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID rate limit config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3162,6 +6785,8 @@ Update SSID rate limit config<br/><br/>The interface requires one of the permiss
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidRateLimitConfigRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidRateLimitConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidRateLimitConfigRequest {
 	return WirelessNetworkAPIUpdateSsidRateLimitConfigRequest{
@@ -3176,6 +6801,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidRateLimitConfig(ctx context.Contex
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidRateLimitConfigExecute(r WirelessNetworkAPIUpdateSsidRateLimitConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -3193,6 +6819,142 @@ func (a *WirelessNetworkAPIService) UpdateSsidRateLimitConfigExecute(r WirelessN
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidRateLimitOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidRateLimitOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidRateLimitOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidRateLimitOpenApiVO *UpdateSsidRateLimitOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest) UpdateSsidRateLimitOpenApiVO(updateSsidRateLimitOpenApiVO UpdateSsidRateLimitOpenApiVO) WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest {
+	r.updateSsidRateLimitOpenApiVO = &updateSsidRateLimitOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidRateLimitConfigBySiteExecute(r)
+}
+
+/*
+UpdateSsidRateLimitConfigBySite Update SSID rate limit config by site
+
+Update SSID rate limit config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidRateLimitConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidRateLimitConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidRateLimitConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidRateLimitConfigBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/rate-limit"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3294,7 +7056,7 @@ func (r WirelessNetworkAPIUpdateSsidWifiCallingConfigRequest) Execute() (*Operat
 /*
 UpdateSsidWifiCallingConfig Update SSID wifi calling config
 
-Update SSID Wi-Fi Calling config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Update SSID Wi-Fi Calling config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID wifi calling config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3302,6 +7064,8 @@ Update SSID Wi-Fi Calling config<br/><br/>The interface requires one of the perm
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidWifiCallingConfigRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidWifiCallingConfig(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidWifiCallingConfigRequest {
 	return WirelessNetworkAPIUpdateSsidWifiCallingConfigRequest{
@@ -3316,6 +7080,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidWifiCallingConfig(ctx context.Cont
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidWifiCallingConfigExecute(r WirelessNetworkAPIUpdateSsidWifiCallingConfigRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -3333,6 +7098,142 @@ func (a *WirelessNetworkAPIService) UpdateSsidWifiCallingConfigExecute(r Wireles
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateWifiCallingOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateWifiCallingOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateWifiCallingOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateWifiCallingOpenApiVO *UpdateWifiCallingOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest) UpdateWifiCallingOpenApiVO(updateWifiCallingOpenApiVO UpdateWifiCallingOpenApiVO) WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest {
+	r.updateWifiCallingOpenApiVO = &updateWifiCallingOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidWifiCallingConfigBySiteExecute(r)
+}
+
+/*
+UpdateSsidWifiCallingConfigBySite Update SSID wifi calling config by site
+
+Update SSID Wi-Fi Calling config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidWifiCallingConfigBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidWifiCallingConfigBySiteExecute(r WirelessNetworkAPIUpdateSsidWifiCallingConfigBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidWifiCallingConfigBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/wifi-calling"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3434,7 +7335,7 @@ func (r WirelessNetworkAPIUpdateSsidWlanScheduleRequest) Execute() (*OperationRe
 /*
 UpdateSsidWlanSchedule Update SSID WLAN schedule config
 
-Update SSID WLAN schedule config<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+Update SSID WLAN schedule config, Legacy note: “wlanId” is the legacy name of “apGroupId”. This endpoint will be deprecated in future releases. Please use Update SSID WLAN schedule config by site.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3442,6 +7343,8 @@ Update SSID WLAN schedule config<br/><br/>The interface requires one of the perm
  @param wlanId WLAN ID
  @param ssidId SSID ID
  @return WirelessNetworkAPIUpdateSsidWlanScheduleRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateSsidWlanSchedule(ctx context.Context, omadacId string, siteId string, wlanId string, ssidId string) WirelessNetworkAPIUpdateSsidWlanScheduleRequest {
 	return WirelessNetworkAPIUpdateSsidWlanScheduleRequest{
@@ -3456,6 +7359,7 @@ func (a *WirelessNetworkAPIService) UpdateSsidWlanSchedule(ctx context.Context, 
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateSsidWlanScheduleExecute(r WirelessNetworkAPIUpdateSsidWlanScheduleRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -3473,6 +7377,142 @@ func (a *WirelessNetworkAPIService) UpdateSsidWlanScheduleExecute(r WirelessNetw
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"wlanId"+"}", url.PathEscape(parameterValueToString(r.wlanId, "wlanId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSsidWlanScheduleOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("updateSsidWlanScheduleOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSsidWlanScheduleOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest struct {
+	ctx context.Context
+	ApiService WirelessNetworkAPI
+	omadacId string
+	siteId string
+	ssidId string
+	updateSsidWlanScheduleOpenApiVO *UpdateSsidWlanScheduleOpenApiVO
+}
+
+func (r WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest) UpdateSsidWlanScheduleOpenApiVO(updateSsidWlanScheduleOpenApiVO UpdateSsidWlanScheduleOpenApiVO) WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest {
+	r.updateSsidWlanScheduleOpenApiVO = &updateSsidWlanScheduleOpenApiVO
+	return r
+}
+
+func (r WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.UpdateSsidWlanScheduleBySiteExecute(r)
+}
+
+/*
+UpdateSsidWlanScheduleBySite Update SSID WLAN schedule config by site
+
+Update SSID WLAN schedule config by site<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId SSID ID
+ @return WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest
+*/
+func (a *WirelessNetworkAPIService) UpdateSsidWlanScheduleBySite(ctx context.Context, omadacId string, siteId string, ssidId string) WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest {
+	return WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WirelessNetworkAPIService) UpdateSsidWlanScheduleBySiteExecute(r WirelessNetworkAPIUpdateSsidWlanScheduleBySiteRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessNetworkAPIService.UpdateSsidWlanScheduleBySite")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/wireless-network/ssids/{ssidId}/wlan-schedule"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3571,15 +7611,17 @@ func (r WirelessNetworkAPIUpdateWlanGroupRequest) Execute() (*OperationResponseW
 }
 
 /*
-UpdateWlanGroup Modify an existing WLAN group
+UpdateWlanGroup Modify an existing WLAN Group
 
-Modify an existing WLAN group<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.
+Modify an existing WLAN Group, Legacy note: “WLAN Group” is the legacy name of “AP Group”. This endpoint will be deprecated in future releases. Please use Modify an existing AP Group.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33000  -  This site does not exist.<br/>-33200  -  This WLAN group has been already created.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param wlanId WLAN ID
  @return WirelessNetworkAPIUpdateWlanGroupRequest
+
+Deprecated
 */
 func (a *WirelessNetworkAPIService) UpdateWlanGroup(ctx context.Context, omadacId string, siteId string, wlanId string) WirelessNetworkAPIUpdateWlanGroupRequest {
 	return WirelessNetworkAPIUpdateWlanGroupRequest{
@@ -3593,6 +7635,7 @@ func (a *WirelessNetworkAPIService) UpdateWlanGroup(ctx context.Context, omadacI
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *WirelessNetworkAPIService) UpdateWlanGroupExecute(r WirelessNetworkAPIUpdateWlanGroupRequest) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch

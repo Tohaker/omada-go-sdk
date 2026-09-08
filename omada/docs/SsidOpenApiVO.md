@@ -6,10 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Band** | Pointer to **int32** | SSID band. The lowest bit indicates whether 2.4G is included; the second lowest bit indicates whether 5G is included; the third lowest bit indicates whether 6G is included; 1 means included while 0 means not included. For example, 7(111) means that 2G/5G/6G are enabled; 1(001) means that 2G is enabled. (When 5G is included，it means 5G/5G1/5G2 are enabled.) | [optional] 
 **Broadcast** | Pointer to **bool** | SSID broadcast config status. True: enable, false: disable. | [optional] 
+**ChooseDevices** | Pointer to **int32** |  | [optional] 
+**Description** | Pointer to **bool** | SSID Enable status. | [optional] 
 **GuestNetEnable** | Pointer to **bool** | SSID guest network config status. True: enable, false: disable. | [optional] 
+**Id** | Pointer to **string** | SSID ID | [optional] 
 **Name** | Pointer to **string** | SSID name. It should contain 1 to 32 UTF-8 characters. | [optional] 
 **Security** | Pointer to **int32** | SSID security mode; Security should be a value as follows: 0: None; 2: WPA-Enterprise; 3: WPA-Personal; 4: PPSK without RADIUS; 5: PPSK with RADIUS. | [optional] 
-**SsidId** | Pointer to **string** | SSID ID | [optional] 
+**SsidId** | Pointer to **string** | SSID ID, kept for backward compatibility and equivalent to id. This field will be removed in a future release; use id instead. | [optional] 
 **VlanEnable** | Pointer to **bool** | SSID VLAN config status. True: enable, false: disable. | [optional] 
 **VlanId** | Pointer to **int32** | SSID VLAN ID. This field is required when Parameter [vlanEnable] is true; It should be within the range of 1–4094. | [optional] 
 **VlanPoolIds** | Pointer to **string** | SSID VLAN POOL IDs. This field is required when Parameter [vlanEnable] is true; The numbers contain in it should be within the range of 1–4094. | [optional] 
@@ -83,6 +86,56 @@ SetBroadcast sets Broadcast field to given value.
 
 HasBroadcast returns a boolean if a field has been set.
 
+### GetChooseDevices
+
+`func (o *SsidOpenApiVO) GetChooseDevices() int32`
+
+GetChooseDevices returns the ChooseDevices field if non-nil, zero value otherwise.
+
+### GetChooseDevicesOk
+
+`func (o *SsidOpenApiVO) GetChooseDevicesOk() (*int32, bool)`
+
+GetChooseDevicesOk returns a tuple with the ChooseDevices field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChooseDevices
+
+`func (o *SsidOpenApiVO) SetChooseDevices(v int32)`
+
+SetChooseDevices sets ChooseDevices field to given value.
+
+### HasChooseDevices
+
+`func (o *SsidOpenApiVO) HasChooseDevices() bool`
+
+HasChooseDevices returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *SsidOpenApiVO) GetDescription() bool`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *SsidOpenApiVO) GetDescriptionOk() (*bool, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *SsidOpenApiVO) SetDescription(v bool)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *SsidOpenApiVO) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
 ### GetGuestNetEnable
 
 `func (o *SsidOpenApiVO) GetGuestNetEnable() bool`
@@ -107,6 +160,31 @@ SetGuestNetEnable sets GuestNetEnable field to given value.
 `func (o *SsidOpenApiVO) HasGuestNetEnable() bool`
 
 HasGuestNetEnable returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *SsidOpenApiVO) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *SsidOpenApiVO) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *SsidOpenApiVO) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *SsidOpenApiVO) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 

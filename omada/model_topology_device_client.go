@@ -39,6 +39,8 @@ type TopologyDeviceClient struct {
 	OmadaDeviceType *string `json:"omadaDeviceType,omitempty"`
 	// Device model.
 	ShowModel *string `json:"showModel,omitempty"`
+	// Special device model,for example:EAP225-Outdoor-1a20a950b8d950e8
+	SpecialModel *string `json:"specialModel,omitempty"`
 	// Whether this node is stack or not
 	StackGroup *bool `json:"stackGroup,omitempty"`
 	// Type of Device
@@ -384,6 +386,38 @@ func (o *TopologyDeviceClient) SetShowModel(v string) {
 	o.ShowModel = &v
 }
 
+// GetSpecialModel returns the SpecialModel field value if set, zero value otherwise.
+func (o *TopologyDeviceClient) GetSpecialModel() string {
+	if o == nil || IsNil(o.SpecialModel) {
+		var ret string
+		return ret
+	}
+	return *o.SpecialModel
+}
+
+// GetSpecialModelOk returns a tuple with the SpecialModel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyDeviceClient) GetSpecialModelOk() (*string, bool) {
+	if o == nil || IsNil(o.SpecialModel) {
+		return nil, false
+	}
+	return o.SpecialModel, true
+}
+
+// HasSpecialModel returns a boolean if a field has been set.
+func (o *TopologyDeviceClient) HasSpecialModel() bool {
+	if o != nil && !IsNil(o.SpecialModel) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpecialModel gets a reference to the given string and assigns it to the SpecialModel field.
+func (o *TopologyDeviceClient) SetSpecialModel(v string) {
+	o.SpecialModel = &v
+}
+
 // GetStackGroup returns the StackGroup field value if set, zero value otherwise.
 func (o *TopologyDeviceClient) GetStackGroup() bool {
 	if o == nil || IsNil(o.StackGroup) {
@@ -519,6 +553,9 @@ func (o TopologyDeviceClient) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ShowModel) {
 		toSerialize["showModel"] = o.ShowModel
+	}
+	if !IsNil(o.SpecialModel) {
+		toSerialize["specialModel"] = o.SpecialModel
 	}
 	if !IsNil(o.StackGroup) {
 		toSerialize["stackGroup"] = o.StackGroup

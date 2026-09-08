@@ -19,6 +19,8 @@ var _ MappedNullable = &DeviceVO{}
 
 // DeviceVO The devices selected to create entries.
 type DeviceVO struct {
+	// The impbs selected.
+	Impbs []ImpbVO `json:"impbs,omitempty"`
 	// The mac of the general device.
 	Mac *string `json:"mac,omitempty"`
 	// The ports selected.
@@ -42,6 +44,38 @@ func NewDeviceVO() *DeviceVO {
 func NewDeviceVOWithDefaults() *DeviceVO {
 	this := DeviceVO{}
 	return &this
+}
+
+// GetImpbs returns the Impbs field value if set, zero value otherwise.
+func (o *DeviceVO) GetImpbs() []ImpbVO {
+	if o == nil || IsNil(o.Impbs) {
+		var ret []ImpbVO
+		return ret
+	}
+	return o.Impbs
+}
+
+// GetImpbsOk returns a tuple with the Impbs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceVO) GetImpbsOk() ([]ImpbVO, bool) {
+	if o == nil || IsNil(o.Impbs) {
+		return nil, false
+	}
+	return o.Impbs, true
+}
+
+// HasImpbs returns a boolean if a field has been set.
+func (o *DeviceVO) HasImpbs() bool {
+	if o != nil && !IsNil(o.Impbs) {
+		return true
+	}
+
+	return false
+}
+
+// SetImpbs gets a reference to the given []ImpbVO and assigns it to the Impbs field.
+func (o *DeviceVO) SetImpbs(v []ImpbVO) {
+	o.Impbs = v
 }
 
 // GetMac returns the Mac field value if set, zero value otherwise.
@@ -150,6 +184,9 @@ func (o DeviceVO) MarshalJSON() ([]byte, error) {
 
 func (o DeviceVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Impbs) {
+		toSerialize["impbs"] = o.Impbs
+	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac
 	}

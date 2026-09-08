@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **EndTimeH** | Pointer to **int32** | End time of trigger by time(unit: hour); It should be within the range of 0–23. | [optional] 
 **EndTimeM** | Pointer to **int32** | End time of trigger by time(unit: minute); It should be within the range of 0–59. | [optional] 
 **IdleDuration** | Pointer to **int32** | Idle duration config of trigger by band. | [optional] 
+**Mode** | Pointer to **int32** | Power Saving Mode of device. 0: OFF, 1: Standard( based on the user‑specified time and/or band settings ), 2: Smart, 3: Deep Power‑Saving | [optional] 
 **StartTimeH** | Pointer to **int32** | Start time of trigger by time(unit: hour); It should be within the range of 0–23. | [optional] 
 **StartTimeM** | Pointer to **int32** | Start time of trigger by time(unit: minute); It should be within the range of 0–59. | [optional] 
 **SupportPowerSaving** | Pointer to **bool** | Indicates whether the device supports power saving. True: support, false: unSupport. | [optional] 
@@ -157,6 +158,31 @@ SetIdleDuration sets IdleDuration field to given value.
 `func (o *ApPowerSavingConfigOpenApiVO) HasIdleDuration() bool`
 
 HasIdleDuration returns a boolean if a field has been set.
+
+### GetMode
+
+`func (o *ApPowerSavingConfigOpenApiVO) GetMode() int32`
+
+GetMode returns the Mode field if non-nil, zero value otherwise.
+
+### GetModeOk
+
+`func (o *ApPowerSavingConfigOpenApiVO) GetModeOk() (*int32, bool)`
+
+GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMode
+
+`func (o *ApPowerSavingConfigOpenApiVO) SetMode(v int32)`
+
+SetMode sets Mode field to given value.
+
+### HasMode
+
+`func (o *ApPowerSavingConfigOpenApiVO) HasMode() bool`
+
+HasMode returns a boolean if a field has been set.
 
 ### GetStartTimeH
 

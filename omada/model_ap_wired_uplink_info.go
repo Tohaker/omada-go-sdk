@@ -45,6 +45,8 @@ type ApWiredUplinkInfo struct {
 	ModelVersion *string `json:"modelVersion,omitempty"`
 	// Uplink device name
 	Name *string `json:"name,omitempty"`
+	// PoE state, 0: powering, 1: not powering
+	PoeState *int32 `json:"poeState,omitempty"`
 	// Uplink port ID, only supported by some devices.
 	Port *string `json:"port,omitempty"`
 	// Port Type, 0:ETH, 1:POTS, 2:SFP
@@ -72,6 +74,8 @@ type ApWiredUplinkInfo struct {
 	UplinkMac *string `json:"uplinkMac,omitempty"`
 	// Uplink device port
 	UplinkPort *string `json:"uplinkPort,omitempty"`
+	// VoIP state, 0: off-hook, 1: on-hook
+	VoipState *int32 `json:"voipState,omitempty"`
 	// Voltage, only supported by some devices.
 	Voltage *float64 `json:"voltage,omitempty"`
 }
@@ -507,6 +511,38 @@ func (o *ApWiredUplinkInfo) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ApWiredUplinkInfo) SetName(v string) {
 	o.Name = &v
+}
+
+// GetPoeState returns the PoeState field value if set, zero value otherwise.
+func (o *ApWiredUplinkInfo) GetPoeState() int32 {
+	if o == nil || IsNil(o.PoeState) {
+		var ret int32
+		return ret
+	}
+	return *o.PoeState
+}
+
+// GetPoeStateOk returns a tuple with the PoeState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApWiredUplinkInfo) GetPoeStateOk() (*int32, bool) {
+	if o == nil || IsNil(o.PoeState) {
+		return nil, false
+	}
+	return o.PoeState, true
+}
+
+// HasPoeState returns a boolean if a field has been set.
+func (o *ApWiredUplinkInfo) HasPoeState() bool {
+	if o != nil && !IsNil(o.PoeState) {
+		return true
+	}
+
+	return false
+}
+
+// SetPoeState gets a reference to the given int32 and assigns it to the PoeState field.
+func (o *ApWiredUplinkInfo) SetPoeState(v int32) {
+	o.PoeState = &v
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
@@ -957,6 +993,38 @@ func (o *ApWiredUplinkInfo) SetUplinkPort(v string) {
 	o.UplinkPort = &v
 }
 
+// GetVoipState returns the VoipState field value if set, zero value otherwise.
+func (o *ApWiredUplinkInfo) GetVoipState() int32 {
+	if o == nil || IsNil(o.VoipState) {
+		var ret int32
+		return ret
+	}
+	return *o.VoipState
+}
+
+// GetVoipStateOk returns a tuple with the VoipState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApWiredUplinkInfo) GetVoipStateOk() (*int32, bool) {
+	if o == nil || IsNil(o.VoipState) {
+		return nil, false
+	}
+	return o.VoipState, true
+}
+
+// HasVoipState returns a boolean if a field has been set.
+func (o *ApWiredUplinkInfo) HasVoipState() bool {
+	if o != nil && !IsNil(o.VoipState) {
+		return true
+	}
+
+	return false
+}
+
+// SetVoipState gets a reference to the given int32 and assigns it to the VoipState field.
+func (o *ApWiredUplinkInfo) SetVoipState(v int32) {
+	o.VoipState = &v
+}
+
 // GetVoltage returns the Voltage field value if set, zero value otherwise.
 func (o *ApWiredUplinkInfo) GetVoltage() float64 {
 	if o == nil || IsNil(o.Voltage) {
@@ -1038,6 +1106,9 @@ func (o ApWiredUplinkInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+	if !IsNil(o.PoeState) {
+		toSerialize["poeState"] = o.PoeState
+	}
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
 	}
@@ -1079,6 +1150,9 @@ func (o ApWiredUplinkInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.UplinkPort) {
 		toSerialize["uplinkPort"] = o.UplinkPort
+	}
+	if !IsNil(o.VoipState) {
+		toSerialize["voipState"] = o.VoipState
 	}
 	if !IsNil(o.Voltage) {
 		toSerialize["voltage"] = o.Voltage

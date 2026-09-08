@@ -19,23 +19,25 @@ var _ MappedNullable = &RadiusUserOpenApiVO{}
 
 // RadiusUserOpenApiVO struct for RadiusUserOpenApiVO
 type RadiusUserOpenApiVO struct {
-	// Build-in Radius profile user downlink traffic limit, unit: MB
+	// Description of radius user, should contain 1 to 256 characters
+	Description *string `json:"description,omitempty"`
+	// Build-in RADIUS profile user downlink traffic limit, unit: MB
 	DownLimit *int64 `json:"downLimit,omitempty"`
-	// Build-in Radius profile user downlink rate limit, unit: Kbps
+	// Build-in RADIUS profile user downlink rate limit, unit: Kbps
 	DownRateLimit *int64 `json:"downRateLimit,omitempty"`
-	// Build-in Radius profile user password, when parameter [type] is 1, [password] is the MAC address
+	// Build-in RADIUS profile user password, when parameter [type] is 1, [password] is the MAC address
 	Password *string `json:"password,omitempty"`
 	// Session timeout
 	Timeout *int32 `json:"timeout,omitempty"`
-	// Type of Build-in Radius profile user, 0: user auth; 1: MAC auth
+	// Type of Build-in RADIUS profile user, 0: user auth; 1: MAC auth
 	Type *int32 `json:"type,omitempty"`
-	// Build-in Radius profile user uplink traffic limit, unit: MB
+	// Build-in RADIUS profile user uplink traffic limit, unit: MB
 	UpLimit *int64 `json:"upLimit,omitempty"`
-	// Build-in Radius profile user uplink rate limit, unit: Kbps
+	// Build-in RADIUS profile user uplink rate limit, unit: Kbps
 	UpRateLimit *int64 `json:"upRateLimit,omitempty"`
-	// Build-in Radius profile user ID
+	// Build-in RADIUS profile user ID
 	UserId *string `json:"userId,omitempty"`
-	// Build-in Radius profile user name, when parameter [type] is 1, [username] is the MAC address
+	// Build-in RADIUS profile user name, when parameter [type] is 1, [username] is the MAC address
 	Username *string `json:"username,omitempty"`
 	// VLAN ID, from 1 to 4096
 	VlanId *int32 `json:"vlanId,omitempty"`
@@ -56,6 +58,38 @@ func NewRadiusUserOpenApiVO() *RadiusUserOpenApiVO {
 func NewRadiusUserOpenApiVOWithDefaults() *RadiusUserOpenApiVO {
 	this := RadiusUserOpenApiVO{}
 	return &this
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *RadiusUserOpenApiVO) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RadiusUserOpenApiVO) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *RadiusUserOpenApiVO) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *RadiusUserOpenApiVO) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetDownLimit returns the DownLimit field value if set, zero value otherwise.
@@ -388,6 +422,9 @@ func (o RadiusUserOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o RadiusUserOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	if !IsNil(o.DownLimit) {
 		toSerialize["downLimit"] = o.DownLimit
 	}

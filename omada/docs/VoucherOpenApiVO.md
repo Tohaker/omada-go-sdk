@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Duration** | Pointer to **int64** | Duration of one use, unit: minute. It should be within the range of 1–14400000. | [optional] 
 **DurationType** | Pointer to **int32** | The duration type of the voucher. It should be a value as follows: 0: Client duration, each client expires after the duration is used. 1: Voucher duration, after reaching the voucher duration, clients using the voucher will expire | [optional] 
 **EffectiveTime** | Pointer to **int64** | The timestamp when the voucher takes effect, unit: millisecond | [optional] 
+**EndTime** | Pointer to **int64** | The expiration date of the voucher | [optional] 
 **ExpirationTime** | Pointer to **int64** | The timestamp of the expiration of the voucher, unit: millisecond | [optional] 
 **Id** | Pointer to **string** | Voucher ID | [optional] 
 **LimitNum** | Pointer to **int32** | The number of limitations. It should be within the range of 1–999. If Parameter [limitType] is 0 or 1, [limitNum] should not be null.When Parameter [limitType] is 0, [limitNum] represents the maximum number of times this voucher can be used.When Parameter [limitType] is 1, [limitNum] represents the maximum number of users this voucher can be used at the same time. | [optional] 
@@ -24,7 +25,7 @@ Name | Type | Description | Notes
 **PrintComments** | Pointer to **string** | Customized print information for voters | [optional] 
 **RateLimit** | Pointer to [**RateLimitOpenApiVO**](RateLimitOpenApiVO.md) |  | [optional] 
 **SsidNameList** | Pointer to **[]string** | SSIDs for voucher | [optional] 
-**StartTime** | Pointer to **int64** | The expiration date of the voucher | [optional] 
+**StartTime** | Pointer to **int64** | The time when the voucher was first used, 0 represents it hasn&#39;t started using yet | [optional] 
 **TimingType** | Pointer to **int32** | The timing type of the voucher. It should be a value as follows: 0: Timing by time, clients can use vouchers for specified time duration. 1: Timing by usage, clients can use vouchers for the duration of actual usage | [optional] 
 **Title** | Pointer to **string** | Title for voucher | [optional] 
 **TitleSize** | Pointer to **int32** | Size of title on the pattern of the voucher. It should be within the range of 50-175 | [optional] 
@@ -231,6 +232,31 @@ SetEffectiveTime sets EffectiveTime field to given value.
 `func (o *VoucherOpenApiVO) HasEffectiveTime() bool`
 
 HasEffectiveTime returns a boolean if a field has been set.
+
+### GetEndTime
+
+`func (o *VoucherOpenApiVO) GetEndTime() int64`
+
+GetEndTime returns the EndTime field if non-nil, zero value otherwise.
+
+### GetEndTimeOk
+
+`func (o *VoucherOpenApiVO) GetEndTimeOk() (*int64, bool)`
+
+GetEndTimeOk returns a tuple with the EndTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndTime
+
+`func (o *VoucherOpenApiVO) SetEndTime(v int64)`
+
+SetEndTime sets EndTime field to given value.
+
+### HasEndTime
+
+`func (o *VoucherOpenApiVO) HasEndTime() bool`
+
+HasEndTime returns a boolean if a field has been set.
 
 ### GetExpirationTime
 

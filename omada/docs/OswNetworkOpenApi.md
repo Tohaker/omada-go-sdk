@@ -11,9 +11,10 @@ Name | Type | Description | Notes
 **Ipv6** | Pointer to [**OswIpv6SettingOpenApiVO**](OswIpv6SettingOpenApiVO.md) |  | [optional] 
 **Ipv6Enable** | Pointer to **bool** | Enable IPV6 or not. | [optional] 
 **Mode** | **int32** | DHCP mode. 0: None, mode 1: DHCP Server, mode 2: DHCP Relay | 
+**Mtu** | Pointer to **int32** | MTU, MTU value should be less than or equal to the jumbo value | [optional] 
 **Mvlan** | **bool** | Indicate the vlan is management vlan or not. | 
 **Name** | Pointer to **string** | Switch network name. | [optional] 
-**Status** | Pointer to **bool** | Enable status of the network vlan. | [optional] 
+**Status** | Pointer to **bool** | Enable status of the network vlan. Note: this field only takes effect when toggling switch status on the Interface list page and is ignored by other switch network edit APIs. | [optional] 
 **Vlan** | **int32** | VLAN ID. | 
 **VrfId** | Pointer to **string** | VRF ID | [optional] 
 
@@ -200,6 +201,31 @@ and a boolean to check if the value has been set.
 
 SetMode sets Mode field to given value.
 
+
+### GetMtu
+
+`func (o *OswNetworkOpenApi) GetMtu() int32`
+
+GetMtu returns the Mtu field if non-nil, zero value otherwise.
+
+### GetMtuOk
+
+`func (o *OswNetworkOpenApi) GetMtuOk() (*int32, bool)`
+
+GetMtuOk returns a tuple with the Mtu field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMtu
+
+`func (o *OswNetworkOpenApi) SetMtu(v int32)`
+
+SetMtu sets Mtu field to given value.
+
+### HasMtu
+
+`func (o *OswNetworkOpenApi) HasMtu() bool`
+
+HasMtu returns a boolean if a field has been set.
 
 ### GetMvlan
 

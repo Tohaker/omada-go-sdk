@@ -25,7 +25,7 @@ type AuditLogTemplateAPI interface {
 	/*
 	GetAuditLogSettingForMsp Get site template audit log notification
 
-	Get site template audit log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+	Get site template audit log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -41,7 +41,7 @@ type AuditLogTemplateAPI interface {
 	/*
 	ModifyAuditLogSettingSite Modify site template audit log notification
 
-	Modify site template audit log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+	Modify site template audit log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -72,7 +72,7 @@ func (r AuditLogTemplateAPIGetAuditLogSettingForMspRequest) Execute() (*Operatio
 /*
 GetAuditLogSettingForMsp Get site template audit log notification
 
-Get site template audit log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+Get site template audit log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -199,7 +199,7 @@ func (r AuditLogTemplateAPIModifyAuditLogSettingSiteRequest) Execute() (*Operati
 /*
 ModifyAuditLogSettingSite Modify site template audit log notification
 
-Modify site template audit log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+Modify site template audit log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**BindMspOwner**](CloudUserAPI.md#bindmspowner) | **Post** /openapi/v1/msp/{mspId}/cmd/cloud/bind | Bind the MSP owner account
 [**BindOwner**](CloudUserAPI.md#bindowner) | **Post** /openapi/v1/{omadacId}/cmd/cloud/bind | Bind the owner account
+[**CloudOwnerUnbindMspOwner**](CloudUserAPI.md#cloudownerunbindmspowner) | **Post** /openapi/v1/msp/{mspId}/unbind/cloudowner | Unbind the MSP owner account for cloud owner
+[**CloudOwnerUnbindOwner**](CloudUserAPI.md#cloudownerunbindowner) | **Post** /openapi/v1/{omadacId}/unbind/cloudowner | Unbind the owner account for cloud owner
 [**GetCloudAccessStatus**](CloudUserAPI.md#getcloudaccessstatus) | **Get** /openapi/v1/{omadacId}/cloud/status | Get cloud access status
 [**GetCloudUserInfo**](CloudUserAPI.md#getclouduserinfo) | **Get** /openapi/v1/{omadacId}/cloud/user | Get cloud user information
 [**GetMspCloudAccessStatus**](CloudUserAPI.md#getmspcloudaccessstatus) | **Get** /openapi/v1/msp/{mspId}/cloud/status | Get MSP cloud access status
@@ -140,6 +142,150 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **bindOwnerOpenApiVO** | [**BindOwnerOpenApiVO**](BindOwnerOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CloudOwnerUnbindMspOwner
+
+> OperationResponseWithoutResult CloudOwnerUnbindMspOwner(ctx, mspId).LocalOwnerConfirmVO(localOwnerConfirmVO).Execute()
+
+Unbind the MSP owner account for cloud owner
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	mspId := "mspId_example" // string | MSP ID
+	localOwnerConfirmVO := *openapiclient.NewLocalOwnerConfirmVO("Password_example", "Username_example") // LocalOwnerConfirmVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CloudUserAPI.CloudOwnerUnbindMspOwner(context.Background(), mspId).LocalOwnerConfirmVO(localOwnerConfirmVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CloudUserAPI.CloudOwnerUnbindMspOwner``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CloudOwnerUnbindMspOwner`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `CloudUserAPI.CloudOwnerUnbindMspOwner`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mspId** | **string** | MSP ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCloudOwnerUnbindMspOwnerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **localOwnerConfirmVO** | [**LocalOwnerConfirmVO**](LocalOwnerConfirmVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CloudOwnerUnbindOwner
+
+> OperationResponseWithoutResult CloudOwnerUnbindOwner(ctx, omadacId).LocalOwnerConfirmVO(localOwnerConfirmVO).Execute()
+
+Unbind the owner account for cloud owner
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	localOwnerConfirmVO := *openapiclient.NewLocalOwnerConfirmVO("Password_example", "Username_example") // LocalOwnerConfirmVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CloudUserAPI.CloudOwnerUnbindOwner(context.Background(), omadacId).LocalOwnerConfirmVO(localOwnerConfirmVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CloudUserAPI.CloudOwnerUnbindOwner``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CloudOwnerUnbindOwner`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `CloudUserAPI.CloudOwnerUnbindOwner`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCloudOwnerUnbindOwnerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **localOwnerConfirmVO** | [**LocalOwnerConfirmVO**](LocalOwnerConfirmVO.md) |  | 
 
 ### Return type
 

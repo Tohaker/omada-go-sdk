@@ -23,15 +23,15 @@ type RadiusProfileOpenApiVO struct {
 	AcctServer []RadiusAcctServerOpenApiVO `json:"acctServer,omitempty"`
 	// Radius authentication server list
 	AuthServer []RadiusAuthServerOpenApiVO `json:"authServer,omitempty"`
-	// Is this Radius server a built-in server
+	// Is this RADIUS server a built-in server
 	BuiltInServer *bool `json:"builtInServer,omitempty"`
-	// Built-in Radius server secret, valid when parameter [builtInServer] is true
+	// Built-in RADIUS server secret, valid when parameter [builtInServer] is true
 	BuiltInServerSecret *string `json:"builtInServerSecret,omitempty"`
 	// Radius CoA enable status
 	CoaEnable *bool `json:"coaEnable,omitempty"`
 	// Radius CoA password, valid when parameter [coaEnable] is true
 	CoaPassword *string `json:"coaPassword,omitempty"`
-	// Built-in Radius server custom IP, valid when parameter [builtInServer] is true and [ipType] is 1
+	// Built-in RADIUS server custom IP, valid when parameter [builtInServer] is true and [ipType] is 1
 	CustomIp *string `json:"customIp,omitempty"`
 	// Domain enable status
 	DomainEnable *bool `json:"domainEnable,omitempty"`
@@ -39,7 +39,7 @@ type RadiusProfileOpenApiVO struct {
 	InterimUpdateEnable *bool `json:"interimUpdateEnable,omitempty"`
 	// When interval update enables, interval update duration
 	InterimUpdateInterval *int32 `json:"interimUpdateInterval,omitempty"`
-	// Built-in Radius server IP type, 0: auto，1: custom, valid when parameter [builtInServer] is true
+	// Built-in RADIUS server IP type, 0: auto，1: custom, valid when parameter [builtInServer] is true
 	IpType *int32 `json:"ipType,omitempty"`
 	// Radius profile name
 	Name *string `json:"name,omitempty"`
@@ -49,9 +49,9 @@ type RadiusProfileOpenApiVO struct {
 	RadiusProfileId *string `json:"radiusProfileId,omitempty"`
 	// Message-Authenticator enable status
 	RequireMessageAuthenticator *bool `json:"requireMessageAuthenticator,omitempty"`
-	// Built-in Radius server enable status, valid when parameter [builtInServer] is true
+	// Built-in RADIUS server enable status, valid when parameter [builtInServer] is true
 	ServerEnable *bool `json:"serverEnable,omitempty"`
-	// Built-in Radius server tunneled reply enable status, valid when parameter [builtInServer] is true
+	// Built-in RADIUS server tunneled reply enable status, valid when parameter [builtInServer] is true
 	TunnelReplyEnable *bool `json:"tunnelReplyEnable,omitempty"`
 	// VLAN assignment for wireless network enable status
 	WirelessVlanAssignment *bool `json:"wirelessVlanAssignment,omitempty"`

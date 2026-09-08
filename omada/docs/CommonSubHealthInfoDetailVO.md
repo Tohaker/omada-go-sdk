@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AverageNum** | Pointer to **int32** | Average value of common dimension, such as cpu、memory | [optional] 
+**Incidents** | Pointer to [**[]AnomalyBriefCountVO**](AnomalyBriefCountVO.md) | Incident information for this health dimension, null if no incidents | [optional] 
 **PastNums** | Pointer to [**[]TimeValueItemVO**](TimeValueItemVO.md) | List of common dimension value , such as cpu、memory | [optional] 
 **SummaryScore** | Pointer to **int32** | Sub dimension health score | [optional] 
 **Support** | Pointer to **bool** | Sub dimension support | [optional] 
@@ -52,6 +53,31 @@ SetAverageNum sets AverageNum field to given value.
 `func (o *CommonSubHealthInfoDetailVO) HasAverageNum() bool`
 
 HasAverageNum returns a boolean if a field has been set.
+
+### GetIncidents
+
+`func (o *CommonSubHealthInfoDetailVO) GetIncidents() []AnomalyBriefCountVO`
+
+GetIncidents returns the Incidents field if non-nil, zero value otherwise.
+
+### GetIncidentsOk
+
+`func (o *CommonSubHealthInfoDetailVO) GetIncidentsOk() (*[]AnomalyBriefCountVO, bool)`
+
+GetIncidentsOk returns a tuple with the Incidents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncidents
+
+`func (o *CommonSubHealthInfoDetailVO) SetIncidents(v []AnomalyBriefCountVO)`
+
+SetIncidents sets Incidents field to given value.
+
+### HasIncidents
+
+`func (o *CommonSubHealthInfoDetailVO) HasIncidents() bool`
+
+HasIncidents returns a boolean if a field has been set.
 
 ### GetPastNums
 

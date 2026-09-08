@@ -13,7 +13,8 @@ Method | HTTP request | Description
 [**GetGridOspfInterface**](OSPFAPI.md#getgridospfinterface) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface | Get Ospf Interface list
 [**GetGridOspfProcess**](OSPFAPI.md#getgridospfprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process | Get Ospf Process list
 [**GetOspfDevice**](OSPFAPI.md#getospfdevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ospf/device | Get Ospf Device list
-[**GetOswVlanIf**](OSPFAPI.md#getoswvlanif) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vlan-interface/switches/{switchMac} | Get Switch Vlan Interface list
+[**GetOswVlanIf**](OSPFAPI.md#getoswvlanif) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vlan-interface/switches/{switchMac} | Get Switch Vlan Interface list for OSPF
+[**GetStackVlanIf**](OSPFAPI.md#getstackvlanif) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/vlan-interface/stack/{stackId} | Get Stack Vlan Interface list for OSPF
 [**ModifyOspfInterface**](OSPFAPI.md#modifyospfinterface) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ospf/interface/{ospfInterfaceId} | Modify Ospf Interface
 [**ModifyOspfProcess**](OSPFAPI.md#modifyospfprocess) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ospf/process/{ospfProcessId} | Modify Ospf Process
 
@@ -171,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## CreateOspfInterface
 
-> OperationResponseWithoutResult CreateOspfInterface(ctx, omadacId, siteId).CreateOspfInterfaceRequest(createOspfInterfaceRequest).Execute()
+> OperationResponseWithoutResult CreateOspfInterface(ctx, omadacId, siteId).OspfInterfaceConfigOpenApiVO(ospfInterfaceConfigOpenApiVO).Execute()
 
 Create Ospf Interface
 
@@ -192,11 +193,11 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	createOspfInterfaceRequest := *openapiclient.NewCreateOspfInterfaceRequest() // CreateOspfInterfaceRequest | 
+	ospfInterfaceConfigOpenApiVO := *openapiclient.NewOspfInterfaceConfigOpenApiVO(int32(123), "DeviceName_example", "Mac_example") // OspfInterfaceConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OSPFAPI.CreateOspfInterface(context.Background(), omadacId, siteId).CreateOspfInterfaceRequest(createOspfInterfaceRequest).Execute()
+	resp, r, err := apiClient.OSPFAPI.CreateOspfInterface(context.Background(), omadacId, siteId).OspfInterfaceConfigOpenApiVO(ospfInterfaceConfigOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OSPFAPI.CreateOspfInterface``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -224,7 +225,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **createOspfInterfaceRequest** | [**CreateOspfInterfaceRequest**](CreateOspfInterfaceRequest.md) |  | 
+ **ospfInterfaceConfigOpenApiVO** | [**OspfInterfaceConfigOpenApiVO**](OspfInterfaceConfigOpenApiVO.md) |  | 
 
 ### Return type
 
@@ -246,7 +247,7 @@ Name | Type | Description  | Notes
 
 ## CreateOspfProcess
 
-> OperationResponseWithoutResult CreateOspfProcess(ctx, omadacId, siteId).CreateOspfProcessRequest(createOspfProcessRequest).Execute()
+> OperationResponseWithoutResult CreateOspfProcess(ctx, omadacId, siteId).OspfProcessConfigOpenApiVO(ospfProcessConfigOpenApiVO).Execute()
 
 Create Ospf Process
 
@@ -267,11 +268,11 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	createOspfProcessRequest := *openapiclient.NewCreateOspfProcessRequest() // CreateOspfProcessRequest | 
+	ospfProcessConfigOpenApiVO := *openapiclient.NewOspfProcessConfigOpenApiVO(false, "DeviceName_example", "Mac_example", int32(123), int32(123), false) // OspfProcessConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OSPFAPI.CreateOspfProcess(context.Background(), omadacId, siteId).CreateOspfProcessRequest(createOspfProcessRequest).Execute()
+	resp, r, err := apiClient.OSPFAPI.CreateOspfProcess(context.Background(), omadacId, siteId).OspfProcessConfigOpenApiVO(ospfProcessConfigOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OSPFAPI.CreateOspfProcess``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,7 +300,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **createOspfProcessRequest** | [**CreateOspfProcessRequest**](CreateOspfProcessRequest.md) |  | 
+ **ospfProcessConfigOpenApiVO** | [**OspfProcessConfigOpenApiVO**](OspfProcessConfigOpenApiVO.md) |  | 
 
 ### Return type
 
@@ -321,7 +322,7 @@ Name | Type | Description  | Notes
 
 ## DeleteOspfInterface
 
-> OperationResponseWithoutResult DeleteOspfInterface(ctx, omadacId, siteId, switchMac, ospfInterfaceId).UserInfoBriefDTO(userInfoBriefDTO).Execute()
+> OperationResponseWithoutResult DeleteOspfInterface(ctx, omadacId, siteId, switchMac, ospfInterfaceId).Execute()
 
 Delete Ospf Interface
 
@@ -344,11 +345,10 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
 	ospfInterfaceId := "ospfInterfaceId_example" // string | Ospf Interface ID
-	userInfoBriefDTO := *openapiclient.NewUserInfoBriefDTO() // UserInfoBriefDTO |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OSPFAPI.DeleteOspfInterface(context.Background(), omadacId, siteId, switchMac, ospfInterfaceId).UserInfoBriefDTO(userInfoBriefDTO).Execute()
+	resp, r, err := apiClient.OSPFAPI.DeleteOspfInterface(context.Background(), omadacId, siteId, switchMac, ospfInterfaceId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OSPFAPI.DeleteOspfInterface``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -380,7 +380,6 @@ Name | Type | Description  | Notes
 
 
 
- **userInfoBriefDTO** | [**UserInfoBriefDTO**](UserInfoBriefDTO.md) |  | 
 
 ### Return type
 
@@ -392,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -402,7 +401,7 @@ Name | Type | Description  | Notes
 
 ## DeleteOspfProcess
 
-> OperationResponseWithoutResult DeleteOspfProcess(ctx, omadacId, siteId, switchMac, ospfProcessId).UserInfoBriefDTO(userInfoBriefDTO).Execute()
+> OperationResponseWithoutResult DeleteOspfProcess(ctx, omadacId, siteId, switchMac, ospfProcessId).Execute()
 
 Delete Ospf Process
 
@@ -425,11 +424,10 @@ func main() {
 	siteId := "siteId_example" // string | Site ID
 	switchMac := "switchMac_example" // string | Switch MAC address, like AA-BB-CC-DD-EE-FF
 	ospfProcessId := "ospfProcessId_example" // string | Ospf Process ID
-	userInfoBriefDTO := *openapiclient.NewUserInfoBriefDTO() // UserInfoBriefDTO |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OSPFAPI.DeleteOspfProcess(context.Background(), omadacId, siteId, switchMac, ospfProcessId).UserInfoBriefDTO(userInfoBriefDTO).Execute()
+	resp, r, err := apiClient.OSPFAPI.DeleteOspfProcess(context.Background(), omadacId, siteId, switchMac, ospfProcessId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OSPFAPI.DeleteOspfProcess``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -461,7 +459,6 @@ Name | Type | Description  | Notes
 
 
 
- **userInfoBriefDTO** | [**UserInfoBriefDTO**](UserInfoBriefDTO.md) |  | 
 
 ### Return type
 
@@ -473,7 +470,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -712,7 +709,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseListVlanInterfaceOpenApiVO GetOswVlanIf(ctx, omadacId, siteId, switchMac).Execute()
 
-Get Switch Vlan Interface list
+Get Switch Vlan Interface list for OSPF
 
 
 
@@ -784,9 +781,85 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetStackVlanIf
+
+> OperationResponseListVlanInterfaceOpenApiVO GetStackVlanIf(ctx, omadacId, siteId, stackId).Execute()
+
+Get Stack Vlan Interface list for OSPF
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	stackId := "stackId_example" // string | Stack ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OSPFAPI.GetStackVlanIf(context.Background(), omadacId, siteId, stackId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OSPFAPI.GetStackVlanIf``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetStackVlanIf`: OperationResponseListVlanInterfaceOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `OSPFAPI.GetStackVlanIf`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**stackId** | **string** | Stack ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetStackVlanIfRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseListVlanInterfaceOpenApiVO**](OperationResponseListVlanInterfaceOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ModifyOspfInterface
 
-> OperationResponseWithoutResult ModifyOspfInterface(ctx, omadacId, siteId, ospfInterfaceId).ModifyOspfInterfaceRequest(modifyOspfInterfaceRequest).Execute()
+> OperationResponseWithoutResult ModifyOspfInterface(ctx, omadacId, siteId, ospfInterfaceId).OspfInterfaceConfigOpenApiVO(ospfInterfaceConfigOpenApiVO).Execute()
 
 Modify Ospf Interface
 
@@ -808,11 +881,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	ospfInterfaceId := "ospfInterfaceId_example" // string | Ospf Interface ID
-	modifyOspfInterfaceRequest := *openapiclient.NewModifyOspfInterfaceRequest() // ModifyOspfInterfaceRequest | 
+	ospfInterfaceConfigOpenApiVO := *openapiclient.NewOspfInterfaceConfigOpenApiVO(int32(123), "DeviceName_example", "Mac_example") // OspfInterfaceConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OSPFAPI.ModifyOspfInterface(context.Background(), omadacId, siteId, ospfInterfaceId).ModifyOspfInterfaceRequest(modifyOspfInterfaceRequest).Execute()
+	resp, r, err := apiClient.OSPFAPI.ModifyOspfInterface(context.Background(), omadacId, siteId, ospfInterfaceId).OspfInterfaceConfigOpenApiVO(ospfInterfaceConfigOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OSPFAPI.ModifyOspfInterface``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -842,7 +915,7 @@ Name | Type | Description  | Notes
 
 
 
- **modifyOspfInterfaceRequest** | [**ModifyOspfInterfaceRequest**](ModifyOspfInterfaceRequest.md) |  | 
+ **ospfInterfaceConfigOpenApiVO** | [**OspfInterfaceConfigOpenApiVO**](OspfInterfaceConfigOpenApiVO.md) |  | 
 
 ### Return type
 
@@ -864,7 +937,7 @@ Name | Type | Description  | Notes
 
 ## ModifyOspfProcess
 
-> OperationResponseWithoutResult ModifyOspfProcess(ctx, omadacId, siteId, ospfProcessId).ModifyOspfProcessRequest(modifyOspfProcessRequest).Execute()
+> OperationResponseWithoutResult ModifyOspfProcess(ctx, omadacId, siteId, ospfProcessId).OspfProcessConfigOpenApiVO(ospfProcessConfigOpenApiVO).Execute()
 
 Modify Ospf Process
 
@@ -886,11 +959,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	ospfProcessId := "ospfProcessId_example" // string | Ospf Process ID
-	modifyOspfProcessRequest := *openapiclient.NewModifyOspfProcessRequest() // ModifyOspfProcessRequest | 
+	ospfProcessConfigOpenApiVO := *openapiclient.NewOspfProcessConfigOpenApiVO(false, "DeviceName_example", "Mac_example", int32(123), int32(123), false) // OspfProcessConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OSPFAPI.ModifyOspfProcess(context.Background(), omadacId, siteId, ospfProcessId).ModifyOspfProcessRequest(modifyOspfProcessRequest).Execute()
+	resp, r, err := apiClient.OSPFAPI.ModifyOspfProcess(context.Background(), omadacId, siteId, ospfProcessId).OspfProcessConfigOpenApiVO(ospfProcessConfigOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OSPFAPI.ModifyOspfProcess``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -920,7 +993,7 @@ Name | Type | Description  | Notes
 
 
 
- **modifyOspfProcessRequest** | [**ModifyOspfProcessRequest**](ModifyOspfProcessRequest.md) |  | 
+ **ospfProcessConfigOpenApiVO** | [**OspfProcessConfigOpenApiVO**](OspfProcessConfigOpenApiVO.md) |  | 
 
 ### Return type
 

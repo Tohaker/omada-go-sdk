@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagList** | Pointer to **[]int32** |  | [optional] 
-**Mac** | Pointer to **string** |  | [optional] 
-**PortList** | Pointer to **[]string** |  | [optional] 
-**StackDevice** | Pointer to **bool** |  | [optional] 
+**LagList** | Pointer to **[]int32** | The selected lag ID list. | [optional] 
+**Mac** | Pointer to **string** | The device mac. | [optional] 
+**PortList** | Pointer to **[]string** | The selected standard port ID(unit/slot/port) list. | [optional] 
+**StackDevice** | Pointer to **bool** | Stack device identifier, true: stack device, false: normal device. | [optional] 
 
 ## Methods
 

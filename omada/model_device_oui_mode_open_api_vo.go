@@ -19,7 +19,7 @@ import (
 // checks if the DeviceOuiModeOpenApiVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DeviceOuiModeOpenApiVO{}
 
-// DeviceOuiModeOpenApiVO When mode is 0, should configure device info.
+// DeviceOuiModeOpenApiVO When mode is 1, should configure device info.
 type DeviceOuiModeOpenApiVO struct {
 	// Device MAC. E.g. AA-BB-CC-DD-11-22 . When \"oldFirmwareDevice\" is true, deivce should configure in only one OUI Based VLAN rule.
 	DeviceMac string `json:"deviceMac"`
@@ -27,6 +27,10 @@ type DeviceOuiModeOpenApiVO struct {
 	LagList []int32 `json:"lagList,omitempty"`
 	// Device port list.
 	PortList []int32 `json:"portList,omitempty"`
+	// The stack id of the stack device.
+	StackId *string `json:"stackId,omitempty"`
+	// The stack port list.
+	StackPortList []string `json:"stackPortList,omitempty"`
 }
 
 type _DeviceOuiModeOpenApiVO DeviceOuiModeOpenApiVO
@@ -137,6 +141,70 @@ func (o *DeviceOuiModeOpenApiVO) SetPortList(v []int32) {
 	o.PortList = v
 }
 
+// GetStackId returns the StackId field value if set, zero value otherwise.
+func (o *DeviceOuiModeOpenApiVO) GetStackId() string {
+	if o == nil || IsNil(o.StackId) {
+		var ret string
+		return ret
+	}
+	return *o.StackId
+}
+
+// GetStackIdOk returns a tuple with the StackId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceOuiModeOpenApiVO) GetStackIdOk() (*string, bool) {
+	if o == nil || IsNil(o.StackId) {
+		return nil, false
+	}
+	return o.StackId, true
+}
+
+// HasStackId returns a boolean if a field has been set.
+func (o *DeviceOuiModeOpenApiVO) HasStackId() bool {
+	if o != nil && !IsNil(o.StackId) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackId gets a reference to the given string and assigns it to the StackId field.
+func (o *DeviceOuiModeOpenApiVO) SetStackId(v string) {
+	o.StackId = &v
+}
+
+// GetStackPortList returns the StackPortList field value if set, zero value otherwise.
+func (o *DeviceOuiModeOpenApiVO) GetStackPortList() []string {
+	if o == nil || IsNil(o.StackPortList) {
+		var ret []string
+		return ret
+	}
+	return o.StackPortList
+}
+
+// GetStackPortListOk returns a tuple with the StackPortList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceOuiModeOpenApiVO) GetStackPortListOk() ([]string, bool) {
+	if o == nil || IsNil(o.StackPortList) {
+		return nil, false
+	}
+	return o.StackPortList, true
+}
+
+// HasStackPortList returns a boolean if a field has been set.
+func (o *DeviceOuiModeOpenApiVO) HasStackPortList() bool {
+	if o != nil && !IsNil(o.StackPortList) {
+		return true
+	}
+
+	return false
+}
+
+// SetStackPortList gets a reference to the given []string and assigns it to the StackPortList field.
+func (o *DeviceOuiModeOpenApiVO) SetStackPortList(v []string) {
+	o.StackPortList = v
+}
+
 func (o DeviceOuiModeOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -153,6 +221,12 @@ func (o DeviceOuiModeOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PortList) {
 		toSerialize["portList"] = o.PortList
+	}
+	if !IsNil(o.StackId) {
+		toSerialize["stackId"] = o.StackId
+	}
+	if !IsNil(o.StackPortList) {
+		toSerialize["stackPortList"] = o.StackPortList
 	}
 	return toSerialize, nil
 }

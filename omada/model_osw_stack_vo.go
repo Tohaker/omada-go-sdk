@@ -23,6 +23,10 @@ var _ MappedNullable = &OswStackVO{}
 type OswStackVO struct {
 	// Abnormal Reason
 	AbnormalReason *int32 `json:"abnormalReason,omitempty"`
+	// Block port
+	Block *string `json:"block,omitempty"`
+	// Block Num
+	BlockNum *int32 `json:"blockNum,omitempty"`
 	// Clients
 	Clients *int32 `json:"clients,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -132,6 +136,70 @@ func (o *OswStackVO) HasAbnormalReason() bool {
 // SetAbnormalReason gets a reference to the given int32 and assigns it to the AbnormalReason field.
 func (o *OswStackVO) SetAbnormalReason(v int32) {
 	o.AbnormalReason = &v
+}
+
+// GetBlock returns the Block field value if set, zero value otherwise.
+func (o *OswStackVO) GetBlock() string {
+	if o == nil || IsNil(o.Block) {
+		var ret string
+		return ret
+	}
+	return *o.Block
+}
+
+// GetBlockOk returns a tuple with the Block field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackVO) GetBlockOk() (*string, bool) {
+	if o == nil || IsNil(o.Block) {
+		return nil, false
+	}
+	return o.Block, true
+}
+
+// HasBlock returns a boolean if a field has been set.
+func (o *OswStackVO) HasBlock() bool {
+	if o != nil && !IsNil(o.Block) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlock gets a reference to the given string and assigns it to the Block field.
+func (o *OswStackVO) SetBlock(v string) {
+	o.Block = &v
+}
+
+// GetBlockNum returns the BlockNum field value if set, zero value otherwise.
+func (o *OswStackVO) GetBlockNum() int32 {
+	if o == nil || IsNil(o.BlockNum) {
+		var ret int32
+		return ret
+	}
+	return *o.BlockNum
+}
+
+// GetBlockNumOk returns a tuple with the BlockNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackVO) GetBlockNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.BlockNum) {
+		return nil, false
+	}
+	return o.BlockNum, true
+}
+
+// HasBlockNum returns a boolean if a field has been set.
+func (o *OswStackVO) HasBlockNum() bool {
+	if o != nil && !IsNil(o.BlockNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlockNum gets a reference to the given int32 and assigns it to the BlockNum field.
+func (o *OswStackVO) SetBlockNum(v int32) {
+	o.BlockNum = &v
 }
 
 // GetClients returns the Clients field value if set, zero value otherwise.
@@ -1130,6 +1198,12 @@ func (o OswStackVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AbnormalReason) {
 		toSerialize["abnormalReason"] = o.AbnormalReason
+	}
+	if !IsNil(o.Block) {
+		toSerialize["block"] = o.Block
+	}
+	if !IsNil(o.BlockNum) {
+		toSerialize["blockNum"] = o.BlockNum
 	}
 	if !IsNil(o.Clients) {
 		toSerialize["clients"] = o.Clients

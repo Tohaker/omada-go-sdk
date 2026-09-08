@@ -19,12 +19,18 @@ var _ MappedNullable = &EasyManagedSwitchLoopbackControl{}
 
 // EasyManagedSwitchLoopbackControl struct for EasyManagedSwitchLoopbackControl
 type EasyManagedSwitchLoopbackControl struct {
+	// forwardDelay should be between 4 and 30.
+	ForwardDelay *int32 `json:"forwardDelay,omitempty"`
 	// LoopbackDetectEnable
 	LoopbackDetectEnable *bool `json:"loopbackDetectEnable,omitempty"`
+	// maxAge should be between 6 and 40.
+	MaxAge *int32 `json:"maxAge,omitempty"`
 	// priority
 	Priority *int32 `json:"priority,omitempty"`
-	// STP should be a value as follows: 0: OFF 1: STP 2: RSTP 3: MSTP 
+	// STP should be a value as follows: 0: OFF 1: STP 2: RSTP
 	Stp *int32 `json:"stp,omitempty"`
+	// txHoldCount should be between 1 and 10.
+	TxHoldCount *int32 `json:"txHoldCount,omitempty"`
 }
 
 // NewEasyManagedSwitchLoopbackControl instantiates a new EasyManagedSwitchLoopbackControl object
@@ -42,6 +48,38 @@ func NewEasyManagedSwitchLoopbackControl() *EasyManagedSwitchLoopbackControl {
 func NewEasyManagedSwitchLoopbackControlWithDefaults() *EasyManagedSwitchLoopbackControl {
 	this := EasyManagedSwitchLoopbackControl{}
 	return &this
+}
+
+// GetForwardDelay returns the ForwardDelay field value if set, zero value otherwise.
+func (o *EasyManagedSwitchLoopbackControl) GetForwardDelay() int32 {
+	if o == nil || IsNil(o.ForwardDelay) {
+		var ret int32
+		return ret
+	}
+	return *o.ForwardDelay
+}
+
+// GetForwardDelayOk returns a tuple with the ForwardDelay field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EasyManagedSwitchLoopbackControl) GetForwardDelayOk() (*int32, bool) {
+	if o == nil || IsNil(o.ForwardDelay) {
+		return nil, false
+	}
+	return o.ForwardDelay, true
+}
+
+// HasForwardDelay returns a boolean if a field has been set.
+func (o *EasyManagedSwitchLoopbackControl) HasForwardDelay() bool {
+	if o != nil && !IsNil(o.ForwardDelay) {
+		return true
+	}
+
+	return false
+}
+
+// SetForwardDelay gets a reference to the given int32 and assigns it to the ForwardDelay field.
+func (o *EasyManagedSwitchLoopbackControl) SetForwardDelay(v int32) {
+	o.ForwardDelay = &v
 }
 
 // GetLoopbackDetectEnable returns the LoopbackDetectEnable field value if set, zero value otherwise.
@@ -74,6 +112,38 @@ func (o *EasyManagedSwitchLoopbackControl) HasLoopbackDetectEnable() bool {
 // SetLoopbackDetectEnable gets a reference to the given bool and assigns it to the LoopbackDetectEnable field.
 func (o *EasyManagedSwitchLoopbackControl) SetLoopbackDetectEnable(v bool) {
 	o.LoopbackDetectEnable = &v
+}
+
+// GetMaxAge returns the MaxAge field value if set, zero value otherwise.
+func (o *EasyManagedSwitchLoopbackControl) GetMaxAge() int32 {
+	if o == nil || IsNil(o.MaxAge) {
+		var ret int32
+		return ret
+	}
+	return *o.MaxAge
+}
+
+// GetMaxAgeOk returns a tuple with the MaxAge field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EasyManagedSwitchLoopbackControl) GetMaxAgeOk() (*int32, bool) {
+	if o == nil || IsNil(o.MaxAge) {
+		return nil, false
+	}
+	return o.MaxAge, true
+}
+
+// HasMaxAge returns a boolean if a field has been set.
+func (o *EasyManagedSwitchLoopbackControl) HasMaxAge() bool {
+	if o != nil && !IsNil(o.MaxAge) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxAge gets a reference to the given int32 and assigns it to the MaxAge field.
+func (o *EasyManagedSwitchLoopbackControl) SetMaxAge(v int32) {
+	o.MaxAge = &v
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
@@ -140,6 +210,38 @@ func (o *EasyManagedSwitchLoopbackControl) SetStp(v int32) {
 	o.Stp = &v
 }
 
+// GetTxHoldCount returns the TxHoldCount field value if set, zero value otherwise.
+func (o *EasyManagedSwitchLoopbackControl) GetTxHoldCount() int32 {
+	if o == nil || IsNil(o.TxHoldCount) {
+		var ret int32
+		return ret
+	}
+	return *o.TxHoldCount
+}
+
+// GetTxHoldCountOk returns a tuple with the TxHoldCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EasyManagedSwitchLoopbackControl) GetTxHoldCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.TxHoldCount) {
+		return nil, false
+	}
+	return o.TxHoldCount, true
+}
+
+// HasTxHoldCount returns a boolean if a field has been set.
+func (o *EasyManagedSwitchLoopbackControl) HasTxHoldCount() bool {
+	if o != nil && !IsNil(o.TxHoldCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTxHoldCount gets a reference to the given int32 and assigns it to the TxHoldCount field.
+func (o *EasyManagedSwitchLoopbackControl) SetTxHoldCount(v int32) {
+	o.TxHoldCount = &v
+}
+
 func (o EasyManagedSwitchLoopbackControl) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -150,14 +252,23 @@ func (o EasyManagedSwitchLoopbackControl) MarshalJSON() ([]byte, error) {
 
 func (o EasyManagedSwitchLoopbackControl) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ForwardDelay) {
+		toSerialize["forwardDelay"] = o.ForwardDelay
+	}
 	if !IsNil(o.LoopbackDetectEnable) {
 		toSerialize["loopbackDetectEnable"] = o.LoopbackDetectEnable
+	}
+	if !IsNil(o.MaxAge) {
+		toSerialize["maxAge"] = o.MaxAge
 	}
 	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
 	if !IsNil(o.Stp) {
 		toSerialize["stp"] = o.Stp
+	}
+	if !IsNil(o.TxHoldCount) {
+		toSerialize["txHoldCount"] = o.TxHoldCount
 	}
 	return toSerialize, nil
 }

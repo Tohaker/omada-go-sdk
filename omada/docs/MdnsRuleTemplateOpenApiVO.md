@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Osg** | Pointer to [**OsgMdnsRuleTemplateOpenApiVO**](OsgMdnsRuleTemplateOpenApiVO.md) |  | [optional] 
 **ProfileIds** | Pointer to **[]string** | ID list of selected Bonjour Service Profile | [optional] 
 **Status** | Pointer to **bool** | MDNS rule enable status | [optional] 
-**Type** | Pointer to **int32** | MDNS rule type, 0: AP, 1: Gateway | [optional] 
+**Type** | Pointer to **int32** | MDNS rule band VLAN type. Type should be a value as follows: 0: By VLAN ID, 1: By Network | [optional] 
 
 ## Methods
 

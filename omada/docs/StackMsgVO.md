@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AbnormalReason** | Pointer to **int32** | Causes of abnormal | [optional] 
-**AccountVrfId** | Pointer to **string** |  | [optional] 
-**AuthVrfId** | Pointer to **string** |  | [optional] 
+**AccountVrfId** | Pointer to **string** | The VRF ID for account traffic | [optional] 
+**AuthVrfId** | Pointer to **string** | The VRF ID for auth traffic | [optional] 
 **MasterMac** | Pointer to **string** | Stack masterMac | [optional] 
 **Priority** | Pointer to **int32** | Stack priority | [optional] 
 **StackId** | Pointer to **string** | Stack ID | [optional] 

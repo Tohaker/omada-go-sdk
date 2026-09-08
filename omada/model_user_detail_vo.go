@@ -19,7 +19,7 @@ var _ MappedNullable = &UserDetailVO{}
 
 // UserDetailVO struct for UserDetailVO
 type UserDetailVO struct {
-	// Whether this user want to receive alert emails
+	// Whether this user wants to receive alert, event, and incident emails. Make sure your email is not null.
 	Alert *bool `json:"alert,omitempty"`
 	// Whether user has all site permission, including new created site
 	AllSite *bool `json:"allSite,omitempty"`
@@ -31,7 +31,8 @@ type UserDetailVO struct {
 	Favorites []string `json:"favorites,omitempty"`
 	// User ID
 	Id *string `json:"id,omitempty"`
-	// Incident notification
+	// Incident notification, this field is deprecated, please use alert field instead.
+	// Deprecated
 	IncidentNotification *bool `json:"incidentNotification,omitempty"`
 	// User name
 	Name *string `json:"name,omitempty"`
@@ -271,6 +272,7 @@ func (o *UserDetailVO) SetId(v string) {
 }
 
 // GetIncidentNotification returns the IncidentNotification field value if set, zero value otherwise.
+// Deprecated
 func (o *UserDetailVO) GetIncidentNotification() bool {
 	if o == nil || IsNil(o.IncidentNotification) {
 		var ret bool
@@ -281,6 +283,7 @@ func (o *UserDetailVO) GetIncidentNotification() bool {
 
 // GetIncidentNotificationOk returns a tuple with the IncidentNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *UserDetailVO) GetIncidentNotificationOk() (*bool, bool) {
 	if o == nil || IsNil(o.IncidentNotification) {
 		return nil, false
@@ -298,6 +301,7 @@ func (o *UserDetailVO) HasIncidentNotification() bool {
 }
 
 // SetIncidentNotification gets a reference to the given bool and assigns it to the IncidentNotification field.
+// Deprecated
 func (o *UserDetailVO) SetIncidentNotification(v bool) {
 	o.IncidentNotification = &v
 }

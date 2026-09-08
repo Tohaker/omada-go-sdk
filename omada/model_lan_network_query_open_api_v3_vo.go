@@ -36,6 +36,7 @@ type LanNetworkQueryOpenApiV3VO struct {
 	// DHCP Server Device type. It should be a value as follows: 0:External Device 1:gateway 2:switch 3:none
 	DeviceType int32 `json:"deviceType"`
 	DhcpGuard *DhcpServersSetting `json:"dhcpGuard,omitempty"`
+	DhcpIp *DhcpIpVO `json:"dhcpIp,omitempty"`
 	// The switch of DHCP L2 relay
 	DhcpL2RelayEnable *bool `json:"dhcpL2RelayEnable,omitempty"`
 	DhcpRelay *OswDhcpRelayOpenApiVO `json:"dhcpRelay,omitempty"`
@@ -387,6 +388,38 @@ func (o *LanNetworkQueryOpenApiV3VO) HasDhcpGuard() bool {
 // SetDhcpGuard gets a reference to the given DhcpServersSetting and assigns it to the DhcpGuard field.
 func (o *LanNetworkQueryOpenApiV3VO) SetDhcpGuard(v DhcpServersSetting) {
 	o.DhcpGuard = &v
+}
+
+// GetDhcpIp returns the DhcpIp field value if set, zero value otherwise.
+func (o *LanNetworkQueryOpenApiV3VO) GetDhcpIp() DhcpIpVO {
+	if o == nil || IsNil(o.DhcpIp) {
+		var ret DhcpIpVO
+		return ret
+	}
+	return *o.DhcpIp
+}
+
+// GetDhcpIpOk returns a tuple with the DhcpIp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanNetworkQueryOpenApiV3VO) GetDhcpIpOk() (*DhcpIpVO, bool) {
+	if o == nil || IsNil(o.DhcpIp) {
+		return nil, false
+	}
+	return o.DhcpIp, true
+}
+
+// HasDhcpIp returns a boolean if a field has been set.
+func (o *LanNetworkQueryOpenApiV3VO) HasDhcpIp() bool {
+	if o != nil && !IsNil(o.DhcpIp) {
+		return true
+	}
+
+	return false
+}
+
+// SetDhcpIp gets a reference to the given DhcpIpVO and assigns it to the DhcpIp field.
+func (o *LanNetworkQueryOpenApiV3VO) SetDhcpIp(v DhcpIpVO) {
+	o.DhcpIp = &v
 }
 
 // GetDhcpL2RelayEnable returns the DhcpL2RelayEnable field value if set, zero value otherwise.
@@ -1772,6 +1805,9 @@ func (o LanNetworkQueryOpenApiV3VO) ToMap() (map[string]interface{}, error) {
 	toSerialize["deviceType"] = o.DeviceType
 	if !IsNil(o.DhcpGuard) {
 		toSerialize["dhcpGuard"] = o.DhcpGuard
+	}
+	if !IsNil(o.DhcpIp) {
+		toSerialize["dhcpIp"] = o.DhcpIp
 	}
 	if !IsNil(o.DhcpL2RelayEnable) {
 		toSerialize["dhcpL2RelayEnable"] = o.DhcpL2RelayEnable

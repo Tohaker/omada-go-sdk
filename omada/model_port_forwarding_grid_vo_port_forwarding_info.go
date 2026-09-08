@@ -24,10 +24,6 @@ type PortForwardingGridVOPortForwardingInfo struct {
 	// Number of entries per page.
 	CurrentSize *int32 `json:"currentSize,omitempty"`
 	Data []PortForwardingInfo `json:"data,omitempty"`
-	// Deprecated
-	ExistVirtualWan *bool `json:"existVirtualWan,omitempty"`
-	// Deprecated
-	ExistWanIp *bool `json:"existWanIp,omitempty"`
 	SupportByDsLiteAndMapE *bool `json:"supportByDsLiteAndMapE,omitempty"`
 	SupportVirtualWan *bool `json:"supportVirtualWan,omitempty"`
 	SupportWanIp *bool `json:"supportWanIp,omitempty"`
@@ -146,76 +142,6 @@ func (o *PortForwardingGridVOPortForwardingInfo) HasData() bool {
 // SetData gets a reference to the given []PortForwardingInfo and assigns it to the Data field.
 func (o *PortForwardingGridVOPortForwardingInfo) SetData(v []PortForwardingInfo) {
 	o.Data = v
-}
-
-// GetExistVirtualWan returns the ExistVirtualWan field value if set, zero value otherwise.
-// Deprecated
-func (o *PortForwardingGridVOPortForwardingInfo) GetExistVirtualWan() bool {
-	if o == nil || IsNil(o.ExistVirtualWan) {
-		var ret bool
-		return ret
-	}
-	return *o.ExistVirtualWan
-}
-
-// GetExistVirtualWanOk returns a tuple with the ExistVirtualWan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *PortForwardingGridVOPortForwardingInfo) GetExistVirtualWanOk() (*bool, bool) {
-	if o == nil || IsNil(o.ExistVirtualWan) {
-		return nil, false
-	}
-	return o.ExistVirtualWan, true
-}
-
-// HasExistVirtualWan returns a boolean if a field has been set.
-func (o *PortForwardingGridVOPortForwardingInfo) HasExistVirtualWan() bool {
-	if o != nil && !IsNil(o.ExistVirtualWan) {
-		return true
-	}
-
-	return false
-}
-
-// SetExistVirtualWan gets a reference to the given bool and assigns it to the ExistVirtualWan field.
-// Deprecated
-func (o *PortForwardingGridVOPortForwardingInfo) SetExistVirtualWan(v bool) {
-	o.ExistVirtualWan = &v
-}
-
-// GetExistWanIp returns the ExistWanIp field value if set, zero value otherwise.
-// Deprecated
-func (o *PortForwardingGridVOPortForwardingInfo) GetExistWanIp() bool {
-	if o == nil || IsNil(o.ExistWanIp) {
-		var ret bool
-		return ret
-	}
-	return *o.ExistWanIp
-}
-
-// GetExistWanIpOk returns a tuple with the ExistWanIp field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *PortForwardingGridVOPortForwardingInfo) GetExistWanIpOk() (*bool, bool) {
-	if o == nil || IsNil(o.ExistWanIp) {
-		return nil, false
-	}
-	return o.ExistWanIp, true
-}
-
-// HasExistWanIp returns a boolean if a field has been set.
-func (o *PortForwardingGridVOPortForwardingInfo) HasExistWanIp() bool {
-	if o != nil && !IsNil(o.ExistWanIp) {
-		return true
-	}
-
-	return false
-}
-
-// SetExistWanIp gets a reference to the given bool and assigns it to the ExistWanIp field.
-// Deprecated
-func (o *PortForwardingGridVOPortForwardingInfo) SetExistWanIp(v bool) {
-	o.ExistWanIp = &v
 }
 
 // GetSupportByDsLiteAndMapE returns the SupportByDsLiteAndMapE field value if set, zero value otherwise.
@@ -364,12 +290,6 @@ func (o PortForwardingGridVOPortForwardingInfo) ToMap() (map[string]interface{},
 	}
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
-	}
-	if !IsNil(o.ExistVirtualWan) {
-		toSerialize["existVirtualWan"] = o.ExistVirtualWan
-	}
-	if !IsNil(o.ExistWanIp) {
-		toSerialize["existWanIp"] = o.ExistWanIp
 	}
 	if !IsNil(o.SupportByDsLiteAndMapE) {
 		toSerialize["supportByDsLiteAndMapE"] = o.SupportByDsLiteAndMapE

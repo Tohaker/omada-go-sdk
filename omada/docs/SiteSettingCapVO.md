@@ -47,12 +47,14 @@ Name | Type | Description | Notes
 **NetworkSecurity** | Pointer to **bool** |  | [optional] 
 **OltVlan** | Pointer to **bool** |  | [optional] 
 **OneToOneNat** | Pointer to **bool** |  | [optional] 
+**OpenVpn** | Pointer to **bool** |  | [optional] 
 **P2p** | Pointer to **bool** |  | [optional] 
 **PackageCaptureGateway** | Pointer to **bool** |  | [optional] 
 **PacketCaptureSupport** | Pointer to **bool** |  | [optional] 
 **PeerEndpointDomain** | Pointer to **bool** |  | [optional] 
 **PingSupport** | Pointer to **bool** |  | [optional] 
 **PolicyRouting** | Pointer to **bool** |  | [optional] 
+**Pptp** | Pointer to **bool** |  | [optional] 
 **Qos** | Pointer to **bool** |  | [optional] 
 **Radios** | Pointer to **bool** |  | [optional] 
 **ServerClientWireguard** | Pointer to **bool** |  | [optional] 
@@ -1183,6 +1185,31 @@ SetOneToOneNat sets OneToOneNat field to given value.
 
 HasOneToOneNat returns a boolean if a field has been set.
 
+### GetOpenVpn
+
+`func (o *SiteSettingCapVO) GetOpenVpn() bool`
+
+GetOpenVpn returns the OpenVpn field if non-nil, zero value otherwise.
+
+### GetOpenVpnOk
+
+`func (o *SiteSettingCapVO) GetOpenVpnOk() (*bool, bool)`
+
+GetOpenVpnOk returns a tuple with the OpenVpn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOpenVpn
+
+`func (o *SiteSettingCapVO) SetOpenVpn(v bool)`
+
+SetOpenVpn sets OpenVpn field to given value.
+
+### HasOpenVpn
+
+`func (o *SiteSettingCapVO) HasOpenVpn() bool`
+
+HasOpenVpn returns a boolean if a field has been set.
+
 ### GetP2p
 
 `func (o *SiteSettingCapVO) GetP2p() bool`
@@ -1332,6 +1359,31 @@ SetPolicyRouting sets PolicyRouting field to given value.
 `func (o *SiteSettingCapVO) HasPolicyRouting() bool`
 
 HasPolicyRouting returns a boolean if a field has been set.
+
+### GetPptp
+
+`func (o *SiteSettingCapVO) GetPptp() bool`
+
+GetPptp returns the Pptp field if non-nil, zero value otherwise.
+
+### GetPptpOk
+
+`func (o *SiteSettingCapVO) GetPptpOk() (*bool, bool)`
+
+GetPptpOk returns a tuple with the Pptp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPptp
+
+`func (o *SiteSettingCapVO) SetPptp(v bool)`
+
+SetPptp sets Pptp field to given value.
+
+### HasPptp
+
+`func (o *SiteSettingCapVO) HasPptp() bool`
+
+HasPptp returns a boolean if a field has been set.
 
 ### GetQos
 

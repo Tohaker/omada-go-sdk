@@ -46,7 +46,7 @@ type SIMTemplateAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
-	@param mailId mailId
+	@param mailId Mail ID
 	@return SIMTemplateAPIModifyMailServerTemplateRequest
 	*/
 	ModifyMailServerTemplate(ctx context.Context, omadacId string, siteTemplateId string, mailId string) SIMTemplateAPIModifyMailServerTemplateRequest
@@ -62,7 +62,7 @@ type SIMTemplateAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param siteTemplateId siteTemplateId
+	@param siteTemplateId Site Template ID
 	@return SIMTemplateAPIModifySmsPolicySettingTemplateRequest
 	*/
 	ModifySmsPolicySettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) SIMTemplateAPIModifySmsPolicySettingTemplateRequest
@@ -78,7 +78,7 @@ type SIMTemplateAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param siteTemplateId siteTemplateId
+	@param siteTemplateId Site Template ID
 	@return SIMTemplateAPIModifySmsRouterCommandTemplateRequest
 	*/
 	ModifySmsRouterCommandTemplate(ctx context.Context, omadacId string, siteTemplateId string) SIMTemplateAPIModifySmsRouterCommandTemplateRequest
@@ -94,11 +94,11 @@ type SIMTemplateAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
 	@param simCard SIM card. 1: SIM1; 2: SIM2.
-	@param siteTemplateId siteTemplateId
 	@return SIMTemplateAPIQuerySimCardQuotaSettingTemplateRequest
 	*/
-	QuerySimCardQuotaSettingTemplate(ctx context.Context, omadacId string, simCard string, siteTemplateId string) SIMTemplateAPIQuerySimCardQuotaSettingTemplateRequest
+	QuerySimCardQuotaSettingTemplate(ctx context.Context, omadacId string, siteTemplateId string, simCard string) SIMTemplateAPIQuerySimCardQuotaSettingTemplateRequest
 
 	// QuerySimCardQuotaSettingTemplateExecute executes the request
 	//  @return OperationResponseSimQuotaSetting
@@ -111,7 +111,7 @@ type SIMTemplateAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param siteTemplateId siteTemplateId
+	@param siteTemplateId Site Template ID
 	@return SIMTemplateAPIQuerySmsPolicySettingTemplateRequest
 	*/
 	QuerySmsPolicySettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) SIMTemplateAPIQuerySmsPolicySettingTemplateRequest
@@ -127,7 +127,7 @@ type SIMTemplateAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param siteTemplateId siteTemplateId
+	@param siteTemplateId Site Template ID
 	@return SIMTemplateAPIQuerySmsRouterCommandTemplateRequest
 	*/
 	QuerySmsRouterCommandTemplate(ctx context.Context, omadacId string, siteTemplateId string) SIMTemplateAPIQuerySmsRouterCommandTemplateRequest
@@ -287,7 +287,7 @@ modify mail server.<br/><br/>The interface requires one of the permissions: <br/
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
- @param mailId mailId
+ @param mailId Mail ID
  @return SIMTemplateAPIModifyMailServerTemplateRequest
 */
 func (a *SIMTemplateAPIService) ModifyMailServerTemplate(ctx context.Context, omadacId string, siteTemplateId string, mailId string) SIMTemplateAPIModifyMailServerTemplateRequest {
@@ -421,7 +421,7 @@ Modify SMS policy setting template.<br/><br/>The interface requires one of the p
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param siteTemplateId siteTemplateId
+ @param siteTemplateId Site Template ID
  @return SIMTemplateAPIModifySmsPolicySettingTemplateRequest
 */
 func (a *SIMTemplateAPIService) ModifySmsPolicySettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) SIMTemplateAPIModifySmsPolicySettingTemplateRequest {
@@ -553,7 +553,7 @@ Modify SMS router command template.<br/><br/>The interface requires one of the p
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param siteTemplateId siteTemplateId
+ @param siteTemplateId Site Template ID
  @return SIMTemplateAPIModifySmsRouterCommandTemplateRequest
 */
 func (a *SIMTemplateAPIService) ModifySmsRouterCommandTemplate(ctx context.Context, omadacId string, siteTemplateId string) SIMTemplateAPIModifySmsRouterCommandTemplateRequest {
@@ -665,8 +665,8 @@ type SIMTemplateAPIQuerySimCardQuotaSettingTemplateRequest struct {
 	ctx context.Context
 	ApiService SIMTemplateAPI
 	omadacId string
-	simCard string
 	siteTemplateId string
+	simCard string
 }
 
 func (r SIMTemplateAPIQuerySimCardQuotaSettingTemplateRequest) Execute() (*OperationResponseSimQuotaSetting, *http.Response, error) {
@@ -680,17 +680,17 @@ Get SIM data setting template.<br/><br/>The interface requires one of the permis
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
  @param simCard SIM card. 1: SIM1; 2: SIM2.
- @param siteTemplateId siteTemplateId
  @return SIMTemplateAPIQuerySimCardQuotaSettingTemplateRequest
 */
-func (a *SIMTemplateAPIService) QuerySimCardQuotaSettingTemplate(ctx context.Context, omadacId string, simCard string, siteTemplateId string) SIMTemplateAPIQuerySimCardQuotaSettingTemplateRequest {
+func (a *SIMTemplateAPIService) QuerySimCardQuotaSettingTemplate(ctx context.Context, omadacId string, siteTemplateId string, simCard string) SIMTemplateAPIQuerySimCardQuotaSettingTemplateRequest {
 	return SIMTemplateAPIQuerySimCardQuotaSettingTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
-		simCard: simCard,
 		siteTemplateId: siteTemplateId,
+		simCard: simCard,
 	}
 }
 
@@ -711,8 +711,8 @@ func (a *SIMTemplateAPIService) QuerySimCardQuotaSettingTemplateExecute(r SIMTem
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/sim/quota/{simCard}"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"simCard"+"}", url.PathEscape(parameterValueToString(r.simCard, "simCard")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"simCard"+"}", url.PathEscape(parameterValueToString(r.simCard, "simCard")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -804,7 +804,7 @@ Query SMS policy setting template.<br/><br/>The interface requires one of the pe
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param siteTemplateId siteTemplateId
+ @param siteTemplateId Site Template ID
  @return SIMTemplateAPIQuerySmsPolicySettingTemplateRequest
 */
 func (a *SIMTemplateAPIService) QuerySmsPolicySettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) SIMTemplateAPIQuerySmsPolicySettingTemplateRequest {
@@ -925,7 +925,7 @@ Query SMS router command template.<br/><br/>The interface requires one of the pe
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param siteTemplateId siteTemplateId
+ @param siteTemplateId Site Template ID
  @return SIMTemplateAPIQuerySmsRouterCommandTemplateRequest
 */
 func (a *SIMTemplateAPIService) QuerySmsRouterCommandTemplate(ctx context.Context, omadacId string, siteTemplateId string) SIMTemplateAPIQuerySmsRouterCommandTemplateRequest {

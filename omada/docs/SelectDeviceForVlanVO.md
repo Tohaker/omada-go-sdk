@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Ports** | Pointer to [**[]SelectPortForVlanVO**](SelectPortForVlanVO.md) | Device Ports | [optional] 
 **ReplacedDevice** | Pointer to **bool** | It indicates whether the switch is the dhcp server device that is replaced in the first step | [optional] 
 **StatusCategory** | Pointer to **int32** | Device status category, 0: Disconnected, 1: Connected, 2: Pending,3: Heartbeat Missed, 4: Isolated | [optional] 
+**SupportLayout** | Pointer to **bool** | Whether the device supports reporting port layout information. | [optional] 
 **Type** | Pointer to **string** | Device type, 1: gateway  2: switch | [optional] 
 
 ## Methods
@@ -388,6 +389,31 @@ SetStatusCategory sets StatusCategory field to given value.
 `func (o *SelectDeviceForVlanVO) HasStatusCategory() bool`
 
 HasStatusCategory returns a boolean if a field has been set.
+
+### GetSupportLayout
+
+`func (o *SelectDeviceForVlanVO) GetSupportLayout() bool`
+
+GetSupportLayout returns the SupportLayout field if non-nil, zero value otherwise.
+
+### GetSupportLayoutOk
+
+`func (o *SelectDeviceForVlanVO) GetSupportLayoutOk() (*bool, bool)`
+
+GetSupportLayoutOk returns a tuple with the SupportLayout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportLayout
+
+`func (o *SelectDeviceForVlanVO) SetSupportLayout(v bool)`
+
+SetSupportLayout sets SupportLayout field to given value.
+
+### HasSupportLayout
+
+`func (o *SelectDeviceForVlanVO) HasSupportLayout() bool`
+
+HasSupportLayout returns a boolean if a field has been set.
 
 ### GetType
 

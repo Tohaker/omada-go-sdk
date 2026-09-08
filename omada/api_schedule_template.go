@@ -23,6 +23,22 @@ import (
 type ScheduleTemplateAPI interface {
 
 	/*
+	AddPortScheduleTemplate Create a new Port Schedule Template
+
+	Create a new Port Schedule Template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.<br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return ScheduleTemplateAPIAddPortScheduleTemplateRequest
+	*/
+	AddPortScheduleTemplate(ctx context.Context, omadacId string, siteTemplateId string) ScheduleTemplateAPIAddPortScheduleTemplateRequest
+
+	// AddPortScheduleTemplateExecute executes the request
+	//  @return OperationResponse
+	AddPortScheduleTemplateExecute(r ScheduleTemplateAPIAddPortScheduleTemplateRequest) (*OperationResponse, *http.Response, error)
+
+	/*
 	CreateRebootSchedule Create new reboot schedule template
 
 	Create new reboot schedule template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-33006  -  This name already exists in this site.<br/>-34501  -  The number of RebootSchedules has reached the limit.
@@ -56,20 +72,54 @@ type ScheduleTemplateAPI interface {
 	DeleteRebootScheduleExecute(r ScheduleTemplateAPIDeleteRebootScheduleRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	GetRebootScheduleList1 Get reboot schedule template list
+	GetPortScheduleListTemplate Get port Schedule list
+
+	Get port Schedule list with the given omadacId and siteTemplateId.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return ScheduleTemplateAPIGetPortScheduleListTemplateRequest
+	*/
+	GetPortScheduleListTemplate(ctx context.Context, omadacId string, siteTemplateId string) ScheduleTemplateAPIGetPortScheduleListTemplateRequest
+
+	// GetPortScheduleListTemplateExecute executes the request
+	//  @return OperationResponseListPortOrPoeScheduleOpenApiVO
+	GetPortScheduleListTemplateExecute(r ScheduleTemplateAPIGetPortScheduleListTemplateRequest) (*OperationResponseListPortOrPoeScheduleOpenApiVO, *http.Response, error)
+
+	/*
+	GetRebootScheduleList Get reboot schedule template list
 
 	Get reboot schedule list template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
-	@return ScheduleTemplateAPIGetRebootScheduleList1Request
+	@return ScheduleTemplateAPIGetRebootScheduleListRequest
 	*/
-	GetRebootScheduleList1(ctx context.Context, omadacId string, siteTemplateId string) ScheduleTemplateAPIGetRebootScheduleList1Request
+	GetRebootScheduleList(ctx context.Context, omadacId string, siteTemplateId string) ScheduleTemplateAPIGetRebootScheduleListRequest
 
-	// GetRebootScheduleList1Execute executes the request
+	// GetRebootScheduleListExecute executes the request
 	//  @return OperationResponseListRebootScheduleTemplateQueryOpenApiVO
-	GetRebootScheduleList1Execute(r ScheduleTemplateAPIGetRebootScheduleList1Request) (*OperationResponseListRebootScheduleTemplateQueryOpenApiVO, *http.Response, error)
+	GetRebootScheduleListExecute(r ScheduleTemplateAPIGetRebootScheduleListRequest) (*OperationResponseListRebootScheduleTemplateQueryOpenApiVO, *http.Response, error)
+
+	/*
+	ModifyPortScheduleTemplate Modify a Port Schedule Template
+
+	Modify a Port Schedule Template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.<br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param type_ Port Schedule Type. 0: POE schedule; 1: Enable Schedule.
+	@param portScheduleId Port Schedule Template ID
+	@return ScheduleTemplateAPIModifyPortScheduleTemplateRequest
+	*/
+	ModifyPortScheduleTemplate(ctx context.Context, omadacId string, siteTemplateId string, type_ string, portScheduleId string) ScheduleTemplateAPIModifyPortScheduleTemplateRequest
+
+	// ModifyPortScheduleTemplateExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyPortScheduleTemplateExecute(r ScheduleTemplateAPIModifyPortScheduleTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyRebootSchedule Modify reboot schedule template
@@ -87,10 +137,160 @@ type ScheduleTemplateAPI interface {
 	// ModifyRebootScheduleExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifyRebootScheduleExecute(r ScheduleTemplateAPIModifyRebootScheduleRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	RemovePortScheduleTemplate Delete Port Schedule Template
+
+	Delete Port Schedule Template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.<br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param type_ Port Schedule Type. 0: POE schedule; 1: Enable Schedule.
+	@param portScheduleId Port Schedule Template ID
+	@return ScheduleTemplateAPIRemovePortScheduleTemplateRequest
+	*/
+	RemovePortScheduleTemplate(ctx context.Context, omadacId string, siteTemplateId string, type_ string, portScheduleId string) ScheduleTemplateAPIRemovePortScheduleTemplateRequest
+
+	// RemovePortScheduleTemplateExecute executes the request
+	//  @return OperationResponseWithoutResult
+	RemovePortScheduleTemplateExecute(r ScheduleTemplateAPIRemovePortScheduleTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 }
 
 // ScheduleTemplateAPIService ScheduleTemplateAPI service
 type ScheduleTemplateAPIService service
+
+type ScheduleTemplateAPIAddPortScheduleTemplateRequest struct {
+	ctx context.Context
+	ApiService ScheduleTemplateAPI
+	omadacId string
+	siteTemplateId string
+	portOrPoeScheduleOpenApiVO *PortOrPoeScheduleOpenApiVO
+}
+
+func (r ScheduleTemplateAPIAddPortScheduleTemplateRequest) PortOrPoeScheduleOpenApiVO(portOrPoeScheduleOpenApiVO PortOrPoeScheduleOpenApiVO) ScheduleTemplateAPIAddPortScheduleTemplateRequest {
+	r.portOrPoeScheduleOpenApiVO = &portOrPoeScheduleOpenApiVO
+	return r
+}
+
+func (r ScheduleTemplateAPIAddPortScheduleTemplateRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.AddPortScheduleTemplateExecute(r)
+}
+
+/*
+AddPortScheduleTemplate Create a new Port Schedule Template
+
+Create a new Port Schedule Template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.<br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return ScheduleTemplateAPIAddPortScheduleTemplateRequest
+*/
+func (a *ScheduleTemplateAPIService) AddPortScheduleTemplate(ctx context.Context, omadacId string, siteTemplateId string) ScheduleTemplateAPIAddPortScheduleTemplateRequest {
+	return ScheduleTemplateAPIAddPortScheduleTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *ScheduleTemplateAPIService) AddPortScheduleTemplateExecute(r ScheduleTemplateAPIAddPortScheduleTemplateRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduleTemplateAPIService.AddPortScheduleTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.portOrPoeScheduleOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("portOrPoeScheduleOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.portOrPoeScheduleOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type ScheduleTemplateAPICreateRebootScheduleRequest struct {
 	ctx context.Context
@@ -349,29 +549,150 @@ func (a *ScheduleTemplateAPIService) DeleteRebootScheduleExecute(r ScheduleTempl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ScheduleTemplateAPIGetRebootScheduleList1Request struct {
+type ScheduleTemplateAPIGetPortScheduleListTemplateRequest struct {
 	ctx context.Context
 	ApiService ScheduleTemplateAPI
 	omadacId string
 	siteTemplateId string
 }
 
-func (r ScheduleTemplateAPIGetRebootScheduleList1Request) Execute() (*OperationResponseListRebootScheduleTemplateQueryOpenApiVO, *http.Response, error) {
-	return r.ApiService.GetRebootScheduleList1Execute(r)
+func (r ScheduleTemplateAPIGetPortScheduleListTemplateRequest) Execute() (*OperationResponseListPortOrPoeScheduleOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetPortScheduleListTemplateExecute(r)
 }
 
 /*
-GetRebootScheduleList1 Get reboot schedule template list
+GetPortScheduleListTemplate Get port Schedule list
+
+Get port Schedule list with the given omadacId and siteTemplateId.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return ScheduleTemplateAPIGetPortScheduleListTemplateRequest
+*/
+func (a *ScheduleTemplateAPIService) GetPortScheduleListTemplate(ctx context.Context, omadacId string, siteTemplateId string) ScheduleTemplateAPIGetPortScheduleListTemplateRequest {
+	return ScheduleTemplateAPIGetPortScheduleListTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseListPortOrPoeScheduleOpenApiVO
+func (a *ScheduleTemplateAPIService) GetPortScheduleListTemplateExecute(r ScheduleTemplateAPIGetPortScheduleListTemplateRequest) (*OperationResponseListPortOrPoeScheduleOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseListPortOrPoeScheduleOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduleTemplateAPIService.GetPortScheduleListTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ScheduleTemplateAPIGetRebootScheduleListRequest struct {
+	ctx context.Context
+	ApiService ScheduleTemplateAPI
+	omadacId string
+	siteTemplateId string
+}
+
+func (r ScheduleTemplateAPIGetRebootScheduleListRequest) Execute() (*OperationResponseListRebootScheduleTemplateQueryOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetRebootScheduleListExecute(r)
+}
+
+/*
+GetRebootScheduleList Get reboot schedule template list
 
 Get reboot schedule list template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
- @return ScheduleTemplateAPIGetRebootScheduleList1Request
+ @return ScheduleTemplateAPIGetRebootScheduleListRequest
 */
-func (a *ScheduleTemplateAPIService) GetRebootScheduleList1(ctx context.Context, omadacId string, siteTemplateId string) ScheduleTemplateAPIGetRebootScheduleList1Request {
-	return ScheduleTemplateAPIGetRebootScheduleList1Request{
+func (a *ScheduleTemplateAPIService) GetRebootScheduleList(ctx context.Context, omadacId string, siteTemplateId string) ScheduleTemplateAPIGetRebootScheduleListRequest {
+	return ScheduleTemplateAPIGetRebootScheduleListRequest{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
@@ -381,7 +702,7 @@ func (a *ScheduleTemplateAPIService) GetRebootScheduleList1(ctx context.Context,
 
 // Execute executes the request
 //  @return OperationResponseListRebootScheduleTemplateQueryOpenApiVO
-func (a *ScheduleTemplateAPIService) GetRebootScheduleList1Execute(r ScheduleTemplateAPIGetRebootScheduleList1Request) (*OperationResponseListRebootScheduleTemplateQueryOpenApiVO, *http.Response, error) {
+func (a *ScheduleTemplateAPIService) GetRebootScheduleListExecute(r ScheduleTemplateAPIGetRebootScheduleListRequest) (*OperationResponseListRebootScheduleTemplateQueryOpenApiVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -389,7 +710,7 @@ func (a *ScheduleTemplateAPIService) GetRebootScheduleList1Execute(r ScheduleTem
 		localVarReturnValue  *OperationResponseListRebootScheduleTemplateQueryOpenApiVO
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduleTemplateAPIService.GetRebootScheduleList1")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduleTemplateAPIService.GetRebootScheduleList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -419,6 +740,146 @@ func (a *ScheduleTemplateAPIService) GetRebootScheduleList1Execute(r ScheduleTem
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ScheduleTemplateAPIModifyPortScheduleTemplateRequest struct {
+	ctx context.Context
+	ApiService ScheduleTemplateAPI
+	omadacId string
+	siteTemplateId string
+	type_ string
+	portScheduleId string
+	portOrPoeScheduleOpenApiVO *PortOrPoeScheduleOpenApiVO
+}
+
+func (r ScheduleTemplateAPIModifyPortScheduleTemplateRequest) PortOrPoeScheduleOpenApiVO(portOrPoeScheduleOpenApiVO PortOrPoeScheduleOpenApiVO) ScheduleTemplateAPIModifyPortScheduleTemplateRequest {
+	r.portOrPoeScheduleOpenApiVO = &portOrPoeScheduleOpenApiVO
+	return r
+}
+
+func (r ScheduleTemplateAPIModifyPortScheduleTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyPortScheduleTemplateExecute(r)
+}
+
+/*
+ModifyPortScheduleTemplate Modify a Port Schedule Template
+
+Modify a Port Schedule Template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.<br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param type_ Port Schedule Type. 0: POE schedule; 1: Enable Schedule.
+ @param portScheduleId Port Schedule Template ID
+ @return ScheduleTemplateAPIModifyPortScheduleTemplateRequest
+*/
+func (a *ScheduleTemplateAPIService) ModifyPortScheduleTemplate(ctx context.Context, omadacId string, siteTemplateId string, type_ string, portScheduleId string) ScheduleTemplateAPIModifyPortScheduleTemplateRequest {
+	return ScheduleTemplateAPIModifyPortScheduleTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		type_: type_,
+		portScheduleId: portScheduleId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *ScheduleTemplateAPIService) ModifyPortScheduleTemplateExecute(r ScheduleTemplateAPIModifyPortScheduleTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduleTemplateAPIService.ModifyPortScheduleTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterValueToString(r.type_, "type_")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"portScheduleId"+"}", url.PathEscape(parameterValueToString(r.portScheduleId, "portScheduleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.portOrPoeScheduleOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("portOrPoeScheduleOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.portOrPoeScheduleOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -555,6 +1016,135 @@ func (a *ScheduleTemplateAPIService) ModifyRebootScheduleExecute(r ScheduleTempl
 	}
 	// body params
 	localVarPostBody = r.rebootScheduleTemplateOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ScheduleTemplateAPIRemovePortScheduleTemplateRequest struct {
+	ctx context.Context
+	ApiService ScheduleTemplateAPI
+	omadacId string
+	siteTemplateId string
+	type_ string
+	portScheduleId string
+}
+
+func (r ScheduleTemplateAPIRemovePortScheduleTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.RemovePortScheduleTemplateExecute(r)
+}
+
+/*
+RemovePortScheduleTemplate Delete Port Schedule Template
+
+Delete Port Schedule Template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33009  -  This site template does not exist.<br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param type_ Port Schedule Type. 0: POE schedule; 1: Enable Schedule.
+ @param portScheduleId Port Schedule Template ID
+ @return ScheduleTemplateAPIRemovePortScheduleTemplateRequest
+*/
+func (a *ScheduleTemplateAPIService) RemovePortScheduleTemplate(ctx context.Context, omadacId string, siteTemplateId string, type_ string, portScheduleId string) ScheduleTemplateAPIRemovePortScheduleTemplateRequest {
+	return ScheduleTemplateAPIRemovePortScheduleTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		type_: type_,
+		portScheduleId: portScheduleId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *ScheduleTemplateAPIService) RemovePortScheduleTemplateExecute(r ScheduleTemplateAPIRemovePortScheduleTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduleTemplateAPIService.RemovePortScheduleTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service/port-schedules/{type}/{portScheduleId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterValueToString(r.type_, "type_")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"portScheduleId"+"}", url.PathEscape(parameterValueToString(r.portScheduleId, "portScheduleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

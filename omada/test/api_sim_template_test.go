@@ -88,10 +88,10 @@ func Test_omada_SIMTemplateAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		var omadacId string
-		var simCard string
 		var siteTemplateId string
+		var simCard string
 
-		resp, httpRes, err := apiClient.SIMTemplateAPI.QuerySimCardQuotaSettingTemplate(context.Background(), omadacId, simCard, siteTemplateId).Execute()
+		resp, httpRes, err := apiClient.SIMTemplateAPI.QuerySimCardQuotaSettingTemplate(context.Background(), omadacId, siteTemplateId, simCard).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

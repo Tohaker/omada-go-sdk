@@ -27,6 +27,8 @@ type SelectPortForVlanVO struct {
 	ConfigMlagDad *bool `json:"configMlagDad,omitempty"`
 	// Whether the port is configured as a mlag peer-link port.
 	ConfigMlagPeerLink *bool `json:"configMlagPeerLink,omitempty"`
+	// Whether the port is connected to the Controller.
+	ControllerLinkedPort *bool `json:"controllerLinkedPort,omitempty"`
 	// The vlan of default network.
 	DefaultVlan *int32 `json:"defaultVlan,omitempty"`
 	// The downlink devices of the port
@@ -35,6 +37,8 @@ type SelectPortForVlanVO struct {
 	EditEnable *bool `json:"editEnable,omitempty"`
 	// port number, for example: 1
 	Id *int32 `json:"id,omitempty"`
+	// Whether the port is copper when the port is combo.
+	IsCopper *bool `json:"isCopper,omitempty"`
 	// Lag ID. It indicates the lag id of the port when the port is in a lag.
 	LagId *int32 `json:"lagId,omitempty"`
 	// Mode, 0:WAN,1:LAN;
@@ -213,6 +217,38 @@ func (o *SelectPortForVlanVO) SetConfigMlagPeerLink(v bool) {
 	o.ConfigMlagPeerLink = &v
 }
 
+// GetControllerLinkedPort returns the ControllerLinkedPort field value if set, zero value otherwise.
+func (o *SelectPortForVlanVO) GetControllerLinkedPort() bool {
+	if o == nil || IsNil(o.ControllerLinkedPort) {
+		var ret bool
+		return ret
+	}
+	return *o.ControllerLinkedPort
+}
+
+// GetControllerLinkedPortOk returns a tuple with the ControllerLinkedPort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SelectPortForVlanVO) GetControllerLinkedPortOk() (*bool, bool) {
+	if o == nil || IsNil(o.ControllerLinkedPort) {
+		return nil, false
+	}
+	return o.ControllerLinkedPort, true
+}
+
+// HasControllerLinkedPort returns a boolean if a field has been set.
+func (o *SelectPortForVlanVO) HasControllerLinkedPort() bool {
+	if o != nil && !IsNil(o.ControllerLinkedPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetControllerLinkedPort gets a reference to the given bool and assigns it to the ControllerLinkedPort field.
+func (o *SelectPortForVlanVO) SetControllerLinkedPort(v bool) {
+	o.ControllerLinkedPort = &v
+}
+
 // GetDefaultVlan returns the DefaultVlan field value if set, zero value otherwise.
 func (o *SelectPortForVlanVO) GetDefaultVlan() int32 {
 	if o == nil || IsNil(o.DefaultVlan) {
@@ -339,6 +375,38 @@ func (o *SelectPortForVlanVO) HasId() bool {
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *SelectPortForVlanVO) SetId(v int32) {
 	o.Id = &v
+}
+
+// GetIsCopper returns the IsCopper field value if set, zero value otherwise.
+func (o *SelectPortForVlanVO) GetIsCopper() bool {
+	if o == nil || IsNil(o.IsCopper) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCopper
+}
+
+// GetIsCopperOk returns a tuple with the IsCopper field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SelectPortForVlanVO) GetIsCopperOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsCopper) {
+		return nil, false
+	}
+	return o.IsCopper, true
+}
+
+// HasIsCopper returns a boolean if a field has been set.
+func (o *SelectPortForVlanVO) HasIsCopper() bool {
+	if o != nil && !IsNil(o.IsCopper) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCopper gets a reference to the given bool and assigns it to the IsCopper field.
+func (o *SelectPortForVlanVO) SetIsCopper(v bool) {
+	o.IsCopper = &v
 }
 
 // GetLagId returns the LagId field value if set, zero value otherwise.
@@ -875,6 +943,9 @@ func (o SelectPortForVlanVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ConfigMlagPeerLink) {
 		toSerialize["configMlagPeerLink"] = o.ConfigMlagPeerLink
 	}
+	if !IsNil(o.ControllerLinkedPort) {
+		toSerialize["controllerLinkedPort"] = o.ControllerLinkedPort
+	}
 	if !IsNil(o.DefaultVlan) {
 		toSerialize["defaultVlan"] = o.DefaultVlan
 	}
@@ -886,6 +957,9 @@ func (o SelectPortForVlanVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.IsCopper) {
+		toSerialize["isCopper"] = o.IsCopper
 	}
 	if !IsNil(o.LagId) {
 		toSerialize["lagId"] = o.LagId

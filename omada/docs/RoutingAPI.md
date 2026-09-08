@@ -5,15 +5,15 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreatePolicyRouting**](RoutingAPI.md#createpolicyrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings | Create new policy routing
-[**CreateStaticRouting**](RoutingAPI.md#createstaticrouting) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Create new static routing
+[**CreateStaticRouting1**](RoutingAPI.md#createstaticrouting1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Create new static routing
 [**DeletePolicyRouting**](RoutingAPI.md#deletepolicyrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/{policyRoutingId} | Delete policy routing
-[**DeleteStaticRouting**](RoutingAPI.md#deletestaticrouting) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Delete static routing
+[**DeleteStaticRouting1**](RoutingAPI.md#deletestaticrouting1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Delete static routing
 [**GetGridPolicyRouting**](RoutingAPI.md#getgridpolicyrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings | Get policy routing list
-[**GetGridStaticRouting**](RoutingAPI.md#getgridstaticrouting) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Get static routing list
+[**GetGridStaticRouting1**](RoutingAPI.md#getgridstaticrouting1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings | Get static routing list
 [**GetStaticRoutingInterfaceList**](RoutingAPI.md#getstaticroutinginterfacelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/interfaces | Get static routing interface list
 [**ModifyPolicyRouting**](RoutingAPI.md#modifypolicyrouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/{policyRoutingId} | Modify policy routing
 [**ModifyPolicyRoutingIndex**](RoutingAPI.md#modifypolicyroutingindex) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/routing/policy-routings/modifyIndex | Modify policy routing Index
-[**ModifyStaticRouting**](RoutingAPI.md#modifystaticrouting) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Modify static routing
+[**ModifyStaticRouting1**](RoutingAPI.md#modifystaticrouting1) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/routing/static-routings/{staticRoutingId} | Modify static routing
 
 
 
@@ -92,9 +92,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateStaticRouting
+## CreateStaticRouting1
 
-> OperationResponseWithoutResult CreateStaticRouting(ctx, omadacId, siteId).StaticRoutingConfig(staticRoutingConfig).Execute()
+> OperationResponseWithoutResult CreateStaticRouting1(ctx, omadacId, siteId).StaticRoutingConfig(staticRoutingConfig).Execute()
 
 Create new static routing
 
@@ -119,13 +119,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.RoutingAPI.CreateStaticRouting(context.Background(), omadacId, siteId).StaticRoutingConfig(staticRoutingConfig).Execute()
+	resp, r, err := apiClient.RoutingAPI.CreateStaticRouting1(context.Background(), omadacId, siteId).StaticRoutingConfig(staticRoutingConfig).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RoutingAPI.CreateStaticRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RoutingAPI.CreateStaticRouting1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateStaticRouting`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `RoutingAPI.CreateStaticRouting`: %v\n", resp)
+	// response from `CreateStaticRouting1`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `RoutingAPI.CreateStaticRouting1`: %v\n", resp)
 }
 ```
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateStaticRoutingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateStaticRouting1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -190,7 +190,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	policyRoutingId := "policyRoutingId_example" // string | policyRoutingId
+	policyRoutingId := "policyRoutingId_example" // string | Policy routing ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**policyRoutingId** | **string** | policyRoutingId | 
+**policyRoutingId** | **string** | Policy routing ID | 
 
 ### Other Parameters
 
@@ -243,9 +243,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteStaticRouting
+## DeleteStaticRouting1
 
-> OperationResponseWithoutResult DeleteStaticRouting(ctx, omadacId, siteId, staticRoutingId).Execute()
+> OperationResponseWithoutResult DeleteStaticRouting1(ctx, omadacId, siteId, staticRoutingId).Execute()
 
 Delete static routing
 
@@ -266,17 +266,17 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	staticRoutingId := "staticRoutingId_example" // string | staticRoutingId
+	staticRoutingId := "staticRoutingId_example" // string | Static routing ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.RoutingAPI.DeleteStaticRouting(context.Background(), omadacId, siteId, staticRoutingId).Execute()
+	resp, r, err := apiClient.RoutingAPI.DeleteStaticRouting1(context.Background(), omadacId, siteId, staticRoutingId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RoutingAPI.DeleteStaticRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RoutingAPI.DeleteStaticRouting1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteStaticRouting`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `RoutingAPI.DeleteStaticRouting`: %v\n", resp)
+	// response from `DeleteStaticRouting1`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `RoutingAPI.DeleteStaticRouting1`: %v\n", resp)
 }
 ```
 
@@ -288,11 +288,11 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**staticRoutingId** | **string** | staticRoutingId | 
+**staticRoutingId** | **string** | Static routing ID | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteStaticRoutingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteStaticRouting1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -396,9 +396,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetGridStaticRouting
+## GetGridStaticRouting1
 
-> OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo GetGridStaticRouting(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+> OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo GetGridStaticRouting1(ctx, omadacId, siteId).Page(page).PageSize(pageSize).Execute()
 
 Get static routing list
 
@@ -424,13 +424,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.RoutingAPI.GetGridStaticRouting(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).Execute()
+	resp, r, err := apiClient.RoutingAPI.GetGridStaticRouting1(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RoutingAPI.GetGridStaticRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RoutingAPI.GetGridStaticRouting1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGridStaticRouting`: OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo
-	fmt.Fprintf(os.Stdout, "Response from `RoutingAPI.GetGridStaticRouting`: %v\n", resp)
+	// response from `GetGridStaticRouting1`: OperationResponseStaticRoutingOpenApiGridVOStaticRoutingInfo
+	fmt.Fprintf(os.Stdout, "Response from `RoutingAPI.GetGridStaticRouting1`: %v\n", resp)
 }
 ```
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetGridStaticRoutingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetGridStaticRouting1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -569,7 +569,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	policyRoutingId := "policyRoutingId_example" // string | policyRoutingId
+	policyRoutingId := "policyRoutingId_example" // string | Policy routing ID
 	policyRoutingConfig := *openapiclient.NewPolicyRoutingConfig(false, []string{"DestinationIds_example"}, int32(123), "Name_example", []int32{int32(123)}, []string{"SourceIds_example"}, int32(123), false) // PolicyRoutingConfig | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**policyRoutingId** | **string** | policyRoutingId | 
+**policyRoutingId** | **string** | Policy routing ID | 
 
 ### Other Parameters
 
@@ -699,9 +699,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ModifyStaticRouting
+## ModifyStaticRouting1
 
-> OperationResponseWithoutResult ModifyStaticRouting(ctx, omadacId, siteId, staticRoutingId).StaticRoutingConfig(staticRoutingConfig).Execute()
+> OperationResponseWithoutResult ModifyStaticRouting1(ctx, omadacId, siteId, staticRoutingId).StaticRoutingConfig(staticRoutingConfig).Execute()
 
 Modify static routing
 
@@ -722,18 +722,18 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	staticRoutingId := "staticRoutingId_example" // string | staticRoutingId
+	staticRoutingId := "staticRoutingId_example" // string | Static routing ID
 	staticRoutingConfig := *openapiclient.NewStaticRoutingConfig([]string{"Destinations_example"}, int32(123), "Name_example", int32(123), false) // StaticRoutingConfig | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.RoutingAPI.ModifyStaticRouting(context.Background(), omadacId, siteId, staticRoutingId).StaticRoutingConfig(staticRoutingConfig).Execute()
+	resp, r, err := apiClient.RoutingAPI.ModifyStaticRouting1(context.Background(), omadacId, siteId, staticRoutingId).StaticRoutingConfig(staticRoutingConfig).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RoutingAPI.ModifyStaticRouting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RoutingAPI.ModifyStaticRouting1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ModifyStaticRouting`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `RoutingAPI.ModifyStaticRouting`: %v\n", resp)
+	// response from `ModifyStaticRouting1`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `RoutingAPI.ModifyStaticRouting1`: %v\n", resp)
 }
 ```
 
@@ -745,11 +745,11 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**staticRoutingId** | **string** | staticRoutingId | 
+**staticRoutingId** | **string** | Static routing ID | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiModifyStaticRoutingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiModifyStaticRouting1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

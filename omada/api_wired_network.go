@@ -1189,7 +1189,7 @@ type WiredNetworkAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param profileId
+	@param profileId Switch profile ID
 	@return WiredNetworkAPIGetUseLanProfileESRequest
 	*/
 	GetUseLanProfileES(ctx context.Context, omadacId string, siteId string, profileId string) WiredNetworkAPIGetUseLanProfileESRequest
@@ -10957,7 +10957,7 @@ Query Agile Series switches that used the profile.(Pagination)<br/><br/>The inte
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param profileId
+ @param profileId Switch profile ID
  @return WiredNetworkAPIGetUseLanProfileESRequest
 */
 func (a *WiredNetworkAPIService) GetUseLanProfileES(ctx context.Context, omadacId string, siteId string, profileId string) WiredNetworkAPIGetUseLanProfileESRequest {

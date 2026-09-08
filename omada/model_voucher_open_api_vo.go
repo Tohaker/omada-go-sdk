@@ -33,6 +33,8 @@ type VoucherOpenApiVO struct {
 	DurationType *int32 `json:"durationType,omitempty"`
 	// The timestamp when the voucher takes effect, unit: millisecond
 	EffectiveTime *int64 `json:"effectiveTime,omitempty"`
+	// The expiration date of the voucher
+	EndTime *int64 `json:"endTime,omitempty"`
 	// The timestamp of the expiration of the voucher, unit: millisecond
 	ExpirationTime *int64 `json:"expirationTime,omitempty"`
 	// Voucher ID
@@ -58,7 +60,7 @@ type VoucherOpenApiVO struct {
 	RateLimit *RateLimitOpenApiVO `json:"rateLimit,omitempty"`
 	// SSIDs for voucher
 	SsidNameList []string `json:"ssidNameList,omitempty"`
-	// The expiration date of the voucher
+	// The time when the voucher was first used, 0 represents it hasn't started using yet
 	StartTime *int64 `json:"startTime,omitempty"`
 	// The timing type of the voucher. It should be a value as follows: 0: Timing by time, clients can use vouchers for specified time duration. 1: Timing by usage, clients can use vouchers for the duration of actual usage
 	TimingType *int32 `json:"timingType,omitempty"`
@@ -325,6 +327,38 @@ func (o *VoucherOpenApiVO) HasEffectiveTime() bool {
 // SetEffectiveTime gets a reference to the given int64 and assigns it to the EffectiveTime field.
 func (o *VoucherOpenApiVO) SetEffectiveTime(v int64) {
 	o.EffectiveTime = &v
+}
+
+// GetEndTime returns the EndTime field value if set, zero value otherwise.
+func (o *VoucherOpenApiVO) GetEndTime() int64 {
+	if o == nil || IsNil(o.EndTime) {
+		var ret int64
+		return ret
+	}
+	return *o.EndTime
+}
+
+// GetEndTimeOk returns a tuple with the EndTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VoucherOpenApiVO) GetEndTimeOk() (*int64, bool) {
+	if o == nil || IsNil(o.EndTime) {
+		return nil, false
+	}
+	return o.EndTime, true
+}
+
+// HasEndTime returns a boolean if a field has been set.
+func (o *VoucherOpenApiVO) HasEndTime() bool {
+	if o != nil && !IsNil(o.EndTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetEndTime gets a reference to the given int64 and assigns it to the EndTime field.
+func (o *VoucherOpenApiVO) SetEndTime(v int64) {
+	o.EndTime = &v
 }
 
 // GetExpirationTime returns the ExpirationTime field value if set, zero value otherwise.
@@ -1189,6 +1223,9 @@ func (o VoucherOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EffectiveTime) {
 		toSerialize["effectiveTime"] = o.EffectiveTime
+	}
+	if !IsNil(o.EndTime) {
+		toSerialize["endTime"] = o.EndTime
 	}
 	if !IsNil(o.ExpirationTime) {
 		toSerialize["expirationTime"] = o.ExpirationTime

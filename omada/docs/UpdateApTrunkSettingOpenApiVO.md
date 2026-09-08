@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Enable** | Pointer to **bool** | Whether the device enable trunk setting. | [optional] 
-**Mode** | Pointer to **int32** | Trunk setting mode. Mode should be a value as follows: 0：SRC MAC + DST MAC; 1：DST MAC; 2：SRC MAC. | [optional] 
+**Enable** | Pointer to **bool** | Whether the device enables LAG. The following situations cause port aggregation to be ineffective: 1. When a specific Uplink Port is selected. 2. When PoE Out is enabled on target ports. 3. When Custom VLAN configurations is configured on target ports. 4. When Status is disabled on target ports. | [optional] 
+**Mode** | Pointer to **int32** | LAG mode. Mode should be a value as follows: 0：SRC MAC + DST MAC; 1：DST MAC; 2：SRC MAC. | [optional] 
 
 ## Methods
 

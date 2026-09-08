@@ -21,7 +21,7 @@ var _ MappedNullable = &OuiBasedVlanSwitchOpenApiVO{}
 
 // OuiBasedVlanSwitchOpenApiVO struct for OuiBasedVlanSwitchOpenApiVO
 type OuiBasedVlanSwitchOpenApiVO struct {
-	// When mode is 0, should configure device info.
+	// When mode is 1, should configure device info.
 	DeviceList []DeviceOuiModeOpenApiVO `json:"deviceList,omitempty"`
 	// Switch Rule state.
 	Enable bool `json:"enable"`

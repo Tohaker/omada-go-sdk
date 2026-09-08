@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientHealthScoreDetail** | Pointer to [**HealthStatisticsScoreVO**](HealthStatisticsScoreVO.md) |  | [optional] 
 **DeviceHealthScoreDetail** | Pointer to [**SiteDeviceSubHealthScoreVO**](SiteDeviceSubHealthScoreVO.md) |  | [optional] 
+**IncidentDetail** | Pointer to [**AnomalyStateVO**](AnomalyStateVO.md) |  | [optional] 
 **WanScoreDetail** | Pointer to [**WanHealthListVO**](WanHealthListVO.md) |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetDeviceHealthScoreDetail sets DeviceHealthScoreDetail field to given value.
 `func (o *SiteSubHealthScoreVO) HasDeviceHealthScoreDetail() bool`
 
 HasDeviceHealthScoreDetail returns a boolean if a field has been set.
+
+### GetIncidentDetail
+
+`func (o *SiteSubHealthScoreVO) GetIncidentDetail() AnomalyStateVO`
+
+GetIncidentDetail returns the IncidentDetail field if non-nil, zero value otherwise.
+
+### GetIncidentDetailOk
+
+`func (o *SiteSubHealthScoreVO) GetIncidentDetailOk() (*AnomalyStateVO, bool)`
+
+GetIncidentDetailOk returns a tuple with the IncidentDetail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncidentDetail
+
+`func (o *SiteSubHealthScoreVO) SetIncidentDetail(v AnomalyStateVO)`
+
+SetIncidentDetail sets IncidentDetail field to given value.
+
+### HasIncidentDetail
+
+`func (o *SiteSubHealthScoreVO) HasIncidentDetail() bool`
+
+HasIncidentDetail returns a boolean if a field has been set.
 
 ### GetWanScoreDetail
 

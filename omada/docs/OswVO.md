@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **AddedInAdvanced** | Pointer to **bool** | Whether the device is added in advanced. | [optional] 
 **Address** | Pointer to **string** | Address | [optional] 
 **AdoptFailType** | Pointer to **int32** | Adopt fail reason should be a value as follows: -1:adopt timeout;-2:user/password error | [optional] 
+**Block** | Pointer to **string** | Block information | [optional] 
+**BlockNum** | Pointer to **int32** | Block Num | [optional] 
 **Category** | Pointer to **string** | Category of license.When activating in bulk for the pro site, the front end can only select the same type for bulk activation. | [optional] 
 **ClientNum** | Pointer to **int32** | Number of clients. | [optional] 
 **CombinedGateway** | Pointer to **bool** | Is it an combined gateway? | [optional] 
@@ -37,10 +39,12 @@ Name | Type | Description | Notes
 **HealthScoreTime** | Pointer to **int64** | The time of healthScore | [optional] 
 **HwVersion** | Pointer to **string** | Version of hardware,for example 1.0 | [optional] 
 **InWhitelist** | Pointer to **bool** | Whether the device is in white list | [optional] 
+**Incidents** | Pointer to **int32** | incident number | [optional] 
 **Ip** | Pointer to **string** | Ip address,such as 192.168.0.105 | [optional] 
 **Ippt** | Pointer to **bool** | Whether it is LTE Backup | [optional] 
 **IpptPreconfig** | Pointer to **bool** |  | [optional] 
 **Ipv6List** | Pointer to **[]string** | Ipv6 address List | [optional] 
+**LagCap** | Pointer to [**LagCapVO**](LagCapVO.md) |  | [optional] 
 **LastSeen** | Pointer to **int64** | Last active time. | [optional] 
 **LatestVersion** | Pointer to **string** | Latest firmware version | [optional] 
 **LicenseStatus** | Pointer to **int32** | License status should be a value as follows:0: unActive 1: Unbind 2: Expired 3: active If there is a value and it is not 3, display the Active button. license (specific to cloud base). | [optional] 
@@ -61,8 +65,10 @@ Name | Type | Description | Notes
 **MlagMsg** | Pointer to [**MlagMsgVO**](MlagMsgVO.md) |  | [optional] 
 **Model** | Pointer to **string** | Model, such as EAP225. | [optional] 
 **ModelVersion** | Pointer to **string** | Model version of device,for example:3.0 | [optional] 
+**MstpGetActiveSupport** | Pointer to **bool** | Indicates whether the switch supports MSTP Get Active | [optional] 
 **MstpInsNo** | Pointer to **int32** | The range of MSTP instanceId | [optional] 
 **MstpInsNum** | Pointer to **int32** | The number of MSTP instances | [optional] 
+**MstpPortSupport** | Pointer to **bool** | Indicates whether the switch supports MSTP Port | [optional] 
 **Name** | Pointer to **string** | Default uses the MAC address as the name. | [optional] 
 **NeedUpgrade** | Pointer to **bool** | Whether the device needs upgrade | [optional] 
 **OnlineUpgradeStatus** | Pointer to **int32** | Device online upgrade status should be a value as follows: 0:IDLE,1:DOWNLOADING,2:UPGRADING | [optional] 
@@ -78,6 +84,7 @@ Name | Type | Description | Notes
 **Priority** | Pointer to **int32** | Stack member priority | [optional] 
 **Profiles** | Pointer to **map[string]string** | profiles | [optional] 
 **PublicIp** | Pointer to **string** | Public ip address | [optional] 
+**ReplaceDeviceInfo** | Pointer to [**DeviceReplaceSettingVO**](DeviceReplaceSettingVO.md) |  | [optional] 
 **Resource** | Pointer to **int32** | Data source.Resource should be a value as follows: 0:new created;1:from template;2:override | [optional] 
 **RpvstExtendSupport** | Pointer to **bool** | Indicates whether the switch supports rpvst | [optional] 
 **RpvstInsNum** | Pointer to **int32** | The number of RPVST instances | [optional] 
@@ -106,11 +113,13 @@ Name | Type | Description | Notes
 **SupportExtendStp** | Pointer to **bool** | Indicates whether the switch supports mstp | [optional] 
 **SupportGetOspfNeighborTable** | Pointer to **bool** |  | [optional] 
 **SupportIppt** | Pointer to **bool** |  | [optional] 
+**SupportJumbo** | Pointer to **bool** | Indicates whether the switch supports Jumbo | [optional] 
 **SupportMacDelay** | Pointer to **bool** |  | [optional] 
 **SupportPowerAlert** | Pointer to **bool** | Indicates whether the switch supports power alert | [optional] 
 **SupportRelayMultiServer** | Pointer to **bool** | Whether the device supports DHCP relay multi Server | [optional] 
 **SupportRunningConfig** | Pointer to **bool** | Whether the device supports show running config. | [optional] 
 **SupportSdm** | Pointer to **bool** | Indicates whether the switch supports SDM template | [optional] 
+**SupportSnmp** | Pointer to **bool** | Indicates whether the switch supports SNMP | [optional] 
 **SupportStackGroupSpeed** | Pointer to **bool** | Indicates whether the member device supports configuring the link speed of the stack port aggregation group | [optional] 
 **SupportStp** | Pointer to **bool** | Indicates whether the switch supports stp | [optional] 
 **SupportTpclResInfo** | Pointer to **bool** | Whether the device supports returning TPCL resource information | [optional] 
@@ -271,6 +280,56 @@ SetAdoptFailType sets AdoptFailType field to given value.
 `func (o *OswVO) HasAdoptFailType() bool`
 
 HasAdoptFailType returns a boolean if a field has been set.
+
+### GetBlock
+
+`func (o *OswVO) GetBlock() string`
+
+GetBlock returns the Block field if non-nil, zero value otherwise.
+
+### GetBlockOk
+
+`func (o *OswVO) GetBlockOk() (*string, bool)`
+
+GetBlockOk returns a tuple with the Block field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlock
+
+`func (o *OswVO) SetBlock(v string)`
+
+SetBlock sets Block field to given value.
+
+### HasBlock
+
+`func (o *OswVO) HasBlock() bool`
+
+HasBlock returns a boolean if a field has been set.
+
+### GetBlockNum
+
+`func (o *OswVO) GetBlockNum() int32`
+
+GetBlockNum returns the BlockNum field if non-nil, zero value otherwise.
+
+### GetBlockNumOk
+
+`func (o *OswVO) GetBlockNumOk() (*int32, bool)`
+
+GetBlockNumOk returns a tuple with the BlockNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlockNum
+
+`func (o *OswVO) SetBlockNum(v int32)`
+
+SetBlockNum sets BlockNum field to given value.
+
+### HasBlockNum
+
+`func (o *OswVO) HasBlockNum() bool`
+
+HasBlockNum returns a boolean if a field has been set.
 
 ### GetCategory
 
@@ -972,6 +1031,31 @@ SetInWhitelist sets InWhitelist field to given value.
 
 HasInWhitelist returns a boolean if a field has been set.
 
+### GetIncidents
+
+`func (o *OswVO) GetIncidents() int32`
+
+GetIncidents returns the Incidents field if non-nil, zero value otherwise.
+
+### GetIncidentsOk
+
+`func (o *OswVO) GetIncidentsOk() (*int32, bool)`
+
+GetIncidentsOk returns a tuple with the Incidents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncidents
+
+`func (o *OswVO) SetIncidents(v int32)`
+
+SetIncidents sets Incidents field to given value.
+
+### HasIncidents
+
+`func (o *OswVO) HasIncidents() bool`
+
+HasIncidents returns a boolean if a field has been set.
+
 ### GetIp
 
 `func (o *OswVO) GetIp() string`
@@ -1071,6 +1155,31 @@ SetIpv6List sets Ipv6List field to given value.
 `func (o *OswVO) HasIpv6List() bool`
 
 HasIpv6List returns a boolean if a field has been set.
+
+### GetLagCap
+
+`func (o *OswVO) GetLagCap() LagCapVO`
+
+GetLagCap returns the LagCap field if non-nil, zero value otherwise.
+
+### GetLagCapOk
+
+`func (o *OswVO) GetLagCapOk() (*LagCapVO, bool)`
+
+GetLagCapOk returns a tuple with the LagCap field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLagCap
+
+`func (o *OswVO) SetLagCap(v LagCapVO)`
+
+SetLagCap sets LagCap field to given value.
+
+### HasLagCap
+
+`func (o *OswVO) HasLagCap() bool`
+
+HasLagCap returns a boolean if a field has been set.
 
 ### GetLastSeen
 
@@ -1572,6 +1681,31 @@ SetModelVersion sets ModelVersion field to given value.
 
 HasModelVersion returns a boolean if a field has been set.
 
+### GetMstpGetActiveSupport
+
+`func (o *OswVO) GetMstpGetActiveSupport() bool`
+
+GetMstpGetActiveSupport returns the MstpGetActiveSupport field if non-nil, zero value otherwise.
+
+### GetMstpGetActiveSupportOk
+
+`func (o *OswVO) GetMstpGetActiveSupportOk() (*bool, bool)`
+
+GetMstpGetActiveSupportOk returns a tuple with the MstpGetActiveSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMstpGetActiveSupport
+
+`func (o *OswVO) SetMstpGetActiveSupport(v bool)`
+
+SetMstpGetActiveSupport sets MstpGetActiveSupport field to given value.
+
+### HasMstpGetActiveSupport
+
+`func (o *OswVO) HasMstpGetActiveSupport() bool`
+
+HasMstpGetActiveSupport returns a boolean if a field has been set.
+
 ### GetMstpInsNo
 
 `func (o *OswVO) GetMstpInsNo() int32`
@@ -1621,6 +1755,31 @@ SetMstpInsNum sets MstpInsNum field to given value.
 `func (o *OswVO) HasMstpInsNum() bool`
 
 HasMstpInsNum returns a boolean if a field has been set.
+
+### GetMstpPortSupport
+
+`func (o *OswVO) GetMstpPortSupport() bool`
+
+GetMstpPortSupport returns the MstpPortSupport field if non-nil, zero value otherwise.
+
+### GetMstpPortSupportOk
+
+`func (o *OswVO) GetMstpPortSupportOk() (*bool, bool)`
+
+GetMstpPortSupportOk returns a tuple with the MstpPortSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMstpPortSupport
+
+`func (o *OswVO) SetMstpPortSupport(v bool)`
+
+SetMstpPortSupport sets MstpPortSupport field to given value.
+
+### HasMstpPortSupport
+
+`func (o *OswVO) HasMstpPortSupport() bool`
+
+HasMstpPortSupport returns a boolean if a field has been set.
 
 ### GetName
 
@@ -1996,6 +2155,31 @@ SetPublicIp sets PublicIp field to given value.
 `func (o *OswVO) HasPublicIp() bool`
 
 HasPublicIp returns a boolean if a field has been set.
+
+### GetReplaceDeviceInfo
+
+`func (o *OswVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO`
+
+GetReplaceDeviceInfo returns the ReplaceDeviceInfo field if non-nil, zero value otherwise.
+
+### GetReplaceDeviceInfoOk
+
+`func (o *OswVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool)`
+
+GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplaceDeviceInfo
+
+`func (o *OswVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO)`
+
+SetReplaceDeviceInfo sets ReplaceDeviceInfo field to given value.
+
+### HasReplaceDeviceInfo
+
+`func (o *OswVO) HasReplaceDeviceInfo() bool`
+
+HasReplaceDeviceInfo returns a boolean if a field has been set.
 
 ### GetResource
 
@@ -2697,6 +2881,31 @@ SetSupportIppt sets SupportIppt field to given value.
 
 HasSupportIppt returns a boolean if a field has been set.
 
+### GetSupportJumbo
+
+`func (o *OswVO) GetSupportJumbo() bool`
+
+GetSupportJumbo returns the SupportJumbo field if non-nil, zero value otherwise.
+
+### GetSupportJumboOk
+
+`func (o *OswVO) GetSupportJumboOk() (*bool, bool)`
+
+GetSupportJumboOk returns a tuple with the SupportJumbo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportJumbo
+
+`func (o *OswVO) SetSupportJumbo(v bool)`
+
+SetSupportJumbo sets SupportJumbo field to given value.
+
+### HasSupportJumbo
+
+`func (o *OswVO) HasSupportJumbo() bool`
+
+HasSupportJumbo returns a boolean if a field has been set.
+
 ### GetSupportMacDelay
 
 `func (o *OswVO) GetSupportMacDelay() bool`
@@ -2821,6 +3030,31 @@ SetSupportSdm sets SupportSdm field to given value.
 `func (o *OswVO) HasSupportSdm() bool`
 
 HasSupportSdm returns a boolean if a field has been set.
+
+### GetSupportSnmp
+
+`func (o *OswVO) GetSupportSnmp() bool`
+
+GetSupportSnmp returns the SupportSnmp field if non-nil, zero value otherwise.
+
+### GetSupportSnmpOk
+
+`func (o *OswVO) GetSupportSnmpOk() (*bool, bool)`
+
+GetSupportSnmpOk returns a tuple with the SupportSnmp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportSnmp
+
+`func (o *OswVO) SetSupportSnmp(v bool)`
+
+SetSupportSnmp sets SupportSnmp field to given value.
+
+### HasSupportSnmp
+
+`func (o *OswVO) HasSupportSnmp() bool`
+
+HasSupportSnmp returns a boolean if a field has been set.
 
 ### GetSupportStackGroupSpeed
 

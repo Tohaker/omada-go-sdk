@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Indicates whether the device is activated | [optional] 
+**Block** | Pointer to **string** | Block port | [optional] 
+**BlockNum** | Pointer to **int32** | Number of blocks | [optional] 
 **Category** | Pointer to **string** | Category | [optional] 
 **Compatible** | Pointer to **int32** | Compatible Type | [optional] 
 **CompoundModel** | Pointer to **string** |  | [optional] 
@@ -95,6 +97,56 @@ SetActive sets Active field to given value.
 `func (o *OswStackMemberVO) HasActive() bool`
 
 HasActive returns a boolean if a field has been set.
+
+### GetBlock
+
+`func (o *OswStackMemberVO) GetBlock() string`
+
+GetBlock returns the Block field if non-nil, zero value otherwise.
+
+### GetBlockOk
+
+`func (o *OswStackMemberVO) GetBlockOk() (*string, bool)`
+
+GetBlockOk returns a tuple with the Block field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlock
+
+`func (o *OswStackMemberVO) SetBlock(v string)`
+
+SetBlock sets Block field to given value.
+
+### HasBlock
+
+`func (o *OswStackMemberVO) HasBlock() bool`
+
+HasBlock returns a boolean if a field has been set.
+
+### GetBlockNum
+
+`func (o *OswStackMemberVO) GetBlockNum() int32`
+
+GetBlockNum returns the BlockNum field if non-nil, zero value otherwise.
+
+### GetBlockNumOk
+
+`func (o *OswStackMemberVO) GetBlockNumOk() (*int32, bool)`
+
+GetBlockNumOk returns a tuple with the BlockNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlockNum
+
+`func (o *OswStackMemberVO) SetBlockNum(v int32)`
+
+SetBlockNum sets BlockNum field to given value.
+
+### HasBlockNum
+
+`func (o *OswStackMemberVO) HasBlockNum() bool`
+
+HasBlockNum returns a boolean if a field has been set.
 
 ### GetCategory
 

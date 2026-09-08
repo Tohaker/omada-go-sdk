@@ -17,29 +17,51 @@ import (
 // checks if the MlagAdoptOswVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MlagAdoptOswVO{}
 
-// MlagAdoptOswVO struct for MlagAdoptOswVO
+// MlagAdoptOswVO The switches contained in the M-LAG.
 type MlagAdoptOswVO struct {
+	// whether to active the device(cloud base exclusive).
 	Active *bool `json:"active,omitempty"`
+	// Whether the device is added in advanced.
 	AddedInAdvanced *bool `json:"addedInAdvanced,omitempty"`
+	// Category of license.
 	Category *string `json:"category,omitempty"`
+	// Device type, 1: Gateway; 2: Switch; 3: Ap.
 	DeviceType *int32 `json:"deviceType,omitempty"`
+	// Expire timestamp of license(cloud base exclusive).
 	DueTime *int64 `json:"dueTime,omitempty"`
+	// Milliseconds from the current moment to the expiration time(cloud base exclusive)
 	DueTimeLeft *int64 `json:"dueTimeLeft,omitempty"`
+	// IP
 	Ip *string `json:"ip,omitempty"`
+	// Device IPv6 list.
 	Ipv6List []string `json:"ipv6List,omitempty"`
+	// Device license status (Only for cloud base) should be a value as follows: 0: unActive; 1: Unbind; 2: Expired; 3: active
 	LicenseStatus *int32 `json:"licenseStatus,omitempty"`
+	// Device mac
 	Mac *string `json:"mac,omitempty"`
+	// M-LAG group ID.
 	MlagGroupId *int32 `json:"mlagGroupId,omitempty"`
+	// M-LAG version.
 	MlagVersion *string `json:"mlagVersion,omitempty"`
+	// Model of device,for example:EAP225
 	Model *string `json:"model,omitempty"`
+	// Model version of device,for example:3.0
 	ModelVersion *string `json:"modelVersion,omitempty"`
+	// Device name,default value is the mac address of device
 	Name *string `json:"name,omitempty"`
+	// M-LAG group device ports.
 	Ports []OswMlagPortVO `json:"ports,omitempty"`
+	// Device public IP.
 	PublicIp *string `json:"publicIp,omitempty"`
+	// Model complex shown in the front end.Ap：model+(country)+modelVersion,EAP225(EU) v3.0  Gateway/Switch：model+modelVersion,Osg v3.0
 	ShowModel *string `json:"showModel,omitempty"`
+	// Status of device,status should be a value as follows: 0:Disconnected;1:Disconnected(Migrating);10:Provisioning;11:Configuring;12:Upgrading;13:Rebooting;14:Connected;15:Connected(Wireless);16:Connected(Migrating);17:Connected(Wireless,Migrating);20:Pending;21:Pending(Wireless);22:Adopting;23:Adopting(Wireless);24:Adopt Failed;25:Adopt Failed(Wireless);26:Managed By Others;27:Managed By Others(Wireless);30:Heartbeat Missed;31:Heartbeat Missed(Wireless);32:Heartbeat Missed(Migrating);33:Heartbeat Missed(Wireless,Migrating);40:Isolated;41:Isolated(Migrating);50:Slice Configuring
 	Status *int32 `json:"status,omitempty"`
+	// Whether the device support the configuration of M-LAG group IPv6.
 	SupportMlagIpv6 *bool `json:"supportMlagIpv6,omitempty"`
+	// Support the configuration of peer link ports for devices in the MLAG group.
 	SupportPeerLinkPorts []OswStandPortVO `json:"supportPeerLinkPorts,omitempty"`
+	// Simplified version of firmware,for example:2.5.0.
 	Version *string `json:"version,omitempty"`
 }
 

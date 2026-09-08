@@ -97,6 +97,36 @@ func Test_omada_SiteConfigurationAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SiteConfigurationAPIService GetJumboSetting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.SiteConfigurationAPI.GetJumboSetting(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SiteConfigurationAPIService GetLagHashAlgSetting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.SiteConfigurationAPI.GetLagHashAlgSetting(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SiteConfigurationAPIService GetLldpSetting", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -435,6 +465,36 @@ func Test_omada_SiteConfigurationAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.SiteConfigurationAPI.UpdateRoamingSetting(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SiteConfigurationAPIService UpdateSiteJumboSetting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.SiteConfigurationAPI.UpdateSiteJumboSetting(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SiteConfigurationAPIService UpdateSiteLagHashAlgSetting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.SiteConfigurationAPI.UpdateSiteLagHashAlgSetting(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

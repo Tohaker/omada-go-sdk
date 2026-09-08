@@ -36,6 +36,22 @@ func Test_omada_AuditLogAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test AuditLogAPIService GetApSsidOverridesAuditLogs", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apMac string
+
+		resp, httpRes, err := apiClient.AuditLogAPI.GetApSsidOverridesAuditLogs(context.Background(), omadacId, siteId, apMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test AuditLogAPIService GetAuditLogSettingForGlobal", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

@@ -63,14 +63,33 @@ type CertProfilesAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param fileId Cert profile file ID
 	@return CertProfilesAPIDeleteCertProfileFile1Request
 	*/
-	DeleteCertProfileFile1(ctx context.Context, omadacId string, siteId string, fileId string) CertProfilesAPIDeleteCertProfileFile1Request
+	DeleteCertProfileFile1(ctx context.Context, omadacId string, siteId string) CertProfilesAPIDeleteCertProfileFile1Request
 
 	// DeleteCertProfileFile1Execute executes the request
 	//  @return OperationResponseWithoutResult
 	DeleteCertProfileFile1Execute(r CertProfilesAPIDeleteCertProfileFile1Request) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	DeleteCertProfileFile2 Delete an exist certificate profile file by id in url
+
+	Delete an exist certificate profile file with the given params.This interface has been deprecated. Please use the following interface instead: Delete an exist certificate profile file)<br/><br/>The interface requires one of the permissions: <br/>Network Config Page Modify<br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param fileId Cert profile file ID
+	@return CertProfilesAPIDeleteCertProfileFile2Request
+
+	Deprecated
+	*/
+	DeleteCertProfileFile2(ctx context.Context, omadacId string, siteId string, fileId string) CertProfilesAPIDeleteCertProfileFile2Request
+
+	// DeleteCertProfileFile2Execute executes the request
+	//  @return OperationResponseWithoutResult
+	// Deprecated
+	DeleteCertProfileFile2Execute(r CertProfilesAPIDeleteCertProfileFile2Request) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	GetAllCertProfile Get certificate profile list
@@ -452,7 +471,12 @@ type CertProfilesAPIDeleteCertProfileFile1Request struct {
 	ApiService CertProfilesAPI
 	omadacId string
 	siteId string
-	fileId string
+	certProfileFileIdVO *CertProfileFileIdVO
+}
+
+func (r CertProfilesAPIDeleteCertProfileFile1Request) CertProfileFileIdVO(certProfileFileIdVO CertProfileFileIdVO) CertProfilesAPIDeleteCertProfileFile1Request {
+	r.certProfileFileIdVO = &certProfileFileIdVO
+	return r
 }
 
 func (r CertProfilesAPIDeleteCertProfileFile1Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
@@ -467,16 +491,14 @@ Delete an exist certificate profile file with the given params.<br/><br/>The int
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param fileId Cert profile file ID
  @return CertProfilesAPIDeleteCertProfileFile1Request
 */
-func (a *CertProfilesAPIService) DeleteCertProfileFile1(ctx context.Context, omadacId string, siteId string, fileId string) CertProfilesAPIDeleteCertProfileFile1Request {
+func (a *CertProfilesAPIService) DeleteCertProfileFile1(ctx context.Context, omadacId string, siteId string) CertProfilesAPIDeleteCertProfileFile1Request {
 	return CertProfilesAPIDeleteCertProfileFile1Request{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
 		siteId: siteId,
-		fileId: fileId,
 	}
 }
 
@@ -491,6 +513,138 @@ func (a *CertProfilesAPIService) DeleteCertProfileFile1Execute(r CertProfilesAPI
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertProfilesAPIService.DeleteCertProfileFile1")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/delete-file"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.certProfileFileIdVO == nil {
+		return localVarReturnValue, nil, reportError("certProfileFileIdVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.certProfileFileIdVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type CertProfilesAPIDeleteCertProfileFile2Request struct {
+	ctx context.Context
+	ApiService CertProfilesAPI
+	omadacId string
+	siteId string
+	fileId string
+}
+
+func (r CertProfilesAPIDeleteCertProfileFile2Request) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.DeleteCertProfileFile2Execute(r)
+}
+
+/*
+DeleteCertProfileFile2 Delete an exist certificate profile file by id in url
+
+Delete an exist certificate profile file with the given params.This interface has been deprecated. Please use the following interface instead: Delete an exist certificate profile file)<br/><br/>The interface requires one of the permissions: <br/>Network Config Page Modify<br/>Site Settings Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param fileId Cert profile file ID
+ @return CertProfilesAPIDeleteCertProfileFile2Request
+
+Deprecated
+*/
+func (a *CertProfilesAPIService) DeleteCertProfileFile2(ctx context.Context, omadacId string, siteId string, fileId string) CertProfilesAPIDeleteCertProfileFile2Request {
+	return CertProfilesAPIDeleteCertProfileFile2Request{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		fileId: fileId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+// Deprecated
+func (a *CertProfilesAPIService) DeleteCertProfileFile2Execute(r CertProfilesAPIDeleteCertProfileFile2Request) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertProfilesAPIService.DeleteCertProfileFile2")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

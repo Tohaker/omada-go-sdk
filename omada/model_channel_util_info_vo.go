@@ -21,6 +21,12 @@ var _ MappedNullable = &ChannelUtilInfoVO{}
 type ChannelUtilInfoVO struct {
 	// Channel utilization rate
 	ChannelUtil *int32 `json:"channelUtil,omitempty"`
+	// Channel 2g utilization rate
+	ChannelUtil2g *int32 `json:"channelUtil2g,omitempty"`
+	// Channel 5g utilization rate
+	ChannelUtil5g *int32 `json:"channelUtil5g,omitempty"`
+	// Channel 6g utilization rate
+	ChannelUtil6g *int32 `json:"channelUtil6g,omitempty"`
 	// Device name
 	DeviceName *string `json:"deviceName,omitempty"`
 	// Device type
@@ -82,6 +88,102 @@ func (o *ChannelUtilInfoVO) HasChannelUtil() bool {
 // SetChannelUtil gets a reference to the given int32 and assigns it to the ChannelUtil field.
 func (o *ChannelUtilInfoVO) SetChannelUtil(v int32) {
 	o.ChannelUtil = &v
+}
+
+// GetChannelUtil2g returns the ChannelUtil2g field value if set, zero value otherwise.
+func (o *ChannelUtilInfoVO) GetChannelUtil2g() int32 {
+	if o == nil || IsNil(o.ChannelUtil2g) {
+		var ret int32
+		return ret
+	}
+	return *o.ChannelUtil2g
+}
+
+// GetChannelUtil2gOk returns a tuple with the ChannelUtil2g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelUtilInfoVO) GetChannelUtil2gOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChannelUtil2g) {
+		return nil, false
+	}
+	return o.ChannelUtil2g, true
+}
+
+// HasChannelUtil2g returns a boolean if a field has been set.
+func (o *ChannelUtilInfoVO) HasChannelUtil2g() bool {
+	if o != nil && !IsNil(o.ChannelUtil2g) {
+		return true
+	}
+
+	return false
+}
+
+// SetChannelUtil2g gets a reference to the given int32 and assigns it to the ChannelUtil2g field.
+func (o *ChannelUtilInfoVO) SetChannelUtil2g(v int32) {
+	o.ChannelUtil2g = &v
+}
+
+// GetChannelUtil5g returns the ChannelUtil5g field value if set, zero value otherwise.
+func (o *ChannelUtilInfoVO) GetChannelUtil5g() int32 {
+	if o == nil || IsNil(o.ChannelUtil5g) {
+		var ret int32
+		return ret
+	}
+	return *o.ChannelUtil5g
+}
+
+// GetChannelUtil5gOk returns a tuple with the ChannelUtil5g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelUtilInfoVO) GetChannelUtil5gOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChannelUtil5g) {
+		return nil, false
+	}
+	return o.ChannelUtil5g, true
+}
+
+// HasChannelUtil5g returns a boolean if a field has been set.
+func (o *ChannelUtilInfoVO) HasChannelUtil5g() bool {
+	if o != nil && !IsNil(o.ChannelUtil5g) {
+		return true
+	}
+
+	return false
+}
+
+// SetChannelUtil5g gets a reference to the given int32 and assigns it to the ChannelUtil5g field.
+func (o *ChannelUtilInfoVO) SetChannelUtil5g(v int32) {
+	o.ChannelUtil5g = &v
+}
+
+// GetChannelUtil6g returns the ChannelUtil6g field value if set, zero value otherwise.
+func (o *ChannelUtilInfoVO) GetChannelUtil6g() int32 {
+	if o == nil || IsNil(o.ChannelUtil6g) {
+		var ret int32
+		return ret
+	}
+	return *o.ChannelUtil6g
+}
+
+// GetChannelUtil6gOk returns a tuple with the ChannelUtil6g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelUtilInfoVO) GetChannelUtil6gOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChannelUtil6g) {
+		return nil, false
+	}
+	return o.ChannelUtil6g, true
+}
+
+// HasChannelUtil6g returns a boolean if a field has been set.
+func (o *ChannelUtilInfoVO) HasChannelUtil6g() bool {
+	if o != nil && !IsNil(o.ChannelUtil6g) {
+		return true
+	}
+
+	return false
+}
+
+// SetChannelUtil6g gets a reference to the given int32 and assigns it to the ChannelUtil6g field.
+func (o *ChannelUtilInfoVO) SetChannelUtil6g(v int32) {
+	o.ChannelUtil6g = &v
 }
 
 // GetDeviceName returns the DeviceName field value if set, zero value otherwise.
@@ -288,6 +390,15 @@ func (o ChannelUtilInfoVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ChannelUtil) {
 		toSerialize["channelUtil"] = o.ChannelUtil
+	}
+	if !IsNil(o.ChannelUtil2g) {
+		toSerialize["channelUtil2g"] = o.ChannelUtil2g
+	}
+	if !IsNil(o.ChannelUtil5g) {
+		toSerialize["channelUtil5g"] = o.ChannelUtil5g
+	}
+	if !IsNil(o.ChannelUtil6g) {
+		toSerialize["channelUtil6g"] = o.ChannelUtil6g
 	}
 	if !IsNil(o.DeviceName) {
 		toSerialize["deviceName"] = o.DeviceName

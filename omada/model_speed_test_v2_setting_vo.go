@@ -27,6 +27,8 @@ type SpeedTestV2SettingVO struct {
 	DayOfMonth []int32 `json:"dayOfMonth,omitempty"`
 	// It is required when [timingType] is 2. The value should be within the range of 0(Sunday)~6(Saturday).
 	DayOfWeek []int32 `json:"dayOfWeek,omitempty"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// Start time of speed test(unit: hour); It should be within the range of 0~23.
 	Hour *int32 `json:"hour,omitempty"`
 	// Start time of speed test(unit: minute); It should be within the range of 0~59.
@@ -143,6 +145,38 @@ func (o *SpeedTestV2SettingVO) HasDayOfWeek() bool {
 // SetDayOfWeek gets a reference to the given []int32 and assigns it to the DayOfWeek field.
 func (o *SpeedTestV2SettingVO) SetDayOfWeek(v []int32) {
 	o.DayOfWeek = v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *SpeedTestV2SettingVO) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SpeedTestV2SettingVO) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *SpeedTestV2SettingVO) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *SpeedTestV2SettingVO) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetHour returns the Hour field value if set, zero value otherwise.
@@ -289,6 +323,9 @@ func (o SpeedTestV2SettingVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.DayOfWeek) {
 		toSerialize["dayOfWeek"] = o.DayOfWeek
+	}
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
 	}
 	if !IsNil(o.Hour) {
 		toSerialize["hour"] = o.Hour

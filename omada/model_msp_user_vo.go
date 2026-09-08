@@ -25,6 +25,7 @@ type MspUserVO struct {
 	CustomerRoleId *string `json:"customerRoleId,omitempty"`
 	CustomerRoleName *string `json:"customerRoleName,omitempty"`
 	Email *string `json:"email,omitempty"`
+	Enable2FA *bool `json:"enable2FA,omitempty"`
 	EndTime *int64 `json:"endTime,omitempty"`
 	ForceModify *bool `json:"forceModify,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -193,6 +194,38 @@ func (o *MspUserVO) HasEmail() bool {
 // SetEmail gets a reference to the given string and assigns it to the Email field.
 func (o *MspUserVO) SetEmail(v string) {
 	o.Email = &v
+}
+
+// GetEnable2FA returns the Enable2FA field value if set, zero value otherwise.
+func (o *MspUserVO) GetEnable2FA() bool {
+	if o == nil || IsNil(o.Enable2FA) {
+		var ret bool
+		return ret
+	}
+	return *o.Enable2FA
+}
+
+// GetEnable2FAOk returns a tuple with the Enable2FA field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MspUserVO) GetEnable2FAOk() (*bool, bool) {
+	if o == nil || IsNil(o.Enable2FA) {
+		return nil, false
+	}
+	return o.Enable2FA, true
+}
+
+// HasEnable2FA returns a boolean if a field has been set.
+func (o *MspUserVO) HasEnable2FA() bool {
+	if o != nil && !IsNil(o.Enable2FA) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnable2FA gets a reference to the given bool and assigns it to the Enable2FA field.
+func (o *MspUserVO) SetEnable2FA(v bool) {
+	o.Enable2FA = &v
 }
 
 // GetEndTime returns the EndTime field value if set, zero value otherwise.
@@ -808,6 +841,9 @@ func (o MspUserVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
+	}
+	if !IsNil(o.Enable2FA) {
+		toSerialize["enable2FA"] = o.Enable2FA
 	}
 	if !IsNil(o.EndTime) {
 		toSerialize["endTime"] = o.EndTime

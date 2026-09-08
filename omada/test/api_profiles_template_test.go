@@ -270,10 +270,10 @@ func Test_omada_ProfilesTemplateAPIService(t *testing.T) {
 
 		var omadacId string
 		var siteTemplateId string
-		var groupId string
 		var groupType string
+		var groupId string
 
-		resp, httpRes, err := apiClient.ProfilesTemplateAPI.DeleteGroupProfileTemplate(context.Background(), omadacId, siteTemplateId, groupId, groupType).Execute()
+		resp, httpRes, err := apiClient.ProfilesTemplateAPI.DeleteGroupProfileTemplate(context.Background(), omadacId, siteTemplateId, groupType, groupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OuiProfileId** | **string** | Oui profile ID. | 
 **Priority** | **int32** | Selected priority, valid range is 0 to 7. | 
-**VlanId** | **int32** | Selected vlan, valid range is 1 to 4090. | 
+**VlanId** | **int32** | Selected vlan, valid range is 1 to 4094. | 
 
 ## Methods
 

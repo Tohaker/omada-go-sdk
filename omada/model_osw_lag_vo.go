@@ -27,7 +27,9 @@ type OswLagVO struct {
 	AllMirroredPorts []int32 `json:"allMirroredPorts,omitempty"`
 	// All mirroring ports of the current Switch
 	AllMirroringPorts []int32 `json:"allMirroringPorts,omitempty"`
+	// All ports configured with M-LAG DAD on the current Switch
 	AllMlagDadPorts []int32 `json:"allMlagDadPorts,omitempty"`
+	// All ports configured with M-LAG PeerLink on the current Switch
 	AllMlagPeerLinkPorts []int32 `json:"allMlagPeerLinkPorts,omitempty"`
 	BandCtrl *OswBandCtrlVO `json:"bandCtrl,omitempty"`
 	// BandWidthCtrlType should be a value as follows: 0: Off; 1: Rate Limit; 2: Storming Control
@@ -68,7 +70,9 @@ type OswLagVO struct {
 	LoopbackDetectEnable *bool `json:"loopbackDetectEnable,omitempty"`
 	// Indicates whether loopbackDetect vlan based is enabled
 	LoopbackDetectVlanBasedEnable *bool `json:"loopbackDetectVlanBasedEnable,omitempty"`
+	// Indicates whether M-LAG is enabled
 	MlagEnable *bool `json:"mlagEnable,omitempty"`
+	// M-LAG Name
 	MlagName *string `json:"mlagName,omitempty"`
 	MlagPeerAllPortsConfigInfo *OswMlagPeerAllPortsConfigInfoVO `json:"mlagPeerAllPortsConfigInfo,omitempty"`
 	MlagPeerSetting *OswMlagPeerSettingVO `json:"mlagPeerSetting,omitempty"`
@@ -86,6 +90,7 @@ type OswLagVO struct {
 	NetworkMode *int32 `json:"networkMode,omitempty"`
 	// Network Tags Setting should be a value as follows: 0: Allow All; 1: Block All; 2: Custom
 	NetworkTagsSetting *int32 `json:"networkTagsSetting,omitempty"`
+	OuiBasedVlanNetworks *OswPortOuiBasedVlanVO `json:"ouiBasedVlanNetworks,omitempty"`
 	// Indicates whether port alert is enabled
 	PortAlertEnable *bool `json:"portAlertEnable,omitempty"`
 	// Indicates whether port isolation is enabled
@@ -1377,6 +1382,38 @@ func (o *OswLagVO) SetNetworkTagsSetting(v int32) {
 	o.NetworkTagsSetting = &v
 }
 
+// GetOuiBasedVlanNetworks returns the OuiBasedVlanNetworks field value if set, zero value otherwise.
+func (o *OswLagVO) GetOuiBasedVlanNetworks() OswPortOuiBasedVlanVO {
+	if o == nil || IsNil(o.OuiBasedVlanNetworks) {
+		var ret OswPortOuiBasedVlanVO
+		return ret
+	}
+	return *o.OuiBasedVlanNetworks
+}
+
+// GetOuiBasedVlanNetworksOk returns a tuple with the OuiBasedVlanNetworks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswLagVO) GetOuiBasedVlanNetworksOk() (*OswPortOuiBasedVlanVO, bool) {
+	if o == nil || IsNil(o.OuiBasedVlanNetworks) {
+		return nil, false
+	}
+	return o.OuiBasedVlanNetworks, true
+}
+
+// HasOuiBasedVlanNetworks returns a boolean if a field has been set.
+func (o *OswLagVO) HasOuiBasedVlanNetworks() bool {
+	if o != nil && !IsNil(o.OuiBasedVlanNetworks) {
+		return true
+	}
+
+	return false
+}
+
+// SetOuiBasedVlanNetworks gets a reference to the given OswPortOuiBasedVlanVO and assigns it to the OuiBasedVlanNetworks field.
+func (o *OswLagVO) SetOuiBasedVlanNetworks(v OswPortOuiBasedVlanVO) {
+	o.OuiBasedVlanNetworks = &v
+}
+
 // GetPortAlertEnable returns the PortAlertEnable field value if set, zero value otherwise.
 func (o *OswLagVO) GetPortAlertEnable() bool {
 	if o == nil || IsNil(o.PortAlertEnable) {
@@ -2428,6 +2465,9 @@ func (o OswLagVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.NetworkTagsSetting) {
 		toSerialize["networkTagsSetting"] = o.NetworkTagsSetting
+	}
+	if !IsNil(o.OuiBasedVlanNetworks) {
+		toSerialize["ouiBasedVlanNetworks"] = o.OuiBasedVlanNetworks
 	}
 	if !IsNil(o.PortAlertEnable) {
 		toSerialize["portAlertEnable"] = o.PortAlertEnable

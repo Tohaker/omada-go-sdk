@@ -644,7 +644,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	staticRoutingId := "staticRoutingId_example" // string | 
+	staticRoutingId := "staticRoutingId_example" // string | Static routing ID
 	staticRoutingConfigTemplate := *openapiclient.NewStaticRoutingConfigTemplate([]string{"Destinations_example"}, int32(123), "Name_example", int32(123), false) // StaticRoutingConfigTemplate | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site Template ID | 
-**staticRoutingId** | **string** |  | 
+**staticRoutingId** | **string** | Static routing ID | 
 
 ### Other Parameters
 

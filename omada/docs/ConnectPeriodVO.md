@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Duration** | Pointer to **int64** | Duration of a connect interval | [optional] 
-**End** | Pointer to **int64** | End timestamp of a connect interval. | [optional] 
-**Start** | Pointer to **int64** | Start timestamp of a connect interval. | [optional] 
+**Duration** | Pointer to **int64** | Duration of a connect interval. unit: millisecond. | [optional] 
+**End** | Pointer to **int64** | End timestamp of a connect interval. unit: millisecond. | [optional] 
+**Start** | Pointer to **int64** | Start timestamp of a connect interval. unit: millisecond. | [optional] 
 
 ## Methods
 

@@ -19,6 +19,8 @@ var _ MappedNullable = &SubSingleHealthInfoDetailVO{}
 
 // SubSingleHealthInfoDetailVO Rssi score detail info
 type SubSingleHealthInfoDetailVO struct {
+	// Incident information for this health dimension, null if no incidents
+	Incidents []AnomalyBriefCountVO `json:"incidents,omitempty"`
 	Scores []TimeScoreItemVO `json:"scores,omitempty"`
 	// Sub dimension health score
 	SummaryScore *int32 `json:"summaryScore,omitempty"`
@@ -41,6 +43,38 @@ func NewSubSingleHealthInfoDetailVO() *SubSingleHealthInfoDetailVO {
 func NewSubSingleHealthInfoDetailVOWithDefaults() *SubSingleHealthInfoDetailVO {
 	this := SubSingleHealthInfoDetailVO{}
 	return &this
+}
+
+// GetIncidents returns the Incidents field value if set, zero value otherwise.
+func (o *SubSingleHealthInfoDetailVO) GetIncidents() []AnomalyBriefCountVO {
+	if o == nil || IsNil(o.Incidents) {
+		var ret []AnomalyBriefCountVO
+		return ret
+	}
+	return o.Incidents
+}
+
+// GetIncidentsOk returns a tuple with the Incidents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubSingleHealthInfoDetailVO) GetIncidentsOk() ([]AnomalyBriefCountVO, bool) {
+	if o == nil || IsNil(o.Incidents) {
+		return nil, false
+	}
+	return o.Incidents, true
+}
+
+// HasIncidents returns a boolean if a field has been set.
+func (o *SubSingleHealthInfoDetailVO) HasIncidents() bool {
+	if o != nil && !IsNil(o.Incidents) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidents gets a reference to the given []AnomalyBriefCountVO and assigns it to the Incidents field.
+func (o *SubSingleHealthInfoDetailVO) SetIncidents(v []AnomalyBriefCountVO) {
+	o.Incidents = v
 }
 
 // GetScores returns the Scores field value if set, zero value otherwise.
@@ -149,6 +183,9 @@ func (o SubSingleHealthInfoDetailVO) MarshalJSON() ([]byte, error) {
 
 func (o SubSingleHealthInfoDetailVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Incidents) {
+		toSerialize["incidents"] = o.Incidents
+	}
 	if !IsNil(o.Scores) {
 		toSerialize["scores"] = o.Scores
 	}

@@ -190,7 +190,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	otonatId := "otonatId_example" // string | otonatId
+	otonatId := "otonatId_example" // string | Otonat ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**otonatId** | **string** | otonatId | 
+**otonatId** | **string** | Otonat ID | 
 
 ### Other Parameters
 
@@ -266,7 +266,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	portForwardingId := "portForwardingId_example" // string | portForwardingId
+	portForwardingId := "portForwardingId_example" // string | Port Forwarding ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**portForwardingId** | **string** | portForwardingId | 
+**portForwardingId** | **string** | Port Forwarding ID | 
 
 ### Other Parameters
 
@@ -644,7 +644,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	otonatId := "otonatId_example" // string | otonatId
+	otonatId := "otonatId_example" // string | Otonat ID
 	otoNatOpenApiVO := *openapiclient.NewOtoNatOpenApiVO(false, "ExternalIp_example", []string{"InterfaceIds_example"}, "InternalIp_example", "Name_example", false) // OtoNatOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**otonatId** | **string** | otonatId | 
+**otonatId** | **string** | Otonat ID | 
 
 ### Other Parameters
 
@@ -722,7 +722,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	portForwardingId := "portForwardingId_example" // string | portForwardingId
+	portForwardingId := "portForwardingId_example" // string | Port Forwarding ID
 	portForwardingConfig := *openapiclient.NewPortForwardingConfig(false, "ForwardIp_example", int32(123), "Name_example", false) // PortForwardingConfig | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**portForwardingId** | **string** | portForwardingId | 
+**portForwardingId** | **string** | Port Forwarding ID | 
 
 ### Other Parameters
 

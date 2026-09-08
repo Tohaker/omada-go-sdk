@@ -53,8 +53,6 @@ type APIClient struct {
 
 	ACLTemplateAPI ACLTemplateAPI
 
-	AbnormalDetectAPI AbnormalDetectAPI
-
 	AccessControlAPI AccessControlAPI
 
 	AccessControlTemplateAPI AccessControlTemplateAPI
@@ -82,6 +80,8 @@ type APIClient struct {
 	AuthorizedClientAPI AuthorizedClientAPI
 
 	BackupAndRestoreAPI BackupAndRestoreAPI
+
+	BackupScheduleAPI BackupScheduleAPI
 
 	BandwidthControlAPI BandwidthControlAPI
 
@@ -112,6 +112,12 @@ type APIClient struct {
 	ControllerSettingsAPI ControllerSettingsAPI
 
 	CustomerAPI CustomerAPI
+
+	DHCPReservationAPI DHCPReservationAPI
+
+	DNSAPI DNSAPI
+
+	DNSTemplateAPI DNSTemplateAPI
 
 	DashboardAPI DashboardAPI
 
@@ -161,6 +167,14 @@ type APIClient struct {
 
 	IPMACBindingTemplateAPI IPMACBindingTemplateAPI
 
+	IPTVAPI IPTVAPI
+
+	IPTVTemplateAPI IPTVTemplateAPI
+
+	IncidentTemplateAPI IncidentTemplateAPI
+
+	IncidentsAPI IncidentsAPI
+
 	InsightAPI InsightAPI
 
 	IntelliRecoverClientAPI IntelliRecoverClientAPI
@@ -183,6 +197,10 @@ type APIClient struct {
 
 	MACFilteringTemplateAPI MACFilteringTemplateAPI
 
+	MDNSAPI MDNSAPI
+
+	MDNSTemplateAPI MDNSTemplateAPI
+
 	MSPBatchOpenAPIAPI MSPBatchOpenAPIAPI
 
 	MSPDeviceAPI MSPDeviceAPI
@@ -200,6 +218,8 @@ type APIClient struct {
 	MspLicenseAPI MspLicenseAPI
 
 	MspLogAPI MspLogAPI
+
+	MspOswPortLayoutAPI MspOswPortLayoutAPI
 
 	MspSettingAPI MspSettingAPI
 
@@ -247,6 +267,8 @@ type APIClient struct {
 
 	OUIBasedVLANTemplateAPI OUIBasedVLANTemplateAPI
 
+	OswPortLayoutAPI OswPortLayoutAPI
+
 	ProfilesAPI ProfilesAPI
 
 	ProfilesTemplateAPI ProfilesTemplateAPI
@@ -269,6 +291,14 @@ type APIClient struct {
 
 	SIMTemplateAPI SIMTemplateAPI
 
+	SNMPAPI SNMPAPI
+
+	SNMPTemplateAPI SNMPTemplateAPI
+
+	SSHAPI SSHAPI
+
+	SSHTemplateAPI SSHTemplateAPI
+
 	SSLVPNAPI SSLVPNAPI
 
 	SSOAPI SSOAPI
@@ -276,8 +306,6 @@ type APIClient struct {
 	ScheduleAPI ScheduleAPI
 
 	ScheduleTemplateAPI ScheduleTemplateAPI
-
-	ServiceAPI ServiceAPI
 
 	ServiceTemplateAPI ServiceTemplateAPI
 
@@ -308,6 +336,10 @@ type APIClient struct {
 	ThreatManagementAPI ThreatManagementAPI
 
 	TopologyAPI TopologyAPI
+
+	UPnPAPI UPnPAPI
+
+	UPnPTemplateAPI UPnPTemplateAPI
 
 	URLFilteringAPI URLFilteringAPI
 
@@ -364,7 +396,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.ACLAPI = (*ACLAPIService)(&c.common)
 	c.ACLTemplateAPI = (*ACLTemplateAPIService)(&c.common)
-	c.AbnormalDetectAPI = (*AbnormalDetectAPIService)(&c.common)
 	c.AccessControlAPI = (*AccessControlAPIService)(&c.common)
 	c.AccessControlTemplateAPI = (*AccessControlTemplateAPIService)(&c.common)
 	c.ApAPI = (*ApAPIService)(&c.common)
@@ -379,6 +410,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AuthorizeAPI = (*AuthorizeAPIService)(&c.common)
 	c.AuthorizedClientAPI = (*AuthorizedClientAPIService)(&c.common)
 	c.BackupAndRestoreAPI = (*BackupAndRestoreAPIService)(&c.common)
+	c.BackupScheduleAPI = (*BackupScheduleAPIService)(&c.common)
 	c.BandwidthControlAPI = (*BandwidthControlAPIService)(&c.common)
 	c.BandwidthControlTemplateAPI = (*BandwidthControlTemplateAPIService)(&c.common)
 	c.BatchOpenAPIAPI = (*BatchOpenAPIAPIService)(&c.common)
@@ -394,6 +426,9 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ClusterAPI = (*ClusterAPIService)(&c.common)
 	c.ControllerSettingsAPI = (*ControllerSettingsAPIService)(&c.common)
 	c.CustomerAPI = (*CustomerAPIService)(&c.common)
+	c.DHCPReservationAPI = (*DHCPReservationAPIService)(&c.common)
+	c.DNSAPI = (*DNSAPIService)(&c.common)
+	c.DNSTemplateAPI = (*DNSTemplateAPIService)(&c.common)
 	c.DashboardAPI = (*DashboardAPIService)(&c.common)
 	c.DataExportAPI = (*DataExportAPIService)(&c.common)
 	c.DeviceAPI = (*DeviceAPIService)(&c.common)
@@ -418,6 +453,10 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.IDSIPSTemplateAPI = (*IDSIPSTemplateAPIService)(&c.common)
 	c.IPMACBindingAPI = (*IPMACBindingAPIService)(&c.common)
 	c.IPMACBindingTemplateAPI = (*IPMACBindingTemplateAPIService)(&c.common)
+	c.IPTVAPI = (*IPTVAPIService)(&c.common)
+	c.IPTVTemplateAPI = (*IPTVTemplateAPIService)(&c.common)
+	c.IncidentTemplateAPI = (*IncidentTemplateAPIService)(&c.common)
+	c.IncidentsAPI = (*IncidentsAPIService)(&c.common)
 	c.InsightAPI = (*InsightAPIService)(&c.common)
 	c.IntelliRecoverClientAPI = (*IntelliRecoverClientAPIService)(&c.common)
 	c.IntelliRecoverDeviceAPI = (*IntelliRecoverDeviceAPIService)(&c.common)
@@ -429,6 +468,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LogTemplateAPI = (*LogTemplateAPIService)(&c.common)
 	c.MACFilteringAPI = (*MACFilteringAPIService)(&c.common)
 	c.MACFilteringTemplateAPI = (*MACFilteringTemplateAPIService)(&c.common)
+	c.MDNSAPI = (*MDNSAPIService)(&c.common)
+	c.MDNSTemplateAPI = (*MDNSTemplateAPIService)(&c.common)
 	c.MSPBatchOpenAPIAPI = (*MSPBatchOpenAPIAPIService)(&c.common)
 	c.MSPDeviceAPI = (*MSPDeviceAPIService)(&c.common)
 	c.MSPHistoryDataRetentionAPI = (*MSPHistoryDataRetentionAPIService)(&c.common)
@@ -438,6 +479,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.MlagAPI = (*MlagAPIService)(&c.common)
 	c.MspLicenseAPI = (*MspLicenseAPIService)(&c.common)
 	c.MspLogAPI = (*MspLogAPIService)(&c.common)
+	c.MspOswPortLayoutAPI = (*MspOswPortLayoutAPIService)(&c.common)
 	c.MspSettingAPI = (*MspSettingAPIService)(&c.common)
 	c.MspWebhookSettingAPI = (*MspWebhookSettingAPIService)(&c.common)
 	c.NATAPI = (*NATAPIService)(&c.common)
@@ -461,6 +503,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.OSPFAPI = (*OSPFAPIService)(&c.common)
 	c.OUIBasedVLANAPI = (*OUIBasedVLANAPIService)(&c.common)
 	c.OUIBasedVLANTemplateAPI = (*OUIBasedVLANTemplateAPIService)(&c.common)
+	c.OswPortLayoutAPI = (*OswPortLayoutAPIService)(&c.common)
 	c.ProfilesAPI = (*ProfilesAPIService)(&c.common)
 	c.ProfilesTemplateAPI = (*ProfilesTemplateAPIService)(&c.common)
 	c.QuickActionAPI = (*QuickActionAPIService)(&c.common)
@@ -472,11 +515,14 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.SDWANAPI = (*SDWANAPIService)(&c.common)
 	c.SIMAPI = (*SIMAPIService)(&c.common)
 	c.SIMTemplateAPI = (*SIMTemplateAPIService)(&c.common)
+	c.SNMPAPI = (*SNMPAPIService)(&c.common)
+	c.SNMPTemplateAPI = (*SNMPTemplateAPIService)(&c.common)
+	c.SSHAPI = (*SSHAPIService)(&c.common)
+	c.SSHTemplateAPI = (*SSHTemplateAPIService)(&c.common)
 	c.SSLVPNAPI = (*SSLVPNAPIService)(&c.common)
 	c.SSOAPI = (*SSOAPIService)(&c.common)
 	c.ScheduleAPI = (*ScheduleAPIService)(&c.common)
 	c.ScheduleTemplateAPI = (*ScheduleTemplateAPIService)(&c.common)
-	c.ServiceAPI = (*ServiceAPIService)(&c.common)
 	c.ServiceTemplateAPI = (*ServiceTemplateAPIService)(&c.common)
 	c.SessionLimitAPI = (*SessionLimitAPIService)(&c.common)
 	c.SessionLimitTemplateAPI = (*SessionLimitTemplateAPIService)(&c.common)
@@ -492,6 +538,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.SystemSettingsAPI = (*SystemSettingsAPIService)(&c.common)
 	c.ThreatManagementAPI = (*ThreatManagementAPIService)(&c.common)
 	c.TopologyAPI = (*TopologyAPIService)(&c.common)
+	c.UPnPAPI = (*UPnPAPIService)(&c.common)
+	c.UPnPTemplateAPI = (*UPnPTemplateAPIService)(&c.common)
 	c.URLFilteringAPI = (*URLFilteringAPIService)(&c.common)
 	c.URLFilteringTemplateAPI = (*URLFilteringTemplateAPIService)(&c.common)
 	c.UserAndRoleAPI = (*UserAndRoleAPIService)(&c.common)

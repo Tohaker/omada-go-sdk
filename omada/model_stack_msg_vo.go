@@ -21,7 +21,9 @@ var _ MappedNullable = &StackMsgVO{}
 type StackMsgVO struct {
 	// Causes of abnormal
 	AbnormalReason *int32 `json:"abnormalReason,omitempty"`
+	// The VRF ID for account traffic
 	AccountVrfId *string `json:"accountVrfId,omitempty"`
+	// The VRF ID for auth traffic
 	AuthVrfId *string `json:"authVrfId,omitempty"`
 	// Stack masterMac
 	MasterMac *string `json:"masterMac,omitempty"`

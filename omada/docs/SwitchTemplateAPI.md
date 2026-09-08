@@ -27,7 +27,9 @@ Method | HTTP request | Description
 [**GetRpvstInstancesTemplate**](SwitchTemplateAPI.md#getrpvstinstancestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/rpvst-instances | Get Rpvst Instances Template
 [**GetSwitchTemplateExistNetworks**](SwitchTemplateAPI.md#getswitchtemplateexistnetworks) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/exist-network | Get the networks existing on the switch template
 [**GetSwitchTemplateInfo**](SwitchTemplateAPI.md#getswitchtemplateinfo) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId} | Get switch template info
+[**ListSwitchInterfacesTemplate**](SwitchTemplateAPI.md#listswitchinterfacestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/interfaces | List Switch Interfaces Template
 [**ModifyOswVrfTemplate**](SwitchTemplateAPI.md#modifyoswvrftemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/vrfs/{vrfId} | Modify vrf template
+[**ModifyPmtudStatus**](SwitchTemplateAPI.md#modifypmtudstatus) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/interfaces/pmtud | Modify Path MTU Discovery Template
 [**ModifyPortTagTemplate**](SwitchTemplateAPI.md#modifyporttagtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/port-tag | Modify an existing template port label
 [**ModifySwitchLagTemplate**](SwitchTemplateAPI.md#modifyswitchlagtemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/lags/{lagId} | Modify switch template lag
 [**ModifySwitchPortTemplate**](SwitchTemplateAPI.md#modifyswitchporttemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/ports/{port} | Modify switch template port
@@ -506,7 +508,7 @@ Name | Type | Description  | Notes
 
 ## CreateOswVrfTemplate
 
-> OperationResponseWithoutResult CreateOswVrfTemplate(ctx, omadacId, siteTemplateId, deviceTemplateId).OswVrfConfigOpenApiVO(oswVrfConfigOpenApiVO).Execute()
+> OperationResponseResponseIdVO CreateOswVrfTemplate(ctx, omadacId, siteTemplateId, deviceTemplateId).OswVrfConfigOpenApiVO(oswVrfConfigOpenApiVO).Execute()
 
 Create new vrf template
 
@@ -528,7 +530,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	oswVrfConfigOpenApiVO := *openapiclient.NewOswVrfConfigOpenApiVO(false, false, "Vrf_example") // OswVrfConfigOpenApiVO | 
+	oswVrfConfigOpenApiVO := *openapiclient.NewOswVrfConfigOpenApiVO(false) // OswVrfConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -537,7 +539,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchTemplateAPI.CreateOswVrfTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateOswVrfTemplate`: OperationResponseWithoutResult
+	// response from `CreateOswVrfTemplate`: OperationResponseResponseIdVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchTemplateAPI.CreateOswVrfTemplate`: %v\n", resp)
 }
 ```
@@ -566,7 +568,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+[**OperationResponseResponseIdVO**](OperationResponseResponseIdVO.md)
 
 ### Authorization
 
@@ -760,7 +762,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	lagId := "lagId_example" // string | lagId
+	lagId := "lagId_example" // string | Lag ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -783,7 +785,7 @@ Name | Type | Description  | Notes
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site Template ID | 
 **deviceTemplateId** | **string** | Device Template ID | 
-**lagId** | **string** | lagId | 
+**lagId** | **string** | Lag ID | 
 
 ### Other Parameters
 
@@ -1815,6 +1817,86 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ListSwitchInterfacesTemplate
+
+> OperationResponseOswInterfaceGridOswInterfaceOpenApi ListSwitchInterfacesTemplate(ctx, omadacId, siteTemplateId, deviceTemplateId).Page(page).PageSize(pageSize).Execute()
+
+List Switch Interfaces Template
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchTemplateAPI.ListSwitchInterfacesTemplate(context.Background(), omadacId, siteTemplateId, deviceTemplateId).Page(page).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchTemplateAPI.ListSwitchInterfacesTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSwitchInterfacesTemplate`: OperationResponseOswInterfaceGridOswInterfaceOpenApi
+	fmt.Fprintf(os.Stdout, "Response from `SwitchTemplateAPI.ListSwitchInterfacesTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+**deviceTemplateId** | **string** | Device Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSwitchInterfacesTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+
+### Return type
+
+[**OperationResponseOswInterfaceGridOswInterfaceOpenApi**](OperationResponseOswInterfaceGridOswInterfaceOpenApi.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ModifyOswVrfTemplate
 
 > OperationResponseWithoutResult ModifyOswVrfTemplate(ctx, omadacId, siteTemplateId, deviceTemplateId, vrfId).OswVrfConfigOpenApiVO(oswVrfConfigOpenApiVO).Execute()
@@ -1840,7 +1922,7 @@ func main() {
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
 	vrfId := "vrfId_example" // string | VRF ID
-	oswVrfConfigOpenApiVO := *openapiclient.NewOswVrfConfigOpenApiVO(false, false, "Vrf_example") // OswVrfConfigOpenApiVO | 
+	oswVrfConfigOpenApiVO := *openapiclient.NewOswVrfConfigOpenApiVO(false) // OswVrfConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1881,6 +1963,84 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifyPmtudStatus
+
+> OperationResponse ModifyPmtudStatus(ctx, omadacId, siteTemplateId, deviceTemplateId).OswPmtudVO(oswPmtudVO).Execute()
+
+Modify Path MTU Discovery Template
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
+	oswPmtudVO := *openapiclient.NewOswPmtudVO() // OswPmtudVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchTemplateAPI.ModifyPmtudStatus(context.Background(), omadacId, siteTemplateId, deviceTemplateId).OswPmtudVO(oswPmtudVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchTemplateAPI.ModifyPmtudStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyPmtudStatus`: OperationResponse
+	fmt.Fprintf(os.Stdout, "Response from `SwitchTemplateAPI.ModifyPmtudStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+**deviceTemplateId** | **string** | Device Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyPmtudStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **oswPmtudVO** | [**OswPmtudVO**](OswPmtudVO.md) |  | 
+
+### Return type
+
+[**OperationResponse**](OperationResponse.md)
 
 ### Authorization
 
@@ -1995,7 +2155,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	lagId := "lagId_example" // string | lagId
+	lagId := "lagId_example" // string | Lag ID
 	oswLagSettingVO := *openapiclient.NewOswLagSettingVO() // OswLagSettingVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -2019,7 +2179,7 @@ Name | Type | Description  | Notes
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site Template ID | 
 **deviceTemplateId** | **string** | Device Template ID | 
-**lagId** | **string** | lagId | 
+**lagId** | **string** | Lag ID | 
 
 ### Other Parameters
 
@@ -2238,7 +2398,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
 	deviceTemplateId := "deviceTemplateId_example" // string | Device Template ID
-	port := "port_example" // string | port
+	port := "port_example" // string | Port
 	switchPortPoe := *openapiclient.NewSwitchPortPoe(int32(123)) // SwitchPortPoe | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -2262,7 +2422,7 @@ Name | Type | Description  | Notes
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site Template ID | 
 **deviceTemplateId** | **string** | Device Template ID | 
-**port** | **string** | port | 
+**port** | **string** | Port | 
 
 ### Other Parameters
 

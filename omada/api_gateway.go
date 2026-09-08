@@ -162,7 +162,7 @@ type GatewayAPI interface {
 	/*
 	GetEnableWanDetail Get enable wan port detail
 
-	Get enable wan port detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Health & Incident Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
+	Get enable wan port detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Incidents Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -250,12 +250,12 @@ type GatewayAPI interface {
 	Get gateway lan status<br/><br/>The interface requires one of the permissions: <br/>Global Dashboard Manager View Only<br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteId Site ID
 	@param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
-	@param omadacId omadacId
 	@return GatewayAPIGetLanStatusRequest
 	*/
-	GetLanStatus(ctx context.Context, siteId string, gatewayMac string, omadacId string) GatewayAPIGetLanStatusRequest
+	GetLanStatus(ctx context.Context, omadacId string, siteId string, gatewayMac string) GatewayAPIGetLanStatusRequest
 
 	// GetLanStatusExecute executes the request
 	//  @return OperationResponseListLanStatus
@@ -413,9 +413,9 @@ type GatewayAPI interface {
 	ModifyConfigCommonAdvancedExecute(r GatewayAPIModifyConfigCommonAdvancedRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyConfigGeneral Modify gateway general config
+	ModifyConfigGeneral Modify gateway general config v2
 
-	Modify gateway general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39093  -  The length of the device name exceeds the limit.<br/>-39501  -  This gateway does not exist.
+	Modify gateway general config v2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39093  -  The length of the device name exceeds the limit.<br/>-39501  -  This gateway does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -483,7 +483,7 @@ type GatewayAPI interface {
 	/*
 	ModifyConfigWlans Modify gateway wlans config
 
-	Modify gateway wlans config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33221  -  The SSID to be edited does not exist.<br/>-33222  -  The SSID should contain 1-32 characters.<br/>-33223  -  The security key can only contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33242  -  This SSID VLAN ID cannot be same as the exist default LanNetwork profile.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-39093  -  The length of the device name exceeds the limit.<br/>-39306  -  This WLAN group does not exist.<br/>-39307  -  Failed to add this AP to the WLAN group because this AP is not in the site of the WLAN group.<br/>-39350  -  The SSID of the WLAN group is used in Gateway ACL. Please delete the related ACL rule first.<br/>-39501  -  This gateway does not exist.<br/>-44405  -  The configuration has been overridden.
+	Modify gateway wlans config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33221  -  The SSID to be edited does not exist.<br/>-33222  -  The SSID should contain 1-32 characters.<br/>-33223  -  The security key can only contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33242  -  This SSID VLAN ID cannot be same as the exist default LanNetwork profile.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-39093  -  The length of the device name exceeds the limit.<br/>-39306  -  This WLAN group does not exist.<br/>-39307  -  Failed to add this AP to the WLAN group because this AP is not in the site of the WLAN group.<br/>-39350  -  The SSID of the AP group is used in Gateway ACL. Please delete the related ACL rule first.<br/>-39501  -  This gateway does not exist.<br/>-44405  -  The configuration has been overridden.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -500,18 +500,21 @@ type GatewayAPI interface {
 	/*
 	ModifyGeneralConfig1 Modify gateway general config
 
-	Modify gateway general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
+	Modify gateway general config. This interface has been deprecated. Please use the following interface instead: Modify gateway general config v2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
 	@return GatewayAPIModifyGeneralConfig1Request
+
+	Deprecated
 	*/
 	ModifyGeneralConfig1(ctx context.Context, omadacId string, siteId string, gatewayMac string) GatewayAPIModifyGeneralConfig1Request
 
 	// ModifyGeneralConfig1Execute executes the request
 	//  @return OperationResponseWithoutResult
+	// Deprecated
 	ModifyGeneralConfig1Execute(r GatewayAPIModifyGeneralConfig1Request) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
@@ -677,13 +680,13 @@ type GatewayAPI interface {
 	Recovery gateway poe port<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39508  -  The current gateway model or firmware version does not support poe restart.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
 	@param siteId Site ID
 	@param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
 	@param port Gateway port number
-	@param omadacId omadacId
 	@return GatewayAPIRecoveryPoePortRequest
 	*/
-	RecoveryPoePort(ctx context.Context, siteId string, gatewayMac string, port string, omadacId string) GatewayAPIRecoveryPoePortRequest
+	RecoveryPoePort(ctx context.Context, omadacId string, siteId string, gatewayMac string, port string) GatewayAPIRecoveryPoePortRequest
 
 	// RecoveryPoePortExecute executes the request
 	//  @return OperationResponseOperationResponseWithoutResult
@@ -1806,7 +1809,7 @@ func (r GatewayAPIGetEnableWanDetailRequest) Execute() (*OperationResponseWanDet
 /*
 GetEnableWanDetail Get enable wan port detail
 
-Get enable wan port detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Health & Incident Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
+Get enable wan port detail<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Incidents Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2441,9 +2444,9 @@ func (a *GatewayAPIService) GetIpptLanIpv6Execute(r GatewayAPIGetIpptLanIpv6Requ
 type GatewayAPIGetLanStatusRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
+	omadacId string
 	siteId string
 	gatewayMac string
-	omadacId string
 }
 
 func (r GatewayAPIGetLanStatusRequest) Execute() (*OperationResponseListLanStatus, *http.Response, error) {
@@ -2456,18 +2459,18 @@ GetLanStatus Get gateway lan status
 Get gateway lan status<br/><br/>The interface requires one of the permissions: <br/>Global Dashboard Manager View Only<br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteId Site ID
  @param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
- @param omadacId omadacId
  @return GatewayAPIGetLanStatusRequest
 */
-func (a *GatewayAPIService) GetLanStatus(ctx context.Context, siteId string, gatewayMac string, omadacId string) GatewayAPIGetLanStatusRequest {
+func (a *GatewayAPIService) GetLanStatus(ctx context.Context, omadacId string, siteId string, gatewayMac string) GatewayAPIGetLanStatusRequest {
 	return GatewayAPIGetLanStatusRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteId: siteId,
 		gatewayMac: gatewayMac,
-		omadacId: omadacId,
 	}
 }
 
@@ -2487,9 +2490,9 @@ func (a *GatewayAPIService) GetLanStatusExecute(r GatewayAPIGetLanStatusRequest)
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/lan-status"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3754,9 +3757,9 @@ func (r GatewayAPIModifyConfigGeneralRequest) Execute() (*OperationResponseWitho
 }
 
 /*
-ModifyConfigGeneral Modify gateway general config
+ModifyConfigGeneral Modify gateway general config v2
 
-Modify gateway general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39093  -  The length of the device name exceeds the limit.<br/>-39501  -  This gateway does not exist.
+Modify gateway general config v2<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39093  -  The length of the device name exceeds the limit.<br/>-39501  -  This gateway does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4300,7 +4303,7 @@ func (r GatewayAPIModifyConfigWlansRequest) Execute() (*OperationResponseWithout
 /*
 ModifyConfigWlans Modify gateway wlans config
 
-Modify gateway wlans config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33221  -  The SSID to be edited does not exist.<br/>-33222  -  The SSID should contain 1-32 characters.<br/>-33223  -  The security key can only contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33242  -  This SSID VLAN ID cannot be same as the exist default LanNetwork profile.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-39093  -  The length of the device name exceeds the limit.<br/>-39306  -  This WLAN group does not exist.<br/>-39307  -  Failed to add this AP to the WLAN group because this AP is not in the site of the WLAN group.<br/>-39350  -  The SSID of the WLAN group is used in Gateway ACL. Please delete the related ACL rule first.<br/>-39501  -  This gateway does not exist.<br/>-44405  -  The configuration has been overridden.
+Modify gateway wlans config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33221  -  The SSID to be edited does not exist.<br/>-33222  -  The SSID should contain 1-32 characters.<br/>-33223  -  The security key can only contain 8-63 printable ASCII characters or 8-63 hexadecimal digits.<br/>-33231  -  The ssid' s name should not be the same with emergency ssid.<br/>-33242  -  This SSID VLAN ID cannot be same as the exist default LanNetwork profile.<br/>-33807  -  Invalid VLAN ID. Enter a number from 1 to 4094.<br/>-39093  -  The length of the device name exceeds the limit.<br/>-39306  -  This WLAN group does not exist.<br/>-39307  -  Failed to add this AP to the WLAN group because this AP is not in the site of the WLAN group.<br/>-39350  -  The SSID of the AP group is used in Gateway ACL. Please delete the related ACL rule first.<br/>-39501  -  This gateway does not exist.<br/>-44405  -  The configuration has been overridden.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -4436,13 +4439,15 @@ func (r GatewayAPIModifyGeneralConfig1Request) Execute() (*OperationResponseWith
 /*
 ModifyGeneralConfig1 Modify gateway general config
 
-Modify gateway general config<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
+Modify gateway general config. This interface has been deprecated. Please use the following interface instead: Modify gateway general config v2.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
  @return GatewayAPIModifyGeneralConfig1Request
+
+Deprecated
 */
 func (a *GatewayAPIService) ModifyGeneralConfig1(ctx context.Context, omadacId string, siteId string, gatewayMac string) GatewayAPIModifyGeneralConfig1Request {
 	return GatewayAPIModifyGeneralConfig1Request{
@@ -4456,6 +4461,7 @@ func (a *GatewayAPIService) ModifyGeneralConfig1(ctx context.Context, omadacId s
 
 // Execute executes the request
 //  @return OperationResponseWithoutResult
+// Deprecated
 func (a *GatewayAPIService) ModifyGeneralConfig1Execute(r GatewayAPIModifyGeneralConfig1Request) (*OperationResponseWithoutResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -5794,10 +5800,10 @@ func (a *GatewayAPIService) MspMoveToCustomer2Execute(r GatewayAPIMspMoveToCusto
 type GatewayAPIRecoveryPoePortRequest struct {
 	ctx context.Context
 	ApiService GatewayAPI
+	omadacId string
 	siteId string
 	gatewayMac string
 	port string
-	omadacId string
 }
 
 func (r GatewayAPIRecoveryPoePortRequest) Execute() (*OperationResponseOperationResponseWithoutResult, *http.Response, error) {
@@ -5810,20 +5816,20 @@ RecoveryPoePort Recovery gateway poe port
 Recovery gateway poe port<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/>Device Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39501  -  This gateway does not exist.<br/>-39508  -  The current gateway model or firmware version does not support poe restart.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
  @param siteId Site ID
  @param gatewayMac Gateway MAC address, like AA-BB-CC-DD-EE-FF
  @param port Gateway port number
- @param omadacId omadacId
  @return GatewayAPIRecoveryPoePortRequest
 */
-func (a *GatewayAPIService) RecoveryPoePort(ctx context.Context, siteId string, gatewayMac string, port string, omadacId string) GatewayAPIRecoveryPoePortRequest {
+func (a *GatewayAPIService) RecoveryPoePort(ctx context.Context, omadacId string, siteId string, gatewayMac string, port string) GatewayAPIRecoveryPoePortRequest {
 	return GatewayAPIRecoveryPoePortRequest{
 		ApiService: a,
 		ctx: ctx,
+		omadacId: omadacId,
 		siteId: siteId,
 		gatewayMac: gatewayMac,
 		port: port,
-		omadacId: omadacId,
 	}
 }
 
@@ -5843,10 +5849,10 @@ func (a *GatewayAPIService) RecoveryPoePortExecute(r GatewayAPIRecoveryPoePortRe
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/ports/{port}/restart"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"gatewayMac"+"}", url.PathEscape(parameterValueToString(r.gatewayMac, "gatewayMac")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"port"+"}", url.PathEscape(parameterValueToString(r.port, "port")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

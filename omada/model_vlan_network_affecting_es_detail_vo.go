@@ -23,6 +23,8 @@ type VlanNetworkAffectingEsDetailVO struct {
 	// Switch downlink clients.
 	Clients []OswClientVO `json:"clients,omitempty"`
 	EsDetail *ESDetailVO `json:"esDetail,omitempty"`
+	// Whether the device supports reporting port layout information.
+	SupportLayout *bool `json:"supportLayout,omitempty"`
 }
 
 // NewVlanNetworkAffectingEsDetailVO instantiates a new VlanNetworkAffectingEsDetailVO object
@@ -138,6 +140,38 @@ func (o *VlanNetworkAffectingEsDetailVO) SetEsDetail(v ESDetailVO) {
 	o.EsDetail = &v
 }
 
+// GetSupportLayout returns the SupportLayout field value if set, zero value otherwise.
+func (o *VlanNetworkAffectingEsDetailVO) GetSupportLayout() bool {
+	if o == nil || IsNil(o.SupportLayout) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportLayout
+}
+
+// GetSupportLayoutOk returns a tuple with the SupportLayout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VlanNetworkAffectingEsDetailVO) GetSupportLayoutOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportLayout) {
+		return nil, false
+	}
+	return o.SupportLayout, true
+}
+
+// HasSupportLayout returns a boolean if a field has been set.
+func (o *VlanNetworkAffectingEsDetailVO) HasSupportLayout() bool {
+	if o != nil && !IsNil(o.SupportLayout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportLayout gets a reference to the given bool and assigns it to the SupportLayout field.
+func (o *VlanNetworkAffectingEsDetailVO) SetSupportLayout(v bool) {
+	o.SupportLayout = &v
+}
+
 func (o VlanNetworkAffectingEsDetailVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -156,6 +190,9 @@ func (o VlanNetworkAffectingEsDetailVO) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.EsDetail) {
 		toSerialize["esDetail"] = o.EsDetail
+	}
+	if !IsNil(o.SupportLayout) {
+		toSerialize["supportLayout"] = o.SupportLayout
 	}
 	return toSerialize, nil
 }

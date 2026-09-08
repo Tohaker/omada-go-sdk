@@ -22,6 +22,21 @@ func Test_omada_ScheduleTemplateAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test ScheduleTemplateAPIService AddPortScheduleTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.ScheduleTemplateAPI.AddPortScheduleTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ScheduleTemplateAPIService CreateRebootSchedule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -53,14 +68,46 @@ func Test_omada_ScheduleTemplateAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ScheduleTemplateAPIService GetRebootScheduleList1", func(t *testing.T) {
+	t.Run("Test ScheduleTemplateAPIService GetPortScheduleListTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var omadacId string
 		var siteTemplateId string
 
-		resp, httpRes, err := apiClient.ScheduleTemplateAPI.GetRebootScheduleList1(context.Background(), omadacId, siteTemplateId).Execute()
+		resp, httpRes, err := apiClient.ScheduleTemplateAPI.GetPortScheduleListTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ScheduleTemplateAPIService GetRebootScheduleList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.ScheduleTemplateAPI.GetRebootScheduleList(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ScheduleTemplateAPIService ModifyPortScheduleTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var type_ string
+		var portScheduleId string
+
+		resp, httpRes, err := apiClient.ScheduleTemplateAPI.ModifyPortScheduleTemplate(context.Background(), omadacId, siteTemplateId, type_, portScheduleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -77,6 +124,23 @@ func Test_omada_ScheduleTemplateAPIService(t *testing.T) {
 		var id string
 
 		resp, httpRes, err := apiClient.ScheduleTemplateAPI.ModifyRebootSchedule(context.Background(), omadacId, siteTemplateId, id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ScheduleTemplateAPIService RemovePortScheduleTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var type_ string
+		var portScheduleId string
+
+		resp, httpRes, err := apiClient.ScheduleTemplateAPI.RemovePortScheduleTemplate(context.Background(), omadacId, siteTemplateId, type_, portScheduleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

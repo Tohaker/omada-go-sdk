@@ -29,6 +29,8 @@ type ApPowerSavingConfigOpenApiVO struct {
 	EndTimeM *int32 `json:"endTimeM,omitempty"`
 	// Idle duration config of trigger by band.
 	IdleDuration *int32 `json:"idleDuration,omitempty"`
+	// Power Saving Mode of device. 0: OFF, 1: Standard( based on the user‑specified time and/or band settings ), 2: Smart, 3: Deep Power‑Saving
+	Mode *int32 `json:"mode,omitempty"`
 	// Start time of trigger by time(unit: hour); It should be within the range of 0–23.
 	StartTimeH *int32 `json:"startTimeH,omitempty"`
 	// Start time of trigger by time(unit: minute); It should be within the range of 0–59.
@@ -216,6 +218,38 @@ func (o *ApPowerSavingConfigOpenApiVO) SetIdleDuration(v int32) {
 	o.IdleDuration = &v
 }
 
+// GetMode returns the Mode field value if set, zero value otherwise.
+func (o *ApPowerSavingConfigOpenApiVO) GetMode() int32 {
+	if o == nil || IsNil(o.Mode) {
+		var ret int32
+		return ret
+	}
+	return *o.Mode
+}
+
+// GetModeOk returns a tuple with the Mode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApPowerSavingConfigOpenApiVO) GetModeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Mode) {
+		return nil, false
+	}
+	return o.Mode, true
+}
+
+// HasMode returns a boolean if a field has been set.
+func (o *ApPowerSavingConfigOpenApiVO) HasMode() bool {
+	if o != nil && !IsNil(o.Mode) {
+		return true
+	}
+
+	return false
+}
+
+// SetMode gets a reference to the given int32 and assigns it to the Mode field.
+func (o *ApPowerSavingConfigOpenApiVO) SetMode(v int32) {
+	o.Mode = &v
+}
+
 // GetStartTimeH returns the StartTimeH field value if set, zero value otherwise.
 func (o *ApPowerSavingConfigOpenApiVO) GetStartTimeH() int32 {
 	if o == nil || IsNil(o.StartTimeH) {
@@ -368,6 +402,9 @@ func (o ApPowerSavingConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IdleDuration) {
 		toSerialize["idleDuration"] = o.IdleDuration
+	}
+	if !IsNil(o.Mode) {
+		toSerialize["mode"] = o.Mode
 	}
 	if !IsNil(o.StartTimeH) {
 		toSerialize["startTimeH"] = o.StartTimeH

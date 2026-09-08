@@ -25,7 +25,7 @@ type WirelessIDSIPSTemplateAPI interface {
 	/*
 	GetWidsConfigTemplate Get wireless IDS config template
 
-	Get wireless IDS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get wireless IDS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -41,7 +41,7 @@ type WirelessIDSIPSTemplateAPI interface {
 	/*
 	GetWipsConfigTemplate Get wireless IPS config template
 
-	Get wireless IPS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get wireless IPS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -57,7 +57,7 @@ type WirelessIDSIPSTemplateAPI interface {
 	/*
 	ModifyWidsConfigTemplate Modify wireless IDS config template
 
-	Modify wireless IDS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Modify wireless IDS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -73,7 +73,7 @@ type WirelessIDSIPSTemplateAPI interface {
 	/*
 	ModifyWipsConfigTemplate Modify wireless IPS config template
 
-	Modify wireless IPS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Modify wireless IPS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -104,7 +104,7 @@ func (r WirelessIDSIPSTemplateAPIGetWidsConfigTemplateRequest) Execute() (*Opera
 /*
 GetWidsConfigTemplate Get wireless IDS config template
 
-Get wireless IDS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get wireless IDS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -225,7 +225,7 @@ func (r WirelessIDSIPSTemplateAPIGetWipsConfigTemplateRequest) Execute() (*Opera
 /*
 GetWipsConfigTemplate Get wireless IPS config template
 
-Get wireless IPS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get wireless IPS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -352,7 +352,7 @@ func (r WirelessIDSIPSTemplateAPIModifyWidsConfigTemplateRequest) Execute() (*Op
 /*
 ModifyWidsConfigTemplate Modify wireless IDS config template
 
-Modify wireless IDS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Modify wireless IDS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -484,7 +484,7 @@ func (r WirelessIDSIPSTemplateAPIModifyWipsConfigTemplateRequest) Execute() (*Op
 /*
 ModifyWipsConfigTemplate Modify wireless IPS config template
 
-Modify wireless IPS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Modify wireless IPS config template<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

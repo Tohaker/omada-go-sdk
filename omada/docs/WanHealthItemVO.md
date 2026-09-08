@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Jitter** | Pointer to **string** | Jitter | [optional] 
 **Latency** | Pointer to **string** | Latency | [optional] 
 **Name** | Pointer to **string** | WAN name | [optional] 
+**PacketLoss** | Pointer to **float32** | Packet loss | [optional] 
 **Port** | Pointer to **int32** | WAN port number | [optional] 
 **Throughput** | Pointer to **int32** | Throughput | [optional] 
 
@@ -27,6 +29,31 @@ will change when the set of required properties is changed
 NewWanHealthItemVOWithDefaults instantiates a new WanHealthItemVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetJitter
+
+`func (o *WanHealthItemVO) GetJitter() string`
+
+GetJitter returns the Jitter field if non-nil, zero value otherwise.
+
+### GetJitterOk
+
+`func (o *WanHealthItemVO) GetJitterOk() (*string, bool)`
+
+GetJitterOk returns a tuple with the Jitter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJitter
+
+`func (o *WanHealthItemVO) SetJitter(v string)`
+
+SetJitter sets Jitter field to given value.
+
+### HasJitter
+
+`func (o *WanHealthItemVO) HasJitter() bool`
+
+HasJitter returns a boolean if a field has been set.
 
 ### GetLatency
 
@@ -77,6 +104,31 @@ SetName sets Name field to given value.
 `func (o *WanHealthItemVO) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPacketLoss
+
+`func (o *WanHealthItemVO) GetPacketLoss() float32`
+
+GetPacketLoss returns the PacketLoss field if non-nil, zero value otherwise.
+
+### GetPacketLossOk
+
+`func (o *WanHealthItemVO) GetPacketLossOk() (*float32, bool)`
+
+GetPacketLossOk returns a tuple with the PacketLoss field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPacketLoss
+
+`func (o *WanHealthItemVO) SetPacketLoss(v float32)`
+
+SetPacketLoss sets PacketLoss field to given value.
+
+### HasPacketLoss
+
+`func (o *WanHealthItemVO) HasPacketLoss() bool`
+
+HasPacketLoss returns a boolean if a field has been set.
 
 ### GetPort
 

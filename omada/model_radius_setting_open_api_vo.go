@@ -29,7 +29,7 @@ type RadiusSettingOpenApiVO struct {
 	NasIp *string `json:"nasIp,omitempty"`
 	// Request Timeout, 1~60(s).
 	OverTime int32 `json:"overTime"`
-	// Radius profile ID. Radius profile can be created using 'Create a new Radius profile' interface, and Radius profile ID can be obtained from 'Get Radius profile list' interface.
+	// Radius profile ID. RADIUS profile can be created using 'Create a new RADIUS profile' interface, and RADIUS profile ID can be obtained from 'Get RADIUS profile list' interface.
 	RadiusProfile string `json:"radiusProfile"`
 	// Repeat time should be within the range of 1–10
 	RepeatTime int32 `json:"repeatTime"`

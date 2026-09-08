@@ -19,7 +19,7 @@ import (
 // checks if the HotspotRadiusSetting type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &HotspotRadiusSetting{}
 
-// HotspotRadiusSetting Hotspot Radius Portal Setting.
+// HotspotRadiusSetting Hotspot RADIUS Portal Setting.
 type HotspotRadiusSetting struct {
 	// RADIUS auth mode, should be a value as follows: 1: PAP; 2: CHAP
 	AuthMode int32 `json:"authMode"`

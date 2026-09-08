@@ -4,24 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConfirmConflict** | Pointer to **bool** | The switch to confirm conflict | [optional] 
-**DhcpIp** | Pointer to **string** | DHCP IP | [optional] 
-**Fallback** | Pointer to **bool** | The switch of fallback | [optional] 
-**FallbackGate** | Pointer to **string** | Fallback Gateway | [optional] 
-**FallbackIp** | Pointer to **string** | Fallback IP | [optional] 
-**FallbackMask** | Pointer to **string** | Fallback Mask | [optional] 
+**ConfirmConflict** | Pointer to **bool** | Enable IP-MAC Conflict Detection or not. | [optional] 
+**DhcpIp** | Pointer to **string** | The IP for Address reservation when useFixedAddr is enabled. | [optional] 
+**Fallback** | Pointer to **bool** | The switch of fallback ip for mode 1. | [optional] 
+**FallbackGate** | Pointer to **string** | Fallback gateway for dhcp mode when fallback is enabled. | [optional] 
+**FallbackIp** | Pointer to **string** | Fallback ip for dhcp mode when fallback is enabled. | [optional] 
+**FallbackMask** | Pointer to **string** | Fallback mask for dhcp mode when fallback is enabled. | [optional] 
 **Gateway** | Pointer to **string** | Gateway, like 192.168.0.1 | [optional] 
 **Ip** | Pointer to **string** | Static IP for mode 0, like 192.168.0.1 | [optional] 
 **Mode** | **int32** | IP Setting mode. Static:0, DHCP:1 | 
-**NetId** | Pointer to **string** | netId | [optional] 
+**NetId** | Pointer to **string** | The LAN Network for Address reservation when useFixedAddr is enabled. Obtain the id from \&quot;Get LAN network list\&quot; | [optional] 
 **Netmask** | Pointer to **string** | IP Mask, like 255.255.255.0 | [optional] 
 **Option12** | Pointer to **string** | option12 | [optional] 
 **PreDns** | Pointer to **string** | primary DNS Server | [optional] 
 **SecDns** | Pointer to **string** | second DNS Server | [optional] 
-**ServerMac** | Pointer to **string** | Server MAC | [optional] 
-**ServerStackId** | Pointer to **string** | serverStackId | [optional] 
-**ServerType** | Pointer to **string** | Server Type | [optional] 
-**UserFixedAddr** | Pointer to **bool** | The switch of Fixed Address | [optional] 
+**ServerMac** | Pointer to **string** | The Mac of DHCP Server for Address reservation when useFixedAddr is enabled. | [optional] 
+**ServerStackId** | Pointer to **string** | The Stack ID of DHCP Server for Address reservation when useFixedAddr is enabled. | [optional] 
+**ServerType** | Pointer to **string** | The Type of DHCP Server for Address reservation when useFixedAddr is enabled. | [optional] 
+**UseFixedAddr** | Pointer to **bool** | The switch of Fixed Address | [optional] 
 
 ## Methods
 
@@ -462,30 +462,30 @@ SetServerType sets ServerType field to given value.
 
 HasServerType returns a boolean if a field has been set.
 
-### GetUserFixedAddr
+### GetUseFixedAddr
 
-`func (o *OswIpSettingVO) GetUserFixedAddr() bool`
+`func (o *OswIpSettingVO) GetUseFixedAddr() bool`
 
-GetUserFixedAddr returns the UserFixedAddr field if non-nil, zero value otherwise.
+GetUseFixedAddr returns the UseFixedAddr field if non-nil, zero value otherwise.
 
-### GetUserFixedAddrOk
+### GetUseFixedAddrOk
 
-`func (o *OswIpSettingVO) GetUserFixedAddrOk() (*bool, bool)`
+`func (o *OswIpSettingVO) GetUseFixedAddrOk() (*bool, bool)`
 
-GetUserFixedAddrOk returns a tuple with the UserFixedAddr field if it's non-nil, zero value otherwise
+GetUseFixedAddrOk returns a tuple with the UseFixedAddr field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserFixedAddr
+### SetUseFixedAddr
 
-`func (o *OswIpSettingVO) SetUserFixedAddr(v bool)`
+`func (o *OswIpSettingVO) SetUseFixedAddr(v bool)`
 
-SetUserFixedAddr sets UserFixedAddr field to given value.
+SetUseFixedAddr sets UseFixedAddr field to given value.
 
-### HasUserFixedAddr
+### HasUseFixedAddr
 
-`func (o *OswIpSettingVO) HasUserFixedAddr() bool`
+`func (o *OswIpSettingVO) HasUseFixedAddr() bool`
 
-HasUserFixedAddr returns a boolean if a field has been set.
+HasUseFixedAddr returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

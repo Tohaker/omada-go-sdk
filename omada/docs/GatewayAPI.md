@@ -27,7 +27,7 @@ Method | HTTP request | Description
 [**IspUpgrade**](GatewayAPI.md#ispupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/gateways/{gatewayMac}/isp-upgrade | Upgrade isp
 [**ModifyConfigAdvanced**](GatewayAPI.md#modifyconfigadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced | Modify gateway advanced config
 [**ModifyConfigCommonAdvanced**](GatewayAPI.md#modifyconfigcommonadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/common | Modify gateway advanced common config
-[**ModifyConfigGeneral**](GatewayAPI.md#modifyconfiggeneral) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify gateway general config
+[**ModifyConfigGeneral**](GatewayAPI.md#modifyconfiggeneral) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/general | Modify gateway general config v2
 [**ModifyConfigRadios**](GatewayAPI.md#modifyconfigradios) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/radios | Modify gateway radios config
 [**ModifyConfigServices**](GatewayAPI.md#modifyconfigservices) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/services | Modify gateway config service
 [**ModifyConfigWirelessAdvanced**](GatewayAPI.md#modifyconfigwirelessadvanced) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/gateways/{gatewayMac}/config/advanced/wireless | Modify gateway advanced wireless config
@@ -1058,7 +1058,7 @@ Name | Type | Description  | Notes
 
 ## GetLanStatus
 
-> OperationResponseListLanStatus GetLanStatus(ctx, siteId, gatewayMac, omadacId).Execute()
+> OperationResponseListLanStatus GetLanStatus(ctx, omadacId, siteId, gatewayMac).Execute()
 
 Get gateway lan status
 
@@ -1077,13 +1077,13 @@ import (
 )
 
 func main() {
+	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
-	omadacId := "omadacId_example" // string | omadacId
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.GetLanStatus(context.Background(), siteId, gatewayMac, omadacId).Execute()
+	resp, r, err := apiClient.GatewayAPI.GetLanStatus(context.Background(), omadacId, siteId, gatewayMac).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.GetLanStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1099,9 +1099,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
 **gatewayMac** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
-**omadacId** | **string** | omadacId | 
 
 ### Other Parameters
 
@@ -1824,7 +1824,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyConfigGeneral(ctx, omadacId, siteId, gatewayMac).GatewayGeneralConfig(gatewayGeneralConfig).Execute()
 
-Modify gateway general config
+Modify gateway general config v2
 
 
 
@@ -3004,7 +3004,7 @@ Name | Type | Description  | Notes
 
 ## RecoveryPoePort
 
-> OperationResponseOperationResponseWithoutResult RecoveryPoePort(ctx, siteId, gatewayMac, port, omadacId).Execute()
+> OperationResponseOperationResponseWithoutResult RecoveryPoePort(ctx, omadacId, siteId, gatewayMac, port).Execute()
 
 Recovery gateway poe port
 
@@ -3023,14 +3023,14 @@ import (
 )
 
 func main() {
+	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	gatewayMac := "gatewayMac_example" // string | Gateway MAC address, like AA-BB-CC-DD-EE-FF
 	port := "port_example" // string | Gateway port number
-	omadacId := "omadacId_example" // string | omadacId
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.GatewayAPI.RecoveryPoePort(context.Background(), siteId, gatewayMac, port, omadacId).Execute()
+	resp, r, err := apiClient.GatewayAPI.RecoveryPoePort(context.Background(), omadacId, siteId, gatewayMac, port).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `GatewayAPI.RecoveryPoePort``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3046,10 +3046,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
 **gatewayMac** | **string** | Gateway MAC address, like AA-BB-CC-DD-EE-FF | 
 **port** | **string** | Gateway port number | 
-**omadacId** | **string** | omadacId | 
 
 ### Other Parameters
 

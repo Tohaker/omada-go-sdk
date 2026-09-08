@@ -16,8 +16,10 @@ Name | Type | Description | Notes
 **LocalVlanEnable** | Pointer to **bool** | Whether the port enable VLANs. | [optional] 
 **LocalVlanId** | Pointer to **int32** | Local vlan id. | [optional] 
 **LocalVlanNetworkId** | Pointer to **string** | Local Vlan Network Id, used to enter the LAN field. | [optional] 
+**LogicUplinkPort** | Pointer to **bool** | Whether it is a logical uplink port of device. | [optional] 
 **Name** | Pointer to **string** | Port Name. It should contain 1 ~ 64 ASCII characters. If it is NULL, LanPort is displayed. | [optional] 
 **OnuId** | Pointer to **string** | Onu Id | [optional] 
+**PoeInputMode** | Pointer to **int32** | Poe Input Mode. It should be a value as follows: 0: OFF, 1: BT, 2: AT, 3: AF. | [optional] 
 **PoeOutEnable** | Pointer to **bool** | Whether to enable poe out. | [optional] 
 **PoeState** | Pointer to **int32** | This value is only available when supportPoe is true.It should be a value as follows: 0：In the power supply; 1：Not in the power supply. | [optional] 
 **Port** | Pointer to **int32** | Port Number | [optional] 
@@ -35,7 +37,7 @@ Name | Type | Description | Notes
 **TaggedNetworkId** | Pointer to **[]string** | The Id list of the tagged vlan network profile, it must be present when custom is true. | [optional] 
 **Untagged** | Pointer to **string** | Untagged vlan list, it must be present when custom is true. Two data cannot be duplicated. | [optional] 
 **UntaggedNetworkId** | Pointer to **[]string** | The Id list of the untagged vlan network profile, it must be present when custom is true. | [optional] 
-**UplinkPort** | Pointer to **bool** | Whether it is an actual uplink port. | [optional] 
+**UplinkPort** | Pointer to **bool** | Whether it is an actual uplink port in topology. | [optional] 
 **VoipState** | Pointer to **int32** | This field has a value for the voice port.It should be a value as follows: 0：Off-hook; 1：On-hook. | [optional] 
 
 ## Methods
@@ -357,6 +359,31 @@ SetLocalVlanNetworkId sets LocalVlanNetworkId field to given value.
 
 HasLocalVlanNetworkId returns a boolean if a field has been set.
 
+### GetLogicUplinkPort
+
+`func (o *APLANPortList) GetLogicUplinkPort() bool`
+
+GetLogicUplinkPort returns the LogicUplinkPort field if non-nil, zero value otherwise.
+
+### GetLogicUplinkPortOk
+
+`func (o *APLANPortList) GetLogicUplinkPortOk() (*bool, bool)`
+
+GetLogicUplinkPortOk returns a tuple with the LogicUplinkPort field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogicUplinkPort
+
+`func (o *APLANPortList) SetLogicUplinkPort(v bool)`
+
+SetLogicUplinkPort sets LogicUplinkPort field to given value.
+
+### HasLogicUplinkPort
+
+`func (o *APLANPortList) HasLogicUplinkPort() bool`
+
+HasLogicUplinkPort returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *APLANPortList) GetName() string`
@@ -406,6 +433,31 @@ SetOnuId sets OnuId field to given value.
 `func (o *APLANPortList) HasOnuId() bool`
 
 HasOnuId returns a boolean if a field has been set.
+
+### GetPoeInputMode
+
+`func (o *APLANPortList) GetPoeInputMode() int32`
+
+GetPoeInputMode returns the PoeInputMode field if non-nil, zero value otherwise.
+
+### GetPoeInputModeOk
+
+`func (o *APLANPortList) GetPoeInputModeOk() (*int32, bool)`
+
+GetPoeInputModeOk returns a tuple with the PoeInputMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPoeInputMode
+
+`func (o *APLANPortList) SetPoeInputMode(v int32)`
+
+SetPoeInputMode sets PoeInputMode field to given value.
+
+### HasPoeInputMode
+
+`func (o *APLANPortList) HasPoeInputMode() bool`
+
+HasPoeInputMode returns a boolean if a field has been set.
 
 ### GetPoeOutEnable
 

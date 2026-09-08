@@ -19,7 +19,7 @@ var _ MappedNullable = &CustomerOpenApiVO{}
 
 // CustomerOpenApiVO struct for CustomerOpenApiVO
 type CustomerOpenApiVO struct {
-	// Customer name should contain 1 to 31 characters.
+	// Customer name should contain 1 to 32 characters.
 	CustomerName *string `json:"customerName,omitempty"`
 	// Customer description should contain 1 to 128 characters.
 	Description *string `json:"description,omitempty"`

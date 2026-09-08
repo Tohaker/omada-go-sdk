@@ -21,11 +21,11 @@ var _ MappedNullable = &DhcpServersSetting{}
 
 // DhcpServersSetting Legal DHCP Server
 type DhcpServersSetting struct {
-	// DHCP Server IP1
+	// Primary DHCP Guarding IP
 	DhcpSvr1 *string `json:"dhcpSvr1,omitempty"`
-	// DHCP Server IP2
+	// Secondary DHCP Guarding IP
 	DhcpSvr2 *string `json:"dhcpSvr2,omitempty"`
-	// The switch of DHCP Guarding
+	// The switch of DHCP Guarding. When the switch is off, any configuration of DHCP Guarding will not be saved.
 	Enable bool `json:"enable"`
 	// The fill mode of DHCP Guarding, 1：follow Server 2：custom
 	Mode *int32 `json:"mode,omitempty"`

@@ -23,7 +23,7 @@ var _ MappedNullable = &BatchUpdateApPowerSavingConfigOpenApiVO{}
 type BatchUpdateApPowerSavingConfigOpenApiVO struct {
 	// AP mac list
 	ApMacList []string `json:"apMacList"`
-	// Power Saving trigger by band config status. True: enable, false: disable.
+	// Parameter [bandEnable] can be TRUE only when [mode] = 1. Power Saving trigger by band config status. True: enable, false: disable.
 	BandEnable *bool `json:"bandEnable,omitempty"`
 	// Select bands list config of trigger by band;It should be a value as follows: 0: 2.4GHz; 1: 5GHz; 2: 5G2Hz; 3: 6GHz;This field is required when Parameter [bandEnable] is true;Please note that the band filled in must be supported by the device, otherwise the modified configuration will not take effect properly
 	Bands []int32 `json:"bands,omitempty"`
@@ -33,6 +33,8 @@ type BatchUpdateApPowerSavingConfigOpenApiVO struct {
 	EndTimeM *int32 `json:"endTimeM,omitempty"`
 	// Idle duration config of trigger by band(unit: minute); It should be within the range of 60–1440; This field is required when Parameter [bandEnable] is true.
 	IdleDuration *int32 `json:"idleDuration,omitempty"`
+	// Parameter [mode] is Power Saving Mode of device and should not be null. 0: OFF, 1: Standard( based on the user‑specified time and/or band settings ), 2: Smart, 3: Deep Power‑Saving
+	Mode *int32 `json:"mode,omitempty"`
 	// Start time of trigger by time(unit: hour); It should be within the range of 0–23; This field is required when Parameter [timeEnable] is true.
 	StartTimeH *int32 `json:"startTimeH,omitempty"`
 	// Start time of trigger by time(unit: minute); It should be within the range of 0–59; This field is required when Parameter [timeEnable] is true.
@@ -245,6 +247,38 @@ func (o *BatchUpdateApPowerSavingConfigOpenApiVO) SetIdleDuration(v int32) {
 	o.IdleDuration = &v
 }
 
+// GetMode returns the Mode field value if set, zero value otherwise.
+func (o *BatchUpdateApPowerSavingConfigOpenApiVO) GetMode() int32 {
+	if o == nil || IsNil(o.Mode) {
+		var ret int32
+		return ret
+	}
+	return *o.Mode
+}
+
+// GetModeOk returns a tuple with the Mode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BatchUpdateApPowerSavingConfigOpenApiVO) GetModeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Mode) {
+		return nil, false
+	}
+	return o.Mode, true
+}
+
+// HasMode returns a boolean if a field has been set.
+func (o *BatchUpdateApPowerSavingConfigOpenApiVO) HasMode() bool {
+	if o != nil && !IsNil(o.Mode) {
+		return true
+	}
+
+	return false
+}
+
+// SetMode gets a reference to the given int32 and assigns it to the Mode field.
+func (o *BatchUpdateApPowerSavingConfigOpenApiVO) SetMode(v int32) {
+	o.Mode = &v
+}
+
 // GetStartTimeH returns the StartTimeH field value if set, zero value otherwise.
 func (o *BatchUpdateApPowerSavingConfigOpenApiVO) GetStartTimeH() int32 {
 	if o == nil || IsNil(o.StartTimeH) {
@@ -366,6 +400,9 @@ func (o BatchUpdateApPowerSavingConfigOpenApiVO) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.IdleDuration) {
 		toSerialize["idleDuration"] = o.IdleDuration
+	}
+	if !IsNil(o.Mode) {
+		toSerialize["mode"] = o.Mode
 	}
 	if !IsNil(o.StartTimeH) {
 		toSerialize["startTimeH"] = o.StartTimeH

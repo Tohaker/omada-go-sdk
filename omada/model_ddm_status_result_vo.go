@@ -29,18 +29,24 @@ type DDMStatusResultVO struct {
 	LossOfSignal *bool `json:"lossOfSignal,omitempty"`
 	// OLT optical ports, including Ethernet optical ports and PON ports.
 	Port *string `json:"port,omitempty"`
-	// Port optical module received power.
-	RxPower *string `json:"rxPower,omitempty"`
+	// Port optical module received power(dbm).
+	RxPowerDbm *string `json:"rxPower(dbm),omitempty"`
+	// Port optical module received power(mW).
+	RxPowerMW *float64 `json:"rxPower(mW),omitempty"`
 	// Port optical module received power alert information.
 	RxPowerFlag *int32 `json:"rxPowerFlag,omitempty"`
 	// Temperature of the port optical module.
 	Temperature *string `json:"temperature,omitempty"`
+	// Temperature(Fahrenheit) of the port optical module.
+	TemperatureFahrenheit *float64 `json:"temperature(Fahrenheit),omitempty"`
 	// Port optical module temperature alert information.
 	TemperatureFlag *int32 `json:"temperatureFlag,omitempty"`
 	// Weather the signal from the remote optical module is distorted
 	TransmitFault *int32 `json:"transmitFault,omitempty"`
-	// Port optical module transmission power.
-	TxPower *string `json:"txPower,omitempty"`
+	// Port optical module transmission power(dbm).
+	TxPowerDbm *string `json:"txPower(dbm),omitempty"`
+	// Port optical module transmission power(mW).
+	TxPowerMW *float64 `json:"txPower(mW),omitempty"`
 	// Port optical module transmission power alert information.
 	TxPowerFlag *int32 `json:"txPowerFlag,omitempty"`
 	// Port optical module voltage.
@@ -226,36 +232,68 @@ func (o *DDMStatusResultVO) SetPort(v string) {
 	o.Port = &v
 }
 
-// GetRxPower returns the RxPower field value if set, zero value otherwise.
-func (o *DDMStatusResultVO) GetRxPower() string {
-	if o == nil || IsNil(o.RxPower) {
+// GetRxPowerDbm returns the RxPowerDbm field value if set, zero value otherwise.
+func (o *DDMStatusResultVO) GetRxPowerDbm() string {
+	if o == nil || IsNil(o.RxPowerDbm) {
 		var ret string
 		return ret
 	}
-	return *o.RxPower
+	return *o.RxPowerDbm
 }
 
-// GetRxPowerOk returns a tuple with the RxPower field value if set, nil otherwise
+// GetRxPowerDbmOk returns a tuple with the RxPowerDbm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DDMStatusResultVO) GetRxPowerOk() (*string, bool) {
-	if o == nil || IsNil(o.RxPower) {
+func (o *DDMStatusResultVO) GetRxPowerDbmOk() (*string, bool) {
+	if o == nil || IsNil(o.RxPowerDbm) {
 		return nil, false
 	}
-	return o.RxPower, true
+	return o.RxPowerDbm, true
 }
 
-// HasRxPower returns a boolean if a field has been set.
-func (o *DDMStatusResultVO) HasRxPower() bool {
-	if o != nil && !IsNil(o.RxPower) {
+// HasRxPowerDbm returns a boolean if a field has been set.
+func (o *DDMStatusResultVO) HasRxPowerDbm() bool {
+	if o != nil && !IsNil(o.RxPowerDbm) {
 		return true
 	}
 
 	return false
 }
 
-// SetRxPower gets a reference to the given string and assigns it to the RxPower field.
-func (o *DDMStatusResultVO) SetRxPower(v string) {
-	o.RxPower = &v
+// SetRxPowerDbm gets a reference to the given string and assigns it to the RxPowerDbm field.
+func (o *DDMStatusResultVO) SetRxPowerDbm(v string) {
+	o.RxPowerDbm = &v
+}
+
+// GetRxPowerMW returns the RxPowerMW field value if set, zero value otherwise.
+func (o *DDMStatusResultVO) GetRxPowerMW() float64 {
+	if o == nil || IsNil(o.RxPowerMW) {
+		var ret float64
+		return ret
+	}
+	return *o.RxPowerMW
+}
+
+// GetRxPowerMWOk returns a tuple with the RxPowerMW field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DDMStatusResultVO) GetRxPowerMWOk() (*float64, bool) {
+	if o == nil || IsNil(o.RxPowerMW) {
+		return nil, false
+	}
+	return o.RxPowerMW, true
+}
+
+// HasRxPowerMW returns a boolean if a field has been set.
+func (o *DDMStatusResultVO) HasRxPowerMW() bool {
+	if o != nil && !IsNil(o.RxPowerMW) {
+		return true
+	}
+
+	return false
+}
+
+// SetRxPowerMW gets a reference to the given float64 and assigns it to the RxPowerMW field.
+func (o *DDMStatusResultVO) SetRxPowerMW(v float64) {
+	o.RxPowerMW = &v
 }
 
 // GetRxPowerFlag returns the RxPowerFlag field value if set, zero value otherwise.
@@ -322,6 +360,38 @@ func (o *DDMStatusResultVO) SetTemperature(v string) {
 	o.Temperature = &v
 }
 
+// GetTemperatureFahrenheit returns the TemperatureFahrenheit field value if set, zero value otherwise.
+func (o *DDMStatusResultVO) GetTemperatureFahrenheit() float64 {
+	if o == nil || IsNil(o.TemperatureFahrenheit) {
+		var ret float64
+		return ret
+	}
+	return *o.TemperatureFahrenheit
+}
+
+// GetTemperatureFahrenheitOk returns a tuple with the TemperatureFahrenheit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DDMStatusResultVO) GetTemperatureFahrenheitOk() (*float64, bool) {
+	if o == nil || IsNil(o.TemperatureFahrenheit) {
+		return nil, false
+	}
+	return o.TemperatureFahrenheit, true
+}
+
+// HasTemperatureFahrenheit returns a boolean if a field has been set.
+func (o *DDMStatusResultVO) HasTemperatureFahrenheit() bool {
+	if o != nil && !IsNil(o.TemperatureFahrenheit) {
+		return true
+	}
+
+	return false
+}
+
+// SetTemperatureFahrenheit gets a reference to the given float64 and assigns it to the TemperatureFahrenheit field.
+func (o *DDMStatusResultVO) SetTemperatureFahrenheit(v float64) {
+	o.TemperatureFahrenheit = &v
+}
+
 // GetTemperatureFlag returns the TemperatureFlag field value if set, zero value otherwise.
 func (o *DDMStatusResultVO) GetTemperatureFlag() int32 {
 	if o == nil || IsNil(o.TemperatureFlag) {
@@ -386,36 +456,68 @@ func (o *DDMStatusResultVO) SetTransmitFault(v int32) {
 	o.TransmitFault = &v
 }
 
-// GetTxPower returns the TxPower field value if set, zero value otherwise.
-func (o *DDMStatusResultVO) GetTxPower() string {
-	if o == nil || IsNil(o.TxPower) {
+// GetTxPowerDbm returns the TxPowerDbm field value if set, zero value otherwise.
+func (o *DDMStatusResultVO) GetTxPowerDbm() string {
+	if o == nil || IsNil(o.TxPowerDbm) {
 		var ret string
 		return ret
 	}
-	return *o.TxPower
+	return *o.TxPowerDbm
 }
 
-// GetTxPowerOk returns a tuple with the TxPower field value if set, nil otherwise
+// GetTxPowerDbmOk returns a tuple with the TxPowerDbm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DDMStatusResultVO) GetTxPowerOk() (*string, bool) {
-	if o == nil || IsNil(o.TxPower) {
+func (o *DDMStatusResultVO) GetTxPowerDbmOk() (*string, bool) {
+	if o == nil || IsNil(o.TxPowerDbm) {
 		return nil, false
 	}
-	return o.TxPower, true
+	return o.TxPowerDbm, true
 }
 
-// HasTxPower returns a boolean if a field has been set.
-func (o *DDMStatusResultVO) HasTxPower() bool {
-	if o != nil && !IsNil(o.TxPower) {
+// HasTxPowerDbm returns a boolean if a field has been set.
+func (o *DDMStatusResultVO) HasTxPowerDbm() bool {
+	if o != nil && !IsNil(o.TxPowerDbm) {
 		return true
 	}
 
 	return false
 }
 
-// SetTxPower gets a reference to the given string and assigns it to the TxPower field.
-func (o *DDMStatusResultVO) SetTxPower(v string) {
-	o.TxPower = &v
+// SetTxPowerDbm gets a reference to the given string and assigns it to the TxPowerDbm field.
+func (o *DDMStatusResultVO) SetTxPowerDbm(v string) {
+	o.TxPowerDbm = &v
+}
+
+// GetTxPowerMW returns the TxPowerMW field value if set, zero value otherwise.
+func (o *DDMStatusResultVO) GetTxPowerMW() float64 {
+	if o == nil || IsNil(o.TxPowerMW) {
+		var ret float64
+		return ret
+	}
+	return *o.TxPowerMW
+}
+
+// GetTxPowerMWOk returns a tuple with the TxPowerMW field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DDMStatusResultVO) GetTxPowerMWOk() (*float64, bool) {
+	if o == nil || IsNil(o.TxPowerMW) {
+		return nil, false
+	}
+	return o.TxPowerMW, true
+}
+
+// HasTxPowerMW returns a boolean if a field has been set.
+func (o *DDMStatusResultVO) HasTxPowerMW() bool {
+	if o != nil && !IsNil(o.TxPowerMW) {
+		return true
+	}
+
+	return false
+}
+
+// SetTxPowerMW gets a reference to the given float64 and assigns it to the TxPowerMW field.
+func (o *DDMStatusResultVO) SetTxPowerMW(v float64) {
+	o.TxPowerMW = &v
 }
 
 // GetTxPowerFlag returns the TxPowerFlag field value if set, zero value otherwise.
@@ -539,8 +641,11 @@ func (o DDMStatusResultVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
 	}
-	if !IsNil(o.RxPower) {
-		toSerialize["rxPower"] = o.RxPower
+	if !IsNil(o.RxPowerDbm) {
+		toSerialize["rxPower(dbm)"] = o.RxPowerDbm
+	}
+	if !IsNil(o.RxPowerMW) {
+		toSerialize["rxPower(mW)"] = o.RxPowerMW
 	}
 	if !IsNil(o.RxPowerFlag) {
 		toSerialize["rxPowerFlag"] = o.RxPowerFlag
@@ -548,14 +653,20 @@ func (o DDMStatusResultVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Temperature) {
 		toSerialize["temperature"] = o.Temperature
 	}
+	if !IsNil(o.TemperatureFahrenheit) {
+		toSerialize["temperature(Fahrenheit)"] = o.TemperatureFahrenheit
+	}
 	if !IsNil(o.TemperatureFlag) {
 		toSerialize["temperatureFlag"] = o.TemperatureFlag
 	}
 	if !IsNil(o.TransmitFault) {
 		toSerialize["transmitFault"] = o.TransmitFault
 	}
-	if !IsNil(o.TxPower) {
-		toSerialize["txPower"] = o.TxPower
+	if !IsNil(o.TxPowerDbm) {
+		toSerialize["txPower(dbm)"] = o.TxPowerDbm
+	}
+	if !IsNil(o.TxPowerMW) {
+		toSerialize["txPower(mW)"] = o.TxPowerMW
 	}
 	if !IsNil(o.TxPowerFlag) {
 		toSerialize["txPowerFlag"] = o.TxPowerFlag

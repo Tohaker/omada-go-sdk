@@ -19,10 +19,12 @@ var _ MappedNullable = &ApSnmpConfigOpenApiVO{}
 
 // ApSnmpConfigOpenApiVO struct for ApSnmpConfigOpenApiVO
 type ApSnmpConfigOpenApiVO struct {
-	// Contact, contact should contain 0 to 128 ASCII characters, spaces are not allowed.
+	// SNMP parameter [contact] is required only when [type] = 1, contact should contain 0 to 128 ASCII characters, spaces are not allowed.
 	Contact *string `json:"contact,omitempty"`
-	// Location, location should contain 0 to 128 ASCII characters, spaces are allowed, and leading and trailing spaces are not allowed.
+	// SNMP parameter [location] is required only when [type] = 1, location should contain 0 to 128 ASCII characters, spaces are allowed, and leading and trailing spaces are not allowed.
 	Location *string `json:"location,omitempty"`
+	// SNMP parameter [type] should be a value as follows: 0: Use Site Settings; 1: Custom.
+	Type *int32 `json:"type,omitempty"`
 }
 
 // NewApSnmpConfigOpenApiVO instantiates a new ApSnmpConfigOpenApiVO object
@@ -106,6 +108,38 @@ func (o *ApSnmpConfigOpenApiVO) SetLocation(v string) {
 	o.Location = &v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *ApSnmpConfigOpenApiVO) GetType() int32 {
+	if o == nil || IsNil(o.Type) {
+		var ret int32
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApSnmpConfigOpenApiVO) GetTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *ApSnmpConfigOpenApiVO) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given int32 and assigns it to the Type field.
+func (o *ApSnmpConfigOpenApiVO) SetType(v int32) {
+	o.Type = &v
+}
+
 func (o ApSnmpConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -121,6 +155,9 @@ func (o ApSnmpConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Location) {
 		toSerialize["location"] = o.Location
+	}
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
 	}
 	return toSerialize, nil
 }

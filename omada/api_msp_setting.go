@@ -41,7 +41,7 @@ type MspSettingAPI interface {
 	/*
 	DeleteSSLKey Delete an existing msp SSL key
 
-	Delete an existing msp SSL key.
+	Delete an existing msp SSL key.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -303,7 +303,7 @@ type MspSettingAPI interface {
 	/*
 	UploadCertificate Upload msp certificate
 
-	Upload msp certificate. Only support .pem, .pfx, .jks files. Certificate name should be the same as the file name.
+	Upload msp certificate. Only support .pem, .pfx, .jks files. Certificate name should be the same as the file name.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -318,7 +318,7 @@ type MspSettingAPI interface {
 	/*
 	UploadSSLKey Upload msp SSL key
 
-	Upload msp SSL key. Only support .pem files.
+	Upload msp SSL key. Only support .pem files.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -469,7 +469,7 @@ func (r MspSettingAPIDeleteSSLKeyRequest) Execute() (*OperationResponse, *http.R
 /*
 DeleteSSLKey Delete an existing msp SSL key
 
-Delete an existing msp SSL key.
+Delete an existing msp SSL key.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -2557,7 +2557,7 @@ func (r MspSettingAPIUploadCertificateRequest) Execute() (*OperationResponse, *h
 /*
 UploadCertificate Upload msp certificate
 
-Upload msp certificate. Only support .pem, .pfx, .jks files. Certificate name should be the same as the file name.
+Upload msp certificate. Only support .pem, .pfx, .jks files. Certificate name should be the same as the file name.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -2675,6 +2675,7 @@ type MspSettingAPIUploadSSLKeyRequest struct {
 	uploadSSLKeyRequest *UploadSSLKeyRequest
 }
 
+// SSL Key Name
 func (r MspSettingAPIUploadSSLKeyRequest) KeyName(keyName string) MspSettingAPIUploadSSLKeyRequest {
 	r.keyName = &keyName
 	return r
@@ -2692,7 +2693,7 @@ func (r MspSettingAPIUploadSSLKeyRequest) Execute() (*OperationResponse, *http.R
 /*
 UploadSSLKey Upload msp SSL key
 
-Upload msp SSL key. Only support .pem files.
+Upload msp SSL key. Only support .pem files.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID

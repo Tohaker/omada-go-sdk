@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DhcpPoolMask** | Pointer to **int32** |  | [optional] 
 **Dhcpns** | Pointer to **string** | Setup DHCP server: \&quot;auto\&quot; or \&quot;manual\&quot; | [optional] 
 **Enable** | Pointer to **bool** | When value is true, DHCP server is enabled | [optional] 
 **Gateway** | Pointer to **string** | Manual Setup of DHCP Gateway IP | [optional] 
@@ -31,6 +32,31 @@ will change when the set of required properties is changed
 NewDhcpSettingsConfigTemplateOpenApiVOWithDefaults instantiates a new DhcpSettingsConfigTemplateOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDhcpPoolMask
+
+`func (o *DhcpSettingsConfigTemplateOpenApiVO) GetDhcpPoolMask() int32`
+
+GetDhcpPoolMask returns the DhcpPoolMask field if non-nil, zero value otherwise.
+
+### GetDhcpPoolMaskOk
+
+`func (o *DhcpSettingsConfigTemplateOpenApiVO) GetDhcpPoolMaskOk() (*int32, bool)`
+
+GetDhcpPoolMaskOk returns a tuple with the DhcpPoolMask field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDhcpPoolMask
+
+`func (o *DhcpSettingsConfigTemplateOpenApiVO) SetDhcpPoolMask(v int32)`
+
+SetDhcpPoolMask sets DhcpPoolMask field to given value.
+
+### HasDhcpPoolMask
+
+`func (o *DhcpSettingsConfigTemplateOpenApiVO) HasDhcpPoolMask() bool`
+
+HasDhcpPoolMask returns a boolean if a field has been set.
 
 ### GetDhcpns
 

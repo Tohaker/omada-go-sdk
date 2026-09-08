@@ -23,7 +23,7 @@ var _ MappedNullable = &OswNetworkBaseOpenApi{}
 type OswNetworkBaseOpenApi struct {
 	// Network ID
 	Id string `json:"id"`
-	// Enable status of the network vlan.
+	// Enable status of the network vlan. Note: this field only takes effect when toggling switch status on the Interface list page and is ignored by other switch network edit APIs.
 	Status *bool `json:"status,omitempty"`
 	// VLAN ID.
 	Vlan int32 `json:"vlan"`

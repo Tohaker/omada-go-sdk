@@ -27,6 +27,10 @@ type OswStackDetailVO struct {
 	Active *bool `json:"active,omitempty"`
 	// Whether the device is added in advanced.
 	AddedInAdvanced *bool `json:"addedInAdvanced,omitempty"`
+	// Block information
+	Block *string `json:"block,omitempty"`
+	// Block Num
+	BlockNum *int32 `json:"blockNum,omitempty"`
 	// Whether the device is bound to device template
 	BoundDeviceTemplate *bool `json:"boundDeviceTemplate,omitempty"`
 	// Whether the site where the device is located is bound to a site template
@@ -43,6 +47,7 @@ type OswStackDetailVO struct {
 	CustomId *string `json:"customId,omitempty"`
 	// Customer name
 	CustomName *string `json:"customName,omitempty"`
+	// Description of the device
 	Description *string `json:"description,omitempty"`
 	DevCap *OswDevCapVO `json:"devCap,omitempty"`
 	DeviceMisc *OswDeviceMiscVO `json:"deviceMisc,omitempty"`
@@ -50,6 +55,7 @@ type OswStackDetailVO struct {
 	DeviceSeriesType *int32 `json:"deviceSeriesType,omitempty"`
 	// Whether there is an available device template for the device; it is false if the model is not supported or the site template has not created the corresponding device template.
 	DeviceTemplateAvailable *bool `json:"deviceTemplateAvailable,omitempty"`
+	// Whether to disable hardware reset
 	DisableHwReset *bool `json:"disableHwReset,omitempty"`
 	// Downlink Omada device list
 	DownlinkList []OswDownlinkVO `json:"downlinkList,omitempty"`
@@ -94,12 +100,18 @@ type OswStackDetailVO struct {
 	Ipv6List []string `json:"ipv6List,omitempty"`
 	// Jumbo should be within the range of 1518-9216.
 	Jumbo *int32 `json:"jumbo,omitempty"`
+	// When enabled, the jumbo frame setting follows the site-level configuration; otherwise, a custom setting is used.
+	JumboFollowSite *bool `json:"jumboFollowSite,omitempty"`
 	// It should be a value as follows: 0: SRC MAC; 1: DST MAC; 2: SRC MAC + DST MAC; 3: SRC IP; 4: DST IP; 5: SRC IP + DST IP
 	LagHashAlg *int32 `json:"lagHashAlg,omitempty"`
+	// When enabled, the lag hash alg setting follows the site-level configuration; otherwise, a custom setting is used.
+	LagHashAlgFollowSite *bool `json:"lagHashAlgFollowSite,omitempty"`
 	// Lag List
 	Lags []OswLagVO `json:"lags,omitempty"`
 	// Last Seen
 	LastSeen *int64 `json:"lastSeen,omitempty"`
+	// Latest firmware version
+	LatestVersion *string `json:"latestVersion,omitempty"`
 	// LedSetting should be a value as follows: 0: Off; 1: On; 2:follow site
 	LedSetting *int32 `json:"ledSetting,omitempty"`
 	// License key on detail page of device(cloud base exclusive)
@@ -141,6 +153,8 @@ type OswStackDetailVO struct {
 	// Record that the device is in a moveSite operation; if it is null, then it is not in the moveSite operation.
 	MoveSiteId *string `json:"moveSiteId,omitempty"`
 	Mstp *OswStpMstpVO `json:"mstp,omitempty"`
+	// MTU List
+	MtuList []OswMtuCountVO `json:"mtuList,omitempty"`
 	Multicast *OswLanMulticastVO `json:"multicast,omitempty"`
 	// Only valid when mvlanNetworkId is bridge vlan
 	MvlanBridgeVlan *int32 `json:"mvlanBridgeVlan,omitempty"`
@@ -152,6 +166,8 @@ type OswStackDetailVO struct {
 	NeedUpgrade *bool `json:"needUpgrade,omitempty"`
 	// OmadacId of the device
 	OmadacId *string `json:"omadacId,omitempty"`
+	// Path MTU Discovery enable.
+	PmtudEnable *bool `json:"pmtudEnable,omitempty"`
 	// PoE Residual Power (W)
 	PoeRemain *float64 `json:"poeRemain,omitempty"`
 	// PoE Residual Power Percentage
@@ -170,6 +186,7 @@ type OswStackDetailVO struct {
 	Remember *bool `json:"remember,omitempty"`
 	// Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site
 	RememberDevice *int32 `json:"rememberDevice,omitempty"`
+	ReplaceDeviceInfo *DeviceReplaceSettingVO `json:"replaceDeviceInfo,omitempty"`
 	// Data source.Resource should be a value as follows: 0:new created;1:from template;2:override
 	Resource *int32 `json:"resource,omitempty"`
 	// Rx Rate
@@ -209,6 +226,8 @@ type OswStackDetailVO struct {
 	StpLinkList []OswDownlinkVO `json:"stpLinkList,omitempty"`
 	// Whether the device firmware support intelligent anomaly detection
 	SupportAnomaly *bool `json:"supportAnomaly,omitempty"`
+	// Whether support auto add oui based vlan.
+	SupportAutoAddOuiBasedVlan *bool `json:"supportAutoAddOuiBasedVlan,omitempty"`
 	// Support health
 	SupportHealth *bool `json:"supportHealth,omitempty"`
 	// Support Ipv6 Acl
@@ -397,6 +416,70 @@ func (o *OswStackDetailVO) HasAddedInAdvanced() bool {
 // SetAddedInAdvanced gets a reference to the given bool and assigns it to the AddedInAdvanced field.
 func (o *OswStackDetailVO) SetAddedInAdvanced(v bool) {
 	o.AddedInAdvanced = &v
+}
+
+// GetBlock returns the Block field value if set, zero value otherwise.
+func (o *OswStackDetailVO) GetBlock() string {
+	if o == nil || IsNil(o.Block) {
+		var ret string
+		return ret
+	}
+	return *o.Block
+}
+
+// GetBlockOk returns a tuple with the Block field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDetailVO) GetBlockOk() (*string, bool) {
+	if o == nil || IsNil(o.Block) {
+		return nil, false
+	}
+	return o.Block, true
+}
+
+// HasBlock returns a boolean if a field has been set.
+func (o *OswStackDetailVO) HasBlock() bool {
+	if o != nil && !IsNil(o.Block) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlock gets a reference to the given string and assigns it to the Block field.
+func (o *OswStackDetailVO) SetBlock(v string) {
+	o.Block = &v
+}
+
+// GetBlockNum returns the BlockNum field value if set, zero value otherwise.
+func (o *OswStackDetailVO) GetBlockNum() int32 {
+	if o == nil || IsNil(o.BlockNum) {
+		var ret int32
+		return ret
+	}
+	return *o.BlockNum
+}
+
+// GetBlockNumOk returns a tuple with the BlockNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDetailVO) GetBlockNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.BlockNum) {
+		return nil, false
+	}
+	return o.BlockNum, true
+}
+
+// HasBlockNum returns a boolean if a field has been set.
+func (o *OswStackDetailVO) HasBlockNum() bool {
+	if o != nil && !IsNil(o.BlockNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlockNum gets a reference to the given int32 and assigns it to the BlockNum field.
+func (o *OswStackDetailVO) SetBlockNum(v int32) {
+	o.BlockNum = &v
 }
 
 // GetBoundDeviceTemplate returns the BoundDeviceTemplate field value if set, zero value otherwise.
@@ -1551,6 +1634,38 @@ func (o *OswStackDetailVO) SetJumbo(v int32) {
 	o.Jumbo = &v
 }
 
+// GetJumboFollowSite returns the JumboFollowSite field value if set, zero value otherwise.
+func (o *OswStackDetailVO) GetJumboFollowSite() bool {
+	if o == nil || IsNil(o.JumboFollowSite) {
+		var ret bool
+		return ret
+	}
+	return *o.JumboFollowSite
+}
+
+// GetJumboFollowSiteOk returns a tuple with the JumboFollowSite field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDetailVO) GetJumboFollowSiteOk() (*bool, bool) {
+	if o == nil || IsNil(o.JumboFollowSite) {
+		return nil, false
+	}
+	return o.JumboFollowSite, true
+}
+
+// HasJumboFollowSite returns a boolean if a field has been set.
+func (o *OswStackDetailVO) HasJumboFollowSite() bool {
+	if o != nil && !IsNil(o.JumboFollowSite) {
+		return true
+	}
+
+	return false
+}
+
+// SetJumboFollowSite gets a reference to the given bool and assigns it to the JumboFollowSite field.
+func (o *OswStackDetailVO) SetJumboFollowSite(v bool) {
+	o.JumboFollowSite = &v
+}
+
 // GetLagHashAlg returns the LagHashAlg field value if set, zero value otherwise.
 func (o *OswStackDetailVO) GetLagHashAlg() int32 {
 	if o == nil || IsNil(o.LagHashAlg) {
@@ -1581,6 +1696,38 @@ func (o *OswStackDetailVO) HasLagHashAlg() bool {
 // SetLagHashAlg gets a reference to the given int32 and assigns it to the LagHashAlg field.
 func (o *OswStackDetailVO) SetLagHashAlg(v int32) {
 	o.LagHashAlg = &v
+}
+
+// GetLagHashAlgFollowSite returns the LagHashAlgFollowSite field value if set, zero value otherwise.
+func (o *OswStackDetailVO) GetLagHashAlgFollowSite() bool {
+	if o == nil || IsNil(o.LagHashAlgFollowSite) {
+		var ret bool
+		return ret
+	}
+	return *o.LagHashAlgFollowSite
+}
+
+// GetLagHashAlgFollowSiteOk returns a tuple with the LagHashAlgFollowSite field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDetailVO) GetLagHashAlgFollowSiteOk() (*bool, bool) {
+	if o == nil || IsNil(o.LagHashAlgFollowSite) {
+		return nil, false
+	}
+	return o.LagHashAlgFollowSite, true
+}
+
+// HasLagHashAlgFollowSite returns a boolean if a field has been set.
+func (o *OswStackDetailVO) HasLagHashAlgFollowSite() bool {
+	if o != nil && !IsNil(o.LagHashAlgFollowSite) {
+		return true
+	}
+
+	return false
+}
+
+// SetLagHashAlgFollowSite gets a reference to the given bool and assigns it to the LagHashAlgFollowSite field.
+func (o *OswStackDetailVO) SetLagHashAlgFollowSite(v bool) {
+	o.LagHashAlgFollowSite = &v
 }
 
 // GetLags returns the Lags field value if set, zero value otherwise.
@@ -1645,6 +1792,38 @@ func (o *OswStackDetailVO) HasLastSeen() bool {
 // SetLastSeen gets a reference to the given int64 and assigns it to the LastSeen field.
 func (o *OswStackDetailVO) SetLastSeen(v int64) {
 	o.LastSeen = &v
+}
+
+// GetLatestVersion returns the LatestVersion field value if set, zero value otherwise.
+func (o *OswStackDetailVO) GetLatestVersion() string {
+	if o == nil || IsNil(o.LatestVersion) {
+		var ret string
+		return ret
+	}
+	return *o.LatestVersion
+}
+
+// GetLatestVersionOk returns a tuple with the LatestVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDetailVO) GetLatestVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.LatestVersion) {
+		return nil, false
+	}
+	return o.LatestVersion, true
+}
+
+// HasLatestVersion returns a boolean if a field has been set.
+func (o *OswStackDetailVO) HasLatestVersion() bool {
+	if o != nil && !IsNil(o.LatestVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetLatestVersion gets a reference to the given string and assigns it to the LatestVersion field.
+func (o *OswStackDetailVO) SetLatestVersion(v string) {
+	o.LatestVersion = &v
 }
 
 // GetLedSetting returns the LedSetting field value if set, zero value otherwise.
@@ -2383,6 +2562,38 @@ func (o *OswStackDetailVO) SetMstp(v OswStpMstpVO) {
 	o.Mstp = &v
 }
 
+// GetMtuList returns the MtuList field value if set, zero value otherwise.
+func (o *OswStackDetailVO) GetMtuList() []OswMtuCountVO {
+	if o == nil || IsNil(o.MtuList) {
+		var ret []OswMtuCountVO
+		return ret
+	}
+	return o.MtuList
+}
+
+// GetMtuListOk returns a tuple with the MtuList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDetailVO) GetMtuListOk() ([]OswMtuCountVO, bool) {
+	if o == nil || IsNil(o.MtuList) {
+		return nil, false
+	}
+	return o.MtuList, true
+}
+
+// HasMtuList returns a boolean if a field has been set.
+func (o *OswStackDetailVO) HasMtuList() bool {
+	if o != nil && !IsNil(o.MtuList) {
+		return true
+	}
+
+	return false
+}
+
+// SetMtuList gets a reference to the given []OswMtuCountVO and assigns it to the MtuList field.
+func (o *OswStackDetailVO) SetMtuList(v []OswMtuCountVO) {
+	o.MtuList = v
+}
+
 // GetMulticast returns the Multicast field value if set, zero value otherwise.
 func (o *OswStackDetailVO) GetMulticast() OswLanMulticastVO {
 	if o == nil || IsNil(o.Multicast) {
@@ -2573,6 +2784,38 @@ func (o *OswStackDetailVO) HasOmadacId() bool {
 // SetOmadacId gets a reference to the given string and assigns it to the OmadacId field.
 func (o *OswStackDetailVO) SetOmadacId(v string) {
 	o.OmadacId = &v
+}
+
+// GetPmtudEnable returns the PmtudEnable field value if set, zero value otherwise.
+func (o *OswStackDetailVO) GetPmtudEnable() bool {
+	if o == nil || IsNil(o.PmtudEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.PmtudEnable
+}
+
+// GetPmtudEnableOk returns a tuple with the PmtudEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDetailVO) GetPmtudEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.PmtudEnable) {
+		return nil, false
+	}
+	return o.PmtudEnable, true
+}
+
+// HasPmtudEnable returns a boolean if a field has been set.
+func (o *OswStackDetailVO) HasPmtudEnable() bool {
+	if o != nil && !IsNil(o.PmtudEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetPmtudEnable gets a reference to the given bool and assigns it to the PmtudEnable field.
+func (o *OswStackDetailVO) SetPmtudEnable(v bool) {
+	o.PmtudEnable = &v
 }
 
 // GetPoeRemain returns the PoeRemain field value if set, zero value otherwise.
@@ -2864,6 +3107,38 @@ func (o *OswStackDetailVO) HasRememberDevice() bool {
 // SetRememberDevice gets a reference to the given int32 and assigns it to the RememberDevice field.
 func (o *OswStackDetailVO) SetRememberDevice(v int32) {
 	o.RememberDevice = &v
+}
+
+// GetReplaceDeviceInfo returns the ReplaceDeviceInfo field value if set, zero value otherwise.
+func (o *OswStackDetailVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO {
+	if o == nil || IsNil(o.ReplaceDeviceInfo) {
+		var ret DeviceReplaceSettingVO
+		return ret
+	}
+	return *o.ReplaceDeviceInfo
+}
+
+// GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDetailVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool) {
+	if o == nil || IsNil(o.ReplaceDeviceInfo) {
+		return nil, false
+	}
+	return o.ReplaceDeviceInfo, true
+}
+
+// HasReplaceDeviceInfo returns a boolean if a field has been set.
+func (o *OswStackDetailVO) HasReplaceDeviceInfo() bool {
+	if o != nil && !IsNil(o.ReplaceDeviceInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetReplaceDeviceInfo gets a reference to the given DeviceReplaceSettingVO and assigns it to the ReplaceDeviceInfo field.
+func (o *OswStackDetailVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO) {
+	o.ReplaceDeviceInfo = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
@@ -3536,6 +3811,38 @@ func (o *OswStackDetailVO) HasSupportAnomaly() bool {
 // SetSupportAnomaly gets a reference to the given bool and assigns it to the SupportAnomaly field.
 func (o *OswStackDetailVO) SetSupportAnomaly(v bool) {
 	o.SupportAnomaly = &v
+}
+
+// GetSupportAutoAddOuiBasedVlan returns the SupportAutoAddOuiBasedVlan field value if set, zero value otherwise.
+func (o *OswStackDetailVO) GetSupportAutoAddOuiBasedVlan() bool {
+	if o == nil || IsNil(o.SupportAutoAddOuiBasedVlan) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportAutoAddOuiBasedVlan
+}
+
+// GetSupportAutoAddOuiBasedVlanOk returns a tuple with the SupportAutoAddOuiBasedVlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackDetailVO) GetSupportAutoAddOuiBasedVlanOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportAutoAddOuiBasedVlan) {
+		return nil, false
+	}
+	return o.SupportAutoAddOuiBasedVlan, true
+}
+
+// HasSupportAutoAddOuiBasedVlan returns a boolean if a field has been set.
+func (o *OswStackDetailVO) HasSupportAutoAddOuiBasedVlan() bool {
+	if o != nil && !IsNil(o.SupportAutoAddOuiBasedVlan) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportAutoAddOuiBasedVlan gets a reference to the given bool and assigns it to the SupportAutoAddOuiBasedVlan field.
+func (o *OswStackDetailVO) SetSupportAutoAddOuiBasedVlan(v bool) {
+	o.SupportAutoAddOuiBasedVlan = &v
 }
 
 // GetSupportHealth returns the SupportHealth field value if set, zero value otherwise.
@@ -4264,6 +4571,12 @@ func (o OswStackDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AddedInAdvanced) {
 		toSerialize["addedInAdvanced"] = o.AddedInAdvanced
 	}
+	if !IsNil(o.Block) {
+		toSerialize["block"] = o.Block
+	}
+	if !IsNil(o.BlockNum) {
+		toSerialize["blockNum"] = o.BlockNum
+	}
 	if !IsNil(o.BoundDeviceTemplate) {
 		toSerialize["boundDeviceTemplate"] = o.BoundDeviceTemplate
 	}
@@ -4372,14 +4685,23 @@ func (o OswStackDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Jumbo) {
 		toSerialize["jumbo"] = o.Jumbo
 	}
+	if !IsNil(o.JumboFollowSite) {
+		toSerialize["jumboFollowSite"] = o.JumboFollowSite
+	}
 	if !IsNil(o.LagHashAlg) {
 		toSerialize["lagHashAlg"] = o.LagHashAlg
+	}
+	if !IsNil(o.LagHashAlgFollowSite) {
+		toSerialize["lagHashAlgFollowSite"] = o.LagHashAlgFollowSite
 	}
 	if !IsNil(o.Lags) {
 		toSerialize["lags"] = o.Lags
 	}
 	if !IsNil(o.LastSeen) {
 		toSerialize["lastSeen"] = o.LastSeen
+	}
+	if !IsNil(o.LatestVersion) {
+		toSerialize["latestVersion"] = o.LatestVersion
 	}
 	if !IsNil(o.LedSetting) {
 		toSerialize["ledSetting"] = o.LedSetting
@@ -4450,6 +4772,9 @@ func (o OswStackDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Mstp) {
 		toSerialize["mstp"] = o.Mstp
 	}
+	if !IsNil(o.MtuList) {
+		toSerialize["mtuList"] = o.MtuList
+	}
 	if !IsNil(o.Multicast) {
 		toSerialize["multicast"] = o.Multicast
 	}
@@ -4467,6 +4792,9 @@ func (o OswStackDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OmadacId) {
 		toSerialize["omadacId"] = o.OmadacId
+	}
+	if !IsNil(o.PmtudEnable) {
+		toSerialize["pmtudEnable"] = o.PmtudEnable
 	}
 	if !IsNil(o.PoeRemain) {
 		toSerialize["poeRemain"] = o.PoeRemain
@@ -4494,6 +4822,9 @@ func (o OswStackDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RememberDevice) {
 		toSerialize["rememberDevice"] = o.RememberDevice
+	}
+	if !IsNil(o.ReplaceDeviceInfo) {
+		toSerialize["replaceDeviceInfo"] = o.ReplaceDeviceInfo
 	}
 	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
@@ -4557,6 +4888,9 @@ func (o OswStackDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportAnomaly) {
 		toSerialize["supportAnomaly"] = o.SupportAnomaly
+	}
+	if !IsNil(o.SupportAutoAddOuiBasedVlan) {
+		toSerialize["supportAutoAddOuiBasedVlan"] = o.SupportAutoAddOuiBasedVlan
 	}
 	if !IsNil(o.SupportHealth) {
 		toSerialize["supportHealth"] = o.SupportHealth

@@ -235,6 +235,22 @@ type SiteTemplateAPI interface {
 	GetBoundSitesExecute(r SiteTemplateAPIGetBoundSitesRequest) (*OperationResponseBindSiteBriefOpenApiVO, *http.Response, error)
 
 	/*
+	GetExistSiteTemplateSettingByOpenApi Query site template setting exist or not
+
+	Query site template setting exist or not<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return SiteTemplateAPIGetExistSiteTemplateSettingByOpenApiRequest
+	*/
+	GetExistSiteTemplateSettingByOpenApi(ctx context.Context, omadacId string, siteTemplateId string) SiteTemplateAPIGetExistSiteTemplateSettingByOpenApiRequest
+
+	// GetExistSiteTemplateSettingByOpenApiExecute executes the request
+	//  @return OperationResponseExistSiteSettingOpenApiVO
+	GetExistSiteTemplateSettingByOpenApiExecute(r SiteTemplateAPIGetExistSiteTemplateSettingByOpenApiRequest) (*OperationResponseExistSiteSettingOpenApiVO, *http.Response, error)
+
+	/*
 	GetGridDeviceTemplate Get deviceTemplate info list
 
 	Get deviceTemplate info list.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
@@ -444,6 +460,38 @@ type SiteTemplateAPI interface {
 	// GetSiteTemplateServiceExecute executes the request
 	//  @return OperationResponseSiteServiceOpenApiVO
 	GetSiteTemplateServiceExecute(r SiteTemplateAPIGetSiteTemplateServiceRequest) (*OperationResponseSiteServiceOpenApiVO, *http.Response, error)
+
+	/*
+	GetSiteTemplateSettingCap Get siteTemplate capabilities.
+
+	Get siteTemplate capabilities.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return SiteTemplateAPIGetSiteTemplateSettingCapRequest
+	*/
+	GetSiteTemplateSettingCap(ctx context.Context, omadacId string, siteTemplateId string) SiteTemplateAPIGetSiteTemplateSettingCapRequest
+
+	// GetSiteTemplateSettingCapExecute executes the request
+	//  @return OperationResponseSiteSettingCapOpenApiVO
+	GetSiteTemplateSettingCapExecute(r SiteTemplateAPIGetSiteTemplateSettingCapRequest) (*OperationResponseSiteSettingCapOpenApiVO, *http.Response, error)
+
+	/*
+	GetSiteTemplateSpecification Get siteTemplate functional specifications
+
+	Get siteTemplate functional specifications(Return value only after adding a low-specification device).<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return SiteTemplateAPIGetSiteTemplateSpecificationRequest
+	*/
+	GetSiteTemplateSpecification(ctx context.Context, omadacId string, siteTemplateId string) SiteTemplateAPIGetSiteTemplateSpecificationRequest
+
+	// GetSiteTemplateSpecificationExecute executes the request
+	//  @return OperationResponseSpecificationOpenApiVO
+	GetSiteTemplateSpecificationExecute(r SiteTemplateAPIGetSiteTemplateSpecificationRequest) (*OperationResponseSpecificationOpenApiVO, *http.Response, error)
 
 	/*
 	GetSiteTemplateWirelessFeature get site template WirelessFeature
@@ -2251,6 +2299,127 @@ func (a *SiteTemplateAPIService) GetBoundSitesExecute(r SiteTemplateAPIGetBoundS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type SiteTemplateAPIGetExistSiteTemplateSettingByOpenApiRequest struct {
+	ctx context.Context
+	ApiService SiteTemplateAPI
+	omadacId string
+	siteTemplateId string
+}
+
+func (r SiteTemplateAPIGetExistSiteTemplateSettingByOpenApiRequest) Execute() (*OperationResponseExistSiteSettingOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetExistSiteTemplateSettingByOpenApiExecute(r)
+}
+
+/*
+GetExistSiteTemplateSettingByOpenApi Query site template setting exist or not
+
+Query site template setting exist or not<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return SiteTemplateAPIGetExistSiteTemplateSettingByOpenApiRequest
+*/
+func (a *SiteTemplateAPIService) GetExistSiteTemplateSettingByOpenApi(ctx context.Context, omadacId string, siteTemplateId string) SiteTemplateAPIGetExistSiteTemplateSettingByOpenApiRequest {
+	return SiteTemplateAPIGetExistSiteTemplateSettingByOpenApiRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseExistSiteSettingOpenApiVO
+func (a *SiteTemplateAPIService) GetExistSiteTemplateSettingByOpenApiExecute(r SiteTemplateAPIGetExistSiteTemplateSettingByOpenApiRequest) (*OperationResponseExistSiteSettingOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseExistSiteSettingOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteTemplateAPIService.GetExistSiteTemplateSettingByOpenApi")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/exist"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type SiteTemplateAPIGetGridDeviceTemplateRequest struct {
 	ctx context.Context
 	ApiService SiteTemplateAPI
@@ -3904,6 +4073,248 @@ func (a *SiteTemplateAPIService) GetSiteTemplateServiceExecute(r SiteTemplateAPI
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/service"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SiteTemplateAPIGetSiteTemplateSettingCapRequest struct {
+	ctx context.Context
+	ApiService SiteTemplateAPI
+	omadacId string
+	siteTemplateId string
+}
+
+func (r SiteTemplateAPIGetSiteTemplateSettingCapRequest) Execute() (*OperationResponseSiteSettingCapOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetSiteTemplateSettingCapExecute(r)
+}
+
+/*
+GetSiteTemplateSettingCap Get siteTemplate capabilities.
+
+Get siteTemplate capabilities.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return SiteTemplateAPIGetSiteTemplateSettingCapRequest
+*/
+func (a *SiteTemplateAPIService) GetSiteTemplateSettingCap(ctx context.Context, omadacId string, siteTemplateId string) SiteTemplateAPIGetSiteTemplateSettingCapRequest {
+	return SiteTemplateAPIGetSiteTemplateSettingCapRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSiteSettingCapOpenApiVO
+func (a *SiteTemplateAPIService) GetSiteTemplateSettingCapExecute(r SiteTemplateAPIGetSiteTemplateSettingCapRequest) (*OperationResponseSiteSettingCapOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSiteSettingCapOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteTemplateAPIService.GetSiteTemplateSettingCap")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/capacity"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SiteTemplateAPIGetSiteTemplateSpecificationRequest struct {
+	ctx context.Context
+	ApiService SiteTemplateAPI
+	omadacId string
+	siteTemplateId string
+}
+
+func (r SiteTemplateAPIGetSiteTemplateSpecificationRequest) Execute() (*OperationResponseSpecificationOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetSiteTemplateSpecificationExecute(r)
+}
+
+/*
+GetSiteTemplateSpecification Get siteTemplate functional specifications
+
+Get siteTemplate functional specifications(Return value only after adding a low-specification device).<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return SiteTemplateAPIGetSiteTemplateSpecificationRequest
+*/
+func (a *SiteTemplateAPIService) GetSiteTemplateSpecification(ctx context.Context, omadacId string, siteTemplateId string) SiteTemplateAPIGetSiteTemplateSpecificationRequest {
+	return SiteTemplateAPIGetSiteTemplateSpecificationRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseSpecificationOpenApiVO
+func (a *SiteTemplateAPIService) GetSiteTemplateSpecificationExecute(r SiteTemplateAPIGetSiteTemplateSpecificationRequest) (*OperationResponseSpecificationOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseSpecificationOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteTemplateAPIService.GetSiteTemplateSpecification")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/specification"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
 

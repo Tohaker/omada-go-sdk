@@ -17,12 +17,17 @@ import (
 // checks if the OswBandCtrlLimitRangeVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswBandCtrlLimitRangeVO{}
 
-// OswBandCtrlLimitRangeVO struct for OswBandCtrlLimitRangeVO
+// OswBandCtrlLimitRangeVO The limit range of the bandwidth control
 type OswBandCtrlLimitRangeVO struct {
+	// max egress rate
 	MaxEgressRate *int32 `json:"maxEgressRate,omitempty"`
+	// max ingress rate
 	MaxIngressRate *int32 `json:"maxIngressRate,omitempty"`
+	// min egress rate
 	MinEgressRate *int32 `json:"minEgressRate,omitempty"`
+	// min ingress rate
 	MinIngressRate *int32 `json:"minIngressRate,omitempty"`
+	// unit: 1: kbps, 2: mbps
 	Unit *int32 `json:"unit,omitempty"`
 }
 

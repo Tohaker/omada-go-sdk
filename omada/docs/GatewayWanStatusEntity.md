@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **RxPktRate** | Pointer to **int64** | Port rx Packet rate, Unit: Pkt/s; | [optional] 
 **RxRate** | Pointer to **int64** | Port rx rate, Unit: KB/s; | [optional] 
 **RxSnrMargin** | Pointer to **int64** |  | [optional] 
+**RxTrainingRate** | Pointer to **int64** | Download current training rate. | [optional] 
 **Signal** | Pointer to **int32** |  | [optional] 
 **SimCardUsed** | Pointer to **int32** |  | [optional] 
 **SmsOperator** | Pointer to **string** |  | [optional] 
@@ -60,6 +61,7 @@ Name | Type | Description | Notes
 **TxPktRate** | Pointer to **int64** | Port tx packet rate, Unit: Pkt/s; | [optional] 
 **TxRate** | Pointer to **int64** | Port tx rate, Unit: KB/s; | [optional] 
 **TxSnrMargin** | Pointer to **int64** |  | [optional] 
+**TxTrainingRate** | Pointer to **int64** | Upload current training rate. | [optional] 
 **Type** | Pointer to **int32** | Port type, 0:WAN,1:WAN/LAN,2:LAN; | [optional] 
 **WanIpv6Comptent** | Pointer to **int32** | Gateway wan ipv6 component version | [optional] 
 **WanPortIpv4Config** | Pointer to [**OsgWanPortIpv4ConfigVO**](OsgWanPortIpv4ConfigVO.md) |  | [optional] 
@@ -1084,6 +1086,31 @@ SetRxSnrMargin sets RxSnrMargin field to given value.
 
 HasRxSnrMargin returns a boolean if a field has been set.
 
+### GetRxTrainingRate
+
+`func (o *GatewayWanStatusEntity) GetRxTrainingRate() int64`
+
+GetRxTrainingRate returns the RxTrainingRate field if non-nil, zero value otherwise.
+
+### GetRxTrainingRateOk
+
+`func (o *GatewayWanStatusEntity) GetRxTrainingRateOk() (*int64, bool)`
+
+GetRxTrainingRateOk returns a tuple with the RxTrainingRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRxTrainingRate
+
+`func (o *GatewayWanStatusEntity) SetRxTrainingRate(v int64)`
+
+SetRxTrainingRate sets RxTrainingRate field to given value.
+
+### HasRxTrainingRate
+
+`func (o *GatewayWanStatusEntity) HasRxTrainingRate() bool`
+
+HasRxTrainingRate returns a boolean if a field has been set.
+
 ### GetSignal
 
 `func (o *GatewayWanStatusEntity) GetSignal() int32`
@@ -1483,6 +1510,31 @@ SetTxSnrMargin sets TxSnrMargin field to given value.
 `func (o *GatewayWanStatusEntity) HasTxSnrMargin() bool`
 
 HasTxSnrMargin returns a boolean if a field has been set.
+
+### GetTxTrainingRate
+
+`func (o *GatewayWanStatusEntity) GetTxTrainingRate() int64`
+
+GetTxTrainingRate returns the TxTrainingRate field if non-nil, zero value otherwise.
+
+### GetTxTrainingRateOk
+
+`func (o *GatewayWanStatusEntity) GetTxTrainingRateOk() (*int64, bool)`
+
+GetTxTrainingRateOk returns a tuple with the TxTrainingRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTxTrainingRate
+
+`func (o *GatewayWanStatusEntity) SetTxTrainingRate(v int64)`
+
+SetTxTrainingRate sets TxTrainingRate field to given value.
+
+### HasTxTrainingRate
+
+`func (o *GatewayWanStatusEntity) HasTxTrainingRate() bool`
+
+HasTxTrainingRate returns a boolean if a field has been set.
 
 ### GetType
 

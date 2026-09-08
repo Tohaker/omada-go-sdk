@@ -38,6 +38,23 @@ type AuditLogAPI interface {
 	ExportAuditLogListForGlobalExecute(r AuditLogAPIExportAuditLogListForGlobalRequest) (*OperationResponse, *http.Response, error)
 
 	/*
+	GetApSsidOverridesAuditLogs Get ap ssidoverride audit log list
+
+	Get ap ssidoverride audit logs in site audit page.<br/><br/>The interface requires one of the permissions: <br/>Site Log & Audit Log Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+	@return AuditLogAPIGetApSsidOverridesAuditLogsRequest
+	*/
+	GetApSsidOverridesAuditLogs(ctx context.Context, omadacId string, siteId string, apMac string) AuditLogAPIGetApSsidOverridesAuditLogsRequest
+
+	// GetApSsidOverridesAuditLogsExecute executes the request
+	//  @return OperationResponseGridVOApOverrideAuditLogVO
+	GetApSsidOverridesAuditLogsExecute(r AuditLogAPIGetApSsidOverridesAuditLogsRequest) (*OperationResponseGridVOApOverrideAuditLogVO, *http.Response, error)
+
+	/*
 	GetAuditLogSettingForGlobal Get global audit log notification
 
 	Get global audit log notification.<br/><br/>The interface requires one of the permissions: <br/>Global Log & Audit Log Manager View Only
@@ -211,6 +228,173 @@ func (a *AuditLogAPIService) ExportAuditLogListForGlobalExecute(r AuditLogAPIExp
 	}
 	// body params
 	localVarPostBody = r.exportLogOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type AuditLogAPIGetApSsidOverridesAuditLogsRequest struct {
+	ctx context.Context
+	ApiService AuditLogAPI
+	omadacId string
+	siteId string
+	apMac string
+	page *int32
+	pageSize *int32
+	sortsTime *string
+	filtersTimes *string
+}
+
+// Start page number. Start from 1.
+func (r AuditLogAPIGetApSsidOverridesAuditLogsRequest) Page(page int32) AuditLogAPIGetApSsidOverridesAuditLogsRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.(value:10,15,20,30,50,100)
+func (r AuditLogAPIGetApSsidOverridesAuditLogsRequest) PageSize(pageSize int32) AuditLogAPIGetApSsidOverridesAuditLogsRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r AuditLogAPIGetApSsidOverridesAuditLogsRequest) SortsTime(sortsTime string) AuditLogAPIGetApSsidOverridesAuditLogsRequest {
+	r.sortsTime = &sortsTime
+	return r
+}
+
+// Filter query parameters, support field times, example:[{\&quot;timeStart\&quot;:1678060800000,\&quot;timeEnd\&quot;:1678665599999}](UrlEncode:%5B%7B%22timeStart%22%3A1678060800000%2C%22timeEnd%22%3A1678665599999%7D%5D).If this parameter is not specified (not included or empty array), the interface will query data within the default time period: [{\&quot;timeStart\&quot;:  Current timestamp minus milliseconds of 7 days,\&quot;timeEnd\&quot;: Current timestamp}].
+func (r AuditLogAPIGetApSsidOverridesAuditLogsRequest) FiltersTimes(filtersTimes string) AuditLogAPIGetApSsidOverridesAuditLogsRequest {
+	r.filtersTimes = &filtersTimes
+	return r
+}
+
+func (r AuditLogAPIGetApSsidOverridesAuditLogsRequest) Execute() (*OperationResponseGridVOApOverrideAuditLogVO, *http.Response, error) {
+	return r.ApiService.GetApSsidOverridesAuditLogsExecute(r)
+}
+
+/*
+GetApSsidOverridesAuditLogs Get ap ssidoverride audit log list
+
+Get ap ssidoverride audit logs in site audit page.<br/><br/>The interface requires one of the permissions: <br/>Site Log & Audit Log Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+ @return AuditLogAPIGetApSsidOverridesAuditLogsRequest
+*/
+func (a *AuditLogAPIService) GetApSsidOverridesAuditLogs(ctx context.Context, omadacId string, siteId string, apMac string) AuditLogAPIGetApSsidOverridesAuditLogsRequest {
+	return AuditLogAPIGetApSsidOverridesAuditLogsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apMac: apMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOApOverrideAuditLogVO
+func (a *AuditLogAPIService) GetApSsidOverridesAuditLogsExecute(r AuditLogAPIGetApSsidOverridesAuditLogsRequest) (*OperationResponseGridVOApOverrideAuditLogVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOApOverrideAuditLogVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuditLogAPIService.GetApSsidOverridesAuditLogs")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/audit-logs/{apMac}/ssid-overrides"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	if r.sortsTime != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.time", r.sortsTime, "form", "")
+	}
+	if r.filtersTimes != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.times", r.filtersTimes, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

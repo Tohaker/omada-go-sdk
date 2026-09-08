@@ -31,11 +31,13 @@ type OswNetworkOpenApi struct {
 	Ipv6Enable *bool `json:"ipv6Enable,omitempty"`
 	// DHCP mode. 0: None, mode 1: DHCP Server, mode 2: DHCP Relay
 	Mode int32 `json:"mode"`
+	// MTU, MTU value should be less than or equal to the jumbo value
+	Mtu *int32 `json:"mtu,omitempty"`
 	// Indicate the vlan is management vlan or not.
 	Mvlan bool `json:"mvlan"`
 	// Switch network name.
 	Name *string `json:"name,omitempty"`
-	// Enable status of the network vlan.
+	// Enable status of the network vlan. Note: this field only takes effect when toggling switch status on the Interface list page and is ignored by other switch network edit APIs.
 	Status *bool `json:"status,omitempty"`
 	// VLAN ID.
 	Vlan int32 `json:"vlan"`
@@ -274,6 +276,38 @@ func (o *OswNetworkOpenApi) SetMode(v int32) {
 	o.Mode = v
 }
 
+// GetMtu returns the Mtu field value if set, zero value otherwise.
+func (o *OswNetworkOpenApi) GetMtu() int32 {
+	if o == nil || IsNil(o.Mtu) {
+		var ret int32
+		return ret
+	}
+	return *o.Mtu
+}
+
+// GetMtuOk returns a tuple with the Mtu field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswNetworkOpenApi) GetMtuOk() (*int32, bool) {
+	if o == nil || IsNil(o.Mtu) {
+		return nil, false
+	}
+	return o.Mtu, true
+}
+
+// HasMtu returns a boolean if a field has been set.
+func (o *OswNetworkOpenApi) HasMtu() bool {
+	if o != nil && !IsNil(o.Mtu) {
+		return true
+	}
+
+	return false
+}
+
+// SetMtu gets a reference to the given int32 and assigns it to the Mtu field.
+func (o *OswNetworkOpenApi) SetMtu(v int32) {
+	o.Mtu = &v
+}
+
 // GetMvlan returns the Mvlan field value
 func (o *OswNetworkOpenApi) GetMvlan() bool {
 	if o == nil {
@@ -445,6 +479,9 @@ func (o OswNetworkOpenApi) ToMap() (map[string]interface{}, error) {
 		toSerialize["ipv6Enable"] = o.Ipv6Enable
 	}
 	toSerialize["mode"] = o.Mode
+	if !IsNil(o.Mtu) {
+		toSerialize["mtu"] = o.Mtu
+	}
 	toSerialize["mvlan"] = o.Mvlan
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

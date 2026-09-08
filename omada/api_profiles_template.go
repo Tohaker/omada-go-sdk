@@ -152,9 +152,9 @@ type ProfilesTemplateAPI interface {
 	CreatePPSKProfileTemplateExecute(r ProfilesTemplateAPICreatePPSKProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	CreateRadiusProfileTemplate Create a new Radius profile template
+	CreateRadiusProfileTemplate Create a new RADIUS profile template
 
-	Create a new Radius profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34014  -  The number of RADIUS profiles has reached the limit.
+	Create a new RADIUS profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34014  -  The number of RADIUS profiles has reached the limit.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -168,9 +168,9 @@ type ProfilesTemplateAPI interface {
 	CreateRadiusProfileTemplateExecute(r ProfilesTemplateAPICreateRadiusProfileTemplateRequest) (*OperationResponseResIdOpenApiVO, *http.Response, error)
 
 	/*
-	CreateRadiusUserTemplate Create a new Build-in Radius profile user template
+	CreateRadiusUserTemplate Create a new Build-in RADIUS profile user template
 
-	Get Build-in Radius profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The radius user name already exists.<br/>-34025  -  The number of radius users has reached the limit.<br/>-34030  -  The radius user name exists in other sites. Please contact the administrator if necessary.
+	Get Build-in RADIUS profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The RADIUS user name already exists.<br/>-34025  -  The number of RADIUS users has reached the limit.<br/>-34030  -  The RADIUS user name exists in other sites. Please contact the administrator if necessary.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -288,11 +288,11 @@ type ProfilesTemplateAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
+	@param groupType Type of group profile, 0:IP Group; 1:IP Port Group; 2：Mac Group; 3:IPv6 Group; 4:IPv6 Port Group; 5:Country Group; 7:Domain Group.
 	@param groupId Group profile id.
-	@param groupType groupType
 	@return ProfilesTemplateAPIDeleteGroupProfileTemplateRequest
 	*/
-	DeleteGroupProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, groupId string, groupType string) ProfilesTemplateAPIDeleteGroupProfileTemplateRequest
+	DeleteGroupProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, groupType string, groupId string) ProfilesTemplateAPIDeleteGroupProfileTemplateRequest
 
 	// DeleteGroupProfileTemplateExecute executes the request
 	//  @return OperationResponseWithoutResult
@@ -367,9 +367,9 @@ type ProfilesTemplateAPI interface {
 	DeletePPSKProfileTemplateExecute(r ProfilesTemplateAPIDeletePPSKProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	DeleteRadiusProfileTemplate Delete an exist Radius profile template
+	DeleteRadiusProfileTemplate Delete an exist RADIUS profile template
 
-	Delete an exist Radius profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34009  -  The RADIUS profile cannot be deleted because it is applied in MAC-Based Authentication.<br/>-34010  -  The RADIUS profile cannot be deleted because it is applied in Portal Authentication.<br/>-34012  -  Failed to delete this RADIUS profile because it has been used in 802.1X authentication.<br/>-34013  -  Failed to delete this RADIUS profile because it has been used in SSID.<br/>-34023  -  Failed to delete built-in radius profile.<br/>-43001  -  Failed to delete this radius profile because it is already occupied by SSL VPN.
+	Delete an exist RADIUS profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34009  -  The RADIUS profile cannot be deleted because it is applied in MAC-Based Authentication.<br/>-34010  -  The RADIUS profile cannot be deleted because it is applied in Portal Authentication.<br/>-34012  -  Failed to delete this RADIUS profile because it has been used in 802.1X authentication.<br/>-34013  -  Failed to delete this RADIUS profile because it has been used in SSID.<br/>-34023  -  Failed to delete built-in RADIUS profile.<br/>-43001  -  Failed to delete this RADIUS profile because it is already occupied by SSL VPN.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -384,14 +384,14 @@ type ProfilesTemplateAPI interface {
 	DeleteRadiusProfileTemplateExecute(r ProfilesTemplateAPIDeleteRadiusProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	DeleteRadiusUserTemplate Delete an exist Build-in Radius profile user template
+	DeleteRadiusUserTemplate Delete an exist Build-in RADIUS profile user template
 
-	Get Build-in Radius profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+	Get Build-in RADIUS profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
-	@param userId Build-in Radius profile user Id
+	@param userId Build-in RADIUS profile user Id
 	@return ProfilesTemplateAPIDeleteRadiusUserTemplateRequest
 	*/
 	DeleteRadiusUserTemplate(ctx context.Context, omadacId string, siteTemplateId string, userId string) ProfilesTemplateAPIDeleteRadiusUserTemplateRequest
@@ -599,9 +599,9 @@ type ProfilesTemplateAPI interface {
 	GetPPSKProfilesTemplateExecute(r ProfilesTemplateAPIGetPPSKProfilesTemplateRequest) (*OperationResponseListPpskProfileBriefInfo, *http.Response, error)
 
 	/*
-	GetRadiusProfileListTemplate Get Radius profile template list
+	GetRadiusProfileListTemplate Get RADIUS profile template list
 
-	Get Radius profile template list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+	Get RADIUS profile template list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -615,9 +615,9 @@ type ProfilesTemplateAPI interface {
 	GetRadiusProfileListTemplateExecute(r ProfilesTemplateAPIGetRadiusProfileListTemplateRequest) (*OperationResponseListRadiusProfileOpenApiVO, *http.Response, error)
 
 	/*
-	GetRadiusUserListTemplate Get Build-in Radius profile user template list
+	GetRadiusUserListTemplate Get Build-in RADIUS profile user template list
 
-	Get Build-in Radius profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+	Get Build-in RADIUS profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -781,7 +781,7 @@ type ProfilesTemplateAPI interface {
 	/*
 	ModifyMdnsProfileTemplate Modify an existing Bonjour Service Template
 
-	Modify an existing Bonjour Service Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33756  -  This Bonjour Service name already exists.<br/>-33758  -  This Bonjour Service does not exist.<br/>-33759  -  Build-in Bonjour Service cannot be edited or deleted.
+	Modify an existing Bonjour Service Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33756  -  This Bonjour Service name already exists.<br/>-33758  -  One or more Bonjour Services do not exist.<br/>-33759  -  Build-in Bonjour Service cannot be edited or deleted.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -830,9 +830,9 @@ type ProfilesTemplateAPI interface {
 	ModifyPPSKProfileTemplateExecute(r ProfilesTemplateAPIModifyPPSKProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyRadiusProfileTemplate Modify an exist Radius profile template
+	ModifyRadiusProfileTemplate Modify an exist RADIUS profile template
 
-	Modify an exist Radius profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34005  -  This RADIUS profile does not exist.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34016  -  Unable to set the authentication server URL because the profile is applied in authentications that do not support authentication server URL.<br/>-34018  -  Failed to modify this RADIUS profile because it has been used in 802.1X authentication.<br/>-34022  -  Failed to modify built-in radius profile.<br/>-34027  -  The built-in server is being used, failed to stop built-in radius server.<br/>-43006  -  The RADIUS profile cannot add more than 2 RADIUS servers because it is used by SSL VPN.<br/>-43012  -  The number of Accounting Servers in the radius profile should not be greater than the number of Authentication Servers because the radius profile is used by the SSL VPN server.
+	Modify an exist RADIUS profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34005  -  This RADIUS profile does not exist.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34016  -  Unable to set the authentication server URL because the profile is applied in authentications that do not support authentication server URL.<br/>-34018  -  Failed to modify this RADIUS profile because it has been used in 802.1X authentication.<br/>-34022  -  Failed to modify built-in RADIUS profile.<br/>-34027  -  The built-in server is being used, failed to stop built-in RADIUS server.<br/>-43006  -  The RADIUS profile cannot add more than 2 RADIUS servers because it is used by SSL VPN.<br/>-43012  -  The number of Accounting Servers in the RADIUS profile should not be greater than the number of Authentication Servers because the RADIUS profile is used by the SSL VPN server.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -847,14 +847,14 @@ type ProfilesTemplateAPI interface {
 	ModifyRadiusProfileTemplateExecute(r ProfilesTemplateAPIModifyRadiusProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
-	ModifyRadiusUserTemplate Modify an exist Build-in Radius profile user template
+	ModifyRadiusUserTemplate Modify an exist Build-in RADIUS profile user template
 
-	Get Build-in Radius profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The radius user name already exists.<br/>-34026  -  The radius user does not exist.<br/>-34030  -  The radius user name exists in other sites. Please contact the administrator if necessary.
+	Get Build-in RADIUS profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The RADIUS user name already exists.<br/>-34026  -  The RADIUS user does not exist.<br/>-34030  -  The RADIUS user name exists in other sites. Please contact the administrator if necessary.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
-	@param userId Build-in Radius profile user Id
+	@param userId Build-in RADIUS profile user Id
 	@return ProfilesTemplateAPIModifyRadiusUserTemplateRequest
 	*/
 	ModifyRadiusUserTemplate(ctx context.Context, omadacId string, siteTemplateId string, userId string) ProfilesTemplateAPIModifyRadiusUserTemplateRequest
@@ -2013,9 +2013,9 @@ func (r ProfilesTemplateAPICreateRadiusProfileTemplateRequest) Execute() (*Opera
 }
 
 /*
-CreateRadiusProfileTemplate Create a new Radius profile template
+CreateRadiusProfileTemplate Create a new RADIUS profile template
 
-Create a new Radius profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34014  -  The number of RADIUS profiles has reached the limit.
+Create a new RADIUS profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34014  -  The number of RADIUS profiles has reached the limit.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2145,9 +2145,9 @@ func (r ProfilesTemplateAPICreateRadiusUserTemplateRequest) Execute() (*Operatio
 }
 
 /*
-CreateRadiusUserTemplate Create a new Build-in Radius profile user template
+CreateRadiusUserTemplate Create a new Build-in RADIUS profile user template
 
-Get Build-in Radius profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The radius user name already exists.<br/>-34025  -  The number of radius users has reached the limit.<br/>-34030  -  The radius user name exists in other sites. Please contact the administrator if necessary.
+Get Build-in RADIUS profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The RADIUS user name already exists.<br/>-34025  -  The number of RADIUS users has reached the limit.<br/>-34030  -  The RADIUS user name exists in other sites. Please contact the administrator if necessary.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3038,8 +3038,8 @@ type ProfilesTemplateAPIDeleteGroupProfileTemplateRequest struct {
 	ApiService ProfilesTemplateAPI
 	omadacId string
 	siteTemplateId string
-	groupId string
 	groupType string
+	groupId string
 }
 
 func (r ProfilesTemplateAPIDeleteGroupProfileTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
@@ -3054,18 +3054,18 @@ Delete an exist group profile template with the given params.<br/><br/>The inter
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
+ @param groupType Type of group profile, 0:IP Group; 1:IP Port Group; 2：Mac Group; 3:IPv6 Group; 4:IPv6 Port Group; 5:Country Group; 7:Domain Group.
  @param groupId Group profile id.
- @param groupType groupType
  @return ProfilesTemplateAPIDeleteGroupProfileTemplateRequest
 */
-func (a *ProfilesTemplateAPIService) DeleteGroupProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, groupId string, groupType string) ProfilesTemplateAPIDeleteGroupProfileTemplateRequest {
+func (a *ProfilesTemplateAPIService) DeleteGroupProfileTemplate(ctx context.Context, omadacId string, siteTemplateId string, groupType string, groupId string) ProfilesTemplateAPIDeleteGroupProfileTemplateRequest {
 	return ProfilesTemplateAPIDeleteGroupProfileTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		omadacId: omadacId,
 		siteTemplateId: siteTemplateId,
-		groupId: groupId,
 		groupType: groupType,
+		groupId: groupId,
 	}
 }
 
@@ -3087,8 +3087,8 @@ func (a *ProfilesTemplateAPIService) DeleteGroupProfileTemplateExecute(r Profile
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/groups/{groupType}/{groupId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"groupId"+"}", url.PathEscape(parameterValueToString(r.groupId, "groupId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"groupType"+"}", url.PathEscape(parameterValueToString(r.groupType, "groupType")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"groupId"+"}", url.PathEscape(parameterValueToString(r.groupId, "groupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3675,9 +3675,9 @@ func (r ProfilesTemplateAPIDeleteRadiusProfileTemplateRequest) Execute() (*Opera
 }
 
 /*
-DeleteRadiusProfileTemplate Delete an exist Radius profile template
+DeleteRadiusProfileTemplate Delete an exist RADIUS profile template
 
-Delete an exist Radius profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34009  -  The RADIUS profile cannot be deleted because it is applied in MAC-Based Authentication.<br/>-34010  -  The RADIUS profile cannot be deleted because it is applied in Portal Authentication.<br/>-34012  -  Failed to delete this RADIUS profile because it has been used in 802.1X authentication.<br/>-34013  -  Failed to delete this RADIUS profile because it has been used in SSID.<br/>-34023  -  Failed to delete built-in radius profile.<br/>-43001  -  Failed to delete this radius profile because it is already occupied by SSL VPN.
+Delete an exist RADIUS profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34009  -  The RADIUS profile cannot be deleted because it is applied in MAC-Based Authentication.<br/>-34010  -  The RADIUS profile cannot be deleted because it is applied in Portal Authentication.<br/>-34012  -  Failed to delete this RADIUS profile because it has been used in 802.1X authentication.<br/>-34013  -  Failed to delete this RADIUS profile because it has been used in SSID.<br/>-34023  -  Failed to delete built-in RADIUS profile.<br/>-43001  -  Failed to delete this RADIUS profile because it is already occupied by SSL VPN.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3800,14 +3800,14 @@ func (r ProfilesTemplateAPIDeleteRadiusUserTemplateRequest) Execute() (*Operatio
 }
 
 /*
-DeleteRadiusUserTemplate Delete an exist Build-in Radius profile user template
+DeleteRadiusUserTemplate Delete an exist Build-in RADIUS profile user template
 
-Get Build-in Radius profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
+Get Build-in RADIUS profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
- @param userId Build-in Radius profile user Id
+ @param userId Build-in RADIUS profile user Id
  @return ProfilesTemplateAPIDeleteRadiusUserTemplateRequest
 */
 func (a *ProfilesTemplateAPIService) DeleteRadiusUserTemplate(ctx context.Context, omadacId string, siteTemplateId string, userId string) ProfilesTemplateAPIDeleteRadiusUserTemplateRequest {
@@ -5433,9 +5433,9 @@ func (r ProfilesTemplateAPIGetRadiusProfileListTemplateRequest) Execute() (*Oper
 }
 
 /*
-GetRadiusProfileListTemplate Get Radius profile template list
+GetRadiusProfileListTemplate Get RADIUS profile template list
 
-Get Radius profile template list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+Get RADIUS profile template list of the site with the given omadacId and siteId.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -5575,9 +5575,9 @@ func (r ProfilesTemplateAPIGetRadiusUserListTemplateRequest) Execute() (*Operati
 }
 
 /*
-GetRadiusUserListTemplate Get Build-in Radius profile user template list
+GetRadiusUserListTemplate Get Build-in RADIUS profile user template list
 
-Get Build-in Radius profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
+Get Build-in RADIUS profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -6876,7 +6876,7 @@ func (r ProfilesTemplateAPIModifyMdnsProfileTemplateRequest) Execute() (*Operati
 /*
 ModifyMdnsProfileTemplate Modify an existing Bonjour Service Template
 
-Modify an existing Bonjour Service Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33756  -  This Bonjour Service name already exists.<br/>-33758  -  This Bonjour Service does not exist.<br/>-33759  -  Build-in Bonjour Service cannot be edited or deleted.
+Modify an existing Bonjour Service Template.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-33756  -  This Bonjour Service name already exists.<br/>-33758  -  One or more Bonjour Services do not exist.<br/>-33759  -  Build-in Bonjour Service cannot be edited or deleted.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -7282,9 +7282,9 @@ func (r ProfilesTemplateAPIModifyRadiusProfileTemplateRequest) Execute() (*Opera
 }
 
 /*
-ModifyRadiusProfileTemplate Modify an exist Radius profile template
+ModifyRadiusProfileTemplate Modify an exist RADIUS profile template
 
-Modify an exist Radius profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34005  -  This RADIUS profile does not exist.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34016  -  Unable to set the authentication server URL because the profile is applied in authentications that do not support authentication server URL.<br/>-34018  -  Failed to modify this RADIUS profile because it has been used in 802.1X authentication.<br/>-34022  -  Failed to modify built-in radius profile.<br/>-34027  -  The built-in server is being used, failed to stop built-in radius server.<br/>-43006  -  The RADIUS profile cannot add more than 2 RADIUS servers because it is used by SSL VPN.<br/>-43012  -  The number of Accounting Servers in the radius profile should not be greater than the number of Authentication Servers because the radius profile is used by the SSL VPN server.
+Modify an exist RADIUS profile template with the given params.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33011  -  Operation failed because other operations are being performed on this site template. Please wait and try again later.<br/>-34000  -  Interim Update Interval ranges from 60 to 86400.<br/>-34002  -  Accounting port number ranges from 60 to 86400.<br/>-34003  -  Enter the shared secret key of the accounting server using 1-128 printable ASCII characters (including the space).<br/>-34004  -  This RADIUS profile already exists.<br/>-34005  -  This RADIUS profile does not exist.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34011  -  Invalid IP address of the RADIUS server.<br/>-34016  -  Unable to set the authentication server URL because the profile is applied in authentications that do not support authentication server URL.<br/>-34018  -  Failed to modify this RADIUS profile because it has been used in 802.1X authentication.<br/>-34022  -  Failed to modify built-in RADIUS profile.<br/>-34027  -  The built-in server is being used, failed to stop built-in RADIUS server.<br/>-43006  -  The RADIUS profile cannot add more than 2 RADIUS servers because it is used by SSL VPN.<br/>-43012  -  The number of Accounting Servers in the RADIUS profile should not be greater than the number of Authentication Servers because the RADIUS profile is used by the SSL VPN server.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -7418,14 +7418,14 @@ func (r ProfilesTemplateAPIModifyRadiusUserTemplateRequest) Execute() (*Operatio
 }
 
 /*
-ModifyRadiusUserTemplate Modify an exist Build-in Radius profile user template
+ModifyRadiusUserTemplate Modify an exist Build-in RADIUS profile user template
 
-Get Build-in Radius profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The radius user name already exists.<br/>-34026  -  The radius user does not exist.<br/>-34030  -  The radius user name exists in other sites. Please contact the administrator if necessary.
+Get Build-in RADIUS profile user template list of the site with the given omadacId and siteId. Cloud Based Controller does not support built-in radius function, you cannot call this interface through openAPI on Cloud Based Controller.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-34024  -  The RADIUS user name already exists.<br/>-34026  -  The RADIUS user does not exist.<br/>-34030  -  The RADIUS user name exists in other sites. Please contact the administrator if necessary.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
- @param userId Build-in Radius profile user Id
+ @param userId Build-in RADIUS profile user Id
  @return ProfilesTemplateAPIModifyRadiusUserTemplateRequest
 */
 func (a *ProfilesTemplateAPIService) ModifyRadiusUserTemplate(ctx context.Context, omadacId string, siteTemplateId string, userId string) ProfilesTemplateAPIModifyRadiusUserTemplateRequest {

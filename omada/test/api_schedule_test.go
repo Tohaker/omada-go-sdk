@@ -206,14 +206,14 @@ func Test_omada_ScheduleAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ScheduleAPIService GetRebootScheduleList2", func(t *testing.T) {
+	t.Run("Test ScheduleAPIService GetRebootScheduleList1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var omadacId string
 		var siteId string
 
-		resp, httpRes, err := apiClient.ScheduleAPI.GetRebootScheduleList2(context.Background(), omadacId, siteId).Execute()
+		resp, httpRes, err := apiClient.ScheduleAPI.GetRebootScheduleList1(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

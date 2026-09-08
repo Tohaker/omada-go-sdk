@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ExternalUrlScheme** | Pointer to **string** | External URL scheme, required when [portalCustom] is 2, value could be &#39;http&#39; or &#39;https&#39;. | [optional] 
 **NasId** | Pointer to **string** | RADIUS Attribute: NasID, should contain 1 to 64 characters. | [optional] 
 **PortalCustom** | Pointer to **int32** | Portal customization, should be a value as follows: 1: Local Web Portal; 2: External Web Portal. | [optional] 
-**RadiusProfileId** | Pointer to **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new Radius profile&#39; (&#39;Create a new Radius profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get Radius profile list&#39; (&#39;Get Radius profile template list&#39;) interface | [optional] 
+**RadiusProfileId** | Pointer to **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new RADIUS profile&#39; (&#39;Create a new RADIUS profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get RADIUS profile list&#39; (&#39;Get RADIUS profile template list&#39;) interface | [optional] 
 **ReceiverPort** | Pointer to **int32** | Port for listening to disconnect messages, should be within the range of 1–65535.Only for Omada Local Controller | [optional] 
 **ReceiverPortStatus** | Pointer to **int32** | Port binding status, should be a value as follow: 1: Disconnect Requests port status running, 2: Disconnect Requests port status disable. Only for Omada Local Controller | [optional] 
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Model** | Pointer to **string** | Device model.(Used to display the device model diagram) | [optional] 
 **ModelVersion** | Pointer to **string** | Device model version.(Used to display the device model diagram) | [optional] 
 **Name** | Pointer to **string** | Uplink AP name | [optional] 
+**PartnerLinks** | Pointer to [**[]PartnerLinkVO**](PartnerLinkVO.md) | Mlo link Info | [optional] 
 **Rssi** | Pointer to **int32** | Uplink AP rssi | [optional] 
 **RxRate** | Pointer to **string** | Uplink AP rxRate | [optional] 
 **RxRateInt** | Pointer to **int32** | Uplink AP rxRateInt; Unit: Mbps | [optional] 
@@ -243,6 +244,31 @@ SetName sets Name field to given value.
 `func (o *ApWirelessUplink) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPartnerLinks
+
+`func (o *ApWirelessUplink) GetPartnerLinks() []PartnerLinkVO`
+
+GetPartnerLinks returns the PartnerLinks field if non-nil, zero value otherwise.
+
+### GetPartnerLinksOk
+
+`func (o *ApWirelessUplink) GetPartnerLinksOk() (*[]PartnerLinkVO, bool)`
+
+GetPartnerLinksOk returns a tuple with the PartnerLinks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartnerLinks
+
+`func (o *ApWirelessUplink) SetPartnerLinks(v []PartnerLinkVO)`
+
+SetPartnerLinks sets PartnerLinks field to given value.
+
+### HasPartnerLinks
+
+`func (o *ApWirelessUplink) HasPartnerLinks() bool`
+
+HasPartnerLinks returns a boolean if a field has been set.
 
 ### GetRssi
 

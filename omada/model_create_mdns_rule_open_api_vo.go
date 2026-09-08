@@ -29,7 +29,7 @@ type CreateMdnsRuleOpenApiVO struct {
 	ProfileIds []string `json:"profileIds"`
 	// MDNS rule enable status
 	Status bool `json:"status"`
-	// MDNS rule type. Type should be a value as follows: 0: AP, 1: Gateway
+	// MDNS rule band VLAN type. Type should be a value as follows: 0: By VLAN ID, 1: By Network
 	Type *int32 `json:"type,omitempty"`
 }
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Password** | **string** | Build-in Radius profile user password. Password should contain 1 to 64 characters | 
-**Username** | **string** | Build-in Radius profile user name. Username should contain 1 to 64 characters | 
+**Password** | **string** | Build-in RADIUS profile user password. Password should contain 1 to 64 characters | 
+**Username** | **string** | Build-in RADIUS profile user name. Username should contain 1 to 64 characters | 
 
 ## Methods
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceList** | Pointer to [**[]DeviceOuiModeOpenApiVO**](DeviceOuiModeOpenApiVO.md) | When mode is 0, should configure device info. | [optional] 
+**DeviceList** | Pointer to [**[]DeviceOuiModeOpenApiVO**](DeviceOuiModeOpenApiVO.md) | When mode is 1, should configure device info. | [optional] 
 **Enable** | **bool** | Switch Rule state. | 
 **Mode** | **int32** | Switch Rule type. 0:\&quot;All device port\&quot;, 1:\&quot;Custom device port\&quot; | 
 **Name** | **string** | Switch Rule name should contain 1 to 128 characters. | 

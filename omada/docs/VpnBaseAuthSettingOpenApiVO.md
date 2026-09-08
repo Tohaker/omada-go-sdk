@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DefaultGroup** | **string** | Only for SSL VPN. Default user group ID for the user on the LDAP/Radius server. User group can be created using &#39;Create SSL VPN user group&#39; interface, and user group ID can be obtained from &#39;Get user group list for SSL VPN server&#39; interface. | 
-**ProfileId** | **string** | Profile ID. LDAP profile can be created using &#39;Create a new LDAP profile&#39; interface, and LDAP profile ID can be obtained from &#39;Get LDAP profile list&#39; interface. Radius profile can be created using &#39;Create a new Radius profile&#39; interface, and Radius profile ID can be obtained from &#39;Get Radius profile list&#39; interface. | 
+**ProfileId** | **string** | Profile ID. LDAP profile can be created using &#39;Create a new LDAP profile&#39; interface, and LDAP profile ID can be obtained from &#39;Get LDAP profile list&#39; interface. Radius profile can be created using &#39;Create a new RADIUS profile&#39; interface, and RADIUS profile ID can be obtained from &#39;Get RADIUS profile list&#39; interface. | 
 
 ## Methods
 

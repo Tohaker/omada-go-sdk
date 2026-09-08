@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | VRF ID | [optional] 
+**Id** | Pointer to **string** | VRF ID. This parameter is not required for creation or modification. | [optional] 
 **Ipv4Enable** | **bool** | Whether to enable ipv4. Ipv4Enable should be true | 
 **Ipv6Enable** | **bool** | Whether to enable ipv6 | 
-**Vrf** | **string** | VRF should be 1 to 15 characters consisting of numbers (0 to 9), uppercase and lowercase letters (A to Z, a to z), and symbols -_@.+ but cannot be . or .. only. | 
+**Vrf** | **string** | VRF name, it should be 1 to 15 characters consisting of numbers (0 to 9), uppercase and lowercase letters (A to Z, a to z), and symbols -_@.+ but cannot be . or .. only. | 
 
 ## Methods
 

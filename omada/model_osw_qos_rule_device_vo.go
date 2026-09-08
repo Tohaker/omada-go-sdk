@@ -17,11 +17,15 @@ import (
 // checks if the OswQosRuleDeviceVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswQosRuleDeviceVO{}
 
-// OswQosRuleDeviceVO struct for OswQosRuleDeviceVO
+// OswQosRuleDeviceVO List of switch devices to which QoS rule are bound, only for bindType 1
 type OswQosRuleDeviceVO struct {
+	// The selected lag ID list.
 	LagList []int32 `json:"lagList,omitempty"`
+	// The device mac.
 	Mac *string `json:"mac,omitempty"`
+	// The selected standard port ID(unit/slot/port) list.
 	PortList []string `json:"portList,omitempty"`
+	// Stack device identifier, true: stack device, false: normal device.
 	StackDevice *bool `json:"stackDevice,omitempty"`
 }
 

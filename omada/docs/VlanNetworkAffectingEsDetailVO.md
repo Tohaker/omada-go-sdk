@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AffectedPorts** | Pointer to [**OswPortAndLagNetworkVO**](OswPortAndLagNetworkVO.md) |  | [optional] 
 **Clients** | Pointer to [**[]OswClientVO**](OswClientVO.md) | Switch downlink clients. | [optional] 
 **EsDetail** | Pointer to [**ESDetailVO**](ESDetailVO.md) |  | [optional] 
+**SupportLayout** | Pointer to **bool** | Whether the device supports reporting port layout information. | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetEsDetail sets EsDetail field to given value.
 `func (o *VlanNetworkAffectingEsDetailVO) HasEsDetail() bool`
 
 HasEsDetail returns a boolean if a field has been set.
+
+### GetSupportLayout
+
+`func (o *VlanNetworkAffectingEsDetailVO) GetSupportLayout() bool`
+
+GetSupportLayout returns the SupportLayout field if non-nil, zero value otherwise.
+
+### GetSupportLayoutOk
+
+`func (o *VlanNetworkAffectingEsDetailVO) GetSupportLayoutOk() (*bool, bool)`
+
+GetSupportLayoutOk returns a tuple with the SupportLayout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportLayout
+
+`func (o *VlanNetworkAffectingEsDetailVO) SetSupportLayout(v bool)`
+
+SetSupportLayout sets SupportLayout field to given value.
+
+### HasSupportLayout
+
+`func (o *VlanNetworkAffectingEsDetailVO) HasSupportLayout() bool`
+
+HasSupportLayout returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

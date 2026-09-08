@@ -19,6 +19,7 @@ var _ MappedNullable = &MlagSupportOswVO{}
 
 // MlagSupportOswVO struct for MlagSupportOswVO
 type MlagSupportOswVO struct {
+	// The switches contained in the M-LAG.
 	AdoptedSwitches []MlagAdoptOswVO `json:"adoptedSwitches,omitempty"`
 }
 

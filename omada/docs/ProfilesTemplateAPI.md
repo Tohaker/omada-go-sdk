@@ -12,8 +12,8 @@ Method | HTTP request | Description
 [**CreateMdnsProfileTemplate**](ProfilesTemplateAPI.md#createmdnsprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service | Create new Bonjour Service Template
 [**CreateOuiProfileTemplate**](ProfilesTemplateAPI.md#createouiprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles | Create OUI profile template
 [**CreatePPSKProfileTemplate**](ProfilesTemplateAPI.md#createppskprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile | Create PPSK profile template
-[**CreateRadiusProfileTemplate**](ProfilesTemplateAPI.md#createradiusprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Create a new Radius profile template
-[**CreateRadiusUserTemplate**](ProfilesTemplateAPI.md#createradiususertemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Create a new Build-in Radius profile user template
+[**CreateRadiusProfileTemplate**](ProfilesTemplateAPI.md#createradiusprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Create a new RADIUS profile template
+[**CreateRadiusUserTemplate**](ProfilesTemplateAPI.md#createradiususertemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Create a new Build-in RADIUS profile user template
 [**CreateRateLimitProfileTemplate**](ProfilesTemplateAPI.md#createratelimitprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profiles | Create rate limit profile template
 [**CreateTemplateServiceType**](ProfilesTemplateAPI.md#createtemplateservicetype) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type | Create siteTemplate&#39;s new Gateway QoS Service
 [**CreateTimeRangeProfileTemplate**](ProfilesTemplateAPI.md#createtimerangeprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profiles | Create time range profile template
@@ -25,8 +25,8 @@ Method | HTTP request | Description
 [**DeleteMdnsProfileTemplate**](ProfilesTemplateAPI.md#deletemdnsprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service/{id} | Delete an existing Bonjour Service Template
 [**DeleteOuiProfileTemplate**](ProfilesTemplateAPI.md#deleteouiprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/{ouiId} | Delete OUI Profile template
 [**DeletePPSKProfileTemplate**](ProfilesTemplateAPI.md#deleteppskprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Delete PPSK profile template
-[**DeleteRadiusProfileTemplate**](ProfilesTemplateAPI.md#deleteradiusprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Delete an exist Radius profile template
-[**DeleteRadiusUserTemplate**](ProfilesTemplateAPI.md#deleteradiususertemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Delete an exist Build-in Radius profile user template
+[**DeleteRadiusProfileTemplate**](ProfilesTemplateAPI.md#deleteradiusprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Delete an exist RADIUS profile template
+[**DeleteRadiusUserTemplate**](ProfilesTemplateAPI.md#deleteradiususertemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Delete an exist Build-in RADIUS profile user template
 [**DeleteRateLimitProfileTemplate**](ProfilesTemplateAPI.md#deleteratelimitprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profile/{profileId} | Delete rate limit profile template
 [**DeleteTemplateServiceType**](ProfilesTemplateAPI.md#deletetemplateservicetype) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type/{id} | Delete an existing Gateway QoS Service in siteTemplate
 [**DeleteTimeRangeProfileTemplate**](ProfilesTemplateAPI.md#deletetimerangeprofiletemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profile/{profileId} | Delete time range profile template
@@ -39,8 +39,8 @@ Method | HTTP request | Description
 [**GetOuiProfileListTemplate**](ProfilesTemplateAPI.md#getouiprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles | Get OUI profile template list
 [**GetPPSKProfileDetailTemplate**](ProfilesTemplateAPI.md#getppskprofiledetailtemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Get PPSK profile template detail
 [**GetPPSKProfilesTemplate**](ProfilesTemplateAPI.md#getppskprofilestemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profiles | Get PPSK profile templates list
-[**GetRadiusProfileListTemplate**](ProfilesTemplateAPI.md#getradiusprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Get Radius profile template list
-[**GetRadiusUserListTemplate**](ProfilesTemplateAPI.md#getradiususerlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Get Build-in Radius profile user template list
+[**GetRadiusProfileListTemplate**](ProfilesTemplateAPI.md#getradiusprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius | Get RADIUS profile template list
+[**GetRadiusUserListTemplate**](ProfilesTemplateAPI.md#getradiususerlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users | Get Build-in RADIUS profile user template list
 [**GetRateLimitProfileListTemplate**](ProfilesTemplateAPI.md#getratelimitprofilelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profiles | Get rate limit profile template list
 [**GetTemplateServiceTypeSummary**](ProfilesTemplateAPI.md#gettemplateservicetypesummary) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type-summary | Get all Gateway QoS Service&#39;s ID and name info in siteTemplate
 [**GetTimeRangeListTemplate**](ProfilesTemplateAPI.md#gettimerangelisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profiles | Get time range profile template list
@@ -53,8 +53,8 @@ Method | HTTP request | Description
 [**ModifyMdnsProfileTemplate**](ProfilesTemplateAPI.md#modifymdnsprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/bonjour-service/{id} | Modify an existing Bonjour Service Template
 [**ModifyOuiProfileTemplate**](ProfilesTemplateAPI.md#modifyouiprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/oui-profiles/{ouiId} | Modify OUI Profile template
 [**ModifyPPSKProfileTemplate**](ProfilesTemplateAPI.md#modifyppskprofiletemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ppsk-profile/{profileId} | Modify PPSK profile template
-[**ModifyRadiusProfileTemplate**](ProfilesTemplateAPI.md#modifyradiusprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Modify an exist Radius profile template
-[**ModifyRadiusUserTemplate**](ProfilesTemplateAPI.md#modifyradiususertemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Modify an exist Build-in Radius profile user template
+[**ModifyRadiusProfileTemplate**](ProfilesTemplateAPI.md#modifyradiusprofiletemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius/{radiusProfileId} | Modify an exist RADIUS profile template
+[**ModifyRadiusUserTemplate**](ProfilesTemplateAPI.md#modifyradiususertemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/radius-server/users/{userId} | Modify an exist Build-in RADIUS profile user template
 [**ModifyRateLimitProfileTemplate**](ProfilesTemplateAPI.md#modifyratelimitprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/rate-limit-profile/{profileId} | Modify rate limit profile template
 [**ModifyTemplateServiceType**](ProfilesTemplateAPI.md#modifytemplateservicetype) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/profiles/service-type/{id} | Modify an existing Gateway QoS Service in siteTemplate
 [**ModifyTimeRangeProfileTemplate**](ProfilesTemplateAPI.md#modifytimerangeprofiletemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/time-range-profile/{profileId} | Modify time range profile template
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseResIdOpenApiVO CreateRadiusProfileTemplate(ctx, omadacId, siteTemplateId).CreateRadiusProfileOpenApiVO(createRadiusProfileOpenApiVO).Execute()
 
-Create a new Radius profile template
+Create a new RADIUS profile template
 
 
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseResIdOpenApiVO CreateRadiusUserTemplate(ctx, omadacId, siteTemplateId).CreateRadiusUserOpenApiVO(createRadiusUserOpenApiVO).Execute()
 
-Create a new Build-in Radius profile user template
+Create a new Build-in RADIUS profile user template
 
 
 
@@ -1266,7 +1266,7 @@ Name | Type | Description  | Notes
 
 ## DeleteGroupProfileTemplate
 
-> OperationResponseWithoutResult DeleteGroupProfileTemplate(ctx, omadacId, siteTemplateId, groupId, groupType).Execute()
+> OperationResponseWithoutResult DeleteGroupProfileTemplate(ctx, omadacId, siteTemplateId, groupType, groupId).Execute()
 
 Delete an exist group profile template
 
@@ -1287,12 +1287,12 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+	groupType := "groupType_example" // string | Type of group profile, 0:IP Group; 1:IP Port Group; 2：Mac Group; 3:IPv6 Group; 4:IPv6 Port Group; 5:Country Group; 7:Domain Group.
 	groupId := "groupId_example" // string | Group profile id.
-	groupType := "groupType_example" // string | groupType
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProfilesTemplateAPI.DeleteGroupProfileTemplate(context.Background(), omadacId, siteTemplateId, groupId, groupType).Execute()
+	resp, r, err := apiClient.ProfilesTemplateAPI.DeleteGroupProfileTemplate(context.Background(), omadacId, siteTemplateId, groupType, groupId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProfilesTemplateAPI.DeleteGroupProfileTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1310,8 +1310,8 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site Template ID | 
+**groupType** | **string** | Type of group profile, 0:IP Group; 1:IP Port Group; 2：Mac Group; 3:IPv6 Group; 4:IPv6 Port Group; 5:Country Group; 7:Domain Group. | 
 **groupId** | **string** | Group profile id. | 
-**groupType** | **string** | groupType | 
 
 ### Other Parameters
 
@@ -1651,7 +1651,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult DeleteRadiusProfileTemplate(ctx, omadacId, siteTemplateId, radiusProfileId).Execute()
 
-Delete an exist Radius profile template
+Delete an exist RADIUS profile template
 
 
 
@@ -1727,7 +1727,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult DeleteRadiusUserTemplate(ctx, omadacId, siteTemplateId, userId).Execute()
 
-Delete an exist Build-in Radius profile user template
+Delete an exist Build-in RADIUS profile user template
 
 
 
@@ -1746,7 +1746,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	userId := "userId_example" // string | Build-in Radius profile user Id
+	userId := "userId_example" // string | Build-in RADIUS profile user Id
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1768,7 +1768,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site Template ID | 
-**userId** | **string** | Build-in Radius profile user Id | 
+**userId** | **string** | Build-in RADIUS profile user Id | 
 
 ### Other Parameters
 
@@ -2703,7 +2703,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseListRadiusProfileOpenApiVO GetRadiusProfileListTemplate(ctx, omadacId, siteTemplateId).Execute()
 
-Get Radius profile template list
+Get RADIUS profile template list
 
 
 
@@ -2776,7 +2776,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseGridVORadiusUserOpenApiVO GetRadiusUserListTemplate(ctx, omadacId, siteTemplateId).Page(page).PageSize(pageSize).SortsUsername(sortsUsername).Execute()
 
-Get Build-in Radius profile user template list
+Get Build-in RADIUS profile user template list
 
 
 
@@ -3768,7 +3768,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyRadiusProfileTemplate(ctx, omadacId, siteTemplateId, radiusProfileId).CreateRadiusProfileOpenApiVO(createRadiusProfileOpenApiVO).Execute()
 
-Modify an exist Radius profile template
+Modify an exist RADIUS profile template
 
 
 
@@ -3846,7 +3846,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseWithoutResult ModifyRadiusUserTemplate(ctx, omadacId, siteTemplateId, userId).CreateRadiusUserOpenApiVO(createRadiusUserOpenApiVO).Execute()
 
-Modify an exist Build-in Radius profile user template
+Modify an exist Build-in RADIUS profile user template
 
 
 
@@ -3865,7 +3865,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
-	userId := "userId_example" // string | Build-in Radius profile user Id
+	userId := "userId_example" // string | Build-in RADIUS profile user Id
 	createRadiusUserOpenApiVO := *openapiclient.NewCreateRadiusUserOpenApiVO(int32(123)) // CreateRadiusUserOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -3888,7 +3888,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteTemplateId** | **string** | Site Template ID | 
-**userId** | **string** | Build-in Radius profile user Id | 
+**userId** | **string** | Build-in RADIUS profile user Id | 
 
 ### Other Parameters
 

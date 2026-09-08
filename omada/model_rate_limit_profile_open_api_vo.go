@@ -29,6 +29,8 @@ type RateLimitProfileOpenApiVO struct {
 	Name *string `json:"name,omitempty"`
 	// Rate limit profile ID
 	ProfileId *string `json:"profileId,omitempty"`
+	// Data source. Resource should be a value as follows: 0: new created; 1: from template; 2: override
+	Resource *int32 `json:"resource,omitempty"`
 	// Upload limit(Unit: Kbps), this field is required when parameter [upLimitEnable] is true.
 	UpLimit *int64 `json:"upLimit,omitempty"`
 	// Whether to enable upload limit
@@ -212,6 +214,38 @@ func (o *RateLimitProfileOpenApiVO) SetProfileId(v string) {
 	o.ProfileId = &v
 }
 
+// GetResource returns the Resource field value if set, zero value otherwise.
+func (o *RateLimitProfileOpenApiVO) GetResource() int32 {
+	if o == nil || IsNil(o.Resource) {
+		var ret int32
+		return ret
+	}
+	return *o.Resource
+}
+
+// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RateLimitProfileOpenApiVO) GetResourceOk() (*int32, bool) {
+	if o == nil || IsNil(o.Resource) {
+		return nil, false
+	}
+	return o.Resource, true
+}
+
+// HasResource returns a boolean if a field has been set.
+func (o *RateLimitProfileOpenApiVO) HasResource() bool {
+	if o != nil && !IsNil(o.Resource) {
+		return true
+	}
+
+	return false
+}
+
+// SetResource gets a reference to the given int32 and assigns it to the Resource field.
+func (o *RateLimitProfileOpenApiVO) SetResource(v int32) {
+	o.Resource = &v
+}
+
 // GetUpLimit returns the UpLimit field value if set, zero value otherwise.
 func (o *RateLimitProfileOpenApiVO) GetUpLimit() int64 {
 	if o == nil || IsNil(o.UpLimit) {
@@ -300,6 +334,9 @@ func (o RateLimitProfileOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ProfileId) {
 		toSerialize["profileId"] = o.ProfileId
+	}
+	if !IsNil(o.Resource) {
+		toSerialize["resource"] = o.Resource
 	}
 	if !IsNil(o.UpLimit) {
 		toSerialize["upLimit"] = o.UpLimit

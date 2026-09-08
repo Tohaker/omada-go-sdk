@@ -12,6 +12,8 @@ package omada
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the AnomalyEventSettingEditOpenApiVO type satisfies the MappedNullable interface at compile time
@@ -20,7 +22,7 @@ var _ MappedNullable = &AnomalyEventSettingEditOpenApiVO{}
 // AnomalyEventSettingEditOpenApiVO struct for AnomalyEventSettingEditOpenApiVO
 type AnomalyEventSettingEditOpenApiVO struct {
 	// For the values of Anomaly event code, refer to section 5.7.2.1 of the Open API Access
-	AnomalyCode *string `json:"anomalyCode,omitempty"`
+	AnomalyCode string `json:"anomalyCode"`
 	// Whether to detect anomaly events
 	Enable *bool `json:"enable,omitempty"`
 	// Anomaly event level, it should be a value as follows: 0:Critical, 1:Error, 2:Warning, 3: Info
@@ -29,12 +31,15 @@ type AnomalyEventSettingEditOpenApiVO struct {
 	Params *map[string]int32 `json:"params,omitempty"`
 }
 
+type _AnomalyEventSettingEditOpenApiVO AnomalyEventSettingEditOpenApiVO
+
 // NewAnomalyEventSettingEditOpenApiVO instantiates a new AnomalyEventSettingEditOpenApiVO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAnomalyEventSettingEditOpenApiVO() *AnomalyEventSettingEditOpenApiVO {
+func NewAnomalyEventSettingEditOpenApiVO(anomalyCode string) *AnomalyEventSettingEditOpenApiVO {
 	this := AnomalyEventSettingEditOpenApiVO{}
+	this.AnomalyCode = anomalyCode
 	return &this
 }
 
@@ -46,36 +51,28 @@ func NewAnomalyEventSettingEditOpenApiVOWithDefaults() *AnomalyEventSettingEditO
 	return &this
 }
 
-// GetAnomalyCode returns the AnomalyCode field value if set, zero value otherwise.
+// GetAnomalyCode returns the AnomalyCode field value
 func (o *AnomalyEventSettingEditOpenApiVO) GetAnomalyCode() string {
-	if o == nil || IsNil(o.AnomalyCode) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.AnomalyCode
+
+	return o.AnomalyCode
 }
 
-// GetAnomalyCodeOk returns a tuple with the AnomalyCode field value if set, nil otherwise
+// GetAnomalyCodeOk returns a tuple with the AnomalyCode field value
 // and a boolean to check if the value has been set.
 func (o *AnomalyEventSettingEditOpenApiVO) GetAnomalyCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.AnomalyCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AnomalyCode, true
+	return &o.AnomalyCode, true
 }
 
-// HasAnomalyCode returns a boolean if a field has been set.
-func (o *AnomalyEventSettingEditOpenApiVO) HasAnomalyCode() bool {
-	if o != nil && !IsNil(o.AnomalyCode) {
-		return true
-	}
-
-	return false
-}
-
-// SetAnomalyCode gets a reference to the given string and assigns it to the AnomalyCode field.
+// SetAnomalyCode sets field value
 func (o *AnomalyEventSettingEditOpenApiVO) SetAnomalyCode(v string) {
-	o.AnomalyCode = &v
+	o.AnomalyCode = v
 }
 
 // GetEnable returns the Enable field value if set, zero value otherwise.
@@ -184,9 +181,7 @@ func (o AnomalyEventSettingEditOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o AnomalyEventSettingEditOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AnomalyCode) {
-		toSerialize["anomalyCode"] = o.AnomalyCode
-	}
+	toSerialize["anomalyCode"] = o.AnomalyCode
 	if !IsNil(o.Enable) {
 		toSerialize["enable"] = o.Enable
 	}
@@ -197,6 +192,43 @@ func (o AnomalyEventSettingEditOpenApiVO) ToMap() (map[string]interface{}, error
 		toSerialize["params"] = o.Params
 	}
 	return toSerialize, nil
+}
+
+func (o *AnomalyEventSettingEditOpenApiVO) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"anomalyCode",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAnomalyEventSettingEditOpenApiVO := _AnomalyEventSettingEditOpenApiVO{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varAnomalyEventSettingEditOpenApiVO)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AnomalyEventSettingEditOpenApiVO(varAnomalyEventSettingEditOpenApiVO)
+
+	return err
 }
 
 type NullableAnomalyEventSettingEditOpenApiVO struct {

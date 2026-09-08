@@ -62,12 +62,14 @@ type SiteSettingCapVO struct {
 	NetworkSecurity *bool `json:"networkSecurity,omitempty"`
 	OltVlan *bool `json:"oltVlan,omitempty"`
 	OneToOneNat *bool `json:"oneToOneNat,omitempty"`
+	OpenVpn *bool `json:"openVpn,omitempty"`
 	P2p *bool `json:"p2p,omitempty"`
 	PackageCaptureGateway *bool `json:"packageCaptureGateway,omitempty"`
 	PacketCaptureSupport *bool `json:"packetCaptureSupport,omitempty"`
 	PeerEndpointDomain *bool `json:"peerEndpointDomain,omitempty"`
 	PingSupport *bool `json:"pingSupport,omitempty"`
 	PolicyRouting *bool `json:"policyRouting,omitempty"`
+	Pptp *bool `json:"pptp,omitempty"`
 	Qos *bool `json:"qos,omitempty"`
 	Radios *bool `json:"radios,omitempty"`
 	ServerClientWireguard *bool `json:"serverClientWireguard,omitempty"`
@@ -1498,6 +1500,38 @@ func (o *SiteSettingCapVO) SetOneToOneNat(v bool) {
 	o.OneToOneNat = &v
 }
 
+// GetOpenVpn returns the OpenVpn field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetOpenVpn() bool {
+	if o == nil || IsNil(o.OpenVpn) {
+		var ret bool
+		return ret
+	}
+	return *o.OpenVpn
+}
+
+// GetOpenVpnOk returns a tuple with the OpenVpn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetOpenVpnOk() (*bool, bool) {
+	if o == nil || IsNil(o.OpenVpn) {
+		return nil, false
+	}
+	return o.OpenVpn, true
+}
+
+// HasOpenVpn returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasOpenVpn() bool {
+	if o != nil && !IsNil(o.OpenVpn) {
+		return true
+	}
+
+	return false
+}
+
+// SetOpenVpn gets a reference to the given bool and assigns it to the OpenVpn field.
+func (o *SiteSettingCapVO) SetOpenVpn(v bool) {
+	o.OpenVpn = &v
+}
+
 // GetP2p returns the P2p field value if set, zero value otherwise.
 func (o *SiteSettingCapVO) GetP2p() bool {
 	if o == nil || IsNil(o.P2p) {
@@ -1688,6 +1722,38 @@ func (o *SiteSettingCapVO) HasPolicyRouting() bool {
 // SetPolicyRouting gets a reference to the given bool and assigns it to the PolicyRouting field.
 func (o *SiteSettingCapVO) SetPolicyRouting(v bool) {
 	o.PolicyRouting = &v
+}
+
+// GetPptp returns the Pptp field value if set, zero value otherwise.
+func (o *SiteSettingCapVO) GetPptp() bool {
+	if o == nil || IsNil(o.Pptp) {
+		var ret bool
+		return ret
+	}
+	return *o.Pptp
+}
+
+// GetPptpOk returns a tuple with the Pptp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SiteSettingCapVO) GetPptpOk() (*bool, bool) {
+	if o == nil || IsNil(o.Pptp) {
+		return nil, false
+	}
+	return o.Pptp, true
+}
+
+// HasPptp returns a boolean if a field has been set.
+func (o *SiteSettingCapVO) HasPptp() bool {
+	if o != nil && !IsNil(o.Pptp) {
+		return true
+	}
+
+	return false
+}
+
+// SetPptp gets a reference to the given bool and assigns it to the Pptp field.
+func (o *SiteSettingCapVO) SetPptp(v bool) {
+	o.Pptp = &v
 }
 
 // GetQos returns the Qos field value if set, zero value otherwise.
@@ -2949,6 +3015,9 @@ func (o SiteSettingCapVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OneToOneNat) {
 		toSerialize["oneToOneNat"] = o.OneToOneNat
 	}
+	if !IsNil(o.OpenVpn) {
+		toSerialize["openVpn"] = o.OpenVpn
+	}
 	if !IsNil(o.P2p) {
 		toSerialize["p2p"] = o.P2p
 	}
@@ -2966,6 +3035,9 @@ func (o SiteSettingCapVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PolicyRouting) {
 		toSerialize["policyRouting"] = o.PolicyRouting
+	}
+	if !IsNil(o.Pptp) {
+		toSerialize["pptp"] = o.Pptp
 	}
 	if !IsNil(o.Qos) {
 		toSerialize["qos"] = o.Qos

@@ -975,6 +975,22 @@ type WiredNetworkTemplateAPI interface {
 	ModifyOswLanProfileTemplateExecute(r WiredNetworkTemplateAPIModifyOswLanProfileTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	ModifySinglePortSettingTemplate Modify Wan Port Settings Template
+
+	Modify Wan Port Settings Template.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33400  -  Current site has no WAN.<br/>-33411  -  Current gateway is not connected.<br/>-33442  -  Unable to change WAN settings. Please enable the internet override function first.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@return WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest
+	*/
+	ModifySinglePortSettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest
+
+	// ModifySinglePortSettingTemplateExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifySinglePortSettingTemplateExecute(r WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	ModifySpeedTestV2SettingTemplate Modify SpeedTest Setting Template
 
 	Modify SpeedTest Setting Template.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
@@ -8698,6 +8714,138 @@ func (a *WiredNetworkTemplateAPIService) ModifyOswLanProfileTemplateExecute(r Wi
 	}
 	// body params
 	localVarPostBody = r.lanProfileSettingOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest struct {
+	ctx context.Context
+	ApiService WiredNetworkTemplateAPI
+	omadacId string
+	siteTemplateId string
+	internetPortOpenApiVO *InternetPortOpenApiVO
+}
+
+func (r WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest) InternetPortOpenApiVO(internetPortOpenApiVO InternetPortOpenApiVO) WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest {
+	r.internetPortOpenApiVO = &internetPortOpenApiVO
+	return r
+}
+
+func (r WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifySinglePortSettingTemplateExecute(r)
+}
+
+/*
+ModifySinglePortSettingTemplate Modify Wan Port Settings Template
+
+Modify Wan Port Settings Template.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33400  -  Current site has no WAN.<br/>-33411  -  Current gateway is not connected.<br/>-33442  -  Unable to change WAN settings. Please enable the internet override function first.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @return WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest
+*/
+func (a *WiredNetworkTemplateAPIService) ModifySinglePortSettingTemplate(ctx context.Context, omadacId string, siteTemplateId string) WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest {
+	return WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *WiredNetworkTemplateAPIService) ModifySinglePortSettingTemplateExecute(r WiredNetworkTemplateAPIModifySinglePortSettingTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WiredNetworkTemplateAPIService.ModifySinglePortSettingTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/wan/networks/port-setting"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.internetPortOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("internetPortOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.internetPortOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

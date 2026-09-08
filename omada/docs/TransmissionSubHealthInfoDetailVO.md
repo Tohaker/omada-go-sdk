@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AverageNumTxDrop** | Pointer to **int32** | Average value of tx drop | [optional] 
 **AverageNumTxRetry** | Pointer to **int32** | Average value of tx retry | [optional] 
+**Incidents** | Pointer to [**[]AnomalyBriefCountVO**](AnomalyBriefCountVO.md) | Incident information for this health dimension, null if no incidents | [optional] 
 **PastNumsTxDrop** | Pointer to [**[]TimeValueItemVO**](TimeValueItemVO.md) | List of tx drop | [optional] 
 **PastNumsTxRetry** | Pointer to [**[]TimeValueItemVO**](TimeValueItemVO.md) | List of tx retry | [optional] 
 **SummaryScore** | Pointer to **int32** | Sub dimension health score | [optional] 
@@ -79,6 +80,31 @@ SetAverageNumTxRetry sets AverageNumTxRetry field to given value.
 `func (o *TransmissionSubHealthInfoDetailVO) HasAverageNumTxRetry() bool`
 
 HasAverageNumTxRetry returns a boolean if a field has been set.
+
+### GetIncidents
+
+`func (o *TransmissionSubHealthInfoDetailVO) GetIncidents() []AnomalyBriefCountVO`
+
+GetIncidents returns the Incidents field if non-nil, zero value otherwise.
+
+### GetIncidentsOk
+
+`func (o *TransmissionSubHealthInfoDetailVO) GetIncidentsOk() (*[]AnomalyBriefCountVO, bool)`
+
+GetIncidentsOk returns a tuple with the Incidents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncidents
+
+`func (o *TransmissionSubHealthInfoDetailVO) SetIncidents(v []AnomalyBriefCountVO)`
+
+SetIncidents sets Incidents field to given value.
+
+### HasIncidents
+
+`func (o *TransmissionSubHealthInfoDetailVO) HasIncidents() bool`
+
+HasIncidents returns a boolean if a field has been set.
 
 ### GetPastNumsTxDrop
 

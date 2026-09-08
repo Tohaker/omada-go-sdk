@@ -25,6 +25,8 @@ type IptvOpenApiVO struct {
 	DslConfig *IptvDslOpenApiVO `json:"dslConfig,omitempty"`
 	// Whether to enable iptv feature. Options: 'true' or 'false'.
 	Enable bool `json:"enable"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// Mode should be a value as follows: 0:Bridge, 1:Custom
 	Mode int32 `json:"mode"`
 	// Config the port mode of the LAN ports to determine which port is used to support Internet service, IPTV service, or IP Phone service.
@@ -144,6 +146,38 @@ func (o *IptvOpenApiVO) SetEnable(v bool) {
 	o.Enable = v
 }
 
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *IptvOpenApiVO) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IptvOpenApiVO) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *IptvOpenApiVO) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *IptvOpenApiVO) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
+}
+
 // GetMode returns the Mode field value
 func (o *IptvOpenApiVO) GetMode() int32 {
 	if o == nil {
@@ -233,6 +267,9 @@ func (o IptvOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["dslConfig"] = o.DslConfig
 	}
 	toSerialize["enable"] = o.Enable
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
+	}
 	toSerialize["mode"] = o.Mode
 	toSerialize["portConfig"] = o.PortConfig
 	toSerialize["wanPortId"] = o.WanPortId

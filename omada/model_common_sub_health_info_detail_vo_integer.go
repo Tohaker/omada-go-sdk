@@ -17,7 +17,7 @@ import (
 // checks if the CommonSubHealthInfoDetailVOInteger type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CommonSubHealthInfoDetailVOInteger{}
 
-// CommonSubHealthInfoDetailVOInteger Rssi health info and score
+// CommonSubHealthInfoDetailVOInteger Link error score info (wired clients only)
 type CommonSubHealthInfoDetailVOInteger struct {
 	// List of common dimension value, such as rssi
 	AverageNum []TimeValueItemVOInteger `json:"averageNum,omitempty"`

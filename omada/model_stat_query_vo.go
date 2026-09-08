@@ -21,7 +21,7 @@ var _ MappedNullable = &StatQueryVO{}
 
 // StatQueryVO struct for StatQueryVO
 type StatQueryVO struct {
-	// Attributes to be queried. Attributes not included in attrs will return a value of 0.Item of attrs should be a value as follows: mem, cpu, tx, rx, txRate, rxRate, txPkts, rxPkts, txBroadPkts, rxBroadPkts, txMultiPkts, rxMultiPkts, dropPkts, txErrPkts, rxErrPkts
+	// Attributes to be queried. Attributes not included in attrs will return a value of 0 or be omitted. The supported attrs and response fields depend on the device type and statistic granularity. For details, refer to section 5.9.1 Device Statistics of the Open API Access Guide.
 	Attrs []string `json:"attrs"`
 	// end time, number of seconds from UTC0 1970/01/01
 	End int64 `json:"end"`

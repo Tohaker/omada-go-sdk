@@ -21,12 +21,14 @@ var _ MappedNullable = &AnomalyEventSettingOpenApiVO{}
 type AnomalyEventSettingOpenApiVO struct {
 	// For the values of Anomaly event code, refer to section 5.7.2.1 of the Open API Access
 	AnomalyCode *string `json:"anomalyCode,omitempty"`
-	// Anomaly event category, it should be a value as follows: 0:Networking, 1:Mesh, 2:Access, 3:Roaming, 4:Network Service, 5:Software/Configuration, 6:Hardware, 7:Security, 8:Throughput, 9:Coverage
+	// Anomaly event category, it should be a value as follows:11:Access, 12:Authentication, 13:Roaming, 14:Wireless Network, 15:Wired Network, 16:Link, 17:WAN and Services, 18:Device Status, 19:Security, example: 11 Or 12,13,14
 	Category *int32 `json:"category,omitempty"`
 	// Whether to detect anomaly events
 	Enable *bool `json:"enable,omitempty"`
 	// Anomaly event level, it should be a value as follows: 0:Critical, 1:Error, 2:Warning, 3: Info
 	Level *int32 `json:"level,omitempty"`
+	// Device type
+	ObjectType *string `json:"objectType,omitempty"`
 	// For the values of Anomaly event params, refer to section 5.7.2.1 of the Open API Access
 	Params *map[string]int32 `json:"params,omitempty"`
 }
@@ -176,6 +178,38 @@ func (o *AnomalyEventSettingOpenApiVO) SetLevel(v int32) {
 	o.Level = &v
 }
 
+// GetObjectType returns the ObjectType field value if set, zero value otherwise.
+func (o *AnomalyEventSettingOpenApiVO) GetObjectType() string {
+	if o == nil || IsNil(o.ObjectType) {
+		var ret string
+		return ret
+	}
+	return *o.ObjectType
+}
+
+// GetObjectTypeOk returns a tuple with the ObjectType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AnomalyEventSettingOpenApiVO) GetObjectTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ObjectType) {
+		return nil, false
+	}
+	return o.ObjectType, true
+}
+
+// HasObjectType returns a boolean if a field has been set.
+func (o *AnomalyEventSettingOpenApiVO) HasObjectType() bool {
+	if o != nil && !IsNil(o.ObjectType) {
+		return true
+	}
+
+	return false
+}
+
+// SetObjectType gets a reference to the given string and assigns it to the ObjectType field.
+func (o *AnomalyEventSettingOpenApiVO) SetObjectType(v string) {
+	o.ObjectType = &v
+}
+
 // GetParams returns the Params field value if set, zero value otherwise.
 func (o *AnomalyEventSettingOpenApiVO) GetParams() map[string]int32 {
 	if o == nil || IsNil(o.Params) {
@@ -229,6 +263,9 @@ func (o AnomalyEventSettingOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Level) {
 		toSerialize["level"] = o.Level
+	}
+	if !IsNil(o.ObjectType) {
+		toSerialize["objectType"] = o.ObjectType
 	}
 	if !IsNil(o.Params) {
 		toSerialize["params"] = o.Params

@@ -53,6 +53,8 @@ type DeviceCaptureInfo struct {
 	ModelVersion *string `json:"modelVersion,omitempty"`
 	// Device name.
 	Name *string `json:"name,omitempty"`
+	// Scan Status of device,status should be a value as follows:  0:Not Scanned, 1:Spectrum Scanning, 2:RFScanning, 3:packet capturing, 4:RFPlanning, 5:Interference Detecting;
+	ScanStatus *int32 `json:"scanStatus,omitempty"`
 	// Model complex shown in the front end.Ap：model+(country)+modelVersion,EAP225(EU) v3.0  Gateway/Switch：model+modelVersion,Osg v3.0
 	ShowModel *string `json:"showModel,omitempty"`
 	// Parameter [stack] indicates whether the device supports stacking.
@@ -642,6 +644,38 @@ func (o *DeviceCaptureInfo) SetName(v string) {
 	o.Name = &v
 }
 
+// GetScanStatus returns the ScanStatus field value if set, zero value otherwise.
+func (o *DeviceCaptureInfo) GetScanStatus() int32 {
+	if o == nil || IsNil(o.ScanStatus) {
+		var ret int32
+		return ret
+	}
+	return *o.ScanStatus
+}
+
+// GetScanStatusOk returns a tuple with the ScanStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceCaptureInfo) GetScanStatusOk() (*int32, bool) {
+	if o == nil || IsNil(o.ScanStatus) {
+		return nil, false
+	}
+	return o.ScanStatus, true
+}
+
+// HasScanStatus returns a boolean if a field has been set.
+func (o *DeviceCaptureInfo) HasScanStatus() bool {
+	if o != nil && !IsNil(o.ScanStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetScanStatus gets a reference to the given int32 and assigns it to the ScanStatus field.
+func (o *DeviceCaptureInfo) SetScanStatus(v int32) {
+	o.ScanStatus = &v
+}
+
 // GetShowModel returns the ShowModel field value if set, zero value otherwise.
 func (o *DeviceCaptureInfo) GetShowModel() string {
 	if o == nil || IsNil(o.ShowModel) {
@@ -1118,6 +1152,9 @@ func (o DeviceCaptureInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.ScanStatus) {
+		toSerialize["scanStatus"] = o.ScanStatus
 	}
 	if !IsNil(o.ShowModel) {
 		toSerialize["showModel"] = o.ShowModel

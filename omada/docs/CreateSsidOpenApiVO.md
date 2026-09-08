@@ -4,10 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CondBroadcastCtrl** | Pointer to [**CondBroadcastCtrlVO**](CondBroadcastCtrlVO.md) |  | [optional] 
+**ApGroupIds** | Pointer to **[]string** | AP Group ID list that the SSID is associated with. Supports binding to multiple AP groups. | [optional] 
 **Band** | **int32** | SSID band. The lowest bit indicates whether 2.4G is included; the second lowest bit indicates whether 5G is included; the third lowest bit indicates whether 6G is included; 1 means included while 0 means not included. For example, 7(111) means that 2G/5G/6G are enabled; 1(001) means that 2G is enabled. (When 5G is included，it means 5G/5G1/5G2 are enabled.) | 
 **Broadcast** | **bool** | SSID broadcast config status. True: enable, false: disable. | 
+**ChooseDevices** | Pointer to **int32** | description &#x3D; select all devices or not. 0 means select all devices, 1 means not select all devices. | [optional] 
 **DeviceType** | **int32** | SSID device type, identify which devices this SSID will take effect; The lowest bit indicates whether [EAP] is included, the second low bit indicates whether [Gateway] is included, 1 means included while 0 means not included; For example, 3(11) means that EAP/Gateway is enabled, 1(01) means that EAP is enabled. | 
 **Enable11r** | **bool** | SSID 802.11r config status. True: enable, false: disable. | 
+**EnhancedIotConnectivity** | Pointer to **bool** | SSID Enhanced IoT Connectivity config status. True: enable, false: disable. This configuration can be enabled only when the 5GHz and 6GHz bands are disabled, the parameters [versionEnt] and [versionPsk] are not set to 4, and the following configurations are disabled: [hotspotV2Enable], [bandSteer], [arpCastEnable], [loadBalance], [enable11r], [gikRekeyPskEnable], [pmfMode], [mloEnable]. | [optional] 
 **EntSetting** | Pointer to [**SsidEnterpriseSettingOpenApiVO**](SsidEnterpriseSettingOpenApiVO.md) |  | [optional] 
 **GreEnable** | Pointer to **bool** | SSID EoGre Tunnel config status. True: enable, false: disable. This configuration can be enabled only when the [VPN - EoGre Tunnel] global config is enabled;(This configuration applies to the Pro Site of the Omada Pro Controller only). | [optional] 
 **GuestNetEnable** | **bool** | SSID guest network config status. True: enable, false: disable. | 
@@ -19,6 +23,7 @@ Name | Type | Description | Notes
 **ProhibitWifiShare** | Pointer to **bool** | SSID prohibitWifiShare config status. True: enable, false: disable. | [optional] 
 **PskSetting** | Pointer to [**SsidPskSettingOpenApiVO**](SsidPskSettingOpenApiVO.md) |  | [optional] 
 **Security** | **int32** | SSID security mode; Security should be a value as follows: 0: None; 2: WPA-Enterprise; 3: WPA-Personal; 4: PPSK without RADIUS; 5: PPSK with RADIUS. | 
+**SsidEnable** | Pointer to **bool** | SSID enable status. True: enable, false: disable. | [optional] 
 **VlanEnable** | **bool** | SSID VLAN config status. True: enable, false: disable. | 
 **VlanId** | Pointer to **int32** | SSID VLAN ID. This field is required when Parameter [vlanEnable] is true; It should be within the range of 1–4094. If the field vlanSetting is entered, this field must be null. | [optional] 
 **VlanSetting** | Pointer to [**SsidVlanSettingOpenApiVO**](SsidVlanSettingOpenApiVO.md) |  | [optional] 
@@ -43,6 +48,56 @@ will change when the set of required properties is changed
 NewCreateSsidOpenApiVOWithDefaults instantiates a new CreateSsidOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCondBroadcastCtrl
+
+`func (o *CreateSsidOpenApiVO) GetCondBroadcastCtrl() CondBroadcastCtrlVO`
+
+GetCondBroadcastCtrl returns the CondBroadcastCtrl field if non-nil, zero value otherwise.
+
+### GetCondBroadcastCtrlOk
+
+`func (o *CreateSsidOpenApiVO) GetCondBroadcastCtrlOk() (*CondBroadcastCtrlVO, bool)`
+
+GetCondBroadcastCtrlOk returns a tuple with the CondBroadcastCtrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCondBroadcastCtrl
+
+`func (o *CreateSsidOpenApiVO) SetCondBroadcastCtrl(v CondBroadcastCtrlVO)`
+
+SetCondBroadcastCtrl sets CondBroadcastCtrl field to given value.
+
+### HasCondBroadcastCtrl
+
+`func (o *CreateSsidOpenApiVO) HasCondBroadcastCtrl() bool`
+
+HasCondBroadcastCtrl returns a boolean if a field has been set.
+
+### GetApGroupIds
+
+`func (o *CreateSsidOpenApiVO) GetApGroupIds() []string`
+
+GetApGroupIds returns the ApGroupIds field if non-nil, zero value otherwise.
+
+### GetApGroupIdsOk
+
+`func (o *CreateSsidOpenApiVO) GetApGroupIdsOk() (*[]string, bool)`
+
+GetApGroupIdsOk returns a tuple with the ApGroupIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApGroupIds
+
+`func (o *CreateSsidOpenApiVO) SetApGroupIds(v []string)`
+
+SetApGroupIds sets ApGroupIds field to given value.
+
+### HasApGroupIds
+
+`func (o *CreateSsidOpenApiVO) HasApGroupIds() bool`
+
+HasApGroupIds returns a boolean if a field has been set.
 
 ### GetBand
 
@@ -84,6 +139,31 @@ and a boolean to check if the value has been set.
 SetBroadcast sets Broadcast field to given value.
 
 
+### GetChooseDevices
+
+`func (o *CreateSsidOpenApiVO) GetChooseDevices() int32`
+
+GetChooseDevices returns the ChooseDevices field if non-nil, zero value otherwise.
+
+### GetChooseDevicesOk
+
+`func (o *CreateSsidOpenApiVO) GetChooseDevicesOk() (*int32, bool)`
+
+GetChooseDevicesOk returns a tuple with the ChooseDevices field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChooseDevices
+
+`func (o *CreateSsidOpenApiVO) SetChooseDevices(v int32)`
+
+SetChooseDevices sets ChooseDevices field to given value.
+
+### HasChooseDevices
+
+`func (o *CreateSsidOpenApiVO) HasChooseDevices() bool`
+
+HasChooseDevices returns a boolean if a field has been set.
+
 ### GetDeviceType
 
 `func (o *CreateSsidOpenApiVO) GetDeviceType() int32`
@@ -123,6 +203,31 @@ and a boolean to check if the value has been set.
 
 SetEnable11r sets Enable11r field to given value.
 
+
+### GetEnhancedIotConnectivity
+
+`func (o *CreateSsidOpenApiVO) GetEnhancedIotConnectivity() bool`
+
+GetEnhancedIotConnectivity returns the EnhancedIotConnectivity field if non-nil, zero value otherwise.
+
+### GetEnhancedIotConnectivityOk
+
+`func (o *CreateSsidOpenApiVO) GetEnhancedIotConnectivityOk() (*bool, bool)`
+
+GetEnhancedIotConnectivityOk returns a tuple with the EnhancedIotConnectivity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnhancedIotConnectivity
+
+`func (o *CreateSsidOpenApiVO) SetEnhancedIotConnectivity(v bool)`
+
+SetEnhancedIotConnectivity sets EnhancedIotConnectivity field to given value.
+
+### HasEnhancedIotConnectivity
+
+`func (o *CreateSsidOpenApiVO) HasEnhancedIotConnectivity() bool`
+
+HasEnhancedIotConnectivity returns a boolean if a field has been set.
 
 ### GetEntSetting
 
@@ -368,6 +473,31 @@ and a boolean to check if the value has been set.
 
 SetSecurity sets Security field to given value.
 
+
+### GetSsidEnable
+
+`func (o *CreateSsidOpenApiVO) GetSsidEnable() bool`
+
+GetSsidEnable returns the SsidEnable field if non-nil, zero value otherwise.
+
+### GetSsidEnableOk
+
+`func (o *CreateSsidOpenApiVO) GetSsidEnableOk() (*bool, bool)`
+
+GetSsidEnableOk returns a tuple with the SsidEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSsidEnable
+
+`func (o *CreateSsidOpenApiVO) SetSsidEnable(v bool)`
+
+SetSsidEnable sets SsidEnable field to given value.
+
+### HasSsidEnable
+
+`func (o *CreateSsidOpenApiVO) HasSsidEnable() bool`
+
+HasSsidEnable returns a boolean if a field has been set.
 
 ### GetVlanEnable
 

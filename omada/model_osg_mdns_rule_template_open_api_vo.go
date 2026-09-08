@@ -19,7 +19,7 @@ import (
 // checks if the OsgMdnsRuleTemplateOpenApiVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OsgMdnsRuleTemplateOpenApiVO{}
 
-// OsgMdnsRuleTemplateOpenApiVO MDNS rule gateway config, valid when parameter [type] is 1
+// OsgMdnsRuleTemplateOpenApiVO MDNS rule by network config, valid when parameter [type] is 1
 type OsgMdnsRuleTemplateOpenApiVO struct {
 	// LAN Network ID list of selected client networks. LAN Network can be created using 'Create LAN network template' interface, and LAN Network ID can be obtained from 'Get LAN network template list' interface
 	ClientNetworks []string `json:"clientNetworks"`

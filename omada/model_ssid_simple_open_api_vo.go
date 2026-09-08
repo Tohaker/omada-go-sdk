@@ -19,7 +19,10 @@ var _ MappedNullable = &SsidSimpleOpenApiVO{}
 
 // SsidSimpleOpenApiVO SSID list with MAC-Based authentication configured
 type SsidSimpleOpenApiVO struct {
-	// This field represents SSID ID. SSID can be created using 'Create new SSID' ('Create new SSID template') interface, and SSID ID can be obtained from 'Get SSID list' ('Get SSID template list') interface
+	// ID of SSID
+	Id *string `json:"id,omitempty"`
+	// SSID ID, kept for backward compatibility and equivalent to id. This field will be removed in a future release; use id instead.
+	// Deprecated
 	SsidId *string `json:"ssidId,omitempty"`
 	// This field represents SSID name
 	SsidName *string `json:"ssidName,omitempty"`
@@ -42,7 +45,40 @@ func NewSsidSimpleOpenApiVOWithDefaults() *SsidSimpleOpenApiVO {
 	return &this
 }
 
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *SsidSimpleOpenApiVO) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SsidSimpleOpenApiVO) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *SsidSimpleOpenApiVO) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *SsidSimpleOpenApiVO) SetId(v string) {
+	o.Id = &v
+}
+
 // GetSsidId returns the SsidId field value if set, zero value otherwise.
+// Deprecated
 func (o *SsidSimpleOpenApiVO) GetSsidId() string {
 	if o == nil || IsNil(o.SsidId) {
 		var ret string
@@ -53,6 +89,7 @@ func (o *SsidSimpleOpenApiVO) GetSsidId() string {
 
 // GetSsidIdOk returns a tuple with the SsidId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *SsidSimpleOpenApiVO) GetSsidIdOk() (*string, bool) {
 	if o == nil || IsNil(o.SsidId) {
 		return nil, false
@@ -70,6 +107,7 @@ func (o *SsidSimpleOpenApiVO) HasSsidId() bool {
 }
 
 // SetSsidId gets a reference to the given string and assigns it to the SsidId field.
+// Deprecated
 func (o *SsidSimpleOpenApiVO) SetSsidId(v string) {
 	o.SsidId = &v
 }
@@ -116,6 +154,9 @@ func (o SsidSimpleOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o SsidSimpleOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 	if !IsNil(o.SsidId) {
 		toSerialize["ssidId"] = o.SsidId
 	}

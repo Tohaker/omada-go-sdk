@@ -25,6 +25,8 @@ type VlanNetworkAffectingStackDetailVO struct {
 	StackDetail *OswStackDetailVO `json:"stackDetail,omitempty"`
 	// Stack lags
 	StackLags []OswStackMemberLagVO `json:"stackLags,omitempty"`
+	// Whether the device supports reporting port layout information.
+	SupportLayout *bool `json:"supportLayout,omitempty"`
 }
 
 // NewVlanNetworkAffectingStackDetailVO instantiates a new VlanNetworkAffectingStackDetailVO object
@@ -172,6 +174,38 @@ func (o *VlanNetworkAffectingStackDetailVO) SetStackLags(v []OswStackMemberLagVO
 	o.StackLags = v
 }
 
+// GetSupportLayout returns the SupportLayout field value if set, zero value otherwise.
+func (o *VlanNetworkAffectingStackDetailVO) GetSupportLayout() bool {
+	if o == nil || IsNil(o.SupportLayout) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportLayout
+}
+
+// GetSupportLayoutOk returns a tuple with the SupportLayout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VlanNetworkAffectingStackDetailVO) GetSupportLayoutOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportLayout) {
+		return nil, false
+	}
+	return o.SupportLayout, true
+}
+
+// HasSupportLayout returns a boolean if a field has been set.
+func (o *VlanNetworkAffectingStackDetailVO) HasSupportLayout() bool {
+	if o != nil && !IsNil(o.SupportLayout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportLayout gets a reference to the given bool and assigns it to the SupportLayout field.
+func (o *VlanNetworkAffectingStackDetailVO) SetSupportLayout(v bool) {
+	o.SupportLayout = &v
+}
+
 func (o VlanNetworkAffectingStackDetailVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -193,6 +227,9 @@ func (o VlanNetworkAffectingStackDetailVO) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.StackLags) {
 		toSerialize["stackLags"] = o.StackLags
+	}
+	if !IsNil(o.SupportLayout) {
+		toSerialize["supportLayout"] = o.SupportLayout
 	}
 	return toSerialize, nil
 }

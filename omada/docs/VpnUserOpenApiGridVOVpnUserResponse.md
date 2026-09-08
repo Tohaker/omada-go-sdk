@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **SupportL2TP** | Pointer to **bool** | Whether the L2TP configuration is supported by the VPN user. | [optional] 
 **SupportLocalIp** | Pointer to **bool** | Whether the local IP address configuration is supported by the VPN user. | [optional] 
 **SupportOpenVpn** | Pointer to **bool** | Whether the OpenVPN configuration is supported by the VPN user. | [optional] 
+**SupportPptp** | Pointer to **bool** | Whether the PPTP configuration is supported by the VPN user. | [optional] 
 **SupportProtocol** | Pointer to **bool** | Whether protocol configuration is supported of the VPN user | [optional] 
 **SupportServerOptional** | Pointer to **bool** | Whether VPN server is optional. | [optional] 
 **SupportSslVpn** | Pointer to **bool** | Whether the SSLVPN configuration is supported by the VPN user. | [optional] 
@@ -261,6 +262,31 @@ SetSupportOpenVpn sets SupportOpenVpn field to given value.
 `func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSupportOpenVpn() bool`
 
 HasSupportOpenVpn returns a boolean if a field has been set.
+
+### GetSupportPptp
+
+`func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportPptp() bool`
+
+GetSupportPptp returns the SupportPptp field if non-nil, zero value otherwise.
+
+### GetSupportPptpOk
+
+`func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportPptpOk() (*bool, bool)`
+
+GetSupportPptpOk returns a tuple with the SupportPptp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportPptp
+
+`func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSupportPptp(v bool)`
+
+SetSupportPptp sets SupportPptp field to given value.
+
+### HasSupportPptp
+
+`func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSupportPptp() bool`
+
+HasSupportPptp returns a boolean if a field has been set.
 
 ### GetSupportProtocol
 

@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **IngressEnable** | **bool** | Indicates whether egress is enabled | 
 **IngressLimit** | Pointer to **int32** | Ingress Limit, when the user-configured value is much larger than the actual maximum value, the device will process it at the maximum value | [optional] 
 **IngressUnit** | Pointer to **int32** | Ingress Unit should be a value as follows: 1: Kbps; 2: Mbps | [optional] 
-**LimitRange** | Pointer to [**[]OswBandCtrlLimitRangeVO**](OswBandCtrlLimitRangeVO.md) |  | [optional] 
-**UnitSupport** | Pointer to **[]int32** |  | [optional] 
+**LimitRange** | Pointer to [**[]OswBandCtrlLimitRangeVO**](OswBandCtrlLimitRangeVO.md) | The limit range of the bandwidth control | [optional] 
+**UnitSupport** | Pointer to **[]int32** | The supported units of the bandwidth control, 1: Kbps; 2: Mbps | [optional] 
 
 ## Methods
 

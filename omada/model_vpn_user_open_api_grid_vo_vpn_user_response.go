@@ -36,6 +36,8 @@ type VpnUserOpenApiGridVOVpnUserResponse struct {
 	SupportLocalIp *bool `json:"supportLocalIp,omitempty"`
 	// Whether the OpenVPN configuration is supported by the VPN user.
 	SupportOpenVpn *bool `json:"supportOpenVpn,omitempty"`
+	// Whether the PPTP configuration is supported by the VPN user.
+	SupportPptp *bool `json:"supportPptp,omitempty"`
 	// Whether protocol configuration is supported of the VPN user
 	SupportProtocol *bool `json:"supportProtocol,omitempty"`
 	// Whether VPN server is optional.
@@ -351,6 +353,38 @@ func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSupportOpenVpn(v bool) {
 	o.SupportOpenVpn = &v
 }
 
+// GetSupportPptp returns the SupportPptp field value if set, zero value otherwise.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportPptp() bool {
+	if o == nil || IsNil(o.SupportPptp) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportPptp
+}
+
+// GetSupportPptpOk returns a tuple with the SupportPptp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportPptpOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportPptp) {
+		return nil, false
+	}
+	return o.SupportPptp, true
+}
+
+// HasSupportPptp returns a boolean if a field has been set.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) HasSupportPptp() bool {
+	if o != nil && !IsNil(o.SupportPptp) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportPptp gets a reference to the given bool and assigns it to the SupportPptp field.
+func (o *VpnUserOpenApiGridVOVpnUserResponse) SetSupportPptp(v bool) {
+	o.SupportPptp = &v
+}
+
 // GetSupportProtocol returns the SupportProtocol field value if set, zero value otherwise.
 func (o *VpnUserOpenApiGridVOVpnUserResponse) GetSupportProtocol() bool {
 	if o == nil || IsNil(o.SupportProtocol) {
@@ -515,6 +549,9 @@ func (o VpnUserOpenApiGridVOVpnUserResponse) ToMap() (map[string]interface{}, er
 	}
 	if !IsNil(o.SupportOpenVpn) {
 		toSerialize["supportOpenVpn"] = o.SupportOpenVpn
+	}
+	if !IsNil(o.SupportPptp) {
+		toSerialize["supportPptp"] = o.SupportPptp
 	}
 	if !IsNil(o.SupportProtocol) {
 		toSerialize["supportProtocol"] = o.SupportProtocol

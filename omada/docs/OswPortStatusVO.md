@@ -18,14 +18,14 @@ Name | Type | Description | Notes
 **Port** | Pointer to **int32** | Port Number | [optional] 
 **PortId** | Pointer to **string** | Port ID | [optional] 
 **PortIdSubtype** | Pointer to **string** | Port ID Subtype | [optional] 
-**Rx** | Pointer to **int64** | Rx | [optional] 
-**RxRate** | Pointer to **int64** | Rx Rate | [optional] 
+**Rx** | Pointer to **int64** | Rx, in bytes | [optional] 
+**RxRate** | Pointer to **int64** | Rx rate, in bit/s | [optional] 
 **StkStatus** | Pointer to **int32** | Stk Status | [optional] 
 **Stp** | Pointer to **string** | STP Status | [optional] 
 **StpDiscarding** | Pointer to **bool** | STP Discarding | [optional] 
 **TrunkState** | Pointer to **int32** | LACP port state | [optional] 
-**Tx** | Pointer to **int64** | Tx | [optional] 
-**TxRate** | Pointer to **int64** | Tx Rate | [optional] 
+**Tx** | Pointer to **int64** | Tx, in bytes | [optional] 
+**TxRate** | Pointer to **int64** | Tx rate, in bit/s | [optional] 
 
 ## Methods
 

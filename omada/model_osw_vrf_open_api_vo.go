@@ -23,15 +23,15 @@ var _ MappedNullable = &OswVrfOpenApiVO{}
 type OswVrfOpenApiVO struct {
 	// VRF ID
 	Id *string `json:"id,omitempty"`
-	// Indicates whether ipv4 is enabled
+	// Whether to enable ipv4. Ipv4Enable should be true
 	Ipv4Enable bool `json:"ipv4Enable"`
-	// Indicates whether ipv6 is enabled
+	// Whether to enable ipv6
 	Ipv6Enable bool `json:"ipv6Enable"`
 	// Indicates whether vrf is default vrf
 	IsDefault *bool `json:"isDefault,omitempty"`
-	// Resource
+	// resource is a value as follows: 0: new created; 1: from template; 2: override
 	Resource *int32 `json:"resource,omitempty"`
-	// VRF Name
+	// VRF name, it should be 1 to 15 characters consisting of numbers (0 to 9), uppercase and lowercase letters (A to Z, a to z), and symbols -_@.+ but cannot be . or .. only.
 	Vrf string `json:"vrf"`
 }
 

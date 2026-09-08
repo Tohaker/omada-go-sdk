@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **AllMirroredStPorts** | Pointer to [**[]OswStandPortVO**](OswStandPortVO.md) | All Mirrored Standard Ports | [optional] 
 **AllMirroringPorts** | Pointer to **[]int32** | All mirroring ports of the current Switch | [optional] 
 **AllMirroringStPorts** | Pointer to [**[]OswStandPortVO**](OswStandPortVO.md) | All Mirroring Standard Ports | [optional] 
-**AllMlagDadPorts** | Pointer to **[]int32** |  | [optional] 
-**AllMlagPeerLinkPorts** | Pointer to **[]int32** |  | [optional] 
+**AllMlagDadPorts** | Pointer to **[]int32** | All ports configured with M-LAG DAD on the current Switch | [optional] 
+**AllMlagPeerLinkPorts** | Pointer to **[]int32** | All ports configured with M-LAG PeerLink on the current Switch | [optional] 
 **BandCtrl** | Pointer to [**OswBandCtrlVO**](OswBandCtrlVO.md) |  | [optional] 
 **BandWidthCtrlType** | Pointer to **int32** | BandWidthCtrlType should be a value as follows: 0: Off; 1: Rate Limit; 2: Storming Control | [optional] 
 **DhcpL2RelaySettings** | Pointer to [**OswPortDhcpL2RelayVO**](OswPortDhcpL2RelayVO.md) |  | [optional] 
@@ -34,8 +34,8 @@ Name | Type | Description | Notes
 **LocateEnable** | Pointer to **bool** | Whether locate function is enabled | [optional] 
 **LoopbackDetectEnable** | Pointer to **bool** | Indicates whether loopbackDetect port based is enabled | [optional] 
 **LoopbackDetectVlanBasedEnable** | Pointer to **bool** | Indicates whether loopbackDetect vlan based is enabled | [optional] 
-**MlagEnable** | Pointer to **bool** |  | [optional] 
-**MlagName** | Pointer to **string** |  | [optional] 
+**MlagEnable** | Pointer to **bool** | Indicates whether M-LAG is enabled | [optional] 
+**MlagName** | Pointer to **string** | M-LAG Name | [optional] 
 **MlagPeerAllPortsConfigInfo** | Pointer to [**OswMlagPeerAllPortsConfigInfoVO**](OswMlagPeerAllPortsConfigInfoVO.md) |  | [optional] 
 **MlagPeerSetting** | Pointer to [**OswMlagPeerSettingVO**](OswMlagPeerSettingVO.md) |  | [optional] 
 **MldFastLeaveEnable** | Pointer to **bool** | Indicates whether mld fast leave is enabled | [optional] 
@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **NetworkConflict** | Pointer to **bool** | Indicates whether the VLAN configuration activated on the port is inconsistent with the VLAN configuration in the Profile. | [optional] 
 **NetworkMode** | Pointer to **int32** | Network Mode should be a value as follows: 0: Trunk, 1: Access | [optional] 
 **NetworkTagsSetting** | Pointer to **int32** | Network Tags Setting should be a value as follows: 0: Allow All; 1: Block All; 2: Custom | [optional] 
+**OuiBasedVlanNetworks** | Pointer to [**OswPortOuiBasedVlanVO**](OswPortOuiBasedVlanVO.md) |  | [optional] 
 **PortAlertEnable** | Pointer to **bool** | Indicates whether port alert is enabled | [optional] 
 **PortIsolationEnable** | Pointer to **bool** | Indicates whether port isolation is enabled | [optional] 
 **Ports** | Pointer to **[]int32** | Lag Ports | [optional] 
@@ -1119,6 +1120,31 @@ SetNetworkTagsSetting sets NetworkTagsSetting field to given value.
 `func (o *OswStackMemberLagVO) HasNetworkTagsSetting() bool`
 
 HasNetworkTagsSetting returns a boolean if a field has been set.
+
+### GetOuiBasedVlanNetworks
+
+`func (o *OswStackMemberLagVO) GetOuiBasedVlanNetworks() OswPortOuiBasedVlanVO`
+
+GetOuiBasedVlanNetworks returns the OuiBasedVlanNetworks field if non-nil, zero value otherwise.
+
+### GetOuiBasedVlanNetworksOk
+
+`func (o *OswStackMemberLagVO) GetOuiBasedVlanNetworksOk() (*OswPortOuiBasedVlanVO, bool)`
+
+GetOuiBasedVlanNetworksOk returns a tuple with the OuiBasedVlanNetworks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOuiBasedVlanNetworks
+
+`func (o *OswStackMemberLagVO) SetOuiBasedVlanNetworks(v OswPortOuiBasedVlanVO)`
+
+SetOuiBasedVlanNetworks sets OuiBasedVlanNetworks field to given value.
+
+### HasOuiBasedVlanNetworks
+
+`func (o *OswStackMemberLagVO) HasOuiBasedVlanNetworks() bool`
+
+HasOuiBasedVlanNetworks returns a boolean if a field has been set.
 
 ### GetPortAlertEnable
 

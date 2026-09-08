@@ -55,7 +55,7 @@ type BackupAndRestoreAPI interface {
 	/*
 	BackupSitesFileServer Backup multi sites config to file server
 
-	Backup multi sites config to file server. At most 300 sites can backup.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30301  -  Backing up...<br/>-30304  -  Restoring...<br/>-30309  -  Failed to back up the configurations.<br/>-30320  -  Failed to connect to the file server. The file server may not exist or it is temporarily unavailable. Please check the information and your network connection, and try again.
+	Backup multi sites config to file server. At most 300 sites can backup.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30301  -  Backing up...<br/>-30304  -  Restoring...<br/>-30309  -  Failed to back up the configurations.<br/>-30320  -  Failed to connect to the file server. The file server may not exist or it is temporarily unavailable. Please check the information and your network connection, and try again.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -70,7 +70,7 @@ type BackupAndRestoreAPI interface {
 	/*
 	BackupSitesSelfServer Backup multi sites config to self server
 
-	Backup multi sites config to self server. At most 300 sites can backup.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30301  -  Backing up...<br/>-30304  -  Restoring...<br/>-30309  -  Failed to back up the configurations.
+	Backup multi sites config to self server. At most 300 sites can backup.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30301  -  Backing up...<br/>-30304  -  Restoring...<br/>-30309  -  Failed to back up the configurations.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -85,7 +85,7 @@ type BackupAndRestoreAPI interface {
 	/*
 	GetBackupResult Get controller backup result
 
-	Get controller backup result.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30309  -  Failed to back up the configurations.
+	Get controller backup result.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30309  -  Failed to back up the configurations.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -100,7 +100,7 @@ type BackupAndRestoreAPI interface {
 	/*
 	GetRestoreResult Get controller restore result
 
-	Get controller restore result.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting View Only<br/>Site Settings Manager View Only<br/>Maintenance Page View Only<br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30303  -  Failed to restore because the file is incompatible.<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.<br/>-30307  -  Invalid configuration file. Please select the configuration file of the same integrated gateway model.<br/>-30317  -  Cannot restore a site-level backup file into the controller. Please go to global Dashboard > Site List to import<br/>-30318  -  Invalid file. To restore controller data, please go to Settings > Maintenance > Backup & Restore.<br/>-30319  -  Failed to restore due to database anomaly, please try again later.<br/>-30326  -  The devices in the customer configuration file are duplicate with the adopted devices and cannot be imported.
+	Get controller restore result.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30303  -  Failed to restore because the file is incompatible.<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.<br/>-30307  -  Invalid configuration file. Please select the configuration file of the same integrated gateway model.<br/>-30317  -  Cannot restore a site-level backup file into the controller. Please go to global Dashboard > Site List to import<br/>-30318  -  Invalid file. To restore controller data, please go to Settings > Maintenance > Backup & Restore.<br/>-30319  -  Failed to restore due to database anomaly, please try again later.<br/>-30326  -  The devices in the customer configuration file are duplicate with the adopted devices and cannot be imported.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -115,7 +115,7 @@ type BackupAndRestoreAPI interface {
 	/*
 	GetSelfServerFileList Get controller backup file list in self server
 
-	Get controller backup file list in self server.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
+	Get controller backup file list in self server.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -130,7 +130,7 @@ type BackupAndRestoreAPI interface {
 	/*
 	GetSelfServerSiteFileList Get site backup file list in self server
 
-	Get site backup file list in self server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Maintenance Page View Only<br/>Global Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
+	Get site backup file list in self server.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -146,7 +146,7 @@ type BackupAndRestoreAPI interface {
 	/*
 	GetSiteBackupResult Get site backup result
 
-	Get site backup result.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Maintenance Page View Only<br/>Global Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30309  -  Failed to back up the configurations.
+	Get site backup result.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30309  -  Failed to back up the configurations.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -192,7 +192,7 @@ type BackupAndRestoreAPI interface {
 	/*
 	RestoreSitesFileServer Restore multi sites config from file server
 
-	Restore multi sites config from file server. At most 300 sites can be restored.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30304  -  Restoring...<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.<br/>-30320  -  Failed to connect to the file server. The file server may not exist or it is temporarily unavailable. Please check the information and your network connection, and try again.
+	Restore multi sites config from file server. At most 300 sites can be restored.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30304  -  Restoring...<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.<br/>-30320  -  Failed to connect to the file server. The file server may not exist or it is temporarily unavailable. Please check the information and your network connection, and try again.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -207,7 +207,7 @@ type BackupAndRestoreAPI interface {
 	/*
 	RestoreSitesSelfServer Restore multi sites config from self server
 
-	Restore multi sites config from self server. At most 300 sites can be restored.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30304  -  Restoring...<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.
+	Restore multi sites config from self server. At most 300 sites can be restored.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30304  -  Restoring...<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -498,7 +498,7 @@ func (r BackupAndRestoreAPIBackupSitesFileServerRequest) Execute() (*OperationRe
 /*
 BackupSitesFileServer Backup multi sites config to file server
 
-Backup multi sites config to file server. At most 300 sites can backup.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30301  -  Backing up...<br/>-30304  -  Restoring...<br/>-30309  -  Failed to back up the configurations.<br/>-30320  -  Failed to connect to the file server. The file server may not exist or it is temporarily unavailable. Please check the information and your network connection, and try again.
+Backup multi sites config to file server. At most 300 sites can backup.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30301  -  Backing up...<br/>-30304  -  Restoring...<br/>-30309  -  Failed to back up the configurations.<br/>-30320  -  Failed to connect to the file server. The file server may not exist or it is temporarily unavailable. Please check the information and your network connection, and try again.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -626,7 +626,7 @@ func (r BackupAndRestoreAPIBackupSitesSelfServerRequest) Execute() (*OperationRe
 /*
 BackupSitesSelfServer Backup multi sites config to self server
 
-Backup multi sites config to self server. At most 300 sites can backup.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30301  -  Backing up...<br/>-30304  -  Restoring...<br/>-30309  -  Failed to back up the configurations.
+Backup multi sites config to self server. At most 300 sites can backup.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30301  -  Backing up...<br/>-30304  -  Restoring...<br/>-30309  -  Failed to back up the configurations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -748,7 +748,7 @@ func (r BackupAndRestoreAPIGetBackupResultRequest) Execute() (*BackupResultOpenA
 /*
 GetBackupResult Get controller backup result
 
-Get controller backup result.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30309  -  Failed to back up the configurations.
+Get controller backup result.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30309  -  Failed to back up the configurations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -865,7 +865,7 @@ func (r BackupAndRestoreAPIGetRestoreResultRequest) Execute() (*RestoreResultVO,
 /*
 GetRestoreResult Get controller restore result
 
-Get controller restore result.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting View Only<br/>Site Settings Manager View Only<br/>Maintenance Page View Only<br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30303  -  Failed to restore because the file is incompatible.<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.<br/>-30307  -  Invalid configuration file. Please select the configuration file of the same integrated gateway model.<br/>-30317  -  Cannot restore a site-level backup file into the controller. Please go to global Dashboard > Site List to import<br/>-30318  -  Invalid file. To restore controller data, please go to Settings > Maintenance > Backup & Restore.<br/>-30319  -  Failed to restore due to database anomaly, please try again later.<br/>-30326  -  The devices in the customer configuration file are duplicate with the adopted devices and cannot be imported.
+Get controller restore result.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30303  -  Failed to restore because the file is incompatible.<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.<br/>-30307  -  Invalid configuration file. Please select the configuration file of the same integrated gateway model.<br/>-30317  -  Cannot restore a site-level backup file into the controller. Please go to global Dashboard > Site List to import<br/>-30318  -  Invalid file. To restore controller data, please go to Settings > Maintenance > Backup & Restore.<br/>-30319  -  Failed to restore due to database anomaly, please try again later.<br/>-30326  -  The devices in the customer configuration file are duplicate with the adopted devices and cannot be imported.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -982,7 +982,7 @@ func (r BackupAndRestoreAPIGetSelfServerFileListRequest) Execute() (*BackupFileL
 /*
 GetSelfServerFileList Get controller backup file list in self server
 
-Get controller backup file list in self server.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
+Get controller backup file list in self server.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1100,7 +1100,7 @@ func (r BackupAndRestoreAPIGetSelfServerSiteFileListRequest) Execute() (*BackupF
 /*
 GetSelfServerSiteFileList Get site backup file list in self server
 
-Get site backup file list in self server.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Maintenance Page View Only<br/>Global Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
+Get site backup file list in self server.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1221,7 +1221,7 @@ func (r BackupAndRestoreAPIGetSiteBackupResultRequest) Execute() (*BackupResultO
 /*
 GetSiteBackupResult Get site backup result
 
-Get site backup result.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Maintenance Page View Only<br/>Global Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30309  -  Failed to back up the configurations.
+Get site backup result.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30309  -  Failed to back up the configurations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1603,7 +1603,7 @@ func (r BackupAndRestoreAPIRestoreSitesFileServerRequest) Execute() (*OperationR
 /*
 RestoreSitesFileServer Restore multi sites config from file server
 
-Restore multi sites config from file server. At most 300 sites can be restored.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30304  -  Restoring...<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.<br/>-30320  -  Failed to connect to the file server. The file server may not exist or it is temporarily unavailable. Please check the information and your network connection, and try again.
+Restore multi sites config from file server. At most 300 sites can be restored.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30304  -  Restoring...<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.<br/>-30320  -  Failed to connect to the file server. The file server may not exist or it is temporarily unavailable. Please check the information and your network connection, and try again.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1731,7 +1731,7 @@ func (r BackupAndRestoreAPIRestoreSitesSelfServerRequest) Execute() (*OperationR
 /*
 RestoreSitesSelfServer Restore multi sites config from self server
 
-Restore multi sites config from self server. At most 300 sites can be restored.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30304  -  Restoring...<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.
+Restore multi sites config from self server. At most 300 sites can be restored.<br/><br/>The interface requires one of the permissions: <br/>Maintenance Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30028  -  Operation failed because other operations (backuping, site copying, customer copying, etc.) are being performed on this organization. Please wait and try again later.<br/>-30304  -  Restoring...<br/>-30305  -  Failed to restore because of unexpected errors. Please try again later.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

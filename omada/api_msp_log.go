@@ -100,7 +100,7 @@ type MspLogAPI interface {
 	/*
 	GetAuditLogSettingForMsp2 Get MSP audit log notification
 
-	Get msp audit log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
+	Get msp audit log notification.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -115,7 +115,7 @@ type MspLogAPI interface {
 	/*
 	GetAuditLogsForMsp Get MSP audit log list
 
-	Get audit logs in msp audit page.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
+	Get audit logs in msp audit page.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -178,7 +178,7 @@ type MspLogAPI interface {
 	/*
 	ModifyAuditLogSettingMsp Modify MSP audit log notification
 
-	Modify MSP audit log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
+	Modify MSP audit log notification.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -963,7 +963,7 @@ func (r MspLogAPIGetAuditLogSettingForMsp2Request) Execute() (*OperationResponse
 /*
 GetAuditLogSettingForMsp2 Get MSP audit log notification
 
-Get msp audit log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
+Get msp audit log notification.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -1136,7 +1136,7 @@ func (r MspLogAPIGetAuditLogsForMspRequest) Execute() (*OperationResponseGridVOA
 /*
 GetAuditLogsForMsp Get MSP audit log list
 
-Get audit logs in msp audit page.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
+Get audit logs in msp audit page.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -1693,7 +1693,7 @@ func (r MspLogAPIModifyAuditLogSettingMspRequest) Execute() (*OperationResponseW
 /*
 ModifyAuditLogSettingMsp Modify MSP audit log notification
 
-Modify MSP audit log notification.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
+Modify MSP audit log notification.<br/><br/>The interface requires one of the permissions: <br/>MSP Log Manager Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID

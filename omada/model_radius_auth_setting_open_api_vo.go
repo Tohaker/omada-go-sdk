@@ -29,7 +29,7 @@ type RadiusAuthSettingOpenApiVO struct {
 	NasIp *string `json:"nasIp,omitempty"`
 	// Request Timeout, 1~60(s).
 	OverTime int32 `json:"overTime"`
-	// Profile ID. LDAP profile can be created using 'Create a new LDAP profile' interface, and LDAP profile ID can be obtained from 'Get LDAP profile list' interface. Radius profile can be created using 'Create a new Radius profile' interface, and Radius profile ID can be obtained from 'Get Radius profile list' interface.
+	// Profile ID. LDAP profile can be created using 'Create a new LDAP profile' interface, and LDAP profile ID can be obtained from 'Get LDAP profile list' interface. Radius profile can be created using 'Create a new RADIUS profile' interface, and RADIUS profile ID can be obtained from 'Get RADIUS profile list' interface.
 	ProfileId string `json:"profileId"`
 	// Repeat time should be within the range of 1–10.
 	RepeatTime int32 `json:"repeatTime"`

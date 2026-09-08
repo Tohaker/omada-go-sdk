@@ -342,7 +342,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	id := "id_example" // string | id
+	id := "id_example" // string | Local user ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**id** | **string** | id | 
+**id** | **string** | Local user ID | 
 
 ### Other Parameters
 
@@ -417,7 +417,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	siteId := "siteId_example" // string | siteId
+	siteId := "siteId_example" // string | Site ID
 	exportAuthedClientOpenApiVO := *openapiclient.NewExportAuthedClientOpenApiVO() // ExportAuthedClientOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**siteId** | **string** | siteId | 
+**siteId** | **string** | Site ID | 
 
 ### Other Parameters
 

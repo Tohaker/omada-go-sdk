@@ -33,6 +33,8 @@ type LanDnsQueryOpenApiVO struct {
 	Domain string `json:"domain"`
 	// off:false, on: true
 	Enable bool `json:"enable"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// The ID of current Lan Dns entry.
 	Id *string `json:"id,omitempty"`
 	// When the Type is IP, it is the IPv4 address of the returned DNS response.
@@ -246,6 +248,38 @@ func (o *LanDnsQueryOpenApiVO) GetEnableOk() (*bool, bool) {
 // SetEnable sets field value
 func (o *LanDnsQueryOpenApiVO) SetEnable(v bool) {
 	o.Enable = v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *LanDnsQueryOpenApiVO) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LanDnsQueryOpenApiVO) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *LanDnsQueryOpenApiVO) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *LanDnsQueryOpenApiVO) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -480,6 +514,9 @@ func (o LanDnsQueryOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["domain"] = o.Domain
 	toSerialize["enable"] = o.Enable
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}

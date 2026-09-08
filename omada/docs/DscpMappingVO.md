@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Mapping** | **map[string][]int32** |  | 
+**Mapping** | **map[string][]int32** | The Queue-DSCP mapping map. The key corresponds to the queue and the value corresponds to the DSCP value list | 
 
 ## Methods
 

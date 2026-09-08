@@ -25,6 +25,7 @@ type ActiveClientBubbleVO struct {
 	Download *int64 `json:"download,omitempty"`
 	DownloadPercent *int32 `json:"downloadPercent,omitempty"`
 	HealthScore *int32 `json:"healthScore,omitempty"`
+	Incidents *int32 `json:"incidents,omitempty"`
 	Mac *string `json:"mac,omitempty"`
 	Name *string `json:"name,omitempty"`
 	RadioId *int32 `json:"radioId,omitempty"`
@@ -247,6 +248,38 @@ func (o *ActiveClientBubbleVO) HasHealthScore() bool {
 // SetHealthScore gets a reference to the given int32 and assigns it to the HealthScore field.
 func (o *ActiveClientBubbleVO) SetHealthScore(v int32) {
 	o.HealthScore = &v
+}
+
+// GetIncidents returns the Incidents field value if set, zero value otherwise.
+func (o *ActiveClientBubbleVO) GetIncidents() int32 {
+	if o == nil || IsNil(o.Incidents) {
+		var ret int32
+		return ret
+	}
+	return *o.Incidents
+}
+
+// GetIncidentsOk returns a tuple with the Incidents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ActiveClientBubbleVO) GetIncidentsOk() (*int32, bool) {
+	if o == nil || IsNil(o.Incidents) {
+		return nil, false
+	}
+	return o.Incidents, true
+}
+
+// HasIncidents returns a boolean if a field has been set.
+func (o *ActiveClientBubbleVO) HasIncidents() bool {
+	if o != nil && !IsNil(o.Incidents) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidents gets a reference to the given int32 and assigns it to the Incidents field.
+func (o *ActiveClientBubbleVO) SetIncidents(v int32) {
+	o.Incidents = &v
 }
 
 // GetMac returns the Mac field value if set, zero value otherwise.
@@ -692,6 +725,9 @@ func (o ActiveClientBubbleVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HealthScore) {
 		toSerialize["healthScore"] = o.HealthScore
+	}
+	if !IsNil(o.Incidents) {
+		toSerialize["incidents"] = o.Incidents
 	}
 	if !IsNil(o.Mac) {
 		toSerialize["mac"] = o.Mac

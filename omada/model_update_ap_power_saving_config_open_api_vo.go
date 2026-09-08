@@ -12,8 +12,6 @@ package omada
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the UpdateApPowerSavingConfigOpenApiVO type satisfies the MappedNullable interface at compile time
@@ -21,8 +19,8 @@ var _ MappedNullable = &UpdateApPowerSavingConfigOpenApiVO{}
 
 // UpdateApPowerSavingConfigOpenApiVO struct for UpdateApPowerSavingConfigOpenApiVO
 type UpdateApPowerSavingConfigOpenApiVO struct {
-	// Power Saving trigger by band config status. True: enable, false: disable.
-	BandEnable bool `json:"bandEnable"`
+	// Parameter [bandEnable] can be TRUE only when [mode] = 1. Power Saving trigger by band config status. True: enable, false: disable.
+	BandEnable *bool `json:"bandEnable,omitempty"`
 	// Select bands list config of trigger by band;It should be a value as follows: 0: 2.4GHz; 1: 5GHz; 2: 5G2Hz; 3: 6GHz;This field is required when Parameter [bandEnable] is true;Please note that the band filled in must be supported by the device, otherwise the modified configuration will not take effect properly
 	Bands []int32 `json:"bands,omitempty"`
 	// End time of trigger by time(unit: hour); It should be within the range of 0–23; This field is required when Parameter [timeEnable] is true.
@@ -31,24 +29,22 @@ type UpdateApPowerSavingConfigOpenApiVO struct {
 	EndTimeM *int32 `json:"endTimeM,omitempty"`
 	// Idle duration config of trigger by band(unit: minute); It should be within the range of 60–1440; This field is required when Parameter [bandEnable] is true.
 	IdleDuration *int32 `json:"idleDuration,omitempty"`
+	// Parameter [mode] is Power Saving Mode of device and should not be null. 0: OFF, 1: Standard( based on the user‑specified time and/or band settings ), 2: Smart, 3: Deep Power‑Saving
+	Mode *int32 `json:"mode,omitempty"`
 	// Start time of trigger by time(unit: hour); It should be within the range of 0–23; This field is required when Parameter [timeEnable] is true.
 	StartTimeH *int32 `json:"startTimeH,omitempty"`
 	// Start time of trigger by time(unit: minute); It should be within the range of 0–59; This field is required when Parameter [timeEnable] is true.
 	StartTimeM *int32 `json:"startTimeM,omitempty"`
-	// Power Saving trigger by time config status. True: enable, false: disable.
-	TimeEnable bool `json:"timeEnable"`
+	// Parameter [timeEnable] can be TRUE only when [mode] = 1. Power Saving trigger by time config status. True: enable, false: disable.
+	TimeEnable *bool `json:"timeEnable,omitempty"`
 }
-
-type _UpdateApPowerSavingConfigOpenApiVO UpdateApPowerSavingConfigOpenApiVO
 
 // NewUpdateApPowerSavingConfigOpenApiVO instantiates a new UpdateApPowerSavingConfigOpenApiVO object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUpdateApPowerSavingConfigOpenApiVO(bandEnable bool, timeEnable bool) *UpdateApPowerSavingConfigOpenApiVO {
+func NewUpdateApPowerSavingConfigOpenApiVO() *UpdateApPowerSavingConfigOpenApiVO {
 	this := UpdateApPowerSavingConfigOpenApiVO{}
-	this.BandEnable = bandEnable
-	this.TimeEnable = timeEnable
 	return &this
 }
 
@@ -60,28 +56,36 @@ func NewUpdateApPowerSavingConfigOpenApiVOWithDefaults() *UpdateApPowerSavingCon
 	return &this
 }
 
-// GetBandEnable returns the BandEnable field value
+// GetBandEnable returns the BandEnable field value if set, zero value otherwise.
 func (o *UpdateApPowerSavingConfigOpenApiVO) GetBandEnable() bool {
-	if o == nil {
+	if o == nil || IsNil(o.BandEnable) {
 		var ret bool
 		return ret
 	}
-
-	return o.BandEnable
+	return *o.BandEnable
 }
 
-// GetBandEnableOk returns a tuple with the BandEnable field value
+// GetBandEnableOk returns a tuple with the BandEnable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateApPowerSavingConfigOpenApiVO) GetBandEnableOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.BandEnable) {
 		return nil, false
 	}
-	return &o.BandEnable, true
+	return o.BandEnable, true
 }
 
-// SetBandEnable sets field value
+// HasBandEnable returns a boolean if a field has been set.
+func (o *UpdateApPowerSavingConfigOpenApiVO) HasBandEnable() bool {
+	if o != nil && !IsNil(o.BandEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetBandEnable gets a reference to the given bool and assigns it to the BandEnable field.
 func (o *UpdateApPowerSavingConfigOpenApiVO) SetBandEnable(v bool) {
-	o.BandEnable = v
+	o.BandEnable = &v
 }
 
 // GetBands returns the Bands field value if set, zero value otherwise.
@@ -212,6 +216,38 @@ func (o *UpdateApPowerSavingConfigOpenApiVO) SetIdleDuration(v int32) {
 	o.IdleDuration = &v
 }
 
+// GetMode returns the Mode field value if set, zero value otherwise.
+func (o *UpdateApPowerSavingConfigOpenApiVO) GetMode() int32 {
+	if o == nil || IsNil(o.Mode) {
+		var ret int32
+		return ret
+	}
+	return *o.Mode
+}
+
+// GetModeOk returns a tuple with the Mode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateApPowerSavingConfigOpenApiVO) GetModeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Mode) {
+		return nil, false
+	}
+	return o.Mode, true
+}
+
+// HasMode returns a boolean if a field has been set.
+func (o *UpdateApPowerSavingConfigOpenApiVO) HasMode() bool {
+	if o != nil && !IsNil(o.Mode) {
+		return true
+	}
+
+	return false
+}
+
+// SetMode gets a reference to the given int32 and assigns it to the Mode field.
+func (o *UpdateApPowerSavingConfigOpenApiVO) SetMode(v int32) {
+	o.Mode = &v
+}
+
 // GetStartTimeH returns the StartTimeH field value if set, zero value otherwise.
 func (o *UpdateApPowerSavingConfigOpenApiVO) GetStartTimeH() int32 {
 	if o == nil || IsNil(o.StartTimeH) {
@@ -276,28 +312,36 @@ func (o *UpdateApPowerSavingConfigOpenApiVO) SetStartTimeM(v int32) {
 	o.StartTimeM = &v
 }
 
-// GetTimeEnable returns the TimeEnable field value
+// GetTimeEnable returns the TimeEnable field value if set, zero value otherwise.
 func (o *UpdateApPowerSavingConfigOpenApiVO) GetTimeEnable() bool {
-	if o == nil {
+	if o == nil || IsNil(o.TimeEnable) {
 		var ret bool
 		return ret
 	}
-
-	return o.TimeEnable
+	return *o.TimeEnable
 }
 
-// GetTimeEnableOk returns a tuple with the TimeEnable field value
+// GetTimeEnableOk returns a tuple with the TimeEnable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateApPowerSavingConfigOpenApiVO) GetTimeEnableOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TimeEnable) {
 		return nil, false
 	}
-	return &o.TimeEnable, true
+	return o.TimeEnable, true
 }
 
-// SetTimeEnable sets field value
+// HasTimeEnable returns a boolean if a field has been set.
+func (o *UpdateApPowerSavingConfigOpenApiVO) HasTimeEnable() bool {
+	if o != nil && !IsNil(o.TimeEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimeEnable gets a reference to the given bool and assigns it to the TimeEnable field.
 func (o *UpdateApPowerSavingConfigOpenApiVO) SetTimeEnable(v bool) {
-	o.TimeEnable = v
+	o.TimeEnable = &v
 }
 
 func (o UpdateApPowerSavingConfigOpenApiVO) MarshalJSON() ([]byte, error) {
@@ -310,7 +354,9 @@ func (o UpdateApPowerSavingConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o UpdateApPowerSavingConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["bandEnable"] = o.BandEnable
+	if !IsNil(o.BandEnable) {
+		toSerialize["bandEnable"] = o.BandEnable
+	}
 	if !IsNil(o.Bands) {
 		toSerialize["bands"] = o.Bands
 	}
@@ -323,52 +369,19 @@ func (o UpdateApPowerSavingConfigOpenApiVO) ToMap() (map[string]interface{}, err
 	if !IsNil(o.IdleDuration) {
 		toSerialize["idleDuration"] = o.IdleDuration
 	}
+	if !IsNil(o.Mode) {
+		toSerialize["mode"] = o.Mode
+	}
 	if !IsNil(o.StartTimeH) {
 		toSerialize["startTimeH"] = o.StartTimeH
 	}
 	if !IsNil(o.StartTimeM) {
 		toSerialize["startTimeM"] = o.StartTimeM
 	}
-	toSerialize["timeEnable"] = o.TimeEnable
+	if !IsNil(o.TimeEnable) {
+		toSerialize["timeEnable"] = o.TimeEnable
+	}
 	return toSerialize, nil
-}
-
-func (o *UpdateApPowerSavingConfigOpenApiVO) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"bandEnable",
-		"timeEnable",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateApPowerSavingConfigOpenApiVO := _UpdateApPowerSavingConfigOpenApiVO{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUpdateApPowerSavingConfigOpenApiVO)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateApPowerSavingConfigOpenApiVO(varUpdateApPowerSavingConfigOpenApiVO)
-
-	return err
 }
 
 type NullableUpdateApPowerSavingConfigOpenApiVO struct {

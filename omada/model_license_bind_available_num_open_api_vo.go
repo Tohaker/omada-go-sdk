@@ -19,6 +19,8 @@ var _ MappedNullable = &LicenseBindAvailableNumOpenApiVO{}
 
 // LicenseBindAvailableNumOpenApiVO struct for LicenseBindAvailableNumOpenApiVO
 type LicenseBindAvailableNumOpenApiVO struct {
+	// 1month license num
+	Var1month *int32 `json:"1month,omitempty"`
 	// 1year license num
 	Var1year *int32 `json:"1year,omitempty"`
 	// 2years license num
@@ -53,6 +55,38 @@ func NewLicenseBindAvailableNumOpenApiVO() *LicenseBindAvailableNumOpenApiVO {
 func NewLicenseBindAvailableNumOpenApiVOWithDefaults() *LicenseBindAvailableNumOpenApiVO {
 	this := LicenseBindAvailableNumOpenApiVO{}
 	return &this
+}
+
+// GetVar1month returns the Var1month field value if set, zero value otherwise.
+func (o *LicenseBindAvailableNumOpenApiVO) GetVar1month() int32 {
+	if o == nil || IsNil(o.Var1month) {
+		var ret int32
+		return ret
+	}
+	return *o.Var1month
+}
+
+// GetVar1monthOk returns a tuple with the Var1month field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LicenseBindAvailableNumOpenApiVO) GetVar1monthOk() (*int32, bool) {
+	if o == nil || IsNil(o.Var1month) {
+		return nil, false
+	}
+	return o.Var1month, true
+}
+
+// HasVar1month returns a boolean if a field has been set.
+func (o *LicenseBindAvailableNumOpenApiVO) HasVar1month() bool {
+	if o != nil && !IsNil(o.Var1month) {
+		return true
+	}
+
+	return false
+}
+
+// SetVar1month gets a reference to the given int32 and assigns it to the Var1month field.
+func (o *LicenseBindAvailableNumOpenApiVO) SetVar1month(v int32) {
+	o.Var1month = &v
 }
 
 // GetVar1year returns the Var1year field value if set, zero value otherwise.
@@ -353,6 +387,9 @@ func (o LicenseBindAvailableNumOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o LicenseBindAvailableNumOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Var1month) {
+		toSerialize["1month"] = o.Var1month
+	}
 	if !IsNil(o.Var1year) {
 		toSerialize["1year"] = o.Var1year
 	}

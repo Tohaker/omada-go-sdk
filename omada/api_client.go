@@ -251,6 +251,22 @@ type ClientAPI interface {
 	GetClientHistoryDataEnableExecute(r ClientAPIGetClientHistoryDataEnableRequest) (*OperationResponseOmadacClientSettingOpenApiVO, *http.Response, error)
 
 	/*
+	GetClientIncidentCounts Get site client incident counts
+
+	Get incident counts for the specified clients in a site.<br/><br/>The interface requires one of the permissions: <br/>Site Clients Manager View Only<br/>Incidents Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ClientAPIGetClientIncidentCountsRequest
+	*/
+	GetClientIncidentCounts(ctx context.Context, omadacId string, siteId string) ClientAPIGetClientIncidentCountsRequest
+
+	// GetClientIncidentCountsExecute executes the request
+	//  @return OperationResponseClientIncidentCountResultOpenApiVO
+	GetClientIncidentCountsExecute(r ClientAPIGetClientIncidentCountsRequest) (*OperationResponseClientIncidentCountResultOpenApiVO, *http.Response, error)
+
+	/*
 	GetClientJourney Get client connection histories
 
 	Get client connection histories.<br/><br/>The interface requires one of the permissions: <br/>Site Clients Manager View Only
@@ -349,6 +365,23 @@ type ClientAPI interface {
 	// GetGridClientHistoryExecute executes the request
 	//  @return OperationResponseGridVOClientHistoryVO
 	GetGridClientHistoryExecute(r ClientAPIGetGridClientHistoryRequest) (*OperationResponseGridVOClientHistoryVO, *http.Response, error)
+
+	/*
+	GetGridSsidClients Get clients list of ssid.
+
+	Get clients list of ssid.<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ssidId
+	@return ClientAPIGetGridSsidClientsRequest
+	*/
+	GetGridSsidClients(ctx context.Context, omadacId string, siteId string, ssidId string) ClientAPIGetGridSsidClientsRequest
+
+	// GetGridSsidClientsExecute executes the request
+	//  @return OperationResponseClientGridVOSsidClientVO
+	GetGridSsidClientsExecute(r ClientAPIGetGridSsidClientsRequest) (*OperationResponseClientGridVOSsidClientVO, *http.Response, error)
 
 	/*
 	GetVigiDetailStat5Min Get VIGI device statistical data details at a 5-minute interval.
@@ -2407,6 +2440,138 @@ func (a *ClientAPIService) GetClientHistoryDataEnableExecute(r ClientAPIGetClien
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ClientAPIGetClientIncidentCountsRequest struct {
+	ctx context.Context
+	ApiService ClientAPI
+	omadacId string
+	siteId string
+	clientIncidentCountRequestOpenApiVO *ClientIncidentCountRequestOpenApiVO
+}
+
+func (r ClientAPIGetClientIncidentCountsRequest) ClientIncidentCountRequestOpenApiVO(clientIncidentCountRequestOpenApiVO ClientIncidentCountRequestOpenApiVO) ClientAPIGetClientIncidentCountsRequest {
+	r.clientIncidentCountRequestOpenApiVO = &clientIncidentCountRequestOpenApiVO
+	return r
+}
+
+func (r ClientAPIGetClientIncidentCountsRequest) Execute() (*OperationResponseClientIncidentCountResultOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetClientIncidentCountsExecute(r)
+}
+
+/*
+GetClientIncidentCounts Get site client incident counts
+
+Get incident counts for the specified clients in a site.<br/><br/>The interface requires one of the permissions: <br/>Site Clients Manager View Only<br/>Incidents Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ClientAPIGetClientIncidentCountsRequest
+*/
+func (a *ClientAPIService) GetClientIncidentCounts(ctx context.Context, omadacId string, siteId string) ClientAPIGetClientIncidentCountsRequest {
+	return ClientAPIGetClientIncidentCountsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseClientIncidentCountResultOpenApiVO
+func (a *ClientAPIService) GetClientIncidentCountsExecute(r ClientAPIGetClientIncidentCountsRequest) (*OperationResponseClientIncidentCountResultOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseClientIncidentCountResultOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetClientIncidentCounts")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/clients/incidents"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.clientIncidentCountRequestOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("clientIncidentCountRequestOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.clientIncidentCountRequestOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ClientAPIGetClientJourneyRequest struct {
 	ctx context.Context
 	ApiService ClientAPI
@@ -3401,6 +3566,141 @@ func (a *ClientAPIService) GetGridClientHistoryExecute(r ClientAPIGetGridClientH
 	if r.searchKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
 	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ClientAPIGetGridSsidClientsRequest struct {
+	ctx context.Context
+	ApiService ClientAPI
+	omadacId string
+	siteId string
+	ssidId string
+	queryDataVO *OpenApiQueryDataV2VO
+}
+
+func (r ClientAPIGetGridSsidClientsRequest) QueryDataVO(queryDataVO OpenApiQueryDataV2VO) ClientAPIGetGridSsidClientsRequest {
+	r.queryDataVO = &queryDataVO
+	return r
+}
+
+func (r ClientAPIGetGridSsidClientsRequest) Execute() (*OperationResponseClientGridVOSsidClientVO, *http.Response, error) {
+	return r.ApiService.GetGridSsidClientsExecute(r)
+}
+
+/*
+GetGridSsidClients Get clients list of ssid.
+
+Get clients list of ssid.<br/><br/>The interface requires one of the permissions: <br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ssidId
+ @return ClientAPIGetGridSsidClientsRequest
+*/
+func (a *ClientAPIService) GetGridSsidClients(ctx context.Context, omadacId string, siteId string, ssidId string) ClientAPIGetGridSsidClientsRequest {
+	return ClientAPIGetGridSsidClientsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ssidId: ssidId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseClientGridVOSsidClientVO
+func (a *ClientAPIService) GetGridSsidClientsExecute(r ClientAPIGetGridSsidClientsRequest) (*OperationResponseClientGridVOSsidClientVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseClientGridVOSsidClientVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAPIService.GetGridSsidClients")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/clientList/{ssidId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ssidId"+"}", url.PathEscape(parameterValueToString(r.ssidId, "ssidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.queryDataVO == nil {
+		return localVarReturnValue, nil, reportError("queryDataVO is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryDataVO", r.queryDataVO, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

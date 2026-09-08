@@ -21,6 +21,8 @@ var _ MappedNullable = &OswStaticRoutingVO{}
 
 // OswStaticRoutingVO struct for OswStaticRoutingVO
 type OswStaticRoutingVO struct {
+	// The description of static routing. It may contain 0 to 128 characters, including digits (0–9), uppercase and lowercase letters (A–Z, a–z), spaces, and -_@:/.+# .
+	Description *string `json:"description,omitempty"`
 	// IP address/SubNet, up to 16 entries are allowed for the destinations list.
 	Destinations []string `json:"destinations"`
 	// Distance should be within the range of 1–255.
@@ -69,6 +71,38 @@ func NewOswStaticRoutingVO(destinations []string, distance int32, status bool) *
 func NewOswStaticRoutingVOWithDefaults() *OswStaticRoutingVO {
 	this := OswStaticRoutingVO{}
 	return &this
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *OswStaticRoutingVO) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStaticRoutingVO) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *OswStaticRoutingVO) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *OswStaticRoutingVO) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetDestinations returns the Destinations field value
@@ -505,6 +539,9 @@ func (o OswStaticRoutingVO) MarshalJSON() ([]byte, error) {
 
 func (o OswStaticRoutingVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	toSerialize["destinations"] = o.Destinations
 	toSerialize["distance"] = o.Distance
 	if !IsNil(o.EntryId) {

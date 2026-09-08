@@ -665,7 +665,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	lockTunnelId := "lockTunnelId_example" // string | lockTunnelId
+	lockTunnelId := "lockTunnelId_example" // string | Locked tunnel ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**lockTunnelId** | **string** | lockTunnelId | 
+**lockTunnelId** | **string** | Locked tunnel ID | 
 
 ### Other Parameters
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Destinations** | **[]string** | IP address/SubNet, up to 16 entries are allowed for the destinations list. | 
 **ExistVirtualWan** | Pointer to **bool** | Whether the interface option exists virtual WAN | [optional] 
 **ExistVpnClient** | Pointer to **bool** | Whether the interface option exists VPN client | [optional] 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **Id** | Pointer to **string** | ID | [optional] 
 **InterfaceId** | Pointer to **string** | Interface ID, for example: if interfaceType is network, interfaceId should be LAN network ID. LAN Network can be created using &#39;Create LAN network&#39; interface, and LAN Network ID can be obtained from &#39;Get LAN network list&#39; interface. | [optional] 
 **InterfaceType** | Pointer to **int32** | Only for routeType:1, interfaceType should be a value as follows: 0: Internet(WAN); 1: Network(LAN); 2: L2TP, 3: PPTP, 5: Virtual WAN. | [optional] 
@@ -104,6 +105,31 @@ SetExistVpnClient sets ExistVpnClient field to given value.
 `func (o *StaticRoutingInfo) HasExistVpnClient() bool`
 
 HasExistVpnClient returns a boolean if a field has been set.
+
+### GetFeatureDescription
+
+`func (o *StaticRoutingInfo) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *StaticRoutingInfo) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *StaticRoutingInfo) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *StaticRoutingInfo) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetId
 

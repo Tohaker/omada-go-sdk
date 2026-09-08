@@ -23,6 +23,10 @@ var _ MappedNullable = &OspfProcessOpenApiVO{}
 type OspfProcessOpenApiVO struct {
 	//  Up to 16 entries are allowed for the areaList.
 	AreaList []OspfProcessAreaOpenApiVO `json:"areaList"`
+	// Auto-Cost Reference Bandwidth.
+	AutoCost *int32 `json:"autoCost,omitempty"`
+	// enable Auto-Cost Reference Bandwidth.
+	AutoCostEnable *bool `json:"autoCostEnable,omitempty"`
 	// Direct connection routing protocol switch
 	ConnectedEnable bool `json:"connectedEnable"`
 	// Set the metric value to be used as the metric of redistributed routes. It should be within the range of 1-16777214 and the default is equal to Default Metric configured on Basic page.
@@ -101,6 +105,70 @@ func (o *OspfProcessOpenApiVO) GetAreaListOk() ([]OspfProcessAreaOpenApiVO, bool
 // SetAreaList sets field value
 func (o *OspfProcessOpenApiVO) SetAreaList(v []OspfProcessAreaOpenApiVO) {
 	o.AreaList = v
+}
+
+// GetAutoCost returns the AutoCost field value if set, zero value otherwise.
+func (o *OspfProcessOpenApiVO) GetAutoCost() int32 {
+	if o == nil || IsNil(o.AutoCost) {
+		var ret int32
+		return ret
+	}
+	return *o.AutoCost
+}
+
+// GetAutoCostOk returns a tuple with the AutoCost field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfProcessOpenApiVO) GetAutoCostOk() (*int32, bool) {
+	if o == nil || IsNil(o.AutoCost) {
+		return nil, false
+	}
+	return o.AutoCost, true
+}
+
+// HasAutoCost returns a boolean if a field has been set.
+func (o *OspfProcessOpenApiVO) HasAutoCost() bool {
+	if o != nil && !IsNil(o.AutoCost) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoCost gets a reference to the given int32 and assigns it to the AutoCost field.
+func (o *OspfProcessOpenApiVO) SetAutoCost(v int32) {
+	o.AutoCost = &v
+}
+
+// GetAutoCostEnable returns the AutoCostEnable field value if set, zero value otherwise.
+func (o *OspfProcessOpenApiVO) GetAutoCostEnable() bool {
+	if o == nil || IsNil(o.AutoCostEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.AutoCostEnable
+}
+
+// GetAutoCostEnableOk returns a tuple with the AutoCostEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfProcessOpenApiVO) GetAutoCostEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.AutoCostEnable) {
+		return nil, false
+	}
+	return o.AutoCostEnable, true
+}
+
+// HasAutoCostEnable returns a boolean if a field has been set.
+func (o *OspfProcessOpenApiVO) HasAutoCostEnable() bool {
+	if o != nil && !IsNil(o.AutoCostEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoCostEnable gets a reference to the given bool and assigns it to the AutoCostEnable field.
+func (o *OspfProcessOpenApiVO) SetAutoCostEnable(v bool) {
+	o.AutoCostEnable = &v
 }
 
 // GetConnectedEnable returns the ConnectedEnable field value
@@ -514,6 +582,12 @@ func (o OspfProcessOpenApiVO) MarshalJSON() ([]byte, error) {
 func (o OspfProcessOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["areaList"] = o.AreaList
+	if !IsNil(o.AutoCost) {
+		toSerialize["autoCost"] = o.AutoCost
+	}
+	if !IsNil(o.AutoCostEnable) {
+		toSerialize["autoCostEnable"] = o.AutoCostEnable
+	}
 	toSerialize["connectedEnable"] = o.ConnectedEnable
 	if !IsNil(o.ConnectedMetric) {
 		toSerialize["connectedMetric"] = o.ConnectedMetric

@@ -23,9 +23,9 @@ var _ MappedNullable = &CreateSiteTemplateEntity{}
 type CreateSiteTemplateEntity struct {
 	// Name of the site template should contain 1 to 64 characters.
 	Name string `json:"name"`
-	// Settings of the site template support. Optional settings are as follows: AIRFPlaning, firewall, wirelessIdsIps(only for pro controller), siteCLI, abnormal(only for pro controller), log, auditLogs, sim, applicationControl, servicesRebootSchedule, servicesPortSchedule
+	// Settings of the site template support. Optional settings are as follows: AIRFPlaning, firewall, wirelessIdsIps, siteCLI, abnormal, sim, log, auditLogs, applicationControl, servicesRebootSchedule, servicesPortSchedule
 	Settings []string `json:"settings,omitempty"`
-	// The type should be a value as follows: 0:basic; 1:pro. This field applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.
+	// This param has been deprecated. Please do not use it.
 	Type *int32 `json:"type,omitempty"`
 }
 

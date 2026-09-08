@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Alert** | Pointer to **bool** | Alert email | [optional] 
+**Alert** | Pointer to **bool** | Whether this user wants to receive alert, event, and incident emails. Make sure your email is not null. | [optional] 
 **AllSite** | **bool** | Whether user has all site permission, including new created site. | 
 **Email** | Pointer to **string** | Email of user | [optional] 
 **EndTime** | Pointer to **int64** | The end time of the user&#39;s validity period. time range: end timestamp (Millisecond). | [optional] 
 **ForceModify** | Pointer to **bool** | Force modify | [optional] 
-**IncidentNotification** | Pointer to **bool** | Incident notification | [optional] 
+**IncidentNotification** | Pointer to **bool** | Incident notification, this field is deprecated, please use alert field instead. | [optional] 
 **Name** | **string** | User name should contain 1 to 128 characters and start with letters, numbers, and underscores. When creating cloud user, you should set TP-LINK ID. | 
 **Password** | Pointer to **string** | Password of local user should contain 8 to 128 characters. And password must be a combination of uppercase letters, lowercase letters, numbers, and special symbols. Symbols such as ! # $ % &amp; * @ ^ are supported. | [optional] 
 **RoleId** | **string** | This field represents Role ID. Role can be created using &#39;Create new role&#39; interface, and Role ID can be obtained from &#39;Get role list&#39; interface. | 
+**SitePrivileges** | Pointer to [**[]CreateSitePrivilegeVO**](CreateSitePrivilegeVO.md) | User site privileges | [optional] 
 **Sites** | Pointer to **[]string** | User site privilege list | [optional] 
 **StartTime** | Pointer to **int64** | The start time of the user&#39;s validity period. time range: start timestamp (Millisecond). | [optional] 
 **TemporaryEnable** | Pointer to **bool** | Whether the user wants to enable the temporary worker permission | [optional] 
@@ -245,6 +246,31 @@ and a boolean to check if the value has been set.
 
 SetRoleId sets RoleId field to given value.
 
+
+### GetSitePrivileges
+
+`func (o *ModifyUserVO) GetSitePrivileges() []CreateSitePrivilegeVO`
+
+GetSitePrivileges returns the SitePrivileges field if non-nil, zero value otherwise.
+
+### GetSitePrivilegesOk
+
+`func (o *ModifyUserVO) GetSitePrivilegesOk() (*[]CreateSitePrivilegeVO, bool)`
+
+GetSitePrivilegesOk returns a tuple with the SitePrivileges field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSitePrivileges
+
+`func (o *ModifyUserVO) SetSitePrivileges(v []CreateSitePrivilegeVO)`
+
+SetSitePrivileges sets SitePrivileges field to given value.
+
+### HasSitePrivileges
+
+`func (o *ModifyUserVO) HasSitePrivileges() bool`
+
+HasSitePrivileges returns a boolean if a field has been set.
 
 ### GetSites
 

@@ -18,12 +18,14 @@ Method | HTTP request | Description
 [**GetClientDetailStatHourly**](ClientAPI.md#getclientdetailstathourly) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/client-stat-detail/{clientMac}/hourly | Get client statistical data details at a hourly interval.
 [**GetClientFilteringOptions**](ClientAPI.md#getclientfilteringoptions) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/search-fields-options | Get client list filtering options
 [**GetClientHistoryDataEnable**](ClientAPI.md#getclienthistorydataenable) | **Get** /openapi/v1/{omadacId}/controller/client/history-enable | Get History data retention config.
+[**GetClientIncidentCounts**](ClientAPI.md#getclientincidentcounts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/incidents | Get site client incident counts
 [**GetClientJourney**](ClientAPI.md#getclientjourney) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-connection | Get client connection histories
 [**GetClientTimeline**](ClientAPI.md#getclienttimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-timeline | Get client timeline events
 [**GetClientTopology**](ClientAPI.md#getclienttopology) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-link-topology | Get client link topology
 [**GetGridActiveClients**](ClientAPI.md#getgridactiveclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients | Get client list
 [**GetGridAllClients**](ClientAPI.md#getgridallclients) | **Post** /openapi/v2/{omadacId}/sites/{siteId}/clients | Get all client list
 [**GetGridClientHistory**](ClientAPI.md#getgridclienthistory) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clients/{clientMac}/client-history |  Get Client history.
+[**GetGridSsidClients**](ClientAPI.md#getgridssidclients) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/clientList/{ssidId} | Get clients list of ssid.
 [**GetVigiDetailStat5Min**](ClientAPI.md#getvigidetailstat5min) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/5Min | Get VIGI device statistical data details at a 5-minute interval.
 [**GetVigiDetailStatDaily**](ClientAPI.md#getvigidetailstatdaily) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/daily | Get VIGI device statistical data details at a daily interval.
 [**GetVigiDetailStatHourly**](ClientAPI.md#getvigidetailstathourly) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/vigi-stat-detail/{vigiMac}/hourly | Get VIGI device statistical data details at a hourly interval.
@@ -1091,6 +1093,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetClientIncidentCounts
+
+> OperationResponseClientIncidentCountResultOpenApiVO GetClientIncidentCounts(ctx, omadacId, siteId).ClientIncidentCountRequestOpenApiVO(clientIncidentCountRequestOpenApiVO).Execute()
+
+Get site client incident counts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	clientIncidentCountRequestOpenApiVO := *openapiclient.NewClientIncidentCountRequestOpenApiVO([]string{"ClientList_example"}) // ClientIncidentCountRequestOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClientAPI.GetClientIncidentCounts(context.Background(), omadacId, siteId).ClientIncidentCountRequestOpenApiVO(clientIncidentCountRequestOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetClientIncidentCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetClientIncidentCounts`: OperationResponseClientIncidentCountResultOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetClientIncidentCounts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetClientIncidentCountsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **clientIncidentCountRequestOpenApiVO** | [**ClientIncidentCountRequestOpenApiVO**](ClientIncidentCountRequestOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseClientIncidentCountResultOpenApiVO**](OperationResponseClientIncidentCountResultOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetClientJourney
 
 > OperationResponseClientConnectionHistories GetClientJourney(ctx, omadacId, siteId, clientMac).Start(start).End(end).Execute()
@@ -1588,6 +1665,84 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseGridVOClientHistoryVO**](OperationResponseGridVOClientHistoryVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridSsidClients
+
+> OperationResponseClientGridVOSsidClientVO GetGridSsidClients(ctx, omadacId, siteId, ssidId).QueryDataVO(queryDataVO).Execute()
+
+Get clients list of ssid.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	ssidId := "ssidId_example" // string | 
+	queryDataVO := *openapiclient.NewOpenApiQueryDataV2VO(int32(123), int32(123)) // OpenApiQueryDataV2VO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ClientAPI.GetGridSsidClients(context.Background(), omadacId, siteId, ssidId).QueryDataVO(queryDataVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ClientAPI.GetGridSsidClients``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridSsidClients`: OperationResponseClientGridVOSsidClientVO
+	fmt.Fprintf(os.Stdout, "Response from `ClientAPI.GetGridSsidClients`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**ssidId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridSsidClientsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **queryDataVO** | [**OpenApiQueryDataV2VO**](OpenApiQueryDataV2VO.md) |  | 
+
+### Return type
+
+[**OperationResponseClientGridVOSsidClientVO**](OperationResponseClientGridVOSsidClientVO.md)
 
 ### Authorization
 

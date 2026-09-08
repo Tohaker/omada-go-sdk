@@ -5,12 +5,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChannelInterf** | Pointer to **int32** | Channel interference rate | [optional] 
+**ChannelInterf2g** | Pointer to **int32** | Channel interference rate | [optional] 
+**ChannelInterf5g** | Pointer to **int32** | Channel interference rate | [optional] 
+**ChannelInterf6g** | Pointer to **int32** | Channel interference rate | [optional] 
 **DeviceName** | Pointer to **string** | Device name | [optional] 
 **DeviceType** | Pointer to **string** | Device type | [optional] 
 **Ip** | Pointer to **string** | ip | [optional] 
 **Mac** | Pointer to **string** | Mac address | [optional] 
 **Model** | Pointer to **string** | Device model name with version | [optional] 
 **ModelVersion** | Pointer to **string** | Model version of device, for example:3.0 | [optional] 
+**NoiseFloor2g** | Pointer to **int32** | Noise floor of 2.4g | [optional] 
+**NoiseFloor5g** | Pointer to **int32** | Noise floor of 5g | [optional] 
+**NoiseFloor6g** | Pointer to **int32** | Noise floor of 6g | [optional] 
 
 ## Methods
 
@@ -55,6 +61,81 @@ SetChannelInterf sets ChannelInterf field to given value.
 `func (o *ChannelInterInfoVO) HasChannelInterf() bool`
 
 HasChannelInterf returns a boolean if a field has been set.
+
+### GetChannelInterf2g
+
+`func (o *ChannelInterInfoVO) GetChannelInterf2g() int32`
+
+GetChannelInterf2g returns the ChannelInterf2g field if non-nil, zero value otherwise.
+
+### GetChannelInterf2gOk
+
+`func (o *ChannelInterInfoVO) GetChannelInterf2gOk() (*int32, bool)`
+
+GetChannelInterf2gOk returns a tuple with the ChannelInterf2g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannelInterf2g
+
+`func (o *ChannelInterInfoVO) SetChannelInterf2g(v int32)`
+
+SetChannelInterf2g sets ChannelInterf2g field to given value.
+
+### HasChannelInterf2g
+
+`func (o *ChannelInterInfoVO) HasChannelInterf2g() bool`
+
+HasChannelInterf2g returns a boolean if a field has been set.
+
+### GetChannelInterf5g
+
+`func (o *ChannelInterInfoVO) GetChannelInterf5g() int32`
+
+GetChannelInterf5g returns the ChannelInterf5g field if non-nil, zero value otherwise.
+
+### GetChannelInterf5gOk
+
+`func (o *ChannelInterInfoVO) GetChannelInterf5gOk() (*int32, bool)`
+
+GetChannelInterf5gOk returns a tuple with the ChannelInterf5g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannelInterf5g
+
+`func (o *ChannelInterInfoVO) SetChannelInterf5g(v int32)`
+
+SetChannelInterf5g sets ChannelInterf5g field to given value.
+
+### HasChannelInterf5g
+
+`func (o *ChannelInterInfoVO) HasChannelInterf5g() bool`
+
+HasChannelInterf5g returns a boolean if a field has been set.
+
+### GetChannelInterf6g
+
+`func (o *ChannelInterInfoVO) GetChannelInterf6g() int32`
+
+GetChannelInterf6g returns the ChannelInterf6g field if non-nil, zero value otherwise.
+
+### GetChannelInterf6gOk
+
+`func (o *ChannelInterInfoVO) GetChannelInterf6gOk() (*int32, bool)`
+
+GetChannelInterf6gOk returns a tuple with the ChannelInterf6g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannelInterf6g
+
+`func (o *ChannelInterInfoVO) SetChannelInterf6g(v int32)`
+
+SetChannelInterf6g sets ChannelInterf6g field to given value.
+
+### HasChannelInterf6g
+
+`func (o *ChannelInterInfoVO) HasChannelInterf6g() bool`
+
+HasChannelInterf6g returns a boolean if a field has been set.
 
 ### GetDeviceName
 
@@ -205,6 +286,81 @@ SetModelVersion sets ModelVersion field to given value.
 `func (o *ChannelInterInfoVO) HasModelVersion() bool`
 
 HasModelVersion returns a boolean if a field has been set.
+
+### GetNoiseFloor2g
+
+`func (o *ChannelInterInfoVO) GetNoiseFloor2g() int32`
+
+GetNoiseFloor2g returns the NoiseFloor2g field if non-nil, zero value otherwise.
+
+### GetNoiseFloor2gOk
+
+`func (o *ChannelInterInfoVO) GetNoiseFloor2gOk() (*int32, bool)`
+
+GetNoiseFloor2gOk returns a tuple with the NoiseFloor2g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNoiseFloor2g
+
+`func (o *ChannelInterInfoVO) SetNoiseFloor2g(v int32)`
+
+SetNoiseFloor2g sets NoiseFloor2g field to given value.
+
+### HasNoiseFloor2g
+
+`func (o *ChannelInterInfoVO) HasNoiseFloor2g() bool`
+
+HasNoiseFloor2g returns a boolean if a field has been set.
+
+### GetNoiseFloor5g
+
+`func (o *ChannelInterInfoVO) GetNoiseFloor5g() int32`
+
+GetNoiseFloor5g returns the NoiseFloor5g field if non-nil, zero value otherwise.
+
+### GetNoiseFloor5gOk
+
+`func (o *ChannelInterInfoVO) GetNoiseFloor5gOk() (*int32, bool)`
+
+GetNoiseFloor5gOk returns a tuple with the NoiseFloor5g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNoiseFloor5g
+
+`func (o *ChannelInterInfoVO) SetNoiseFloor5g(v int32)`
+
+SetNoiseFloor5g sets NoiseFloor5g field to given value.
+
+### HasNoiseFloor5g
+
+`func (o *ChannelInterInfoVO) HasNoiseFloor5g() bool`
+
+HasNoiseFloor5g returns a boolean if a field has been set.
+
+### GetNoiseFloor6g
+
+`func (o *ChannelInterInfoVO) GetNoiseFloor6g() int32`
+
+GetNoiseFloor6g returns the NoiseFloor6g field if non-nil, zero value otherwise.
+
+### GetNoiseFloor6gOk
+
+`func (o *ChannelInterInfoVO) GetNoiseFloor6gOk() (*int32, bool)`
+
+GetNoiseFloor6gOk returns a tuple with the NoiseFloor6g field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNoiseFloor6g
+
+`func (o *ChannelInterInfoVO) SetNoiseFloor6g(v int32)`
+
+SetNoiseFloor6g sets NoiseFloor6g field to given value.
+
+### HasNoiseFloor6g
+
+`func (o *ChannelInterInfoVO) HasNoiseFloor6g() bool`
+
+HasNoiseFloor6g returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

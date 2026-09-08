@@ -22,6 +22,8 @@ type VlanNetworkAffectingOsgDetailVO struct {
 	// Affected gateway port list.
 	AffectedPorts []int32 `json:"affectedPorts,omitempty"`
 	GatewayDetail *OsgDetailVO `json:"gatewayDetail,omitempty"`
+	// Ports using this VLAN as the Native Network.
+	NativeVlanPorts []int32 `json:"nativeVlanPorts,omitempty"`
 }
 
 // NewVlanNetworkAffectingOsgDetailVO instantiates a new VlanNetworkAffectingOsgDetailVO object
@@ -105,6 +107,38 @@ func (o *VlanNetworkAffectingOsgDetailVO) SetGatewayDetail(v OsgDetailVO) {
 	o.GatewayDetail = &v
 }
 
+// GetNativeVlanPorts returns the NativeVlanPorts field value if set, zero value otherwise.
+func (o *VlanNetworkAffectingOsgDetailVO) GetNativeVlanPorts() []int32 {
+	if o == nil || IsNil(o.NativeVlanPorts) {
+		var ret []int32
+		return ret
+	}
+	return o.NativeVlanPorts
+}
+
+// GetNativeVlanPortsOk returns a tuple with the NativeVlanPorts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VlanNetworkAffectingOsgDetailVO) GetNativeVlanPortsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.NativeVlanPorts) {
+		return nil, false
+	}
+	return o.NativeVlanPorts, true
+}
+
+// HasNativeVlanPorts returns a boolean if a field has been set.
+func (o *VlanNetworkAffectingOsgDetailVO) HasNativeVlanPorts() bool {
+	if o != nil && !IsNil(o.NativeVlanPorts) {
+		return true
+	}
+
+	return false
+}
+
+// SetNativeVlanPorts gets a reference to the given []int32 and assigns it to the NativeVlanPorts field.
+func (o *VlanNetworkAffectingOsgDetailVO) SetNativeVlanPorts(v []int32) {
+	o.NativeVlanPorts = v
+}
+
 func (o VlanNetworkAffectingOsgDetailVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -120,6 +154,9 @@ func (o VlanNetworkAffectingOsgDetailVO) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.GatewayDetail) {
 		toSerialize["gatewayDetail"] = o.GatewayDetail
+	}
+	if !IsNil(o.NativeVlanPorts) {
+		toSerialize["nativeVlanPorts"] = o.NativeVlanPorts
 	}
 	return toSerialize, nil
 }

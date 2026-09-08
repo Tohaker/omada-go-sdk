@@ -17,7 +17,7 @@ import (
 // checks if the ChannelSubHealthInfoDetailVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ChannelSubHealthInfoDetailVO{}
 
-// ChannelSubHealthInfoDetailVO Channel utilization rate health info and score of supported channel, exists only when the device is a wireless router
+// ChannelSubHealthInfoDetailVO Rssi health info and score
 type ChannelSubHealthInfoDetailVO struct {
 	// Average value of 2g channel
 	AverageNum2g *int32 `json:"averageNum2g,omitempty"`
@@ -25,6 +25,8 @@ type ChannelSubHealthInfoDetailVO struct {
 	AverageNum5g *int32 `json:"averageNum5g,omitempty"`
 	// Average value of 6g channel
 	AverageNum6g *int32 `json:"averageNum6g,omitempty"`
+	// Incident information for this health dimension, null if no incidents
+	Incidents []AnomalyBriefCountVO `json:"incidents,omitempty"`
 	// List of 2g channel value
 	PastNums2g []TimeValueItemVO `json:"pastNums2g,omitempty"`
 	// List of 5g channel value
@@ -148,6 +150,38 @@ func (o *ChannelSubHealthInfoDetailVO) HasAverageNum6g() bool {
 // SetAverageNum6g gets a reference to the given int32 and assigns it to the AverageNum6g field.
 func (o *ChannelSubHealthInfoDetailVO) SetAverageNum6g(v int32) {
 	o.AverageNum6g = &v
+}
+
+// GetIncidents returns the Incidents field value if set, zero value otherwise.
+func (o *ChannelSubHealthInfoDetailVO) GetIncidents() []AnomalyBriefCountVO {
+	if o == nil || IsNil(o.Incidents) {
+		var ret []AnomalyBriefCountVO
+		return ret
+	}
+	return o.Incidents
+}
+
+// GetIncidentsOk returns a tuple with the Incidents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelSubHealthInfoDetailVO) GetIncidentsOk() ([]AnomalyBriefCountVO, bool) {
+	if o == nil || IsNil(o.Incidents) {
+		return nil, false
+	}
+	return o.Incidents, true
+}
+
+// HasIncidents returns a boolean if a field has been set.
+func (o *ChannelSubHealthInfoDetailVO) HasIncidents() bool {
+	if o != nil && !IsNil(o.Incidents) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidents gets a reference to the given []AnomalyBriefCountVO and assigns it to the Incidents field.
+func (o *ChannelSubHealthInfoDetailVO) SetIncidents(v []AnomalyBriefCountVO) {
+	o.Incidents = v
 }
 
 // GetPastNums2g returns the PastNums2g field value if set, zero value otherwise.
@@ -328,6 +362,9 @@ func (o ChannelSubHealthInfoDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AverageNum6g) {
 		toSerialize["averageNum6g"] = o.AverageNum6g
+	}
+	if !IsNil(o.Incidents) {
+		toSerialize["incidents"] = o.Incidents
 	}
 	if !IsNil(o.PastNums2g) {
 		toSerialize["pastNums2g"] = o.PastNums2g

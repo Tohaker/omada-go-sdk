@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name of the site template should contain 1 to 64 characters. | 
-**Settings** | Pointer to **[]string** | Settings of the site template support. Optional settings are as follows: AIRFPlaning, firewall, wirelessIdsIps(only for pro controller), siteCLI, abnormal(only for pro controller), log, auditLogs, sim, applicationControl, servicesRebootSchedule, servicesPortSchedule | [optional] 
-**Type** | Pointer to **int32** | The type should be a value as follows: 0:basic; 1:pro. This field applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers. | [optional] 
+**Settings** | Pointer to **[]string** | Settings of the site template support. Optional settings are as follows: AIRFPlaning, firewall, wirelessIdsIps, siteCLI, abnormal, sim, log, auditLogs, applicationControl, servicesRebootSchedule, servicesPortSchedule | [optional] 
+**Type** | Pointer to **int32** | This param has been deprecated. Please do not use it. | [optional] 
 
 ## Methods
 

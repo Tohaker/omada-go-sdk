@@ -19,7 +19,7 @@ import (
 // checks if the IpSettingVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &IpSettingVO{}
 
-// IpSettingVO struct for IpSettingVO
+// IpSettingVO Ip Setting
 type IpSettingVO struct {
 	// Alternate DNS, only for \"static\" mode
 	AlternateDNS *string `json:"alternateDNS,omitempty"`
