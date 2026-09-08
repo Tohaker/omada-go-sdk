@@ -23,6 +23,8 @@ type TransmissionSubHealthInfoDetailVO struct {
 	AverageNumTxDrop *int32 `json:"averageNumTxDrop,omitempty"`
 	// Average value of tx retry
 	AverageNumTxRetry *int32 `json:"averageNumTxRetry,omitempty"`
+	// Incident information for this health dimension, null if no incidents
+	Incidents []AnomalyBriefCountVO `json:"incidents,omitempty"`
 	// List of tx drop
 	PastNumsTxDrop []TimeValueItemVO `json:"pastNumsTxDrop,omitempty"`
 	// List of tx retry
@@ -112,6 +114,38 @@ func (o *TransmissionSubHealthInfoDetailVO) HasAverageNumTxRetry() bool {
 // SetAverageNumTxRetry gets a reference to the given int32 and assigns it to the AverageNumTxRetry field.
 func (o *TransmissionSubHealthInfoDetailVO) SetAverageNumTxRetry(v int32) {
 	o.AverageNumTxRetry = &v
+}
+
+// GetIncidents returns the Incidents field value if set, zero value otherwise.
+func (o *TransmissionSubHealthInfoDetailVO) GetIncidents() []AnomalyBriefCountVO {
+	if o == nil || IsNil(o.Incidents) {
+		var ret []AnomalyBriefCountVO
+		return ret
+	}
+	return o.Incidents
+}
+
+// GetIncidentsOk returns a tuple with the Incidents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TransmissionSubHealthInfoDetailVO) GetIncidentsOk() ([]AnomalyBriefCountVO, bool) {
+	if o == nil || IsNil(o.Incidents) {
+		return nil, false
+	}
+	return o.Incidents, true
+}
+
+// HasIncidents returns a boolean if a field has been set.
+func (o *TransmissionSubHealthInfoDetailVO) HasIncidents() bool {
+	if o != nil && !IsNil(o.Incidents) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidents gets a reference to the given []AnomalyBriefCountVO and assigns it to the Incidents field.
+func (o *TransmissionSubHealthInfoDetailVO) SetIncidents(v []AnomalyBriefCountVO) {
+	o.Incidents = v
 }
 
 // GetPastNumsTxDrop returns the PastNumsTxDrop field value if set, zero value otherwise.
@@ -257,6 +291,9 @@ func (o TransmissionSubHealthInfoDetailVO) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.AverageNumTxRetry) {
 		toSerialize["averageNumTxRetry"] = o.AverageNumTxRetry
+	}
+	if !IsNil(o.Incidents) {
+		toSerialize["incidents"] = o.Incidents
 	}
 	if !IsNil(o.PastNumsTxDrop) {
 		toSerialize["pastNumsTxDrop"] = o.PastNumsTxDrop

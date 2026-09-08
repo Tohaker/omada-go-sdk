@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 **AllMirroredStPorts** | Pointer to [**[]OswStandPortVO**](OswStandPortVO.md) | All mirrored ports of the current Stack | [optional] 
 **AllMirroringPorts** | Pointer to **[]int32** | All ports in the mirroring state on the Switch | [optional] 
 **AllMirroringStPorts** | Pointer to [**[]OswStandPortVO**](OswStandPortVO.md) | All mirroring ports of the current Stack | [optional] 
-**AllMlagDadPorts** | Pointer to **[]int32** |  | [optional] 
-**AllMlagPeerLinkPorts** | Pointer to **[]int32** |  | [optional] 
+**AllMlagDadPorts** | Pointer to **[]int32** | All ports configured with M-LAG DAD on the Switch | [optional] 
+**AllMlagPeerLinkPorts** | Pointer to **[]int32** | All ports configured with M-LAG PeerLink on the Switch | [optional] 
 **BandCtrl** | Pointer to [**OswBandCtrlVO**](OswBandCtrlVO.md) |  | [optional] 
 **BandWidthCtrlType** | Pointer to **int32** | BandWidth Control should be a value as follows: 0: Off; 1: Rate Limit; 2: Storming Control | [optional] 
-**ConfigMlagDad** | Pointer to **bool** |  | [optional] 
-**ConfigMlagPeerLink** | Pointer to **bool** |  | [optional] 
+**ConfigMlagDad** | Pointer to **bool** | Indicates whether the port is configured with M-LAG DAD Link | [optional] 
+**ConfigMlagPeerLink** | Pointer to **bool** | Indicates whether the port is configured with M-LAG Peer Link | [optional] 
 **ConfigStack** | Pointer to **bool** | Indicates whether the current port is configured as a stack port (joined a stack aggregation group) | [optional] 
 **DhcpL2RelaySettings** | Pointer to [**OswPortDhcpL2RelayVO**](OswPortDhcpL2RelayVO.md) |  | [optional] 
 **Disable** | Pointer to **bool** | Indicates whether to disable the port | [optional] 
@@ -28,16 +28,17 @@ Name | Type | Description | Notes
 **EsEnableAllProfileCanAdd** | Pointer to **bool** | Indicates whether es enable of all profile can continue to add VLANs | [optional] 
 **EsQosSupport** | Pointer to **bool** | Indicates whether the ES device port supports modification of QoS configuration | [optional] 
 **ExtendModeEnable** | Pointer to **bool** | Indicates whether extendMode is enabled | [optional] 
-**ExtendModeSupport** | Pointer to **bool** |  | [optional] 
+**ExtendModeSupport** | Pointer to **bool** | Indicates whether extend mode is supported | [optional] 
 **FastLeaveEnable** | Pointer to **bool** | Indicates whether igmpSnooping fastLeave is enabled | [optional] 
-**FecCap** | Pointer to [**[]OswFecCapVO**](OswFecCapVO.md) |  | [optional] 
-**FecLinkPeerApplyEnable** | Pointer to **bool** |  | [optional] 
-**FecMode** | Pointer to **int32** |  | [optional] 
-**FecSupport** | Pointer to **bool** |  | [optional] 
+**FecCap** | Pointer to [**[]OswFecCapVO**](OswFecCapVO.md) | All LinkSpeed&amp;FECMode combinations supported by the port | [optional] 
+**FecLinkPeerApplyEnable** | Pointer to **bool** | Indicates whether the same FEC mode is applied to the link peer | [optional] 
+**FecMode** | Pointer to **int32** | FEC Mode, sourced from FecModeEnum. 0 - Reserved; 1 - FEC-OFF (Off); 2 - FEC-RS528; 3 - FEC-RS544; 4 - FEC-AUTO; 5 - FEC-BASER | [optional] 
+**FecSupport** | Pointer to **bool** | Indicates whether the port supports FEC configuration | [optional] 
 **FlowControlEnable** | Pointer to **bool** | Indicates whether flow control is enabled | [optional] 
 **Id** | Pointer to **string** | ID | [optional] 
-**IgmpFastLeaveEnable** | Pointer to **bool** |  | [optional] 
+**IgmpFastLeaveEnable** | Pointer to **bool** | Indicates whether IGMP fast leave is enabled | [optional] 
 **IgmpSnoopingEnable** | Pointer to **bool** | Indicates whether IGMP Snooping is enabled | [optional] 
+**IsCopper** | Pointer to **bool** | Whether the port is copper when the port is combo. | [optional] 
 **LagSetting** | Pointer to [**OswLagVO**](OswLagVO.md) |  | [optional] 
 **LagStatus** | Pointer to [**OswLagStatusVO**](OswLagStatusVO.md) |  | [optional] 
 **LinkSpeed** | Pointer to **int32** | Link Speed should be a value as follows: 0: auto; 1: 10M; 2: 100M; 3: 1000M; 4: 10G | [optional] 
@@ -50,7 +51,7 @@ Name | Type | Description | Notes
 **MirroredLags** | Pointer to [**[]MirroredLag**](MirroredLag.md) | Monitored LAG | [optional] 
 **MirroredPorts** | Pointer to [**[]MirroredPort**](MirroredPort.md) | Monitored Port | [optional] 
 **MlagPeerAllPortsConfigInfo** | Pointer to [**OswMlagPeerAllPortsConfigInfoVO**](OswMlagPeerAllPortsConfigInfoVO.md) |  | [optional] 
-**MldFastLeaveEnable** | Pointer to **bool** |  | [optional] 
+**MldFastLeaveEnable** | Pointer to **bool** | Indicates whether MLD fast leave is enabled | [optional] 
 **Name** | Pointer to **string** | Port Name | [optional] 
 **NativeBridgeVlan** | Pointer to **int32** | Native Network Bridge Vlan. | [optional] 
 **NativeNetworkId** | Pointer to **string** | Native Network ID, Native Network cannot be selected from Tagged Networks or Untagged Networks. | [optional] 
@@ -58,6 +59,7 @@ Name | Type | Description | Notes
 **NetworkMode** | Pointer to **int32** | Network Mode should be a value as follows: 0: Trunk, 1: Access | [optional] 
 **NetworkTagsSetting** | Pointer to **int32** | Network Tags Setting should be a value as follows: 0: Allow All; 1: Block All; 2: Custom | [optional] 
 **Operation** | Pointer to **string** | Operation should be a value as follows: SWITCHING; MIRRORING; AGGREGATING | [optional] 
+**OuiBasedVlanNetworks** | Pointer to [**OswPortOuiBasedVlanVO**](OswPortOuiBasedVlanVO.md) |  | [optional] 
 **Poe** | Pointer to **int32** | PoE switch should be a value as follows: 0: Off; 1: 802.3at/af | [optional] 
 **PoeDisplayType** | Pointer to **int32** | PoeDisplayType should be a value as follows: -1: Not Support POE; 0: Support POE; 1: POE(4W); 2: POE(7W); 3: POE(15.4W); 4: POE+(30W); 5: POE++(45W); 6: POE++(60W); 7: POE++(75W); 8: POE++(90W); 9: POE++(100W). | [optional] 
 **Port** | Pointer to **int32** | Port | [optional] 
@@ -76,7 +78,7 @@ Name | Type | Description | Notes
 **Resource** | Pointer to **int32** | Data Source. Resource should be a value as follows: 0: new created; 1: from template; 2: override | [optional] 
 **SpanningTreeEnable** | Pointer to **bool** | Indicates whether SpanningTree is enabled | [optional] 
 **SpanningTreeSetting** | Pointer to [**SpanningTreeSettingVO**](SpanningTreeSettingVO.md) |  | [optional] 
-**Speed** | Pointer to **int32** |  | [optional] 
+**Speed** | Pointer to **int32** | Port Speed should be a value as follows: 1: 10Mbps; 2: 100Mbps; 3: 1000Mbps; 4: 10Gbps | [optional] 
 **StackPortsGroupIndex** | Pointer to **int32** | Number of the stacking port aggregation group to join | [optional] 
 **StandardPort** | Pointer to [**OswStandPortVO**](OswStandPortVO.md) |  | [optional] 
 **StormCtrl** | Pointer to [**OswStormCtrlVO**](OswStormCtrlVO.md) |  | [optional] 
@@ -93,6 +95,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **int32** | Type should be a value as follows: 1: Copper; 2: Combo; 3: SFP | [optional] 
 **UntagBridgeVlanMap** | Pointer to **map[string][]int32** | Untag Network Bridge Vlan Map | [optional] 
 **UntagNetworkIds** | Pointer to **[]string** | Untag Network IDs | [optional] 
+**UsedFunctions** | Pointer to **[]string** | List of functions that use this port | [optional] 
 **VoiceBridgeVlan** | Pointer to **int32** | Voice Network Bridge Vlan | [optional] 
 **VoiceDscp** | Pointer to **int32** | Voice DSCP | [optional] 
 **VoiceDscpEnable** | Pointer to **bool** | Voice DSCP enable status | [optional] 
@@ -968,6 +971,31 @@ SetIgmpSnoopingEnable sets IgmpSnoopingEnable field to given value.
 
 HasIgmpSnoopingEnable returns a boolean if a field has been set.
 
+### GetIsCopper
+
+`func (o *OswPortVO) GetIsCopper() bool`
+
+GetIsCopper returns the IsCopper field if non-nil, zero value otherwise.
+
+### GetIsCopperOk
+
+`func (o *OswPortVO) GetIsCopperOk() (*bool, bool)`
+
+GetIsCopperOk returns a tuple with the IsCopper field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCopper
+
+`func (o *OswPortVO) SetIsCopper(v bool)`
+
+SetIsCopper sets IsCopper field to given value.
+
+### HasIsCopper
+
+`func (o *OswPortVO) HasIsCopper() bool`
+
+HasIsCopper returns a boolean if a field has been set.
+
 ### GetLagSetting
 
 `func (o *OswPortVO) GetLagSetting() OswLagVO`
@@ -1467,6 +1495,31 @@ SetOperation sets Operation field to given value.
 `func (o *OswPortVO) HasOperation() bool`
 
 HasOperation returns a boolean if a field has been set.
+
+### GetOuiBasedVlanNetworks
+
+`func (o *OswPortVO) GetOuiBasedVlanNetworks() OswPortOuiBasedVlanVO`
+
+GetOuiBasedVlanNetworks returns the OuiBasedVlanNetworks field if non-nil, zero value otherwise.
+
+### GetOuiBasedVlanNetworksOk
+
+`func (o *OswPortVO) GetOuiBasedVlanNetworksOk() (*OswPortOuiBasedVlanVO, bool)`
+
+GetOuiBasedVlanNetworksOk returns a tuple with the OuiBasedVlanNetworks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOuiBasedVlanNetworks
+
+`func (o *OswPortVO) SetOuiBasedVlanNetworks(v OswPortOuiBasedVlanVO)`
+
+SetOuiBasedVlanNetworks sets OuiBasedVlanNetworks field to given value.
+
+### HasOuiBasedVlanNetworks
+
+`func (o *OswPortVO) HasOuiBasedVlanNetworks() bool`
+
+HasOuiBasedVlanNetworks returns a boolean if a field has been set.
 
 ### GetPoe
 
@@ -2342,6 +2395,31 @@ SetUntagNetworkIds sets UntagNetworkIds field to given value.
 `func (o *OswPortVO) HasUntagNetworkIds() bool`
 
 HasUntagNetworkIds returns a boolean if a field has been set.
+
+### GetUsedFunctions
+
+`func (o *OswPortVO) GetUsedFunctions() []string`
+
+GetUsedFunctions returns the UsedFunctions field if non-nil, zero value otherwise.
+
+### GetUsedFunctionsOk
+
+`func (o *OswPortVO) GetUsedFunctionsOk() (*[]string, bool)`
+
+GetUsedFunctionsOk returns a tuple with the UsedFunctions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsedFunctions
+
+`func (o *OswPortVO) SetUsedFunctions(v []string)`
+
+SetUsedFunctions sets UsedFunctions field to given value.
+
+### HasUsedFunctions
+
+`func (o *OswPortVO) HasUsedFunctions() bool`
+
+HasUsedFunctions returns a boolean if a field has been set.
 
 ### GetVoiceBridgeVlan
 

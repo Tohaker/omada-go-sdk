@@ -21,6 +21,7 @@ var _ MappedNullable = &DeviceHealthVO{}
 type DeviceHealthVO struct {
 	// Number of devices with good health status
 	Good *int32 `json:"good,omitempty"`
+	IncidentDetail *IncidentVO `json:"incidentDetail,omitempty"`
 	// Number of devices with no health data
 	NoData *int32 `json:"noData,omitempty"`
 	// Number of devices with poor health status
@@ -78,6 +79,38 @@ func (o *DeviceHealthVO) HasGood() bool {
 // SetGood gets a reference to the given int32 and assigns it to the Good field.
 func (o *DeviceHealthVO) SetGood(v int32) {
 	o.Good = &v
+}
+
+// GetIncidentDetail returns the IncidentDetail field value if set, zero value otherwise.
+func (o *DeviceHealthVO) GetIncidentDetail() IncidentVO {
+	if o == nil || IsNil(o.IncidentDetail) {
+		var ret IncidentVO
+		return ret
+	}
+	return *o.IncidentDetail
+}
+
+// GetIncidentDetailOk returns a tuple with the IncidentDetail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceHealthVO) GetIncidentDetailOk() (*IncidentVO, bool) {
+	if o == nil || IsNil(o.IncidentDetail) {
+		return nil, false
+	}
+	return o.IncidentDetail, true
+}
+
+// HasIncidentDetail returns a boolean if a field has been set.
+func (o *DeviceHealthVO) HasIncidentDetail() bool {
+	if o != nil && !IsNil(o.IncidentDetail) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncidentDetail gets a reference to the given IncidentVO and assigns it to the IncidentDetail field.
+func (o *DeviceHealthVO) SetIncidentDetail(v IncidentVO) {
+	o.IncidentDetail = &v
 }
 
 // GetNoData returns the NoData field value if set, zero value otherwise.
@@ -220,6 +253,9 @@ func (o DeviceHealthVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Good) {
 		toSerialize["good"] = o.Good
+	}
+	if !IsNil(o.IncidentDetail) {
+		toSerialize["incidentDetail"] = o.IncidentDetail
 	}
 	if !IsNil(o.NoData) {
 		toSerialize["noData"] = o.NoData

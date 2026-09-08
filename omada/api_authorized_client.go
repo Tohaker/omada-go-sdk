@@ -97,7 +97,7 @@ type AuthorizedClientAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param id id
+	@param id Local user ID
 	@return AuthorizedClientAPIDisconnectHotspotAuthedClientRequest
 	*/
 	DisconnectHotspotAuthedClient(ctx context.Context, omadacId string, siteId string, id string) AuthorizedClientAPIDisconnectHotspotAuthedClientRequest
@@ -113,7 +113,7 @@ type AuthorizedClientAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param siteId siteId
+	@param siteId Site ID
 	@return AuthorizedClientAPIExportAuthedClientListGlobalByCloudAccessRequest
 	*/
 	ExportAuthedClientListGlobalByCloudAccess(ctx context.Context, omadacId string, siteId string) AuthorizedClientAPIExportAuthedClientListGlobalByCloudAccessRequest
@@ -702,7 +702,7 @@ Disconnect the authentication record with the given omadacId, siteId, authClient
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param id id
+ @param id Local user ID
  @return AuthorizedClientAPIDisconnectHotspotAuthedClientRequest
 */
 func (a *AuthorizedClientAPIService) DisconnectHotspotAuthedClient(ctx context.Context, omadacId string, siteId string, id string) AuthorizedClientAPIDisconnectHotspotAuthedClientRequest {
@@ -831,7 +831,7 @@ Export global authed client list with the given omadacId, siteId.<br/><br/>The i
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param siteId siteId
+ @param siteId Site ID
  @return AuthorizedClientAPIExportAuthedClientListGlobalByCloudAccessRequest
 */
 func (a *AuthorizedClientAPIService) ExportAuthedClientListGlobalByCloudAccess(ctx context.Context, omadacId string, siteId string) AuthorizedClientAPIExportAuthedClientListGlobalByCloudAccessRequest {

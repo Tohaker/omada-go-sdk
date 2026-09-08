@@ -7,10 +7,12 @@ Name | Type | Description | Notes
 **Ipv4Proto** | Pointer to **string** | Virtual WAN IPv4 proto. | [optional] 
 **MaxBandwidth** | Pointer to **int64** | Port max bandwidth. | [optional] 
 **Name** | Pointer to **string** | Virtual WAN name. | [optional] 
+**OnlineDetection** | Pointer to **int32** | Port Online Detection. | [optional] 
 **PhysicalWanId** | Pointer to **string** | Physical WAN ID. | [optional] 
 **Type** | Pointer to **int32** | Physical WAN port type, 0: WAN; 1:WAN/LAN; 2:LAN; 3:SFP WAN; 4:USB LTE WAN; 5: LTE WAN; 6:DSL WAN; | [optional] 
 **VirtualEntryId** | Pointer to **int32** | Virtual WAN Entry ID. | [optional] 
 **VirtualWanId** | Pointer to **string** | Virtual WAN ID. | [optional] 
+**Weight** | Pointer to **int32** | Virtual WAN weight. | [optional] 
 
 ## Methods
 
@@ -105,6 +107,31 @@ SetName sets Name field to given value.
 `func (o *VirtualWanAvailableOpenApiVO) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetOnlineDetection
+
+`func (o *VirtualWanAvailableOpenApiVO) GetOnlineDetection() int32`
+
+GetOnlineDetection returns the OnlineDetection field if non-nil, zero value otherwise.
+
+### GetOnlineDetectionOk
+
+`func (o *VirtualWanAvailableOpenApiVO) GetOnlineDetectionOk() (*int32, bool)`
+
+GetOnlineDetectionOk returns a tuple with the OnlineDetection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnlineDetection
+
+`func (o *VirtualWanAvailableOpenApiVO) SetOnlineDetection(v int32)`
+
+SetOnlineDetection sets OnlineDetection field to given value.
+
+### HasOnlineDetection
+
+`func (o *VirtualWanAvailableOpenApiVO) HasOnlineDetection() bool`
+
+HasOnlineDetection returns a boolean if a field has been set.
 
 ### GetPhysicalWanId
 
@@ -205,6 +232,31 @@ SetVirtualWanId sets VirtualWanId field to given value.
 `func (o *VirtualWanAvailableOpenApiVO) HasVirtualWanId() bool`
 
 HasVirtualWanId returns a boolean if a field has been set.
+
+### GetWeight
+
+`func (o *VirtualWanAvailableOpenApiVO) GetWeight() int32`
+
+GetWeight returns the Weight field if non-nil, zero value otherwise.
+
+### GetWeightOk
+
+`func (o *VirtualWanAvailableOpenApiVO) GetWeightOk() (*int32, bool)`
+
+GetWeightOk returns a tuple with the Weight field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWeight
+
+`func (o *VirtualWanAvailableOpenApiVO) SetWeight(v int32)`
+
+SetWeight sets Weight field to given value.
+
+### HasWeight
+
+`func (o *VirtualWanAvailableOpenApiVO) HasWeight() bool`
+
+HasWeight returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

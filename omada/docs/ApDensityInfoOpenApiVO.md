@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **Model** | Pointer to **string** | The model of ap. | [optional] 
 **ModelVersion** | Pointer to **string** | The modelVersion of ap. | [optional] 
 **Name** | Pointer to **string** | The name of ap. | [optional] 
-**NeighborApNum** | Pointer to **int32** | The neighbor ap percent | [optional] 
+**NeighborApNum** | Pointer to **int32** | The neighbor ap number of ap. | [optional] 
+**NeighborApPercent** | Pointer to **int32** | The neighbor ap percent | [optional] 
 **NoData** | Pointer to **bool** | This flag indicates whether data exists. | [optional] 
 **NoDataReason** | Pointer to **int32** | The no data reason of ap. | [optional] 
 **Type** | Pointer to **string** | The type of ap. | [optional] 
@@ -156,6 +157,31 @@ SetNeighborApNum sets NeighborApNum field to given value.
 `func (o *ApDensityInfoOpenApiVO) HasNeighborApNum() bool`
 
 HasNeighborApNum returns a boolean if a field has been set.
+
+### GetNeighborApPercent
+
+`func (o *ApDensityInfoOpenApiVO) GetNeighborApPercent() int32`
+
+GetNeighborApPercent returns the NeighborApPercent field if non-nil, zero value otherwise.
+
+### GetNeighborApPercentOk
+
+`func (o *ApDensityInfoOpenApiVO) GetNeighborApPercentOk() (*int32, bool)`
+
+GetNeighborApPercentOk returns a tuple with the NeighborApPercent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNeighborApPercent
+
+`func (o *ApDensityInfoOpenApiVO) SetNeighborApPercent(v int32)`
+
+SetNeighborApPercent sets NeighborApPercent field to given value.
+
+### HasNeighborApPercent
+
+`func (o *ApDensityInfoOpenApiVO) HasNeighborApPercent() bool`
+
+HasNeighborApPercent returns a boolean if a field has been set.
 
 ### GetNoData
 

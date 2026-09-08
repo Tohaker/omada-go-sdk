@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enable** | Pointer to **bool** | Whether the port is affected. | [optional] 
 **AutoSelect** | Pointer to **bool** | Whether the port needs to be automatically selected. | [optional] 
+**ControllerLinkedPort** | Pointer to **bool** | Whether the port is connected to the Controller. | [optional] 
 **DefaultVlan** | Pointer to **int32** | The vlan of default network. | [optional] 
 **DownlinkDevices** | Pointer to [**[]DeviceBriefVO**](DeviceBriefVO.md) | The downlink devices of the port | [optional] 
 **EditEnable** | Pointer to **bool** | Whether the port is selectable. | [optional] 
@@ -93,6 +94,31 @@ SetAutoSelect sets AutoSelect field to given value.
 `func (o *SelectStackLagForVlanVO) HasAutoSelect() bool`
 
 HasAutoSelect returns a boolean if a field has been set.
+
+### GetControllerLinkedPort
+
+`func (o *SelectStackLagForVlanVO) GetControllerLinkedPort() bool`
+
+GetControllerLinkedPort returns the ControllerLinkedPort field if non-nil, zero value otherwise.
+
+### GetControllerLinkedPortOk
+
+`func (o *SelectStackLagForVlanVO) GetControllerLinkedPortOk() (*bool, bool)`
+
+GetControllerLinkedPortOk returns a tuple with the ControllerLinkedPort field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetControllerLinkedPort
+
+`func (o *SelectStackLagForVlanVO) SetControllerLinkedPort(v bool)`
+
+SetControllerLinkedPort sets ControllerLinkedPort field to given value.
+
+### HasControllerLinkedPort
+
+`func (o *SelectStackLagForVlanVO) HasControllerLinkedPort() bool`
+
+HasControllerLinkedPort returns a boolean if a field has been set.
 
 ### GetDefaultVlan
 

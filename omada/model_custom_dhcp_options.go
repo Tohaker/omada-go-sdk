@@ -21,6 +21,10 @@ var _ MappedNullable = &CustomDHCPOptions{}
 type CustomDHCPOptions struct {
 	// Custom DHCP option code
 	Code *int32 `json:"code,omitempty"`
+	// Whether is custom by user.
+	Custom *bool `json:"custom,omitempty"`
+	// Custom DHCP option name.
+	Name *string `json:"name,omitempty"`
 	// Type should be a value as follows: 0: \"String\"; 1: \"IP Address\"; 2: \"Hex Array\"
 	Type *int32 `json:"type,omitempty"`
 	// Value
@@ -74,6 +78,70 @@ func (o *CustomDHCPOptions) HasCode() bool {
 // SetCode gets a reference to the given int32 and assigns it to the Code field.
 func (o *CustomDHCPOptions) SetCode(v int32) {
 	o.Code = &v
+}
+
+// GetCustom returns the Custom field value if set, zero value otherwise.
+func (o *CustomDHCPOptions) GetCustom() bool {
+	if o == nil || IsNil(o.Custom) {
+		var ret bool
+		return ret
+	}
+	return *o.Custom
+}
+
+// GetCustomOk returns a tuple with the Custom field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomDHCPOptions) GetCustomOk() (*bool, bool) {
+	if o == nil || IsNil(o.Custom) {
+		return nil, false
+	}
+	return o.Custom, true
+}
+
+// HasCustom returns a boolean if a field has been set.
+func (o *CustomDHCPOptions) HasCustom() bool {
+	if o != nil && !IsNil(o.Custom) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustom gets a reference to the given bool and assigns it to the Custom field.
+func (o *CustomDHCPOptions) SetCustom(v bool) {
+	o.Custom = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *CustomDHCPOptions) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomDHCPOptions) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *CustomDHCPOptions) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *CustomDHCPOptions) SetName(v string) {
+	o.Name = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -152,6 +220,12 @@ func (o CustomDHCPOptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
+	}
+	if !IsNil(o.Custom) {
+		toSerialize["custom"] = o.Custom
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

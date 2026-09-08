@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | virtual wan name | [optional] 
+**PhysicalWanId** | Pointer to **string** | physical wan id | [optional] 
 **VirtualWanId** | **string** | virtual wan id | 
 **Weight** | Pointer to **int32** | virtual wan weight | [optional] 
 
@@ -51,6 +52,31 @@ SetName sets Name field to given value.
 `func (o *VirtualWanWeightOpenApiVO) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPhysicalWanId
+
+`func (o *VirtualWanWeightOpenApiVO) GetPhysicalWanId() string`
+
+GetPhysicalWanId returns the PhysicalWanId field if non-nil, zero value otherwise.
+
+### GetPhysicalWanIdOk
+
+`func (o *VirtualWanWeightOpenApiVO) GetPhysicalWanIdOk() (*string, bool)`
+
+GetPhysicalWanIdOk returns a tuple with the PhysicalWanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPhysicalWanId
+
+`func (o *VirtualWanWeightOpenApiVO) SetPhysicalWanId(v string)`
+
+SetPhysicalWanId sets PhysicalWanId field to given value.
+
+### HasPhysicalWanId
+
+`func (o *VirtualWanWeightOpenApiVO) HasPhysicalWanId() bool`
+
+HasPhysicalWanId returns a boolean if a field has been set.
 
 ### GetVirtualWanId
 

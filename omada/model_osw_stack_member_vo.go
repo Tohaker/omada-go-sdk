@@ -23,6 +23,10 @@ var _ MappedNullable = &OswStackMemberVO{}
 type OswStackMemberVO struct {
 	// Indicates whether the device is activated
 	Active *bool `json:"active,omitempty"`
+	// Block port
+	Block *string `json:"block,omitempty"`
+	// Number of blocks
+	BlockNum *int32 `json:"blockNum,omitempty"`
 	// Category
 	Category *string `json:"category,omitempty"`
 	// Compatible Type
@@ -166,6 +170,70 @@ func (o *OswStackMemberVO) HasActive() bool {
 // SetActive gets a reference to the given bool and assigns it to the Active field.
 func (o *OswStackMemberVO) SetActive(v bool) {
 	o.Active = &v
+}
+
+// GetBlock returns the Block field value if set, zero value otherwise.
+func (o *OswStackMemberVO) GetBlock() string {
+	if o == nil || IsNil(o.Block) {
+		var ret string
+		return ret
+	}
+	return *o.Block
+}
+
+// GetBlockOk returns a tuple with the Block field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackMemberVO) GetBlockOk() (*string, bool) {
+	if o == nil || IsNil(o.Block) {
+		return nil, false
+	}
+	return o.Block, true
+}
+
+// HasBlock returns a boolean if a field has been set.
+func (o *OswStackMemberVO) HasBlock() bool {
+	if o != nil && !IsNil(o.Block) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlock gets a reference to the given string and assigns it to the Block field.
+func (o *OswStackMemberVO) SetBlock(v string) {
+	o.Block = &v
+}
+
+// GetBlockNum returns the BlockNum field value if set, zero value otherwise.
+func (o *OswStackMemberVO) GetBlockNum() int32 {
+	if o == nil || IsNil(o.BlockNum) {
+		var ret int32
+		return ret
+	}
+	return *o.BlockNum
+}
+
+// GetBlockNumOk returns a tuple with the BlockNum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OswStackMemberVO) GetBlockNumOk() (*int32, bool) {
+	if o == nil || IsNil(o.BlockNum) {
+		return nil, false
+	}
+	return o.BlockNum, true
+}
+
+// HasBlockNum returns a boolean if a field has been set.
+func (o *OswStackMemberVO) HasBlockNum() bool {
+	if o != nil && !IsNil(o.BlockNum) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlockNum gets a reference to the given int32 and assigns it to the BlockNum field.
+func (o *OswStackMemberVO) SetBlockNum(v int32) {
+	o.BlockNum = &v
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
@@ -1620,6 +1688,12 @@ func (o OswStackMemberVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
+	}
+	if !IsNil(o.Block) {
+		toSerialize["block"] = o.Block
+	}
+	if !IsNil(o.BlockNum) {
+		toSerialize["blockNum"] = o.BlockNum
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category

@@ -237,6 +237,23 @@ type DeviceAPI interface {
 	CheckMacTypeExecute(r DeviceAPICheckMacTypeRequest) (*OperationResponseCheckMacTypeOpenApiVO, *http.Response, error)
 
 	/*
+	CheckReplaceRecord Check replace record
+
+	Check replace record.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+	@return DeviceAPICheckReplaceRecordRequest
+	*/
+	CheckReplaceRecord(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPICheckReplaceRecordRequest
+
+	// CheckReplaceRecordExecute executes the request
+	//  @return OperationResponseReplaceConfigRespVO
+	CheckReplaceRecordExecute(r DeviceAPICheckReplaceRecordRequest) (*OperationResponseReplaceConfigRespVO, *http.Response, error)
+
+	/*
 	CopyDeviceConfiguration Copy configuration
 
 	Copy the configuration of one device to another device of the same model. Only for switch and access point.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39056  -  Failed to copy config because of source device not exist.<br/>-39057  -  Failed to copy config because of the copied device is different from the model of the source device.
@@ -251,6 +268,40 @@ type DeviceAPI interface {
 	// CopyDeviceConfigurationExecute executes the request
 	//  @return OperationResponseWithoutResult
 	CopyDeviceConfigurationExecute(r DeviceAPICopyDeviceConfigurationRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	CreateReplaceRecord Create replace record
+
+	Create replace record.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+	@return DeviceAPICreateReplaceRecordRequest
+	*/
+	CreateReplaceRecord(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPICreateReplaceRecordRequest
+
+	// CreateReplaceRecordExecute executes the request
+	//  @return OperationResponseWithoutResult
+	CreateReplaceRecordExecute(r DeviceAPICreateReplaceRecordRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	DeleteReplaceRecord Delete replace record
+
+	Delete replace record.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+	@return DeviceAPIDeleteReplaceRecordRequest
+	*/
+	DeleteReplaceRecord(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPIDeleteReplaceRecordRequest
+
+	// DeleteReplaceRecordExecute executes the request
+	//  @return OperationResponseWithoutResult
+	DeleteReplaceRecordExecute(r DeviceAPIDeleteReplaceRecordRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	DeleteTag Delete an existing tag
@@ -457,7 +508,7 @@ type DeviceAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param operateId
+	@param operateId Add device operation ID
 	@return DeviceAPIGetAddDevicesStatusRequest
 	*/
 	GetAddDevicesStatus(ctx context.Context, omadacId string, siteId string, operateId string) DeviceAPIGetAddDevicesStatusRequest
@@ -473,7 +524,7 @@ type DeviceAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param operateId
+	@param operateId Add device operation ID
 	@return DeviceAPIGetAddDevicesStatusMultiSiteRequest
 	*/
 	GetAddDevicesStatusMultiSite(ctx context.Context, omadacId string, operateId string) DeviceAPIGetAddDevicesStatusMultiSiteRequest
@@ -594,6 +645,22 @@ type DeviceAPI interface {
 	GetDeviceAdoptResultExecute(r DeviceAPIGetDeviceAdoptResultRequest) (*OperationResponseAdoptResult, *http.Response, error)
 
 	/*
+	GetDeviceIncidentCounts Get site device incident counts
+
+	Get incident counts for the specified devices in a site.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Incidents Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return DeviceAPIGetDeviceIncidentCountsRequest
+	*/
+	GetDeviceIncidentCounts(ctx context.Context, omadacId string, siteId string) DeviceAPIGetDeviceIncidentCountsRequest
+
+	// GetDeviceIncidentCountsExecute executes the request
+	//  @return OperationResponseDeviceIncidentCountResultOpenApiVO
+	GetDeviceIncidentCountsExecute(r DeviceAPIGetDeviceIncidentCountsRequest) (*OperationResponseDeviceIncidentCountResultOpenApiVO, *http.Response, error)
+
+	/*
 	GetDeviceList Get site device list
 
 	Get site device list.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>MSP Device Manager View Only
@@ -675,6 +742,21 @@ type DeviceAPI interface {
 	// GetForgetProcessExecute executes the request
 	//  @return OperationResponseWithoutResult
 	GetForgetProcessExecute(r DeviceAPIGetForgetProcessRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	GetGlobalDeviceIncidentCounts Get global device incident counts
+
+	Get incident counts for the specified devices globally.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Incidents Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@return DeviceAPIGetGlobalDeviceIncidentCountsRequest
+	*/
+	GetGlobalDeviceIncidentCounts(ctx context.Context, omadacId string) DeviceAPIGetGlobalDeviceIncidentCountsRequest
+
+	// GetGlobalDeviceIncidentCountsExecute executes the request
+	//  @return OperationResponseDeviceIncidentCountResultOpenApiVO
+	GetGlobalDeviceIncidentCountsExecute(r DeviceAPIGetGlobalDeviceIncidentCountsRequest) (*OperationResponseDeviceIncidentCountResultOpenApiVO, *http.Response, error)
 
 	/*
 	GetGlobalKnownDeviceList Get global known device list
@@ -804,6 +886,21 @@ type DeviceAPI interface {
 	GetMoveSiteProcessExecute(r DeviceAPIGetMoveSiteProcessRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	GetMspAdoptTip MSP get adopt tip
+
+	MSP get adopt tip<br/><br/>The interface requires one of the permissions: <br/>MSP Adopt Device Manager Access<br/>MSP Add Device Manager Access
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mspId MSP ID
+	@return DeviceAPIGetMspAdoptTipRequest
+	*/
+	GetMspAdoptTip(ctx context.Context, mspId string) DeviceAPIGetMspAdoptTipRequest
+
+	// GetMspAdoptTipExecute executes the request
+	//  @return OperationResponseAdoptTipOpenApiVO
+	GetMspAdoptTipExecute(r DeviceAPIGetMspAdoptTipRequest) (*OperationResponseAdoptTipOpenApiVO, *http.Response, error)
+
+	/*
 	GetOnlineTimeline Get device online timeline
 
 	Get device online timeline<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only
@@ -909,7 +1006,7 @@ type DeviceAPI interface {
 	/*
 	GetUplinkDeviceInfo Query uplink information for specified device MAC addresses under the site.
 
-	Query uplink information for specified device MAC addresses under the site.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>MSP Device Manager View Only<br/>Site Health & Incident Manager View Only
+	Query uplink information for specified device MAC addresses under the site.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>MSP Device Manager View Only<br/>Incidents Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -987,6 +1084,23 @@ type DeviceAPI interface {
 	// ModifyDeviceRememberMeExecute executes the request
 	//  @return OperationResponseWithoutResult
 	ModifyDeviceRememberMeExecute(r DeviceAPIModifyDeviceRememberMeRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyReplaceRecord Modify replace record
+
+	Modify replace record.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+	@return DeviceAPIModifyReplaceRecordRequest
+	*/
+	ModifyReplaceRecord(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPIModifyReplaceRecordRequest
+
+	// ModifyReplaceRecordExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifyReplaceRecordExecute(r DeviceAPIModifyReplaceRecordRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyTag Modify an existing tag
@@ -1142,13 +1256,13 @@ type DeviceAPI interface {
 	retry add device in msp view<br/><br/>The interface requires one of the permissions: <br/>MSP Adopt Device Manager Access<br/>MSP Add Device Manager Access
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mspId MSP ID
 	@param customerId Omada ID
+	@param siteId Site ID
 	@param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
-	@param mspId mspId
-	@param siteId siteId
 	@return DeviceAPIRetryAddDeviceByMspRequest
 	*/
-	RetryAddDeviceByMsp(ctx context.Context, customerId string, deviceMac string, mspId string, siteId string) DeviceAPIRetryAddDeviceByMspRequest
+	RetryAddDeviceByMsp(ctx context.Context, mspId string, customerId string, siteId string, deviceMac string) DeviceAPIRetryAddDeviceByMspRequest
 
 	// RetryAddDeviceByMspExecute executes the request
 	//  @return OperationResponseRetryAddDeviceRespOpenApiVO
@@ -2958,6 +3072,142 @@ func (a *DeviceAPIService) CheckMacTypeExecute(r DeviceAPICheckMacTypeRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type DeviceAPICheckReplaceRecordRequest struct {
+	ctx context.Context
+	ApiService DeviceAPI
+	omadacId string
+	siteId string
+	deviceMac string
+	checkReplaceVO *CheckReplaceVO
+}
+
+func (r DeviceAPICheckReplaceRecordRequest) CheckReplaceVO(checkReplaceVO CheckReplaceVO) DeviceAPICheckReplaceRecordRequest {
+	r.checkReplaceVO = &checkReplaceVO
+	return r
+}
+
+func (r DeviceAPICheckReplaceRecordRequest) Execute() (*OperationResponseReplaceConfigRespVO, *http.Response, error) {
+	return r.ApiService.CheckReplaceRecordExecute(r)
+}
+
+/*
+CheckReplaceRecord Check replace record
+
+Check replace record.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+ @return DeviceAPICheckReplaceRecordRequest
+*/
+func (a *DeviceAPIService) CheckReplaceRecord(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPICheckReplaceRecordRequest {
+	return DeviceAPICheckReplaceRecordRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		deviceMac: deviceMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseReplaceConfigRespVO
+func (a *DeviceAPIService) CheckReplaceRecordExecute(r DeviceAPICheckReplaceRecordRequest) (*OperationResponseReplaceConfigRespVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseReplaceConfigRespVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceAPIService.CheckReplaceRecord")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device/check"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceMac"+"}", url.PathEscape(parameterValueToString(r.deviceMac, "deviceMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.checkReplaceVO == nil {
+		return localVarReturnValue, nil, reportError("checkReplaceVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.checkReplaceVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type DeviceAPICopyDeviceConfigurationRequest struct {
 	ctx context.Context
 	ApiService DeviceAPI
@@ -3039,6 +3289,267 @@ func (a *DeviceAPIService) CopyDeviceConfigurationExecute(r DeviceAPICopyDeviceC
 	}
 	// body params
 	localVarPostBody = r.deviceCopyConfigurationOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type DeviceAPICreateReplaceRecordRequest struct {
+	ctx context.Context
+	ApiService DeviceAPI
+	omadacId string
+	siteId string
+	deviceMac string
+	deviceReplaceSettingVO *DeviceReplaceSettingVO
+}
+
+func (r DeviceAPICreateReplaceRecordRequest) DeviceReplaceSettingVO(deviceReplaceSettingVO DeviceReplaceSettingVO) DeviceAPICreateReplaceRecordRequest {
+	r.deviceReplaceSettingVO = &deviceReplaceSettingVO
+	return r
+}
+
+func (r DeviceAPICreateReplaceRecordRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CreateReplaceRecordExecute(r)
+}
+
+/*
+CreateReplaceRecord Create replace record
+
+Create replace record.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+ @return DeviceAPICreateReplaceRecordRequest
+*/
+func (a *DeviceAPIService) CreateReplaceRecord(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPICreateReplaceRecordRequest {
+	return DeviceAPICreateReplaceRecordRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		deviceMac: deviceMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *DeviceAPIService) CreateReplaceRecordExecute(r DeviceAPICreateReplaceRecordRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceAPIService.CreateReplaceRecord")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceMac"+"}", url.PathEscape(parameterValueToString(r.deviceMac, "deviceMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.deviceReplaceSettingVO == nil {
+		return localVarReturnValue, nil, reportError("deviceReplaceSettingVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.deviceReplaceSettingVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type DeviceAPIDeleteReplaceRecordRequest struct {
+	ctx context.Context
+	ApiService DeviceAPI
+	omadacId string
+	siteId string
+	deviceMac string
+}
+
+func (r DeviceAPIDeleteReplaceRecordRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.DeleteReplaceRecordExecute(r)
+}
+
+/*
+DeleteReplaceRecord Delete replace record
+
+Delete replace record.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+ @return DeviceAPIDeleteReplaceRecordRequest
+*/
+func (a *DeviceAPIService) DeleteReplaceRecord(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPIDeleteReplaceRecordRequest {
+	return DeviceAPIDeleteReplaceRecordRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		deviceMac: deviceMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *DeviceAPIService) DeleteReplaceRecordExecute(r DeviceAPIDeleteReplaceRecordRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceAPIService.DeleteReplaceRecord")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceMac"+"}", url.PathEscape(parameterValueToString(r.deviceMac, "deviceMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -4637,7 +5148,7 @@ Batch get added device status.<br/><br/>The interface requires one of the permis
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param operateId
+ @param operateId Add device operation ID
  @return DeviceAPIGetAddDevicesStatusRequest
 */
 func (a *DeviceAPIService) GetAddDevicesStatus(ctx context.Context, omadacId string, siteId string, operateId string) DeviceAPIGetAddDevicesStatusRequest {
@@ -4760,7 +5271,7 @@ Batch get added device status with multi site.<br/><br/>The interface requires o
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param operateId
+ @param operateId Add device operation ID
  @return DeviceAPIGetAddDevicesStatusMultiSiteRequest
 */
 func (a *DeviceAPIService) GetAddDevicesStatusMultiSite(ctx context.Context, omadacId string, operateId string) DeviceAPIGetAddDevicesStatusMultiSiteRequest {
@@ -5861,6 +6372,138 @@ func (a *DeviceAPIService) GetDeviceAdoptResultExecute(r DeviceAPIGetDeviceAdopt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type DeviceAPIGetDeviceIncidentCountsRequest struct {
+	ctx context.Context
+	ApiService DeviceAPI
+	omadacId string
+	siteId string
+	deviceIncidentCountRequestOpenApiVO *DeviceIncidentCountRequestOpenApiVO
+}
+
+func (r DeviceAPIGetDeviceIncidentCountsRequest) DeviceIncidentCountRequestOpenApiVO(deviceIncidentCountRequestOpenApiVO DeviceIncidentCountRequestOpenApiVO) DeviceAPIGetDeviceIncidentCountsRequest {
+	r.deviceIncidentCountRequestOpenApiVO = &deviceIncidentCountRequestOpenApiVO
+	return r
+}
+
+func (r DeviceAPIGetDeviceIncidentCountsRequest) Execute() (*OperationResponseDeviceIncidentCountResultOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetDeviceIncidentCountsExecute(r)
+}
+
+/*
+GetDeviceIncidentCounts Get site device incident counts
+
+Get incident counts for the specified devices in a site.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Incidents Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return DeviceAPIGetDeviceIncidentCountsRequest
+*/
+func (a *DeviceAPIService) GetDeviceIncidentCounts(ctx context.Context, omadacId string, siteId string) DeviceAPIGetDeviceIncidentCountsRequest {
+	return DeviceAPIGetDeviceIncidentCountsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseDeviceIncidentCountResultOpenApiVO
+func (a *DeviceAPIService) GetDeviceIncidentCountsExecute(r DeviceAPIGetDeviceIncidentCountsRequest) (*OperationResponseDeviceIncidentCountResultOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseDeviceIncidentCountResultOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceAPIService.GetDeviceIncidentCounts")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/devices/incidents"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.deviceIncidentCountRequestOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("deviceIncidentCountRequestOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.deviceIncidentCountRequestOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type DeviceAPIGetDeviceListRequest struct {
 	ctx context.Context
 	ApiService DeviceAPI
@@ -6550,6 +7193,134 @@ func (a *DeviceAPIService) GetForgetProcessExecute(r DeviceAPIGetForgetProcessRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type DeviceAPIGetGlobalDeviceIncidentCountsRequest struct {
+	ctx context.Context
+	ApiService DeviceAPI
+	omadacId string
+	deviceIncidentCountRequestOpenApiVO *DeviceIncidentCountRequestOpenApiVO
+}
+
+func (r DeviceAPIGetGlobalDeviceIncidentCountsRequest) DeviceIncidentCountRequestOpenApiVO(deviceIncidentCountRequestOpenApiVO DeviceIncidentCountRequestOpenApiVO) DeviceAPIGetGlobalDeviceIncidentCountsRequest {
+	r.deviceIncidentCountRequestOpenApiVO = &deviceIncidentCountRequestOpenApiVO
+	return r
+}
+
+func (r DeviceAPIGetGlobalDeviceIncidentCountsRequest) Execute() (*OperationResponseDeviceIncidentCountResultOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetGlobalDeviceIncidentCountsExecute(r)
+}
+
+/*
+GetGlobalDeviceIncidentCounts Get global device incident counts
+
+Get incident counts for the specified devices globally.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Incidents Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @return DeviceAPIGetGlobalDeviceIncidentCountsRequest
+*/
+func (a *DeviceAPIService) GetGlobalDeviceIncidentCounts(ctx context.Context, omadacId string) DeviceAPIGetGlobalDeviceIncidentCountsRequest {
+	return DeviceAPIGetGlobalDeviceIncidentCountsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseDeviceIncidentCountResultOpenApiVO
+func (a *DeviceAPIService) GetGlobalDeviceIncidentCountsExecute(r DeviceAPIGetGlobalDeviceIncidentCountsRequest) (*OperationResponseDeviceIncidentCountResultOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseDeviceIncidentCountResultOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceAPIService.GetGlobalDeviceIncidentCounts")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/devices/incidents"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.deviceIncidentCountRequestOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("deviceIncidentCountRequestOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.deviceIncidentCountRequestOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type DeviceAPIGetGlobalKnownDeviceListRequest struct {
 	ctx context.Context
 	ApiService DeviceAPI
@@ -7155,6 +7926,55 @@ type DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest struct {
 	ctx context.Context
 	ApiService DeviceAPI
 	omadacId string
+	page *int32
+	pageSize *int32
+	sortsName *string
+	sortsStatus *string
+	sortsIp *string
+	searchKey *string
+	filtersTag *string
+}
+
+// Start page number. Start from 1.
+func (r DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest) Page(page int32) DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest) PageSize(pageSize int32) DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest) SortsName(sortsName string) DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest {
+	r.sortsName = &sortsName
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest) SortsStatus(sortsStatus string) DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest {
+	r.sortsStatus = &sortsStatus
+	return r
+}
+
+// Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect
+func (r DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest) SortsIp(sortsIp string) DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest {
+	r.sortsIp = &sortsIp
+	return r
+}
+
+// Fuzzy query parameters, support field name,mac,ip
+func (r DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest) SearchKey(searchKey string) DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest {
+	r.searchKey = &searchKey
+	return r
+}
+
+// Filter query parameters, support field tag name
+func (r DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest) FiltersTag(filtersTag string) DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest {
+	r.filtersTag = &filtersTag
+	return r
 }
 
 func (r DeviceAPIGetGridAdoptedDevicesStatByGlobalRequest) Execute() (*OperationResponseGlobalDeviceStatOpenApiVO, *http.Response, error) {
@@ -7199,7 +8019,30 @@ func (a *DeviceAPIService) GetGridAdoptedDevicesStatByGlobalExecute(r DeviceAPIG
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	if r.sortsName != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.name", r.sortsName, "form", "")
+	}
+	if r.sortsStatus != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.status", r.sortsStatus, "form", "")
+	}
+	if r.sortsIp != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sorts.ip", r.sortsIp, "form", "")
+	}
+	if r.searchKey != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
+	}
+	if r.filtersTag != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filters.tag", r.filtersTag, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7884,17 +8727,134 @@ func (a *DeviceAPIService) GetMoveSiteProcessExecute(r DeviceAPIGetMoveSiteProce
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type DeviceAPIGetMspAdoptTipRequest struct {
+	ctx context.Context
+	ApiService DeviceAPI
+	mspId string
+}
+
+func (r DeviceAPIGetMspAdoptTipRequest) Execute() (*OperationResponseAdoptTipOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetMspAdoptTipExecute(r)
+}
+
+/*
+GetMspAdoptTip MSP get adopt tip
+
+MSP get adopt tip<br/><br/>The interface requires one of the permissions: <br/>MSP Adopt Device Manager Access<br/>MSP Add Device Manager Access
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param mspId MSP ID
+ @return DeviceAPIGetMspAdoptTipRequest
+*/
+func (a *DeviceAPIService) GetMspAdoptTip(ctx context.Context, mspId string) DeviceAPIGetMspAdoptTipRequest {
+	return DeviceAPIGetMspAdoptTipRequest{
+		ApiService: a,
+		ctx: ctx,
+		mspId: mspId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseAdoptTipOpenApiVO
+func (a *DeviceAPIService) GetMspAdoptTipExecute(r DeviceAPIGetMspAdoptTipRequest) (*OperationResponseAdoptTipOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseAdoptTipOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceAPIService.GetMspAdoptTip")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/adopt-tip"
+	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type DeviceAPIGetOnlineTimelineRequest struct {
 	ctx context.Context
 	ApiService DeviceAPI
 	omadacId string
 	siteId string
 	deviceMac string
-	dto *TimeIntervalQueryOpenApiVO
+	queryParam *TimeIntervalQueryOpenApiVO
 }
 
-func (r DeviceAPIGetOnlineTimelineRequest) Dto(dto TimeIntervalQueryOpenApiVO) DeviceAPIGetOnlineTimelineRequest {
-	r.dto = &dto
+func (r DeviceAPIGetOnlineTimelineRequest) QueryParam(queryParam TimeIntervalQueryOpenApiVO) DeviceAPIGetOnlineTimelineRequest {
+	r.queryParam = &queryParam
 	return r
 }
 
@@ -7946,11 +8906,11 @@ func (a *DeviceAPIService) GetOnlineTimelineExecute(r DeviceAPIGetOnlineTimeline
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.dto == nil {
-		return localVarReturnValue, nil, reportError("dto is required and must be specified")
+	if r.queryParam == nil {
+		return localVarReturnValue, nil, reportError("queryParam is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dto", r.dto, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "queryParam", r.queryParam, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8668,7 +9628,7 @@ func (r DeviceAPIGetUplinkDeviceInfoRequest) Execute() (*OperationResponseListDe
 /*
 GetUplinkDeviceInfo Query uplink information for specified device MAC addresses under the site.
 
-Query uplink information for specified device MAC addresses under the site.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>MSP Device Manager View Only<br/>Site Health & Incident Manager View Only
+Query uplink information for specified device MAC addresses under the site.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>MSP Device Manager View Only<br/>Incidents Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -9265,6 +10225,142 @@ func (a *DeviceAPIService) ModifyDeviceRememberMeExecute(r DeviceAPIModifyDevice
 	}
 	// body params
 	localVarPostBody = r.deviceRememberConfig
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type DeviceAPIModifyReplaceRecordRequest struct {
+	ctx context.Context
+	ApiService DeviceAPI
+	omadacId string
+	siteId string
+	deviceMac string
+	deviceReplaceSettingVO *DeviceReplaceSettingVO
+}
+
+func (r DeviceAPIModifyReplaceRecordRequest) DeviceReplaceSettingVO(deviceReplaceSettingVO DeviceReplaceSettingVO) DeviceAPIModifyReplaceRecordRequest {
+	r.deviceReplaceSettingVO = &deviceReplaceSettingVO
+	return r
+}
+
+func (r DeviceAPIModifyReplaceRecordRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifyReplaceRecordExecute(r)
+}
+
+/*
+ModifyReplaceRecord Modify replace record
+
+Modify replace record.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
+ @return DeviceAPIModifyReplaceRecordRequest
+*/
+func (a *DeviceAPIService) ModifyReplaceRecord(ctx context.Context, omadacId string, siteId string, deviceMac string) DeviceAPIModifyReplaceRecordRequest {
+	return DeviceAPIModifyReplaceRecordRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		deviceMac: deviceMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *DeviceAPIService) ModifyReplaceRecordExecute(r DeviceAPIModifyReplaceRecordRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceAPIService.ModifyReplaceRecord")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceMac"+"}", url.PathEscape(parameterValueToString(r.deviceMac, "deviceMac")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.deviceReplaceSettingVO == nil {
+		return localVarReturnValue, nil, reportError("deviceReplaceSettingVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.deviceReplaceSettingVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -10500,10 +11596,10 @@ func (a *DeviceAPIService) RetryAddDeviceExecute(r DeviceAPIRetryAddDeviceReques
 type DeviceAPIRetryAddDeviceByMspRequest struct {
 	ctx context.Context
 	ApiService DeviceAPI
-	customerId string
-	deviceMac string
 	mspId string
+	customerId string
 	siteId string
+	deviceMac string
 	retryAddDeviceOpenApiVO *RetryAddDeviceOpenApiVO
 }
 
@@ -10522,20 +11618,20 @@ RetryAddDeviceByMsp retry add device in msp view
 retry add device in msp view<br/><br/>The interface requires one of the permissions: <br/>MSP Adopt Device Manager Access<br/>MSP Add Device Manager Access
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param mspId MSP ID
  @param customerId Omada ID
+ @param siteId Site ID
  @param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
- @param mspId mspId
- @param siteId siteId
  @return DeviceAPIRetryAddDeviceByMspRequest
 */
-func (a *DeviceAPIService) RetryAddDeviceByMsp(ctx context.Context, customerId string, deviceMac string, mspId string, siteId string) DeviceAPIRetryAddDeviceByMspRequest {
+func (a *DeviceAPIService) RetryAddDeviceByMsp(ctx context.Context, mspId string, customerId string, siteId string, deviceMac string) DeviceAPIRetryAddDeviceByMspRequest {
 	return DeviceAPIRetryAddDeviceByMspRequest{
 		ApiService: a,
 		ctx: ctx,
-		customerId: customerId,
-		deviceMac: deviceMac,
 		mspId: mspId,
+		customerId: customerId,
 		siteId: siteId,
+		deviceMac: deviceMac,
 	}
 }
 
@@ -10555,10 +11651,10 @@ func (a *DeviceAPIService) RetryAddDeviceByMspExecute(r DeviceAPIRetryAddDeviceB
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/add/retry"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"deviceMac"+"}", url.PathEscape(parameterValueToString(r.deviceMac, "deviceMac")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceMac"+"}", url.PathEscape(parameterValueToString(r.deviceMac, "deviceMac")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

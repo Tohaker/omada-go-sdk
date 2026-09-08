@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Mac** | Pointer to **string** |  | [optional] 
-**MaxLagMember** | Pointer to **int32** |  | [optional] 
-**MaxLagNum** | Pointer to **int32** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**PortNum** | Pointer to **int32** |  | [optional] 
-**UsedLagIds** | Pointer to **[]int32** |  | [optional] 
+**Mac** | Pointer to **string** | M-LAG Peer device mac | [optional] 
+**MaxLagMember** | Pointer to **int32** | Maximum number of ports in a LAG group | [optional] 
+**MaxLagNum** | Pointer to **int32** | Maximum number of LAG groups | [optional] 
+**Name** | Pointer to **string** | M-LAG Peer device name | [optional] 
+**PortNum** | Pointer to **int32** | Number of ports in the M-LAG group | [optional] 
+**UsedLagIds** | Pointer to **[]int32** | List of used lag IDs | [optional] 
 
 ## Methods
 

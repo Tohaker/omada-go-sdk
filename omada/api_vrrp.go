@@ -97,11 +97,11 @@ type VRRPAPICreateOswVrrpRequest struct {
 	ApiService VRRPAPI
 	omadacId string
 	siteId string
-	createOswVrrpRequest *CreateOswVrrpRequest
+	oswVrrpConfigOpenApiVO *OswVrrpConfigOpenApiVO
 }
 
-func (r VRRPAPICreateOswVrrpRequest) CreateOswVrrpRequest(createOswVrrpRequest CreateOswVrrpRequest) VRRPAPICreateOswVrrpRequest {
-	r.createOswVrrpRequest = &createOswVrrpRequest
+func (r VRRPAPICreateOswVrrpRequest) OswVrrpConfigOpenApiVO(oswVrrpConfigOpenApiVO OswVrrpConfigOpenApiVO) VRRPAPICreateOswVrrpRequest {
+	r.oswVrrpConfigOpenApiVO = &oswVrrpConfigOpenApiVO
 	return r
 }
 
@@ -150,8 +150,8 @@ func (a *VRRPAPIService) CreateOswVrrpExecute(r VRRPAPICreateOswVrrpRequest) (*O
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.createOswVrrpRequest == nil {
-		return localVarReturnValue, nil, reportError("createOswVrrpRequest is required and must be specified")
+	if r.oswVrrpConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("oswVrrpConfigOpenApiVO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -172,7 +172,7 @@ func (a *VRRPAPIService) CreateOswVrrpExecute(r VRRPAPICreateOswVrrpRequest) (*O
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOswVrrpRequest
+	localVarPostBody = r.oswVrrpConfigOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -230,12 +230,6 @@ type VRRPAPIDeleteOswVrrpRequest struct {
 	omadacId string
 	siteId string
 	oswVrrpId string
-	userInfoBriefDTO *UserInfoBriefDTO
-}
-
-func (r VRRPAPIDeleteOswVrrpRequest) UserInfoBriefDTO(userInfoBriefDTO UserInfoBriefDTO) VRRPAPIDeleteOswVrrpRequest {
-	r.userInfoBriefDTO = &userInfoBriefDTO
-	return r
 }
 
 func (r VRRPAPIDeleteOswVrrpRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
@@ -288,7 +282,7 @@ func (a *VRRPAPIService) DeleteOswVrrpExecute(r VRRPAPIDeleteOswVrrpRequest) (*O
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -304,8 +298,6 @@ func (a *VRRPAPIService) DeleteOswVrrpExecute(r VRRPAPIDeleteOswVrrpRequest) (*O
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.userInfoBriefDTO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -506,11 +498,11 @@ type VRRPAPIModifyOswVrrpRequest struct {
 	omadacId string
 	siteId string
 	oswVrrpId string
-	createOswVrrpRequest *CreateOswVrrpRequest
+	oswVrrpConfigOpenApiVO *OswVrrpConfigOpenApiVO
 }
 
-func (r VRRPAPIModifyOswVrrpRequest) CreateOswVrrpRequest(createOswVrrpRequest CreateOswVrrpRequest) VRRPAPIModifyOswVrrpRequest {
-	r.createOswVrrpRequest = &createOswVrrpRequest
+func (r VRRPAPIModifyOswVrrpRequest) OswVrrpConfigOpenApiVO(oswVrrpConfigOpenApiVO OswVrrpConfigOpenApiVO) VRRPAPIModifyOswVrrpRequest {
+	r.oswVrrpConfigOpenApiVO = &oswVrrpConfigOpenApiVO
 	return r
 }
 
@@ -562,8 +554,8 @@ func (a *VRRPAPIService) ModifyOswVrrpExecute(r VRRPAPIModifyOswVrrpRequest) (*O
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.createOswVrrpRequest == nil {
-		return localVarReturnValue, nil, reportError("createOswVrrpRequest is required and must be specified")
+	if r.oswVrrpConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("oswVrrpConfigOpenApiVO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -584,7 +576,7 @@ func (a *VRRPAPIService) ModifyOswVrrpExecute(r VRRPAPIModifyOswVrrpRequest) (*O
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOswVrrpRequest
+	localVarPostBody = r.oswVrrpConfigOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

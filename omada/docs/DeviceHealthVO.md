@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Good** | Pointer to **int32** | Number of devices with good health status | [optional] 
+**IncidentDetail** | Pointer to [**IncidentVO**](IncidentVO.md) |  | [optional] 
 **NoData** | Pointer to **int32** | Number of devices with no health data | [optional] 
 **Poor** | Pointer to **int32** | Number of devices with poor health status | [optional] 
 **Time** | Pointer to **int64** | Timestamp | [optional] 
@@ -53,6 +54,31 @@ SetGood sets Good field to given value.
 `func (o *DeviceHealthVO) HasGood() bool`
 
 HasGood returns a boolean if a field has been set.
+
+### GetIncidentDetail
+
+`func (o *DeviceHealthVO) GetIncidentDetail() IncidentVO`
+
+GetIncidentDetail returns the IncidentDetail field if non-nil, zero value otherwise.
+
+### GetIncidentDetailOk
+
+`func (o *DeviceHealthVO) GetIncidentDetailOk() (*IncidentVO, bool)`
+
+GetIncidentDetailOk returns a tuple with the IncidentDetail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncidentDetail
+
+`func (o *DeviceHealthVO) SetIncidentDetail(v IncidentVO)`
+
+SetIncidentDetail sets IncidentDetail field to given value.
+
+### HasIncidentDetail
+
+`func (o *DeviceHealthVO) HasIncidentDetail() bool`
+
+HasIncidentDetail returns a boolean if a field has been set.
 
 ### GetNoData
 

@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **HealthScore** | Pointer to **int32** | 1~3: poor; 4~7: fair; 0: no data; 8~10 good. | [optional] 
 **HostName** | Pointer to **string** | Host name, device name. | [optional] 
 **Id** | Pointer to **string** | Client ID. | [optional] 
+**IncidentNum** | Pointer to **int32** | Number of anomaly incidents in the last 10 minutes. | [optional] 
 **Ip** | Pointer to **string** | IP Address. | [optional] 
 **IpSetting** | Pointer to [**ClientIpSetting**](ClientIpSetting.md) |  | [optional] 
 **Ipv6List** | Pointer to **[]string** | IPv6 Address. | [optional] 
@@ -772,6 +773,31 @@ SetId sets Id field to given value.
 `func (o *OpenApiClientInfo) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIncidentNum
+
+`func (o *OpenApiClientInfo) GetIncidentNum() int32`
+
+GetIncidentNum returns the IncidentNum field if non-nil, zero value otherwise.
+
+### GetIncidentNumOk
+
+`func (o *OpenApiClientInfo) GetIncidentNumOk() (*int32, bool)`
+
+GetIncidentNumOk returns a tuple with the IncidentNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncidentNum
+
+`func (o *OpenApiClientInfo) SetIncidentNum(v int32)`
+
+SetIncidentNum sets IncidentNum field to given value.
+
+### HasIncidentNum
+
+`func (o *OpenApiClientInfo) HasIncidentNum() bool`
+
+HasIncidentNum returns a boolean if a field has been set.
 
 ### GetIp
 

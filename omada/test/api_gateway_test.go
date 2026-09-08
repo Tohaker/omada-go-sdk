@@ -235,11 +235,11 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteId string
 		var gatewayMac string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayAPI.GetLanStatus(context.Background(), siteId, gatewayMac, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayAPI.GetLanStatus(context.Background(), omadacId, siteId, gatewayMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -637,12 +637,12 @@ func Test_omada_GatewayAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var omadacId string
 		var siteId string
 		var gatewayMac string
 		var port string
-		var omadacId string
 
-		resp, httpRes, err := apiClient.GatewayAPI.RecoveryPoePort(context.Background(), siteId, gatewayMac, port, omadacId).Execute()
+		resp, httpRes, err := apiClient.GatewayAPI.RecoveryPoePort(context.Background(), omadacId, siteId, gatewayMac, port).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

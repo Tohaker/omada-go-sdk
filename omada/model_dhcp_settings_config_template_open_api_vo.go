@@ -19,6 +19,7 @@ var _ MappedNullable = &DhcpSettingsConfigTemplateOpenApiVO{}
 
 // DhcpSettingsConfigTemplateOpenApiVO Configure DHCP settings
 type DhcpSettingsConfigTemplateOpenApiVO struct {
+	DhcpPoolMask *int32 `json:"dhcpPoolMask,omitempty"`
 	// Setup DHCP server: \"auto\" or \"manual\"
 	Dhcpns *string `json:"dhcpns,omitempty"`
 	// When value is true, DHCP server is enabled
@@ -52,6 +53,38 @@ func NewDhcpSettingsConfigTemplateOpenApiVO() *DhcpSettingsConfigTemplateOpenApi
 func NewDhcpSettingsConfigTemplateOpenApiVOWithDefaults() *DhcpSettingsConfigTemplateOpenApiVO {
 	this := DhcpSettingsConfigTemplateOpenApiVO{}
 	return &this
+}
+
+// GetDhcpPoolMask returns the DhcpPoolMask field value if set, zero value otherwise.
+func (o *DhcpSettingsConfigTemplateOpenApiVO) GetDhcpPoolMask() int32 {
+	if o == nil || IsNil(o.DhcpPoolMask) {
+		var ret int32
+		return ret
+	}
+	return *o.DhcpPoolMask
+}
+
+// GetDhcpPoolMaskOk returns a tuple with the DhcpPoolMask field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DhcpSettingsConfigTemplateOpenApiVO) GetDhcpPoolMaskOk() (*int32, bool) {
+	if o == nil || IsNil(o.DhcpPoolMask) {
+		return nil, false
+	}
+	return o.DhcpPoolMask, true
+}
+
+// HasDhcpPoolMask returns a boolean if a field has been set.
+func (o *DhcpSettingsConfigTemplateOpenApiVO) HasDhcpPoolMask() bool {
+	if o != nil && !IsNil(o.DhcpPoolMask) {
+		return true
+	}
+
+	return false
+}
+
+// SetDhcpPoolMask gets a reference to the given int32 and assigns it to the DhcpPoolMask field.
+func (o *DhcpSettingsConfigTemplateOpenApiVO) SetDhcpPoolMask(v int32) {
+	o.DhcpPoolMask = &v
 }
 
 // GetDhcpns returns the Dhcpns field value if set, zero value otherwise.
@@ -320,6 +353,9 @@ func (o DhcpSettingsConfigTemplateOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o DhcpSettingsConfigTemplateOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.DhcpPoolMask) {
+		toSerialize["dhcpPoolMask"] = o.DhcpPoolMask
+	}
 	if !IsNil(o.Dhcpns) {
 		toSerialize["dhcpns"] = o.Dhcpns
 	}

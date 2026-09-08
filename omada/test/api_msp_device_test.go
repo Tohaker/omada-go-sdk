@@ -26,12 +26,12 @@ func Test_omada_MSPDeviceAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var mspId string
 		var customerId string
 		var siteId string
 		var deviceMac string
-		var mspId string
 
-		resp, httpRes, err := apiClient.MSPDeviceAPI.AdoptOneForMsp(context.Background(), customerId, siteId, deviceMac, mspId).Execute()
+		resp, httpRes, err := apiClient.MSPDeviceAPI.AdoptOneForMsp(context.Background(), mspId, customerId, siteId, deviceMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -55,6 +55,20 @@ func Test_omada_MSPDeviceAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test MSPDeviceAPIService GetMspDeviceIncidentCounts", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var mspId string
+
+		resp, httpRes, err := apiClient.MSPDeviceAPI.GetMspDeviceIncidentCounts(context.Background(), mspId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MSPDeviceAPIService GetMspKnownDeviceList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -62,6 +76,23 @@ func Test_omada_MSPDeviceAPIService(t *testing.T) {
 		var mspId string
 
 		resp, httpRes, err := apiClient.MSPDeviceAPI.GetMspKnownDeviceList(context.Background(), mspId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MSPDeviceAPIService GetMspObjectHealthIncident", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var mspId string
+		var customerId string
+		var siteId string
+		var mac string
+
+		resp, httpRes, err := apiClient.MSPDeviceAPI.GetMspObjectHealthIncident(context.Background(), mspId, customerId, siteId, mac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

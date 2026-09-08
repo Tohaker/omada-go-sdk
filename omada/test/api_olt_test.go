@@ -302,12 +302,12 @@ func Test_omada_OLTAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var siteId string
 		var mspId string
 		var customerId string
+		var siteId string
 		var deviceMac string
 
-		resp, httpRes, err := apiClient.OLTAPI.ModifyOltConfigForMsp(context.Background(), siteId, mspId, customerId, deviceMac).Execute()
+		resp, httpRes, err := apiClient.OLTAPI.ModifyOltConfigForMsp(context.Background(), mspId, customerId, siteId, deviceMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

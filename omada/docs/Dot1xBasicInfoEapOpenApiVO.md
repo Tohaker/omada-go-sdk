@@ -5,8 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enable** | **bool** | EAP 802.1x function enable status | 
+**GuestVlanSetting** | Pointer to [**Dot1xGuestVlanSettingOpenApiVO**](Dot1xGuestVlanSettingOpenApiVO.md) |  | [optional] 
 **MacFormat** | Pointer to **int32** | Format of the MAC address. MacFormat should be a value as follows: 0: aabbccddeeff, 1: aa-bb-cc-dd-ee-ff, 2: aa:bb:cc:dd:ee:ff, 3: AABBCCDDEEFF, 4: AA-BB-CC-DD-EE-FF, 5: AA:BB:CC:DD:EE:FF | [optional] 
-**RadiusProfileId** | Pointer to **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new Radius profile&#39; (&#39;Create a new Radius profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get Radius profile list&#39; (&#39;Get Radius profile template list&#39;) interface | [optional] 
+**RadiusProfileId** | Pointer to **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new RADIUS profile&#39; (&#39;Create a new RADIUS profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get RADIUS profile list&#39; (&#39;Get RADIUS profile template list&#39;) interface | [optional] 
 
 ## Methods
 
@@ -46,6 +47,31 @@ and a boolean to check if the value has been set.
 
 SetEnable sets Enable field to given value.
 
+
+### GetGuestVlanSetting
+
+`func (o *Dot1xBasicInfoEapOpenApiVO) GetGuestVlanSetting() Dot1xGuestVlanSettingOpenApiVO`
+
+GetGuestVlanSetting returns the GuestVlanSetting field if non-nil, zero value otherwise.
+
+### GetGuestVlanSettingOk
+
+`func (o *Dot1xBasicInfoEapOpenApiVO) GetGuestVlanSettingOk() (*Dot1xGuestVlanSettingOpenApiVO, bool)`
+
+GetGuestVlanSettingOk returns a tuple with the GuestVlanSetting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGuestVlanSetting
+
+`func (o *Dot1xBasicInfoEapOpenApiVO) SetGuestVlanSetting(v Dot1xGuestVlanSettingOpenApiVO)`
+
+SetGuestVlanSetting sets GuestVlanSetting field to given value.
+
+### HasGuestVlanSetting
+
+`func (o *Dot1xBasicInfoEapOpenApiVO) HasGuestVlanSetting() bool`
+
+HasGuestVlanSetting returns a boolean if a field has been set.
 
 ### GetMacFormat
 

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DadLinkPort** | Pointer to **[]int32** |  | [optional] 
-**MlagId** | Pointer to **string** |  | [optional] 
-**MlagName** | Pointer to **string** |  | [optional] 
-**PeerLinkPort** | Pointer to **[]int32** |  | [optional] 
-**Priority** | Pointer to **int32** |  | [optional] 
-**Role** | Pointer to **int32** |  | [optional] 
+**DadLinkPort** | Pointer to **[]int32** | Set of DAD Link Ports | [optional] 
+**MlagId** | Pointer to **string** | M-LAG ID | [optional] 
+**MlagName** | Pointer to **string** | M-LAG Group Name | [optional] 
+**PeerLinkPort** | Pointer to **[]int32** | Set of Peer Link Ports | [optional] 
+**Priority** | Pointer to **int32** | M-LAG Priority | [optional] 
+**Role** | Pointer to **int32** | M-LAG Role, 0: Unknown, 1: Primary, 2: Secondary | [optional] 
 
 ## Methods
 

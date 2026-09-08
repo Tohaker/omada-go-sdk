@@ -19,6 +19,14 @@ var _ MappedNullable = &WirelessUpInfoDTO{}
 
 // WirelessUpInfoDTO Wireless UpLink Info
 type WirelessUpInfoDTO struct {
+	// channel in link
+	Channel *int32 `json:"channel,omitempty"`
+	// downRate of this radio Id
+	DownRate *int64 `json:"downRate,omitempty"`
+	// radio Id used in mesh link
+	MeshRadioId *int32 `json:"meshRadioId,omitempty"`
+	// partner link info in mlo mesh link
+	PartnerLinks []PartnerLinkDTO `json:"partnerLinks,omitempty"`
 	// Rssi
 	Rssi *int32 `json:"rssi,omitempty"`
 	// Rssi Percent
@@ -41,6 +49,8 @@ type WirelessUpInfoDTO struct {
 	TxErrPkts *int64 `json:"txErrPkts,omitempty"`
 	// Tx Rate
 	TxRate *string `json:"txRate,omitempty"`
+	// upRate of this radio Id
+	UpRate *int64 `json:"upRate,omitempty"`
 }
 
 // NewWirelessUpInfoDTO instantiates a new WirelessUpInfoDTO object
@@ -58,6 +68,134 @@ func NewWirelessUpInfoDTO() *WirelessUpInfoDTO {
 func NewWirelessUpInfoDTOWithDefaults() *WirelessUpInfoDTO {
 	this := WirelessUpInfoDTO{}
 	return &this
+}
+
+// GetChannel returns the Channel field value if set, zero value otherwise.
+func (o *WirelessUpInfoDTO) GetChannel() int32 {
+	if o == nil || IsNil(o.Channel) {
+		var ret int32
+		return ret
+	}
+	return *o.Channel
+}
+
+// GetChannelOk returns a tuple with the Channel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WirelessUpInfoDTO) GetChannelOk() (*int32, bool) {
+	if o == nil || IsNil(o.Channel) {
+		return nil, false
+	}
+	return o.Channel, true
+}
+
+// HasChannel returns a boolean if a field has been set.
+func (o *WirelessUpInfoDTO) HasChannel() bool {
+	if o != nil && !IsNil(o.Channel) {
+		return true
+	}
+
+	return false
+}
+
+// SetChannel gets a reference to the given int32 and assigns it to the Channel field.
+func (o *WirelessUpInfoDTO) SetChannel(v int32) {
+	o.Channel = &v
+}
+
+// GetDownRate returns the DownRate field value if set, zero value otherwise.
+func (o *WirelessUpInfoDTO) GetDownRate() int64 {
+	if o == nil || IsNil(o.DownRate) {
+		var ret int64
+		return ret
+	}
+	return *o.DownRate
+}
+
+// GetDownRateOk returns a tuple with the DownRate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WirelessUpInfoDTO) GetDownRateOk() (*int64, bool) {
+	if o == nil || IsNil(o.DownRate) {
+		return nil, false
+	}
+	return o.DownRate, true
+}
+
+// HasDownRate returns a boolean if a field has been set.
+func (o *WirelessUpInfoDTO) HasDownRate() bool {
+	if o != nil && !IsNil(o.DownRate) {
+		return true
+	}
+
+	return false
+}
+
+// SetDownRate gets a reference to the given int64 and assigns it to the DownRate field.
+func (o *WirelessUpInfoDTO) SetDownRate(v int64) {
+	o.DownRate = &v
+}
+
+// GetMeshRadioId returns the MeshRadioId field value if set, zero value otherwise.
+func (o *WirelessUpInfoDTO) GetMeshRadioId() int32 {
+	if o == nil || IsNil(o.MeshRadioId) {
+		var ret int32
+		return ret
+	}
+	return *o.MeshRadioId
+}
+
+// GetMeshRadioIdOk returns a tuple with the MeshRadioId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WirelessUpInfoDTO) GetMeshRadioIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.MeshRadioId) {
+		return nil, false
+	}
+	return o.MeshRadioId, true
+}
+
+// HasMeshRadioId returns a boolean if a field has been set.
+func (o *WirelessUpInfoDTO) HasMeshRadioId() bool {
+	if o != nil && !IsNil(o.MeshRadioId) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeshRadioId gets a reference to the given int32 and assigns it to the MeshRadioId field.
+func (o *WirelessUpInfoDTO) SetMeshRadioId(v int32) {
+	o.MeshRadioId = &v
+}
+
+// GetPartnerLinks returns the PartnerLinks field value if set, zero value otherwise.
+func (o *WirelessUpInfoDTO) GetPartnerLinks() []PartnerLinkDTO {
+	if o == nil || IsNil(o.PartnerLinks) {
+		var ret []PartnerLinkDTO
+		return ret
+	}
+	return o.PartnerLinks
+}
+
+// GetPartnerLinksOk returns a tuple with the PartnerLinks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WirelessUpInfoDTO) GetPartnerLinksOk() ([]PartnerLinkDTO, bool) {
+	if o == nil || IsNil(o.PartnerLinks) {
+		return nil, false
+	}
+	return o.PartnerLinks, true
+}
+
+// HasPartnerLinks returns a boolean if a field has been set.
+func (o *WirelessUpInfoDTO) HasPartnerLinks() bool {
+	if o != nil && !IsNil(o.PartnerLinks) {
+		return true
+	}
+
+	return false
+}
+
+// SetPartnerLinks gets a reference to the given []PartnerLinkDTO and assigns it to the PartnerLinks field.
+func (o *WirelessUpInfoDTO) SetPartnerLinks(v []PartnerLinkDTO) {
+	o.PartnerLinks = v
 }
 
 // GetRssi returns the Rssi field value if set, zero value otherwise.
@@ -412,6 +550,38 @@ func (o *WirelessUpInfoDTO) SetTxRate(v string) {
 	o.TxRate = &v
 }
 
+// GetUpRate returns the UpRate field value if set, zero value otherwise.
+func (o *WirelessUpInfoDTO) GetUpRate() int64 {
+	if o == nil || IsNil(o.UpRate) {
+		var ret int64
+		return ret
+	}
+	return *o.UpRate
+}
+
+// GetUpRateOk returns a tuple with the UpRate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WirelessUpInfoDTO) GetUpRateOk() (*int64, bool) {
+	if o == nil || IsNil(o.UpRate) {
+		return nil, false
+	}
+	return o.UpRate, true
+}
+
+// HasUpRate returns a boolean if a field has been set.
+func (o *WirelessUpInfoDTO) HasUpRate() bool {
+	if o != nil && !IsNil(o.UpRate) {
+		return true
+	}
+
+	return false
+}
+
+// SetUpRate gets a reference to the given int64 and assigns it to the UpRate field.
+func (o *WirelessUpInfoDTO) SetUpRate(v int64) {
+	o.UpRate = &v
+}
+
 func (o WirelessUpInfoDTO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -422,6 +592,18 @@ func (o WirelessUpInfoDTO) MarshalJSON() ([]byte, error) {
 
 func (o WirelessUpInfoDTO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Channel) {
+		toSerialize["channel"] = o.Channel
+	}
+	if !IsNil(o.DownRate) {
+		toSerialize["downRate"] = o.DownRate
+	}
+	if !IsNil(o.MeshRadioId) {
+		toSerialize["meshRadioId"] = o.MeshRadioId
+	}
+	if !IsNil(o.PartnerLinks) {
+		toSerialize["partnerLinks"] = o.PartnerLinks
+	}
 	if !IsNil(o.Rssi) {
 		toSerialize["rssi"] = o.Rssi
 	}
@@ -454,6 +636,9 @@ func (o WirelessUpInfoDTO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TxRate) {
 		toSerialize["txRate"] = o.TxRate
+	}
+	if !IsNil(o.UpRate) {
+		toSerialize["upRate"] = o.UpRate
 	}
 	return toSerialize, nil
 }

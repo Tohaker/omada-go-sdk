@@ -139,9 +139,9 @@ type SwitchTemplateAPI interface {
 	CreateOswVrfTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPICreateOswVrfTemplateRequest
 
 	// CreateOswVrfTemplateExecute executes the request
-	//  @return OperationResponseWithoutResult
+	//  @return OperationResponseResponseIdVO
 	// Deprecated
-	CreateOswVrfTemplateExecute(r SwitchTemplateAPICreateOswVrfTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	CreateOswVrfTemplateExecute(r SwitchTemplateAPICreateOswVrfTemplateRequest) (*OperationResponseResponseIdVO, *http.Response, error)
 
 	/*
 	DeleteOswVrfTemplate Delete vrf template
@@ -189,7 +189,7 @@ type SwitchTemplateAPI interface {
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param lagId lagId
+	@param lagId Lag ID
 	@return SwitchTemplateAPIDeleteSwitchLagTemplateRequest
 	*/
 	DeleteSwitchLagTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, lagId string) SwitchTemplateAPIDeleteSwitchLagTemplateRequest
@@ -421,6 +421,23 @@ type SwitchTemplateAPI interface {
 	GetSwitchTemplateInfoExecute(r SwitchTemplateAPIGetSwitchTemplateInfoRequest) (*OperationResponseSwitchTemplateOverviewInfo, *http.Response, error)
 
 	/*
+	ListSwitchInterfacesTemplate List Switch Interfaces Template
+
+	List Switch Interfaces Template, include VLAN Interface and Loopback Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param deviceTemplateId Device Template ID
+	@return SwitchTemplateAPIListSwitchInterfacesTemplateRequest
+	*/
+	ListSwitchInterfacesTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIListSwitchInterfacesTemplateRequest
+
+	// ListSwitchInterfacesTemplateExecute executes the request
+	//  @return OperationResponseOswInterfaceGridOswInterfaceOpenApi
+	ListSwitchInterfacesTemplateExecute(r SwitchTemplateAPIListSwitchInterfacesTemplateRequest) (*OperationResponseOswInterfaceGridOswInterfaceOpenApi, *http.Response, error)
+
+	/*
 	ModifyOswVrfTemplate Modify vrf template
 
 	Modify vrf template. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Global Site Template Manager Modify
@@ -440,6 +457,23 @@ type SwitchTemplateAPI interface {
 	//  @return OperationResponseWithoutResult
 	// Deprecated
 	ModifyOswVrfTemplateExecute(r SwitchTemplateAPIModifyOswVrfTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	ModifyPmtudStatus Modify Path MTU Discovery Template
+
+	modify Path MTU Discovery Template.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteTemplateId Site Template ID
+	@param deviceTemplateId Device Template ID
+	@return SwitchTemplateAPIModifyPmtudStatusRequest
+	*/
+	ModifyPmtudStatus(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIModifyPmtudStatusRequest
+
+	// ModifyPmtudStatusExecute executes the request
+	//  @return OperationResponse
+	ModifyPmtudStatusExecute(r SwitchTemplateAPIModifyPmtudStatusRequest) (*OperationResponse, *http.Response, error)
 
 	/*
 	ModifyPortTagTemplate Modify an existing template port label
@@ -466,7 +500,7 @@ type SwitchTemplateAPI interface {
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param lagId lagId
+	@param lagId Lag ID
 	@return SwitchTemplateAPIModifySwitchLagTemplateRequest
 	*/
 	ModifySwitchLagTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, lagId string) SwitchTemplateAPIModifySwitchLagTemplateRequest
@@ -520,7 +554,7 @@ type SwitchTemplateAPI interface {
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
 	@param deviceTemplateId Device Template ID
-	@param port port
+	@param port Port
 	@return SwitchTemplateAPISetPoeModeForGivenPortRequest
 	*/
 	SetPoeModeForGivenPort(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, port string) SwitchTemplateAPISetPoeModeForGivenPortRequest
@@ -1413,7 +1447,7 @@ func (r SwitchTemplateAPICreateOswVrfTemplateRequest) OswVrfConfigOpenApiVO(oswV
 	return r
 }
 
-func (r SwitchTemplateAPICreateOswVrfTemplateRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+func (r SwitchTemplateAPICreateOswVrfTemplateRequest) Execute() (*OperationResponseResponseIdVO, *http.Response, error) {
 	return r.ApiService.CreateOswVrfTemplateExecute(r)
 }
 
@@ -1441,14 +1475,14 @@ func (a *SwitchTemplateAPIService) CreateOswVrfTemplate(ctx context.Context, oma
 }
 
 // Execute executes the request
-//  @return OperationResponseWithoutResult
+//  @return OperationResponseResponseIdVO
 // Deprecated
-func (a *SwitchTemplateAPIService) CreateOswVrfTemplateExecute(r SwitchTemplateAPICreateOswVrfTemplateRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+func (a *SwitchTemplateAPIService) CreateOswVrfTemplateExecute(r SwitchTemplateAPICreateOswVrfTemplateRequest) (*OperationResponseResponseIdVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
+		localVarReturnValue  *OperationResponseResponseIdVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchTemplateAPIService.CreateOswVrfTemplate")
@@ -1824,7 +1858,7 @@ Delete switch template lag.<br/><br/>The interface requires one of the permissio
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param lagId lagId
+ @param lagId Lag ID
  @return SwitchTemplateAPIDeleteSwitchLagTemplateRequest
 */
 func (a *SwitchTemplateAPIService) DeleteSwitchLagTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, lagId string) SwitchTemplateAPIDeleteSwitchLagTemplateRequest {
@@ -3650,6 +3684,153 @@ func (a *SwitchTemplateAPIService) GetSwitchTemplateInfoExecute(r SwitchTemplate
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type SwitchTemplateAPIListSwitchInterfacesTemplateRequest struct {
+	ctx context.Context
+	ApiService SwitchTemplateAPI
+	omadacId string
+	siteTemplateId string
+	deviceTemplateId string
+	page *int32
+	pageSize *int32
+}
+
+// Start page number. Start from 1.
+func (r SwitchTemplateAPIListSwitchInterfacesTemplateRequest) Page(page int32) SwitchTemplateAPIListSwitchInterfacesTemplateRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r SwitchTemplateAPIListSwitchInterfacesTemplateRequest) PageSize(pageSize int32) SwitchTemplateAPIListSwitchInterfacesTemplateRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r SwitchTemplateAPIListSwitchInterfacesTemplateRequest) Execute() (*OperationResponseOswInterfaceGridOswInterfaceOpenApi, *http.Response, error) {
+	return r.ApiService.ListSwitchInterfacesTemplateExecute(r)
+}
+
+/*
+ListSwitchInterfacesTemplate List Switch Interfaces Template
+
+List Switch Interfaces Template, include VLAN Interface and Loopback Interface.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param deviceTemplateId Device Template ID
+ @return SwitchTemplateAPIListSwitchInterfacesTemplateRequest
+*/
+func (a *SwitchTemplateAPIService) ListSwitchInterfacesTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIListSwitchInterfacesTemplateRequest {
+	return SwitchTemplateAPIListSwitchInterfacesTemplateRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		deviceTemplateId: deviceTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOswInterfaceGridOswInterfaceOpenApi
+func (a *SwitchTemplateAPIService) ListSwitchInterfacesTemplateExecute(r SwitchTemplateAPIListSwitchInterfacesTemplateRequest) (*OperationResponseOswInterfaceGridOswInterfaceOpenApi, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOswInterfaceGridOswInterfaceOpenApi
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchTemplateAPIService.ListSwitchInterfacesTemplate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/interfaces"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type SwitchTemplateAPIModifyOswVrfTemplateRequest struct {
 	ctx context.Context
 	ApiService SwitchTemplateAPI
@@ -3742,6 +3923,142 @@ func (a *SwitchTemplateAPIService) ModifyOswVrfTemplateExecute(r SwitchTemplateA
 	}
 	// body params
 	localVarPostBody = r.oswVrfConfigOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SwitchTemplateAPIModifyPmtudStatusRequest struct {
+	ctx context.Context
+	ApiService SwitchTemplateAPI
+	omadacId string
+	siteTemplateId string
+	deviceTemplateId string
+	oswPmtudVO *OswPmtudVO
+}
+
+func (r SwitchTemplateAPIModifyPmtudStatusRequest) OswPmtudVO(oswPmtudVO OswPmtudVO) SwitchTemplateAPIModifyPmtudStatusRequest {
+	r.oswPmtudVO = &oswPmtudVO
+	return r
+}
+
+func (r SwitchTemplateAPIModifyPmtudStatusRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.ModifyPmtudStatusExecute(r)
+}
+
+/*
+ModifyPmtudStatus Modify Path MTU Discovery Template
+
+modify Path MTU Discovery Template.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39700  -  Switch does not exist
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteTemplateId Site Template ID
+ @param deviceTemplateId Device Template ID
+ @return SwitchTemplateAPIModifyPmtudStatusRequest
+*/
+func (a *SwitchTemplateAPIService) ModifyPmtudStatus(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string) SwitchTemplateAPIModifyPmtudStatusRequest {
+	return SwitchTemplateAPIModifyPmtudStatusRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteTemplateId: siteTemplateId,
+		deviceTemplateId: deviceTemplateId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *SwitchTemplateAPIService) ModifyPmtudStatusExecute(r SwitchTemplateAPIModifyPmtudStatusRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchTemplateAPIService.ModifyPmtudStatus")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switchtemplates/{deviceTemplateId}/interfaces/pmtud"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteTemplateId"+"}", url.PathEscape(parameterValueToString(r.siteTemplateId, "siteTemplateId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deviceTemplateId"+"}", url.PathEscape(parameterValueToString(r.deviceTemplateId, "deviceTemplateId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.oswPmtudVO == nil {
+		return localVarReturnValue, nil, reportError("oswPmtudVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.oswPmtudVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -3953,7 +4270,7 @@ Modify switch template lag.<br/><br/>The interface requires one of the permissio
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param lagId lagId
+ @param lagId Lag ID
  @return SwitchTemplateAPIModifySwitchLagTemplateRequest
 */
 func (a *SwitchTemplateAPIService) ModifySwitchLagTemplate(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, lagId string) SwitchTemplateAPIModifySwitchLagTemplateRequest {
@@ -4373,7 +4690,7 @@ Set poe mode for given switch template port. Please enable profile override firs
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
  @param deviceTemplateId Device Template ID
- @param port port
+ @param port Port
  @return SwitchTemplateAPISetPoeModeForGivenPortRequest
 */
 func (a *SwitchTemplateAPIService) SetPoeModeForGivenPort(ctx context.Context, omadacId string, siteTemplateId string, deviceTemplateId string, port string) SwitchTemplateAPISetPoeModeForGivenPortRequest {

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Device or Client Name. | [optional] 
 **OmadaDeviceType** | Pointer to **string** | Type of omada device when it&#39;s type is other in topology | [optional] 
 **ShowModel** | Pointer to **string** | Device model. | [optional] 
+**SpecialModel** | Pointer to **string** | Special device model,for example:EAP225-Outdoor-1a20a950b8d950e8 | [optional] 
 **StackGroup** | Pointer to **bool** | Whether this node is stack or not | [optional] 
 **Type** | Pointer to **string** | Type of Device | [optional] 
 **UplinkMac** | Pointer to **string** | Uplink Device MAC address of client. | [optional] 
@@ -286,6 +287,31 @@ SetShowModel sets ShowModel field to given value.
 `func (o *TopologyDeviceClient) HasShowModel() bool`
 
 HasShowModel returns a boolean if a field has been set.
+
+### GetSpecialModel
+
+`func (o *TopologyDeviceClient) GetSpecialModel() string`
+
+GetSpecialModel returns the SpecialModel field if non-nil, zero value otherwise.
+
+### GetSpecialModelOk
+
+`func (o *TopologyDeviceClient) GetSpecialModelOk() (*string, bool)`
+
+GetSpecialModelOk returns a tuple with the SpecialModel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpecialModel
+
+`func (o *TopologyDeviceClient) SetSpecialModel(v string)`
+
+SetSpecialModel sets SpecialModel field to given value.
+
+### HasSpecialModel
+
+`func (o *TopologyDeviceClient) HasSpecialModel() bool`
+
+HasSpecialModel returns a boolean if a field has been set.
 
 ### GetStackGroup
 

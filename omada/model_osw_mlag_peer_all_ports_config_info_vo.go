@@ -17,12 +17,17 @@ import (
 // checks if the OswMlagPeerAllPortsConfigInfoVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswMlagPeerAllPortsConfigInfoVO{}
 
-// OswMlagPeerAllPortsConfigInfoVO struct for OswMlagPeerAllPortsConfigInfoVO
+// OswMlagPeerAllPortsConfigInfoVO Configuration information of all M-LAG Peer ports, used to determine whether the port can be selected
 type OswMlagPeerAllPortsConfigInfoVO struct {
+	// all aggregating ports of M-LAG Peer Switch
 	AllAggregatingPorts []int32 `json:"allAggregatingPorts,omitempty"`
+	// all mirrored ports of M-LAG Peer Switch
 	AllMirroredPorts []int32 `json:"allMirroredPorts,omitempty"`
+	// all mirroring ports of M-LAG Peer Switch
 	AllMirroringPorts []int32 `json:"allMirroringPorts,omitempty"`
+	// all M-LAG DAD ports of M-LAG Peer Switch
 	AllMlagDadPorts []int32 `json:"allMlagDadPorts,omitempty"`
+	// all M-LAG PeerLink ports of M-LAG Peer Switch
 	AllMlagPeerLinkPorts []int32 `json:"allMlagPeerLinkPorts,omitempty"`
 }
 

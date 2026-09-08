@@ -17,7 +17,10 @@ Method | HTTP request | Description
 [**BatchAdopt**](DeviceAPI.md#batchadopt) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/batch-adopt | batch adopt device
 [**CancelRollingUpgrade**](DeviceAPI.md#cancelrollingupgrade) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/rolling-upgrade-tasks/{taskId} | End the rolling upgrade task
 [**CheckMacType**](DeviceAPI.md#checkmactype) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/check-mac-type | Check the device type by mac.
+[**CheckReplaceRecord**](DeviceAPI.md#checkreplacerecord) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device/check | Check replace record
 [**CopyDeviceConfiguration**](DeviceAPI.md#copydeviceconfiguration) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/copy | Copy configuration
+[**CreateReplaceRecord**](DeviceAPI.md#createreplacerecord) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device | Create replace record
+[**DeleteReplaceRecord**](DeviceAPI.md#deletereplacerecord) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device | Delete replace record
 [**DeleteTag**](DeviceAPI.md#deletetag) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Delete an existing tag
 [**DownloadDeviceInfo**](DeviceAPI.md#downloaddeviceinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/cmd/devices/{deviceMac}/downloadDeviceInfo/{type} | Download device information.
 [**ExistUnSupportRadSecDevice**](DeviceAPI.md#existunsupportradsecdevice) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/un-support-radsec | Check for unsupported RadSec devices.
@@ -39,11 +42,13 @@ Method | HTTP request | Description
 [**GetAutoSelectDevices**](DeviceAPI.md#getautoselectdevices) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/quick-action/network-wizard/auto-select-devices | Get auto select devices in quick-config page.
 [**GetCheckFirmwareTaskResult**](DeviceAPI.md#getcheckfirmwaretaskresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/all-devices/check-latest-firmware-tasks/{taskId} | Get the result of the given check latest firmware task
 [**GetDeviceAdoptResult**](DeviceAPI.md#getdeviceadoptresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/adopt-result | Get device adopt result
+[**GetDeviceIncidentCounts**](DeviceAPI.md#getdeviceincidentcounts) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/incidents | Get site device incident counts
 [**GetDeviceList**](DeviceAPI.md#getdevicelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices | Get site device list
 [**GetDeviceRememberMe**](DeviceAPI.md#getdevicerememberme) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/remember | Get device remember Config
 [**GetDeviceWhiteList**](DeviceAPI.md#getdevicewhitelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/device-white-list | Get the whitelist list of devices.
 [**GetFirmwareInfo**](DeviceAPI.md#getfirmwareinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/latest-firmware-info | Get the latest firmware info of the device
 [**GetForgetProcess**](DeviceAPI.md#getforgetprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/forget/{forgetId}/status | Get batch forget process
+[**GetGlobalDeviceIncidentCounts**](DeviceAPI.md#getglobaldeviceincidentcounts) | **Post** /openapi/v1/{omadacId}/devices/incidents | Get global device incident counts
 [**GetGlobalKnownDeviceList**](DeviceAPI.md#getglobalknowndevicelist) | **Get** /openapi/v1/{omadacId}/devices/known-devices | Get global known device list
 [**GetGlobalUnknownDeviceList**](DeviceAPI.md#getglobalunknowndevicelist) | **Get** /openapi/v1/{omadacId}/devices/unknown-devices | Get global unknown device list
 [**GetGridAdoptedBridgeDevicesBySite**](DeviceAPI.md#getgridadoptedbridgedevicesbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/bridge-devices/adopted | Get Bridge group grouped devices
@@ -52,6 +57,7 @@ Method | HTTP request | Description
 [**GetGridPendingDevicesBySite**](DeviceAPI.md#getgridpendingdevicesbysite) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/grid/devices/pending | Get adoptable device list of target site
 [**GetManuallyUpgradeRes**](DeviceAPI.md#getmanuallyupgraderes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/manually-upgrade-tasks/{taskId} | Get the result of the given manually upgrade task
 [**GetMoveSiteProcess**](DeviceAPI.md#getmovesiteprocess) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/move/{moveSiteId}/status | Get batch move site process
+[**GetMspAdoptTip**](DeviceAPI.md#getmspadopttip) | **Get** /openapi/v1/msp/{mspId}/adopt-tip | MSP get adopt tip
 [**GetOnlineTimeline**](DeviceAPI.md#getonlinetimeline) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/timeline | Get device online timeline
 [**GetOnlineUpgradeRes**](DeviceAPI.md#getonlineupgraderes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/online-upgrade-result | Get online upgrade result
 [**GetRollingUpgradeRes**](DeviceAPI.md#getrollingupgraderes) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/rolling-upgrade-tasks/{taskId} | Get the result of the given rolling upgrade task
@@ -63,6 +69,7 @@ Method | HTTP request | Description
 [**LocatePorts**](DeviceAPI.md#locateports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/locate/switch-ports | Locate multiple ports of multiple switches
 [**ManuallyUpgrade**](DeviceAPI.md#manuallyupgrade) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/multi-devices/start-manually-upgrade | Start manually upgrade
 [**ModifyDeviceRememberMe**](DeviceAPI.md#modifydevicerememberme) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/remember | Modify device remember Config
+[**ModifyReplaceRecord**](DeviceAPI.md#modifyreplacerecord) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/replace-device | Modify replace record
 [**ModifyTag**](DeviceAPI.md#modifytag) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/devices/tag | Modify an existing tag
 [**MoveSite**](DeviceAPI.md#movesite) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/devices/{deviceMac}/site-move | Move site
 [**MoveSiteForAps**](DeviceAPI.md#movesiteforaps) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/site-move | Move aps to another site
@@ -1059,6 +1066,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CheckReplaceRecord
+
+> OperationResponseReplaceConfigRespVO CheckReplaceRecord(ctx, omadacId, siteId, deviceMac).CheckReplaceVO(checkReplaceVO).Execute()
+
+Check replace record
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
+	checkReplaceVO := *openapiclient.NewCheckReplaceVO("DeviceKey_example") // CheckReplaceVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceAPI.CheckReplaceRecord(context.Background(), omadacId, siteId, deviceMac).CheckReplaceVO(checkReplaceVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.CheckReplaceRecord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CheckReplaceRecord`: OperationResponseReplaceConfigRespVO
+	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.CheckReplaceRecord`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**deviceMac** | **string** | Device MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCheckReplaceRecordRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **checkReplaceVO** | [**CheckReplaceVO**](CheckReplaceVO.md) |  | 
+
+### Return type
+
+[**OperationResponseReplaceConfigRespVO**](OperationResponseReplaceConfigRespVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CopyDeviceConfiguration
 
 > OperationResponseWithoutResult CopyDeviceConfiguration(ctx, omadacId, siteId).DeviceCopyConfigurationOpenApiVO(deviceCopyConfigurationOpenApiVO).Execute()
@@ -1127,6 +1212,160 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateReplaceRecord
+
+> OperationResponseWithoutResult CreateReplaceRecord(ctx, omadacId, siteId, deviceMac).DeviceReplaceSettingVO(deviceReplaceSettingVO).Execute()
+
+Create replace record
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
+	deviceReplaceSettingVO := *openapiclient.NewDeviceReplaceSettingVO("DestinationDeviceKey_example") // DeviceReplaceSettingVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceAPI.CreateReplaceRecord(context.Background(), omadacId, siteId, deviceMac).DeviceReplaceSettingVO(deviceReplaceSettingVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.CreateReplaceRecord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateReplaceRecord`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.CreateReplaceRecord`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**deviceMac** | **string** | Device MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateReplaceRecordRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **deviceReplaceSettingVO** | [**DeviceReplaceSettingVO**](DeviceReplaceSettingVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteReplaceRecord
+
+> OperationResponseWithoutResult DeleteReplaceRecord(ctx, omadacId, siteId, deviceMac).Execute()
+
+Delete replace record
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceAPI.DeleteReplaceRecord(context.Background(), omadacId, siteId, deviceMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.DeleteReplaceRecord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteReplaceRecord`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.DeleteReplaceRecord`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**deviceMac** | **string** | Device MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteReplaceRecordRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -2058,7 +2297,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	operateId := "operateId_example" // string | 
+	operateId := "operateId_example" // string | Add device operation ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2080,7 +2319,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
 **siteId** | **string** | Site ID | 
-**operateId** | **string** |  | 
+**operateId** | **string** | Add device operation ID | 
 
 ### Other Parameters
 
@@ -2133,7 +2372,7 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
-	operateId := "operateId_example" // string | 
+	operateId := "operateId_example" // string | Add device operation ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2154,7 +2393,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **omadacId** | **string** | Omada ID | 
-**operateId** | **string** |  | 
+**operateId** | **string** | Add device operation ID | 
 
 ### Other Parameters
 
@@ -2722,6 +2961,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetDeviceIncidentCounts
+
+> OperationResponseDeviceIncidentCountResultOpenApiVO GetDeviceIncidentCounts(ctx, omadacId, siteId).DeviceIncidentCountRequestOpenApiVO(deviceIncidentCountRequestOpenApiVO).Execute()
+
+Get site device incident counts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	deviceIncidentCountRequestOpenApiVO := *openapiclient.NewDeviceIncidentCountRequestOpenApiVO() // DeviceIncidentCountRequestOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceAPI.GetDeviceIncidentCounts(context.Background(), omadacId, siteId).DeviceIncidentCountRequestOpenApiVO(deviceIncidentCountRequestOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.GetDeviceIncidentCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDeviceIncidentCounts`: OperationResponseDeviceIncidentCountResultOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.GetDeviceIncidentCounts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDeviceIncidentCountsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **deviceIncidentCountRequestOpenApiVO** | [**DeviceIncidentCountRequestOpenApiVO**](DeviceIncidentCountRequestOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseDeviceIncidentCountResultOpenApiVO**](OperationResponseDeviceIncidentCountResultOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetDeviceList
 
 > OperationResponseGridVODeviceInfo GetDeviceList(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SortsName(sortsName).SortsStatus(sortsStatus).SortsIp(sortsIp).SearchKey(searchKey).FiltersTag(filtersTag).Execute()
@@ -3110,6 +3424,78 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetGlobalDeviceIncidentCounts
+
+> OperationResponseDeviceIncidentCountResultOpenApiVO GetGlobalDeviceIncidentCounts(ctx, omadacId).DeviceIncidentCountRequestOpenApiVO(deviceIncidentCountRequestOpenApiVO).Execute()
+
+Get global device incident counts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	deviceIncidentCountRequestOpenApiVO := *openapiclient.NewDeviceIncidentCountRequestOpenApiVO() // DeviceIncidentCountRequestOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceAPI.GetGlobalDeviceIncidentCounts(context.Background(), omadacId).DeviceIncidentCountRequestOpenApiVO(deviceIncidentCountRequestOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.GetGlobalDeviceIncidentCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGlobalDeviceIncidentCounts`: OperationResponseDeviceIncidentCountResultOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.GetGlobalDeviceIncidentCounts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGlobalDeviceIncidentCountsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **deviceIncidentCountRequestOpenApiVO** | [**DeviceIncidentCountRequestOpenApiVO**](DeviceIncidentCountRequestOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseDeviceIncidentCountResultOpenApiVO**](OperationResponseDeviceIncidentCountResultOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetGlobalKnownDeviceList
 
 > OperationResponseGridVOGlobalKnownDeviceOpenApiVO GetGlobalKnownDeviceList(ctx, omadacId).Page(page).PageSize(pageSize).SortsMac(sortsMac).SearchMacs(searchMacs).SearchNames(searchNames).SearchModels(searchModels).SearchSns(searchSns).FiltersTag(filtersTag).FiltersDeviceSeriesType(filtersDeviceSeriesType).Execute()
@@ -3373,7 +3759,7 @@ Name | Type | Description  | Notes
 
 ## GetGridAdoptedDevicesStatByGlobal
 
-> OperationResponseGlobalDeviceStatOpenApiVO GetGridAdoptedDevicesStatByGlobal(ctx, omadacId).Execute()
+> OperationResponseGlobalDeviceStatOpenApiVO GetGridAdoptedDevicesStatByGlobal(ctx, omadacId).Page(page).PageSize(pageSize).SortsName(sortsName).SortsStatus(sortsStatus).SortsIp(sortsIp).SearchKey(searchKey).FiltersTag(filtersTag).Execute()
 
 Query the statistics for the list of global adopted devices.
 
@@ -3393,10 +3779,17 @@ import (
 
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	sortsName := "sortsName_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
+	sortsStatus := "sortsStatus_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
+	sortsIp := "sortsIp_example" // string | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect (optional)
+	searchKey := "searchKey_example" // string | Fuzzy query parameters, support field name,mac,ip (optional)
+	filtersTag := "filtersTag_example" // string | Filter query parameters, support field tag name (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceAPI.GetGridAdoptedDevicesStatByGlobal(context.Background(), omadacId).Execute()
+	resp, r, err := apiClient.DeviceAPI.GetGridAdoptedDevicesStatByGlobal(context.Background(), omadacId).Page(page).PageSize(pageSize).SortsName(sortsName).SortsStatus(sortsStatus).SortsIp(sortsIp).SearchKey(searchKey).FiltersTag(filtersTag).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.GetGridAdoptedDevicesStatByGlobal``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3422,6 +3815,13 @@ Other parameters are passed through a pointer to a apiGetGridAdoptedDevicesStatB
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **sortsName** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect | 
+ **sortsStatus** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect | 
+ **sortsIp** | **string** | Sort parameter may be one of asc or desc. Optional parameter. If it is not carried, it means it is not sorted by this field. When there are more than one, the first one takes effect | 
+ **searchKey** | **string** | Fuzzy query parameters, support field name,mac,ip | 
+ **filtersTag** | **string** | Filter query parameters, support field tag name | 
 
 ### Return type
 
@@ -3763,9 +4163,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetMspAdoptTip
+
+> OperationResponseAdoptTipOpenApiVO GetMspAdoptTip(ctx, mspId).Execute()
+
+MSP get adopt tip
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	mspId := "mspId_example" // string | MSP ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceAPI.GetMspAdoptTip(context.Background(), mspId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.GetMspAdoptTip``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMspAdoptTip`: OperationResponseAdoptTipOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.GetMspAdoptTip`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mspId** | **string** | MSP ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMspAdoptTipRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**OperationResponseAdoptTipOpenApiVO**](OperationResponseAdoptTipOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetOnlineTimeline
 
-> OperationResponseTimelineOpenApiVO GetOnlineTimeline(ctx, omadacId, siteId, deviceMac).Dto(dto).Execute()
+> OperationResponseTimelineOpenApiVO GetOnlineTimeline(ctx, omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 
 Get device online timeline
 
@@ -3787,11 +4257,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	dto := *openapiclient.NewTimeIntervalQueryOpenApiVO(int64(123), int64(123)) // TimeIntervalQueryOpenApiVO | 
+	queryParam := *openapiclient.NewTimeIntervalQueryOpenApiVO(int64(123), int64(123)) // TimeIntervalQueryOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceAPI.GetOnlineTimeline(context.Background(), omadacId, siteId, deviceMac).Dto(dto).Execute()
+	resp, r, err := apiClient.DeviceAPI.GetOnlineTimeline(context.Background(), omadacId, siteId, deviceMac).QueryParam(queryParam).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.GetOnlineTimeline``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3821,7 +4291,7 @@ Name | Type | Description  | Notes
 
 
 
- **dto** | [**TimeIntervalQueryOpenApiVO**](TimeIntervalQueryOpenApiVO.md) |  | 
+ **queryParam** | [**TimeIntervalQueryOpenApiVO**](TimeIntervalQueryOpenApiVO.md) |  | 
 
 ### Return type
 
@@ -4605,6 +5075,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ModifyReplaceRecord
+
+> OperationResponseWithoutResult ModifyReplaceRecord(ctx, omadacId, siteId, deviceMac).DeviceReplaceSettingVO(deviceReplaceSettingVO).Execute()
+
+Modify replace record
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
+	deviceReplaceSettingVO := *openapiclient.NewDeviceReplaceSettingVO("DestinationDeviceKey_example") // DeviceReplaceSettingVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceAPI.ModifyReplaceRecord(context.Background(), omadacId, siteId, deviceMac).DeviceReplaceSettingVO(deviceReplaceSettingVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.ModifyReplaceRecord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyReplaceRecord`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.ModifyReplaceRecord`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**deviceMac** | **string** | Device MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyReplaceRecordRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **deviceReplaceSettingVO** | [**DeviceReplaceSettingVO**](DeviceReplaceSettingVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ModifyTag
 
 > OperationResponseWithoutResult ModifyTag(ctx, omadacId, siteId).ModifyTagOpenApiVO(modifyTagOpenApiVO).Execute()
@@ -5290,7 +5838,7 @@ Name | Type | Description  | Notes
 
 ## RetryAddDeviceByMsp
 
-> OperationResponseRetryAddDeviceRespOpenApiVO RetryAddDeviceByMsp(ctx, customerId, deviceMac, mspId, siteId).RetryAddDeviceOpenApiVO(retryAddDeviceOpenApiVO).Execute()
+> OperationResponseRetryAddDeviceRespOpenApiVO RetryAddDeviceByMsp(ctx, mspId, customerId, siteId, deviceMac).RetryAddDeviceOpenApiVO(retryAddDeviceOpenApiVO).Execute()
 
 retry add device in msp view
 
@@ -5309,15 +5857,15 @@ import (
 )
 
 func main() {
+	mspId := "mspId_example" // string | MSP ID
 	customerId := "customerId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
 	deviceMac := "deviceMac_example" // string | Device MAC address, like AA-BB-CC-DD-EE-FF
-	mspId := "mspId_example" // string | mspId
-	siteId := "siteId_example" // string | siteId
 	retryAddDeviceOpenApiVO := *openapiclient.NewRetryAddDeviceOpenApiVO() // RetryAddDeviceOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceAPI.RetryAddDeviceByMsp(context.Background(), customerId, deviceMac, mspId, siteId).RetryAddDeviceOpenApiVO(retryAddDeviceOpenApiVO).Execute()
+	resp, r, err := apiClient.DeviceAPI.RetryAddDeviceByMsp(context.Background(), mspId, customerId, siteId, deviceMac).RetryAddDeviceOpenApiVO(retryAddDeviceOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.RetryAddDeviceByMsp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5333,10 +5881,10 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mspId** | **string** | MSP ID | 
 **customerId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
 **deviceMac** | **string** | Device MAC address, like AA-BB-CC-DD-EE-FF | 
-**mspId** | **string** | mspId | 
-**siteId** | **string** | siteId | 
 
 ### Other Parameters
 

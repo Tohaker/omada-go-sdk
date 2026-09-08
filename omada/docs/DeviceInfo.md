@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **Sn** | Pointer to **string** | Device serial number | [optional] 
 **Status** | Pointer to **int32** | Device status should be a value as follows: 0: Disconnected; 1: Connected; 2: Pending; 3: Heartbeat Missed; 4: Isolated | [optional] 
 **Subtype** | Pointer to **string** | Switch subtype should be a value as follows: smart: Non-Agile Series Switch; es: Agile Series Switch. | [optional] 
+**SupportAfc** | Pointer to **bool** | Whether the device supports AFC. | [optional] 
 **SwitchConsistent** | Pointer to **bool** | Whether the device can be adopted by the site. | [optional] 
 **TagName** | Pointer to **string** | Device tag name | [optional] 
 **Type** | Pointer to **string** | Device type | [optional] 
@@ -628,6 +629,31 @@ SetSubtype sets Subtype field to given value.
 `func (o *DeviceInfo) HasSubtype() bool`
 
 HasSubtype returns a boolean if a field has been set.
+
+### GetSupportAfc
+
+`func (o *DeviceInfo) GetSupportAfc() bool`
+
+GetSupportAfc returns the SupportAfc field if non-nil, zero value otherwise.
+
+### GetSupportAfcOk
+
+`func (o *DeviceInfo) GetSupportAfcOk() (*bool, bool)`
+
+GetSupportAfcOk returns a tuple with the SupportAfc field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportAfc
+
+`func (o *DeviceInfo) SetSupportAfc(v bool)`
+
+SetSupportAfc sets SupportAfc field to given value.
+
+### HasSupportAfc
+
+`func (o *DeviceInfo) HasSupportAfc() bool`
+
+HasSupportAfc returns a boolean if a field has been set.
 
 ### GetSwitchConsistent
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CustomerRoleId** | Pointer to **string** |  | [optional] 
 **CustomerRoleName** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
+**Enable2FA** | Pointer to **bool** |  | [optional] 
 **EndTime** | Pointer to **int64** |  | [optional] 
 **ForceModify** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -146,6 +147,31 @@ SetEmail sets Email field to given value.
 `func (o *MspUserVO) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
+
+### GetEnable2FA
+
+`func (o *MspUserVO) GetEnable2FA() bool`
+
+GetEnable2FA returns the Enable2FA field if non-nil, zero value otherwise.
+
+### GetEnable2FAOk
+
+`func (o *MspUserVO) GetEnable2FAOk() (*bool, bool)`
+
+GetEnable2FAOk returns a tuple with the Enable2FA field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnable2FA
+
+`func (o *MspUserVO) SetEnable2FA(v bool)`
+
+SetEnable2FA sets Enable2FA field to given value.
+
+### HasEnable2FA
+
+`func (o *MspUserVO) HasEnable2FA() bool`
+
+HasEnable2FA returns a boolean if a field has been set.
 
 ### GetEndTime
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AiAssi** | Pointer to **int32** | AI Assistant, it should be a value as follows: 0:block; 1:view only; 2:modify | [optional] 
 **MspAddAdoptDevice** | Pointer to **int32** | Msp add and adopt devices. It should be a value as follows: 0:block; 2:access | [optional] 
 **MspAddDevices** | Pointer to **int32** | Msp add devices. It should be a value as follows: 0:block; 2:access | [optional] 
 **MspAdopt** | Pointer to **int32** | Msp adopt. It should be a value as follows: 0:block; 2:access | [optional] 
@@ -41,6 +42,31 @@ will change when the set of required properties is changed
 NewMspRoleVOWithDefaults instantiates a new MspRoleVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAiAssi
+
+`func (o *MspRoleVO) GetAiAssi() int32`
+
+GetAiAssi returns the AiAssi field if non-nil, zero value otherwise.
+
+### GetAiAssiOk
+
+`func (o *MspRoleVO) GetAiAssiOk() (*int32, bool)`
+
+GetAiAssiOk returns a tuple with the AiAssi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiAssi
+
+`func (o *MspRoleVO) SetAiAssi(v int32)`
+
+SetAiAssi sets AiAssi field to given value.
+
+### HasAiAssi
+
+`func (o *MspRoleVO) HasAiAssi() bool`
+
+HasAiAssi returns a boolean if a field has been set.
 
 ### GetMspAddAdoptDevice
 

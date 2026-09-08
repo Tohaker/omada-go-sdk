@@ -29,6 +29,8 @@ type InterfaceInfo struct {
 	InterfaceName *string `json:"interfaceName,omitempty"`
 	// Parameter [interfaceType] should be a value as follows: 0: Wired, 1: Wireless.
 	InterfaceType *int32 `json:"interfaceType,omitempty"`
+	// Whether the port is copper when the port is combo.
+	IsCopper *bool `json:"isCopper,omitempty"`
 	// Link status should be a value as follows: 0:LINK_DOWN;1:LINK_UP
 	LinkStatus *int32 `json:"linkStatus,omitempty"`
 }
@@ -210,6 +212,38 @@ func (o *InterfaceInfo) SetInterfaceType(v int32) {
 	o.InterfaceType = &v
 }
 
+// GetIsCopper returns the IsCopper field value if set, zero value otherwise.
+func (o *InterfaceInfo) GetIsCopper() bool {
+	if o == nil || IsNil(o.IsCopper) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCopper
+}
+
+// GetIsCopperOk returns a tuple with the IsCopper field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InterfaceInfo) GetIsCopperOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsCopper) {
+		return nil, false
+	}
+	return o.IsCopper, true
+}
+
+// HasIsCopper returns a boolean if a field has been set.
+func (o *InterfaceInfo) HasIsCopper() bool {
+	if o != nil && !IsNil(o.IsCopper) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCopper gets a reference to the given bool and assigns it to the IsCopper field.
+func (o *InterfaceInfo) SetIsCopper(v bool) {
+	o.IsCopper = &v
+}
+
 // GetLinkStatus returns the LinkStatus field value if set, zero value otherwise.
 func (o *InterfaceInfo) GetLinkStatus() int32 {
 	if o == nil || IsNil(o.LinkStatus) {
@@ -266,6 +300,9 @@ func (o InterfaceInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.InterfaceType) {
 		toSerialize["interfaceType"] = o.InterfaceType
+	}
+	if !IsNil(o.IsCopper) {
+		toSerialize["isCopper"] = o.IsCopper
 	}
 	if !IsNil(o.LinkStatus) {
 		toSerialize["linkStatus"] = o.LinkStatus

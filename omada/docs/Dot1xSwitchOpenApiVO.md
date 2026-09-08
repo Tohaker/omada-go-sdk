@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Mab** | **bool** | MAB enable status | 
 **MacFormat** | **int32** | Format of the MAC address. MacFormat should be a value as follows: 0: aabbccddeeff, 1: aa-bb-cc-dd-ee-ff, 2: aa:bb:cc:dd:ee:ff, 3: AABBCCDDEEFF, 4: AA-BB-CC-DD-EE-FF, 5: AA:BB:CC:DD:EE:FF | 
 **NasId** | Pointer to **string** | Nas ID,NasId should contain 1~31 characters, except the question mark (?) and double quote (\&quot;). | [optional] 
-**RadiusProfileId** | **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new Radius profile&#39; (&#39;Create a new Radius profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get Radius profile list&#39; (&#39;Get Radius profile template list&#39;) interface | 
+**RadiusProfileId** | **string** | This field represents radius profile ID. Radius profile can be created using &#39;Create a new RADIUS profile&#39; (&#39;Create a new RADIUS profile template&#39;) interface, and radius profile ID can be obtained from &#39;Get RADIUS profile list&#39; (&#39;Get RADIUS profile template list&#39;) interface | 
 **Switches** | Pointer to [**[]Dot1xSwitchSettingOpenApiVO**](Dot1xSwitchSettingOpenApiVO.md) | Enabled switch ports, optional when update switch 802.1x setting | [optional] 
 **VlanAssign** | **bool** | VLAN Assignment enable status | 
 

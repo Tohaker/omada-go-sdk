@@ -21,6 +21,12 @@ var _ MappedNullable = &ChannelInterInfoVO{}
 type ChannelInterInfoVO struct {
 	// Channel interference rate
 	ChannelInterf *int32 `json:"channelInterf,omitempty"`
+	// Channel interference rate
+	ChannelInterf2g *int32 `json:"channelInterf2g,omitempty"`
+	// Channel interference rate
+	ChannelInterf5g *int32 `json:"channelInterf5g,omitempty"`
+	// Channel interference rate
+	ChannelInterf6g *int32 `json:"channelInterf6g,omitempty"`
 	// Device name
 	DeviceName *string `json:"deviceName,omitempty"`
 	// Device type
@@ -33,6 +39,12 @@ type ChannelInterInfoVO struct {
 	Model *string `json:"model,omitempty"`
 	// Model version of device, for example:3.0
 	ModelVersion *string `json:"modelVersion,omitempty"`
+	// Noise floor of 2.4g
+	NoiseFloor2g *int32 `json:"noiseFloor2g,omitempty"`
+	// Noise floor of 5g
+	NoiseFloor5g *int32 `json:"noiseFloor5g,omitempty"`
+	// Noise floor of 6g
+	NoiseFloor6g *int32 `json:"noiseFloor6g,omitempty"`
 }
 
 // NewChannelInterInfoVO instantiates a new ChannelInterInfoVO object
@@ -82,6 +94,102 @@ func (o *ChannelInterInfoVO) HasChannelInterf() bool {
 // SetChannelInterf gets a reference to the given int32 and assigns it to the ChannelInterf field.
 func (o *ChannelInterInfoVO) SetChannelInterf(v int32) {
 	o.ChannelInterf = &v
+}
+
+// GetChannelInterf2g returns the ChannelInterf2g field value if set, zero value otherwise.
+func (o *ChannelInterInfoVO) GetChannelInterf2g() int32 {
+	if o == nil || IsNil(o.ChannelInterf2g) {
+		var ret int32
+		return ret
+	}
+	return *o.ChannelInterf2g
+}
+
+// GetChannelInterf2gOk returns a tuple with the ChannelInterf2g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelInterInfoVO) GetChannelInterf2gOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChannelInterf2g) {
+		return nil, false
+	}
+	return o.ChannelInterf2g, true
+}
+
+// HasChannelInterf2g returns a boolean if a field has been set.
+func (o *ChannelInterInfoVO) HasChannelInterf2g() bool {
+	if o != nil && !IsNil(o.ChannelInterf2g) {
+		return true
+	}
+
+	return false
+}
+
+// SetChannelInterf2g gets a reference to the given int32 and assigns it to the ChannelInterf2g field.
+func (o *ChannelInterInfoVO) SetChannelInterf2g(v int32) {
+	o.ChannelInterf2g = &v
+}
+
+// GetChannelInterf5g returns the ChannelInterf5g field value if set, zero value otherwise.
+func (o *ChannelInterInfoVO) GetChannelInterf5g() int32 {
+	if o == nil || IsNil(o.ChannelInterf5g) {
+		var ret int32
+		return ret
+	}
+	return *o.ChannelInterf5g
+}
+
+// GetChannelInterf5gOk returns a tuple with the ChannelInterf5g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelInterInfoVO) GetChannelInterf5gOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChannelInterf5g) {
+		return nil, false
+	}
+	return o.ChannelInterf5g, true
+}
+
+// HasChannelInterf5g returns a boolean if a field has been set.
+func (o *ChannelInterInfoVO) HasChannelInterf5g() bool {
+	if o != nil && !IsNil(o.ChannelInterf5g) {
+		return true
+	}
+
+	return false
+}
+
+// SetChannelInterf5g gets a reference to the given int32 and assigns it to the ChannelInterf5g field.
+func (o *ChannelInterInfoVO) SetChannelInterf5g(v int32) {
+	o.ChannelInterf5g = &v
+}
+
+// GetChannelInterf6g returns the ChannelInterf6g field value if set, zero value otherwise.
+func (o *ChannelInterInfoVO) GetChannelInterf6g() int32 {
+	if o == nil || IsNil(o.ChannelInterf6g) {
+		var ret int32
+		return ret
+	}
+	return *o.ChannelInterf6g
+}
+
+// GetChannelInterf6gOk returns a tuple with the ChannelInterf6g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelInterInfoVO) GetChannelInterf6gOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChannelInterf6g) {
+		return nil, false
+	}
+	return o.ChannelInterf6g, true
+}
+
+// HasChannelInterf6g returns a boolean if a field has been set.
+func (o *ChannelInterInfoVO) HasChannelInterf6g() bool {
+	if o != nil && !IsNil(o.ChannelInterf6g) {
+		return true
+	}
+
+	return false
+}
+
+// SetChannelInterf6g gets a reference to the given int32 and assigns it to the ChannelInterf6g field.
+func (o *ChannelInterInfoVO) SetChannelInterf6g(v int32) {
+	o.ChannelInterf6g = &v
 }
 
 // GetDeviceName returns the DeviceName field value if set, zero value otherwise.
@@ -276,6 +384,102 @@ func (o *ChannelInterInfoVO) SetModelVersion(v string) {
 	o.ModelVersion = &v
 }
 
+// GetNoiseFloor2g returns the NoiseFloor2g field value if set, zero value otherwise.
+func (o *ChannelInterInfoVO) GetNoiseFloor2g() int32 {
+	if o == nil || IsNil(o.NoiseFloor2g) {
+		var ret int32
+		return ret
+	}
+	return *o.NoiseFloor2g
+}
+
+// GetNoiseFloor2gOk returns a tuple with the NoiseFloor2g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelInterInfoVO) GetNoiseFloor2gOk() (*int32, bool) {
+	if o == nil || IsNil(o.NoiseFloor2g) {
+		return nil, false
+	}
+	return o.NoiseFloor2g, true
+}
+
+// HasNoiseFloor2g returns a boolean if a field has been set.
+func (o *ChannelInterInfoVO) HasNoiseFloor2g() bool {
+	if o != nil && !IsNil(o.NoiseFloor2g) {
+		return true
+	}
+
+	return false
+}
+
+// SetNoiseFloor2g gets a reference to the given int32 and assigns it to the NoiseFloor2g field.
+func (o *ChannelInterInfoVO) SetNoiseFloor2g(v int32) {
+	o.NoiseFloor2g = &v
+}
+
+// GetNoiseFloor5g returns the NoiseFloor5g field value if set, zero value otherwise.
+func (o *ChannelInterInfoVO) GetNoiseFloor5g() int32 {
+	if o == nil || IsNil(o.NoiseFloor5g) {
+		var ret int32
+		return ret
+	}
+	return *o.NoiseFloor5g
+}
+
+// GetNoiseFloor5gOk returns a tuple with the NoiseFloor5g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelInterInfoVO) GetNoiseFloor5gOk() (*int32, bool) {
+	if o == nil || IsNil(o.NoiseFloor5g) {
+		return nil, false
+	}
+	return o.NoiseFloor5g, true
+}
+
+// HasNoiseFloor5g returns a boolean if a field has been set.
+func (o *ChannelInterInfoVO) HasNoiseFloor5g() bool {
+	if o != nil && !IsNil(o.NoiseFloor5g) {
+		return true
+	}
+
+	return false
+}
+
+// SetNoiseFloor5g gets a reference to the given int32 and assigns it to the NoiseFloor5g field.
+func (o *ChannelInterInfoVO) SetNoiseFloor5g(v int32) {
+	o.NoiseFloor5g = &v
+}
+
+// GetNoiseFloor6g returns the NoiseFloor6g field value if set, zero value otherwise.
+func (o *ChannelInterInfoVO) GetNoiseFloor6g() int32 {
+	if o == nil || IsNil(o.NoiseFloor6g) {
+		var ret int32
+		return ret
+	}
+	return *o.NoiseFloor6g
+}
+
+// GetNoiseFloor6gOk returns a tuple with the NoiseFloor6g field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChannelInterInfoVO) GetNoiseFloor6gOk() (*int32, bool) {
+	if o == nil || IsNil(o.NoiseFloor6g) {
+		return nil, false
+	}
+	return o.NoiseFloor6g, true
+}
+
+// HasNoiseFloor6g returns a boolean if a field has been set.
+func (o *ChannelInterInfoVO) HasNoiseFloor6g() bool {
+	if o != nil && !IsNil(o.NoiseFloor6g) {
+		return true
+	}
+
+	return false
+}
+
+// SetNoiseFloor6g gets a reference to the given int32 and assigns it to the NoiseFloor6g field.
+func (o *ChannelInterInfoVO) SetNoiseFloor6g(v int32) {
+	o.NoiseFloor6g = &v
+}
+
 func (o ChannelInterInfoVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -288,6 +492,15 @@ func (o ChannelInterInfoVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ChannelInterf) {
 		toSerialize["channelInterf"] = o.ChannelInterf
+	}
+	if !IsNil(o.ChannelInterf2g) {
+		toSerialize["channelInterf2g"] = o.ChannelInterf2g
+	}
+	if !IsNil(o.ChannelInterf5g) {
+		toSerialize["channelInterf5g"] = o.ChannelInterf5g
+	}
+	if !IsNil(o.ChannelInterf6g) {
+		toSerialize["channelInterf6g"] = o.ChannelInterf6g
 	}
 	if !IsNil(o.DeviceName) {
 		toSerialize["deviceName"] = o.DeviceName
@@ -306,6 +519,15 @@ func (o ChannelInterInfoVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ModelVersion) {
 		toSerialize["modelVersion"] = o.ModelVersion
+	}
+	if !IsNil(o.NoiseFloor2g) {
+		toSerialize["noiseFloor2g"] = o.NoiseFloor2g
+	}
+	if !IsNil(o.NoiseFloor5g) {
+		toSerialize["noiseFloor5g"] = o.NoiseFloor5g
+	}
+	if !IsNil(o.NoiseFloor6g) {
+		toSerialize["noiseFloor6g"] = o.NoiseFloor6g
 	}
 	return toSerialize, nil
 }

@@ -22,6 +22,21 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test WirelessNetworkAPIService CountApGroups", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.CountApGroups(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService CountWlans", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -30,6 +45,21 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.CountWlans(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService CreateApGroup", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.CreateApGroup(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -53,6 +83,21 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkAPIService CreateSsidV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.CreateSsidV2(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService CreateWlanGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -61,6 +106,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var siteId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.CreateWlanGroup(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService DeleteApGroup", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apGroupId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.DeleteApGroup(context.Background(), omadacId, siteId, apGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -85,6 +146,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkAPIService DeleteSsidBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.DeleteSsidBySite(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService DeleteWlanGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -94,6 +171,52 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var wlanId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.DeleteWlanGroup(context.Background(), omadacId, siteId, wlanId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService GetAllApGroupListBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.GetAllApGroupListBySite(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService GetApGroupInfo", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apGroupId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.GetApGroupInfo(context.Background(), omadacId, siteId, apGroupId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService GetApGroupList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.GetApGroupList(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -148,6 +271,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkAPIService GetSsidDetailV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.GetSsidDetailV2(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService GetSsidList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -157,6 +296,21 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var wlanId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.GetSsidList(context.Background(), omadacId, siteId, wlanId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService GetSsidListV2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.GetSsidListV2(context.Background(), omadacId, siteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -210,6 +364,53 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkAPIService QuerySsidBindApGroups", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.QuerySsidBindApGroups(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService QuerySsidDuplicateNameBySite1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.QuerySsidDuplicateNameBySite1(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService UpdateApGroup", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apGroupId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateApGroup(context.Background(), omadacId, siteId, apGroupId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService UpdateSsidBandSteerConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -220,6 +421,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var ssidId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidBandSteerConfig(context.Background(), omadacId, siteId, wlanId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService UpdateSsidBandSteerConfigBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidBandSteerConfigBySite(context.Background(), omadacId, siteId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -244,6 +461,38 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkAPIService UpdateSsidBasicConfigBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidBasicConfigBySite(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService UpdateSsidBindApGroups", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidBindApGroups(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService UpdateSsidDhcpOptionConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -254,6 +503,38 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var ssidId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidDhcpOptionConfig(context.Background(), omadacId, siteId, wlanId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService UpdateSsidDhcpOptionConfigBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidDhcpOptionConfigBySite(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService UpdateSsidEnableStatusBySite1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidEnableStatusBySite1(context.Background(), omadacId, siteId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -278,6 +559,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkAPIService UpdateSsidHotspotV2SettingBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidHotspotV2SettingBySite(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService UpdateSsidLoadBalanceConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -288,6 +585,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var ssidId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidLoadBalanceConfig(context.Background(), omadacId, siteId, wlanId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService UpdateSsidLoadBalanceConfigBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidLoadBalanceConfigBySite(context.Background(), omadacId, siteId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -312,6 +625,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkAPIService UpdateSsidMacFilterConfigBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidMacFilterConfigBySite(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService UpdateSsidMultiCastConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -322,6 +651,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var ssidId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidMultiCastConfig(context.Background(), omadacId, siteId, wlanId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService UpdateSsidMultiCastConfigBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidMultiCastConfigBySite(context.Background(), omadacId, siteId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -346,6 +691,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkAPIService UpdateSsidRateControlConfigBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidRateControlConfigBySite(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService UpdateSsidRateLimitConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -356,6 +717,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var ssidId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidRateLimitConfig(context.Background(), omadacId, siteId, wlanId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService UpdateSsidRateLimitConfigBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidRateLimitConfigBySite(context.Background(), omadacId, siteId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -380,6 +757,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WirelessNetworkAPIService UpdateSsidWifiCallingConfigBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidWifiCallingConfigBySite(context.Background(), omadacId, siteId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WirelessNetworkAPIService UpdateSsidWlanSchedule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -390,6 +783,22 @@ func Test_omada_WirelessNetworkAPIService(t *testing.T) {
 		var ssidId string
 
 		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidWlanSchedule(context.Background(), omadacId, siteId, wlanId, ssidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessNetworkAPIService UpdateSsidWlanScheduleBySite", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.WirelessNetworkAPI.UpdateSsidWlanScheduleBySite(context.Background(), omadacId, siteId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

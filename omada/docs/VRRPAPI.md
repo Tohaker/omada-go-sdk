@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateOswVrrp
 
-> OperationResponseResIdOpenApiVO CreateOswVrrp(ctx, omadacId, siteId).CreateOswVrrpRequest(createOswVrrpRequest).Execute()
+> OperationResponseResIdOpenApiVO CreateOswVrrp(ctx, omadacId, siteId).OswVrrpConfigOpenApiVO(oswVrrpConfigOpenApiVO).Execute()
 
 Create Switch Vrrp
 
@@ -34,11 +34,11 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	createOswVrrpRequest := *openapiclient.NewCreateOswVrrpRequest() // CreateOswVrrpRequest | 
+	oswVrrpConfigOpenApiVO := *openapiclient.NewOswVrrpConfigOpenApiVO(int32(123), int32(123), int32(123), "Name_example", false, int32(123)) // OswVrrpConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VRRPAPI.CreateOswVrrp(context.Background(), omadacId, siteId).CreateOswVrrpRequest(createOswVrrpRequest).Execute()
+	resp, r, err := apiClient.VRRPAPI.CreateOswVrrp(context.Background(), omadacId, siteId).OswVrrpConfigOpenApiVO(oswVrrpConfigOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VRRPAPI.CreateOswVrrp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **createOswVrrpRequest** | [**CreateOswVrrpRequest**](CreateOswVrrpRequest.md) |  | 
+ **oswVrrpConfigOpenApiVO** | [**OswVrrpConfigOpenApiVO**](OswVrrpConfigOpenApiVO.md) |  | 
 
 ### Return type
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## DeleteOswVrrp
 
-> OperationResponseWithoutResult DeleteOswVrrp(ctx, omadacId, siteId, oswVrrpId).UserInfoBriefDTO(userInfoBriefDTO).Execute()
+> OperationResponseWithoutResult DeleteOswVrrp(ctx, omadacId, siteId, oswVrrpId).Execute()
 
 Delete Switch Vrrp
 
@@ -110,11 +110,10 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	oswVrrpId := "oswVrrpId_example" // string | Osw Vrrp ID
-	userInfoBriefDTO := *openapiclient.NewUserInfoBriefDTO() // UserInfoBriefDTO |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VRRPAPI.DeleteOswVrrp(context.Background(), omadacId, siteId, oswVrrpId).UserInfoBriefDTO(userInfoBriefDTO).Execute()
+	resp, r, err := apiClient.VRRPAPI.DeleteOswVrrp(context.Background(), omadacId, siteId, oswVrrpId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VRRPAPI.DeleteOswVrrp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -144,7 +143,6 @@ Name | Type | Description  | Notes
 
 
 
- **userInfoBriefDTO** | [**UserInfoBriefDTO**](UserInfoBriefDTO.md) |  | 
 
 ### Return type
 
@@ -156,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -243,7 +241,7 @@ Name | Type | Description  | Notes
 
 ## ModifyOswVrrp
 
-> OperationResponseWithoutResult ModifyOswVrrp(ctx, omadacId, siteId, oswVrrpId).CreateOswVrrpRequest(createOswVrrpRequest).Execute()
+> OperationResponseWithoutResult ModifyOswVrrp(ctx, omadacId, siteId, oswVrrpId).OswVrrpConfigOpenApiVO(oswVrrpConfigOpenApiVO).Execute()
 
 Modify Switch Vrrp
 
@@ -265,11 +263,11 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	oswVrrpId := "oswVrrpId_example" // string | Osw Vrrp ID
-	createOswVrrpRequest := *openapiclient.NewCreateOswVrrpRequest() // CreateOswVrrpRequest | 
+	oswVrrpConfigOpenApiVO := *openapiclient.NewOswVrrpConfigOpenApiVO(int32(123), int32(123), int32(123), "Name_example", false, int32(123)) // OswVrrpConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VRRPAPI.ModifyOswVrrp(context.Background(), omadacId, siteId, oswVrrpId).CreateOswVrrpRequest(createOswVrrpRequest).Execute()
+	resp, r, err := apiClient.VRRPAPI.ModifyOswVrrp(context.Background(), omadacId, siteId, oswVrrpId).OswVrrpConfigOpenApiVO(oswVrrpConfigOpenApiVO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VRRPAPI.ModifyOswVrrp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,7 +297,7 @@ Name | Type | Description  | Notes
 
 
 
- **createOswVrrpRequest** | [**CreateOswVrrpRequest**](CreateOswVrrpRequest.md) |  | 
+ **oswVrrpConfigOpenApiVO** | [**OswVrrpConfigOpenApiVO**](OswVrrpConfigOpenApiVO.md) |  | 
 
 ### Return type
 

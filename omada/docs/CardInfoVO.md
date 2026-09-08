@@ -9,10 +9,13 @@ Name | Type | Description | Notes
 **ApStatus** | Pointer to [**[]OnlineOfflineVO**](OnlineOfflineVO.md) |  | [optional] 
 **AppCategories** | Pointer to [**AppCategoryTrafficsVO**](AppCategoryTrafficsVO.md) |  | [optional] 
 **ClientConnectionTrend** | Pointer to [**ClientConnectionTrend**](ClientConnectionTrend.md) |  | [optional] 
-**ClientHealthTrend** | Pointer to [**[]DeviceHealthVO**](DeviceHealthVO.md) |  | [optional] 
+**ClientHealthTrend** | Pointer to [**[]ClientHealthTrendVO**](ClientHealthTrendVO.md) |  | [optional] 
 **ClientTraffic** | Pointer to [**ClientTrafficInfo**](ClientTrafficInfo.md) |  | [optional] 
 **ClientsAssociationActivities** | Pointer to [**[]ClientAssociationActivities**](ClientAssociationActivities.md) | Clients association activities with time. | [optional] 
+**ClientsDataRate** | Pointer to [**[]DataRateDistributionVO**](DataRateDistributionVO.md) | Clients data rate distribution trend | [optional] 
 **ClientsOverview** | Pointer to [**ClientStatisticsOverview**](ClientStatisticsOverview.md) |  | [optional] 
+**ClientsRssi** | Pointer to [**[]RssiDistributionVO**](RssiDistributionVO.md) | Clients RSSI distribution trend | [optional] 
+**ClientsSnr** | Pointer to [**[]SnrDistributionVO**](SnrDistributionVO.md) | Clients SNR distribution trend | [optional] 
 **ClientsWithOnboardingTimes** | Pointer to [**ClientsWithOnBoardingTimes**](ClientsWithOnBoardingTimes.md) |  | [optional] 
 **DeviceHealthTrend** | Pointer to [**[]DeviceHealthVO**](DeviceHealthVO.md) |  | [optional] 
 **DeviceStatus** | Pointer to [**[]OnlineOfflineVO**](OnlineOfflineVO.md) |  | [optional] 
@@ -25,6 +28,7 @@ Name | Type | Description | Notes
 **SwitchAlertReboot** | Pointer to [**SwitchAlertRebootVO**](SwitchAlertRebootVO.md) |  | [optional] 
 **SwitchHealthTrend** | Pointer to [**[]DeviceHealthVO**](DeviceHealthVO.md) |  | [optional] 
 **SwitchStatus** | Pointer to [**[]OnlineOfflineVO**](OnlineOfflineVO.md) |  | [optional] 
+**TopApByConnFailure** | Pointer to [**TopApByConnFailureVO**](TopApByConnFailureVO.md) |  | [optional] 
 **TopApByCpuAndMemory** | Pointer to [**ApUtilizationVO**](ApUtilizationVO.md) |  | [optional] 
 **TopApByInterference** | Pointer to [**TopApByInterferenceVO**](TopApByInterferenceVO.md) |  | [optional] 
 **TopApByRtAndDrop** | Pointer to [**TopApByRtDropVO**](TopApByRtDropVO.md) |  | [optional] 
@@ -32,6 +36,7 @@ Name | Type | Description | Notes
 **TopApplicationByTraffic** | Pointer to [**[]TopApplicationByTrafficVO**](TopApplicationByTrafficVO.md) |  | [optional] 
 **TopClient** | Pointer to [**TopTrafficAndUptimeClients**](TopTrafficAndUptimeClients.md) |  | [optional] 
 **TopSsidByTraffic** | Pointer to [**[]TopSsidTrafficVO**](TopSsidTrafficVO.md) |  | [optional] 
+**TopSwitchByPacket** | Pointer to [**TopSwitchByPacketVO**](TopSwitchByPacketVO.md) |  | [optional] 
 **TopSwitchByTrafficAndPoePower** | Pointer to [**TopSwitchVO**](TopSwitchVO.md) |  | [optional] 
 **TopSwitchCpuMemory** | Pointer to [**SwitchUtilizationVO**](SwitchUtilizationVO.md) |  | [optional] 
 **TrafficDistribution** | Pointer to [**TrafficDistributionVO**](TrafficDistributionVO.md) |  | [optional] 
@@ -187,20 +192,20 @@ HasClientConnectionTrend returns a boolean if a field has been set.
 
 ### GetClientHealthTrend
 
-`func (o *CardInfoVO) GetClientHealthTrend() []DeviceHealthVO`
+`func (o *CardInfoVO) GetClientHealthTrend() []ClientHealthTrendVO`
 
 GetClientHealthTrend returns the ClientHealthTrend field if non-nil, zero value otherwise.
 
 ### GetClientHealthTrendOk
 
-`func (o *CardInfoVO) GetClientHealthTrendOk() (*[]DeviceHealthVO, bool)`
+`func (o *CardInfoVO) GetClientHealthTrendOk() (*[]ClientHealthTrendVO, bool)`
 
 GetClientHealthTrendOk returns a tuple with the ClientHealthTrend field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientHealthTrend
 
-`func (o *CardInfoVO) SetClientHealthTrend(v []DeviceHealthVO)`
+`func (o *CardInfoVO) SetClientHealthTrend(v []ClientHealthTrendVO)`
 
 SetClientHealthTrend sets ClientHealthTrend field to given value.
 
@@ -260,6 +265,31 @@ SetClientsAssociationActivities sets ClientsAssociationActivities field to given
 
 HasClientsAssociationActivities returns a boolean if a field has been set.
 
+### GetClientsDataRate
+
+`func (o *CardInfoVO) GetClientsDataRate() []DataRateDistributionVO`
+
+GetClientsDataRate returns the ClientsDataRate field if non-nil, zero value otherwise.
+
+### GetClientsDataRateOk
+
+`func (o *CardInfoVO) GetClientsDataRateOk() (*[]DataRateDistributionVO, bool)`
+
+GetClientsDataRateOk returns a tuple with the ClientsDataRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientsDataRate
+
+`func (o *CardInfoVO) SetClientsDataRate(v []DataRateDistributionVO)`
+
+SetClientsDataRate sets ClientsDataRate field to given value.
+
+### HasClientsDataRate
+
+`func (o *CardInfoVO) HasClientsDataRate() bool`
+
+HasClientsDataRate returns a boolean if a field has been set.
+
 ### GetClientsOverview
 
 `func (o *CardInfoVO) GetClientsOverview() ClientStatisticsOverview`
@@ -284,6 +314,56 @@ SetClientsOverview sets ClientsOverview field to given value.
 `func (o *CardInfoVO) HasClientsOverview() bool`
 
 HasClientsOverview returns a boolean if a field has been set.
+
+### GetClientsRssi
+
+`func (o *CardInfoVO) GetClientsRssi() []RssiDistributionVO`
+
+GetClientsRssi returns the ClientsRssi field if non-nil, zero value otherwise.
+
+### GetClientsRssiOk
+
+`func (o *CardInfoVO) GetClientsRssiOk() (*[]RssiDistributionVO, bool)`
+
+GetClientsRssiOk returns a tuple with the ClientsRssi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientsRssi
+
+`func (o *CardInfoVO) SetClientsRssi(v []RssiDistributionVO)`
+
+SetClientsRssi sets ClientsRssi field to given value.
+
+### HasClientsRssi
+
+`func (o *CardInfoVO) HasClientsRssi() bool`
+
+HasClientsRssi returns a boolean if a field has been set.
+
+### GetClientsSnr
+
+`func (o *CardInfoVO) GetClientsSnr() []SnrDistributionVO`
+
+GetClientsSnr returns the ClientsSnr field if non-nil, zero value otherwise.
+
+### GetClientsSnrOk
+
+`func (o *CardInfoVO) GetClientsSnrOk() (*[]SnrDistributionVO, bool)`
+
+GetClientsSnrOk returns a tuple with the ClientsSnr field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientsSnr
+
+`func (o *CardInfoVO) SetClientsSnr(v []SnrDistributionVO)`
+
+SetClientsSnr sets ClientsSnr field to given value.
+
+### HasClientsSnr
+
+`func (o *CardInfoVO) HasClientsSnr() bool`
+
+HasClientsSnr returns a boolean if a field has been set.
 
 ### GetClientsWithOnboardingTimes
 
@@ -585,6 +665,31 @@ SetSwitchStatus sets SwitchStatus field to given value.
 
 HasSwitchStatus returns a boolean if a field has been set.
 
+### GetTopApByConnFailure
+
+`func (o *CardInfoVO) GetTopApByConnFailure() TopApByConnFailureVO`
+
+GetTopApByConnFailure returns the TopApByConnFailure field if non-nil, zero value otherwise.
+
+### GetTopApByConnFailureOk
+
+`func (o *CardInfoVO) GetTopApByConnFailureOk() (*TopApByConnFailureVO, bool)`
+
+GetTopApByConnFailureOk returns a tuple with the TopApByConnFailure field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTopApByConnFailure
+
+`func (o *CardInfoVO) SetTopApByConnFailure(v TopApByConnFailureVO)`
+
+SetTopApByConnFailure sets TopApByConnFailure field to given value.
+
+### HasTopApByConnFailure
+
+`func (o *CardInfoVO) HasTopApByConnFailure() bool`
+
+HasTopApByConnFailure returns a boolean if a field has been set.
+
 ### GetTopApByCpuAndMemory
 
 `func (o *CardInfoVO) GetTopApByCpuAndMemory() ApUtilizationVO`
@@ -759,6 +864,31 @@ SetTopSsidByTraffic sets TopSsidByTraffic field to given value.
 `func (o *CardInfoVO) HasTopSsidByTraffic() bool`
 
 HasTopSsidByTraffic returns a boolean if a field has been set.
+
+### GetTopSwitchByPacket
+
+`func (o *CardInfoVO) GetTopSwitchByPacket() TopSwitchByPacketVO`
+
+GetTopSwitchByPacket returns the TopSwitchByPacket field if non-nil, zero value otherwise.
+
+### GetTopSwitchByPacketOk
+
+`func (o *CardInfoVO) GetTopSwitchByPacketOk() (*TopSwitchByPacketVO, bool)`
+
+GetTopSwitchByPacketOk returns a tuple with the TopSwitchByPacket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTopSwitchByPacket
+
+`func (o *CardInfoVO) SetTopSwitchByPacket(v TopSwitchByPacketVO)`
+
+SetTopSwitchByPacket sets TopSwitchByPacket field to given value.
+
+### HasTopSwitchByPacket
+
+`func (o *CardInfoVO) HasTopSwitchByPacket() bool`
+
+HasTopSwitchByPacket returns a boolean if a field has been set.
 
 ### GetTopSwitchByTrafficAndPoePower
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddedInAdvanced** | Pointer to **bool** | Whether the device is added offline in advance. | [optional] 
 **DeviceSeriesType** | Pointer to **int32** | DeviceSeriesType should be a value as follows: 0:advanced; 1:pro | [optional] 
 **Ip** | Pointer to **string** | Ip address | [optional] 
+**IpLong** | Pointer to **int64** |  | [optional] 
 **Mac** | Pointer to **string** | Device mac | [optional] 
 **MasterMac** | Pointer to **string** | Master mac. If the device is not a member of stack, masterMac should be null | [optional] 
 **Model** | Pointer to **string** | Model of device | [optional] 
@@ -111,6 +112,31 @@ SetIp sets Ip field to given value.
 `func (o *SupportCliDeviceVO) HasIp() bool`
 
 HasIp returns a boolean if a field has been set.
+
+### GetIpLong
+
+`func (o *SupportCliDeviceVO) GetIpLong() int64`
+
+GetIpLong returns the IpLong field if non-nil, zero value otherwise.
+
+### GetIpLongOk
+
+`func (o *SupportCliDeviceVO) GetIpLongOk() (*int64, bool)`
+
+GetIpLongOk returns a tuple with the IpLong field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpLong
+
+`func (o *SupportCliDeviceVO) SetIpLong(v int64)`
+
+SetIpLong sets IpLong field to given value.
+
+### HasIpLong
+
+`func (o *SupportCliDeviceVO) HasIpLong() bool`
+
+HasIpLong returns a boolean if a field has been set.
 
 ### GetMac
 

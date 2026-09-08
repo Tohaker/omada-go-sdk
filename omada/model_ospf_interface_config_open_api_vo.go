@@ -21,32 +21,40 @@ var _ MappedNullable = &OspfInterfaceConfigOpenApiVO{}
 
 // OspfInterfaceConfigOpenApiVO struct for OspfInterfaceConfigOpenApiVO
 type OspfInterfaceConfigOpenApiVO struct {
-	// Authentication Type, it should be a value as follows: 0: None, 1: Simple, 2: MD5.
-	AuthenticationType int32 `json:"authenticationType"`
+	// Authentication Type. Not Null when type is 0. It should be a value as follows: 0: None, 1: Simple, 2: MD5.
+	AuthenticationType *int32 `json:"authenticationType,omitempty"`
 	// The link cost. OSPF uses this value in computing shortest paths. It should be within the range of 1–65535.
 	Cost int32 `json:"cost"`
 	// The dead interval for the specified interface in seconds. This specifies how long a router will wait to see a neighbor router's Hello packets before declaring that the router is down. This parameter must be the same for all routers attached to a network. It should be within the range of 1-65535 seconds and the default is 40.
 	DeadInterval *int32 `json:"deadInterval,omitempty"`
 	// Device Name
 	DeviceName string `json:"deviceName"`
-	// The hello interval for the specified interface in seconds. This parameter must be the same for all routers attached to a network. It should be within the range of 1-65535 seconds and the default is 10 seconds.
-	HelloInterval int32 `json:"helloInterval"`
+	// The hello interval for the specified interface in seconds. Not Null when type is 0. This parameter must be the same for all routers attached to a network. It should be within the range of 1-65535 seconds and the default is 10 seconds.
+	HelloInterval *int32 `json:"helloInterval,omitempty"`
+	// Loopback ID should be within the range of 1-64. Not Null when type is 1.
+	LoopbackId *int32 `json:"loopbackId,omitempty"`
+	// Loopback Interface ID. Not Null when type is 1.
+	LoopbackInterfaceId *string `json:"loopbackInterfaceId,omitempty"`
 	// Device Mac
 	Mac string `json:"mac"`
 	// Displays the key used for md5 authentication, its value should be within the range of 1-16.
 	Md5Key *string `json:"md5Key,omitempty"`
 	// Displays the key ID used for md5 authentication, its value should be within the range of 1-255.
 	Md5KeyId *int32 `json:"md5KeyId,omitempty"`
-	// Network Type, it should be a value as follows: 0: Broadcast, 1: Non-Broadcast, 2: Point-to-Multipoint, 3: Point-to-Point. The default network type for Ethernet interfaces is broadcast.
-	NetworkType int32 `json:"networkType"`
+	// Network Type. Not Null when type is 0. It should be a value as follows: 0: Broadcast, 1: Non-Broadcast, 2: Point-to-Multipoint, 3: Point-to-Point. The default network type for Ethernet interfaces is broadcast.
+	NetworkType *int32 `json:"networkType,omitempty"`
+	// enable passive interface.
+	PassiveEnable *bool `json:"passiveEnable,omitempty"`
 	// Displays the key used for simple authentication, its value should be within the range of 1-8.
 	SimpleKey *string `json:"simpleKey,omitempty"`
-	// Vlan ID should be within the range of 1–4094.
-	VlanId int32 `json:"vlanId"`
-	// Vlan Interface ID
-	VlanInterfaceId string `json:"vlanInterfaceId"`
-	// Vlan Interface Name
-	VlanInterfaceName string `json:"vlanInterfaceName"`
+	// OSPF Interface type, 0: VLAN interface; 1: Loopback interface. If null, defaults to VLAN interface (0).
+	Type *int32 `json:"type,omitempty"`
+	// Vlan ID should be within the range of 1–4094. Not Null when type is 0.
+	VlanId *int32 `json:"vlanId,omitempty"`
+	// Vlan Interface ID. Not Null when type is 0.
+	VlanInterfaceId *string `json:"vlanInterfaceId,omitempty"`
+	// Vlan Interface Name. Not Null when type is 0.
+	VlanInterfaceName *string `json:"vlanInterfaceName,omitempty"`
 }
 
 type _OspfInterfaceConfigOpenApiVO OspfInterfaceConfigOpenApiVO
@@ -55,17 +63,11 @@ type _OspfInterfaceConfigOpenApiVO OspfInterfaceConfigOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOspfInterfaceConfigOpenApiVO(authenticationType int32, cost int32, deviceName string, helloInterval int32, mac string, networkType int32, vlanId int32, vlanInterfaceId string, vlanInterfaceName string) *OspfInterfaceConfigOpenApiVO {
+func NewOspfInterfaceConfigOpenApiVO(cost int32, deviceName string, mac string) *OspfInterfaceConfigOpenApiVO {
 	this := OspfInterfaceConfigOpenApiVO{}
-	this.AuthenticationType = authenticationType
 	this.Cost = cost
 	this.DeviceName = deviceName
-	this.HelloInterval = helloInterval
 	this.Mac = mac
-	this.NetworkType = networkType
-	this.VlanId = vlanId
-	this.VlanInterfaceId = vlanInterfaceId
-	this.VlanInterfaceName = vlanInterfaceName
 	return &this
 }
 
@@ -77,28 +79,36 @@ func NewOspfInterfaceConfigOpenApiVOWithDefaults() *OspfInterfaceConfigOpenApiVO
 	return &this
 }
 
-// GetAuthenticationType returns the AuthenticationType field value
+// GetAuthenticationType returns the AuthenticationType field value if set, zero value otherwise.
 func (o *OspfInterfaceConfigOpenApiVO) GetAuthenticationType() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.AuthenticationType) {
 		var ret int32
 		return ret
 	}
-
-	return o.AuthenticationType
+	return *o.AuthenticationType
 }
 
-// GetAuthenticationTypeOk returns a tuple with the AuthenticationType field value
+// GetAuthenticationTypeOk returns a tuple with the AuthenticationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OspfInterfaceConfigOpenApiVO) GetAuthenticationTypeOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AuthenticationType) {
 		return nil, false
 	}
-	return &o.AuthenticationType, true
+	return o.AuthenticationType, true
 }
 
-// SetAuthenticationType sets field value
+// HasAuthenticationType returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasAuthenticationType() bool {
+	if o != nil && !IsNil(o.AuthenticationType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthenticationType gets a reference to the given int32 and assigns it to the AuthenticationType field.
 func (o *OspfInterfaceConfigOpenApiVO) SetAuthenticationType(v int32) {
-	o.AuthenticationType = v
+	o.AuthenticationType = &v
 }
 
 // GetCost returns the Cost field value
@@ -181,28 +191,100 @@ func (o *OspfInterfaceConfigOpenApiVO) SetDeviceName(v string) {
 	o.DeviceName = v
 }
 
-// GetHelloInterval returns the HelloInterval field value
+// GetHelloInterval returns the HelloInterval field value if set, zero value otherwise.
 func (o *OspfInterfaceConfigOpenApiVO) GetHelloInterval() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.HelloInterval) {
 		var ret int32
 		return ret
 	}
-
-	return o.HelloInterval
+	return *o.HelloInterval
 }
 
-// GetHelloIntervalOk returns a tuple with the HelloInterval field value
+// GetHelloIntervalOk returns a tuple with the HelloInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OspfInterfaceConfigOpenApiVO) GetHelloIntervalOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.HelloInterval) {
 		return nil, false
 	}
-	return &o.HelloInterval, true
+	return o.HelloInterval, true
 }
 
-// SetHelloInterval sets field value
+// HasHelloInterval returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasHelloInterval() bool {
+	if o != nil && !IsNil(o.HelloInterval) {
+		return true
+	}
+
+	return false
+}
+
+// SetHelloInterval gets a reference to the given int32 and assigns it to the HelloInterval field.
 func (o *OspfInterfaceConfigOpenApiVO) SetHelloInterval(v int32) {
-	o.HelloInterval = v
+	o.HelloInterval = &v
+}
+
+// GetLoopbackId returns the LoopbackId field value if set, zero value otherwise.
+func (o *OspfInterfaceConfigOpenApiVO) GetLoopbackId() int32 {
+	if o == nil || IsNil(o.LoopbackId) {
+		var ret int32
+		return ret
+	}
+	return *o.LoopbackId
+}
+
+// GetLoopbackIdOk returns a tuple with the LoopbackId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfInterfaceConfigOpenApiVO) GetLoopbackIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.LoopbackId) {
+		return nil, false
+	}
+	return o.LoopbackId, true
+}
+
+// HasLoopbackId returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasLoopbackId() bool {
+	if o != nil && !IsNil(o.LoopbackId) {
+		return true
+	}
+
+	return false
+}
+
+// SetLoopbackId gets a reference to the given int32 and assigns it to the LoopbackId field.
+func (o *OspfInterfaceConfigOpenApiVO) SetLoopbackId(v int32) {
+	o.LoopbackId = &v
+}
+
+// GetLoopbackInterfaceId returns the LoopbackInterfaceId field value if set, zero value otherwise.
+func (o *OspfInterfaceConfigOpenApiVO) GetLoopbackInterfaceId() string {
+	if o == nil || IsNil(o.LoopbackInterfaceId) {
+		var ret string
+		return ret
+	}
+	return *o.LoopbackInterfaceId
+}
+
+// GetLoopbackInterfaceIdOk returns a tuple with the LoopbackInterfaceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfInterfaceConfigOpenApiVO) GetLoopbackInterfaceIdOk() (*string, bool) {
+	if o == nil || IsNil(o.LoopbackInterfaceId) {
+		return nil, false
+	}
+	return o.LoopbackInterfaceId, true
+}
+
+// HasLoopbackInterfaceId returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasLoopbackInterfaceId() bool {
+	if o != nil && !IsNil(o.LoopbackInterfaceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetLoopbackInterfaceId gets a reference to the given string and assigns it to the LoopbackInterfaceId field.
+func (o *OspfInterfaceConfigOpenApiVO) SetLoopbackInterfaceId(v string) {
+	o.LoopbackInterfaceId = &v
 }
 
 // GetMac returns the Mac field value
@@ -293,28 +375,68 @@ func (o *OspfInterfaceConfigOpenApiVO) SetMd5KeyId(v int32) {
 	o.Md5KeyId = &v
 }
 
-// GetNetworkType returns the NetworkType field value
+// GetNetworkType returns the NetworkType field value if set, zero value otherwise.
 func (o *OspfInterfaceConfigOpenApiVO) GetNetworkType() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.NetworkType) {
 		var ret int32
 		return ret
 	}
-
-	return o.NetworkType
+	return *o.NetworkType
 }
 
-// GetNetworkTypeOk returns a tuple with the NetworkType field value
+// GetNetworkTypeOk returns a tuple with the NetworkType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OspfInterfaceConfigOpenApiVO) GetNetworkTypeOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.NetworkType) {
 		return nil, false
 	}
-	return &o.NetworkType, true
+	return o.NetworkType, true
 }
 
-// SetNetworkType sets field value
+// HasNetworkType returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasNetworkType() bool {
+	if o != nil && !IsNil(o.NetworkType) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkType gets a reference to the given int32 and assigns it to the NetworkType field.
 func (o *OspfInterfaceConfigOpenApiVO) SetNetworkType(v int32) {
-	o.NetworkType = v
+	o.NetworkType = &v
+}
+
+// GetPassiveEnable returns the PassiveEnable field value if set, zero value otherwise.
+func (o *OspfInterfaceConfigOpenApiVO) GetPassiveEnable() bool {
+	if o == nil || IsNil(o.PassiveEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.PassiveEnable
+}
+
+// GetPassiveEnableOk returns a tuple with the PassiveEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfInterfaceConfigOpenApiVO) GetPassiveEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.PassiveEnable) {
+		return nil, false
+	}
+	return o.PassiveEnable, true
+}
+
+// HasPassiveEnable returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasPassiveEnable() bool {
+	if o != nil && !IsNil(o.PassiveEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetPassiveEnable gets a reference to the given bool and assigns it to the PassiveEnable field.
+func (o *OspfInterfaceConfigOpenApiVO) SetPassiveEnable(v bool) {
+	o.PassiveEnable = &v
 }
 
 // GetSimpleKey returns the SimpleKey field value if set, zero value otherwise.
@@ -349,76 +471,132 @@ func (o *OspfInterfaceConfigOpenApiVO) SetSimpleKey(v string) {
 	o.SimpleKey = &v
 }
 
-// GetVlanId returns the VlanId field value
-func (o *OspfInterfaceConfigOpenApiVO) GetVlanId() int32 {
-	if o == nil {
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *OspfInterfaceConfigOpenApiVO) GetType() int32 {
+	if o == nil || IsNil(o.Type) {
 		var ret int32
 		return ret
 	}
-
-	return o.VlanId
+	return *o.Type
 }
 
-// GetVlanIdOk returns a tuple with the VlanId field value
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfInterfaceConfigOpenApiVO) GetTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given int32 and assigns it to the Type field.
+func (o *OspfInterfaceConfigOpenApiVO) SetType(v int32) {
+	o.Type = &v
+}
+
+// GetVlanId returns the VlanId field value if set, zero value otherwise.
+func (o *OspfInterfaceConfigOpenApiVO) GetVlanId() int32 {
+	if o == nil || IsNil(o.VlanId) {
+		var ret int32
+		return ret
+	}
+	return *o.VlanId
+}
+
+// GetVlanIdOk returns a tuple with the VlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OspfInterfaceConfigOpenApiVO) GetVlanIdOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VlanId) {
 		return nil, false
 	}
-	return &o.VlanId, true
+	return o.VlanId, true
 }
 
-// SetVlanId sets field value
+// HasVlanId returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasVlanId() bool {
+	if o != nil && !IsNil(o.VlanId) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanId gets a reference to the given int32 and assigns it to the VlanId field.
 func (o *OspfInterfaceConfigOpenApiVO) SetVlanId(v int32) {
-	o.VlanId = v
+	o.VlanId = &v
 }
 
-// GetVlanInterfaceId returns the VlanInterfaceId field value
+// GetVlanInterfaceId returns the VlanInterfaceId field value if set, zero value otherwise.
 func (o *OspfInterfaceConfigOpenApiVO) GetVlanInterfaceId() string {
-	if o == nil {
+	if o == nil || IsNil(o.VlanInterfaceId) {
 		var ret string
 		return ret
 	}
-
-	return o.VlanInterfaceId
+	return *o.VlanInterfaceId
 }
 
-// GetVlanInterfaceIdOk returns a tuple with the VlanInterfaceId field value
+// GetVlanInterfaceIdOk returns a tuple with the VlanInterfaceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OspfInterfaceConfigOpenApiVO) GetVlanInterfaceIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VlanInterfaceId) {
 		return nil, false
 	}
-	return &o.VlanInterfaceId, true
+	return o.VlanInterfaceId, true
 }
 
-// SetVlanInterfaceId sets field value
+// HasVlanInterfaceId returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasVlanInterfaceId() bool {
+	if o != nil && !IsNil(o.VlanInterfaceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanInterfaceId gets a reference to the given string and assigns it to the VlanInterfaceId field.
 func (o *OspfInterfaceConfigOpenApiVO) SetVlanInterfaceId(v string) {
-	o.VlanInterfaceId = v
+	o.VlanInterfaceId = &v
 }
 
-// GetVlanInterfaceName returns the VlanInterfaceName field value
+// GetVlanInterfaceName returns the VlanInterfaceName field value if set, zero value otherwise.
 func (o *OspfInterfaceConfigOpenApiVO) GetVlanInterfaceName() string {
-	if o == nil {
+	if o == nil || IsNil(o.VlanInterfaceName) {
 		var ret string
 		return ret
 	}
-
-	return o.VlanInterfaceName
+	return *o.VlanInterfaceName
 }
 
-// GetVlanInterfaceNameOk returns a tuple with the VlanInterfaceName field value
+// GetVlanInterfaceNameOk returns a tuple with the VlanInterfaceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OspfInterfaceConfigOpenApiVO) GetVlanInterfaceNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VlanInterfaceName) {
 		return nil, false
 	}
-	return &o.VlanInterfaceName, true
+	return o.VlanInterfaceName, true
 }
 
-// SetVlanInterfaceName sets field value
+// HasVlanInterfaceName returns a boolean if a field has been set.
+func (o *OspfInterfaceConfigOpenApiVO) HasVlanInterfaceName() bool {
+	if o != nil && !IsNil(o.VlanInterfaceName) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanInterfaceName gets a reference to the given string and assigns it to the VlanInterfaceName field.
 func (o *OspfInterfaceConfigOpenApiVO) SetVlanInterfaceName(v string) {
-	o.VlanInterfaceName = v
+	o.VlanInterfaceName = &v
 }
 
 func (o OspfInterfaceConfigOpenApiVO) MarshalJSON() ([]byte, error) {
@@ -431,13 +609,23 @@ func (o OspfInterfaceConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o OspfInterfaceConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["authenticationType"] = o.AuthenticationType
+	if !IsNil(o.AuthenticationType) {
+		toSerialize["authenticationType"] = o.AuthenticationType
+	}
 	toSerialize["cost"] = o.Cost
 	if !IsNil(o.DeadInterval) {
 		toSerialize["deadInterval"] = o.DeadInterval
 	}
 	toSerialize["deviceName"] = o.DeviceName
-	toSerialize["helloInterval"] = o.HelloInterval
+	if !IsNil(o.HelloInterval) {
+		toSerialize["helloInterval"] = o.HelloInterval
+	}
+	if !IsNil(o.LoopbackId) {
+		toSerialize["loopbackId"] = o.LoopbackId
+	}
+	if !IsNil(o.LoopbackInterfaceId) {
+		toSerialize["loopbackInterfaceId"] = o.LoopbackInterfaceId
+	}
 	toSerialize["mac"] = o.Mac
 	if !IsNil(o.Md5Key) {
 		toSerialize["md5Key"] = o.Md5Key
@@ -445,13 +633,27 @@ func (o OspfInterfaceConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Md5KeyId) {
 		toSerialize["md5KeyId"] = o.Md5KeyId
 	}
-	toSerialize["networkType"] = o.NetworkType
+	if !IsNil(o.NetworkType) {
+		toSerialize["networkType"] = o.NetworkType
+	}
+	if !IsNil(o.PassiveEnable) {
+		toSerialize["passiveEnable"] = o.PassiveEnable
+	}
 	if !IsNil(o.SimpleKey) {
 		toSerialize["simpleKey"] = o.SimpleKey
 	}
-	toSerialize["vlanId"] = o.VlanId
-	toSerialize["vlanInterfaceId"] = o.VlanInterfaceId
-	toSerialize["vlanInterfaceName"] = o.VlanInterfaceName
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.VlanId) {
+		toSerialize["vlanId"] = o.VlanId
+	}
+	if !IsNil(o.VlanInterfaceId) {
+		toSerialize["vlanInterfaceId"] = o.VlanInterfaceId
+	}
+	if !IsNil(o.VlanInterfaceName) {
+		toSerialize["vlanInterfaceName"] = o.VlanInterfaceName
+	}
 	return toSerialize, nil
 }
 
@@ -460,15 +662,9 @@ func (o *OspfInterfaceConfigOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"authenticationType",
 		"cost",
 		"deviceName",
-		"helloInterval",
 		"mac",
-		"networkType",
-		"vlanId",
-		"vlanInterfaceId",
-		"vlanInterfaceName",
 	}
 
 	allProperties := make(map[string]interface{})

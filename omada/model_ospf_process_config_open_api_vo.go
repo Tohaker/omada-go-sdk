@@ -22,7 +22,11 @@ var _ MappedNullable = &OspfProcessConfigOpenApiVO{}
 // OspfProcessConfigOpenApiVO struct for OspfProcessConfigOpenApiVO
 type OspfProcessConfigOpenApiVO struct {
 	//  Up to 16 entries are allowed for the areaList.
-	AreaList []OspfProcessAreaOpenApiVO `json:"areaList"`
+	AreaList []OspfProcessAreaOpenApiVO `json:"areaList,omitempty"`
+	// Auto-Cost Reference Bandwidth.
+	AutoCost *int32 `json:"autoCost,omitempty"`
+	// enable Auto-Cost Reference Bandwidth.
+	AutoCostEnable *bool `json:"autoCostEnable,omitempty"`
 	// Direct connection routing protocol switch
 	ConnectedEnable bool `json:"connectedEnable"`
 	// Set the metric value to be used as the metric of redistributed routes. It should be within the range of 1-16777214 and the default is equal to Default Metric configured on Basic page.
@@ -45,6 +49,8 @@ type OspfProcessConfigOpenApiVO struct {
 	StaticMetric *int32 `json:"staticMetric,omitempty"`
 	// Set the OSPF metric type of redistributed routes. It should be a value as follows: 1: External Type 1, 2: External Type 2. The default is External Type 2.
 	StaticMetricType *int32 `json:"staticMetricType,omitempty"`
+	// VRF ID.
+	VrfId *string `json:"vrfId,omitempty"`
 }
 
 type _OspfProcessConfigOpenApiVO OspfProcessConfigOpenApiVO
@@ -53,9 +59,8 @@ type _OspfProcessConfigOpenApiVO OspfProcessConfigOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOspfProcessConfigOpenApiVO(areaList []OspfProcessAreaOpenApiVO, connectedEnable bool, deviceName string, mac string, processId int32, routerMode int32, staticEnable bool) *OspfProcessConfigOpenApiVO {
+func NewOspfProcessConfigOpenApiVO(connectedEnable bool, deviceName string, mac string, processId int32, routerMode int32, staticEnable bool) *OspfProcessConfigOpenApiVO {
 	this := OspfProcessConfigOpenApiVO{}
-	this.AreaList = areaList
 	this.ConnectedEnable = connectedEnable
 	this.DeviceName = deviceName
 	this.Mac = mac
@@ -73,28 +78,100 @@ func NewOspfProcessConfigOpenApiVOWithDefaults() *OspfProcessConfigOpenApiVO {
 	return &this
 }
 
-// GetAreaList returns the AreaList field value
+// GetAreaList returns the AreaList field value if set, zero value otherwise.
 func (o *OspfProcessConfigOpenApiVO) GetAreaList() []OspfProcessAreaOpenApiVO {
-	if o == nil {
+	if o == nil || IsNil(o.AreaList) {
 		var ret []OspfProcessAreaOpenApiVO
 		return ret
 	}
-
 	return o.AreaList
 }
 
-// GetAreaListOk returns a tuple with the AreaList field value
+// GetAreaListOk returns a tuple with the AreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OspfProcessConfigOpenApiVO) GetAreaListOk() ([]OspfProcessAreaOpenApiVO, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AreaList) {
 		return nil, false
 	}
 	return o.AreaList, true
 }
 
-// SetAreaList sets field value
+// HasAreaList returns a boolean if a field has been set.
+func (o *OspfProcessConfigOpenApiVO) HasAreaList() bool {
+	if o != nil && !IsNil(o.AreaList) {
+		return true
+	}
+
+	return false
+}
+
+// SetAreaList gets a reference to the given []OspfProcessAreaOpenApiVO and assigns it to the AreaList field.
 func (o *OspfProcessConfigOpenApiVO) SetAreaList(v []OspfProcessAreaOpenApiVO) {
 	o.AreaList = v
+}
+
+// GetAutoCost returns the AutoCost field value if set, zero value otherwise.
+func (o *OspfProcessConfigOpenApiVO) GetAutoCost() int32 {
+	if o == nil || IsNil(o.AutoCost) {
+		var ret int32
+		return ret
+	}
+	return *o.AutoCost
+}
+
+// GetAutoCostOk returns a tuple with the AutoCost field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfProcessConfigOpenApiVO) GetAutoCostOk() (*int32, bool) {
+	if o == nil || IsNil(o.AutoCost) {
+		return nil, false
+	}
+	return o.AutoCost, true
+}
+
+// HasAutoCost returns a boolean if a field has been set.
+func (o *OspfProcessConfigOpenApiVO) HasAutoCost() bool {
+	if o != nil && !IsNil(o.AutoCost) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoCost gets a reference to the given int32 and assigns it to the AutoCost field.
+func (o *OspfProcessConfigOpenApiVO) SetAutoCost(v int32) {
+	o.AutoCost = &v
+}
+
+// GetAutoCostEnable returns the AutoCostEnable field value if set, zero value otherwise.
+func (o *OspfProcessConfigOpenApiVO) GetAutoCostEnable() bool {
+	if o == nil || IsNil(o.AutoCostEnable) {
+		var ret bool
+		return ret
+	}
+	return *o.AutoCostEnable
+}
+
+// GetAutoCostEnableOk returns a tuple with the AutoCostEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfProcessConfigOpenApiVO) GetAutoCostEnableOk() (*bool, bool) {
+	if o == nil || IsNil(o.AutoCostEnable) {
+		return nil, false
+	}
+	return o.AutoCostEnable, true
+}
+
+// HasAutoCostEnable returns a boolean if a field has been set.
+func (o *OspfProcessConfigOpenApiVO) HasAutoCostEnable() bool {
+	if o != nil && !IsNil(o.AutoCostEnable) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoCostEnable gets a reference to the given bool and assigns it to the AutoCostEnable field.
+func (o *OspfProcessConfigOpenApiVO) SetAutoCostEnable(v bool) {
+	o.AutoCostEnable = &v
 }
 
 // GetConnectedEnable returns the ConnectedEnable field value
@@ -401,6 +478,38 @@ func (o *OspfProcessConfigOpenApiVO) SetStaticMetricType(v int32) {
 	o.StaticMetricType = &v
 }
 
+// GetVrfId returns the VrfId field value if set, zero value otherwise.
+func (o *OspfProcessConfigOpenApiVO) GetVrfId() string {
+	if o == nil || IsNil(o.VrfId) {
+		var ret string
+		return ret
+	}
+	return *o.VrfId
+}
+
+// GetVrfIdOk returns a tuple with the VrfId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OspfProcessConfigOpenApiVO) GetVrfIdOk() (*string, bool) {
+	if o == nil || IsNil(o.VrfId) {
+		return nil, false
+	}
+	return o.VrfId, true
+}
+
+// HasVrfId returns a boolean if a field has been set.
+func (o *OspfProcessConfigOpenApiVO) HasVrfId() bool {
+	if o != nil && !IsNil(o.VrfId) {
+		return true
+	}
+
+	return false
+}
+
+// SetVrfId gets a reference to the given string and assigns it to the VrfId field.
+func (o *OspfProcessConfigOpenApiVO) SetVrfId(v string) {
+	o.VrfId = &v
+}
+
 func (o OspfProcessConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -411,7 +520,15 @@ func (o OspfProcessConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o OspfProcessConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["areaList"] = o.AreaList
+	if !IsNil(o.AreaList) {
+		toSerialize["areaList"] = o.AreaList
+	}
+	if !IsNil(o.AutoCost) {
+		toSerialize["autoCost"] = o.AutoCost
+	}
+	if !IsNil(o.AutoCostEnable) {
+		toSerialize["autoCostEnable"] = o.AutoCostEnable
+	}
 	toSerialize["connectedEnable"] = o.ConnectedEnable
 	if !IsNil(o.ConnectedMetric) {
 		toSerialize["connectedMetric"] = o.ConnectedMetric
@@ -433,6 +550,9 @@ func (o OspfProcessConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.StaticMetricType) {
 		toSerialize["staticMetricType"] = o.StaticMetricType
 	}
+	if !IsNil(o.VrfId) {
+		toSerialize["vrfId"] = o.VrfId
+	}
 	return toSerialize, nil
 }
 
@@ -441,7 +561,6 @@ func (o *OspfProcessConfigOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"areaList",
 		"connectedEnable",
 		"deviceName",
 		"mac",

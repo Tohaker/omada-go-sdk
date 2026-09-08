@@ -23,6 +23,8 @@ var _ MappedNullable = &QuerySessionLimitRuleOpenApiVO{}
 type QuerySessionLimitRuleOpenApiVO struct {
 	// Whether Source Type of Current Session Limit rule is IP Address.
 	ExistIpAddress *bool `json:"existIpAddress,omitempty"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// ID of the session limit rule.
 	Id *string `json:"id,omitempty"`
 	// Index of the session limit rule. When the [sourceType] is 0 or 1, the index is counted in order, when the sourceType is 2, the index is always -1
@@ -94,6 +96,38 @@ func (o *QuerySessionLimitRuleOpenApiVO) HasExistIpAddress() bool {
 // SetExistIpAddress gets a reference to the given bool and assigns it to the ExistIpAddress field.
 func (o *QuerySessionLimitRuleOpenApiVO) SetExistIpAddress(v bool) {
 	o.ExistIpAddress = &v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *QuerySessionLimitRuleOpenApiVO) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuerySessionLimitRuleOpenApiVO) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *QuerySessionLimitRuleOpenApiVO) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *QuerySessionLimitRuleOpenApiVO) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -332,6 +366,9 @@ func (o QuerySessionLimitRuleOpenApiVO) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ExistIpAddress) {
 		toSerialize["existIpAddress"] = o.ExistIpAddress
+	}
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

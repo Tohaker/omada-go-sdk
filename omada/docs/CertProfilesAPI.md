@@ -6,7 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateCertProfile1**](CertProfilesAPI.md#createcertprofile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles | Create a new certificate profile
 [**DeleteCertProfile1**](CertProfilesAPI.md#deletecertprofile1) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Delete an exist certificate profile
-[**DeleteCertProfileFile1**](CertProfilesAPI.md#deletecertprofilefile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/delete-file/{fileId} | Delete an exist certificate profile file
+[**DeleteCertProfileFile1**](CertProfilesAPI.md#deletecertprofilefile1) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/delete-file | Delete an exist certificate profile file
+[**DeleteCertProfileFile2**](CertProfilesAPI.md#deletecertprofilefile2) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/delete-file/{fileId} | Delete an exist certificate profile file by id in url
 [**GetAllCertProfile**](CertProfilesAPI.md#getallcertprofile) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/all-cert-profiles | Get certificate profile list
 [**GetCertProfileDetail1**](CertProfilesAPI.md#getcertprofiledetail1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles/{certId} | Get a certificate profile detail
 [**GetGridCertProfile1**](CertProfilesAPI.md#getgridcertprofile1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/profiles/cert-profiles | Get grid certificate profile list
@@ -170,9 +171,84 @@ Name | Type | Description  | Notes
 
 ## DeleteCertProfileFile1
 
-> OperationResponseWithoutResult DeleteCertProfileFile1(ctx, omadacId, siteId, fileId).Execute()
+> OperationResponseWithoutResult DeleteCertProfileFile1(ctx, omadacId, siteId).CertProfileFileIdVO(certProfileFileIdVO).Execute()
 
 Delete an exist certificate profile file
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	certProfileFileIdVO := *openapiclient.NewCertProfileFileIdVO() // CertProfileFileIdVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CertProfilesAPI.DeleteCertProfileFile1(context.Background(), omadacId, siteId).CertProfileFileIdVO(certProfileFileIdVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CertProfilesAPI.DeleteCertProfileFile1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteCertProfileFile1`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `CertProfilesAPI.DeleteCertProfileFile1`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteCertProfileFile1Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **certProfileFileIdVO** | [**CertProfileFileIdVO**](CertProfileFileIdVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCertProfileFile2
+
+> OperationResponseWithoutResult DeleteCertProfileFile2(ctx, omadacId, siteId, fileId).Execute()
+
+Delete an exist certificate profile file by id in url
 
 
 
@@ -195,13 +271,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CertProfilesAPI.DeleteCertProfileFile1(context.Background(), omadacId, siteId, fileId).Execute()
+	resp, r, err := apiClient.CertProfilesAPI.DeleteCertProfileFile2(context.Background(), omadacId, siteId, fileId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CertProfilesAPI.DeleteCertProfileFile1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CertProfilesAPI.DeleteCertProfileFile2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteCertProfileFile1`: OperationResponseWithoutResult
-	fmt.Fprintf(os.Stdout, "Response from `CertProfilesAPI.DeleteCertProfileFile1`: %v\n", resp)
+	// response from `DeleteCertProfileFile2`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `CertProfilesAPI.DeleteCertProfileFile2`: %v\n", resp)
 }
 ```
 
@@ -217,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteCertProfileFile1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCertProfileFile2Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

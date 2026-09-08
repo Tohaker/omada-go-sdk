@@ -326,6 +326,22 @@ type ClientInsightAPI interface {
 	GetPastClientNumExecute(r ClientInsightAPIGetPastClientNumRequest) (*OperationResponseClientSummaryVO, *http.Response, error)
 
 	/*
+	GetRealTimeClientCards Get real-time client cards.
+
+	Get real-time client distribution cards (e.g. by RSSI, SNR) with customizable buckets.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return ClientInsightAPIGetRealTimeClientCardsRequest
+	*/
+	GetRealTimeClientCards(ctx context.Context, omadacId string, siteId string) ClientInsightAPIGetRealTimeClientCardsRequest
+
+	// GetRealTimeClientCardsExecute executes the request
+	//  @return OperationResponseClientCardsResultOpenApiVO
+	GetRealTimeClientCardsExecute(r ClientInsightAPIGetRealTimeClientCardsRequest) (*OperationResponseClientCardsResultOpenApiVO, *http.Response, error)
+
+	/*
 	GetStackClientStat Get stack client stat.
 
 	Obtain the sampling statistics of the clients.<br/><br/>The interface requires one of the permissions: <br/>Site Statics Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
@@ -2853,6 +2869,138 @@ func (a *ClientInsightAPIService) GetPastClientNumExecute(r ClientInsightAPIGetP
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ClientInsightAPIGetRealTimeClientCardsRequest struct {
+	ctx context.Context
+	ApiService ClientInsightAPI
+	omadacId string
+	siteId string
+	clientCardsQueryOpenApiVO *ClientCardsQueryOpenApiVO
+}
+
+func (r ClientInsightAPIGetRealTimeClientCardsRequest) ClientCardsQueryOpenApiVO(clientCardsQueryOpenApiVO ClientCardsQueryOpenApiVO) ClientInsightAPIGetRealTimeClientCardsRequest {
+	r.clientCardsQueryOpenApiVO = &clientCardsQueryOpenApiVO
+	return r
+}
+
+func (r ClientInsightAPIGetRealTimeClientCardsRequest) Execute() (*OperationResponseClientCardsResultOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetRealTimeClientCardsExecute(r)
+}
+
+/*
+GetRealTimeClientCards Get real-time client cards.
+
+Get real-time client distribution cards (e.g. by RSSI, SNR) with customizable buckets.<br/><br/>The interface requires one of the permissions: <br/>Site Dashboard Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return ClientInsightAPIGetRealTimeClientCardsRequest
+*/
+func (a *ClientInsightAPIService) GetRealTimeClientCards(ctx context.Context, omadacId string, siteId string) ClientInsightAPIGetRealTimeClientCardsRequest {
+	return ClientInsightAPIGetRealTimeClientCardsRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseClientCardsResultOpenApiVO
+func (a *ClientInsightAPIService) GetRealTimeClientCardsExecute(r ClientInsightAPIGetRealTimeClientCardsRequest) (*OperationResponseClientCardsResultOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseClientCardsResultOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientInsightAPIService.GetRealTimeClientCards")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/client/realtime/cards"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.clientCardsQueryOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("clientCardsQueryOpenApiVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.clientCardsQueryOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

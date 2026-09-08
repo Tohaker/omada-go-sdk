@@ -5,11 +5,13 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAvailableNetworks**](TopologyAPI.md#getavailablenetworks) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/available-network | Get available network
+[**GetAvailableVlans**](TopologyAPI.md#getavailablevlans) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/available-vlans | Get available vlans
 [**GetDeviceLinkTopology**](TopologyAPI.md#getdevicelinktopology) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/devices/{deviceMac}/device-link-topology | Get Device Link Topology
 [**GetDevicesOfSsid**](TopologyAPI.md#getdevicesofssid) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/ssids/{ssidId}/devices | Search Devices of Ssid in Topology
 [**GetDevicesOfVlan**](TopologyAPI.md#getdevicesofvlan) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/{networkId}/vlan/{vlan}/devices | Search Devices of Vlan in Topology
 [**GetFilterDevicesOfSsid**](TopologyAPI.md#getfilterdevicesofssid) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology/ssids/{ssidId}/devices | Filter Devices of Ssid in Topology
 [**GetFilterDevicesOfVlan**](TopologyAPI.md#getfilterdevicesofvlan) | **Get** /openapi/v3/{omadacId}/sites/{siteId}/topology/{networkId}/vlan/{vlan}/devices | Filter Devices of Vlan in Topology
+[**GetGridAvailableSsids**](TopologyAPI.md#getgridavailablessids) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/available-ssids | Get available ssids
 [**GetGridDeviceClient**](TopologyAPI.md#getgriddeviceclient) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/search-device-client | Search Device or Client in Topology
 [**GetIsolatedAndPreConfigDevices**](TopologyAPI.md#getisolatedandpreconfigdevices) | **Get** /openapi/v2/{omadacId}/sites/{siteId}/topology/isolated-and-pre-config | Get isolated and preconfigured devices
 [**GetMspDeviceLinkTopology**](TopologyAPI.md#getmspdevicelinktopology) | **Get** /openapi/v2/msp/{mspId}/customers/{customerId}/sites/{siteId}/devices/{deviceMac}/device-link-topology | Get Msp Device Link Topology
@@ -73,6 +75,79 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetAvailableNetworksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseTopologyAvailableNetworkAndSSID**](OperationResponseTopologyAvailableNetworkAndSSID.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAvailableVlans
+
+> OperationResponseTopologyAvailableNetworkAndSSID GetAvailableVlans(ctx, omadacId, siteId).Execute()
+
+Get available vlans
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TopologyAPI.GetAvailableVlans(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TopologyAPI.GetAvailableVlans``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAvailableVlans`: OperationResponseTopologyAvailableNetworkAndSSID
+	fmt.Fprintf(os.Stdout, "Response from `TopologyAPI.GetAvailableVlans`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAvailableVlansRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -469,6 +544,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseTopologyFilterDevicesVO**](OperationResponseTopologyFilterDevicesVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGridAvailableSsids
+
+> OperationResponseTopologyAvailableNetworkAndSSID GetGridAvailableSsids(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
+
+Get available ssids
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	page := int32(56) // int32 | Start page number. Start from 1.
+	pageSize := int32(56) // int32 | Number of entries per page. It should be within the range of 1–1000.
+	searchKey := "searchKey_example" // string | Fuzzy query parameters, support field 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TopologyAPI.GetGridAvailableSsids(context.Background(), omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TopologyAPI.GetGridAvailableSsids``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGridAvailableSsids`: OperationResponseTopologyAvailableNetworkAndSSID
+	fmt.Fprintf(os.Stdout, "Response from `TopologyAPI.GetGridAvailableSsids`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGridAvailableSsidsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **page** | **int32** | Start page number. Start from 1. | 
+ **pageSize** | **int32** | Number of entries per page. It should be within the range of 1–1000. | 
+ **searchKey** | **string** | Fuzzy query parameters, support field  | 
+
+### Return type
+
+[**OperationResponseTopologyAvailableNetworkAndSSID**](OperationResponseTopologyAvailableNetworkAndSSID.md)
 
 ### Authorization
 

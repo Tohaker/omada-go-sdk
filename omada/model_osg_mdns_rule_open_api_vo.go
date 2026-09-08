@@ -19,11 +19,11 @@ import (
 // checks if the OsgMdnsRuleOpenApiVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OsgMdnsRuleOpenApiVO{}
 
-// OsgMdnsRuleOpenApiVO MDNS rule gateway config, valid when parameter [type] is 1
+// OsgMdnsRuleOpenApiVO MDNS rule by network config, valid when parameter [type] is 1
 type OsgMdnsRuleOpenApiVO struct {
-	// LAN Network ID list of selected client networks. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface
+	// LAN Network ID list of selected client networks.  This configuration is used for MDNS Rules where the band VLAN type is \"By Network\". LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface
 	ClientNetworks []string `json:"clientNetworks"`
-	// LAN Network ID list of selected service networks. LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface
+	// LAN Network ID list of selected service networks. This configuration is used for MDNS Rules where the band VLAN type is \"By Network\". LAN Network can be created using 'Create LAN network' interface, and LAN Network ID can be obtained from 'Get LAN network list' interface
 	ServiceNetworks []string `json:"serviceNetworks"`
 }
 

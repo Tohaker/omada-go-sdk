@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CccRslt** | Pointer to **string** |  | [optional] 
+**CccRslt** | Pointer to **string** | The result of the M-LAG consistency check. | [optional] 
 **CfgName** | Pointer to **string** | M-LAG group member configuration name | [optional] 
-**LocalVal** | Pointer to **string** |  | [optional] 
+**LocalVal** | Pointer to **string** | The local configuration values for M-LAG consistency check. | [optional] 
 **PathType** | Pointer to **int32** | M-LAG group member configuration path. It should be a value as follows:-1 : Settings -&gt; CLI Configuration0 : Device configuration page -&gt; config -&gt; General -&gt; Hash Algorithm1 : Device configuration page -&gt; ports -&gt; Profile Overrides -&gt; Operation(Aggregating)2 : Device configuration page -&gt; config -&gt; Services -&gt; Loopback Control -&gt; Loopback Detection3 : Device configuration page -&gt; ports -&gt; Profile Overrides -&gt; Loopback Control4 : Device configuration page -&gt; config -&gt; Services -&gt; Loopback Control -&gt; Spanning Tree5 : Device configuration page -&gt; config -&gt; Services -&gt; Loopback Control -&gt; CIST Priority6 : Device configuration page -&gt; config -&gt; Services -&gt; Loopback Control -&gt; MSTP Instance config7 : Device configuration page -&gt; ports -&gt; Profile Overrides -&gt; Spanning Tree Config8 : Device configuration page -&gt; ports -&gt; Profile Overrides -&gt; Loopback Control9 : Device configuration page -&gt; config -&gt; VLAN Interface10 : Settings -&gt; Transmission -&gt; VRRP -&gt; Optional Settings11 : Settings -&gt; Transmission -&gt; VRRP12 : Settings -&gt; Wired&amp;Wireless Networks -&gt; LAN -&gt; Networks -&gt; DHCP L2 Relay13 : Device configuration page -&gt; ports -&gt; LAG -&gt; Profile14 : Settings -&gt; Wired&amp;Wireless Networks -&gt; LAN -&gt; Networks -&gt; IGMP Snooping15 : Settings -&gt; Wired&amp;Wireless Networks -&gt; LAN -&gt; Networks -&gt; MLD Snooping | [optional] 
-**PeerVal** | Pointer to **string** |  | [optional] 
+**PeerVal** | Pointer to **string** | The opposite-end configuration values for M-LAG consistency check. | [optional] 
 **Type** | Pointer to **int32** | M-LAG group member configuration type. It should be a value as follows:1 : Critical2 : Significant | [optional] 
 
 ## Methods

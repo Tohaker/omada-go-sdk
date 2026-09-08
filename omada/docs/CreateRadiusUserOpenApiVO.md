@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DownLimit** | Pointer to **int64** | Build-in Radius profile user downlink traffic limit, unit: MB. DownLimit should be within the range of 1-10485760 | [optional] 
-**DownRateLimit** | Pointer to **int64** | Build-in Radius profile user downlink rate limit, unit: Kbps. DownRateLimit should be within the range of 1-10485760 | [optional] 
+**Description** | Pointer to **string** | Description of radius user, should contain 1 to 256 characters | [optional] 
+**DownLimit** | Pointer to **int64** | Build-in RADIUS profile user downlink traffic limit, unit: MB. DownLimit should be within the range of 1-10485760 | [optional] 
+**DownRateLimit** | Pointer to **int64** | Build-in RADIUS profile user downlink rate limit, unit: Kbps. DownRateLimit should be within the range of 1-10485760 | [optional] 
 **MacAddress** | Pointer to **string** | MAC address, required when parameter [type] is 1. Should be a valid MAC address format | [optional] 
 **Timeout** | Pointer to **int32** | Session timeout, unit: second | [optional] 
-**Type** | **int32** | Type of Build-in Radius profile user, 0: user auth; 1: MAC auth | 
-**UpLimit** | Pointer to **int64** | Build-in Radius profile user uplink traffic limit, unit: MB. UpLimit should be within the range of 1-10485760 | [optional] 
-**UpRateLimit** | Pointer to **int64** | Build-in Radius profile user uplink rate limit, unit: Kbps. UpRateLimit should be within the range of 1-10485760 | [optional] 
+**Type** | **int32** | Type of Build-in RADIUS profile user, 0: user auth; 1: MAC auth | 
+**UpLimit** | Pointer to **int64** | Build-in RADIUS profile user uplink traffic limit, unit: MB. UpLimit should be within the range of 1-10485760 | [optional] 
+**UpRateLimit** | Pointer to **int64** | Build-in RADIUS profile user uplink rate limit, unit: Kbps. UpRateLimit should be within the range of 1-10485760 | [optional] 
 **UserInfo** | Pointer to [**RadiusUserInfoOpenApiVO**](RadiusUserInfoOpenApiVO.md) |  | [optional] 
 **VlanId** | Pointer to **int32** | VLAN ID. VlanId should be within the range of 1-4096 | [optional] 
 
@@ -32,6 +33,31 @@ will change when the set of required properties is changed
 NewCreateRadiusUserOpenApiVOWithDefaults instantiates a new CreateRadiusUserOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDescription
+
+`func (o *CreateRadiusUserOpenApiVO) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *CreateRadiusUserOpenApiVO) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *CreateRadiusUserOpenApiVO) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *CreateRadiusUserOpenApiVO) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetDownLimit
 

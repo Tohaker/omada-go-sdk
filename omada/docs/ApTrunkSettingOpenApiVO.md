@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Enable** | Pointer to **bool** | Whether the device enable trunk setting. | [optional] 
-**Mode** | Pointer to **int32** | Trunk setting mode. Mode should be a value as follows: 0：SRC MAC + DST MAC; 1：DST MAC; 2：SRC MAC. | [optional] 
-**SupportTrunkSetting** | Pointer to **bool** | Whether the device supports trunk setting. | [optional] 
+**Enable** | Pointer to **bool** | Whether the device enables trunk setting (LAG). | [optional] 
+**Mode** | Pointer to **int32** | Trunk setting (LAG) mode. Mode should be a value as follows: 0：SRC MAC + DST MAC; 1：DST MAC; 2：SRC MAC. | [optional] 
+**SupportTrunkSetting** | Pointer to **bool** | Whether the device supports trunk setting (LAG). | [optional] 
 
 ## Methods
 

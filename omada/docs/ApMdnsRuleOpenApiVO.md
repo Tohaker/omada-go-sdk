@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientVlan** | **string** | Client Network VLAN. ClientVlan should be within the range of 1 to 4094. Enter one or multiple VLANs. For example: 1,2-100 | 
-**ServiceVlan** | **string** | Services Network VLAN. ServiceVlan should be within the range of 1 to 4094. Enter only one VLAN | 
+**ClientVlan** | **string** | Client Network VLAN. ClientVlan should be within the range of 1 to 4094. Enter one or multiple VLANs. For example: 1,2-100. This configuration is used for MDNS Rules where the band VLAN type is \&quot;By VLAN ID\&quot;. | 
+**ServiceVlan** | **string** | Services Network VLAN. ServiceVlan should be within the range of 1 to 4094. Enter only one VLAN. This configuration is used for MDNS Rules where the band VLAN type is \&quot;By VLAN ID\&quot;. | 
 
 ## Methods
 

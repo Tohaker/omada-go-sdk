@@ -21,8 +21,8 @@ var _ MappedNullable = &SetNotificationOpenApiVO{}
 
 // SetNotificationOpenApiVO struct for SetNotificationOpenApiVO
 type SetNotificationOpenApiVO struct {
-	EmailAlerts NotificationConfigurationOpenApiVO `json:"Email Alerts"`
 	AlertEmailSetting AlertEmailSettingVO `json:"alertEmailSetting"`
+	Email NotificationConfigurationOpenApiVO `json:"email"`
 }
 
 type _SetNotificationOpenApiVO SetNotificationOpenApiVO
@@ -31,10 +31,10 @@ type _SetNotificationOpenApiVO SetNotificationOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSetNotificationOpenApiVO(emailAlerts NotificationConfigurationOpenApiVO, alertEmailSetting AlertEmailSettingVO) *SetNotificationOpenApiVO {
+func NewSetNotificationOpenApiVO(alertEmailSetting AlertEmailSettingVO, email NotificationConfigurationOpenApiVO) *SetNotificationOpenApiVO {
 	this := SetNotificationOpenApiVO{}
-	this.EmailAlerts = emailAlerts
 	this.AlertEmailSetting = alertEmailSetting
+	this.Email = email
 	return &this
 }
 
@@ -44,30 +44,6 @@ func NewSetNotificationOpenApiVO(emailAlerts NotificationConfigurationOpenApiVO,
 func NewSetNotificationOpenApiVOWithDefaults() *SetNotificationOpenApiVO {
 	this := SetNotificationOpenApiVO{}
 	return &this
-}
-
-// GetEmailAlerts returns the EmailAlerts field value
-func (o *SetNotificationOpenApiVO) GetEmailAlerts() NotificationConfigurationOpenApiVO {
-	if o == nil {
-		var ret NotificationConfigurationOpenApiVO
-		return ret
-	}
-
-	return o.EmailAlerts
-}
-
-// GetEmailAlertsOk returns a tuple with the EmailAlerts field value
-// and a boolean to check if the value has been set.
-func (o *SetNotificationOpenApiVO) GetEmailAlertsOk() (*NotificationConfigurationOpenApiVO, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EmailAlerts, true
-}
-
-// SetEmailAlerts sets field value
-func (o *SetNotificationOpenApiVO) SetEmailAlerts(v NotificationConfigurationOpenApiVO) {
-	o.EmailAlerts = v
 }
 
 // GetAlertEmailSetting returns the AlertEmailSetting field value
@@ -94,6 +70,30 @@ func (o *SetNotificationOpenApiVO) SetAlertEmailSetting(v AlertEmailSettingVO) {
 	o.AlertEmailSetting = v
 }
 
+// GetEmail returns the Email field value
+func (o *SetNotificationOpenApiVO) GetEmail() NotificationConfigurationOpenApiVO {
+	if o == nil {
+		var ret NotificationConfigurationOpenApiVO
+		return ret
+	}
+
+	return o.Email
+}
+
+// GetEmailOk returns a tuple with the Email field value
+// and a boolean to check if the value has been set.
+func (o *SetNotificationOpenApiVO) GetEmailOk() (*NotificationConfigurationOpenApiVO, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Email, true
+}
+
+// SetEmail sets field value
+func (o *SetNotificationOpenApiVO) SetEmail(v NotificationConfigurationOpenApiVO) {
+	o.Email = v
+}
+
 func (o SetNotificationOpenApiVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -104,8 +104,8 @@ func (o SetNotificationOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o SetNotificationOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["Email Alerts"] = o.EmailAlerts
 	toSerialize["alertEmailSetting"] = o.AlertEmailSetting
+	toSerialize["email"] = o.Email
 	return toSerialize, nil
 }
 
@@ -114,8 +114,8 @@ func (o *SetNotificationOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"Email Alerts",
 		"alertEmailSetting",
+		"email",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -236,6 +236,21 @@ func Test_omada_ClientAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ClientAPIService GetClientIncidentCounts", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ClientAPI.GetClientIncidentCounts(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ClientAPIService GetClientJourney", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -323,6 +338,22 @@ func Test_omada_ClientAPIService(t *testing.T) {
 		var clientMac string
 
 		resp, httpRes, err := apiClient.ClientAPI.GetGridClientHistory(context.Background(), omadacId, siteId, clientMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ClientAPIService GetGridSsidClients", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var ssidId string
+
+		resp, httpRes, err := apiClient.ClientAPI.GetGridSsidClients(context.Background(), omadacId, siteId, ssidId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

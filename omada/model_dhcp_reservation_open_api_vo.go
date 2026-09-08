@@ -30,6 +30,8 @@ type DhcpReservationOpenApiVO struct {
 	ExistOptions []int32 `json:"existOptions,omitempty"`
 	// Indicates whether DHCP reservation can be exported to the IP-MAC Binding list
 	ExportToIpMacBinding *bool `json:"exportToIpMacBinding,omitempty"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// DHCP reservation ID
 	Id *string `json:"id,omitempty"`
 	// Reserved IP address
@@ -242,6 +244,38 @@ func (o *DhcpReservationOpenApiVO) HasExportToIpMacBinding() bool {
 // SetExportToIpMacBinding gets a reference to the given bool and assigns it to the ExportToIpMacBinding field.
 func (o *DhcpReservationOpenApiVO) SetExportToIpMacBinding(v bool) {
 	o.ExportToIpMacBinding = &v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *DhcpReservationOpenApiVO) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DhcpReservationOpenApiVO) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *DhcpReservationOpenApiVO) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *DhcpReservationOpenApiVO) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -780,6 +814,9 @@ func (o DhcpReservationOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ExportToIpMacBinding) {
 		toSerialize["exportToIpMacBinding"] = o.ExportToIpMacBinding
+	}
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

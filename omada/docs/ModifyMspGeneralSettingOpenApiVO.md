@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Dst** | Pointer to [**ModifyDstDTO**](ModifyDstDTO.md) |  | [optional] 
-**Name** | Pointer to **string** | Parameter [name] should be within the range of 1–32 visible ASCII characters. | [optional] 
+**Name** | Pointer to **string** | Parameter [name] should be within the range of 1–36 visible ASCII characters. | [optional] 
 **TimeZone** | Pointer to **string** | For the values of timeZone, refer to section 5.1 of the Open API Access Guide. | [optional] 
 
 ## Methods

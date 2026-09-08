@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DownlinkDevices** | Pointer to [**[]DeviceBriefVO**](DeviceBriefVO.md) | Downlink Devices | [optional] 
 **EditEnable** | Pointer to **bool** | It indicates whether the port can run cable test. | [optional] 
+**IsCopper** | Pointer to **bool** | Whether the port is copper when the port is combo. | [optional] 
 **IsDisabled** | Pointer to **bool** | It indicates whether the port is disabled. | [optional] 
 **IsStackPort** | Pointer to **bool** | It indicates whether the port is stack port | [optional] 
 **IsUpperPort** | Pointer to **bool** | It indicates whether the port is upper port. | [optional] 
@@ -83,6 +84,31 @@ SetEditEnable sets EditEnable field to given value.
 `func (o *OswCableTestPortVO) HasEditEnable() bool`
 
 HasEditEnable returns a boolean if a field has been set.
+
+### GetIsCopper
+
+`func (o *OswCableTestPortVO) GetIsCopper() bool`
+
+GetIsCopper returns the IsCopper field if non-nil, zero value otherwise.
+
+### GetIsCopperOk
+
+`func (o *OswCableTestPortVO) GetIsCopperOk() (*bool, bool)`
+
+GetIsCopperOk returns a tuple with the IsCopper field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCopper
+
+`func (o *OswCableTestPortVO) SetIsCopper(v bool)`
+
+SetIsCopper sets IsCopper field to given value.
+
+### HasIsCopper
+
+`func (o *OswCableTestPortVO) HasIsCopper() bool`
+
+HasIsCopper returns a boolean if a field has been set.
 
 ### GetIsDisabled
 

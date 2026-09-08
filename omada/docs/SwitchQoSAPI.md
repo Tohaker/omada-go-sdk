@@ -19,13 +19,14 @@ Method | HTTP request | Description
 [**ModifyOswQosMode**](SwitchQoSAPI.md#modifyoswqosmode) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-mode | Modify switch QoS mode.
 [**ModifyQosRule**](SwitchQoSAPI.md#modifyqosrule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/{qosRuleId} | Modify switch QoS rule.
 [**ModifyQosRuleStatus**](SwitchQoSAPI.md#modifyqosrulestatus) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/status/{qosRuleId} | Modify switch QoS rule&#39;s status.
+[**ModifyRuleIndex**](SwitchQoSAPI.md#modifyruleindex) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/modify-index | Drag and sort the QoS rules.
 [**ModifySchedulerMapping**](SwitchQoSAPI.md#modifyschedulermapping) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-qos/qos-rule/scheduler-mapping | Modify switch QoS queue scheduling.
 
 
 
 ## CreateQosRule
 
-> OperationResponse CreateQosRule(ctx, omadacId, siteId).OswQosRuleVO(oswQosRuleVO).Execute()
+> OperationResponseOswQosRuleResultVO CreateQosRule(ctx, omadacId, siteId).OswQosRuleVO(oswQosRuleVO).Execute()
 
 Create switch QoS rule.
 
@@ -55,7 +56,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.CreateQosRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateQosRule`: OperationResponse
+	// response from `CreateQosRule`: OperationResponseOswQosRuleResultVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.CreateQosRule`: %v\n", resp)
 }
 ```
@@ -82,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseOswQosRuleResultVO**](OperationResponseOswQosRuleResultVO.md)
 
 ### Authorization
 
@@ -100,7 +101,7 @@ Name | Type | Description  | Notes
 
 ## DeleteQosRule
 
-> OperationResponse DeleteQosRule(ctx, omadacId, siteId, qosRuleId).Execute()
+> OperationResponseOswQosRuleResultVO DeleteQosRule(ctx, omadacId, siteId, qosRuleId).Execute()
 
 Delete switch QoS rule.
 
@@ -130,7 +131,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.DeleteQosRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteQosRule`: OperationResponse
+	// response from `DeleteQosRule`: OperationResponseOswQosRuleResultVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.DeleteQosRule`: %v\n", resp)
 }
 ```
@@ -158,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseOswQosRuleResultVO**](OperationResponseOswQosRuleResultVO.md)
 
 ### Authorization
 
@@ -176,7 +177,7 @@ Name | Type | Description  | Notes
 
 ## GetAllSelectableDevices
 
-> OperationResponse GetAllSelectableDevices(ctx, omadacId, siteId).RuleType(ruleType).NetworkId(networkId).Execute()
+> OperationResponseOswMacListVO GetAllSelectableDevices(ctx, omadacId, siteId).RuleType(ruleType).NetworkId(networkId).Execute()
 
 Get switch QoS all selectable device's mac.
 
@@ -197,8 +198,8 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	ruleType := int32(56) // int32 | 
-	networkId := "networkId_example" // string |  (optional)
+	ruleType := int32(56) // int32 | The type of Qos rule, 0:Network, 1:Port, 2:Custom
+	networkId := "networkId_example" // string | Network ID (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -207,7 +208,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.GetAllSelectableDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAllSelectableDevices`: OperationResponse
+	// response from `GetAllSelectableDevices`: OperationResponseOswMacListVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.GetAllSelectableDevices`: %v\n", resp)
 }
 ```
@@ -230,12 +231,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **ruleType** | **int32** |  | 
- **networkId** | **string** |  | 
+ **ruleType** | **int32** | The type of Qos rule, 0:Network, 1:Port, 2:Custom | 
+ **networkId** | **string** | Network ID | 
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseOswMacListVO**](OperationResponseOswMacListVO.md)
 
 ### Authorization
 
@@ -253,7 +254,7 @@ Name | Type | Description  | Notes
 
 ## GetDscpMapping
 
-> OperationResponse GetDscpMapping(ctx, omadacId, siteId).Execute()
+> OperationResponseDscpMappingVO GetDscpMapping(ctx, omadacId, siteId).Execute()
 
 Get switch QoS dscp mapping.
 
@@ -282,7 +283,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.GetDscpMapping``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDscpMapping`: OperationResponse
+	// response from `GetDscpMapping`: OperationResponseDscpMappingVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.GetDscpMapping`: %v\n", resp)
 }
 ```
@@ -308,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseDscpMappingVO**](OperationResponseDscpMappingVO.md)
 
 ### Authorization
 
@@ -326,7 +327,7 @@ Name | Type | Description  | Notes
 
 ## GetDscpMappingTemplate
 
-> OperationResponse GetDscpMappingTemplate(ctx, omadacId, siteTemplateId).Execute()
+> OperationResponseDscpMappingVO GetDscpMappingTemplate(ctx, omadacId, siteTemplateId).Execute()
 
 Get switch QoS dscp mapping in site template.
 
@@ -355,7 +356,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.GetDscpMappingTemplate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDscpMappingTemplate`: OperationResponse
+	// response from `GetDscpMappingTemplate`: OperationResponseDscpMappingVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.GetDscpMappingTemplate`: %v\n", resp)
 }
 ```
@@ -381,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseDscpMappingVO**](OperationResponseDscpMappingVO.md)
 
 ### Authorization
 
@@ -399,7 +400,7 @@ Name | Type | Description  | Notes
 
 ## GetOswQosMode
 
-> OperationResponse GetOswQosMode(ctx, omadacId, siteId).Execute()
+> OperationResponseOswQosModeVO GetOswQosMode(ctx, omadacId, siteId).Execute()
 
 Get switch QoS mode.
 
@@ -428,7 +429,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.GetOswQosMode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetOswQosMode`: OperationResponse
+	// response from `GetOswQosMode`: OperationResponseOswQosModeVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.GetOswQosMode`: %v\n", resp)
 }
 ```
@@ -454,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseOswQosModeVO**](OperationResponseOswQosModeVO.md)
 
 ### Authorization
 
@@ -472,7 +473,7 @@ Name | Type | Description  | Notes
 
 ## GetQosRules
 
-> OperationResponse GetQosRules(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
+> OperationResponseGridVOOswQosRuleVO GetQosRules(ctx, omadacId, siteId).Page(page).PageSize(pageSize).SearchKey(searchKey).Execute()
 
 Get switch QoS rules.
 
@@ -504,7 +505,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.GetQosRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetQosRules`: OperationResponse
+	// response from `GetQosRules`: OperationResponseGridVOOswQosRuleVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.GetQosRules`: %v\n", resp)
 }
 ```
@@ -533,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseGridVOOswQosRuleVO**](OperationResponseGridVOOswQosRuleVO.md)
 
 ### Authorization
 
@@ -551,7 +552,7 @@ Name | Type | Description  | Notes
 
 ## GetSchedulerMapping
 
-> OperationResponse GetSchedulerMapping(ctx, omadacId, siteId).Execute()
+> OperationResponseQueueSchedulerMappingVO GetSchedulerMapping(ctx, omadacId, siteId).Execute()
 
 Get switch QoS queue scheduling.
 
@@ -580,7 +581,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.GetSchedulerMapping``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSchedulerMapping`: OperationResponse
+	// response from `GetSchedulerMapping`: OperationResponseQueueSchedulerMappingVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.GetSchedulerMapping`: %v\n", resp)
 }
 ```
@@ -606,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseQueueSchedulerMappingVO**](OperationResponseQueueSchedulerMappingVO.md)
 
 ### Authorization
 
@@ -624,7 +625,7 @@ Name | Type | Description  | Notes
 
 ## GetSelectableDevices
 
-> OperationResponse GetSelectableDevices(ctx, omadacId, siteId).RuleType(ruleType).NetworkId(networkId).Execute()
+> OperationResponseGridVOOswDetailVO GetSelectableDevices(ctx, omadacId, siteId).RuleType(ruleType).NetworkId(networkId).Execute()
 
 Get switch QoS selectable devices.
 
@@ -645,8 +646,8 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	ruleType := int32(56) // int32 | 
-	networkId := "networkId_example" // string |  (optional)
+	ruleType := int32(56) // int32 | The type of Qos rule, 0:Network, 1:Port, 2:Custom
+	networkId := "networkId_example" // string | Network ID (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -655,7 +656,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.GetSelectableDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSelectableDevices`: OperationResponse
+	// response from `GetSelectableDevices`: OperationResponseGridVOOswDetailVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.GetSelectableDevices`: %v\n", resp)
 }
 ```
@@ -678,12 +679,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **ruleType** | **int32** |  | 
- **networkId** | **string** |  | 
+ **ruleType** | **int32** | The type of Qos rule, 0:Network, 1:Port, 2:Custom | 
+ **networkId** | **string** | Network ID | 
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseGridVOOswDetailVO**](OperationResponseGridVOOswDetailVO.md)
 
 ### Authorization
 
@@ -701,7 +702,7 @@ Name | Type | Description  | Notes
 
 ## GetSelectedDeviceBriefInfo
 
-> OperationResponse GetSelectedDeviceBriefInfo(ctx, omadacId, siteId).OswMacListVO(oswMacListVO).Execute()
+> OperationResponseListSelectedOswBriefVO GetSelectedDeviceBriefInfo(ctx, omadacId, siteId).OswMacListVO(oswMacListVO).Execute()
 
 Get switch QoS selected device brief info.
 
@@ -731,7 +732,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.GetSelectedDeviceBriefInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSelectedDeviceBriefInfo`: OperationResponse
+	// response from `GetSelectedDeviceBriefInfo`: OperationResponseListSelectedOswBriefVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.GetSelectedDeviceBriefInfo`: %v\n", resp)
 }
 ```
@@ -758,7 +759,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseListSelectedOswBriefVO**](OperationResponseListSelectedOswBriefVO.md)
 
 ### Authorization
 
@@ -776,7 +777,7 @@ Name | Type | Description  | Notes
 
 ## GetUpgradableDevices
 
-> OperationResponse GetUpgradableDevices(ctx, omadacId, siteId).Execute()
+> OperationResponseListSelectedOswBriefVO GetUpgradableDevices(ctx, omadacId, siteId).Execute()
 
 Get switch QoS upgradable devices.
 
@@ -805,7 +806,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.GetUpgradableDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUpgradableDevices`: OperationResponse
+	// response from `GetUpgradableDevices`: OperationResponseListSelectedOswBriefVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.GetUpgradableDevices`: %v\n", resp)
 }
 ```
@@ -831,7 +832,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseListSelectedOswBriefVO**](OperationResponseListSelectedOswBriefVO.md)
 
 ### Authorization
 
@@ -999,7 +1000,7 @@ Name | Type | Description  | Notes
 
 ## ModifyQosRule
 
-> OperationResponse ModifyQosRule(ctx, omadacId, siteId, qosRuleId).OswQosRuleVO(oswQosRuleVO).Execute()
+> OperationResponseOswQosRuleResultVO ModifyQosRule(ctx, omadacId, siteId, qosRuleId).OswQosRuleVO(oswQosRuleVO).Execute()
 
 Modify switch QoS rule.
 
@@ -1030,7 +1031,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.ModifyQosRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ModifyQosRule`: OperationResponse
+	// response from `ModifyQosRule`: OperationResponseOswQosRuleResultVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.ModifyQosRule`: %v\n", resp)
 }
 ```
@@ -1059,7 +1060,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseOswQosRuleResultVO**](OperationResponseOswQosRuleResultVO.md)
 
 ### Authorization
 
@@ -1077,7 +1078,7 @@ Name | Type | Description  | Notes
 
 ## ModifyQosRuleStatus
 
-> OperationResponse ModifyQosRuleStatus(ctx, omadacId, siteId, qosRuleId).OswQosRuleStatusVO(oswQosRuleStatusVO).Execute()
+> OperationResponseOswQosRuleResultVO ModifyQosRuleStatus(ctx, omadacId, siteId, qosRuleId).OswQosRuleStatusVO(oswQosRuleStatusVO).Execute()
 
 Modify switch QoS rule's status.
 
@@ -1108,7 +1109,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.ModifyQosRuleStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ModifyQosRuleStatus`: OperationResponse
+	// response from `ModifyQosRuleStatus`: OperationResponseOswQosRuleResultVO
 	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.ModifyQosRuleStatus`: %v\n", resp)
 }
 ```
@@ -1137,7 +1138,82 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponse**](OperationResponse.md)
+[**OperationResponseOswQosRuleResultVO**](OperationResponseOswQosRuleResultVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ModifyRuleIndex
+
+> OperationResponseOswQosRuleResultVO ModifyRuleIndex(ctx, omadacId, siteId).DragSortIndexVO(dragSortIndexVO).Execute()
+
+Drag and sort the QoS rules.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	dragSortIndexVO := *openapiclient.NewDragSortIndexVO(map[string]int32{"key": int32(123)}) // DragSortIndexVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SwitchQoSAPI.ModifyRuleIndex(context.Background(), omadacId, siteId).DragSortIndexVO(dragSortIndexVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SwitchQoSAPI.ModifyRuleIndex``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyRuleIndex`: OperationResponseOswQosRuleResultVO
+	fmt.Fprintf(os.Stdout, "Response from `SwitchQoSAPI.ModifyRuleIndex`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyRuleIndexRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **dragSortIndexVO** | [**DragSortIndexVO**](DragSortIndexVO.md) |  | 
+
+### Return type
+
+[**OperationResponseOswQosRuleResultVO**](OperationResponseOswQosRuleResultVO.md)
 
 ### Authorization
 

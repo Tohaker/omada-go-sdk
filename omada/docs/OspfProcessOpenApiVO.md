@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AreaList** | [**[]OspfProcessAreaOpenApiVO**](OspfProcessAreaOpenApiVO.md) |  Up to 16 entries are allowed for the areaList. | 
+**AutoCost** | Pointer to **int32** | Auto-Cost Reference Bandwidth. | [optional] 
+**AutoCostEnable** | Pointer to **bool** | enable Auto-Cost Reference Bandwidth. | [optional] 
 **ConnectedEnable** | **bool** | Direct connection routing protocol switch | 
 **ConnectedMetric** | Pointer to **int32** | Set the metric value to be used as the metric of redistributed routes. It should be within the range of 1-16777214 and the default is equal to Default Metric configured on Basic page. | [optional] 
 **ConnectedMetricType** | Pointer to **int32** | Set the OSPF metric type of redistributed routes. The default is External Type 2. | [optional] 
@@ -58,6 +60,56 @@ and a boolean to check if the value has been set.
 
 SetAreaList sets AreaList field to given value.
 
+
+### GetAutoCost
+
+`func (o *OspfProcessOpenApiVO) GetAutoCost() int32`
+
+GetAutoCost returns the AutoCost field if non-nil, zero value otherwise.
+
+### GetAutoCostOk
+
+`func (o *OspfProcessOpenApiVO) GetAutoCostOk() (*int32, bool)`
+
+GetAutoCostOk returns a tuple with the AutoCost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoCost
+
+`func (o *OspfProcessOpenApiVO) SetAutoCost(v int32)`
+
+SetAutoCost sets AutoCost field to given value.
+
+### HasAutoCost
+
+`func (o *OspfProcessOpenApiVO) HasAutoCost() bool`
+
+HasAutoCost returns a boolean if a field has been set.
+
+### GetAutoCostEnable
+
+`func (o *OspfProcessOpenApiVO) GetAutoCostEnable() bool`
+
+GetAutoCostEnable returns the AutoCostEnable field if non-nil, zero value otherwise.
+
+### GetAutoCostEnableOk
+
+`func (o *OspfProcessOpenApiVO) GetAutoCostEnableOk() (*bool, bool)`
+
+GetAutoCostEnableOk returns a tuple with the AutoCostEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoCostEnable
+
+`func (o *OspfProcessOpenApiVO) SetAutoCostEnable(v bool)`
+
+SetAutoCostEnable sets AutoCostEnable field to given value.
+
+### HasAutoCostEnable
+
+`func (o *OspfProcessOpenApiVO) HasAutoCostEnable() bool`
+
+HasAutoCostEnable returns a boolean if a field has been set.
 
 ### GetConnectedEnable
 

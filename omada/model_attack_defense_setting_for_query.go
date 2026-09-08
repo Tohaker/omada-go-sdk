@@ -25,6 +25,8 @@ type AttackDefenseSettingForQuery struct {
 	ExistLargePingThreshold *bool `json:"existLargePingThreshold,omitempty"`
 	// Whether Block TCP scan with reject of the attack defense setting is ON.
 	ExistTcpScanReject *bool `json:"existTcpScanReject,omitempty"`
+	// Gateway Feature Description.
+	FeatureDescription []FeatureInfoVO `json:"featureDescription,omitempty"`
 	// Multi-connections ICMP flood enable of the attack defense setting.
 	IcmpConnEnable *bool `json:"icmpConnEnable,omitempty"`
 	// Multi-connections ICMP flood limit should be within the range of 100–99999.
@@ -191,6 +193,38 @@ func (o *AttackDefenseSettingForQuery) HasExistTcpScanReject() bool {
 // SetExistTcpScanReject gets a reference to the given bool and assigns it to the ExistTcpScanReject field.
 func (o *AttackDefenseSettingForQuery) SetExistTcpScanReject(v bool) {
 	o.ExistTcpScanReject = &v
+}
+
+// GetFeatureDescription returns the FeatureDescription field value if set, zero value otherwise.
+func (o *AttackDefenseSettingForQuery) GetFeatureDescription() []FeatureInfoVO {
+	if o == nil || IsNil(o.FeatureDescription) {
+		var ret []FeatureInfoVO
+		return ret
+	}
+	return o.FeatureDescription
+}
+
+// GetFeatureDescriptionOk returns a tuple with the FeatureDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AttackDefenseSettingForQuery) GetFeatureDescriptionOk() ([]FeatureInfoVO, bool) {
+	if o == nil || IsNil(o.FeatureDescription) {
+		return nil, false
+	}
+	return o.FeatureDescription, true
+}
+
+// HasFeatureDescription returns a boolean if a field has been set.
+func (o *AttackDefenseSettingForQuery) HasFeatureDescription() bool {
+	if o != nil && !IsNil(o.FeatureDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureDescription gets a reference to the given []FeatureInfoVO and assigns it to the FeatureDescription field.
+func (o *AttackDefenseSettingForQuery) SetFeatureDescription(v []FeatureInfoVO) {
+	o.FeatureDescription = v
 }
 
 // GetIcmpConnEnable returns the IcmpConnEnable field value if set, zero value otherwise.
@@ -1075,6 +1109,9 @@ func (o AttackDefenseSettingForQuery) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ExistTcpScanReject) {
 		toSerialize["existTcpScanReject"] = o.ExistTcpScanReject
+	}
+	if !IsNil(o.FeatureDescription) {
+		toSerialize["featureDescription"] = o.FeatureDescription
 	}
 	if !IsNil(o.IcmpConnEnable) {
 		toSerialize["icmpConnEnable"] = o.IcmpConnEnable

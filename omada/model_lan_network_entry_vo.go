@@ -17,9 +17,11 @@ import (
 // checks if the LanNetworkEntryVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &LanNetworkEntryVO{}
 
-// LanNetworkEntryVO struct for LanNetworkEntryVO
+// LanNetworkEntryVO It can be issued when the type is either \"Network\" or \"Custom\". For the \"Network\" type, multiple options are available; for the \"Custom\" type, a single option is required.
 type LanNetworkEntryVO struct {
+	// The LAN Network ID
 	NetworkId *string `json:"networkId,omitempty"`
+	// The VLAN ID
 	VlanId *int32 `json:"vlanId,omitempty"`
 }
 

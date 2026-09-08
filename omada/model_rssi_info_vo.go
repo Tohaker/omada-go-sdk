@@ -19,8 +19,12 @@ var _ MappedNullable = &RssiInfoVO{}
 
 // RssiInfoVO struct for RssiInfoVO
 type RssiInfoVO struct {
+	// Client model for icon display
+	ClientModel *string `json:"clientModel,omitempty"`
 	// Client name
 	ClientName *string `json:"clientName,omitempty"`
+	// Client type for icon display (e.g. Mobile, Laptop, IPC)
+	ClientType *string `json:"clientType,omitempty"`
 	// Client-connected device mac
 	ConnectDeviceMac *string `json:"connectDeviceMac,omitempty"`
 	// Client-connected device name
@@ -54,6 +58,38 @@ func NewRssiInfoVOWithDefaults() *RssiInfoVO {
 	return &this
 }
 
+// GetClientModel returns the ClientModel field value if set, zero value otherwise.
+func (o *RssiInfoVO) GetClientModel() string {
+	if o == nil || IsNil(o.ClientModel) {
+		var ret string
+		return ret
+	}
+	return *o.ClientModel
+}
+
+// GetClientModelOk returns a tuple with the ClientModel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RssiInfoVO) GetClientModelOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientModel) {
+		return nil, false
+	}
+	return o.ClientModel, true
+}
+
+// HasClientModel returns a boolean if a field has been set.
+func (o *RssiInfoVO) HasClientModel() bool {
+	if o != nil && !IsNil(o.ClientModel) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientModel gets a reference to the given string and assigns it to the ClientModel field.
+func (o *RssiInfoVO) SetClientModel(v string) {
+	o.ClientModel = &v
+}
+
 // GetClientName returns the ClientName field value if set, zero value otherwise.
 func (o *RssiInfoVO) GetClientName() string {
 	if o == nil || IsNil(o.ClientName) {
@@ -84,6 +120,38 @@ func (o *RssiInfoVO) HasClientName() bool {
 // SetClientName gets a reference to the given string and assigns it to the ClientName field.
 func (o *RssiInfoVO) SetClientName(v string) {
 	o.ClientName = &v
+}
+
+// GetClientType returns the ClientType field value if set, zero value otherwise.
+func (o *RssiInfoVO) GetClientType() string {
+	if o == nil || IsNil(o.ClientType) {
+		var ret string
+		return ret
+	}
+	return *o.ClientType
+}
+
+// GetClientTypeOk returns a tuple with the ClientType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RssiInfoVO) GetClientTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientType) {
+		return nil, false
+	}
+	return o.ClientType, true
+}
+
+// HasClientType returns a boolean if a field has been set.
+func (o *RssiInfoVO) HasClientType() bool {
+	if o != nil && !IsNil(o.ClientType) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientType gets a reference to the given string and assigns it to the ClientType field.
+func (o *RssiInfoVO) SetClientType(v string) {
+	o.ClientType = &v
 }
 
 // GetConnectDeviceMac returns the ConnectDeviceMac field value if set, zero value otherwise.
@@ -320,8 +388,14 @@ func (o RssiInfoVO) MarshalJSON() ([]byte, error) {
 
 func (o RssiInfoVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ClientModel) {
+		toSerialize["clientModel"] = o.ClientModel
+	}
 	if !IsNil(o.ClientName) {
 		toSerialize["clientName"] = o.ClientName
+	}
+	if !IsNil(o.ClientType) {
+		toSerialize["clientType"] = o.ClientType
 	}
 	if !IsNil(o.ConnectDeviceMac) {
 		toSerialize["connectDeviceMac"] = o.ConnectDeviceMac

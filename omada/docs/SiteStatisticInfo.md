@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **GatewayHealth** | Pointer to **int32** |  | [optional] 
 **GatewayStatus** | Pointer to **int32** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**IssueEvent** | Pointer to [**AnomalyStatVO**](AnomalyStatVO.md) |  | [optional] 
+**IssueEvent** | Pointer to [**SiteSettingAnomalyStatVO**](SiteSettingAnomalyStatVO.md) |  | [optional] 
 **Lan** | Pointer to **bool** |  | [optional] 
 **LanDeviceConnectedNum** | Pointer to **int64** |  | [optional] 
 **LanDeviceDisconnectedNum** | Pointer to **int64** |  | [optional] 
@@ -181,20 +181,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetIssueEvent
 
-`func (o *SiteStatisticInfo) GetIssueEvent() AnomalyStatVO`
+`func (o *SiteStatisticInfo) GetIssueEvent() SiteSettingAnomalyStatVO`
 
 GetIssueEvent returns the IssueEvent field if non-nil, zero value otherwise.
 
 ### GetIssueEventOk
 
-`func (o *SiteStatisticInfo) GetIssueEventOk() (*AnomalyStatVO, bool)`
+`func (o *SiteStatisticInfo) GetIssueEventOk() (*SiteSettingAnomalyStatVO, bool)`
 
 GetIssueEventOk returns a tuple with the IssueEvent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssueEvent
 
-`func (o *SiteStatisticInfo) SetIssueEvent(v AnomalyStatVO)`
+`func (o *SiteStatisticInfo) SetIssueEvent(v SiteSettingAnomalyStatVO)`
 
 SetIssueEvent sets IssueEvent field to given value.
 

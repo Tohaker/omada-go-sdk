@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Interfaces** | Pointer to [**[]InterfaceInfo**](InterfaceInfo.md) |  | [optional] 
+**SupportLayout** | Pointer to **bool** | Whether the device supports reporting port layout information. | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetInterfaces sets Interfaces field to given value.
 `func (o *DeviceInterfaces) HasInterfaces() bool`
 
 HasInterfaces returns a boolean if a field has been set.
+
+### GetSupportLayout
+
+`func (o *DeviceInterfaces) GetSupportLayout() bool`
+
+GetSupportLayout returns the SupportLayout field if non-nil, zero value otherwise.
+
+### GetSupportLayoutOk
+
+`func (o *DeviceInterfaces) GetSupportLayoutOk() (*bool, bool)`
+
+GetSupportLayoutOk returns a tuple with the SupportLayout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportLayout
+
+`func (o *DeviceInterfaces) SetSupportLayout(v bool)`
+
+SetSupportLayout sets SupportLayout field to given value.
+
+### HasSupportLayout
+
+`func (o *DeviceInterfaces) HasSupportLayout() bool`
+
+HasSupportLayout returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

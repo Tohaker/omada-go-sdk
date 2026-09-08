@@ -53,6 +53,8 @@ Name | Type | Description | Notes
 **RdMode6g** | Pointer to **string** | rdMode6g | [optional] 
 **Role** | Pointer to **int32** | Identify Device Role In P2P Scenarios | [optional] 
 **ShowModel** | Pointer to **string** | Device Show Model | [optional] 
+**SpecialModel** | Pointer to **string** | Special device model,for example:EAP225-Outdoor-1a20a950b8d950e8 | [optional] 
+**SpecificOtherType** | Pointer to **string** | SpecificOtherType for other device | [optional] 
 **SpecificType** | Pointer to **int32** | SpecificType for multiSwitchNode, 0 means mlag node and 1 means vrrp node | [optional] 
 **StackGroup** | Pointer to **bool** | Whether The Switch Device Is Stack Group Or Not | [optional] 
 **StackId** | Pointer to **string** | StackGroup Switch Device Id | [optional] 
@@ -1318,6 +1320,56 @@ SetShowModel sets ShowModel field to given value.
 `func (o *TopologyV3OpenApiNodeVO) HasShowModel() bool`
 
 HasShowModel returns a boolean if a field has been set.
+
+### GetSpecialModel
+
+`func (o *TopologyV3OpenApiNodeVO) GetSpecialModel() string`
+
+GetSpecialModel returns the SpecialModel field if non-nil, zero value otherwise.
+
+### GetSpecialModelOk
+
+`func (o *TopologyV3OpenApiNodeVO) GetSpecialModelOk() (*string, bool)`
+
+GetSpecialModelOk returns a tuple with the SpecialModel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpecialModel
+
+`func (o *TopologyV3OpenApiNodeVO) SetSpecialModel(v string)`
+
+SetSpecialModel sets SpecialModel field to given value.
+
+### HasSpecialModel
+
+`func (o *TopologyV3OpenApiNodeVO) HasSpecialModel() bool`
+
+HasSpecialModel returns a boolean if a field has been set.
+
+### GetSpecificOtherType
+
+`func (o *TopologyV3OpenApiNodeVO) GetSpecificOtherType() string`
+
+GetSpecificOtherType returns the SpecificOtherType field if non-nil, zero value otherwise.
+
+### GetSpecificOtherTypeOk
+
+`func (o *TopologyV3OpenApiNodeVO) GetSpecificOtherTypeOk() (*string, bool)`
+
+GetSpecificOtherTypeOk returns a tuple with the SpecificOtherType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpecificOtherType
+
+`func (o *TopologyV3OpenApiNodeVO) SetSpecificOtherType(v string)`
+
+SetSpecificOtherType sets SpecificOtherType field to given value.
+
+### HasSpecificOtherType
+
+`func (o *TopologyV3OpenApiNodeVO) HasSpecificOtherType() bool`
+
+HasSpecificOtherType returns a boolean if a field has been set.
 
 ### GetSpecificType
 

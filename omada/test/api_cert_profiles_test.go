@@ -59,9 +59,24 @@ func Test_omada_CertProfilesAPIService(t *testing.T) {
 
 		var omadacId string
 		var siteId string
+
+		resp, httpRes, err := apiClient.CertProfilesAPI.DeleteCertProfileFile1(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CertProfilesAPIService DeleteCertProfileFile2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
 		var fileId string
 
-		resp, httpRes, err := apiClient.CertProfilesAPI.DeleteCertProfileFile1(context.Background(), omadacId, siteId, fileId).Execute()
+		resp, httpRes, err := apiClient.CertProfilesAPI.DeleteCertProfileFile2(context.Background(), omadacId, siteId, fileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

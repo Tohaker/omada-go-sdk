@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AffectedPorts** | Pointer to **[]int32** | Affected gateway port list. | [optional] 
 **GatewayDetail** | Pointer to [**OsgDetailVO**](OsgDetailVO.md) |  | [optional] 
+**NativeVlanPorts** | Pointer to **[]int32** | Ports using this VLAN as the Native Network. | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetGatewayDetail sets GatewayDetail field to given value.
 `func (o *VlanNetworkAffectingOsgDetailVO) HasGatewayDetail() bool`
 
 HasGatewayDetail returns a boolean if a field has been set.
+
+### GetNativeVlanPorts
+
+`func (o *VlanNetworkAffectingOsgDetailVO) GetNativeVlanPorts() []int32`
+
+GetNativeVlanPorts returns the NativeVlanPorts field if non-nil, zero value otherwise.
+
+### GetNativeVlanPortsOk
+
+`func (o *VlanNetworkAffectingOsgDetailVO) GetNativeVlanPortsOk() (*[]int32, bool)`
+
+GetNativeVlanPortsOk returns a tuple with the NativeVlanPorts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNativeVlanPorts
+
+`func (o *VlanNetworkAffectingOsgDetailVO) SetNativeVlanPorts(v []int32)`
+
+SetNativeVlanPorts sets NativeVlanPorts field to given value.
+
+### HasNativeVlanPorts
+
+`func (o *VlanNetworkAffectingOsgDetailVO) HasNativeVlanPorts() bool`
+
+HasNativeVlanPorts returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

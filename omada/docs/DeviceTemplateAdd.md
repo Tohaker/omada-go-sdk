@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Model** | Pointer to **string** | The model name of device. | [optional] 
 **ModelVersion** | Pointer to **string** | The model version of device.For example: 1.0 | [optional] 
 **TemplateName** | Pointer to **string** | The name of device template. | [optional] 
-**TemplateSettings** | Pointer to **[]int32** | The configurable modules of device. For switch:  1:port; 2:vlanInterface; 3:staticRoute; 4:services; 5:ipSetting. For gateway: 1:port; 2:radios; 3:wlans; 4:services; 5:advanced. | [optional] 
+**TemplateSettings** | Pointer to **[]int32** | The configurable modules of device. For Access Series/ Aggregation/ Campus Switches: 1:port; 2:vlanInterface; 3:staticRoute; 6:general; 7:loopbackControl. For Agile Series Switches: 1:port; 5:ipSetting; 6:general; 7:loopbackControl. For only Wireless Gateways: 2:radios; 3:wlans; 5:advanced. For only 4G/5G Gateways: 7:sim_statistics; 8:sms_settings. For all Gateways: 1:port; 4:general; 9:routing; 10:nat; 11:bandwidth_control; 12:acl; 13:session_limit; 14:gateway_qos; 15:url_filtering; 16:application_control; 17:ids_ips; 18:firewall; 19:dns; 20:upnp; 21:iptv; 23:advanced_general; 24:mac_filtering. | [optional] 
 
 ## Methods
 

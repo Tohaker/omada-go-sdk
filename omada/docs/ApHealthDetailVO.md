@@ -7,9 +7,10 @@ Name | Type | Description | Notes
 **ChannelInterf** | Pointer to [**ChannelSubHealthInfoDetailVO**](ChannelSubHealthInfoDetailVO.md) |  | [optional] 
 **ChannelUtil** | Pointer to [**ChannelSubHealthInfoDetailVO**](ChannelSubHealthInfoDetailVO.md) |  | [optional] 
 **Cpu** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
+**Incident** | Pointer to [**IncidentSubHealthInfoDetailVO**](IncidentSubHealthInfoDetailVO.md) |  | [optional] 
 **Memory** | Pointer to [**CommonSubHealthInfoDetailVO**](CommonSubHealthInfoDetailVO.md) |  | [optional] 
 **Score** | Pointer to **int32** | Device health score. | [optional] 
-**SupportedChannelInterf** | Pointer to [**ChannelSubHealthInfoDetailVO**](ChannelSubHealthInfoDetailVO.md) |  | [optional] 
+**SupportedChannelInterf** | Pointer to [**ChannelInterferenceSubHealthDetailVO**](ChannelInterferenceSubHealthDetailVO.md) |  | [optional] 
 **SupportedChannelUtil** | Pointer to [**ChannelSubHealthInfoDetailVO**](ChannelSubHealthInfoDetailVO.md) |  | [optional] 
 **Transmission** | Pointer to [**TransmissionSubHealthInfoDetailVO**](TransmissionSubHealthInfoDetailVO.md) |  | [optional] 
 
@@ -107,6 +108,31 @@ SetCpu sets Cpu field to given value.
 
 HasCpu returns a boolean if a field has been set.
 
+### GetIncident
+
+`func (o *ApHealthDetailVO) GetIncident() IncidentSubHealthInfoDetailVO`
+
+GetIncident returns the Incident field if non-nil, zero value otherwise.
+
+### GetIncidentOk
+
+`func (o *ApHealthDetailVO) GetIncidentOk() (*IncidentSubHealthInfoDetailVO, bool)`
+
+GetIncidentOk returns a tuple with the Incident field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncident
+
+`func (o *ApHealthDetailVO) SetIncident(v IncidentSubHealthInfoDetailVO)`
+
+SetIncident sets Incident field to given value.
+
+### HasIncident
+
+`func (o *ApHealthDetailVO) HasIncident() bool`
+
+HasIncident returns a boolean if a field has been set.
+
 ### GetMemory
 
 `func (o *ApHealthDetailVO) GetMemory() CommonSubHealthInfoDetailVO`
@@ -159,20 +185,20 @@ HasScore returns a boolean if a field has been set.
 
 ### GetSupportedChannelInterf
 
-`func (o *ApHealthDetailVO) GetSupportedChannelInterf() ChannelSubHealthInfoDetailVO`
+`func (o *ApHealthDetailVO) GetSupportedChannelInterf() ChannelInterferenceSubHealthDetailVO`
 
 GetSupportedChannelInterf returns the SupportedChannelInterf field if non-nil, zero value otherwise.
 
 ### GetSupportedChannelInterfOk
 
-`func (o *ApHealthDetailVO) GetSupportedChannelInterfOk() (*ChannelSubHealthInfoDetailVO, bool)`
+`func (o *ApHealthDetailVO) GetSupportedChannelInterfOk() (*ChannelInterferenceSubHealthDetailVO, bool)`
 
 GetSupportedChannelInterfOk returns a tuple with the SupportedChannelInterf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSupportedChannelInterf
 
-`func (o *ApHealthDetailVO) SetSupportedChannelInterf(v ChannelSubHealthInfoDetailVO)`
+`func (o *ApHealthDetailVO) SetSupportedChannelInterf(v ChannelInterferenceSubHealthDetailVO)`
 
 SetSupportedChannelInterf sets SupportedChannelInterf field to given value.
 

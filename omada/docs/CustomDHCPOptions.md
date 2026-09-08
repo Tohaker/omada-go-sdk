@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Code** | Pointer to **int32** | Custom DHCP option code | [optional] 
+**Custom** | Pointer to **bool** | Whether is custom by user. | [optional] 
+**Name** | Pointer to **string** | Custom DHCP option name. | [optional] 
 **Type** | Pointer to **int32** | Type should be a value as follows: 0: \&quot;String\&quot;; 1: \&quot;IP Address\&quot;; 2: \&quot;Hex Array\&quot; | [optional] 
 **Value** | Pointer to **string** | Value | [optional] 
 
@@ -51,6 +53,56 @@ SetCode sets Code field to given value.
 `func (o *CustomDHCPOptions) HasCode() bool`
 
 HasCode returns a boolean if a field has been set.
+
+### GetCustom
+
+`func (o *CustomDHCPOptions) GetCustom() bool`
+
+GetCustom returns the Custom field if non-nil, zero value otherwise.
+
+### GetCustomOk
+
+`func (o *CustomDHCPOptions) GetCustomOk() (*bool, bool)`
+
+GetCustomOk returns a tuple with the Custom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustom
+
+`func (o *CustomDHCPOptions) SetCustom(v bool)`
+
+SetCustom sets Custom field to given value.
+
+### HasCustom
+
+`func (o *CustomDHCPOptions) HasCustom() bool`
+
+HasCustom returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *CustomDHCPOptions) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *CustomDHCPOptions) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *CustomDHCPOptions) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *CustomDHCPOptions) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetType
 

@@ -7,8 +7,6 @@ Name | Type | Description | Notes
 **CurrentPage** | Pointer to **int32** | Current page number. | [optional] 
 **CurrentSize** | Pointer to **int32** | Number of entries per page. | [optional] 
 **Data** | Pointer to [**[]PortForwardingInfo**](PortForwardingInfo.md) |  | [optional] 
-**ExistVirtualWan** | Pointer to **bool** |  | [optional] 
-**ExistWanIp** | Pointer to **bool** |  | [optional] 
 **SupportByDsLiteAndMapE** | Pointer to **bool** |  | [optional] 
 **SupportVirtualWan** | Pointer to **bool** |  | [optional] 
 **SupportWanIp** | Pointer to **bool** |  | [optional] 
@@ -107,56 +105,6 @@ SetData sets Data field to given value.
 `func (o *PortForwardingGridVOPortForwardingInfo) HasData() bool`
 
 HasData returns a boolean if a field has been set.
-
-### GetExistVirtualWan
-
-`func (o *PortForwardingGridVOPortForwardingInfo) GetExistVirtualWan() bool`
-
-GetExistVirtualWan returns the ExistVirtualWan field if non-nil, zero value otherwise.
-
-### GetExistVirtualWanOk
-
-`func (o *PortForwardingGridVOPortForwardingInfo) GetExistVirtualWanOk() (*bool, bool)`
-
-GetExistVirtualWanOk returns a tuple with the ExistVirtualWan field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExistVirtualWan
-
-`func (o *PortForwardingGridVOPortForwardingInfo) SetExistVirtualWan(v bool)`
-
-SetExistVirtualWan sets ExistVirtualWan field to given value.
-
-### HasExistVirtualWan
-
-`func (o *PortForwardingGridVOPortForwardingInfo) HasExistVirtualWan() bool`
-
-HasExistVirtualWan returns a boolean if a field has been set.
-
-### GetExistWanIp
-
-`func (o *PortForwardingGridVOPortForwardingInfo) GetExistWanIp() bool`
-
-GetExistWanIp returns the ExistWanIp field if non-nil, zero value otherwise.
-
-### GetExistWanIpOk
-
-`func (o *PortForwardingGridVOPortForwardingInfo) GetExistWanIpOk() (*bool, bool)`
-
-GetExistWanIpOk returns a tuple with the ExistWanIp field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExistWanIp
-
-`func (o *PortForwardingGridVOPortForwardingInfo) SetExistWanIp(v bool)`
-
-SetExistWanIp sets ExistWanIp field to given value.
-
-### HasExistWanIp
-
-`func (o *PortForwardingGridVOPortForwardingInfo) HasExistWanIp() bool`
-
-HasExistWanIp returns a boolean if a field has been set.
 
 ### GetSupportByDsLiteAndMapE
 

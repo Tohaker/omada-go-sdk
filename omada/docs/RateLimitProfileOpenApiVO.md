@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **DownLimitEnable** | Pointer to **bool** | Whether to enable download limit | [optional] 
 **Name** | Pointer to **string** | Rate limit profile name | [optional] 
 **ProfileId** | Pointer to **string** | Rate limit profile ID | [optional] 
+**Resource** | Pointer to **int32** | Data source. Resource should be a value as follows: 0: new created; 1: from template; 2: override | [optional] 
 **UpLimit** | Pointer to **int64** | Upload limit(Unit: Kbps), this field is required when parameter [upLimitEnable] is true. | [optional] 
 **UpLimitEnable** | Pointer to **bool** | Whether to enable upload limit | [optional] 
 
@@ -155,6 +156,31 @@ SetProfileId sets ProfileId field to given value.
 `func (o *RateLimitProfileOpenApiVO) HasProfileId() bool`
 
 HasProfileId returns a boolean if a field has been set.
+
+### GetResource
+
+`func (o *RateLimitProfileOpenApiVO) GetResource() int32`
+
+GetResource returns the Resource field if non-nil, zero value otherwise.
+
+### GetResourceOk
+
+`func (o *RateLimitProfileOpenApiVO) GetResourceOk() (*int32, bool)`
+
+GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResource
+
+`func (o *RateLimitProfileOpenApiVO) SetResource(v int32)`
+
+SetResource sets Resource field to given value.
+
+### HasResource
+
+`func (o *RateLimitProfileOpenApiVO) HasResource() bool`
+
+HasResource returns a boolean if a field has been set.
 
 ### GetUpLimit
 

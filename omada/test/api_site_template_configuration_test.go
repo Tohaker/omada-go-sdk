@@ -22,36 +22,6 @@ func Test_omada_SiteTemplateConfigurationAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SiteTemplateConfigurationAPIService GetBandSteeringTemplateSetting", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-
-		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.GetBandSteeringTemplateSetting(context.Background(), omadacId, siteTemplateId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SiteTemplateConfigurationAPIService GetBeaconControlTemplateSetting", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-
-		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.GetBeaconControlTemplateSetting(context.Background(), omadacId, siteTemplateId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test SiteTemplateConfigurationAPIService GetChannelLimitTemplateSetting", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -60,21 +30,6 @@ func Test_omada_SiteTemplateConfigurationAPIService(t *testing.T) {
 		var siteTemplateId string
 
 		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.GetChannelLimitTemplateSetting(context.Background(), omadacId, siteTemplateId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SiteTemplateConfigurationAPIService GetExistSiteTemplateSettingByOpenApi", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-
-		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.GetExistSiteTemplateSettingByOpenApi(context.Background(), omadacId, siteTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -157,6 +112,36 @@ func Test_omada_SiteTemplateConfigurationAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SiteTemplateConfigurationAPIService GetSiteTemplateJumboSetting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateJumboSetting(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SiteTemplateConfigurationAPIService GetSiteTemplateLagHashAlgSetting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateLagHashAlgSetting(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SiteTemplateConfigurationAPIService GetSiteTemplateLedSetting", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -172,44 +157,14 @@ func Test_omada_SiteTemplateConfigurationAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SiteTemplateConfigurationAPIService GetSiteTemplateSettingCap", func(t *testing.T) {
+	t.Run("Test SiteTemplateConfigurationAPIService GetSiteTemplateRememberSettingByOpenApi", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var omadacId string
 		var siteTemplateId string
 
-		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateSettingCap(context.Background(), omadacId, siteTemplateId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SiteTemplateConfigurationAPIService GetSiteTemplateSpecification", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-
-		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateSpecification(context.Background(), omadacId, siteTemplateId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SiteTemplateConfigurationAPIService ModifySiteConfigurationTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var omadacId string
-		var siteTemplateId string
-
-		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.ModifySiteConfigurationTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.GetSiteTemplateRememberSettingByOpenApi(context.Background(), omadacId, siteTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -240,6 +195,21 @@ func Test_omada_SiteTemplateConfigurationAPIService(t *testing.T) {
 		var siteTemplateId string
 
 		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.ModifySiteTemplateGeneralConfig(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SiteTemplateConfigurationAPIService ModifySiteTemplateRememberSettingByOpenApi", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.ModifySiteTemplateRememberSettingByOpenApi(context.Background(), omadacId, siteTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -375,6 +345,36 @@ func Test_omada_SiteTemplateConfigurationAPIService(t *testing.T) {
 		var siteTemplateId string
 
 		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.UpdateRoamingTemplateSetting(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SiteTemplateConfigurationAPIService UpdateSiteTemplateJumboSetting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.UpdateSiteTemplateJumboSetting(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SiteTemplateConfigurationAPIService UpdateSiteTemplateLagHashAlgSetting", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.SiteTemplateConfigurationAPI.UpdateSiteTemplateLagHashAlgSetting(context.Background(), omadacId, siteTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

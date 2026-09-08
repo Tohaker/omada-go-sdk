@@ -21,6 +21,8 @@ var _ MappedNullable = &FullChanScanCommandOpenApiVO{}
 type FullChanScanCommandOpenApiVO struct {
 	// Whether to enable channel load detect.
 	EnableChannelUtil *bool `json:"enableChannelUtil,omitempty"`
+	// Whether to detect interference when full channel scan.
+	EnableInterference *bool `json:"enableInterference,omitempty"`
 	// Whether to enable wifi interference detect.
 	EnableWifiInterference *bool `json:"enableWifiInterference,omitempty"`
 }
@@ -74,6 +76,38 @@ func (o *FullChanScanCommandOpenApiVO) SetEnableChannelUtil(v bool) {
 	o.EnableChannelUtil = &v
 }
 
+// GetEnableInterference returns the EnableInterference field value if set, zero value otherwise.
+func (o *FullChanScanCommandOpenApiVO) GetEnableInterference() bool {
+	if o == nil || IsNil(o.EnableInterference) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableInterference
+}
+
+// GetEnableInterferenceOk returns a tuple with the EnableInterference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FullChanScanCommandOpenApiVO) GetEnableInterferenceOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableInterference) {
+		return nil, false
+	}
+	return o.EnableInterference, true
+}
+
+// HasEnableInterference returns a boolean if a field has been set.
+func (o *FullChanScanCommandOpenApiVO) HasEnableInterference() bool {
+	if o != nil && !IsNil(o.EnableInterference) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableInterference gets a reference to the given bool and assigns it to the EnableInterference field.
+func (o *FullChanScanCommandOpenApiVO) SetEnableInterference(v bool) {
+	o.EnableInterference = &v
+}
+
 // GetEnableWifiInterference returns the EnableWifiInterference field value if set, zero value otherwise.
 func (o *FullChanScanCommandOpenApiVO) GetEnableWifiInterference() bool {
 	if o == nil || IsNil(o.EnableWifiInterference) {
@@ -118,6 +152,9 @@ func (o FullChanScanCommandOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.EnableChannelUtil) {
 		toSerialize["enableChannelUtil"] = o.EnableChannelUtil
+	}
+	if !IsNil(o.EnableInterference) {
+		toSerialize["enableInterference"] = o.EnableInterference
 	}
 	if !IsNil(o.EnableWifiInterference) {
 		toSerialize["enableWifiInterference"] = o.EnableWifiInterference

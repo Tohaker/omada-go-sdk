@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CondBroadcastCtrl** | Pointer to [**CondBroadcastCtrlVO**](CondBroadcastCtrlVO.md) |  | [optional] 
 **AutoWanAccess** | Pointer to **bool** | Whether to enable auto wan access. True: enable, false: disable. | [optional] 
 **Band** | **int32** | SSID band. The lowest bit indicates whether 2.4G is included; the second lowest bit indicates whether 5G is included; the third lowest bit indicates whether 6G is included; 1 means included while 0 means not included. For example, 7(111) means that 2G/5G/6G are enabled; 1(001) means that 2G is enabled. (When 5G is included，it means 5G/5G1/5G2 are enabled.) | 
 **Broadcast** | **bool** | SSID broadcast config status. True: enable, false: disable. | 
 **Enable11r** | **bool** | SSID 802.11r config status. True: enable, false: disable. | 
+**EnhancedIotConnectivity** | Pointer to **bool** | SSID Enhanced IoT Connectivity config status. True: enable, false: disable. This configuration can be enabled only when the 5GHz and 6GHz bands are disabled, the parameters [versionEnt] and [versionPsk] are not set to 4, and the following configurations are disabled: [hotspotV2Enable], [bandSteer], [arpCastEnable], [loadBalance], [enable11r], [gikRekeyPskEnable], [pmfMode], [mloEnable]. | [optional] 
 **EntSetting** | Pointer to [**SsidEnterpriseSettingOpenApiVO**](SsidEnterpriseSettingOpenApiVO.md) |  | [optional] 
 **GreEnable** | Pointer to **bool** | SSID EoGre Tunnel config status. True: enable, false: disable; This configuration can be enabled only when the [VPN - EoGre Tunnel] global config is enabled. | [optional] 
 **GuestNetEnable** | **bool** | SSID guest network config status. True: enable, false: disable. | 
@@ -42,6 +44,31 @@ will change when the set of required properties is changed
 NewUpdateSsidBasicConfigOpenApiVOWithDefaults instantiates a new UpdateSsidBasicConfigOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCondBroadcastCtrl
+
+`func (o *UpdateSsidBasicConfigOpenApiVO) GetCondBroadcastCtrl() CondBroadcastCtrlVO`
+
+GetCondBroadcastCtrl returns the CondBroadcastCtrl field if non-nil, zero value otherwise.
+
+### GetCondBroadcastCtrlOk
+
+`func (o *UpdateSsidBasicConfigOpenApiVO) GetCondBroadcastCtrlOk() (*CondBroadcastCtrlVO, bool)`
+
+GetCondBroadcastCtrlOk returns a tuple with the CondBroadcastCtrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCondBroadcastCtrl
+
+`func (o *UpdateSsidBasicConfigOpenApiVO) SetCondBroadcastCtrl(v CondBroadcastCtrlVO)`
+
+SetCondBroadcastCtrl sets CondBroadcastCtrl field to given value.
+
+### HasCondBroadcastCtrl
+
+`func (o *UpdateSsidBasicConfigOpenApiVO) HasCondBroadcastCtrl() bool`
+
+HasCondBroadcastCtrl returns a boolean if a field has been set.
 
 ### GetAutoWanAccess
 
@@ -127,6 +154,31 @@ and a boolean to check if the value has been set.
 
 SetEnable11r sets Enable11r field to given value.
 
+
+### GetEnhancedIotConnectivity
+
+`func (o *UpdateSsidBasicConfigOpenApiVO) GetEnhancedIotConnectivity() bool`
+
+GetEnhancedIotConnectivity returns the EnhancedIotConnectivity field if non-nil, zero value otherwise.
+
+### GetEnhancedIotConnectivityOk
+
+`func (o *UpdateSsidBasicConfigOpenApiVO) GetEnhancedIotConnectivityOk() (*bool, bool)`
+
+GetEnhancedIotConnectivityOk returns a tuple with the EnhancedIotConnectivity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnhancedIotConnectivity
+
+`func (o *UpdateSsidBasicConfigOpenApiVO) SetEnhancedIotConnectivity(v bool)`
+
+SetEnhancedIotConnectivity sets EnhancedIotConnectivity field to given value.
+
+### HasEnhancedIotConnectivity
+
+`func (o *UpdateSsidBasicConfigOpenApiVO) HasEnhancedIotConnectivity() bool`
+
+HasEnhancedIotConnectivity returns a boolean if a field has been set.
 
 ### GetEntSetting
 

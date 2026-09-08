@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FecMode** | Pointer to **int32** |  | [optional] 
-**LinkSpeed** | Pointer to **int32** |  | [optional] 
+**FecMode** | Pointer to **int32** | FEC mode, 0 - reserved, 1 - FEC-OFF, 2 - FEC-RS528, 3 - FEC-RS544, 4 - FEC-AUTO, 5 - FEC-BASER | [optional] 
+**LinkSpeed** | Pointer to **int32** | speed of the link | [optional] 
 
 ## Methods
 

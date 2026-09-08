@@ -19,10 +19,14 @@ var _ MappedNullable = &WanHealthItemVO{}
 
 // WanHealthItemVO struct for WanHealthItemVO
 type WanHealthItemVO struct {
+	// Jitter
+	Jitter *string `json:"jitter,omitempty"`
 	// Latency
 	Latency *string `json:"latency,omitempty"`
 	// WAN name
 	Name *string `json:"name,omitempty"`
+	// Packet loss
+	PacketLoss *float32 `json:"packetLoss,omitempty"`
 	// WAN port number
 	Port *int32 `json:"port,omitempty"`
 	// Throughput
@@ -44,6 +48,38 @@ func NewWanHealthItemVO() *WanHealthItemVO {
 func NewWanHealthItemVOWithDefaults() *WanHealthItemVO {
 	this := WanHealthItemVO{}
 	return &this
+}
+
+// GetJitter returns the Jitter field value if set, zero value otherwise.
+func (o *WanHealthItemVO) GetJitter() string {
+	if o == nil || IsNil(o.Jitter) {
+		var ret string
+		return ret
+	}
+	return *o.Jitter
+}
+
+// GetJitterOk returns a tuple with the Jitter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WanHealthItemVO) GetJitterOk() (*string, bool) {
+	if o == nil || IsNil(o.Jitter) {
+		return nil, false
+	}
+	return o.Jitter, true
+}
+
+// HasJitter returns a boolean if a field has been set.
+func (o *WanHealthItemVO) HasJitter() bool {
+	if o != nil && !IsNil(o.Jitter) {
+		return true
+	}
+
+	return false
+}
+
+// SetJitter gets a reference to the given string and assigns it to the Jitter field.
+func (o *WanHealthItemVO) SetJitter(v string) {
+	o.Jitter = &v
 }
 
 // GetLatency returns the Latency field value if set, zero value otherwise.
@@ -108,6 +144,38 @@ func (o *WanHealthItemVO) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WanHealthItemVO) SetName(v string) {
 	o.Name = &v
+}
+
+// GetPacketLoss returns the PacketLoss field value if set, zero value otherwise.
+func (o *WanHealthItemVO) GetPacketLoss() float32 {
+	if o == nil || IsNil(o.PacketLoss) {
+		var ret float32
+		return ret
+	}
+	return *o.PacketLoss
+}
+
+// GetPacketLossOk returns a tuple with the PacketLoss field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WanHealthItemVO) GetPacketLossOk() (*float32, bool) {
+	if o == nil || IsNil(o.PacketLoss) {
+		return nil, false
+	}
+	return o.PacketLoss, true
+}
+
+// HasPacketLoss returns a boolean if a field has been set.
+func (o *WanHealthItemVO) HasPacketLoss() bool {
+	if o != nil && !IsNil(o.PacketLoss) {
+		return true
+	}
+
+	return false
+}
+
+// SetPacketLoss gets a reference to the given float32 and assigns it to the PacketLoss field.
+func (o *WanHealthItemVO) SetPacketLoss(v float32) {
+	o.PacketLoss = &v
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
@@ -184,11 +252,17 @@ func (o WanHealthItemVO) MarshalJSON() ([]byte, error) {
 
 func (o WanHealthItemVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Jitter) {
+		toSerialize["jitter"] = o.Jitter
+	}
 	if !IsNil(o.Latency) {
 		toSerialize["latency"] = o.Latency
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.PacketLoss) {
+		toSerialize["packetLoss"] = o.PacketLoss
 	}
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port

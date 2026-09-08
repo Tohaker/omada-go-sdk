@@ -37,6 +37,21 @@ func Test_omada_ApAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test ApAPIService BatchModifyApLagConfig", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+
+		resp, httpRes, err := apiClient.ApAPI.BatchModifyApLagConfig(context.Background(), omadacId, siteId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ApAPIService BatchModifyApVlanConfig", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -201,6 +216,22 @@ func Test_omada_ApAPIService(t *testing.T) {
 		var apMac string
 
 		resp, httpRes, err := apiClient.ApAPI.GetApL3AccessConfig(context.Background(), omadacId, siteId, apMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApAPIService GetApLagConfig", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apMac string
+
+		resp, httpRes, err := apiClient.ApAPI.GetApLagConfig(context.Background(), omadacId, siteId, apMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -840,6 +871,22 @@ func Test_omada_ApAPIService(t *testing.T) {
 		var apMac string
 
 		resp, httpRes, err := apiClient.ApAPI.ModifyApChannelConfig(context.Background(), omadacId, siteId, apMac).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApAPIService ModifyApLagConfig", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteId string
+		var apMac string
+
+		resp, httpRes, err := apiClient.ApAPI.ModifyApLagConfig(context.Background(), omadacId, siteId, apMac).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

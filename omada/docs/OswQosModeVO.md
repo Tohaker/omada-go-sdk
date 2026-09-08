@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Completed** | Pointer to **int32** |  | [optional] 
-**QosMode** | Pointer to **int32** |  | [optional] 
+**Completed** | Pointer to **int32** | Indicates whether the new mode switch has been completed. 0: Not completed, 1: Completed. If it is in the preview state, qosMode is 1 and completed is 0. | [optional] 
+**QosMode** | Pointer to **int32** | Switch QoS Mode, 0:old mode(Based on Qos Profile implementation), 1:new mode(Based on QoS rules implementation.) | [optional] 
 
 ## Methods
 

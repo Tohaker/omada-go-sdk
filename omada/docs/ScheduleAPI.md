@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**GetPoeScheduleList**](ScheduleAPI.md#getpoeschedulelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules | Get PoE schedule list
 [**GetPortScheduleList**](ScheduleAPI.md#getportschedulelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules | Get port schedule list
 [**GetPortSchedulePorts**](ScheduleAPI.md#getportscheduleports) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/port-status-ports | Get device ports list supporting port schedule
-[**GetRebootScheduleList2**](ScheduleAPI.md#getrebootschedulelist2) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules | Get reboot schedule list
+[**GetRebootScheduleList1**](ScheduleAPI.md#getrebootschedulelist1) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/reboot-schedules | Get reboot schedule list
 [**GetUpgradeScheduleList**](ScheduleAPI.md#getupgradeschedulelist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/upgrade-schedules | Get upgrade schedule list
 [**ModifyPoeSchedule**](ScheduleAPI.md#modifypoeschedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/poe-schedules/{poeScheduleId} | Modify PoE Schedule
 [**ModifyPortSchedule**](ScheduleAPI.md#modifyportschedule) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/port-schedules/{portScheduleId} | Modify Port Schedule
@@ -929,9 +929,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetRebootScheduleList2
+## GetRebootScheduleList1
 
-> OperationResponseListRebootScheduleQueryOpenApiVO GetRebootScheduleList2(ctx, omadacId, siteId).Execute()
+> OperationResponseListRebootScheduleQueryOpenApiVO GetRebootScheduleList1(ctx, omadacId, siteId).Execute()
 
 Get reboot schedule list
 
@@ -955,13 +955,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScheduleAPI.GetRebootScheduleList2(context.Background(), omadacId, siteId).Execute()
+	resp, r, err := apiClient.ScheduleAPI.GetRebootScheduleList1(context.Background(), omadacId, siteId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScheduleAPI.GetRebootScheduleList2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ScheduleAPI.GetRebootScheduleList1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRebootScheduleList2`: OperationResponseListRebootScheduleQueryOpenApiVO
-	fmt.Fprintf(os.Stdout, "Response from `ScheduleAPI.GetRebootScheduleList2`: %v\n", resp)
+	// response from `GetRebootScheduleList1`: OperationResponseListRebootScheduleQueryOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `ScheduleAPI.GetRebootScheduleList1`: %v\n", resp)
 }
 ```
 
@@ -976,7 +976,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRebootScheduleList2Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRebootScheduleList1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

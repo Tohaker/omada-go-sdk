@@ -4,32 +4,35 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ArpTableSupport** | Pointer to **bool** |  | [optional] 
+**ArpTableSupport** | Pointer to **bool** | Arp Table Support | [optional] 
 **CableTestSupport** | Pointer to **bool** | Cable Test Support | [optional] 
 **CliSupport** | Pointer to **bool** | CLI Support | [optional] 
-**CustomDhcpOptionSupport** | Pointer to **bool** |  | [optional] 
-**DdmSupport** | Pointer to **bool** |  | [optional] 
+**CustomDhcpOptionSupport** | Pointer to **bool** | Custom DHCP Option Support | [optional] 
+**DdmSupport** | Pointer to **bool** | DDM Support | [optional] 
 **DhcpL2RelaySupport** | Pointer to **bool** | Dhcp L2 Relay Support | [optional] 
-**DhcpRangeSupport** | Pointer to **bool** |  | [optional] 
-**DhcpRelayIfNum** | Pointer to **int32** |  | [optional] 
-**DhcpReservationSupport** | Pointer to **bool** |  | [optional] 
-**DhcpServerPoolNum** | Pointer to **int32** |  | [optional] 
-**DnsLoopUpSupport** | Pointer to **bool** |  | [optional] 
-**DomainPingSupport** | Pointer to **bool** |  | [optional] 
-**DomainTraceRouteSupport** | Pointer to **bool** |  | [optional] 
+**DhcpManualBindNum** | Pointer to **int32** | DHCP Manual Bind Num | [optional] 
+**DhcpRangeSupport** | Pointer to **bool** | Whether the device supports DHCP server address pool | [optional] 
+**DhcpRelayIfNum** | Pointer to **int32** | DHCP Relay Interface Num | [optional] 
+**DhcpReservationSupport** | Pointer to **bool** | Whether the device supports DHCP reservation | [optional] 
+**DhcpServerPoolNum** | Pointer to **int32** | DHCP Server Pool Num | [optional] 
+**DnsLoopUpSupport** | Pointer to **bool** | DNS Loop Up Support | [optional] 
+**DomainPingSupport** | Pointer to **bool** | Domain Ping Support | [optional] 
+**DomainTraceRouteSupport** | Pointer to **bool** | Domain Trace Route Support | [optional] 
 **EeeSupport** | Pointer to **bool** | eee Support | [optional] 
 **EsQosSupport** | Pointer to **bool** | Agile Series Switch QoS Support | [optional] 
+**EsStpExtendSupport** | Pointer to **bool** | ES STP Extend Support | [optional] 
 **FecSupport** | Pointer to **bool** | FEC Support | [optional] 
 **FlowControlSupport** | Pointer to **bool** | FlowControl Support | [optional] 
-**GponSupport** | Pointer to **bool** |  | [optional] 
+**GponSupport** | Pointer to **bool** | Gpon Support | [optional] 
 **IgmpFastLeaveSupport** | Pointer to **bool** | Igmp FastLeve Support | [optional] 
-**IpcDetectSupport** | Pointer to **bool** |  | [optional] 
-**Ipv4StaticRouteNum** | Pointer to **int32** |  | [optional] 
-**Ipv6StaticRouteNum** | Pointer to **int32** |  | [optional] 
+**IpcDetectSupport** | Pointer to **bool** | IPC Detect Support | [optional] 
+**Ipv4StaticRouteNum** | Pointer to **int32** | IPv4 Static Route Num | [optional] 
+**Ipv6StaticRouteNum** | Pointer to **int32** | IPv6 Static Route Num | [optional] 
 **JumboOddSupport** | Pointer to **bool** | Jumbo Odd Support | [optional] 
 **JumboSupport** | Pointer to **bool** | Jumbo Support | [optional] 
 **LagCap** | Pointer to [**LagCapVO**](LagCapVO.md) |  | [optional] 
 **LocatePortSupport** | Pointer to **bool** | Locate port Support | [optional] 
+**LoopbackInterfaceCreateSupport** | Pointer to **bool** | Loopback Interface Create Support | [optional] 
 **LoopbackInterfaceSupport** | Pointer to **bool** | Loopback Interface Support | [optional] 
 **LoopbackVlanBasedSupport** | Pointer to **bool** | Loopback Detect Vlan Based Support | [optional] 
 **MaxLagMember** | Pointer to **int32** | Max Lacp Member | [optional] 
@@ -39,18 +42,25 @@ Name | Type | Description | Notes
 **MaxRelayServerNum** | Pointer to **int32** | Max DHCP relay server num | [optional] 
 **MaxStackGroupNumber** | Pointer to **int32** | Max Stack Group Number | [optional] 
 **MaxStackUnitNumber** | Pointer to **int32** | Max Stack Unit Number | [optional] 
-**MirrorSupport** | Pointer to **bool** |  | [optional] 
-**MlagGroupId** | Pointer to **int32** |  | [optional] 
-**MlagVersion** | Pointer to **string** |  | [optional] 
+**MirrorSupport** | Pointer to **bool** | Mirror Support | [optional] 
+**MlagGroupId** | Pointer to **int32** | MLAG Group ID | [optional] 
+**MlagVersion** | Pointer to **string** | MLAG Version | [optional] 
+**MstpGetActiveSupport** | Pointer to **bool** | MSTP Get Active Support | [optional] 
 **MstpInsNo** | Pointer to **int32** | Mstp Max InstanceId | [optional] 
 **MstpInsNum** | Pointer to **int32** | Mstp Instance Num | [optional] 
+**MstpPortSupport** | Pointer to **bool** | MSTP Port Support | [optional] 
+**MtuInVlanSupport** | Pointer to **bool** | MTU In VLAN Support | [optional] 
 **NeedFullSync** | Pointer to **bool** | Need full sync | [optional] 
-**NetworkCheckSupport** | Pointer to **bool** |  | [optional] 
+**NetworkCheckSupport** | Pointer to **bool** | Network Check Support | [optional] 
+**OspfAutoCostRefSupport** | Pointer to **bool** | OSPF Process Auto-Cost Reference Bandwidth Support | [optional] 
 **OspfDeadIntervalSupport** | Pointer to **bool** | OSPF Dead Interval Support  | [optional] 
+**OspfPassiveSupport** | Pointer to **bool** | OSPF Interface Passive Support | [optional] 
 **OspfSupport** | Pointer to **bool** | OSPF Support | [optional] 
+**OuiBasedVlanESSupport** | Pointer to **bool** | Oui Based Vlan Support | [optional] 
 **OuiBasedVlanSupport** | Pointer to **bool** | Oui Based Vlan Support | [optional] 
-**PacketCaptureSupport** | Pointer to **bool** |  | [optional] 
-**PingSupport** | Pointer to **bool** |  | [optional] 
+**PacketCaptureSupport** | Pointer to **bool** | Packet Capture Support | [optional] 
+**PingSupport** | Pointer to **bool** | Ping Support | [optional] 
+**PmtudSupport** | Pointer to **bool** | Path MTU Discovery Support | [optional] 
 **PoePortNum** | Pointer to **int32** | Poe Port Num | [optional] 
 **PoeSupport** | Pointer to **bool** | Poe Support | [optional] 
 **QosForVlanSupport** | Pointer to **bool** | Qos for Vlan Support | [optional] 
@@ -59,39 +69,43 @@ Name | Type | Description | Notes
 **RpvstInsNum** | Pointer to **int32** | Max Rpvst Instance Num | [optional] 
 **SfpBeginNum** | Pointer to **int32** | SFP Begin Num | [optional] 
 **SfpNum** | Pointer to **int32** | SFP Num | [optional] 
+**SnmpSupport** | Pointer to **bool** | SNMP Support | [optional] 
 **StackPortCap** | Pointer to **map[string][]string** | Stack Port Capability | [optional] 
-**StaticRouteNum** | Pointer to **int32** |  | [optional] 
+**StaticRouteNum** | Pointer to **int32** | Static Route Num | [optional] 
 **StkVer** | Pointer to **string** | Stack Version | [optional] 
 **StkableGroupId** | Pointer to **int32** | Stackable Group ID | [optional] 
 **StormRateModeSupport** | Pointer to **bool** | StormControl RateMode Support | [optional] 
 **StpExtendSupport** | Pointer to **bool** | STP Extend Support | [optional] 
+**StpSupport** | Pointer to **bool** | STP Support | [optional] 
 **SupportArpDetect** | Pointer to **bool** | Whether support arp detect | [optional] 
 **SupportBt** | Pointer to **bool** | Support Poe Bt | [optional] 
 **SupportClearCounters** | Pointer to **bool** | Whether the device supports clear counters | [optional] 
 **SupportConfigSync** | Pointer to **bool** | Whether the device supports config sync | [optional] 
 **SupportDhcpSnoop** | Pointer to **bool** | Whether support dhcp snoop | [optional] 
-**SupportEsHealth** | Pointer to **bool** |  | [optional] 
+**SupportEsHealth** | Pointer to **bool** | Whether the device supports ES health check | [optional] 
 **SupportEsMulticast** | Pointer to **bool** | Whether Agile Series Switch support multicast | [optional] 
 **SupportFan** | Pointer to **bool** | Support Fan | [optional] 
-**SupportGetDhcpClientTable** | Pointer to **bool** |  | [optional] 
-**SupportGetDhcpServerInfo** | Pointer to **bool** |  | [optional] 
-**SupportGetOspfNeighborTable** | Pointer to **bool** |  | [optional] 
-**SupportGetVlanIfInfo** | Pointer to **bool** |  | [optional] 
+**SupportGetDhcpClientTable** | Pointer to **bool** | Whether the device supports getting DHCP client table via get message | [optional] 
+**SupportGetDhcpServerInfo** | Pointer to **bool** | Whether the device supports getting DHCP server info via get message | [optional] 
+**SupportGetOspfNeighborTable** | Pointer to **bool** | Whether the device supports getting OSPF neighbor table via get message | [optional] 
+**SupportGetVlanIfInfo** | Pointer to **bool** | Whether the device supports getting VLAN interface info via get message | [optional] 
 **SupportImpb** | Pointer to **bool** | Whether support impb | [optional] 
-**SupportMad** | Pointer to **bool** |  | [optional] 
-**SupportMlag** | Pointer to **bool** |  | [optional] 
+**SupportLayout** | Pointer to **bool** | Whether the device supports reporting port layout information. | [optional] 
+**SupportMad** | Pointer to **bool** | Whether the device supports MAD | [optional] 
+**SupportMlag** | Pointer to **bool** | Whether the device supports MLAG | [optional] 
 **SupportMulticast** | Pointer to **bool** | Whether support multicast | [optional] 
 **SupportRelayMultiServer** | Pointer to **bool** | Whether the device supports DHCP relay multi Server | [optional] 
 **SupportRunningConfig** | Pointer to **bool** | Whether the device supports showing running config | [optional] 
-**SupportSdm** | Pointer to **bool** |  | [optional] 
+**SupportSdm** | Pointer to **bool** | Whether the device supports SDM | [optional] 
 **SupportTpclResInfo** | Pointer to **bool** | Whether the device supports returning TPCL resource information | [optional] 
-**SupportVrf** | Pointer to **bool** |  | [optional] 
-**TerminalSupport** | Pointer to **bool** |  | [optional] 
-**TracerouteSupport** | Pointer to **bool** |  | [optional] 
-**UplinkSupport** | Pointer to **bool** |  | [optional] 
+**SupportVrf** | Pointer to **bool** | Whether the device supports VRF | [optional] 
+**TerminalSupport** | Pointer to **bool** | Terminal Support | [optional] 
+**TracerouteSupport** | Pointer to **bool** | Traceroute Support | [optional] 
+**UplinkSupport** | Pointer to **bool** | Uplink Support | [optional] 
 **VlanIfNum** | Pointer to **int32** | Vlan Interface Num | [optional] 
-**VoiceDscpSupport** | Pointer to **bool** |  | [optional] 
-**VrfNum** | Pointer to **int32** |  | [optional] 
+**VoiceDscpSupport** | Pointer to **bool** | Voice DSCP Support | [optional] 
+**VoiceNetworkSupport** | Pointer to **bool** | Voice Network Support | [optional] 
+**VrfNum** | Pointer to **int32** | VRF Num | [optional] 
 **VrrpSupport** | Pointer to **bool** | Vrrp Support | [optional] 
 
 ## Methods
@@ -262,6 +276,31 @@ SetDhcpL2RelaySupport sets DhcpL2RelaySupport field to given value.
 `func (o *OswDevCapVO) HasDhcpL2RelaySupport() bool`
 
 HasDhcpL2RelaySupport returns a boolean if a field has been set.
+
+### GetDhcpManualBindNum
+
+`func (o *OswDevCapVO) GetDhcpManualBindNum() int32`
+
+GetDhcpManualBindNum returns the DhcpManualBindNum field if non-nil, zero value otherwise.
+
+### GetDhcpManualBindNumOk
+
+`func (o *OswDevCapVO) GetDhcpManualBindNumOk() (*int32, bool)`
+
+GetDhcpManualBindNumOk returns a tuple with the DhcpManualBindNum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDhcpManualBindNum
+
+`func (o *OswDevCapVO) SetDhcpManualBindNum(v int32)`
+
+SetDhcpManualBindNum sets DhcpManualBindNum field to given value.
+
+### HasDhcpManualBindNum
+
+`func (o *OswDevCapVO) HasDhcpManualBindNum() bool`
+
+HasDhcpManualBindNum returns a boolean if a field has been set.
 
 ### GetDhcpRangeSupport
 
@@ -487,6 +526,31 @@ SetEsQosSupport sets EsQosSupport field to given value.
 `func (o *OswDevCapVO) HasEsQosSupport() bool`
 
 HasEsQosSupport returns a boolean if a field has been set.
+
+### GetEsStpExtendSupport
+
+`func (o *OswDevCapVO) GetEsStpExtendSupport() bool`
+
+GetEsStpExtendSupport returns the EsStpExtendSupport field if non-nil, zero value otherwise.
+
+### GetEsStpExtendSupportOk
+
+`func (o *OswDevCapVO) GetEsStpExtendSupportOk() (*bool, bool)`
+
+GetEsStpExtendSupportOk returns a tuple with the EsStpExtendSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEsStpExtendSupport
+
+`func (o *OswDevCapVO) SetEsStpExtendSupport(v bool)`
+
+SetEsStpExtendSupport sets EsStpExtendSupport field to given value.
+
+### HasEsStpExtendSupport
+
+`func (o *OswDevCapVO) HasEsStpExtendSupport() bool`
+
+HasEsStpExtendSupport returns a boolean if a field has been set.
 
 ### GetFecSupport
 
@@ -762,6 +826,31 @@ SetLocatePortSupport sets LocatePortSupport field to given value.
 `func (o *OswDevCapVO) HasLocatePortSupport() bool`
 
 HasLocatePortSupport returns a boolean if a field has been set.
+
+### GetLoopbackInterfaceCreateSupport
+
+`func (o *OswDevCapVO) GetLoopbackInterfaceCreateSupport() bool`
+
+GetLoopbackInterfaceCreateSupport returns the LoopbackInterfaceCreateSupport field if non-nil, zero value otherwise.
+
+### GetLoopbackInterfaceCreateSupportOk
+
+`func (o *OswDevCapVO) GetLoopbackInterfaceCreateSupportOk() (*bool, bool)`
+
+GetLoopbackInterfaceCreateSupportOk returns a tuple with the LoopbackInterfaceCreateSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoopbackInterfaceCreateSupport
+
+`func (o *OswDevCapVO) SetLoopbackInterfaceCreateSupport(v bool)`
+
+SetLoopbackInterfaceCreateSupport sets LoopbackInterfaceCreateSupport field to given value.
+
+### HasLoopbackInterfaceCreateSupport
+
+`func (o *OswDevCapVO) HasLoopbackInterfaceCreateSupport() bool`
+
+HasLoopbackInterfaceCreateSupport returns a boolean if a field has been set.
 
 ### GetLoopbackInterfaceSupport
 
@@ -1063,6 +1152,31 @@ SetMlagVersion sets MlagVersion field to given value.
 
 HasMlagVersion returns a boolean if a field has been set.
 
+### GetMstpGetActiveSupport
+
+`func (o *OswDevCapVO) GetMstpGetActiveSupport() bool`
+
+GetMstpGetActiveSupport returns the MstpGetActiveSupport field if non-nil, zero value otherwise.
+
+### GetMstpGetActiveSupportOk
+
+`func (o *OswDevCapVO) GetMstpGetActiveSupportOk() (*bool, bool)`
+
+GetMstpGetActiveSupportOk returns a tuple with the MstpGetActiveSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMstpGetActiveSupport
+
+`func (o *OswDevCapVO) SetMstpGetActiveSupport(v bool)`
+
+SetMstpGetActiveSupport sets MstpGetActiveSupport field to given value.
+
+### HasMstpGetActiveSupport
+
+`func (o *OswDevCapVO) HasMstpGetActiveSupport() bool`
+
+HasMstpGetActiveSupport returns a boolean if a field has been set.
+
 ### GetMstpInsNo
 
 `func (o *OswDevCapVO) GetMstpInsNo() int32`
@@ -1112,6 +1226,56 @@ SetMstpInsNum sets MstpInsNum field to given value.
 `func (o *OswDevCapVO) HasMstpInsNum() bool`
 
 HasMstpInsNum returns a boolean if a field has been set.
+
+### GetMstpPortSupport
+
+`func (o *OswDevCapVO) GetMstpPortSupport() bool`
+
+GetMstpPortSupport returns the MstpPortSupport field if non-nil, zero value otherwise.
+
+### GetMstpPortSupportOk
+
+`func (o *OswDevCapVO) GetMstpPortSupportOk() (*bool, bool)`
+
+GetMstpPortSupportOk returns a tuple with the MstpPortSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMstpPortSupport
+
+`func (o *OswDevCapVO) SetMstpPortSupport(v bool)`
+
+SetMstpPortSupport sets MstpPortSupport field to given value.
+
+### HasMstpPortSupport
+
+`func (o *OswDevCapVO) HasMstpPortSupport() bool`
+
+HasMstpPortSupport returns a boolean if a field has been set.
+
+### GetMtuInVlanSupport
+
+`func (o *OswDevCapVO) GetMtuInVlanSupport() bool`
+
+GetMtuInVlanSupport returns the MtuInVlanSupport field if non-nil, zero value otherwise.
+
+### GetMtuInVlanSupportOk
+
+`func (o *OswDevCapVO) GetMtuInVlanSupportOk() (*bool, bool)`
+
+GetMtuInVlanSupportOk returns a tuple with the MtuInVlanSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMtuInVlanSupport
+
+`func (o *OswDevCapVO) SetMtuInVlanSupport(v bool)`
+
+SetMtuInVlanSupport sets MtuInVlanSupport field to given value.
+
+### HasMtuInVlanSupport
+
+`func (o *OswDevCapVO) HasMtuInVlanSupport() bool`
+
+HasMtuInVlanSupport returns a boolean if a field has been set.
 
 ### GetNeedFullSync
 
@@ -1163,6 +1327,31 @@ SetNetworkCheckSupport sets NetworkCheckSupport field to given value.
 
 HasNetworkCheckSupport returns a boolean if a field has been set.
 
+### GetOspfAutoCostRefSupport
+
+`func (o *OswDevCapVO) GetOspfAutoCostRefSupport() bool`
+
+GetOspfAutoCostRefSupport returns the OspfAutoCostRefSupport field if non-nil, zero value otherwise.
+
+### GetOspfAutoCostRefSupportOk
+
+`func (o *OswDevCapVO) GetOspfAutoCostRefSupportOk() (*bool, bool)`
+
+GetOspfAutoCostRefSupportOk returns a tuple with the OspfAutoCostRefSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOspfAutoCostRefSupport
+
+`func (o *OswDevCapVO) SetOspfAutoCostRefSupport(v bool)`
+
+SetOspfAutoCostRefSupport sets OspfAutoCostRefSupport field to given value.
+
+### HasOspfAutoCostRefSupport
+
+`func (o *OswDevCapVO) HasOspfAutoCostRefSupport() bool`
+
+HasOspfAutoCostRefSupport returns a boolean if a field has been set.
+
 ### GetOspfDeadIntervalSupport
 
 `func (o *OswDevCapVO) GetOspfDeadIntervalSupport() bool`
@@ -1188,6 +1377,31 @@ SetOspfDeadIntervalSupport sets OspfDeadIntervalSupport field to given value.
 
 HasOspfDeadIntervalSupport returns a boolean if a field has been set.
 
+### GetOspfPassiveSupport
+
+`func (o *OswDevCapVO) GetOspfPassiveSupport() bool`
+
+GetOspfPassiveSupport returns the OspfPassiveSupport field if non-nil, zero value otherwise.
+
+### GetOspfPassiveSupportOk
+
+`func (o *OswDevCapVO) GetOspfPassiveSupportOk() (*bool, bool)`
+
+GetOspfPassiveSupportOk returns a tuple with the OspfPassiveSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOspfPassiveSupport
+
+`func (o *OswDevCapVO) SetOspfPassiveSupport(v bool)`
+
+SetOspfPassiveSupport sets OspfPassiveSupport field to given value.
+
+### HasOspfPassiveSupport
+
+`func (o *OswDevCapVO) HasOspfPassiveSupport() bool`
+
+HasOspfPassiveSupport returns a boolean if a field has been set.
+
 ### GetOspfSupport
 
 `func (o *OswDevCapVO) GetOspfSupport() bool`
@@ -1212,6 +1426,31 @@ SetOspfSupport sets OspfSupport field to given value.
 `func (o *OswDevCapVO) HasOspfSupport() bool`
 
 HasOspfSupport returns a boolean if a field has been set.
+
+### GetOuiBasedVlanESSupport
+
+`func (o *OswDevCapVO) GetOuiBasedVlanESSupport() bool`
+
+GetOuiBasedVlanESSupport returns the OuiBasedVlanESSupport field if non-nil, zero value otherwise.
+
+### GetOuiBasedVlanESSupportOk
+
+`func (o *OswDevCapVO) GetOuiBasedVlanESSupportOk() (*bool, bool)`
+
+GetOuiBasedVlanESSupportOk returns a tuple with the OuiBasedVlanESSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOuiBasedVlanESSupport
+
+`func (o *OswDevCapVO) SetOuiBasedVlanESSupport(v bool)`
+
+SetOuiBasedVlanESSupport sets OuiBasedVlanESSupport field to given value.
+
+### HasOuiBasedVlanESSupport
+
+`func (o *OswDevCapVO) HasOuiBasedVlanESSupport() bool`
+
+HasOuiBasedVlanESSupport returns a boolean if a field has been set.
 
 ### GetOuiBasedVlanSupport
 
@@ -1287,6 +1526,31 @@ SetPingSupport sets PingSupport field to given value.
 `func (o *OswDevCapVO) HasPingSupport() bool`
 
 HasPingSupport returns a boolean if a field has been set.
+
+### GetPmtudSupport
+
+`func (o *OswDevCapVO) GetPmtudSupport() bool`
+
+GetPmtudSupport returns the PmtudSupport field if non-nil, zero value otherwise.
+
+### GetPmtudSupportOk
+
+`func (o *OswDevCapVO) GetPmtudSupportOk() (*bool, bool)`
+
+GetPmtudSupportOk returns a tuple with the PmtudSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPmtudSupport
+
+`func (o *OswDevCapVO) SetPmtudSupport(v bool)`
+
+SetPmtudSupport sets PmtudSupport field to given value.
+
+### HasPmtudSupport
+
+`func (o *OswDevCapVO) HasPmtudSupport() bool`
+
+HasPmtudSupport returns a boolean if a field has been set.
 
 ### GetPoePortNum
 
@@ -1488,6 +1752,31 @@ SetSfpNum sets SfpNum field to given value.
 
 HasSfpNum returns a boolean if a field has been set.
 
+### GetSnmpSupport
+
+`func (o *OswDevCapVO) GetSnmpSupport() bool`
+
+GetSnmpSupport returns the SnmpSupport field if non-nil, zero value otherwise.
+
+### GetSnmpSupportOk
+
+`func (o *OswDevCapVO) GetSnmpSupportOk() (*bool, bool)`
+
+GetSnmpSupportOk returns a tuple with the SnmpSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSnmpSupport
+
+`func (o *OswDevCapVO) SetSnmpSupport(v bool)`
+
+SetSnmpSupport sets SnmpSupport field to given value.
+
+### HasSnmpSupport
+
+`func (o *OswDevCapVO) HasSnmpSupport() bool`
+
+HasSnmpSupport returns a boolean if a field has been set.
+
 ### GetStackPortCap
 
 `func (o *OswDevCapVO) GetStackPortCap() map[string][]string`
@@ -1637,6 +1926,31 @@ SetStpExtendSupport sets StpExtendSupport field to given value.
 `func (o *OswDevCapVO) HasStpExtendSupport() bool`
 
 HasStpExtendSupport returns a boolean if a field has been set.
+
+### GetStpSupport
+
+`func (o *OswDevCapVO) GetStpSupport() bool`
+
+GetStpSupport returns the StpSupport field if non-nil, zero value otherwise.
+
+### GetStpSupportOk
+
+`func (o *OswDevCapVO) GetStpSupportOk() (*bool, bool)`
+
+GetStpSupportOk returns a tuple with the StpSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStpSupport
+
+`func (o *OswDevCapVO) SetStpSupport(v bool)`
+
+SetStpSupport sets StpSupport field to given value.
+
+### HasStpSupport
+
+`func (o *OswDevCapVO) HasStpSupport() bool`
+
+HasStpSupport returns a boolean if a field has been set.
 
 ### GetSupportArpDetect
 
@@ -1963,6 +2277,31 @@ SetSupportImpb sets SupportImpb field to given value.
 
 HasSupportImpb returns a boolean if a field has been set.
 
+### GetSupportLayout
+
+`func (o *OswDevCapVO) GetSupportLayout() bool`
+
+GetSupportLayout returns the SupportLayout field if non-nil, zero value otherwise.
+
+### GetSupportLayoutOk
+
+`func (o *OswDevCapVO) GetSupportLayoutOk() (*bool, bool)`
+
+GetSupportLayoutOk returns a tuple with the SupportLayout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportLayout
+
+`func (o *OswDevCapVO) SetSupportLayout(v bool)`
+
+SetSupportLayout sets SupportLayout field to given value.
+
+### HasSupportLayout
+
+`func (o *OswDevCapVO) HasSupportLayout() bool`
+
+HasSupportLayout returns a boolean if a field has been set.
+
 ### GetSupportMad
 
 `func (o *OswDevCapVO) GetSupportMad() bool`
@@ -2287,6 +2626,31 @@ SetVoiceDscpSupport sets VoiceDscpSupport field to given value.
 `func (o *OswDevCapVO) HasVoiceDscpSupport() bool`
 
 HasVoiceDscpSupport returns a boolean if a field has been set.
+
+### GetVoiceNetworkSupport
+
+`func (o *OswDevCapVO) GetVoiceNetworkSupport() bool`
+
+GetVoiceNetworkSupport returns the VoiceNetworkSupport field if non-nil, zero value otherwise.
+
+### GetVoiceNetworkSupportOk
+
+`func (o *OswDevCapVO) GetVoiceNetworkSupportOk() (*bool, bool)`
+
+GetVoiceNetworkSupportOk returns a tuple with the VoiceNetworkSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVoiceNetworkSupport
+
+`func (o *OswDevCapVO) SetVoiceNetworkSupport(v bool)`
+
+SetVoiceNetworkSupport sets VoiceNetworkSupport field to given value.
+
+### HasVoiceNetworkSupport
+
+`func (o *OswDevCapVO) HasVoiceNetworkSupport() bool`
+
+HasVoiceNetworkSupport returns a boolean if a field has been set.
 
 ### GetVrfNum
 

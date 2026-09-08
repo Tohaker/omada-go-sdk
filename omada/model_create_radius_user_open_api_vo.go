@@ -21,19 +21,21 @@ var _ MappedNullable = &CreateRadiusUserOpenApiVO{}
 
 // CreateRadiusUserOpenApiVO struct for CreateRadiusUserOpenApiVO
 type CreateRadiusUserOpenApiVO struct {
-	// Build-in Radius profile user downlink traffic limit, unit: MB. DownLimit should be within the range of 1-10485760
+	// Description of radius user, should contain 1 to 256 characters
+	Description *string `json:"description,omitempty"`
+	// Build-in RADIUS profile user downlink traffic limit, unit: MB. DownLimit should be within the range of 1-10485760
 	DownLimit *int64 `json:"downLimit,omitempty"`
-	// Build-in Radius profile user downlink rate limit, unit: Kbps. DownRateLimit should be within the range of 1-10485760
+	// Build-in RADIUS profile user downlink rate limit, unit: Kbps. DownRateLimit should be within the range of 1-10485760
 	DownRateLimit *int64 `json:"downRateLimit,omitempty"`
 	// MAC address, required when parameter [type] is 1. Should be a valid MAC address format
 	MacAddress *string `json:"macAddress,omitempty"`
 	// Session timeout, unit: second
 	Timeout *int32 `json:"timeout,omitempty"`
-	// Type of Build-in Radius profile user, 0: user auth; 1: MAC auth
+	// Type of Build-in RADIUS profile user, 0: user auth; 1: MAC auth
 	Type int32 `json:"type"`
-	// Build-in Radius profile user uplink traffic limit, unit: MB. UpLimit should be within the range of 1-10485760
+	// Build-in RADIUS profile user uplink traffic limit, unit: MB. UpLimit should be within the range of 1-10485760
 	UpLimit *int64 `json:"upLimit,omitempty"`
-	// Build-in Radius profile user uplink rate limit, unit: Kbps. UpRateLimit should be within the range of 1-10485760
+	// Build-in RADIUS profile user uplink rate limit, unit: Kbps. UpRateLimit should be within the range of 1-10485760
 	UpRateLimit *int64 `json:"upRateLimit,omitempty"`
 	UserInfo *RadiusUserInfoOpenApiVO `json:"userInfo,omitempty"`
 	// VLAN ID. VlanId should be within the range of 1-4096
@@ -58,6 +60,38 @@ func NewCreateRadiusUserOpenApiVO(type_ int32) *CreateRadiusUserOpenApiVO {
 func NewCreateRadiusUserOpenApiVOWithDefaults() *CreateRadiusUserOpenApiVO {
 	this := CreateRadiusUserOpenApiVO{}
 	return &this
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *CreateRadiusUserOpenApiVO) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateRadiusUserOpenApiVO) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *CreateRadiusUserOpenApiVO) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *CreateRadiusUserOpenApiVO) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetDownLimit returns the DownLimit field value if set, zero value otherwise.
@@ -350,6 +384,9 @@ func (o CreateRadiusUserOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o CreateRadiusUserOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	if !IsNil(o.DownLimit) {
 		toSerialize["downLimit"] = o.DownLimit
 	}

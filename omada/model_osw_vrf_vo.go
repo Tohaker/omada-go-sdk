@@ -21,13 +21,13 @@ var _ MappedNullable = &OswVrfVO{}
 
 // OswVrfVO struct for OswVrfVO
 type OswVrfVO struct {
-	// VRF ID
+	// VRF ID. This parameter is not required for creation or modification.
 	Id *string `json:"id,omitempty"`
 	// Whether to enable ipv4. Ipv4Enable should be true
 	Ipv4Enable bool `json:"ipv4Enable"`
 	// Whether to enable ipv6
 	Ipv6Enable bool `json:"ipv6Enable"`
-	// VRF should be 1 to 15 characters consisting of numbers (0 to 9), uppercase and lowercase letters (A to Z, a to z), and symbols -_@.+ but cannot be . or .. only.
+	// VRF name, it should be 1 to 15 characters consisting of numbers (0 to 9), uppercase and lowercase letters (A to Z, a to z), and symbols -_@.+ but cannot be . or .. only.
 	Vrf string `json:"vrf"`
 }
 

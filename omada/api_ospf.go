@@ -171,9 +171,9 @@ type OSPFAPI interface {
 	GetOspfDeviceExecute(r OSPFAPIGetOspfDeviceRequest) (*OperationResponseListOspfDeviceOpenApiVO, *http.Response, error)
 
 	/*
-	GetOswVlanIf Get Switch Vlan Interface list
+	GetOswVlanIf Get Switch Vlan Interface list for OSPF
 
-	Get Switch Vlan Interface list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Site Device Manager View Only
+	Get Switch Vlan Interface list for OSPF.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Site Device Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -186,6 +186,23 @@ type OSPFAPI interface {
 	// GetOswVlanIfExecute executes the request
 	//  @return OperationResponseListVlanInterfaceOpenApiVO
 	GetOswVlanIfExecute(r OSPFAPIGetOswVlanIfRequest) (*OperationResponseListVlanInterfaceOpenApiVO, *http.Response, error)
+
+	/*
+	GetStackVlanIf Get Stack Vlan Interface list for OSPF
+
+	Get Stack Vlan Interface list for OSPF.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Site Device Manager View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param stackId Stack ID
+	@return OSPFAPIGetStackVlanIfRequest
+	*/
+	GetStackVlanIf(ctx context.Context, omadacId string, siteId string, stackId string) OSPFAPIGetStackVlanIfRequest
+
+	// GetStackVlanIfExecute executes the request
+	//  @return OperationResponseListVlanInterfaceOpenApiVO
+	GetStackVlanIfExecute(r OSPFAPIGetStackVlanIfRequest) (*OperationResponseListVlanInterfaceOpenApiVO, *http.Response, error)
 
 	/*
 	ModifyOspfInterface Modify Ospf Interface
@@ -494,11 +511,11 @@ type OSPFAPICreateOspfInterfaceRequest struct {
 	ApiService OSPFAPI
 	omadacId string
 	siteId string
-	createOspfInterfaceRequest *CreateOspfInterfaceRequest
+	ospfInterfaceConfigOpenApiVO *OspfInterfaceConfigOpenApiVO
 }
 
-func (r OSPFAPICreateOspfInterfaceRequest) CreateOspfInterfaceRequest(createOspfInterfaceRequest CreateOspfInterfaceRequest) OSPFAPICreateOspfInterfaceRequest {
-	r.createOspfInterfaceRequest = &createOspfInterfaceRequest
+func (r OSPFAPICreateOspfInterfaceRequest) OspfInterfaceConfigOpenApiVO(ospfInterfaceConfigOpenApiVO OspfInterfaceConfigOpenApiVO) OSPFAPICreateOspfInterfaceRequest {
+	r.ospfInterfaceConfigOpenApiVO = &ospfInterfaceConfigOpenApiVO
 	return r
 }
 
@@ -547,8 +564,8 @@ func (a *OSPFAPIService) CreateOspfInterfaceExecute(r OSPFAPICreateOspfInterface
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.createOspfInterfaceRequest == nil {
-		return localVarReturnValue, nil, reportError("createOspfInterfaceRequest is required and must be specified")
+	if r.ospfInterfaceConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("ospfInterfaceConfigOpenApiVO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -569,7 +586,7 @@ func (a *OSPFAPIService) CreateOspfInterfaceExecute(r OSPFAPICreateOspfInterface
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOspfInterfaceRequest
+	localVarPostBody = r.ospfInterfaceConfigOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -626,11 +643,11 @@ type OSPFAPICreateOspfProcessRequest struct {
 	ApiService OSPFAPI
 	omadacId string
 	siteId string
-	createOspfProcessRequest *CreateOspfProcessRequest
+	ospfProcessConfigOpenApiVO *OspfProcessConfigOpenApiVO
 }
 
-func (r OSPFAPICreateOspfProcessRequest) CreateOspfProcessRequest(createOspfProcessRequest CreateOspfProcessRequest) OSPFAPICreateOspfProcessRequest {
-	r.createOspfProcessRequest = &createOspfProcessRequest
+func (r OSPFAPICreateOspfProcessRequest) OspfProcessConfigOpenApiVO(ospfProcessConfigOpenApiVO OspfProcessConfigOpenApiVO) OSPFAPICreateOspfProcessRequest {
+	r.ospfProcessConfigOpenApiVO = &ospfProcessConfigOpenApiVO
 	return r
 }
 
@@ -679,8 +696,8 @@ func (a *OSPFAPIService) CreateOspfProcessExecute(r OSPFAPICreateOspfProcessRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.createOspfProcessRequest == nil {
-		return localVarReturnValue, nil, reportError("createOspfProcessRequest is required and must be specified")
+	if r.ospfProcessConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("ospfProcessConfigOpenApiVO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -701,7 +718,7 @@ func (a *OSPFAPIService) CreateOspfProcessExecute(r OSPFAPICreateOspfProcessRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOspfProcessRequest
+	localVarPostBody = r.ospfProcessConfigOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -760,12 +777,6 @@ type OSPFAPIDeleteOspfInterfaceRequest struct {
 	siteId string
 	switchMac string
 	ospfInterfaceId string
-	userInfoBriefDTO *UserInfoBriefDTO
-}
-
-func (r OSPFAPIDeleteOspfInterfaceRequest) UserInfoBriefDTO(userInfoBriefDTO UserInfoBriefDTO) OSPFAPIDeleteOspfInterfaceRequest {
-	r.userInfoBriefDTO = &userInfoBriefDTO
-	return r
 }
 
 func (r OSPFAPIDeleteOspfInterfaceRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
@@ -821,7 +832,7 @@ func (a *OSPFAPIService) DeleteOspfInterfaceExecute(r OSPFAPIDeleteOspfInterface
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -837,8 +848,6 @@ func (a *OSPFAPIService) DeleteOspfInterfaceExecute(r OSPFAPIDeleteOspfInterface
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.userInfoBriefDTO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -897,12 +906,6 @@ type OSPFAPIDeleteOspfProcessRequest struct {
 	siteId string
 	switchMac string
 	ospfProcessId string
-	userInfoBriefDTO *UserInfoBriefDTO
-}
-
-func (r OSPFAPIDeleteOspfProcessRequest) UserInfoBriefDTO(userInfoBriefDTO UserInfoBriefDTO) OSPFAPIDeleteOspfProcessRequest {
-	r.userInfoBriefDTO = &userInfoBriefDTO
-	return r
 }
 
 func (r OSPFAPIDeleteOspfProcessRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
@@ -958,7 +961,7 @@ func (a *OSPFAPIService) DeleteOspfProcessExecute(r OSPFAPIDeleteOspfProcessRequ
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -974,8 +977,6 @@ func (a *OSPFAPIService) DeleteOspfProcessExecute(r OSPFAPIDeleteOspfProcessRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.userInfoBriefDTO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1447,9 +1448,9 @@ func (r OSPFAPIGetOswVlanIfRequest) Execute() (*OperationResponseListVlanInterfa
 }
 
 /*
-GetOswVlanIf Get Switch Vlan Interface list
+GetOswVlanIf Get Switch Vlan Interface list for OSPF
 
-Get Switch Vlan Interface list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Site Device Manager View Only
+Get Switch Vlan Interface list for OSPF.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Site Device Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1559,17 +1560,142 @@ func (a *OSPFAPIService) GetOswVlanIfExecute(r OSPFAPIGetOswVlanIfRequest) (*Ope
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type OSPFAPIGetStackVlanIfRequest struct {
+	ctx context.Context
+	ApiService OSPFAPI
+	omadacId string
+	siteId string
+	stackId string
+}
+
+func (r OSPFAPIGetStackVlanIfRequest) Execute() (*OperationResponseListVlanInterfaceOpenApiVO, *http.Response, error) {
+	return r.ApiService.GetStackVlanIfExecute(r)
+}
+
+/*
+GetStackVlanIf Get Stack Vlan Interface list for OSPF
+
+Get Stack Vlan Interface list for OSPF.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Site Device Manager View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param stackId Stack ID
+ @return OSPFAPIGetStackVlanIfRequest
+*/
+func (a *OSPFAPIService) GetStackVlanIf(ctx context.Context, omadacId string, siteId string, stackId string) OSPFAPIGetStackVlanIfRequest {
+	return OSPFAPIGetStackVlanIfRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		stackId: stackId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseListVlanInterfaceOpenApiVO
+func (a *OSPFAPIService) GetStackVlanIfExecute(r OSPFAPIGetStackVlanIfRequest) (*OperationResponseListVlanInterfaceOpenApiVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseListVlanInterfaceOpenApiVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OSPFAPIService.GetStackVlanIf")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/vlan-interface/stack/{stackId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stackId"+"}", url.PathEscape(parameterValueToString(r.stackId, "stackId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type OSPFAPIModifyOspfInterfaceRequest struct {
 	ctx context.Context
 	ApiService OSPFAPI
 	omadacId string
 	siteId string
 	ospfInterfaceId string
-	modifyOspfInterfaceRequest *ModifyOspfInterfaceRequest
+	ospfInterfaceConfigOpenApiVO *OspfInterfaceConfigOpenApiVO
 }
 
-func (r OSPFAPIModifyOspfInterfaceRequest) ModifyOspfInterfaceRequest(modifyOspfInterfaceRequest ModifyOspfInterfaceRequest) OSPFAPIModifyOspfInterfaceRequest {
-	r.modifyOspfInterfaceRequest = &modifyOspfInterfaceRequest
+func (r OSPFAPIModifyOspfInterfaceRequest) OspfInterfaceConfigOpenApiVO(ospfInterfaceConfigOpenApiVO OspfInterfaceConfigOpenApiVO) OSPFAPIModifyOspfInterfaceRequest {
+	r.ospfInterfaceConfigOpenApiVO = &ospfInterfaceConfigOpenApiVO
 	return r
 }
 
@@ -1621,8 +1747,8 @@ func (a *OSPFAPIService) ModifyOspfInterfaceExecute(r OSPFAPIModifyOspfInterface
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.modifyOspfInterfaceRequest == nil {
-		return localVarReturnValue, nil, reportError("modifyOspfInterfaceRequest is required and must be specified")
+	if r.ospfInterfaceConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("ospfInterfaceConfigOpenApiVO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1643,7 +1769,7 @@ func (a *OSPFAPIService) ModifyOspfInterfaceExecute(r OSPFAPIModifyOspfInterface
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.modifyOspfInterfaceRequest
+	localVarPostBody = r.ospfInterfaceConfigOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1701,11 +1827,11 @@ type OSPFAPIModifyOspfProcessRequest struct {
 	omadacId string
 	siteId string
 	ospfProcessId string
-	modifyOspfProcessRequest *ModifyOspfProcessRequest
+	ospfProcessConfigOpenApiVO *OspfProcessConfigOpenApiVO
 }
 
-func (r OSPFAPIModifyOspfProcessRequest) ModifyOspfProcessRequest(modifyOspfProcessRequest ModifyOspfProcessRequest) OSPFAPIModifyOspfProcessRequest {
-	r.modifyOspfProcessRequest = &modifyOspfProcessRequest
+func (r OSPFAPIModifyOspfProcessRequest) OspfProcessConfigOpenApiVO(ospfProcessConfigOpenApiVO OspfProcessConfigOpenApiVO) OSPFAPIModifyOspfProcessRequest {
+	r.ospfProcessConfigOpenApiVO = &ospfProcessConfigOpenApiVO
 	return r
 }
 
@@ -1757,8 +1883,8 @@ func (a *OSPFAPIService) ModifyOspfProcessExecute(r OSPFAPIModifyOspfProcessRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.modifyOspfProcessRequest == nil {
-		return localVarReturnValue, nil, reportError("modifyOspfProcessRequest is required and must be specified")
+	if r.ospfProcessConfigOpenApiVO == nil {
+		return localVarReturnValue, nil, reportError("ospfProcessConfigOpenApiVO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1779,7 +1905,7 @@ func (a *OSPFAPIService) ModifyOspfProcessExecute(r OSPFAPIModifyOspfProcessRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.modifyOspfProcessRequest
+	localVarPostBody = r.ospfProcessConfigOpenApiVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

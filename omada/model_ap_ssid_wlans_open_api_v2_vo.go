@@ -21,6 +21,10 @@ var _ MappedNullable = &ApSsidWlansOpenApiV2VO{}
 
 // ApSsidWlansOpenApiV2VO struct for ApSsidWlansOpenApiV2VO
 type ApSsidWlansOpenApiV2VO struct {
+	// AP Group Id
+	ApGroupId *string `json:"apGroupId,omitempty"`
+	// AP Group Name
+	ApGroupName *string `json:"apGroupName,omitempty"`
 	// SsidOverride Config List
 	SsidOverrides []SsidOverrideConfigOpenApiV2VO `json:"ssidOverrides"`
 }
@@ -43,6 +47,70 @@ func NewApSsidWlansOpenApiV2VO(ssidOverrides []SsidOverrideConfigOpenApiV2VO) *A
 func NewApSsidWlansOpenApiV2VOWithDefaults() *ApSsidWlansOpenApiV2VO {
 	this := ApSsidWlansOpenApiV2VO{}
 	return &this
+}
+
+// GetApGroupId returns the ApGroupId field value if set, zero value otherwise.
+func (o *ApSsidWlansOpenApiV2VO) GetApGroupId() string {
+	if o == nil || IsNil(o.ApGroupId) {
+		var ret string
+		return ret
+	}
+	return *o.ApGroupId
+}
+
+// GetApGroupIdOk returns a tuple with the ApGroupId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApSsidWlansOpenApiV2VO) GetApGroupIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ApGroupId) {
+		return nil, false
+	}
+	return o.ApGroupId, true
+}
+
+// HasApGroupId returns a boolean if a field has been set.
+func (o *ApSsidWlansOpenApiV2VO) HasApGroupId() bool {
+	if o != nil && !IsNil(o.ApGroupId) {
+		return true
+	}
+
+	return false
+}
+
+// SetApGroupId gets a reference to the given string and assigns it to the ApGroupId field.
+func (o *ApSsidWlansOpenApiV2VO) SetApGroupId(v string) {
+	o.ApGroupId = &v
+}
+
+// GetApGroupName returns the ApGroupName field value if set, zero value otherwise.
+func (o *ApSsidWlansOpenApiV2VO) GetApGroupName() string {
+	if o == nil || IsNil(o.ApGroupName) {
+		var ret string
+		return ret
+	}
+	return *o.ApGroupName
+}
+
+// GetApGroupNameOk returns a tuple with the ApGroupName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApSsidWlansOpenApiV2VO) GetApGroupNameOk() (*string, bool) {
+	if o == nil || IsNil(o.ApGroupName) {
+		return nil, false
+	}
+	return o.ApGroupName, true
+}
+
+// HasApGroupName returns a boolean if a field has been set.
+func (o *ApSsidWlansOpenApiV2VO) HasApGroupName() bool {
+	if o != nil && !IsNil(o.ApGroupName) {
+		return true
+	}
+
+	return false
+}
+
+// SetApGroupName gets a reference to the given string and assigns it to the ApGroupName field.
+func (o *ApSsidWlansOpenApiV2VO) SetApGroupName(v string) {
+	o.ApGroupName = &v
 }
 
 // GetSsidOverrides returns the SsidOverrides field value
@@ -79,6 +147,12 @@ func (o ApSsidWlansOpenApiV2VO) MarshalJSON() ([]byte, error) {
 
 func (o ApSsidWlansOpenApiV2VO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ApGroupId) {
+		toSerialize["apGroupId"] = o.ApGroupId
+	}
+	if !IsNil(o.ApGroupName) {
+		toSerialize["apGroupName"] = o.ApGroupName
+	}
 	toSerialize["ssidOverrides"] = o.SsidOverrides
 	return toSerialize, nil
 }

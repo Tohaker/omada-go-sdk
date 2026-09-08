@@ -53,6 +53,36 @@ type CloudUserAPI interface {
 	BindOwnerExecute(r CloudUserAPIBindOwnerRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	CloudOwnerUnbindMspOwner Unbind the MSP owner account for cloud owner
+
+	Unbind the MSP owner account for cloud owner.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7101  -  Cloud access is not enabled.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param mspId MSP ID
+	@return CloudUserAPICloudOwnerUnbindMspOwnerRequest
+	*/
+	CloudOwnerUnbindMspOwner(ctx context.Context, mspId string) CloudUserAPICloudOwnerUnbindMspOwnerRequest
+
+	// CloudOwnerUnbindMspOwnerExecute executes the request
+	//  @return OperationResponseWithoutResult
+	CloudOwnerUnbindMspOwnerExecute(r CloudUserAPICloudOwnerUnbindMspOwnerRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
+	CloudOwnerUnbindOwner Unbind the owner account for cloud owner
+
+	Unbind the owner account for cloud owner.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-7101  -  Cloud access is not enabled.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@return CloudUserAPICloudOwnerUnbindOwnerRequest
+	*/
+	CloudOwnerUnbindOwner(ctx context.Context, omadacId string) CloudUserAPICloudOwnerUnbindOwnerRequest
+
+	// CloudOwnerUnbindOwnerExecute executes the request
+	//  @return OperationResponseWithoutResult
+	CloudOwnerUnbindOwnerExecute(r CloudUserAPICloudOwnerUnbindOwnerRequest) (*OperationResponseWithoutResult, *http.Response, error)
+
+	/*
 	GetCloudAccessStatus Get cloud access status
 
 	Get cloud access status.
@@ -351,6 +381,262 @@ func (a *CloudUserAPIService) BindOwnerExecute(r CloudUserAPIBindOwnerRequest) (
 	}
 	// body params
 	localVarPostBody = r.bindOwnerOpenApiVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type CloudUserAPICloudOwnerUnbindMspOwnerRequest struct {
+	ctx context.Context
+	ApiService CloudUserAPI
+	mspId string
+	localOwnerConfirmVO *LocalOwnerConfirmVO
+}
+
+func (r CloudUserAPICloudOwnerUnbindMspOwnerRequest) LocalOwnerConfirmVO(localOwnerConfirmVO LocalOwnerConfirmVO) CloudUserAPICloudOwnerUnbindMspOwnerRequest {
+	r.localOwnerConfirmVO = &localOwnerConfirmVO
+	return r
+}
+
+func (r CloudUserAPICloudOwnerUnbindMspOwnerRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CloudOwnerUnbindMspOwnerExecute(r)
+}
+
+/*
+CloudOwnerUnbindMspOwner Unbind the MSP owner account for cloud owner
+
+Unbind the MSP owner account for cloud owner.<br/><br/>The interface requires one of the permissions: <br/>MSP Other Settings Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-7101  -  Cloud access is not enabled.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param mspId MSP ID
+ @return CloudUserAPICloudOwnerUnbindMspOwnerRequest
+*/
+func (a *CloudUserAPIService) CloudOwnerUnbindMspOwner(ctx context.Context, mspId string) CloudUserAPICloudOwnerUnbindMspOwnerRequest {
+	return CloudUserAPICloudOwnerUnbindMspOwnerRequest{
+		ApiService: a,
+		ctx: ctx,
+		mspId: mspId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *CloudUserAPIService) CloudOwnerUnbindMspOwnerExecute(r CloudUserAPICloudOwnerUnbindMspOwnerRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudUserAPIService.CloudOwnerUnbindMspOwner")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/unbind/cloudowner"
+	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.localOwnerConfirmVO == nil {
+		return localVarReturnValue, nil, reportError("localOwnerConfirmVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.localOwnerConfirmVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type CloudUserAPICloudOwnerUnbindOwnerRequest struct {
+	ctx context.Context
+	ApiService CloudUserAPI
+	omadacId string
+	localOwnerConfirmVO *LocalOwnerConfirmVO
+}
+
+func (r CloudUserAPICloudOwnerUnbindOwnerRequest) LocalOwnerConfirmVO(localOwnerConfirmVO LocalOwnerConfirmVO) CloudUserAPICloudOwnerUnbindOwnerRequest {
+	r.localOwnerConfirmVO = &localOwnerConfirmVO
+	return r
+}
+
+func (r CloudUserAPICloudOwnerUnbindOwnerRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.CloudOwnerUnbindOwnerExecute(r)
+}
+
+/*
+CloudOwnerUnbindOwner Unbind the owner account for cloud owner
+
+Unbind the owner account for cloud owner.<br/><br/>The interface requires one of the permissions: <br/>Global Other Setting Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1004  -  Invalid request type.<br/>-7101  -  Cloud access is not enabled.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @return CloudUserAPICloudOwnerUnbindOwnerRequest
+*/
+func (a *CloudUserAPIService) CloudOwnerUnbindOwner(ctx context.Context, omadacId string) CloudUserAPICloudOwnerUnbindOwnerRequest {
+	return CloudUserAPICloudOwnerUnbindOwnerRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *CloudUserAPIService) CloudOwnerUnbindOwnerExecute(r CloudUserAPICloudOwnerUnbindOwnerRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CloudUserAPIService.CloudOwnerUnbindOwner")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/unbind/cloudowner"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.localOwnerConfirmVO == nil {
+		return localVarReturnValue, nil, reportError("localOwnerConfirmVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.localOwnerConfirmVO
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

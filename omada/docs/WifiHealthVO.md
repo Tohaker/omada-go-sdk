@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ChannelUtilScore** | Pointer to **int32** | AP channel utility score | [optional] 
 **RssiScore** | Pointer to **int32** | RSSI score | [optional] 
 **SupportAccessCapacity** | Pointer to **bool** | support AP Access capacity score | [optional] 
+**WirelessClientQualityScore** | Pointer to **int32** | Wireless client quality score (onboarding time) | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetSupportAccessCapacity sets SupportAccessCapacity field to given value.
 `func (o *WifiHealthVO) HasSupportAccessCapacity() bool`
 
 HasSupportAccessCapacity returns a boolean if a field has been set.
+
+### GetWirelessClientQualityScore
+
+`func (o *WifiHealthVO) GetWirelessClientQualityScore() int32`
+
+GetWirelessClientQualityScore returns the WirelessClientQualityScore field if non-nil, zero value otherwise.
+
+### GetWirelessClientQualityScoreOk
+
+`func (o *WifiHealthVO) GetWirelessClientQualityScoreOk() (*int32, bool)`
+
+GetWirelessClientQualityScoreOk returns a tuple with the WirelessClientQualityScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWirelessClientQualityScore
+
+`func (o *WifiHealthVO) SetWirelessClientQualityScore(v int32)`
+
+SetWirelessClientQualityScore sets WirelessClientQualityScore field to given value.
+
+### HasWirelessClientQualityScore
+
+`func (o *WifiHealthVO) HasWirelessClientQualityScore() bool`
+
+HasWirelessClientQualityScore returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

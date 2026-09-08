@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SsidId** | Pointer to **string** | This field represents SSID ID. SSID can be created using &#39;Create new SSID&#39; (&#39;Create new SSID template&#39;) interface, and SSID ID can be obtained from &#39;Get SSID list&#39; (&#39;Get SSID template list&#39;) interface | [optional] 
+**Id** | Pointer to **string** | ID of SSID | [optional] 
+**SsidId** | Pointer to **string** | SSID ID, kept for backward compatibility and equivalent to id. This field will be removed in a future release; use id instead. | [optional] 
 **SsidName** | Pointer to **string** | This field represents SSID name | [optional] 
 
 ## Methods
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewSsidSimpleOpenApiVOWithDefaults instantiates a new SsidSimpleOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *SsidSimpleOpenApiVO) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *SsidSimpleOpenApiVO) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *SsidSimpleOpenApiVO) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *SsidSimpleOpenApiVO) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetSsidId
 

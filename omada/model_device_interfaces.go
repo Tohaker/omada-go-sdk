@@ -20,6 +20,8 @@ var _ MappedNullable = &DeviceInterfaces{}
 // DeviceInterfaces struct for DeviceInterfaces
 type DeviceInterfaces struct {
 	Interfaces []InterfaceInfo `json:"interfaces,omitempty"`
+	// Whether the device supports reporting port layout information.
+	SupportLayout *bool `json:"supportLayout,omitempty"`
 }
 
 // NewDeviceInterfaces instantiates a new DeviceInterfaces object
@@ -71,6 +73,38 @@ func (o *DeviceInterfaces) SetInterfaces(v []InterfaceInfo) {
 	o.Interfaces = v
 }
 
+// GetSupportLayout returns the SupportLayout field value if set, zero value otherwise.
+func (o *DeviceInterfaces) GetSupportLayout() bool {
+	if o == nil || IsNil(o.SupportLayout) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportLayout
+}
+
+// GetSupportLayoutOk returns a tuple with the SupportLayout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInterfaces) GetSupportLayoutOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportLayout) {
+		return nil, false
+	}
+	return o.SupportLayout, true
+}
+
+// HasSupportLayout returns a boolean if a field has been set.
+func (o *DeviceInterfaces) HasSupportLayout() bool {
+	if o != nil && !IsNil(o.SupportLayout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportLayout gets a reference to the given bool and assigns it to the SupportLayout field.
+func (o *DeviceInterfaces) SetSupportLayout(v bool) {
+	o.SupportLayout = &v
+}
+
 func (o DeviceInterfaces) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -83,6 +117,9 @@ func (o DeviceInterfaces) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Interfaces) {
 		toSerialize["interfaces"] = o.Interfaces
+	}
+	if !IsNil(o.SupportLayout) {
+		toSerialize["supportLayout"] = o.SupportLayout
 	}
 	return toSerialize, nil
 }

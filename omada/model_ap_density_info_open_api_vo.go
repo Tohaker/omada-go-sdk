@@ -27,8 +27,10 @@ type ApDensityInfoOpenApiVO struct {
 	ModelVersion *string `json:"modelVersion,omitempty"`
 	// The name of ap.
 	Name *string `json:"name,omitempty"`
-	// The neighbor ap percent
+	// The neighbor ap number of ap.
 	NeighborApNum *int32 `json:"neighborApNum,omitempty"`
+	// The neighbor ap percent
+	NeighborApPercent *int32 `json:"neighborApPercent,omitempty"`
 	// This flag indicates whether data exists.
 	NoData *bool `json:"noData,omitempty"`
 	// The no data reason of ap.
@@ -214,6 +216,38 @@ func (o *ApDensityInfoOpenApiVO) SetNeighborApNum(v int32) {
 	o.NeighborApNum = &v
 }
 
+// GetNeighborApPercent returns the NeighborApPercent field value if set, zero value otherwise.
+func (o *ApDensityInfoOpenApiVO) GetNeighborApPercent() int32 {
+	if o == nil || IsNil(o.NeighborApPercent) {
+		var ret int32
+		return ret
+	}
+	return *o.NeighborApPercent
+}
+
+// GetNeighborApPercentOk returns a tuple with the NeighborApPercent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApDensityInfoOpenApiVO) GetNeighborApPercentOk() (*int32, bool) {
+	if o == nil || IsNil(o.NeighborApPercent) {
+		return nil, false
+	}
+	return o.NeighborApPercent, true
+}
+
+// HasNeighborApPercent returns a boolean if a field has been set.
+func (o *ApDensityInfoOpenApiVO) HasNeighborApPercent() bool {
+	if o != nil && !IsNil(o.NeighborApPercent) {
+		return true
+	}
+
+	return false
+}
+
+// SetNeighborApPercent gets a reference to the given int32 and assigns it to the NeighborApPercent field.
+func (o *ApDensityInfoOpenApiVO) SetNeighborApPercent(v int32) {
+	o.NeighborApPercent = &v
+}
+
 // GetNoData returns the NoData field value if set, zero value otherwise.
 func (o *ApDensityInfoOpenApiVO) GetNoData() bool {
 	if o == nil || IsNil(o.NoData) {
@@ -334,6 +368,9 @@ func (o ApDensityInfoOpenApiVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.NeighborApNum) {
 		toSerialize["neighborApNum"] = o.NeighborApNum
+	}
+	if !IsNil(o.NeighborApPercent) {
+		toSerialize["neighborApPercent"] = o.NeighborApPercent
 	}
 	if !IsNil(o.NoData) {
 		toSerialize["noData"] = o.NoData

@@ -22,12 +22,12 @@ Name | Type | Description | Notes
 **CpuUtil** | Pointer to **int32** |  | [optional] 
 **CustomId** | Pointer to **string** | Customer ID | [optional] 
 **CustomName** | Pointer to **string** | Customer name | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** | Description of the device | [optional] 
 **DevCap** | Pointer to [**OsgCapVO**](OsgCapVO.md) |  | [optional] 
 **DeviceMisc** | Pointer to [**WirelessRouterMiscVO**](WirelessRouterMiscVO.md) |  | [optional] 
 **DeviceSeriesType** | Pointer to **int32** | Device series type.DeviceSeriesType should be a value as follows: 0:advanced;1:pro | [optional] 
 **DeviceTemplateAvailable** | Pointer to **bool** | Whether there is an available device template for the device; it is false if the model is not supported or the site template has not created the corresponding device template. | [optional] 
-**DisableHwReset** | Pointer to **bool** |  | [optional] 
+**DisableHwReset** | Pointer to **bool** | Whether to disable hardware reset | [optional] 
 **DownlinkList** | Pointer to [**[]OsgDownLinkVO**](OsgDownLinkVO.md) |  | [optional] 
 **Download** | Pointer to **int64** |  | [optional] 
 **DueTime** | Pointer to **int64** | Expire timestamp of license(cloud base exclusive) | [optional] 
@@ -54,6 +54,7 @@ Name | Type | Description | Notes
 **JumboSize** | Pointer to **int32** |  | [optional] 
 **LanClientStats** | Pointer to [**[]OsgLanStatVO**](OsgLanStatVO.md) |  | [optional] 
 **LastSeen** | Pointer to **int64** |  | [optional] 
+**LatestVersion** | Pointer to **string** | Latest firmware version | [optional] 
 **LbSetting2g** | Pointer to [**ApLoadBalanceVO**](ApLoadBalanceVO.md) |  | [optional] 
 **LbSetting5g** | Pointer to [**ApLoadBalanceVO**](ApLoadBalanceVO.md) |  | [optional] 
 **LbSetting5g2** | Pointer to [**ApLoadBalanceVO**](ApLoadBalanceVO.md) |  | [optional] 
@@ -108,6 +109,7 @@ Name | Type | Description | Notes
 **RadiosResource** | Pointer to **int32** |  | [optional] 
 **Remember** | Pointer to **bool** | Whether to remember the device(deprecated) | [optional] 
 **RememberDevice** | Pointer to **int32** | Whether to remember the device.RememberDevice should be a value as follows: 0:off, 1:on, 2: follow site | [optional] 
+**ReplaceDeviceInfo** | Pointer to [**DeviceReplaceSettingVO**](DeviceReplaceSettingVO.md) |  | [optional] 
 **Resource** | Pointer to **int32** | Data source.Resource should be a value as follows: 0:new created;1:from template;2:override | [optional] 
 **Rps** | Pointer to [**[]OsgRpsStatusVO**](OsgRpsStatusVO.md) |  | [optional] 
 **RssiSetting2g** | Pointer to [**ApRssiThresholdVO**](ApRssiThresholdVO.md) |  | [optional] 
@@ -1453,6 +1455,31 @@ SetLastSeen sets LastSeen field to given value.
 `func (o *OsgDetailVO) HasLastSeen() bool`
 
 HasLastSeen returns a boolean if a field has been set.
+
+### GetLatestVersion
+
+`func (o *OsgDetailVO) GetLatestVersion() string`
+
+GetLatestVersion returns the LatestVersion field if non-nil, zero value otherwise.
+
+### GetLatestVersionOk
+
+`func (o *OsgDetailVO) GetLatestVersionOk() (*string, bool)`
+
+GetLatestVersionOk returns a tuple with the LatestVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatestVersion
+
+`func (o *OsgDetailVO) SetLatestVersion(v string)`
+
+SetLatestVersion sets LatestVersion field to given value.
+
+### HasLatestVersion
+
+`func (o *OsgDetailVO) HasLatestVersion() bool`
+
+HasLatestVersion returns a boolean if a field has been set.
 
 ### GetLbSetting2g
 
@@ -2803,6 +2830,31 @@ SetRememberDevice sets RememberDevice field to given value.
 `func (o *OsgDetailVO) HasRememberDevice() bool`
 
 HasRememberDevice returns a boolean if a field has been set.
+
+### GetReplaceDeviceInfo
+
+`func (o *OsgDetailVO) GetReplaceDeviceInfo() DeviceReplaceSettingVO`
+
+GetReplaceDeviceInfo returns the ReplaceDeviceInfo field if non-nil, zero value otherwise.
+
+### GetReplaceDeviceInfoOk
+
+`func (o *OsgDetailVO) GetReplaceDeviceInfoOk() (*DeviceReplaceSettingVO, bool)`
+
+GetReplaceDeviceInfoOk returns a tuple with the ReplaceDeviceInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplaceDeviceInfo
+
+`func (o *OsgDetailVO) SetReplaceDeviceInfo(v DeviceReplaceSettingVO)`
+
+SetReplaceDeviceInfo sets ReplaceDeviceInfo field to given value.
+
+### HasReplaceDeviceInfo
+
+`func (o *OsgDetailVO) HasReplaceDeviceInfo() bool`
+
+HasReplaceDeviceInfo returns a boolean if a field has been set.
 
 ### GetResource
 

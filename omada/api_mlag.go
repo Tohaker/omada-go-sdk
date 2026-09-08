@@ -46,7 +46,7 @@ type MlagAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param mlagId M-LAG group ID
+	@param mlagId M-LAG ID
 	@return MlagAPIDeleteMlagGroupRequest
 	*/
 	DeleteMlagGroup(ctx context.Context, omadacId string, siteId string, mlagId string) MlagAPIDeleteMlagGroupRequest
@@ -79,7 +79,7 @@ type MlagAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param mlagId M-LAG group ID
+	@param mlagId M-LAG ID
 	@param type_ The level of configuration consistency check should be a value as follows: 0:Critical & Significant 1: Critical; 2: Significant
 	@return MlagAPIGetMlagCccResultRequest
 	*/
@@ -113,14 +113,14 @@ type MlagAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param mlagId M-LAG group ID
+	@param mlagId M-LAG ID
 	@return MlagAPILocateMlagRequest
 	*/
 	LocateMlag(ctx context.Context, omadacId string, siteId string, mlagId string) MlagAPILocateMlagRequest
 
 	// LocateMlagExecute executes the request
-	//  @return OperationResponseWithoutResult
-	LocateMlagExecute(r MlagAPILocateMlagRequest) (*OperationResponseWithoutResult, *http.Response, error)
+	//  @return OperationResponseLocateResultVO
+	LocateMlagExecute(r MlagAPILocateMlagRequest) (*OperationResponseLocateResultVO, *http.Response, error)
 
 	/*
 	ModifyMlagGroup Modify M-LAG group
@@ -130,7 +130,7 @@ type MlagAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param mlagId M-LAG group ID
+	@param mlagId M-LAG ID
 	@return MlagAPIModifyMlagGroupRequest
 	*/
 	ModifyMlagGroup(ctx context.Context, omadacId string, siteId string, mlagId string) MlagAPIModifyMlagGroupRequest
@@ -147,7 +147,7 @@ type MlagAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param mlagId M-LAG group ID
+	@param mlagId M-LAG ID
 	@return MlagAPIRebootMlagRequest
 	*/
 	RebootMlag(ctx context.Context, omadacId string, siteId string, mlagId string) MlagAPIRebootMlagRequest
@@ -312,7 +312,7 @@ Delete M-LAG group.<br/><br/>The interface requires one of the permissions: <br/
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param mlagId M-LAG group ID
+ @param mlagId M-LAG ID
  @return MlagAPIDeleteMlagGroupRequest
 */
 func (a *MlagAPIService) DeleteMlagGroup(ctx context.Context, omadacId string, siteId string, mlagId string) MlagAPIDeleteMlagGroupRequest {
@@ -581,7 +581,7 @@ Get the configuration consistency check result of the M-LAG Group.<br/><br/>The 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param mlagId M-LAG group ID
+ @param mlagId M-LAG ID
  @param type_ The level of configuration consistency check should be a value as follows: 0:Critical & Significant 1: Critical; 2: Significant
  @return MlagAPIGetMlagCccResultRequest
 */
@@ -824,7 +824,7 @@ func (r MlagAPILocateMlagRequest) MlagLocateOpenApiVO(mlagLocateOpenApiVO MlagLo
 	return r
 }
 
-func (r MlagAPILocateMlagRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+func (r MlagAPILocateMlagRequest) Execute() (*OperationResponseLocateResultVO, *http.Response, error) {
 	return r.ApiService.LocateMlagExecute(r)
 }
 
@@ -836,7 +836,7 @@ Locate M-LAG group.<br/><br/>The interface requires one of the permissions: <br/
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param mlagId M-LAG group ID
+ @param mlagId M-LAG ID
  @return MlagAPILocateMlagRequest
 */
 func (a *MlagAPIService) LocateMlag(ctx context.Context, omadacId string, siteId string, mlagId string) MlagAPILocateMlagRequest {
@@ -850,13 +850,13 @@ func (a *MlagAPIService) LocateMlag(ctx context.Context, omadacId string, siteId
 }
 
 // Execute executes the request
-//  @return OperationResponseWithoutResult
-func (a *MlagAPIService) LocateMlagExecute(r MlagAPILocateMlagRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+//  @return OperationResponseLocateResultVO
+func (a *MlagAPIService) LocateMlagExecute(r MlagAPILocateMlagRequest) (*OperationResponseLocateResultVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseWithoutResult
+		localVarReturnValue  *OperationResponseLocateResultVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MlagAPIService.LocateMlag")
@@ -972,7 +972,7 @@ Modify M-LAG group.<br/><br/>The interface requires one of the permissions: <br/
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param mlagId M-LAG group ID
+ @param mlagId M-LAG ID
  @return MlagAPIModifyMlagGroupRequest
 */
 func (a *MlagAPIService) ModifyMlagGroup(ctx context.Context, omadacId string, siteId string, mlagId string) MlagAPIModifyMlagGroupRequest {
@@ -1108,7 +1108,7 @@ Reboot M-LAG group.<br/><br/>The interface requires one of the permissions: <br/
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param mlagId M-LAG group ID
+ @param mlagId M-LAG ID
  @return MlagAPIRebootMlagRequest
 */
 func (a *MlagAPIService) RebootMlag(ctx context.Context, omadacId string, siteId string, mlagId string) MlagAPIRebootMlagRequest {

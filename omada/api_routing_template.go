@@ -161,7 +161,7 @@ type RoutingTemplateAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteTemplateId Site Template ID
-	@param staticRoutingId
+	@param staticRoutingId Static routing ID
 	@return RoutingTemplateAPIModifyTemplateStaticRoutingRequest
 	*/
 	ModifyTemplateStaticRouting(ctx context.Context, omadacId string, siteTemplateId string, staticRoutingId string) RoutingTemplateAPIModifyTemplateStaticRoutingRequest
@@ -1246,7 +1246,7 @@ Modify site template's static routing.<br/><br/>The interface requires one of th
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteTemplateId Site Template ID
- @param staticRoutingId
+ @param staticRoutingId Static routing ID
  @return RoutingTemplateAPIModifyTemplateStaticRoutingRequest
 */
 func (a *RoutingTemplateAPIService) ModifyTemplateStaticRouting(ctx context.Context, omadacId string, siteTemplateId string, staticRoutingId string) RoutingTemplateAPIModifyTemplateStaticRoutingRequest {

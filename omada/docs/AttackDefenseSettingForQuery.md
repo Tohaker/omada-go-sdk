@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ExistIcmpTimestampRequestReject** | Pointer to **bool** | Whether ICMP Timestamp Request of the attack defense setting is ON. | [optional] 
 **ExistLargePingThreshold** | Pointer to **bool** | Whether custom Block Large Ping Threshold of attack defense is configured. | [optional] 
 **ExistTcpScanReject** | Pointer to **bool** | Whether Block TCP scan with reject of the attack defense setting is ON. | [optional] 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **IcmpConnEnable** | Pointer to **bool** | Multi-connections ICMP flood enable of the attack defense setting. | [optional] 
 **IcmpConnLimit** | Pointer to **int32** | Multi-connections ICMP flood limit should be within the range of 100–99999. | [optional] 
 **IcmpSrcEnable** | Pointer to **bool** | Stationary source ICMP flood enable of the attack defense setting. | [optional] 
@@ -128,6 +129,31 @@ SetExistTcpScanReject sets ExistTcpScanReject field to given value.
 `func (o *AttackDefenseSettingForQuery) HasExistTcpScanReject() bool`
 
 HasExistTcpScanReject returns a boolean if a field has been set.
+
+### GetFeatureDescription
+
+`func (o *AttackDefenseSettingForQuery) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *AttackDefenseSettingForQuery) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *AttackDefenseSettingForQuery) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *AttackDefenseSettingForQuery) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetIcmpConnEnable
 

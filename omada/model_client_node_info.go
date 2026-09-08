@@ -27,6 +27,8 @@ type ClientNodeInfo struct {
 	DevRxRate *int64 `json:"devRxRate,omitempty"`
 	// Client real-time uploadRate
 	DevTxRate *int64 `json:"devTxRate,omitempty"`
+	// Downlink nodes, exists when client is other gateway
+	DownlinkNodes []DeviceNodeInfo `json:"downlinkNodes,omitempty"`
 	// (Wireless) Whether it is Guest (used to display the wireless Guest client icon).
 	Guest *bool `json:"guest,omitempty"`
 	// Health Score, 1~3: poor; 4~7: fair; 0: no data; 8~10 good.
@@ -192,6 +194,38 @@ func (o *ClientNodeInfo) HasDevTxRate() bool {
 // SetDevTxRate gets a reference to the given int64 and assigns it to the DevTxRate field.
 func (o *ClientNodeInfo) SetDevTxRate(v int64) {
 	o.DevTxRate = &v
+}
+
+// GetDownlinkNodes returns the DownlinkNodes field value if set, zero value otherwise.
+func (o *ClientNodeInfo) GetDownlinkNodes() []DeviceNodeInfo {
+	if o == nil || IsNil(o.DownlinkNodes) {
+		var ret []DeviceNodeInfo
+		return ret
+	}
+	return o.DownlinkNodes
+}
+
+// GetDownlinkNodesOk returns a tuple with the DownlinkNodes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientNodeInfo) GetDownlinkNodesOk() ([]DeviceNodeInfo, bool) {
+	if o == nil || IsNil(o.DownlinkNodes) {
+		return nil, false
+	}
+	return o.DownlinkNodes, true
+}
+
+// HasDownlinkNodes returns a boolean if a field has been set.
+func (o *ClientNodeInfo) HasDownlinkNodes() bool {
+	if o != nil && !IsNil(o.DownlinkNodes) {
+		return true
+	}
+
+	return false
+}
+
+// SetDownlinkNodes gets a reference to the given []DeviceNodeInfo and assigns it to the DownlinkNodes field.
+func (o *ClientNodeInfo) SetDownlinkNodes(v []DeviceNodeInfo) {
+	o.DownlinkNodes = v
 }
 
 // GetGuest returns the Guest field value if set, zero value otherwise.
@@ -567,6 +601,9 @@ func (o ClientNodeInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.DevTxRate) {
 		toSerialize["devTxRate"] = o.DevTxRate
+	}
+	if !IsNil(o.DownlinkNodes) {
+		toSerialize["downlinkNodes"] = o.DownlinkNodes
 	}
 	if !IsNil(o.Guest) {
 		toSerialize["guest"] = o.Guest

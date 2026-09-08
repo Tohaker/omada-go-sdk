@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DnsMode** | Pointer to **int32** | DNS mode for dynamic mode, 0: Get Dynamic DNS, 1: Use the Following DNS Addresses. | [optional] 
 **Ipv6Addr** | Pointer to **string** | IPv6 Address for static mode, like 2001:4860:4860::8888 | [optional] 
-**Mode** | **string** | Ipv6Setting parameter [mode] should be dynamic: 1 or static: 0 | 
+**Mode** | **string** | Ipv6Setting parameter [mode] should be \&quot;dynamic\&quot; or \&quot;static\&quot; | 
 **PrefixLen** | Pointer to **int32** | Prefix Length for static mode, which should be within the range of 1–128 | [optional] 
 **PriDns** | Pointer to **string** | Primary DNS, like 2001:4860:4860::8888 | [optional] 
 **SndDns** | Pointer to **string** | Second DNS, like 2001:4860:4860::8844 | [optional] 

@@ -40,7 +40,7 @@ type UserAndRoleAPI interface {
 	/*
 	CreateNewUser Create new user
 
-	Create new user.<br/><br/>The interface requires one of the permissions: <br/>Global Users Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30103  -  Invalid email address.<br/>-30104  -  Invalid username.<br/>-30105  -  Invalid password.<br/>-30106  -  This username is already registered.<br/>-30124  -  The number of users has reached the limit.<br/>-30162  -  Cannot change the target account. Its role permission scope cannot be greater than its manager.<br/>-30190  -  You do not have the All Customers permission. Cannot grant sub-users the Modify Customers permission.<br/>-30192  -  You do not have the All Site permission. Cannot grant sub-users the Modify Sites permission.<br/>-30196  -  MSP role and customer role must be both super admin or both not super admin.<br/>-44118  -  This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.<br/>-7101  -  Cloud access is not enabled.<br/>-7106  -  Bind TP-Link ID first.
+	Create new user.<br/><br/>The interface requires one of the permissions: <br/>Global Users Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30103  -  Invalid email address.<br/>-30104  -  Invalid username.<br/>-30105  -  Invalid password.<br/>-30106  -  This username is already registered.<br/>-30124  -  The number of users has reached the limit.<br/>-30162  -  Cannot change the target account. An account with user management permission must have a role permission scope that covers its sub-users.<br/>-30190  -  You do not have the All Customers permission. Cannot grant sub-users the Modify Customers permission.<br/>-30192  -  You do not have the All Site permission. Cannot grant sub-users the Modify Sites permission.<br/>-30196  -  MSP role and customer role must be both super admin or both not super admin.<br/>-44118  -  This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.<br/>-7101  -  Cloud access is not enabled.<br/>-7106  -  Bind TP-Link ID first.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -75,7 +75,7 @@ type UserAndRoleAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param userID userID
+	@param userID User ID
 	@return UserAndRoleAPIDeleteUserRequest
 	*/
 	DeleteUser(ctx context.Context, omadacId string, userID string) UserAndRoleAPIDeleteUserRequest
@@ -135,7 +135,7 @@ type UserAndRoleAPI interface {
 	Get user list. This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.<br/><br/>The interface requires one of the permissions: <br/>Global Users Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44118  -  This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param omadacId
+	@param omadacId Omada ID
 	@return UserAndRoleAPIGetAppGridUsersRequest
 	*/
 	GetAppGridUsers(ctx context.Context, omadacId string) UserAndRoleAPIGetAppGridUsersRequest
@@ -180,7 +180,7 @@ type UserAndRoleAPI interface {
 	Get user list. This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.<br/><br/>The interface requires one of the permissions: <br/>Global Users Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44118  -  This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param omadacId
+	@param omadacId Omada ID
 	@return UserAndRoleAPIGetGridUsersRequest
 	*/
 	GetGridUsers(ctx context.Context, omadacId string) UserAndRoleAPIGetGridUsersRequest
@@ -212,7 +212,7 @@ type UserAndRoleAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param userID userID
+	@param userID User ID
 	@return UserAndRoleAPIGetUserRequest
 	*/
 	GetUser(ctx context.Context, omadacId string, userID string) UserAndRoleAPIGetUserRequest
@@ -239,7 +239,7 @@ type UserAndRoleAPI interface {
 	/*
 	ModifyRole Modify an existing role
 
-	Modify an existing role. Only user with all permissions modify can use this interface.<br/><br/>The interface requires one of the permissions: <br/>Global Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. Its role permission scope cannot be greater than its manager.
+	Modify an existing role. Only user with all permissions modify can use this interface.<br/><br/>The interface requires one of the permissions: <br/>Global Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. An account with user management permission must have a role permission scope that covers its sub-users.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -259,7 +259,7 @@ type UserAndRoleAPI interface {
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
-	@param userID userID
+	@param userID User ID
 	@return UserAndRoleAPIModifyUserRequest
 	*/
 	ModifyUser(ctx context.Context, omadacId string, userID string) UserAndRoleAPIModifyUserRequest
@@ -480,7 +480,7 @@ func (r UserAndRoleAPICreateNewUserRequest) Execute() (*OperationResponseCreateU
 /*
 CreateNewUser Create new user
 
-Create new user.<br/><br/>The interface requires one of the permissions: <br/>Global Users Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30103  -  Invalid email address.<br/>-30104  -  Invalid username.<br/>-30105  -  Invalid password.<br/>-30106  -  This username is already registered.<br/>-30124  -  The number of users has reached the limit.<br/>-30162  -  Cannot change the target account. Its role permission scope cannot be greater than its manager.<br/>-30190  -  You do not have the All Customers permission. Cannot grant sub-users the Modify Customers permission.<br/>-30192  -  You do not have the All Site permission. Cannot grant sub-users the Modify Sites permission.<br/>-30196  -  MSP role and customer role must be both super admin or both not super admin.<br/>-44118  -  This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.<br/>-7101  -  Cloud access is not enabled.<br/>-7106  -  Bind TP-Link ID first.
+Create new user.<br/><br/>The interface requires one of the permissions: <br/>Global Users Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30103  -  Invalid email address.<br/>-30104  -  Invalid username.<br/>-30105  -  Invalid password.<br/>-30106  -  This username is already registered.<br/>-30124  -  The number of users has reached the limit.<br/>-30162  -  Cannot change the target account. An account with user management permission must have a role permission scope that covers its sub-users.<br/>-30190  -  You do not have the All Customers permission. Cannot grant sub-users the Modify Customers permission.<br/>-30192  -  You do not have the All Site permission. Cannot grant sub-users the Modify Sites permission.<br/>-30196  -  MSP role and customer role must be both super admin or both not super admin.<br/>-44118  -  This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.<br/>-7101  -  Cloud access is not enabled.<br/>-7106  -  Bind TP-Link ID first.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -734,7 +734,7 @@ Delete an existing user. This interface only supports the authorization code mod
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param userID userID
+ @param userID User ID
  @return UserAndRoleAPIDeleteUserRequest
 */
 func (a *UserAndRoleAPIService) DeleteUser(ctx context.Context, omadacId string, userID string) UserAndRoleAPIDeleteUserRequest {
@@ -1251,7 +1251,7 @@ GetAppGridUsers Get user list for app
 Get user list. This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.<br/><br/>The interface requires one of the permissions: <br/>Global Users Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44118  -  This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param omadacId
+ @param omadacId Omada ID
  @return UserAndRoleAPIGetAppGridUsersRequest
 */
 func (a *UserAndRoleAPIService) GetAppGridUsers(ctx context.Context, omadacId string) UserAndRoleAPIGetAppGridUsersRequest {
@@ -1664,7 +1664,7 @@ GetGridUsers Get user list
 Get user list. This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.<br/><br/>The interface requires one of the permissions: <br/>Global Users Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44118  -  This interface only supports the authorization code mode, not the client mode. Please call this interface in authorization code mode.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param omadacId
+ @param omadacId Omada ID
  @return UserAndRoleAPIGetGridUsersRequest
 */
 func (a *UserAndRoleAPIService) GetGridUsers(ctx context.Context, omadacId string) UserAndRoleAPIGetGridUsersRequest {
@@ -1924,7 +1924,7 @@ Get user info. This interface only supports the authorization code mode, not the
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param userID userID
+ @param userID User ID
  @return UserAndRoleAPIGetUserRequest
 */
 func (a *UserAndRoleAPIService) GetUser(ctx context.Context, omadacId string, userID string) UserAndRoleAPIGetUserRequest {
@@ -2175,7 +2175,7 @@ func (r UserAndRoleAPIModifyRoleRequest) Execute() (*OperationResponse, *http.Re
 /*
 ModifyRole Modify an existing role
 
-Modify an existing role. Only user with all permissions modify can use this interface.<br/><br/>The interface requires one of the permissions: <br/>Global Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. Its role permission scope cannot be greater than its manager.
+Modify an existing role. Only user with all permissions modify can use this interface.<br/><br/>The interface requires one of the permissions: <br/>Global Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30156  -  This role already exists.<br/>-30157  -  An error occurred while modifying the role.<br/>-30159  -  The default role cannot be modified.<br/>-30162  -  Cannot change the target account. An account with user management permission must have a role permission scope that covers its sub-users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -2311,7 +2311,7 @@ Modify an existing user.<br/><br/>The interface requires one of the permissions:
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
- @param userID userID
+ @param userID User ID
  @return UserAndRoleAPIModifyUserRequest
 */
 func (a *UserAndRoleAPIService) ModifyUser(ctx context.Context, omadacId string, userID string) UserAndRoleAPIModifyUserRequest {

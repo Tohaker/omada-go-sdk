@@ -62,7 +62,7 @@ type NATAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param otonatId otonatId
+	@param otonatId Otonat ID
 	@return NATAPIDeleteOtoNatRequest
 	*/
 	DeleteOtoNat(ctx context.Context, omadacId string, siteId string, otonatId string) NATAPIDeleteOtoNatRequest
@@ -79,7 +79,7 @@ type NATAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param portForwardingId portForwardingId
+	@param portForwardingId Port Forwarding ID
 	@return NATAPIDeletePortForwardingRequest
 	*/
 	DeletePortForwarding(ctx context.Context, omadacId string, siteId string, portForwardingId string) NATAPIDeletePortForwardingRequest
@@ -160,7 +160,7 @@ type NATAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param otonatId otonatId
+	@param otonatId Otonat ID
 	@return NATAPIModifyOtoNatRequest
 	*/
 	ModifyOtoNat(ctx context.Context, omadacId string, siteId string, otonatId string) NATAPIModifyOtoNatRequest
@@ -177,7 +177,7 @@ type NATAPI interface {
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
-	@param portForwardingId portForwardingId
+	@param portForwardingId Port Forwarding ID
 	@return NATAPIModifyPortForwardingRequest
 	*/
 	ModifyPortForwarding(ctx context.Context, omadacId string, siteId string, portForwardingId string) NATAPIModifyPortForwardingRequest
@@ -474,7 +474,7 @@ Delete One-to-One NAT.<br/><br/>The interface requires one of the permissions: <
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param otonatId otonatId
+ @param otonatId Otonat ID
  @return NATAPIDeleteOtoNatRequest
 */
 func (a *NATAPIService) DeleteOtoNat(ctx context.Context, omadacId string, siteId string, otonatId string) NATAPIDeleteOtoNatRequest {
@@ -599,7 +599,7 @@ Delete port forwarding.<br/><br/>The interface requires one of the permissions: 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param portForwardingId portForwardingId
+ @param portForwardingId Port Forwarding ID
  @return NATAPIDeletePortForwardingRequest
 */
 func (a *NATAPIService) DeletePortForwarding(ctx context.Context, omadacId string, siteId string, portForwardingId string) NATAPIDeletePortForwardingRequest {
@@ -1269,7 +1269,7 @@ Modify One-to-One NAT.<br/><br/>The interface requires one of the permissions: <
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param otonatId otonatId
+ @param otonatId Otonat ID
  @return NATAPIModifyOtoNatRequest
 */
 func (a *NATAPIService) ModifyOtoNat(ctx context.Context, omadacId string, siteId string, otonatId string) NATAPIModifyOtoNatRequest {
@@ -1405,7 +1405,7 @@ Modify port forwarding.<br/><br/>The interface requires one of the permissions: 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
- @param portForwardingId portForwardingId
+ @param portForwardingId Port Forwarding ID
  @return NATAPIModifyPortForwardingRequest
 */
 func (a *NATAPIService) ModifyPortForwarding(ctx context.Context, omadacId string, siteId string, portForwardingId string) NATAPIModifyPortForwardingRequest {

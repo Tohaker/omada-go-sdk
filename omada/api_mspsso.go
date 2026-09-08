@@ -25,7 +25,7 @@ type MSPSSOAPI interface {
 	/*
 	CreateExternalUserGroup1 Create new msp external user group
 
-	Create new msp external user group.<br/><br/>The interface requires one of the permissions: <br/>MSP Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML role name already exists.<br/>-30179  -  The SAML roles number has reached the upper limit.
+	Create new msp external user group.<br/><br/>The interface requires one of the permissions: <br/>MSP Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML User Group name already exists.<br/>-30179  -  The SAML User Group number has reached the upper limit.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -132,7 +132,7 @@ type MSPSSOAPI interface {
 	/*
 	ModifyExternalUserGroup1 Modify an existing msp external user group
 
-	Modify an existing msp external user group.<br/><br/>The interface requires one of the permissions: <br/>MSP Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML role name already exists.
+	Modify an existing msp external user group.<br/><br/>The interface requires one of the permissions: <br/>MSP Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML User Group name already exists.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param mspId MSP ID
@@ -184,7 +184,7 @@ func (r MSPSSOAPICreateExternalUserGroup1Request) Execute() (*OperationResponseR
 /*
 CreateExternalUserGroup1 Create new msp external user group
 
-Create new msp external user group.<br/><br/>The interface requires one of the permissions: <br/>MSP Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML role name already exists.<br/>-30179  -  The SAML roles number has reached the upper limit.
+Create new msp external user group.<br/><br/>The interface requires one of the permissions: <br/>MSP Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML User Group name already exists.<br/>-30179  -  The SAML User Group number has reached the upper limit.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID
@@ -1150,7 +1150,7 @@ func (r MSPSSOAPIModifyExternalUserGroup1Request) Execute() (*OperationResponseW
 /*
 ModifyExternalUserGroup1 Modify an existing msp external user group
 
-Modify an existing msp external user group.<br/><br/>The interface requires one of the permissions: <br/>MSP Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML role name already exists.
+Modify an existing msp external user group.<br/><br/>The interface requires one of the permissions: <br/>MSP Saml Roles Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-30102  -  This role does not exist.<br/>-30172  -  The SAML User Group name already exists.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param mspId MSP ID

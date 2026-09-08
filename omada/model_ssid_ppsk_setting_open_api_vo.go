@@ -25,9 +25,9 @@ type SsidPpskSettingOpenApiVO struct {
 	NasId *string `json:"nasId,omitempty"`
 	// This field represents PPSK Profile ID; This is necessary when the value of security is 4(PPSK without RADIUS); PPSK Profile(PPSK Profile Template) can be created using Create PPSK profile interface(Create PPSK profile template interface), and PPSK Profile ID(PPSK Profile Template ID) can be obtained from Get PPSK profiles list(Get PPSK profile templates list) interface.
 	PpskProfileId *string `json:"ppskProfileId,omitempty"`
-	// This field represents RADIUS Profile ID; This is necessary when the value of security is 5(PPSK with RADIUS); RADIUS Profile(RADIUS Profile Template) can be created using Create a new Radius profile(Create a new Radius profile template) interface, and RADIUS Profile ID(RADIUS Profile Template ID) can be obtained from Get Radius profile list(Get Radius profile template list) interface.
+	// This field represents RADIUS Profile ID; This is necessary when the value of security is 5(PPSK with RADIUS); RADIUS Profile(RADIUS Profile Template) can be created using Create a new RADIUS profile(Create a new RADIUS profile template) interface, and RADIUS Profile ID(RADIUS Profile Template ID) can be obtained from Get RADIUS profile list(Get RADIUS profile template list) interface.
 	RadiusProfileId *string `json:"radiusProfileId,omitempty"`
-	// Authentication type. This is necessary when the value of security is 5(PPSK with RADIUS); It should be a value as follows: 0: Mac Auth(Generic Radius with bound MAC); 1: EKMS(This configuration applies to the Pro Site of the Omada Pro Controller only); 2: Generic Radius with unbound MAC(This configuration applies to the Pro Site of the Omada Pro Controller only).
+	// Authentication type. This is necessary when the value of security is 5(PPSK with RADIUS); It should be a value as follows: 0: Mac Auth(Generic RADIUS with bound MAC); 1: EKMS(This configuration applies to the Pro Site of the Omada Pro Controller only); 2: Generic RADIUS with unbound MAC(This configuration applies to the Pro Site of the Omada Pro Controller only).
 	Type *int32 `json:"type,omitempty"`
 }
 

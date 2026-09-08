@@ -21,6 +21,8 @@ var _ MappedNullable = &OsgHealthDetailVO{}
 type OsgHealthDetailVO struct {
 	ChannelUtil *ChannelSubHealthInfoDetailVO `json:"channelUtil,omitempty"`
 	Cpu *CommonSubHealthInfoDetailVO `json:"cpu,omitempty"`
+	Incident *IncidentSubHealthInfoDetailVO `json:"incident,omitempty"`
+	LinkError *LinkErrorHealthInfoDetailVO `json:"linkError,omitempty"`
 	Memory *CommonSubHealthInfoDetailVO `json:"memory,omitempty"`
 	// Device health score.
 	Score *int32 `json:"score,omitempty"`
@@ -28,6 +30,7 @@ type OsgHealthDetailVO struct {
 	Temperature *CommonSubHealthInfoDetailVO `json:"temperature,omitempty"`
 	Transmission *TransmissionSubHealthInfoDetailVO `json:"transmission,omitempty"`
 	WanLatency *CommonSubHealthInfoDetailVO `json:"wanLatency,omitempty"`
+	WanStatus *WanSubHealthInfoDetailVO `json:"wanStatus,omitempty"`
 }
 
 // NewOsgHealthDetailVO instantiates a new OsgHealthDetailVO object
@@ -109,6 +112,70 @@ func (o *OsgHealthDetailVO) HasCpu() bool {
 // SetCpu gets a reference to the given CommonSubHealthInfoDetailVO and assigns it to the Cpu field.
 func (o *OsgHealthDetailVO) SetCpu(v CommonSubHealthInfoDetailVO) {
 	o.Cpu = &v
+}
+
+// GetIncident returns the Incident field value if set, zero value otherwise.
+func (o *OsgHealthDetailVO) GetIncident() IncidentSubHealthInfoDetailVO {
+	if o == nil || IsNil(o.Incident) {
+		var ret IncidentSubHealthInfoDetailVO
+		return ret
+	}
+	return *o.Incident
+}
+
+// GetIncidentOk returns a tuple with the Incident field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgHealthDetailVO) GetIncidentOk() (*IncidentSubHealthInfoDetailVO, bool) {
+	if o == nil || IsNil(o.Incident) {
+		return nil, false
+	}
+	return o.Incident, true
+}
+
+// HasIncident returns a boolean if a field has been set.
+func (o *OsgHealthDetailVO) HasIncident() bool {
+	if o != nil && !IsNil(o.Incident) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncident gets a reference to the given IncidentSubHealthInfoDetailVO and assigns it to the Incident field.
+func (o *OsgHealthDetailVO) SetIncident(v IncidentSubHealthInfoDetailVO) {
+	o.Incident = &v
+}
+
+// GetLinkError returns the LinkError field value if set, zero value otherwise.
+func (o *OsgHealthDetailVO) GetLinkError() LinkErrorHealthInfoDetailVO {
+	if o == nil || IsNil(o.LinkError) {
+		var ret LinkErrorHealthInfoDetailVO
+		return ret
+	}
+	return *o.LinkError
+}
+
+// GetLinkErrorOk returns a tuple with the LinkError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgHealthDetailVO) GetLinkErrorOk() (*LinkErrorHealthInfoDetailVO, bool) {
+	if o == nil || IsNil(o.LinkError) {
+		return nil, false
+	}
+	return o.LinkError, true
+}
+
+// HasLinkError returns a boolean if a field has been set.
+func (o *OsgHealthDetailVO) HasLinkError() bool {
+	if o != nil && !IsNil(o.LinkError) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinkError gets a reference to the given LinkErrorHealthInfoDetailVO and assigns it to the LinkError field.
+func (o *OsgHealthDetailVO) SetLinkError(v LinkErrorHealthInfoDetailVO) {
+	o.LinkError = &v
 }
 
 // GetMemory returns the Memory field value if set, zero value otherwise.
@@ -303,6 +370,38 @@ func (o *OsgHealthDetailVO) SetWanLatency(v CommonSubHealthInfoDetailVO) {
 	o.WanLatency = &v
 }
 
+// GetWanStatus returns the WanStatus field value if set, zero value otherwise.
+func (o *OsgHealthDetailVO) GetWanStatus() WanSubHealthInfoDetailVO {
+	if o == nil || IsNil(o.WanStatus) {
+		var ret WanSubHealthInfoDetailVO
+		return ret
+	}
+	return *o.WanStatus
+}
+
+// GetWanStatusOk returns a tuple with the WanStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OsgHealthDetailVO) GetWanStatusOk() (*WanSubHealthInfoDetailVO, bool) {
+	if o == nil || IsNil(o.WanStatus) {
+		return nil, false
+	}
+	return o.WanStatus, true
+}
+
+// HasWanStatus returns a boolean if a field has been set.
+func (o *OsgHealthDetailVO) HasWanStatus() bool {
+	if o != nil && !IsNil(o.WanStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetWanStatus gets a reference to the given WanSubHealthInfoDetailVO and assigns it to the WanStatus field.
+func (o *OsgHealthDetailVO) SetWanStatus(v WanSubHealthInfoDetailVO) {
+	o.WanStatus = &v
+}
+
 func (o OsgHealthDetailVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -318,6 +417,12 @@ func (o OsgHealthDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Cpu) {
 		toSerialize["cpu"] = o.Cpu
+	}
+	if !IsNil(o.Incident) {
+		toSerialize["incident"] = o.Incident
+	}
+	if !IsNil(o.LinkError) {
+		toSerialize["linkError"] = o.LinkError
 	}
 	if !IsNil(o.Memory) {
 		toSerialize["memory"] = o.Memory
@@ -336,6 +441,9 @@ func (o OsgHealthDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.WanLatency) {
 		toSerialize["wanLatency"] = o.WanLatency
+	}
+	if !IsNil(o.WanStatus) {
+		toSerialize["wanStatus"] = o.WanStatus
 	}
 	return toSerialize, nil
 }

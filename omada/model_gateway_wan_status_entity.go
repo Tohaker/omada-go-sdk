@@ -79,6 +79,8 @@ type GatewayWanStatusEntity struct {
 	// Port rx rate, Unit: KB/s;
 	RxRate *int64 `json:"rxRate,omitempty"`
 	RxSnrMargin *int64 `json:"rxSnrMargin,omitempty"`
+	// Download current training rate.
+	RxTrainingRate *int64 `json:"rxTrainingRate,omitempty"`
 	Signal *int32 `json:"signal,omitempty"`
 	SimCardUsed *int32 `json:"simCardUsed,omitempty"`
 	SmsOperator *string `json:"smsOperator,omitempty"`
@@ -101,6 +103,8 @@ type GatewayWanStatusEntity struct {
 	// Port tx rate, Unit: KB/s;
 	TxRate *int64 `json:"txRate,omitempty"`
 	TxSnrMargin *int64 `json:"txSnrMargin,omitempty"`
+	// Upload current training rate.
+	TxTrainingRate *int64 `json:"txTrainingRate,omitempty"`
 	// Port type, 0:WAN,1:WAN/LAN,2:LAN;
 	Type *int32 `json:"type,omitempty"`
 	// Gateway wan ipv6 component version
@@ -1406,6 +1410,38 @@ func (o *GatewayWanStatusEntity) SetRxSnrMargin(v int64) {
 	o.RxSnrMargin = &v
 }
 
+// GetRxTrainingRate returns the RxTrainingRate field value if set, zero value otherwise.
+func (o *GatewayWanStatusEntity) GetRxTrainingRate() int64 {
+	if o == nil || IsNil(o.RxTrainingRate) {
+		var ret int64
+		return ret
+	}
+	return *o.RxTrainingRate
+}
+
+// GetRxTrainingRateOk returns a tuple with the RxTrainingRate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GatewayWanStatusEntity) GetRxTrainingRateOk() (*int64, bool) {
+	if o == nil || IsNil(o.RxTrainingRate) {
+		return nil, false
+	}
+	return o.RxTrainingRate, true
+}
+
+// HasRxTrainingRate returns a boolean if a field has been set.
+func (o *GatewayWanStatusEntity) HasRxTrainingRate() bool {
+	if o != nil && !IsNil(o.RxTrainingRate) {
+		return true
+	}
+
+	return false
+}
+
+// SetRxTrainingRate gets a reference to the given int64 and assigns it to the RxTrainingRate field.
+func (o *GatewayWanStatusEntity) SetRxTrainingRate(v int64) {
+	o.RxTrainingRate = &v
+}
+
 // GetSignal returns the Signal field value if set, zero value otherwise.
 func (o *GatewayWanStatusEntity) GetSignal() int32 {
 	if o == nil || IsNil(o.Signal) {
@@ -1918,6 +1954,38 @@ func (o *GatewayWanStatusEntity) SetTxSnrMargin(v int64) {
 	o.TxSnrMargin = &v
 }
 
+// GetTxTrainingRate returns the TxTrainingRate field value if set, zero value otherwise.
+func (o *GatewayWanStatusEntity) GetTxTrainingRate() int64 {
+	if o == nil || IsNil(o.TxTrainingRate) {
+		var ret int64
+		return ret
+	}
+	return *o.TxTrainingRate
+}
+
+// GetTxTrainingRateOk returns a tuple with the TxTrainingRate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GatewayWanStatusEntity) GetTxTrainingRateOk() (*int64, bool) {
+	if o == nil || IsNil(o.TxTrainingRate) {
+		return nil, false
+	}
+	return o.TxTrainingRate, true
+}
+
+// HasTxTrainingRate returns a boolean if a field has been set.
+func (o *GatewayWanStatusEntity) HasTxTrainingRate() bool {
+	if o != nil && !IsNil(o.TxTrainingRate) {
+		return true
+	}
+
+	return false
+}
+
+// SetTxTrainingRate gets a reference to the given int64 and assigns it to the TxTrainingRate field.
+func (o *GatewayWanStatusEntity) SetTxTrainingRate(v int64) {
+	o.TxTrainingRate = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *GatewayWanStatusEntity) GetType() int32 {
 	if o == nil || IsNil(o.Type) {
@@ -2176,6 +2244,9 @@ func (o GatewayWanStatusEntity) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RxSnrMargin) {
 		toSerialize["rxSnrMargin"] = o.RxSnrMargin
 	}
+	if !IsNil(o.RxTrainingRate) {
+		toSerialize["rxTrainingRate"] = o.RxTrainingRate
+	}
 	if !IsNil(o.Signal) {
 		toSerialize["signal"] = o.Signal
 	}
@@ -2223,6 +2294,9 @@ func (o GatewayWanStatusEntity) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TxSnrMargin) {
 		toSerialize["txSnrMargin"] = o.TxSnrMargin
+	}
+	if !IsNil(o.TxTrainingRate) {
+		toSerialize["txTrainingRate"] = o.TxTrainingRate
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

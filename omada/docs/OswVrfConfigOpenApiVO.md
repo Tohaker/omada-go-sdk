@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ipv4Enable** | **bool** | Indicates whether ipv4 is enabled | 
-**Ipv6Enable** | **bool** | Indicates whether ipv6 is enabled | 
-**Vrf** | **string** | VRF Name | 
+**Ipv4Enable** | Pointer to **bool** | Whether to enable ipv4. Ipv4Enable should be true. This parameter is required when creating a VRF and is not needed when modifying a VRF. | [optional] 
+**Ipv6Enable** | **bool** | Whether to enable ipv6 | 
+**Vrf** | Pointer to **string** | VRF name: 1 to 15 characters consisting of numbers (0 to 9), uppercase and lowercase letters (A to Z, a to z), and symbols -_@.+; cannot be &#39;.&#39; or &#39;..&#39; only. This parameter is required when creating a VRF and is not needed when modifying a VRF. | [optional] 
 
 ## Methods
 
 ### NewOswVrfConfigOpenApiVO
 
-`func NewOswVrfConfigOpenApiVO(ipv4Enable bool, ipv6Enable bool, vrf string, ) *OswVrfConfigOpenApiVO`
+`func NewOswVrfConfigOpenApiVO(ipv6Enable bool, ) *OswVrfConfigOpenApiVO`
 
 NewOswVrfConfigOpenApiVO instantiates a new OswVrfConfigOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetIpv4Enable sets Ipv4Enable field to given value.
 
+### HasIpv4Enable
+
+`func (o *OswVrfConfigOpenApiVO) HasIpv4Enable() bool`
+
+HasIpv4Enable returns a boolean if a field has been set.
 
 ### GetIpv6Enable
 
@@ -86,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetVrf sets Vrf field to given value.
 
+### HasVrf
+
+`func (o *OswVrfConfigOpenApiVO) HasVrf() bool`
+
+HasVrf returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

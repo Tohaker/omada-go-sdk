@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Osg** | Pointer to [**OsgMdnsRuleTemplateOpenApiVO**](OsgMdnsRuleTemplateOpenApiVO.md) |  | [optional] 
 **ProfileIds** | **[]string** | This field represents Bonjour service profile ID. Bonjour Service Profile can be created using &#39;Create new Bonjour Service&#39; interface, and Bonjour service profile ID can be obtained from &#39;Get Bonjour Service list&#39; interface | 
 **Status** | **bool** | MDNS rule enable status | 
-**Type** | Pointer to **int32** | MDNS rule type. Type should be a value as follows: 0: AP, 1: Gateway | [optional] 
+**Type** | Pointer to **int32** | MDNS rule band VLAN type. Type should be a value as follows: 0: By VLAN ID, 1: By Network | [optional] 
 
 ## Methods
 

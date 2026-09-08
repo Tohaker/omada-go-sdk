@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AnomalyCode** | Pointer to **string** | For the values of Anomaly event code, refer to section 5.7.2.1 of the Open API Access | [optional] 
+**AnomalyCode** | **string** | For the values of Anomaly event code, refer to section 5.7.2.1 of the Open API Access | 
 **Enable** | Pointer to **bool** | Whether to detect anomaly events | [optional] 
 **Level** | Pointer to **int32** | Anomaly event level, it should be a value as follows: 0:Critical, 1:Error, 2:Warning, 3: Info | [optional] 
 **Params** | Pointer to **map[string]int32** | For the values of Anomaly event params, refer to section 5.7.2.1 of the Open API Access | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewAnomalyEventSettingEditOpenApiVO
 
-`func NewAnomalyEventSettingEditOpenApiVO() *AnomalyEventSettingEditOpenApiVO`
+`func NewAnomalyEventSettingEditOpenApiVO(anomalyCode string, ) *AnomalyEventSettingEditOpenApiVO`
 
 NewAnomalyEventSettingEditOpenApiVO instantiates a new AnomalyEventSettingEditOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetAnomalyCode sets AnomalyCode field to given value.
 
-### HasAnomalyCode
-
-`func (o *AnomalyEventSettingEditOpenApiVO) HasAnomalyCode() bool`
-
-HasAnomalyCode returns a boolean if a field has been set.
 
 ### GetEnable
 

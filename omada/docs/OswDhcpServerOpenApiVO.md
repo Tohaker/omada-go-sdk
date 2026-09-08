@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DhcpPoolMask** | Pointer to **int32** | DHCP pool mask, value is from 1 to 31. | [optional] 
 **Gateway** | Pointer to **string** | Gateway IP, like 192.168.0.1 | [optional] 
-**Ip** | **string** | DHCP Server IP, like 192.168.0.1. | 
+**Ip** | Pointer to **string** | DHCP Server IP, like 192.168.0.1. | [optional] 
 **IpRangePool** | Pointer to [**[]OswDhcpServerRangeOpenApiVO**](OswDhcpServerRangeOpenApiVO.md) | The list of DHCP Range | [optional] 
 **Leasetime** | **int32** | Lease time should be within the range of 2–2880 | 
-**Netmask** | **string** | Parameter [netmask] should not within the range of 1-30 | 
+**Netmask** | Pointer to **string** | Parameter [netmask] should be within the range of 1-31 | [optional] 
 **Option138** | Pointer to **string** | option138 ip, like 192.168.0.1 | [optional] 
 **Options** | Pointer to [**[]SwitchCustomDHCPOptions**](SwitchCustomDHCPOptions.md) | Custom DHCP options. | [optional] 
 **PriDns** | Pointer to **string** | Primary DNS, like 192.0.0.1 | [optional] 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewOswDhcpServerOpenApiVO
 
-`func NewOswDhcpServerOpenApiVO(ip string, leasetime int32, netmask string, ) *OswDhcpServerOpenApiVO`
+`func NewOswDhcpServerOpenApiVO(leasetime int32, ) *OswDhcpServerOpenApiVO`
 
 NewOswDhcpServerOpenApiVO instantiates a new OswDhcpServerOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -33,6 +34,31 @@ will change when the set of required properties is changed
 NewOswDhcpServerOpenApiVOWithDefaults instantiates a new OswDhcpServerOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDhcpPoolMask
+
+`func (o *OswDhcpServerOpenApiVO) GetDhcpPoolMask() int32`
+
+GetDhcpPoolMask returns the DhcpPoolMask field if non-nil, zero value otherwise.
+
+### GetDhcpPoolMaskOk
+
+`func (o *OswDhcpServerOpenApiVO) GetDhcpPoolMaskOk() (*int32, bool)`
+
+GetDhcpPoolMaskOk returns a tuple with the DhcpPoolMask field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDhcpPoolMask
+
+`func (o *OswDhcpServerOpenApiVO) SetDhcpPoolMask(v int32)`
+
+SetDhcpPoolMask sets DhcpPoolMask field to given value.
+
+### HasDhcpPoolMask
+
+`func (o *OswDhcpServerOpenApiVO) HasDhcpPoolMask() bool`
+
+HasDhcpPoolMask returns a boolean if a field has been set.
 
 ### GetGateway
 
@@ -78,6 +104,11 @@ and a boolean to check if the value has been set.
 
 SetIp sets Ip field to given value.
 
+### HasIp
+
+`func (o *OswDhcpServerOpenApiVO) HasIp() bool`
+
+HasIp returns a boolean if a field has been set.
 
 ### GetIpRangePool
 
@@ -143,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetNetmask sets Netmask field to given value.
 
+### HasNetmask
+
+`func (o *OswDhcpServerOpenApiVO) HasNetmask() bool`
+
+HasNetmask returns a boolean if a field has been set.
 
 ### GetOption138
 

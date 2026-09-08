@@ -47,6 +47,8 @@ type SelectDeviceForVlanVO struct {
 	ReplacedDevice *bool `json:"replacedDevice,omitempty"`
 	// Device status category, 0: Disconnected, 1: Connected, 2: Pending,3: Heartbeat Missed, 4: Isolated
 	StatusCategory *int32 `json:"statusCategory,omitempty"`
+	// Whether the device supports reporting port layout information.
+	SupportLayout *bool `json:"supportLayout,omitempty"`
 	// Device type, 1: gateway  2: switch
 	Type *string `json:"type,omitempty"`
 }
@@ -516,6 +518,38 @@ func (o *SelectDeviceForVlanVO) SetStatusCategory(v int32) {
 	o.StatusCategory = &v
 }
 
+// GetSupportLayout returns the SupportLayout field value if set, zero value otherwise.
+func (o *SelectDeviceForVlanVO) GetSupportLayout() bool {
+	if o == nil || IsNil(o.SupportLayout) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportLayout
+}
+
+// GetSupportLayoutOk returns a tuple with the SupportLayout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SelectDeviceForVlanVO) GetSupportLayoutOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportLayout) {
+		return nil, false
+	}
+	return o.SupportLayout, true
+}
+
+// HasSupportLayout returns a boolean if a field has been set.
+func (o *SelectDeviceForVlanVO) HasSupportLayout() bool {
+	if o != nil && !IsNil(o.SupportLayout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportLayout gets a reference to the given bool and assigns it to the SupportLayout field.
+func (o *SelectDeviceForVlanVO) SetSupportLayout(v bool) {
+	o.SupportLayout = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *SelectDeviceForVlanVO) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -599,6 +633,9 @@ func (o SelectDeviceForVlanVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.StatusCategory) {
 		toSerialize["statusCategory"] = o.StatusCategory
+	}
+	if !IsNil(o.SupportLayout) {
+		toSerialize["supportLayout"] = o.SupportLayout
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

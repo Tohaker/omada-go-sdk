@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ClientModel** | Pointer to **string** | Client model for icon display | [optional] 
 **ClientName** | Pointer to **string** | Client name | [optional] 
+**ClientType** | Pointer to **string** | Client type for icon display (e.g. Mobile, Laptop, IPC) | [optional] 
 **ConnectDeviceMac** | Pointer to **string** | Client-connected device mac | [optional] 
 **ConnectDeviceName** | Pointer to **string** | Client-connected device name | [optional] 
 **DeviceType** | Pointer to **string** | Client-connected device type | [optional] 
@@ -32,6 +34,31 @@ NewRssiInfoVOWithDefaults instantiates a new RssiInfoVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetClientModel
+
+`func (o *RssiInfoVO) GetClientModel() string`
+
+GetClientModel returns the ClientModel field if non-nil, zero value otherwise.
+
+### GetClientModelOk
+
+`func (o *RssiInfoVO) GetClientModelOk() (*string, bool)`
+
+GetClientModelOk returns a tuple with the ClientModel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientModel
+
+`func (o *RssiInfoVO) SetClientModel(v string)`
+
+SetClientModel sets ClientModel field to given value.
+
+### HasClientModel
+
+`func (o *RssiInfoVO) HasClientModel() bool`
+
+HasClientModel returns a boolean if a field has been set.
+
 ### GetClientName
 
 `func (o *RssiInfoVO) GetClientName() string`
@@ -56,6 +83,31 @@ SetClientName sets ClientName field to given value.
 `func (o *RssiInfoVO) HasClientName() bool`
 
 HasClientName returns a boolean if a field has been set.
+
+### GetClientType
+
+`func (o *RssiInfoVO) GetClientType() string`
+
+GetClientType returns the ClientType field if non-nil, zero value otherwise.
+
+### GetClientTypeOk
+
+`func (o *RssiInfoVO) GetClientTypeOk() (*string, bool)`
+
+GetClientTypeOk returns a tuple with the ClientType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientType
+
+`func (o *RssiInfoVO) SetClientType(v string)`
+
+SetClientType sets ClientType field to given value.
+
+### HasClientType
+
+`func (o *RssiInfoVO) HasClientType() bool`
+
+HasClientType returns a boolean if a field has been set.
 
 ### GetConnectDeviceMac
 

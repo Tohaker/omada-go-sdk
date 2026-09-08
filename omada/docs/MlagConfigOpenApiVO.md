@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GroupId** | Pointer to **string** | MLAG group id should be between 1 and 31 characters. Only letters, numbers, and the following symbols are allowed: - . / : @ _ + # | [optional] 
 **MembersConfig** | Pointer to [**[]MlagMemberConfigVO**](MlagMemberConfigVO.md) | M-LAG group members configuration | [optional] 
 **Name** | **string** | MLAG group name should be between 1 and 31 characters. Only letters, numbers, and the following symbols are allowed: - . / : @ _ + # | 
 
@@ -26,31 +25,6 @@ will change when the set of required properties is changed
 NewMlagConfigOpenApiVOWithDefaults instantiates a new MlagConfigOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetGroupId
-
-`func (o *MlagConfigOpenApiVO) GetGroupId() string`
-
-GetGroupId returns the GroupId field if non-nil, zero value otherwise.
-
-### GetGroupIdOk
-
-`func (o *MlagConfigOpenApiVO) GetGroupIdOk() (*string, bool)`
-
-GetGroupIdOk returns a tuple with the GroupId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroupId
-
-`func (o *MlagConfigOpenApiVO) SetGroupId(v string)`
-
-SetGroupId sets GroupId field to given value.
-
-### HasGroupId
-
-`func (o *MlagConfigOpenApiVO) HasGroupId() bool`
-
-HasGroupId returns a boolean if a field has been set.
 
 ### GetMembersConfig
 

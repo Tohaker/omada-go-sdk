@@ -155,6 +155,23 @@ type InsightAPI interface {
 	GetBatchFullChannelDetectStatusExecute(r InsightAPIGetBatchFullChannelDetectStatusRequest) (*OperationResponseListBatchFullChannelDetectStatusOpenApiVO, *http.Response, error)
 
 	/*
+	GetBatchInterferencesResult Get Batch Interferences Result
+
+	Get Batch Interferences Result<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param historyId Customer ID
+	@return InsightAPIGetBatchInterferencesResultRequest
+	*/
+	GetBatchInterferencesResult(ctx context.Context, omadacId string, siteId string, historyId string) InsightAPIGetBatchInterferencesResultRequest
+
+	// GetBatchInterferencesResultExecute executes the request
+	//  @return OperationResponseListApInterference
+	GetBatchInterferencesResultExecute(r InsightAPIGetBatchInterferencesResultRequest) (*OperationResponseListApInterference, *http.Response, error)
+
+	/*
 	GetBatchWifiInterferencesResult Get WiFi interference results of batch interference detection
 
 	Get WiFi interference results of batch interference detection<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
@@ -482,6 +499,23 @@ type InsightAPI interface {
 	// GetGridWipsBlackListExecute executes the request
 	//  @return OperationResponseGridVOWipsBlackListOpenApiVO
 	GetGridWipsBlackListExecute(r InsightAPIGetGridWipsBlackListRequest) (*OperationResponseGridVOWipsBlackListOpenApiVO, *http.Response, error)
+
+	/*
+	GetInterfResult Get Interference result
+
+	Get Interference result<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+	@return InsightAPIGetInterfResultRequest
+	*/
+	GetInterfResult(ctx context.Context, omadacId string, siteId string, apMac string) InsightAPIGetInterfResultRequest
+
+	// GetInterfResultExecute executes the request
+	//  @return OperationResponseApInterference
+	GetInterfResultExecute(r InsightAPIGetInterfResultRequest) (*OperationResponseApInterference, *http.Response, error)
 
 	/*
 	GetPortForwardStatus Get Port Forwarding Status
@@ -1642,6 +1676,153 @@ func (a *InsightAPIService) GetBatchFullChannelDetectStatusExecute(r InsightAPIG
 	}
 	// body params
 	localVarPostBody = r.queryBatchFullChannelDetectStatusVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type InsightAPIGetBatchInterferencesResultRequest struct {
+	ctx context.Context
+	ApiService InsightAPI
+	omadacId string
+	siteId string
+	historyId string
+	page *int32
+	pageSize *int32
+}
+
+// Start page number. Start from 1.
+func (r InsightAPIGetBatchInterferencesResultRequest) Page(page int32) InsightAPIGetBatchInterferencesResultRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r InsightAPIGetBatchInterferencesResultRequest) PageSize(pageSize int32) InsightAPIGetBatchInterferencesResultRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r InsightAPIGetBatchInterferencesResultRequest) Execute() (*OperationResponseListApInterference, *http.Response, error) {
+	return r.ApiService.GetBatchInterferencesResultExecute(r)
+}
+
+/*
+GetBatchInterferencesResult Get Batch Interferences Result
+
+Get Batch Interferences Result<br/><br/>The interface requires one of the permissions: <br/>Site Tools Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param historyId Customer ID
+ @return InsightAPIGetBatchInterferencesResultRequest
+*/
+func (a *InsightAPIService) GetBatchInterferencesResult(ctx context.Context, omadacId string, siteId string, historyId string) InsightAPIGetBatchInterferencesResultRequest {
+	return InsightAPIGetBatchInterferencesResultRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		historyId: historyId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseListApInterference
+func (a *InsightAPIService) GetBatchInterferencesResultExecute(r InsightAPIGetBatchInterferencesResultRequest) (*OperationResponseListApInterference, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseListApInterference
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetBatchInterferencesResult")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/full-channel-detect/{historyId}/grid/interference"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"historyId"+"}", url.PathEscape(parameterValueToString(r.historyId, "historyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -4636,6 +4817,153 @@ func (a *InsightAPIService) GetGridWipsBlackListExecute(r InsightAPIGetGridWipsB
 	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/insight/wids/blacklist"
 	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type InsightAPIGetInterfResultRequest struct {
+	ctx context.Context
+	ApiService InsightAPI
+	omadacId string
+	siteId string
+	apMac string
+	page *int32
+	pageSize *int32
+}
+
+// Start page number. Start from 1.
+func (r InsightAPIGetInterfResultRequest) Page(page int32) InsightAPIGetInterfResultRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r InsightAPIGetInterfResultRequest) PageSize(pageSize int32) InsightAPIGetInterfResultRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r InsightAPIGetInterfResultRequest) Execute() (*OperationResponseApInterference, *http.Response, error) {
+	return r.ApiService.GetInterfResultExecute(r)
+}
+
+/*
+GetInterfResult Get Interference result
+
+Get Interference result<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39050  -  This device does not exist.<br/>-39303  -  AP does not exist.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param apMac AP MAC address, like AA-BB-CC-DD-EE-FF
+ @return InsightAPIGetInterfResultRequest
+*/
+func (a *InsightAPIService) GetInterfResult(ctx context.Context, omadacId string, siteId string, apMac string) InsightAPIGetInterfResultRequest {
+	return InsightAPIGetInterfResultRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		apMac: apMac,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseApInterference
+func (a *InsightAPIService) GetInterfResultExecute(r InsightAPIGetInterfResultRequest) (*OperationResponseApInterference, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseApInterference
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetInterfResult")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/full-channel-detect/grid/interference"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apMac"+"}", url.PathEscape(parameterValueToString(r.apMac, "apMac")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

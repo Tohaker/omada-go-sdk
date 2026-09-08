@@ -19,6 +19,8 @@ var _ MappedNullable = &BriefServerDeviceVO{}
 
 // BriefServerDeviceVO List of devices acting as DHCP servers in this network
 type BriefServerDeviceVO struct {
+	// Dhcp Server Config Ranges
+	ConfigRanges []DhcpRangeOpenApiVO `json:"configRanges,omitempty"`
 	// Whether DHCP Server is enabled
 	DhcpServerEnable *bool `json:"dhcpServerEnable,omitempty"`
 	// Whether DHCP Setting is auto
@@ -56,6 +58,38 @@ func NewBriefServerDeviceVO() *BriefServerDeviceVO {
 func NewBriefServerDeviceVOWithDefaults() *BriefServerDeviceVO {
 	this := BriefServerDeviceVO{}
 	return &this
+}
+
+// GetConfigRanges returns the ConfigRanges field value if set, zero value otherwise.
+func (o *BriefServerDeviceVO) GetConfigRanges() []DhcpRangeOpenApiVO {
+	if o == nil || IsNil(o.ConfigRanges) {
+		var ret []DhcpRangeOpenApiVO
+		return ret
+	}
+	return o.ConfigRanges
+}
+
+// GetConfigRangesOk returns a tuple with the ConfigRanges field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BriefServerDeviceVO) GetConfigRangesOk() ([]DhcpRangeOpenApiVO, bool) {
+	if o == nil || IsNil(o.ConfigRanges) {
+		return nil, false
+	}
+	return o.ConfigRanges, true
+}
+
+// HasConfigRanges returns a boolean if a field has been set.
+func (o *BriefServerDeviceVO) HasConfigRanges() bool {
+	if o != nil && !IsNil(o.ConfigRanges) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigRanges gets a reference to the given []DhcpRangeOpenApiVO and assigns it to the ConfigRanges field.
+func (o *BriefServerDeviceVO) SetConfigRanges(v []DhcpRangeOpenApiVO) {
+	o.ConfigRanges = v
 }
 
 // GetDhcpServerEnable returns the DhcpServerEnable field value if set, zero value otherwise.
@@ -388,6 +422,9 @@ func (o BriefServerDeviceVO) MarshalJSON() ([]byte, error) {
 
 func (o BriefServerDeviceVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ConfigRanges) {
+		toSerialize["configRanges"] = o.ConfigRanges
+	}
 	if !IsNil(o.DhcpServerEnable) {
 		toSerialize["dhcpServerEnable"] = o.DhcpServerEnable
 	}

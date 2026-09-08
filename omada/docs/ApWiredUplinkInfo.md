@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Model** | Pointer to **string** | Uplink device model | [optional] 
 **ModelVersion** | Pointer to **string** | Uplink device modelVersion | [optional] 
 **Name** | Pointer to **string** | Uplink device name | [optional] 
+**PoeState** | Pointer to **int32** | PoE state, 0: powering, 1: not powering | [optional] 
 **Port** | Pointer to **string** | Uplink port ID, only supported by some devices. | [optional] 
 **PortType** | Pointer to **int32** | Port Type, 0:ETH, 1:POTS, 2:SFP | [optional] 
 **Rate** | Pointer to **string** | Negotiation rate, LAN(connected): 10,100,1000,2500,10000, LAN(disconnected):0, Unit:Mbps | [optional] 
@@ -31,6 +32,7 @@ Name | Type | Description | Notes
 **UpPackets** | Pointer to **int64** | Uplink Device upPackets | [optional] 
 **UplinkMac** | Pointer to **string** | Uplink device MAC address | [optional] 
 **UplinkPort** | Pointer to **string** | Uplink device port | [optional] 
+**VoipState** | Pointer to **int32** | VoIP state, 0: off-hook, 1: on-hook | [optional] 
 **Voltage** | Pointer to **float64** | Voltage, only supported by some devices. | [optional] 
 
 ## Methods
@@ -376,6 +378,31 @@ SetName sets Name field to given value.
 `func (o *ApWiredUplinkInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPoeState
+
+`func (o *ApWiredUplinkInfo) GetPoeState() int32`
+
+GetPoeState returns the PoeState field if non-nil, zero value otherwise.
+
+### GetPoeStateOk
+
+`func (o *ApWiredUplinkInfo) GetPoeStateOk() (*int32, bool)`
+
+GetPoeStateOk returns a tuple with the PoeState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPoeState
+
+`func (o *ApWiredUplinkInfo) SetPoeState(v int32)`
+
+SetPoeState sets PoeState field to given value.
+
+### HasPoeState
+
+`func (o *ApWiredUplinkInfo) HasPoeState() bool`
+
+HasPoeState returns a boolean if a field has been set.
 
 ### GetPort
 
@@ -726,6 +753,31 @@ SetUplinkPort sets UplinkPort field to given value.
 `func (o *ApWiredUplinkInfo) HasUplinkPort() bool`
 
 HasUplinkPort returns a boolean if a field has been set.
+
+### GetVoipState
+
+`func (o *ApWiredUplinkInfo) GetVoipState() int32`
+
+GetVoipState returns the VoipState field if non-nil, zero value otherwise.
+
+### GetVoipStateOk
+
+`func (o *ApWiredUplinkInfo) GetVoipStateOk() (*int32, bool)`
+
+GetVoipStateOk returns a tuple with the VoipState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVoipState
+
+`func (o *ApWiredUplinkInfo) SetVoipState(v int32)`
+
+SetVoipState sets VoipState field to given value.
+
+### HasVoipState
+
+`func (o *ApWiredUplinkInfo) HasVoipState() bool`
+
+HasVoipState returns a boolean if a field has been set.
 
 ### GetVoltage
 

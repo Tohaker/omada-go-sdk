@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AutoSpeedTest** | **bool** | Whether enable scheduled speed testing. | 
 **DayOfMonth** | Pointer to **[]int32** | It is required when [timingType] is 3. The value should be within the range of 1~31. | [optional] 
 **DayOfWeek** | Pointer to **[]int32** | It is required when [timingType] is 2. The value should be within the range of 0(Sunday)~6(Saturday). | [optional] 
+**FeatureDescription** | Pointer to [**[]FeatureInfoVO**](FeatureInfoVO.md) | Gateway Feature Description. | [optional] 
 **Hour** | Pointer to **int32** | Start time of speed test(unit: hour); It should be within the range of 0~23. | [optional] 
 **Minute** | Pointer to **int32** | Start time of speed test(unit: minute); It should be within the range of 0~59. | [optional] 
 **Resource** | Pointer to **int32** | Data Source. Resource should be a value as follows: 0: new created; 1: from template; 2: override | [optional] 
@@ -100,6 +101,31 @@ SetDayOfWeek sets DayOfWeek field to given value.
 `func (o *SpeedTestV2SettingVO) HasDayOfWeek() bool`
 
 HasDayOfWeek returns a boolean if a field has been set.
+
+### GetFeatureDescription
+
+`func (o *SpeedTestV2SettingVO) GetFeatureDescription() []FeatureInfoVO`
+
+GetFeatureDescription returns the FeatureDescription field if non-nil, zero value otherwise.
+
+### GetFeatureDescriptionOk
+
+`func (o *SpeedTestV2SettingVO) GetFeatureDescriptionOk() (*[]FeatureInfoVO, bool)`
+
+GetFeatureDescriptionOk returns a tuple with the FeatureDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureDescription
+
+`func (o *SpeedTestV2SettingVO) SetFeatureDescription(v []FeatureInfoVO)`
+
+SetFeatureDescription sets FeatureDescription field to given value.
+
+### HasFeatureDescription
+
+`func (o *SpeedTestV2SettingVO) HasFeatureDescription() bool`
+
+HasFeatureDescription returns a boolean if a field has been set.
 
 ### GetHour
 

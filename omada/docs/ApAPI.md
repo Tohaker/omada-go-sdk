@@ -5,6 +5,7 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**BatchModifyAntSwitchConfig**](ApAPI.md#batchmodifyantswitchconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/ant-switch | Batch modify AP antSwitch setting
+[**BatchModifyApLagConfig**](ApAPI.md#batchmodifyaplagconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/lag | Batch modify AP lag config
 [**BatchModifyApVlanConfig**](ApAPI.md#batchmodifyapvlanconfig) | **Put** /openapi/v2/{omadacId}/sites/{siteId}/aps/vlan | Batch modify AP vlan config
 [**BatchModifyMultiApPorts**](ApAPI.md#batchmodifymultiapports) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/config | Batch modify multiple APs port config
 [**BatchModifyPowerSavingConfig**](ApAPI.md#batchmodifypowersavingconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/power-saving | Batch Modify ap power saving config
@@ -16,6 +17,7 @@ Method | HTTP request | Description
 [**GetAntennaGainConfig**](ApAPI.md#getantennagainconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Get AP antenna gain config
 [**GetApBridgeInfo**](ApAPI.md#getapbridgeinfo) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Get P2P bridge config
 [**GetApL3AccessConfig**](ApAPI.md#getapl3accessconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/l3access | Get AP l3Access config
+[**GetApLagConfig**](ApAPI.md#getaplagconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lag | Get AP lag config
 [**GetApListChannelInfo**](ApAPI.md#getaplistchannelinfo) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/channel-info | Get ap list channel info.
 [**GetApLldpConfig**](ApAPI.md#getaplldpconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lldp | Get AP lldp config
 [**GetApLoadBalanceConfig**](ApAPI.md#getaploadbalanceconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Get AP load balance config
@@ -56,6 +58,7 @@ Method | HTTP request | Description
 [**ModifyAntennaGainConfig**](ApAPI.md#modifyantennagainconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/antenna-gain | Modify AP antenna gain config
 [**ModifyApBridgeInfo**](ApAPI.md#modifyapbridgeinfo) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/bridge | Modify P2P bridge config
 [**ModifyApChannelConfig**](ApAPI.md#modifyapchannelconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/channel-config | Modify AP channel config
+[**ModifyApLagConfig**](ApAPI.md#modifyaplagconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lag | Modify AP lag config
 [**ModifyApLoadBalanceConfig**](ApAPI.md#modifyaploadbalanceconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/load-balance | Modify AP load balance config
 [**ModifyApManagementSsidConfig**](ApAPI.md#modifyapmanagementssidconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/management-wlan | Modify AP management ssid config
 [**ModifyApOfdmaConfig**](ApAPI.md#modifyapofdmaconfig) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/ofdma | Modify AP OFDMA config
@@ -143,6 +146,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## BatchModifyApLagConfig
+
+> OperationResponseApBatchConfigResultVO BatchModifyApLagConfig(ctx, omadacId, siteId).BatchUpdateApLagOpenApiVO(batchUpdateApLagOpenApiVO).Execute()
+
+Batch modify AP lag config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	batchUpdateApLagOpenApiVO := *openapiclient.NewBatchUpdateApLagOpenApiVO([]string{"ApMacList_example"}) // BatchUpdateApLagOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApAPI.BatchModifyApLagConfig(context.Background(), omadacId, siteId).BatchUpdateApLagOpenApiVO(batchUpdateApLagOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.BatchModifyApLagConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `BatchModifyApLagConfig`: OperationResponseApBatchConfigResultVO
+	fmt.Fprintf(os.Stdout, "Response from `ApAPI.BatchModifyApLagConfig`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBatchModifyApLagConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **batchUpdateApLagOpenApiVO** | [**BatchUpdateApLagOpenApiVO**](BatchUpdateApLagOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseApBatchConfigResultVO**](OperationResponseApBatchConfigResultVO.md)
 
 ### Authorization
 
@@ -972,6 +1050,82 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponseApL3AccessConfigOpenApiVO**](OperationResponseApL3AccessConfigOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetApLagConfig
+
+> OperationResponseApTrunkSettingOpenApiVO GetApLagConfig(ctx, omadacId, siteId, apMac).Execute()
+
+Get AP lag config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApAPI.GetApLagConfig(context.Background(), omadacId, siteId, apMac).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.GetApLagConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetApLagConfig`: OperationResponseApTrunkSettingOpenApiVO
+	fmt.Fprintf(os.Stdout, "Response from `ApAPI.GetApLagConfig`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetApLagConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**OperationResponseApTrunkSettingOpenApiVO**](OperationResponseApTrunkSettingOpenApiVO.md)
 
 ### Authorization
 
@@ -4046,6 +4200,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ModifyApLagConfig
+
+> OperationResponseWithoutResult ModifyApLagConfig(ctx, omadacId, siteId, apMac).UpdateApTrunkSettingOpenApiVO(updateApTrunkSettingOpenApiVO).Execute()
+
+Modify AP lag config
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
+	updateApTrunkSettingOpenApiVO := *openapiclient.NewUpdateApTrunkSettingOpenApiVO() // UpdateApTrunkSettingOpenApiVO | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ApAPI.ModifyApLagConfig(context.Background(), omadacId, siteId, apMac).UpdateApTrunkSettingOpenApiVO(updateApTrunkSettingOpenApiVO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ApAPI.ModifyApLagConfig``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ModifyApLagConfig`: OperationResponseWithoutResult
+	fmt.Fprintf(os.Stdout, "Response from `ApAPI.ModifyApLagConfig`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+**apMac** | **string** | AP MAC address, like AA-BB-CC-DD-EE-FF | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiModifyApLagConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **updateApTrunkSettingOpenApiVO** | [**UpdateApTrunkSettingOpenApiVO**](UpdateApTrunkSettingOpenApiVO.md) |  | 
+
+### Return type
+
+[**OperationResponseWithoutResult**](OperationResponseWithoutResult.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ModifyApLoadBalanceConfig
 
 > OperationResponseWithoutResult ModifyApLoadBalanceConfig(ctx, omadacId, siteId, apMac).UpdateApAdvancedLoadBalanceOpenApiVO(updateApAdvancedLoadBalanceOpenApiVO).Execute()
@@ -5165,7 +5397,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	apMac := "apMac_example" // string | AP MAC address, like AA-BB-CC-DD-EE-FF
-	updateApPowerSavingConfigOpenApiVO := *openapiclient.NewUpdateApPowerSavingConfigOpenApiVO(false, false) // UpdateApPowerSavingConfigOpenApiVO | 
+	updateApPowerSavingConfigOpenApiVO := *openapiclient.NewUpdateApPowerSavingConfigOpenApiVO() // UpdateApPowerSavingConfigOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -25,7 +25,7 @@ type OUIBasedVLANAPI interface {
 	/*
 	CreateApOuiBasedVlan Create Ap oui based vlan
 
-	Create Ap oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33789  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID does not select PPSK.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34225  -  When the rule is enabled, the same SSID should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Create Ap oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33789  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID does not select PPSK.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34225  -  When the rule is enabled, the same SSID should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -41,7 +41,7 @@ type OUIBasedVLANAPI interface {
 	/*
 	CreateSwitchOuiBasedVlan Create Switch oui based vlan
 
-	Create Switch oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-34219  -  The rule for all device ports has been created in Rules.<br/>-34220  -  The rule for all device ports and the rule for custom device ports should not be enabled simultaneously.<br/>-34223  -  When the rule enabled, the same VLAN should not be bound with the same device port/LAG in different rules. Please check the settings.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34227  -  When the rule is enabled, the same OUI on the same device should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-34230  -  When the rule for all device ports is created, devices with old firmware should not be configured in rules for custom device ports.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Create Switch oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-34219  -  The rule for all device ports has been created in Rules.<br/>-34220  -  The rule for all device ports and the rule for custom device ports should not be enabled simultaneously.<br/>-34223  -  When the rule enabled, the same VLAN should not be bound with the same device port/LAG in different rules. Please check the settings.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34227  -  When the rule is enabled, the same OUI on the same device should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-34230  -  When the rule for all device ports is created, devices with old firmware should not be configured in rules for custom device ports.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -57,7 +57,7 @@ type OUIBasedVLANAPI interface {
 	/*
 	DeleteApOuiBasedVlan Delete Ap oui based vlan
 
-	Delete Ap oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Delete Ap oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -74,7 +74,7 @@ type OUIBasedVLANAPI interface {
 	/*
 	DeleteSwitchOuiBasedVlan Delete Switch oui based vlan
 
-	Delete Switch oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Delete Switch oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -91,7 +91,7 @@ type OUIBasedVLANAPI interface {
 	/*
 	GetGridApOuiBasedVlan Get Ap oui based vlan list
 
-	Get Ap oui based vlan list.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get Ap oui based vlan list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -107,7 +107,7 @@ type OUIBasedVLANAPI interface {
 	/*
 	GetGridSwitchOuiBasedVlan Get Switch oui based vlan list
 
-	Get Switch oui based vlan list.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get Switch oui based vlan list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -123,7 +123,7 @@ type OUIBasedVLANAPI interface {
 	/*
 	GetSwitchList Get switch list of supporting oui based vlan
 
-	Get switch list of supporting oui based vlanThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Get switch list of supporting oui based vlan<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -133,13 +133,13 @@ type OUIBasedVLANAPI interface {
 	GetSwitchList(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetSwitchListRequest
 
 	// GetSwitchListExecute executes the request
-	//  @return OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO
-	GetSwitchListExecute(r OUIBasedVLANAPIGetSwitchListRequest) (*OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO, *http.Response, error)
+	//  @return OperationResponseGridVOOuiBasedVlanDeviceInfoVO
+	GetSwitchListExecute(r OUIBasedVLANAPIGetSwitchListRequest) (*OperationResponseGridVOOuiBasedVlanDeviceInfoVO, *http.Response, error)
 
 	/*
 	ModifyApOuiBasedVlan Modify Ap oui based vlan
 
-	Modify Ap oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33789  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID does not select PPSK.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34225  -  When the rule is enabled, the same SSID should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Modify Ap oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33789  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID does not select PPSK.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34225  -  When the rule is enabled, the same SSID should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -156,7 +156,7 @@ type OUIBasedVLANAPI interface {
 	/*
 	ModifySwitchOuiBasedVlan Modify Switch oui based vlan
 
-	Modify Switch oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-34219  -  The rule for all device ports has been created in Rules.<br/>-34220  -  The rule for all device ports and the rule for custom device ports should not be enabled simultaneously.<br/>-34223  -  When the rule enabled, the same VLAN should not be bound with the same device port/LAG in different rules. Please check the settings.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34227  -  When the rule is enabled, the same OUI on the same device should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-34230  -  When the rule for all device ports is created, devices with old firmware should not be configured in rules for custom device ports.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+	Modify Switch oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-34219  -  The rule for all device ports has been created in Rules.<br/>-34220  -  The rule for all device ports and the rule for custom device ports should not be enabled simultaneously.<br/>-34223  -  When the rule enabled, the same VLAN should not be bound with the same device port/LAG in different rules. Please check the settings.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34227  -  When the rule is enabled, the same OUI on the same device should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-34230  -  When the rule for all device ports is created, devices with old firmware should not be configured in rules for custom device ports.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -194,7 +194,7 @@ func (r OUIBasedVLANAPICreateApOuiBasedVlanRequest) Execute() (*OperationRespons
 /*
 CreateApOuiBasedVlan Create Ap oui based vlan
 
-Create Ap oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33789  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID does not select PPSK.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34225  -  When the rule is enabled, the same SSID should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Create Ap oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33789  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID does not select PPSK.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34225  -  When the rule is enabled, the same SSID should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -326,7 +326,7 @@ func (r OUIBasedVLANAPICreateSwitchOuiBasedVlanRequest) Execute() (*OperationRes
 /*
 CreateSwitchOuiBasedVlan Create Switch oui based vlan
 
-Create Switch oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-34219  -  The rule for all device ports has been created in Rules.<br/>-34220  -  The rule for all device ports and the rule for custom device ports should not be enabled simultaneously.<br/>-34223  -  When the rule enabled, the same VLAN should not be bound with the same device port/LAG in different rules. Please check the settings.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34227  -  When the rule is enabled, the same OUI on the same device should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-34230  -  When the rule for all device ports is created, devices with old firmware should not be configured in rules for custom device ports.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Create Switch oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-34219  -  The rule for all device ports has been created in Rules.<br/>-34220  -  The rule for all device ports and the rule for custom device ports should not be enabled simultaneously.<br/>-34223  -  When the rule enabled, the same VLAN should not be bound with the same device port/LAG in different rules. Please check the settings.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34227  -  When the rule is enabled, the same OUI on the same device should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-34230  -  When the rule for all device ports is created, devices with old firmware should not be configured in rules for custom device ports.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -453,7 +453,7 @@ func (r OUIBasedVLANAPIDeleteApOuiBasedVlanRequest) Execute() (*OperationRespons
 /*
 DeleteApOuiBasedVlan Delete Ap oui based vlan
 
-Delete Ap oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Delete Ap oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -578,7 +578,7 @@ func (r OUIBasedVLANAPIDeleteSwitchOuiBasedVlanRequest) Execute() (*OperationRes
 /*
 DeleteSwitchOuiBasedVlan Delete Switch oui based vlan
 
-Delete Switch oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Delete Switch oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -716,7 +716,7 @@ func (r OUIBasedVLANAPIGetGridApOuiBasedVlanRequest) Execute() (*OperationRespon
 /*
 GetGridApOuiBasedVlan Get Ap oui based vlan list
 
-Get Ap oui based vlan list.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get Ap oui based vlan list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -859,7 +859,7 @@ func (r OUIBasedVLANAPIGetGridSwitchOuiBasedVlanRequest) Execute() (*OperationRe
 /*
 GetGridSwitchOuiBasedVlan Get Switch oui based vlan list
 
-Get Switch oui based vlan list.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get Switch oui based vlan list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1002,14 +1002,14 @@ func (r OUIBasedVLANAPIGetSwitchListRequest) Name(name string) OUIBasedVLANAPIGe
 	return r
 }
 
-func (r OUIBasedVLANAPIGetSwitchListRequest) Execute() (*OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO, *http.Response, error) {
+func (r OUIBasedVLANAPIGetSwitchListRequest) Execute() (*OperationResponseGridVOOuiBasedVlanDeviceInfoVO, *http.Response, error) {
 	return r.ApiService.GetSwitchListExecute(r)
 }
 
 /*
 GetSwitchList Get switch list of supporting oui based vlan
 
-Get switch list of supporting oui based vlanThis interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Get switch list of supporting oui based vlan<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1026,13 +1026,13 @@ func (a *OUIBasedVLANAPIService) GetSwitchList(ctx context.Context, omadacId str
 }
 
 // Execute executes the request
-//  @return OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO
-func (a *OUIBasedVLANAPIService) GetSwitchListExecute(r OUIBasedVLANAPIGetSwitchListRequest) (*OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO, *http.Response, error) {
+//  @return OperationResponseGridVOOuiBasedVlanDeviceInfoVO
+func (a *OUIBasedVLANAPIService) GetSwitchListExecute(r OUIBasedVLANAPIGetSwitchListRequest) (*OperationResponseGridVOOuiBasedVlanDeviceInfoVO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponseGridVOOuiBasedVlanSwitchInfoOpenApiVO
+		localVarReturnValue  *OperationResponseGridVOOuiBasedVlanDeviceInfoVO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OUIBasedVLANAPIService.GetSwitchList")
@@ -1148,7 +1148,7 @@ func (r OUIBasedVLANAPIModifyApOuiBasedVlanRequest) Execute() (*OperationRespons
 /*
 ModifyApOuiBasedVlan Modify Ap oui based vlan
 
-Modify Ap oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33789  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID does not select PPSK.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34225  -  When the rule is enabled, the same SSID should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Modify Ap oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-33789  -  PPSK and OUI Based VLAN are mutually exclusive. Please make sure the SSID does not select PPSK.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34225  -  When the rule is enabled, the same SSID should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -1284,7 +1284,7 @@ func (r OUIBasedVLANAPIModifySwitchOuiBasedVlanRequest) Execute() (*OperationRes
 /*
 ModifySwitchOuiBasedVlan Modify Switch oui based vlan
 
-Modify Switch oui based vlan.This interface applies to the Omada Pro Controller only. Please do not use it for non-Pro controllers.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-34219  -  The rule for all device ports has been created in Rules.<br/>-34220  -  The rule for all device ports and the rule for custom device ports should not be enabled simultaneously.<br/>-34223  -  When the rule enabled, the same VLAN should not be bound with the same device port/LAG in different rules. Please check the settings.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34227  -  When the rule is enabled, the same OUI on the same device should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-34230  -  When the rule for all device ports is created, devices with old firmware should not be configured in rules for custom device ports.<br/>-44119  -  This interface applies to the Omada Pro only. Please do not use it for non-Pro controllers or sites.
+Modify Switch oui based vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-33779  -  This OUI profile does not exist.<br/>-34219  -  The rule for all device ports has been created in Rules.<br/>-34220  -  The rule for all device ports and the rule for custom device ports should not be enabled simultaneously.<br/>-34223  -  When the rule enabled, the same VLAN should not be bound with the same device port/LAG in different rules. Please check the settings.<br/>-34224  -  When the rule is enabled, the same device should not configure OUI-VLAN combination greater than 16.<br/>-34227  -  When the rule is enabled, the same OUI on the same device should not be configured in multiple rules.<br/>-34229  -  The OUI based VLAN rule name already exists.<br/>-34230  -  When the rule for all device ports is created, devices with old firmware should not be configured in rules for custom device ports.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

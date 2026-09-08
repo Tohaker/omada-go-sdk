@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DefaultGroup** | **string** | Default user group ID for the user on the radius server. User group can be created using &#39;Create SSL VPN user group&#39; interface, and user group ID can be obtained from &#39;Get user group list for SSL VPN server&#39; interface. | 
 **NasIp** | Pointer to **string** | NAS IP | [optional] 
 **OverTime** | **int32** | Request Timeout, 1~60(s). | 
-**RadiusProfile** | **string** | Radius profile ID. Radius profile can be created using &#39;Create a new Radius profile&#39; interface, and Radius profile ID can be obtained from &#39;Get Radius profile list&#39; interface. | 
+**RadiusProfile** | **string** | Radius profile ID. RADIUS profile can be created using &#39;Create a new RADIUS profile&#39; interface, and RADIUS profile ID can be obtained from &#39;Get RADIUS profile list&#39; interface. | 
 **RepeatTime** | **int32** | Repeat time should be within the range of 1–10 | 
 
 ## Methods

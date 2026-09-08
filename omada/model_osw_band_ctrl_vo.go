@@ -33,7 +33,9 @@ type OswBandCtrlVO struct {
 	IngressLimit *int32 `json:"ingressLimit,omitempty"`
 	// Ingress Unit should be a value as follows: 1: Kbps; 2: Mbps
 	IngressUnit *int32 `json:"ingressUnit,omitempty"`
+	// The limit range of the bandwidth control
 	LimitRange []OswBandCtrlLimitRangeVO `json:"limitRange,omitempty"`
+	// The supported units of the bandwidth control, 1: Kbps; 2: Mbps
 	UnitSupport []int32 `json:"unitSupport,omitempty"`
 }
 

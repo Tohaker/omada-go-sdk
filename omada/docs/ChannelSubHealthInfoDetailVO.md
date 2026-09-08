@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AverageNum2g** | Pointer to **int32** | Average value of 2g channel | [optional] 
 **AverageNum5g** | Pointer to **int32** | Average value of 5g channel | [optional] 
 **AverageNum6g** | Pointer to **int32** | Average value of 6g channel | [optional] 
+**Incidents** | Pointer to [**[]AnomalyBriefCountVO**](AnomalyBriefCountVO.md) | Incident information for this health dimension, null if no incidents | [optional] 
 **PastNums2g** | Pointer to [**[]TimeValueItemVO**](TimeValueItemVO.md) | List of 2g channel value | [optional] 
 **PastNums5g** | Pointer to [**[]TimeValueItemVO**](TimeValueItemVO.md) | List of 5g channel value | [optional] 
 **PastNums6g** | Pointer to [**[]TimeValueItemVO**](TimeValueItemVO.md) | List of 6g channel value | [optional] 
@@ -106,6 +107,31 @@ SetAverageNum6g sets AverageNum6g field to given value.
 `func (o *ChannelSubHealthInfoDetailVO) HasAverageNum6g() bool`
 
 HasAverageNum6g returns a boolean if a field has been set.
+
+### GetIncidents
+
+`func (o *ChannelSubHealthInfoDetailVO) GetIncidents() []AnomalyBriefCountVO`
+
+GetIncidents returns the Incidents field if non-nil, zero value otherwise.
+
+### GetIncidentsOk
+
+`func (o *ChannelSubHealthInfoDetailVO) GetIncidentsOk() (*[]AnomalyBriefCountVO, bool)`
+
+GetIncidentsOk returns a tuple with the Incidents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncidents
+
+`func (o *ChannelSubHealthInfoDetailVO) SetIncidents(v []AnomalyBriefCountVO)`
+
+SetIncidents sets Incidents field to given value.
+
+### HasIncidents
+
+`func (o *ChannelSubHealthInfoDetailVO) HasIncidents() bool`
+
+HasIncidents returns a boolean if a field has been set.
 
 ### GetPastNums2g
 

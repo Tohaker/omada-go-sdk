@@ -177,7 +177,7 @@ type SiteAPI interface {
 	/*
 	GetNtpServerStatus Get ntp server status
 
-	Get ntp server status.<br/><br/>The interface requires one of the permissions: <br/>Site Health & Incident Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+	Get ntp server status.<br/><br/>The interface requires one of the permissions: <br/>Incidents Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -374,6 +374,22 @@ type SiteAPI interface {
 	// GetUnplacedSitePositionsExecute executes the request
 	//  @return OperationResponseUnplacedSitesUnplacedSite
 	GetUnplacedSitePositionsExecute(r SiteAPIGetUnplacedSitePositionsRequest) (*OperationResponseUnplacedSitesUnplacedSite, *http.Response, error)
+
+	/*
+	ModifySiteWirelessFeaturePingPangEnable enable the site setting of ping pang suppression
+
+	enable the site setting of ping pang suppression<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Global Dashboard Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId siteId
+	@return SiteAPIModifySiteWirelessFeaturePingPangEnableRequest
+	*/
+	ModifySiteWirelessFeaturePingPangEnable(ctx context.Context, omadacId string, siteId string) SiteAPIModifySiteWirelessFeaturePingPangEnableRequest
+
+	// ModifySiteWirelessFeaturePingPangEnableExecute executes the request
+	//  @return OperationResponseWithoutResult
+	ModifySiteWirelessFeaturePingPangEnableExecute(r SiteAPIModifySiteWirelessFeaturePingPangEnableRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
 	ModifyTag1 Modify an existing site tag
@@ -1738,7 +1754,7 @@ func (r SiteAPIGetNtpServerStatusRequest) Execute() (*OperationResponse, *http.R
 /*
 GetNtpServerStatus Get ntp server status
 
-Get ntp server status.<br/><br/>The interface requires one of the permissions: <br/>Site Health & Incident Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
+Get ntp server status.<br/><br/>The interface requires one of the permissions: <br/>Incidents Page View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1300  -  Failed to get site information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -3306,6 +3322,127 @@ func (a *SiteAPIService) GetUnplacedSitePositionsExecute(r SiteAPIGetUnplacedSit
 	if r.searchKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "searchKey", r.searchKey, "form", "")
 	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SiteAPIModifySiteWirelessFeaturePingPangEnableRequest struct {
+	ctx context.Context
+	ApiService SiteAPI
+	omadacId string
+	siteId string
+}
+
+func (r SiteAPIModifySiteWirelessFeaturePingPangEnableRequest) Execute() (*OperationResponseWithoutResult, *http.Response, error) {
+	return r.ApiService.ModifySiteWirelessFeaturePingPangEnableExecute(r)
+}
+
+/*
+ModifySiteWirelessFeaturePingPangEnable enable the site setting of ping pang suppression
+
+enable the site setting of ping pang suppression<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Global Dashboard Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId siteId
+ @return SiteAPIModifySiteWirelessFeaturePingPangEnableRequest
+*/
+func (a *SiteAPIService) ModifySiteWirelessFeaturePingPangEnable(ctx context.Context, omadacId string, siteId string) SiteAPIModifySiteWirelessFeaturePingPangEnableRequest {
+	return SiteAPIModifySiteWirelessFeaturePingPangEnableRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseWithoutResult
+func (a *SiteAPIService) ModifySiteWirelessFeaturePingPangEnableExecute(r SiteAPIModifySiteWirelessFeaturePingPangEnableRequest) (*OperationResponseWithoutResult, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseWithoutResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteAPIService.ModifySiteWirelessFeaturePingPangEnable")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/setting/roaming/pingpang/enable"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

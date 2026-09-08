@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EndIp** | **string** |  | 
-**StartIp** | **string** |  | 
+**EndIp** | **string** | DHCP Range End IP | 
+**StartIp** | **string** | DHCP Range Start IP | 
 
 ## Methods
 

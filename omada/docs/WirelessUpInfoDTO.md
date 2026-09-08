@@ -4,6 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Channel** | Pointer to **int32** | channel in link | [optional] 
+**DownRate** | Pointer to **int64** | downRate of this radio Id | [optional] 
+**MeshRadioId** | Pointer to **int32** | radio Id used in mesh link | [optional] 
+**PartnerLinks** | Pointer to [**[]PartnerLinkDTO**](PartnerLinkDTO.md) | partner link info in mlo mesh link | [optional] 
 **Rssi** | Pointer to **int32** | Rssi | [optional] 
 **RssiPercent** | Pointer to **float32** | Rssi Percent | [optional] 
 **Rx** | Pointer to **int32** | Rx | [optional] 
@@ -15,6 +19,7 @@ Name | Type | Description | Notes
 **TxDropPkts** | Pointer to **int64** | Tx Dropped Packets | [optional] 
 **TxErrPkts** | Pointer to **int64** | Tx Error Packets | [optional] 
 **TxRate** | Pointer to **string** | Tx Rate | [optional] 
+**UpRate** | Pointer to **int64** | upRate of this radio Id | [optional] 
 
 ## Methods
 
@@ -34,6 +39,106 @@ will change when the set of required properties is changed
 NewWirelessUpInfoDTOWithDefaults instantiates a new WirelessUpInfoDTO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetChannel
+
+`func (o *WirelessUpInfoDTO) GetChannel() int32`
+
+GetChannel returns the Channel field if non-nil, zero value otherwise.
+
+### GetChannelOk
+
+`func (o *WirelessUpInfoDTO) GetChannelOk() (*int32, bool)`
+
+GetChannelOk returns a tuple with the Channel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannel
+
+`func (o *WirelessUpInfoDTO) SetChannel(v int32)`
+
+SetChannel sets Channel field to given value.
+
+### HasChannel
+
+`func (o *WirelessUpInfoDTO) HasChannel() bool`
+
+HasChannel returns a boolean if a field has been set.
+
+### GetDownRate
+
+`func (o *WirelessUpInfoDTO) GetDownRate() int64`
+
+GetDownRate returns the DownRate field if non-nil, zero value otherwise.
+
+### GetDownRateOk
+
+`func (o *WirelessUpInfoDTO) GetDownRateOk() (*int64, bool)`
+
+GetDownRateOk returns a tuple with the DownRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownRate
+
+`func (o *WirelessUpInfoDTO) SetDownRate(v int64)`
+
+SetDownRate sets DownRate field to given value.
+
+### HasDownRate
+
+`func (o *WirelessUpInfoDTO) HasDownRate() bool`
+
+HasDownRate returns a boolean if a field has been set.
+
+### GetMeshRadioId
+
+`func (o *WirelessUpInfoDTO) GetMeshRadioId() int32`
+
+GetMeshRadioId returns the MeshRadioId field if non-nil, zero value otherwise.
+
+### GetMeshRadioIdOk
+
+`func (o *WirelessUpInfoDTO) GetMeshRadioIdOk() (*int32, bool)`
+
+GetMeshRadioIdOk returns a tuple with the MeshRadioId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeshRadioId
+
+`func (o *WirelessUpInfoDTO) SetMeshRadioId(v int32)`
+
+SetMeshRadioId sets MeshRadioId field to given value.
+
+### HasMeshRadioId
+
+`func (o *WirelessUpInfoDTO) HasMeshRadioId() bool`
+
+HasMeshRadioId returns a boolean if a field has been set.
+
+### GetPartnerLinks
+
+`func (o *WirelessUpInfoDTO) GetPartnerLinks() []PartnerLinkDTO`
+
+GetPartnerLinks returns the PartnerLinks field if non-nil, zero value otherwise.
+
+### GetPartnerLinksOk
+
+`func (o *WirelessUpInfoDTO) GetPartnerLinksOk() (*[]PartnerLinkDTO, bool)`
+
+GetPartnerLinksOk returns a tuple with the PartnerLinks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartnerLinks
+
+`func (o *WirelessUpInfoDTO) SetPartnerLinks(v []PartnerLinkDTO)`
+
+SetPartnerLinks sets PartnerLinks field to given value.
+
+### HasPartnerLinks
+
+`func (o *WirelessUpInfoDTO) HasPartnerLinks() bool`
+
+HasPartnerLinks returns a boolean if a field has been set.
 
 ### GetRssi
 
@@ -309,6 +414,31 @@ SetTxRate sets TxRate field to given value.
 `func (o *WirelessUpInfoDTO) HasTxRate() bool`
 
 HasTxRate returns a boolean if a field has been set.
+
+### GetUpRate
+
+`func (o *WirelessUpInfoDTO) GetUpRate() int64`
+
+GetUpRate returns the UpRate field if non-nil, zero value otherwise.
+
+### GetUpRateOk
+
+`func (o *WirelessUpInfoDTO) GetUpRateOk() (*int64, bool)`
+
+GetUpRateOk returns a tuple with the UpRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpRate
+
+`func (o *WirelessUpInfoDTO) SetUpRate(v int64)`
+
+SetUpRate sets UpRate field to given value.
+
+### HasUpRate
+
+`func (o *WirelessUpInfoDTO) HasUpRate() bool`
+
+HasUpRate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

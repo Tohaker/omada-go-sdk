@@ -25,7 +25,7 @@ type StatisticAPI interface {
 	/*
 	GetDevice5MinStatistic Get device statistic data 5 min
 
-	Get device statistic data 5 min<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
+	Get device statistic data 5 min. The supported attrs and response fields depend on the type parameter. For details, refer to section 5.9.1 Device Statistics of the Open API Access Guide.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -42,7 +42,7 @@ type StatisticAPI interface {
 	/*
 	GetDeviceDailyStatistic Get device statistic data daily
 
-	Get device statistic data daily<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
+	Get device statistic data daily. The supported attrs and response fields depend on the type parameter. For details, refer to section 5.9.1 Device Statistics of the Open API Access Guide.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -59,7 +59,7 @@ type StatisticAPI interface {
 	/*
 	GetDeviceHourlyStatistic Get device statistic data hourly
 
-	Get device statistic data hourly<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
+	Get device statistic data hourly. The supported attrs and response fields depend on the type parameter. For details, refer to section 5.9.1 Device Statistics of the Open API Access Guide.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -98,7 +98,7 @@ Within 26 hours, 5 minutes of data is displayed
 	/*
 	GetOswRankingCards Get switch ranking cards
 
-	Get switch ranking cards<br/><br/>The interface requires one of the permissions: <br/>Site Health & Incident Manager View Only
+	Get switch ranking cards<br/><br/>The interface requires one of the permissions: <br/>Incidents Page View Only
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
@@ -221,7 +221,7 @@ func (r StatisticAPIGetDevice5MinStatisticRequest) Execute() (*OperationResponse
 /*
 GetDevice5MinStatistic Get device statistic data 5 min
 
-Get device statistic data 5 min<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
+Get device statistic data 5 min. The supported attrs and response fields depend on the type parameter. For details, refer to section 5.9.1 Device Statistics of the Open API Access Guide.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -368,7 +368,7 @@ func (r StatisticAPIGetDeviceDailyStatisticRequest) Execute() (*OperationRespons
 /*
 GetDeviceDailyStatistic Get device statistic data daily
 
-Get device statistic data daily<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
+Get device statistic data daily. The supported attrs and response fields depend on the type parameter. For details, refer to section 5.9.1 Device Statistics of the Open API Access Guide.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -515,7 +515,7 @@ func (r StatisticAPIGetDeviceHourlyStatisticRequest) Execute() (*OperationRespon
 /*
 GetDeviceHourlyStatistic Get device statistic data hourly
 
-Get device statistic data hourly<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
+Get device statistic data hourly. The supported attrs and response fields depend on the type parameter. For details, refer to section 5.9.1 Device Statistics of the Open API Access Guide.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/>Site Statics Manager View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
@@ -795,7 +795,7 @@ func (r StatisticAPIGetOswRankingCardsRequest) Execute() (*OperationResponseOswR
 /*
 GetOswRankingCards Get switch ranking cards
 
-Get switch ranking cards<br/><br/>The interface requires one of the permissions: <br/>Site Health & Incident Manager View Only
+Get switch ranking cards<br/><br/>The interface requires one of the permissions: <br/>Incidents Page View Only
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID

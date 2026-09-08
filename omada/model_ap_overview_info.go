@@ -35,11 +35,17 @@ type ApOverviewInfo struct {
 	Model *string `json:"model,omitempty"`
 	// Device name
 	Name *string `json:"name,omitempty"`
+	// Status of device,status should be a value as follows: 0:Disconnected; 1:Disconnected(Migrating); 10:Provisioning; 11:Configuring; 12:Upgrading; 13:Rebooting; 14:Connected; 15:Connected(Wireless); 16:Connected(Migrating); 17:Connected(Wireless,Migrating); 20:Pending; 21:Pending(Wireless); 22:Adopting; 23:Adopting(Wireless); 24:Adopt Failed; 25:Adopt Failed(Wireless); 26:Managed By Others; 27:Managed By Others(Wireless); 30:Heartbeat Missed; 31:Heartbeat Missed(Wireless); 32:Heartbeat Missed(Migrating); 33:Heartbeat Missed(Wireless,Migrating); 40:Isolated; 41:Isolated(Migrating); 50:Slice Configuring
+	Status *int32 `json:"status,omitempty"`
+	// Category of device status, statusCategory should be a value as follows: 0:Disconnected; 1:Connected; 2:Pending; 3:Heartbeat Missed; 4:Isolated
+	StatusCategory *int32 `json:"statusCategory,omitempty"`
 	// Device type
 	Type *string `json:"type,omitempty"`
 	// Device uptime(unit:second)
 	UptimeLong *int64 `json:"uptimeLong,omitempty"`
 	WirelessUplinkInfo *ApWirelessUplink `json:"wireless uplink info,omitempty"`
+	// Whether AP is wireless linked
+	WirelessLinked *bool `json:"wirelessLinked,omitempty"`
 	// WLAN group ID
 	WlanGroupId *string `json:"wlan group id,omitempty"`
 }
@@ -317,6 +323,70 @@ func (o *ApOverviewInfo) SetName(v string) {
 	o.Name = &v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *ApOverviewInfo) GetStatus() int32 {
+	if o == nil || IsNil(o.Status) {
+		var ret int32
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApOverviewInfo) GetStatusOk() (*int32, bool) {
+	if o == nil || IsNil(o.Status) {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *ApOverviewInfo) HasStatus() bool {
+	if o != nil && !IsNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given int32 and assigns it to the Status field.
+func (o *ApOverviewInfo) SetStatus(v int32) {
+	o.Status = &v
+}
+
+// GetStatusCategory returns the StatusCategory field value if set, zero value otherwise.
+func (o *ApOverviewInfo) GetStatusCategory() int32 {
+	if o == nil || IsNil(o.StatusCategory) {
+		var ret int32
+		return ret
+	}
+	return *o.StatusCategory
+}
+
+// GetStatusCategoryOk returns a tuple with the StatusCategory field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApOverviewInfo) GetStatusCategoryOk() (*int32, bool) {
+	if o == nil || IsNil(o.StatusCategory) {
+		return nil, false
+	}
+	return o.StatusCategory, true
+}
+
+// HasStatusCategory returns a boolean if a field has been set.
+func (o *ApOverviewInfo) HasStatusCategory() bool {
+	if o != nil && !IsNil(o.StatusCategory) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusCategory gets a reference to the given int32 and assigns it to the StatusCategory field.
+func (o *ApOverviewInfo) SetStatusCategory(v int32) {
+	o.StatusCategory = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ApOverviewInfo) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -413,6 +483,38 @@ func (o *ApOverviewInfo) SetWirelessUplinkInfo(v ApWirelessUplink) {
 	o.WirelessUplinkInfo = &v
 }
 
+// GetWirelessLinked returns the WirelessLinked field value if set, zero value otherwise.
+func (o *ApOverviewInfo) GetWirelessLinked() bool {
+	if o == nil || IsNil(o.WirelessLinked) {
+		var ret bool
+		return ret
+	}
+	return *o.WirelessLinked
+}
+
+// GetWirelessLinkedOk returns a tuple with the WirelessLinked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApOverviewInfo) GetWirelessLinkedOk() (*bool, bool) {
+	if o == nil || IsNil(o.WirelessLinked) {
+		return nil, false
+	}
+	return o.WirelessLinked, true
+}
+
+// HasWirelessLinked returns a boolean if a field has been set.
+func (o *ApOverviewInfo) HasWirelessLinked() bool {
+	if o != nil && !IsNil(o.WirelessLinked) {
+		return true
+	}
+
+	return false
+}
+
+// SetWirelessLinked gets a reference to the given bool and assigns it to the WirelessLinked field.
+func (o *ApOverviewInfo) SetWirelessLinked(v bool) {
+	o.WirelessLinked = &v
+}
+
 // GetWlanGroupId returns the WlanGroupId field value if set, zero value otherwise.
 func (o *ApOverviewInfo) GetWlanGroupId() string {
 	if o == nil || IsNil(o.WlanGroupId) {
@@ -479,6 +581,12 @@ func (o ApOverviewInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
+	if !IsNil(o.Status) {
+		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.StatusCategory) {
+		toSerialize["statusCategory"] = o.StatusCategory
+	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
@@ -487,6 +595,9 @@ func (o ApOverviewInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.WirelessUplinkInfo) {
 		toSerialize["wireless uplink info"] = o.WirelessUplinkInfo
+	}
+	if !IsNil(o.WirelessLinked) {
+		toSerialize["wirelessLinked"] = o.WirelessLinked
 	}
 	if !IsNil(o.WlanGroupId) {
 		toSerialize["wlan group id"] = o.WlanGroupId

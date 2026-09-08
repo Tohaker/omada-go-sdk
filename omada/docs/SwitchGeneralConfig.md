@@ -4,12 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Jumbo** | Pointer to **int32** | It should be within the range of 1518–9216 Bytes. | [optional] 
-**LagHashAlg** | Pointer to **int32** | It should be a value as follows: 0: SRC MAC; 1: DST MAC; 2: SRC MAC + DST MAC; 3: SRC IP; 4: DST IP; 5: SRC IP + DST IP | [optional] 
+**Jumbo** | Pointer to **int32** | Required only when jumboFollowSite &#x3D; false. Range: 1518–9216. | [optional] 
+**JumboFollowSite** | Pointer to **bool** | Whether jumbo setting follows site setting. | [optional] 
+**LagHashAlg** | Pointer to **int32** | Required only when lagHashAlgFollowSite &#x3D; false. It should be a value as follows: 0: SRC MAC; 1: DST MAC; 2: SRC MAC + DST MAC; 3: SRC IP; 4: DST IP; 5: SRC IP + DST IP | [optional] 
+**LagHashAlgFollowSite** | Pointer to **bool** | Whether lag hash algorithm setting follows site setting. | [optional] 
 **LedSetting** | Pointer to **int32** | Led setting should be a value as follows: 0:off; 1:on; 2:Use Site Settings | [optional] 
 **Location** | Pointer to [**DeviceLocationDetailVO**](DeviceLocationDetailVO.md) |  | [optional] 
 **Name** | Pointer to **string** | Device name should contain 1 to 128 characters. | [optional] 
 **Sdm** | Pointer to [**OswSdmTemplateVO**](OswSdmTemplateVO.md) |  | [optional] 
+**Snmp** | Pointer to [**OswSnmpOpenApiVO**](OswSnmpOpenApiVO.md) |  | [optional] 
 **TagIds** | Pointer to **[]string** | Tag IDs | [optional] 
 
 ## Methods
@@ -56,6 +59,31 @@ SetJumbo sets Jumbo field to given value.
 
 HasJumbo returns a boolean if a field has been set.
 
+### GetJumboFollowSite
+
+`func (o *SwitchGeneralConfig) GetJumboFollowSite() bool`
+
+GetJumboFollowSite returns the JumboFollowSite field if non-nil, zero value otherwise.
+
+### GetJumboFollowSiteOk
+
+`func (o *SwitchGeneralConfig) GetJumboFollowSiteOk() (*bool, bool)`
+
+GetJumboFollowSiteOk returns a tuple with the JumboFollowSite field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJumboFollowSite
+
+`func (o *SwitchGeneralConfig) SetJumboFollowSite(v bool)`
+
+SetJumboFollowSite sets JumboFollowSite field to given value.
+
+### HasJumboFollowSite
+
+`func (o *SwitchGeneralConfig) HasJumboFollowSite() bool`
+
+HasJumboFollowSite returns a boolean if a field has been set.
+
 ### GetLagHashAlg
 
 `func (o *SwitchGeneralConfig) GetLagHashAlg() int32`
@@ -80,6 +108,31 @@ SetLagHashAlg sets LagHashAlg field to given value.
 `func (o *SwitchGeneralConfig) HasLagHashAlg() bool`
 
 HasLagHashAlg returns a boolean if a field has been set.
+
+### GetLagHashAlgFollowSite
+
+`func (o *SwitchGeneralConfig) GetLagHashAlgFollowSite() bool`
+
+GetLagHashAlgFollowSite returns the LagHashAlgFollowSite field if non-nil, zero value otherwise.
+
+### GetLagHashAlgFollowSiteOk
+
+`func (o *SwitchGeneralConfig) GetLagHashAlgFollowSiteOk() (*bool, bool)`
+
+GetLagHashAlgFollowSiteOk returns a tuple with the LagHashAlgFollowSite field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLagHashAlgFollowSite
+
+`func (o *SwitchGeneralConfig) SetLagHashAlgFollowSite(v bool)`
+
+SetLagHashAlgFollowSite sets LagHashAlgFollowSite field to given value.
+
+### HasLagHashAlgFollowSite
+
+`func (o *SwitchGeneralConfig) HasLagHashAlgFollowSite() bool`
+
+HasLagHashAlgFollowSite returns a boolean if a field has been set.
 
 ### GetLedSetting
 
@@ -180,6 +233,31 @@ SetSdm sets Sdm field to given value.
 `func (o *SwitchGeneralConfig) HasSdm() bool`
 
 HasSdm returns a boolean if a field has been set.
+
+### GetSnmp
+
+`func (o *SwitchGeneralConfig) GetSnmp() OswSnmpOpenApiVO`
+
+GetSnmp returns the Snmp field if non-nil, zero value otherwise.
+
+### GetSnmpOk
+
+`func (o *SwitchGeneralConfig) GetSnmpOk() (*OswSnmpOpenApiVO, bool)`
+
+GetSnmpOk returns a tuple with the Snmp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSnmp
+
+`func (o *SwitchGeneralConfig) SetSnmp(v OswSnmpOpenApiVO)`
+
+SetSnmp sets Snmp field to given value.
+
+### HasSnmp
+
+`func (o *SwitchGeneralConfig) HasSnmp() bool`
+
+HasSnmp returns a boolean if a field has been set.
 
 ### GetTagIds
 

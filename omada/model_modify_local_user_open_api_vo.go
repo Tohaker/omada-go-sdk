@@ -25,9 +25,6 @@ type ModifyLocalUserOpenApiVO struct {
 	ApplyToAllPortals *bool `json:"applyToAllPortals,omitempty"`
 	// MAC binding type should be a value as follows: 0: no binding; 1: static binding; 2: dynamic binding.
 	BindingType int32 `json:"bindingType"`
-	DailyLimit *DailyAuthTimeOpenApiVO `json:"dailyLimit,omitempty"`
-	// Whether to enable localuser daily time limit
-	DailyLimitEnable *bool `json:"dailyLimitEnable,omitempty"`
 	// Whether to enable.
 	Enable bool `json:"enable"`
 	// Expiration timestamp. Unit:ms.
@@ -136,70 +133,6 @@ func (o *ModifyLocalUserOpenApiVO) GetBindingTypeOk() (*int32, bool) {
 // SetBindingType sets field value
 func (o *ModifyLocalUserOpenApiVO) SetBindingType(v int32) {
 	o.BindingType = v
-}
-
-// GetDailyLimit returns the DailyLimit field value if set, zero value otherwise.
-func (o *ModifyLocalUserOpenApiVO) GetDailyLimit() DailyAuthTimeOpenApiVO {
-	if o == nil || IsNil(o.DailyLimit) {
-		var ret DailyAuthTimeOpenApiVO
-		return ret
-	}
-	return *o.DailyLimit
-}
-
-// GetDailyLimitOk returns a tuple with the DailyLimit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModifyLocalUserOpenApiVO) GetDailyLimitOk() (*DailyAuthTimeOpenApiVO, bool) {
-	if o == nil || IsNil(o.DailyLimit) {
-		return nil, false
-	}
-	return o.DailyLimit, true
-}
-
-// HasDailyLimit returns a boolean if a field has been set.
-func (o *ModifyLocalUserOpenApiVO) HasDailyLimit() bool {
-	if o != nil && !IsNil(o.DailyLimit) {
-		return true
-	}
-
-	return false
-}
-
-// SetDailyLimit gets a reference to the given DailyAuthTimeOpenApiVO and assigns it to the DailyLimit field.
-func (o *ModifyLocalUserOpenApiVO) SetDailyLimit(v DailyAuthTimeOpenApiVO) {
-	o.DailyLimit = &v
-}
-
-// GetDailyLimitEnable returns the DailyLimitEnable field value if set, zero value otherwise.
-func (o *ModifyLocalUserOpenApiVO) GetDailyLimitEnable() bool {
-	if o == nil || IsNil(o.DailyLimitEnable) {
-		var ret bool
-		return ret
-	}
-	return *o.DailyLimitEnable
-}
-
-// GetDailyLimitEnableOk returns a tuple with the DailyLimitEnable field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModifyLocalUserOpenApiVO) GetDailyLimitEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.DailyLimitEnable) {
-		return nil, false
-	}
-	return o.DailyLimitEnable, true
-}
-
-// HasDailyLimitEnable returns a boolean if a field has been set.
-func (o *ModifyLocalUserOpenApiVO) HasDailyLimitEnable() bool {
-	if o != nil && !IsNil(o.DailyLimitEnable) {
-		return true
-	}
-
-	return false
-}
-
-// SetDailyLimitEnable gets a reference to the given bool and assigns it to the DailyLimitEnable field.
-func (o *ModifyLocalUserOpenApiVO) SetDailyLimitEnable(v bool) {
-	o.DailyLimitEnable = &v
 }
 
 // GetEnable returns the Enable field value
@@ -576,12 +509,6 @@ func (o ModifyLocalUserOpenApiVO) ToMap() (map[string]interface{}, error) {
 		toSerialize["applyToAllPortals"] = o.ApplyToAllPortals
 	}
 	toSerialize["bindingType"] = o.BindingType
-	if !IsNil(o.DailyLimit) {
-		toSerialize["dailyLimit"] = o.DailyLimit
-	}
-	if !IsNil(o.DailyLimitEnable) {
-		toSerialize["dailyLimitEnable"] = o.DailyLimitEnable
-	}
 	toSerialize["enable"] = o.Enable
 	toSerialize["expirationTime"] = o.ExpirationTime
 	if !IsNil(o.Logout) {

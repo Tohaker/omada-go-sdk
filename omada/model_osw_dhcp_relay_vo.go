@@ -17,7 +17,7 @@ import (
 // checks if the OswDhcpRelayVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswDhcpRelayVO{}
 
-// OswDhcpRelayVO Network DHCP relay settings. Only valid when deviceType is 2 and mode is 2
+// OswDhcpRelayVO Network DHCP relay settings.
 type OswDhcpRelayVO struct {
 	// Address IP, like 192.168.0.1
 	Addr *string `json:"addr,omitempty"`

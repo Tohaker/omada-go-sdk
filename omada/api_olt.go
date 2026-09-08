@@ -321,13 +321,13 @@ type OLTAPI interface {
 	Modify olt config(MSP mode)<br/><br/>The interface requires one of the permissions: <br/>MSP Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39051  -  Operation failed. Please try again later.<br/>-39093  -  The length of the device name exceeds the limit.<br/>-45000  -  This OLT does not exist.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param siteId Site ID
 	@param mspId mspId
 	@param customerId customerId
-	@param deviceMac deviceMac
+	@param siteId Site ID
+	@param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
 	@return OLTAPIModifyOltConfigForMspRequest
 	*/
-	ModifyOltConfigForMsp(ctx context.Context, siteId string, mspId string, customerId string, deviceMac string) OLTAPIModifyOltConfigForMspRequest
+	ModifyOltConfigForMsp(ctx context.Context, mspId string, customerId string, siteId string, deviceMac string) OLTAPIModifyOltConfigForMspRequest
 
 	// ModifyOltConfigForMspExecute executes the request
 	//  @return OperationResponseOltDetailVO
@@ -2608,9 +2608,9 @@ func (a *OLTAPIService) ModifyOltConfigExecute(r OLTAPIModifyOltConfigRequest) (
 type OLTAPIModifyOltConfigForMspRequest struct {
 	ctx context.Context
 	ApiService OLTAPI
-	siteId string
 	mspId string
 	customerId string
+	siteId string
 	deviceMac string
 	oltConfigModifyDTO *OltConfigModifyDTO
 }
@@ -2630,19 +2630,19 @@ ModifyOltConfigForMsp Modify olt config(MSP mode)
 Modify olt config(MSP mode)<br/><br/>The interface requires one of the permissions: <br/>MSP Device Manager Modify<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-39051  -  Operation failed. Please try again later.<br/>-39093  -  The length of the device name exceeds the limit.<br/>-45000  -  This OLT does not exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param siteId Site ID
  @param mspId mspId
  @param customerId customerId
- @param deviceMac deviceMac
+ @param siteId Site ID
+ @param deviceMac Device MAC address, like AA-BB-CC-DD-EE-FF
  @return OLTAPIModifyOltConfigForMspRequest
 */
-func (a *OLTAPIService) ModifyOltConfigForMsp(ctx context.Context, siteId string, mspId string, customerId string, deviceMac string) OLTAPIModifyOltConfigForMspRequest {
+func (a *OLTAPIService) ModifyOltConfigForMsp(ctx context.Context, mspId string, customerId string, siteId string, deviceMac string) OLTAPIModifyOltConfigForMspRequest {
 	return OLTAPIModifyOltConfigForMspRequest{
 		ApiService: a,
 		ctx: ctx,
-		siteId: siteId,
 		mspId: mspId,
 		customerId: customerId,
+		siteId: siteId,
 		deviceMac: deviceMac,
 	}
 }
@@ -2663,9 +2663,9 @@ func (a *OLTAPIService) ModifyOltConfigForMspExecute(r OLTAPIModifyOltConfigForM
 	}
 
 	localVarPath := localBasePath + "/openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/olts/{deviceMac}"
-	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"mspId"+"}", url.PathEscape(parameterValueToString(r.mspId, "mspId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"deviceMac"+"}", url.PathEscape(parameterValueToString(r.deviceMac, "deviceMac")), -1)
 
 	localVarHeaderParams := make(map[string]string)

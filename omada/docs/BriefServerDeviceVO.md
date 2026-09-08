@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ConfigRanges** | Pointer to [**[]DhcpRangeOpenApiVO**](DhcpRangeOpenApiVO.md) | Dhcp Server Config Ranges | [optional] 
 **DhcpServerEnable** | Pointer to **bool** | Whether DHCP Server is enabled | [optional] 
 **DhcpSettingsAuto** | Pointer to **bool** | Whether DHCP Setting is auto | [optional] 
 **Mac** | Pointer to **string** | Dhcp Server Mac | [optional] 
@@ -33,6 +34,31 @@ will change when the set of required properties is changed
 NewBriefServerDeviceVOWithDefaults instantiates a new BriefServerDeviceVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetConfigRanges
+
+`func (o *BriefServerDeviceVO) GetConfigRanges() []DhcpRangeOpenApiVO`
+
+GetConfigRanges returns the ConfigRanges field if non-nil, zero value otherwise.
+
+### GetConfigRangesOk
+
+`func (o *BriefServerDeviceVO) GetConfigRangesOk() (*[]DhcpRangeOpenApiVO, bool)`
+
+GetConfigRangesOk returns a tuple with the ConfigRanges field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigRanges
+
+`func (o *BriefServerDeviceVO) SetConfigRanges(v []DhcpRangeOpenApiVO)`
+
+SetConfigRanges sets ConfigRanges field to given value.
+
+### HasConfigRanges
+
+`func (o *BriefServerDeviceVO) HasConfigRanges() bool`
+
+HasConfigRanges returns a boolean if a field has been set.
 
 ### GetDhcpServerEnable
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Var1month** | Pointer to **int32** | 1month license num | [optional] 
 **Var1year** | Pointer to **int32** | 1year license num | [optional] 
 **Var2years** | Pointer to **int32** | 2years license num | [optional] 
 **Var3years** | Pointer to **int32** | 3years license num | [optional] 
@@ -32,6 +33,31 @@ will change when the set of required properties is changed
 NewLicenseBindAvailableNumOpenApiVOWithDefaults instantiates a new LicenseBindAvailableNumOpenApiVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetVar1month
+
+`func (o *LicenseBindAvailableNumOpenApiVO) GetVar1month() int32`
+
+GetVar1month returns the Var1month field if non-nil, zero value otherwise.
+
+### GetVar1monthOk
+
+`func (o *LicenseBindAvailableNumOpenApiVO) GetVar1monthOk() (*int32, bool)`
+
+GetVar1monthOk returns a tuple with the Var1month field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVar1month
+
+`func (o *LicenseBindAvailableNumOpenApiVO) SetVar1month(v int32)`
+
+SetVar1month sets Var1month field to given value.
+
+### HasVar1month
+
+`func (o *LicenseBindAvailableNumOpenApiVO) HasVar1month() bool`
+
+HasVar1month returns a boolean if a field has been set.
 
 ### GetVar1year
 

@@ -17,7 +17,7 @@ import (
 // checks if the OperationResponseObject type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OperationResponseObject{}
 
-// OperationResponseObject A response list
+// OperationResponseObject struct for OperationResponseObject
 type OperationResponseObject struct {
 	ErrorCode *int32 `json:"errorCode,omitempty"`
 	Msg *string `json:"msg,omitempty"`

@@ -21,6 +21,7 @@ var _ MappedNullable = &UpdateSsidBasicConfigOpenApiVO{}
 
 // UpdateSsidBasicConfigOpenApiVO struct for UpdateSsidBasicConfigOpenApiVO
 type UpdateSsidBasicConfigOpenApiVO struct {
+	CondBroadcastCtrl *CondBroadcastCtrlVO `json:"CondBroadcastCtrl,omitempty"`
 	// Whether to enable auto wan access. True: enable, false: disable.
 	AutoWanAccess *bool `json:"autoWanAccess,omitempty"`
 	// SSID band. The lowest bit indicates whether 2.4G is included; the second lowest bit indicates whether 5G is included; the third lowest bit indicates whether 6G is included; 1 means included while 0 means not included. For example, 7(111) means that 2G/5G/6G are enabled; 1(001) means that 2G is enabled. (When 5G is included，it means 5G/5G1/5G2 are enabled.)
@@ -29,6 +30,8 @@ type UpdateSsidBasicConfigOpenApiVO struct {
 	Broadcast bool `json:"broadcast"`
 	// SSID 802.11r config status. True: enable, false: disable.
 	Enable11r bool `json:"enable11r"`
+	// SSID Enhanced IoT Connectivity config status. True: enable, false: disable. This configuration can be enabled only when the 5GHz and 6GHz bands are disabled, the parameters [versionEnt] and [versionPsk] are not set to 4, and the following configurations are disabled: [hotspotV2Enable], [bandSteer], [arpCastEnable], [loadBalance], [enable11r], [gikRekeyPskEnable], [pmfMode], [mloEnable].
+	EnhancedIotConnectivity *bool `json:"enhancedIotConnectivity,omitempty"`
 	EntSetting *SsidEnterpriseSettingOpenApiVO `json:"entSetting,omitempty"`
 	// SSID EoGre Tunnel config status. True: enable, false: disable; This configuration can be enabled only when the [VPN - EoGre Tunnel] global config is enabled.
 	GreEnable *bool `json:"greEnable,omitempty"`
@@ -83,6 +86,38 @@ func NewUpdateSsidBasicConfigOpenApiVO(band int32, broadcast bool, enable11r boo
 func NewUpdateSsidBasicConfigOpenApiVOWithDefaults() *UpdateSsidBasicConfigOpenApiVO {
 	this := UpdateSsidBasicConfigOpenApiVO{}
 	return &this
+}
+
+// GetCondBroadcastCtrl returns the CondBroadcastCtrl field value if set, zero value otherwise.
+func (o *UpdateSsidBasicConfigOpenApiVO) GetCondBroadcastCtrl() CondBroadcastCtrlVO {
+	if o == nil || IsNil(o.CondBroadcastCtrl) {
+		var ret CondBroadcastCtrlVO
+		return ret
+	}
+	return *o.CondBroadcastCtrl
+}
+
+// GetCondBroadcastCtrlOk returns a tuple with the CondBroadcastCtrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSsidBasicConfigOpenApiVO) GetCondBroadcastCtrlOk() (*CondBroadcastCtrlVO, bool) {
+	if o == nil || IsNil(o.CondBroadcastCtrl) {
+		return nil, false
+	}
+	return o.CondBroadcastCtrl, true
+}
+
+// HasCondBroadcastCtrl returns a boolean if a field has been set.
+func (o *UpdateSsidBasicConfigOpenApiVO) HasCondBroadcastCtrl() bool {
+	if o != nil && !IsNil(o.CondBroadcastCtrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetCondBroadcastCtrl gets a reference to the given CondBroadcastCtrlVO and assigns it to the CondBroadcastCtrl field.
+func (o *UpdateSsidBasicConfigOpenApiVO) SetCondBroadcastCtrl(v CondBroadcastCtrlVO) {
+	o.CondBroadcastCtrl = &v
 }
 
 // GetAutoWanAccess returns the AutoWanAccess field value if set, zero value otherwise.
@@ -187,6 +222,38 @@ func (o *UpdateSsidBasicConfigOpenApiVO) GetEnable11rOk() (*bool, bool) {
 // SetEnable11r sets field value
 func (o *UpdateSsidBasicConfigOpenApiVO) SetEnable11r(v bool) {
 	o.Enable11r = v
+}
+
+// GetEnhancedIotConnectivity returns the EnhancedIotConnectivity field value if set, zero value otherwise.
+func (o *UpdateSsidBasicConfigOpenApiVO) GetEnhancedIotConnectivity() bool {
+	if o == nil || IsNil(o.EnhancedIotConnectivity) {
+		var ret bool
+		return ret
+	}
+	return *o.EnhancedIotConnectivity
+}
+
+// GetEnhancedIotConnectivityOk returns a tuple with the EnhancedIotConnectivity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateSsidBasicConfigOpenApiVO) GetEnhancedIotConnectivityOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnhancedIotConnectivity) {
+		return nil, false
+	}
+	return o.EnhancedIotConnectivity, true
+}
+
+// HasEnhancedIotConnectivity returns a boolean if a field has been set.
+func (o *UpdateSsidBasicConfigOpenApiVO) HasEnhancedIotConnectivity() bool {
+	if o != nil && !IsNil(o.EnhancedIotConnectivity) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnhancedIotConnectivity gets a reference to the given bool and assigns it to the EnhancedIotConnectivity field.
+func (o *UpdateSsidBasicConfigOpenApiVO) SetEnhancedIotConnectivity(v bool) {
+	o.EnhancedIotConnectivity = &v
 }
 
 // GetEntSetting returns the EntSetting field value if set, zero value otherwise.
@@ -631,12 +698,18 @@ func (o UpdateSsidBasicConfigOpenApiVO) MarshalJSON() ([]byte, error) {
 
 func (o UpdateSsidBasicConfigOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CondBroadcastCtrl) {
+		toSerialize["CondBroadcastCtrl"] = o.CondBroadcastCtrl
+	}
 	if !IsNil(o.AutoWanAccess) {
 		toSerialize["autoWanAccess"] = o.AutoWanAccess
 	}
 	toSerialize["band"] = o.Band
 	toSerialize["broadcast"] = o.Broadcast
 	toSerialize["enable11r"] = o.Enable11r
+	if !IsNil(o.EnhancedIotConnectivity) {
+		toSerialize["enhancedIotConnectivity"] = o.EnhancedIotConnectivity
+	}
 	if !IsNil(o.EntSetting) {
 		toSerialize["entSetting"] = o.EntSetting
 	}

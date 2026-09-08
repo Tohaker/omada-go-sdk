@@ -17,7 +17,7 @@ import (
 // checks if the TimeScoreItemVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TimeScoreItemVO{}
 
-// TimeScoreItemVO struct for TimeScoreItemVO
+// TimeScoreItemVO List of time score items
 type TimeScoreItemVO struct {
 	// Health score corresponding to time
 	Score *int32 `json:"score,omitempty"`

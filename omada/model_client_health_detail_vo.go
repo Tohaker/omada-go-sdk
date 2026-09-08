@@ -20,9 +20,13 @@ var _ MappedNullable = &ClientHealthDetailVO{}
 // ClientHealthDetailVO struct for ClientHealthDetailVO
 type ClientHealthDetailVO struct {
 	AssociationTime *CommonSubHealthInfoDetailVOInteger `json:"associationTime,omitempty"`
+	ConnectScore *CommonSubHealthInfoDetailVOInteger `json:"connectScore,omitempty"`
+	Incident *IncidentSubHealthInfoDetailVO `json:"incident,omitempty"`
+	LinkErrorScore *CommonSubHealthInfoDetailVOInteger `json:"linkErrorScore,omitempty"`
 	Rate *CommonSubHealthInfoDetailVOLong `json:"rate,omitempty"`
 	Rssi *CommonSubHealthInfoDetailVOInteger `json:"rssi,omitempty"`
 	Score *int32 `json:"score,omitempty"`
+	Snr *CommonSubHealthInfoDetailVOInteger `json:"snr,omitempty"`
 }
 
 // NewClientHealthDetailVO instantiates a new ClientHealthDetailVO object
@@ -72,6 +76,102 @@ func (o *ClientHealthDetailVO) HasAssociationTime() bool {
 // SetAssociationTime gets a reference to the given CommonSubHealthInfoDetailVOInteger and assigns it to the AssociationTime field.
 func (o *ClientHealthDetailVO) SetAssociationTime(v CommonSubHealthInfoDetailVOInteger) {
 	o.AssociationTime = &v
+}
+
+// GetConnectScore returns the ConnectScore field value if set, zero value otherwise.
+func (o *ClientHealthDetailVO) GetConnectScore() CommonSubHealthInfoDetailVOInteger {
+	if o == nil || IsNil(o.ConnectScore) {
+		var ret CommonSubHealthInfoDetailVOInteger
+		return ret
+	}
+	return *o.ConnectScore
+}
+
+// GetConnectScoreOk returns a tuple with the ConnectScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientHealthDetailVO) GetConnectScoreOk() (*CommonSubHealthInfoDetailVOInteger, bool) {
+	if o == nil || IsNil(o.ConnectScore) {
+		return nil, false
+	}
+	return o.ConnectScore, true
+}
+
+// HasConnectScore returns a boolean if a field has been set.
+func (o *ClientHealthDetailVO) HasConnectScore() bool {
+	if o != nil && !IsNil(o.ConnectScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectScore gets a reference to the given CommonSubHealthInfoDetailVOInteger and assigns it to the ConnectScore field.
+func (o *ClientHealthDetailVO) SetConnectScore(v CommonSubHealthInfoDetailVOInteger) {
+	o.ConnectScore = &v
+}
+
+// GetIncident returns the Incident field value if set, zero value otherwise.
+func (o *ClientHealthDetailVO) GetIncident() IncidentSubHealthInfoDetailVO {
+	if o == nil || IsNil(o.Incident) {
+		var ret IncidentSubHealthInfoDetailVO
+		return ret
+	}
+	return *o.Incident
+}
+
+// GetIncidentOk returns a tuple with the Incident field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientHealthDetailVO) GetIncidentOk() (*IncidentSubHealthInfoDetailVO, bool) {
+	if o == nil || IsNil(o.Incident) {
+		return nil, false
+	}
+	return o.Incident, true
+}
+
+// HasIncident returns a boolean if a field has been set.
+func (o *ClientHealthDetailVO) HasIncident() bool {
+	if o != nil && !IsNil(o.Incident) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncident gets a reference to the given IncidentSubHealthInfoDetailVO and assigns it to the Incident field.
+func (o *ClientHealthDetailVO) SetIncident(v IncidentSubHealthInfoDetailVO) {
+	o.Incident = &v
+}
+
+// GetLinkErrorScore returns the LinkErrorScore field value if set, zero value otherwise.
+func (o *ClientHealthDetailVO) GetLinkErrorScore() CommonSubHealthInfoDetailVOInteger {
+	if o == nil || IsNil(o.LinkErrorScore) {
+		var ret CommonSubHealthInfoDetailVOInteger
+		return ret
+	}
+	return *o.LinkErrorScore
+}
+
+// GetLinkErrorScoreOk returns a tuple with the LinkErrorScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientHealthDetailVO) GetLinkErrorScoreOk() (*CommonSubHealthInfoDetailVOInteger, bool) {
+	if o == nil || IsNil(o.LinkErrorScore) {
+		return nil, false
+	}
+	return o.LinkErrorScore, true
+}
+
+// HasLinkErrorScore returns a boolean if a field has been set.
+func (o *ClientHealthDetailVO) HasLinkErrorScore() bool {
+	if o != nil && !IsNil(o.LinkErrorScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinkErrorScore gets a reference to the given CommonSubHealthInfoDetailVOInteger and assigns it to the LinkErrorScore field.
+func (o *ClientHealthDetailVO) SetLinkErrorScore(v CommonSubHealthInfoDetailVOInteger) {
+	o.LinkErrorScore = &v
 }
 
 // GetRate returns the Rate field value if set, zero value otherwise.
@@ -170,6 +270,38 @@ func (o *ClientHealthDetailVO) SetScore(v int32) {
 	o.Score = &v
 }
 
+// GetSnr returns the Snr field value if set, zero value otherwise.
+func (o *ClientHealthDetailVO) GetSnr() CommonSubHealthInfoDetailVOInteger {
+	if o == nil || IsNil(o.Snr) {
+		var ret CommonSubHealthInfoDetailVOInteger
+		return ret
+	}
+	return *o.Snr
+}
+
+// GetSnrOk returns a tuple with the Snr field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientHealthDetailVO) GetSnrOk() (*CommonSubHealthInfoDetailVOInteger, bool) {
+	if o == nil || IsNil(o.Snr) {
+		return nil, false
+	}
+	return o.Snr, true
+}
+
+// HasSnr returns a boolean if a field has been set.
+func (o *ClientHealthDetailVO) HasSnr() bool {
+	if o != nil && !IsNil(o.Snr) {
+		return true
+	}
+
+	return false
+}
+
+// SetSnr gets a reference to the given CommonSubHealthInfoDetailVOInteger and assigns it to the Snr field.
+func (o *ClientHealthDetailVO) SetSnr(v CommonSubHealthInfoDetailVOInteger) {
+	o.Snr = &v
+}
+
 func (o ClientHealthDetailVO) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -183,6 +315,15 @@ func (o ClientHealthDetailVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AssociationTime) {
 		toSerialize["associationTime"] = o.AssociationTime
 	}
+	if !IsNil(o.ConnectScore) {
+		toSerialize["connectScore"] = o.ConnectScore
+	}
+	if !IsNil(o.Incident) {
+		toSerialize["incident"] = o.Incident
+	}
+	if !IsNil(o.LinkErrorScore) {
+		toSerialize["linkErrorScore"] = o.LinkErrorScore
+	}
 	if !IsNil(o.Rate) {
 		toSerialize["rate"] = o.Rate
 	}
@@ -191,6 +332,9 @@ func (o ClientHealthDetailVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Score) {
 		toSerialize["score"] = o.Score
+	}
+	if !IsNil(o.Snr) {
+		toSerialize["snr"] = o.Snr
 	}
 	return toSerialize, nil
 }

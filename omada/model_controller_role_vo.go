@@ -27,6 +27,8 @@ type ControllerRoleVO struct {
 	// Adopt permission should be a value as follows: 0:block; 2:access
 	// Deprecated
 	Adopt *int32 `json:"adopt,omitempty"`
+	// AI assistant permission. 0:block; 1:view only; 2:modify
+	AiAssi *int32 `json:"aiAssi,omitempty"`
 	// Tools permission in global view. Only for hardware controller should be a value as follows: 0:block; 1:view only; 2:modify
 	Analyze *int32 `json:"analyze,omitempty"`
 	// Anomaly permission in global view should be a value as follows: 0:block; 1:view only; 2:modify
@@ -228,6 +230,38 @@ func (o *ControllerRoleVO) HasAdopt() bool {
 // Deprecated
 func (o *ControllerRoleVO) SetAdopt(v int32) {
 	o.Adopt = &v
+}
+
+// GetAiAssi returns the AiAssi field value if set, zero value otherwise.
+func (o *ControllerRoleVO) GetAiAssi() int32 {
+	if o == nil || IsNil(o.AiAssi) {
+		var ret int32
+		return ret
+	}
+	return *o.AiAssi
+}
+
+// GetAiAssiOk returns a tuple with the AiAssi field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ControllerRoleVO) GetAiAssiOk() (*int32, bool) {
+	if o == nil || IsNil(o.AiAssi) {
+		return nil, false
+	}
+	return o.AiAssi, true
+}
+
+// HasAiAssi returns a boolean if a field has been set.
+func (o *ControllerRoleVO) HasAiAssi() bool {
+	if o != nil && !IsNil(o.AiAssi) {
+		return true
+	}
+
+	return false
+}
+
+// SetAiAssi gets a reference to the given int32 and assigns it to the AiAssi field.
+func (o *ControllerRoleVO) SetAiAssi(v int32) {
+	o.AiAssi = &v
 }
 
 // GetAnalyze returns the Analyze field value if set, zero value otherwise.
@@ -1534,6 +1568,9 @@ func (o ControllerRoleVO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Adopt) {
 		toSerialize["adopt"] = o.Adopt
+	}
+	if !IsNil(o.AiAssi) {
+		toSerialize["aiAssi"] = o.AiAssi
 	}
 	if !IsNil(o.Analyze) {
 		toSerialize["analyze"] = o.Analyze

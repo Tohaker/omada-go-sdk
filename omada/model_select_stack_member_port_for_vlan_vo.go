@@ -25,6 +25,8 @@ type SelectStackMemberPortForVlanVO struct {
 	AutoSelect *bool `json:"autoSelect,omitempty"`
 	// Whether the port is configured as a stack port.
 	ConfigStack *bool `json:"configStack,omitempty"`
+	// Whether the port is connected to the Controller.
+	ControllerLinkedPort *bool `json:"controllerLinkedPort,omitempty"`
 	// The vlan of default network.
 	DefaultVlan *int32 `json:"defaultVlan,omitempty"`
 	// The downlink devices of the port
@@ -176,6 +178,38 @@ func (o *SelectStackMemberPortForVlanVO) HasConfigStack() bool {
 // SetConfigStack gets a reference to the given bool and assigns it to the ConfigStack field.
 func (o *SelectStackMemberPortForVlanVO) SetConfigStack(v bool) {
 	o.ConfigStack = &v
+}
+
+// GetControllerLinkedPort returns the ControllerLinkedPort field value if set, zero value otherwise.
+func (o *SelectStackMemberPortForVlanVO) GetControllerLinkedPort() bool {
+	if o == nil || IsNil(o.ControllerLinkedPort) {
+		var ret bool
+		return ret
+	}
+	return *o.ControllerLinkedPort
+}
+
+// GetControllerLinkedPortOk returns a tuple with the ControllerLinkedPort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SelectStackMemberPortForVlanVO) GetControllerLinkedPortOk() (*bool, bool) {
+	if o == nil || IsNil(o.ControllerLinkedPort) {
+		return nil, false
+	}
+	return o.ControllerLinkedPort, true
+}
+
+// HasControllerLinkedPort returns a boolean if a field has been set.
+func (o *SelectStackMemberPortForVlanVO) HasControllerLinkedPort() bool {
+	if o != nil && !IsNil(o.ControllerLinkedPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetControllerLinkedPort gets a reference to the given bool and assigns it to the ControllerLinkedPort field.
+func (o *SelectStackMemberPortForVlanVO) SetControllerLinkedPort(v bool) {
+	o.ControllerLinkedPort = &v
 }
 
 // GetDefaultVlan returns the DefaultVlan field value if set, zero value otherwise.
@@ -836,6 +870,9 @@ func (o SelectStackMemberPortForVlanVO) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.ConfigStack) {
 		toSerialize["configStack"] = o.ConfigStack
+	}
+	if !IsNil(o.ControllerLinkedPort) {
+		toSerialize["controllerLinkedPort"] = o.ControllerLinkedPort
 	}
 	if !IsNil(o.DefaultVlan) {
 		toSerialize["defaultVlan"] = o.DefaultVlan

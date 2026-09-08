@@ -22,6 +22,8 @@ type VlanNetworkAffectingSwitchDetailVO struct {
 	AffectedPorts *OswPortAndLagNetworkVO `json:"affectedPorts,omitempty"`
 	// Switch downlink clients.
 	Clients []OswClientVO `json:"clients,omitempty"`
+	// Whether the device supports reporting port layout information.
+	SupportLayout *bool `json:"supportLayout,omitempty"`
 	SwitchDetail *OswDetailVO `json:"switchDetail,omitempty"`
 }
 
@@ -106,6 +108,38 @@ func (o *VlanNetworkAffectingSwitchDetailVO) SetClients(v []OswClientVO) {
 	o.Clients = v
 }
 
+// GetSupportLayout returns the SupportLayout field value if set, zero value otherwise.
+func (o *VlanNetworkAffectingSwitchDetailVO) GetSupportLayout() bool {
+	if o == nil || IsNil(o.SupportLayout) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportLayout
+}
+
+// GetSupportLayoutOk returns a tuple with the SupportLayout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VlanNetworkAffectingSwitchDetailVO) GetSupportLayoutOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportLayout) {
+		return nil, false
+	}
+	return o.SupportLayout, true
+}
+
+// HasSupportLayout returns a boolean if a field has been set.
+func (o *VlanNetworkAffectingSwitchDetailVO) HasSupportLayout() bool {
+	if o != nil && !IsNil(o.SupportLayout) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportLayout gets a reference to the given bool and assigns it to the SupportLayout field.
+func (o *VlanNetworkAffectingSwitchDetailVO) SetSupportLayout(v bool) {
+	o.SupportLayout = &v
+}
+
 // GetSwitchDetail returns the SwitchDetail field value if set, zero value otherwise.
 func (o *VlanNetworkAffectingSwitchDetailVO) GetSwitchDetail() OswDetailVO {
 	if o == nil || IsNil(o.SwitchDetail) {
@@ -153,6 +187,9 @@ func (o VlanNetworkAffectingSwitchDetailVO) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.Clients) {
 		toSerialize["clients"] = o.Clients
+	}
+	if !IsNil(o.SupportLayout) {
+		toSerialize["supportLayout"] = o.SupportLayout
 	}
 	if !IsNil(o.SwitchDetail) {
 		toSerialize["switchDetail"] = o.SwitchDetail

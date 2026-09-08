@@ -41,10 +41,14 @@ type APLANPortList struct {
 	LocalVlanId *int32 `json:"localVlanId,omitempty"`
 	// Local Vlan Network Id, used to enter the LAN field.
 	LocalVlanNetworkId *string `json:"localVlanNetworkId,omitempty"`
+	// Whether it is a logical uplink port of device.
+	LogicUplinkPort *bool `json:"logicUplinkPort,omitempty"`
 	// Port Name. It should contain 1 ~ 64 ASCII characters. If it is NULL, LanPort is displayed.
 	Name *string `json:"name,omitempty"`
 	// Onu Id
 	OnuId *string `json:"onuId,omitempty"`
+	// Poe Input Mode. It should be a value as follows: 0: OFF, 1: BT, 2: AT, 3: AF.
+	PoeInputMode *int32 `json:"poeInputMode,omitempty"`
 	// Whether to enable poe out.
 	PoeOutEnable *bool `json:"poeOutEnable,omitempty"`
 	// This value is only available when supportPoe is true.It should be a value as follows: 0：In the power supply; 1：Not in the power supply.
@@ -78,7 +82,7 @@ type APLANPortList struct {
 	Untagged *string `json:"untagged,omitempty"`
 	// The Id list of the untagged vlan network profile, it must be present when custom is true.
 	UntaggedNetworkId []string `json:"untaggedNetworkId,omitempty"`
-	// Whether it is an actual uplink port.
+	// Whether it is an actual uplink port in topology.
 	UplinkPort *bool `json:"uplinkPort,omitempty"`
 	// This field has a value for the voice port.It should be a value as follows: 0：Off-hook; 1：On-hook.
 	VoipState *int32 `json:"voipState,omitempty"`
@@ -485,6 +489,38 @@ func (o *APLANPortList) SetLocalVlanNetworkId(v string) {
 	o.LocalVlanNetworkId = &v
 }
 
+// GetLogicUplinkPort returns the LogicUplinkPort field value if set, zero value otherwise.
+func (o *APLANPortList) GetLogicUplinkPort() bool {
+	if o == nil || IsNil(o.LogicUplinkPort) {
+		var ret bool
+		return ret
+	}
+	return *o.LogicUplinkPort
+}
+
+// GetLogicUplinkPortOk returns a tuple with the LogicUplinkPort field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *APLANPortList) GetLogicUplinkPortOk() (*bool, bool) {
+	if o == nil || IsNil(o.LogicUplinkPort) {
+		return nil, false
+	}
+	return o.LogicUplinkPort, true
+}
+
+// HasLogicUplinkPort returns a boolean if a field has been set.
+func (o *APLANPortList) HasLogicUplinkPort() bool {
+	if o != nil && !IsNil(o.LogicUplinkPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetLogicUplinkPort gets a reference to the given bool and assigns it to the LogicUplinkPort field.
+func (o *APLANPortList) SetLogicUplinkPort(v bool) {
+	o.LogicUplinkPort = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *APLANPortList) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -547,6 +583,38 @@ func (o *APLANPortList) HasOnuId() bool {
 // SetOnuId gets a reference to the given string and assigns it to the OnuId field.
 func (o *APLANPortList) SetOnuId(v string) {
 	o.OnuId = &v
+}
+
+// GetPoeInputMode returns the PoeInputMode field value if set, zero value otherwise.
+func (o *APLANPortList) GetPoeInputMode() int32 {
+	if o == nil || IsNil(o.PoeInputMode) {
+		var ret int32
+		return ret
+	}
+	return *o.PoeInputMode
+}
+
+// GetPoeInputModeOk returns a tuple with the PoeInputMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *APLANPortList) GetPoeInputModeOk() (*int32, bool) {
+	if o == nil || IsNil(o.PoeInputMode) {
+		return nil, false
+	}
+	return o.PoeInputMode, true
+}
+
+// HasPoeInputMode returns a boolean if a field has been set.
+func (o *APLANPortList) HasPoeInputMode() bool {
+	if o != nil && !IsNil(o.PoeInputMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetPoeInputMode gets a reference to the given int32 and assigns it to the PoeInputMode field.
+func (o *APLANPortList) SetPoeInputMode(v int32) {
+	o.PoeInputMode = &v
 }
 
 // GetPoeOutEnable returns the PoeOutEnable field value if set, zero value otherwise.
@@ -1203,11 +1271,17 @@ func (o APLANPortList) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LocalVlanNetworkId) {
 		toSerialize["localVlanNetworkId"] = o.LocalVlanNetworkId
 	}
+	if !IsNil(o.LogicUplinkPort) {
+		toSerialize["logicUplinkPort"] = o.LogicUplinkPort
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
 	if !IsNil(o.OnuId) {
 		toSerialize["onuId"] = o.OnuId
+	}
+	if !IsNil(o.PoeInputMode) {
+		toSerialize["poeInputMode"] = o.PoeInputMode
 	}
 	if !IsNil(o.PoeOutEnable) {
 		toSerialize["poeOutEnable"] = o.PoeOutEnable

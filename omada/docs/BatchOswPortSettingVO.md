@@ -4,11 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ArpDetectEnable** | Pointer to **bool** | Indicates whether arp detect is enabled | [optional] 
 **BandCtrl** | Pointer to [**OswBandCtrlVO**](OswBandCtrlVO.md) |  | [optional] 
 **BandWidthCtrlType** | Pointer to **int32** | BandWidthCtrlType should be a value as follows: 0: Off; 1: Rate Limit; 2: Storming Control | [optional] 
 **DhcpL2RelaySettings** | Pointer to [**OswPortDhcpL2RelayVO**](OswPortDhcpL2RelayVO.md) |  | [optional] 
-**DhcpSnoopEnable** | Pointer to **bool** | Indicates whether dhcp snoop is enabled | [optional] 
 **Disable** | Pointer to **bool** | Indicates whether to disable | [optional] 
 **Dot1pPriority** | Pointer to **int32** | Dot1p Priority | [optional] 
 **Dot1x** | Pointer to **int32** | Dot1x should be a value as follows: 0: Force unauthorized; 1: Force authorized; 2: Auto | [optional] 
@@ -20,7 +18,7 @@ Name | Type | Description | Notes
 **FlowControlEnable** | Pointer to **bool** | Indicates whether flow control is enabled | [optional] 
 **IgmpFastLeaveEnable** | Pointer to **bool** | Indicates whether igmp fast leave is enabled | [optional] 
 **IgmpSnoopingEnable** | Pointer to **bool** | Indicates whether IGMP Snooping is enabled | [optional] 
-**Impbs** | Pointer to [**[]ImpbVO**](ImpbVO.md) | Impbs | [optional] 
+**LagDelete** | Pointer to **bool** | When the operation changes from aggregating to switching, this parameter should be set to true, and the \&quot;lagSetting\&quot; parameter needs to include the lagId. | [optional] 
 **LagSetting** | Pointer to [**OswLagBasicVO**](OswLagBasicVO.md) |  | [optional] 
 **LinkSpeed** | Pointer to **int32** | Link Speed should be a value as follows: 0: auto; 1: 10M; 2: 100M; 3: 1000M; 4: 2.5G; 5: 10G | [optional] 
 **LldpMedEnable** | Pointer to **bool** | Indicates whether LLDP-MED is enabled | [optional] 
@@ -38,11 +36,12 @@ Name | Type | Description | Notes
 **PortAlertEnable** | Pointer to **bool** | Indicates whether port alert is enabled | [optional] 
 **PortIsolationEnable** | Pointer to **bool** | Indicates whether port isolation is enabled | [optional] 
 **PortList** | **[]int32** |  | 
-**ProfileId** | Pointer to **string** | Profile ID | [optional] 
+**ProfileId** | Pointer to **string** | Profile ID is required (not null) when modifying a single port. | [optional] 
 **ProfileOverrideEnable** | Pointer to **bool** | Indicates whether to enable Profile Override before v6.2.10; Indicates the fill mode of port configuration after v6.2.10: true: custom; false: follow profile | [optional] 
 **ProfileVlanOverrideEnable** | Pointer to **bool** | Indicates the fill mode of vlan configuration: true: custom; false: follow profile | [optional] 
 **QosQueueEnable** | Pointer to **bool** | Indicates whether the ES device port has enabled the Qos scheduling queue configuration | [optional] 
 **QueueId** | Pointer to **int32** | ES Qos scheduling queue ID | [optional] 
+**RemovedOuiBasedRuleIds** | Pointer to **[]string** | The id of oui based vlan rule removded. | [optional] 
 **SpanningTreeEnable** | Pointer to **bool** | Indicates whether SpanningTree is enabled | [optional] 
 **SpanningTreeSetting** | Pointer to [**SpanningTreeSettingVO**](SpanningTreeSettingVO.md) |  | [optional] 
 **StormCtrl** | Pointer to [**OswStormCtrlVO**](OswStormCtrlVO.md) |  | [optional] 
@@ -77,31 +76,6 @@ will change when the set of required properties is changed
 NewBatchOswPortSettingVOWithDefaults instantiates a new BatchOswPortSettingVO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetArpDetectEnable
-
-`func (o *BatchOswPortSettingVO) GetArpDetectEnable() bool`
-
-GetArpDetectEnable returns the ArpDetectEnable field if non-nil, zero value otherwise.
-
-### GetArpDetectEnableOk
-
-`func (o *BatchOswPortSettingVO) GetArpDetectEnableOk() (*bool, bool)`
-
-GetArpDetectEnableOk returns a tuple with the ArpDetectEnable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetArpDetectEnable
-
-`func (o *BatchOswPortSettingVO) SetArpDetectEnable(v bool)`
-
-SetArpDetectEnable sets ArpDetectEnable field to given value.
-
-### HasArpDetectEnable
-
-`func (o *BatchOswPortSettingVO) HasArpDetectEnable() bool`
-
-HasArpDetectEnable returns a boolean if a field has been set.
 
 ### GetBandCtrl
 
@@ -177,31 +151,6 @@ SetDhcpL2RelaySettings sets DhcpL2RelaySettings field to given value.
 `func (o *BatchOswPortSettingVO) HasDhcpL2RelaySettings() bool`
 
 HasDhcpL2RelaySettings returns a boolean if a field has been set.
-
-### GetDhcpSnoopEnable
-
-`func (o *BatchOswPortSettingVO) GetDhcpSnoopEnable() bool`
-
-GetDhcpSnoopEnable returns the DhcpSnoopEnable field if non-nil, zero value otherwise.
-
-### GetDhcpSnoopEnableOk
-
-`func (o *BatchOswPortSettingVO) GetDhcpSnoopEnableOk() (*bool, bool)`
-
-GetDhcpSnoopEnableOk returns a tuple with the DhcpSnoopEnable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDhcpSnoopEnable
-
-`func (o *BatchOswPortSettingVO) SetDhcpSnoopEnable(v bool)`
-
-SetDhcpSnoopEnable sets DhcpSnoopEnable field to given value.
-
-### HasDhcpSnoopEnable
-
-`func (o *BatchOswPortSettingVO) HasDhcpSnoopEnable() bool`
-
-HasDhcpSnoopEnable returns a boolean if a field has been set.
 
 ### GetDisable
 
@@ -478,30 +427,30 @@ SetIgmpSnoopingEnable sets IgmpSnoopingEnable field to given value.
 
 HasIgmpSnoopingEnable returns a boolean if a field has been set.
 
-### GetImpbs
+### GetLagDelete
 
-`func (o *BatchOswPortSettingVO) GetImpbs() []ImpbVO`
+`func (o *BatchOswPortSettingVO) GetLagDelete() bool`
 
-GetImpbs returns the Impbs field if non-nil, zero value otherwise.
+GetLagDelete returns the LagDelete field if non-nil, zero value otherwise.
 
-### GetImpbsOk
+### GetLagDeleteOk
 
-`func (o *BatchOswPortSettingVO) GetImpbsOk() (*[]ImpbVO, bool)`
+`func (o *BatchOswPortSettingVO) GetLagDeleteOk() (*bool, bool)`
 
-GetImpbsOk returns a tuple with the Impbs field if it's non-nil, zero value otherwise
+GetLagDeleteOk returns a tuple with the LagDelete field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetImpbs
+### SetLagDelete
 
-`func (o *BatchOswPortSettingVO) SetImpbs(v []ImpbVO)`
+`func (o *BatchOswPortSettingVO) SetLagDelete(v bool)`
 
-SetImpbs sets Impbs field to given value.
+SetLagDelete sets LagDelete field to given value.
 
-### HasImpbs
+### HasLagDelete
 
-`func (o *BatchOswPortSettingVO) HasImpbs() bool`
+`func (o *BatchOswPortSettingVO) HasLagDelete() bool`
 
-HasImpbs returns a boolean if a field has been set.
+HasLagDelete returns a boolean if a field has been set.
 
 ### GetLagSetting
 
@@ -1047,6 +996,31 @@ SetQueueId sets QueueId field to given value.
 `func (o *BatchOswPortSettingVO) HasQueueId() bool`
 
 HasQueueId returns a boolean if a field has been set.
+
+### GetRemovedOuiBasedRuleIds
+
+`func (o *BatchOswPortSettingVO) GetRemovedOuiBasedRuleIds() []string`
+
+GetRemovedOuiBasedRuleIds returns the RemovedOuiBasedRuleIds field if non-nil, zero value otherwise.
+
+### GetRemovedOuiBasedRuleIdsOk
+
+`func (o *BatchOswPortSettingVO) GetRemovedOuiBasedRuleIdsOk() (*[]string, bool)`
+
+GetRemovedOuiBasedRuleIdsOk returns a tuple with the RemovedOuiBasedRuleIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemovedOuiBasedRuleIds
+
+`func (o *BatchOswPortSettingVO) SetRemovedOuiBasedRuleIds(v []string)`
+
+SetRemovedOuiBasedRuleIds sets RemovedOuiBasedRuleIds field to given value.
+
+### HasRemovedOuiBasedRuleIds
+
+`func (o *BatchOswPortSettingVO) HasRemovedOuiBasedRuleIds() bool`
+
+HasRemovedOuiBasedRuleIds returns a boolean if a field has been set.
 
 ### GetSpanningTreeEnable
 
