@@ -5,6 +5,7 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAccessControl**](AccessControlAPI.md#getaccesscontrol) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Get access control setting
+[**GetAutoFreeAuthPolicy**](AccessControlAPI.md#getautofreeauthpolicy) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/auto-free-auth-policy | Get automatically generated free auth policy items
 [**ModifyAccessControl**](AccessControlAPI.md#modifyaccesscontrol) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Modify access control setting
 
 
@@ -67,6 +68,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponsePortalAccessControlOpenApiVO**](OperationResponsePortalAccessControlOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAutoFreeAuthPolicy
+
+> OperationResponseListAutoFreeAuthPolicyOpenApi GetAutoFreeAuthPolicy(ctx, omadacId, siteId).Execute()
+
+Get automatically generated free auth policy items
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteId := "siteId_example" // string | Site ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccessControlAPI.GetAutoFreeAuthPolicy(context.Background(), omadacId, siteId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccessControlAPI.GetAutoFreeAuthPolicy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAutoFreeAuthPolicy`: OperationResponseListAutoFreeAuthPolicyOpenApi
+	fmt.Fprintf(os.Stdout, "Response from `AccessControlAPI.GetAutoFreeAuthPolicy`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteId** | **string** | Site ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAutoFreeAuthPolicyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseListAutoFreeAuthPolicyOpenApi**](OperationResponseListAutoFreeAuthPolicyOpenApi.md)
 
 ### Authorization
 

@@ -89,6 +89,38 @@ type OUIBasedVLANAPI interface {
 	DeleteSwitchOuiBasedVlanExecute(r OUIBasedVLANAPIDeleteSwitchOuiBasedVlanRequest) (*OperationResponseWithoutResult, *http.Response, error)
 
 	/*
+	EnableAutoAddVlan Enable the site and device auto add vlan.
+
+	Enable the site and device auto add vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return OUIBasedVLANAPIEnableAutoAddVlanRequest
+	*/
+	EnableAutoAddVlan(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIEnableAutoAddVlanRequest
+
+	// EnableAutoAddVlanExecute executes the request
+	//  @return OperationResponse
+	EnableAutoAddVlanExecute(r OUIBasedVLANAPIEnableAutoAddVlanRequest) (*OperationResponse, *http.Response, error)
+
+	/*
+	GetAllSupportAutoAddVlanSwitchList Get switch list of supporting oui based vlan with ports(lags) info of vlans in oui based rules but not included in port(lag) vlan.
+
+	Get switch list of supporting oui based vlan with ports(lags) info of vlans in oui based rules but not included in port(lag) vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest
+	*/
+	GetAllSupportAutoAddVlanSwitchList(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest
+
+	// GetAllSupportAutoAddVlanSwitchListExecute executes the request
+	//  @return OperationResponseGridVOOuiBasedVlanDeviceInfoVO
+	GetAllSupportAutoAddVlanSwitchListExecute(r OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest) (*OperationResponseGridVOOuiBasedVlanDeviceInfoVO, *http.Response, error)
+
+	/*
 	GetGridApOuiBasedVlan Get Ap oui based vlan list
 
 	Get Ap oui based vlan list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
@@ -121,6 +153,22 @@ type OUIBasedVLANAPI interface {
 	GetGridSwitchOuiBasedVlanExecute(r OUIBasedVLANAPIGetGridSwitchOuiBasedVlanRequest) (*OperationResponseGridVOOuiBasedVlanSwitchQueryOpenApiVO, *http.Response, error)
 
 	/*
+	GetOuiBasedVlanSwitchList Get all oui based vlan switch list.
+
+	Get all oui based vlan switch list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest
+	*/
+	GetOuiBasedVlanSwitchList(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest
+
+	// GetOuiBasedVlanSwitchListExecute executes the request
+	//  @return OperationResponseOuiBasedVlanGridVOSwitchDataVO
+	GetOuiBasedVlanSwitchListExecute(r OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest) (*OperationResponseOuiBasedVlanGridVOSwitchDataVO, *http.Response, error)
+
+	/*
 	GetSwitchList Get switch list of supporting oui based vlan
 
 	Get switch list of supporting oui based vlan<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
@@ -135,6 +183,71 @@ type OUIBasedVLANAPI interface {
 	// GetSwitchListExecute executes the request
 	//  @return OperationResponseGridVOOuiBasedVlanDeviceInfoVO
 	GetSwitchListExecute(r OUIBasedVLANAPIGetSwitchListRequest) (*OperationResponseGridVOOuiBasedVlanDeviceInfoVO, *http.Response, error)
+
+	/*
+	GetWhetherAllSwitchSupportAutoAddVlan Get whether all switches support oui rule auto add vlan.
+
+	Get whether all switches support oui rule auto add vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return OUIBasedVLANAPIGetWhetherAllSwitchSupportAutoAddVlanRequest
+	*/
+	GetWhetherAllSwitchSupportAutoAddVlan(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetWhetherAllSwitchSupportAutoAddVlanRequest
+
+	// GetWhetherAllSwitchSupportAutoAddVlanExecute executes the request
+	//  @return OperationResponseOuiBasedVlanDeviceAutoAddVlanVO
+	GetWhetherAllSwitchSupportAutoAddVlanExecute(r OUIBasedVLANAPIGetWhetherAllSwitchSupportAutoAddVlanRequest) (*OperationResponseOuiBasedVlanDeviceAutoAddVlanVO, *http.Response, error)
+
+	/*
+	GetWhetherExistAllowAllPortOrLagsForRuleCreation Get whether exist at least one port or lag with allow all network tags for oui based vlan creation.
+
+	Get whether exist at least one port or lag with allow all network tags for oui based vlan creation.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest
+	*/
+	GetWhetherExistAllowAllPortOrLagsForRuleCreation(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest
+
+	// GetWhetherExistAllowAllPortOrLagsForRuleCreationExecute executes the request
+	//  @return OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO
+	GetWhetherExistAllowAllPortOrLagsForRuleCreationExecute(r OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest) (*OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO, *http.Response, error)
+
+	/*
+	GetWhetherExistAllowAllPortOrLagsForRuleModification Get whether exist at least one port or lag with allow all network tags for oui based vlan modification.
+
+	Get whether exist at least one port or lag with allow all network tags for oui based vlan modification.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@param ouiBasedVlanId Oui Based Vlan ID
+	@return OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest
+	*/
+	GetWhetherExistAllowAllPortOrLagsForRuleModification(ctx context.Context, omadacId string, siteId string, ouiBasedVlanId string) OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest
+
+	// GetWhetherExistAllowAllPortOrLagsForRuleModificationExecute executes the request
+	//  @return OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO
+	GetWhetherExistAllowAllPortOrLagsForRuleModificationExecute(r OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest) (*OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO, *http.Response, error)
+
+	/*
+	GetWhetherSiteOpenAutoAddVlan Get whether site open oui rule auto add vlan.
+
+	Get whether site open oui rule auto add vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param omadacId Omada ID
+	@param siteId Site ID
+	@return OUIBasedVLANAPIGetWhetherSiteOpenAutoAddVlanRequest
+	*/
+	GetWhetherSiteOpenAutoAddVlan(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetWhetherSiteOpenAutoAddVlanRequest
+
+	// GetWhetherSiteOpenAutoAddVlanExecute executes the request
+	//  @return OperationResponseOuiBasedVlanSiteAutoAddVlanVO
+	GetWhetherSiteOpenAutoAddVlanExecute(r OUIBasedVLANAPIGetWhetherSiteOpenAutoAddVlanRequest) (*OperationResponseOuiBasedVlanSiteAutoAddVlanVO, *http.Response, error)
 
 	/*
 	ModifyApOuiBasedVlan Modify Ap oui based vlan
@@ -688,6 +801,280 @@ func (a *OUIBasedVLANAPIService) DeleteSwitchOuiBasedVlanExecute(r OUIBasedVLANA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type OUIBasedVLANAPIEnableAutoAddVlanRequest struct {
+	ctx context.Context
+	ApiService OUIBasedVLANAPI
+	omadacId string
+	siteId string
+}
+
+func (r OUIBasedVLANAPIEnableAutoAddVlanRequest) Execute() (*OperationResponse, *http.Response, error) {
+	return r.ApiService.EnableAutoAddVlanExecute(r)
+}
+
+/*
+EnableAutoAddVlan Enable the site and device auto add vlan.
+
+Enable the site and device auto add vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager Modify<br/>Network Config Page Modify
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return OUIBasedVLANAPIEnableAutoAddVlanRequest
+*/
+func (a *OUIBasedVLANAPIService) EnableAutoAddVlan(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIEnableAutoAddVlanRequest {
+	return OUIBasedVLANAPIEnableAutoAddVlanRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponse
+func (a *OUIBasedVLANAPIService) EnableAutoAddVlanExecute(r OUIBasedVLANAPIEnableAutoAddVlanRequest) (*OperationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OUIBasedVLANAPIService.EnableAutoAddVlan")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/enable-auto-add-vlan"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest struct {
+	ctx context.Context
+	ApiService OUIBasedVLANAPI
+	page *int32
+	pageSize *int32
+	omadacId string
+	siteId string
+	name *string
+}
+
+// Start page number. Start from 1.
+func (r OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest) Page(page int32) OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest) PageSize(pageSize int32) OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+// Switch name. Support fuzzy search
+func (r OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest) Name(name string) OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest {
+	r.name = &name
+	return r
+}
+
+func (r OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest) Execute() (*OperationResponseGridVOOuiBasedVlanDeviceInfoVO, *http.Response, error) {
+	return r.ApiService.GetAllSupportAutoAddVlanSwitchListExecute(r)
+}
+
+/*
+GetAllSupportAutoAddVlanSwitchList Get switch list of supporting oui based vlan with ports(lags) info of vlans in oui based rules but not included in port(lag) vlan.
+
+Get switch list of supporting oui based vlan with ports(lags) info of vlans in oui based rules but not included in port(lag) vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest
+*/
+func (a *OUIBasedVLANAPIService) GetAllSupportAutoAddVlanSwitchList(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest {
+	return OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseGridVOOuiBasedVlanDeviceInfoVO
+func (a *OUIBasedVLANAPIService) GetAllSupportAutoAddVlanSwitchListExecute(r OUIBasedVLANAPIGetAllSupportAutoAddVlanSwitchListRequest) (*OperationResponseGridVOOuiBasedVlanDeviceInfoVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseGridVOOuiBasedVlanDeviceInfoVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OUIBasedVLANAPIService.GetAllSupportAutoAddVlanSwitchList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/switches/support-auto-add-vlan"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	if r.name != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name", r.name, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type OUIBasedVLANAPIGetGridApOuiBasedVlanRequest struct {
 	ctx context.Context
 	ApiService OUIBasedVLANAPI
@@ -974,6 +1361,149 @@ func (a *OUIBasedVLANAPIService) GetGridSwitchOuiBasedVlanExecute(r OUIBasedVLAN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest struct {
+	ctx context.Context
+	ApiService OUIBasedVLANAPI
+	page *int32
+	pageSize *int32
+	omadacId string
+	siteId string
+}
+
+// Start page number. Start from 1.
+func (r OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest) Page(page int32) OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest {
+	r.page = &page
+	return r
+}
+
+// Number of entries per page. It should be within the range of 1–1000.
+func (r OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest) PageSize(pageSize int32) OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest) Execute() (*OperationResponseOuiBasedVlanGridVOSwitchDataVO, *http.Response, error) {
+	return r.ApiService.GetOuiBasedVlanSwitchListExecute(r)
+}
+
+/*
+GetOuiBasedVlanSwitchList Get all oui based vlan switch list.
+
+Get all oui based vlan switch list.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest
+*/
+func (a *OUIBasedVLANAPIService) GetOuiBasedVlanSwitchList(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest {
+	return OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOuiBasedVlanGridVOSwitchDataVO
+func (a *OUIBasedVLANAPIService) GetOuiBasedVlanSwitchListExecute(r OUIBasedVLANAPIGetOuiBasedVlanSwitchListRequest) (*OperationResponseOuiBasedVlanGridVOSwitchDataVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOuiBasedVlanGridVOSwitchDataVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OUIBasedVLANAPIService.GetOuiBasedVlanSwitchList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/switches"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.page == nil {
+		return localVarReturnValue, nil, reportError("page is required and must be specified")
+	}
+	if r.pageSize == nil {
+		return localVarReturnValue, nil, reportError("pageSize is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type OUIBasedVLANAPIGetSwitchListRequest struct {
 	ctx context.Context
 	ApiService OUIBasedVLANAPI
@@ -1059,6 +1589,516 @@ func (a *OUIBasedVLANAPIService) GetSwitchListExecute(r OUIBasedVLANAPIGetSwitch
 	if r.name != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "name", r.name, "form", "")
 	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type OUIBasedVLANAPIGetWhetherAllSwitchSupportAutoAddVlanRequest struct {
+	ctx context.Context
+	ApiService OUIBasedVLANAPI
+	omadacId string
+	siteId string
+}
+
+func (r OUIBasedVLANAPIGetWhetherAllSwitchSupportAutoAddVlanRequest) Execute() (*OperationResponseOuiBasedVlanDeviceAutoAddVlanVO, *http.Response, error) {
+	return r.ApiService.GetWhetherAllSwitchSupportAutoAddVlanExecute(r)
+}
+
+/*
+GetWhetherAllSwitchSupportAutoAddVlan Get whether all switches support oui rule auto add vlan.
+
+Get whether all switches support oui rule auto add vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return OUIBasedVLANAPIGetWhetherAllSwitchSupportAutoAddVlanRequest
+*/
+func (a *OUIBasedVLANAPIService) GetWhetherAllSwitchSupportAutoAddVlan(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetWhetherAllSwitchSupportAutoAddVlanRequest {
+	return OUIBasedVLANAPIGetWhetherAllSwitchSupportAutoAddVlanRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOuiBasedVlanDeviceAutoAddVlanVO
+func (a *OUIBasedVLANAPIService) GetWhetherAllSwitchSupportAutoAddVlanExecute(r OUIBasedVLANAPIGetWhetherAllSwitchSupportAutoAddVlanRequest) (*OperationResponseOuiBasedVlanDeviceAutoAddVlanVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOuiBasedVlanDeviceAutoAddVlanVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OUIBasedVLANAPIService.GetWhetherAllSwitchSupportAutoAddVlan")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/auto-add-vlan-all-support"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest struct {
+	ctx context.Context
+	ApiService OUIBasedVLANAPI
+	omadacId string
+	siteId string
+	ouiBasedVlanRuleVO *OuiBasedVlanRuleVO
+}
+
+func (r OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest) OuiBasedVlanRuleVO(ouiBasedVlanRuleVO OuiBasedVlanRuleVO) OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest {
+	r.ouiBasedVlanRuleVO = &ouiBasedVlanRuleVO
+	return r
+}
+
+func (r OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest) Execute() (*OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO, *http.Response, error) {
+	return r.ApiService.GetWhetherExistAllowAllPortOrLagsForRuleCreationExecute(r)
+}
+
+/*
+GetWhetherExistAllowAllPortOrLagsForRuleCreation Get whether exist at least one port or lag with allow all network tags for oui based vlan creation.
+
+Get whether exist at least one port or lag with allow all network tags for oui based vlan creation.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest
+*/
+func (a *OUIBasedVLANAPIService) GetWhetherExistAllowAllPortOrLagsForRuleCreation(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest {
+	return OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO
+func (a *OUIBasedVLANAPIService) GetWhetherExistAllowAllPortOrLagsForRuleCreationExecute(r OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleCreationRequest) (*OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OUIBasedVLANAPIService.GetWhetherExistAllowAllPortOrLagsForRuleCreation")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/switches/check"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.ouiBasedVlanRuleVO == nil {
+		return localVarReturnValue, nil, reportError("ouiBasedVlanRuleVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.ouiBasedVlanRuleVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest struct {
+	ctx context.Context
+	ApiService OUIBasedVLANAPI
+	omadacId string
+	siteId string
+	ouiBasedVlanId string
+	ouiBasedVlanRuleVO *OuiBasedVlanRuleVO
+}
+
+func (r OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest) OuiBasedVlanRuleVO(ouiBasedVlanRuleVO OuiBasedVlanRuleVO) OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest {
+	r.ouiBasedVlanRuleVO = &ouiBasedVlanRuleVO
+	return r
+}
+
+func (r OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest) Execute() (*OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO, *http.Response, error) {
+	return r.ApiService.GetWhetherExistAllowAllPortOrLagsForRuleModificationExecute(r)
+}
+
+/*
+GetWhetherExistAllowAllPortOrLagsForRuleModification Get whether exist at least one port or lag with allow all network tags for oui based vlan modification.
+
+Get whether exist at least one port or lag with allow all network tags for oui based vlan modification.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @param ouiBasedVlanId Oui Based Vlan ID
+ @return OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest
+*/
+func (a *OUIBasedVLANAPIService) GetWhetherExistAllowAllPortOrLagsForRuleModification(ctx context.Context, omadacId string, siteId string, ouiBasedVlanId string) OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest {
+	return OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+		ouiBasedVlanId: ouiBasedVlanId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO
+func (a *OUIBasedVLANAPIService) GetWhetherExistAllowAllPortOrLagsForRuleModificationExecute(r OUIBasedVLANAPIGetWhetherExistAllowAllPortOrLagsForRuleModificationRequest) (*OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OUIBasedVLANAPIService.GetWhetherExistAllowAllPortOrLagsForRuleModification")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/switches/{ouiBasedVlanId}/check"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ouiBasedVlanId"+"}", url.PathEscape(parameterValueToString(r.ouiBasedVlanId, "ouiBasedVlanId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.ouiBasedVlanRuleVO == nil {
+		return localVarReturnValue, nil, reportError("ouiBasedVlanRuleVO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.ouiBasedVlanRuleVO
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["AccessToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type OUIBasedVLANAPIGetWhetherSiteOpenAutoAddVlanRequest struct {
+	ctx context.Context
+	ApiService OUIBasedVLANAPI
+	omadacId string
+	siteId string
+}
+
+func (r OUIBasedVLANAPIGetWhetherSiteOpenAutoAddVlanRequest) Execute() (*OperationResponseOuiBasedVlanSiteAutoAddVlanVO, *http.Response, error) {
+	return r.ApiService.GetWhetherSiteOpenAutoAddVlanExecute(r)
+}
+
+/*
+GetWhetherSiteOpenAutoAddVlan Get whether site open oui rule auto add vlan.
+
+Get whether site open oui rule auto add vlan.<br/><br/>The interface requires one of the permissions: <br/>Site Settings Manager View Only<br/>Network Config Page View Only
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param omadacId Omada ID
+ @param siteId Site ID
+ @return OUIBasedVLANAPIGetWhetherSiteOpenAutoAddVlanRequest
+*/
+func (a *OUIBasedVLANAPIService) GetWhetherSiteOpenAutoAddVlan(ctx context.Context, omadacId string, siteId string) OUIBasedVLANAPIGetWhetherSiteOpenAutoAddVlanRequest {
+	return OUIBasedVLANAPIGetWhetherSiteOpenAutoAddVlanRequest{
+		ApiService: a,
+		ctx: ctx,
+		omadacId: omadacId,
+		siteId: siteId,
+	}
+}
+
+// Execute executes the request
+//  @return OperationResponseOuiBasedVlanSiteAutoAddVlanVO
+func (a *OUIBasedVLANAPIService) GetWhetherSiteOpenAutoAddVlanExecute(r OUIBasedVLANAPIGetWhetherSiteOpenAutoAddVlanRequest) (*OperationResponseOuiBasedVlanSiteAutoAddVlanVO, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *OperationResponseOuiBasedVlanSiteAutoAddVlanVO
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OUIBasedVLANAPIService.GetWhetherSiteOpenAutoAddVlan")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/whether-auto-add-vlan"
+	localVarPath = strings.Replace(localVarPath, "{"+"omadacId"+"}", url.PathEscape(parameterValueToString(r.omadacId, "omadacId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"siteId"+"}", url.PathEscape(parameterValueToString(r.siteId, "siteId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

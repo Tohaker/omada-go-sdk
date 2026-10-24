@@ -665,19 +665,22 @@ type ApAPI interface {
 	GetMeshStatisticsForMspExecute(r ApAPIGetMeshStatisticsForMspRequest) (*OperationResponseApMeshStatisticsOpenApiVO, *http.Response, error)
 
 	/*
-	GetMultiApPortList Get multiple APs port list
+	GetMultiApPortList Get multiple APs port capability
 
-	Get multiple APs Port List.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39050  -  This device does not exist.<br/>-39749  -  To modify AP port configurations in batches, select APs of the same model.
+	Get port capability information for multiple APs. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39050  -  This device does not exist.<br/>-39749  -  To modify AP port configurations in batches, select APs of the same model.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param omadacId Omada ID
 	@param siteId Site ID
 	@return ApAPIGetMultiApPortListRequest
+
+	Deprecated
 	*/
 	GetMultiApPortList(ctx context.Context, omadacId string, siteId string) ApAPIGetMultiApPortListRequest
 
 	// GetMultiApPortListExecute executes the request
 	//  @return OperationResponseListAPLANPortList
+	// Deprecated
 	GetMultiApPortListExecute(r ApAPIGetMultiApPortListRequest) (*OperationResponseListAPLANPortList, *http.Response, error)
 
 	/*
@@ -6235,14 +6238,16 @@ func (r ApAPIGetMultiApPortListRequest) Execute() (*OperationResponseListAPLANPo
 }
 
 /*
-GetMultiApPortList Get multiple APs port list
+GetMultiApPortList Get multiple APs port capability
 
-Get multiple APs Port List.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39050  -  This device does not exist.<br/>-39749  -  To modify AP port configurations in batches, select APs of the same model.
+Get port capability information for multiple APs. This interface has been deprecated.<br/><br/>The interface requires one of the permissions: <br/>Site Device Manager View Only<br/><br/>The possible error code for the interface in the returned body is one of the following error codes (non generic error codes): <br/>-1001  -  Invalid request parameters.<br/>-39050  -  This device does not exist.<br/>-39749  -  To modify AP port configurations in batches, select APs of the same model.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param omadacId Omada ID
  @param siteId Site ID
  @return ApAPIGetMultiApPortListRequest
+
+Deprecated
 */
 func (a *ApAPIService) GetMultiApPortList(ctx context.Context, omadacId string, siteId string) ApAPIGetMultiApPortListRequest {
 	return ApAPIGetMultiApPortListRequest{
@@ -6255,6 +6260,7 @@ func (a *ApAPIService) GetMultiApPortList(ctx context.Context, omadacId string, 
 
 // Execute executes the request
 //  @return OperationResponseListAPLANPortList
+// Deprecated
 func (a *ApAPIService) GetMultiApPortListExecute(r ApAPIGetMultiApPortListRequest) (*OperationResponseListAPLANPortList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **BeforeIndex** | Pointer to **int32** | Index before WLAN Optimization, between 0 and 100. | [optional] 
 **IsAppliedSuccess** | Pointer to **bool** | Parameter [isAppliedSuccess] means whether WLAN Optimization executes successfully. | [optional] 
 **Length** | Pointer to **int32** | Parameter [length] means the duration of the WLAN Optimization in seconds. | [optional] 
-**Mode** | Pointer to **int32** | 0: by WLAN Optimization schedule. 1: by one-click WLAN Optimization. | [optional] 
+**Mode** | Pointer to **int32** | 0: by WLAN Optimization schedule. 1: by one-click WLAN Optimization. 2: by RRM schedule(Deprecated). 3: by RRM adaptive. | [optional] 
 **Time** | Pointer to **int64** | Timestamp corresponding to the start of optimization. | [optional] 
 
 ## Methods

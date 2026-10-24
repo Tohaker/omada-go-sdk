@@ -17,7 +17,7 @@ import (
 // checks if the StackMsgVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &StackMsgVO{}
 
-// StackMsgVO Stack Message
+// StackMsgVO The stack info if it belongs to a stack.
 type StackMsgVO struct {
 	// Causes of abnormal
 	AbnormalReason *int32 `json:"abnormalReason,omitempty"`
