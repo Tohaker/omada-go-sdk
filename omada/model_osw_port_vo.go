@@ -17,7 +17,7 @@ import (
 // checks if the OswPortVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OswPortVO{}
 
-// OswPortVO Port List
+// OswPortVO The infos of ports.
 type OswPortVO struct {
 	// Site to which the port belongs
 	Site *string `json:"Site,omitempty"`

@@ -1017,7 +1017,7 @@ Name | Type | Description  | Notes
 
 ## GetRadioFrequencyPlanningConfig
 
-> OperationResponsePlanningHistoryDetail GetRadioFrequencyPlanningConfig(ctx, omadacId, siteId).Execute()
+> OperationResponseRFPlanningConfig GetRadioFrequencyPlanningConfig(ctx, omadacId, siteId).Execute()
 
 get Radio Frequency Planning Config
 
@@ -1046,7 +1046,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `WLANOptimizationAPI.GetRadioFrequencyPlanningConfig``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRadioFrequencyPlanningConfig`: OperationResponsePlanningHistoryDetail
+	// response from `GetRadioFrequencyPlanningConfig`: OperationResponseRFPlanningConfig
 	fmt.Fprintf(os.Stdout, "Response from `WLANOptimizationAPI.GetRadioFrequencyPlanningConfig`: %v\n", resp)
 }
 ```
@@ -1072,7 +1072,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationResponsePlanningHistoryDetail**](OperationResponsePlanningHistoryDetail.md)
+[**OperationResponseRFPlanningConfig**](OperationResponseRFPlanningConfig.md)
 
 ### Authorization
 

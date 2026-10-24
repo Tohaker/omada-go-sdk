@@ -409,6 +409,7 @@ docs/AutoCheckUpgradeInfo.md
 docs/AutoConfigOpenApiVO.md
 docs/AutoEffectDeviceForVlanVO.md
 docs/AutoEffectDevicesForVlanVO.md
+docs/AutoFreeAuthPolicyOpenApi.md
 docs/AutoSelectDeviceForVlanVO.md
 docs/AutoSelectDevicesForVlanVO.md
 docs/AutoSelectWanPortReq.md
@@ -840,6 +841,7 @@ docs/DeviceObjectDTO.md
 docs/DeviceOpenApiVO.md
 docs/DeviceOuiModeOpenApiVO.md
 docs/DeviceOuiModeQueryOpenApiVO.md
+docs/DeviceOuiModeVO.md
 docs/DevicePoePorts.md
 docs/DevicePortVO.md
 docs/DevicePorts.md
@@ -2116,6 +2118,7 @@ docs/OperationResponseListApnProfile.md
 docs/OperationResponseListApplicationStatTraffic.md
 docs/OperationResponseListApplicationTrafficWithClientCount.md
 docs/OperationResponseListAuthenticationConfigDTO.md
+docs/OperationResponseListAutoFreeAuthPolicyOpenApi.md
 docs/OperationResponseListAutoServicePortVO.md
 docs/OperationResponseListBatchFullChannelDetectStatusOpenApiVO.md
 docs/OperationResponseListBriefDeviceInfoDetailForBatchAdoptOpenApiVO.md
@@ -2318,6 +2321,10 @@ docs/OperationResponseOswStackSwitchVO.md
 docs/OperationResponseOswStatOpenApiVO.md
 docs/OperationResponseOswStaticRoutingGridVOOswStaticRoutingVO.md
 docs/OperationResponseOtoNatOpenApiGridVO.md
+docs/OperationResponseOuiBasedVlanDeviceAutoAddVlanVO.md
+docs/OperationResponseOuiBasedVlanGridVOSwitchDataVO.md
+docs/OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO.md
+docs/OperationResponseOuiBasedVlanSiteAutoAddVlanVO.md
 docs/OperationResponseOuiGridVOOuiProfileQueryOpenApiVO.md
 docs/OperationResponseOutboxMessageOpenApiGridVOOutboxMessage.md
 docs/OperationResponseOverviewStatisticsOpenApiVO.md
@@ -2356,6 +2363,7 @@ docs/OperationResponsePortalPictureInfo.md
 docs/OperationResponsePrivacyPolicy.md
 docs/OperationResponseQueryDeviceListOpenApiVO.md
 docs/OperationResponseQueueSchedulerMappingVO.md
+docs/OperationResponseRFPlanningConfig.md
 docs/OperationResponseRFPlanningResult.md
 docs/OperationResponseRemoteBindingOpenApiVO.md
 docs/OperationResponseRemoteLog.md
@@ -2692,6 +2700,7 @@ docs/OswStackConfigOpenApiVO.md
 docs/OswStackDataVO.md
 docs/OswStackDataVODeviceInfo.md
 docs/OswStackDataVOOswDataVO.md
+docs/OswStackDataVOSwitchDataVO.md
 docs/OswStackDetailConfigOpenApiVO.md
 docs/OswStackDetailIntPropertyDTO.md
 docs/OswStackDetailLongPropertyDTO.md
@@ -2759,8 +2768,13 @@ docs/OtoNatOpenApiGridVO.md
 docs/OtoNatOpenApiVO.md
 docs/OuiBasedVlanApOpenApiVO.md
 docs/OuiBasedVlanApQueryOpenApiVO.md
+docs/OuiBasedVlanDeviceAutoAddVlanVO.md
 docs/OuiBasedVlanDeviceInfoVO.md
+docs/OuiBasedVlanGridVOSwitchDataVO.md
 docs/OuiBasedVlanNetworkVO.md
+docs/OuiBasedVlanOswPortNetworkTagsSettingVO.md
+docs/OuiBasedVlanRuleVO.md
+docs/OuiBasedVlanSiteAutoAddVlanVO.md
 docs/OuiBasedVlanSwitchOpenApiVO.md
 docs/OuiBasedVlanSwitchQueryOpenApiVO.md
 docs/OuiBasedVlanTemplateOpenApiVO.md
@@ -2914,6 +2928,7 @@ docs/QueueSchedulerMappingVO.md
 docs/QuickActionAPI.md
 docs/QuotaDataSettingOpenApiVO.md
 docs/QuotaSmsSettingOpenApiVO.md
+docs/RFPlanningConfig.md
 docs/RFPlanningDeployConfig.md
 docs/RFPlanningDeployResult.md
 docs/RFPlanningHistory.md
@@ -3192,6 +3207,7 @@ docs/SsidMacFilterOpenApiVO.md
 docs/SsidMultiCastOpenApiVO.md
 docs/SsidOpenApiVO.md
 docs/SsidOuiModeOpenApiVO.md
+docs/SsidOuiModeVO.md
 docs/SsidOverrideConfigOpenApiV2VO.md
 docs/SsidOverrideOpenApiV2VO.md
 docs/SsidOverrideVO.md
@@ -3274,6 +3290,7 @@ docs/SwitchAlertRebootVO.md
 docs/SwitchAlertVO.md
 docs/SwitchBatchLoopbackControl.md
 docs/SwitchCustomDHCPOptions.md
+docs/SwitchDataVO.md
 docs/SwitchDistributionVO.md
 docs/SwitchGeneralConfig.md
 docs/SwitchInfo.md
@@ -3541,6 +3558,7 @@ docs/VlanNetworkIdListVO.md
 docs/VlanNetworkVlansVO.md
 docs/VlanOuiModeOpenApiVO.md
 docs/VlanOuiModeQueryOpenApiVO.md
+docs/VlanOuiModeVO.md
 docs/VlanPreConfigOpenApiVO.md
 docs/VoIPAPI.md
 docs/VoIPTemplateAPI.md
@@ -3924,6 +3942,7 @@ model_auto_check_upgrade_info.go
 model_auto_config_open_api_vo.go
 model_auto_effect_device_for_vlan_vo.go
 model_auto_effect_devices_for_vlan_vo.go
+model_auto_free_auth_policy_open_api.go
 model_auto_select_device_for_vlan_vo.go
 model_auto_select_devices_for_vlan_vo.go
 model_auto_select_wan_port_req.go
@@ -4330,6 +4349,7 @@ model_device_object_dto.go
 model_device_open_api_vo.go
 model_device_oui_mode_open_api_vo.go
 model_device_oui_mode_query_open_api_vo.go
+model_device_oui_mode_vo.go
 model_device_poe_ports.go
 model_device_port_vo.go
 model_device_ports.go
@@ -5536,6 +5556,7 @@ model_operation_response_list_apn_profile.go
 model_operation_response_list_application_stat_traffic.go
 model_operation_response_list_application_traffic_with_client_count.go
 model_operation_response_list_authentication_config_dto.go
+model_operation_response_list_auto_free_auth_policy_open_api.go
 model_operation_response_list_auto_service_port_vo.go
 model_operation_response_list_batch_full_channel_detect_status_open_api_vo.go
 model_operation_response_list_brief_device_info_detail_for_batch_adopt_open_api_vo.go
@@ -5738,6 +5759,10 @@ model_operation_response_osw_stack_switch_vo.go
 model_operation_response_osw_stat_open_api_vo.go
 model_operation_response_osw_static_routing_grid_vo_osw_static_routing_vo.go
 model_operation_response_oto_nat_open_api_grid_vo.go
+model_operation_response_oui_based_vlan_device_auto_add_vlan_vo.go
+model_operation_response_oui_based_vlan_grid_vo_switch_data_vo.go
+model_operation_response_oui_based_vlan_osw_port_network_tags_setting_vo.go
+model_operation_response_oui_based_vlan_site_auto_add_vlan_vo.go
 model_operation_response_oui_grid_vo_oui_profile_query_open_api_vo.go
 model_operation_response_outbox_message_open_api_grid_vo_outbox_message.go
 model_operation_response_overview_statistics_open_api_vo.go
@@ -5790,6 +5815,7 @@ model_operation_response_response_id_vo.go
 model_operation_response_restriction_result_entity.go
 model_operation_response_retry_add_device_resp_open_api_vo.go
 model_operation_response_retry_drop_rate.go
+model_operation_response_rf_planning_config.go
 model_operation_response_rf_planning_result.go
 model_operation_response_rolling_upgrade_res.go
 model_operation_response_rrm_setting_open_api_vo.go
@@ -6111,6 +6137,7 @@ model_osw_stack_config_open_api_vo.go
 model_osw_stack_data_vo.go
 model_osw_stack_data_vo_device_info.go
 model_osw_stack_data_vo_osw_data_vo.go
+model_osw_stack_data_vo_switch_data_vo.go
 model_osw_stack_detail_config_open_api_vo.go
 model_osw_stack_detail_int_property_dto.go
 model_osw_stack_detail_long_property_dto.go
@@ -6179,8 +6206,13 @@ model_oto_nat_open_api_vo.go
 model_oui_and_description.go
 model_oui_based_vlan_ap_open_api_vo.go
 model_oui_based_vlan_ap_query_open_api_vo.go
+model_oui_based_vlan_device_auto_add_vlan_vo.go
 model_oui_based_vlan_device_info_vo.go
+model_oui_based_vlan_grid_vo_switch_data_vo.go
 model_oui_based_vlan_network_vo.go
+model_oui_based_vlan_osw_port_network_tags_setting_vo.go
+model_oui_based_vlan_rule_vo.go
+model_oui_based_vlan_site_auto_add_vlan_vo.go
 model_oui_based_vlan_switch_open_api_vo.go
 model_oui_based_vlan_switch_query_open_api_vo.go
 model_oui_based_vlan_template_open_api_vo.go
@@ -6387,6 +6419,7 @@ model_retry_add_device_open_api_vo.go
 model_retry_add_device_resp_open_api_vo.go
 model_retry_drop_rate.go
 model_retry_eap.go
+model_rf_planning_config.go
 model_rf_planning_deploy_config.go
 model_rf_planning_deploy_result.go
 model_rf_planning_history.go
@@ -6584,6 +6617,7 @@ model_ssid_mac_filter_open_api_vo.go
 model_ssid_multi_cast_open_api_vo.go
 model_ssid_open_api_vo.go
 model_ssid_oui_mode_open_api_vo.go
+model_ssid_oui_mode_vo.go
 model_ssid_override_config_open_api_v2_vo.go
 model_ssid_override_open_api_v2_vo.go
 model_ssid_override_vo.go
@@ -6665,6 +6699,7 @@ model_switch_alert_reboot_vo.go
 model_switch_alert_vo.go
 model_switch_batch_loopback_control.go
 model_switch_custom_dhcp_options.go
+model_switch_data_vo.go
 model_switch_distribution_vo.go
 model_switch_general_config.go
 model_switch_info.go
@@ -6919,6 +6954,7 @@ model_vlan_network_id_list_vo.go
 model_vlan_network_vlans_vo.go
 model_vlan_oui_mode_open_api_vo.go
 model_vlan_oui_mode_query_open_api_vo.go
+model_vlan_oui_mode_vo.go
 model_vlan_pre_config_open_api_vo.go
 model_voice_mail.go
 model_voice_mail_batch_delete.go

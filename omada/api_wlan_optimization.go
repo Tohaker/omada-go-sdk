@@ -246,8 +246,8 @@ type WLANOptimizationAPI interface {
 	GetRadioFrequencyPlanningConfig(ctx context.Context, omadacId string, siteId string) WLANOptimizationAPIGetRadioFrequencyPlanningConfigRequest
 
 	// GetRadioFrequencyPlanningConfigExecute executes the request
-	//  @return OperationResponsePlanningHistoryDetail
-	GetRadioFrequencyPlanningConfigExecute(r WLANOptimizationAPIGetRadioFrequencyPlanningConfigRequest) (*OperationResponsePlanningHistoryDetail, *http.Response, error)
+	//  @return OperationResponseRFPlanningConfig
+	GetRadioFrequencyPlanningConfigExecute(r WLANOptimizationAPIGetRadioFrequencyPlanningConfigRequest) (*OperationResponseRFPlanningConfig, *http.Response, error)
 
 	/*
 	GetRadioFrequencyPlanningConfigTemplate get Radio Frequency Planning Config Template
@@ -2169,7 +2169,7 @@ type WLANOptimizationAPIGetRadioFrequencyPlanningConfigRequest struct {
 	siteId string
 }
 
-func (r WLANOptimizationAPIGetRadioFrequencyPlanningConfigRequest) Execute() (*OperationResponsePlanningHistoryDetail, *http.Response, error) {
+func (r WLANOptimizationAPIGetRadioFrequencyPlanningConfigRequest) Execute() (*OperationResponseRFPlanningConfig, *http.Response, error) {
 	return r.ApiService.GetRadioFrequencyPlanningConfigExecute(r)
 }
 
@@ -2193,13 +2193,13 @@ func (a *WLANOptimizationAPIService) GetRadioFrequencyPlanningConfig(ctx context
 }
 
 // Execute executes the request
-//  @return OperationResponsePlanningHistoryDetail
-func (a *WLANOptimizationAPIService) GetRadioFrequencyPlanningConfigExecute(r WLANOptimizationAPIGetRadioFrequencyPlanningConfigRequest) (*OperationResponsePlanningHistoryDetail, *http.Response, error) {
+//  @return OperationResponseRFPlanningConfig
+func (a *WLANOptimizationAPIService) GetRadioFrequencyPlanningConfigExecute(r WLANOptimizationAPIGetRadioFrequencyPlanningConfigRequest) (*OperationResponseRFPlanningConfig, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OperationResponsePlanningHistoryDetail
+		localVarReturnValue  *OperationResponseRFPlanningConfig
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WLANOptimizationAPIService.GetRadioFrequencyPlanningConfig")

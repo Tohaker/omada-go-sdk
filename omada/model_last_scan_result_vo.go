@@ -29,7 +29,7 @@ type LastScanResultVO struct {
 	IsAppliedSuccess *bool `json:"isAppliedSuccess,omitempty"`
 	// Parameter [length] means the duration of the WLAN Optimization in seconds.
 	Length *int32 `json:"length,omitempty"`
-	// 0: by WLAN Optimization schedule. 1: by one-click WLAN Optimization.
+	// 0: by WLAN Optimization schedule. 1: by one-click WLAN Optimization. 2: by RRM schedule(Deprecated). 3: by RRM adaptive.
 	Mode *int32 `json:"mode,omitempty"`
 	// Timestamp corresponding to the start of optimization.
 	Time *int64 `json:"time,omitempty"`

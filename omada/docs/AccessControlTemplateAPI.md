@@ -5,6 +5,7 @@ All URIs are relative to *https://use1-omada-northbound.tplinkcloud.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAccessControlTemplate**](AccessControlTemplateAPI.md#getaccesscontroltemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/access-control | Get access control setting template
+[**GetAutoFreeAuthPolicyTemplate**](AccessControlTemplateAPI.md#getautofreeauthpolicytemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/auto-free-auth-policy | Get automatically generated free auth policy template items
 [**ModifyAccessControlTemplate**](AccessControlTemplateAPI.md#modifyaccesscontroltemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/access-control | Modify access control setting template
 
 
@@ -67,6 +68,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperationResponsePortalAccessControlOpenApiVO**](OperationResponsePortalAccessControlOpenApiVO.md)
+
+### Authorization
+
+[AccessToken](../README.md#accesstoken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAutoFreeAuthPolicyTemplate
+
+> OperationResponseListAutoFreeAuthPolicyOpenApi GetAutoFreeAuthPolicyTemplate(ctx, omadacId, siteTemplateId).Execute()
+
+Get automatically generated free auth policy template items
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/Tohaker/omada-go-sdk/omada"
+)
+
+func main() {
+	omadacId := "omadacId_example" // string | Omada ID
+	siteTemplateId := "siteTemplateId_example" // string | Site Template ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccessControlTemplateAPI.GetAutoFreeAuthPolicyTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccessControlTemplateAPI.GetAutoFreeAuthPolicyTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAutoFreeAuthPolicyTemplate`: OperationResponseListAutoFreeAuthPolicyOpenApi
+	fmt.Fprintf(os.Stdout, "Response from `AccessControlTemplateAPI.GetAutoFreeAuthPolicyTemplate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**omadacId** | **string** | Omada ID | 
+**siteTemplateId** | **string** | Site Template ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAutoFreeAuthPolicyTemplateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**OperationResponseListAutoFreeAuthPolicyOpenApi**](OperationResponseListAutoFreeAuthPolicyOpenApi.md)
 
 ### Authorization
 
