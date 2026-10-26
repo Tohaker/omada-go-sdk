@@ -23,6 +23,8 @@ var _ MappedNullable = &NatTraversalTunnelOpenApiVO{}
 type NatTraversalTunnelOpenApiVO struct {
 	// App type of the remote access tunnel for the local target device. HTTP, HTTPS, SSH, TELNET.
 	AppType string `json:"appType"`
+	// If the remote access tunnel enabled auto login. true: Auto login is enabled; false: Auto login is disabled.
+	AutoLogin *bool `json:"autoLogin,omitempty"`
 	// Client's type of the remote access tunnel for the client.
 	ClientDeviceType *string `json:"clientDeviceType,omitempty"`
 	// Client's manager of the remote access tunnel for the client.
@@ -92,6 +94,38 @@ func (o *NatTraversalTunnelOpenApiVO) GetAppTypeOk() (*string, bool) {
 // SetAppType sets field value
 func (o *NatTraversalTunnelOpenApiVO) SetAppType(v string) {
 	o.AppType = v
+}
+
+// GetAutoLogin returns the AutoLogin field value if set, zero value otherwise.
+func (o *NatTraversalTunnelOpenApiVO) GetAutoLogin() bool {
+	if o == nil || IsNil(o.AutoLogin) {
+		var ret bool
+		return ret
+	}
+	return *o.AutoLogin
+}
+
+// GetAutoLoginOk returns a tuple with the AutoLogin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NatTraversalTunnelOpenApiVO) GetAutoLoginOk() (*bool, bool) {
+	if o == nil || IsNil(o.AutoLogin) {
+		return nil, false
+	}
+	return o.AutoLogin, true
+}
+
+// HasAutoLogin returns a boolean if a field has been set.
+func (o *NatTraversalTunnelOpenApiVO) HasAutoLogin() bool {
+	if o != nil && !IsNil(o.AutoLogin) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoLogin gets a reference to the given bool and assigns it to the AutoLogin field.
+func (o *NatTraversalTunnelOpenApiVO) SetAutoLogin(v bool) {
+	o.AutoLogin = &v
 }
 
 // GetClientDeviceType returns the ClientDeviceType field value if set, zero value otherwise.
@@ -433,6 +467,9 @@ func (o NatTraversalTunnelOpenApiVO) MarshalJSON() ([]byte, error) {
 func (o NatTraversalTunnelOpenApiVO) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["appType"] = o.AppType
+	if !IsNil(o.AutoLogin) {
+		toSerialize["autoLogin"] = o.AutoLogin
+	}
 	if !IsNil(o.ClientDeviceType) {
 		toSerialize["clientDeviceType"] = o.ClientDeviceType
 	}

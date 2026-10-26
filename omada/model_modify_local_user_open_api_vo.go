@@ -34,7 +34,7 @@ type ModifyLocalUserOpenApiVO struct {
 	// Mac address,the value is only available when the macType is static binding or dynamic binding.
 	MacAddress *string `json:"macAddress,omitempty"`
 	// The maximum number of users online at the same time when the MAC binding type is No Binding. It cannot be modified after initialization. MaxUsers should be within the range of 1–2048.
-	MaxUsers int32 `json:"maxUsers"`
+	MaxUsers *int32 `json:"maxUsers,omitempty"`
 	// Name should contain 1 to 128 characters, with no spaces at the beginning and end, and spaces in the middle
 	Name *string `json:"name,omitempty"`
 	// Password should contain 1 to 128 characters.
@@ -58,12 +58,11 @@ type _ModifyLocalUserOpenApiVO ModifyLocalUserOpenApiVO
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModifyLocalUserOpenApiVO(bindingType int32, enable bool, expirationTime int64, maxUsers int32, password string, portals []string, rateLimit RateLimitOpenApiVO, trafficLimitEnable bool) *ModifyLocalUserOpenApiVO {
+func NewModifyLocalUserOpenApiVO(bindingType int32, enable bool, expirationTime int64, password string, portals []string, rateLimit RateLimitOpenApiVO, trafficLimitEnable bool) *ModifyLocalUserOpenApiVO {
 	this := ModifyLocalUserOpenApiVO{}
 	this.BindingType = bindingType
 	this.Enable = enable
 	this.ExpirationTime = expirationTime
-	this.MaxUsers = maxUsers
 	this.Password = password
 	this.Portals = portals
 	this.RateLimit = rateLimit
@@ -247,28 +246,36 @@ func (o *ModifyLocalUserOpenApiVO) SetMacAddress(v string) {
 	o.MacAddress = &v
 }
 
-// GetMaxUsers returns the MaxUsers field value
+// GetMaxUsers returns the MaxUsers field value if set, zero value otherwise.
 func (o *ModifyLocalUserOpenApiVO) GetMaxUsers() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.MaxUsers) {
 		var ret int32
 		return ret
 	}
-
-	return o.MaxUsers
+	return *o.MaxUsers
 }
 
-// GetMaxUsersOk returns a tuple with the MaxUsers field value
+// GetMaxUsersOk returns a tuple with the MaxUsers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModifyLocalUserOpenApiVO) GetMaxUsersOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.MaxUsers) {
 		return nil, false
 	}
-	return &o.MaxUsers, true
+	return o.MaxUsers, true
 }
 
-// SetMaxUsers sets field value
+// HasMaxUsers returns a boolean if a field has been set.
+func (o *ModifyLocalUserOpenApiVO) HasMaxUsers() bool {
+	if o != nil && !IsNil(o.MaxUsers) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxUsers gets a reference to the given int32 and assigns it to the MaxUsers field.
 func (o *ModifyLocalUserOpenApiVO) SetMaxUsers(v int32) {
-	o.MaxUsers = v
+	o.MaxUsers = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -517,7 +524,9 @@ func (o ModifyLocalUserOpenApiVO) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MacAddress) {
 		toSerialize["macAddress"] = o.MacAddress
 	}
-	toSerialize["maxUsers"] = o.MaxUsers
+	if !IsNil(o.MaxUsers) {
+		toSerialize["maxUsers"] = o.MaxUsers
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
@@ -545,7 +554,6 @@ func (o *ModifyLocalUserOpenApiVO) UnmarshalJSON(data []byte) (err error) {
 		"bindingType",
 		"enable",
 		"expirationTime",
-		"maxUsers",
 		"password",
 		"portals",
 		"rateLimit",

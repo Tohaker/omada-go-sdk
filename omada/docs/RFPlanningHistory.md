@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **IsAppliedSuccess** | Pointer to **bool** | True: Succeeded to apply settings recommended by the algorithm. False or null: Failed to apply settings recommended by the algorithm.  | [optional] 
 **IsScanSuccess** | Pointer to **bool** | True: Succeeded to obtain device scan results. False: Failed to obtain device scan results. | [optional] 
 **Length** | Pointer to **int32** | Parameter [length] means the duration of the WLAN Optimization in seconds. | [optional] 
-**Mode** | Pointer to **int32** | 0: by WLAN Optimization schedule. 1: by one-click WLAN Optimization. | [optional] 
+**Mode** | Pointer to **int32** | 0: by WLAN Optimization schedule. 1: by one-click WLAN Optimization. 2: by RRM schedule(Deprecated). 3: by RRM adaptive. | [optional] 
 **Msg** | Pointer to **string** |  | [optional] 
 **MsgType** | Pointer to **int32** |  | [optional] 
 **PlanningHistroyId** | Pointer to **string** | Planning histroy ID. | [optional] 

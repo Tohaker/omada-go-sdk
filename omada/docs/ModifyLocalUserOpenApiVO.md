@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ExpirationTime** | **int64** | Expiration timestamp. Unit:ms. | 
 **Logout** | Pointer to **bool** | local user logout. enable local user logout | [optional] 
 **MacAddress** | Pointer to **string** | Mac address,the value is only available when the macType is static binding or dynamic binding. | [optional] 
-**MaxUsers** | **int32** | The maximum number of users online at the same time when the MAC binding type is No Binding. It cannot be modified after initialization. MaxUsers should be within the range of 1–2048. | 
+**MaxUsers** | Pointer to **int32** | The maximum number of users online at the same time when the MAC binding type is No Binding. It cannot be modified after initialization. MaxUsers should be within the range of 1–2048. | [optional] 
 **Name** | Pointer to **string** | Name should contain 1 to 128 characters, with no spaces at the beginning and end, and spaces in the middle | [optional] 
 **Password** | **string** | Password should contain 1 to 128 characters. | 
 **Phone** | Pointer to **string** | Phone number should contain 1 to 20 characters. | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewModifyLocalUserOpenApiVO
 
-`func NewModifyLocalUserOpenApiVO(bindingType int32, enable bool, expirationTime int64, maxUsers int32, password string, portals []string, rateLimit RateLimitOpenApiVO, trafficLimitEnable bool, ) *ModifyLocalUserOpenApiVO`
+`func NewModifyLocalUserOpenApiVO(bindingType int32, enable bool, expirationTime int64, password string, portals []string, rateLimit RateLimitOpenApiVO, trafficLimitEnable bool, ) *ModifyLocalUserOpenApiVO`
 
 NewModifyLocalUserOpenApiVO instantiates a new ModifyLocalUserOpenApiVO object
 This constructor will assign default values to properties that have it defined,
@@ -193,6 +193,11 @@ and a boolean to check if the value has been set.
 
 SetMaxUsers sets MaxUsers field to given value.
 
+### HasMaxUsers
+
+`func (o *ModifyLocalUserOpenApiVO) HasMaxUsers() bool`
+
+HasMaxUsers returns a boolean if a field has been set.
 
 ### GetName
 

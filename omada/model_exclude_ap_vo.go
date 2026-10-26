@@ -17,7 +17,7 @@ import (
 // checks if the ExcludeApVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ExcludeApVO{}
 
-// ExcludeApVO struct for ExcludeApVO
+// ExcludeApVO Info of Excluded APs.
 type ExcludeApVO struct {
 	// Whether the device is added in advanced.
 	AddedInAdvanced *bool `json:"addedInAdvanced,omitempty"`

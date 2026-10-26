@@ -114,8 +114,10 @@ Class | Method | HTTP request | Description
 *ACLTemplateAPI* | [**ModifyOsgCustomAclIndexTemplate**](docs/ACLTemplateAPI.md#modifyosgcustomaclindextemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls/modifyIndex | Modify gateway custom ACL template index
 *ACLTemplateAPI* | [**UpdateOsgCustomAclsTemplate**](docs/ACLTemplateAPI.md#updateosgcustomaclstemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/acls/osg-custom-acls | Update osg custom ACL templates
 *AccessControlAPI* | [**GetAccessControl**](docs/AccessControlAPI.md#getaccesscontrol) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Get access control setting
+*AccessControlAPI* | [**GetAutoFreeAuthPolicy**](docs/AccessControlAPI.md#getautofreeauthpolicy) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/setting/auto-free-auth-policy | Get automatically generated free auth policy items
 *AccessControlAPI* | [**ModifyAccessControl**](docs/AccessControlAPI.md#modifyaccesscontrol) | **Patch** /openapi/v1/{omadacId}/sites/{siteId}/setting/access-control | Modify access control setting
 *AccessControlTemplateAPI* | [**GetAccessControlTemplate**](docs/AccessControlTemplateAPI.md#getaccesscontroltemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/access-control | Get access control setting template
+*AccessControlTemplateAPI* | [**GetAutoFreeAuthPolicyTemplate**](docs/AccessControlTemplateAPI.md#getautofreeauthpolicytemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/auto-free-auth-policy | Get automatically generated free auth policy template items
 *AccessControlTemplateAPI* | [**ModifyAccessControlTemplate**](docs/AccessControlTemplateAPI.md#modifyaccesscontroltemplate) | **Patch** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/setting/access-control | Modify access control setting template
 *ApAPI* | [**BatchModifyAntSwitchConfig**](docs/ApAPI.md#batchmodifyantswitchconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/cmd/aps/config/ant-switch | Batch modify AP antSwitch setting
 *ApAPI* | [**BatchModifyApLagConfig**](docs/ApAPI.md#batchmodifyaplagconfig) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/aps/lag | Batch modify AP lag config
@@ -155,7 +157,7 @@ Class | Method | HTTP request | Description
 *ApAPI* | [**GetLanDetail**](docs/ApAPI.md#getlandetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lan-traffic-info | Get AP lan traffic info
 *ApAPI* | [**GetMeshStatistics**](docs/ApAPI.md#getmeshstatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get AP mesh statistics
 *ApAPI* | [**GetMeshStatisticsForMsp**](docs/ApAPI.md#getmeshstatisticsformsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get AP mesh statistics for MSP view
-*ApAPI* | [**GetMultiApPortList**](docs/ApAPI.md#getmultiapportlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/capability | Get multiple APs port list
+*ApAPI* | [**GetMultiApPortList**](docs/ApAPI.md#getmultiapportlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/capability | Get multiple APs port capability
 *ApAPI* | [**GetOverviewDetail**](docs/ApAPI.md#getoverviewdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac} | Get AP info
 *ApAPI* | [**GetParingWindowResult**](docs/ApAPI.md#getparingwindowresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/paring-window-result | Get Paring Window Result
 *ApAPI* | [**GetPowerSavingConfig**](docs/ApAPI.md#getpowersavingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Get AP power saving config
@@ -1306,17 +1308,31 @@ Class | Method | HTTP request | Description
 *OUIBasedVLANAPI* | [**CreateSwitchOuiBasedVlan**](docs/OUIBasedVLANAPI.md#createswitchouibasedvlan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules | Create Switch oui based vlan
 *OUIBasedVLANAPI* | [**DeleteApOuiBasedVlan**](docs/OUIBasedVLANAPI.md#deleteapouibasedvlan) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/ap-oui-rules/{ouiBasedVlanId} | Delete Ap oui based vlan
 *OUIBasedVLANAPI* | [**DeleteSwitchOuiBasedVlan**](docs/OUIBasedVLANAPI.md#deleteswitchouibasedvlan) | **Delete** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/{ouiBasedVlanId} | Delete Switch oui based vlan
+*OUIBasedVLANAPI* | [**EnableAutoAddVlan**](docs/OUIBasedVLANAPI.md#enableautoaddvlan) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/enable-auto-add-vlan | Enable the site and device auto add vlan.
+*OUIBasedVLANAPI* | [**GetAllSupportAutoAddVlanSwitchList**](docs/OUIBasedVLANAPI.md#getallsupportautoaddvlanswitchlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/switches/support-auto-add-vlan | Get switch list of supporting oui based vlan with ports(lags) info of vlans in oui based rules but not included in port(lag) vlan.
 *OUIBasedVLANAPI* | [**GetGridApOuiBasedVlan**](docs/OUIBasedVLANAPI.md#getgridapouibasedvlan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/ap-oui-rules | Get Ap oui based vlan list
 *OUIBasedVLANAPI* | [**GetGridSwitchOuiBasedVlan**](docs/OUIBasedVLANAPI.md#getgridswitchouibasedvlan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules | Get Switch oui based vlan list
+*OUIBasedVLANAPI* | [**GetOuiBasedVlanSwitchList**](docs/OUIBasedVLANAPI.md#getouibasedvlanswitchlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/switches | Get all oui based vlan switch list.
 *OUIBasedVLANAPI* | [**GetSwitchList**](docs/OUIBasedVLANAPI.md#getswitchlist) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/support-device | Get switch list of supporting oui based vlan
+*OUIBasedVLANAPI* | [**GetWhetherAllSwitchSupportAutoAddVlan**](docs/OUIBasedVLANAPI.md#getwhetherallswitchsupportautoaddvlan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/auto-add-vlan-all-support | Get whether all switches support oui rule auto add vlan.
+*OUIBasedVLANAPI* | [**GetWhetherExistAllowAllPortOrLagsForRuleCreation**](docs/OUIBasedVLANAPI.md#getwhetherexistallowallportorlagsforrulecreation) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/switches/check | Get whether exist at least one port or lag with allow all network tags for oui based vlan creation.
+*OUIBasedVLANAPI* | [**GetWhetherExistAllowAllPortOrLagsForRuleModification**](docs/OUIBasedVLANAPI.md#getwhetherexistallowallportorlagsforrulemodification) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/switches/{ouiBasedVlanId}/check | Get whether exist at least one port or lag with allow all network tags for oui based vlan modification.
+*OUIBasedVLANAPI* | [**GetWhetherSiteOpenAutoAddVlan**](docs/OUIBasedVLANAPI.md#getwhethersiteopenautoaddvlan) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/whether-auto-add-vlan | Get whether site open oui rule auto add vlan.
 *OUIBasedVLANAPI* | [**ModifyApOuiBasedVlan**](docs/OUIBasedVLANAPI.md#modifyapouibasedvlan) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/ap-oui-rules/{ouiBasedVlanId} | Modify Ap oui based vlan
 *OUIBasedVLANAPI* | [**ModifySwitchOuiBasedVlan**](docs/OUIBasedVLANAPI.md#modifyswitchouibasedvlan) | **Put** /openapi/v1/{omadacId}/sites/{siteId}/switch-oui-rules/{ouiBasedVlanId} | Modify Switch oui based vlan
 *OUIBasedVLANTemplateAPI* | [**CreateApOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#createapouibasedvlantemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules | Create Ap oui based vlan template
 *OUIBasedVLANTemplateAPI* | [**CreateSwitchOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#createswitchouibasedvlantemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules | Create Switch oui based vlan template
 *OUIBasedVLANTemplateAPI* | [**DeleteApOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#deleteapouibasedvlantemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules/{ouiBasedVlanId} | Delete Ap oui based vlan template
 *OUIBasedVLANTemplateAPI* | [**DeleteSwitchOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#deleteswitchouibasedvlantemplate) | **Delete** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/{ouiBasedVlanId} | Delete Switch oui based vlan template
+*OUIBasedVLANTemplateAPI* | [**EnableAutoAddVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#enableautoaddvlantemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/enable-auto-add-vlan | Enable the site template and device auto add vlan.
+*OUIBasedVLANTemplateAPI* | [**GetAllSupportAutoAddVlanSwitchListTemplate**](docs/OUIBasedVLANTemplateAPI.md#getallsupportautoaddvlanswitchlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/switches/support-auto-add-vlan | Get switch template list of supporting oui based vlan with ports(lags) info of vlans in oui based rules but not included in port(lag) vlan.
 *OUIBasedVLANTemplateAPI* | [**GetGridApOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#getgridapouibasedvlantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules | Get Ap oui based vlan template list
 *OUIBasedVLANTemplateAPI* | [**GetGridSwitchOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#getgridswitchouibasedvlantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules | Get Switch oui based vlan template list
+*OUIBasedVLANTemplateAPI* | [**GetOuiBasedVlanSwitchListTemplate**](docs/OUIBasedVLANTemplateAPI.md#getouibasedvlanswitchlisttemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/switches | Get all oui based vlan switch template list.
+*OUIBasedVLANTemplateAPI* | [**GetWhetherAllSwitchSupportAutoAddVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#getwhetherallswitchsupportautoaddvlantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/auto-add-vlan-all-support | Get whether all switches template support oui rule auto add vlan.
+*OUIBasedVLANTemplateAPI* | [**GetWhetherExistAllowAllPortOrLagsForRuleCreationTemplate**](docs/OUIBasedVLANTemplateAPI.md#getwhetherexistallowallportorlagsforrulecreationtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/switches/check | Get whether exist at least one port or lag with allow all network tags for oui based vlan creation.
+*OUIBasedVLANTemplateAPI* | [**GetWhetherExistAllowAllPortOrLagsForRuleModificationTemplate**](docs/OUIBasedVLANTemplateAPI.md#getwhetherexistallowallportorlagsforrulemodificationtemplate) | **Post** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/switches/{ouiBasedVlanId}/check | Get whether exist at least one port or lag with allow all network tags for oui based vlan modification.
+*OUIBasedVLANTemplateAPI* | [**GetWhetherSiteOpenAutoAddVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#getwhethersiteopenautoaddvlantemplate) | **Get** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/whether-auto-add-vlan | Get whether site template open oui rule auto add vlan.
 *OUIBasedVLANTemplateAPI* | [**ModifyApOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#modifyapouibasedvlantemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/ap-oui-rules/{ouiBasedVlanId} | Modify Ap oui based vlan template
 *OUIBasedVLANTemplateAPI* | [**ModifySwitchOuiBasedVlanTemplate**](docs/OUIBasedVLANTemplateAPI.md#modifyswitchouibasedvlantemplate) | **Put** /openapi/v1/{omadacId}/sitetemplates/{siteTemplateId}/switch-oui-rules/{ouiBasedVlanId} | Modify Switch oui based vlan template
 *OswPortLayoutAPI* | [**GetOswPortLayoutVO**](docs/OswPortLayoutAPI.md#getoswportlayoutvo) | **Get** /openapi/v1/{omadacId}/port/layout | Get all osw port layout.
@@ -2746,6 +2762,7 @@ Class | Method | HTTP request | Description
  - [AutoConfigOpenApiVO](docs/AutoConfigOpenApiVO.md)
  - [AutoEffectDeviceForVlanVO](docs/AutoEffectDeviceForVlanVO.md)
  - [AutoEffectDevicesForVlanVO](docs/AutoEffectDevicesForVlanVO.md)
+ - [AutoFreeAuthPolicyOpenApi](docs/AutoFreeAuthPolicyOpenApi.md)
  - [AutoSelectDeviceForVlanVO](docs/AutoSelectDeviceForVlanVO.md)
  - [AutoSelectDevicesForVlanVO](docs/AutoSelectDevicesForVlanVO.md)
  - [AutoSelectWanPortReq](docs/AutoSelectWanPortReq.md)
@@ -3153,6 +3170,7 @@ Class | Method | HTTP request | Description
  - [DeviceOpenApiVO](docs/DeviceOpenApiVO.md)
  - [DeviceOuiModeOpenApiVO](docs/DeviceOuiModeOpenApiVO.md)
  - [DeviceOuiModeQueryOpenApiVO](docs/DeviceOuiModeQueryOpenApiVO.md)
+ - [DeviceOuiModeVO](docs/DeviceOuiModeVO.md)
  - [DevicePoePorts](docs/DevicePoePorts.md)
  - [DevicePortVO](docs/DevicePortVO.md)
  - [DevicePorts](docs/DevicePorts.md)
@@ -4359,6 +4377,7 @@ Class | Method | HTTP request | Description
  - [OperationResponseListApplicationStatTraffic](docs/OperationResponseListApplicationStatTraffic.md)
  - [OperationResponseListApplicationTrafficWithClientCount](docs/OperationResponseListApplicationTrafficWithClientCount.md)
  - [OperationResponseListAuthenticationConfigDTO](docs/OperationResponseListAuthenticationConfigDTO.md)
+ - [OperationResponseListAutoFreeAuthPolicyOpenApi](docs/OperationResponseListAutoFreeAuthPolicyOpenApi.md)
  - [OperationResponseListAutoServicePortVO](docs/OperationResponseListAutoServicePortVO.md)
  - [OperationResponseListBatchFullChannelDetectStatusOpenApiVO](docs/OperationResponseListBatchFullChannelDetectStatusOpenApiVO.md)
  - [OperationResponseListBriefDeviceInfoDetailForBatchAdoptOpenApiVO](docs/OperationResponseListBriefDeviceInfoDetailForBatchAdoptOpenApiVO.md)
@@ -4561,6 +4580,10 @@ Class | Method | HTTP request | Description
  - [OperationResponseOswStatOpenApiVO](docs/OperationResponseOswStatOpenApiVO.md)
  - [OperationResponseOswStaticRoutingGridVOOswStaticRoutingVO](docs/OperationResponseOswStaticRoutingGridVOOswStaticRoutingVO.md)
  - [OperationResponseOtoNatOpenApiGridVO](docs/OperationResponseOtoNatOpenApiGridVO.md)
+ - [OperationResponseOuiBasedVlanDeviceAutoAddVlanVO](docs/OperationResponseOuiBasedVlanDeviceAutoAddVlanVO.md)
+ - [OperationResponseOuiBasedVlanGridVOSwitchDataVO](docs/OperationResponseOuiBasedVlanGridVOSwitchDataVO.md)
+ - [OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO](docs/OperationResponseOuiBasedVlanOswPortNetworkTagsSettingVO.md)
+ - [OperationResponseOuiBasedVlanSiteAutoAddVlanVO](docs/OperationResponseOuiBasedVlanSiteAutoAddVlanVO.md)
  - [OperationResponseOuiGridVOOuiProfileQueryOpenApiVO](docs/OperationResponseOuiGridVOOuiProfileQueryOpenApiVO.md)
  - [OperationResponseOutboxMessageOpenApiGridVOOutboxMessage](docs/OperationResponseOutboxMessageOpenApiGridVOOutboxMessage.md)
  - [OperationResponseOverviewStatisticsOpenApiVO](docs/OperationResponseOverviewStatisticsOpenApiVO.md)
@@ -4599,6 +4622,7 @@ Class | Method | HTTP request | Description
  - [OperationResponsePrivacyPolicy](docs/OperationResponsePrivacyPolicy.md)
  - [OperationResponseQueryDeviceListOpenApiVO](docs/OperationResponseQueryDeviceListOpenApiVO.md)
  - [OperationResponseQueueSchedulerMappingVO](docs/OperationResponseQueueSchedulerMappingVO.md)
+ - [OperationResponseRFPlanningConfig](docs/OperationResponseRFPlanningConfig.md)
  - [OperationResponseRFPlanningResult](docs/OperationResponseRFPlanningResult.md)
  - [OperationResponseRemoteBindingOpenApiVO](docs/OperationResponseRemoteBindingOpenApiVO.md)
  - [OperationResponseRemoteLog](docs/OperationResponseRemoteLog.md)
@@ -4934,6 +4958,7 @@ Class | Method | HTTP request | Description
  - [OswStackDataVO](docs/OswStackDataVO.md)
  - [OswStackDataVODeviceInfo](docs/OswStackDataVODeviceInfo.md)
  - [OswStackDataVOOswDataVO](docs/OswStackDataVOOswDataVO.md)
+ - [OswStackDataVOSwitchDataVO](docs/OswStackDataVOSwitchDataVO.md)
  - [OswStackDetailConfigOpenApiVO](docs/OswStackDetailConfigOpenApiVO.md)
  - [OswStackDetailIntPropertyDTO](docs/OswStackDetailIntPropertyDTO.md)
  - [OswStackDetailLongPropertyDTO](docs/OswStackDetailLongPropertyDTO.md)
@@ -5001,8 +5026,13 @@ Class | Method | HTTP request | Description
  - [OtoNatOpenApiVO](docs/OtoNatOpenApiVO.md)
  - [OuiBasedVlanApOpenApiVO](docs/OuiBasedVlanApOpenApiVO.md)
  - [OuiBasedVlanApQueryOpenApiVO](docs/OuiBasedVlanApQueryOpenApiVO.md)
+ - [OuiBasedVlanDeviceAutoAddVlanVO](docs/OuiBasedVlanDeviceAutoAddVlanVO.md)
  - [OuiBasedVlanDeviceInfoVO](docs/OuiBasedVlanDeviceInfoVO.md)
+ - [OuiBasedVlanGridVOSwitchDataVO](docs/OuiBasedVlanGridVOSwitchDataVO.md)
  - [OuiBasedVlanNetworkVO](docs/OuiBasedVlanNetworkVO.md)
+ - [OuiBasedVlanOswPortNetworkTagsSettingVO](docs/OuiBasedVlanOswPortNetworkTagsSettingVO.md)
+ - [OuiBasedVlanRuleVO](docs/OuiBasedVlanRuleVO.md)
+ - [OuiBasedVlanSiteAutoAddVlanVO](docs/OuiBasedVlanSiteAutoAddVlanVO.md)
  - [OuiBasedVlanSwitchOpenApiVO](docs/OuiBasedVlanSwitchOpenApiVO.md)
  - [OuiBasedVlanSwitchQueryOpenApiVO](docs/OuiBasedVlanSwitchQueryOpenApiVO.md)
  - [OuiBasedVlanTemplateOpenApiVO](docs/OuiBasedVlanTemplateOpenApiVO.md)
@@ -5153,6 +5183,7 @@ Class | Method | HTTP request | Description
  - [QueueSchedulerMappingVO](docs/QueueSchedulerMappingVO.md)
  - [QuotaDataSettingOpenApiVO](docs/QuotaDataSettingOpenApiVO.md)
  - [QuotaSmsSettingOpenApiVO](docs/QuotaSmsSettingOpenApiVO.md)
+ - [RFPlanningConfig](docs/RFPlanningConfig.md)
  - [RFPlanningDeployConfig](docs/RFPlanningDeployConfig.md)
  - [RFPlanningDeployResult](docs/RFPlanningDeployResult.md)
  - [RFPlanningHistory](docs/RFPlanningHistory.md)
@@ -5408,6 +5439,7 @@ Class | Method | HTTP request | Description
  - [SsidMultiCastOpenApiVO](docs/SsidMultiCastOpenApiVO.md)
  - [SsidOpenApiVO](docs/SsidOpenApiVO.md)
  - [SsidOuiModeOpenApiVO](docs/SsidOuiModeOpenApiVO.md)
+ - [SsidOuiModeVO](docs/SsidOuiModeVO.md)
  - [SsidOverrideConfigOpenApiV2VO](docs/SsidOverrideConfigOpenApiV2VO.md)
  - [SsidOverrideOpenApiV2VO](docs/SsidOverrideOpenApiV2VO.md)
  - [SsidOverrideVO](docs/SsidOverrideVO.md)
@@ -5487,6 +5519,7 @@ Class | Method | HTTP request | Description
  - [SwitchAlertVO](docs/SwitchAlertVO.md)
  - [SwitchBatchLoopbackControl](docs/SwitchBatchLoopbackControl.md)
  - [SwitchCustomDHCPOptions](docs/SwitchCustomDHCPOptions.md)
+ - [SwitchDataVO](docs/SwitchDataVO.md)
  - [SwitchDistributionVO](docs/SwitchDistributionVO.md)
  - [SwitchGeneralConfig](docs/SwitchGeneralConfig.md)
  - [SwitchInfo](docs/SwitchInfo.md)
@@ -5742,6 +5775,7 @@ Class | Method | HTTP request | Description
  - [VlanNetworkVlansVO](docs/VlanNetworkVlansVO.md)
  - [VlanOuiModeOpenApiVO](docs/VlanOuiModeOpenApiVO.md)
  - [VlanOuiModeQueryOpenApiVO](docs/VlanOuiModeQueryOpenApiVO.md)
+ - [VlanOuiModeVO](docs/VlanOuiModeVO.md)
  - [VlanPreConfigOpenApiVO](docs/VlanPreConfigOpenApiVO.md)
  - [VoiceMail](docs/VoiceMail.md)
  - [VoiceMailBatchDelete](docs/VoiceMailBatchDelete.md)
