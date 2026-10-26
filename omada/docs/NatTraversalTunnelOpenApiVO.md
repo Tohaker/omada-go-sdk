@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AppType** | **string** | App type of the remote access tunnel for the local target device. HTTP, HTTPS, SSH, TELNET. | 
+**AutoLogin** | Pointer to **bool** | If the remote access tunnel enabled auto login. true: Auto login is enabled; false: Auto login is disabled. | [optional] 
 **ClientDeviceType** | Pointer to **string** | Client&#39;s type of the remote access tunnel for the client. | [optional] 
 **ClientManager** | Pointer to **bool** | Client&#39;s manager of the remote access tunnel for the client. | [optional] 
 **ClientModel** | Pointer to **string** | Client&#39;s model of the remote access tunnel for the client. | [optional] 
@@ -55,6 +56,31 @@ and a boolean to check if the value has been set.
 
 SetAppType sets AppType field to given value.
 
+
+### GetAutoLogin
+
+`func (o *NatTraversalTunnelOpenApiVO) GetAutoLogin() bool`
+
+GetAutoLogin returns the AutoLogin field if non-nil, zero value otherwise.
+
+### GetAutoLoginOk
+
+`func (o *NatTraversalTunnelOpenApiVO) GetAutoLoginOk() (*bool, bool)`
+
+GetAutoLoginOk returns a tuple with the AutoLogin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoLogin
+
+`func (o *NatTraversalTunnelOpenApiVO) SetAutoLogin(v bool)`
+
+SetAutoLogin sets AutoLogin field to given value.
+
+### HasAutoLogin
+
+`func (o *NatTraversalTunnelOpenApiVO) HasAutoLogin() bool`
+
+HasAutoLogin returns a boolean if a field has been set.
 
 ### GetClientDeviceType
 

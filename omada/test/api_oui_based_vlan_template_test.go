@@ -84,6 +84,36 @@ func Test_omada_OUIBasedVLANTemplateAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test OUIBasedVLANTemplateAPIService EnableAutoAddVlanTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.OUIBasedVLANTemplateAPI.EnableAutoAddVlanTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test OUIBasedVLANTemplateAPIService GetAllSupportAutoAddVlanSwitchListTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.OUIBasedVLANTemplateAPI.GetAllSupportAutoAddVlanSwitchListTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test OUIBasedVLANTemplateAPIService GetGridApOuiBasedVlanTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -107,6 +137,82 @@ func Test_omada_OUIBasedVLANTemplateAPIService(t *testing.T) {
 		var siteTemplateId string
 
 		resp, httpRes, err := apiClient.OUIBasedVLANTemplateAPI.GetGridSwitchOuiBasedVlanTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test OUIBasedVLANTemplateAPIService GetOuiBasedVlanSwitchListTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.OUIBasedVLANTemplateAPI.GetOuiBasedVlanSwitchListTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test OUIBasedVLANTemplateAPIService GetWhetherAllSwitchSupportAutoAddVlanTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.OUIBasedVLANTemplateAPI.GetWhetherAllSwitchSupportAutoAddVlanTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test OUIBasedVLANTemplateAPIService GetWhetherExistAllowAllPortOrLagsForRuleCreationTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.OUIBasedVLANTemplateAPI.GetWhetherExistAllowAllPortOrLagsForRuleCreationTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test OUIBasedVLANTemplateAPIService GetWhetherExistAllowAllPortOrLagsForRuleModificationTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+		var ouiBasedVlanId string
+
+		resp, httpRes, err := apiClient.OUIBasedVLANTemplateAPI.GetWhetherExistAllowAllPortOrLagsForRuleModificationTemplate(context.Background(), omadacId, siteTemplateId, ouiBasedVlanId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test OUIBasedVLANTemplateAPIService GetWhetherSiteOpenAutoAddVlanTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.OUIBasedVLANTemplateAPI.GetWhetherSiteOpenAutoAddVlanTemplate(context.Background(), omadacId, siteTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

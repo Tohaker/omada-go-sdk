@@ -42,7 +42,7 @@ Method | HTTP request | Description
 [**GetLanDetail**](ApAPI.md#getlandetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/lan-traffic-info | Get AP lan traffic info
 [**GetMeshStatistics**](ApAPI.md#getmeshstatistics) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get AP mesh statistics
 [**GetMeshStatisticsForMsp**](ApAPI.md#getmeshstatisticsformsp) | **Get** /openapi/v1/msp/{mspId}/customers/{customerId}/sites/{siteId}/aps/{apMac}/mesh/statistics | Get AP mesh statistics for MSP view
-[**GetMultiApPortList**](ApAPI.md#getmultiapportlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/capability | Get multiple APs port list
+[**GetMultiApPortList**](ApAPI.md#getmultiapportlist) | **Post** /openapi/v1/{omadacId}/sites/{siteId}/aps/ports/capability | Get multiple APs port capability
 [**GetOverviewDetail**](ApAPI.md#getoverviewdetail) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac} | Get AP info
 [**GetParingWindowResult**](ApAPI.md#getparingwindowresult) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/paring-window-result | Get Paring Window Result
 [**GetPowerSavingConfig**](ApAPI.md#getpowersavingconfig) | **Get** /openapi/v1/{omadacId}/sites/{siteId}/aps/{apMac}/power-saving | Get AP power saving config
@@ -2979,7 +2979,7 @@ Name | Type | Description  | Notes
 
 > OperationResponseListAPLANPortList GetMultiApPortList(ctx, omadacId, siteId).MultiApPortCapOpenApiVO(multiApPortCapOpenApiVO).Execute()
 
-Get multiple APs port list
+Get multiple APs port capability
 
 
 

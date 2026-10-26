@@ -37,6 +37,21 @@ func Test_omada_AccessControlTemplateAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test AccessControlTemplateAPIService GetAutoFreeAuthPolicyTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var omadacId string
+		var siteTemplateId string
+
+		resp, httpRes, err := apiClient.AccessControlTemplateAPI.GetAutoFreeAuthPolicyTemplate(context.Background(), omadacId, siteTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test AccessControlTemplateAPIService ModifyAccessControlTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

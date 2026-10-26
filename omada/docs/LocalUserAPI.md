@@ -115,7 +115,7 @@ import (
 func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
-	createLocalUserOpenApiVO := *openapiclient.NewCreateLocalUserOpenApiVO(int32(123), false, int64(123), int32(123), "Password_example", []string{"Portals_example"}, *openapiclient.NewRateLimitOpenApiVO(int32(123)), false, "UserName_example") // CreateLocalUserOpenApiVO | 
+	createLocalUserOpenApiVO := *openapiclient.NewCreateLocalUserOpenApiVO(int32(123), false, int64(123), "Password_example", []string{"Portals_example"}, *openapiclient.NewRateLimitOpenApiVO(int32(123)), false, "UserName_example") // CreateLocalUserOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -578,7 +578,7 @@ func main() {
 	omadacId := "omadacId_example" // string | Omada ID
 	siteId := "siteId_example" // string | Site ID
 	id := "id_example" // string | Local user ID
-	modifyLocalUserOpenApiVO := *openapiclient.NewModifyLocalUserOpenApiVO(int32(123), false, int64(123), int32(123), "Password_example", []string{"Portals_example"}, *openapiclient.NewRateLimitOpenApiVO(int32(123)), false) // ModifyLocalUserOpenApiVO | 
+	modifyLocalUserOpenApiVO := *openapiclient.NewModifyLocalUserOpenApiVO(int32(123), false, int64(123), "Password_example", []string{"Portals_example"}, *openapiclient.NewRateLimitOpenApiVO(int32(123)), false) // ModifyLocalUserOpenApiVO | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

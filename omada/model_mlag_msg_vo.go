@@ -17,7 +17,7 @@ import (
 // checks if the MlagMsgVO type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MlagMsgVO{}
 
-// MlagMsgVO M-LAG Message
+// MlagMsgVO The mlag info if it belongs to a mlag.
 type MlagMsgVO struct {
 	// Set of DAD Link Ports
 	DadLinkPort []int32 `json:"dadLinkPort,omitempty"`
